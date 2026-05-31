@@ -1,9 +1,39 @@
-import { execSync } from 'child_process';
 import type { Prospect } from './importer.js';
 import type { PatternSelection } from './influence.js';
 import type { MechanicalCheckResult } from './judge.js';
 
-const SUPABASE_PROJECT = 'slttpknnuthbttjuzrnz';
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
+const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY || '';
+
+async function supabaseRest(
+  table: string,
+  method: 'POST' | 'PATCH' | 'DELETE' | 'GET',
+  body?: any,
+  query?: string
+): Promise<{ ok: boolean; data?: any; error?: string }> {
+  const url = `${SUPABASE_URL}/rest/v1/${table}${query ? '?' + query : ''}`;
+  const headers: Record<string, string> = {
+    'apikey': SUPABASE_KEY,
+    'Authorization': `Bearer ${SUPABASE_KEY}`,
+    'Content-Type': 'application/json',
+    'Prefer': method === 'POST' ? 'resolution=merge-duplicates,return=minimal' : 'return=minimal',
+  };
+
+  try {
+    const res = await fetch(url, {
+      method,
+      headers,
+      body: body ? JSON.stringify(body) : undefined,
+    });
+    if (!res.ok) {
+      const errText = await res.text();
+      return { ok: false, error: `${res.status} ${errText}` };
+    }
+    return { ok: true };
+  } catch (err: any) {
+    return { ok: false, error: err.message };
+  }
+}
 
 interface DossierRow {
   prospect_id: string;
@@ -184,11 +214,7 @@ export function dryRunPreview(payload: SupabaseWritePayload): void {
   }
 }
 
-// --- Write to Supabase ---
-
-function escapeSql(val: string): string {
-  return val.replace(/'/g, "''");
-}
+// --- Write to Supabase via REST API ---
 
 export async function writeDossierToSupabase(payload: SupabaseWritePayload): Promise<boolean> {
   const validation = validateBeforeWrite(payload);
@@ -202,91 +228,49 @@ export async function writeDossierToSupabase(payload: SupabaseWritePayload): Pro
     for (const w of validation.warnings) console.log(`  ⚠ ${w}`);
   }
 
-  const d = payload.dossier;
-
-  const sql = `INSERT INTO sr_brain_dossiers (
-    prospect_id, run_id, first_name, last_name, email, company, title, state,
-    icp_status, icp_reason, assigned_ae, ae_email, persona_bucket,
-    research_summary, challenger_insight,
-    influence_pattern_t1, influence_pattern_t2, influence_pattern_t3,
-    email_subject_t1, email_body_t1, email_ps_t1,
-    email_subject_t2, email_body_t2, email_ps_t2,
-    email_subject_t3, email_body_t3, email_ps_t3,
-    microsite_slug, research_model, research_confidence,
-    mechanical_check_passed, mechanical_check_failures, created_at
-  ) VALUES (
-    '${escapeSql(d.prospect_id)}', '${escapeSql(d.run_id)}',
-    '${escapeSql(d.first_name)}', '${escapeSql(d.last_name)}',
-    '${escapeSql(d.email)}', '${escapeSql(d.company)}',
-    '${escapeSql(d.title)}', '${escapeSql(d.state)}',
-    '${escapeSql(d.icp_status)}', '${escapeSql(d.icp_reason)}',
-    '${escapeSql(d.assigned_ae)}', '${escapeSql(d.ae_email)}',
-    '${escapeSql(d.persona_bucket)}',
-    '${escapeSql(d.research_summary)}', '${escapeSql(d.challenger_insight)}',
-    '${escapeSql(d.influence_pattern_t1)}', '${escapeSql(d.influence_pattern_t2)}',
-    '${escapeSql(d.influence_pattern_t3)}',
-    '${escapeSql(d.email_subject_t1)}', '${escapeSql(d.email_body_t1)}',
-    '${escapeSql(d.email_ps_t1)}',
-    '${escapeSql(d.email_subject_t2)}', '${escapeSql(d.email_body_t2)}',
-    '${escapeSql(d.email_ps_t2)}',
-    '${escapeSql(d.email_subject_t3)}', '${escapeSql(d.email_body_t3)}',
-    '${escapeSql(d.email_ps_t3)}',
-    '${escapeSql(d.microsite_slug)}', '${escapeSql(d.research_model)}',
-    '${escapeSql(d.research_confidence)}',
-    ${d.mechanical_check_passed}, '${escapeSql(d.mechanical_check_failures)}',
-    '${d.created_at}'
-  ) ON CONFLICT (prospect_id, run_id) DO UPDATE SET
-    email_subject_t1 = EXCLUDED.email_subject_t1,
-    email_body_t1 = EXCLUDED.email_body_t1,
-    email_ps_t1 = EXCLUDED.email_ps_t1,
-    email_subject_t2 = EXCLUDED.email_subject_t2,
-    email_body_t2 = EXCLUDED.email_body_t2,
-    email_ps_t2 = EXCLUDED.email_ps_t2,
-    email_subject_t3 = EXCLUDED.email_subject_t3,
-    email_body_t3 = EXCLUDED.email_body_t3,
-    email_ps_t3 = EXCLUDED.email_ps_t3,
-    mechanical_check_passed = EXCLUDED.mechanical_check_passed,
-    mechanical_check_failures = EXCLUDED.mechanical_check_failures;`;
-
-  try {
-    execSync(
-      `npx supabase db execute --project-ref ${SUPABASE_PROJECT} --sql '${sql.replace(/'/g, "'\\''")}'`,
-      { encoding: 'utf-8', timeout: 30000 }
-    );
-    return true;
-  } catch (err: any) {
-    console.error(`  ✗ Supabase write failed: ${err.message}`);
+  if (!SUPABASE_KEY) {
+    console.error(`  ✗ SUPABASE_ANON_KEY not set. Set NEXT_PUBLIC_SUPABASE_ANON_KEY or SUPABASE_ANON_KEY env var.`);
     return false;
   }
+
+  const result = await supabaseRest('sr_brain_dossiers', 'POST', payload.dossier);
+  if (!result.ok) {
+    console.error(`  ✗ Supabase write failed: ${result.error}`);
+    return false;
+  }
+  return true;
 }
 
 // --- Rollback by run_id ---
 
 export async function rollbackRun(runId: string, dryRun: boolean = true): Promise<void> {
-  const countSql = `SELECT COUNT(*) as count FROM sr_brain_dossiers WHERE run_id = '${escapeSql(runId)}'`;
+  if (!SUPABASE_KEY) {
+    console.error(`  ✗ SUPABASE_ANON_KEY not set.`);
+    return;
+  }
 
-  try {
-    const countResult = execSync(
-      `npx supabase db execute --project-ref ${SUPABASE_PROJECT} --sql "${countSql}"`,
-      { encoding: 'utf-8', timeout: 15000 }
-    );
-    console.log(`\n  Rollback target: run_id = ${runId}`);
-    console.log(`  Records found: ${countResult.trim()}`);
+  const countResult = await supabaseRest(
+    'sr_brain_dossiers', 'GET', undefined,
+    `run_id=eq.${encodeURIComponent(runId)}&select=prospect_id`
+  );
 
-    if (dryRun) {
-      console.log(`  [DRY RUN] Would delete all records with run_id = ${runId}`);
-      console.log(`  To execute: npx tsx supabase-adapter.ts rollback ${runId} --confirm`);
-      return;
-    }
+  console.log(`\n  Rollback target: run_id = ${runId}`);
 
-    const deleteSql = `DELETE FROM sr_brain_dossiers WHERE run_id = '${escapeSql(runId)}'`;
-    execSync(
-      `npx supabase db execute --project-ref ${SUPABASE_PROJECT} --sql "${deleteSql}"`,
-      { encoding: 'utf-8', timeout: 30000 }
-    );
+  if (dryRun) {
+    console.log(`  [DRY RUN] Would delete all records with run_id = ${runId}`);
+    console.log(`  To execute: npx tsx supabase-adapter.ts rollback ${runId} --confirm`);
+    return;
+  }
+
+  const result = await supabaseRest(
+    'sr_brain_dossiers', 'DELETE', undefined,
+    `run_id=eq.${encodeURIComponent(runId)}`
+  );
+
+  if (result.ok) {
     console.log(`  ✓ Rolled back run_id = ${runId}`);
-  } catch (err: any) {
-    console.error(`  ✗ Rollback failed: ${err.message}`);
+  } else {
+    console.error(`  ✗ Rollback failed: ${result.error}`);
   }
 }
 
