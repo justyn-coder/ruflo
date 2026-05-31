@@ -13,7 +13,8 @@
  */
 
 import { resolve, dirname } from 'path';
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, unlinkSync } from 'fs';
+import { execSync } from 'child_process';
 import { importProspects, printImportSummary, type Prospect } from './importer.js';
 import { RESEARCH_PERSONAS, buildMultiPersonaPrompt, generateCrossExamQuestions } from './personas.js';
 import { INFLUENCE_TOOLKIT, buildPatternSelectorPrompt, buildComposerPrompt, type PatternSelection } from './influence.js';
@@ -27,6 +28,33 @@ const AE_TERRITORY: Record<string, { name: string; email: string }> = {
   central: { name: 'Nathan Dunn', email: 'nathan@inorsa.com' },
   west: { name: 'Lucas Spencer', email: 'lucas@inorsa.com' },
 };
+
+function executePrompt(prompt: string, model: string = 'sonnet', budgetUsd: number = 0.50): string {
+  const tmpFile = resolve('/tmp', `showrev-prompt-${Date.now()}-${Math.random().toString(36).slice(2, 8)}.md`);
+  writeFileSync(tmpFile, prompt);
+  try {
+    const result = execSync(
+      `claude -p --model ${model} --max-budget-usd ${budgetUsd} --output-format json "$(cat '${tmpFile}')"`,
+      { encoding: 'utf-8', timeout: 180000, maxBuffer: 1024 * 1024 * 10 }
+    );
+    try {
+      const parsed = JSON.parse(result);
+      return parsed.result || parsed.content || result;
+    } catch {
+      return result;
+    }
+  } finally {
+    try { unlinkSync(tmpFile); } catch {}
+  }
+}
+
+function parseJSON(text: string): any {
+  const jsonMatch = text.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/) || text.match(/(\{[\s\S]*\})/);
+  if (jsonMatch) {
+    return JSON.parse(jsonMatch[1]);
+  }
+  return JSON.parse(text);
+}
 
 interface PremiumConfig {
   csvPath: string;
@@ -116,13 +144,15 @@ async function processProspect(
       } : undefined
     );
 
-    // In production, these would be parallel API calls
-    // For now, we write the prompts to files for agent execution
-    const promptPath = resolve(config.outputDir, 'prompts', `${prospect.id}-${persona.role.toLowerCase().replace(/\s/g, '-')}.md`);
-    mkdirSync(dirname(promptPath), { recursive: true });
-    writeFileSync(promptPath, prompt);
-    personaResults[persona.role] = `[Awaiting ${persona.role} research results]`;
-    console.log(`  │  ✓ ${persona.role} prompt generated`);
+    console.log(`  │  ⏳ ${persona.role} researching...`);
+    const result = executePrompt(prompt, config.model, 0.50);
+    personaResults[persona.role] = result;
+
+    // Save research output for audit trail
+    const outputPath = resolve(config.outputDir, 'research', `${prospect.id}-${persona.role.toLowerCase().replace(/\s/g, '-')}.json`);
+    mkdirSync(dirname(outputPath), { recursive: true });
+    writeFileSync(outputPath, result);
+    console.log(`  │  ✓ ${persona.role} complete`);
   }
 
   // PHASE 2: Cross-examination questions
@@ -134,156 +164,140 @@ async function processProspect(
   );
 
   const crossExamPath = resolve(config.outputDir, 'prompts', `${prospect.id}-cross-exam.md`);
+  mkdirSync(dirname(crossExamPath), { recursive: true });
   writeFileSync(crossExamPath, JSON.stringify(crossExamQuestions, null, 2));
 
   // PHASE 3: Influence pattern selection for each touch
   console.log(`  │  Phase 3: Influence pattern selection...`);
-  const dossierSummary = `Company: ${prospect.company}. Title: ${prospect.title}. ${prospect.aeNotes ? `Booth notes: "${prospect.aeNotes}"` : 'No booth notes.'}${relatedNote}`;
+  const researchSummaryForPatterns = Object.values(personaResults).join('\n\n---\n\n');
+  const enrichedDossierSummary = `Company: ${prospect.company}. Title: ${prospect.title}.\n\nResearch findings:\n${researchSummaryForPatterns}\n\n${prospect.aeNotes ? `Booth notes: "${prospect.aeNotes}"` : 'No booth notes.'}${relatedNote}`;
 
-  const patternPrompts: string[] = [];
+  const patternSelections: PatternSelection[] = [];
   for (const touchNum of [1, 2, 3] as const) {
-    const prompt = buildPatternSelectorPrompt(dossierSummary, prospect.aeNotes, prospect.title, touchNum);
-    const promptPath = resolve(config.outputDir, 'prompts', `${prospect.id}-pattern-t${touchNum}.md`);
-    writeFileSync(promptPath, prompt);
-    patternPrompts.push(prompt);
-    console.log(`  │  ✓ T${touchNum} influence pattern prompt generated`);
+    const prompt = buildPatternSelectorPrompt(enrichedDossierSummary, prospect.aeNotes, prospect.title, touchNum);
+    console.log(`  │  ⏳ T${touchNum} pattern selection...`);
+    const result = executePrompt(prompt, config.model, 0.15);
+
+    try {
+      const parsed = parseJSON(result);
+      patternSelections.push(parsed as PatternSelection);
+      console.log(`  │  ✓ T${touchNum} → ${parsed.pattern}`);
+    } catch (e) {
+      console.log(`  │  ⚠ T${touchNum} pattern parse failed, using fallback`);
+      patternSelections.push({
+        pattern: touchNum === 1 ? 'challenger_insight' : touchNum === 2 ? 'curiosity_gap' : 'challenger_insight',
+        rationale: 'Fallback due to parse error',
+        emotionalFrame: 'curiosity',
+        challengerInsight: '[Parse error - manual review needed]',
+        psStrategy: 'Microsite link',
+        ctaType: touchNum === 1 ? 'interest_based' : touchNum === 2 ? 'soft_time' : 'binary_close',
+      });
+    }
   }
 
-  // PHASE 4: Email composition prompts
-  console.log(`  │  Phase 4: Email composition prompts...`);
-  // These would be generated after pattern selection in production
-  // For now, generate a template composer prompt for each touch
-  for (const touchNum of [1, 2, 3] as const) {
-    const mockPattern: PatternSelection = {
-      pattern: prospect.aeNotes?.includes('demo') || prospect.aeNotes?.includes('meeting')
-        ? 'commitment_consistency'
-        : prospect.aeNotes?.includes('price') || prospect.aeNotes?.includes('previously')
-          ? 'reframe_anchor'
-          : prospect.aeNotes
-            ? 'challenger_insight'
-            : 'curiosity_gap',
-      rationale: 'Auto-selected based on available signals',
-      emotionalFrame: prospect.aeNotes?.includes('BEAD') || prospect.aeNotes?.includes('ASAP') ? 'urgency' : 'curiosity',
-      challengerInsight: '[Generated by pattern selector]',
-      psStrategy: '[Generated by pattern selector]',
-      ctaType: touchNum === 1 ? 'interest_based' : touchNum === 2 ? 'soft_time' : 'binary_close',
-    };
+  // PHASE 4: Email composition (using actual pattern selections)
+  console.log(`  │  Phase 4: Email composition...`);
 
-    // Resolve AE from prospect territory or assigned_ae field
-    const aeKey = (prospect as any).assigned_ae || 'east';
-    const ae = AE_TERRITORY[aeKey] || AE_TERRITORY.east;
-    const micrositeSlug = prospect.company.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  const emails: Array<{ touchNumber: number; pattern: PatternSelection; subject: string; previewText: string; body: string; ps: string; wordCount: number }> = [];
+
+  // Resolve AE
+  const aeKey = (prospect as any).assigned_ae?.toLowerCase().includes('mike') ? 'east'
+    : (prospect as any).assigned_ae?.toLowerCase().includes('nathan') ? 'central'
+    : (prospect as any).assigned_ae?.toLowerCase().includes('lucas') ? 'west' : 'east';
+  const ae = AE_TERRITORY[aeKey] || AE_TERRITORY.east;
+
+  // Generate microsite slug
+  const micrositeSlug = prospect.company.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+  const researchSummary = Object.values(personaResults).join('\n\n');
+
+  for (let i = 0; i < 3; i++) {
+    const touchNum = (i + 1) as 1 | 2 | 3;
+    const pattern = patternSelections[i];
 
     const composerPrompt = buildComposerPrompt(
-      mockPattern,
-      dossierSummary,
+      pattern,
+      researchSummary,
       { firstName: prospect.firstName, lastName: prospect.lastName, title: prospect.title, company: prospect.company },
       prospect.aeNotes,
       touchNum,
-      undefined,  // previousTouchSubject
+      i > 0 ? emails[i - 1]?.subject : undefined,
       ae.name,
       ae.email,
       micrositeSlug
     );
 
-    const promptPath = resolve(config.outputDir, 'prompts', `${prospect.id}-compose-t${touchNum}.md`);
-    writeFileSync(promptPath, composerPrompt);
-    console.log(`  │  ✓ T${touchNum} composer prompt generated`);
+    console.log(`  │  ⏳ T${touchNum} composing (${pattern.pattern})...`);
+    const result = executePrompt(composerPrompt, config.model, 0.20);
+
+    try {
+      const parsed = parseJSON(result);
+      emails.push({
+        touchNumber: touchNum,
+        pattern,
+        subject: parsed.subject || '',
+        previewText: parsed.previewText || '',
+        body: parsed.body || '',
+        ps: parsed.ps || '',
+        wordCount: parsed.wordCount || (parsed.body || '').split(/\s+/).length,
+      });
+      console.log(`  │  ✓ T${touchNum} composed (${(parsed.body || '').split(/\s+/).length} words)`);
+    } catch (e) {
+      console.log(`  │  ⚠ T${touchNum} compose parse failed`);
+      emails.push({
+        touchNumber: touchNum,
+        pattern,
+        subject: '[Parse error]',
+        previewText: '',
+        body: '[Parse error - manual review needed]',
+        ps: '',
+        wordCount: 0,
+      });
+    }
   }
 
-  // PHASE 5: Generate AE prep sheet
-  console.log(`  │  Phase 5: AE prep sheet...`);
-  const mockDossier: HubSpotDossier = {
-    contact: {
-      email: prospect.email,
-      firstname: prospect.firstName,
-      lastname: prospect.lastName,
-      jobtitle: prospect.title,
-      phone: prospect.phone,
-      city: prospect.city,
-      state: prospect.state,
-      showrev_research_summary: '[Populated by research]',
-      showrev_decision_authority: 'Unknown',
-      showrev_likely_objections: prospect.aeNotes?.includes('price') ? 'Price sensitivity (prior relationship)' : '[Populated by research]',
-      showrev_talking_points: prospect.aeNotes ? `Reference booth conversation: "${prospect.aeNotes}"` : '[Populated by research]',
-      showrev_booth_notes: prospect.aeNotes || '',
-      showrev_persona_classification: '[Populated by research]',
-      showrev_linkedin_summary: '[Populated by research]',
-      showrev_other_stakeholders: relatedContacts.map(c => `${c.firstName} ${c.lastName} (${c.title})`).join(', ') || 'None identified at show',
-    },
-    company: {
-      name: prospect.company,
-      domain: prospect.email.split('@')[1] || '',
-      city: prospect.city,
-      state: prospect.state,
-      industry: 'Fiber Optics / Telecommunications',
-      showrev_company_summary: '[Populated by research]',
-      showrev_company_size: '[Populated by research]',
-      showrev_fiber_activities: '[Populated by research]',
-      showrev_bead_status: '[Populated by research]',
-      showrev_growth_signals: '[Populated by research]',
-      showrev_competitive_landscape: '[Populated by research]',
-      showrev_key_projects: '[Populated by research]',
-      showrev_recent_news: '[Populated by research]',
-      showrev_external_deadlines: '[Populated by research]',
-    },
-    salesIntel: {
-      showrev_influence_pattern: '[Selected by pattern selector]',
-      showrev_challenger_insight: '[Generated by research]',
-      showrev_buying_timeline: '[Inferred by research]',
-      showrev_deal_size_estimate: '[Estimated by research]',
-      showrev_signal_strength: '[Scored by research]',
-      showrev_fit_rationale: '[Generated by research]',
-      showrev_next_best_action: prospect.aeNotes?.includes('demo') ? 'Book demo - prospect asked at booth' : '[Determined by research]',
-      showrev_risk_factors: '[Identified by research]',
-      showrev_multi_thread_contacts: relatedContacts.map(c => `${c.firstName} ${c.lastName} (${c.title})`).join(', ') || '',
-    },
-    emailSequence: {
-      showrev_t1_subject: '[Composed]', showrev_t1_body: '[Composed]', showrev_t1_ps: '[Composed]',
-      showrev_t1_send_date: new Date().toISOString().split('T')[0], showrev_t1_status: 'draft',
-      showrev_t2_subject: '[Composed]', showrev_t2_body: '[Composed]', showrev_t2_ps: '[Composed]',
-      showrev_t2_send_date: '', showrev_t2_status: 'draft',
-      showrev_t3_subject: '[Composed]', showrev_t3_body: '[Composed]', showrev_t3_ps: '[Composed]',
-      showrev_t3_send_date: '', showrev_t3_status: 'draft',
-    },
-    meta: {
-      showrev_research_date: new Date().toISOString(),
-      showrev_research_confidence: 'pending',
-      showrev_sources_count: 0,
-      showrev_sources_list: '[]',
-      showrev_original_tier: prospect.tier,
-      showrev_revised_tier: prospect.tier,
-      showrev_tier_revision_reason: '',
-      showrev_research_model: 'premium_3persona',
-      showrev_personas_used: 'analyst,ae_proxy,tech_evaluator',
-      showrev_show_name: 'Fiber Connect 2026',  // Gaylord Palms Resort, Kissimmee FL, Booth 1728
-      showrev_show_date: '2026-05-18',           // May 18-19, 2026
-    },
-  };
+  // PHASE 5: Write output
+  console.log(`  │  Phase 5: Writing output...`);
 
-  const aePrep = formatDossierForAE(mockDossier);
-  const aePrepPath = resolve(config.outputDir, 'ae-prep', `${prospect.id}-ae-prep.md`);
-  mkdirSync(dirname(aePrepPath), { recursive: true });
-  writeFileSync(aePrepPath, aePrep);
-
-  const dossierPath = resolve(config.outputDir, 'dossiers', `${prospect.id}-dossier.json`);
-  mkdirSync(dirname(dossierPath), { recursive: true });
-  writeFileSync(dossierPath, JSON.stringify(mockDossier, null, 2));
-
-  console.log(`  └─ ✓ All prompts + schema generated for ${prospect.firstName} ${prospect.lastName}\n`);
-
-  return {
+  const output: ProspectOutput = {
     prospect,
     personaFindings: {
       analyst: personaResults['Industry Analyst'] || '',
       aeProxy: personaResults['AE Proxy'] || '',
       techEval: personaResults['Technical Evaluator'] || '',
     },
-    crossExamInsights: '',
-    dossier: mockDossier,
-    emails: [],
-    aePrep,
+    crossExamInsights: JSON.stringify(crossExamQuestions),
+    dossier: {} as any,
+    emails,
+    aePrep: '',
   };
+
+  // Write JSON output
+  const jsonPath = resolve(config.outputDir, 'output', `${prospect.id}-output.json`);
+  mkdirSync(dirname(jsonPath), { recursive: true });
+  writeFileSync(jsonPath, JSON.stringify(output, null, 2));
+
+  // Write human-readable markdown
+  const mdPath = resolve(config.outputDir, 'output', `${prospect.id}-output.md`);
+  let md = `# ${prospect.firstName} ${prospect.lastName} — ${prospect.company}\n\n`;
+  md += `**AE:** ${ae.name} (${ae.email})\n`;
+  md += `**Microsite:** https://fiber.inorsa.com/brief/${micrositeSlug}\n\n`;
+  md += `## Research Summary\n\n${researchSummary}\n\n`;
+  md += `---\n\n`;
+
+  for (const email of emails) {
+    md += `## T${email.touchNumber} — ${email.pattern.pattern}\n\n`;
+    md += `**Subject:** ${email.subject}\n\n`;
+    md += `${email.body}\n\n`;
+    if (email.ps) md += `${email.ps}\n\n`;
+    md += `**Word count:** ${email.wordCount}\n\n---\n\n`;
+  }
+
+  writeFileSync(mdPath, md);
+  console.log(`  │  ✓ Output written to ${jsonPath}`);
+
+  console.log(`  └─ ✅ Complete: ${emails.length} touches composed\n`);
+  return output;
 }
 
 async function runPremiumPipeline(config: PremiumConfig): Promise<void> {
@@ -320,6 +334,7 @@ async function runPremiumPipeline(config: PremiumConfig): Promise<void> {
   }
 
   // Write execution manifest
+  const totalEmails = results.reduce((sum, r) => sum + r.emails.length, 0);
   const manifest = {
     pipeline: 'premium_3persona',
     runDate: new Date().toISOString(),
@@ -327,10 +342,8 @@ async function runPremiumPipeline(config: PremiumConfig): Promise<void> {
     prospectCount: prospects.length,
     resultsCount: results.length,
     tiers: config.tiers,
-    promptsGenerated: results.length * 9,  // 3 personas + 1 cross-exam + 3 patterns + 3 composers - 1
-    nextStep: config.dryRun
-      ? 'Run without --dry-run to generate prompts, then execute with agent swarm'
-      : 'Execute prompts via agent swarm: npx tsx premium-pipeline.ts execute',
+    emailsComposed: totalEmails,
+    status: config.dryRun ? 'dry_run' : 'executed',
   };
 
   const manifestPath = resolve(config.outputDir, 'premium-manifest.json');
@@ -338,15 +351,13 @@ async function runPremiumPipeline(config: PremiumConfig): Promise<void> {
   writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
 
   console.log('╔══════════════════════════════════════════════════╗');
-  console.log('║  Pipeline Generation Complete                     ║');
+  console.log('║  Pipeline Execution Complete                      ║');
   console.log('╚══════════════════════════════════════════════════╝');
   console.log(`\n  Prospects processed: ${results.length}`);
-  console.log(`  Prompts generated: ${results.length * 9} files`);
-  console.log(`  Dossier templates: ${results.length}`);
-  console.log(`  AE prep sheets: ${results.length}`);
+  console.log(`  Emails composed: ${totalEmails}`);
   console.log(`\n  Output directory: ${config.outputDir}`);
-  console.log(`\n  Next step: Execute research prompts with agent swarm`);
-  console.log(`  Command: npx tsx premium-pipeline.ts execute --tiers=${config.tiers.join(',')}`);
+  console.log(`  JSON: ${config.outputDir}/output/<prospect-id>-output.json`);
+  console.log(`  Markdown: ${config.outputDir}/output/<prospect-id>-output.md`);
 }
 
 // CLI
@@ -369,28 +380,19 @@ switch (command) {
     runPremiumPipeline(config);
     break;
 
-  case 'execute':
-    console.log('Execute mode: runs generated prompts through agent swarm.');
-    console.log('This spawns researcher agents for each prospect\'s prompts.');
-    console.log('Implementation: use Agent tool or direct API calls.');
-    console.log('\nFor now, run prompts manually:');
-    console.log(`  ls ${resolve(config.outputDir, 'prompts')}/*.md`);
-    break;
-
   default:
     console.log(`
 M1 Email Find — Premium Pipeline
 
 Usage:
-  npx tsx premium-pipeline.ts run [options]      Generate all prompts + schemas
-  npx tsx premium-pipeline.ts dry-run [options]  Preview without generating
-  npx tsx premium-pipeline.ts execute [options]  Execute generated prompts via agents
+  npx tsx premium-pipeline.ts run [options]      Execute full pipeline (research + compose)
+  npx tsx premium-pipeline.ts dry-run [options]  Preview without executing
 
 Options:
   --tiers=A,B,C,D      Tiers to process (default: A,B)
-  --prospect=fc2026-061 Process single prospect by ID
+  --prospect=fc2026-001 Process single prospect by ID
   --model=sonnet        LLM model (default: sonnet)
-  --batch=5             Parallel batch size (default: 5)
+  --batch=5             Batch size (default: 5)
   --dry-run             Preview only
 `);
 }
