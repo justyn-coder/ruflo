@@ -202,7 +202,7 @@ async function processProspect(
   for (const touchNum of [1, 2, 3] as const) {
     const prompt = buildPatternSelectorPrompt(enrichedDossierSummary, prospect.aeNotes, prospect.title, touchNum);
     console.log(`  │  ⏳ T${touchNum} pattern selection...`);
-    const result = executePrompt(prompt, config.model, 120000);
+    const result = executePrompt(prompt, config.model, 300000);
 
     try {
       const parsed = parseJSON(result);
@@ -250,7 +250,7 @@ async function processProspect(
     );
 
     console.log(`  │  ⏳ T${touchNum} composing (${pattern.pattern})...`);
-    const result = executePrompt(composerPrompt, config.model, 120000);
+    const result = executePrompt(composerPrompt, config.model, 300000);
 
     try {
       const parsed = parseJSON(result);
@@ -332,9 +332,12 @@ async function runPremiumPipeline(config: PremiumConfig): Promise<void> {
   printImportSummary(importResult);
 
   const allProspects = importResult.prospects;
+  const emailFilter = process.argv.find(a => a.startsWith('--email='))?.split('=')[1];
   const prospects = config.singleProspect
     ? allProspects.filter(p => p.id === config.singleProspect)
-    : config.tiers.flatMap(t => importResult.byTier[t] || []);
+    : emailFilter
+      ? allProspects.filter(p => p.email === emailFilter)
+      : config.tiers.flatMap(t => importResult.byTier[t] || []);
 
   console.log(`\n▶ Processing ${prospects.length} prospects (tiers: ${config.tiers.join(', ')})`);
   console.log(`  Model: ${config.model} | Batch: ${config.batchSize} | Dry run: ${config.dryRun}`);
