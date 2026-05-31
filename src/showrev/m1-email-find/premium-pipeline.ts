@@ -15,10 +15,12 @@
 import { resolve, dirname } from 'path';
 import { readFileSync, writeFileSync, mkdirSync, existsSync, unlinkSync } from 'fs';
 import { execSync } from 'child_process';
-import { importProspects, printImportSummary, type Prospect } from './importer.js';
+import { importProspects, printImportSummary, type Prospect, type ICPStatus } from './importer.js';
 import { RESEARCH_PERSONAS, buildMultiPersonaPrompt, generateCrossExamQuestions } from './personas.js';
 import { INFLUENCE_TOOLKIT, buildPatternSelectorPrompt, buildComposerPrompt, type PatternSelection } from './influence.js';
 import { type HubSpotDossier, formatDossierForAE } from './dossier-schema.js';
+import { runMechanicalChecks } from './judge.js';
+import { buildDossierRow, validateBeforeWrite, dryRunPreview, writeDossierToSupabase, type SupabaseWritePayload } from './supabase-adapter.js';
 
 const BASE_DIR = resolve(dirname(new URL(import.meta.url).pathname), '../../../data/showrev');
 const INORSA_VP_SUMMARY = `Inorsa turns design data into permit-ready construction drawings. Quality control is built in, so builds keep moving. Engineering Suite + Data Suite. Fiber only (no tower/cellular).`;
@@ -60,18 +62,54 @@ function resolveAE(prospect: Prospect): { name: string; email: string } {
   return AE_TERRITORY.west;
 }
 
-function executePrompt(prompt: string, model: string = 'sonnet', timeoutMs: number = 300000): string {
+function sleep(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+const MAX_RETRIES = 3;
+const BASE_DELAY_MS = 2000;
+
+async function executePrompt(
+  prompt: string,
+  model: string = 'sonnet',
+  timeoutMs: number = 300000,
+  label: string = 'prompt'
+): Promise<string> {
   const tmpFile = resolve('/tmp', `showrev-prompt-${Date.now()}-${Math.random().toString(36).slice(2, 8)}.md`);
   writeFileSync(tmpFile, prompt);
-  try {
-    const result = execSync(
-      `cat '${tmpFile}' | claude -p --model ${model}`,
-      { encoding: 'utf-8', timeout: timeoutMs, maxBuffer: 1024 * 1024 * 10 }
-    );
-    return result.trim();
-  } finally {
-    try { unlinkSync(tmpFile); } catch {}
+
+  let lastError: Error | null = null;
+
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      const result = execSync(
+        `cat '${tmpFile}' | claude -p --model ${model}`,
+        { encoding: 'utf-8', timeout: timeoutMs, maxBuffer: 1024 * 1024 * 10 }
+      );
+      const trimmed = result.trim();
+      if (!trimmed) {
+        throw new Error('Empty response from claude -p');
+      }
+      return trimmed;
+    } catch (err: any) {
+      lastError = err;
+      const isTimeout = err.killed || err.signal === 'SIGTERM';
+      const isRateLimit = err.stderr?.includes('rate') || err.stderr?.includes('429');
+      const isOverloaded = err.stderr?.includes('overloaded') || err.stderr?.includes('529');
+
+      if (attempt < MAX_RETRIES) {
+        const delayMs = isRateLimit
+          ? BASE_DELAY_MS * Math.pow(3, attempt)
+          : BASE_DELAY_MS * Math.pow(2, attempt - 1);
+        const reason = isTimeout ? 'timeout' : isRateLimit ? 'rate-limit' : isOverloaded ? 'overloaded' : 'error';
+        console.log(`  │  ⚠ ${label} attempt ${attempt}/${MAX_RETRIES} failed (${reason}), retrying in ${Math.round(delayMs / 1000)}s...`);
+        await sleep(delayMs);
+      }
+    }
   }
+
+  try { unlinkSync(tmpFile); } catch {}
+  throw new Error(`${label} failed after ${MAX_RETRIES} attempts: ${lastError?.message || 'unknown error'}`);
 }
 
 function parseJSON(text: string): any {
@@ -90,6 +128,43 @@ interface PremiumConfig {
   dryRun: boolean;
   singleProspect?: string;
   outputDir: string;
+  runId: string;
+}
+
+function generateRunId(): string {
+  const now = new Date();
+  const date = now.toISOString().slice(0, 10).replace(/-/g, '');
+  const rand = Math.random().toString(36).slice(2, 6);
+  return `run-${date}-${rand}`;
+}
+
+interface Checkpoint {
+  runId: string;
+  completedProspectIds: string[];
+  startedAt: string;
+  lastUpdated: string;
+  config: Omit<PremiumConfig, 'outputDir'>;
+}
+
+function getCheckpointPath(outputDir: string, runId: string): string {
+  return resolve(outputDir, `${runId}-checkpoint.json`);
+}
+
+function loadCheckpoint(outputDir: string, runId: string): Checkpoint | null {
+  const path = getCheckpointPath(outputDir, runId);
+  if (!existsSync(path)) return null;
+  try {
+    return JSON.parse(readFileSync(path, 'utf-8'));
+  } catch {
+    return null;
+  }
+}
+
+function saveCheckpoint(outputDir: string, checkpoint: Checkpoint): void {
+  const path = getCheckpointPath(outputDir, checkpoint.runId);
+  mkdirSync(dirname(path), { recursive: true });
+  checkpoint.lastUpdated = new Date().toISOString();
+  writeFileSync(path, JSON.stringify(checkpoint, null, 2));
 }
 
 interface ProspectOutput {
@@ -121,7 +196,8 @@ Location: ${p.city}, ${p.state}
 Email: ${p.email}
 Phone: ${p.phone}
 Lead type: ${p.leadType}
-Current tier: ${p.tier} (${p.grade})`;
+ICP: ${p.icpStatus} (${p.icpReason})
+Batch tier: ${p.tier} (${p.grade})`;
 }
 
 function findRelatedContacts(prospect: Prospect, allProspects: Prospect[]): Prospect[] {
@@ -171,7 +247,7 @@ async function processProspect(
     );
 
     console.log(`  │  ⏳ ${persona.role} researching...`);
-    const result = executePrompt(prompt, config.model);
+    const result = await executePrompt(prompt, config.model, 300000, persona.role);
     personaResults[persona.role] = result;
 
     // Save research output for audit trail
@@ -202,7 +278,7 @@ async function processProspect(
   for (const touchNum of [1, 2, 3] as const) {
     const prompt = buildPatternSelectorPrompt(enrichedDossierSummary, prospect.aeNotes, prospect.title, touchNum);
     console.log(`  │  ⏳ T${touchNum} pattern selection...`);
-    const result = executePrompt(prompt, config.model, 300000);
+    const result = await executePrompt(prompt, config.model, 300000, `T${touchNum}-pattern`);
 
     try {
       const parsed = parseJSON(result);
@@ -250,7 +326,7 @@ async function processProspect(
     );
 
     console.log(`  │  ⏳ T${touchNum} composing (${pattern.pattern})...`);
-    const result = executePrompt(composerPrompt, config.model, 300000);
+    const result = await executePrompt(composerPrompt, config.model, 300000, `T${touchNum}-compose`);
 
     try {
       const parsed = parseJSON(result);
@@ -278,8 +354,21 @@ async function processProspect(
     }
   }
 
-  // PHASE 5: Write output
-  console.log(`  │  Phase 5: Writing output...`);
+  // PHASE 5: Mechanical quality checks
+  console.log(`  │  Phase 5: Mechanical checks...`);
+  const t1 = emails.find(e => e.touchNumber === 1);
+  const mechanicalCheck = t1
+    ? runMechanicalChecks(t1.body, t1.subject, t1.ps, ae.name, ae.email, prospect.firstName, micrositeSlug)
+    : { passed: false, failures: ['No T1 email produced'] };
+
+  if (mechanicalCheck.passed) {
+    console.log(`  │  ✓ Mechanical checks passed`);
+  } else {
+    console.log(`  │  ⚠ Mechanical failures: ${mechanicalCheck.failures.join(', ')}`);
+  }
+
+  // PHASE 6: Write output
+  console.log(`  │  Phase 6: Writing output...`);
 
   const output: ProspectOutput = {
     prospect,
@@ -302,7 +391,10 @@ async function processProspect(
   // Write human-readable markdown
   const mdPath = resolve(config.outputDir, 'output', `${prospect.id}-output.md`);
   let md = `# ${prospect.firstName} ${prospect.lastName} — ${prospect.company}\n\n`;
+  md += `**Run:** ${config.runId}\n`;
   md += `**AE:** ${ae.name} (${ae.email})\n`;
+  md += `**ICP:** ${prospect.icpStatus} — ${prospect.icpReason}\n`;
+  md += `**Mechanical:** ${mechanicalCheck.passed ? 'PASS' : 'FAIL — ' + mechanicalCheck.failures.join(', ')}\n`;
   md += `**Microsite:** https://fiber.inorsa.com/brief/${micrositeSlug}\n\n`;
   md += `## Research Summary\n\n${researchSummary}\n\n`;
   md += `---\n\n`;
@@ -316,7 +408,24 @@ async function processProspect(
   }
 
   writeFileSync(mdPath, md);
-  console.log(`  │  ✓ Output written to ${jsonPath}`);
+  console.log(`  │  ✓ Files written to ${jsonPath}`);
+
+  // PHASE 7: Supabase write (or dry-run preview)
+  const dossierRow = buildDossierRow(prospect, config.runId, researchSummary, emails, ae, micrositeSlug, mechanicalCheck);
+  const payload: SupabaseWritePayload = { dossier: dossierRow, prospect, emails, mechanicalCheck };
+
+  if (config.dryRun) {
+    dryRunPreview(payload);
+  } else {
+    const validation = validateBeforeWrite(payload);
+    if (validation.valid) {
+      console.log(`  │  Phase 7: Supabase write...`);
+      const written = await writeDossierToSupabase(payload);
+      console.log(`  │  ${written ? '✓ Written to Supabase' : '✗ Supabase write failed (JSON saved as fallback)'}`);
+    } else {
+      console.log(`  │  ⚠ Skipping Supabase (validation failed): ${validation.errors.join(', ')}`);
+    }
+  }
 
   console.log(`  └─ ✅ Complete: ${emails.length} touches composed\n`);
   return output;
@@ -327,34 +436,68 @@ async function runPremiumPipeline(config: PremiumConfig): Promise<void> {
   console.log('║  M1 Email Find — PREMIUM Pipeline                ║');
   console.log('║  3-Persona STORM + Influence Psychology + Anti-Tell ║');
   console.log('╚══════════════════════════════════════════════════╝\n');
+  console.log(`  Run ID: ${config.runId}`);
 
   const importResult = importProspects(config.csvPath);
   printImportSummary(importResult);
 
   const allProspects = importResult.prospects;
   const emailFilter = process.argv.find(a => a.startsWith('--email='))?.split('=')[1];
-  const prospects = config.singleProspect
-    ? allProspects.filter(p => p.id === config.singleProspect)
-    : emailFilter
-      ? allProspects.filter(p => p.email === emailFilter)
-      : config.tiers.flatMap(t => importResult.byTier[t] || []);
+  const icpFilter = process.argv.find(a => a.startsWith('--icp='))?.split('=')[1];
 
-  console.log(`\n▶ Processing ${prospects.length} prospects (tiers: ${config.tiers.join(', ')})`);
+  let prospects: Prospect[];
+  if (config.singleProspect) {
+    prospects = allProspects.filter(p => p.id === config.singleProspect);
+  } else if (emailFilter) {
+    prospects = allProspects.filter(p => p.email === emailFilter);
+  } else if (icpFilter) {
+    const statuses = icpFilter.split(',') as ICPStatus[];
+    prospects = allProspects.filter(p => statuses.includes(p.icpStatus));
+  } else {
+    prospects = config.tiers.flatMap(t => importResult.byTier[t] || []);
+  }
+
+  // Load checkpoint for resume
+  const checkpoint = loadCheckpoint(config.outputDir, config.runId);
+  const completedIds = new Set(checkpoint?.completedProspectIds || []);
+  const remaining = prospects.filter(p => !completedIds.has(p.id));
+
+  if (completedIds.size > 0) {
+    console.log(`\n  Resuming: ${completedIds.size} already done, ${remaining.length} remaining`);
+  }
+
+  console.log(`\n▶ Processing ${remaining.length} prospects (tiers: ${config.tiers.join(', ')})`);
   console.log(`  Model: ${config.model} | Batch: ${config.batchSize} | Dry run: ${config.dryRun}`);
   console.log(`  Output: ${config.outputDir}\n`);
 
+  const currentCheckpoint: Checkpoint = checkpoint || {
+    runId: config.runId,
+    completedProspectIds: [],
+    startedAt: new Date().toISOString(),
+    lastUpdated: new Date().toISOString(),
+    config: { ...config, outputDir: undefined } as any,
+  };
+
   const results: ProspectOutput[] = [];
 
-  for (let i = 0; i < prospects.length; i += config.batchSize) {
-    const batch = prospects.slice(i, i + config.batchSize);
+  for (let i = 0; i < remaining.length; i += config.batchSize) {
+    const batch = remaining.slice(i, i + config.batchSize);
     const batchNum = Math.floor(i / config.batchSize) + 1;
-    const totalBatches = Math.ceil(prospects.length / config.batchSize);
+    const totalBatches = Math.ceil(remaining.length / config.batchSize);
 
     console.log(`═══ Batch ${batchNum}/${totalBatches} (${batch.length} prospects) ═══`);
 
     for (const prospect of batch) {
-      const result = await processProspect(prospect, allProspects, config);
-      if (result) results.push(result);
+      try {
+        const result = await processProspect(prospect, allProspects, config);
+        if (result) results.push(result);
+        currentCheckpoint.completedProspectIds.push(prospect.id);
+        saveCheckpoint(config.outputDir, currentCheckpoint);
+      } catch (err: any) {
+        console.error(`  ✗ ${prospect.firstName} ${prospect.lastName} FAILED: ${err.message}`);
+        console.error(`    Checkpoint saved. Resume with: --run-id=${config.runId}`);
+        saveCheckpoint(config.outputDir, currentCheckpoint);
+      }
     }
   }
 
@@ -362,27 +505,29 @@ async function runPremiumPipeline(config: PremiumConfig): Promise<void> {
   const totalEmails = results.reduce((sum, r) => sum + r.emails.length, 0);
   const manifest = {
     pipeline: 'premium_3persona',
+    runId: config.runId,
     runDate: new Date().toISOString(),
     config,
     prospectCount: prospects.length,
-    resultsCount: results.length,
+    resultsCount: results.length + completedIds.size,
+    skippedFromCheckpoint: completedIds.size,
     tiers: config.tiers,
     emailsComposed: totalEmails,
     status: config.dryRun ? 'dry_run' : 'executed',
   };
 
-  const manifestPath = resolve(config.outputDir, 'premium-manifest.json');
+  const manifestPath = resolve(config.outputDir, `${config.runId}-manifest.json`);
   mkdirSync(dirname(manifestPath), { recursive: true });
   writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
 
   console.log('╔══════════════════════════════════════════════════╗');
   console.log('║  Pipeline Execution Complete                      ║');
   console.log('╚══════════════════════════════════════════════════╝');
-  console.log(`\n  Prospects processed: ${results.length}`);
+  console.log(`\n  Run ID: ${config.runId}`);
+  console.log(`  Prospects processed: ${results.length} (${completedIds.size} from checkpoint)`);
   console.log(`  Emails composed: ${totalEmails}`);
   console.log(`\n  Output directory: ${config.outputDir}`);
-  console.log(`  JSON: ${config.outputDir}/output/<prospect-id>-output.json`);
-  console.log(`  Markdown: ${config.outputDir}/output/<prospect-id>-output.md`);
+  console.log(`  Manifest: ${manifestPath}`);
 }
 
 // CLI
@@ -397,6 +542,7 @@ const config: PremiumConfig = {
   dryRun: command === 'dry-run' || args.includes('--dry-run'),
   singleProspect: args.find(a => a.startsWith('--prospect='))?.split('=')[1],
   outputDir: resolve(BASE_DIR, 'premium'),
+  runId: args.find(a => a.startsWith('--run-id='))?.split('=')[1] || generateRunId(),
 };
 
 switch (command) {
@@ -410,14 +556,17 @@ switch (command) {
 M1 Email Find — Premium Pipeline
 
 Usage:
-  npx tsx premium-pipeline.ts run [options]      Execute full pipeline (research + compose)
+  npx tsx premium-pipeline.ts run [options]      Execute full pipeline
   npx tsx premium-pipeline.ts dry-run [options]  Preview without executing
 
 Options:
-  --tiers=A,B,C,D      Tiers to process (default: A,B)
-  --prospect=fc2026-001 Process single prospect by ID
-  --model=sonnet        LLM model (default: sonnet)
-  --batch=5             Batch size (default: 5)
-  --dry-run             Preview only
+  --tiers=A,B,C,D        Batch tiers to process (default: A,B)
+  --icp=pass,hold        Filter by ICP status (pass/hold/reject)
+  --prospect=fc2026-001  Process single prospect by ID
+  --email=user@co.com    Process single prospect by email
+  --model=sonnet         LLM model (default: sonnet)
+  --batch=5              Batch size (default: 5)
+  --run-id=run-xxx       Resume a previous run from checkpoint
+  --dry-run              Preview only
 `);
 }

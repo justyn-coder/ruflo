@@ -1,6 +1,8 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
+export type ICPStatus = 'pass' | 'hold' | 'reject';
+
 export interface Prospect {
   id: string;
   firstName: string;
@@ -15,6 +17,8 @@ export interface Prospect {
   state: string;
   grade: 'Hot' | 'Warm' | 'Cold' | 'Ungraded';
   tier: 'A' | 'B' | 'C' | 'D' | 'E';
+  icpStatus: ICPStatus;
+  icpReason: string;
   aeNotes: string;
   hasAeNotes: boolean;
   leadType: string;
@@ -28,6 +32,7 @@ export interface ImportResult {
   duplicatesRemoved: number;
   emailsCorrected: number;
   byTier: Record<string, Prospect[]>;
+  byICP: Record<ICPStatus, Prospect[]>;
   skipped: Prospect[];
   prospects: Prospect[];
 }
@@ -47,6 +52,67 @@ const COLD_KEYWORDS = [
   'works for fiber magazine',
   'director of events',
 ];
+
+const REJECT_SEGMENTS = [
+  'equipment', 'manufacturer', 'distributor', 'hardware',
+  'software', 'platform', 'saas', 'staffing', 'insurance',
+  'education', 'training', 'media', 'publishing', 'events',
+  'magazine', 'association',
+];
+
+const PASS_TITLE_SIGNALS = [
+  'engineering', 'design', 'construction', 'operations',
+  'plant', 'field', 'permitting', 'regulatory', 'program',
+  'ceo', 'cto', 'coo', 'president', 'vp', 'director',
+  'svp', 'evp', 'chief', 'cos',
+];
+
+function classifyICP(
+  prospect: { title: string; company: string; aeNotes: string; grade: string; leadType: string }
+): { status: ICPStatus; reason: string } {
+  const notesLower = (prospect.aeNotes || '').toLowerCase();
+  const titleLower = prospect.title.toLowerCase();
+  const companyLower = prospect.company.toLowerCase();
+  const leadLower = (prospect.leadType || '').toLowerCase();
+
+  if (COLD_KEYWORDS.some(kw => notesLower.includes(kw))) {
+    return { status: 'reject', reason: `AE flagged: ${prospect.aeNotes.slice(0, 80)}` };
+  }
+
+  if (REJECT_SEGMENTS.some(seg => companyLower.includes(seg) || leadLower.includes(seg))) {
+    return { status: 'reject', reason: 'Company segment auto-reject (equipment/software/staffing)' };
+  }
+
+  if (prospect.grade === 'Cold') {
+    return { status: 'reject', reason: 'AE graded Cold' };
+  }
+
+  const hasTitleSignal = PASS_TITLE_SIGNALS.some(sig => titleLower.includes(sig));
+  const hasNotes = notesLower.length > 0;
+  const isHotOrWarm = prospect.grade === 'Hot' || prospect.grade === 'Warm';
+
+  if (isHotOrWarm && hasTitleSignal) {
+    return { status: 'pass', reason: `${prospect.grade} grade + relevant title` };
+  }
+
+  if (isHotOrWarm) {
+    return { status: 'pass', reason: `${prospect.grade} grade` };
+  }
+
+  if (hasTitleSignal && hasNotes) {
+    return { status: 'pass', reason: 'Relevant title + AE notes present' };
+  }
+
+  if (hasTitleSignal) {
+    return { status: 'hold', reason: 'Relevant title but no AE notes or grade' };
+  }
+
+  if (hasNotes) {
+    return { status: 'hold', reason: 'AE notes present but title unclear' };
+  }
+
+  return { status: 'hold', reason: 'Thin data — needs research to determine fit' };
+}
 
 function normalizeEmail(email: string): string {
   return email.trim().toLowerCase();
@@ -143,6 +209,12 @@ export function importProspects(csvPath: string): ImportResult {
     const grade = detectGrade(gradeRaw, aeNotes);
     const tier = assignTier(grade, hasAeNotes);
 
+    const title = (fields[colIndex['Title']] || '').trim();
+    const company = (fields[colIndex['Company Name']] || '').trim();
+    const leadType = (fields[colIndex['Lead Type']] || '').trim();
+
+    const icp = classifyICP({ title, company, aeNotes, grade, leadType });
+
     const prospect: Prospect = {
       id: `fc2026-${i.toString().padStart(3, '0')}`,
       firstName: (fields[colIndex['First Name']] || '').trim(),
@@ -151,20 +223,22 @@ export function importProspects(csvPath: string): ImportResult {
       emailCorrected: wasCorrected,
       originalEmail: wasCorrected ? rawEmail : undefined,
       phone: (fields[colIndex['Primary Phone']] || '').trim(),
-      title: (fields[colIndex['Title']] || '').trim(),
+      title,
       city: (fields[colIndex['City']] || '').trim(),
-      company: (fields[colIndex['Company Name']] || '').trim(),
+      company,
       state: (fields[colIndex['State']] || '').trim(),
       grade,
       tier,
+      icpStatus: icp.status,
+      icpReason: icp.reason,
       aeNotes,
       hasAeNotes,
-      leadType: (fields[colIndex['Lead Type']] || '').trim(),
+      leadType,
       isDuplicate: false,
     };
 
-    if (grade === 'Cold') {
-      prospect.skipReason = aeNotes || 'Marked Cold by AE';
+    if (icp.status === 'reject') {
+      prospect.skipReason = icp.reason;
     }
 
     seen.set(normalizedEmail, prospect);
@@ -173,11 +247,13 @@ export function importProspects(csvPath: string): ImportResult {
   const prospects = Array.from(seen.values());
 
   const byTier: Record<string, Prospect[]> = { A: [], B: [], C: [], D: [], E: [] };
+  const byICP: Record<ICPStatus, Prospect[]> = { pass: [], hold: [], reject: [] };
   const skipped: Prospect[] = [];
 
   for (const p of prospects) {
     byTier[p.tier].push(p);
-    if (p.tier === 'E') skipped.push(p);
+    byICP[p.icpStatus].push(p);
+    if (p.icpStatus === 'reject') skipped.push(p);
   }
 
   // Sort each tier: contacts with notes first, then alphabetically by company
@@ -194,6 +270,7 @@ export function importProspects(csvPath: string): ImportResult {
     duplicatesRemoved,
     emailsCorrected,
     byTier,
+    byICP,
     skipped,
     prospects,
   };
@@ -206,7 +283,12 @@ export function printImportSummary(result: ImportResult): void {
   console.log(`Duplicates removed: ${result.duplicatesRemoved}`);
   console.log(`Emails corrected:  ${result.emailsCorrected}`);
   console.log('');
-  console.log('By tier:');
+  console.log('ICP status:');
+  console.log(`  PASS:   ${result.byICP.pass.length}`);
+  console.log(`  HOLD:   ${result.byICP.hold.length}`);
+  console.log(`  REJECT: ${result.byICP.reject.length}`);
+  console.log('');
+  console.log('Batch order (tier):');
   console.log(`  A (Hot):              ${result.byTier.A.length}`);
   console.log(`  B (Warm):             ${result.byTier.B.length}`);
   console.log(`  C (Notes, ungraded):  ${result.byTier.C.length}`);
@@ -214,28 +296,26 @@ export function printImportSummary(result: ImportResult): void {
   console.log(`  E (Cold/skip):        ${result.byTier.E.length}`);
   console.log('');
 
-  if (result.byTier.A.length > 0) {
-    console.log('--- Tier A (Hot — process first) ---');
-    for (const p of result.byTier.A) {
-      console.log(`  ${p.firstName} ${p.lastName} | ${p.title} | ${p.company} | ${p.email}`);
-      if (p.aeNotes) console.log(`    AE: ${p.aeNotes}`);
+  if (result.byICP.pass.length > 0) {
+    console.log('--- ICP PASS (ready for pipeline) ---');
+    for (const p of result.byICP.pass) {
+      console.log(`  ${p.firstName} ${p.lastName} | ${p.title} | ${p.company} | ${p.icpReason}`);
     }
     console.log('');
   }
 
-  if (result.byTier.B.length > 0) {
-    console.log('--- Tier B (Warm) ---');
-    for (const p of result.byTier.B) {
-      console.log(`  ${p.firstName} ${p.lastName} | ${p.title} | ${p.company} | ${p.email}`);
-      if (p.aeNotes) console.log(`    AE: ${p.aeNotes}`);
+  if (result.byICP.hold.length > 0) {
+    console.log('--- ICP HOLD (needs research) ---');
+    for (const p of result.byICP.hold) {
+      console.log(`  ${p.firstName} ${p.lastName} | ${p.title} | ${p.company} | ${p.icpReason}`);
     }
     console.log('');
   }
 
-  if (result.skipped.length > 0) {
-    console.log('--- Tier E (Skipped) ---');
-    for (const p of result.skipped) {
-      console.log(`  ${p.firstName} ${p.lastName} | ${p.company} | Reason: ${p.skipReason || 'Cold'}`);
+  if (result.byICP.reject.length > 0) {
+    console.log('--- ICP REJECT ---');
+    for (const p of result.byICP.reject) {
+      console.log(`  ${p.firstName} ${p.lastName} | ${p.company} | ${p.icpReason}`);
     }
   }
 }
