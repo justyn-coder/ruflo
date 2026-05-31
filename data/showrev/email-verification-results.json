@@ -1,0 +1,451 @@
+{
+  "verifiedAt": "2026-05-29T12:59:49.710Z",
+  "total": 36,
+  "summary": {
+    "valid": 36,
+    "invalid": 0,
+    "catchAll": 0,
+    "unknown": 0,
+    "errors": 0
+  },
+  "results": [
+    {
+      "email": "janan@airworks.io",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectId": "fc2026-038",
+      "prospectName": "Janan Guillaume",
+      "company": "AirWorks",
+      "raw": {
+        "email": "janan@airworks.io",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "chris.d.fort@gmail.com",
+      "status": "valid",
+      "provider": "Google",
+      "prospectId": "fc2026-001",
+      "prospectName": "Chris Fort",
+      "company": "Centillion Solutions",
+      "raw": {
+        "email": "chris.d.fort@gmail.com",
+        "verified": true,
+        "provider": "Google"
+      }
+    },
+    {
+      "email": "vince@fybercom.net",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectId": "fc2026-029",
+      "prospectName": "Vince Calkins",
+      "company": "Fybercom",
+      "raw": {
+        "email": "vince@fybercom.net",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "leila.hussein@isginc.com",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectId": "fc2026-039",
+      "prospectName": "Leila Hussein",
+      "company": "ISG",
+      "raw": {
+        "email": "leila.hussein@isginc.com",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "uwriteme@gmail.com",
+      "status": "valid",
+      "provider": "Google",
+      "prospectId": "fc2026-072",
+      "prospectName": "Murali Nair",
+      "company": "Lightbulb",
+      "raw": {
+        "email": "uwriteme@gmail.com",
+        "verified": true,
+        "provider": "Google"
+      }
+    },
+    {
+      "email": "thoover@pccigroup.com",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectId": "fc2026-014",
+      "prospectName": "Troy Hoover",
+      "company": "PCCI Group",
+      "raw": {
+        "email": "thoover@pccigroup.com",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "len.dewees@btgrp.com",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectName": "Len DeWees",
+      "company": "B+T GRP",
+      "raw": {
+        "email": "len.dewees@btgrp.com",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "adam.cavazos@hilliary.com",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectName": "Adam Cavazos",
+      "company": "Hilliary",
+      "raw": {
+        "email": "adam.cavazos@hilliary.com",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "patrik.lowenborg@netpmd.com",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectName": "Patrik Lowenborg",
+      "company": "NetPMD",
+      "raw": {
+        "email": "patrik.lowenborg@netpmd.com",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "spencer@bookereng.com",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectName": "Spencer Kariniemi",
+      "company": "Booker",
+      "raw": {
+        "email": "spencer@bookereng.com",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "garth@avatartechllc.com",
+      "status": "valid",
+      "provider": "Google",
+      "prospectName": "Garth Naar",
+      "company": "Avatar Tech",
+      "raw": {
+        "email": "garth@avatartechllc.com",
+        "verified": true,
+        "provider": "Google"
+      }
+    },
+    {
+      "email": "michael@shwdirect.com",
+      "status": "valid",
+      "provider": "Other",
+      "prospectName": "Michael Shultz",
+      "company": "Ohio Gig",
+      "raw": {
+        "email": "michael@shwdirect.com",
+        "verified": true,
+        "provider": "Other"
+      }
+    },
+    {
+      "email": "roberto.martinez@lh.tech",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectName": "Roberto Martinez",
+      "company": "Lighthouse",
+      "raw": {
+        "email": "roberto.martinez@lh.tech",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "nathan.robbins@nemepa.org",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectName": "Nathan Robbins",
+      "company": "NEMEPA",
+      "raw": {
+        "email": "nathan.robbins@nemepa.org",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "kathy.eisele@terracon.com",
+      "status": "valid",
+      "provider": "Other",
+      "prospectName": "Kathryn Eisele",
+      "company": "Terracon",
+      "raw": {
+        "email": "kathy.eisele@terracon.com",
+        "verified": true,
+        "provider": "Other"
+      }
+    },
+    {
+      "email": "raymond.jordanc@rayco-digs.com",
+      "status": "valid",
+      "provider": "Google",
+      "prospectName": "Jordan Raymond",
+      "company": "Rayco",
+      "raw": {
+        "email": "raymond.jordanc@rayco-digs.com",
+        "verified": true,
+        "provider": "Google"
+      }
+    },
+    {
+      "email": "carlos@onedrill.us",
+      "status": "valid",
+      "provider": "Google",
+      "prospectName": "Carlos Figueiroa",
+      "company": "One Drill",
+      "raw": {
+        "email": "carlos@onedrill.us",
+        "verified": true,
+        "provider": "Google"
+      }
+    },
+    {
+      "email": "jacob.fox@brescosolutions.com",
+      "status": "valid",
+      "provider": "Other",
+      "prospectName": "Jacob Fox",
+      "company": "Bresco",
+      "raw": {
+        "email": "jacob.fox@brescosolutions.com",
+        "verified": true,
+        "provider": "Other"
+      }
+    },
+    {
+      "email": "office@lundercorp.com",
+      "status": "valid",
+      "provider": "Google",
+      "prospectName": "Luiz Nobre",
+      "company": "Lunder",
+      "raw": {
+        "email": "office@lundercorp.com",
+        "verified": true,
+        "provider": "Google"
+      }
+    },
+    {
+      "email": "kesari@induscadworks.com",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectName": "Kesari Iyengar",
+      "company": "Indus CAD",
+      "raw": {
+        "email": "kesari@induscadworks.com",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "raj@induscadworks.com",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectName": "Raj Ahuja",
+      "company": "Indus CAD",
+      "raw": {
+        "email": "raj@induscadworks.com",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "lauren.lanoux@terracon.com",
+      "status": "valid",
+      "provider": "Other",
+      "prospectName": "Lauren Lanoux",
+      "company": "Terracon",
+      "raw": {
+        "email": "lauren.lanoux@terracon.com",
+        "verified": true,
+        "provider": "Other"
+      }
+    },
+    {
+      "email": "vyshnaw@immcoinc.com",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectName": "Vyshnaw Sadanandan",
+      "company": "IMMCO",
+      "raw": {
+        "email": "vyshnaw@immcoinc.com",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "dastan@nomadtelecom.net",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectName": "Dastan Shaimerdenov",
+      "company": "Nomad",
+      "raw": {
+        "email": "dastan@nomadtelecom.net",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "clee@mountainltd.com",
+      "status": "valid",
+      "provider": "Other",
+      "prospectName": "Chris Lee",
+      "company": "Mountain",
+      "raw": {
+        "email": "clee@mountainltd.com",
+        "verified": true,
+        "provider": "Other"
+      }
+    },
+    {
+      "email": "jsolomon@jdifibertech.com",
+      "status": "valid",
+      "provider": "Google",
+      "prospectName": "Jonathan Solomon",
+      "company": "JDI",
+      "raw": {
+        "email": "jsolomon@jdifibertech.com",
+        "verified": true,
+        "provider": "Google"
+      }
+    },
+    {
+      "email": "fcollier@tec.com",
+      "status": "valid",
+      "provider": "Other",
+      "prospectName": "Forrest Collier",
+      "company": "TEC",
+      "raw": {
+        "email": "fcollier@tec.com",
+        "verified": true,
+        "provider": "Other"
+      }
+    },
+    {
+      "email": "cliff@fos-llc.com",
+      "status": "valid",
+      "provider": "Google",
+      "prospectName": "Cliff Churchill",
+      "company": "FOS",
+      "raw": {
+        "email": "cliff@fos-llc.com",
+        "verified": true,
+        "provider": "Google"
+      }
+    },
+    {
+      "email": "jhall@mohawk-networks.com",
+      "status": "valid",
+      "provider": "Google",
+      "prospectName": "Jason Hall",
+      "company": "Mohawk",
+      "raw": {
+        "email": "jhall@mohawk-networks.com",
+        "verified": true,
+        "provider": "Google"
+      }
+    },
+    {
+      "email": "clint@diamondnetok.com",
+      "status": "valid",
+      "provider": "Other",
+      "prospectName": "Clint Smith",
+      "company": "DiamondNet",
+      "raw": {
+        "email": "clint@diamondnetok.com",
+        "verified": true,
+        "provider": "Other"
+      }
+    },
+    {
+      "email": "mshearer@lhtc.net",
+      "status": "valid",
+      "provider": "Other",
+      "prospectName": "Matt Shearer",
+      "company": "LHTC",
+      "raw": {
+        "email": "mshearer@lhtc.net",
+        "verified": true,
+        "provider": "Other"
+      }
+    },
+    {
+      "email": "dtrout@schurz.com",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectName": "Douglas Trout",
+      "company": "Schurz",
+      "raw": {
+        "email": "dtrout@schurz.com",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "ssmith@advanced1.net",
+      "status": "valid",
+      "provider": "Other",
+      "prospectName": "Salli Smith",
+      "company": "Advanced 1",
+      "raw": {
+        "email": "ssmith@advanced1.net",
+        "verified": true,
+        "provider": "Other"
+      }
+    },
+    {
+      "email": "kmckinley@takbroadband.com",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectName": "Kimberly McKinley",
+      "company": "TAK",
+      "raw": {
+        "email": "kmckinley@takbroadband.com",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "aditya@integertel.com",
+      "status": "valid",
+      "provider": "Microsoft",
+      "prospectName": "Aditya Kumar",
+      "company": "Integer",
+      "raw": {
+        "email": "aditya@integertel.com",
+        "verified": true,
+        "provider": "Microsoft"
+      }
+    },
+    {
+      "email": "cgass@mygea.net",
+      "status": "valid",
+      "provider": "Other",
+      "prospectName": "Chris Gass",
+      "company": "GEA",
+      "raw": {
+        "email": "cgass@mygea.net",
+        "verified": true,
+        "provider": "Other"
+      }
+    }
+  ]
+}

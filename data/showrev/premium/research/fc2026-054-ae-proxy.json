@@ -1,0 +1,50 @@
+Enough data to synthesize. Compiling AE Proxy findings now.
+
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Jason Hall has been at Mohawk Networks / Saint Regis Mohawk Tribe since 2011 — 15-year institutional tenure, deeply embedded, not a recent hire. Source: mohawk-networks.com/our-people + ZoomInfo",
+    "His title is 'Tribal Broadband Projects Manager' — grant management and project execution, NOT P&L ownership. Budget authority sits with Allyson Mitchell (GM) and Billy Hunt (COO). He is a strong influencer and likely first-filter, not final approver. Source: mohawk-networks.com/our-people",
+    "Mohawk Networks formed a majority-controlled JV with Aecon Utilities in July 2025 to serve OTHER tribal communities as a construction-services vehicle. Aecon does civil construction; Mohawk Networks handles telecom design, inside plant, and network ops. This is the single most important commercial development. Source: tribalbusinessnews.com + mohawk-networks.com/press-releases",
+    "New York BEAD Final Proposal approved by NTIA December 4, 2025 and NIST January 16, 2026. ISP contract finalization window closes ~October 2026 (6 months from April 30 operational date). Construction starts Q3 2026. They are in active planning NOW. Source: governor.ny.gov BEAD announcement + broadband.ny.gov",
+    "Mohawk Networks has real construction history — $15M 68-mile fiber build for SRMT, 14-mile fiber under RUS/ARRA, tower erection and wireless deployment. They are not a pure ISP; they execute construction. Source: mohawknetworksllc.com/completed-contracts",
+    "Jason spoke at Fiber Connect 2024 (July 29, Nashville) on 'Tribal Broadband Best Practices for Communities and Operators' — he is a public-facing tribal broadband educator, not just an internal PM. He attended FC2026. Source: fiberconnect2024.eventscribe.net",
+    "Calix is their technology platform — Jason is a certified Calix Home Wi-Fi Specialist. Calix covers NOC/subscriber management, not engineering design or permit drawings. Inorsa is upstream and non-overlapping. Source: mohawk-networks.com/our-people + calix.com press release 2023",
+    "Mohawk Networks org is small (8 people listed). No dedicated engineering design staff visible. For the Aecon JV, design capacity will be the bottleneck as they take on multi-community tribal builds simultaneously. Source: mohawk-networks.com/our-people",
+    "NTIA Tribal Broadband Connectivity Program (TBCP) Round 1 funding recipient — federal money already flows to this org. BEAD + TBCP round 2 grants are eligible for engineering/design cost reimbursement. Budget objection is partially defused. Source: ntia.gov/funding-programs/tribal-broadband-connectivity-program",
+    "Marvin Phillips (Director of IT) sits on the Board of Managers — dual role means IT decisions have board-level exposure. Any tool adoption with technical integration has a higher governance bar than a typical SMB. Source: mohawk-networks.com/our-people"
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No direct Jason Hall quotes found about permitting pain, design workflow, or engineering tooling — his Fiber Connect 2024 session content is not publicly transcribed",
+    "Cannot confirm whether the Aecon JV has won any specific tribal community contracts yet (JV announced July 2025; no award announcements found)",
+    "New York BEAD ISP-level allocation amounts for Mohawk Networks specifically are not confirmed — county infrastructure transfer to Mohawk Networks was mentioned but not quantified",
+    "No visibility into current engineering/design process — whether they use GIS tools, CAD vendors, or manual workflows",
+    "Jason Hall's LinkedIn is accessible but content not pulled — career history beyond SRMT and depth of engineering exposure unknown",
+    "No confirmed second contact from Mohawk Networks in the FC2026 booth-scan list (multi-threading opportunity unverified)"
+  ],
+  "challengesToOtherFindings": [
+    "The Industry Analyst baseline classifies Jason as a 'Build/Document' persona focused on engineering throughput — partially correct but undersells his grant-management mandate. His primary pressure is DELIVERING on federal grant milestones with tight timelines and federal reporting requirements, not optimizing CAD throughput. The pitch needs to frame Inorsa around grant compliance speed and milestone defensibility, not just drawing volume.",
+    "The baseline assumes permitting is the binding constraint universally. For tribal land, there is an additional complexity: tribal sovereignty creates a different permitting regime (tribal authority + BIA + state/county may all apply for cross-boundary builds). The Aecon JV explicitly targets off-reservation tribal communities, meaning multi-jurisdiction permitting is their specific exposure. The baseline's '3-6 weeks per kickback' likely UNDERSTATES the risk here.",
+    "Tier D (Ungraded) likely reflects data sparsity at scan time, not low strategic value. The Aecon JV announced July 2025 transforms this from a single small-ISP into a broadband delivery platform for tribal communities nationally. Strategic value is materially higher than tier suggests."
+  ],
+  "topInsight": "The Aecon JV is the unlock. Mohawk Networks is no longer just a 68-mile single-territory ISP — they are positioning as the telecom arm for tribal broadband builds across North America, with Aecon handling civil construction for communities that have TBCP/BEAD grants but no technical capacity. Jason Hall is the PM who will have to run concurrent engineering and network design work for multiple tribal communities simultaneously, with no dedicated design staff. BEAD construction window opens Q3 2026. The pitch is not 'fix your permit kickbacks on your home network' — it is 'you are about to become a design-and-deploy service for 10+ tribal ISPs at once; Inorsa is how you scale without hiring a fiber design team you can't find anyway.'",
+  "sourcesUsed": [
+    "https://www.mohawk-networks.com/our-people",
+    "https://www.zoominfo.com/p/Jason-Hall/-1508403569",
+    "https://www.linkedin.com/in/jason-hall-10416165",
+    "https://fiberconnect2024.eventscribe.net/fsPopup.asp?efp=VVZZS0lOR00yMTcyNw&PresenterID=1833485&rnd=0.5795186&mode=presenterinfo",
+    "https://tribalbusinessnews.com/sections/economic-development/15260-mohawk-networks-targets-forgotten-mile-in-cross-border-broadband-jv",
+    "https://www.mohawk-networks.com/press-releases-1/mohawk-networks-and-aecon-utilities-form-new-indigenous-led-joint-venture-for-utilities-projects-in-the-united-states",
+    "https://www.aecon.com/press-room/news/2025/07/09/Aecon-Mohawk-Networks",
+    "https://broadbandusa.ntia.gov/funding-programs/tribal-broadband-connectivity-program-round-1/awardee/mohawk-broadband-infrastructure-expansion-digital-inclusion",
+    "https://www.ntia.gov/funding-programs/internet-all/tribal-broadband-connectivity-program/tribal-broadband-connectivity-program-round-1-2021/funding-recipients/mohawk-broadband-infrastructure-expansion-digital-inclusion",
+    "https://www.governor.ny.gov/news/governor-hochul-announces-broadband-projects-totaling-more-636-million-achieve-universal",
+    "https://www.calix.com/press-release/2023/04/mohawk-networks-leverages-the-calix-platform-to-ensure-vitality-.html",
+    "https://www.calix.com/blog/2025/11/broadband-success-playbook-for-tribes.html",
+    "https://www.mohawknetworksllc.com/completed-contracts",
+    "https://www.mohawknetworksllc.com/about-us"
+  ]
+}
+```
