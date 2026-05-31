@@ -18,9 +18,11 @@ import { execSync } from 'child_process';
 import { importProspects, printImportSummary, type Prospect, type ICPStatus } from './importer.js';
 import { RESEARCH_PERSONAS, buildMultiPersonaPrompt, generateCrossExamQuestions } from './personas.js';
 import { INFLUENCE_TOOLKIT, buildPatternSelectorPrompt, buildComposerPrompt, type PatternSelection } from './influence.js';
-// HubSpotDossier types available from './dossier-schema.js' for HubSpot loading phase
 import { runMechanicalChecks } from './judge.js';
 import { buildDossierRow, validateBeforeWrite, dryRunPreview, writeDossierToSupabase, type SupabaseWritePayload } from './supabase-adapter.js';
+import { ingestResearchIntoBrain, loadBrainDigest } from './brain-ingest.js';
+import { structureIntelReport } from './intel-structurer.js';
+import { composeMicrositeContent, type MicrositeRow } from './microsite-composer.js';
 
 const BASE_DIR = resolve(dirname(new URL(import.meta.url).pathname), '../../../data/showrev');
 const INORSA_VP_SUMMARY = `Inorsa turns design data into permit-ready construction drawings. Quality control is built in, so builds keep moving. Engineering Suite + Data Suite. Fiber only (no tower/cellular).`;
@@ -216,7 +218,8 @@ function findRelatedContacts(prospect: Prospect, allProspects: Prospect[]): Pros
 async function processProspect(
   prospect: Prospect,
   allProspects: Prospect[],
-  config: PremiumConfig
+  config: PremiumConfig,
+  prospectIndex: number = 0
 ): Promise<ProspectOutput | null> {
   const prospectContext = buildProspectContext(prospect);
   const relatedContacts = findRelatedContacts(prospect, allProspects);
@@ -235,13 +238,20 @@ async function processProspect(
     return null;
   }
 
+  // Load Brain digest for research context
+  const brainDir = resolve(BASE_DIR, '../brain/fiber-telecom/inorsa/fiber/fiber-connect-2026');
+  const brainDigest = loadBrainDigest(brainDir);
+  const brainContext = brainDigest
+    ? `\n\n## Prior research knowledge (from Brain)\n${brainDigest.slice(0, 2000)}`
+    : '';
+
   // PHASE 1: Multi-persona research (3 parallel agents)
   console.log(`  │  Phase 1: 3-persona research...`);
   const personaResults: Record<string, string> = {};
 
   for (const persona of RESEARCH_PERSONAS) {
     const prompt = buildMultiPersonaPrompt(
-      prospectContext + relatedNote,
+      prospectContext + relatedNote + brainContext,
       persona,
       prospect.aeNotes,
       Object.keys(personaResults).length > 0 ? {
@@ -273,6 +283,11 @@ async function processProspect(
   const crossExamPath = resolve(config.outputDir, 'prompts', `${prospect.id}-cross-exam.md`);
   mkdirSync(dirname(crossExamPath), { recursive: true });
   writeFileSync(crossExamPath, JSON.stringify(crossExamQuestions, null, 2));
+
+  // PHASE 2b: Brain Ingest (extract entities, update KB)
+  console.log(`  │  Phase 2b: Brain ingest...`);
+  const brainResult = await ingestResearchIntoBrain(personaResults, prospect.id, brainDir, prospectIndex, 10);
+  console.log(`  │  ✓ Brain: +${brainResult.added} new, ${brainResult.updated} updated (${brainResult.total} total)${brainResult.digestRefreshed ? ' [digest refreshed]' : ''}`);
 
   // PHASE 3: Influence pattern selection for each touch
   console.log(`  │  Phase 3: Influence pattern selection...`);
@@ -359,8 +374,41 @@ async function processProspect(
     }
   }
 
-  // PHASE 5: Mechanical quality checks
-  console.log(`  │  Phase 5: Mechanical checks...`);
+  // PHASE 5: Intel Report Structuring
+  console.log(`  │  Phase 5: Intel structuring...`);
+  let structuredDossier: any = null;
+  let intelWarnings: string[] = [];
+  try {
+    const intelResult = await structureIntelReport(
+      personaResults,
+      JSON.stringify(crossExamQuestions),
+      prospect,
+      emails,
+      patternSelections,
+      ae.name,
+      executePrompt,
+      config.model,
+    );
+    structuredDossier = intelResult.dossier;
+    intelWarnings = intelResult.warnings;
+    console.log(`  │  ✓ Intel structured (${intelWarnings.length} warnings)`);
+    for (const w of intelWarnings) console.log(`  │    ⚠ ${w}`);
+  } catch (err: any) {
+    console.log(`  │  ⚠ Intel structuring failed: ${err.message?.slice(0, 80)}`);
+  }
+
+  // PHASE 6: ABM Microsite Composition
+  console.log(`  │  Phase 6: Microsite composition...`);
+  const challengerInsight = patternSelections[0]?.challengerInsight || '';
+  const personaBucket = structuredDossier?.contact?.showrev_persona_classification || '';
+  const micrositeRow = composeMicrositeContent(
+    prospect, config.runId, micrositeSlug, ae,
+    challengerInsight, researchSummary, personaBucket, brainDir
+  );
+  console.log(`  │  ✓ Microsite: "${micrositeRow.headline.slice(0, 50)}..."`);
+
+  // PHASE 7: Mechanical quality checks
+  console.log(`  │  Phase 7: Mechanical checks...`);
   const t1 = emails.find(e => e.touchNumber === 1);
   const mechanicalCheck = t1
     ? runMechanicalChecks(t1.body, t1.subject, t1.ps, ae.name, ae.email, prospect.firstName, micrositeSlug)
@@ -372,8 +420,8 @@ async function processProspect(
     console.log(`  │  ⚠ Mechanical failures: ${mechanicalCheck.failures.join(', ')}`);
   }
 
-  // PHASE 6: Write output
-  console.log(`  │  Phase 6: Writing output...`);
+  // PHASE 8: Write output
+  console.log(`  │  Phase 8: Writing output...`);
 
   const output: ProspectOutput = {
     prospect,
@@ -415,11 +463,30 @@ async function processProspect(
     md += `**Word count:** ${email.wordCount}\n\n---\n\n`;
   }
 
+  if (structuredDossier) {
+    md += `## Intel Report\n\n`;
+    const si = structuredDossier.salesIntel || {};
+    md += `**Signal:** ${si.showrev_signal_strength || 'N/A'} — ${si.showrev_fit_rationale || ''}\n`;
+    md += `**Next action:** ${si.showrev_next_best_action || ''}\n`;
+    md += `**Buying timeline:** ${si.showrev_buying_timeline || ''}\n`;
+    md += `**Risk:** ${si.showrev_risk_factors || ''}\n\n`;
+    const ct = structuredDossier.contact || {};
+    md += `**Talking points:**\n${ct.showrev_talking_points || ''}\n\n---\n\n`;
+  }
+
+  md += `## Microsite Content\n\n`;
+  md += `**Headline:** ${micrositeRow.headline}\n`;
+  md += `**Insight:** ${micrositeRow.insight_text}\n`;
+  md += `**Case study:** ${micrositeRow.case_study_text}\n\n---\n\n`;
+
   writeFileSync(mdPath, md);
   console.log(`  │  ✓ Files written to ${jsonPath}`);
 
-  // PHASE 7: Supabase write (or dry-run preview)
+  // PHASE 9: Supabase write (or dry-run preview)
   const dossierRow = buildDossierRow(prospect, config.runId, researchSummary, emails, ae, micrositeSlug, mechanicalCheck);
+  if (structuredDossier?.contact?.showrev_persona_classification) {
+    dossierRow.persona_bucket = structuredDossier.contact.showrev_persona_classification;
+  }
   const payload: SupabaseWritePayload = { dossier: dossierRow, prospect, emails, mechanicalCheck };
 
   if (config.dryRun) {
@@ -427,7 +494,7 @@ async function processProspect(
   } else {
     const validation = validateBeforeWrite(payload);
     if (validation.valid) {
-      console.log(`  │  Phase 7: Supabase write...`);
+      console.log(`  │  Phase 9: Supabase write...`);
       const written = await writeDossierToSupabase(payload);
       console.log(`  │  ${written ? '✓ Written to Supabase' : '✗ Supabase write failed (JSON saved as fallback)'}`);
     } else {
@@ -495,9 +562,11 @@ async function runPremiumPipeline(config: PremiumConfig): Promise<void> {
 
     console.log(`═══ Batch ${batchNum}/${totalBatches} (${batch.length} prospects) ═══`);
 
-    for (const prospect of batch) {
+    for (let batchIdx = 0; batchIdx < batch.length; batchIdx++) {
+      const prospect = batch[batchIdx];
+      const globalIdx = i + batchIdx;
       try {
-        const result = await processProspect(prospect, allProspects, config);
+        const result = await processProspect(prospect, allProspects, config, globalIdx);
         if (result) results.push(result);
         currentCheckpoint.completedProspectIds.push(prospect.id);
         saveCheckpoint(config.outputDir, currentCheckpoint);
