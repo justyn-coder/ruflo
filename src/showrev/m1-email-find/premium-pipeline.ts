@@ -18,7 +18,7 @@ import { execSync } from 'child_process';
 import { importProspects, printImportSummary, type Prospect, type ICPStatus } from './importer.js';
 import { RESEARCH_PERSONAS, buildMultiPersonaPrompt, generateCrossExamQuestions } from './personas.js';
 import { INFLUENCE_TOOLKIT, buildPatternSelectorPrompt, buildComposerPrompt, type PatternSelection } from './influence.js';
-import { type HubSpotDossier, formatDossierForAE } from './dossier-schema.js';
+// HubSpotDossier types available from './dossier-schema.js' for HubSpot loading phase
 import { runMechanicalChecks } from './judge.js';
 import { buildDossierRow, validateBeforeWrite, dryRunPreview, writeDossierToSupabase, type SupabaseWritePayload } from './supabase-adapter.js';
 
@@ -167,25 +167,30 @@ function saveCheckpoint(outputDir: string, checkpoint: Checkpoint): void {
   writeFileSync(path, JSON.stringify(checkpoint, null, 2));
 }
 
-interface ProspectOutput {
+export interface EmailOutput {
+  touchNumber: number;
+  pattern: PatternSelection;
+  subject: string;
+  previewText: string;
+  body: string;
+  ps: string;
+  wordCount: number;
+}
+
+export interface ProspectOutput {
   prospect: Prospect;
+  runId: string;
   personaFindings: {
     analyst: string;
     aeProxy: string;
     techEval: string;
   };
   crossExamInsights: string;
-  dossier: HubSpotDossier;
-  emails: Array<{
-    touchNumber: number;
-    pattern: PatternSelection;
-    subject: string;
-    previewText: string;
-    body: string;
-    ps: string;
-    wordCount: number;
-  }>;
-  aePrep: string;
+  ae: { name: string; email: string };
+  micrositeSlug: string;
+  emails: EmailOutput[];
+  mechanicalCheckPassed: boolean;
+  mechanicalCheckFailures: string[];
 }
 
 function buildProspectContext(p: Prospect): string {
@@ -300,7 +305,7 @@ async function processProspect(
   // PHASE 4: Email composition (using actual pattern selections)
   console.log(`  │  Phase 4: Email composition...`);
 
-  const emails: Array<{ touchNumber: number; pattern: PatternSelection; subject: string; previewText: string; body: string; ps: string; wordCount: number }> = [];
+  const emails: EmailOutput[] = [];
 
   const ae = resolveAE(prospect);
 
@@ -372,15 +377,18 @@ async function processProspect(
 
   const output: ProspectOutput = {
     prospect,
+    runId: config.runId,
     personaFindings: {
       analyst: personaResults['Industry Analyst'] || '',
       aeProxy: personaResults['AE Proxy'] || '',
       techEval: personaResults['Technical Evaluator'] || '',
     },
     crossExamInsights: JSON.stringify(crossExamQuestions),
-    dossier: {} as any,
+    ae,
+    micrositeSlug,
     emails,
-    aePrep: '',
+    mechanicalCheckPassed: mechanicalCheck.passed,
+    mechanicalCheckFailures: mechanicalCheck.failures,
   };
 
   // Write JSON output

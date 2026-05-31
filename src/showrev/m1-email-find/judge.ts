@@ -1,3 +1,7 @@
+// 4-dimension LLM judge + mechanical checks.
+// For the 3-judge adversarial panel (Tim Proxy / Recipient Proxy / Skeptic), see judges.ts.
+// For cross-model judging (Claude/Gemini/GPT-5/Grok/DeepSeek), see cross-model-judge.ts.
+
 import { Dossier } from './researcher.js';
 import { ComposedEmail, EmailTouch } from './composer.js';
 import { execSync } from 'child_process';
