@@ -29,20 +29,46 @@ const AE_TERRITORY: Record<string, { name: string; email: string }> = {
   west: { name: 'Lucas Spencer', email: 'lucas@inorsa.com' },
 };
 
-function executePrompt(prompt: string, model: string = 'sonnet', budgetUsd: number = 0.50): string {
+const STATE_TO_AE: Record<string, string> = {
+  // East (Mike Rutski)
+  CT: 'east', MA: 'east', RI: 'east', NH: 'east', VT: 'east', ME: 'east',
+  NY: 'east', NJ: 'east', PA: 'east', DE: 'east', MD: 'east', DC: 'east',
+  VA: 'east', WV: 'east', NC: 'east', SC: 'east', GA: 'east', FL: 'east',
+  AL: 'east', MS: 'east', TN: 'east', KY: 'east', OH: 'east', IN: 'east', MI: 'east',
+  // Central (Nathan Dunn)
+  TX: 'central', OK: 'central', KS: 'central', NE: 'central', SD: 'central', ND: 'central',
+  MN: 'central', IA: 'central', MO: 'central', AR: 'central', LA: 'central',
+  WI: 'central', IL: 'central',
+  // West (Lucas Spencer)
+  WA: 'west', OR: 'west', CA: 'west', NV: 'west', AZ: 'west', NM: 'west',
+  CO: 'west', UT: 'west', WY: 'west', MT: 'west', ID: 'west', HI: 'west', AK: 'west',
+};
+
+function resolveAE(prospect: Prospect): { name: string; email: string } {
+  // 1. Check assigned_ae from sr_prospects (if loaded from Supabase)
+  const assigned = (prospect as any).assigned_ae || '';
+  if (assigned.toLowerCase().includes('mike')) return AE_TERRITORY.east;
+  if (assigned.toLowerCase().includes('nathan')) return AE_TERRITORY.central;
+  if (assigned.toLowerCase().includes('lucas')) return AE_TERRITORY.west;
+
+  // 2. Fall back to state-based mapping
+  const stateKey = prospect.state?.toUpperCase().trim();
+  const territory = STATE_TO_AE[stateKey];
+  if (territory) return AE_TERRITORY[territory];
+
+  // 3. Default to Lucas (West/spread) per operator rule
+  return AE_TERRITORY.west;
+}
+
+function executePrompt(prompt: string, model: string = 'sonnet', timeoutMs: number = 300000): string {
   const tmpFile = resolve('/tmp', `showrev-prompt-${Date.now()}-${Math.random().toString(36).slice(2, 8)}.md`);
   writeFileSync(tmpFile, prompt);
   try {
     const result = execSync(
-      `claude -p --model ${model} --max-budget-usd ${budgetUsd} --output-format json "$(cat '${tmpFile}')"`,
-      { encoding: 'utf-8', timeout: 180000, maxBuffer: 1024 * 1024 * 10 }
+      `cat '${tmpFile}' | claude -p --model ${model}`,
+      { encoding: 'utf-8', timeout: timeoutMs, maxBuffer: 1024 * 1024 * 10 }
     );
-    try {
-      const parsed = JSON.parse(result);
-      return parsed.result || parsed.content || result;
-    } catch {
-      return result;
-    }
+    return result.trim();
   } finally {
     try { unlinkSync(tmpFile); } catch {}
   }
@@ -145,7 +171,7 @@ async function processProspect(
     );
 
     console.log(`  │  ⏳ ${persona.role} researching...`);
-    const result = executePrompt(prompt, config.model, 0.50);
+    const result = executePrompt(prompt, config.model);
     personaResults[persona.role] = result;
 
     // Save research output for audit trail
@@ -176,7 +202,7 @@ async function processProspect(
   for (const touchNum of [1, 2, 3] as const) {
     const prompt = buildPatternSelectorPrompt(enrichedDossierSummary, prospect.aeNotes, prospect.title, touchNum);
     console.log(`  │  ⏳ T${touchNum} pattern selection...`);
-    const result = executePrompt(prompt, config.model, 0.15);
+    const result = executePrompt(prompt, config.model, 120000);
 
     try {
       const parsed = parseJSON(result);
@@ -200,11 +226,7 @@ async function processProspect(
 
   const emails: Array<{ touchNumber: number; pattern: PatternSelection; subject: string; previewText: string; body: string; ps: string; wordCount: number }> = [];
 
-  // Resolve AE
-  const aeKey = (prospect as any).assigned_ae?.toLowerCase().includes('mike') ? 'east'
-    : (prospect as any).assigned_ae?.toLowerCase().includes('nathan') ? 'central'
-    : (prospect as any).assigned_ae?.toLowerCase().includes('lucas') ? 'west' : 'east';
-  const ae = AE_TERRITORY[aeKey] || AE_TERRITORY.east;
+  const ae = resolveAE(prospect);
 
   // Generate microsite slug
   const micrositeSlug = prospect.company.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -228,7 +250,7 @@ async function processProspect(
     );
 
     console.log(`  │  ⏳ T${touchNum} composing (${pattern.pattern})...`);
-    const result = executePrompt(composerPrompt, config.model, 0.20);
+    const result = executePrompt(composerPrompt, config.model, 120000);
 
     try {
       const parsed = parseJSON(result);
