@@ -1,4 +1,3 @@
-import { execSync } from 'child_process';
 import { writeFileSync, mkdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 
@@ -27,40 +26,64 @@ export interface CrossModelReport {
   judgedAt: string;
 }
 
-const JUDGE_MODELS: Array<{ name: string; command: (prompt: string) => string }> = [
-  {
-    name: 'claude-sonnet',
-    command: (prompt: string) => `claude -p --model sonnet '${prompt.replace(/'/g, "'\\''")}'`,
-  },
-  {
-    name: 'gemini-2.5-pro',
-    command: (prompt: string) => {
-      const escaped = prompt.replace(/'/g, "'\\''");
-      return `python3 engine/scripts/cross-model-judge-gemini.py '${escaped}'`;
-    },
-  },
-  {
-    name: 'gpt-5',
-    command: (prompt: string) => {
-      const escaped = prompt.replace(/'/g, "'\\''");
-      return `python3 engine/scripts/cross-model-judge-gpt.py '${escaped}'`;
-    },
-  },
-  {
-    name: 'grok',
-    command: (prompt: string) => {
-      const escaped = prompt.replace(/'/g, "'\\''");
-      return `python3 engine/scripts/cross-model-judge-grok.py '${escaped}'`;
-    },
-  },
-  {
-    name: 'deepseek',
-    command: (prompt: string) => {
-      const escaped = prompt.replace(/'/g, "'\\''");
-      return `python3 engine/scripts/cross-model-judge-deepseek.py '${escaped}'`;
-    },
-  },
-];
+async function callExternalModel(name: string, prompt: string): Promise<string> {
+  if (name === 'claude-sonnet') {
+    const { callLLM } = await import('./llm-client.js');
+    return callLLM(prompt, { model: 'claude-sonnet-4-6', timeoutMs: 60000, label: 'judge-claude' });
+  }
+
+  if (name === 'gemini') {
+    const key = process.env.GEMINI_API_KEY;
+    if (!key) throw new Error('GEMINI_API_KEY not set');
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=${key}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
+    });
+    const data = await res.json();
+    return data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+  }
+
+  if (name === 'gpt-5') {
+    const key = process.env.OPENAI_API_KEY;
+    if (!key) throw new Error('OPENAI_API_KEY not set');
+    const res = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${key}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model: 'gpt-4o', messages: [{ role: 'user', content: prompt }], max_tokens: 2000 }),
+    });
+    const data = await res.json();
+    return data.choices?.[0]?.message?.content || '';
+  }
+
+  if (name === 'grok') {
+    const key = process.env.XAI_API_KEY;
+    if (!key) throw new Error('XAI_API_KEY not set');
+    const res = await fetch('https://api.x.ai/v1/chat/completions', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${key}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model: 'grok-3', messages: [{ role: 'user', content: prompt }], max_tokens: 2000 }),
+    });
+    const data = await res.json();
+    return data.choices?.[0]?.message?.content || '';
+  }
+
+  if (name === 'deepseek') {
+    const key = process.env.DEEPSEEK_API_KEY;
+    if (!key) throw new Error('DEEPSEEK_API_KEY not set');
+    const res = await fetch('https://api.deepseek.com/chat/completions', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${key}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model: 'deepseek-chat', messages: [{ role: 'user', content: prompt }], max_tokens: 2000 }),
+    });
+    const data = await res.json();
+    return data.choices?.[0]?.message?.content || '';
+  }
+
+  throw new Error(`Unknown model: ${name}`);
+}
+
+const JUDGE_MODEL_NAMES = ['claude-sonnet', 'gemini', 'gpt-5', 'grok', 'deepseek'];
 
 function buildCrossModelJudgePrompt(
   subject: string,
@@ -139,24 +162,18 @@ export async function crossModelJudge(
     subject, body, ps, prospectName, company, title, touchNumber, researchSummary
   );
 
-  const activeModels = models
-    ? JUDGE_MODELS.filter(m => models.includes(m.name))
-    : JUDGE_MODELS;
+  const activeModelNames = models || JUDGE_MODEL_NAMES;
 
   const verdicts: CrossModelVerdict[] = [];
 
-  for (const model of activeModels) {
-    console.log(`  │  ⏳ Cross-model judge: ${model.name}...`);
+  for (const modelName of activeModelNames) {
+    console.log(`  │  ⏳ Cross-model judge: ${modelName}...`);
     try {
-      const raw = execSync(model.command(prompt), {
-        encoding: 'utf-8',
-        timeout: 120000,
-        maxBuffer: 1024 * 1024 * 5,
-      }).trim();
+      const raw = await callExternalModel(modelName, prompt);
 
       const parsed = parseJudgeResponse(raw);
       verdicts.push({
-        model: model.name,
+        model: modelName,
         scores: parsed.scores || { research_depth: 0, vp_connection: 0, tone: 0, conciseness: 0 },
         recommendation: parsed.recommendation || 'hold',
         mustFix: parsed.mustFix || [],
@@ -167,7 +184,7 @@ export async function crossModelJudge(
     } catch (err: any) {
       console.log(`  │  ⚠ ${model.name} failed: ${err.message?.slice(0, 80)}`);
       verdicts.push({
-        model: model.name,
+        model: modelName,
         scores: { research_depth: 0, vp_connection: 0, tone: 0, conciseness: 0 },
         recommendation: 'hold',
         mustFix: [`Judge unavailable: ${err.message?.slice(0, 80)}`],
