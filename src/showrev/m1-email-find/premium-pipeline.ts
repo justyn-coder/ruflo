@@ -354,6 +354,7 @@ async function processProspect(
     try {
       const parsed = parseJSON(result);
       let cleanBody = (parsed.body || '')
+        .replace(/(\d)–(\d)/g, '$1-$2').replace(/(\d)—(\d)/g, '$1-$2')
         .replace(/—/g, ',').replace(/–/g, ',');
       // Join salutation with first paragraph: "Len,\nyou" → "Len, you"
       cleanBody = cleanBody.replace(/^([A-Z][a-z]+,)\s*\n+\s*/m, '$1 ');
