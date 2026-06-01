@@ -62,6 +62,23 @@ export function runMechanicalChecks(
   if (/Harmoni/i.test(body)) failures.push('References Harmoni (tower product)');
   if (/\btower\b|\bcellular\b/i.test(body)) failures.push('References tower/cellular (fiber only)');
 
+  // Sensitivity checks — things that should never appear in prospect-facing copy
+  if (/\bIndia team\b|\boffshore\b|\bIndia.based\b|\boutsourc/i.test(body)) {
+    failures.push('References offshore/India team (sensitive in prospect-facing copy)');
+  }
+
+  // Competitor naming — warn, not fail (sometimes legitimate per competitive_displacement pattern)
+  if (/\bdoesn't close\b|\bdoesn't solve\b|\bdoesn't cover\b|\bcan't handle\b|\bfalls short\b/i.test(body)) {
+    warnings.push('Competitor-negative framing detected — verify tone is "acknowledge, not trash"');
+  }
+
+  // Duplicate signature detection
+  const sigPattern = /\w+ \w+ \| Inorsa \| \w+@inorsa\.com/g;
+  const sigMatches = body.match(sigPattern);
+  if (sigMatches && sigMatches.length > 1) {
+    failures.push('Duplicate AE signature detected');
+  }
+
   return { passed: failures.length === 0, failures, warnings };
 }
 
