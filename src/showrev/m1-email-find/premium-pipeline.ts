@@ -24,7 +24,7 @@ import { INFLUENCE_TOOLKIT, buildPatternSelectorPrompt, buildComposerPrompt, typ
 import { runMechanicalChecks } from './judge.js';
 import { buildTimProxyPrompt, buildRecipientProxyPrompt, buildSkepticPrompt, analyzeDisagreements } from './judges.js';
 import { detectClaims, assessClaimSafety, buildVerificationPrompt } from './verify-facts.js';
-import { buildDossierRow, validateBeforeWrite, dryRunPreview, writeDossierToSupabase, type SupabaseWritePayload } from './supabase-adapter.js';
+import { buildDossierRow, validateBeforeWrite, dryRunPreview, writeDossierToSupabase, resolveProspectId, type SupabaseWritePayload } from './supabase-adapter.js';
 import { ingestResearchIntoBrain, loadBrainDigest } from './brain-ingest.js';
 import { structureIntelReport } from './intel-structurer.js';
 import { composeMicrositeContent, type MicrositeRow } from './microsite-composer.js';
@@ -84,6 +84,22 @@ const COMPOSITION_HARD_CONSTRAINTS = `STRICT RULES — violations cause rejectio
 6. Subject line: 8 words maximum.
 Count the words in your body text RIGHT NOW before outputting. If the count exceeds 80, revise.`;
 
+function executePromptCLI(prompt: string, model: string = 'sonnet', timeoutMs: number = 300000): string {
+  const { execSync } = require('child_process');
+  const { writeFileSync, unlinkSync } = require('fs');
+  const tmpFile = `/tmp/showrev-prompt-${Date.now()}-${Math.random().toString(36).slice(2, 6)}.md`;
+  writeFileSync(tmpFile, prompt);
+  try {
+    const result = execSync(
+      `cat '${tmpFile}' | claude -p --model ${model}`,
+      { encoding: 'utf-8', timeout: timeoutMs, maxBuffer: 1024 * 1024 * 10 }
+    );
+    return result.trim();
+  } finally {
+    try { unlinkSync(tmpFile); } catch {}
+  }
+}
+
 async function executePrompt(
   prompt: string,
   model: string = 'sonnet',
@@ -92,11 +108,15 @@ async function executePrompt(
 ): Promise<string> {
   const resolvedModel = MODEL_MAP[model] || model;
   const isComposition = label.includes('compose');
+
+  if (isComposition) {
+    return executePromptCLI(prompt, model, timeoutMs);
+  }
+
   return callLLMWithBrainCache(prompt, {
     model: resolvedModel,
     timeoutMs,
     label,
-    hardConstraints: isComposition ? COMPOSITION_HARD_CONSTRAINTS : undefined,
   });
 }
 
@@ -456,19 +476,28 @@ async function processProspect(
   }
   for (const w of mechanicalCheck.warnings) console.log(`  │    ⚠ ${w}`);
 
-  // PHASE 7b: Fact verification — detect load-bearing claims in email body
-  console.log(`  │  Phase 7b: Fact verification...`);
+  // PHASE 7b: Fact verification — web-search verify load-bearing claims
+  console.log(`  │  Phase 7b: Fact verification (web search)...`);
   const t1Body = emails.find(e => e.touchNumber === 1)?.body || '';
   const detectedClaims = detectClaims(t1Body);
-  const unsafeClaims = detectedClaims.filter(c => {
-    const assessment = assessClaimSafety(c.text, c.type, 3, false);
-    return !assessment.safeForEmail;
-  });
-  if (unsafeClaims.length > 0) {
-    console.log(`  │  ⚠ ${unsafeClaims.length} unverified claims in email body:`);
-    for (const c of unsafeClaims) console.log(`  │    [${c.type}] "${c.text.slice(0, 60)}..."`);
-  } else if (detectedClaims.length > 0) {
-    console.log(`  │  ✓ ${detectedClaims.length} claims detected, none flagged as unsafe`);
+  let unsafeClaims: any[] = [];
+
+  if (detectedClaims.length > 0) {
+    try {
+      const { verifyClaimsWithWebSearch } = await import('./verify-facts.js');
+      const verification = await verifyClaimsWithWebSearch(t1Body, prospect.company, callLLM);
+      unsafeClaims = verification.verified.filter(c => !c.verified);
+      const verifiedCount = verification.verified.filter(c => c.verified).length;
+      console.log(`  │  ${verification.summary}`);
+      for (const c of verification.verified) {
+        const icon = c.verified ? '✓' : '⚠';
+        console.log(`  │    ${icon} [${c.claimType}] ${c.verified ? 'VERIFIED' : 'UNVERIFIED'}: "${c.claim.slice(0, 50)}"`);
+        if (c.discrepancy) console.log(`  │      Discrepancy: ${c.discrepancy.slice(0, 80)}`);
+      }
+    } catch (err: any) {
+      console.log(`  │  ⚠ Web verification failed: ${err.message?.slice(0, 60)}`);
+      unsafeClaims = detectedClaims.map(c => ({ ...c, verified: false }));
+    }
   } else {
     console.log(`  │  ✓ No load-bearing claims detected`);
   }
@@ -572,7 +601,13 @@ async function processProspect(
   console.log(`  │  ✓ Files written to ${jsonPath}`);
 
   // PHASE 9: Supabase write (or dry-run preview)
-  const dossierRow = buildDossierRow(prospect, config.runId, researchSummary, emails, ae, micrositeSlug, mechanicalCheck, structuredDossier, micrositeRow);
+  // Resolve prospect_id to Supabase ID (prevents importer vs Supabase ID mismatch)
+  const resolvedId = await resolveProspectId(prospect);
+  if (resolvedId !== prospect.id) {
+    console.log(`  │  ID resolved: ${prospect.id} → ${resolvedId}`);
+  }
+  const prospectWithResolvedId = { ...prospect, id: resolvedId };
+  const dossierRow = buildDossierRow(prospectWithResolvedId, config.runId, researchSummary, emails, ae, micrositeSlug, mechanicalCheck, structuredDossier, micrositeRow);
   if (structuredDossier?.contact?.showrev_persona_classification) {
     dossierRow.persona_bucket = structuredDossier.contact.showrev_persona_classification;
   }

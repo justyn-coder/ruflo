@@ -177,6 +177,113 @@ export function resolveEntity(
   };
 }
 
+// --- Automated web verification ---
+
+export interface WebVerifiedClaim {
+  claim: string;
+  claimType: ClaimType;
+  searchQuery: string;
+  verified: boolean;
+  sourceTier: 1 | 2 | 3 | 4;
+  sourceUrl: string;
+  sourceSnippet: string;
+  safeForEmail: boolean;
+  discrepancy: string;
+}
+
+function buildSearchQuery(claim: string, company: string): string {
+  const numbers = claim.match(/\$[\d,.]+[MBK]?|\d+[\s,]*(?:million|billion|employees|miles|feet|locations|crews|designers)/gi) || [];
+  const keywords = claim.match(/BEAD|acquisition|merger|award|grant|NTIA|RDOF/gi) || [];
+  const parts = [company, ...numbers.slice(0, 2), ...keywords.slice(0, 2)].filter(Boolean);
+  return parts.join(' ').slice(0, 120);
+}
+
+function classifySourceTier(url: string): 1 | 2 | 3 | 4 {
+  if (/\.gov|ntia\.gov|fcc\.gov|sec\.gov|broadbandusa/.test(url)) return 1;
+  if (/lightreading|fiercenetwork|telecompetitor|bbcmag|geekwire|prnewswire|businesswire/.test(url)) return 2;
+  if (/linkedin|zoominfo|glassdoor|indeed/.test(url)) return 3;
+  return 3;
+}
+
+export async function verifyClaimsWithWebSearch(
+  emailBody: string,
+  company: string,
+  callLLM: (prompt: string, options: any) => Promise<string>,
+): Promise<{ verified: WebVerifiedClaim[]; summary: string }> {
+  const detected = detectClaims(emailBody);
+  if (detected.length === 0) {
+    return { verified: [], summary: 'No load-bearing claims detected.' };
+  }
+
+  const results: WebVerifiedClaim[] = [];
+
+  for (const claim of detected) {
+    const query = buildSearchQuery(claim.text, company);
+
+    const verifyPrompt = `You are verifying a factual claim from a B2B sales email.
+
+Claim to verify: "${claim.text}"
+Claim type: ${claim.type}
+Company: ${company}
+
+Search for this claim using the web. Find the most authoritative source that either confirms or contradicts it.
+
+Output JSON only:
+{
+  "verified": true/false,
+  "sourceUrl": "the URL you found",
+  "sourceSnippet": "the exact text from the source that confirms or contradicts",
+  "discrepancy": "if not verified, what the correct information is. Empty string if verified.",
+  "confidence": "high|medium|low"
+}`;
+
+    try {
+      const raw = await callLLM(verifyPrompt, {
+        model: 'claude-sonnet-4-6',
+        timeoutMs: 60000,
+        label: `verify-${claim.type}`,
+      });
+
+      const jsonMatch = raw.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        const parsed = JSON.parse(jsonMatch[0]);
+        const tier = parsed.sourceUrl ? classifySourceTier(parsed.sourceUrl) : 4;
+        const safety = assessClaimSafety(claim.text, claim.type, tier, parsed.verified);
+
+        results.push({
+          claim: claim.text,
+          claimType: claim.type,
+          searchQuery: query,
+          verified: parsed.verified || false,
+          sourceTier: tier,
+          sourceUrl: parsed.sourceUrl || '',
+          sourceSnippet: parsed.sourceSnippet || '',
+          safeForEmail: safety.safeForEmail,
+          discrepancy: parsed.discrepancy || '',
+        });
+      }
+    } catch {
+      results.push({
+        claim: claim.text,
+        claimType: claim.type,
+        searchQuery: query,
+        verified: false,
+        sourceTier: 4,
+        sourceUrl: '',
+        sourceSnippet: '',
+        safeForEmail: false,
+        discrepancy: 'Verification failed — could not search',
+      });
+    }
+  }
+
+  const verifiedCount = results.filter(r => r.verified).length;
+  const failedCount = results.filter(r => !r.verified).length;
+  const summary = `${verifiedCount} verified, ${failedCount} unverified out of ${results.length} claims.`;
+
+  return { verified: results, summary };
+}
+
 export function buildVerificationPrompt(
   emailBody: string,
   dossierSummary: string,

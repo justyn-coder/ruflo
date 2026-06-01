@@ -5,6 +5,17 @@ import type { MechanicalCheckResult } from './judge.js';
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
 const SUPABASE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY || '';
 
+export async function lookupProspectId(email: string): Promise<string | null> {
+  if (!SUPABASE_KEY || !email) return null;
+  const result = await supabaseRest('sr_prospects', 'GET', undefined,
+    `email=eq.${encodeURIComponent(email)}&select=id&limit=1`
+  );
+  if (result.ok && result.data?.length > 0) {
+    return result.data[0].id;
+  }
+  return null;
+}
+
 async function supabaseRest(
   table: string,
   method: 'POST' | 'PATCH' | 'DELETE' | 'GET',
@@ -28,6 +39,10 @@ async function supabaseRest(
     if (!res.ok) {
       const errText = await res.text();
       return { ok: false, error: `${res.status} ${errText}` };
+    }
+    if (method === 'GET') {
+      const data = await res.json();
+      return { ok: true, data };
     }
     return { ok: true };
   } catch (err: any) {
@@ -165,6 +180,11 @@ export function validateBeforeWrite(payload: SupabaseWritePayload): ValidationRe
 }
 
 // --- Build the row from pipeline output ---
+
+export async function resolveProspectId(prospect: Prospect): Promise<string> {
+  const supabaseId = await lookupProspectId(prospect.email);
+  return supabaseId || prospect.id;
+}
 
 export function buildDossierRow(
   prospect: Prospect,
