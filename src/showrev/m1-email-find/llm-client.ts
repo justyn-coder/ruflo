@@ -25,6 +25,7 @@ export interface LLMCallOptions {
   timeoutMs?: number;
   label?: string;
   cacheableSystemContent?: string;
+  hardConstraints?: string;
 }
 
 function sleep(ms: number): Promise<void> {
@@ -41,6 +42,7 @@ export async function callLLM(
     timeoutMs = 300000,
     label = 'llm-call',
     cacheableSystemContent,
+    hardConstraints,
   } = options;
 
   const anthropic = getClient();
@@ -55,6 +57,13 @@ export async function callLLM(
           type: 'text' as const,
           text: cacheableSystemContent,
           cache_control: { type: 'ephemeral' as const },
+        });
+      }
+
+      if (hardConstraints) {
+        systemBlocks.push({
+          type: 'text' as const,
+          text: hardConstraints,
         });
       }
 

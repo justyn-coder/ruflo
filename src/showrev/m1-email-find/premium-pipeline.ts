@@ -73,6 +73,15 @@ const MODEL_MAP: Record<string, string> = {
   haiku: 'claude-haiku-4-5-20251001',
 };
 
+const COMPOSITION_HARD_CONSTRAINTS = `STRICT RULES — violations cause rejection:
+1. Email body MUST be under 80 words. Count every word before outputting. If over 80, cut sentences until under. This is non-negotiable.
+2. NEVER use em-dashes (—) or en-dashes (–) anywhere. Use commas, periods, or semicolons instead.
+3. Salutation is "[FirstName]," on its own line. Next line starts the body immediately, no blank line.
+4. NEVER reference India, offshore, outsourced, or workforce geography.
+5. Sign off ONCE only: "[AE Name] | Inorsa | [email]". Never duplicate the signature.
+6. Subject line: 8 words maximum.
+Count the words in your body text RIGHT NOW before outputting. If the count exceeds 80, revise.`;
+
 async function executePrompt(
   prompt: string,
   model: string = 'sonnet',
@@ -80,10 +89,12 @@ async function executePrompt(
   label: string = 'prompt'
 ): Promise<string> {
   const resolvedModel = MODEL_MAP[model] || model;
+  const isComposition = label.includes('compose');
   return callLLMWithBrainCache(prompt, {
     model: resolvedModel,
     timeoutMs,
     label,
+    hardConstraints: isComposition ? COMPOSITION_HARD_CONSTRAINTS : undefined,
   });
 }
 
@@ -342,16 +353,19 @@ async function processProspect(
 
     try {
       const parsed = parseJSON(result);
+      const cleanBody = (parsed.body || '').replace(/—/g, ',').replace(/–/g, ',');
+      const cleanSubject = (parsed.subject || '').replace(/—/g, ',').replace(/–/g, ',');
+      const cleanPs = (parsed.ps || '').replace(/—/g, ',').replace(/–/g, ',');
       emails.push({
         touchNumber: touchNum,
         pattern,
-        subject: parsed.subject || '',
+        subject: cleanSubject,
         previewText: parsed.previewText || '',
-        body: parsed.body || '',
-        ps: parsed.ps || '',
-        wordCount: parsed.wordCount || (parsed.body || '').split(/\s+/).length,
+        body: cleanBody,
+        ps: cleanPs,
+        wordCount: cleanBody.split(/\s+/).length,
       });
-      console.log(`  │  ✓ T${touchNum} composed (${(parsed.body || '').split(/\s+/).length} words)`);
+      console.log(`  │  ✓ T${touchNum} composed (${cleanBody.split(/\s+/).length} words)`);
     } catch (e) {
       console.log(`  │  ⚠ T${touchNum} compose parse failed`);
       emails.push({
