@@ -1,0 +1,38 @@
+I have sufficient data to produce the output.
+
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Centillion Solutions was acquired by Osmose Utilities Services in October 2025 — Chris Fort is now a VP inside a PE-backed utility/telecom engineering conglomerate, not an independent company. Source: https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "Centillion's core service line is OSP design, make-ready, permitting, and post-construction for FTTx and HFC networks — they ARE a fiber engineering services firm, not an operator/ISP. The $25.5M BEAD award likely belongs to a client they serve, not to Centillion itself. Source: https://www.centillionsolutions.com/about-us/",
+    "Centillion operates an on-site/offshore hybrid model with a dedicated India engineering center — directly corroborating AE booth note ('a number of those are based in India'). This India team produces US fiber design and permit drawings at scale. Source: https://finance.yahoo.com/news/osmose-acquires-centillion-solutions-inc-140000981.html",
+    "Post-acquisition, Osmose explicitly markets Centillion's capability as 'expedited design, engineering and permitting processes' for telecom clients — making permit cycle time their core competitive differentiator and their clients' primary pain point. Source: https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "Osmose's strategic rationale for the acquisition was single-vendor coverage: pre-design walkout → OSP design → make-ready/permitting → post-construction. This signals Centillion was seen as a gap-filler in the permitting/make-ready layer specifically. Source: https://pulse2.com/osmose-buying-centillion-solutions-to-expand-technical-services-capabilities/",
+    "BEAD construction ramp is their core demand driver: 52 states have signed award agreements as of May 2026, with construction starting Q3 2026. Centillion/Osmose's engineering capacity will be under surge-demand pressure in H2 2026 exactly when their India team must produce compliant permit packages at volume. Source: https://www.ntia.gov/funding-programs/internet-all/broadband-equity-access-and-deployment-bead-program/progress-dashboard",
+    "Osmose is a serial acquirer — they also acquired Mainswest Pty Ltd and Centillion Solutions Pty Ltd (Australia) in a parallel deal — indicating aggressive expansion into fiber engineering services globally. Source: https://www.osmose.com/news/osmose-australia-acquires-mainswest-pty-ltd-and-assets-of-centillion-solutions-pty-ltd"
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "AE notes say '8,000 employees' — Centillion's published headcount is '800+ engineers.' The 8,000 figure likely refers to Osmose consolidated headcount post-acquisition, but this was not confirmed",
+    "Chris Fort's specific post-acquisition role/charter is unknown — VP title pre-acquisition may mean procurement authority, technology leadership, or client delivery; unclear without direct verification",
+    "Could not tie the $25.5M BEAD award in the research context directly to Centillion as a recipient — most likely a client or a state sub-grant recipient Centillion serves. No public record linking Centillion as a BEAD direct awardee",
+    "No job postings data found to confirm where Centillion/Osmose is actively hiring (permitting, GIS, CAD) post-acquisition",
+    "No trade press quotes from Centillion leadership on permitting bottlenecks or tooling investments — would strengthen substrate"
+  ],
+  "challengesToOtherFindings": [
+    "The AE note framing ('might be a use case for Inorsa') understates the fit signal. Centillion is not a prospect exploring whether offshore teams could use engineering software — they ARE an engineering services firm that sells permitting speed as their product. If Inorsa cuts their permit review cycles from 3-4 weeks to 2 days, that is a margin and capacity multiplier for Centillion/Osmose, not just an operational convenience. The outreach should frame Inorsa as a revenue-enabler, not a productivity tool.",
+    "If other personas characterize Centillion as a broadband operator or ISP, that is incorrect — they are a pure engineering and design services provider. BEAD funding flows to their clients, not to Centillion. Centillion's business grows when BEAD-funded ISPs need engineering capacity, which is happening now."
+  ],
+  "topInsight": "Centillion is now Osmose's fiber engineering arm — and Osmose acquired them specifically to sell 'expedited permitting' as a service to telecom clients. Every permit kickback Centillion's India-based drafters cause costs Osmose a client deliverable and a 3-6 week delay they promised to prevent. Inorsa directly solves the exact problem Osmose is marketing around. The pitch is not 'save time internally' — it is 'protect the capability you just paid an acquisition premium to sell.'",
+  "sourcesUsed": [
+    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "https://finance.yahoo.com/news/osmose-acquires-centillion-solutions-inc-140000981.html",
+    "https://www.centillionsolutions.com/about-us/",
+    "https://pulse2.com/osmose-buying-centillion-solutions-to-expand-technical-services-capabilities/",
+    "https://mergr.com/transaction/osmose-acquires-centillion-e4SV73",
+    "https://www.osmose.com/news/osmose-australia-acquires-mainswest-pty-ltd-and-assets-of-centillion-solutions-pty-ltd",
+    "https://www.ntia.gov/funding-programs/internet-all/broadband-equity-access-and-deployment-bead-program/progress-dashboard"
+  ]
+}
+```

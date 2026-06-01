@@ -1,0 +1,42 @@
+I have enough evidence. Compiling the Technical Evaluator JSON now.
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "AirWorks output formats confirmed: DXF (.dxf), ArcGIS-compatible layers, SPIDAcalc data, PDFs. These are BASEMAP and FEATURE-EXTRACTION outputs — not permit packages or construction drawings. Source: airworks.io/product, builtin.com Senior GIS Engineer posting",
+    "LightSett case study reveals the exact workflow gap: AirWorks extracts features via AI → LightSett designers take that GIS data into ArcGIS and other design software → designers produce permit/construction documents. The human design step between AirWorks and permit-ready output is explicit and still manual. Source: info.airworks.io/en/lightsett-telecom",
+    "AirWorks is actively hiring a Senior GIS Engineer (Greenhouse, 2025) requiring: Global Mapper, Bentley, Trimble, AutoCAD, pointcloud classification, Python scripting. This is a data-processing role, not a drawing-production role — confirms AirWorks has no internal team generating permit packages and is not building toward that capability. Source: job-boards.greenhouse.io/airworks/jobs/4693744007",
+    "AirWorks' Broadband Design Partners category has exactly 3 listed firms: IMMCO, CHR, ADVANCED1 — all OSP engineering services companies doing manual GIS-to-drawing work. No drawing-generation software vendor exists in this partner slot. This is the open technical slot Inorsa could occupy. Source: airworks.io/about/our-partners",
+    "Platform integrations confirmed: Bentley Systems and Esri are the only named software platform partners. No Katapult, IQGeo, Biarri, or Render Networks integration confirmed in the partner list — no OSP design/drawing downstream tool is formally integrated. Source: airworks.io/about/our-partners",
+    "AirWorks' blog language on permitting: 'reduces field visits, flags constructibility issues early, and streamlines permitting' — this refers to data quality improving the permitting PROCESS, not AirWorks generating permit documents. Permitting acceleration is claimed as a data benefit, not a product capability. Source: blog.airworks.io/how-ai-powered-mapping-and-automation-accelerates-fiber-network-design",
+    "AirWorks claims '7x faster basemap delivery' vs. traditional methods. The LightSett stat — 10 engineered miles/month → 200-300 miles/month to permit — reflects LightSett's total workflow gain, not AirWorks alone. The design/permit drawing step is still done by LightSett engineers. This is a critical precision gap in how AirWorks markets ROI. Source: info.airworks.io/en/lightsett-telecom",
+    "Inorsa's stated inputs (GIS/LLD data, validated infrastructure data) are a direct match for AirWorks' confirmed outputs (DXF, ArcGIS layers, pole-level attribute data). Integration technical feasibility is high — Inorsa could ingest AirWorks deliverables without format conversion friction. Source: airworks.io/product + Inorsa capability statement in research brief"
+  ],
+  "evidenceStrength": "strong",
+  "gaps": [
+    "AirWorks job board search returned a Senior GIS Engineer role but no partnership, integrations, or business development roles — cannot confirm whether AirWorks has active internal bandwidth to evaluate and implement a new technology partnership",
+    "LightSett case study did not name the specific CAD or drawing software used post-AirWorks — confirmed ArcGIS, 'other design software' unnamed. Cannot confirm whether LightSett uses any automated drawing tool or is purely manual in the permit-package step",
+    "No data on AirWorks' API or data export specifications — DXF and ArcGIS confirmed, but unknown whether AirWorks offers a structured data API that Inorsa could call programmatically vs. manual file handoff",
+    "Cannot confirm current AirWorks customer list beyond Lightsett — do not know how many of their 75+ customers are engineering firms (who could use Inorsa) vs. carriers/ISPs (who may outsource design entirely)",
+    "No evidence found confirming whether AirWorks is in active partnership discussion with any permit-drawing or construction-drawing generation vendor already — the slot may already be in flight with IMMCO, CHR, or ADVANCED1 as a services-level exclusive"
+  ],
+  "challengesToOtherFindings": [
+    "Both Industry Analyst and AE Proxy frame this as a clean two-party AirWorks→Inorsa integration story. The LightSett workflow reveals it is a THREE-party dynamic: AirWorks (data) → Engineering Firm (drawing production, currently manual) → Permit Package. Inorsa's actual integration target is the engineering firm in the middle, not AirWorks directly. The partnership with Janan is about channel access to those 75+ engineering firm customers — not a direct AirWorks system integration. Conflating these is a pitching error.",
+    "AE Proxy says AirWorks' 'Broadband Design Partners category is an existing partner lane — Inorsa fits structurally.' Technically true structurally, but every current occupant (IMMCO, CHR, ADVANCED1) is a human services firm doing manual drawing work. Inorsa is software that automates that step. This makes Inorsa a partial COMPETITOR to those three partners from AirWorks' perspective, not a pure addition. Janan needs to be sold on why adding Inorsa doesn't cannibalize her existing design partner relationships — this objection is unaddressed in both personas.",
+    "Industry Analyst's top insight frames the Osmose/Centillion M&A threat as primary urgency. Technically: Osmose is a SERVICES company (utility services) — their threat is at the field-services and design-services layer, not the data-platform layer. AirWorks' positioning as an AI data platform is structurally different from Centillion's walkout services. The M&A threat is real but less technically direct than presented — Osmose builds crews, not software platforms. A sharper technical framing: AirWorks' real risk is if IQGeo or Katapult builds upstream data capture capability, not if a utility services firm verticalizes.",
+    "AE Proxy claims 'no listed integration partner that generates permit packages or construction drawings' — confirmed accurate. But this absence may reflect a deliberate product boundary AirWorks has set (they are data-upstream by design, not engineering-output). Janan as VP of Product may have already decided AirWorks should NOT own the permit-drawing layer. Outreach should probe whether this is a conscious product decision or an open gap — not assume it is an unaddressed need."
+  ],
+  "topInsight": "The LightSett case study is the most important technical evidence in this brief: AirWorks' flagship customer success story confirms that a human design team still sits between AirWorks data delivery and permit-ready drawings. AirWorks is marketing 200-300 miles/month to permit as their headline ROI — but Inorsa is the missing layer that would make that number actually true end-to-end without a manual design bottleneck in the middle. The outreach angle is not 'integrate our tools' — it is 'your LightSett story has a gap that Inorsa closes, and it is the gap that will matter to every BEAD customer you pitch this fall.' That framing is technically precise, evidence-backed, and gives Janan something she can take back to her product roadmap — not just a vendor meeting.",
+  "sourcesUsed": [
+    "https://job-boards.greenhouse.io/airworks/jobs/4693744007",
+    "https://builtin.com/job/senior-gis-engineer/6342850",
+    "https://info.airworks.io/en/lightsett-telecom",
+    "https://www.airworks.io/about/our-partners",
+    "https://airworks.io/product/",
+    "https://blog.airworks.io/how-ai-powered-mapping-and-automation-accelerates-fiber-network-design",
+    "https://blog.airworks.io/automation-as-a-competitive-edge-in-telecommunications-operations",
+    "https://airworks.io/industries/telecom"
+  ]
+}
+```

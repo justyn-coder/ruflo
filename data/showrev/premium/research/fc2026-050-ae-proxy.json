@@ -1,0 +1,44 @@
+I have enough signal to compile the analysis. Assembling JSON output.
+
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Garth Naar IS the decision-maker. He is CEO + founder of both Avatar Tech LLC (construction/installation) and Avatarius LLC (consulting). Confirmed 3-person leadership team (Garth, Derrick, Cheryl). No procurement layer. Budget authority is his alone. [Source: avatarius.net/about-us]",
+    "Former Director of Engineering at Telcordia (Bell Labs subsidiary), specialized in intelligent switches. 25+ years telecom, Columbia University engineering. He has deep technical credibility — he will evaluate Inorsa on engineering merit, not just price. [Source: avatarius.net/about-us]",
+    "Avatar Tech is a named partner in the Newark Fiber initiative alongside GigXero, Andrena, Millennium, Net Tarius, and Teknogrid. This is live infrastructure work in Newark — not a prospect account, an active deployer. [Source: investnewark.org/newark-fiber]",
+    "Company website lists 'design and engineering' as a service but has ZERO mention of permit drawing generation, GIS integration, construction document automation, or kickback management. This is a hard gap they either outsource or do manually. [Source: avatartechllc.kinsta.cloud]",
+    "Avatarius LLC (the consulting arm) offers broadband mapping, funding application support, and broadband strategy — but not engineering deliverables. Two-entity structure means Garth sits at the intersection of design consulting AND field execution. He needs throughput on both sides. [Source: avatarius.net/avatarius-broadband]",
+    "Gold quote from PBS interview (Season 5, Ep. 7): 'They will not allow you to do the level of work that's commensurate with your experience, your capacity and your ability, but relegate you to something at the second or third tier level where margins are smaller and if you sneeze, you're gonna lose money.' — This is his stated core frustration: being treated as a low-margin subcontractor despite senior engineering capability. [Source: pbs.org/video/black-history-shaped-my-future-lhqzpw]",
+    "Brain data references a $25.5M BEAD award. NJ BEAD received $263M total allocation; NJ's subgrantee selection was 'in progress' per nj.gov as of 2025. The award page on avatartechllc.com returned HTTP 404 — amount NOT independently verified but is plausible at that scale. If confirmed, it creates a funded execution mandate with a 4-year deployment deadline. [Source: nj.gov/connect/grants/bead; avatartechllc.com 404]",
+    "Response speed is Garth's stated competitive differentiator: 'We are there many times hours before our nearest competitor' for emergency breaks. He prizes local presence and fast execution — this maps to Inorsa's cycle-time value prop. [Source: PBS interview]",
+    "Avatar Tech is certified to operate in NY, MD, NJ, and DC — not a single-state operator. BEAD-driven expansion could pull them into multi-state permit workflows they aren't currently equipped to process at scale. [Source: avatartechllc.kinsta.cloud]"
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "BEAD award amount ($25.5M from Brain data) not independently verified — award page 404'd. Could not confirm state, award date, or specific project scope.",
+    "Cannot confirm whether Avatar Tech performs in-house permit drawing or outsources entirely. No job postings, org chart, or tool stack visible.",
+    "No direct quote from Garth about permitting pain specifically — only general frustration about margin compression and being underutilized.",
+    "Cheryl's exact role (IT consulting/solutions architecture) is unclear — she may be a technical validator in a buying decision, but no org chart confirms her authority.",
+    "No evidence of current tool stack for engineering deliverables (what software do they use for design today?).",
+    "NJ BEAD construction start timeline unclear — state is still in subgrantee selection. Urgency is real but exact trigger date for construction ramp-up is not confirmed."
+  ],
+  "challengesToOtherFindings": [
+    "Brain data flags 'Centillion just publicly endorsed' and 'Centillion delivers' as tools/platforms in use — I found ZERO public evidence of any company named Centillion connected to Avatar Tech or Avatarius in any search. This looks like corrupted or hallucinated Brain extraction. Do NOT use 'Centillion' as a known tool in outreach — it could embarrass the rep.",
+    "Brain data also includes 'Fort personally sold' — almost certainly a garbled version of 'Garth personally sold.' The Brain text extraction quality for this account is poor; treat all Brain tool/platform claims as unverified.",
+    "Industry Analyst finding (pending) should not assume Avatar Tech is primarily an ISP/carrier. They are a construction + consulting firm that partners with ISPs (GigXero, Newark Fiber). The buying angle is different: they need engineering throughput as a subcontractor/EPC, not as a network operator managing their own plant.",
+    "The $25.5M BEAD figure in Brain data should be treated as a hypothesis, not a confirmed fact. If an analyst uses it as established, that conclusion is premature — the page 404'd and NJ subgrantee selection was still open as of research date."
+  ],
+  "topInsight": "Garth Naar publicly stated on PBS that his core frustration is being 'relegated to second or third tier level where margins are smaller.' Inorsa's pitch is not 'help you draw faster' — it's 'help you move up-market.' With a live BEAD deployment (Newark Fiber partnership confirmed) and a likely BEAD sub-award driving construction urgency, Garth needs to produce permit-ready engineering deliverables faster and with fewer kickbacks to win and execute higher-value contracts. Inorsa is the tool that lets him compete at the first-tier level his Bell Labs background trained him for. Lead with that reframe.",
+  "sourcesUsed": [
+    "https://avatarius.net/about-us",
+    "https://avatarius.net/avatarius-broadband",
+    "https://avatartechllc.kinsta.cloud",
+    "https://investnewark.org/newark-fiber/",
+    "https://www.pbs.org/video/black-history-shaped-my-future-lhqzpw/",
+    "https://www.nj.gov/connect/grants/bead/",
+    "https://www.linkedin.com/in/garth-naar/",
+    "https://seamless.ai/b/avatar-tech-10622533"
+  ]
+}
+```

@@ -293,13 +293,13 @@ Match the existing `/ops` aesthetic: warm paper background (#f5f1eb), dark text 
 
 ---
 
-## Open questions
+## Operator decisions (resolved 2026-05-31)
 
-1. **Email editing persistence:** When operator edits an email, should it write back to `sr_brain_dossiers` immediately, or stage as a draft until [Save]? Immediate is simpler; staging prevents accidental overwrites.
+1. **Email editing persistence:** Save immediately on edit. No staging/draft state. Simpler, and the operator trusts their own edits. `original_body` column preserves the Engine version for Brain training.
 
-2. **Re-research scope:** When operator clicks [RE-RESEARCH], does it re-run the full 10-phase pipeline, or just the research phases (1-2b) with existing composition? Full re-run is simpler; partial re-run is faster but needs phase-level checkpointing.
+2. **Re-research scope:** Full 10-phase pipeline re-run. Simpler, and the operator wants fresh research when they re-research — not stale composition on new data. Checkpointing already handles resume if it crashes mid-run.
 
-3. **Outcome tracking polling:** Pull from HubSpot on page load (simplest), or set up a HubSpot webhook that pushes to Supabase in real-time? Webhook is better but requires HubSpot Private App configuration.
+3. **Outcome tracking:** Pull from HubSpot on page load. No webhook infrastructure needed. Acceptable latency (operator checks outcomes periodically, not in real-time). Can upgrade to webhook later if engagement volume justifies it.
 
 ---
 
@@ -308,3 +308,4 @@ Match the existing `/ops` aesthetic: warm paper background (#f5f1eb), dark text 
 | Version | Date (EST) | Author | Change |
 |---------|-----------|--------|--------|
 | v1 | 2026-05-31 21:33 | Claude | Initial spec. 4 sections: Pipeline Dashboard, Review Queue, Brain Activity, Outcome Tracking. Build order + data model + multi-user phasing. |
+| v2 | 2026-05-31 22:05 | Claude | Operator decisions: immediate save on edit, full re-run on re-research, page-load polling for outcomes. |

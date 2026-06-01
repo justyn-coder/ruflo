@@ -1,0 +1,41 @@
+I have enough to compile the report now.
+
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Booker Engineering is a 26-person OSP telecom engineering firm founded January 28, 2021 in Monroe, WA. Already expanded with teams in Arizona and Minnesota — a growing, not static, firm. Source: RocketReach/LinkedIn, bizprofile.net",
+    "Services are directly BEAD-aligned: FTTH design, utility pole attachment permitting, ROW permitting, construction prints, PE stamping. They are positioned to absorb subcontracted OSP work from WA BEAD ISP/PUD awardees. Source: bookereng.com",
+    "Washington's $1B BEAD program (NTIA-approved February 26, 2026) covers 238 project areas — 48% fiber — with construction starting Q3 2026 and running through 2030. This is a 4-year workload wave landing directly in Booker's geography. Source: WA Dept of Commerce",
+    "Brain data references a $25.5M BEAD award ('serve the St.' partial fragment) — almost certainly a client they are supporting, not a direct grantee (Booker is an engineering services firm, not an ISP). This confirms BEAD work is already in their active pipeline.",
+    "Centillion Solutions — a direct competitor using proprietary digital engineering workflows and geospatial tools — was acquired by Osmose Utilities Services in October 2025. Osmose now offers end-to-end OSP design + make-ready + permitting as a single vendor with offshore India design capacity. This is a structural competitive threat to boutique in-house firms like Booker. Source: osmose.com press release, October 28, 2025",
+    "Brain data references 'Centillion just publicly endorsed' and 'Centillion delivers' alongside 'proprietary data' — aligns with the Osmose acquisition announcement emphasizing Centillion's digital workflows achieving shorter permitting cycles. Booker's leadership appears aware of this development.",
+    "Industry-wide labor shortage: 3:1 job-to-candidate ratio for fiber OSP designers, 58,000 new roles needed by 2032. For a 26-person shop doing all work in-house, hiring fast enough to absorb BEAD volume is arithmetically impossible without tooling. Source: ShowRev Industry Intelligence KB",
+    "AE booth note confirms Spencer Kariniemi is actively exploring 'technology to streamline things' — direct signal that tooling adoption is already on his agenda, not a cold pitch."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "The $25.5M BEAD client identity not independently verified — Brain fragment cut off ('serve the St.') prevents source confirmation",
+    "No current job postings found for Booker Engineering — could not confirm active hiring stress or specific role demand",
+    "Zero trade press mentions found (fiercenetwork, lightreading, telecompetitor) — firm operates below industry media radar, consistent with boutique scale",
+    "No podcast appearances or executive long-form interviews found",
+    "Revenue and financial data unavailable — private LLC, no filings surface",
+    "Specific permitting volume or cycle time data for Booker not available — permitting pain is inferred from service offerings and industry baseline, not confirmed by Booker-specific data"
+  ],
+  "challengesToOtherFindings": [
+    "AE proxy may overweight 'may not be perfect fit' caution — Booker's explicit permitting service line and active BEAD client work make them a stronger fit than the booth conversation implied. The uncertainty appears to be about fit with Inorsa's GIS/LLD input requirements, not about their fiber volume",
+    "Technical Evaluator may focus on CAD/GIS toolchain compatibility — but Booker's 'in-house control over quality and deadlines' positioning suggests they would respond more to cycle time arguments than pure toolchain arguments. Lead with permit return rates, not software integration"
+  ],
+  "topInsight": "Booker is a fast-growing 26-person OSP firm doing 100% in-house work at the exact moment Washington's $1B BEAD program starts generating construction volume (Q3 2026). Their primary competitor Centillion was just acquired by Osmose and now has offshore design scale plus proprietary digital permitting workflows. Spencer already told the AE he wants to streamline with technology. The window is: before BEAD permit volume hits them at full force and they are forced to hire or offshore to keep pace — both of which destroy the 'in-house quality control' brand promise they lead with.",
+  "sourcesUsed": [
+    "https://www.bookereng.com/",
+    "https://rocketreach.co/booker-engineering-management_b79dbfb1c5a63f8c",
+    "https://www.linkedin.com/company/booker-engineering",
+    "https://www.crunchbase.com/organization/booker-engineering",
+    "https://www.bizprofile.net/wa/monroe/booker-engineering-llc",
+    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "https://www.commerce.wa.gov/ntia-approves-washingtons-final-bead-proposal-unlocking-1-billion-investment-for-broadband-expansion-2/",
+    "https://www.commerce.wa.gov/wsbo/bead/"
+  ]
+}
+```

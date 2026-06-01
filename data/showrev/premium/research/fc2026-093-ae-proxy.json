@@ -1,0 +1,42 @@
+I have enough to compile the AE Proxy report. Here is the output:
+
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Spencer Kariniemi is FOUNDER, not just GM — he signs the checks. At a 26-person private LLC, founder = sole budget authority. No procurement committee, no IT sign-off, no board approval needed. This is a direct founder sale. Source: Crunchbase, ZoomInfo, LinkedIn",
+    "Family leadership structure: Spencer Kariniemi (Founder/GM), Alex Kariniemi (Co-Founder, Head of Business Development), Jared Kariniemi (Strategic Project Manager). Decisions stay tightly within this group. Source: RocketReach org chart",
+    "Career path reveals a control-and-quality identity: Crown Castle (big-firm fiber engineer) → Waeco Construction (GM of Engineering, underground utility + telecom) → Founded Booker Engineering (2021). He left large organizations deliberately to own quality. 'In-house control' is not just a service pitch — it is his founder identity. Source: LinkedIn, RocketReach",
+    "Riley Riutta (Project Manager, also at FC2026) has ZERO public profile — no LinkedIn surfaced, no trade press mentions. At a firm this small, PMs who attend trade shows typically evaluate tooling operationally. Riley is likely the internal champion and workflow gatekeeper if a trial is initiated. Not finding them online makes cold outreach to Riley impossible; all threads run through Spencer first. Source: search not found",
+    "Alex Kariniemi (Head of BD) is a co-founder and is not publicly identified as attending FC2026. If Inorsa's value prop touches client-facing quality or competitive positioning (vs. Centillion/Osmose), Alex becomes a second stakeholder to loop in — but Spencer controls the initial decision. Source: RocketReach",
+    "Buying timeline: BEAD construction starts Q3 2026. Spencer attended FC2026 in May explicitly seeking technology to streamline operations. He is in active evaluation mode NOW. Window is 30-60 days before BEAD delivery crunch consumes all bandwidth for new tool adoption. After that, 'not the right time' objection becomes real. Source: AE booth note + WA BEAD program timeline",
+    "The 'may not be a perfect fit' AE signal points to workflow uncertainty, not disqualification. Booker's service list is broad — ADA ramps, traffic control plans, E-rate, long haul, FTTH. If Inorsa's ingest requires pure FTTH GIS/LLD inputs, Booker's mixed-work model creates a scoping challenge. Permitting (utility pole attachment, ROW) is explicitly listed in their services and is BEAD-critical — the fit question is whether Inorsa covers permitting workflows beyond FTTH construction prints. Source: bookereng.com",
+    "Spencer's St. Cloud State BS + Waeco GM background means he is operationally literate, not a technical GIS/CAD specialist. He will evaluate on business outcomes (throughput, cycle time, margin) not on software architecture. Pitch to him in ops and finance terms, not feature terms. Source: Crunchbase person profile"
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Riley Riutta (Project Manager) has no public profile — role scope, seniority, and evaluation authority unknown. If Riley is the workflow gatekeeper, we have no intelligence on their specific objections or priorities",
+    "No direct quotes from Spencer found anywhere — no podcast, no panel, no trade press. The AE booth note is the only first-person signal we have",
+    "Exact toolchain Booker uses today is unknown. Brain data references 'case,' 'engineering,' and 'proprietary data' — ambiguous. No confirmation of GIS software (ESRI? QGIS?), CAD platform (AutoCAD? MicroStation?), or permit management workflow",
+    "Revenue and margins unknown — private LLC, no filings surface. Cannot assess price sensitivity ceiling or how a Inorsa contract would compare to existing OpEx",
+    "The $25.5M BEAD client reference remains an unconfirmed fragment — identity unknown, which means we cannot use that client as a reference or talking point without risking awkwardness",
+    "No confirmation of whether Booker is actively hiring designers — this would be the clearest signal that labor-capacity stress has hit. Job board check not performed"
+  ],
+  "challengesToOtherFindings": [
+    "Industry Analyst says 'may not be perfect fit' is AE caution overweighting — I partially agree but do NOT fully dismiss it. The concern is real: Inorsa's ingest model (GIS/LLD) needs to match Booker's actual input formats. A 26-person mixed-service OSP firm may have heterogeneous workflows. The AE should confirm at top of next conversation: 'When you do FTTH permitting, what does your input package typically look like — GIS shapefiles, or field-collected data?' This surfaces the fit question cleanly without killing momentum",
+    "Industry Analyst frames Centillion/Osmose as a threat to Booker as a competitive pressure. I agree on direction but would reframe for the sales conversation: the Centillion/Osmose story is NOT about Booker being displaced — it is about Booker's CLIENTS (WA ISPs/PUDs) now having access to a single-vendor alternative with offshore design scale. If Booker cannot match Osmose's cycle times, they lose subcontract volume. The threat is client defection, not direct market displacement. Spencer will respond to this framing much more viscerally",
+    "Technical Evaluator will likely focus on CAD/GIS toolchain fit. I would subordinate that to the permitting cycle time argument. Spencer's decision will be made on: 'Can this help us do more BEAD work without hiring 5 designers?' — toolchain compatibility is a qualifier, not the decision driver. Technical discovery belongs in a second conversation with Riley, not in the opener with Spencer"
+  ],
+  "topInsight": "Spencer Kariniemi is the founder and sole budget authority — not a gatekeeper, the buyer. He attended FC2026 specifically to evaluate technology to scale throughput. His identity is built on 'in-house quality control,' which is now directly threatened: Centillion/Osmose can offer WA BEAD clients offshore design scale with proprietary permitting workflows at lower cost. The pitch is not 'add a tool' — it is 'protect the in-house quality brand at 2x BEAD volume without entering the 3:1 labor market.' That framing lets Spencer say yes to Inorsa while staying true to what he built Booker to be. Window is 30-60 days before Q3 BEAD volume locks out any new tool evaluation.",
+  "sourcesUsed": [
+    "https://www.crunchbase.com/person/spencer-kariniemi",
+    "https://www.linkedin.com/in/spencer-kariniemi-96a517207/",
+    "https://rocketreach.co/booker-engineering-management_b79dbfb1c5a63f8c",
+    "https://www.zoominfo.com/p/Spencer-Kariniemi/3647864201",
+    "https://www.bookereng.com/",
+    "https://www.bizprofile.net/wa/monroe/booker-engineering-llc",
+    "https://opengovwa.com/corporation/604698189",
+    "https://www.commerce.wa.gov/wsbo/bead/"
+  ]
+}
+```

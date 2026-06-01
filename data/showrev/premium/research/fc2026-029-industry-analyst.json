@@ -1,0 +1,40 @@
+Enough data. Composing output.
+
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Fybercom is an ISP/CLEC (not an engineering services firm) — they build and operate their own fiber network in Eastern Idaho, serving residential and business customers. Founded 2014, headquartered Idaho Falls. [source: fybercom.net, BroadbandNow]",
+    "PE acquisition closed October 2025: Novacap (Canadian PE, Digital Infrastructure Fund, 6th platform) acquired Fybercom explicitly 'to accelerate fiber expansion in Idaho.' Novacap press release confirms shared mission of connecting underserved markets across North America — this is a growth-mandate investment, not a hold-and-harvest. [source: novacapcorp.com, GlobeNewswire Oct 3 2025]",
+    "Fybercom holds a $83.2M provisional BEAD award (fiber to 12,485 locations + mixed tech to 2,715 locations) — one of Idaho's two largest BEAD awards. Idaho BEAD subgrant agreements were targeted for signing by December 2025; construction is expected to begin 2026 construction season. 4-year deployment deadline applies. [source: Telecompetitor BEAD provisional awards list, Idaho Office of Broadband / Link Up Idaho]",
+    "Active build already underway: $13.7M Madison County Capital Projects Fund grant (state-level, pre-BEAD) with Fybercom as ISP partner — 18-mile open-access mid-mile segment, 3,000 unserved homes targeted. CEO Jared Stowell stated project 'on track to be completed this year' (2024 statement). [source: Idaho Commerce, Madison County broadband project page]",
+    "Idaho Falls Fiber Network partnership: Fybercom connects via 100Gbig circuit — largest available connection — to Idaho Falls open-access fiber. Service extends across 28 cities and towns in Idaho. [source: idahofallsidaho.gov, FyberCom.net]",
+    "CTO Vince Calkins + Sr. Director of OSP Steve Smith both attended Fiber Connect 2026 — two engineering/technical leaders at a design and deployment conference signals active vendor evaluation for scale-up tooling, not casual attendance.",
+    "AE booth note ('short runs, don't do a lot of CAD') describes their historical workflow as a small ISP doing incremental builds. That profile is directly incompatible with a 12,000+ location BEAD deployment mandate — this is the gap Inorsa addresses."
+  ],
+  "evidenceStrength": "strong",
+  "gaps": [
+    "No direct Fybercom job postings found for OSP designer or CAD engineer roles — unclear if they plan to staff up internally or outsource design",
+    "BEAD award is still 'provisional' as of last confirmed data (Idaho submitted final proposal September 2025, in curing rounds with NTIA) — final execution date not confirmed",
+    "No public data on Fybercom's current design toolchain (GIS platform, CAD software in use, permitting workflow)",
+    "Competitive ISP landscape in Eastern Idaho not fully mapped — unknown which other BEAD subgrantees overlap Fybercom's proposed service territory",
+    "Novacap's specific growth targets for Fybercom (# of passings, acquisition strategy) not publicly disclosed beyond 'accelerate expansion'"
+  ],
+  "challengesToOtherFindings": [
+    "AE's 'not a good fit' call is likely based on Fybercom's historical profile (small ISP, short runs, low CAD volume) — but that profile changes materially under BEAD + PE pressure. A company that has never done large-scale CAD-intensive design now has to deliver engineering drawings for 15,000+ locations on a federal clock. The low-CAD history is the risk, not evidence of low fit.",
+    "The 'short runs' characterization from the AE may reflect Fybercom's residential drop/last-mile work, not their backbone engineering. Steve Smith's title (Sr. Director of OSP) suggests a serious engineering function managing outside plant — this is not a company without design discipline, just one that may be at an inflection point."
+  ],
+  "topInsight": "Fybercom is a small Idaho ISP that just received PE backing AND an $83M BEAD award requiring fiber to 12,000+ locations on a federal deployment timeline — their entire design and permitting capacity will be stress-tested within the next 6-12 months. The CTO and OSP Director both showed up at Fiber Connect actively looking at solutions. The AE's concern ('short runs, no CAD') is precisely the capacity gap that makes Inorsa relevant: Fybercom needs to scale from incremental local builds to a large-scale, permit-heavy deployment without a large in-house design team.",
+  "sourcesUsed": [
+    "https://fybercom.net/",
+    "https://novacapcorp.com/news/novacap-announces-partnership-with-fybercom-to-accelerate-fiber-expansion-in-idaho/",
+    "https://www.globenewswire.com/news-release/2025/10/03/3161224/0/en/Novacap-Announces-Partnership-with-FyberCom-to-Accelerate-Fiber-Expansion-in-Idaho.html",
+    "https://www.telecompetitor.com/updated-comprehensive-list-bead-benefit-of-the-bargain-provisional-awards/",
+    "https://linkup.idaho.gov/beadsubgrantee/",
+    "https://linkup.idaho.gov/idaho-office-of-broadband-update-november-2025/",
+    "https://commerce.idaho.gov/blog/fybercom-and-madison-county-partner-to-provide-high-speed-internet-access/",
+    "https://www.idahofallsidaho.gov/m/newsflash/Home/Detail/2028?arc=3223",
+    "https://broadbandnow.com/Fybercom"
+  ]
+}
+```

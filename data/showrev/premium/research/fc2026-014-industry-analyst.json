@@ -1,0 +1,49 @@
+I have sufficient data to compile the analysis now.
+
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "PCCI Group is a vertically integrated OSP firm: construction (PCCI) + in-house engineering (ProDesign) + two owned ISPs (Tel-Star HFC in central Illinois, i5 Fiber FTTH in Bonita Springs FL). This structure makes PCCI both a services firm AND an ISP with direct BEAD execution pressure. Source: pccigroup.com/services/isps/, pccigroup.com/our-team/team-bios/",
+    "Troy Hoover is Director of Operations for ProDesign — the engineering division — with 24 years OSP experience, previously managed 27 designers/CAD drafters, certified in Broadband Design. He runs the specific team Inorsa would displace or augment. Source: pccigroup.com/our-team/team-bios/",
+    "ProDesign uses: AutoCAD, SpatialNET, Microstation, Bentley Comms, Lode Data, Katapult Pro, 3GIS — a manual, multi-platform stack with no indication of automated GIS-to-permit pipeline. ProDesign is on Katapult Pro's vendor list confirming active use. Source: pccigroup.com/services/prodesign/, katapultengineering.com/vendor-list/prodesign-engineering-inc",
+    "ProDesign was actively hiring a Permit Specialist as of Sept 2024, signaling permitting is a known bottleneck and active growth area. Source: linkedin.com/posts/pcci-prodesign permit-specialist post",
+    "Centillion Solutions (direct competitor to ProDesign in OSP design/engineering) was acquired by Osmose Utilities on Oct 28, 2025. Centillion now operates with offshore India design center, US/EU/Australia offices. Brain data suggests PCCI had a relationship with Centillion ('Centillion just publicly endorsed', 'Centillion delivers'). Post-acquisition, that relationship is either disrupted or PCCI now faces a scaled-up competitor with offshore capacity advantage. Source: osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "Illinois BEAD: $990M+ provisional awards across 160,000 locations. Tel-Star does not appear in major award recipients (Wisper $350M, Strategic Management $268M, Comcast $92M top the list). Tel-Star may have a smaller sub-grant not yet publicly confirmed, or may still be in application/challenge process. Source: dceo.illinois.gov BEAD page, telecompetitor.com comprehensive BEAD list",
+    "Florida BEAD (i5 Fiber territory, Bonita Springs): still under extension as of late 2025, no provisional awards announced. i5 Fiber's BEAD application status is unconfirmed publicly. Source: broadbandnow.com BEAD status by state",
+    "Brain data indicates a $25.5M BEAD award 'to serve the St.' — specific 'St.' location and state unconfirmed across public BEAD award databases. This may be a state-level broadband grant (not federal BEAD) or a program not yet indexed publicly. Source: Brain Knowledge Digest, not independently verified",
+    "PCCI exhibited at both Fiber Connect 2025 (booth 1163) and Metro Connect 2025 Fort Lauderdale (booth 1001) — two major fiber industry events. Active conference presence signals growth posture, not a firm in contraction. Source: fiberconnect2025.eventscribe.net, metro-connect-usa.com",
+    "Tel-Star operates HFC (not fiber), serving 3,500+ customers in central Illinois since 1989. BEAD-funded FTTH competitors entering that territory pose structural competitive pressure — HFC is increasingly noncompetitive for grant-eligible locations. Jim Perley built i5 Fiber (FTTH) as the next-generation answer, but Tel-Star's legacy infrastructure gap is a near-term vulnerability. Source: pccigroup.com/services/isps/, pccigroup.com/our-team/team-bios/"
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "The '$25.5M BEAD award to serve the St.' from Brain data is unverified — did not appear in any public BEAD award database searched. Could be a state-level program, a Connect Illinois award, or a non-BEAD federal grant.",
+    "Exact nature of PCCI-Centillion relationship not confirmed — whether Centillion was a subcontractor, referral partner, or simply a market endorsement cannot be verified from public sources.",
+    "Troy Hoover's LinkedIn profile is blocked from direct access; his current role scope and any recent public statements are not confirmed beyond the PCCI team bio page.",
+    "i5 Fiber BEAD award status: Florida has not announced provisional BEAD awards as of late 2025 — i5 Fiber's application position is unknown.",
+    "ProDesign engineering revenue or headcount: current size of the design team (vs. the '27 designers' Troy previously managed elsewhere) is not public.",
+    "No trade press mentions (LightReading, FierceNetwork, Telecompetitor) found for PCCI Group — the company operates below the trade publication radar."
+  ],
+  "challengesToOtherFindings": [
+    "The AE noted Troy as 'interested in looking deeper' after a brief Fiber Connect interaction — this is a soft signal. Caution: Troy manages an in-house engineering division (ProDesign) that could perceive Inorsa as threatening to his team's existence, not a complement. The outreach framing matters enormously — lead with capacity augmentation and permitting speed, not replacement.",
+    "Brain data shows 'Fort personally sold' as a platform/tool entry — this likely refers to Metro Connect 2025 at Fort Lauderdale where PCCI had booth 1001, suggesting the Inorsa AE may have had a Fort Lauderdale touchpoint with PCCI earlier in 2025 before Fiber Connect. If so, Troy may already have context on Inorsa beyond the May 19 interaction.",
+    "The $25.5M figure appears twice in Brain data (as '$25.5M award' and '$25.5M BEAD') — may be a single award listed redundantly, not two separate awards. Do not assume double the funding exposure."
+  ],
+  "topInsight": "PCCI Group owns both the engineering capacity (ProDesign, led by Troy Hoover) and the ISP execution obligation (Tel-Star + i5 Fiber with apparent BEAD award). Troy sits at the intersection: he must deliver engineering throughput for BEAD construction while his primary competitive design supplier (Centillion) was just absorbed by a larger, offshore-capable competitor (Osmose). His team runs a multi-platform manual stack (Katapult Pro, AutoCAD, Microstation) and was already hiring Permit Specialists to handle bottlenecks. The email opener is not 'we generate drawings' — it is 'as your BEAD construction clock starts and Centillion is now inside Osmose, how are you protecting your permit throughput?'",
+  "sourcesUsed": [
+    "https://pccigroup.com/",
+    "https://pccigroup.com/services/prodesign/",
+    "https://pccigroup.com/services/isps/",
+    "https://pccigroup.com/our-team/team-bios/",
+    "https://fiberconnect2025.eventscribe.net/ajaxcalls/ExhibitorInfo.asp?rnd=0.79048&BoothID=770849",
+    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "https://finance.yahoo.com/news/osmose-acquires-centillion-solutions-inc-140000981.html",
+    "https://www.katapultengineering.com/vendor-list/prodesign-engineering-inc",
+    "https://www.linkedin.com/posts/pcci-prodesign_permit-specialist-activity-7235000815495622656-R9Js",
+    "https://dceo.illinois.gov/broadband/bead/sub-grantee-selection-process.html",
+    "https://www.telecompetitor.com/updated-comprehensive-list-bead-benefit-of-the-bargain-provisional-awards/",
+    "https://broadbandnow.com/research/bead-grants",
+    "https://grokipedia.com/page/pcci_group"
+  ]
+}
+```

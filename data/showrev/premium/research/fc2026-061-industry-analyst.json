@@ -1,48 +1,49 @@
-I have sufficient data to synthesize. Compiling findings now.
+Enough signal to synthesize. Compiling Industry Analyst JSON now.
 
 ```json
 {
   "role": "Industry Analyst",
   "keyFindings": [
-    "B+T Group is a Tulsa-based A&E/engineering services firm (founded 2000, 200-500 employees, licensed all 50 states) — they are NOT an ISP or carrier, they are hired BY ISPs to deliver fiber design and permitting services. This makes them a potential tool-buyer or production partner for Inorsa, not a direct BEAD awardee. Source: btgrp.com/about-bt-group/",
-    "B+T Group's VP Leigh Anne Self explicitly oversees 'fiber delivery programs' as a dedicated service line — fiber is a growth vertical, not a legacy one. Company expanded from wireless structural engineering into fiber as a deliberate strategic move. Source: btgrp.com/about-bt-group/",
-    "B+T publicly claims end-to-end fiber scope: route engineering, permitting, construction drawings, PE-stamped deliverables. Their own blog (industry-shift-licensed-pes) acknowledges PE-stamp compliance is 'no longer optional' and non-compliant designs trigger permitting rejection and project delays — they are acutely aware of permitting as their liability. Source: btgrp.com/industry-shift-the-growing-role-of-licensed-pes-in-fiber-engineering-projects/",
-    "Len DeWees' career path: Crown Castle → Danella Companies (Division Manager, fiber construction serving ILECs) → B+T Group Program Director - Fiber. This is an operator-turned-engineering-manager profile — he understands both field construction realities AND design/permitting workflows. Not a pure estimator or sales person. Source: linkedin.com/in/len-dewees-b9209124 + danella.com (404)",
-    "Active hiring signal: B+T was recruiting a 'Project Manager - Fiber' in Pittsburgh as recently as early 2026, and a LinkedIn job post called for 'Telecom A&E Designers.' Given the 3:1 industry-wide job-to-candidate ratio, B+T is competing in a constrained labor market for the exact designers Len needs to scale production. Source: LinkedIn job posts via search result",
-    "B+T serves carriers, municipalities, and enterprises — their BEAD exposure is indirect but significant: as ISPs and rural carriers win BEAD awards and activate construction, B+T absorbs the design and permitting work. The 4-year BEAD deployment window starting Q3 2026 creates a multi-year production ramp that B+T needs capacity to handle. Source: industry baseline KB + btgrp.com/fiber-infrastructure-providers/",
-    "No publicly visible BEAD contract wins for B+T Group directly — as an A&E firm they would appear as a sub or partner in ISP awards, not as a direct NTIA awardee. No trade press coverage (FierceNetwork, LightReading, Telecompetitor) found mentioning B+T in connection with specific BEAD projects. Gap: this absence does not mean no BEAD work — it means their pipeline is not public.",
-    "B+T's own blog post ('From Tower to Fiber: How Turnkey Engineering Solutions Are Powering America's Next Generation Networks') signals intentional pivot messaging toward fiber as a growth story — consistent with an organization building out production capacity, not winding it down. Source: btgrp.com/news/",
-    "Competitor context: B+T's named competitors per RocketReach are AECOM, Arcadis, Jacobs — large global A&E firms with significantly deeper benches and offshore design capacity. The 20-40% offshore design trend at larger A&E firms (industry KB) is a structural pressure B+T faces: larger competitors can absorb BEAD surge via offshore; a mid-size firm like B+T (200-500 employees) faces a harder capacity problem. Source: rocketreach.co B+T competitors + industry KB"
+    "B+T Group is a 155-person turnkey telecom engineering firm (founded 2000, Tulsa HQ) offering end-to-end fiber services: feasibility, route engineering, construction drawings, permitting, and project management — nationwide, licensed in all 50 states. [source: btgrp.com/about-us/who-we-are]",
+    "Len DeWees is titled 'Program Director - Fiber' and is based in Langhorne, PA — not Tulsa HQ — indicating a remote engineering leadership role with national scope rather than a local delivery function. [source: linkedin.com/in/len-dewees-b9209124]",
+    "B+T Group has an open A&E Fiber Designer position in Tulsa (remote eligible), posting tasks including AutoCAD construction drawings, fiber routing plans, splice schematics, and permit compliance. Active hiring at this level against BEAD-era workload = direct capacity constraint signal. [source: glassdoor.com job listing]",
+    "Oklahoma BEAD: $797M allocated, NTIA-approved, 24 subgrantees, construction deadline October 2026 — 5 months from now. Trace Fiber Networks alone has $250.7M in commitments. B+T, as an A&E firm, is positioned as engineering-for-hire to these subgrantees, not a direct grantee. [source: oklahoma.gov/broadband, brandergroup.net BEAD tracker]",
+    "Brain data confirms B+T holds a $25.5M BEAD-adjacent engagement — consistent with being the A&E engineering partner to a mid-sized Oklahoma BEAD subgrantee. No public press release found; classified as not-independently-verified.",
+    "Centillion Solutions — a direct competitor doing fiber OSP engineering and permitting — was acquired by Osmose Utilities in October 2025. Osmose/Centillion now offers single-vendor turn-key: pre-design walkout + OSP design + make-ready + permitting + post-construction. This consolidation puts direct competitive pressure on B+T's fiber engineering margin and client retention. [source: osmose.com/news, yahoo finance 2025-10-28]",
+    "Brain notes reference 'Centillion just publicly endorsed' and 'Centillion delivers' — consistent with B+T having either a tool or workflow that Centillion (now Osmose) validated, or B+T tracking Centillion's platform decisions as a competitive reference point. Could not confirm specific endorsement from public search.",
+    "B+T's proprietary Site360 platform (3D modeling, virtual tours, BIM, digital reports, custom software) signals they have technology investment appetite — but this is an asset management / visualization product, not a drawing generation or permitting-automation workflow. The gap between Site360 and automated construction drawing generation is where Inorsa fits. [source: btgrp.com/comprehensive-engineering-services]",
+    "B+T's published fiber case studies feature manual per-project engineering: a PA ISP project required creating individual construction/permit drawings per cabinet location and filing separately with multiple municipalities. This is exactly the workflow that creates permit kickback exposure at BEAD scale. [source: btgrp.com/streamlining-fiber-infrastructure-development-for-a-isp-in-pennsylvania]",
+    "Industry-wide: fiber labor shortage is 3:1 job-to-candidate ratio; 58,000 new roles needed by 2032. B+T at 155 employees nationwide faces structural throughput limits that can't be solved by hiring alone — especially with October 2026 construction deadlines already in frame."
   ],
   "evidenceStrength": "moderate",
   "gaps": [
-    "Could not confirm Len DeWees' full LinkedIn profile content (rate-limited) — specifically his tenure at B+T, scope of fiber program he leads, or any published conference talks",
-    "No BEAD-specific pipeline data for B+T found — unknown which ISP clients they serve, which state programs they're working on, or what volume of BEAD-related design work they currently have or expect",
-    "Current job postings could not be accessed (Paylocity recruiter portal blocked, LinkedIn rate-limited) — cannot confirm current fiber designer headcount or active hiring volume",
-    "B+T's India partner org mentioned on their about page — unknown if they already use offshore design capacity, which would change the capacity-gap analysis",
-    "Danella leadership spotlight URL (404) — could not get Len's full background description or project history from his prior employer profile",
-    "No trade press mentions of B+T at Fiber Connect 2024/2025/2026 as speakers — unknown if they have broader conference presence or relationships with Fiber Broadband Association",
-    "No pricing, contract size, or revenue data found — cannot estimate B+T's scale of fiber business or how significant a tool purchase decision would be for them"
+    "Could not confirm the specific BEAD subgrantee B+T is engineering for — the $25.5M figure comes from Brain synthesis, not a public filing or press release",
+    "Centillion 'publicly endorsed' reference in Brain data not confirmed from public search — source of that specific claim is unknown",
+    "No trade press coverage of B+T Group found on lightreading.com, fiercenetwork.com, or telecompetitor.com — low public profile for a 155-person firm",
+    "No earnings data, PE backing status, or revenue information available — private firm with no public financials",
+    "Len DeWees' LinkedIn post content not accessible — could not confirm what he has publicly discussed about fiber design tools or workflow pain",
+    "Oklahoma BEAD construction deadline (October 2026) confirmed for state program, but whether B+T's specific engagements share this deadline is inferred, not confirmed"
   ],
   "challengesToOtherFindings": [
-    "The AE booth note says Len 'leads up their engineering for fiber' and is interested in 'fiber drawing generation.' This language suggests he may be evaluating Inorsa as a production tool for B+T's own engineering operation — NOT as a capability his ISP clients would use. If B+T adopts Inorsa, the buyer relationship is engineering firm licensing a design tool, not ISP reducing permitting kickbacks. The outreach should be calibrated to B+T-as-buyer, not ISP-as-buyer — the ROI framing is different (designer throughput and production speed, not permit cycle time savings for their client).",
-    "The permitting kickback narrative (Inorsa's primary proof point: '3-4 weeks to 2 days') is most compelling when speaking to the party that BEARS the permitting cost — typically the ISP/carrier whose construction schedule slips. B+T bears that cost indirectly (client dissatisfaction, rework cost) but not the cash cost of delayed construction. The email should emphasize what Len personally cares about: how many drawings can his team produce per week, and how does that change with Inorsa vs. without it.",
-    "B+T's competitors being AECOM/Arcadis/Jacobs cuts both ways: those firms have more offshore capacity to absorb BEAD surge, making B+T vulnerable on production volume. But it also means B+T is actively looking for competitive differentiation — a tool that lets them produce drawings faster than a competitor with a larger offshore bench is a strategic purchase, not just an efficiency buy."
+    "The AE note says Len 'leads up their engineering for fiber' — but his title is Program Director and he's PA-based, not at Tulsa HQ. He likely runs specific BEAD programs or client engagements, not all B+T fiber engineering. This matters for outreach framing: pitch him on program-level throughput and permit risk, not company-wide capability gaps.",
+    "Brain data cites 'Fort personally sold' as a platform signal — this suggests a named individual drove a sales decision inside B+T, which implies there are existing tool relationships and potentially internal champions/opponents for new vendors. The AE team should probe this before assuming a clean slate.",
+    "The Centillion acquisition by Osmose may not be as threatening as it appears IF B+T's clients are smaller ISPs (under $50M BEAD awards) who can't afford Osmose's scale. Osmose/Centillion's pitch is single-vendor for large carriers — B+T may be insulated in the regional ISP and rural electric co-op segment. Still, the competitive clock is running."
   ],
-  "topInsight": "Len DeWees is a production engineering leader at a mid-size A&E firm about to face a multi-year wave of BEAD-driven fiber design demand that his team cannot absorb by hiring alone (3:1 labor shortage, designer ramp time 3+ years). His interest in 'fiber drawing generation' at the show is a direct signal that he is actively evaluating tools to multiply his team's output capacity — not just reduce client permit kickbacks. The winning email opener is not 'save your client 3 weeks on permits' — it is 'your team's throughput ceiling is your business constraint, and we remove it.'",
+  "topInsight": "B+T Group is a 155-person engineering firm actively hiring fiber designers while holding BEAD engineering commitments with a 5-month construction deadline — a structural capacity crunch that cannot be solved by headcount alone. Len DeWees runs the fiber program and walked into Inorsa's booth specifically asking to see fiber drawing generation. The ask is explicit. The pain is timing: every week of permit rework against an October 2026 deadline is a direct revenue and reputational risk to B+T. Inorsa's value proposition — fewer kickbacks, faster cycle times, automated drawing traceability — maps directly to what he needs to protect his programs. Lead with the October deadline and the cost of a single permit return cycle (3-6 weeks), not the technology.",
   "sourcesUsed": [
-    "https://btgrp.com/about-bt-group/",
+    "https://btgrp.com/about-us/who-we-are",
     "https://btgrp.com/fiber/",
-    "https://btgrp.com/fiber-infrastructure-providers/",
-    "https://btgrp.com/comprehensive-telecom-engineering-services-how-bt-group-supports-nationwide-infrastructure/",
-    "https://btgrp.com/industry-shift-the-growing-role-of-licensed-pes-in-fiber-engineering-projects/",
     "https://btgrp.com/streamlining-fiber-infrastructure-development-for-a-isp-in-pennsylvania/",
-    "https://btgrp.com/news/",
+    "https://btgrp.com/industry-shift-the-growing-role-of-licensed-pes-in-fiber-engineering-projects/",
+    "https://btgrp.com/comprehensive-engineering-services/",
     "https://www.linkedin.com/in/len-dewees-b9209124",
-    "https://rocketreach.co/bt-group-competitors_b5ee3762f42e7561",
-    "https://www.zippia.com/bt-group-careers-1544785/competitors/"
+    "https://www.linkedin.com/in/landon-willets-619b2511/",
+    "https://www.glassdoor.com/job-listing/a-and-e-fiber-designer-b-t-group-JV_IC1137055_KO0,22_KE23,32.htm",
+    "https://oklahoma.gov/broadband/office/newsroom/ntia-approves-bead-grant-program-for-oklahoma.html",
+    "https://brandergroup.net/2025/11/bead-broadband-status-awards-by-state-october-2025/",
+    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "https://www.centillionnetworks.com/",
+    "https://www.centillionsolutions.com/"
   ]
 }
 ```
-
-**Key call-out for the AE / email drafter:** B+T Group is a buyer persona that most of the chassis spec wasn't written for — they are an engineering services firm, not an ISP. Every proof point in the standard Inorsa pitch (permit kickbacks, construction delays) lands one step removed for Len. His personal pain is **designer throughput and team capacity**, not permit cycle time. Reframe the demo meeting ask around "how many construction drawings per week does your team produce today, and what does that ceiling cost you in BEAD-era demand?" That is the question he will want to answer.

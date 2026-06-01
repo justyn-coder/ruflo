@@ -1,0 +1,49 @@
+I have enough to synthesize. Writing the Technical Evaluator output now.
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "Centillion Solutions — Ohio Gig's 'publicly endorsed' FTTx engineering partner — used this confirmed toolchain for fiber design: AutoCAD, 3-GIS, ArcGIS/ArcMap, QGIS, Bentley Comms, MapInfo, SpatialNET, O-Calc, SPIDA Calc, ARAMIS, BST-CAD, CADTel. Centillion's workflow: field survey → desktop survey → HLD/LLD → construction drawings → permit prep. This is the design-to-permit pipeline Ohio Gig has been receiving outputs from, not running internally. Source: centillionsolutions.com/wireline-fttx/",
+    "Zero job postings found for Ohio Gig LLC, Chagrin Valley Gig, or SHW Direct for any GIS, CAD, OSP design, or permit engineering roles — on Indeed, LinkedIn, ZipRecruiter, or Glassdoor. Absence of hiring signal = no evidence Ohio Gig is building an in-house design team. Consistent with full outsourcing of engineering to Centillion. Source: Indeed, LinkedIn, ZipRecruiter searches — all null results for Ohio Gig entity names",
+    "Ohio Gig does NOT appear as a named customer on any major design platform case study site: Katapult, IQGeo, 3-GIS, Render Networks. No vendor endorsement or customer story indexed anywhere. This means Ohio Gig does not directly interface with these design platforms — Centillion holds the toolchain relationship, Ohio Gig receives outputs. Source: site:katapult.com, site:iqgeo.com, site:3-gis.com, site:rendernetworks.com searches — all null",
+    "Ohio Gig's NE Ohio affiliate is Chagrin Valley Gig (Lake, Geauga, Eastern Cuyahoga) — Shultz (SHW Direct, Mentor OH) is the field operations layer for this affiliate. Chagrin Valley Gig's website has no engineering, design, or technology content. No PE-licensed engineer on the affiliate team is publicly identifiable. Source: ohiogig.com affiliate list; chagrinvalleygig.com; SHW Direct AV/IT profile from ZoomInfo/BBB",
+    "Ohio counties require PE-licensed, stamped drawings for fiber construction permit submissions. Mahoning County (adjacent to Ohio Gig build territory) explicitly requires drawings 'prepared/certified by a Professional Engineer licensed in Ohio.' This is a legal compliance requirement, not a workflow preference. Centillion as a PE-capable engineering firm provided this legal coverage. With Centillion now Osmose-owned, Ohio Gig's access to PE-stamped drawings is the live compliance dependency. Source: mahoningcountyoh.gov/DocumentCenter/View/50129/WORK-WITHIN-THE-RW-PERMIT-FIBEROPTIC-PLAN-REVIEW-CHECKLIST26; Ohio PE stamp regulations",
+    "SHW Direct (Shultz's company) is classified as AV/IT installation — BBB category: 'Audio Visual Equipment,' NAICS: commercial/residential low-voltage wiring. Zero fiber OSP design engineering capability. Shultz's domain is structured cabling, AV, and IT systems installation — he receives permit-ready drawings and deploys crews against them. He does not produce, review, or procure design outputs. Source: bbb.org/us/oh/mentor/profile/audio-visual-equipment/structured-home-wiring-direct-llc; shwdirect.com; ZoomInfo listing",
+    "Centillion's on/offshore hybrid model confirms their role: they own the GIS-to-drawing workflow and produced deliverables Ohio Gig affiliates consumed. The workflow Ohio Gig depends on (field survey data in → PE-stamped construction + permit drawings out) is precisely the workflow Inorsa replaces. No internal re-tooling required on Ohio Gig's side — they already operate as a drawing consumer, not a drawing producer. Source: centillionsolutions.com/about-us/",
+    "'Proprietary data' referenced in Brain is most likely Ohio Gig's own GIS fiber plant records (buried plant locations, splice points, subscriber addresses, service territory polygons) — not a proprietary design platform. Community ISPs routinely maintain plant GIS records as owned assets. This data is Inorsa-ingestible INPUT, not a competing tool. Source: inference from ohiogig.com community ISP model; standard industry practice for FTTP operators"
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Cannot confirm whether Ohio Gig corporate (Nick Hunter level) has any in-house OSP design engineers separate from the affiliate layer. Corporate may have a small design team that feeds work to affiliates — no public evidence either way.",
+    "Post-Osmose acquisition (Oct 2025): no public statement from Ohio Gig on whether their Centillion relationship is continuing, being renegotiated, or being shopped. This is the highest-value unknown. If the relationship is intact and terms unchanged, the urgency framing is softer.",
+    "Cannot confirm whether Chagrin Valley Gig uses Centillion directly or another engineering firm for their NE Ohio builds. The Centillion endorsement may be Ohio Gig corporate-level, not affiliate-level.",
+    "Ohio PE licensing: cannot confirm whether any Ohio Gig or Chagrin Valley Gig employee is a licensed PE. If they have one on staff, they can self-stamp; if not (likely), they MUST use an external engineering firm for permit submissions.",
+    "No access to Ohio Gig's actual design-to-permit cycle times or permit rejection rate for NE Ohio territory — cannot quantify the permitting pain that Inorsa's 3-4 week → 2 day proof point would resolve.",
+    "No career or LinkedIn profile for Jacob Fox (Operations Manager) to assess his technical background or whether he interfaces with design tools directly.",
+    "'Fort personally sold' remains unresolved — no Ohio Gig executive named Fort identified on any public page. Could be a relationship-layer contact who holds vendor contract authority."
+  ],
+  "challengesToOtherFindings": [
+    "Industry Analyst correctly identifies the Centillion disruption but underweights the compliance dimension. This is not just vendor stability risk — it is a PE stamp dependency. If Ohio Gig cannot get PE-licensed drawings from an engineering firm, they cannot submit permit applications in most Ohio counties. The disruption is existential to their BEAD deployment timeline, not just operationally inconvenient.",
+    "Both personas treat 'proprietary data' and 'engineering tools' as ambiguous. Technical evaluation resolves this: 'proprietary data' = Ohio Gig's owned GIS plant records (input asset, not a design platform). 'Engineering tools' = project management and field coordination software, not an OSP GIS-to-CAD design stack. There is zero evidence of an internal design engineering toolchain. Ohio Gig is a drawing consumer, not a drawing producer.",
+    "AE Proxy is correct that Shultz is not the buyer but misframes the switching cost implication. AE Proxy implies adding a vendor is the resistance point. Technical reality: there is NO switching cost for Ohio Gig to use Inorsa, because they don't own the design toolchain. The tool lives at Centillion, not at Ohio Gig. Ohio Gig already buys outputs from an external firm. The objection to Inorsa is not 'we have a tool' — it is 'we already have a vendor.' That is a much easier objection to address, especially when the current vendor is Osmose-owned.",
+    "Industry Analyst's '$25.5M award' gap is validated — confirmed unverifiable. BEAD = $11.18M. Pole reimbursement applied-for = $13M+. No single $25.5M figure appears in any indexed source. Do not use this number in outreach.",
+    "Neither persona identifies that the design-to-permit workflow runs through Centillion's specific toolchain (3-GIS, ArcGIS, AutoCAD, Bentley Comms). This matters for Inorsa's technical pitch: Inorsa needs to confirm it can ingest the GIS data formats Ohio Gig/Centillion uses (ESRI/ArcGIS most likely) and produce outputs compatible with Ohio county permit submission requirements."
+  ],
+  "topInsight": "Ohio Gig has no in-house OSP design engineering capability at any level — corporate, affiliate, or NE Ohio field. Their entire design-to-permit pipeline has run through Centillion Solutions, which is now Osmose-owned. Ohio Gig affiliates are drawing CONSUMERS who receive PE-stamped construction and permit drawings from an external engineering firm and deploy crews against them. This means: (1) switching cost for Inorsa is near-zero — no internal toolchain to rip out; (2) the Centillion-to-Osmose disruption is not just a vendor stability risk but a PE stamp compliance dependency at exactly the moment BEAD permits must be filed for Q3 2026 construction; (3) Shultz's outreach angle is not 'do you have a design problem' but 'what is your engineering firm continuity plan post-Osmose acquisition?' — a concrete, verifiable, non-salesy question he can answer or escalate with confidence.",
+  "sourcesUsed": [
+    "https://www.centillionsolutions.com/wireline-fttx/",
+    "https://www.centillionsolutions.com/about-us/",
+    "https://ohiogig.com/",
+    "https://chagrinvalleygig.com/",
+    "https://www.shwdirect.com/",
+    "https://www.bbb.org/us/oh/mentor/profile/audio-visual-equipment/structured-home-wiring-direct-llc-0312-92051158",
+    "https://www.mahoningcountyoh.gov/DocumentCenter/View/50129/WORK-WITHIN-THE-RW-PERMIT-FIBEROPTIC-PLAN-REVIEW-CHECKLIST26",
+    "https://engineersealstamps.com/blogs/info/mastering-the-ohio-pe-stamp-requirements-a-step-by-step-guide",
+    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "https://www.ziprecruiter.com/Jobs/Fiber-Design-Engineer",
+    "https://www.linkedin.com/jobs/fiber-design-jobs",
+    "https://www.indeed.com/q-osp-engineer-l-ohio-jobs.html"
+  ]
+}
+```

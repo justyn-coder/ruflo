@@ -1,0 +1,42 @@
+I have enough data to compile the Technical Evaluator findings. Here is the output:
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "Hilliary's open engineering roles are 100% IP/transport layer — CCNP/CCIE, BGP, OSPF, MPLS, DWDM. Zero OSP designer, GIS technician, or fiber drafter postings found on hilliary.com/careers, Indeed, or LinkedIn. This is the single strongest signal that Hilliary outsources its OSP design and permit-drawing work rather than running an in-house design team. Source: hilliary.com/careers/network-engineer/, hilliary.com/careers/network-engineer-2-lawton-ok/",
+    "Centillion Solutions provides exactly the workflow Inorsa targets: AutoCAD, ESRI ArcGIS, 3-GIS, BST-CAD, Bentley Comms — covering 'high-level & low-level designs, construction drawings, and permit preparation' for FTTx/FTTH. They are an IQGeo reseller/partner AND a construction-drawing vendor. If Hilliary is a Centillion client, they are already inside the exact workflow Inorsa would touch. Source: centillionsolutions.com/wireline-fttx/",
+    "Centillion Solutions was acquired by Osmose Utilities Services in October 2025. Osmose is a utility asset-management company, not a telecom-native engineering firm. Post-acquisition vendor disruption — pricing changes, service model shifts, talent attrition — is a credible risk for any Centillion client right now. This creates a potential opening: if Adam is evaluating his OSP design vendor relationship post-acquisition, Inorsa enters that conversation at a structurally advantageous moment. Source: osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "IQGeo is a network planning and management platform — it handles network inventory, field operations, and design workflows. It does NOT generate permit-ready construction drawings or run permit-package validation. IQGeo's Fiber Connect 2026 preview focused on a 'Unified Fieldworker App' and autonomous AI agents for data quality and network planning — further confirming it operates upstream of permit generation. Source: iqgeo.com/news/iqgeo-to-preview-unified-fieldworker-app-at-fiber-connect-2026",
+    "The NVIDIA reference in the booth note ('something with NVIDIA that seems similar to what we do') most likely points to a NOC or network operations AI tool — not a fiber design or permit-drawing tool. NVIDIA's telecom AI focus is on network configuration, NOC automation, and inference optimization. Hilliary's IP-heavy engineering team would plausibly be evaluating NVIDIA-accelerated NOC tools. This is a different category than Inorsa entirely, which explains Adam's own uncertainty ('seems similar... although the video caused confusion'). Source: blogs.nvidia.com/blog/telecom-agentic-ai-for-network-operations/, build.nvidia.com/nvidia/telco-network-configuration"
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No confirmed named Hilliary-Centillion customer relationship found — the Brain data 'Centillion just publicly endorsed' fragment could not be sourced to a Hilliary-specific reference. It may refer to Centillion's IQGeo partnership announcement, not a Hilliary endorsement.",
+    "Cannot confirm whether Hilliary uses Centillion, CHR Solutions, Entrust Solutions Group, or another OSP design vendor — no case study, press release, or job posting names their design partner.",
+    "The specific NVIDIA tool Adam referenced at the booth remains unidentified. No Hilliary-NVIDIA partnership or product deployment found anywhere in public records.",
+    "Hilliary's careers page did not render active job listings at time of fetch — only general copy. Job posting content is stale or gated. Cannot confirm whether any OSP/GIS design roles have been posted historically.",
+    "No visibility into whether Centillion's Osmose acquisition has affected Hilliary's vendor relationship — no press, no comment from either party about customer continuity."
+  ],
+  "challengesToOtherFindings": [
+    "AE Proxy connects 'Centillion just publicly endorsed' to a Hilliary-Centillion tool relationship. This is unsupported. The Brain fragment is almost certainly a scrape artifact from Centillion's own IQGeo case study announcement, not a Hilliary statement. The Hilliary-Centillion relationship is plausible but unconfirmed — it should be framed as a hypothesis, not a finding.",
+    "AE Proxy frames the NVIDIA confusion as evidence Adam is evaluating AI-powered design tools similar to Inorsa. The technical evidence does not support this. NVIDIA's telecom AI product line is NOC and network operations focused — not permit-drawing generation. The confusion at the booth is more likely a category mismatch (Adam saw a network operations AI demo and partially mapped it to what Inorsa does) than evidence he is actively evaluating Inorsa-adjacent tools.",
+    "AE Proxy concludes Inorsa and IQGeo are 'not the same category.' Correct directionally, but the boundary deserves sharper specification for the pitch: IQGeo handles planning and field management upstream; Inorsa handles validated drawing output and permit-package generation downstream. These can coexist. If Hilliary is already on IQGeo via Centillion, the pitch is 'Inorsa plugs into the back end of your IQGeo workflow' — not 'replace IQGeo.'",
+    "The outsourced-design hypothesis (no in-house OSP designers found) significantly changes the Inorsa pitch framing. AE Proxy's 'Cavazos is a builder who knows the pain from inside the work' framing assumes he owns the design workflow directly. But if his team outsources to Centillion, he experiences permit pain as a downstream outcome (delays, kickbacks) rather than as a workflow actor. The pitch should lead with permit kickback cost-per-week impact, not with design workflow efficiency."
+  ],
+  "topInsight": "Hilliary almost certainly outsources its fiber construction drawing and permit preparation work — their engineering team is IP/transport, not OSP design. The likely vendor is Centillion Solutions (or a firm like it), which was just acquired by Osmose in October 2025, creating near-term vendor uncertainty. Inorsa's pitch to Adam should not position against IQGeo or NVIDIA — those are different categories. The single-sentence value statement: 'Whatever firm prepares your construction drawings today, Inorsa validates them before submission and eliminates the permit kickbacks that are costing your 11-county buildout 3-6 weeks per return.' The Osmose acquisition gives Adam a concrete reason to be evaluating his design vendor stack right now.",
+  "sourcesUsed": [
+    "https://hilliary.com/careers/network-engineer/",
+    "https://hilliary.com/careers/network-engineer-2-lawton-ok/",
+    "https://hilliary.com/careers/",
+    "https://www.centillionsolutions.com/wireline-fttx/",
+    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "https://finance.yahoo.com/news/osmose-acquires-centillion-solutions-inc-140000981.html",
+    "https://www.iqgeo.com/customer-stories/centillion-solutions",
+    "https://www.iqgeo.com/news/iqgeo-to-preview-unified-fieldworker-app-at-fiber-connect-2026",
+    "https://blogs.nvidia.com/blog/telecom-agentic-ai-for-network-operations/",
+    "https://build.nvidia.com/nvidia/telco-network-configuration",
+    "https://hilliary.com/careers/network-operations-center-engineer-lawton-ok/"
+  ]
+}
+```

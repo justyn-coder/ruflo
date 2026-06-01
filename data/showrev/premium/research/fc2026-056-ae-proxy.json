@@ -1,0 +1,48 @@
+I have enough to synthesize. Compiling AE Proxy output now.
+
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Michael Shultz is LinkedIn-confirmed at Structured Home Wiring Direct (SHW Direct), a low-voltage residential/commercial IT/AV installation company at 7750 Tyler Blvd, Mentor OH — NOT a fiber OSP engineering firm. His Ohio Gig title (Director of Field Engineering) is the field operations layer of an affiliate, not a corporate procurement role. Source: ZoomInfo SHW Direct listing; LinkedIn profile https://www.linkedin.com/in/michael-shultz-156b16232",
+    "Ohio Gig operates through community-based ISP affiliates, not a single corporate entity. SHW Direct in Mentor appears to be the Northeast Ohio affiliate through which Ohio Gig builds in Lake/Geauga/Cuyahoga counties. Shultz is likely employed by the affiliate, not by Ohio Gig LLC corporate. Source: ohiogig.com affiliate model; fibercapitalpartners.com",
+    "Budget authority for engineering software/vendor contracts almost certainly sits ABOVE Shultz — at the Ohio Gig LLC / Fiber Capital Partners level (Nick Hunter, CEO) or the affiliate ISP owner. Shultz controls field crew deployment, not vendor procurement. He is an influencer and pain-articulator, not a budget holder. Source: Fiber Capital Partners org description; Ohio Gig affiliate structure",
+    "Jacob Fox (Operations Manager, also FC2026 attendee) is likely MORE budget-adjacent than Shultz. Operations Managers in affiliate ISP models typically own workflow costs, crew scheduling efficiency, and vendor relationships. Fox + Shultz together = the complete NE Ohio field influence cluster. Source: role inference from affiliate model; FC2026 booth scan",
+    "No public speaking, trade press quotes, or conference panel appearances found for Michael Shultz or Jacob Fox — no direct voice-of-customer language available to use as email opener. Source: Fiber Connect 2026 speaker list checked; no trade press results returned for either name",
+    "The Brain data reference 'Fort personally sold' likely refers to an executive-level relationship Ohio Gig has used to close prior vendor or construction deals. 'Fort' is not a named executive on any public Ohio Gig or Fiber Capital Partners page — this is an unverified internal reference. Source: ohiogig.com; fibercapitalpartners.com; ofbf.org — no Fort identified",
+    "SHW Direct's core business (low-voltage AV/IT installation) aligns with field installation skills, not OSP design engineering. Shultz's background is wiring/installation, not GIS-to-CAD design. This means he almost certainly does NOT manage permitting workflows himself — he receives drawings and deploys crews. He feels permit kickbacks as crew idleness, not as a design backlog. Source: shwdirect.com; ZoomInfo listing",
+    "Ohio Gig's BEAD-funded NE Ohio build (Lake, Geauga, Cuyahoga counties) is the newest and least proven territory for the company — their playbook was developed in SW Ohio (Warren/Clinton/Belmont). NE Ohio altafiber competitive pressure adds urgency. Source: ohiogig.com; businesswire.com altafiber announcement",
+    "Centillion Solutions (Ohio Gig's publicly-endorsed FTTx design partner) was acquired by Osmose Utilities in October 2025. If Shultz/Fox are the field-side recipients of Centillion design outputs, they will be directly affected by service level or pricing changes from Osmose's absorption of that relationship. Source: osmose.com/news/osmose-acquires-centillion-solutions-inc"
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Shultz's actual tenure at Ohio Gig and SHW Direct — cannot confirm start date, whether he was hired for the NE Ohio expansion specifically, or how long he's been in the Director role. Tenure matters for rapport and urgency framing.",
+    "Who 'Fort' is — Brain data says 'Fort personally sold' but no public Ohio Gig executive named Fort appears anywhere. Could be a first name, nickname, or reference to a company called Fort. Could also be the actual decision-maker for vendor contracts.",
+    "Whether Jacob Fox (Operations Manager) has actual budget authority or is also an influencer-only role. His seniority and scope relative to Shultz is unknown.",
+    "Ohio Gig's current permitting toolchain — vertical integration claim is self-reported. No public info on what GIS, CAD, or permitting software the NE Ohio affiliate uses. 'Proprietary data' claim is unverified.",
+    "Ohio Gig's contract status with Centillion post-Osmose acquisition — no public statement from Ohio Gig on whether they are continuing, renegotiating, or shopping alternatives. This is the highest-value gap to fill.",
+    "Whether SHW Direct (the affiliate) or Ohio Gig LLC corporate signs vendor contracts — this determines who actually approves Inorsa access.",
+    "No conference talk, podcast, or trade press quote from Shultz or Fox found — no direct voice-of-customer to build email opener around."
+  ],
+  "challengesToOtherFindings": [
+    "Industry Analyst frames Shultz as 'the person whose field crews get idled by permit kickbacks' — correct pain diagnosis, wrong authority inference. Shultz FEELS the pain but he does not PROCURE the solution. His title (Director of Field Engineering) at an IT/AV affiliate maps to field operations ownership, not engineering software procurement. The Industry Analyst's outreach angle is right, the implied buyer-level is wrong. Shultz should be the pain-articulator who helps make the case to someone above him, not the person being asked to sign.",
+    "The Centillion disruption framing is valid but the Industry Analyst overstates Shultz's agency in responding to it. If Ohio Gig corporate chose Centillion and now faces Osmose-era pricing/service changes, that vendor renegotiation happens at the Nick Hunter / Ohio Gig LLC level, not the NE Ohio affiliate field engineering level. Shultz is downstream of that decision.",
+    "The '$25.5M award' in Brain data remains unreconciled. BEAD shows $11.18M. The delta could be Pole Replacement Program ($13M+ applied for across 6 counties) + BEAD combined, but this is not verified. Do not cite $25.5M in outreach — use only the $11.18M BEAD figure which is sourced and confirmed.",
+    "Brain data lists 'proprietary data' and 'engineering' as tools in use. The Industry Analyst correctly challenges the 'they already have design covered' misread. But from Shultz's AV/IT background, 'proprietary data' may simply mean Ohio Gig's own GIS survey data, not a full design-to-permit stack. The more important question is whether the NE Ohio affiliate has OSP design and permitting capacity AT SCALE for a multi-county concurrent BEAD build — almost certainly not, given this is newer territory and SHW Direct's core competency is installation, not design.",
+    "The 'quarter the cost' vertical integration claim cuts both ways, as Industry Analyst notes. From an AE angle: a company that stakes its competitive positioning on eliminating subcontractor layers will ALSO be reluctant to add a new vendor spend line. The objection to overcome is not 'we have a tool' — it's 'we're a lean operation and don't add vendors easily.' The counter is Inorsa as accelerant to their own field crews' utilization, not as a replacement for their design capability."
+  ],
+  "topInsight": "Shultz is the right pain point, wrong buyer level. He's a field engineering director at what is effectively an IT/AV installation affiliate — his job is crew deployment, not vendor procurement. The email should position him as the internal champion who can surface the permit-cycle-time problem to the Ohio Gig LLC / Fiber Capital Partners decision layer (Nick Hunter or whoever holds vendor contracts). The ask should be a 20-minute call with him AND Jacob Fox (Operations Manager, also at FC2026), framed around how Ohio Gig's NE Ohio BEAD build ramp is specifically exposed to permit kickbacks — and what that costs in field crew idle time per week. That framing gives Shultz something concrete to bring upstairs. Separately, the Centillion-to-Osmose disruption is the best cold opener: their publicly-endorsed design partner just changed ownership, which is a live vendor-stability question that neither Shultz nor anyone above him has publicly resolved.",
+  "sourcesUsed": [
+    "https://www.linkedin.com/in/michael-shultz-156b16232",
+    "https://www.zoominfo.com/c/structured-home-wiring-direct/456636801",
+    "https://ohiogig.com/",
+    "https://www.fibercapitalpartners.com/",
+    "https://www.fibercapitalpartners.com/about",
+    "https://ofbf.org/2021/11/12/ohio-gig-links-more-than-fiber-optics-in-rural-ohio/",
+    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "https://www.centillionsolutions.com/",
+    "https://fiberconnect2026.eventscribe.net/agenda.asp?pfp=FullSchedule",
+    "https://www.businesswire.com/news/home/20240912153750/en/altafiber-Expands-Geographic-Reach-Into-Northeast-Ohio"
+  ]
+}
+```

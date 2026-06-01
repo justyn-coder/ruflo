@@ -1,0 +1,48 @@
+I have enough data. Compiling the Technical Evaluator JSON now.
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "ProDesign confirmed 7-tool manual OSP stack: AutoCAD, SpatialNET, Microstation, Bentley Comms V8I, Lode Data, Katapult Pro, 3GIS. No automated GIS-to-permit pipeline exists in any publicly listed capability. Every tool handles a discrete step with manual handoff between each. Source: pccigroup.com/services/prodesign/, prodesign-engineering.com",
+    "Troy Hoover is the named contact on Katapult Engineering's vendor registry for ProDesign — email thoover@pccigroup.com. He personally manages the Katapult Pro relationship, confirming he controls platform decisions, not just personnel. Source: katapultengineering.com/vendor-list/prodesign-engineering-inc",
+    "ProDesign has 40+ full-time employees and 150+ years combined staff experience. This is the threshold where automation ROI becomes real: enough volume to amortize implementation, enough headcount to free rather than eliminate. Source: katapultengineering.com/vendor-list/prodesign-engineering-inc",
+    "ProDesign's Katapult vendor profile lists HQ as Georgetown, KY — not Bonita Springs, FL. The FL contact address in the AE notes likely reflects Troy attending Fiber Connect (Bonita Springs-area venue), not a FL-based office. This matters for outreach timing: Troy operates on Eastern time from KY. Source: katapultengineering.com/vendor-list/prodesign-engineering-inc",
+    "ProDesign covers all 6 US regions (Northeast, Southeast, Midwest, Southwest, Rocky Mountains, West Coast). National scale at 40+ staff running a 7-platform manual stack means permit bottlenecks compound across multiple concurrent state/municipal jurisdictions — not just one. Source: katapultengineering.com/vendor-list/prodesign-engineering-inc",
+    "No automated drawing generation, no AI layer, no GIS-to-permit automation tool found in any public source. ProDesign listed 'permitting' as a service but no tooling for automated permit-conflict detection or flagging is mentioned anywhere. This is greenfield. Source: pccigroup.com/services/prodesign/, prodesign-engineering.com",
+    "ProDesign hired a Permit Specialist in Sept 2024, confirming permitting was a recognized capacity bottleneck requiring headcount, not technology, to solve at that time. That framing is the entry point: what's changed since the hire, and is headcount still the answer with BEAD volume incoming? Source: linkedin.com/posts/pcci-prodesign_permit-specialist-activity-7235000815495622656-R9Js",
+    "Osmose/Centillion now offers full-lifecycle OSP: pre-design walkout, OSP design, make-ready and permitting, post-construction — with offshore India design center. If ProDesign competes for third-party engineering contracts, they now face a scaled, offshore-backed competitor with lower labor costs. If Centillion was a referral peer, that network just shifted allegiances. Source: osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "No Inorsa competitors found in ProDesign's current stack. AlphaSTAR, Valore, Integrated Wireless Development, Crafton Communications are Inorsa's listed competitors but none appear in any ProDesign or PCCI public documentation. ProDesign has not adopted any AI-generated drawing tool. Source: ZoomInfo Inorsa competitor list, pccigroup.com",
+    "ProDesign annual revenue approximately $7.2M (2025 estimate). This is mid-market — large enough for a tool investment, small enough that permitting delays on a single large BEAD project are materially damaging. Source: rocketreach.co/prodesign-engineering-profile"
+  ],
+  "evidenceStrength": "strong",
+  "gaps": [
+    "Inorsa's specific ingestion compatibility with ProDesign's 7-tool stack is unconfirmed. Katapult Pro and 3GIS use proprietary data formats. If Inorsa only ingests standard GIS shapefiles or KMZ, a data-format translation step is required — adding switching cost the outreach cannot ignore.",
+    "Current ProDesign team headcount under Troy is unknown. The '40+ full-time employees' is company-wide. Troy's direct design/drafting team size today is not confirmed — could be 10 or 35.",
+    "ProDesign's specific permit submission workflow is not public: do they submit through a state broadband portal, municipal systems, or manually? Without this, it's unclear where exactly Inorsa's conflict-flagging would intercept their process.",
+    "The exact PCCI-Centillion relationship (competitor vs. subcontractor vs. referral) cannot be confirmed from public sources. 'Brain data' flags are ambiguous — 'Centillion just publicly endorsed' could mean a LinkedIn post praising Centillion, not a contract relationship.",
+    "ProDesign's in-house BEAD project pipeline size is unknown. If ProDesign is serving external telco clients on BEAD (not just Tel-Star/i5 Fiber), the volume of concurrent BEAD engineering work is much higher — but this isn't publicly quantified.",
+    "Troy's current sentiment toward automation is unknown. As Director of a 40+ person engineering firm, he may frame Inorsa as a headcount threat to his team, not an efficiency gain. No public statements found on his openness to AI tooling."
+  ],
+  "challengesToOtherFindings": [
+    "Industry Analyst frames Centillion as a direct ProDesign competitor. This is likely correct, but the 'Brain data' noting Centillion endorsed PCCI could indicate a referral or subcontract relationship rather than pure competition. These two scenarios have opposite implications for outreach: if Centillion was a competitor, Osmose acquisition is a threat signal; if Centillion was a partner/subcontractor, Troy just lost a supply-chain partner. The outreach angle differs materially — confirm before assuming.",
+    "Industry Analyst says Troy 'previously managed 27 designers.' Confirmed from PCCI bio. But this was at a prior firm, not ProDesign. Do not assume ProDesign's current team is 27 — it could be smaller or larger. The '40+ employees company-wide' from the Katapult vendor page is the more current signal, and includes construction + management, not just designers.",
+    "AE Proxy's finding status is listed as incomplete ('will synthesize when agent returns'). The one data point I can challenge: the contact address shows Bonita Springs, FL — but Katapult's vendor page clearly lists Georgetown, KY as ProDesign HQ. Troy likely attended Fiber Connect in the Bonita Springs area but is Kentucky-based. This affects outreach timing and context.",
+    "The Industry Analyst notes 'Fort personally sold' from Brain data as a possible Metro Connect Fort Lauderdale Inorsa touchpoint. As a Technical Evaluator, I'd flag this differently: 'Fort' in the Brain tools list ('Fort personally sold') may be a corrupted transcription of a platform name ('Fortra,' 'Forterra,' or a vendor rep's name), not a metro city reference. Do not over-interpret Brain data artifacts as confirmed facts.",
+    "The $25.5M BEAD award listed twice in Brain data is plausibly a single award listed redundantly (as '$25.5M award' and '$25.5M BEAD'). Industry Analyst flags this correctly. From a technical standpoint: even one $25.5M BEAD award implies a deployment footprint that would stress ProDesign's current manual stack — a single large BEAD project at that scale typically requires 500-2,000 construction drawing sets. That volume alone would create measurable permitting lag under the current 7-tool manual workflow."
+  ],
+  "topInsight": "Troy Hoover is ProDesign's named Katapult Pro vendor contact — he is simultaneously the technical stack owner AND the permitting operations manager for a 40+ person national firm running 7 disconnected manual tools with no automation layer. The integration ask is not 'replace your stack' — it is 'add a validation and permit-conflict layer on top of the GIS data you already collect in Katapult and 3GIS.' The single technical question that gates the deal: can Inorsa ingest Katapult Pro and 3GIS native formats without a ProDesign workflow change? If yes, switching cost is near-zero and the outreach frames as pure capacity upside on BEAD volume. If no, the switching cost conversation must happen before any close.",
+  "sourcesUsed": [
+    "https://pccigroup.com/services/prodesign/",
+    "https://pccigroup.com/our-team/team-bios/",
+    "https://www.katapultengineering.com/vendor-list/prodesign-engineering-inc",
+    "https://prodesign-engineering.com/careers/",
+    "https://prodesign-engineering.com/",
+    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "https://www.linkedin.com/posts/pcci-prodesign_permit-specialist-activity-7235000815495622656-R9Js",
+    "https://www.linkedin.com/in/troy-hoover-ba30a023/",
+    "https://rocketreach.co/prodesign-engineering-profile_b41c2de0ff6924c8",
+    "https://inorsa.com/product/"
+  ]
+}
+```

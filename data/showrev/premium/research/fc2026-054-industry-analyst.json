@@ -1,1 +1,57 @@
-Research agent running. I'll have findings shortly.
+Enough data to produce the full analyst output now.
+
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Mohawk Networks is a tribally-owned ISP and engineering services firm wholly owned by the Saint Regis Mohawk Tribe through the Tewáthahón:ni Corporation (Section 17 holding company). SBA 8(a) + HUBZone certified. Launched 2015 after a $10.5M USDA RUS-funded $15M fiber build: 68 miles of fiber, ~1,500 homes and 100 businesses in Akwesasne territory. Source: mohawknetworksllc.com/about-us, BroadbandUSA TBCP entry.",
+    "IBT Group USA — NOT Mohawk Networks — won the NY BEAD award to serve the St. Regis Mohawk Reservation territory: $25.5M award (Jan 2026 approval) to deploy fiber to 1,159 locations in Franklin and St. Lawrence counties including the reservation. Construction expected to start 2026. Source: governor.ny.gov BEAD announcement, Telecompetitor Dec 2025.",
+    "New York BEAD fully approved: NTIA Dec 4 2025, NIST Jan 16 2026. $664.6M total. ISP contracts in-process now; construction starts Q3 2026 at earliest per ConnectALL timeline. Source: NTIA BEAD Progress Dashboard, ConnectALL Deployment Program page.",
+    "Jason Hall has managed grants and projects at Mohawk Networks since 2011 (original tribal fiber build). Speaker at Fiber Connect 2024 (Nashville, July 2024). Quoted in Calix Broadband Academy content (Nov 2025) praising Broadband Academy for teaching how to 'fund, design, build, operate, and market' networks. Source: Fiber Connect 2024 speaker roster, Calix blog Nov 2025.",
+    "Mohawk Networks is a deep Calix platform partner — inaugural member of the Calix Tribal Advisory Board. Achieved 80% truck roll reduction. This is their operational backbone; design/permitting tooling for new builds is an open question. Source: Calix press release Apr 2023, calix.com/tribal.",
+    "Lewis County off-reservation expansion (2017 award, 2019 exit) is the critical failure signal: Mohawk won a $6.4M NY Broadband grant to serve 3,623 homes, then pulled out Feb 2019 citing tower acquisition difficulty, steel cost doubling, complex topography, and unmitigated financial risk. They were replaced by Frontier and Hughes. Source: govtech.com, nny360.com, indiantime.net.",
+    "Fiber Broadband Association published 'How Fiber Broadband Can Close the Digital Divide in Tribal Communities' (March 2026) featuring Mohawk Networks as a success deployment. This elevates their profile exactly as BEAD construction is starting. Source: fiberbroadband.org Mar 2026, Telecompetitor tribal broadband coverage.",
+    "Mohawk Networks does offer in-house engineering and design services: structured cabling (360 planning/design/install), network design, tower installation (Cambium/Redline), GIS-to-build work implied. Completed projects include 23,000+ ft of CAT6/fiber in tribal health buildings, data center cabling, police department infrastructure. Source: mohawknetworksllc.com/structured-cabling, /completed-contracts.",
+    "TBCP Round 1 grant to Mohawk: ~$500K for 2.5 GHz fixed wireless to 30 unserved households. Modest scope — signals limited internal capital and reliance on grant funding for all expansion. Source: NTIA TBCP funding recipient page, BroadbandUSA."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Current engineering headcount and in-house design capacity unknown — no job postings found, no org chart. Cannot determine if they self-perform fiber permit drawings or outsource.",
+    "Relationship between Mohawk Networks and IBT Group for the BEAD St. Regis Mohawk Reservation build is unconfirmed — are they a subcontractor, a parallel operator, or uninvolved in construction entirely?",
+    "Whether Mohawk Networks filed a BEAD subgrant application directly through ConnectALL (as eligible tribal entity) is not confirmed in public records reviewed.",
+    "Current active project pipeline (2026 projects outside Akwesasne) not found. Website completed-contracts page is not updated regularly based on search results.",
+    "No trade press coverage of Mohawk Networks in 2026 beyond FBA paper mention. No earnings, no regulatory filings (private/tribal entity).",
+    "Jason Hall's specific involvement in permitting workflows vs. grant administration vs. design oversight is not determinable from available sources."
+  ],
+  "challengesToOtherFindings": [
+    "The 'ICP: hold' label understates fit risk. Mohawk Networks is primarily an ISP-operator, not an A&E firm. Inorsa's core buyers are engineering firms generating permit drawings at volume. Mohawk's design work appears project-specific and reservation-focused — not the high-volume permit-drawing shop Inorsa is built for. The ICP question turns on whether their BEAD expansion (with IBT as prime) creates a coordination/validation role requiring permit-drawing tools.",
+    "The FBA 2026 paper featuring Mohawk as a 'success story' may read as a strength signal, but it is a retrospective honor for work completed. It says nothing about their current BEAD-era capacity gaps. Do not let the FBA endorsement inflate ICP confidence.",
+    "The Lewis County pullout (2019) is often read as a financial/risk story. It is equally a permitting and design capacity story: unresolved tower easements, underestimated build complexity, no conflict-detection before commitment. That is precisely where Inorsa's pre-construction validation would have prevented the cost doubling. This is the most targeted angle — not drawing generation, but go/no-go validation before financial exposure."
+  ],
+  "topInsight": "Jason Hall attended Fiber Connect twice (2024 + 2026) specifically as the person managing tribal BEAD grants and projects. His 2019 Lewis County experience is the lived case study for why pre-construction conflict detection matters: costs doubled when hidden complexity (tower sites, easements, topography) surfaced after commitment. With IBT Group now building on Mohawk's own territory and Mohawk's own BEAD ambitions for surrounding counties at stake, the email hook is that Lewis County failure — reframed as a solvable permitting-and-validation problem, not a cost problem. If Jason is evaluating vendors for future expansion support, Inorsa's conflict-flagging before permit submission is the direct answer to why 2019 failed.",
+  "sourcesUsed": [
+    "https://www.mohawknetworksllc.com/about-us",
+    "https://www.mohawk-networks.com/our-people",
+    "https://broadbandusa.ntia.gov/funding-programs/tribal-broadband-connectivity-program-round-1/awardee/mohawk-broadband-infrastructure-expansion-digital-inclusion",
+    "https://www.ntia.gov/funding-programs/internet-all/tribal-broadband-connectivity-program/tribal-broadband-connectivity-program-round-1-2021/funding-recipients/mohawk-broadband-infrastructure-expansion-digital-inclusion",
+    "https://www.governor.ny.gov/news/governor-hochul-announces-broadband-projects-totaling-more-636-million-achieve-universal",
+    "https://www.telecompetitor.com/new-york-details-its-542m-broadband-plan-including-287m-in-bead-awards/",
+    "https://broadband.ny.gov/connectall-deployment-program",
+    "https://www.ntia.gov/funding-programs/internet-all/broadband-equity-access-and-deployment-bead-program/progress-dashboard",
+    "https://www.linkinglewiscounty.com/001904/Empire-State-Development-Working-on-Solutions-After-Mohawk-Networks-Pulls-Out-of-Lewis-County-Broadband-Project.html",
+    "https://www.nny360.com/top_stories/lewis-county-broadband-frontier-hughes-to-replace-mohawk-after-pullout/article_ebbf2bb1-1ec7-57d8-879d-e7bec3bdaaac.html",
+    "https://www.govtech.com/network/lewis-county-ny-broadband-contractor-pulls-out-citing-costs.html",
+    "https://www.indiantime.net/story/2019/05/02/news/mohawk-networks-pulls-out-of-lewis-county-nys-broadband-project/31168.html",
+    "https://fiberbroadband.org/2026/03/18/fiber-broadband-association-releases-new-paper-on-the-importance-of-fiber-in-tribal-communities/",
+    "https://www.telecompetitor.com/fba-lauds-tribal-broadband-wins-urges-funding-reform/",
+    "https://fiberconnect2024.eventscribe.net/fsPopup.asp?efp=VVZZS0lOR00yMTcyNw&PresenterID=1833485&rnd=0.5795186&mode=presenterinfo",
+    "https://www.calix.com/press-release/2023/04/mohawk-networks-leverages-the-calix-platform-to-ensure-vitality-.html",
+    "https://www.calix.com/blog/2025/11/broadband-success-playbook-for-tribes.html",
+    "https://www.calix.com/service-providers/tribal/success-stories/mohawk-networks.html",
+    "https://www.mohawknetworksllc.com/completed-contracts",
+    "https://www.mohawknetworksllc.com/structured-cabling",
+    "http://tribalbusinessjournal.com/mohawk-networks-bringing-broadband-rural-communities/",
+    "https://www.srmt-nsn.gov/news/mohawk-networks-presents-broadband-deployment-to-lewis-county-business-leaders"
+  ]
+}
+```

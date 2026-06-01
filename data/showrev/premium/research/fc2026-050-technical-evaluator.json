@@ -1,0 +1,45 @@
+I have sufficient research. Let me compile the Technical Evaluator output now.
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "ZERO evidence of in-house GIS/CAD design stack. Searched for AutoCAD, MicroStation, ArcGIS, Katapult, 3GIS, IQGeo across job postings, vendor case studies, website, and staff profiles. No platform named anywhere. Tool stack is invisible — not because it's hidden, but because it likely doesn't exist in a structured form. [Sources: avatartechllc.kinsta.cloud, workhands.com, LinkedIn jobs search]",
+    "Avatar Tech is a construction/installation contractor, NOT a design engineering firm. Their FOCUS training program (run with ECC and RampUp America) trains fiber optic SPLICERS — curriculum covers cable prep, fusion splicing, OTDR testing, loss budgets. These are field technician skills, not design engineer skills. The workforce they're building is in the ground, not at a workstation. [Source: LinkedIn post Garth Naar, ECC FOCUS program]",
+    "No job postings found on any platform (LinkedIn Jobs, Indeed, Glassdoor, Workhands). Workhands page explicitly shows 'No openings listed yet.' For a company claiming to be growing, zero public engineering or design job postings is a signal: either they use apprenticeship pipelines exclusively (field roles), or they aren't staffing up a design function. [Source: workhands.com/organizations/avatar-tech-llc/openings/claim]",
+    "Avatarius (consulting arm) provides broadband mapping and funding strategy — but NOT construction document generation. Service list: Broadband Funding Applications, Viability Assessments, Community Speed Assessments, Broadband Mapping, Strategy Development. None of these are engineering deliverables. [Source: avatarius.net/avatarius-broadband]",
+    "Newark Fiber partnership role is installer, not designer. GigXero is explicitly the technology partner ('Newark Fiber is powered by GigXero'). Avatar Tech is one of five construction/execution partners. This means the engineering design and permitting likely flows from GigXero or a separate A&E firm — NOT from Avatar Tech. [Source: investnewark.org/newark-fiber]",
+    "$25.5M BEAD award amount NOT confirmed via any public source. NJ BEAD subgrantee selection is still 'in progress' per official NJ.gov sources. No press release, no NTIA announcement, no state contract listing naming Avatar Tech as a subgrantee. The Brain data figure should be treated as unverified. [Sources: nj.gov/connect/grants/bead, ntia.gov BEAD dashboard — no Avatar Tech listing found]",
+    "Multi-state licensing (NY, NJ, MD, DC) confirms geographic reach but does NOT confirm design capability across those jurisdictions. Each state has different permitting requirements. If Avatar Tech starts winning BEAD construction contracts in multiple states, managing permit drawing workflows manually across 4 jurisdictions becomes a hard constraint. [Source: avatartechllc.kinsta.cloud]",
+    "Garth Naar's engineering background (Columbia University, Telcordia Director of Engineering) creates a credibility asymmetry: he can EVALUATE engineering software on technical merit, but Avatar Tech's current operational profile is closer to a construction contractor than to an engineering design firm. His background is where he was, not necessarily what Avatar Tech is today. [Source: avatarius.net/about-us]"
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Cannot confirm who currently generates Avatar Tech's permit drawings — do they use an outsourced A&E firm, rely on GigXero's engineering team, or does Garth produce them manually using unlisted tools?",
+    "No confirmed tool stack whatsoever. No job postings, no vendor case studies, no staff profiles with design tool mentions. Tool stack is either absent or not disclosed anywhere publicly.",
+    "BEAD award amount ($25.5M) unverifiable. NJ has not published subgrantee awards publicly as of research date. Cannot confirm Avatar Tech is a named subgrantee.",
+    "Team composition below Garth, Derrick, and Cheryl is unknown. No LinkedIn staff profiles for engineering or design roles. Cannot assess whether they have hidden design capacity not visible publicly.",
+    "Cannot determine Inorsa's pricing fit against a company of this size. If Avatar Tech is a 5-10 person firm (plausible given visible org), the ROI math for a design automation tool needs to clear a lower absolute threshold."
+  ],
+  "challengesToOtherFindings": [
+    "AE Proxy framing that Garth 'needs engineering throughput as a subcontractor/EPC' may be inverted. The correct technical read is: Avatar Tech does NOT currently appear to have engineering throughput to improve — they appear to be primarily a build/install contractor. Inorsa's value proposition should be reframed as ENABLING a design capability they don't yet have, not accelerating one they do. This is a harder sale but potentially a more strategic one.",
+    "AE Proxy rightly killed 'Centillion' — confirmed zero public evidence of any Centillion relationship. The Brain text extraction is corrupted for this account. However, AE Proxy should also flag that 'Fort personally sold' is almost certainly 'Garth personally sold' — both extractions are from the same low-quality parse. Treat all Brain tool/platform data for this account as noise.",
+    "AE Proxy's positioning that Garth 'needs throughput on both sides' (design consulting + field execution) assumes Avatarius generates engineering deliverables. It does not. Avatarius is a policy/strategy/mapping consultancy, not a drawings shop. The two entities together still don't add up to an in-house engineering function — they add up to strategy + construction with a gap in the middle.",
+    "The 'response speed is his competitive differentiator' framing (from PBS) refers to emergency break-fix response, not design or permitting speed. Conflating these is a messaging risk: Inorsa accelerates permit cycles, not emergency truck rolls. The outreach must connect those dots explicitly, not assume Garth sees them as the same problem.",
+    "If Avatar Tech's permit drawings are currently generated by GigXero's team or a third-party A&E firm (which the Newark Fiber partnership structure suggests), then the actual Inorsa buyer may be GigXero or the prime A&E, not Avatar Tech. Avatar Tech as an end-user of Inorsa only makes sense if Garth wants to own the engineering workflow — his stated ambition suggests yes, but it's an aspiration buy, not a pain buy."
+  ],
+  "topInsight": "Avatar Tech's technical profile is that of a construction contractor with design ambitions, not a design firm with construction capacity. They train splicers, not CAD operators. Their permit drawings almost certainly come from someone else (GigXero or a prime A&E). Inorsa's most credible pitch to Garth is not 'fix your broken permit workflow' — it's 'own your engineering deliverables so you stop being a sub and start being a prime.' That framing aligns with his PBS statement about margin compression and matches his Columbia/Telcordia engineering background. But the AE needs to qualify hard on one question before investing outreach: does Avatar Tech currently produce any construction permit drawings in-house, or does that work sit with GigXero? The answer changes the ICP fit from 'strong' to 'aspirational.'",
+  "sourcesUsed": [
+    "https://avatartechllc.kinsta.cloud",
+    "https://avatarius.net/avatarius-broadband",
+    "https://avatarius.net/about-us",
+    "https://investnewark.org/newark-fiber/",
+    "https://workhands.com/organizations/avatar-tech-llc/openings/claim",
+    "https://www.linkedin.com/posts/garth-naar_first-group-of-fiber-optics-students-complete-activity-7234733707314491392-I3vo",
+    "https://www.nj.gov/connect/grants/bead/",
+    "https://www.ntia.gov/funding-programs/internet-all/broadband-equity-access-and-deployment-bead-program/progress-dashboard",
+    "https://seamless.ai/b/avatar-tech-10622533",
+    "https://cisleads.com/company/details/434716"
+  ]
+}
+```

@@ -1,0 +1,45 @@
+I have enough to compile the analysis. Here's the Industry Analyst output:
+
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "AirWorks is a GeoAI field intelligence platform (Boston, ~Series A, $25.4M raised, PSG-backed Oct 2023) that converts aerial/LiDAR drone captures into structured pole-level data — attachment counts, clearances, span measurements — in formats compatible with GIS, CAD, and pole loading tools. Source: businesswire.com/news/home/20231024880653, airworks.io/about/overview",
+    "Their stated telecom output benchmark: 3 to 18+ miles/day of processed field data. That positions them as a data acceleration layer upstream of OSP design — they fill the field-to-basemap gap, not the design-to-permit gap. Source: airworks.io/industries/telecom",
+    "AirWorks explicitly delivers 'permit-triggering conflict' detection and pre-engineering make-ready data, but their output is data structured for downstream tools — they do not generate the engineering drawings or permit packages themselves. Source: airworks.io/use-case/telecommunications-power",
+    "Centillion Solutions — referenced in Brain notes as an AirWorks customer/endorser — was acquired by Osmose Utilities in October 2025. Osmose's stated goal: single-vendor pre-design walkout + OSP design + make-ready + permitting + post-construction services. This is a direct competitive threat to both AirWorks' downstream partners and to Inorsa. Source: osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "Janan Guillaume joined AirWorks as VP of Product in 2025. Prior role: VP of Product at Align Technologies (ToolWatch, construction asset mgmt). Before that: Senior Director of Product at EagleView (aerial imagery for infrastructure — a direct analog to AirWorks). She has specific domain expertise bridging AI/computer-vision to 'skeptical' traditional-infrastructure customers. Source: linkedin.com/in/jananguillaume, highperformr.ai/people/jananguillaume",
+    "AirWorks is BEAD-adjacent: they specifically address the FCC Broadband Serviceable Location Fabric data challenge and help ISPs identify unserved locations with aerial-derived address/building-footprint data. BEAD construction starting Q3 2026 drives direct volume demand for their data processing capacity. Source: blog.airworks.io/fccs-gis-based-broadband-serviceable-location-fabric-reporting-requirements",
+    "AirWorks partners include Esri (GIS), Bentley, Nearmap, EagleView, and domain-specific engineering firms — they operate as a data processing hub inside a broader OSP engineering ecosystem, not a standalone end-to-end platform. Source: airworks.io/about/our-partners",
+    "AE booth note characterizes this as a 'potential partnership discussion' — AirWorks collects field data and converts to usable formats. This frames the Inorsa relationship as integration/partnership, not pure vendor-customer."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No verified information on AirWorks' current customer count, ARR, or revenue growth trajectory — PitchBook profile exists but not accessible without paywall",
+    "Could not confirm the specific 'Fort personally sold' and 'Centillion just publicly endorsed' Brain references — likely internal AirWorks sales/marketing references, not verifiable externally",
+    "No job postings data found for AirWorks to confirm where they are actively investing headcount",
+    "No direct quotes from Janan Guillaume about permitting workflows or data-to-drawing gaps specifically",
+    "Could not confirm whether AirWorks has a formal integration with any design/drawing generation tool — the gap between their data output and permit-ready drawings may or may not be documented publicly"
+  ],
+  "challengesToOtherFindings": [
+    "The AE proxy may frame this as a traditional ISP/carrier prospect — it is not. AirWorks is a technology platform company serving telecom companies, not a telco itself. The partnership framing in AE notes is likely correct and more relevant than a standard vendor pitch.",
+    "Brain knowledge references BEAD award to 'serve the St.' — incomplete fragment, likely a state-level BEAD sub-grant to an AirWorks customer, not AirWorks directly. AirWorks does not build fiber; they process field data for builders. Citing BEAD funding as AirWorks' funding is a misclassification.",
+    "The $25.5M figures in Brain (funding programs) align with AirWorks' total raised ($25.4M), but these appear to be equity funding from PSG/VC, not a BEAD grant. The 'BEAD award' reference is almost certainly a customer win or case study reference, not direct government grant to AirWorks."
+  ],
+  "topInsight": "AirWorks sits one step upstream of Inorsa in the same workflow: they process field captures into structured pole/infrastructure data; Inorsa takes validated infrastructure data and generates construction and permit drawings. The Osmose acquisition of Centillion (Oct 2025) is building a vertically integrated competitor to both companies — walkout through permitting in a single vendor. That M&A threat is the shared pressure that makes a partnership conversation between AirWorks and Inorsa time-sensitive, not just interesting. Janan Guillaume as VP of Product — with her EagleView background — will immediately understand the workflow integration angle. The outreach should lead with the Osmose/Centillion threat and frame Inorsa as the design/permit layer that completes the AirWorks data stack before a single-vendor competitor closes the market.",
+  "sourcesUsed": [
+    "https://www.airworks.io/",
+    "https://airworks.io/industries/telecom/",
+    "https://www.airworks.io/about/overview",
+    "https://blog.airworks.io/expanded-capabilities-telecom-projects",
+    "https://www.airworks.io/use-case/telecommunications-power",
+    "https://www.businesswire.com/news/home/20231024880653/en/AirWorks-Announces-Strategic-Growth-Investment-Led-by-PSG",
+    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "https://finance.yahoo.com/news/osmose-acquires-centillion-solutions-inc-140000981.html",
+    "https://blog.airworks.io/fccs-gis-based-broadband-serviceable-location-fabric-reporting-requirements-creates-new-tech-challenges",
+    "https://www.highperformr.ai/people/jananguillaume",
+    "https://www.linkedin.com/in/jananguillaume/",
+    "https://tracxn.com/d/companies/airworks/__-GJdMhve_6c9875AD6-vMSeyzWVPPL0AaSFVmtlApIU"
+  ]
+}
+```

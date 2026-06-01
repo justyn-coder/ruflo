@@ -1,0 +1,43 @@
+I have sufficient data to synthesize. Compiling the Industry Analyst output now.
+
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Ohio Gig received $11.18M BEAD provisional award (BroadbandOhio, Aug 2025) for 1,286 fiber-to-premises locations — the 6th-largest sub-award in Ohio's $227M tranche. Source: telecompetitor.com/updated-comprehensive-list-bead-benefit-of-the-bargain-provisional-awards/",
+    "Ohio Gig applied for $18.5M in Ohio's Pole Replacement and Undergrounding Program across 6 counties (Belmont, Delaware, Union, Hardin, Clinton, Warren) — indicating simultaneous multi-county construction pipelines requiring concurrent permitting. Source: telecompetitor.com/almost-24m-awarded-in-ohio-pole-reimbursement-program/",
+    "Ohio Gig now operates in Northeast Ohio (Lake, Geauga, Cuyahoga counties) — Mentor, OH (Lake County) is Michael Shultz's base. This is a newer expansion territory for a company whose legacy is SW Ohio (Warren/Clinton counties). Northeast Ohio is less mature in their playbook. Source: ohiogig.com",
+    "Centillion Solutions — an FTTx engineering/design firm explicitly referenced in Brain data as 'just publicly endorsed' by Ohio Gig — was acquired by Osmose Utilities Services in October 2025. This is a live M&A disruption: a tool/partner Ohio Gig publicly aligned with is now inside a larger utility services conglomerate, which may affect pricing, service levels, or vendor independence. Source: osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "Ohio Gig brands itself as 'Vermeer's top fiber construction partner in Ohio' with claimed vertical integration from design to activation — positioned as lower-cost than competitors by eliminating subcontracting layers. Source: ohiogig.com (company narrative)",
+    "SHW Direct (shwdirect.com, Mentor OH) — the email domain for Michael Shultz — is a residential/commercial IT/AV installation company, not a fiber engineering firm. Shultz appears to hold dual roles: Ohio Gig Director of Field Engineering AND SHW Direct affiliation. This dual-company structure in Northeast Ohio suggests SHW Direct may be the local entity Ohio Gig operates through for field work in the region. Source: shwdirect.com",
+    "altafiber is building to ~100,000 homes in Summit, Portage, Geauga, and Cuyahoga counties (Northeast Ohio), with construction started 2025, completing by December 2029. This directly overlaps Ohio Gig's Northeast Ohio service territory. Competitive pressure is arriving. Source: businesswire.com/news/home/20240912153750/",
+    "Ohio BEAD became operational April 30, 2026. ISP contracts finalizing now, construction starts Q3 2026. Ohio Gig is in the window where design → permitting → field mobilization decisions are being made THIS quarter. Source: BroadbandOhio + industry baseline"
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Cannot confirm what the '$25.5M award' figure in Brain data refers to — BEAD data shows $11.18M. May be combined BEAD + pole reimbursement + state grant, or a more recent award not yet indexed. Not verified.",
+    "Michael Shultz's exact role boundary between Ohio Gig and SHW Direct is unclear — could be owner/operator of SHW Direct as the Northeast Ohio affiliate entity, or a separate contractor relationship. No public source confirms the structure.",
+    "No job postings found for Ohio Gig or SHW Direct to confirm active hiring or engineering capacity signals.",
+    "No conference speaking history found for Michael Shultz or Jacob Fox to gauge technical POV or pain-point language.",
+    "No public information on Ohio Gig's current permitting tools, GIS stack, or CAD workflow — vertical integration claim is self-reported, not independently verified.",
+    "Centillion acquisition impact on Ohio Gig is speculative — no public statement from Ohio Gig on how the Osmose/Centillion deal affects their workflow."
+  ],
+  "challengesToOtherFindings": [
+    "Brain data describes Ohio Gig using 'proprietary data' and 'engineering' tools in-house — this could be read as 'they already have design covered, Inorsa is redundant.' That reading is wrong. In-house design capability at a company running concurrent multi-county BEAD builds does not mean they have permitting throughput capacity. The question is cycle time, not capability.",
+    "Ohio Gig's 'quarter the cost' claim (eliminating subcontractors) suggests they are cost-disciplined and may resist any new vendor. But the same vertical integration ethos makes permit kickbacks MORE painful — every week of delay hits their own field crews, not a subcontractor's P&L. The pain is internalized, which makes it real.",
+    "The Centillion endorsement being listed in Brain as a positive signal should be read cautiously — as of October 2025, Centillion is now Osmose-owned. If Ohio Gig was using Centillion for FTTx engineering/design, that vendor relationship just changed materially. This is disruption, not validation."
+  ],
+  "topInsight": "Ohio Gig is running concurrent BEAD-funded builds across 6+ Ohio counties with construction mobilizing Q3 2026, while simultaneously expanding into a newer Northeast Ohio territory where their playbook is less proven and competitive pressure from altafiber is building. Their Director of Field Engineering — Michael Shultz, operating out of Mentor via SHW Direct — is the person whose field crews get idled by permit kickbacks. With Centillion (their publicly endorsed engineering partner) now absorbed into Osmose, Ohio Gig faces a live vendor disruption in their design/engineering stack at the exact moment BEAD deployment volume is peaking. The outreach angle is not design capacity — it's permit cycle time at the moment their Northeast Ohio builds are ramping.",
+  "sourcesUsed": [
+    "https://ohiogig.com/",
+    "https://www.telecompetitor.com/updated-comprehensive-list-bead-benefit-of-the-bargain-provisional-awards/",
+    "https://www.telecompetitor.com/almost-24m-awarded-in-ohio-pole-reimbursement-program/",
+    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "https://finance.yahoo.com/news/osmose-acquires-centillion-solutions-inc-140000981.html",
+    "https://www.businesswire.com/news/home/20240912153750/en/altafiber-Expands-Geographic-Reach-Into-Northeast-Ohio-Will-Build-Fiber-to-Nearly-100000-Addresses-Near-Akron-Cleveland",
+    "https://www.shwdirect.com/",
+    "https://ofbf.org/2021/11/12/ohio-gig-links-more-than-fiber-optics-in-rural-ohio/",
+    "https://broadband.ohio.gov/explore-broadband/bead"
+  ]
+}
+```

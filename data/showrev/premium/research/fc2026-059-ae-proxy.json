@@ -1,0 +1,44 @@
+I have sufficient data. Compiling the AE Proxy analysis now.
+
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Adam Cavazos is confirmed CTO (not SVP) at Hilliary since March 2019, overseeing network operations and engineering for ALL Hilliary companies — this is genuine technical authority, not a recommender role. Source: hilliary.com/leadership/adam-cavazos/",
+    "37 years at Dobson Technologies (VP Network Systems & Engineering) before Hilliary — he personally managed 'complete design, development, and approval' of Dobson's network. He is a builder, not a buyer. He knows the pain from inside the work. Source: hilliary.com CTO announcement",
+    "Hilliary is deploying $250M+ in broadband infrastructure across Oklahoma/Texas/Iowa AND just closed the TDS Telecom Oklahoma acquisition (adds 35,000 new locations, 8th acquisition since 2016). The TDS integration = immediate wave of new permit-drawing and engineering work hitting his team NOW. Source: prnewswire.com/hilliary-tds-acquisition + hilliary.com",
+    "BEAD contract deadline is ~October 2026 (Oklahoma BEAD got NTIA final approval April 22, 2026; states have 6 months to finalize ISP contracts). Construction starts Q3 2026. Adam's team must be production-ready before that ramp. Source: nondoc.com Oklahoma broadband + NTIA BEAD dashboard",
+    "Active $65.9M southern Oklahoma project underway ($43.2M federal + $22.8M Hilliary match) across 11 counties — Atoka, Comanche, Cotton, Grady, Jackson, Kiowa, Latimer, Le Flore, Pittsburg, Stephens, Washita. This is concurrent load on top of the TDS integration. Source: oklahoma.gov/broadband + hilliary.com",
+    "The 'something with NVIDIA' mentioned at booth is consistent with Centillion Solutions + IQGeo — Centillion is a telecom engineering/software company that partners with IQGeo (AI-powered geospatial platform for fiber planning). IQGeo is a network planning tool; Inorsa is a permit-drawing generation and validation tool. These are NOT the same category. Source: iqgeo.com/customer-stories/centillion-solutions",
+    "Direct Cavazos quote (2019, still directionally valid): 'I want to be able to take today's network and build it for tomorrow's solutions.' — signals openness to new tools when they serve scale and modernization. Source: hilliary.com CTO announcement",
+    "Hilliary is actively hiring Network Engineers in Lawton — NOC Engineer, Network Engineer 1, Network Engineer 2 roles listed. Labor shortage is real and documented at the company level, not just industry level. Source: hilliary.com/careers"
+  ],
+  "evidenceStrength": "strong",
+  "gaps": [
+    "No confirmed CEO/owner name at Hilliary to map reporting chain above Cavazos — family-owned means final capital decisions may route through an owner who didn't attend Fiber Connect. Need to identify who Adam reports to.",
+    "TDS acquisition close date not confirmed — announced July 2025, expected H2 2025, but no press release confirming close found. If still in integration, that actually heightens urgency.",
+    "No direct quote from Cavazos about permitting pain specifically — all available quotes are about network modernization and growth, not permit cycle times.",
+    "Centillion in booth notes is ambiguous — 'Centillion just publicly endorsed' and 'Centillion delivers' are partial phrases from Brain scrape. Could refer to Centillion Networks (services firm) or Centillion Solutions (IQGeo partner). Could not confirm which one Hilliary uses or what the endorsement was.",
+    "No visibility into Hilliary's internal design workflow — unclear if they use in-house designers, outsource to a firm like Centillion, or both. This determines whether Inorsa replaces a vendor relationship or augments internal staff."
+  ],
+  "challengesToOtherFindings": [
+    "Brain data lists 'Fort personally sold' and 'those' as tools/platforms — these are clearly data parsing artifacts, not real tools. Discard. The only legitimate tool signal is Centillion + NVIDIA mention from the booth.",
+    "Brain classifies this as 'long haul shorts' and 'fiber to the pram' — likely OCR/transcription noise from booth scan. The actual booth note is clear: long haul, some FTTH, fiber-to-the-premises. Do not let garbled terms shape the pitch.",
+    "The $25.5M BEAD award in Brain data is consistent with confirmed public records, but context matters: this is ONE of multiple Hilliary funding tranches. The real budget pressure is the aggregate $250M+ deployment, not just the BEAD award. Scoping the pitch to BEAD alone undersells the opportunity.",
+    "Industry Analyst findings (pending) may cite labor shortage as a generic force — at Hilliary this is confirmed active: they are hiring engineers right now while managing 11-county buildout + TDS integration. The labor shortage is not background noise here; it is a current constraint Adam is managing today."
+  ],
+  "topInsight": "Adam Cavazos is not a prospect evaluating tools — he is a 37-year field engineer running a $250M buildout, integrating a 35,000-location acquisition, and staring down an October 2026 BEAD contract deadline with open engineering headcount. He already believes AI-assisted design has value (the Centillion/NVIDIA comment) but confused Inorsa with a planning tool. The pitch must make one distinction: Centillion/IQGeo plans the network; Inorsa generates permit-ready construction drawings and eliminates kickbacks. Each kickback on his active 11-county project = 3-6 weeks. That framing lands with a builder-CTO who has personally managed permit approvals for 37 years.",
+  "sourcesUsed": [
+    "https://hilliary.com/leadership/adam-cavazos/",
+    "https://hilliary.com/adam-cavazos-joins-hilliary-communications-as-chief-technology-officer/",
+    "https://www.prnewswire.com/news-releases/hilliary-communications-to-acquire-tds-telecoms-oklahoma-operations-expansion-brings-future-ready-broadband-to-rural-communities-302505580.html",
+    "https://oklahoma.gov/broadband/office/newsroom/gov--stitt--oklahoma-broadband-office--hilliary-launch-high-speed-internet-expansion-in-southern-oklahoma/",
+    "https://nondoc.com/2025/08/08/amid-trump-admin-changes-oklahoma-broadband-office-prepares-for-next-stage-of-development/",
+    "https://www.ntia.gov/funding-programs/internet-all/broadband-equity-access-and-deployment-bead-program/progress-dashboard",
+    "https://hilliary.com/hilliary-communications-expanding-workforce-to-provide-service-for-new-acquisitions-and-fiber-to-the-home-project/",
+    "https://hilliary.com/careers/network-operations-center-engineer-lawton-ok/",
+    "https://www.iqgeo.com/customer-stories/centillion-solutions",
+    "https://broadbandbreakfast.com/hilliary-communications-to-acquire-tds-telecoms-oklahoma-operations/"
+  ]
+}
+```

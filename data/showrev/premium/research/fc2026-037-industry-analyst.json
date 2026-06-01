@@ -1,0 +1,47 @@
+Now I have sufficient depth. Compiling the analyst output.
+
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "NetPMD merged with NetPMD Solutions on March 18, 2026 — the exact 'acquisition' noted by the AE. Strategic rationale: handle 'increasingly complex, large-scale fiber programs requiring faster deployment with reduced operational complexity.' Post-merger integration strain is live right now. Source: netpmd.com/merger-with-netpmd-solutions/",
+    "Scale trajectory is aggressive: 250+ cities, 5M+ premises globally, 12.5M feet of construction-ready design delivered in US in 2025 alone ('Project Santa' = 70,000 homes designed in 20 days). New partnerships with Calix, Vertiv, OciusX added in 2025. Source: netpmd.com/2025-look-back/",
+    "IQGeo with Comsof automated design is their core platform — not a manual GIS-to-CAD shop. Patrik Lowenborg is personally named in IQGeo customer story as the executive championing the platform. This means Inorsa cannot pitch as 'replacing' their design stack; must pitch as complementary — specifically on permit validation and conflict flagging gaps that IQGeo/Comsof don't cover. Source: iqgeo.com/customer-stories/netpmd-design-and-integration",
+    "Permitting is an explicit, sold service line for NetPMD — they offer permit management and permit drafting to their own clients. This means permitting cycle time is both internal pain AND client-facing revenue. A tool that cuts permit kickbacks does not just help NetPMD — it protects their delivery commitments to end clients. Source: netpmd.com/services/",
+    "Patrik Lowenborg has 25 years of telecom experience and previously served as Deputy CTO at SiFi Networks where his explicit mandate included 'evaluating new systems and software tools' with focus on cost engineering. He is a seasoned software evaluator — feature lists won't move him; ROI math and cycle time data will. Source: ZoomInfo / search results",
+    "NetPMD expanded into middle-mile, long-haul design, site acquisition, and data center services in 2025 — broadening beyond FTTH design into full-program delivery. This expansion increases their surface area for workflow complexity and tool compatibility challenges. Source: netpmd.com/2025-look-back/",
+    "BEAD construction window is opening Q3 2026. NetPMD has acknowledged 'resourcing issues in US construction phase' in their own BEAD commentary. They are positioning as a design/engineering partner to BEAD sub-grantees. The 4-year deployment deadline + permit-as-binding-constraint dynamic means any tool that reduces permit cycle time is directly on the critical path for their client commitments. Source: netpmd.com/bead-funding-everything-we-currently-know/ + industry baseline",
+    "No trade press coverage found in FierceNetwork, LightReading, or Telecompetitor — NetPMD communicates primarily through owned channels (blog, LinkedIn, conference attendance). This limits independent signal on financial health or project pipeline, but also means their self-reported growth metrics (12.5M ft, 250+ cities) are the best available data and should be treated as directionally reliable but unverified. Source: negative search result",
+    "Fiber labor shortage (3:1 job-to-candidate ratio, 58,000 new roles needed by 2032) directly pressures NetPMD's design delivery model. Their response — Comsof automation + aggressive hiring ('rapid growth of US team') — suggests they're aware the organic staffing path is insufficient at BEAD scale. A tool that multiplies designer throughput without proportional headcount is aligned with their current operating thesis. Source: industry baseline + netpmd.com/netpmd-announce-rapid-growth-of-us-team/",
+    "Centillion reference in brain notes ('Centillion just publicly endorsed,' 'Centillion delivers') could not be independently verified via web search in context of NetPMD. Likely a design tool or platform partner not publicly announced. Treat as unverified signal — worth probing in conversation."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No confirmed BEAD sub-grant awards specifically to NetPMD clients — they position as a design partner but no named BEAD project wins found",
+    "Centillion relationship/endorsement not independently verifiable — brain note may be fragmentary extraction artifact",
+    "No financial data (revenue, headcount, margins) — privately held, no filings available",
+    "IQGeo/Comsof stack specifics unknown — unclear whether their current permitting workflow includes automated conflict detection or is still human-reviewed",
+    "Patrik's title in AE notes is 'VP Client Solutions' but ZoomInfo/RocketReach shows 'VP Network Design' — title change may signal role shift (from technical delivery to client-facing) which would affect how to pitch",
+    "Prior pricing friction with Inorsa not quantified — unknown what price point broke the conversation and whether the deal size or ROI framing was the actual issue"
+  ],
+  "challengesToOtherFindings": [
+    "Brain notes cite 'proprietary data' as a tool in use — this is vague and may conflict with the IQGeo customer story showing they run on commercial platforms. If NetPMD has built proprietary tooling, Inorsa faces an internal-vs-buy dynamic, not just vendor comparison. Needs clarification.",
+    "AE note says 'price became a sticking point' — but given Patrik's background as a software evaluator who explicitly focused on cost engineering, the pricing objection may have been about ROI clarity, not absolute price. Other personas may interpret this as pure price sensitivity; I'd argue it's a framing problem. Inorsa's 3-4 weeks to 2-day permit cycle reduction is the counter.",
+    "The merger with NetPMD Solutions creates near-term integration complexity that could cut both ways: it could make NetPMD more open to standardizing on fewer, better tools (opportunity) or more cautious about new vendor relationships while integrating (blocker). The AE's note that they're 'still interested' suggests the blocker is not the merger itself."
+  ],
+  "topInsight": "NetPMD just merged two organizations (March 2026) while simultaneously ramping for BEAD construction starts this quarter. They are scaling design output at pace — 12.5M ft in 2025 — using IQGeo/Comsof, but permitting is an explicit service line they sell to clients, meaning permit kickbacks damage both their internal delivery and their client-facing commitments. Patrik Lowenborg is a 25-year veteran who has formally evaluated telecom software tools as Deputy CTO — he will not respond to feature pitches. The opener that unlocks this conversation is: 'You're absorbing NetPMD Solutions and ramping into BEAD construction simultaneously — what does one permit kickback (3-6 weeks) cost you at current scale?' That reframes price as irrelevant compared to delay risk.",
+  "sourcesUsed": [
+    "https://netpmd.com/merger-with-netpmd-solutions/",
+    "https://netpmd.com/2025-look-back/",
+    "https://netpmd.com/our-work/",
+    "https://netpmd.com/services/",
+    "https://netpmd.com/bead-funding-everything-we-currently-know/",
+    "https://netpmd.com/why-data-driven-design-is-the-key-to-fibre-network-design-success/",
+    "https://netpmd.com/netpmd-contribute-to-iq-geo-panel/",
+    "https://www.iqgeo.com/customer-stories/netpmd-design-and-integration",
+    "https://www.zoominfo.com/p/Patrik-Lowenborg/3085494532",
+    "https://netpmd.com/netpmd-at-fiber-connect-2025/",
+    "https://netpmd.com/netpmd-announce-rapid-growth-of-us-team-with-latest-new-recruits/"
+  ]
+}
+```

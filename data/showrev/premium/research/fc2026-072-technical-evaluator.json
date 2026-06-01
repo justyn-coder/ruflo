@@ -1,0 +1,42 @@
+I have enough across the research vectors to produce the output.
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "Lightbulb is an engineering SERVICES firm, not a fiber operator — they design/engineer for clients, not build/operate (lightbulbsupport.com, confirmed via site crawl)",
+    "Confirmed tool stack: AutoCAD (CAD/permit drawings), O-CALC (pole structural analysis), ESRI/ArcGIS (GIS dashboards integrated with customer OSS platforms) — no Katapult, Render Networks, IQGeo, or Biarri found (lightbulbsupport.com)",
+    "Full OSP workflow documented: conceptual → HLD → LLD → permit drawings → construction management, serving clients across US (lightbulbsupport.com)",
+    "Permitting is a core deliverable: they explicitly handle DOT, County, City, Electric Company, and Railway clearances for underground and aerial applications — this is where Inorsa's value lands (lightbulbsupport.com)",
+    "Centillion Solutions (same service class as Lightbulb) was acquired by Osmose in Oct 2025 and is an Esri partner — the Brain 'Centillion just publicly endorsed' and 'Centillion delivers' fragments are likely garbled partial sentences from scraped marketing copy, not named tools (osmose.com, centillionsolutions.com, esri.com/partners)",
+    "No Katapult/IQGeo/modern automation tooling found — they appear to run a manual GIS-to-CAD workflow, which is the exact gap Inorsa addresses",
+    "BEAD $25.5M award is almost certainly a CLIENT's award, not Lightbulb's — as a design contractor they serve BEAD-funded operators, not hold BEAD awards directly",
+    "AE booth note confirms small company ('small company doing fiber and tower') — team size signal is sub-20 engineers; no job postings found, consistent with a lean shop",
+    "Murali Nair's title 'Engineering Sales & Operations' places him at the sales/biz-dev boundary — he evaluates vendor tools and signs design contracts, not an individual CAD drafter"
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Cannot confirm specific CAD software version or whether they use any fiber-specific design layer on top of AutoCAD (VETRO, 3-GIS, etc.)",
+    "Cannot verify which clients they are engineering for under BEAD — no named customer relationships found",
+    "Team headcount not disclosed on site; no job postings found to infer growth trajectory",
+    "Murali Nair DFW LinkedIn profile exists but was not accessible to confirm role history at Lightbulb",
+    "'Fort personally sold' and 'proprietary data' Brain fragments are unresolvable without original scraped content — could be a named client deal or an internal data system",
+    "Current design-to-permit turnaround time not found — cannot benchmark against Inorsa's 2-day proof point without this"
+  ],
+  "challengesToOtherFindings": [
+    "Industry Analyst likely treated Lightbulb as a fiber operator based on BEAD context — this is wrong. They are a design contractor. The Inorsa pitch must target their efficiency economics (how many permit packages can they produce per engineer), not their deployment capacity.",
+    "AE Proxy may angle toward BEAD urgency and construction ramp — partially right framing, but the mechanism is wrong. Lightbulb doesn't deploy; they produce engineering deliverables. The pain is permit kickbacks slowing THEIR CLIENT's construction, which slows Lightbulb's project close-out and their next contract cycle.",
+    "Brain data labels 'Centillion just publicly endorsed' and 'Centillion delivers' as tools — these are NOT tools. They are corrupted text fragments from marketing copy. Centillion is a direct competitor (now Osmose), not a platform Lightbulb uses. Do not pitch Inorsa as compatible with 'Centillion tooling' — that angle is fabricated.",
+    "Any finding that Lightbulb 'holds' a BEAD award should be challenged — engineering services firms don't receive BEAD awards; ISPs/carriers do. Lightbulb rides BEAD through their clients."
+  ],
+  "topInsight": "Lightbulb is a small engineering services firm running a manual AutoCAD + ESRI workflow to produce permit drawings for fiber/tower clients — they are the entity that ABSORBS permit kickbacks on behalf of their clients (each kickback is rework that hits Lightbulb's margin and timeline). Inorsa's fit is as a back-office efficiency tool for Lightbulb's own production workflow, not a pitch about the operator's deployment speed. Murali Nair (Engineering Sales & Ops) is the right contact — he controls vendor adoption decisions at the intersection of engineering delivery and sales capacity.",
+  "sourcesUsed": [
+    "https://www.lightbulbsupport.com/",
+    "https://www.centillionsolutions.com/wireline-fttx/",
+    "https://www.centillionsolutions.com/about-us/",
+    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
+    "https://www.esri.com/partners/centillion-solutions-a2T5x000008VW31EAG",
+    "https://www.linkedin.com/in/viewmnairprofile/"
+  ]
+}
+```

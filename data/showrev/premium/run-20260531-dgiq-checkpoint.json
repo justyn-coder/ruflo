@@ -1,0 +1,20 @@
+{
+  "runId": "run-20260531-dgiq",
+  "completedProspectIds": [
+    "fc2026-054"
+  ],
+  "startedAt": "2026-05-31T22:44:14.044Z",
+  "lastUpdated": "2026-05-31T23:02:05.832Z",
+  "config": {
+    "csvPath": "/Users/justynszymczyk/Documents/GitHub/ruflo/data/showrev/fiber-connect-2026-booth-scans.csv",
+    "tiers": [
+      "A",
+      "B"
+    ],
+    "model": "sonnet",
+    "batchSize": 5,
+    "dryRun": false,
+    "singleProspect": "fc2026-054",
+    "runId": "run-20260531-dgiq"
+  }
+}
