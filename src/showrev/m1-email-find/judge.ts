@@ -39,9 +39,24 @@ export function runMechanicalChecks(
   if (subject.split(/\s+/).length > 8) failures.push(`Subject "${subject}" exceeds 8 words`);
 
   // Salutation check (first line should be "[FirstName]," only)
-  const firstLine = body.split('\n')[0].trim();
+  const lines = body.split('\n');
+  const firstLine = lines[0].trim();
   if (firstLine !== `${prospectFirstName},`) {
     failures.push(`Salutation "${firstLine}" should be "${prospectFirstName},"`);
+  }
+
+  // No blank line after salutation — first paragraph starts immediately
+  if (lines.length > 1 && lines[1].trim() === '' && lines.length > 2) {
+    warnings.push('Blank line between salutation and first paragraph — wastes inbox preview text');
+  }
+
+  // First word after salutation should be capitalized
+  const contentStart = lines.findIndex((l, i) => i > 0 && l.trim() !== '');
+  if (contentStart > 0) {
+    const firstWord = lines[contentStart].trim().charAt(0);
+    if (firstWord && firstWord !== firstWord.toUpperCase()) {
+      warnings.push(`First word after salutation starts lowercase ("${lines[contentStart].trim().slice(0, 20)}...")`);
+    }
   }
 
   // P.S. microsite slug check (warn, not fail — composer may choose a better custom P.S.)
