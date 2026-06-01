@@ -42,50 +42,55 @@ ${crossExamInsights.slice(0, 1500)}
 - Company: ${prospect.company}
 - State: ${prospect.state}
 
+## IMPORTANT: Write for an AE who has 30 seconds per prospect.
+- Each field: 1-2 SHORT sentences max. No paragraphs. No prose.
+- Use fragments, not full sentences. "756 employees. Canton GA. 4 continents." not "They are a 756-employee firm headquartered in Canton, Georgia with offices across four continents."
+- Bullet points with "- " prefix for lists (talking_points, objections).
+- Numbers > words. "$83M BEAD" not "approximately eighty-three million dollars in BEAD funding."
+
 ## Extract into these fields (JSON only)
 
 {
   "contact": {
-    "showrev_research_summary": "2-3 sentence summary of who this person is and why they matter. Include career tenure and scope of responsibility.",
-    "showrev_decision_authority": "Budget owner | Influencer | Champion | Unknown — based on org position, title, and AE Proxy findings",
-    "showrev_likely_objections": "What would make them say no? Price, timing, existing tool, skepticism, wrong priority?",
-    "showrev_talking_points": "3-5 bullet points for the AE call. Specific questions to ask, topics to raise, things to reference.",
+    "showrev_research_summary": "1-2 sentences. Who they are, what they control. Fragment style.",
+    "showrev_decision_authority": "Budget owner | Influencer | Champion | Unknown",
+    "showrev_likely_objections": "Numbered list. 1. Objection. 2. Objection. Max 3.",
+    "showrev_talking_points": "- Bullet point question/topic\\n- Bullet point\\n- Bullet point. Max 5.",
     "showrev_persona_classification": "build_pace | drawings_quality | permit_cycle | program_leverage | cycle_time_exec | capital_efficiency | pass_through | connect_request",
-    "showrev_linkedin_summary": "Key points from LinkedIn research (if found). Role history, stated interests, certifications.",
-    "showrev_other_stakeholders": "Other contacts from this company found during research. Name, title, relationship."
+    "showrev_linkedin_summary": "Title history + certifications. 1 line.",
+    "showrev_other_stakeholders": "Name (Title) — relationship. One per line."
   },
   "company": {
-    "showrev_company_summary": "2-3 sentences. What the company does, size, history, current trajectory.",
-    "showrev_company_size": "Employee count and/or revenue range. Cite source.",
-    "showrev_fiber_activities": "What fiber/telecom work they do. FTTH, long haul, A&E, construction, etc.",
-    "showrev_bead_status": "BEAD allocation, award status, construction timeline. State and dollar amount if known.",
-    "showrev_growth_signals": "Acquisitions, expansions, new markets, hiring, funding rounds.",
-    "showrev_competitive_landscape": "Known competitors or tools in use. Vendor relationships.",
-    "showrev_key_projects": "Named projects with scale (miles, homes, dollars).",
-    "showrev_recent_news": "News from last 12 months. Acquisitions, awards, leadership changes.",
-    "showrev_external_deadlines": "BEAD construction deadlines, funding tranche dates, regulatory milestones."
+    "showrev_company_summary": "What they do. Size. Location. 1-2 sentences max.",
+    "showrev_company_size": "Employee count + revenue if known. e.g. '756 employees. ~$120M revenue.'",
+    "showrev_fiber_activities": "Comma-separated list. FTTx, OSP engineering, pole loading, etc.",
+    "showrev_bead_status": "State, dollar amount, timeline. e.g. 'OK BEAD $797M. Construction Q3 2026.'",
+    "showrev_growth_signals": "Acquisitions, hiring, expansion. Fragment list.",
+    "showrev_competitive_landscape": "Tools/vendors in use. e.g. 'IQGeo (GIS), Centillion/Osmose (design).'",
+    "showrev_key_projects": "Named projects with scale. e.g. 'TDS integration: 35,000 locations.'",
+    "showrev_recent_news": "Last 12 months. One line per event.",
+    "showrev_external_deadlines": "Dates. e.g. 'BEAD construction Q3 2026. ISP contracts close Oct 2026.'"
   },
   "salesIntel": {
     "showrev_influence_pattern": "${patternSelections[0]?.pattern || ''}",
-    "showrev_challenger_insight": "${patternSelections[0]?.challengerInsight?.slice(0, 100) || ''}",
-    "showrev_buying_timeline": "When is the buying window? External deadline or internal priority?",
-    "showrev_deal_size_estimate": "Estimated deal size range based on company size and project scope.",
-    "showrev_signal_strength": "Strong | Good | Possible | Weak | No fit — based on evidence weight",
-    "showrev_fit_rationale": "One sentence: why this company fits or doesn't fit Inorsa's ICP.",
-    "showrev_next_best_action": "The single most important next step for the AE. Be specific.",
-    "showrev_risk_factors": "What could go wrong? Prior objections, competitor entrenchment, timing issues.",
-    "showrev_multi_thread_contacts": "Other people at this company to engage. Names and roles."
+    "showrev_challenger_insight": "The one thing they probably don't know. 1 sentence.",
+    "showrev_buying_timeline": "Window + driver. e.g. 'Q2-Q3 2026. BEAD construction start.'",
+    "showrev_deal_size_estimate": "Range. e.g. 'Mid-market $100K-300K.'",
+    "showrev_signal_strength": "Strong | Good | Possible | Weak | No fit",
+    "showrev_fit_rationale": "One sentence. Why they fit or don't.",
+    "showrev_next_best_action": "One specific step. Name the person. Name the action.",
+    "showrev_risk_factors": "1. Risk. 2. Risk. Max 3.",
+    "showrev_multi_thread_contacts": "Name (Title). One per line."
   },
   "meta": {
-    "showrev_research_confidence": "high | medium | low — based on source count and evidence quality",
+    "showrev_research_confidence": "high | medium | low",
     "showrev_sources_count": 0
   }
 }
 
 Rules:
-- Every field that has evidence: fill it with specific, cited content.
+- BREVITY IS MANDATORY. An AE reads this in 30 seconds before a call. If they can't scan it, it failed.
 - Fields with insufficient data: use "[insufficient data]" — do NOT make up facts.
-- showrev_talking_points: format as "- Question/topic\\n- Question/topic" (newline-separated bullets)
 - showrev_decision_authority MUST be exactly one of: Budget owner, Influencer, Champion, Unknown
 - showrev_signal_strength MUST be exactly one of: Strong, Good, Possible, Weak, No fit
 - showrev_persona_classification MUST be exactly one of: build_pace, drawings_quality, permit_cycle, program_leverage, cycle_time_exec, capital_efficiency, pass_through, connect_request`;

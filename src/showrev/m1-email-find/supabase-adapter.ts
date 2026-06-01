@@ -77,6 +77,25 @@ interface DossierRow {
   intel_risk_factors: string;
   intel_talking_points: string;
   intel_decision_authority: string;
+  company_summary: string;
+  company_size: string;
+  fiber_activities: string;
+  bead_status: string;
+  growth_signals: string;
+  key_projects: string;
+  external_deadlines: string;
+  known_tools: string;
+  likely_competitors: string;
+  market_moment: string;
+  bellwether_inference: string;
+  linkedin_summary: string;
+  other_stakeholders: string;
+  likely_objections: string;
+  meddpicc_identified_pain: string;
+  meddpicc_economic_buyer: string;
+  meddpicc_decision_criteria: string;
+  meddpicc_champion: string;
+  meddpicc_competition: string;
   created_at: string;
 }
 
@@ -204,6 +223,25 @@ export function buildDossierRow(
     intel_risk_factors: structuredDossier?.salesIntel?.showrev_risk_factors || '',
     intel_talking_points: structuredDossier?.contact?.showrev_talking_points || '',
     intel_decision_authority: structuredDossier?.contact?.showrev_decision_authority || '',
+    company_summary: structuredDossier?.company?.showrev_company_summary || '',
+    company_size: structuredDossier?.company?.showrev_company_size || '',
+    fiber_activities: structuredDossier?.company?.showrev_fiber_activities || '',
+    bead_status: structuredDossier?.company?.showrev_bead_status || '',
+    growth_signals: structuredDossier?.company?.showrev_growth_signals || '',
+    key_projects: structuredDossier?.company?.showrev_key_projects || '',
+    external_deadlines: structuredDossier?.company?.showrev_external_deadlines || '',
+    known_tools: structuredDossier?.company?.showrev_competitive_landscape || '',
+    likely_competitors: structuredDossier?.company?.showrev_competitive_landscape || '',
+    market_moment: structuredDossier?.company?.showrev_recent_news || '',
+    bellwether_inference: '',
+    linkedin_summary: structuredDossier?.contact?.showrev_linkedin_summary || '',
+    other_stakeholders: structuredDossier?.contact?.showrev_other_stakeholders || '',
+    likely_objections: structuredDossier?.contact?.showrev_likely_objections || '',
+    meddpicc_identified_pain: structuredDossier?.salesIntel?.showrev_fit_rationale || '',
+    meddpicc_economic_buyer: structuredDossier?.salesIntel?.showrev_deal_size_estimate || '',
+    meddpicc_decision_criteria: '',
+    meddpicc_champion: structuredDossier?.contact?.showrev_decision_authority || '',
+    meddpicc_competition: structuredDossier?.salesIntel?.showrev_risk_factors || '',
     created_at: new Date().toISOString(),
   };
 }
