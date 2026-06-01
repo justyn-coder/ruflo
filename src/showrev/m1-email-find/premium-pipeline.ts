@@ -13,8 +13,8 @@
  */
 
 import { resolve, dirname } from 'path';
-import { readFileSync, writeFileSync, mkdirSync, existsSync, unlinkSync } from 'fs';
-import { execSync } from 'child_process';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
+import { callLLM, callLLMWithBrainCache, setBrainCacheContent, type LLMCallOptions } from './llm-client.js';
 import { importProspects, printImportSummary, type Prospect, type ICPStatus } from './importer.js';
 import { RESEARCH_PERSONAS, buildMultiPersonaPrompt, generateCrossExamQuestions } from './personas.js';
 import { INFLUENCE_TOOLKIT, buildPatternSelectorPrompt, buildComposerPrompt, type PatternSelection } from './influence.js';
@@ -64,12 +64,11 @@ function resolveAE(prospect: Prospect): { name: string; email: string } {
   return AE_TERRITORY.west;
 }
 
-function sleep(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-const MAX_RETRIES = 3;
-const BASE_DELAY_MS = 2000;
+const MODEL_MAP: Record<string, string> = {
+  sonnet: 'claude-sonnet-4-6',
+  opus: 'claude-opus-4-6',
+  haiku: 'claude-haiku-4-5-20251001',
+};
 
 async function executePrompt(
   prompt: string,
@@ -77,41 +76,12 @@ async function executePrompt(
   timeoutMs: number = 300000,
   label: string = 'prompt'
 ): Promise<string> {
-  const tmpFile = resolve('/tmp', `showrev-prompt-${Date.now()}-${Math.random().toString(36).slice(2, 8)}.md`);
-  writeFileSync(tmpFile, prompt);
-
-  let lastError: Error | null = null;
-
-  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-    try {
-      const result = execSync(
-        `cat '${tmpFile}' | claude -p --model ${model}`,
-        { encoding: 'utf-8', timeout: timeoutMs, maxBuffer: 1024 * 1024 * 10 }
-      );
-      const trimmed = result.trim();
-      if (!trimmed) {
-        throw new Error('Empty response from claude -p');
-      }
-      return trimmed;
-    } catch (err: any) {
-      lastError = err;
-      const isTimeout = err.killed || err.signal === 'SIGTERM';
-      const isRateLimit = err.stderr?.includes('rate') || err.stderr?.includes('429');
-      const isOverloaded = err.stderr?.includes('overloaded') || err.stderr?.includes('529');
-
-      if (attempt < MAX_RETRIES) {
-        const delayMs = isRateLimit
-          ? BASE_DELAY_MS * Math.pow(3, attempt)
-          : BASE_DELAY_MS * Math.pow(2, attempt - 1);
-        const reason = isTimeout ? 'timeout' : isRateLimit ? 'rate-limit' : isOverloaded ? 'overloaded' : 'error';
-        console.log(`  │  ⚠ ${label} attempt ${attempt}/${MAX_RETRIES} failed (${reason}), retrying in ${Math.round(delayMs / 1000)}s...`);
-        await sleep(delayMs);
-      }
-    }
-  }
-
-  try { unlinkSync(tmpFile); } catch {}
-  throw new Error(`${label} failed after ${MAX_RETRIES} attempts: ${lastError?.message || 'unknown error'}`);
+  const resolvedModel = MODEL_MAP[model] || model;
+  return callLLMWithBrainCache(prompt, {
+    model: resolvedModel,
+    timeoutMs,
+    label,
+  });
 }
 
 function parseJSON(text: string): any {
@@ -238,12 +208,21 @@ async function processProspect(
     return null;
   }
 
-  // Load Brain digest for research context
+  // Load Brain digest and set as prompt cache (stable across prospects)
   const brainDir = resolve(BASE_DIR, '../brain/fiber-telecom/inorsa/fiber/fiber-connect-2026');
   const brainDigest = loadBrainDigest(brainDir);
   const brainContext = brainDigest
     ? `\n\n## Prior research knowledge (from Brain)\n${brainDigest.slice(0, 2000)}`
     : '';
+
+  const cacheableContent = [
+    `## What Inorsa does\n${INORSA_VP_SUMMARY}`,
+    brainDigest ? `## Brain Knowledge Base\n${brainDigest}` : '',
+  ].filter(Boolean).join('\n\n');
+
+  if (cacheableContent) {
+    setBrainCacheContent(cacheableContent);
+  }
 
   // PHASE 1: Multi-persona research (3 parallel agents)
   console.log(`  │  Phase 1: 3-persona research (parallel)...`);
@@ -376,6 +355,7 @@ async function processProspect(
   let structuredDossier: any = null;
   let intelWarnings: string[] = [];
   try {
+    const resolvedModel = MODEL_MAP[config.model] || config.model;
     const intelResult = await structureIntelReport(
       personaResults,
       JSON.stringify(crossExamQuestions),
@@ -383,8 +363,7 @@ async function processProspect(
       emails,
       patternSelections,
       ae.name,
-      executePrompt,
-      config.model,
+      resolvedModel,
     );
     structuredDossier = intelResult.dossier;
     intelWarnings = intelResult.warnings;

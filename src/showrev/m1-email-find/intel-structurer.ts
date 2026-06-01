@@ -1,9 +1,7 @@
-import { writeFileSync, mkdirSync } from 'fs';
-import { resolve, dirname } from 'path';
 import type { Prospect } from './importer.js';
-import type { HubSpotDossier, HubSpotContactFields, HubSpotCompanyFields, SalesIntelFields, DossierMeta } from './dossier-schema.js';
 import type { PatternSelection } from './influence.js';
 import type { EmailOutput } from './premium-pipeline.js';
+import { callLLM } from './llm-client.js';
 
 const VALID_DECISION_AUTHORITY = ['Budget owner', 'Influencer', 'Champion', 'Unknown'];
 const VALID_SIGNAL_STRENGTH = ['Strong', 'Good', 'Possible', 'Weak', 'No fit'];
@@ -144,8 +142,7 @@ export async function structureIntelReport(
   emails: EmailOutput[],
   patternSelections: PatternSelection[],
   aeName: string,
-  executePrompt: (prompt: string, model: string, timeout: number, label: string) => Promise<string>,
-  model: string = 'sonnet',
+  model: string = 'claude-sonnet-4-6',
 ): Promise<{ dossier: any; warnings: string[] }> {
   const prompt = buildStructurerPrompt(
     personaResults['Industry Analyst'] || '',
@@ -158,7 +155,7 @@ export async function structureIntelReport(
     aeName,
   );
 
-  const raw = await executePrompt(prompt, model, 180000, 'intel-structure');
+  const raw = await callLLM(prompt, { model, timeoutMs: 180000, label: 'intel-structure' });
   const parsed = parseStructuredOutput(raw);
   return validateAndClean(parsed);
 }
