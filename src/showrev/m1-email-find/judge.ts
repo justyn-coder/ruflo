@@ -81,9 +81,10 @@ export function runMechanicalChecks(
   if (/Harmoni/i.test(body)) failures.push('References Harmoni (tower product)');
   if (/\btower\b|\bcellular\b/i.test(body)) failures.push('References tower/cellular (fiber only)');
 
-  // Sensitivity checks — things that should never appear in prospect-facing copy
-  if (/\bIndia team\b|\boffshore\b|\bIndia.based\b|\boutsourc/i.test(body)) {
-    failures.push('References offshore/India team (sensitive in prospect-facing copy)');
+  // Sensitivity checks — scan body AND subject
+  const prospectCopy = `${subject} ${body}`;
+  if (/\bIndia\b|\boffshore\b|\boutsourc/i.test(prospectCopy)) {
+    failures.push('References offshore/India (sensitive in prospect-facing copy)');
   }
 
   // Competitor naming — warn, not fail (sometimes legitimate per competitive_displacement pattern)

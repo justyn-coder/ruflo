@@ -96,10 +96,27 @@ Rules:
 - showrev_persona_classification MUST be exactly one of: build_pace, drawings_quality, permit_cycle, program_leverage, cycle_time_exec, capital_efficiency, pass_through, connect_request`;
 }
 
+function repairJSON(text: string): string {
+  return text
+    .replace(/[\x00-\x1f]/g, (ch) => {
+      if (ch === '\n') return '\\n';
+      if (ch === '\r') return '\\r';
+      if (ch === '\t') return '\\t';
+      return '';
+    })
+    .replace(/,\s*}/g, '}')
+    .replace(/,\s*]/g, ']');
+}
+
 function parseStructuredOutput(raw: string): any {
   const jsonMatch = raw.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/) || raw.match(/(\{[\s\S]*\})/);
-  if (jsonMatch) return JSON.parse(jsonMatch[1]);
-  return JSON.parse(raw);
+  const jsonText = jsonMatch ? jsonMatch[1] : raw;
+
+  try {
+    return JSON.parse(jsonText);
+  } catch {
+    return JSON.parse(repairJSON(jsonText));
+  }
 }
 
 function validateAndClean(parsed: any): { dossier: any; warnings: string[] } {

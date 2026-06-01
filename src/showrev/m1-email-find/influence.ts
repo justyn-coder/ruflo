@@ -223,6 +223,7 @@ ${touchNumber === 3 ? 'Final touch. 3-4 sentences MAX. Binary close: "worth a lo
 - NO perfect parallel structure across paragraphs
 - NO transition words (Furthermore, Additionally, Moreover)
 - NO more than 2 sentences in any paragraph
+- NEVER reference "India", "offshore", "outsourced", or any workforce geography in the email body OR subject line. This is a hard rule — even if the research found offshore teams, do NOT mention it in prospect-facing copy.
 - VARY sentence length: mix short punchy (3-5 words) with medium (10-15)
 - USE at least one sentence fragment or informal construction
 - START one sentence with "And" or "But" (humans do this)
