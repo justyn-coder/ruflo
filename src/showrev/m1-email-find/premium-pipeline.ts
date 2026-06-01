@@ -412,13 +412,14 @@ async function processProspect(
   const t1 = emails.find(e => e.touchNumber === 1);
   const mechanicalCheck = t1
     ? runMechanicalChecks(t1.body, t1.subject, t1.ps, ae.name, ae.email, prospect.firstName, micrositeSlug)
-    : { passed: false, failures: ['No T1 email produced'] };
+    : { passed: false, failures: ['No T1 email produced'], warnings: [] };
 
   if (mechanicalCheck.passed) {
-    console.log(`  │  ✓ Mechanical checks passed`);
+    console.log(`  │  ✓ Mechanical checks passed${mechanicalCheck.warnings.length > 0 ? ` (${mechanicalCheck.warnings.length} warnings)` : ''}`);
   } else {
     console.log(`  │  ⚠ Mechanical failures: ${mechanicalCheck.failures.join(', ')}`);
   }
+  for (const w of mechanicalCheck.warnings) console.log(`  │    ⚠ ${w}`);
 
   // PHASE 8: Write output
   console.log(`  │  Phase 8: Writing output...`);

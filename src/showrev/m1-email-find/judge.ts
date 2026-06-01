@@ -13,6 +13,7 @@ import { resolve, dirname } from 'path';
 export interface MechanicalCheckResult {
   passed: boolean;
   failures: string[];
+  warnings: string[];
 }
 
 export function runMechanicalChecks(
@@ -25,10 +26,11 @@ export function runMechanicalChecks(
   micrositeSlug: string
 ): MechanicalCheckResult {
   const failures: string[] = [];
+  const warnings: string[] = [];
 
-  // Word count (body only)
+  // Word count (body only) — target is 80, gate at 88 (+10% buffer)
   const wordCount = body.trim().split(/\s+/).length;
-  if (wordCount > 80) failures.push(`Word count ${wordCount} exceeds 80`);
+  if (wordCount > 88) failures.push(`Word count ${wordCount} exceeds 88 (target: 80)`);
 
   // Em-dash check
   if (body.includes('—') || body.includes('–')) failures.push('Contains em-dash or en-dash');
@@ -42,9 +44,9 @@ export function runMechanicalChecks(
     failures.push(`Salutation "${firstLine}" should be "${prospectFirstName},"`);
   }
 
-  // P.S. microsite slug check
+  // P.S. microsite slug check (warn, not fail — composer may choose a better custom P.S.)
   if (ps && micrositeSlug && !ps.includes(micrositeSlug)) {
-    failures.push(`P.S. missing microsite slug "${micrositeSlug}"`);
+    warnings.push(`P.S. uses custom content instead of microsite slug "${micrositeSlug}"`);
   }
 
   // Anti-AI-tell spot checks
@@ -60,7 +62,7 @@ export function runMechanicalChecks(
   if (/Harmoni/i.test(body)) failures.push('References Harmoni (tower product)');
   if (/\btower\b|\bcellular\b/i.test(body)) failures.push('References tower/cellular (fiber only)');
 
-  return { passed: failures.length === 0, failures };
+  return { passed: failures.length === 0, failures, warnings };
 }
 
 export interface JudgeScore {

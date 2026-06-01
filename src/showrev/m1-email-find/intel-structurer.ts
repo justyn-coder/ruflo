@@ -158,7 +158,7 @@ export async function structureIntelReport(
     aeName,
   );
 
-  const raw = await executePrompt(prompt, model, 120000, 'intel-structure');
+  const raw = await executePrompt(prompt, model, 180000, 'intel-structure');
   const parsed = parseStructuredOutput(raw);
   return validateAndClean(parsed);
 }

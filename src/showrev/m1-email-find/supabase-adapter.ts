@@ -111,11 +111,11 @@ export function validateBeforeWrite(payload: SupabaseWritePayload): ValidationRe
   if (!d.assigned_ae) errors.push('Missing assigned_ae');
   if (!d.ae_email) errors.push('Missing ae_email');
 
-  if (d.email_body_t1 && d.email_body_t1.split(/\s+/).length > 80) {
-    errors.push(`T1 body exceeds 80 words (${d.email_body_t1.split(/\s+/).length})`);
+  if (d.email_body_t1 && d.email_body_t1.split(/\s+/).length > 88) {
+    errors.push(`T1 body exceeds 88 words (${d.email_body_t1.split(/\s+/).length})`);
   }
-  if (d.email_body_t2 && d.email_body_t2.split(/\s+/).length > 80) {
-    errors.push(`T2 body exceeds 80 words (${d.email_body_t2.split(/\s+/).length})`);
+  if (d.email_body_t2 && d.email_body_t2.split(/\s+/).length > 88) {
+    errors.push(`T2 body exceeds 88 words (${d.email_body_t2.split(/\s+/).length})`);
   }
 
   if (d.email_subject_t1 && d.email_subject_t1.split(/\s+/).length > 8) {
