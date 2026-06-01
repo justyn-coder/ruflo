@@ -353,7 +353,21 @@ async function processProspect(
 
     try {
       const parsed = parseJSON(result);
-      const cleanBody = (parsed.body || '').replace(/—/g, ',').replace(/–/g, ',');
+      let cleanBody = (parsed.body || '')
+        .replace(/—/g, ',').replace(/–/g, ',')
+        .replace(/\n\n+/g, '\n');
+      // Strip duplicate signatures
+      const sigRegex = /\n.*?\| Inorsa \| .*?@inorsa\.com/g;
+      const sigMatches = cleanBody.match(sigRegex);
+      if (sigMatches && sigMatches.length > 1) {
+        let sigCount = 0;
+        cleanBody = cleanBody.replace(sigRegex, (match) => {
+          sigCount++;
+          return sigCount === 1 ? match : '';
+        });
+      }
+      // Ensure no blank line after salutation
+      cleanBody = cleanBody.replace(/^([A-Z][a-z]+,)\n\n/m, '$1\n');
       const cleanSubject = (parsed.subject || '').replace(/—/g, ',').replace(/–/g, ',');
       const cleanPs = (parsed.ps || '').replace(/—/g, ',').replace(/–/g, ',');
       emails.push({
