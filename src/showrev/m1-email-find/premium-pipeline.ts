@@ -386,16 +386,8 @@ async function processProspect(
         if (commonWords.test(word)) return sal + word[0].toLowerCase() + word.slice(1);
         return sal + word;
       });
-      // Strip duplicate signatures
-      const sigRegex = /\n.*?\| Inorsa \| .*?@inorsa\.com/g;
-      const sigMatches = cleanBody.match(sigRegex);
-      if (sigMatches && sigMatches.length > 1) {
-        let sigCount = 0;
-        cleanBody = cleanBody.replace(sigRegex, (match) => {
-          sigCount++;
-          return sigCount === 1 ? match : '';
-        });
-      }
+      // Strip ALL signatures from body — HubSpot adds the real one
+      cleanBody = cleanBody.replace(/\n\s*\w[\w\s]*\| Inorsa \| \w+@inorsa\.com\s*/g, '').trim();
       const cleanSubject = (parsed.subject || '').replace(/—/g, ',').replace(/–/g, ',');
       let cleanPs = (parsed.ps || '').replace(/—/g, ',').replace(/–/g, ',');
       // Ensure microsite link in P.S. for T1 and T2
