@@ -451,7 +451,7 @@ async function processProspect(
     prospect, config.runId, micrositeSlug, ae,
     challengerInsight, researchSummary, personaBucket, brainDir
   );
-  console.log(`  │  ✓ Microsite: "${micrositeRow.headline.slice(0, 50)}..."`);
+  console.log(`  │  ✓ Microsite: "${(micrositeRow.headline || '').slice(0, 50)}..."`);
 
   // PHASE 7: Mechanical quality checks
   console.log(`  │  Phase 7: Mechanical checks...`);
