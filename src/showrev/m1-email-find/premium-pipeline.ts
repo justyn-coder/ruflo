@@ -354,8 +354,16 @@ async function processProspect(
     try {
       const parsed = parseJSON(result);
       let cleanBody = (parsed.body || '')
-        .replace(/—/g, ',').replace(/–/g, ',')
-        .replace(/\n\n+/g, '\n');
+        .replace(/—/g, ',').replace(/–/g, ',');
+      // Join salutation with first paragraph: "Len,\nyou" → "Len, you"
+      cleanBody = cleanBody.replace(/^([A-Z][a-z]+,)\s*\n+\s*/m, '$1 ');
+      // Lowercase first word after "Name, " unless it's a proper noun/acronym/name
+      cleanBody = cleanBody.replace(/^([A-Z][a-z]+, )(\S+)/m, (_, sal, word) => {
+        if (/[A-Z]/.test(word.slice(1))) return sal + word;
+        const commonWords = /^(The|This|That|These|Those|We|You|Your|Our|But|And|If|So|At|In|On|By|Or|As|It|Is|Was|Are|No|Not|One|Two|Most|Every|When|Where|Why|How|Each|All|Has|Had|Last|Next|Here|Now|Just|Still|Also|Even|Back)$/;
+        if (commonWords.test(word)) return sal + word[0].toLowerCase() + word.slice(1);
+        return sal + word;
+      });
       // Strip duplicate signatures
       const sigRegex = /\n.*?\| Inorsa \| .*?@inorsa\.com/g;
       const sigMatches = cleanBody.match(sigRegex);
@@ -366,10 +374,14 @@ async function processProspect(
           return sigCount === 1 ? match : '';
         });
       }
-      // Ensure no blank line after salutation
-      cleanBody = cleanBody.replace(/^([A-Z][a-z]+,)\n\n/m, '$1\n');
       const cleanSubject = (parsed.subject || '').replace(/—/g, ',').replace(/–/g, ',');
-      const cleanPs = (parsed.ps || '').replace(/—/g, ',').replace(/–/g, ',');
+      let cleanPs = (parsed.ps || '').replace(/—/g, ',').replace(/–/g, ',');
+      // Ensure microsite link in P.S. for T1 and T2
+      if (touchNum <= 2 && micrositeSlug && !cleanPs.includes('fiber.inorsa.com')) {
+        cleanPs = cleanPs
+          ? `${cleanPs}\nhttps://fiber.inorsa.com/brief/${micrositeSlug}`
+          : `P.S. Put together an overview: https://fiber.inorsa.com/brief/${micrositeSlug}`;
+      }
       emails.push({
         touchNumber: touchNum,
         pattern,
