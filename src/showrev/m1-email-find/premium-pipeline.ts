@@ -246,31 +246,28 @@ async function processProspect(
     : '';
 
   // PHASE 1: Multi-persona research (3 parallel agents)
-  console.log(`  │  Phase 1: 3-persona research...`);
+  console.log(`  │  Phase 1: 3-persona research (parallel)...`);
   const personaResults: Record<string, string> = {};
 
-  for (const persona of RESEARCH_PERSONAS) {
+  const researchPromises = RESEARCH_PERSONAS.map(persona => {
     const prompt = buildMultiPersonaPrompt(
       prospectContext + relatedNote + brainContext,
       persona,
       prospect.aeNotes,
-      Object.keys(personaResults).length > 0 ? {
-        analyst: personaResults['Industry Analyst'],
-        ae: personaResults['AE Proxy'],
-        tech: personaResults['Technical Evaluator'],
-      } : undefined
+      undefined
     );
-
     console.log(`  │  ⏳ ${persona.role} researching...`);
-    const result = await executePrompt(prompt, config.model, 300000, persona.role);
-    personaResults[persona.role] = result;
-
-    // Save research output for audit trail
-    const outputPath = resolve(config.outputDir, 'research', `${prospect.id}-${persona.role.toLowerCase().replace(/\s/g, '-')}.json`);
-    mkdirSync(dirname(outputPath), { recursive: true });
-    writeFileSync(outputPath, result);
-    console.log(`  │  ✓ ${persona.role} complete`);
-  }
+    return executePrompt(prompt, config.model, 300000, persona.role)
+      .then(result => {
+        personaResults[persona.role] = result;
+        const outputPath = resolve(config.outputDir, 'research', `${prospect.id}-${persona.role.toLowerCase().replace(/\s/g, '-')}.json`);
+        mkdirSync(dirname(outputPath), { recursive: true });
+        writeFileSync(outputPath, result);
+        console.log(`  │  ✓ ${persona.role} complete`);
+        return result;
+      });
+  });
+  await Promise.all(researchPromises);
 
   // PHASE 2: Cross-examination questions
   console.log(`  │  Phase 2: Cross-examination questions generated`);
