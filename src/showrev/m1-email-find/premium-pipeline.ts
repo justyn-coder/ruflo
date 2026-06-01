@@ -22,6 +22,8 @@ import { importProspects, printImportSummary, type Prospect, type ICPStatus } fr
 import { RESEARCH_PERSONAS, buildMultiPersonaPrompt, generateCrossExamQuestions } from './personas.js';
 import { INFLUENCE_TOOLKIT, buildPatternSelectorPrompt, buildComposerPrompt, type PatternSelection } from './influence.js';
 import { runMechanicalChecks } from './judge.js';
+import { buildTimProxyPrompt, buildRecipientProxyPrompt, buildSkepticPrompt, analyzeDisagreements } from './judges.js';
+import { detectClaims, assessClaimSafety, buildVerificationPrompt } from './verify-facts.js';
 import { buildDossierRow, validateBeforeWrite, dryRunPreview, writeDossierToSupabase, type SupabaseWritePayload } from './supabase-adapter.js';
 import { ingestResearchIntoBrain, loadBrainDigest } from './brain-ingest.js';
 import { structureIntelReport } from './intel-structurer.js';
@@ -454,6 +456,48 @@ async function processProspect(
   }
   for (const w of mechanicalCheck.warnings) console.log(`  │    ⚠ ${w}`);
 
+  // PHASE 7b: Fact verification — detect load-bearing claims in email body
+  console.log(`  │  Phase 7b: Fact verification...`);
+  const t1Body = emails.find(e => e.touchNumber === 1)?.body || '';
+  const detectedClaims = detectClaims(t1Body);
+  const unsafeClaims = detectedClaims.filter(c => {
+    const assessment = assessClaimSafety(c.text, c.type, 3, false);
+    return !assessment.safeForEmail;
+  });
+  if (unsafeClaims.length > 0) {
+    console.log(`  │  ⚠ ${unsafeClaims.length} unverified claims in email body:`);
+    for (const c of unsafeClaims) console.log(`  │    [${c.type}] "${c.text.slice(0, 60)}..."`);
+  } else if (detectedClaims.length > 0) {
+    console.log(`  │  ✓ ${detectedClaims.length} claims detected, none flagged as unsafe`);
+  } else {
+    console.log(`  │  ✓ No load-bearing claims detected`);
+  }
+
+  // PHASE 7c: Tim Proxy Judge — would Tim send this?
+  console.log(`  │  Phase 7c: Tim Proxy judge...`);
+  let timVerdict: any = null;
+  try {
+    const prospectCtx = `${prospect.firstName} ${prospect.lastName}, ${prospect.title} at ${prospect.company}`;
+    const timPrompt = buildTimProxyPrompt(
+      emails[0]?.subject || '', emails[0]?.body || '', emails[0]?.ps || '',
+      prospectCtx, 1
+    );
+    const timRaw = await executePrompt(timPrompt, config.model, 120000, 'tim-proxy');
+    try {
+      const jsonMatch = timRaw.match(/\{[\s\S]*\}/);
+      timVerdict = jsonMatch ? JSON.parse(jsonMatch[0]) : null;
+    } catch {}
+    if (timVerdict) {
+      const icon = timVerdict.pass ? '✓' : '⚠';
+      console.log(`  │  ${icon} Tim Proxy: ${timVerdict.pass ? 'PASS' : 'FAIL'} (${timVerdict.score}/10) — ${timVerdict.wouldYouSendThis || ''}`);
+      if (timVerdict.mustFix?.length > 0) {
+        for (const fix of timVerdict.mustFix) console.log(`  │    Fix: ${fix.slice(0, 80)}`);
+      }
+    }
+  } catch (err: any) {
+    console.log(`  │  ⚠ Tim Proxy failed: ${err.message?.slice(0, 60)}`);
+  }
+
   // PHASE 8: Write output
   console.log(`  │  Phase 8: Writing output...`);
 
@@ -507,6 +551,17 @@ async function processProspect(
     const ct = structuredDossier.contact || {};
     md += `**Talking points:**\n${ct.showrev_talking_points || ''}\n\n---\n\n`;
   }
+
+  md += `## Verification Gates\n\n`;
+  md += `**Fact claims detected:** ${detectedClaims.length} | **Unsafe:** ${unsafeClaims.length}\n`;
+  if (unsafeClaims.length > 0) {
+    for (const c of unsafeClaims) md += `- [${c.type}] "${c.text.slice(0, 80)}"\n`;
+  }
+  md += `**Tim Proxy:** ${timVerdict ? `${timVerdict.pass ? 'PASS' : 'FAIL'} (${timVerdict.score}/10)` : 'Not run'}\n`;
+  if (timVerdict?.mustFix?.length > 0) {
+    for (const fix of timVerdict.mustFix) md += `- Fix: ${fix}\n`;
+  }
+  md += `\n---\n\n`;
 
   md += `## Microsite Content\n\n`;
   md += `**Headline:** ${micrositeRow.headline}\n`;
