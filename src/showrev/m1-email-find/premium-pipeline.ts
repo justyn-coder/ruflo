@@ -208,16 +208,29 @@ async function processProspect(
     return null;
   }
 
-  // Load Brain digest and set as prompt cache (stable across prospects)
+  // Load Brain context — semantic search (AgentDB) with JSONL digest fallback
   const brainDir = resolve(BASE_DIR, '../brain/fiber-telecom/inorsa/fiber/fiber-connect-2026');
-  const brainDigest = loadBrainDigest(brainDir);
-  const brainContext = brainDigest
-    ? `\n\n## Prior research knowledge (from Brain)\n${brainDigest.slice(0, 2000)}`
-    : '';
+  let brainContext = '';
+  try {
+    const { initBrainDB, buildSemanticDigest } = await import('./brain-agentdb.js');
+    await initBrainDB();
+    const query = `${prospect.company} ${prospect.title} fiber design permitting ${prospect.state}`;
+    const semanticDigest = await buildSemanticDigest(query, 15);
+    if (semanticDigest) {
+      brainContext = `\n\n${semanticDigest}`;
+      console.log(`  │  Brain: semantic search (${semanticDigest.split('\n').length} lines)`);
+    }
+  } catch {
+    // Fallback to flat file digest
+    const brainDigest = loadBrainDigest(brainDir);
+    brainContext = brainDigest
+      ? `\n\n## Prior research knowledge (from Brain)\n${brainDigest.slice(0, 2000)}`
+      : '';
+  }
 
   const cacheableContent = [
     `## What Inorsa does\n${INORSA_VP_SUMMARY}`,
-    brainDigest ? `## Brain Knowledge Base\n${brainDigest}` : '',
+    brainContext || '',
   ].filter(Boolean).join('\n\n');
 
   if (cacheableContent) {
@@ -263,7 +276,7 @@ async function processProspect(
   // PHASE 2b: Brain Ingest (extract entities, update KB)
   console.log(`  │  Phase 2b: Brain ingest...`);
   const brainResult = await ingestResearchIntoBrain(personaResults, prospect.id, brainDir, prospectIndex, 10);
-  console.log(`  │  ✓ Brain: +${brainResult.added} new, ${brainResult.updated} updated (${brainResult.total} total)${brainResult.digestRefreshed ? ' [digest refreshed]' : ''}`);
+  console.log(`  │  ✓ Brain: +${brainResult.added} new, ${brainResult.updated} updated (${brainResult.total} total)${brainResult.agentDBStored ? ` [${brainResult.agentDBStored} → AgentDB]` : ''}${brainResult.digestRefreshed ? ' [digest refreshed]' : ''}`);
 
   // PHASE 3: Influence pattern selection for each touch
   console.log(`  │  Phase 3: Influence pattern selection...`);

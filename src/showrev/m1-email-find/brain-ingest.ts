@@ -245,18 +245,34 @@ export function generateDigest(brainDir: string): string {
   return digest;
 }
 
+let agentDBInitialized = false;
+
 export async function ingestResearchIntoBrain(
   personaResults: Record<string, string>,
   prospectId: string,
   brainDir: string = DEFAULT_BRAIN_DIR,
   prospectCount: number = 0,
   digestInterval: number = 10
-): Promise<{ added: number; updated: number; total: number; digestRefreshed: boolean }> {
+): Promise<{ added: number; updated: number; total: number; digestRefreshed: boolean; agentDBStored: number }> {
   const allResearch = Object.values(personaResults).join('\n\n');
 
   const entities = extractEntities(allResearch, prospectId);
 
   const result = ingestEntities(brainDir, entities);
+
+  // Store to AgentDB for semantic search
+  let agentDBStored = 0;
+  try {
+    const { initBrainDB, ingestEntitiesToAgentDB } = await import('./brain-agentdb.js');
+    if (!agentDBInitialized) {
+      await initBrainDB();
+      agentDBInitialized = true;
+    }
+    const dbResult = await ingestEntitiesToAgentDB(entities);
+    agentDBStored = dbResult.stored;
+  } catch (err: any) {
+    // AgentDB is optional — JSONL is the primary store
+  }
 
   let digestRefreshed = false;
   if (prospectCount % digestInterval === 0 || prospectCount <= 1) {
@@ -264,7 +280,7 @@ export async function ingestResearchIntoBrain(
     digestRefreshed = true;
   }
 
-  return { ...result, digestRefreshed };
+  return { ...result, digestRefreshed, agentDBStored };
 }
 
 export function loadBrainDigest(brainDir: string = DEFAULT_BRAIN_DIR): string {
