@@ -28,7 +28,7 @@ import { structureIntelReport } from './intel-structurer.js';
 import { composeMicrositeContent, type MicrositeRow } from './microsite-composer.js';
 
 const BASE_DIR = resolve(dirname(new URL(import.meta.url).pathname), '../../../data/showrev');
-const INORSA_VP_SUMMARY = `Inorsa turns design data into permit-ready construction drawings. Quality control is built in, so builds keep moving. Engineering Suite + Data Suite. Fiber only (no tower/cellular).`;
+const INORSA_VP_SUMMARY = `Inorsa converts GIS design data into CAD-ready construction drawings. Quality control is built in, so builds keep moving. Engineering Suite + Data Suite. Fiber only (no tower/cellular).`;
 
 const AE_TERRITORY: Record<string, { name: string; email: string }> = {
   east: { name: 'Mike Rutski', email: 'mike@inorsa.com' },

@@ -278,7 +278,7 @@ HubSpot has a Workflow that auto-sets Contact Owner = Company Owner ~12 seconds 
 ## §7 Operator Constraints (hard rules)
 
 ### Pitch Verbatim (locked)
-> "We turn design data into permit-ready construction drawings. Quality control is built in, so builds keep moving."
+> "We convert GIS design data into CAD-ready construction drawings. Quality control is built in, so builds keep moving."
 
 Do NOT paraphrase in prospect-facing copy.
 

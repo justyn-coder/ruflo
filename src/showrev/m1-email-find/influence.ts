@@ -192,7 +192,7 @@ export function buildComposerPrompt(
   return `You are writing a post-show follow-up email for Fiber Connect 2026 (May 18-19, Gaylord Palms Resort, Kissimmee FL, Booth 1728). The sender is ${aeName}, an AE at Inorsa.
 
 ## What Inorsa does (use verbatim when describing the value prop)
-We turn design data into permit-ready construction drawings. Quality control is built in, so builds keep moving.
+We convert GIS design data into CAD-ready construction drawings. Quality control is built in, so builds keep moving.
 
 ## Influence pattern to use: ${pattern.name}
 ${pattern.description}
