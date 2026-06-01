@@ -16,7 +16,8 @@ loadEnv({ path: new URL('.env', import.meta.url).pathname });
  */
 
 import { resolve, dirname } from 'path';
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, unlinkSync } from 'fs';
+import { execSync } from 'child_process';
 import { callLLM, callLLMWithBrainCache, setBrainCacheContent, type LLMCallOptions } from './llm-client.js';
 import { importProspects, printImportSummary, type Prospect, type ICPStatus } from './importer.js';
 import { RESEARCH_PERSONAS, buildMultiPersonaPrompt, generateCrossExamQuestions } from './personas.js';
@@ -85,8 +86,6 @@ const COMPOSITION_HARD_CONSTRAINTS = `STRICT RULES — violations cause rejectio
 Count the words in your body text RIGHT NOW before outputting. If the count exceeds 80, revise.`;
 
 function executePromptCLI(prompt: string, model: string = 'sonnet', timeoutMs: number = 300000): string {
-  const { execSync } = require('child_process');
-  const { writeFileSync, unlinkSync } = require('fs');
   const tmpFile = `/tmp/showrev-prompt-${Date.now()}-${Math.random().toString(36).slice(2, 6)}.md`;
   writeFileSync(tmpFile, prompt);
   try {
