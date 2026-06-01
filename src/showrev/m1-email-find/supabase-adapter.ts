@@ -64,10 +64,19 @@ interface DossierRow {
   email_body_t3: string;
   email_ps_t3: string;
   microsite_slug: string;
+  microsite_headline: string;
+  microsite_insight: string;
   research_model: string;
   research_confidence: string;
   mechanical_check_passed: boolean;
   mechanical_check_failures: string;
+  intel_signal_strength: string;
+  intel_fit_rationale: string;
+  intel_next_action: string;
+  intel_buying_timeline: string;
+  intel_risk_factors: string;
+  intel_talking_points: string;
+  intel_decision_authority: string;
   created_at: string;
 }
 
@@ -145,7 +154,9 @@ export function buildDossierRow(
   emails: EmailRow[],
   ae: { name: string; email: string },
   micrositeSlug: string,
-  mechanicalCheck: MechanicalCheckResult
+  mechanicalCheck: MechanicalCheckResult,
+  structuredDossier?: any,
+  micrositeRow?: { headline: string; insight_text: string },
 ): DossierRow {
   const t1 = emails.find(e => e.touchNumber === 1);
   const t2 = emails.find(e => e.touchNumber === 2);
@@ -180,10 +191,19 @@ export function buildDossierRow(
     email_body_t3: t3?.body || '',
     email_ps_t3: t3?.ps || '',
     microsite_slug: micrositeSlug,
+    microsite_headline: micrositeRow?.headline || '',
+    microsite_insight: micrositeRow?.insight_text || '',
     research_model: 'premium_3persona',
-    research_confidence: '',
+    research_confidence: structuredDossier?.meta?.showrev_research_confidence || '',
     mechanical_check_passed: mechanicalCheck.passed,
     mechanical_check_failures: mechanicalCheck.failures.join('; '),
+    intel_signal_strength: structuredDossier?.salesIntel?.showrev_signal_strength || '',
+    intel_fit_rationale: structuredDossier?.salesIntel?.showrev_fit_rationale || '',
+    intel_next_action: structuredDossier?.salesIntel?.showrev_next_best_action || '',
+    intel_buying_timeline: structuredDossier?.salesIntel?.showrev_buying_timeline || '',
+    intel_risk_factors: structuredDossier?.salesIntel?.showrev_risk_factors || '',
+    intel_talking_points: structuredDossier?.contact?.showrev_talking_points || '',
+    intel_decision_authority: structuredDossier?.contact?.showrev_decision_authority || '',
     created_at: new Date().toISOString(),
   };
 }

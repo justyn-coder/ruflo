@@ -476,7 +476,7 @@ async function processProspect(
   console.log(`  │  ✓ Files written to ${jsonPath}`);
 
   // PHASE 9: Supabase write (or dry-run preview)
-  const dossierRow = buildDossierRow(prospect, config.runId, researchSummary, emails, ae, micrositeSlug, mechanicalCheck);
+  const dossierRow = buildDossierRow(prospect, config.runId, researchSummary, emails, ae, micrositeSlug, mechanicalCheck, structuredDossier, micrositeRow);
   if (structuredDossier?.contact?.showrev_persona_classification) {
     dossierRow.persona_bucket = structuredDossier.contact.showrev_persona_classification;
   }
