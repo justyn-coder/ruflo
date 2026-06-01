@@ -242,8 +242,8 @@ The first ~90 characters of your email body will show in the inbox preview pane 
 - One specific question per email (not two, not zero)
 - Subject line: under 8 words, specific to their situation, lowercase okay
 - Salutation: strictly ${prospect.firstName}, (comma only, NO greeting word)
-- First paragraph starts on the NEXT LINE after salutation — NO blank line between. Format: "${prospect.firstName},\\nFirst sentence starts here."
-- First word after salutation MUST be capitalized (it's a new sentence)
+- First paragraph starts on the NEXT LINE after salutation — NO blank line between. Format: "${prospect.firstName},\\nfirst sentence starts here."
+- The salutation IS the start of the sentence. Do NOT capitalize the first word unless it's a proper noun (person, place, company). Examples: "${prospect.firstName}, thanks for..." / "${prospect.firstName}, most fiber builders..." / "${prospect.firstName}, BEAD deadlines..."
 - No em-dashes anywhere
 - Sign off as: ${aeName} | Inorsa | ${aeEmail} (ONCE only, never duplicate)
 - CTA type for this touch: ${patternSelection.ctaType}

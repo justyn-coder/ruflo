@@ -50,12 +50,16 @@ export function runMechanicalChecks(
     warnings.push('Blank line between salutation and first paragraph — wastes inbox preview text');
   }
 
-  // First word after salutation should be capitalized
+  // First word after salutation should be lowercase (salutation IS the sentence start)
+  // Exception: proper nouns (BEAD, company names, person names) are okay capitalized
   const contentStart = lines.findIndex((l, i) => i > 0 && l.trim() !== '');
   if (contentStart > 0) {
-    const firstWord = lines[contentStart].trim().charAt(0);
-    if (firstWord && firstWord !== firstWord.toUpperCase()) {
-      warnings.push(`First word after salutation starts lowercase ("${lines[contentStart].trim().slice(0, 20)}...")`);
+    const firstContentLine = lines[contentStart].trim();
+    const firstChar = firstContentLine.charAt(0);
+    const firstWord = firstContentLine.split(/\s/)[0];
+    const isProperNoun = /^[A-Z]{2,}/.test(firstWord) || /^(The|A|An|In|On|At|Most|Every|When|Your|One|Three|Last|BEAD|NTIA|NY|BIA)$/.test(firstWord);
+    if (firstChar && firstChar === firstChar.toUpperCase() && !isProperNoun) {
+      warnings.push(`First word after salutation is capitalized ("${firstWord}") — salutation is the sentence start, use lowercase unless proper noun`);
     }
   }
 
