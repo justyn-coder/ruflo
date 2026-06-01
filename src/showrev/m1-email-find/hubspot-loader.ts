@@ -148,7 +148,37 @@ export interface EngineRow {
   external_deadlines: string;
   market_moment: string;
   microsite_slug: string;
+  email_subject_t1: string;
   email_body_t1: string;
+  email_ps_t1: string;
+  email_subject_t2: string;
+  email_body_t2: string;
+  email_ps_t2: string;
+  email_subject_t3: string;
+  email_body_t3: string;
+  email_ps_t3: string;
+}
+
+function decomposeEmail(body: string): { para1: string; para2: string; para3: string; para4: string } {
+  const lines = body.split('\n');
+  // Remove salutation line (e.g., "Chris,")
+  const startIdx = lines.findIndex((l, i) => i > 0 && l.trim() !== '') > 0
+    ? lines.findIndex((l, i) => i > 0 && l.trim() !== '')
+    : 1;
+
+  const contentLines = lines.slice(startIdx).join('\n').trim();
+  // Split on blank lines to get paragraphs
+  const paragraphs = contentLines.split(/\n\n+/).map(p => p.trim()).filter(Boolean);
+
+  // Remove signature lines (AE Name | Inorsa | email)
+  const filtered = paragraphs.filter(p => !p.includes('| Inorsa |'));
+
+  return {
+    para1: filtered[0] || '',
+    para2: filtered[1] || '',
+    para3: filtered[2] || '',
+    para4: filtered[3] || '',
+  };
 }
 
 export async function loadProspectToHubSpot(
@@ -219,6 +249,11 @@ export async function loadProspectToHubSpot(
   const signalMapped = SIGNAL_MAP[row.intel_signal_strength] || 'ORANGE';
   const personaMapped = PERSONA_MAP[row.persona_bucket] || 'core_icp';
 
+  // Decompose email bodies into paragraph tokens for Sequence templates
+  const t1Parts = decomposeEmail(row.email_body_t1 || '');
+  const t2Parts = decomposeEmail(row.email_body_t2 || '');
+  const t3Parts = decomposeEmail(row.email_body_t3 || '');
+
   const contactProps: Record<string, string> = {
     email: row.email,
     firstname: row.first_name,
@@ -236,6 +271,14 @@ export async function loadProspectToHubSpot(
     ...(row.linkedin_summary ? { showrev_linkedin_summary: row.linkedin_summary.slice(0, 2000) } : {}),
     ...(row.other_stakeholders ? { showrev_other_stakeholders: row.other_stakeholders } : {}),
     ...(row.microsite_slug ? { showrev_microsite_url: `https://fiber.inorsa.com/brief/${row.microsite_slug}` } : {}),
+    // T1 email decomposed for Sequence template tokens
+    ...(row.email_subject_t1 ? { showrev_pre_show_t1_subject: row.email_subject_t1 } : {}),
+    ...(t1Parts.para1 ? { showrev_pre_show_t1_para1: t1Parts.para1 } : {}),
+    ...(t1Parts.para2 ? { showrev_pre_show_t1_para2: t1Parts.para2 } : {}),
+    ...(t1Parts.para3 ? { showrev_pre_show_t1_para3: t1Parts.para3 } : {}),
+    ...(t1Parts.para4 ? { showrev_pre_show_t1_para4: t1Parts.para4 } : {}),
+    ...(row.email_ps_t1 ? { showrev_pilot_anchor_paragraph: t1Parts.para1 } : {}),
+    ...(t1Parts.para3 || t1Parts.para2 ? { showrev_pilot_cta_phrasing: t1Parts.para3 || t1Parts.para2 } : {}),
   };
 
   // Only set owner + lifecycle on NEW contacts (per Tim's rules)
