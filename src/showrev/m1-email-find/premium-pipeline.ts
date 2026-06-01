@@ -1,5 +1,8 @@
 #!/usr/bin/env npx tsx
 
+import { config as loadEnv } from 'dotenv';
+loadEnv({ path: new URL('.env', import.meta.url).pathname });
+
 /**
  * Premium M1 Email Find Pipeline
  *

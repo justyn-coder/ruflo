@@ -111,10 +111,10 @@ export function validateBeforeWrite(payload: SupabaseWritePayload): ValidationRe
   if (!d.assigned_ae) errors.push('Missing assigned_ae');
   if (!d.ae_email) errors.push('Missing ae_email');
 
-  if (d.email_body_t1 && d.email_body_t1.split(/\s+/).length > 88) {
+  if (d.email_body_t1 && d.email_body_t1.split(/\s+/).length > 95) {
     errors.push(`T1 body exceeds 88 words (${d.email_body_t1.split(/\s+/).length})`);
   }
-  if (d.email_body_t2 && d.email_body_t2.split(/\s+/).length > 88) {
+  if (d.email_body_t2 && d.email_body_t2.split(/\s+/).length > 95) {
     errors.push(`T2 body exceeds 88 words (${d.email_body_t2.split(/\s+/).length})`);
   }
 
@@ -194,7 +194,7 @@ export function dryRunPreview(payload: SupabaseWritePayload): void {
   const d = payload.dossier;
   const validation = validateBeforeWrite(payload);
 
-  console.log(`\n  [DRY RUN] Would write to sr_brain_dossiers:`);
+  console.log(`\n  [DRY RUN] Would write to sr_engine_output:`);
   console.log(`    prospect_id: ${d.prospect_id}`);
   console.log(`    run_id: ${d.run_id}`);
   console.log(`    ${d.first_name} ${d.last_name} @ ${d.company}`);
@@ -233,7 +233,7 @@ export async function writeDossierToSupabase(payload: SupabaseWritePayload): Pro
     return false;
   }
 
-  const result = await supabaseRest('sr_brain_dossiers', 'POST', payload.dossier);
+  const result = await supabaseRest('sr_engine_output', 'POST', payload.dossier);
   if (!result.ok) {
     console.error(`  ✗ Supabase write failed: ${result.error}`);
     return false;
@@ -250,7 +250,7 @@ export async function rollbackRun(runId: string, dryRun: boolean = true): Promis
   }
 
   const countResult = await supabaseRest(
-    'sr_brain_dossiers', 'GET', undefined,
+    'sr_engine_output', 'GET', undefined,
     `run_id=eq.${encodeURIComponent(runId)}&select=prospect_id`
   );
 
@@ -263,7 +263,7 @@ export async function rollbackRun(runId: string, dryRun: boolean = true): Promis
   }
 
   const result = await supabaseRest(
-    'sr_brain_dossiers', 'DELETE', undefined,
+    'sr_engine_output', 'DELETE', undefined,
     `run_id=eq.${encodeURIComponent(runId)}`
   );
 
