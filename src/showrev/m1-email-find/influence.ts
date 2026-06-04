@@ -123,7 +123,8 @@ export function buildPatternSelectorPrompt(
   dossierSummary: string,
   aeNotes: string,
   contactTitle: string,
-  touchNumber: 1 | 2 | 3
+  touchNumber: 1 | 2 | 3,
+  previousPatterns: InfluencePattern[] = []
 ): string {
   const patternsDesc = Object.entries(INFLUENCE_TOOLKIT.patterns)
     .map(([key, p]) => `**${key}**: ${p.description} Use when: ${p.whenToUse}`)
@@ -135,8 +136,8 @@ export function buildPatternSelectorPrompt(
 
   const touchGuidance: Record<number, string> = {
     1: 'T1 (first touch, ASAP): Interest-based CTA. No links. Booth callback if notes exist. Goal: get a reply, not a meeting.',
-    2: 'T2 (T1 + 5 days): Different angle than T1. Soft time suggestion CTA. Should feel like a reply to T1, not a new email. Goal: advance to meeting discussion.',
-    3: 'T3 (T2 + 5 days): Shortest. Binary close CTA. Respectful final touch. Goal: get a yes or a "not now" — both are useful.',
+    2: 'T2 (T1 + 5 days): Different angle than T1. Ask a specific diagnostic question about their operations. Should feel like a casual follow-up, not a formal new email. Goal: advance to meeting discussion.',
+    3: 'T3 (T2 + 5 days): Shortest. Direct binary question about a specific decision they face. Respectful final touch. Goal: get a yes or a "not now" — both are useful.',
   };
 
   return `You are an influence strategy selector for a B2B sales email campaign. Your job is to select the BEST psychological influence pattern for this specific prospect and touch.
@@ -160,10 +161,11 @@ ${contactTitle}
 ${touchGuidance[touchNumber]}
 
 ## IMPORTANT: Touch sequencing rules
-- T1 and T2 should use DIFFERENT patterns (don't repeat the same angle)
+- T1 and T2 MUST use DIFFERENT patterns (don't repeat the same angle)
 - T3 is always a short binary close regardless of pattern
 - If T1 uses commitment_consistency (booth callback), T2 should switch to challenger_insight or loss_aversion
 - If T1 uses curiosity_gap, T2 should deliver on the curiosity with a specific insight
+${previousPatterns.length > 0 ? `\n## MANDATORY: Do NOT repeat these patterns already used for earlier touches: ${previousPatterns.join(', ')}. You MUST select a DIFFERENT pattern.` : ''}
 
 ## Output format (JSON only)
 {
@@ -191,8 +193,15 @@ export function buildComposerPrompt(
 
   return `You are writing a post-show follow-up email for Fiber Connect 2026 (May 18-19, Gaylord Palms Resort, Kissimmee FL, Booth 1728). The sender is ${aeName}, an AE at Inorsa.
 
-## What Inorsa does (use verbatim when describing the value prop)
-We convert GIS design data into CAD-ready construction drawings. Quality control is built in, so builds keep moving.
+## What Inorsa does (describe by OUTCOME, vary the phrasing each email)
+Core capability: automated GIS-to-CAD construction drawing generation. The value is SPEED and CAPACITY.
+NEVER claim Inorsa "validates inputs" or "catches errors" or "built-in QC" — errors in GIS data = errors in output. The value is that faster production gives the team more time for THEIR OWN QC.
+When mentioning Inorsa, describe the RESULT for THIS prospect. Examples of voice:
+- "Inorsa automates the GIS-to-CAD step, so your team stops hand-drawing what's already designed."
+- "your designers spend time designing, not reformatting."
+- "drawing production in minutes means your team has time to QC properly before submission."
+Do NOT copy any example sentence verbatim. Adapt to the prospect's situation.
+Mention Inorsa ONCE in the email. Describe it by outcome, not product features.
 
 ## Influence pattern to use: ${pattern.name}
 ${pattern.description}
@@ -213,8 +222,8 @@ ${dossierSummary}
 
 ## Touch ${touchNumber} specifics
 ${touchNumber === 1 ? `First touch. Interest-based CTA only ("Is this something you're running into?" not "Can we meet?"). No links. Reference booth visit${aeNotes ? ' and conversation' : ' generally'}.` : ''}
-${touchNumber === 2 ? `Second touch. Different angle than T1${previousTouchSubject ? ` (T1 subject was: "${previousTouchSubject}")` : ''}. Should feel like a casual follow-up, not a formal new email. Soft time suggestion CTA.` : ''}
-${touchNumber === 3 ? 'Final touch. 3-4 sentences MAX. Binary close: "worth a look, or not the right time?" Easy to say yes or no. Respectful.' : ''}
+${touchNumber === 2 ? `Second touch. Different angle than T1${previousTouchSubject ? ` (T1 subject was: "${previousTouchSubject}")` : ''}. Should feel like a casual follow-up, not a formal new email. Soft time suggestion CTA. ALSO include a secondary CTA for Office Hours: "Or see it live — Inorsa runs weekly Office Hours where the team demos fiber drawing generation and takes questions. 30 minutes, no commitment." Link: https://events.teams.microsoft.com/event/d351d0fb-4db5-4b4e-b627-ace41b7a75c2@1ffe754f-042e-41a2-857b-2ff7c6da0c27` : ''}
+${touchNumber === 3 ? 'Final touch. 3-4 sentences MAX. Binary close — one specific diagnostic question easy to answer yes or no. NOT "Worth a 20-minute conversation?" (generic gate, easy to ignore). Instead: "Is [specific thing from research] something you are solving internally, or still open?" Professional. If the prospect has not engaged with T1 or T2, reference Office Hours as a fallback: "If a 1:1 isn\'t the right fit, our weekly Office Hours might be" with link https://events.teams.microsoft.com/event/d351d0fb-4db5-4b4e-b627-ace41b7a75c2@1ffe754f-042e-41a2-857b-2ff7c6da0c27' : ''}
 
 ## Anti-AI-tell checklist (ENFORCE ALL)
 - NO "I'm curious..." or "Curious whether..." (Claude fingerprint)
@@ -224,6 +233,7 @@ ${touchNumber === 3 ? 'Final touch. 3-4 sentences MAX. Binary close: "worth a lo
 - NO transition words (Furthermore, Additionally, Moreover)
 - NO more than 2 sentences in any paragraph
 - NEVER reference "India", "offshore", "outsourced", or any workforce geography in the email body OR subject line. This is a hard rule — even if the research found offshore teams, do NOT mention it in prospect-facing copy.
+- NEVER use: "worth a look", "or not the right time", "just say the word", "say the word", "on my end", "just let me know", "Different angle", "eat construction time", "bleeding", "binding constraint"
 - VARY sentence length: mix short punchy (3-5 words) with medium (10-15)
 - USE at least one sentence fragment or informal construction
 - START one sentence with "And" or "But" (humans do this)
@@ -240,8 +250,8 @@ The first ~90 characters of your email body will show in the inbox preview pane 
 
 ## Hard constraints
 - Under 80 words (body only, not counting subject/signature/PS)
-- One specific question per email (not two, not zero)
-- Subject line: under 8 words, specific to their situation, lowercase okay
+- One specific DIAGNOSTIC question per email — a question about THEIR situation that forces them to think, not a generic meeting ask. NEVER use "Worth a 20-minute conversation?" or "Worth X minutes?" — these are generic gates easy to ignore. Instead ask something specific: "How are you handling [specific thing from research]?" or "What's [specific metric] costing you per [time period]?" The question should demonstrate you understand their business.
+- Subject line: under 8 words, specific to their situation. First letter MUST be capitalized. Proper nouns capitalized. No all-lowercase subjects.
 - Salutation: strictly ${prospect.firstName}, (comma only, NO greeting word)
 - First paragraph starts on the NEXT LINE after salutation — NO blank line between. Format: "${prospect.firstName},\\nfirst sentence starts here."
 - The salutation IS the start of the sentence. Do NOT capitalize the first word unless it's a proper noun (person, place, company). Examples: "${prospect.firstName}, thanks for..." / "${prospect.firstName}, most fiber builders..." / "${prospect.firstName}, BEAD deadlines..."
