@@ -18,6 +18,7 @@ export type EmailPattern =
   | 'firstlast'
   | 'lastf'
   | 'f.last'
+  | 'initials'
   | 'unknown';
 
 export interface PatternResult {
@@ -35,17 +36,22 @@ export interface CandidateEmail {
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
-/** B2B prevalence ordering (source: industry aggregates). */
+/**
+ * B2B prevalence ordering — calibrated to fiber-telecom data.
+ * Test data: flast=33%, first.last=33%, first=17%, firstl=4%.
+ * Both flast and first.last are co-ranked #1.
+ */
 const PATTERN_PREVALENCE: Array<{ pattern: EmailPattern; weight: number }> = [
-  { pattern: 'first.last', weight: 0.60 },
-  { pattern: 'flast', weight: 0.15 },
-  { pattern: 'first', weight: 0.10 },
+  { pattern: 'first.last', weight: 0.33 },
+  { pattern: 'flast', weight: 0.33 },
+  { pattern: 'first', weight: 0.15 },
   { pattern: 'firstlast', weight: 0.05 },
+  { pattern: 'firstl', weight: 0.04 },
   { pattern: 'first_last', weight: 0.03 },
   { pattern: 'lastf', weight: 0.02 },
   { pattern: 'last.first', weight: 0.02 },
   { pattern: 'f.last', weight: 0.02 },
-  { pattern: 'firstl', weight: 0.01 },
+  { pattern: 'initials', weight: 0.01 },
 ];
 
 /** Common nickname → formal name bidirectional map (telecom-relevant). */
@@ -62,6 +68,7 @@ const NICKNAME_MAP: Record<string, string[]> = {
   matthew: ['matt'],
   elizabeth: ['liz', 'beth'],
   katherine: ['kate', 'kathy'],
+  kathryn: ['kate', 'kathy', 'kath'],
   catherine: ['kate', 'cathy'],
   jennifer: ['jen'],
   jonathan: ['jon'],
@@ -269,14 +276,27 @@ function buildLocalPart(pattern: EmailPattern, first: string, last: string): str
     case 'firstlast': return `${first}${last}`;
     case 'lastf': return `${last}${first[0]}`;
     case 'f.last': return `${first[0]}.${last}`;
+    case 'initials': return `${first[0]}${last[0]}`;
     default: return null;
   }
+}
+
+/**
+ * Build initials from all name parts (first, middle, last).
+ * "Wolfgang K Domschke" -> "wkd"
+ */
+function buildInitials(fullNameParts: string[]): string {
+  return fullNameParts
+    .map((p) => p.replace(/[^a-z]/g, ''))
+    .filter((p) => p.length > 0)
+    .map((p) => p[0])
+    .join('');
 }
 
 /** All recognizable patterns. */
 const ALL_PATTERNS: EmailPattern[] = [
   'first.last', 'flast', 'firstl', 'first', 'last.first',
-  'first_last', 'firstlast', 'lastf', 'f.last',
+  'first_last', 'firstlast', 'lastf', 'f.last', 'initials',
 ];
 
 /**
@@ -300,6 +320,15 @@ export function inferPattern(email: string, firstName: string, lastName: string)
           return pattern;
         }
       }
+    }
+  }
+
+  // Check full-name initials (e.g. "Wolfgang K Domschke" -> "wkd")
+  const fullParts = `${firstName} ${lastName}`.toLowerCase().split(/\s+/);
+  if (fullParts.length >= 2) {
+    const initials = buildInitials(fullParts);
+    if (initials.length >= 2 && initials === local) {
+      return 'initials';
     }
   }
 
@@ -526,12 +555,46 @@ export function generateCandidates(
   const primaryLast = lastVariants[0];
   const domainLower = domain.toLowerCase().replace(/^@/, '');
 
-  // Known pattern: single candidate
+  // Known pattern: generate for primary AND nickname variants (Fix 9)
   if (knownPattern && knownPattern !== 'unknown') {
+    const candidates: CandidateEmail[] = [];
+    const seen = new Set<string>();
+    let rank = 1;
+
+    // Primary name first
     const local = buildLocalPart(knownPattern, primaryFirst, primaryLast);
     if (local) {
-      return [{ email: `${local}@${domainLower}`, pattern: knownPattern, rank: 1 }];
+      const email = `${local}@${domainLower}`;
+      seen.add(email);
+      candidates.push({ email, pattern: knownPattern, rank: rank++ });
     }
+
+    // Nickname variants for the known pattern
+    for (const variant of firstVariants.slice(1)) {
+      const altLocal = buildLocalPart(knownPattern, variant, primaryLast);
+      if (altLocal) {
+        const email = `${altLocal}@${domainLower}`;
+        if (!seen.has(email)) {
+          seen.add(email);
+          candidates.push({ email, pattern: knownPattern, rank: rank++ });
+        }
+      }
+    }
+
+    // Initials candidate if known pattern is initials
+    if (knownPattern === 'initials') {
+      const fullParts = `${firstName} ${lastName}`.toLowerCase().split(/\s+/);
+      const initials = buildInitials(fullParts);
+      if (initials.length >= 2) {
+        const email = `${initials}@${domainLower}`;
+        if (!seen.has(email)) {
+          seen.add(email);
+          candidates.push({ email, pattern: 'initials', rank: rank++ });
+        }
+      }
+    }
+
+    return candidates;
   }
 
   // Generate all pattern candidates, primary names first
@@ -539,7 +602,9 @@ export function generateCandidates(
   const seen = new Set<string>();
   let rank = 1;
 
+  // Pass 1: all patterns with primary names
   for (const { pattern } of PATTERN_PREVALENCE) {
+    if (pattern === 'initials') continue; // handle separately below
     const local = buildLocalPart(pattern, primaryFirst, primaryLast);
     if (local) {
       const email = `${local}@${domainLower}`;
@@ -550,8 +615,12 @@ export function generateCandidates(
     }
   }
 
-  // Add nickname variants for first.last and flast (the two most common patterns)
-  const nicknamePatterns: EmailPattern[] = ['first.last', 'flast', 'firstlast'];
+  // Pass 2: nickname variants for ALL high-prevalence patterns (Fix 9)
+  // Use all patterns where nickname could change the output
+  const nicknamePatterns: EmailPattern[] = [
+    'first.last', 'flast', 'first', 'firstlast', 'firstl',
+    'first_last', 'last.first', 'f.last', 'lastf',
+  ];
   for (const variant of firstVariants.slice(1)) { // skip primary, already used
     for (const pattern of nicknamePatterns) {
       const local = buildLocalPart(pattern, variant, primaryLast);
@@ -565,10 +634,11 @@ export function generateCandidates(
     }
   }
 
-  // Add hyphenated last name variants for top patterns
+  // Pass 3: hyphenated last name variants for top patterns
   if (lastVariants.length > 1) {
     for (const lastVariant of lastVariants.slice(1)) {
       for (const { pattern } of PATTERN_PREVALENCE.slice(0, 3)) { // top 3 patterns only
+        if (pattern === 'initials') continue;
         const local = buildLocalPart(pattern, primaryFirst, lastVariant);
         if (local) {
           const email = `${local}@${domainLower}`;
@@ -577,6 +647,28 @@ export function generateCandidates(
             candidates.push({ email, pattern, rank: rank++ });
           }
         }
+      }
+    }
+  }
+
+  // Pass 4: initials — full name parts (Fix 10)
+  const fullParts = `${firstName} ${lastName}`.toLowerCase().split(/\s+/);
+  const initials = buildInitials(fullParts);
+  if (initials.length >= 2) {
+    const email = `${initials}@${domainLower}`;
+    if (!seen.has(email)) {
+      seen.add(email);
+      candidates.push({ email, pattern: 'initials', rank: rank++ });
+    }
+  }
+  // Also two-letter initials (first + last only, no middle)
+  if (fullParts.length > 2) {
+    const shortInitials = `${fullParts[0][0]}${fullParts[fullParts.length - 1][0]}`;
+    if (shortInitials !== initials) {
+      const email = `${shortInitials}@${domainLower}`;
+      if (!seen.has(email)) {
+        seen.add(email);
+        candidates.push({ email, pattern: 'initials', rank: rank++ });
       }
     }
   }

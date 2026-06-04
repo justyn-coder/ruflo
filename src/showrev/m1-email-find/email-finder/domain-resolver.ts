@@ -50,6 +50,9 @@ const COMPANY_SUFFIXES = [
   'services', 'solutions', 'enterprises', 'network', 'networks',
 ];
 
+/** Corporate-suffix words to try appending back to the stripped slug. */
+const APPEND_SUFFIXES = ['inc', 'corp', 'llc', 'ltd', 'group', 'grp'];
+
 /** Patterns that signal a subsidiary/DBA relationship. */
 const SUBSIDIARY_PATTERNS = [
   /a\s+(?:division|subsidiary|unit|brand)\s+of\s+["']?([^"',.<]+)/i,
@@ -136,6 +139,8 @@ function extractDomainsFromResults(results: string[]): string[] {
  */
 function companyToSlug(name: string): string {
   let slug = name.toLowerCase().trim();
+  // Replace + with nothing
+  slug = slug.replace(/\+/g, '');
   // Remove punctuation
   slug = slug.replace(/[^a-z0-9\s\-]/g, '');
   // Strip known suffixes (word-boundary match)
@@ -151,12 +156,76 @@ function companyToSlug(name: string): string {
  */
 function companyToHyphenated(name: string): string {
   let slug = name.toLowerCase().trim();
+  slug = slug.replace(/\+/g, '');
   slug = slug.replace(/[^a-z0-9\s\-]/g, '');
   for (const suffix of COMPANY_SUFFIXES) {
     slug = slug.replace(new RegExp(`\\b${suffix}\\b`, 'gi'), '');
   }
   slug = slug.trim().replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
   return slug;
+}
+
+/**
+ * Full company name as slug with NO suffix stripping (keeps descriptors
+ * like "networks", "telecom", "communications").
+ * "Render Networks" -> "rendernetworks"
+ */
+function companyToFullSlug(name: string): string {
+  let slug = name.toLowerCase().trim();
+  // Replace + with nothing
+  slug = slug.replace(/\+/g, '');
+  // Remove punctuation except spaces/hyphens
+  slug = slug.replace(/[^a-z0-9\s\-]/g, '');
+  // Only strip legal suffixes (inc, llc, llp, corp, corporation, ltd, limited, co, company, holdings)
+  const legalOnly = [
+    'incorporated', 'inc', 'llc', 'llp', 'corp', 'corporation',
+    'co', 'company', 'ltd', 'limited', 'holdings',
+  ];
+  for (const suffix of legalOnly) {
+    slug = slug.replace(new RegExp(`\\b${suffix}\\b`, 'gi'), '');
+  }
+  slug = slug.trim().replace(/\s+/g, '');
+  return slug;
+}
+
+/**
+ * Full company name as hyphenated slug with NO suffix stripping.
+ * "Mohawk Networks" -> "mohawk-networks"
+ */
+function companyToFullHyphenated(name: string): string {
+  let slug = name.toLowerCase().trim();
+  slug = slug.replace(/\+/g, '');
+  slug = slug.replace(/[^a-z0-9\s\-]/g, '');
+  const legalOnly = [
+    'incorporated', 'inc', 'llc', 'llp', 'corp', 'corporation',
+    'co', 'company', 'ltd', 'limited', 'holdings',
+  ];
+  for (const suffix of legalOnly) {
+    slug = slug.replace(new RegExp(`\\b${suffix}\\b`, 'gi'), '');
+  }
+  slug = slug.trim().replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+  return slug;
+}
+
+/**
+ * Generate acronym from company name initials.
+ * "Fiber Optic Solutions" -> "fos"
+ */
+function companyToAcronym(name: string): string {
+  let cleaned = name.toLowerCase().trim();
+  cleaned = cleaned.replace(/\+/g, '');
+  cleaned = cleaned.replace(/[^a-z0-9\s\-]/g, '');
+  // Strip legal suffixes only
+  const legalOnly = [
+    'incorporated', 'inc', 'llc', 'llp', 'corp', 'corporation',
+    'co', 'company', 'ltd', 'limited', 'holdings',
+  ];
+  for (const suffix of legalOnly) {
+    cleaned = cleaned.replace(new RegExp(`\\b${suffix}\\b`, 'gi'), '');
+  }
+  const words = cleaned.trim().split(/\s+/).filter(Boolean);
+  if (words.length < 2) return '';
+  return words.map((w) => w[0]).join('');
 }
 
 // ---------------------------------------------------------------------------
@@ -360,11 +429,18 @@ async function tacticHeuristics(
 ): Promise<DomainResult | null> {
   const slug = companyToSlug(companyName);
   const hyphenated = companyToHyphenated(companyName);
+  const fullSlug = companyToFullSlug(companyName);
+  const fullHyphenated = companyToFullHyphenated(companyName);
+  const acronym = companyToAcronym(companyName);
+  const nameLower = companyName.toLowerCase().trim();
 
   if (!slug) {
     log(audit, { tactic: 'heuristics', attempted: false, outcome: 'skip', detail: 'empty slug after stripping' });
     return null;
   }
+
+  // All TLDs to try — .tech and .io added for modern companies (Fix 7)
+  const TLDS = ['com', 'net', 'org', 'us', 'io', 'tech'];
 
   // Build candidate list — order matters (most likely first)
   const candidates: string[] = [];
@@ -372,27 +448,115 @@ async function tacticHeuristics(
 
   const addCandidate = (c: string) => {
     const n = normalizeDomain(c);
-    if (n && !seen.has(n)) {
+    if (n && !seen.has(n) && n.includes('.')) {
       seen.add(n);
       candidates.push(n);
     }
   };
 
-  // Primary guesses
-  addCandidate(`${slug}.com`);
-  if (hyphenated !== slug) addCandidate(`${hyphenated}.com`);
-  addCandidate(`${slug}.net`);
-  addCandidate(`${slug}.org`);
-  if (hyphenated !== slug) {
-    addCandidate(`${hyphenated}.net`);
-    addCandidate(`${hyphenated}.org`);
+  // --- Tier 1: stripped slug across TLDs ---
+  for (const tld of TLDS) {
+    addCandidate(`${slug}.${tld}`);
   }
 
-  // Telecom-specific TLDs
-  addCandidate(`${slug}.us`);
-  addCandidate(`${slug}.io`);
+  // --- Tier 2: full slug (no descriptor stripping) across TLDs (Fix 4) ---
+  if (fullSlug !== slug) {
+    for (const tld of TLDS) {
+      addCandidate(`${fullSlug}.${tld}`);
+    }
+  }
 
-  // Check MX records for each candidate
+  // --- Tier 3: hyphenated variants (Fix 5) ---
+  if (hyphenated !== slug) {
+    for (const tld of TLDS) {
+      addCandidate(`${hyphenated}.${tld}`);
+    }
+  }
+  if (fullHyphenated !== fullSlug && fullHyphenated !== hyphenated) {
+    for (const tld of TLDS) {
+      addCandidate(`${fullHyphenated}.${tld}`);
+    }
+  }
+
+  // --- Tier 4: "the" prefix (Fix 2) ---
+  const startsWithThe = nameLower.startsWith('the ') || nameLower.startsWith('the-');
+  if (!startsWithThe && slug.length > 2) {
+    for (const tld of TLDS) {
+      addCandidate(`the${slug}.${tld}`);
+    }
+    if (fullSlug !== slug) {
+      for (const tld of TLDS) {
+        addCandidate(`the${fullSlug}.${tld}`);
+      }
+    }
+  }
+
+  // --- Tier 5: slug + corporate suffix (Fix 3) ---
+  // Always generate inc/corp/llc appended variants — many telecom companies
+  // use the suffix in their domain even when casual references omit it.
+  for (const corpSuffix of APPEND_SUFFIXES) {
+    // .com and .net only for unconditional appends (limit explosion)
+    addCandidate(`${slug}${corpSuffix}.com`);
+    addCandidate(`${slug}${corpSuffix}.net`);
+
+    // Full TLD spread only if the company name actually contains the suffix
+    const nameWords = nameLower.replace(/[^a-z0-9\s]/g, '').split(/\s+/);
+    if (nameWords.some((w) => w === corpSuffix)) {
+      for (const tld of TLDS) {
+        addCandidate(`${slug}${corpSuffix}.${tld}`);
+      }
+    }
+    // Also try for fullSlug if different
+    if (fullSlug !== slug) {
+      addCandidate(`${fullSlug}${corpSuffix}.com`);
+      addCandidate(`${fullSlug}${corpSuffix}.net`);
+    }
+  }
+
+  // --- Tier 6: acronym-based (Fix 6) ---
+  if (acronym && acronym.length >= 2 && acronym !== slug) {
+    for (const tld of TLDS) {
+      addCandidate(`${acronym}.${tld}`);
+    }
+    // acronym + corporate suffixes (e.g. fos-llc)
+    for (const corpSuffix of ['llc', 'inc', 'corp']) {
+      addCandidate(`${acronym}-${corpSuffix}.com`);
+      addCandidate(`${acronym}${corpSuffix}.com`);
+    }
+  }
+
+  // --- Tier 7: abbreviated forms for names with "Telecom"/"Communications"/etc. ---
+  // "LCC Telecom" -> "lcctelecom", "Hawaiian Telcom" -> "hawaiiantel"
+  // Track which bases came from this logic for ranking later
+  const telecomConcats = new Set<string>();
+  const telecomAbbrevs: Record<string, string[]> = {
+    'telecommunications': ['telecom', 'tel'],
+    'telecom': ['telecom', 'tel'],
+    'telcom': ['telcom', 'tel'],
+    'communications': ['comm', 'com'],
+    'technologies': ['tech'],
+    'technology': ['tech'],
+    'engineering': ['eng'],
+    'broadband': ['broadband', 'bb'],
+    'insurance': ['ins'],
+  };
+  for (const [word, abbrevs] of Object.entries(telecomAbbrevs)) {
+    if (nameLower.includes(word)) {
+      const beforeWord = nameLower.split(word)[0]
+        .replace(/[^a-z0-9]/g, '');
+      if (beforeWord) {
+        for (const abbrev of abbrevs) {
+          const base = `${beforeWord}${abbrev}`;
+          telecomConcats.add(base);
+          for (const tld of TLDS) {
+            addCandidate(`${base}.${tld}`);
+          }
+        }
+      }
+    }
+  }
+
+  // Check MX records for all candidates in parallel
   const verified: string[] = [];
   const mxChecks = candidates.map(async (domain) => {
     const mx = await withTimeout(resolveDomainsFromMx(domain), opts.timeout);
@@ -402,17 +566,22 @@ async function tacticHeuristics(
   await Promise.all(mxChecks);
 
   if (verified.length > 0) {
+    // Fix 1: smarter primary selection
+    // Prefer the domain whose base name most closely matches the full slug or slug
+    const primary = pickBestDomain(verified, slug, fullSlug, acronym, companyName, telecomConcats);
+    const alternatives = verified.filter((d) => d !== primary);
+
     log(audit, {
       tactic: 'heuristics',
       attempted: true,
       outcome: 'success',
-      detail: `MX verified: ${verified.join(', ')}`,
+      detail: `MX verified: ${verified.join(', ')} | primary: ${primary}`,
     });
     return {
-      domain: verified[0],
+      domain: primary,
       confidence: 'medium',
       source: 'heuristics-mx-verified',
-      alternativeDomains: verified.length > 1 ? verified.slice(1) : undefined,
+      alternativeDomains: alternatives.length > 0 ? alternatives : undefined,
     };
   }
 
@@ -423,6 +592,86 @@ async function tacticHeuristics(
     detail: `no MX records for candidates: ${candidates.join(', ')}`,
   });
   return null;
+}
+
+/**
+ * Pick the best domain from a set of MX-verified candidates.
+ *
+ * Key insight: for telecom companies, the "full slug" (with descriptors like
+ * "networks", "telecom") is often the actual domain. The stripped slug is a
+ * fallback. We rank by specificity: more-specific bases beat shorter ones.
+ */
+function pickBestDomain(
+  verified: string[],
+  slug: string,
+  fullSlug: string,
+  acronym: string,
+  companyName: string,
+  telecomConcats: Set<string>,
+): string {
+  const TLD_RANK: Record<string, number> = {
+    'com': 0, 'net': 1, 'org': 2, 'us': 3, 'io': 4, 'tech': 5,
+  };
+
+  const nameLower = companyName.toLowerCase();
+  // Check if company name originally contained corporate suffixes
+  const nameContainsInc = /\binc\b/i.test(nameLower);
+  const nameContainsCorp = /\bcorp\b/i.test(nameLower);
+  const nameContainsLlc = /\bllc\b/i.test(nameLower);
+  const nameContainsLtd = /\bltd\b/i.test(nameLower);
+
+  // Score each candidate
+  const scored = verified.map((domain) => {
+    const dotIdx = domain.indexOf('.');
+    const base = dotIdx > 0 ? domain.substring(0, dotIdx) : domain;
+    const tld = dotIdx > 0 ? domain.substring(dotIdx + 1) : '';
+    const tldRank = TLD_RANK[tld] ?? 10;
+
+    // Priority tiers — lower = better:
+    // 0 = slug+corporate-suffix when name had that suffix (immcoinc.com for IMMCO Inc.)
+    // 1 = full slug match (rendernetworks.com for Render Networks)
+    // 1 = telecom-concatenated forms from abbrev logic (lcctelecom, nomadtelecom)
+    // 2 = stripped slug match (esri.com for Esri) — most common case
+    // 2 = "the" prefix variant (thetalentpartners for TalentPartners)
+    // 3 = abbreviated telecom variant (hawaiiantel for Hawaiian Telcom)
+    // 4 = speculative slug+suffix (dycominc when name doesn't say Inc.)
+    // 5 = acronym
+    // 6 = everything else
+
+    let matchTier = 6;
+
+    // Check if base is a known telecom-concatenated form from abbrev logic
+    const isTelecomConcat = telecomConcats.has(base);
+
+    // Slug + corporate suffix matches when name actually contains the suffix
+    if (nameContainsInc && (base === `${slug}inc` || base === `${fullSlug}inc`)) matchTier = 0;
+    else if (nameContainsCorp && (base === `${slug}corp` || base === `${fullSlug}corp`)) matchTier = 0;
+    else if (nameContainsLlc && (base === `${slug}llc` || base === `${fullSlug}llc`)) matchTier = 0;
+    else if (nameContainsLtd && (base === `${slug}ltd` || base === `${fullSlug}ltd`)) matchTier = 0;
+    // Full slug (with descriptors kept) — more specific = more likely correct
+    else if (base === fullSlug && fullSlug !== slug && fullSlug.length > slug.length) matchTier = 1;
+    // Telecom concatenated forms (lcctelecom, nomadtelecom, bookereng)
+    else if (isTelecomConcat) matchTier = 1;
+    // Stripped slug — the safest default
+    else if (base === slug) matchTier = 2;
+    // "the" prefix variants — very common for companies that can't get bare domain
+    else if (base === `the${slug}` || base === `the${fullSlug}`) matchTier = 2;
+    // Abbreviated telecom variants (e.g. "hawaiiantel" for "Hawaiian Telcom")
+    // Must be a prefix of the full slug and shorter (not suffix-appended)
+    else if (base.length > 4 && base.length < fullSlug.length && fullSlug.startsWith(base)) matchTier = 3;
+    // Speculative slug + corporate suffix (name doesn't contain the suffix)
+    else if (base === `${slug}inc` || base === `${slug}corp` || base === `${slug}llc`
+          || base === `${slug}ltd` || base === `${slug}group` || base === `${slug}grp`) matchTier = 4;
+    // Acronym
+    else if (acronym && (base === acronym || base.startsWith(acronym))) matchTier = 5;
+    // Anything else
+    else matchTier = 6;
+
+    return { domain, matchTier, tldRank };
+  });
+
+  scored.sort((a, b) => a.matchTier - b.matchTier || a.tldRank - b.tldRank);
+  return scored[0].domain;
 }
 
 // ---------------------------------------------------------------------------
