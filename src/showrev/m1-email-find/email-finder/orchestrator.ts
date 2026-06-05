@@ -372,6 +372,9 @@ async function findEmailForContact(
   tacticsAttempted.push('smtp-verification');
   console.log(`${prefix()} Step 6: verification — ${candidates.length} candidates to check on ${domain} (provider=${providerStr})`);
   const t6 = ms();
+  // Hard timeout on entire verification step — Proofpoint/self-hosted can hang for minutes
+  const VERIFY_TIMEOUT_MS = 30000;
+  const verifyDeadline = Date.now() + VERIFY_TIMEOUT_MS;
 
   // ---------------------------------------------------------------------------
   // Build a list of (domain, candidates, provider) tuples to try.
@@ -475,6 +478,11 @@ async function findEmailForContact(
     const domainSurvivors: SurvivorEntry[] = [];
 
     for (const candidate of attemptCandidates) {
+      // Hard deadline check — bail if we've exceeded 30s total for all verification
+      if (Date.now() > verifyDeadline) {
+        console.log(`${prefix()} Step 6: TIMEOUT after ${VERIFY_TIMEOUT_MS}ms — stopping verification`);
+        break;
+      }
       try {
         console.log(`${prefix()} Step 6: verifying ${candidate.email} (pattern=${candidate.pattern}, rank=${candidate.rank}, method=${method})`);
         const result: SmtpVerifyResult = await verifyEmail(candidate.email);
@@ -568,7 +576,12 @@ async function findEmailForContact(
     allSurvivors.sort((a, b) => {
       const aLocal = a.candidate.email.split('@')[0];
       const bLocal = b.candidate.email.split('@')[0];
-      // Prefer shorter local parts (first@ over first.last@)
+      // Penalize very short locals (initials like "vs@" or "gn@") — these are
+      // almost never real email patterns. Prefer first@ (3+ chars) over initials.
+      const aIsInitials = aLocal.length <= 2;
+      const bIsInitials = bLocal.length <= 2;
+      if (aIsInitials !== bIsInitials) return aIsInitials ? 1 : -1;
+      // Among non-initials, prefer shorter (first@ over first.last@)
       const lenDiff = aLocal.length - bLocal.length;
       if (lenDiff !== 0) return lenDiff;
       // Break ties by original rank
