@@ -201,9 +201,54 @@ async function phaseEmailFind(
 
   try {
     const { findEmail } = await import('./email-finder/orchestrator.js');
-    // MVP: use mock search/fetch (we'll wire real WebSearch/WebFetch later)
-    const mockSearchFn = async (_query: string): Promise<string[]> => [];
-    const mockFetchFn = async (_url: string): Promise<string> => '';
+
+    // Real web search via Google Custom Search or DuckDuckGo HTML scraping
+    const realSearchFn = async (query: string): Promise<string[]> => {
+      try {
+        // Use DuckDuckGo HTML search (no API key needed)
+        const encoded = encodeURIComponent(query);
+        const url = `https://html.duckduckgo.com/html/?q=${encoded}`;
+        const res = await fetch(url, {
+          headers: { 'User-Agent': 'Mozilla/5.0 (compatible; ShowRev/1.0)' },
+          signal: AbortSignal.timeout(10000),
+        });
+        if (!res.ok) return [];
+        const html = await res.text();
+        // Extract result URLs from DuckDuckGo HTML response
+        const urls: string[] = [];
+        const urlRegex = /uddg=([^&"]+)/g;
+        let match;
+        while ((match = urlRegex.exec(html)) !== null) {
+          try {
+            const decoded = decodeURIComponent(match[1]);
+            if (decoded.startsWith('http') && !decoded.includes('duckduckgo')) {
+              urls.push(decoded);
+            }
+          } catch {}
+        }
+        return urls.slice(0, 10);
+      } catch {
+        return [];
+      }
+    };
+
+    // Real web page fetch
+    const realFetchFn = async (url: string): Promise<string> => {
+      try {
+        const res = await fetch(url, {
+          headers: { 'User-Agent': 'Mozilla/5.0 (compatible; ShowRev/1.0)' },
+          signal: AbortSignal.timeout(10000),
+        });
+        if (!res.ok) return '';
+        const contentType = res.headers.get('content-type') || '';
+        if (!contentType.includes('text/html') && !contentType.includes('text/plain')) return '';
+        const text = await res.text();
+        // Limit to 50KB to avoid memory issues on large pages
+        return text.slice(0, 50000);
+      } catch {
+        return '';
+      }
+    };
 
     const result = await findEmail(
       {
@@ -214,7 +259,7 @@ async function phaseEmailFind(
         companyUrl: row.companyUrl,
         state: row.state,
       },
-      { searchFn: mockSearchFn, fetchFn: mockFetchFn, smtpVerify: false },
+      { searchFn: realSearchFn, fetchFn: realFetchFn, smtpVerify: true },
     );
     return { email: result.email, confidence: result.confidence };
   } catch (err: any) {
