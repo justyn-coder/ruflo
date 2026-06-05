@@ -29,6 +29,8 @@ interface PipelineConfig {
   dryRun: boolean;
   skipExisting: boolean;
   skipResearch: boolean;
+  skipComposition: boolean;
+  touches: number[];
   verbose: boolean;
   model: string;
   composer: 'full' | 'lean' | 'auto';
@@ -805,11 +807,16 @@ async function processOneProspect(
   // Phase 6: Email composition
   const ae = resolveAE(row.state);
   const micrositeSlug = toSlug(row.company);
-  console.log('  Phase 6: Email composition...');
   let emails: ComposedEmail[] = [];
-  if (config.skipResearch) {
-    console.log('  -> Composition SKIPPED (no research to compose from)');
-    emails = [1, 2, 3].map(n => ({
+  let judgeResult = { scores: {} as Record<string, number>, pass: false, failures: [] as string[] };
+  let microsite = { headline: '', insightText: '', caseStudy: '' };
+
+  if (config.skipComposition) {
+    // --skip-composition: phases 1-4 only, skip 6/7/8
+    console.log('  Phase 6-8: SKIPPED (--skip-composition)');
+  } else if (config.skipResearch) {
+    console.log('  Phase 6: Email composition SKIPPED (no research to compose from)');
+    emails = config.touches.map(n => ({
       touchNumber: n,
       subject: '[Skipped]',
       body: '[Composition skipped - no research]',
@@ -818,49 +825,88 @@ async function processOneProspect(
       pattern: patterns[n - 1]?.pattern || 'challenger_insight',
     }));
   } else {
+    console.log(`  Phase 6: Email composition (touches: ${config.touches.join(', ')})...`);
     try {
-      emails = await phaseComposition(
+      const allEmails = await phaseComposition(
         row, researchSummary, patterns, ae, micrositeSlug,
         config.composer, config.model, config.verbose,
       );
+      // Filter to only requested touches
+      emails = allEmails.filter(e => config.touches.includes(e.touchNumber));
       console.log(`  -> ${emails.length} touches composed`);
+
+      // Word count safety net: recompose with lean if any touch exceeds 88 words
+      const { composeLean } = await import('./lean-composer.js');
+      for (let idx = 0; idx < emails.length; idx++) {
+        const email = emails[idx];
+        const wc = email.body.split(/\s+/).filter(Boolean).length;
+        if (wc > 88) {
+          console.log(`  -> WARNING: T${email.touchNumber} has ${wc} words (limit 88), recomposing with lean...`);
+          try {
+            const lean = composeLean(
+              {
+                prospect: { firstName: row.firstName, lastName: row.lastName, title: row.title, company: row.company },
+                companySummary: researchSummary.slice(0, 1500),
+                challengerInsight: patterns[email.touchNumber - 1]?.challengerInsight || '',
+                talkingPoints: patterns[email.touchNumber - 1]?.rationale || '',
+                fitRationale: patterns[email.touchNumber - 1]?.emotionalFrame || '',
+                boothNotes: '',
+                ae,
+                touchNumber: email.touchNumber as 1 | 2 | 3,
+                previousSubject: email.touchNumber > 1 ? emails.find(e => e.touchNumber === email.touchNumber - 1)?.subject : undefined,
+                micrositeSlug,
+              },
+              config.model === 'opus' ? 'opus' : 'sonnet',
+            );
+            emails[idx] = {
+              touchNumber: email.touchNumber,
+              subject: lean.subject,
+              body: lean.body,
+              ps: lean.ps,
+              wordCount: lean.wordCount,
+              pattern: email.pattern,
+            };
+            console.log(`  -> T${email.touchNumber} recomposed (${lean.wordCount} words)`);
+          } catch (err: any) {
+            console.log(`  -> T${email.touchNumber} lean recompose failed: ${err.message?.slice(0, 60)}`);
+          }
+        }
+      }
     } catch (err: any) {
       errors.push(`composition: ${err.message?.slice(0, 80)}`);
       console.log(`  -> Composition error: ${err.message?.slice(0, 60)}`);
     }
-  }
 
-  result.emailSubjects = {
-    t1: emails.find(e => e.touchNumber === 1)?.subject || '',
-    t2: emails.find(e => e.touchNumber === 2)?.subject || '',
-    t3: emails.find(e => e.touchNumber === 3)?.subject || '',
-  };
+    result.emailSubjects = {
+      t1: emails.find(e => e.touchNumber === 1)?.subject || '',
+      t2: emails.find(e => e.touchNumber === 2)?.subject || '',
+      t3: emails.find(e => e.touchNumber === 3)?.subject || '',
+    };
 
-  // Phase 7: Judge gate
-  console.log('  Phase 7: Judge gate...');
-  let judgeResult = { scores: {} as Record<string, number>, pass: false, failures: [] as string[] };
-  try {
-    judgeResult = await phaseJudge(emails, row, ae, micrositeSlug, config.verbose);
-    result.judgeScores = judgeResult.scores;
-    result.judgePass = judgeResult.pass;
-    console.log(`  -> ${judgeResult.pass ? 'PASS' : 'FAIL'}${judgeResult.failures.length > 0 ? ` (${judgeResult.failures.length} failures)` : ''}`);
-  } catch (err: any) {
-    errors.push(`judge: ${err.message?.slice(0, 80)}`);
-    console.log(`  -> Judge error: ${err.message?.slice(0, 60)}`);
-  }
+    // Phase 7: Judge gate
+    console.log('  Phase 7: Judge gate...');
+    try {
+      judgeResult = await phaseJudge(emails, row, ae, micrositeSlug, config.verbose);
+      result.judgeScores = judgeResult.scores;
+      result.judgePass = judgeResult.pass;
+      console.log(`  -> ${judgeResult.pass ? 'PASS' : 'FAIL'}${judgeResult.failures.length > 0 ? ` (${judgeResult.failures.length} failures)` : ''}`);
+    } catch (err: any) {
+      errors.push(`judge: ${err.message?.slice(0, 80)}`);
+      console.log(`  -> Judge error: ${err.message?.slice(0, 60)}`);
+    }
 
-  // Phase 8: Microsite content
-  console.log('  Phase 8: Microsite content...');
-  let microsite = { headline: '', insightText: '', caseStudy: '' };
-  try {
-    microsite = await phaseMicrosite(
-      row, runId, micrositeSlug, ae,
-      patterns[0]?.challengerInsight || '', researchSummary, '',
-    );
-    console.log(`  -> "${microsite.headline.slice(0, 50)}..."`);
-  } catch (err: any) {
-    errors.push(`microsite: ${err.message?.slice(0, 80)}`);
-    console.log(`  -> Microsite error: ${err.message?.slice(0, 60)}`);
+    // Phase 8: Microsite content
+    console.log('  Phase 8: Microsite content...');
+    try {
+      microsite = await phaseMicrosite(
+        row, runId, micrositeSlug, ae,
+        patterns[0]?.challengerInsight || '', researchSummary, '',
+      );
+      console.log(`  -> "${microsite.headline.slice(0, 50)}..."`);
+    } catch (err: any) {
+      errors.push(`microsite: ${err.message?.slice(0, 80)}`);
+      console.log(`  -> Microsite error: ${err.message?.slice(0, 60)}`);
+    }
   }
   result.micrositeSlug = micrositeSlug;
 
@@ -951,6 +997,8 @@ async function main(): Promise<void> {
       'dry-run': { type: 'boolean', default: false },
       'skip-existing': { type: 'boolean', default: false },
       'skip-research': { type: 'boolean', default: false },
+      'skip-composition': { type: 'boolean', default: false },
+      touches: { type: 'string', default: '1,2,3' },
       verbose: { type: 'boolean', short: 'v', default: false },
       model: { type: 'string', default: 'sonnet' },
       composer: { type: 'string', default: 'auto' },
@@ -969,9 +1017,14 @@ Usage:
 Options:
   --input, -i <file>     CSV file with prospects (required)
   --limit, -n <N>        Process only first N rows
+  --touches <list>       Comma-separated touch numbers to compose (default: 1,2,3)
+                         e.g. --touches 1  or  --touches 1,2
   --dry-run              Print plan but don't write to Supabase
   --skip-existing        Skip prospects already in sr_engine_output
   --skip-research        Skip LLM research (for testing)
+  --skip-composition     Run phases 1-4 only (email find + research + substrate +
+                         pattern selection). Writes research fields to Supabase,
+                         skips composition/judge/microsite.
   --verbose, -v          Verbose output
   --model <model>        LLM model: sonnet (default) or opus
   --composer <mode>      Composition: auto (default), lean, or full
@@ -989,12 +1042,19 @@ Environment variables:
     process.exit(values.help ? 0 : 1);
   }
 
+  const parsedTouches = ((values.touches as string) || '1,2,3')
+    .split(',')
+    .map(s => parseInt(s.trim(), 10))
+    .filter(n => n >= 1 && n <= 3);
+
   const config: PipelineConfig = {
     input: values.input as string,
     limit: values.limit ? parseInt(values.limit as string, 10) : undefined,
     dryRun: values['dry-run'] as boolean,
     skipExisting: values['skip-existing'] as boolean,
     skipResearch: values['skip-research'] as boolean,
+    skipComposition: values['skip-composition'] as boolean,
+    touches: parsedTouches.length > 0 ? parsedTouches : [1, 2, 3],
     verbose: values.verbose as boolean,
     model: (values.model as string) || 'sonnet',
     composer: ((values.composer as string) || 'auto') as 'full' | 'lean' | 'auto',
@@ -1033,8 +1093,10 @@ Environment variables:
   console.log(`  Model: ${config.model}`);
   console.log(`  Composer: ${config.composer}`);
   if (config.dryRun) console.log('  Mode: DRY RUN');
+  if (config.skipComposition) console.log('  Mode: SKIP COMPOSITION (phases 1-4 only)');
   if (config.skipResearch) console.log('  Mode: SKIP RESEARCH');
   if (config.skipExisting) console.log('  Mode: SKIP EXISTING');
+  if (config.touches.length < 3) console.log(`  Touches: ${config.touches.join(', ')} only`);
 
   // Process each prospect
   const t0 = Date.now();

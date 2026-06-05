@@ -249,7 +249,7 @@ Rules: 1-2 sentences max. Pattern break from body tone. Most-read part of email.
 The first ~90 characters of your email body will show in the inbox preview pane BEFORE the recipient opens. Write the opening line knowing it serves double duty as the preview text. It must compel the open -- don't waste it on "Hi [Name]".
 
 ## Hard constraints
-- Under 80 words (body only, not counting subject/signature/PS)
+- HARD LIMIT: 80 words maximum (body only, not counting subject/signature/PS). Count every word. Emails over 80 words will be rejected and rewritten. Under 70 words is ideal. This is the single most important constraint — violating it invalidates the entire email. After drafting, recount. If over 80, cut ruthlessly. Short emails get read. Long emails get archived.
 - One specific DIAGNOSTIC question per email — a question about THEIR situation that forces them to think, not a generic meeting ask. NEVER use "Worth a 20-minute conversation?" or "Worth X minutes?" — these are generic gates easy to ignore. Instead ask something specific: "How are you handling [specific thing from research]?" or "What's [specific metric] costing you per [time period]?" The question should demonstrate you understand their business.
 - Subject line: under 8 words, specific to their situation. First letter MUST be capitalized. Proper nouns capitalized. No all-lowercase subjects.
 - Salutation: strictly ${prospect.firstName}, (comma only, NO greeting word)
