@@ -319,23 +319,62 @@ async function tacticClearbit(
   try {
     const results = JSON.parse(raw);
     if (Array.isArray(results) && results.length > 0) {
-      // Clearbit ranks by relevance — first result is best match
-      const best = results[0] as { name?: string; domain?: string; logo?: string };
-      if (best.domain) {
+      // Find the result with the closest name match — not just first result
+      // "Avatar Tech" should match "Avatar Tech: avatartechllc.com" (exact)
+      // NOT "Avatar Technologies: avatartechs.com" (partial)
+      const queryLower = companyName.toLowerCase().trim();
+
+      // First pass: exact name match
+      let best = (results as Array<{ name?: string; domain?: string }>).find(
+        r => r.name && r.domain && r.name.toLowerCase().trim() === queryLower
+      );
+
+      // Second pass: name starts with our query or our query starts with name
+      if (!best) {
+        best = (results as Array<{ name?: string; domain?: string }>).find(
+          r => r.name && r.domain && (
+            r.name.toLowerCase().trim().startsWith(queryLower) ||
+            queryLower.startsWith(r.name.toLowerCase().trim())
+          ) && Math.abs((r.name?.length || 0) - companyName.length) < 5
+        );
+      }
+
+      if (best && best.domain) {
         const domain = normalizeDomain(best.domain);
+        // Collect ALL exact-match domains as alternatives (Clearbit may return multiple)
+        const allMatches = (results as Array<{ name?: string; domain?: string }>)
+          .filter(r => r.name && r.domain && (
+            r.name.toLowerCase().trim() === queryLower ||
+            r.name.toLowerCase().trim().startsWith(queryLower) ||
+            queryLower.startsWith(r.name.toLowerCase().trim())
+          ))
+          .map(r => normalizeDomain(r.domain!))
+          .filter(d => d && d !== domain);
+
         log(audit, {
           tactic: 'clearbit-autocomplete',
           attempted: true,
           outcome: 'success',
-          detail: `matched "${best.name}" -> ${domain}`,
+          detail: `exact match "${best.name}" -> ${domain}${allMatches.length > 0 ? ` (+${allMatches.length} alts)` : ''}`,
         });
         return {
           domain,
           confidence: 'high',
           source: 'clearbit-autocomplete',
           emailsFound: [],
+          alternativeDomains: allMatches.length > 0 ? allMatches : undefined,
         };
       }
+
+      // No close match — reject rather than return wrong company
+      const names = (results as Array<{ name?: string }>).map(r => r.name).filter(Boolean).join(', ');
+      log(audit, {
+        tactic: 'clearbit-autocomplete',
+        attempted: true,
+        outcome: 'fail',
+        detail: `no exact name match for "${companyName}" in [${names.slice(0, 100)}]`,
+      });
+      return null;
     }
   } catch {
     // JSON parse failure — non-JSON response
@@ -644,12 +683,47 @@ async function tacticWebsiteExtraction(
   }
 
   // No emails but we have the domain from the URL
-  if (urlDomain) {
+  // ONLY trust this if the page content mentions the company name
+  // (prevents booker.com being returned for "Booker Engineering" — booker.com is a restaurant platform)
+  if (urlDomain && !companyUrl) {
+    const htmlLower = html.toLowerCase();
+    const nameTokens = companyName.toLowerCase().split(/\s+/).filter(t => t.length > 2);
+    const matchCount = nameTokens.filter(t => htmlLower.includes(t)).length;
+    const matchRatio = nameTokens.length > 0 ? matchCount / nameTokens.length : 0;
+
+    // Require FULL company name as a phrase (case-insensitive)
+    // Token matching is too loose — "avatar" + "tech" appear on avatar.com
+    // (a different company) giving 100% match on individual tokens.
+    // Only the full phrase "avatar tech" confirms it's the right company.
+    const fullNamePresent = htmlLower.includes(companyName.toLowerCase().trim());
+    if (fullNamePresent) {
+      log(audit, {
+        tactic: 'website-extraction',
+        attempted: true,
+        outcome: 'success',
+        detail: `no emails but page mentions company (${matchCount}/${nameTokens.length} tokens), using URL domain from ${url}`,
+      });
+      return {
+        domain: urlDomain,
+        confidence: 'medium',
+        source: `website-extraction: ${url}`,
+      };
+    } else {
+      log(audit, {
+        tactic: 'website-extraction',
+        attempted: true,
+        outcome: 'fail',
+        detail: `page at ${url} does not mention "${companyName}" (${matchCount}/${nameTokens.length} tokens) — likely wrong company`,
+      });
+      return null;
+    }
+  } else if (urlDomain && companyUrl) {
+    // If the operator provided the URL, trust it
     log(audit, {
       tactic: 'website-extraction',
       attempted: true,
       outcome: 'success',
-      detail: `no emails found, using URL domain from ${url}`,
+      detail: `no emails found, using operator-provided URL domain from ${url}`,
     });
     return {
       domain: urlDomain,
@@ -1101,20 +1175,23 @@ export async function resolveDomain(
   };
   const audit: AuditEntry[] = [];
 
-  // Waterfall: data-driven order (tactic-eval 2026-06-05 against 83 booth contacts)
-  // Heuristic+MX first (44.6%) — best for niche fiber companies
-  // Clearbit second (22.9%) — good for well-known companies, but returns WRONG
-  //   results for niche firms if run first (Booker Engineering -> booker.com)
-  // DuckDuckGo search (B/C) REMOVED — 0% hit rate on both person and company search
-  // Person search kept but deprioritized — needs Bing API to be useful
+  // Waterfall: data-driven order (tactic-eval 2026-06-05, refined overnight)
+  //
+  // Key insight: Clearbit has exact name matches for niche companies
+  // (Avatar Tech → avatartechllc.com, Booker Engineering → bookereng.com)
+  // but ONLY when the returned name matches our query closely.
+  //
+  // Clearbit first (exact name match only) — catches both niche and well-known
+  // Website extraction second (with company name content check)
+  // Heuristic+MX third — catches remaining predictable domains
+  // DuckDuckGo search REMOVED — 0% hit rate (confirmed by 83-contact eval)
   const tactics: Array<() => Promise<DomainResult | null>> = [
+    () => tacticClearbit(companyName, opts, audit),
     () => tacticWebsiteExtraction(companyName, companyUrl, opts, audit),
     () => tacticHeuristics(companyName, opts, audit),
-    () => tacticClearbit(companyName, opts, audit),
     () => tacticPersonEmailSearch(companyName, opts, audit),
     () => tacticFccLookup(companyName, opts, audit),
     () => tacticSubsidiaryLookup(companyName, opts, audit),
-    // tacticFilteredWebSearch removed — DuckDuckGo returns 0% correct domains
   ];
 
   for (const tactic of tactics) {
