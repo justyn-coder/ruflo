@@ -202,10 +202,16 @@ async function phaseEmailFind(
   try {
     const { findEmail } = await import('./email-finder/orchestrator.js');
 
-    // Real web search via Google Custom Search or DuckDuckGo HTML scraping
+    // Social media domains to always exclude from search results
+    const SOCIAL_DOMAINS = [
+      'x.com', 'twitter.com', 'linkedin.com', 'facebook.com',
+      'instagram.com', 'youtube.com', 'reddit.com', 'tiktok.com',
+      'wikipedia.org', 'pinterest.com',
+    ];
+
+    // DuckDuckGo HTML search with social-media filtering
     const realSearchFn = async (query: string): Promise<string[]> => {
       try {
-        // Use DuckDuckGo HTML search (no API key needed)
         const encoded = encodeURIComponent(query);
         const url = `https://html.duckduckgo.com/html/?q=${encoded}`;
         const res = await fetch(url, {
@@ -214,15 +220,21 @@ async function phaseEmailFind(
         });
         if (!res.ok) return [];
         const html = await res.text();
-        // Extract result URLs from DuckDuckGo HTML response
         const urls: string[] = [];
         const urlRegex = /uddg=([^&"]+)/g;
         let match;
         while ((match = urlRegex.exec(html)) !== null) {
           try {
             const decoded = decodeURIComponent(match[1]);
-            if (decoded.startsWith('http') && !decoded.includes('duckduckgo')) {
-              urls.push(decoded);
+            if (decoded.startsWith('http')) {
+              // Filter out social media and DuckDuckGo self-links
+              const domain = new URL(decoded).hostname.replace(/^www\./, '');
+              const isSocial = SOCIAL_DOMAINS.some(
+                (sd) => domain === sd || domain.endsWith('.' + sd),
+              );
+              if (!isSocial && !domain.includes('duckduckgo')) {
+                urls.push(decoded);
+              }
             }
           } catch {}
         }
@@ -534,36 +546,211 @@ async function phaseJudge(
   ae: { name: string; email: string },
   micrositeSlug: string,
   verbose: boolean,
+  model: string = 'sonnet',
+  researchSummary: string = '',
 ): Promise<{ scores: Record<string, number>; pass: boolean; failures: string[] }> {
-  const { runMechanicalChecks } = await import('./judge.js');
+  // Phase 1: Mechanical checks (no LLM needed)
+  const { runMechanicalChecks, judgeEmail: judgeDimensions } = await import('./judge.js');
+  // 5-dimension LLM scorer: research_depth, vp_connection, tone, conciseness, jtbd_alignment
 
-  const t1 = emails.find(e => e.touchNumber === 1);
-  if (!t1) return { scores: {}, pass: false, failures: ['No T1 email produced'] };
+  const allFailures: string[] = [];
 
-  const mechanical = runMechanicalChecks(
-    t1.body, t1.subject, t1.ps,
-    ae.name, ae.email,
-    row.firstName, micrositeSlug,
-  );
+  for (const email of emails) {
+    const mechanical = runMechanicalChecks(
+      email.body, email.subject, email.ps,
+      ae.name, ae.email,
+      row.firstName, micrositeSlug,
+    );
 
-  const scores: Record<string, number> = {
-    wordCount: t1.wordCount <= 88 ? 8 : 4,
-    mechanicalPass: mechanical.passed ? 9 : 3,
-  };
-
-  if (verbose) {
-    if (!mechanical.passed) {
-      console.log(`    Mechanical failures: ${mechanical.failures.join(', ')}`);
+    if (verbose) {
+      if (!mechanical.passed) {
+        console.log(`    T${email.touchNumber} mechanical failures: ${mechanical.failures.join(', ')}`);
+      }
+      for (const w of mechanical.warnings) {
+        console.log(`    T${email.touchNumber} warning: ${w}`);
+      }
     }
-    for (const w of mechanical.warnings) {
-      console.log(`    Warning: ${w}`);
+
+    if (!mechanical.passed) {
+      allFailures.push(...mechanical.failures.map(f => `T${email.touchNumber}: ${f}`));
     }
   }
 
+  // If mechanical checks fail, don't spend LLM budget on 5-dim scoring
+  if (allFailures.length > 0) {
+    const t1 = emails.find(e => e.touchNumber === 1);
+    return {
+      scores: {
+        wordCount: (t1?.wordCount ?? 999) <= 88 ? 8 : 4,
+        mechanicalPass: 3,
+      },
+      pass: false,
+      failures: allFailures,
+    };
+  }
+
+  // Phase 2: 5-dimension LLM scoring (research_depth, vp_connection, tone, conciseness, jtbd_alignment)
+  const prospectId = `${row.firstName}-${row.lastName}-${row.company}`.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+
+  // Build a minimal Dossier compatible with judgeEmail
+  const minimalDossier = {
+    prospectId,
+    prospect: {
+      id: prospectId,
+      firstName: row.firstName,
+      lastName: row.lastName,
+      email: row.email || '',
+      emailCorrected: false,
+      phone: '',
+      title: row.title,
+      city: '',
+      company: row.company,
+      state: row.state || '',
+      grade: 'Ungraded' as const,
+      tier: 'A' as const,
+      icpStatus: 'pass' as const,
+      icpReason: '',
+      aeNotes: '',
+      hasAeNotes: false,
+      leadType: '',
+      isDuplicate: false,
+    },
+    company: {
+      name: row.company,
+      description: '',
+      size: '',
+      services: [] as string[],
+      geography: row.state || '',
+      recentNews: [] as string[],
+      fiberActivities: [] as string[],
+      beadStatus: '',
+      competitors: [] as string[],
+      keySignals: [] as string[],
+    },
+    contact: {
+      name: `${row.firstName} ${row.lastName}`,
+      title: row.title,
+      role: '',
+      responsibilities: [] as string[],
+      linkedinSummary: '',
+      publicActivity: [] as string[],
+    },
+    jtbd: {
+      personaBucket: '',
+      primaryJTBD: researchSummary.slice(0, 300),
+      supportingEvidence: [] as string[],
+      vpConnection: '',
+      confidenceLevel: 'medium' as const,
+      confidenceReason: '',
+    },
+    researchMeta: {
+      hypothesesTested: 0,
+      sourcesChecked: 0,
+      sourcesUsed: [] as string[],
+      lateralSearchAttempted: false,
+      lateralFindings: '',
+      timeSpentMs: 0,
+      searchesExhausted: false,
+    },
+    revisedTier: 'A' as const,
+    tierReason: '',
+  };
+
+  const aggregatedScores: Record<string, number> = {
+    mechanicalPass: 9,
+  };
+  let worstRecommendation: 'send' | 'hold' | 'reject' = 'send';
+  let anyJtbdReject = false;
+
+  for (const email of emails) {
+    // Build EmailTouch compatible with judgeEmail
+    const touch = {
+      touchNumber: email.touchNumber as 1 | 2 | 3,
+      subject: email.subject,
+      body: `${email.body}${email.ps ? `\n\n${email.ps}` : ''}`,
+      sendDelay: email.touchNumber === 1 ? '0d' : email.touchNumber === 2 ? '5d' : '10d',
+    };
+
+    try {
+      const verdict = await judgeDimensions(minimalDossier as any, touch, model);
+
+      if (!verdict) {
+        console.log(`    T${email.touchNumber} LLM judge returned null — mechanical-only fallback`);
+        continue;
+      }
+
+      // Extract per-dimension scores
+      const dimMap: Record<string, number> = {};
+      for (const s of verdict.scores) {
+        dimMap[s.dimension] = s.score;
+      }
+
+      const research = dimMap['research_depth'] ?? 0;
+      const vp = dimMap['vp_connection'] ?? 0;
+      const tone = dimMap['tone'] ?? 0;
+      const concise = dimMap['conciseness'] ?? 0;
+      const jtbd = dimMap['jtbd_alignment'] ?? 0;
+      const avg = verdict.overallScore;
+
+      // Log dimension scores
+      console.log(`    T${email.touchNumber} dimension scores: research=${research}, vp=${vp}, tone=${tone}, concise=${concise}, jtbd=${jtbd} (avg: ${avg} -> ${verdict.recommendation.toUpperCase()})`);
+
+      if (verdict.mustFix.length > 0 && verbose) {
+        console.log(`    T${email.touchNumber} must fix: ${verdict.mustFix.join('; ')}`);
+      }
+
+      // Store per-touch scores
+      aggregatedScores[`t${email.touchNumber}_research_depth`] = research;
+      aggregatedScores[`t${email.touchNumber}_vp_connection`] = vp;
+      aggregatedScores[`t${email.touchNumber}_tone`] = tone;
+      aggregatedScores[`t${email.touchNumber}_conciseness`] = concise;
+      aggregatedScores[`t${email.touchNumber}_jtbd_alignment`] = jtbd;
+      aggregatedScores[`t${email.touchNumber}_avg`] = avg;
+
+      // JTBD alignment <= 4 = auto-reject regardless of other scores
+      if (jtbd <= 4) {
+        anyJtbdReject = true;
+        allFailures.push(`T${email.touchNumber}: jtbd_alignment=${jtbd} (auto-reject, threshold: >4)`);
+      }
+
+      // Track worst recommendation across all touches
+      if (verdict.recommendation === 'reject') {
+        worstRecommendation = 'reject';
+      } else if (verdict.recommendation === 'hold' && worstRecommendation !== 'reject') {
+        worstRecommendation = 'hold';
+      }
+    } catch (err: any) {
+      console.log(`    T${email.touchNumber} LLM judge error: ${err.message?.slice(0, 80)} — mechanical-only fallback`);
+    }
+  }
+
+  // Determine final pass/hold/reject
+  // JTBD <= 4 = reject (hard gate)
+  // Average < 7.0 on any touch = hold (flag for operator review, don't block)
+  // Average >= 7.0 on all touches = pass
+  const touchAvgs = emails.map(e => aggregatedScores[`t${e.touchNumber}_avg`]).filter(v => v !== undefined);
+  const anyBelowThreshold = touchAvgs.some(avg => avg < 7.0);
+
+  let finalPass: boolean;
+  if (anyJtbdReject) {
+    finalPass = false;
+    console.log(`    5-dim verdict: REJECT (jtbd_alignment <= 4)`);
+  } else if (worstRecommendation === 'reject') {
+    finalPass = false;
+    console.log(`    5-dim verdict: REJECT (dimension <= 4)`);
+  } else if (anyBelowThreshold || worstRecommendation === 'hold') {
+    // HOLD = flag for review, but don't block pipeline
+    finalPass = true;
+    console.log(`    5-dim verdict: HOLD (avg < 7.0 on some touches — flagged for operator review)`);
+  } else {
+    finalPass = true;
+    console.log(`    5-dim verdict: PASS (all touches avg >= 7.0)`);
+  }
+
   return {
-    scores,
-    pass: mechanical.passed,
-    failures: mechanical.failures,
+    scores: aggregatedScores,
+    pass: finalPass,
+    failures: allFailures,
   };
 }
 
@@ -931,7 +1118,7 @@ async function processOneProspect(
     // Phase 7: Judge gate
     console.log('  Phase 7: Judge gate...');
     try {
-      judgeResult = await phaseJudge(emails, row, ae, micrositeSlug, config.verbose);
+      judgeResult = await phaseJudge(emails, row, ae, micrositeSlug, config.verbose, config.model, researchSummary);
       result.judgeScores = judgeResult.scores;
       result.judgePass = judgeResult.pass;
       console.log(`  -> ${judgeResult.pass ? 'PASS' : 'FAIL'}${judgeResult.failures.length > 0 ? ` (${judgeResult.failures.length} failures)` : ''}`);
