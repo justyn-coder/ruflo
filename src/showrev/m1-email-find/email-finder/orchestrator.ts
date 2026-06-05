@@ -561,10 +561,17 @@ async function findEmailForContact(
 
   // Rank survivors and pick the best
   if (allSurvivors.length > 0) {
-    // Sort: lower rank = more likely pattern. Break ties by preferring domains
-    // where eliminations occurred (higher signal quality).
+    // Sort survivors by likelihood. For partial catch-all domains (multiple
+    // survivors), prefer SHORTER local parts — small fiber companies typically
+    // use first@ not first.last@. Data: 83-contact eval showed first@ (17%)
+    // and flast@ (33%) are common in fiber telecom alongside first.last@ (33%).
     allSurvivors.sort((a, b) => {
-      // Prefer domains that had eliminations (the 302s give us confidence)
+      const aLocal = a.candidate.email.split('@')[0];
+      const bLocal = b.candidate.email.split('@')[0];
+      // Prefer shorter local parts (first@ over first.last@)
+      const lenDiff = aLocal.length - bLocal.length;
+      if (lenDiff !== 0) return lenDiff;
+      // Break ties by original rank
       if (a.candidate.rank !== b.candidate.rank) return a.candidate.rank - b.candidate.rank;
       return 0;
     });
