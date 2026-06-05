@@ -45,6 +45,13 @@ export interface EmailFinderResult {
   timestamp: string;
 }
 
+export interface ApolloFallbackResult {
+  email: string | null;
+  domain: string | null;
+  confidence: 'high' | 'medium' | 'low' | 'not-found';
+  source: string;
+}
+
 export interface OrchestratorOptions {
   searchFn?: (query: string) => Promise<string[]>;
   fetchFn?: (url: string) => Promise<string>;
@@ -52,6 +59,8 @@ export interface OrchestratorOptions {
   concurrency?: number;
   delayBetweenDomains?: number;
   apolloFn?: (firstName: string, lastName: string, domain: string) => Promise<string | null>;
+  apolloPeopleMatchFn?: (firstName: string, lastName: string, companyName: string, domain?: string) => Promise<ApolloFallbackResult>;
+  millionVerifierFn?: (email: string) => Promise<{ quality: string; result: string }>;
   skipProviders?: string[];
 }
 
@@ -168,6 +177,55 @@ async function findEmailForContact(
       console.log(`${prefix()} Step 1 complete (${ms() - t1}ms): domain=${domainResult.domain}, confidence=${domainResult.confidence}`);
     } else {
       console.log(`${prefix()} Step 1 complete (${ms() - t1}ms): no domain found`);
+
+      // Step 1b: APOLLO FALLBACK — try People Match when domain resolution fails entirely
+      if (options.apolloPeopleMatchFn) {
+        tacticsAttempted.push('apollo-people-match (no-domain)');
+        console.log(`${prefix()} Step 1b: Apollo People Match fallback for ${contact.firstName} ${contact.lastName} @ ${contact.company}`);
+        try {
+          const apolloResult = await options.apolloPeopleMatchFn(
+            contact.firstName, contact.lastName, contact.company,
+          );
+          if (apolloResult.email) {
+            tacticsSucceeded.push('apollo-people-match (no-domain)');
+            const apolloDomain = apolloResult.domain || apolloResult.email.split('@')[1];
+            console.log(`${prefix()} Step 1b: Apollo returned ${apolloResult.email} (domain=${apolloDomain}, confidence=${apolloResult.confidence})`);
+
+            // Run MillionVerifier on Apollo result if available
+            let mvQuality = 'skipped';
+            if (options.millionVerifierFn) {
+              try {
+                const mvResult = await options.millionVerifierFn(apolloResult.email);
+                mvQuality = mvResult.quality;
+                console.log(`${prefix()} Step 1b: MillionVerifier: ${apolloResult.email} = ${mvQuality}`);
+              } catch (err) {
+                console.log(`${prefix()} Step 1b: MillionVerifier error: ${err instanceof Error ? err.message : String(err)}`);
+              }
+            }
+
+            const confidence = apolloResult.confidence === 'high' ? 'green' as const
+              : apolloResult.confidence === 'medium' ? 'yellow' as const
+              : 'amber' as const;
+
+            return buildResult(contact, {
+              email: apolloResult.email,
+              confidence: mvQuality === 'bad' ? 'red' : confidence,
+              domain: apolloDomain,
+              pattern: null,
+              verificationStatus: mvQuality === 'good' ? 'valid' : mvQuality === 'bad' ? 'invalid' : 'unverified',
+              mailProvider: `apollo:${apolloResult.source}`,
+              tacticsAttempted,
+              tacticsSucceeded,
+              duration: ms() - t0,
+            });
+          } else {
+            console.log(`${prefix()} Step 1b: Apollo returned no match`);
+          }
+        } catch (err) {
+          console.log(`${prefix()} Step 1b: Apollo error: ${err instanceof Error ? err.message : String(err)}`);
+        }
+      }
+
       return buildResult(contact, {
         email: null,
         confidence: 'not-found',
@@ -479,13 +537,21 @@ async function findEmailForContact(
 
     for (const candidate of attemptCandidates) {
       // Hard deadline check — bail if we've exceeded 30s total for all verification
-      if (Date.now() > verifyDeadline) {
+      const remainingMs = verifyDeadline - Date.now();
+      if (remainingMs <= 0) {
         console.log(`${prefix()} Step 6: TIMEOUT after ${VERIFY_TIMEOUT_MS}ms — stopping verification`);
         break;
       }
       try {
         console.log(`${prefix()} Step 6: verifying ${candidate.email} (pattern=${candidate.pattern}, rank=${candidate.rank}, method=${method})`);
-        const result: SmtpVerifyResult = await verifyEmail(candidate.email);
+        // Wrap in race so a hanging SMTP connection can't exceed the deadline
+        const perCallTimeout = Math.min(remainingMs, 15_000);
+        const result: SmtpVerifyResult = await Promise.race([
+          verifyEmail(candidate.email),
+          new Promise<SmtpVerifyResult>((resolve) =>
+            setTimeout(() => resolve({ status: 'timeout', smtpCode: null, smtpMessage: `Per-call timeout after ${perCallTimeout}ms` }), perCallTimeout),
+          ),
+        ]);
         console.log(`${prefix()} Step 6: ${candidate.email} -> ${result.status} (code=${result.smtpCode ?? 'n/a'}, msg=${result.smtpMessage ?? 'n/a'})`);
 
         if (result.status === 'valid') {
@@ -643,7 +709,53 @@ async function findEmailForContact(
     });
   }
 
-  // All candidates across all domains exhausted
+  // All candidates across all domains exhausted — try Apollo People Match as last resort
+  if (options.apolloPeopleMatchFn) {
+    tacticsAttempted.push('apollo-people-match (red-fallback)');
+    console.log(`${prefix()} Step 7: Apollo People Match fallback (all self-hosted candidates failed)`);
+    try {
+      const apolloResult = await options.apolloPeopleMatchFn(
+        contact.firstName, contact.lastName, contact.company, domain,
+      );
+      if (apolloResult.email) {
+        tacticsSucceeded.push('apollo-people-match (red-fallback)');
+        const apolloDomain = apolloResult.domain || apolloResult.email.split('@')[1];
+        console.log(`${prefix()} Step 7: Apollo returned ${apolloResult.email} (confidence=${apolloResult.confidence})`);
+
+        let mvQuality = 'skipped';
+        if (options.millionVerifierFn) {
+          try {
+            const mvResult = await options.millionVerifierFn(apolloResult.email);
+            mvQuality = mvResult.quality;
+            console.log(`${prefix()} Step 7: MillionVerifier: ${apolloResult.email} = ${mvQuality}`);
+          } catch (err) {
+            console.log(`${prefix()} Step 7: MillionVerifier error: ${err instanceof Error ? err.message : String(err)}`);
+          }
+        }
+
+        const confidence = apolloResult.confidence === 'high' ? 'green' as const
+          : apolloResult.confidence === 'medium' ? 'yellow' as const
+          : 'amber' as const;
+
+        return buildResult(contact, {
+          email: apolloResult.email,
+          confidence: mvQuality === 'bad' ? 'red' : confidence,
+          domain: apolloDomain,
+          pattern: null,
+          verificationStatus: mvQuality === 'good' ? 'valid' : mvQuality === 'bad' ? 'invalid' : 'unverified',
+          mailProvider: `apollo:${apolloResult.source}`,
+          tacticsAttempted,
+          tacticsSucceeded,
+          duration: ms() - t0,
+        });
+      } else {
+        console.log(`${prefix()} Step 7: Apollo returned no match`);
+      }
+    } catch (err) {
+      console.log(`${prefix()} Step 7: Apollo error: ${err instanceof Error ? err.message : String(err)}`);
+    }
+  }
+
   return buildResult(contact, {
     email: candidates[0]?.email ?? null,
     confidence: 'red',

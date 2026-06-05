@@ -20,3 +20,11 @@ export type { SmtpVerifyResult, MailProvider } from './smtp-verifier.js';
 // Pattern Detector
 export { generateCandidates, detectPatternFromWeb, inferPattern } from './pattern-detector.js';
 export type { EmailPattern, CandidateEmail, PatternResult } from './pattern-detector.js';
+
+// Apollo Fallback
+export { apolloPeopleMatch, createApolloEnrichFn } from './apollo-fallback.js';
+export type { ApolloMatchResult, ApolloFallbackOptions } from './apollo-fallback.js';
+
+// MillionVerifier
+export { verifyEmailMV, verifyBatchMV, summarizeMVResults } from './million-verifier.js';
+export type { MillionVerifierResult, MillionVerifierOptions } from './million-verifier.js';

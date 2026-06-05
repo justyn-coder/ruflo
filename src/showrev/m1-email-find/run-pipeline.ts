@@ -18,6 +18,7 @@
 import { parseArgs } from 'node:util';
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
+import 'dotenv/config';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -284,6 +285,26 @@ async function phaseEmailFind(
       }
     };
 
+    // Apollo People Match fallback — called when self-hosted returns RED/NOT-FOUND
+    const apolloApiKey = process.env.APOLLO_API_KEY;
+    let apolloPeopleMatchFn: ((fn: string, ln: string, co: string, d?: string) => Promise<any>) | undefined;
+    if (apolloApiKey) {
+      const { apolloPeopleMatch } = await import('./email-finder/apollo-fallback.js');
+      apolloPeopleMatchFn = (fn: string, ln: string, co: string, d?: string) =>
+        apolloPeopleMatch(fn, ln, co, d, { apiKey: apolloApiKey });
+    }
+
+    // MillionVerifier — final verification on Apollo results
+    const mvApiKey = process.env.MILLIONVERIFIER_API_KEY;
+    let millionVerifierFn: ((email: string) => Promise<{ quality: string; result: string }>) | undefined;
+    if (mvApiKey) {
+      const { verifyEmailMV } = await import('./email-finder/million-verifier.js');
+      millionVerifierFn = async (email: string) => {
+        const r = await verifyEmailMV(email, { apiKey: mvApiKey });
+        return { quality: r.quality, result: r.result };
+      };
+    }
+
     const result = await findEmail(
       {
         firstName: row.firstName,
@@ -293,7 +314,13 @@ async function phaseEmailFind(
         companyUrl: row.companyUrl,
         state: row.state,
       },
-      { searchFn: realSearchFn, fetchFn: realFetchFn, smtpVerify: true },
+      {
+        searchFn: realSearchFn,
+        fetchFn: realFetchFn,
+        smtpVerify: true,
+        apolloPeopleMatchFn,
+        millionVerifierFn,
+      },
     );
     return { email: result.email, confidence: result.confidence };
   } catch (err: any) {
