@@ -274,7 +274,8 @@ async function phaseEmailFind(
         });
         if (!res.ok) return '';
         const contentType = res.headers.get('content-type') || '';
-        if (!contentType.includes('text/html') && !contentType.includes('text/plain')) return '';
+        // Accept HTML, plain text, AND JSON (Clearbit API returns application/json)
+        if (!contentType.includes('text/html') && !contentType.includes('text/plain') && !contentType.includes('application/json')) return '';
         const text = await res.text();
         // Limit to 50KB to avoid memory issues on large pages
         return text.slice(0, 50000);
