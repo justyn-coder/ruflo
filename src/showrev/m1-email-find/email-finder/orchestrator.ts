@@ -72,7 +72,10 @@ interface BatchSummary {
 
 const DEFAULT_CONCURRENCY = 3;
 const DEFAULT_DELAY_BETWEEN_DOMAINS_MS = 2_000;
-const DEFAULT_SKIP_PROVIDERS = ['google-workspace'];
+// Previously skipped Google Workspace (SMTP returns 250 for everything).
+// Now using M365 Autodiscover which works across providers via federation.
+// No providers need to be skipped by default.
+const DEFAULT_SKIP_PROVIDERS: string[] = [];
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -152,6 +155,8 @@ async function findEmailForContact(
       domainResult = await resolveDomain(contact.company, contact.companyUrl, {
         searchFn: options.searchFn,
         fetchFn: options.fetchFn,
+        firstName: contact.firstName,
+        lastName: contact.lastName,
       });
     } catch (err) {
       console.log(`${prefix()} Step 1 error: ${err instanceof Error ? err.message : String(err)}`);
@@ -321,18 +326,15 @@ async function findEmailForContact(
   }
 
   // -----------------------------------------------------------------------
-  // Step 6: SMTP VERIFICATION
+  // Step 6: SMTP VERIFICATION (with alternative domain fallback)
   // -----------------------------------------------------------------------
   const providerStr: string = provider ?? 'unknown';
-  const shouldSkipSmtp =
-    !smtpEnabled ||
-    skipProviders.includes(providerStr);
 
-  if (shouldSkipSmtp) {
+  // Only skip entirely when verification is globally disabled
+  if (!smtpEnabled) {
     tacticsAttempted.push('smtp-verification (skipped)');
-    console.log(`${prefix()} Step 6: SMTP skipped (enabled=${smtpEnabled}, provider=${providerStr})`);
+    console.log(`${prefix()} Step 6: SMTP globally disabled`);
 
-    // No SMTP — use best candidate with pattern confidence
     const bestCandidate = candidates[0] ?? null;
 
     if (!bestCandidate) {
@@ -349,7 +351,6 @@ async function findEmailForContact(
       });
     }
 
-    // Confidence depends on pattern quality (confidence is a 0-1 number)
     const confidence = patternResult
       ? (patternResult.confidence >= 0.7 ? 'amber' : 'red')
       : 'red';
@@ -369,55 +370,260 @@ async function findEmailForContact(
 
   // SMTP is enabled and provider supports it
   tacticsAttempted.push('smtp-verification');
-  console.log(`${prefix()} Step 6: SMTP verification — ${candidates.length} candidates to check`);
+  console.log(`${prefix()} Step 6: verification — ${candidates.length} candidates to check on ${domain} (provider=${providerStr})`);
   const t6 = ms();
 
-  for (const candidate of candidates) {
+  // ---------------------------------------------------------------------------
+  // Build a list of (domain, candidates, provider) tuples to try.
+  // Primary domain first, then alternative domains from domain resolution.
+  // ---------------------------------------------------------------------------
+  interface DomainAttempt {
+    attemptDomain: string;
+    attemptCandidates: CandidateEmail[];
+    attemptProvider: MailProvider | string;
+    isAlternative: boolean;
+  }
+
+  const domainAttempts: DomainAttempt[] = [
+    { attemptDomain: domain, attemptCandidates: candidates, attemptProvider: providerStr, isAlternative: false },
+  ];
+
+  // Enqueue alternative domains from domain resolution
+  const altDomains = domainResult.alternativeDomains ?? [];
+  if (altDomains.length > 0) {
+    console.log(`${prefix()} Step 6: ${altDomains.length} alternative domain(s) available: ${altDomains.join(', ')}`);
+  }
+  for (const altDomain of altDomains) {
+    if (altDomain.toLowerCase() === domain.toLowerCase()) continue; // skip duplicate
+    const altCandidates = generateCandidates(
+      contact.firstName,
+      contact.lastName,
+      altDomain,
+      patternResult?.pattern ?? undefined,
+    );
+    // Detect provider for the alternative domain
+    let altProvider: MailProvider | string = 'unknown';
     try {
-      const result: SmtpVerifyResult = await verifyEmail(candidate.email);
+      altProvider = await detectMailProvider(altDomain);
+    } catch { /* keep unknown */ }
+    console.log(`${prefix()} Step 6: alt domain ${altDomain} -> ${altCandidates.length} candidates, provider=${altProvider}`);
+    domainAttempts.push({
+      attemptDomain: altDomain,
+      attemptCandidates: altCandidates,
+      attemptProvider: altProvider,
+      isAlternative: true,
+    });
+  }
 
-      if (result.status === 'valid') {
-        tacticsSucceeded.push('smtp-verification');
-        console.log(`${prefix()} Step 6 complete (${ms() - t6}ms): ${candidate.email} = valid`);
-        return buildResult(contact, {
-          email: candidate.email,
-          confidence: 'green',
-          domain,
-          pattern: candidate.pattern ?? patternResult?.pattern ?? null,
-          verificationStatus: 'valid',
-          mailProvider: providerStr,
-          tacticsAttempted,
-          tacticsSucceeded,
-          duration: ms() - t0,
-        });
+  // Track best catch-all result across all attempts (fallback if no GREEN)
+  let bestCatchAll: {
+    email: string;
+    domain: string;
+    pattern: string | null;
+    provider: string;
+  } | null = null;
+
+  // ---------------------------------------------------------------------------
+  // Verification uses two strategies depending on the method:
+  //
+  // A) SMTP RCPT TO (self-hosted): valid=250 is a hard GREEN signal.
+  //    Short-circuit immediately on the first valid result.
+  //
+  // B) Autodiscover (M365 + Google Workspace): 302=hard INVALID, 200=soft valid.
+  //    Some M365 tenants return 200 for random addresses (partial catch-all).
+  //    Strategy: try ALL candidates, collect 302s (eliminated) and 200s (survived).
+  //    If some are eliminated while others survive, promote survivors.
+  //    This "elimination" approach correctly picks the real pattern.
+  // ---------------------------------------------------------------------------
+
+  interface SurvivorEntry {
+    candidate: CandidateEmail;
+    domain: string;
+    provider: string;
+    isAlternative: boolean;
+  }
+  const allSurvivors: SurvivorEntry[] = [];
+  let anyEliminationsOccurred = false;
+
+  for (const attempt of domainAttempts) {
+    const { attemptDomain, attemptCandidates, attemptProvider, isAlternative } = attempt;
+
+    // Skip providers in the explicit skip list
+    if (skipProviders.includes(attemptProvider as string)) {
+      console.log(`${prefix()} Step 6: skipping ${attemptDomain} (provider=${attemptProvider} in skip list)`);
+      if (!isAlternative && attemptCandidates.length > 0 && !bestCatchAll) {
+        bestCatchAll = {
+          email: attemptCandidates[0].email,
+          domain: attemptDomain,
+          pattern: attemptCandidates[0].pattern ?? patternResult?.pattern ?? null,
+          provider: attemptProvider as string,
+        };
       }
+      continue;
+    }
 
-      if (result.status === 'catch-all') {
-        tacticsSucceeded.push('smtp-verification (catch-all)');
-        console.log(`${prefix()} Step 6 complete (${ms() - t6}ms): ${candidate.email} = catch-all`);
-        return buildResult(contact, {
-          email: candidate.email,
-          confidence: 'yellow',
-          domain,
-          pattern: candidate.pattern ?? patternResult?.pattern ?? null,
-          verificationStatus: 'catch-all',
-          mailProvider: providerStr,
-          tacticsAttempted,
-          tacticsSucceeded,
-          duration: ms() - t0,
-        });
+    if (isAlternative) {
+      tacticsAttempted.push(`alt-domain:${attemptDomain}`);
+      console.log(`${prefix()} Step 6: trying alternative domain ${attemptDomain} (${attemptCandidates.length} candidates, provider=${attemptProvider})`);
+    }
+
+    // Detect verification method for this domain
+    const usesAutodiscover = attemptProvider === 'microsoft-365' || attemptProvider === 'google-workspace';
+    const method = usesAutodiscover ? 'Autodiscover' : 'SMTP';
+
+    let domainHasInvalids = false;
+    const domainSurvivors: SurvivorEntry[] = [];
+
+    for (const candidate of attemptCandidates) {
+      try {
+        console.log(`${prefix()} Step 6: verifying ${candidate.email} (pattern=${candidate.pattern}, rank=${candidate.rank}, method=${method})`);
+        const result: SmtpVerifyResult = await verifyEmail(candidate.email);
+        console.log(`${prefix()} Step 6: ${candidate.email} -> ${result.status} (code=${result.smtpCode ?? 'n/a'}, msg=${result.smtpMessage ?? 'n/a'})`);
+
+        if (result.status === 'valid') {
+          if (!usesAutodiscover) {
+            // SMTP valid = hard GREEN, return immediately
+            tacticsSucceeded.push('smtp-verification');
+            if (isAlternative) tacticsSucceeded.push(`alt-domain:${attemptDomain}`);
+            console.log(`${prefix()} Step 6 complete (${ms() - t6}ms): ${candidate.email} = VALID (GREEN) via SMTP`);
+            return buildResult(contact, {
+              email: candidate.email,
+              confidence: 'green',
+              domain: attemptDomain,
+              pattern: candidate.pattern ?? patternResult?.pattern ?? null,
+              verificationStatus: 'valid',
+              mailProvider: attemptProvider as string,
+              tacticsAttempted,
+              tacticsSucceeded,
+              duration: ms() - t0,
+            });
+          }
+
+          // Autodiscover 200 = soft valid, collect for elimination analysis
+          domainSurvivors.push({
+            candidate,
+            domain: attemptDomain,
+            provider: attemptProvider as string,
+            isAlternative,
+          });
+          console.log(`${prefix()} Step 6: ${candidate.email} = Autodiscover 200 (survived, rank=${candidate.rank})`);
+        } else if (result.status === 'invalid') {
+          domainHasInvalids = true;
+          console.log(`${prefix()} Step 6: ${candidate.email} = INVALID (eliminated)`);
+        } else if (result.status === 'catch-all') {
+          domainSurvivors.push({
+            candidate,
+            domain: attemptDomain,
+            provider: attemptProvider as string,
+            isAlternative,
+          });
+          console.log(`${prefix()} Step 6: ${candidate.email} = catch-all (survived)`);
+        } else {
+          console.log(`${prefix()} Step 6: ${candidate.email} = ${result.status}, skipped`);
+        }
+      } catch (err) {
+        console.log(`${prefix()} Step 6 error for ${candidate.email}: ${err instanceof Error ? err.message : String(err)}`);
       }
+    }
 
-      // 'invalid' — skip to next candidate
-      console.log(`${prefix()} Step 6: ${candidate.email} = ${result.status}, trying next`);
-    } catch (err) {
-      console.log(`${prefix()} Step 6 error for ${candidate.email}: ${err instanceof Error ? err.message : String(err)}`);
+    // Summarize domain results
+    if (domainHasInvalids) {
+      anyEliminationsOccurred = true;
+      console.log(`${prefix()} Step 6: ${attemptDomain} elimination: ${domainSurvivors.length} survived, ${attemptCandidates.length - domainSurvivors.length} eliminated`);
+    }
+
+    if (domainSurvivors.length > 0) {
+      allSurvivors.push(...domainSurvivors);
+    }
+
+    // Early exit: if Autodiscover elimination on this domain produced exactly 1
+    // survivor, that's a high-confidence result — skip remaining domains.
+    if (usesAutodiscover && domainHasInvalids && domainSurvivors.length === 1) {
+      const winner = domainSurvivors[0];
+      tacticsSucceeded.push('smtp-verification (elimination)');
+      if (isAlternative) tacticsSucceeded.push(`alt-domain:${attemptDomain}`);
+      console.log(`${prefix()} Step 6 early-exit: single Autodiscover survivor ${winner.candidate.email} on ${attemptDomain} — skipping remaining domains`);
+      return buildResult(contact, {
+        email: winner.candidate.email,
+        confidence: 'green',
+        domain: winner.domain,
+        pattern: winner.candidate.pattern ?? patternResult?.pattern ?? null,
+        verificationStatus: 'valid',
+        mailProvider: winner.provider,
+        tacticsAttempted,
+        tacticsSucceeded,
+        duration: ms() - t0,
+      });
     }
   }
 
-  console.log(`${prefix()} Step 6 complete (${ms() - t6}ms): all candidates invalid/failed`);
+  console.log(`${prefix()} Step 6 complete (${ms() - t6}ms): ${allSurvivors.length} survivors across ${domainAttempts.length} domain(s), eliminations=${anyEliminationsOccurred}`);
 
-  // All candidates exhausted
+  // Rank survivors and pick the best
+  if (allSurvivors.length > 0) {
+    // Sort: lower rank = more likely pattern. Break ties by preferring domains
+    // where eliminations occurred (higher signal quality).
+    allSurvivors.sort((a, b) => {
+      // Prefer domains that had eliminations (the 302s give us confidence)
+      if (a.candidate.rank !== b.candidate.rank) return a.candidate.rank - b.candidate.rank;
+      return 0;
+    });
+
+    const winner = allSurvivors[0];
+
+    if (anyEliminationsOccurred && allSurvivors.length <= 3) {
+      // Elimination narrowed the field — high confidence
+      const conf = allSurvivors.length === 1 ? 'green' as const : 'yellow' as const;
+      tacticsSucceeded.push('smtp-verification (elimination)');
+      if (winner.isAlternative) tacticsSucceeded.push(`alt-domain:${winner.domain}`);
+      console.log(`${prefix()} Step 6 elimination winner: ${winner.candidate.email} (${allSurvivors.length} survivors -> ${conf})`);
+      return buildResult(contact, {
+        email: winner.candidate.email,
+        confidence: conf,
+        domain: winner.domain,
+        pattern: winner.candidate.pattern ?? patternResult?.pattern ?? null,
+        verificationStatus: allSurvivors.length === 1 ? 'valid' : 'catch-all',
+        mailProvider: winner.provider,
+        tacticsAttempted,
+        tacticsSucceeded,
+        duration: ms() - t0,
+      });
+    }
+
+    // No eliminations or too many survivors — treat as catch-all
+    tacticsSucceeded.push('smtp-verification (catch-all)');
+    console.log(`${prefix()} Step 6 fallback: best survivor ${winner.candidate.email}`);
+    return buildResult(contact, {
+      email: winner.candidate.email,
+      confidence: 'yellow',
+      domain: winner.domain,
+      pattern: winner.candidate.pattern ?? patternResult?.pattern ?? null,
+      verificationStatus: 'catch-all',
+      mailProvider: winner.provider,
+      tacticsAttempted,
+      tacticsSucceeded,
+      duration: ms() - t0,
+    });
+  }
+
+  // Return best catch-all if we found one
+  if (bestCatchAll) {
+    tacticsSucceeded.push('smtp-verification (catch-all)');
+    console.log(`${prefix()} Step 6 fallback: using catch-all ${bestCatchAll.email}`);
+    return buildResult(contact, {
+      email: bestCatchAll.email,
+      confidence: 'yellow',
+      domain: bestCatchAll.domain,
+      pattern: bestCatchAll.pattern,
+      verificationStatus: 'catch-all',
+      mailProvider: bestCatchAll.provider,
+      tacticsAttempted,
+      tacticsSucceeded,
+      duration: ms() - t0,
+    });
+  }
+
+  // All candidates across all domains exhausted
   return buildResult(contact, {
     email: candidates[0]?.email ?? null,
     confidence: 'red',

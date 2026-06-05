@@ -493,7 +493,97 @@ export async function isCatchAll(
 }
 
 // ---------------------------------------------------------------------------
-// 5. SMTP RCPT TO Verification
+// 5a. Microsoft 365 Autodiscover Verification
+// ---------------------------------------------------------------------------
+
+/**
+ * Verify an email using the M365 Autodiscover JSON endpoint.
+ *
+ * This endpoint leaks user existence without authentication and works across
+ * both M365-hosted AND Google Workspace domains (because M365 autodiscover
+ * resolves the user's actual mailbox location via federation).
+ *
+ *   GET https://outlook.office365.com/autodiscover/autodiscover.json/v1.0/{email}?Protocol=Autodiscoverv1
+ *
+ * Responses:
+ *   200          → user EXISTS (returns autodiscover URL)
+ *   302          → user does NOT exist (redirect to login)
+ *   Other (429)  → rate limited / uncertain
+ *
+ * NOTE: The older CalendarView endpoint (api/v2.0/users/{email}/calendarview)
+ * returns 401 for ALL emails at a valid tenant, making it useless for user
+ * enumeration. The Autodiscover endpoint correctly differentiates.
+ */
+export async function verifyM365Email(email: string): Promise<SmtpVerifyResult> {
+  const [, domain] = email.split('@');
+  const detectedProvider = domain ? (providerCache.get(domain) ?? 'microsoft-365') : 'microsoft-365';
+
+  try {
+    const url = `https://outlook.office365.com/autodiscover/autodiscover.json/v1.0/${encodeURIComponent(email)}?Protocol=Autodiscoverv1`;
+
+    const res = await fetch(url, {
+      method: 'GET',
+      headers: { 'User-Agent': 'Mozilla/5.0' },
+      redirect: 'manual', // Don't follow 302 redirects — we need to see the status code
+      signal: AbortSignal.timeout(8000),
+    });
+
+    const status = res.status;
+
+    // 302 = definitively INVALID — the server actively rejected the user.
+    // This is the high-confidence signal: 302 is a hard "no" even on domains
+    // that return 200 for some/all other addresses.
+    if (status === 302) {
+      return {
+        email,
+        status: 'invalid',
+        smtpCode: 302,
+        smtpMessage: 'User not found (Autodiscover 302 redirect)',
+        provider: detectedProvider,
+        isCatchAll: false,
+      };
+    }
+
+    // 200 = user *likely* exists. However, some M365 tenants return 200 for
+    // random addresses too (partial catch-all). We return 'valid' here and let
+    // the orchestrator's elimination strategy handle the ambiguity: if other
+    // candidates at the same domain get 302 while this one gets 200, the
+    // orchestrator promotes this candidate.
+    if (status === 200) {
+      return {
+        email,
+        status: 'valid',
+        smtpCode: 200,
+        smtpMessage: 'User exists (Autodiscover 200)',
+        provider: detectedProvider,
+        isCatchAll: false,
+      };
+    }
+
+    // Rate limited or other — uncertain
+    return {
+      email,
+      status: 'catch-all',
+      smtpCode: status,
+      smtpMessage: `Autodiscover uncertain (HTTP ${status})`,
+      provider: detectedProvider,
+      isCatchAll: false,
+    };
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : String(err);
+    return {
+      email,
+      status: 'timeout',
+      smtpCode: undefined,
+      smtpMessage: msg.slice(0, 80),
+      provider: detectedProvider,
+      isCatchAll: false,
+    };
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 5b. SMTP RCPT TO Verification
 // ---------------------------------------------------------------------------
 
 /**
@@ -558,15 +648,16 @@ export async function verifyEmail(
     };
   }
 
-  // Google Workspace: SMTP verify is useless — always returns 250
+  // Google Workspace: SMTP RCPT TO is useless (always returns 250).
+  // Use M365 Autodiscover endpoint instead — it works across providers
+  // via federation and correctly differentiates real vs fake users.
   if (provider === 'google-workspace') {
-    return {
-      email,
-      status: 'catch-all',
-      smtpMessage: 'Google Workspace returns 250 for all RCPT TO — SMTP verification unreliable',
-      provider,
-      isCatchAll: true,
-    };
+    return verifyM365Email(email);
+  }
+
+  // Microsoft 365: SMTP RCPT TO reliably times out; use Autodiscover instead
+  if (provider === 'microsoft-365') {
+    return verifyM365Email(email);
   }
 
   let conn: SmtpConnection | null = null;
@@ -715,8 +806,8 @@ function groupByDomain(emails: string[]): Map<string, string[]> {
   return groups;
 }
 
-/** Default providers to skip (SMTP useless for these). */
-const DEFAULT_SKIP_PROVIDERS: MailProvider[] = ['google-workspace'];
+/** Default providers to skip — now empty because Autodiscover works across providers. */
+const DEFAULT_SKIP_PROVIDERS: MailProvider[] = [];
 
 /**
  * Verify a batch of emails with concurrency control and rate limiting.
@@ -785,9 +876,10 @@ export async function verifyBatch(
 
       // Delay between same-domain checks to avoid rate limiting
       if (i < domainEmails.length - 1) {
-        // Microsoft 365 needs longer delays
+        // Microsoft 365 uses Graph API (fast, no SMTP) — shorter delay sufficient
+        // Other providers use SMTP and may need longer delays
         const effectiveDelay = provider === 'microsoft-365'
-          ? Math.max(delayMs, 3000)
+          ? Math.min(delayMs, 500)
           : delayMs;
         await sleep(effectiveDelay);
       }
