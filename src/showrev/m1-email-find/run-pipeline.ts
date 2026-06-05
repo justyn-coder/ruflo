@@ -69,6 +69,9 @@ interface PipelineResult {
   researchSummary: string;
   semanticVerification: SemanticVerification | null;
   factVerification: FactVerification | null;
+  structuredIntel: { dossier: any; warnings: string[] } | null;
+  brainIngest: { added: number; updated: number; total: number } | null;
+  brainContext: { entriesFound: number } | null;
   judgeScores: Record<string, number>;
   judgePass: boolean;
   emailSubjects: { t1: string; t2: string; t3: string };
@@ -960,6 +963,9 @@ async function processOneProspect(
     researchSummary: '',
     semanticVerification: null,
     factVerification: null,
+    structuredIntel: null,
+    brainIngest: null,
+    brainContext: null,
     judgeScores: {},
     judgePass: false,
     emailSubjects: { t1: '', t2: '', t3: '' },
@@ -993,6 +999,75 @@ async function processOneProspect(
     console.log(`  Phase 2: Email provided (${row.email})`);
   }
 
+  // Phase 3a: Brain/AgentDB context query — provide cached knowledge to research
+  //   Strategy: try AgentDB semantic search first (searchBrain), fall back to JSONL filtering
+  const brainDir = resolve(process.cwd(), 'data/brain/fiber-telecom/inorsa/fiber/fiber-connect-2026');
+  let brainContextEntries = 0;
+  if (!config.skipResearch) {
+    console.log('  Phase 3a: Brain context query...');
+    try {
+      let brainContextText = '';
+
+      // Attempt 1: AgentDB semantic search (HNSW vector similarity)
+      try {
+        const { initBrainDB, searchBrain } = await import('./brain-agentdb.js');
+        await initBrainDB();
+        const query = `${row.company} ${row.title} fiber broadband ${row.state || ''}`.trim();
+        const agentDBResults = await searchBrain(query, 10);
+        if (agentDBResults.length > 0) {
+          brainContextEntries = agentDBResults.length;
+          brainContextText = `## Prior Brain Knowledge — AgentDB (${agentDBResults.length} semantic matches)\n\n` +
+            agentDBResults.map(r => `- [${r.type}] **${r.name}** (${(r.score * 100).toFixed(0)}%): ${r.facts[0] || ''}`).join('\n') + '\n';
+          console.log(`  -> AgentDB: ${agentDBResults.length} semantic matches`);
+        }
+      } catch {
+        // AgentDB not available — fall through to JSONL
+      }
+
+      // Attempt 2: JSONL entity graph filtering (always available)
+      if (!brainContextText) {
+        const { loadEntityGraph, loadBrainDigest } = await import('./brain-ingest.js');
+        const graph = loadEntityGraph(brainDir);
+
+        const companyLower = row.company.toLowerCase();
+        const relevant: string[] = [];
+        for (const entity of Array.from(graph.values())) {
+          const nameMatch = entity.name.toLowerCase().includes(companyLower) ||
+            companyLower.includes(entity.name.toLowerCase());
+          const factMatch = entity.facts.some((f: string) => f.toLowerCase().includes(companyLower));
+          if (nameMatch || factMatch) {
+            relevant.push(`[${entity.type}] ${entity.name}: ${entity.facts[0]?.slice(0, 200) || ''}`);
+          }
+        }
+
+        if (relevant.length > 0) {
+          brainContextEntries = relevant.length;
+          brainContextText = `## Prior Brain Knowledge (${relevant.length} entities)\n\n${relevant.slice(0, 20).join('\n')}\n`;
+          console.log(`  -> Brain context: ${relevant.length} relevant JSONL entries found`);
+        } else {
+          // Fallback: load the full digest for general industry context
+          const digest = loadBrainDigest(brainDir);
+          if (digest) {
+            brainContextText = digest.slice(0, 3000);
+            console.log(`  -> Brain context: digest loaded (no company-specific matches)`);
+          } else {
+            console.log('  -> Brain context: no prior knowledge');
+          }
+        }
+      }
+
+      result.brainContext = { entriesFound: brainContextEntries };
+
+      // Inject whatever context we found into LLM cacheable system content
+      if (brainContextText) {
+        const { setBrainCacheContent } = await import('./llm-client.js');
+        setBrainCacheContent(brainContextText);
+      }
+    } catch (err: any) {
+      console.log(`  -> Brain context error (non-blocking): ${err.message?.slice(0, 60)}`);
+    }
+  }
+
   // Phase 3: Research (3-persona STORM)
   let researchResults = { analyst: '', aeProxy: '', techEval: '' };
   if (config.skipResearch) {
@@ -1015,6 +1090,75 @@ async function processOneProspect(
   }
 
   const researchSummary = Object.values(researchResults).filter(Boolean).join('\n\n');
+
+  // Phase 3b: Brain Ingest — extract entities from research into entity graph
+  if (!config.skipResearch && researchSummary) {
+    console.log('  Phase 3b: Brain ingest...');
+    try {
+      const { ingestResearchIntoBrain } = await import('./brain-ingest.js');
+      const prospectId = `${row.firstName}-${row.lastName}-${row.company}`.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      const brainResult = await ingestResearchIntoBrain(
+        { 'Industry Analyst': researchResults.analyst, 'AE Proxy': researchResults.aeProxy, 'Technical Evaluator': researchResults.techEval },
+        prospectId,
+        undefined, // default brain dir
+        index,     // prospect count for digest interval
+        10,        // refresh digest every 10 prospects
+      );
+      result.brainIngest = { added: brainResult.added, updated: brainResult.updated, total: brainResult.total };
+      console.log(`  -> Brain ingest: ${brainResult.added + brainResult.updated} entities extracted (${brainResult.added} new, ${brainResult.updated} updated)${brainResult.digestRefreshed ? ' [digest refreshed]' : ''}`);
+    } catch (err: any) {
+      errors.push(`brain-ingest: ${err.message?.slice(0, 80)}`);
+      console.log(`  -> Brain ingest error (non-blocking): ${err.message?.slice(0, 60)}`);
+    }
+  }
+
+  // Phase 3c: Intel Structurer — structure research into HubSpot dossier fields
+  const ae = resolveAE(row.state);
+  if (!config.skipResearch && researchSummary) {
+    console.log('  Phase 3c: Intel structurer...');
+    try {
+      const { structureIntelReport } = await import('./intel-structurer.js');
+      const prospectObj = {
+        id: `${row.firstName}-${row.lastName}-${row.company}`.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+        firstName: row.firstName,
+        lastName: row.lastName,
+        email: row.email || '',
+        emailCorrected: false,
+        phone: '',
+        title: row.title,
+        city: '',
+        company: row.company,
+        state: row.state || '',
+        grade: 'Ungraded' as const,
+        tier: 'A' as const,
+        icpStatus: 'pass' as const,
+        icpReason: '',
+        aeNotes: '',
+        hasAeNotes: false,
+        leadType: '',
+        isDuplicate: false,
+      };
+
+      const intelResult = await structureIntelReport(
+        { 'Industry Analyst': researchResults.analyst, 'AE Proxy': researchResults.aeProxy, 'Technical Evaluator': researchResults.techEval },
+        '', // cross-exam insights (not available at this phase)
+        prospectObj as any,
+        [], // emails not yet composed
+        [], // pattern selections not yet available
+        ae.name,
+        config.model === 'opus' ? 'claude-opus-4-6' : 'claude-sonnet-4-6',
+      );
+
+      result.structuredIntel = intelResult;
+      const fieldCount = Object.values(intelResult.dossier || {}).reduce((sum: number, section: any) => {
+        return sum + (typeof section === 'object' ? Object.keys(section).filter(k => section[k] && section[k] !== '[insufficient data]').length : 0);
+      }, 0);
+      console.log(`  -> Intel structured: ${fieldCount} fields populated${intelResult.warnings.length > 0 ? ` (${intelResult.warnings.length} warnings)` : ''}`);
+    } catch (err: any) {
+      errors.push(`intel-structurer: ${err.message?.slice(0, 80)}`);
+      console.log(`  -> Intel structurer error (non-blocking): ${err.message?.slice(0, 60)}`);
+    }
+  }
 
   // Phase 4: Substrate search
   console.log('  Phase 4: Substrate search...');
@@ -1083,7 +1227,6 @@ async function processOneProspect(
   }
 
   // Phase 6: Email composition
-  const ae = resolveAE(row.state);
   const micrositeSlug = toSlug(row.company);
   let emails: ComposedEmail[] = [];
   let judgeResult = { scores: {} as Record<string, number>, pass: false, failures: [] as string[] };
