@@ -2,11 +2,13 @@
  * domain-resolver.ts
  *
  * Resolves company names to corporate email domains via a waterfall of tactics:
- *   1. Google Search scraping (injected searchFn)
- *   2. Website extraction (injected fetchFn)
- *   3. Company name -> domain heuristics + DNS MX verification
- *   4. FCC filing lookup (fiber telecom specific)
- *   5. Subsidiary / DBA handling
+ *   A. Clearbit Company Autocomplete (free, purpose-built, highest signal)
+ *   B. Person + company email search (finds published emails directly)
+ *   C. Filtered web search (social-media excluded)
+ *   1. Website extraction (injected fetchFn)
+ *   2. Company name -> domain heuristics + DNS MX verification
+ *   3. FCC filing lookup (fiber telecom specific)
+ *   4. Subsidiary / DBA handling
  *
  * All network I/O is dependency-injected (searchFn, fetchFn) so the module
  * is fully testable with no external dependencies beyond Node.js builtins.
@@ -33,6 +35,10 @@ export interface ResolveOptions {
   fetchFn?: (url: string) => Promise<string>;
   /** Per-tactic timeout in ms (default 10 000) */
   timeout?: number;
+  /** Contact's first name — enables person+company email search tactic */
+  firstName?: string;
+  /** Contact's last name — enables person+company email search tactic */
+  lastName?: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -266,7 +272,245 @@ function log(entries: AuditEntry[], entry: AuditEntry): void {
 }
 
 // ---------------------------------------------------------------------------
-// Tactic 1: Google Search scraping
+// Convenience type aliases
+// ---------------------------------------------------------------------------
+
+type SearchFn = (query: string) => Promise<string[]>;
+type FetchFn = (url: string) => Promise<string>;
+
+// ---------------------------------------------------------------------------
+// Social-media domains to exclude from URL-based results
+// ---------------------------------------------------------------------------
+
+const SOCIAL_DOMAINS = [
+  'x.com', 'twitter.com', 'linkedin.com', 'facebook.com',
+  'instagram.com', 'youtube.com', 'reddit.com', 'tiktok.com',
+  'wikipedia.org', 'pinterest.com',
+];
+
+function isSocialDomain(hostname: string): boolean {
+  const h = hostname.replace(/^www\./, '').toLowerCase();
+  return SOCIAL_DOMAINS.some((sd) => h === sd || h.endsWith(`.${sd}`));
+}
+
+// ---------------------------------------------------------------------------
+// Tactic A: Clearbit Company Autocomplete (FREE, no API key)
+// ---------------------------------------------------------------------------
+
+async function tacticClearbit(
+  companyName: string,
+  opts: Required<Pick<ResolveOptions, 'timeout'>> & Pick<ResolveOptions, 'fetchFn'>,
+  audit: AuditEntry[],
+): Promise<DomainResult | null> {
+  if (!opts.fetchFn) {
+    log(audit, { tactic: 'clearbit-autocomplete', attempted: false, outcome: 'skip', detail: 'no fetchFn provided' });
+    return null;
+  }
+
+  const encoded = encodeURIComponent(companyName);
+  const url = `https://autocomplete.clearbit.com/v1/companies/suggest?query=${encoded}`;
+
+  const raw = await withTimeout(opts.fetchFn(url), opts.timeout);
+  if (!raw) {
+    log(audit, { tactic: 'clearbit-autocomplete', attempted: true, outcome: 'fail', detail: 'fetch returned nothing' });
+    return null;
+  }
+
+  try {
+    const results = JSON.parse(raw);
+    if (Array.isArray(results) && results.length > 0) {
+      // Clearbit ranks by relevance — first result is best match
+      const best = results[0] as { name?: string; domain?: string; logo?: string };
+      if (best.domain) {
+        const domain = normalizeDomain(best.domain);
+        log(audit, {
+          tactic: 'clearbit-autocomplete',
+          attempted: true,
+          outcome: 'success',
+          detail: `matched "${best.name}" -> ${domain}`,
+        });
+        return {
+          domain,
+          confidence: 'high',
+          source: 'clearbit-autocomplete',
+          emailsFound: [],
+        };
+      }
+    }
+  } catch {
+    // JSON parse failure — non-JSON response
+  }
+
+  log(audit, { tactic: 'clearbit-autocomplete', attempted: true, outcome: 'fail', detail: 'no domain in response' });
+  return null;
+}
+
+// ---------------------------------------------------------------------------
+// Tactic B: Person + Company email search
+// ---------------------------------------------------------------------------
+
+async function tacticPersonEmailSearch(
+  companyName: string,
+  opts: Required<Pick<ResolveOptions, 'timeout'>> & Pick<ResolveOptions, 'searchFn' | 'fetchFn' | 'firstName' | 'lastName'>,
+  audit: AuditEntry[],
+): Promise<DomainResult | null> {
+  if (!opts.firstName || !opts.lastName) {
+    log(audit, { tactic: 'person-email-search', attempted: false, outcome: 'skip', detail: 'no firstName/lastName' });
+    return null;
+  }
+  if (!opts.searchFn) {
+    log(audit, { tactic: 'person-email-search', attempted: false, outcome: 'skip', detail: 'no searchFn provided' });
+    return null;
+  }
+
+  const query = `"${opts.firstName} ${opts.lastName}" "${companyName}" "@" -site:linkedin.com -site:twitter.com -site:facebook.com`;
+  const results = await withTimeout(opts.searchFn(query), opts.timeout);
+  if (!results || results.length === 0) {
+    log(audit, { tactic: 'person-email-search', attempted: true, outcome: 'fail', detail: 'search returned no results' });
+    return null;
+  }
+
+  // Check URLs text for email addresses
+  const allText = results.join(' ');
+  const emails = extractEmails(allText);
+
+  // If search results are URLs, also try to fetch each and look for emails
+  if (emails.length === 0 && opts.fetchFn) {
+    for (const urlOrSnippet of results.slice(0, 5)) {
+      if (!urlOrSnippet.startsWith('http')) continue;
+      // Skip social media URLs
+      try {
+        const hostname = new URL(urlOrSnippet).hostname;
+        if (isSocialDomain(hostname)) continue;
+      } catch { continue; }
+
+      const pageHtml = await withTimeout(opts.fetchFn(urlOrSnippet), opts.timeout);
+      if (!pageHtml) continue;
+
+      const pageEmails = extractEmails(pageHtml);
+      // Look for emails that match the person's name
+      const nameMatch = pageEmails.filter((e) => {
+        const local = e.split('@')[0].toLowerCase();
+        const first = opts.firstName!.toLowerCase();
+        const last = opts.lastName!.toLowerCase();
+        return local.includes(first) || local.includes(last);
+      });
+
+      if (nameMatch.length > 0) {
+        const domain = normalizeDomain(nameMatch[0].split('@')[1]);
+        log(audit, {
+          tactic: 'person-email-search',
+          attempted: true,
+          outcome: 'success',
+          detail: `found person email on ${urlOrSnippet}`,
+        });
+        return {
+          domain,
+          confidence: 'high',
+          source: `person-email-search: ${urlOrSnippet}`,
+          emailsFound: nameMatch,
+        };
+      }
+    }
+  }
+
+  if (emails.length > 0) {
+    // Filter for emails matching the person's name
+    const first = opts.firstName.toLowerCase();
+    const last = opts.lastName.toLowerCase();
+    const nameMatch = emails.filter((e) => {
+      const local = e.split('@')[0].toLowerCase();
+      return local.includes(first) || local.includes(last);
+    });
+    const bestEmail = nameMatch.length > 0 ? nameMatch[0] : emails[0];
+    const domain = normalizeDomain(bestEmail.split('@')[1]);
+    log(audit, {
+      tactic: 'person-email-search',
+      attempted: true,
+      outcome: 'success',
+      detail: `found email in search result text: ${bestEmail}`,
+    });
+    return {
+      domain,
+      confidence: 'high',
+      source: 'person-email-search',
+      emailsFound: nameMatch.length > 0 ? nameMatch : [bestEmail],
+    };
+  }
+
+  log(audit, { tactic: 'person-email-search', attempted: true, outcome: 'fail', detail: 'no emails found' });
+  return null;
+}
+
+// ---------------------------------------------------------------------------
+// Tactic C: Filtered web search (social-media excluded)
+// ---------------------------------------------------------------------------
+
+async function tacticFilteredWebSearch(
+  companyName: string,
+  opts: Required<Pick<ResolveOptions, 'timeout'>> & Pick<ResolveOptions, 'searchFn'>,
+  audit: AuditEntry[],
+): Promise<DomainResult | null> {
+  if (!opts.searchFn) {
+    log(audit, { tactic: 'filtered-web-search', attempted: false, outcome: 'skip', detail: 'no searchFn provided' });
+    return null;
+  }
+
+  const slug = companyToSlug(companyName);
+  const query = `"${companyName}" official site OR website OR "contact us" -twitter -linkedin -facebook -instagram -youtube -reddit`;
+  const results = await withTimeout(opts.searchFn(query), opts.timeout);
+  if (!results || results.length === 0) {
+    log(audit, { tactic: 'filtered-web-search', attempted: true, outcome: 'fail', detail: 'search returned no results' });
+    return null;
+  }
+
+  // Extract domains from URLs, filtering out social media
+  const urlRe = /https?:\/\/([\w.\-]+)/gi;
+  const candidateDomains: string[] = [];
+  for (const snippet of results) {
+    let m: RegExpExecArray | null;
+    while ((m = urlRe.exec(snippet)) !== null) {
+      const d = normalizeDomain(m[1]);
+      if (!d || isSocialDomain(d)) continue;
+      // Skip search engines too
+      if (d.includes('google') || d.includes('bing') || d.includes('yahoo') || d.includes('duckduckgo')) continue;
+      if (!candidateDomains.includes(d)) candidateDomains.push(d);
+    }
+  }
+
+  if (candidateDomains.length === 0) {
+    log(audit, { tactic: 'filtered-web-search', attempted: true, outcome: 'fail', detail: 'no non-social domains found' });
+    return null;
+  }
+
+  // Prefer domain whose hostname contains a distinctive token from the company name
+  const slugTokens = slug.length >= 4 ? [slug] : [];
+  // Also try individual words from the company name (3+ chars)
+  const nameWords = companyName.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter((w) => w.length >= 4);
+
+  const preferred = candidateDomains.find((d) => {
+    const base = d.split('.')[0];
+    return slugTokens.some((t) => base.includes(t)) || nameWords.some((w) => base.includes(w));
+  });
+
+  const chosen = preferred ?? candidateDomains[0];
+
+  log(audit, {
+    tactic: 'filtered-web-search',
+    attempted: true,
+    outcome: 'success',
+    detail: `found domain: ${chosen} (preferred=${!!preferred})`,
+  });
+  return {
+    domain: normalizeDomain(chosen),
+    confidence: preferred ? 'medium' : 'low',
+    source: `filtered-web-search`,
+    alternativeDomains: candidateDomains.filter((d) => d !== chosen).slice(0, 5),
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Tactic 1: Google Search scraping (legacy — kept for backwards compatibility)
 // ---------------------------------------------------------------------------
 
 async function tacticGoogleSearch(
@@ -832,9 +1076,10 @@ async function tacticSubsidiaryLookup(
 /**
  * Resolve a company name to its corporate email domain.
  *
- * Runs a waterfall of tactics (google search -> website extraction ->
- * heuristics + MX -> FCC filings -> subsidiary lookup) and returns
- * the first successful result, or null if nothing works.
+ * Runs a waterfall of tactics (clearbit -> person-email-search ->
+ * filtered-web-search -> website extraction -> heuristics + MX ->
+ * FCC filings -> subsidiary lookup) and returns the first successful
+ * result, or null if nothing works.
  *
  * @param companyName - The company name to resolve (e.g. "Dobson Fiber")
  * @param companyUrl  - Optional known website URL
@@ -847,16 +1092,29 @@ export async function resolveDomain(
   options?: ResolveOptions,
 ): Promise<DomainResult | null> {
   const timeout = options?.timeout ?? DEFAULT_TIMEOUT_MS;
-  const opts = { searchFn: options?.searchFn, fetchFn: options?.fetchFn, timeout };
+  const opts = {
+    searchFn: options?.searchFn,
+    fetchFn: options?.fetchFn,
+    timeout,
+    firstName: options?.firstName,
+    lastName: options?.lastName,
+  };
   const audit: AuditEntry[] = [];
 
-  // Waterfall: try each tactic in order, stop on first success
+  // Waterfall: data-driven order (tactic-eval 2026-06-05 against 83 booth contacts)
+  // Heuristic+MX first (44.6%) — best for niche fiber companies
+  // Clearbit second (22.9%) — good for well-known companies, but returns WRONG
+  //   results for niche firms if run first (Booker Engineering -> booker.com)
+  // DuckDuckGo search (B/C) REMOVED — 0% hit rate on both person and company search
+  // Person search kept but deprioritized — needs Bing API to be useful
   const tactics: Array<() => Promise<DomainResult | null>> = [
-    () => tacticGoogleSearch(companyName, opts, audit),
     () => tacticWebsiteExtraction(companyName, companyUrl, opts, audit),
     () => tacticHeuristics(companyName, opts, audit),
+    () => tacticClearbit(companyName, opts, audit),
+    () => tacticPersonEmailSearch(companyName, opts, audit),
     () => tacticFccLookup(companyName, opts, audit),
     () => tacticSubsidiaryLookup(companyName, opts, audit),
+    // tacticFilteredWebSearch removed — DuckDuckGo returns 0% correct domains
   ];
 
   for (const tactic of tactics) {
