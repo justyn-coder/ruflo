@@ -46,11 +46,29 @@ interface ProspectRow {
   companyUrl?: string;
 }
 
+interface SemanticVerification {
+  totalClaims: number;
+  verified: number;
+  flagged: number;
+  overallConfidence: 'high' | 'medium' | 'low';
+  blockers: string[];
+}
+
+interface FactVerification {
+  totalClaims: number;
+  verified: number;
+  unverified: number;
+  summary: string;
+  unsafeForEmail: string[];
+}
+
 interface PipelineResult {
   prospect: ProspectRow;
   emailFound: string | null;
   emailConfidence: string;
   researchSummary: string;
+  semanticVerification: SemanticVerification | null;
+  factVerification: FactVerification | null;
   judgeScores: Record<string, number>;
   judgePass: boolean;
   emailSubjects: { t1: string; t2: string; t3: string };
@@ -940,6 +958,8 @@ async function processOneProspect(
     emailFound: row.email || null,
     emailConfidence: row.email ? 'provided' : 'not-attempted',
     researchSummary: '',
+    semanticVerification: null,
+    factVerification: null,
     judgeScores: {},
     judgePass: false,
     emailSubjects: { t1: '', t2: '', t3: '' },
@@ -1009,6 +1029,32 @@ async function processOneProspect(
   } catch (err: any) {
     errors.push(`substrate: ${err.message?.slice(0, 80)}`);
   }
+
+  // Phase 4b: Semantic Verification — cross-check research claims against substrate
+  let semanticVerification: SemanticVerification | null = null;
+  if (!config.skipResearch && researchSummary) {
+    console.log('  Phase 4b: Semantic verification...');
+    try {
+      const { verifyAllClaims } = await import('./semantic-verifier.js');
+      const prospectId = `${row.firstName}-${row.lastName}-${row.company}`.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      const verificationReport = await verifyAllClaims(researchSummary, row.company, prospectId);
+      semanticVerification = {
+        totalClaims: verificationReport.totalClaims,
+        verified: verificationReport.verified,
+        flagged: verificationReport.unverified,
+        overallConfidence: verificationReport.overallConfidence,
+        blockers: verificationReport.blockers,
+      };
+      console.log(`  -> Semantic verification: ${verificationReport.totalClaims} claims checked, ${verificationReport.verified} verified, ${verificationReport.unverified} flagged`);
+      if (verificationReport.blockers.length > 0) {
+        console.log(`  -> Blockers: ${verificationReport.blockers.join('; ').slice(0, 120)}`);
+      }
+    } catch (err: any) {
+      errors.push(`semantic-verify: ${err.message?.slice(0, 80)}`);
+      console.log(`  -> Semantic verification error: ${err.message?.slice(0, 60)}`);
+    }
+  }
+  result.semanticVerification = semanticVerification;
 
   // Phase 5: Pattern selection (Thompson Sampling fallback to default)
   console.log('  Phase 5: Pattern selection...');
@@ -1114,6 +1160,41 @@ async function processOneProspect(
       t2: emails.find(e => e.touchNumber === 2)?.subject || '',
       t3: emails.find(e => e.touchNumber === 3)?.subject || '',
     };
+
+    // Phase 6b: Fact Verification — check composed email claims via web search
+    let factVerification: FactVerification | null = null;
+    if (emails.length > 0) {
+      console.log('  Phase 6b: Fact verification...');
+      try {
+        const { verifyClaimsWithWebSearch: verifyFacts } = await import('./verify-facts.js');
+        const { callLLM: verifyCallLLM } = await import('./llm-client.js');
+
+        // Verify claims in T1 body (primary touch, most claim-dense)
+        const t1 = emails.find(e => e.touchNumber === 1);
+        if (t1 && t1.body && t1.body !== '[Composition error]') {
+          const factResult = await verifyFacts(t1.body, row.company, verifyCallLLM);
+          const unsafeForEmail = factResult.verified
+            .filter(c => !c.safeForEmail)
+            .map(c => `${c.claimType}: "${c.claim.slice(0, 50)}" — ${c.discrepancy || 'unverified'}`);
+
+          factVerification = {
+            totalClaims: factResult.verified.length,
+            verified: factResult.verified.filter(c => c.verified).length,
+            unverified: factResult.verified.filter(c => !c.verified).length,
+            summary: factResult.summary,
+            unsafeForEmail,
+          };
+          console.log(`  -> Fact verification: ${factResult.summary}`);
+          if (unsafeForEmail.length > 0) {
+            console.log(`  -> Unsafe for email: ${unsafeForEmail.length} claim(s) flagged`);
+          }
+        }
+      } catch (err: any) {
+        errors.push(`fact-verify: ${err.message?.slice(0, 80)}`);
+        console.log(`  -> Fact verification error: ${err.message?.slice(0, 60)}`);
+      }
+    }
+    result.factVerification = factVerification;
 
     // Phase 7: Judge gate
     console.log('  Phase 7: Judge gate...');
