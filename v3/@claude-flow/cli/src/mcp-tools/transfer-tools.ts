@@ -7,7 +7,7 @@
  */
 
 import type { MCPTool, MCPToolResult } from './types.js';
-import { validateIdentifier, validateText } from './validate-input.js';
+import { validateIdentifier, validatePackageName, validateText } from './validate-input.js';
 
 /**
  * Helper to create MCP tool result
@@ -33,7 +33,7 @@ export const transferTools: MCPTool[] = [
   // ═══════════════════════════════════════════════════════════════
   {
     name: 'transfer_detect-pii',
-    description: 'Detect PII in content without redacting',
+    description: 'Detect PII in content without redacting Use when native package install (`npm i`, `pip install`) is wrong because the artifact lives on IPFS (plugins, witness chains, learned patterns). For npm-registry deps, native npm is fine.',
     category: 'transfer',
     version: '1.0.0',
     inputSchema: {
@@ -63,7 +63,7 @@ export const transferTools: MCPTool[] = [
   // ═══════════════════════════════════════════════════════════════
   {
     name: 'transfer_ipfs-resolve',
-    description: 'Resolve IPNS name to CID',
+    description: 'Resolve IPNS name to CID Use when native package install (`npm i`, `pip install`) is wrong because the artifact lives on IPFS (plugins, witness chains, learned patterns). For npm-registry deps, native npm is fine.',
     category: 'transfer',
     version: '1.0.0',
     inputSchema: {
@@ -93,7 +93,7 @@ export const transferTools: MCPTool[] = [
   // ═══════════════════════════════════════════════════════════════
   {
     name: 'transfer_store-search',
-    description: 'Search the pattern store',
+    description: 'Search the pattern store Use when native package install (`npm i`, `pip install`) is wrong because the artifact lives on IPFS (plugins, witness chains, learned patterns). For npm-registry deps, native npm is fine.',
     category: 'transfer',
     version: '1.0.0',
     inputSchema: {
@@ -138,7 +138,7 @@ export const transferTools: MCPTool[] = [
 
   {
     name: 'transfer_store-info',
-    description: 'Get detailed info about a pattern',
+    description: 'Get detailed info about a pattern Use when native package install (`npm i`, `pip install`) is wrong because the artifact lives on IPFS (plugins, witness chains, learned patterns). For npm-registry deps, native npm is fine.',
     category: 'transfer',
     version: '1.0.0',
     inputSchema: {
@@ -170,7 +170,7 @@ export const transferTools: MCPTool[] = [
 
   {
     name: 'transfer_store-download',
-    description: 'Download a pattern from the store',
+    description: 'Download a pattern from the store Use when native package install (`npm i`, `pip install`) is wrong because the artifact lives on IPFS (plugins, witness chains, learned patterns). For npm-registry deps, native npm is fine.',
     category: 'transfer',
     version: '1.0.0',
     inputSchema: {
@@ -206,7 +206,7 @@ export const transferTools: MCPTool[] = [
 
   {
     name: 'transfer_store-featured',
-    description: 'Get featured patterns from the store',
+    description: 'Get featured patterns from the store Use when native package install (`npm i`, `pip install`) is wrong because the artifact lives on IPFS (plugins, witness chains, learned patterns). For npm-registry deps, native npm is fine.',
     category: 'transfer',
     version: '1.0.0',
     inputSchema: {
@@ -234,7 +234,7 @@ export const transferTools: MCPTool[] = [
 
   {
     name: 'transfer_store-trending',
-    description: 'Get trending patterns from the store',
+    description: 'Get trending patterns from the store Use when native package install (`npm i`, `pip install`) is wrong because the artifact lives on IPFS (plugins, witness chains, learned patterns). For npm-registry deps, native npm is fine.',
     category: 'transfer',
     version: '1.0.0',
     inputSchema: {
@@ -265,7 +265,7 @@ export const transferTools: MCPTool[] = [
   // ═══════════════════════════════════════════════════════════════
   {
     name: 'transfer_plugin-search',
-    description: 'Search the plugin store',
+    description: 'Search the plugin store Use when native package install (`npm i`, `pip install`) is wrong because the artifact lives on IPFS (plugins, witness chains, learned patterns). For npm-registry deps, native npm is fine.',
     category: 'transfer',
     version: '1.0.0',
     inputSchema: {
@@ -321,7 +321,7 @@ export const transferTools: MCPTool[] = [
 
   {
     name: 'transfer_plugin-info',
-    description: 'Get detailed info about a plugin',
+    description: 'Get detailed info about a plugin Use when native package install (`npm i`, `pip install`) is wrong because the artifact lives on IPFS (plugins, witness chains, learned patterns). For npm-registry deps, native npm is fine.',
     category: 'transfer',
     version: '1.0.0',
     inputSchema: {
@@ -335,7 +335,7 @@ export const transferTools: MCPTool[] = [
       required: ['name'],
     },
     handler: async (input): Promise<MCPToolResult> => {
-      { const v = validateIdentifier((input as { name: string }).name, 'name'); if (!v.valid) return createResult({ error: v.error }, true); }
+      { const v = validatePackageName((input as { name: string }).name, 'name'); if (!v.valid) return createResult({ error: v.error }, true); }
       try {
         const { createPluginDiscoveryService } = await import('../plugins/store/index.js');
         const discovery = createPluginDiscoveryService();
@@ -357,7 +357,7 @@ export const transferTools: MCPTool[] = [
 
   {
     name: 'transfer_plugin-featured',
-    description: 'Get featured plugins from the store',
+    description: 'Get featured plugins from the store Use when native package install (`npm i`, `pip install`) is wrong because the artifact lives on IPFS (plugins, witness chains, learned patterns). For npm-registry deps, native npm is fine.',
     category: 'transfer',
     version: '1.0.0',
     inputSchema: {
@@ -390,7 +390,7 @@ export const transferTools: MCPTool[] = [
 
   {
     name: 'transfer_plugin-official',
-    description: 'Get official plugins from the store',
+    description: 'Get official plugins from the store Use when native package install (`npm i`, `pip install`) is wrong because the artifact lives on IPFS (plugins, witness chains, learned patterns). For npm-registry deps, native npm is fine.',
     category: 'transfer',
     version: '1.0.0',
     inputSchema: {

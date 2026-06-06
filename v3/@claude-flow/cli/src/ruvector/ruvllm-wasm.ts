@@ -24,6 +24,9 @@
 import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 
+// WASM binary requires at least 768-dim input for MicroLoRA adapt()
+const MICROLORA_WASM_MIN_DIM = 768;
+
 // ── Types ────────────────────────────────────────────────────
 
 export interface HnswRouterConfig {
@@ -178,7 +181,12 @@ export async function createHnswRouter(config: HnswRouterConfig): Promise<{
       return ok;
     },
     route(query: Float32Array, k = 3): HnswRouteResult[] {
-      return router.route(query, k);
+      const raw = router.route(query, k);
+      return Array.from(raw).map((r: any) => ({
+        name: r.name ?? r.pattern_name ?? '',
+        score: r.score ?? r.distance ?? 0,
+        metadata: r.metadata ? (typeof r.metadata === 'string' ? JSON.parse(r.metadata) : r.metadata) : undefined,
+      }));
     },
     clear(): void {
       router.clear();
@@ -251,7 +259,7 @@ export async function createSonaInstant(config: SonaConfig = {}): Promise<{
 export async function createMicroLora(config: MicroLoraConfig): Promise<{
   apply: (input: Float32Array) => Float32Array;
   adapt: (quality: number, learningRate?: number, success?: boolean) => void;
-  applyUpdates: (gradients: Float32Array) => void;
+  applyUpdates: (learningRate?: number) => void;
   stats: () => string;
   reset: () => void;
   toJson: () => string;
@@ -273,18 +281,27 @@ export async function createMicroLora(config: MicroLoraConfig): Promise<{
       return lora.apply(input);
     },
     adapt(quality: number, learningRate = 0.01, success = true): void {
-      // v2.0.2: adapt(input, feedback) — two args
       const feedback = new mod.AdaptFeedbackWasm();
       feedback.quality = quality;
       feedback.learningRate = learningRate;
-      // Note: feedback.success not on prototype in v2.0.2, set via property
       try { (feedback as any).success = success; } catch { /* v2.0.2 quirk */ }
-      // Create a dummy input vector matching the configured inputDim
-      const input = new Float32Array(config.inputDim);
+      const input = new Float32Array(Math.max(config.inputDim, MICROLORA_WASM_MIN_DIM));
       lora.adapt(input, feedback);
+      // Flush accumulated gradients. HONEST CAVEAT (audit
+      // docs/reviews/intelligence-system-audit-2026-05-29.md): even WITH this
+      // flush, the shipped @ruvector/ruvllm-wasm@2.0.2 MicroLoraWasm.apply()
+      // output is empirically UNCHANGED (measured maxAbsDelta = 0 after 200
+      // adapts). MicroLoRA adaptation is therefore effectively a no-op on
+      // inference with this WASM backend. We do NOT synthesize a fake gradient
+      // from the scalar quality to make output "move" — that would be a
+      // fabricated signal. Real adaptation needs the WASM backend to flush B,
+      // or a caller supplying real gradients.
+      lora.applyUpdates(learningRate as unknown as Float32Array);
     },
-    applyUpdates(gradients: Float32Array): void {
-      lora.applyUpdates(gradients);
+    applyUpdates(learningRate = 0.01): void {
+      // WASM runtime signature is applyUpdates(learning_rate: number); the
+      // shipped .d.ts mistypes it as Float32Array, hence the cast.
+      lora.applyUpdates(learningRate as unknown as Float32Array);
     },
     stats(): string {
       return lora.toJson();
