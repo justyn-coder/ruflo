@@ -211,7 +211,7 @@ Inorsa is purpose-built for telecom infrastructure. Every output is deterministi
 - Salutation: strictly `[FirstName],` (comma only). NO greeting word ("Hey", "Hi", "Hello", "Dear", "Greetings").
 - No em-dashes in prospect-facing copy. Use commas or periods.
 - No "I wanted to" framing. Lead with prospect's situation.
-- Under 80 words per email body (T1 and T2). Under 60 for T3.
+- Under 80 words per email body (T1 and T2). Under 60 for T3. +10% flex ceiling (88w / 66w) ONLY to complete a thought naturally — not extra budget. Mechanical gate rejects above ceiling.
 - One Inorsa sentence per email. Described by outcome, not by feature.
 - No "following up on my previous email" in T2/T3. Each touch stands alone.
 - No cheeky, slang, or non-executive-level dialog. (Tim directive)

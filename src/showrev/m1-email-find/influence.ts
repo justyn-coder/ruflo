@@ -90,7 +90,7 @@ function getPersonaFraming(title: string): PersonaFraming {
   const framings: Record<PersonaBucket, Omit<PersonaFraming, 'bucket'>> = {
     revenue_leader: {
       pitchVariant: 'C',
-      pitchVerbatim: 'Fiber activations measured in days. Inorsa automates drawing generation from your GIS and LLD inputs so your team scales output at constant headcount.',
+      pitchVerbatim: 'Inorsa automates drawing generation from your GIS and LLD inputs so your team scales output without adding headcount.',
       framingInstructions: 'This is an executive. Frame EVERYTHING around capital efficiency, time-to-revenue, and competitive market capture. They care about how fast fiber lights up and what that means for subscriber activation and BEAD ROI. Do NOT talk about drawings, GIS layers, or technical process. Talk about SPEED TO REVENUE and SCALE WITHOUT HEADCOUNT.',
       valueLens: 'revenue timing, BEAD investment yield, subscriber activation speed, competitive market capture, capital efficiency',
     },
@@ -102,7 +102,7 @@ function getPersonaFraming(title: string): PersonaFraming {
     },
     technical_designer: {
       pitchVariant: 'B',
-      pitchVerbatim: 'Inorsa structures your GIS and LLD inputs into asset-level data, then generates construction and permit drawings with full traceability back to source. No manual extraction, no AI guesswork.',
+      pitchVerbatim: 'Inorsa converts your GIS and LLD inputs into permit-ready construction drawings with full source traceability.',
       framingInstructions: 'This is an engineering/technical leader. Frame around GIS-to-CAD automation, data traceability, design tool integration, and workforce scaling. They care about accuracy, source traceability, and not losing data in translation. Talk about STRUCTURED DATA and TRACEABILITY.',
       valueLens: 'GIS-to-CAD automation, data traceability, design tool integration, workforce scaling without quality loss',
     },
@@ -476,7 +476,7 @@ ${micrositeSlug ? `P.S. Put together a brief on ${prospect.company}'s [relevant 
 Rules: 1-2 sentences. Pattern break from body tone.
 
 ## Hard constraints
-- WORD COUNT: 78-99 words target (body only, excluding subject/PS/signature). Under 78 is too thin. Over 99 triggers recomposition. Hard ceiling 110. Company-specific data points are worth the words, so do not cut them to hit a lower target.
+- WORD COUNT: ${touchNumber === 3 ? '45-55 words target. Hard ceiling 66 words (+10% flex).' : '65-78 words target. Hard ceiling 88 words (+10% flex).'} Body only, excluding subject/PS/signature. Over the ceiling triggers recomposition. Company-specific data points are worth the words, but ruthlessly cut filler to stay under the ceiling. Flex exists only to complete a thought naturally, not as extra budget.
 - Subject line: under 8 words, specific to their situation. First letter capitalized. No all-lowercase.
 - Salutation: strictly "${prospect.firstName}," (comma only, NO greeting word)
 - The salutation IS the sentence start. Do NOT capitalize the first word after the comma unless it's a proper noun (state names like Mississippi/Washington/Georgia, country names, company names, person names, and acronyms like BEAD/NTIA are ALL proper nouns — keep them capitalized).

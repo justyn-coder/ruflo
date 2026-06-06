@@ -684,7 +684,7 @@ async function phaseJudge(
     const mechanical = runMechanicalChecks(
       email.body, email.subject, email.ps,
       ae.name, ae.email,
-      row.firstName, micrositeSlug, icpType,
+      row.firstName, micrositeSlug, icpType, email.touchNumber,
     );
 
     if (verbose) {
@@ -1612,15 +1612,15 @@ async function processOneProspect(
       emails = allEmails.filter(e => config.touches.includes(e.touchNumber));
       console.log(`  -> ${emails.length} touches composed`);
 
-      // Word count safety net: recompose with full prompt + tightening instruction if above 110w hard ceiling
-      // 78-99 = PASS clean, 100-110 = PASS-but-flagged (flex zone, acceptable), >110 = FAIL
+      // Word count: target 80w T1/T2, 60w T3. Ceiling +10% flex (88w / 66w) per SOT §11
       const { buildComposerPrompt: wcRecomposeBuilder } = await import('./influence.js');
       const { callLLM: wcRecomposeLLM } = await import('./llm-client.js');
       for (let idx = 0; idx < emails.length; idx++) {
         const email = emails[idx];
         const wc = email.body.split(/\s+/).filter(Boolean).length;
-        if (wc > 110) {
-          console.log(`  -> WARNING: T${email.touchNumber} has ${wc} words (hard ceiling 110), recomposing with full prompt + word count tightening...`);
+        const wcCeiling = email.touchNumber === 3 ? 66 : 88;
+        if (wc > wcCeiling) {
+          console.log(`  -> WARNING: T${email.touchNumber} has ${wc} words (ceiling ${wcCeiling}), recomposing...`);
           try {
             const tNum = email.touchNumber as 1 | 2 | 3;
             const patternForTouch = patterns[tNum - 1];
@@ -1637,7 +1637,7 @@ async function processOneProspect(
               micrositeSlug,
               wcKeyFacts,
               icpType,
-            ) + `\n\n## CRITICAL: WORD COUNT FIX\nYour previous draft was ${wc} words. The HARD CEILING is 110 words. Target 78-99 words. Cut filler ruthlessly but KEEP the company-specific opener fact. Every sentence must earn its place.`;
+            ) + `\n\n## CRITICAL: WORD COUNT FIX\nYour previous draft was ${wc} words. The HARD CEILING is ${wcCeiling} words. Target ${wcCeiling === 66 ? '45-55' : '65-78'} words. Cut filler ruthlessly but KEEP the company-specific opener fact. Every sentence must earn its place.`;
             const wcResult = await wcRecomposeLLM(wcPrompt, {
               model: config.model === 'opus' ? 'claude-opus-4-6' : 'claude-sonnet-4-6',
               label: `T${tNum}-wc-recompose`,

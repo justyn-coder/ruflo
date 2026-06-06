@@ -1,8 +1,8 @@
 ---
 title: Claude Design Prompt -- ShowRev System Architecture Visualization
 status: ACTIVE
-last_updated: 2026-06-06 07:30 EST
-version: v2
+last_updated: 2026-06-06 09:55 EST
+version: v3
 purpose: Exact prompt for Claude Design to render the full ShowRev system architecture. Reflects actual code in run-pipeline.ts as of Wave 2 completion. Every component, data flow, gate, and external service.
 ---
 
@@ -46,13 +46,16 @@ Group components into 6 vertical swim lanes from left to right:
 - PASS: continues with icpType threaded downstream
 - Error handling: defaults to pass (non-blocking)
 
-**Phase 2: Email Discovery** (run-pipeline.ts `phaseEmailFind`, lines 231-340)
+**Phase 2: Email Discovery** (run-pipeline.ts `phaseEmailFind`, lines 231-357)
 - Only runs if CSV has no email
-- DuckDuckGo HTML search → domain extraction → email pattern inference
-- Social media domain filtering (x.com, linkedin.com, etc.)
-- Domain hints loaded from `data/showrev/premium/domain-hints.json`
-- Real web page fetch for contact page scraping
-- Output: email address + confidence level
+- Multi-step orchestrator (`email-finder/orchestrator.ts`):
+  1. **Apollo primary** (if APOLLO_API_KEY set): people match by name + company → returns email + status + confidence
+  2. **DuckDuckGo fallback** (if Apollo misses): HTML search → domain extraction → email pattern inference
+  3. **Domain hints** loaded from `data/showrev/premium/domain-hints.json` (manual overrides for known company domains)
+  4. **Social media domain filtering** (x.com, linkedin.com, etc.) — prevents false domain matches
+  5. **MillionVerifier check** (if MILLIONVERIFIER_API_KEY set): verifies deliverability → quality (good/bad/risky) + result (ok/catch_all/unknown)
+- Confidence color: green (verified by Apollo + MV), yellow (partial verification), red (unverified)
+- Output: email address + confidence color
 - Note: "Required for P2 cold prospects (2,300 contacts without email)"
 
 **Phase 2b: Prospect Upsert** (run-pipeline.ts `phaseProspectUpsert`, line 1342)
@@ -128,7 +131,7 @@ Group components into 6 vertical swim lanes from left to right:
   - Failure-friction bridge micro-template with ICP-specific examples
   - Competitive bridge (9 competitors across 5 categories, osmose excluded)
   - Anti-AI-tell checklist (10 rules enforced in prompt)
-- Hard constraints: under 80 words, one question, salutation = "[FirstName]," only, no em-dashes
+- Hard constraints: target 80w T1/T2 (60w T3), ceiling 88w/66w (+10% flex per SOT §11), one question, salutation = "[FirstName]," only, no em-dashes
 - AE resolved: assigned_ae override > state territory > default Lucas
 - P.S. standardized: microsite link (fiber.inorsa.com/brief/[slug])
 - Signature: [AE Name] | Inorsa | [ae_email]
@@ -145,7 +148,7 @@ Group components into 6 vertical swim lanes from left to right:
 - Two sub-phases:
 
   **7a: Mechanical Checks** (no LLM, line 677)
-  - Word count > 80 → fail
+  - Word count > 88 (T1/T2) or > 66 (T3) → fail (SOT §11 flex ceiling)
   - Em-dash or en-dash → fail
   - Subject > 8 words → fail
   - Salutation not "[FirstName]," → fail
@@ -170,10 +173,11 @@ Group components into 6 vertical swim lanes from left to right:
 - Optional second-opinion from alternate model
 - Runs after primary judge passes
 
-**Email Verification** (verify-emails.ts)
-- Verifies email addresses before send
-- External service: Findymail API
-- Bounced/invalid → flag, do not send
+**Email Verification** (MillionVerifier, called during Phase 2)
+- Verifies email deliverability during email discovery (not a separate phase)
+- External service: MillionVerifier API (MILLIONVERIFIER_API_KEY)
+- Returns: quality (good/bad/risky), result (ok/catch_all/unknown)
+- bad/risky → confidence drops to red, pipeline continues but email flagged
 
 ### Swim Lane 5: STAGING (Mission Control)
 
@@ -270,8 +274,9 @@ npx tsx src/showrev/m1-email-find/run-pipeline.ts --input prospects.csv [--limit
 |---------|---------|---------|
 | callLLM() → Anthropic API | Research, Pattern, Composition, Judge, Intel Structurer | LLM execution (Sonnet or Opus) |
 | callLLM() → Haiku | ICP Gate (LLM tier) | Fast classification |
-| DuckDuckGo HTML Search | Email Discovery, Research agents | Web search without API key |
-| Findymail API | Email Verification | Address validation |
+| Apollo.io API | Email Discovery (Step 0, primary) | People match → verified email + confidence |
+| MillionVerifier API | Email Discovery (Step 0, post-Apollo) | Deliverability verification → quality/result |
+| DuckDuckGo HTML Search | Email Discovery (fallback), Research agents | Web search without API key |
 | Supabase Edge Functions | Substrate Search | search-substrate semantic endpoint |
 | Supabase Direct | Prospect/Dossier/Engine/Microsite writes | Database read/write |
 | Vercel | Microsites, Mission Control | Hosting + deployment |
@@ -313,5 +318,6 @@ Justyn Szymczyk, ShowRev founder. Visual learner. This diagram is both a communi
 
 | Version | Date (EST) | Author | Change |
 |---------|-----------|--------|--------|
+| v3 | 2026-06-06 09:55 | Claude | Corrected Email Discovery to reflect actual multi-step orchestrator: Apollo primary → DuckDuckGo fallback → MillionVerifier verification (was described as DuckDuckGo-only + Findymail). Fixed word count gate: 88w T1/T2, 66w T3 per SOT §11 (was incorrectly stated as >80). Updated external services table. Cross-referenced against pipeline-trace-lyte-fiber.md IPO trace to verify all phases match code. |
 | v2 | 2026-06-06 07:30 | Claude | Complete rewrite to reflect actual code after Wave 1+2. Added: 9-phase orchestrator backbone, ICP routing (3 types + tower exclusion), Brain learning loop (Phase 3a/3b), semantic verification (Phase 4b), fact verification (Phase 6b), auto-recompose on judge failure, Wave 2 ICP-aware composition/judge features, CSV aeNotes column mapping. Corrected: removed "7-bucket persona" (actually 3 persona buckets), fixed judge dimensions (5 not 4), added cross-model judge, honest build status on HubSpot Loader. |
 | v1 | 2026-05-31 12:00 | Claude | Initial architecture visualization prompt. |

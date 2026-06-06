@@ -1,6 +1,6 @@
-Brain Knowledge Digest (574 entities)
+Brain Knowledge Digest (635 entities)
 
-## Companies discovered (55)
+## Companies discovered (65)
 - **Avatar Tech**: firm Avatar Tech is
 - **Mohawk Networks**: operator: Mohawk Networks is
 - **Centillion**: firm Centillion is
@@ -67,7 +67,7 @@ Lighthouse Technologies is
 - **IMMCO's current headcount with prec**: firm IMMCO's current headcount with precis
 - **Spencer Kariniemi's LinkedIn profile or career h**: firm Spencer Kariniemi's LinkedIn profile or career his
 
-## Funding programs (71)
+## Funding programs (78)
 - $25.5M award
 - $25.5M BEAD
 - $83M BEAD
@@ -139,8 +139,15 @@ Lighthouse Technologies is
 - $1.26B in BEAD
 - $133M allocation
 - $160M in BEAD
+- $452M in BEAD
+- $454M in BEAD
+- $3.3B allocation
+- $665M in BEAD
+- $868M BEAD
+- $399M in BEAD
+- $813M allocation
 
-## Relationships (81)
+## Relationships (83)
 - NetPMD Solutions creates near-term integration complexity that could cut both ways: merger with NetPMD Solutions creates near-term integration complexity that could cut both ways
 - NetPMD Solutions is live. The strategic rationale was explicit: merger with NetPMD Solutions is live. The strategic rationale was explicit 
 - Janan is about channel access to those: partnership with Janan is about channel access to those 
@@ -242,8 +249,25 @@ Result: partnership between NATE and accredited post-secondary colleges and univ
 - Pure Integration: partnership with Pure Integration
 - VETRO FiberMap in: partnership with VETRO FiberMap in 
 - a larger anchor entity. Source: partnership with a larger anchor entity. Source
+- local electric cooperative to deploy FTTH network serving: Partnership with local electric cooperative to deploy FTTH network serving 
+- local electric cooperative.
 
-## Tools / platforms in use (366)
+Result: Partnership with local electric cooperative.
+
+Result 
+
+## Known competitors in use (9)
+- Iqgeo (systems_of_record)
+- 3gis (systems_of_record)
+- Katapult (systems_of_record)
+- Render Networks (systems_of_record)
+- Biarri (systems_of_record)
+- Vetro (systems_of_record)
+- Comsof (engineering_software)
+- Osmose (engineering_software)
+- Hexagon (engineering_software)
+
+## Tools / platforms in use (399)
 - case
 - engineering
 - those
@@ -612,6 +636,39 @@ Runway is designed
 - requirements found
 - IQGeo directly or if that
 - design capacity comparable
+- any automated drawing generation
+- originally built
+- references
+- stack identified
+- in tribal entities due
+- with AutoCAD and is preparing
+- his crews
+- or subcontracts
+- MicroStation
+- any design automation
+- teams are understaffed relative
+- usage
+- staffing agencies or subcontractors
+- matters
+- an offshore drafting partner
+- him
+- Inorsa or competitor automated drawing
+- they are trying
+- with AutoCAD or outsourced
+- identity is critical
+- ArcGIS or QGIS
+- usage found in any public source
+- design capability as the default
+- hiring signals as a proxy
+- she will need
+- that might own a proprietary
+- design team with real drawing volume
+- in OSP design
+- any drawing automation
+- OSP designers or outsource design
+- or contracts
+- was confirmed in any public source
+- conversation needs
 
 ## Regulatory / funding landscape (1 entries)
 - BEAD award to serve the St.

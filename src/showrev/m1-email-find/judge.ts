@@ -24,13 +24,14 @@ export function runMechanicalChecks(
   prospectFirstName: string,
   micrositeSlug: string,
   icpType?: string,
+  touchNumber?: number,
 ): MechanicalCheckResult {
   const failures: string[] = [];
   const warnings: string[] = [];
 
-  // Word count (body only) — target is 80, gate at 88 (+10% buffer)
+  const wcCeiling = (touchNumber ?? 1) === 3 ? 66 : 88;
   const wordCount = body.trim().split(/\s+/).length;
-  if (wordCount > 110) failures.push(`Word count ${wordCount} exceeds 110 (target: 78-99)`);
+  if (wordCount > wcCeiling) failures.push(`Word count ${wordCount} exceeds ${wcCeiling}-word ceiling`);
 
   // Em-dash check
   if (body.includes('—') || body.includes('–')) failures.push('Contains em-dash or en-dash');
