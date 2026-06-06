@@ -1,16 +1,16 @@
 ---
 title: Claude Design Prompt -- ShowRev System Architecture Visualization
 status: ACTIVE
-last_updated: 2026-05-31 12:00 EST
-version: v1
-purpose: Exact prompt for Claude Design to render the full ShowRev system architecture. Every component, data flow, gate, and external service.
+last_updated: 2026-06-06 07:30 EST
+version: v2
+purpose: Exact prompt for Claude Design to render the full ShowRev system architecture. Reflects actual code in run-pipeline.ts as of Wave 2 completion. Every component, data flow, gate, and external service.
 ---
 
 # Claude Design Prompt
 
 ## Goal
 
-Create a comprehensive system architecture diagram for ShowRev, a B2B tradeshow outreach automation platform. The diagram should show how data flows from raw CSV input through research, composition, quality gates, staging, and delivery -- with all database connections, external services, and decision points clearly mapped.
+Create a comprehensive system architecture diagram for ShowRev, a B2B tradeshow outreach automation platform. The diagram must show how data flows from raw CSV input through the 9-phase pipeline orchestrated by `run-pipeline.ts` — with all database connections, external services, quality gates, and decision points clearly mapped.
 
 ## Layout
 
@@ -24,201 +24,288 @@ Group components into 6 vertical swim lanes from left to right:
 5. **STAGING** (Mission Control)
 6. **DELIVERY** (right edge)
 
-## Content -- Every Component
+## Content — Every Component (Honest Build Status)
 
 ### Swim Lane 1: INTAKE
 
-**CSV Importer** (src/showrev/m1-email-find/importer.ts)
-- Input: Booth scan CSV (name, email, company, title, state, AE notes, AE grade)
-- OR: Attendee list CSV (name, company, title, state, country -- NO email, NO domain)
-- Processing: parse, deduplicate, normalize, extract AE notes
-- Output: Normalized prospect records
-- Writes to: Supabase `sr_prospects` table
-- Note on diagram: "Substrate depth varies. Email/domain/notes may be absent."
+**CSV Parser** (run-pipeline.ts `parseCSV`, lines 127-176)
+- Input: Prospect CSV with flexible header matching
+- Mapped columns: firstName, lastName, company, title, state, email, companyUrl, aeNotes (Wave 2)
+- Header matching: regex-based (`/first.?name/`, `/ae.?notes|booth.?notes/`, etc.)
+- Handles quoted fields with commas (`splitCSVLine`)
+- Output: `ProspectRow[]` — typed records with optional fields
+- Note on diagram: "P1 CSV has email + aeNotes. P2 CSV has name/company/title only."
 
-**Discovery Phase** (not yet built -- show as dashed outline)
-- For thin-substrate contacts: find company domain, find contact email
-- Tools: Apollo, web search, domain lookup
-- Note: "Required for cold prospecting project (2,300 contacts)"
+**Phase 1: ICP Gate** (icp-gate.ts, called at line 1293)
+- Two-tier classification: regex first, LLM fallback (Haiku)
+- Regex tier: scores company against AE_INDICATORS, OPERATOR_INDICATORS, NON_ICP_INDICATORS
+- Wave 2 addition: TOWER_AE_INDICATORS + FIBER_OVERRIDE_INDICATORS — tower A&E firms rejected unless fiber signals override
+- LLM tier: Haiku classifier with fiber-first bias (false negatives 10x worse than false positives)
+- Three ICP types: `fiber_operator`, `ae_firm`, `non_icp`
+- REJECT: stops processing, logs to sr_prospects with reason
+- PASS: continues with icpType threaded downstream
+- Error handling: defaults to pass (non-blocking)
+
+**Phase 2: Email Discovery** (run-pipeline.ts `phaseEmailFind`, lines 231-340)
+- Only runs if CSV has no email
+- DuckDuckGo HTML search → domain extraction → email pattern inference
+- Social media domain filtering (x.com, linkedin.com, etc.)
+- Domain hints loaded from `data/showrev/premium/domain-hints.json`
+- Real web page fetch for contact page scraping
+- Output: email address + confidence level
+- Note: "Required for P2 cold prospects (2,300 contacts without email)"
+
+**Phase 2b: Prospect Upsert** (run-pipeline.ts `phaseProspectUpsert`, line 1342)
+- Upserts sr_prospects in Supabase immediately after email discovery
+- Mission Control needs prospect rows to show status
+- Sets icp_status, icp_reason, icp_type, assigned_ae
+- AE resolved via state-based territory mapping (East/Central/West)
 
 ### Swim Lane 2: RESEARCH + BRAIN
 
-**STORM Multi-Persona Research** (src/showrev/m1-email-find/personas.ts + researcher.ts)
-- Three parallel research agents:
-  - Industry Analyst (market dynamics, BEAD, regulatory, growth signals)
-  - AE Proxy (buying signals, decision authority, objections, org mapping)
-  - Technical Evaluator (current tools, workflow, technical pain, integration fit)
+**Phase 3a: Brain Context Query** (brain-agentdb.ts + brain-ingest.ts, line 1361)
+- Strategy: AgentDB semantic search first (HNSW vectors), JSONL entity graph fallback
+- AgentDB: vector similarity search across prior research for this company
+- JSONL fallback: filter entity-graph.jsonl by company name match
+- Last fallback: load full brain-context-digest.md for general industry context
+- Output: injected into LLM cache via `setBrainCacheContent()`
+- Note: "Brain grows with each prospect — cumulative learning across runs"
+
+**Phase 3: 3-Persona STORM Research** (personas.ts + researcher.ts, line 1431)
+- Three parallel research agents (all run concurrently via Promise.all):
+  - **Industry Analyst** — market dynamics, BEAD, regulatory, growth signals
+  - **AE Proxy** — buying signals, decision authority, objections, org mapping
+  - **Technical Evaluator** — current tools, workflow, technical pain, integration fit
 - Each agent: forms hypotheses, searches web, confirms/disconfirms (Heuer ACH method)
-- Cross-examination: personas challenge each other's findings
+- External service: `callLLM()` → Sonnet or Opus
 - Source hierarchy: Tier 1 (government filings) > Tier 2 (trade press) > Tier 3 (company website) > Tier 4 (aggregators)
-- External service: `claude -p` (headless Claude CLI) for each persona execution
-- External service: Web search (via Claude's built-in tools)
-- Output: Structured dossier per prospect (company profile, contact profile, JTBD inference, research meta)
-- Writes to: Supabase `sr_brain_dossiers` table
+- Output: structured dossier per prospect
 
-**ICP Gate** (within research phase)
-- Decision: PASS / HOLD / REJECT based on:
-  - Segment (A&E firm 70% pass, fiber operator 64%, contractor 50%, equipment/software 0%)
-  - Scale (employees, revenue, fiber activity)
-  - Data confidence (high/medium/low based on source count)
-- REJECT: stops processing, logs reason
-- HOLD: flags for operator with specific gap documented
-- PASS: continues to composition
-- Writes to: `sr_brain_dossiers.icp_status` and `sr_prospects.icp_status`
+**Phase 3b: Brain Ingest** (brain-ingest.ts `ingestResearchIntoBrain`, line 1450)
+- Extracts entities from research output into entity graph
+- Writes to entity-graph.jsonl (append)
+- Refreshes brain-context-digest.md every 10 prospects
+- Note: "This is the learning loop — Brain accumulates knowledge across runs"
 
-**Persona Classification** (7-bucket cascade)
-- Assigns persona bucket: build_pace, drawings_quality, permit_cycle, program_leverage, cycle_time_exec, capital_efficiency, pass_through
-- Used for QA gating (confirms email angle matches role), NOT for composition
-- Writes to: `sr_brain_dossiers.persona_bucket`
+**Phase 3c: Intel Structurer** (intel-structurer.ts `structureIntelReport`, line 1471)
+- Structures raw research into HubSpot-ready dossier fields
+- Fields: showrev_company_summary, showrev_bead_status, showrev_key_projects, showrev_growth_signals, showrev_challenger_insight, showrev_competitive_landscape, showrev_automation_level, showrev_product_fit, etc.
+- Output: structured dossier object with populated field count
 
-**Brain Knowledge Base** (data/showrev/)
-- brain-synthesis.md (segment analysis, pattern library)
-- industry-intelligence-kb.md (BEAD status, market forces, labor trends)
-- competitor-intelligence.md (8 competitors profiled)
-- inorsa-source-of-truth.md (product constraints, pitch verbatim, value prop scope)
-- booth-transcripts-batch1-analysis.md (conversation intel)
-- Read by research agents for context. Updated by Brain after each project.
+**Brain Knowledge Base** (data/brain/fiber-telecom/inorsa/fiber/fiber-connect-2026/)
+- entity-graph.jsonl — growing entity graph (updated by Phase 3b)
+- brain-context-digest.md — synthesized digest (refreshed every 10 prospects)
+- Read by Phase 3a for context. Written by Phase 3b after research.
 
 ### Swim Lane 3: COMPOSITION
 
-**Influence Pattern Selector** (src/showrev/m1-email-find/influence.ts)
-- Input: dossier summary, AE booth notes, contact title, touch number
-- Selects from 8 patterns: challenger_insight, commitment_consistency, competitive_displacement, curiosity_gap, loss_aversion, social_proof, reframe_anchor, reciprocity
-- Output: PatternSelection (pattern, rationale, emotional frame, challenger insight, P.S. strategy, CTA type)
-- Rule: T1 and T2 MUST use different patterns
-- External service: `claude -p` for pattern selection
+**Phase 4: Substrate Search** (run-pipeline.ts `phaseSubstrateSearch`, line 1517)
+- Semantic search against Supabase Edge Function `search-substrate`
+- Query: company + title + state + "fiber broadband"
+- Returns up to 8 semantic matches from industry substrate corpus
+- Used to enrich research context for composition
 
-**Email Composer** (influence.ts buildComposerPrompt)
-- Input: pattern selection, dossier summary, prospect info, AE name/email, microsite slug
-- Applies anti-AI-tell checklist (10 rules enforced in prompt)
+**Phase 4b: Semantic Verification** (semantic-verifier.ts `verifyAllClaims`, line 1533)
+- Cross-checks research claims against substrate and web sources
+- Reports: totalClaims, verified count, flagged count, confidence level
+- Identifies blockers (unverifiable critical claims)
+- Non-blocking — flags for review, doesn't stop pipeline
+
+**Phase 5: Pattern Selection** (influence.ts `buildPatternSelectorPrompt`, line 1560)
+- Input: enriched research summary, aeNotes, title, touch number, icpType (Wave 2)
+- Selects from 8 influence patterns: challenger_insight, commitment_consistency, competitive_displacement, curiosity_gap, loss_aversion, social_proof, reframe_anchor, reciprocity
+- Wave 2: commitment_consistency excluded for cold prospects (no aeNotes)
+- Wave 2: ICP segment context block added (fiber_operator vs ae_firm framing)
+- T1 and T2 MUST use different patterns
+- Output: PatternSelection per touch (pattern, challengerInsight, emotionalFrame, rationale, ctaType, psStrategy)
+
+**Phase 6: Email Composition** (influence.ts `buildComposerPrompt` + lean-composer.ts, line 1605)
+- Two modes: full composer (LLM-driven) or lean composer (template-driven, for thin research)
+- Auto mode: selects based on research signal strength
+- Full composer features (Wave 2):
+  - Conditional post-show vs cold framing (based on hasAeNotes)
+  - ICP-specific CTA questions (4 per ICP type in hypothesis format)
+  - Failure-friction bridge micro-template with ICP-specific examples
+  - Competitive bridge (9 competitors across 5 categories, osmose excluded)
+  - Anti-AI-tell checklist (10 rules enforced in prompt)
 - Hard constraints: under 80 words, one question, salutation = "[FirstName]," only, no em-dashes
-- AE resolved via: assigned_ae override > state-based territory mapping > default Lucas
+- AE resolved: assigned_ae override > state territory > default Lucas
 - P.S. standardized: microsite link (fiber.inorsa.com/brief/[slug])
 - Signature: [AE Name] | Inorsa | [ae_email]
-- External service: `claude -p` for composition
-- Output: JSON (subject, previewText, body, ps, wordCount, antiTellChecks)
+- Output per touch: JSON (subject, body, ps, wordCount)
 
-**Touch Sequencing**
-- T1: Interest-based CTA ("Is this relevant?")
-- T2: Soft time CTA ("Worth 20 minutes?")
-- T3: Binary close ("Worth a look, or not the right time?")
-- T2/T3 not yet built as value-delivery touches (future: interactive content for T2)
+**Phase 6b: Fact Verification** (verify-facts.ts, line 1695)
+- Cross-checks composed email claims against original research
+- Prevents hallucinated or distorted facts from reaching final copy
+- Runs after composition, before judge
 
 ### Swim Lane 4: QUALITY GATES
 
-**4-Dimension LLM Judge** (src/showrev/m1-email-find/judge.ts)
-- Scores 1-10 on: Research Depth, VP Connection, Tone, Conciseness
-- All must be >= 7 to pass
-- Verdicts: send (all >= 7), hold (any 5-6), reject (any <= 4)
-- External service: `claude -p` for judging
+**Phase 7: Judge Gate** (judge.ts `judgeEmail` + `runMechanicalChecks`, line 1730)
+- Two sub-phases:
 
-**Mechanical Checks** (judge.ts runMechanicalChecks)
-- Word count > 80 → fail
-- Em-dash or en-dash → fail
-- Subject > 8 words → fail
-- Salutation not "[FirstName]," → fail
-- P.S. missing microsite slug → fail
-- AI-tell phrases detected → fail (6 patterns: "I'm curious", "Happy to", "I'd love to", "Furthermore", "Additionally", "Moreover")
-- Wrong product references → fail (structural analysis, Harmoni, tower/cellular)
-- All automated, no LLM needed
+  **7a: Mechanical Checks** (no LLM, line 677)
+  - Word count > 80 → fail
+  - Em-dash or en-dash → fail
+  - Subject > 8 words → fail
+  - Salutation not "[FirstName]," → fail
+  - P.S. missing microsite slug → fail
+  - AI-tell phrases → fail (6 patterns: "I'm curious", "Happy to", "I'd love to", "Furthermore", "Additionally", "Moreover")
+  - Wrong product references → fail (structural analysis, Harmoni, tower/cellular)
 
-**Fact Verification** (src/showrev/m1-email-find/verify-facts.ts)
-- Cross-checks dossier claims against web sources
-- Flags unverifiable claims for manual review
-- Prevents hallucinated facts from reaching email copy
+  **7b: 5-Dimension LLM Scoring** (line 717)
+  - Dimensions: research_depth, vp_connection, tone, conciseness, jtbd_alignment
+  - All must be >= 7 to pass
+  - Verdicts: send (all >= 7), hold (any 5-6), reject (any <= 4)
+  - Wave 2: ICP-aware bonus scoring (+1-2 on jtbd_alignment for fiber_operator/ae_firm, BONUS ONLY — no penalties)
+  - Wave 2: Conditional cold/post-show framing in judge prompt (based on aeNotes)
+  - Anti-validation rule reinforced for A&E firms
 
-**Email Verification** (src/showrev/m1-email-find/verify-emails.ts)
+  **Auto-recompose on failure** (line 1752)
+  - If judge rejects, identifies failing touches
+  - Auto-recomposes failing touches (up to 2 retries)
+  - Re-runs judge on recomposed emails
+
+**Phase 7b: Cross-Model Judge** (cross-model-judge.ts, line 1812)
+- Optional second-opinion from alternate model
+- Runs after primary judge passes
+
+**Email Verification** (verify-emails.ts)
 - Verifies email addresses before send
 - External service: Findymail API
 - Bounced/invalid → flag, do not send
 
 ### Swim Lane 5: STAGING (Mission Control)
 
+**Phase 8: Microsite Content** (microsite-composer.ts `composeMicrositeContent`, line 1831)
+- Generates personalized Field Brief content
+- Components: headline, insight text, case study
+- Uses research summary, challenger insight, persona bucket
+
+**Phase 8b: Microsite Upsert** (run-pipeline.ts `phaseMicrositeUpsert`, line 1845)
+- Upserts sr_microsites in Supabase
+- Sets slug, company, AE info, booking URL, logo URL
+
+**Phase 9: Supabase Write** (run-pipeline.ts `phaseSupabaseWrite`, line 1860)
+- Writes full engine output to sr_engine_output
+- Stores: email subjects/bodies/ps for T1/T2/T3, judge scores, research summary, ICP classification, patterns used, AE assignment
+- Updates sr_brain_dossiers with structured intel
+
 **Mission Control UI** (src/showrev/microsite/app/ops/)
 - Web app: showrev-microsites.vercel.app/ops (or fiber.inorsa.com/ops)
-- Data source: reads from Supabase (sr_prospects + sr_brain_dossiers + sr_microsites)
+- Data source: reads from Supabase (sr_prospects + sr_brain_dossiers + sr_engine_output + sr_microsites)
 - Shows: every contact with status, email preview, dossier intel, ABM microsite link, AE review status
-- Operator actions: cycle status (send/hold/reject/dnc/partner), AE review (pending/verified/flagged/fixed/rejected), notes, GO button
+- Operator actions: cycle status (send/hold/reject/dnc/partner), AE review, notes, GO
 
 **Operator Gate** (human decision)
 - Operator reviews Engine output in Mission Control
-- Can override any decision: change status, reassign AE, edit email, flag issues
+- Can override any decision
 - Two-step activation: AE verified → Operator GO
-- Every override is a training signal for the Brain (future: Brain learns from overrides)
 
 **ABM Microsites** (src/showrev/microsite/app/brief/[slug]/route.ts)
 - Per-contact personalized Field Brief pages
-- Dynamic rendering from Supabase data (prospect name, company, AE, insight, booking URL)
+- Dynamic rendering from Supabase (prospect name, company, AE, insight, booking URL)
 - Domain: fiber.inorsa.com/brief/[slug]
 - Includes: HubSpot tracking code, booking CTA, company logo, AE headshot
-- Booking: HubSpot Meetings with pre-fill (firstname, lastname, email, meeting_notes)
 
 **Booking Confirmation** (src/showrev/microsite/app/booked/route.ts)
 - Cookie-based personalization (sr_slug set by /brief/ route)
 - Two variants: operator (permit speed) vs A&E firm (margin/throughput)
-- Redirected from HubSpot Meetings after booking
 
 ### Swim Lane 6: DELIVERY
 
-**HubSpot Loader** (not yet automated -- show as dashed outline with protocol notes)
+**HubSpot Loader** (hubspot-loader.ts — built but manual trigger, show as solid with manual icon)
 - Protocol (Breeze-validated):
   1. Search company by domain (not name)
   2. If exists → capture ID. If not → create with showrev_* fields
   3. Create contact with showrev_* fields + lifecyclestage=Prospect
   4. Explicitly associate contact → company by ID
-- Safety: turn OFF auto-create-companies setting before load, turn back on after
+- Safety: turn OFF auto-create-companies before load
 - Properties: showrev_engagement_slug, showrev_pilot_owner, showrev_research_summary, showrev_microsite_url, showrev_challenger_insight, abm_play (1:Few)
-- Owner inheritance: company owner → contact owner via existing Workflow
-- External service: HubSpot MCP (or HubSpot API via Private App token)
+- External service: HubSpot API (Private App token)
 - Portal: Inorsa account 20729069
 
-**HubSpot Sequences** (not yet built -- show as dashed outline)
+**HubSpot Sequences** (not yet built — show as dashed outline)
 - T1/T2/T3 email bodies loaded into HubSpot sequence steps
 - AE sends via HubSpot (tracks opens, clicks, replies)
-- Engagement data flows back for outcome tracking
 
-**Outcome Tracking / Reporter** (not yet built -- show as dashed outline)
+**Outcome Tracking / Reporter** (not yet built — show as dashed outline)
 - HubSpot engagement events → Supabase sr_outcomes
-- Tracks: opens, clicks, replies, bounces, meetings booked, deals created
-- Feeds Brain learning loop: which decisions → which outcomes → which patterns
 - Required meta-fields: influence_pattern, persona_bucket, research_confidence, source_count
+- Feeds Brain learning loop
 
-## Database Schema (show as central data store connected to all swim lanes)
+## The Orchestrator
+
+**run-pipeline.ts** (~2000 lines) is the single CLI orchestrator that wires all phases. Show it as a horizontal backbone connecting all swim lanes, with phase numbers labeled on each connection.
+
+```
+CSV → [P1: ICP Gate] → [P2: Email Find] → [P2b: Prospect Upsert]
+    → [P3a: Brain Query] → [P3: STORM Research (3 parallel)] → [P3b: Brain Ingest] → [P3c: Intel Structurer]
+    → [P4: Substrate Search] → [P4b: Semantic Verify]
+    → [P5: Pattern Selection] → [P6: Composition] → [P6b: Fact Verify]
+    → [P7: Judge Gate] → [P7b: Cross-Model Judge]
+    → [P8: Microsite] → [P8b: Microsite Upsert] → [P9: Supabase Write]
+```
+
+CLI invocation:
+```
+npx tsx src/showrev/m1-email-find/run-pipeline.ts --input prospects.csv [--limit N] [--dry-run] [--skip-research] [--skip-composition] [--model sonnet|opus] [--composer full|lean|auto] [--touches 1,2,3]
+```
+
+## Database Schema (central data store connected to all swim lanes)
 
 **Supabase (project slttpknnuthbttjuzrnz)**
 
 | Table | Purpose | Key fields |
 |-------|---------|------------|
-| sr_prospects | All contacts | first_name, last_name, email, company, send_status, icp_status, assigned_ae |
-| sr_brain_dossiers | Research + email output | company_summary, challenger_insight, email_subject, email_body, email_ps, persona_bucket, fit_score |
+| sr_prospects | All contacts + status | first_name, last_name, email, company, title, state, send_status, icp_status, icp_type, icp_reason, assigned_ae |
+| sr_brain_dossiers | Structured research output | company_summary, challenger_insight, persona_bucket, competitive_landscape, bead_status, growth_signals |
+| sr_engine_output | Full pipeline output per contact | email_subject_t1/t2/t3, email_body_t1/t2/t3, email_ps_t1/t2/t3, judge_scores, patterns, research_summary |
 | sr_microsites | ABM page config | slug, company_name, ae_name, ae_booking_url, ae_photo_url, company_logo_url |
 | sr_microsite_events | Page view tracking | microsite_id, event_type, metadata |
 
-## External Services (show as cloud icons connected to relevant components)
+## External Services (cloud icons connected to relevant components)
 
 | Service | Used by | Purpose |
 |---------|---------|---------|
-| claude -p (Anthropic CLI) | Research, Pattern Selection, Composition, Judge | LLM execution (Sonnet model) |
-| HubSpot MCP | HubSpot Loader, Collision Check | CRM read/write |
-| Supabase MCP | All data operations | Database read/write |
+| callLLM() → Anthropic API | Research, Pattern, Composition, Judge, Intel Structurer | LLM execution (Sonnet or Opus) |
+| callLLM() → Haiku | ICP Gate (LLM tier) | Fast classification |
+| DuckDuckGo HTML Search | Email Discovery, Research agents | Web search without API key |
 | Findymail API | Email Verification | Address validation |
-| Web Search | Research agents | Company/contact research |
+| Supabase Edge Functions | Substrate Search | search-substrate semantic endpoint |
+| Supabase Direct | Prospect/Dossier/Engine/Microsite writes | Database read/write |
 | Vercel | Microsites, Mission Control | Hosting + deployment |
+| HubSpot API | HubSpot Loader | CRM write (manual trigger) |
 | HubSpot Meetings | Booking flow | Calendar scheduling with pre-fill |
+
+## ICP Routing (Wave 2 Addition)
+
+Show as a decision diamond after Phase 1:
+
+```
+ICP Gate → fiber_operator → (composition gets fiber CTAs, fiber bridges, fiber judge bonus)
+         → ae_firm       → (composition gets A&E CTAs, A&E bridges, A&E judge bonus, anti-validation rule)
+         → non_icp       → REJECT (stops pipeline)
+         → tower A&E     → REJECT (tower signals without fiber override)
+```
+
+icpType threads through: Phase 5 (pattern selection) → Phase 6 (composition) → Phase 7 (judge scoring)
 
 ## Key for diagram
 
 - Solid boxes: built and working
+- Solid boxes with manual icon: built but requires manual trigger (HubSpot Loader)
 - Dashed boxes: designed but not yet built
 - Green arrows: data flows that are working
 - Orange dashed arrows: planned data flows
 - Red gate icons: quality gates (reject path shown)
 - Purple highlights: external service calls
 - Database cylinder: Supabase (central, connected to all lanes)
+- Brain cycle icon: learning loop (Phase 3a reads → Phase 3b writes)
 
 ## Audience
 
-Justyn Szymczyk, ShowRev founder. Visual learner. Needs to see the full system at once to build confidence that everything is properly wired. This diagram is both a communication tool and an audit tool -- if something is missing or fake, it should be obvious from the diagram.
+Justyn Szymczyk, ShowRev founder. Visual learner. This diagram is both a communication tool and an audit tool — if something is missing or fake, it should be obvious from the diagram.
 
 ---
 
@@ -226,4 +313,5 @@ Justyn Szymczyk, ShowRev founder. Visual learner. Needs to see the full system a
 
 | Version | Date (EST) | Author | Change |
 |---------|-----------|--------|--------|
-| v1 | 2026-05-31 12:00 | Claude | Initial architecture visualization prompt. All 6 swim lanes, database schema, external services, build status. |
+| v2 | 2026-06-06 07:30 | Claude | Complete rewrite to reflect actual code after Wave 1+2. Added: 9-phase orchestrator backbone, ICP routing (3 types + tower exclusion), Brain learning loop (Phase 3a/3b), semantic verification (Phase 4b), fact verification (Phase 6b), auto-recompose on judge failure, Wave 2 ICP-aware composition/judge features, CSV aeNotes column mapping. Corrected: removed "7-bucket persona" (actually 3 persona buckets), fixed judge dimensions (5 not 4), added cross-model judge, honest build status on HubSpot Loader. |
+| v1 | 2026-05-31 12:00 | Claude | Initial architecture visualization prompt. |
