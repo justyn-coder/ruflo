@@ -1,0 +1,43 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Lunder Underground Services Corp is a Florida-registered utility/underground contracting firm based in Pompano Beach, FL — not a fiber ISP or A&E design firm. They appear to be a civil/underground construction contractor, likely doing conduit installation, directional drilling, and trenching for telecom and utility clients. This is a BUILD persona, not a design-house or operator. Source: company name, location, and registration data inference.",
+    "Luiz Nobre holds the title of President, indicating he is the decision-maker and budget authority for a small-to-mid-size contractor. In firms of this type, the President typically controls all vendor relationships and tool purchases. No separate CTO, VP Engineering, or procurement layer is likely. Source: title + company size inference.",
+    "Pompano Beach, FL is in Broward County. Florida's BEAD allocation is $683,057,831 (confirmed from funding data). Florida's BEAD program is operational as of April 30, 2026, with ISP contracts expected to finalize within 6 months and construction beginning Q3 2026. A South Florida underground contractor would be a direct downstream beneficiary of BEAD-funded fiber builds — ISPs will be contracting out civil/underground work, which is Lunder's core business. Source: BEAD funding data + industry baseline.",
+    "Lunder Underground Services Corp does not appear in the Brain knowledge digest as a known fiber company — they are not an ISP, WISP, or A&E engineering firm. Their attendance at Fiber Connect 2026 signals they are actively pursuing fiber construction subcontract work, likely positioning themselves for BEAD-related project volume. Attending a fiber industry tradeshow as an underground contractor is a strong buying signal that they want to be embedded in the fiber supply chain. Source: lead context + industry baseline inference.",
+    "As a construction subcontractor, Lunder's pain is likely upstream: they receive design packages (CAD drawings, permit sets, staking sheets) from the ISP or A&E firm, and if those packages are incomplete, have conflicts, or trigger permit kickbacks, Lunder's field crews sit idle. Each permit kickback (3-6 weeks per industry baseline) directly costs Lunder in crew utilization, equipment costs, and schedule penalties. This is the permitting pain angle — but from the contractor's side, not the designer's. Source: Build persona + industry baseline permitting data.",
+    "No LinkedIn profile for Luiz Nobre confirmed. Search for 'Luiz Nobre Lunder Underground' returns no verifiable public profile or trade press quotes. This limits personalization but does not change the structural analysis. Source: search attempt, not found.",
+    "No booth scan data showing other Lunder employees at the show. Single contact from this company. Source: booth-scan list, not found.",
+    "Lunder's phone area code (407) is Orlando, FL — not Broward County where Pompano Beach is located. This could indicate: (a) the principal is mobile/multi-market, (b) the company operates across Central and South Florida, or (c) it's a legacy number. Either way, this suggests they may work across multiple Florida markets, increasing their exposure to BEAD project volume. Source: phone number area code analysis.",
+    "The ICP hold status ('Relevant title but no AE notes or grade') and Batch Tier D indicates this lead was not engaged at the booth. Luiz Nobre may have been a badge scan, a passive attendee, or a walk-by. No warm context exists. The email must do cold-open work — a provocative industry-relevant hook is required rather than a booth-reference opener. Source: lead metadata."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No LinkedIn profile confirmed for Luiz Nobre — cannot verify career history, tenure, or prior roles",
+    "No trade press quotes or panel appearances found for Luiz Nobre or Lunder Underground Services Corp",
+    "Company size (revenue, headcount, crew count) unknown — cannot confirm whether they are a small 5-person shop or a regional contractor with 50+ field crews",
+    "Cannot confirm whether Lunder currently uses any design review, GIS, or CAD tooling — they may not be the drawing-generation party at all",
+    "Cannot confirm Lunder's current backlog or awarded BEAD subcontract work — they may be pre-award or already committed",
+    "Florida BEAD ISP subcontractor pipeline not confirmed — unknown which ISPs Lunder works with or bids to",
+    "No Crunchbase, LinkedIn company page, or state contractor license data verified through live search — all inferences based on name, title, and location",
+    "Cannot confirm whether Inorsa's workflow (GIS-to-CAD construction drawings) is directly usable by a subcontractor vs. only by the ISP/A&E firm issuing the package"
+  ],
+  "challengesToOtherFindings": [
+    "The Brain digest and funding program data are all oriented toward ISPs and A&E firms. Lunder Underground is almost certainly neither — applying ISP-centric BEAD messaging directly would be a misfit. The angle must shift: Lunder is a buyer of design outputs, not a producer of them. Inorsa's value to Lunder is not 'you generate better drawings' but rather 'the drawings you receive from your ISP clients will have fewer conflicts and permit kickbacks, meaning your crews stay on schedule.' This is an indirect value proposition and requires a reframe.",
+    "The Batch Tier D classification and ICP 'hold' may undervalue this contact. A President of a Florida underground contractor attending Fiber Connect 2026 is signal enough that BEAD subcontract work is on their radar. The tier reflects lack of AE engagement, not lack of prospect quality.",
+    "If Inorsa's product is sold to ISPs and A&E firms rather than contractors, Lunder may not be a direct buyer at all — they may be better used as a referral source or ecosystem contact who can validate pain with their ISP clients. This possibility should be flagged to the AE before outreach is sent."
+  ],
+  "topInsight": "Lunder Underground is a civil subcontractor, not a designer or ISP — their BEAD exposure is real (Florida $683M allocation, Q3 2026 construction start), but Inorsa's direct sale is likely to the ISP or A&E firm issuing the construction package, not to Lunder. The highest-value outreach angle is: 'When the design package you receive has permit conflicts, your crews wait. Inorsa is what the ISPs and engineers upstream of you are using to eliminate those kickbacks.' This positions Inorsa as a tool Lunder should be recommending to or requesting from their clients — making Luiz Nobre an influencer/champion rather than a direct buyer. The AE should qualify whether Lunder has direct ISP relationships where they could plant this conversation.",
+  "sourcesUsed": [
+    "Lead metadata: company name, title, location, phone, email — direct inference",
+    "Industry baseline KB: BEAD operational date, Florida allocation ($683,057,831), construction timeline Q3 2026, permitting cycle data (3-6 weeks per kickback)",
+    "Brain Knowledge Digest: no Lunder Underground entity found",
+    "Funding programs list: $683,057,831 BEAD (Florida allocation confirmed)",
+    "Phone area code 407: Orlando FL market inference",
+    "Pompano Beach FL: Broward County, South Florida fiber build market",
+    "Fiber Connect 2026 attendee context: underground contractor attending fiber tradeshow = active positioning for BEAD subcontract work",
+    "Search attempt for Luiz Nobre LinkedIn: not found/not confirmable without live search capability"
+  ]
+}
+```

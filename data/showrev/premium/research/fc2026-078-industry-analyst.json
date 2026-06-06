@@ -1,0 +1,46 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Rayco, Inc. (rayco-digs.com) is a construction and infrastructure services company headquartered in Prosper, TX. Based on the domain 'rayco-digs' and available context, Rayco appears to be a civil/underground construction contractor — likely operating as a subcontractor or prime contractor for fiber/broadband deployment, utility construction, and directional drilling. This is NOT a design firm or ISP; they are on the build/installation side of the fiber value chain. Source: domain inference + LinkedIn context for Jude Guidry title 'Director of Strategy and Business Development'.",
+    "Rayco's Texas base puts them in a high-activity BEAD market. Texas received $683,057,831 in BEAD funding allocation. With BEAD operationally active as of April 30, 2026 and ISP contract finalization expected within 6 months, construction contractors like Rayco are positioned directly in the oncoming wave of ground-breaking activity expected Q3 2026+. Source: NTIA BEAD program records + industry baseline.",
+    "The presence of Jordan Raymond (SVP of Finance) at the same tradeshow as Jude Guidry (Director of Strategy and BD) is a meaningful signal. Finance + Strategy leadership attending a fiber industry show together strongly suggests Rayco is actively evaluating new business lines, vendor partnerships, or service expansion — not just operational attendance. This is a strategic posture, not a procurement trip. Source: prospect context provided.",
+    "As a construction contractor, Rayco's growth path in the BEAD era likely involves bidding on larger or more complex fiber build projects — which increasingly require them to receive or produce permit-ready construction drawings. If Rayco takes on design-build contracts or works with ISPs/operators who push drawing responsibility downstream to the contractor, permitting workflow becomes a direct operational constraint for Rayco, not just an upstream problem. Source: industry baseline on contractor role expansion in BEAD-era builds.",
+    "Labor and capacity constraints are acute for contractors in the current environment. The 3:1 job-to-candidate ratio applies to fiber designers, but construction contractors face parallel skilled-labor shortages. If Rayco is growing its BEAD project pipeline, the bottleneck shifts rapidly from 'winning work' to 'executing work without kickbacks slowing revenue recognition.' Permit kickbacks that add 3-6 weeks per occurrence directly delay contractor invoicing and cash flow. Source: industry baseline.",
+    "Texas is one of the more complex permitting environments for underground construction — involving TxDOT right-of-way, municipal permitting, utility coordination, and in some rural areas, county road access agreements. Each jurisdictional layer adds review cycles. For a contractor like Rayco, drawing quality at submission is the primary lever to reduce these cycles. Source: industry knowledge of Texas ROW permitting landscape.",
+    "Rayco's 'digs' branding and Prosper, TX location (a fast-growing Dallas-Fort Worth exurb) suggests they may have roots in residential/commercial site development or utility installation, with expansion into telecom/fiber as a natural adjacency. DFW is one of the highest-growth fiber construction markets in the country, with multiple ISP builds ongoing (AT&T, Frontier, municipal networks). Source: domain + geography inference.",
+    "No trade press mentions of Rayco found in fiercenetwork.com, lightreading.com, or telecompetitor.com searches. No conference speaker appearances found for Rayco leadership. No BEAD sub-grant award found specifically naming Rayco as a recipient (consistent with contractor rather than ISP status — contractors win work from ISPs, not directly from BEAD grants). Source: search gaps noted below.",
+    "The M&A wave in engineering and construction services is relevant context. PE-backed rollups are consolidating smaller contractors and A&E firms. If Rayco is independently owned (not confirmed), they may be fielding acquisition interest or evaluating whether to grow organically or via partnership to compete for larger BEAD contracts. The SVP of Finance attending a strategy-oriented tradeshow is consistent with either scenario. Source: industry baseline on PE consolidation.",
+    "Inorsa's relevance to a construction contractor like Rayco is real but requires framing adjustment from the ISP/operator pitch. Rayco's pain is not 'I need to convert my GIS data into drawings' — it is more likely 'the drawings I receive from the ISP or A&E firm upstream are not permit-ready, causing kickbacks that delay my construction schedule and cash flow' OR 'I am being asked to take on more design-build work and need drawing production capability I don't currently have in-house.' Both are addressable by Inorsa but require different messaging. Source: analyst inference from contractor business model."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Rayco, Inc. website content not directly reviewed — domain confirms existence but detailed service lines, project portfolio, and revenue scale not verified from public sources in this session.",
+    "No confirmed revenue, employee count, or ownership structure found (private vs. PE-backed vs. family-owned).",
+    "No trade press coverage found for Rayco in fiber/broadband vertical publications.",
+    "No BEAD sub-grant award found naming Rayco — consistent with contractor (not ISP) status but unverified.",
+    "Exact service scope not confirmed: do they perform directional drilling only, full civil construction, conduit and splicing, or design-build? This determines how directly Inorsa's permitting workflow value applies.",
+    "No job postings reviewed for Rayco — could not confirm whether they are hiring designers, estimators, or project managers that would signal design-build expansion.",
+    "No LinkedIn company page data confirmed — employee growth trajectory unknown.",
+    "Jude Guidry's specific background and prior employers not verified — could indicate whether he came from ISP/operator side (which would mean he understands upstream design pain) or pure contractor side.",
+    "No confirmation of which ISPs or operators Rayco works with — knowing their customer base would indicate which BEAD winners they are likely to build for.",
+    "AE booth notes absent — no firsthand signal about what Rayco was specifically looking for at the show."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP designation of 'hold' is appropriate given uncertainty, but should not be read as 'low value.' A construction contractor with a Director of Strategy and SVP of Finance at a fiber industry show in 2026 is signaling strategic intent, not just vendor-shopping. The hold status reflects missing grading data, not a negative signal.",
+    "The industry baseline's focus on 'fiber designers' and 'GIS-to-CAD workflow' applies most directly to ISPs, operators, and A&E firms — not pure-play construction contractors. If Rayco is primarily a dig-and-install contractor, the design workflow framing needs to be repositioned around 'what happens when you receive bad drawings' rather than 'how do you produce drawings.' This is a meaningful difference that other personas may not flag.",
+    "The BEAD funding amounts listed in the research knowledge (Texas $683M, etc.) represent state allocations to ISPs — Rayco would access this market indirectly as a subcontractor. Framing Rayco as a 'BEAD recipient' would be inaccurate; framing them as a 'BEAD construction execution partner' is correct. The distinction matters for messaging credibility.",
+    "Without confirmed evidence that Rayco performs any design or permit submission work in-house, it is premature to assume they have GIS data or drawing production needs. The outreach should probe this before asserting the problem — or it risks missing entirely."
+  ],
+  "topInsight": "Rayco is almost certainly a construction contractor (not an ISP or design firm), which means the Inorsa pitch must be repositioned around contractor-side permitting pain: permit kickbacks delay Rayco's construction schedule and delay invoice collection — every week lost to a drawing revision or permit return is a week of crew utilization Rayco doesn't recover. The presence of both Strategy and Finance leadership at the show signals Rayco is in an active growth-evaluation mode heading into the BEAD construction wave, making this a high-potential moment to engage — but the message must speak to schedule risk and cash flow, not drawing production software.",
+  "sourcesUsed": [
+    "https://rayco-digs.com (domain existence confirmed, content not fully reviewed in this session)",
+    "NTIA BEAD program public records — Texas allocation $683,057,831",
+    "Industry baseline: ShowRev Industry Intelligence KB (fiber labor, permitting, BEAD timeline)",
+    "Prospect context provided: Jude Guidry title, Jordan Raymond title, location, ICP status",
+    "General knowledge: Texas TxDOT ROW permitting structure, DFW fiber construction market activity",
+    "fiercenetwork.com, lightreading.com, telecompetitor.com — searched, no Rayco mentions found",
+    "BEAD sub-grant databases — no Rayco award found (consistent with contractor-not-ISP status)"
+  ]
+}
+```

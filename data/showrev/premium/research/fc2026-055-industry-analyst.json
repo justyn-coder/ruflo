@@ -1,0 +1,44 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Pure Integration is a Reston, VA-based IT consulting and managed services firm (~500-1,000 employees) with deep roots in federal/government IT and enterprise networking. They are NOT a traditional fiber design or A&E engineering firm — they are a systems integrator that has expanded into network infrastructure, including broadband/telecom. Source: pureintegration.com, LinkedIn company profile.",
+    "Pure Integration lists 'Networks & Platforms' as a distinct practice area, which is the domain of VP Rob Woggins (also at Fiber Connect 2026). This practice likely bridges enterprise networking and telecom/broadband infrastructure — suggesting Pure Integration may be positioning as a turnkey network integrator for BEAD-adjacent work, not a design house. Source: pureintegration.com/services inferred from title context.",
+    "Michael LaPierre (Sr. Director, Architecture and Solutions) and Rob Woggins (VP, Networks & Platforms) attending Fiber Connect 2026 together signals an intentional market development push into fiber/broadband. Two senior leaders at the same show is not accidental — it suggests Pure Integration is actively prospecting for broadband/BEAD-related business, likely as a prime or sub on network deployment projects. Source: tradeshow attendance data.",
+    "Pure Integration's federal IT heritage (they have significant government contract history, including work with DoD, intelligence community, and civilian agencies) means they are accustomed to complex multi-stakeholder project environments — but their GIS-to-CAD fiber engineering workflow maturity is almost certainly low. They would be building or acquiring this capability, not operating it at scale. Source: pureintegration.com, USASpending.gov contract history.",
+    "No evidence found of Pure Integration appearing in fiber trade press (Light Reading, Fierce Network, Telecompetitor, Broadband Communities) as a named fiber operator, BEAD applicant, or engineering services firm. This is a significant gap — they are not yet a recognized player in the fiber design/construction ecosystem. Source: searched, not found.",
+    "Jackson Sayers (Business Development Associate) attending alongside two senior leaders suggests Pure Integration is in active business development mode for fiber/broadband — likely hunting for project partnerships, subcontractor relationships, or enterprise clients building out private fiber. This is early-stage market entry behavior. Source: tradeshow attendance data.",
+    "The labor shortage (3:1 job-to-candidate ratio for fiber designers) and fiber price inflation create a strong forcing function for any new entrant into fiber services. Pure Integration, without existing fiber design staffing pipelines, would face severe capacity constraints if they win broadband contracts. This makes Inorsa's automated GIS-to-CAD capability directly relevant as a force multiplier. Source: ShowRev Industry Intelligence KB baseline.",
+    "BEAD operational as of April 30, 2026, with state ISP contracts to be finalized within 6 months and construction starting Q3 2026 at earliest. If Pure Integration is pursuing BEAD-adjacent work (as a systems integrator, subcontractor, or managed services provider to ISPs), they are entering at exactly the moment when engineering throughput and permitting speed become the binding constraints. Source: ShowRev Industry Intelligence KB.",
+    "Pure Integration's government contracting background means they understand compliance, auditability, and documentation traceability — all of which align with Inorsa's deterministic, traceable output model. This is a positive fit signal for procurement conversations. Source: pureintegration.com.",
+    "No evidence of Pure Integration as a BEAD sub-grantee or direct broadband applicant found in state broadband office records. They appear to be a services/integration play, not a network operator. Source: searched state broadband office databases, not found as direct applicant."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Pure Integration's revenue and headcount could not be precisely confirmed — estimates range widely (some sources suggest $50M-$200M range, but no audited figures available).",
+    "No job postings specifically for fiber designers, GIS technicians, or OSP engineers found at Pure Integration — this either means they are not yet staffing for fiber design internally, or postings are not publicly indexed. Absence is itself a signal.",
+    "No trade press mentions in fiber-specific outlets (Light Reading, Telecompetitor, Broadband Communities, Fierce Network) — Pure Integration is not yet a recognized name in fiber deployment circles.",
+    "Cannot confirm whether Pure Integration has an existing GIS or CAD toolchain for fiber design, or whether they are entirely greenfield in this workflow.",
+    "No podcast appearances or long-form executive interviews found for Michael LaPierre or Rob Woggins discussing fiber strategy.",
+    "No Fiber Connect 2026 speaker slot or panel participation found for Pure Integration — they attended as buyers/networkers, not thought leaders in this space.",
+    "Unclear whether Pure Integration's broadband play is focused on enterprise private networks, municipal/ISP subcontracting, or federal broadband programs — this ambiguity affects how Inorsa should frame its pitch."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP classification of 'hold' may be too conservative given the seniority of attendees and the intentional two-person executive presence at Fiber Connect. The real question is not whether Pure Integration is relevant but whether they are early enough in fiber market entry that they haven't yet built entrenched design workflows — if so, Inorsa has a window to become the standard before competitors lock in.",
+    "Batch tier D (ungraded) reflects lack of AE notes, not lack of opportunity. The absence of AE notes combined with VP-level attendance is more likely a missed conversation than a disqualified lead.",
+    "If other personas assume Pure Integration is a traditional A&E or engineering firm based on title keywords, that would be incorrect. They are a systems integrator moving into fiber — which changes the sales motion from 'replace your current tool' to 'here is the capability you don't have yet.'"
+  ],
+  "topInsight": "Pure Integration is a federal IT systems integrator making a deliberate early-stage push into fiber/broadband services, evidenced by two senior leaders attending Fiber Connect 2026 with no existing profile in fiber trade press. They almost certainly lack mature GIS-to-CAD fiber design workflows and face the same labor shortage and BEAD-deadline pressures as native fiber firms — but without the institutional muscle to staff around it. The pitch to Michael LaPierre (Architecture & Solutions) is not 'replace what you have' but 'here is the engineering throughput capability you need to win and deliver fiber contracts you don't yet have the design infrastructure to execute.' Permitting cycle time and permit kickback avoidance should be the primary hook, framed as a competitive differentiator for their bids rather than an operational efficiency play.",
+  "sourcesUsed": [
+    "https://www.pureintegration.com",
+    "https://www.linkedin.com/company/pure-integration",
+    "https://www.usaspending.gov (Pure Integration contract search)",
+    "ShowRev Industry Intelligence KB (BEAD timeline, labor shortage, permitting baseline)",
+    "Fiber Connect 2026 attendee/speaker list (internal tradeshow data)",
+    "https://www.telecompetitor.com (searched, no Pure Integration mentions found)",
+    "https://www.lightreading.com (searched, no Pure Integration mentions found)",
+    "https://www.fiercenetwork.com (searched, no Pure Integration mentions found)",
+    "https://broadbandcommunities.com (searched, no Pure Integration mentions found)"
+  ]
+}
+```

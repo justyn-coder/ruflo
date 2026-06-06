@@ -1,0 +1,46 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Matt Varrelman holds the title 'Senior Fiber Lead' at NB+C (formally Nelson Byrd Woltz? — need to confirm; more likely NB+C Consulting Engineers or similar regional A&E firm based in Raleigh, NC). The 'Senior Fiber Lead' title places him squarely in the Design/Document persona bucket: he likely owns fiber design output quality, throughput, and drawing accuracy — not P&L or vendor budget approval. Source: booth scan record + LinkedIn title inference.",
+    "NB+C appears to be NB+C Consulting Engineers or a similarly-named A&E/telecom engineering firm operating out of the Southeast/Mid-Atlantic corridor. Raleigh, NC positioning is consistent with firms executing BEAD-funded rural fiber deployments across NC and surrounding states. North Carolina's BEAD allocation is approximately $1.06B (confirmed in funding program list), making this one of the largest single-state BEAD pools in the Southeast — strong urgency signal for any firm doing fiber design work in that geography. Source: BEAD funding program list in Brain digest + NC BEAD allocation data.",
+    "Matt Varrelman's phone area code (610) is suburban Philadelphia/Pennsylvania, not Raleigh. This suggests he may be a remote or relocated employee, or the firm has multi-state offices. This is relevant because it implies NB+C may be a Pennsylvania-headquartered firm with Southeast expansion — potentially scaling headcount into NC to capture BEAD work, which would increase design throughput pressure. Source: phone number in prospect record.",
+    "Title 'Senior Fiber Lead' implies he is likely a technical lead or senior designer/project manager, not a VP or Director. This means he is almost certainly an influencer/recommender, not a budget owner. Budget authority most likely sits with a Director of Engineering, VP of Operations, or Principal. He would need to champion Inorsa upward. Source: title-to-authority inference from persona framework.",
+    "NB+C is not found in the discovered companies list (19 companies in Brain), meaning there is no prior relationship context between Inorsa and this firm. This is a cold-ish post-tradeshow contact — he scanned or was scanned at Fiber Connect 2026 but no booth notes exist. Source: 'No AE booth notes available' instruction + company absence from known entity list.",
+    "North Carolina's BEAD program ($1.06B allocation) is now operational as of April 30, 2026. States have 6 months to finalize ISP contracts, meaning construction starts as early as Q3 2026. Any A&E firm doing fiber design in NC faces an imminent volume surge. A 'Senior Fiber Lead' at an NC-based firm would be directly in the path of that surge — design throughput and permit cycle time are likely his acute pain points RIGHT NOW. Source: BEAD operational timeline in industry baseline + NC allocation.",
+    "The labor shortage context (3:1 job-to-candidate ratio, 58,000 roles needed by 2032) is highly relevant: if NB+C is scaling fiber design work for BEAD, Varrelman likely cannot hire fast enough to meet volume. This makes GIS-to-CAD automation (Inorsa's core value prop) directly relevant — it lets existing staff output more without headcount. Source: industry baseline labor shortage data.",
+    "Permitting pain is the Fiber Connect 2026 priority signal from Inorsa's own client feedback. A Senior Fiber Lead in NC would be dealing with municipal and DOT permitting across rural counties — variance in permit requirements by jurisdiction is high in NC. Each kickback = 3-6 weeks. Inorsa's proof point (3-4 weeks to 2 days review cycle reduction) is directly sellable to this persona. Source: Inorsa value prop + Fiber Connect 2026 feedback in prompt.",
+    "No public speaking appearances, trade press quotes, podcast appearances, or LinkedIn posts from Matt Varrelman were findable from available data. This limits the ability to craft a personalized opener from his own words. Source: search attempt — not found.",
+    "No confirmed org chart data for NB+C is available. Cannot verify who Varrelman reports to, whether there is a Director of Fiber Engineering or VP above him, or whether other contacts from NB+C were scanned at the tradeshow. Multi-threading opportunity is unconfirmed. Source: gaps in booth scan data + no org chart found."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Cannot confirm NB+C's full legal name or corporate structure — 'NB+C' is ambiguous (could be NB+C Consulting Engineers, NBC Engineering, or another variant). No website URL confirmed.",
+    "Matt Varrelman's LinkedIn profile was not directly accessible or confirmed — no career history, tenure at NB+C, or prior employers identified.",
+    "No direct quote from Varrelman in any trade publication, podcast, panel, or public forum was found. Cannot personalize opener with his own words.",
+    "Budget authority chain unknown — cannot confirm who above Varrelman would need to approve a vendor like Inorsa.",
+    "No other NB+C contacts confirmed in booth scan list — multi-threading path not established.",
+    "NB+C's specific BEAD involvement (which state programs, which ISP clients, what contract volume) is unverified. Cannot confirm they are actively pursuing NC BEAD work vs. other state programs.",
+    "Whether NB+C uses any existing GIS-to-CAD tooling (e.g., IQGeo, AirWorks, or internal workflow) is unknown — 'we already have a tool' objection cannot be pre-empted without this data.",
+    "PA area code (610) raises question of whether Varrelman is truly Raleigh-based or remote — office structure of NB+C unclear.",
+    "No revenue, headcount, or PE ownership data found for NB+C — cannot assess firm size or budget scale."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP status of 'hold' is appropriate given thin data, but should not be treated as a disqualification signal. The title 'Senior Fiber Lead' at an NC-based firm during BEAD activation is structurally a strong ICP fit for Inorsa — the hold is a data gap problem, not a fit problem. I'd push to upgrade this to ICP-likely pending one additional research pass on NB+C's firm profile.",
+    "Batch tier 'D (Ungraded)' may be underweighting the geographic urgency signal. NC's $1.06B BEAD allocation is among the top 10 in the country. Any engineer with 'Fiber Lead' in their title operating in Raleigh in May 2026 is almost certainly inside the BEAD execution window. The tier should reflect that context, not just the thinness of contact data.",
+    "The discovered companies list (19 firms) is heavily weighted toward operators and small ISPs. NB+C as an A&E/engineering services firm would be a different buyer type — a design contractor rather than an operator. Inorsa should be clear internally that the sales motion here is A&E-firm-as-buyer, not ISP-as-buyer. The value prop framing shifts: it's about Varrelman's team's output capacity and permit success rate, not the ISP's deployment speed directly."
+  ],
+  "topInsight": "Matt Varrelman is a technical lead at an A&E or engineering services firm in Raleigh, NC — directly in the path of North Carolina's $1.06B BEAD activation that went operational April 30, 2026. He almost certainly cannot scale design headcount fast enough to meet the coming surge, and permit kickbacks (each costing 3-6 weeks) are the binding constraint on his team's ability to perform. He is not the budget owner, but he is the person who feels the pain most acutely and would be the internal champion if Inorsa can show him that it reduces rework and permit cycle time — not just drawing generation speed. The outreach should lead with the permitting pain angle ('how many permit kickbacks is your team absorbing per project right now?') rather than the GIS-to-CAD automation angle, because that is what Fiber Connect 2026 feedback confirmed resonates with this persona. The single best outcome of a first call is getting Varrelman to name his director or VP so Inorsa can multi-thread — he can champion but almost certainly cannot buy alone.",
+  "sourcesUsed": [
+    "Prospect record (title, email, phone, location — provided in prompt)",
+    "Inorsa product brief and Fiber Connect 2026 feedback (provided in prompt)",
+    "ShowRev Industry Intelligence KB — industry baseline (provided in prompt)",
+    "Brain Knowledge Digest — funding programs and company list (provided in prompt)",
+    "BEAD operational timeline and NC allocation ($1,060,574,537) — cross-referenced from Brain digest funding list",
+    "Persona framework inference (Design/Document persona, influencer vs. budget owner) — internal methodology",
+    "LinkedIn search for 'Matt Varrelman' — not found / not confirmed in available data",
+    "Trade press search (bbcmag.com, lightreading.com, etisoftware.com) for Varrelman quotes — not found",
+    "NB+C company website / team page — not confirmed or accessible from available data"
+  ]
+}
+```

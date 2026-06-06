@@ -1,0 +1,40 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Fiber Forward is a trade publication focused on the fiber/broadband industry, serving as editorial coverage of the market rather than a participant in it. Doug Mohney is Editor-in-Chief and writes for/runs the publication under Connect2Communications (connect2comm.com), his Alexandria, VA-based media entity. Source: AE booth notes + email domain doug@connect2comm.com.",
+    "Doug Mohney has a long editorial history covering telecom and fiber infrastructure, including contributions to Light Reading, FierceTelecom, and other trade outlets over a career spanning 20+ years. He is a recognized industry voice, not a buyer of engineering services. Source: industry baseline knowledge + email domain pattern consistent with independent media operator.",
+    "Fiber Forward magazine's audience IS Inorsa's ICP — ISPs, fiber operators, A&E firms, and municipal broadband entities deploying BEAD-funded networks. This is the analytically important fact: Doug is a conduit to the buyer, not the buyer himself.",
+    "BEAD went operational April 30, 2026. State ISP contracting windows close within 6 months (by ~October 2026). Construction starts Q3 2026. This is the single dominant news story in the fiber trade press right now — Fiber Forward is almost certainly covering it heavily, which means Doug is actively seeking expert sources, case studies, and data points about deployment bottlenecks. Source: Industry Intelligence KB.",
+    "Permitting workflow failures are the #1 operational constraint for BEAD deployments — each kickback costs 3-6 weeks, average permit review is 8-12+ months in complex jurisdictions. This is exactly the kind of concrete operational problem that trade editors build feature stories around. Source: Fiber Connect 2026 feedback + Industry Intelligence KB.",
+    "Labor shortage data (3:1 job-to-candidate ratio, 58,000 new roles needed by 2032, 3+ year designer ramp) is the kind of verifiable, citation-worthy statistic that trade publications use in features. Inorsa's workflow automation directly addresses this gap — a potential editorial angle for Doug. Source: Industry Intelligence KB.",
+    "Inorsa's proof point — cutting permit review cycles from 3-4 weeks to 2 days — is a compelling, concrete data point that a trade editor would find credible and quotable if substantiated with a named customer or case study. Source: Inorsa value prop provided.",
+    "Connect2Communications / Fiber Forward appears to be a small independent media operation (consistent with solo or small-team editorial structure for a niche trade publication). Doug likely writes most content himself and actively cultivates vendor/operator relationships for editorial access, expert quotes, and sponsored content opportunities. Source: email domain pattern + Alexandria VA location + independent media norms.",
+    "No BEAD sub-grant awards, no engineering services contracts, no job postings, and no M&A activity found or expected — Fiber Forward is media, not infrastructure. These research vectors are not applicable. Source: ICP classification + AE note.",
+    "Competitive landscape for Doug's publication includes Light Reading, Fierce Network, Telecompetitor, Broadband Communities Magazine, and Inside Towers (for wireless). These outlets are also covering BEAD deployment chaos, permitting backlogs, and labor shortages — meaning Doug is competing for the same expert sources and original angles that could differentiate Fiber Forward's coverage."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Could not verify current editorial calendar or active story pitches for Fiber Forward — specific topics Doug is researching right now are unknown.",
+    "Fiber Forward's circulation size, audience demographics, and readership composition not confirmed — assumed to be ISP/operator/engineering-focused based on publication name and Doug's background.",
+    "No confirmed named customers willing to go on record with Inorsa's 3-4 week to 2-day permit cycle proof point — this would be the most valuable thing to offer Doug editorially.",
+    "Connect2comm.com site content and current Fiber Forward issues not directly reviewed — publication's current editorial focus is inferred, not confirmed.",
+    "Whether Doug attended Fiber Connect 2026 as press/media or in another capacity is not specified beyond 'attendee' — press badge vs. general attendee changes the outreach angle slightly.",
+    "No LinkedIn profile data surfaced for Doug Mohney in the provided company list — his exact career history and current editorial relationships not independently verified in this session."
+  ],
+  "challengesToOtherFindings": [
+    "The AE flag ('not an ICP') is correct in the direct-sales sense but analytically undersells the strategic value of this contact. Doug Mohney as Editor-in-Chief of a fiber trade publication is a high-value relationship for thought leadership, earned media, and indirect pipeline influence — not a direct revenue opportunity.",
+    "Treating this as a 'Batch Tier E / Cold' outreach with generic follow-up would be a missed opportunity. The correct frame is: Doug is a media partner prospect, not a software buyer. The outreach should offer him something editorially useful (data, a customer case study, expert access) rather than a product pitch.",
+    "The instruction to 'give him good info' from the AE is strategically sound but the execution matters. Generic BEAD stats he already knows won't land. The hook must be something he hasn't published yet — ideally a specific, verifiable customer outcome or a novel framing of the permitting bottleneck problem."
+  ],
+  "topInsight": "Doug Mohney is not a buyer — but he writes for the people who are. The correct outreach strategy is to position Inorsa as a credible expert source for Fiber Forward's BEAD deployment coverage, specifically around permitting workflow failures and cycle time data. Offer him the 3-4 week to 2-day permit review proof point as an editorial data point, ideally with a named operator willing to be quoted. This turns a cold Tier E non-ICP contact into a potential earned media relationship that reaches hundreds of actual Inorsa ICP buyers through Fiber Forward's readership — at zero media spend.",
+  "sourcesUsed": [
+    "AE booth notes (05/18/2026 1:33 PM)",
+    "Prospect contact record: doug@connect2comm.com, (703) 655-3692, Alexandria VA",
+    "Inorsa value proposition and Fiber Connect 2026 feedback (provided context)",
+    "ShowRev Industry Intelligence KB: BEAD timeline, labor shortage data, permitting constraint data, fiber price increases",
+    "Industry baseline knowledge: Doug Mohney editorial career, Connect2Communications media entity, Fiber Forward publication positioning",
+    "ICP classification and batch tier assignment from campaign system"
+  ]
+}
+```

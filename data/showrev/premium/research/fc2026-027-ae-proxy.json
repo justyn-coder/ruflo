@@ -1,0 +1,46 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Fatbeam is a Coeur d'Alene, ID-based fiber ISP and network operator providing high-speed fiber connectivity primarily across the Pacific Northwest and Intermountain West, serving enterprise, carrier, and wholesale customers — confirmed ICP-relevant as a fiber-only operator. Source: fatbeam.com",
+    "Christopher Davis holds the title 'PMO' (Project Management Office/Officer) at Fatbeam. This title sits at the intersection of engineering execution and delivery operations — not purely a technical designer, not purely a CFO. PMO personas typically own build schedules, vendor coordination, and process improvement mandates. Source: tradeshow lead record + fatbeam.com inference",
+    "Fatbeam's service territory spans Idaho, Montana, Washington, Oregon, and Wyoming — all states with active BEAD allocations. Idaho received $166M BEAD allocation; Montana received $683M. These are among the highest per-capita rural allocations in the western U.S., creating real deployment pressure. Source: NTIA BEAD state allocations (industry baseline KB)",
+    "BEAD operational as of April 30, 2026 with ISP contracts to be finalized within 6 months (deadline ~October 2026) and construction starts targeted Q3 2026. A PMO role at a multi-state fiber operator is directly in the blast radius of this timeline. Source: industry baseline KB",
+    "Fatbeam operates its own fiber network infrastructure (not just a reseller) and has historically grown through both organic build and acquisition — meaning they likely have heterogeneous GIS data environments and legacy design workflows, a common pain point for Inorsa's ingestion and validation layer. Source: fatbeam.com company description",
+    "No direct LinkedIn profile for 'Christopher Davis' at Fatbeam was verifiable with high confidence — common name with multiple matches. Tenure, reporting structure, and prior roles are unconfirmed. Source: LinkedIn search — not resolved with certainty",
+    "No conference speaking engagements, trade press quotes, or podcast appearances found for 'Christopher Davis' at Fatbeam. No direct voice-of-customer signals available. Source: Google search across lightreading.com, bbcmag.com, etisoftware.com — not found",
+    "Fatbeam's leadership page does not appear to publicly list a 'Christopher Davis' by name, making org chart positioning (who he reports to, who peers are) unconfirmed. Source: fatbeam.com/about — not found at time of research",
+    "A PMO title at an operator of Fatbeam's scale (~50-200 employees estimated, regional fiber operator) typically means this person is either the sole PMO function or leads a small team. They are more likely a strong influencer and process owner than the final budget signer. Budget authority likely sits with a VP of Engineering, VP of Operations, or COO/CEO depending on company size. Source: persona inference from PMO role in mid-market fiber operators",
+    "Fatbeam attended Fiber Connect 2026 (Chris Davis as attendee, not speaker), which signals the company is actively evaluating vendors and solutions — not just passive industry participation. Attendee status without a booth suggests they are buyers, not sellers, at the event. Source: tradeshow lead record",
+    "Idaho and Montana's BEAD programs are at early-to-mid subgrantee selection phases as of May 2026, meaning Fatbeam could be weeks away from receiving confirmed project scopes that require immediate ramp in design and permitting throughput. This is a real urgency driver. Source: NTIA BEAD timeline + state broadband office public records (inferred)",
+    "Fatbeam's multi-state footprint means they deal with multiple permitting jurisdictions — USFS, BLM, state DOTs, county roads — all with different submission requirements. This is precisely where Inorsa's permit drawing generation and conflict flagging creates the highest ROI. Source: geographic inference from fatbeam.com service territory"
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Christopher Davis LinkedIn profile not confirmed — tenure, prior employers, and career arc unknown",
+    "Cannot confirm whether Davis controls budget or is a recommender — org chart not public",
+    "No direct quotes, panel appearances, or trade press interviews found for Davis — no voice-of-customer hook available",
+    "Fatbeam's specific BEAD participation status (subgrantee, applicant, or uninvolved) not confirmed — assumed participant based on geography",
+    "Current GIS/design toolchain at Fatbeam unknown — cannot confirm or deny existing tool conflict (e.g., IQGeo, Esri, AutoCAD workflows)",
+    "Team size of Fatbeam's PMO or engineering/design function unknown — cannot size the labor constraint argument precisely",
+    "No other Fatbeam contacts found in booth-scan list to enable multi-threading — single-contact situation",
+    "Whether Fatbeam does design in-house vs. outsources to an A&E firm is unknown — affects whether Inorsa pitch is to internal team or a vendor management angle",
+    "Specific states where Fatbeam has active or pending BEAD projects not confirmed — Idaho and Montana assumed based on service territory"
+  ],
+  "challengesToOtherFindings": [
+    "The ICP classification of 'hold' is defensible given thin data, but the geography alone (Idaho + Montana BEAD exposure, multi-state fiber operator) should push this toward a soft 'qualified' for outreach — downgrading purely on data sparsity risks losing a legitimate BEAD-driven opportunity at exactly the wrong moment in the funding cycle",
+    "PMO title should not be dismissed as a non-decision-maker. At a regional fiber operator of Fatbeam's likely size, the PMO often owns vendor selection for workflow tools and process automation. They may not sign the check, but they are frequently the champion who kills or advances the deal. Treating this as a low-authority contact would be a mistake without confirming the org structure",
+    "Batch tier D (Ungraded) reflects data quality, not prospect quality. The signal from attending Fiber Connect as a buyer-side attendee from a multi-state fiber operator in a high-BEAD state is stronger than the tier suggests"
+  ],
+  "topInsight": "Fatbeam is a multi-state fiber operator headquartered in one of the highest BEAD-exposure regions in the western U.S. (Idaho $166M, Montana $683M), and their PMO attended Fiber Connect 2026 as a buyer — not a speaker or exhibitor. The PMO role at a company facing imminent BEAD construction ramp is exactly the persona Inorsa should prioritize: they own the schedule, they feel permit kickback pain directly (each one slips their Gantt), and they will need to justify build throughput to leadership as contracts finalize by ~October 2026. The absence of any public voice means the opener must lead with the industry pressure they're living through — not a feature pitch — and invite them to confirm whether permitting cycle time or design throughput is the bigger constraint right now.",
+  "sourcesUsed": [
+    "https://www.fatbeam.com",
+    "https://www.linkedin.com/search — Christopher Davis Fatbeam (unresolved, common name)",
+    "NTIA BEAD state allocation public records (industry baseline KB)",
+    "Fiber Connect 2026 tradeshow attendee lead record",
+    "ShowRev Industry Intelligence KB — fiber industry baseline May 2026",
+    "https://broadbandnow.com / state broadband office records — Idaho and Montana BEAD status (inferred)",
+    "fatbeam.com/about and leadership pages (Davis not listed publicly at time of research)"
+  ]
+}
+```

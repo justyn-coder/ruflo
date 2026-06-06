@@ -1,0 +1,713 @@
+I'll research Greeneville Energy Authority and Chris Gass systematically, following the priority search strategy.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville Energy Authority fiber network design engineering"}}
+</tool_call>
+<tool_response>
+Title: Greeneville Energy Authority Expands Fiber Network
+URL: https://www.mygea.net/news/greeneville-energy-authority-expands-fiber-network
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville Energy Authority fiber optic broadband Tennessee"}}
+</tool_call>
+<tool_response>
+Title: Greeneville Energy Authority - Fiber Internet Service
+URL: https://www.mygea.net
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.mygea.net"}}
+</tool_call>
+<tool_response>
+Title: Greeneville Energy Authority | GEA
+URL: https://www.mygea.net
+Content: Skip to content
+[LOGO]
+GEA
+Greeneville Energy Authority
+Emergency Contacts: 423-636-6200
+Menu
+Home
+Pay Online
+Services
+Outage Report
+About Us
+Contact
+GEA
+Greeneville Energy Authority
+Emergency Contacts: 423-636-6200
+Menu
+Home
+Pay Online
+Services
+Outage Report
+About Us
+Contact
+Providing reliable utilities to the community of Greeneville, TN and surrounding Greene County.
+Your full-service utility serving Greeneville, TN and surrounding areas.
+GEA Quick Links
+Pay Online
+Outage Report
+Start/Stop Service
+Help With Your Bills
+GEA Services
+[IMAGE]
+Electric Services
+[IMAGE]
+Water Services
+[IMAGE]
+Fiber Services
+GEA News
+[IMAGE]
+GEA News
+March 10, 2025
+2024-2025 Annual Report
+[IMAGE]
+GEA News
+April 4, 2024
+2023-2024 Annual Report
+[IMAGE]
+GEA News
+November 28, 2023
+Greeneville Energy Authority goes Paperless
+[IMAGE]
+Footer
+Home
+Pay Online
+Services
+Outage Report
+About Us
+Contact
+© Greeneville Energy Authority 2024 | Privacy Policy
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.mygea.net/services"}}
+</tool_call>
+<tool_response>
+Title: Services | GEA
+URL: https://www.mygea.net/services
+Content: Skip to content
+[IMAGE]
+GEA
+Greeneville Energy Authority
+Emergency Contacts: 423-636-6200
+Menu
+Home
+Pay Online
+Services
+Outage Report
+About Us
+Contact
+Services
+GEA provides electric, water, and fiber services to the Greeneville, TN and surrounding areas.
+Electric Services
+Residential Electric
+Commercial Electric
+Industrial Electric
+Water Services
+Residential Water
+Commercial Water
+Industrial Water
+Fiber Services
+Residential Fiber
+Business Fiber
+Check Availability
+Footer
+Home
+Pay Online
+Services
+Outage Report
+About Us
+Contact
+© Greeneville Energy Authority 2024 | Privacy Policy
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.mygea.net/about-us"}}
+</tool_call>
+<tool_response>
+Title: About Us | GEA
+URL: https://www.mygea.net/about-us
+Content: Skip to content
+[IMAGE]
+GEA
+Greeneville Energy Authority
+Emergency Contacts: 423-636-6200
+Menu
+Home
+Pay Online
+Services
+Outage Report
+About Us
+Contact
+About Us
+GEA provides a variety of services to the Greeneville, TN area and surrounding areas. We are a community-owned, full-service utility providing electric, water, and fiber services. Being a community owned utility, we keep the focus on what matters most to us: our community.
+Our Mission
+To provide our community with reliable and affordable utilities that will help our community grow and reach its full potential.
+Our Utility
+Our utility was founded in the early 1900s. Our utility has been serving the community of Greeneville, TN and surrounding areas ever since.
+Our Team
+Our team is made up of dedicated professionals committed to providing the best service to our community.
+Contact Us
+We are always here to help! If you have any questions or concerns, please don't hesitate to contact us.
+Footer
+Home
+Pay Online
+Services
+Outage Report
+About Us
+Contact
+© Greeneville Energy Authority 2024 | Privacy Policy
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville Energy Authority GEA fiber hiring careers AutoCAD GIS engineer"}}
+</tool_call>
+<tool_response>
+Title: Greeneville Energy Authority Careers
+URL: https://www.mygea.net/careers
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Greeneville Energy Authority\" site:linkedin.com"}}
+</tool_call>
+<tool_response>
+Title: Greeneville Energy Authority | LinkedIn
+URL: https://www.linkedin.com/company/greeneville-energy-authority
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/company/greeneville-energy-authority"}}
+</tool_call>
+<tool_response>
+Title: Greeneville Energy Authority | LinkedIn
+URL: https://www.linkedin.com/company/greeneville-energy-authority
+Content: Greeneville Energy Authority | 106 followers on LinkedIn. Greeneville Energy Authority is a Utilities company based out of 900 N. Main St., Greeneville, Tennessee, United States.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Greeneville Energy Authority\" fiber BEAD Tennessee broadband expansion"}}
+</tool_call>
+<tool_response>
+Title: Greeneville Energy Authority Fiber Internet
+URL: https://www.mygea.net/fiber
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.mygea.net/fiber"}}
+</tool_call>
+<tool_response>
+Title: Fiber Services | GEA
+URL: https://www.mygea.net/fiber
+Content: Skip to content
+[IMAGE]
+GEA
+Greeneville Energy Authority
+Emergency Counts: 423-636-6200
+Menu
+Home
+Pay Online
+Services
+Outage Report
+About Us
+Contact
+Fiber Services
+GEA Fiber provides high-speed internet to residential and commercial customers in the Greeneville, TN area and surrounding areas.
+GEA Fiber Plans
+[IMAGE]
+Residential Fiber
+GEA Fiber provides reliable high-speed fiber internet for your home.
+Speeds up to 1 Gbps symmetrical
+Starting at $49.99/month
+Check Availability
+[IMAGE]
+Business Fiber
+GEA Fiber provides reliable high-speed fiber internet for your business.
+Speeds up to 10 Gbps symmetrical
+Starting at $99.99/month
+Check Availability
+Footer
+Home
+Pay Online
+Services
+Outage Report
+About Us
+Contact
+© Greeneville Energy Authority 2024 | Privacy Policy
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Greeneville Energy Authority\" OR \"GEA fiber\" Tennessee BEAD grant broadband 2024 2025"}}
+</tool_call>
+<tool_response>
+Title: Tennessee BEAD Program - Broadband Connectivity
+URL: https://www.tn.gov/broadband/bead.html
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville Tennessee municipal fiber broadband BEAD TNBroadband"}}
+</tool_call>
+<tool_response>
+Title: Broadband in Tennessee
+URL: https://www.tn.gov/broadband
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Tennessee BEAD $683 million fiber broadband ISP eligible applicants 2025"}}
+</tool_call>
+<tool_response>
+Title: Tennessee BEAD Program Updates
+URL: https://www.tn.gov/broadband/bead-program-updates.html
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Tennessee broadband BEAD program $683 million eligible providers municipal utility 2025 2026"}}
+</tool_call>
+<tool_response>
+Title: Tennessee BEAD Broadband Program
+URL: https://www.tn.gov/broadband/funding/bead.html
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Tennessee BEAD broadband allocation 2025 municipal electric cooperatives fiber"}}
+</tool_call>
+<tool_response>
+Title: Tennessee BEAD Broadband Expansion
+URL: https://connecttn.org/bead
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "ConnectTN BEAD Tennessee ISP list awarded providers 2025"}}
+</tool_call>
+<tool_response>
+Title: Connect Tennessee BEAD Program
+URL: https://connecttn.org/broadband-equity-access-deployment/
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Chris Gass\" \"Greeneville Energy\" network engineer fiber"}}
+</tool_call>
+<tool_response>
+Title: Chris Gass - Senior Network Engineer - Greeneville Energy Authority | LinkedIn
+URL: https://www.linkedin.com/in/chris-gass-greeneville-energy
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Chris Gass Greeneville Energy Authority LinkedIn senior network engineer"}}
+</tool_call>
+<tool_response>
+Title: Chris Gass LinkedIn Profile
+URL: https://www.linkedin.com/in/chrisgass
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Greeneville Energy Authority\" fiber design AutoCAD ArcGIS Katapult IQGeo"}}
+</tool_call>
+<tool_response>
+Title: GEA Fiber Design Tools
+URL: https://www.mygea.net/fiber-design
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville Energy Authority GEA fiber network expansion construction permits 2024 2025"}}
+</tool_call>
+<tool_response>
+Title: Greeneville Energy Authority GEA News
+URL: https://www.mygea.net/news
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.mygea.net/news"}}
+</tool_call>
+<tool_response>
+Title: GEA News | GEA
+URL: https://www.mygea.net/news
+Content: Skip to content
+[IMAGE]
+GEA
+Greeneville Energy Authority
+Emergency Contacts: 423-636-6200
+Menu
+Home
+Pay Online
+Services
+Outage Report
+About Us
+Contact
+GEA News
+[IMAGE]
+GEA News
+March 10, 2025
+2024-2025 Annual Report
+[IMAGE]
+GEA News
+April 4, 2024
+2023-2024 Annual Report
+[IMAGE]
+GEA News
+November 28, 2023
+Greeneville Energy Authority goes Paperless
+[IMAGE]
+Footer
+Home
+Pay Online
+Services
+Outage Report
+About Us
+Contact
+© Greeneville Energy Authority 2024 | Privacy Policy
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville Energy Authority annual report 2024 fiber broadband expansion subscribers"}}
+</tool_call>
+<tool_response>
+Title: GEA 2024 Annual Report
+URL: https://www.mygea.net/annual-report-2024
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville Tennessee municipal fiber internet broadband 2024 expansion coverage area"}}
+</tool_call>
+<tool_response>
+Title: Greeneville Municipal Fiber Broadband
+URL: https://www.mygea.net/fiber-coverage
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville TN broadband internet provider fiber 2024 2025 expansion rural Greene County"}}
+</tool_call>
+<tool_response>
+Title: Greeneville Broadband Internet Options
+URL: https://broadbandnow.com/internet-providers/zip/37743
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Greeneville Energy Authority\" fiber construction engineering contractor design"}}
+</tool_call>
+<tool_response>
+Title: Search Results
+URL: https://www.google.com/search?q=%22Greeneville+Energy+Authority%22+fiber+construction+engineering+contractor+design
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville Energy Authority Tennessee TVPPA electric cooperative broadband"}}
+</tool_call>
+<tool_response>
+Title: TVPPA Tennessee Valley Public Power Association
+URL: https://www.tvppa.com
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "TVPPA Tennessee Valley Public Power Association fiber broadband member utilities GEA"}}
+</tool_call>
+<tool_response>
+{"organic": [{"title": "Tennessee Valley Public Power Association (TVPPA) | LinkedIn", "url": "https://www.linkedin.com/company/tennessee-valley-public-power-association-tvppa-", "description": "Tennessee Valley Public Power Association (TVPPA) | 1,479 followers on LinkedIn. TVPPA is the trade association for public power utilities in the Tennessee Valley."}, {"title": "About TVPPA - Tennessee Valley Public Power Association", "url": "https://www.tvppa.com/about/", "description": "TVPPA members serve approximately 9 million people across the Tennessee Valley region. TVPPA is a trade association for public power utilities."}]}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville Energy Authority GEA broadband fiber BEAD Tennessee Connect eligible provider"}}
+</tool_call>
+<tool_response>
+{"organic": [{"title": "Greeneville Energy Authority - Fiber Internet", "url": "https://www.mygea.net/fiber-internet", "description": "GEA Fiber provides high-speed internet services to residential and commercial customers in Greeneville, TN."}]}
+</tool_call>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:mygea.net fiber OR broadband OR annual report OR engineering"}}
+</tool_call>
+<tool_response>
+{"organic": [{"title": "GEA - Greeneville Energy Authority", "url": "https://www.mygea.net", "description": "Providing reliable utilities to the community of Greeneville, TN and surrounding Greene County."}, {"title": "Fiber Services | GEA", "url": "https://www.mygea.net/fiber", "description": "GEA Fiber provides high-speed internet to residential and commercial customers in the Greeneville, TN area and surrounding areas."}, {"title": "GEA News | GEA", "url": "https://www.mygea.net/news", "description": "Latest news from Greeneville Energy Authority."}, {"title": "About Us | GEA", "url": "https://www.mygea.net/about-us", "description": "GEA provides a variety of services to the Greeneville, TN area and surrounding areas."}]}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville Energy Authority 2024 annual report fiber subscribers capital projects"}}
+</tool_call>
+<tool_response>
+{"organic": [{"title": "2024 Annual Report | Greeneville Energy Authority", "url": "https://www.mygea.net/news/2024-annual-report", "description": "Greeneville Energy Authority 2024 Annual Report covering electric, water, and fiber services."}, {"title": "Greeneville Energy Authority GEA - Facebook", "url": "https://www.facebook.com/GreenevilleEnergyAuthority/", "description": "Greeneville Energy Authority (GEA) serves the community of Greeneville, TN with electric, water, and fiber services."}]}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.mygea.net/news/2024-annual-report"}}
+</tool_call>
+<tool_response>
+Title: Not Found
+URL: https://www.mygea.net/news/2024-annual-report
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.facebook.com/GreenevilleEnergyAuthority/"}}
+</tool_call>
+<tool_response>
+Title: Greeneville Energy Authority | Facebook
+URL: https://www.facebook.com/GreenevilleEnergyAuthority/
+Content: Greeneville Energy Authority
+Community organization · Greeneville, Tennessee
+Greeneville Energy Authority is a community-owned utility serving Greeneville, TN with electric, water, and fiber services. We are committed to providing reliable and affordable utilities to our community.
+Recent Posts:
+- New fiber service now available in [area] - March 2025
+- Annual Report 2024-2025 now available - March 2025
+- Fiber expansion update - January 2025
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Greeneville Energy Authority\" OR \"GEA fiber\" site:broadbandnow.com OR site:allconnect.com OR site:highspeedinternet.com"}}
+</tool_call>
+<tool_response>
+{"organic": [{"title": "Internet Providers in Greeneville, TN | BroadbandNow", "url": "https://broadbandnow.com/internet-providers/Greeneville--TN", "description": "Find the best internet providers in Greeneville, TN. Compare speeds, prices, and availability."}, {"title": "Greeneville Energy Authority Internet Review | HighSpeedInternet.com", "url": "https://www.highspeedinternet.com/providers/greeneville-energy-authority", "description": "Greeneville Energy Authority offers fiber internet in Greeneville, TN."}]}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.highspeedinternet.com/providers/greeneville-energy-authority"}}
+</tool_call>
+<tool_response>
+Title: Greeneville Energy Authority Internet Review | HighSpeedInternet.com
+URL: https://www.highspeedinternet.com/providers/greeneville-energy-authority
+Content: Greeneville Energy Authority Internet Plans and Prices
+Greeneville Energy Authority (GEA) offers fiber-optic internet service in Greeneville, Tennessee. GEA is a municipal utility that provides electric, water, and internet services to residential and business customers.
+
+Coverage Area: GEA's fiber network primarily covers the city of Greeneville and portions of Greene County, Tennessee.
+
+Plans and Pricing:
+- 500 Mbps: $49.99/month
+- 1 Gbps: $59.99/month (residential)
+- 10 Gbps: $99.99/month (business)
+
+Technology: Fiber-to-the-home (FTTH)
+
+Company Type: Municipal utility (city-owned)
+
+FCC Data: GEA reports fiber availability to approximately 5,000-8,000 locations in its service area.
+
+Customer Service: Local customer service available at 423-636-6200.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville Energy Authority fiber expansion rural Greene County Tennessee unserved 2025 BEAD"}}
+</tool_call>
+<tool_response>
+{"organic": [{"title": "Tennessee BEAD Program - ConnectTN", "url": "https://connecttn.org/bead", "description": "Tennessee's BEAD program to expand broadband access to unserved and underserved locations."}, {"title": "Greene County TN Broadband Expansion", "url": "https://www.greenecountytn.gov/broadband", "description": "Greene County, TN broadband expansion initiatives and available providers."}]}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Tennessee BEAD $683 million ConnectTN ISP applications eligible providers list 2025 2026"}}
+</tool_call>
+<tool_response>
+{"organic": [{"title": "ConnectTN BEAD Program Overview", "url": "https://connecttn.org/broadband-equity-access-deployment/", "description": "Tennessee's BEAD Program will distribute $683 million to expand broadband access."}, {"title": "Tennessee BEAD Initial Proposal Approved", "url": "https://connecttn.org/bead-initial-proposal/", "description": "Tennessee's BEAD Initial Proposal has been approved, paving the way for distribution of $683 million in federal funding."}]}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://connecttn.org/broadband-equity-access-deployment/"}}
+</tool_call>
+<tool_response>
+Title: BEAD Program | ConnectTN
+URL: https://connecttn.org/broadband-equity-access-deployment/
+Content: BEAD Program
+Tennessee's BEAD (Broadband Equity, Access, and Deployment) Program
+
+Overview
+Tennessee has been allocated $683,057,831 in BEAD funding to expand broadband access to unserved and underserved locations across the state.
+
+Program Status
+Tennessee's BEAD Initial Proposal has been approved by NTIA. The state is now progressing through the subgrantee selection process.
+
+Eligible Entities
+Eligible subgrantees include:
+- Internet service providers (ISPs)
+- Municipal utilities and electric cooperatives
+- Local governments
+- Other eligible entities
+
+Priority Areas
+The program prioritizes deployment to unserved locations (no broadband service at 25/3 Mbps or faster) and underserved locations (no broadband service at 100/20 Mbps or faster).
+
+Timeline
+- Initial Proposal: Approved
+- Final Proposal: In progress
+- Subgrantee Selection: Expected 2025-2026
+- Deployment: 2026-2030
+
+For more information, visit connecttn.org or contact ConnectTN at info@connecttn.org.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville Energy Authority GEA BEAD application Tennessee ConnectTN subgrantee selected"}}
+</tool_call>
+<tool_response>
+{"organic": [{"title": "Tennessee BEAD Subgrantee Selection Process", "url": "https://connecttn.org/bead-subgrantee-selection/", "description": "ConnectTN is currently reviewing applications for BEAD subgrantees."}, {"title": "Greeneville Energy Authority broadband expansion", "url": "https://www.mygea.net/broadband-expansion", "description": "GEA is expanding its fiber broadband network to serve more customers in Greene County."}]}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Greeneville Energy Authority\" OR \"GEA\" Greene County Tennessee fiber design GIS engineering staff"}}
+</tool_call>
+<tool_response>
+{"organic": [{"title": "GEA Careers | Greeneville Energy Authority", "url": "https://www.mygea.net/careers", "description": "Join the GEA team. Greeneville Energy Authority is hiring."}, {"title": "Greeneville Energy Authority LinkedIn Jobs", "url": "https://www.linkedin.com/company/greeneville-energy-authority/jobs/", "description": "See job openings at Greeneville Energy Authority on LinkedIn."}]}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.mygea.net/careers"}}
+</tool_call>
+<tool_response>
+Title: Careers | GEA
+URL: https://www.mygea.net/careers
+Content: Skip to content
+[IMAGE]
+GEA
+Greeneville Energy Authority
+Emergency Contacts: 423-636-6200
+Menu
+Home
+Pay Online
+Services
+Outage Report
+About Us
+Contact
+Careers
+We are always looking for talented individuals to join our team.
+Current Openings
+No current openings at this time.
+Footer
+Home
+Pay Online
+Services
+Outage Report
+About Us
+Contact
+© Greeneville Energy Authority 2024 | Privacy Policy
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/company/greeneville-energy-authority/jobs/"}}
+</tool_call>
+<tool_response>
+Title: Greeneville Energy Authority Jobs | LinkedIn
+URL: https://www.linkedin.com/company/greeneville-energy-authority/jobs/
+Content: Greeneville Energy Authority
+106 followers
+No job postings found for Greeneville Energy Authority on LinkedIn.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Greeneville Energy Authority\" fiber optic construction permit design drawings engineering contractor 2024"}}
+</tool_call>
+<tool_response>
+{"organic": [{"title": "Greeneville Energy Authority - Fiber Internet", "url": "https://www.mygea.net/fiber", "description": "GEA Fiber provides high-speed internet to residential and commercial customers."}]}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville Energy Authority IQGeo Katapult 3GIS ArcGIS fiber GIS platform"}}
+</tool_call>
+<tool_response>
+{"organic": []}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:iqgeo.com \"Greeneville Energy\" OR \"GEA fiber\" Tennessee municipal utility"}}
+</tool_call>
+<tool_response>
+{"organic": []}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:katapult.com \"Greeneville\" OR \"GEA\" Tennessee fiber network"}}
+</tool_call>
+<tool_response>
+{"organic": []}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Tennessee Valley Authority TVA municipal power FTTH fiber design tools GIS AutoCAD workflow"}}
+</tool_call>
+<tool_response>
+{"organic": [{"title": "TVA EnergyRight - Fiber Broadband Resources", "url": "https://energyright.com/broadband/", "description": "TVA supports local power companies in expanding fiber broadband services to their communities."}, {"title": "Municipal fiber Tennessee design workflow AutoCAD GIS", "url": "https://www.fiberbroadband.org/resources/", "description": "Resources for municipal fiber broadband design and deployment."}]}
+</tool_call>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "small municipal electric utility FTTH fiber design workflow in-house AutoCAD GIS staff Tennessee size employees"}}
+</tool_call>
+<tool_response>
+{"organic": [{"title": "Municipal Fiber Deployment Guide - NATOA", "url": "https://natoa.org/resources/municipal-fiber-guide", "description": "Guide for municipal utilities deploying fiber broadband networks."}, {"title": "Small Municipal Fiber Networks - FTTH Council", "url": "https://www.ftthcouncil.org/small-municipal-fiber", "description": "Resources for small municipal utilities deploying fiber networks."}]}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville Tennessee GEA fiber Fiber Connect 2026 conference tradeshow attendee"}}
+</tool_call>
+<tool_response>
+{"organic": []}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Greeneville Energy Authority\" employees staff size utility Tennessee annual budget"}}
+</tool_call>
+<tool_response>
+{"organic": [{"title": "Greeneville Energy Authority - GovSpend", "url": "https://govspend.com/entity/greeneville-energy-authority", "description": "Greeneville Energy Authority spending data and vendor information."}, {"title": "GEA Greeneville Energy Authority - APPA", "url": "https://www.publicpower.org/utility/greeneville-energy-authority", "description": "Greeneville Energy Authority utility profile from the American Public Power Association."}]}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.publicpower.org/utility/greeneville-energy-authority"}}
+</tool_call>
+<tool_response>
+Title: Greeneville Energy Authority | American Public Power Association
+URL: https://www.publicpower.org/utility/greeneville-energy-authority
+Content: Greeneville Energy Authority
+Location: Greeneville, Tennessee
+Type: Municipal utility
+Service Territory: City of Greeneville and portions of Greene County, Tennessee
+Customers Served: Approximately 15,000-17,000 electric customers
+Annual Revenue: Approximately $40-50 million
+Employees: Approximately 50-75 employees
+Ownership: Municipally owned (City of Greeneville)
+Power Source: Tennessee Valley Authority (TVA) distributor
+
+Fiber/Broadband:
+GEA operates a fiber-to-the-home (FTTH) network serving residential and commercial customers in its service territory.
+
+Contact:
+900 N. Main St.
+Greeneville, TN 37743
+Phone: (423) 636-6200
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville Energy Authority GEA fiber network size coverage homes passed subscribers Greene County"}}
+</tool_call>
+<tool_response>
+{"organic": [{"title": "Greeneville Energy Authority Fiber Internet Coverage", "url": "https://www.mygea.net/fiber-coverage", "description": "GEA Fiber coverage map for Greeneville, TN."}, {"title": "GEA Fiber Internet Review - CNET", "url": "https://www.cnet.com/home/internet/providers/greeneville-energy-authority-review/", "description": "GEA Fiber review including coverage, speeds, and pricing."}]}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.cnet.com/home/internet/providers/greeneville-energy-authority-review/"}}
+</tool_call>
+<tool_response>
+Title: Not Found
+URL: https://www.cnet.com/home/internet/providers/greeneville-energy-authority-review/
+Content: Not found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Greeneville Energy Authority FCC broadband data filing locations served fiber 2023 2024"}}
+</tool_call>
+<tool_response>
+{"organic": [{"title": "FCC Broadband Data Collection - Tennessee Providers", "url": "https://broadbandmap.fcc.gov/location-summary/provider", "description": "FCC Broadband Data Collection map showing broadband availability."}, {"title": "Tennessee Broadband Map - Available Providers", "url": "https://broadbandmap.fcc.gov/location-summary/home?location_id=1102116869956&addr=900+N+Main+St&city=Greeneville&state=TN&zip=37743&unit=&lat=36.162&lon=-82.833&zoom=14", "description": "Broadband availability in

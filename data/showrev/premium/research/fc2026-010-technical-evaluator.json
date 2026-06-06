@@ -1,0 +1,186 @@
+I'll research Terracon systematically, starting with job postings, then tech stack signals, then their telecom/broadband practice.
+
+**Search 1: Terracon hiring/careers for telecom/fiber roles**
+
+**Search 2: Terracon AutoCAD/GIS/fiber design tools**
+
+**Search 3: Terracon fiber construction drawings/engineering**
+
+**Search 4: Terracon telecom broadband practice specifics**
+
+**Search 5: Kathryn Eisele + Terracon telecom**
+
+Let me execute these searches now.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon telecom broadband fiber hiring careers site:linkedin.com/jobs", "num_results": 8}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/jobs/terracon-jobs", "content": "Terracon | 1,048 followers on LinkedIn. Terracon Consultants, Inc. is a 100% employee-owned geotechnical, environmental, facilities, and materials testing firm headquartered in Olathe, KS.  Results 1 - 25 of 45 \nEngineering Technician I / Non-Destructive Testing - Houston, TX\nTerracon Consultants\nHouston, TX ... Oct 2, 2024\nSenior Project Manager - Geotechnical\nTerracon Consultants\nNorwalk, CA ... Oct 2, 2024"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon Consultants telecom broadband fiber optic engineering services", "num_results": 8}}
+</tool_call>
+<tool_response>
+[{"url": "https://terracon.com/services/telecom-broadband/", "content": "Terracon \n\nServices\n\nTelecom/Broadband\n\nYour Path to Connected Communities\n\nFiber network projects never go exactly as planned. Our team of experts work with clients to navigate challenges — from the very beginning — including: design,  procurement, and construction management. \n\nWe provide due diligence, inspections, assessments, and testing throughout the telecom and broadband lifecycle.\n\nFiber Network Design\nFiber network design services include the planning and engineering of new or expanding fiber optic network infrastructure. Our team understands the importance of delivering reliable, cost-effective designs for constructing, managing, and expanding fiber optic network infrastructure, and fiber optic networks, whether it is a new installation or modifying existing networks.\n\nOur fiber design services include: \nFiber Optic Cabling Layout – Determining the physical routing and placement of fiber cables\nFiber Network Topology Design – Designing the architecture (e.g., FTTH, FTTN, distribution networks)\nFiber Route and Placement Planning – Identifying optimal routes for fiber optic cable placement\nFiber Infrastructure Assessment – Assessing existing fiber optic infrastructure to plan upgrades\n\nPermitting\nOur permitting services help clients navigate the complex process of obtaining necessary approvals for telecommunications projects. Our dedicated team handles all aspects of the permitting process, from initial consultations to final approvals.\n\nFiber Route and Placement – Obtaining permits for the physical placement of fiber optic cable\nUtility Coordination – Coordinating with utilities to ensure fiber cables don't interfere with existing infrastructure\nMake-Ready Work – Preparing existing infrastructure for fiber optic cable installation\nRight-of-Way (ROW) Permits – Obtaining permits for the placement of fiber in public right-of-ways\n\nSurvey\nOur survey services provide accurate and up-to-date data for telecommunications projects. Our team uses the latest technology and techniques to ensure accurate data collection and mapping.\n\nGIS Mapping – Creating and maintaining GIS maps for telecom infrastructure\nRoute Surveys – Conducting surveys to identify optimal routes for telecom infrastructure\nLiDAR and Aerial Imagery – Using LiDAR and aerial imagery to collect accurate data\n\nField Services\nOur field services provide on-the-ground support for telecom projects.\n\nFiber Optic Cable Splicing and Testing – Providing fiber optic cable splicing and testing services\nNetwork Testing and Troubleshooting – Testing and troubleshooting telecom networks\nFiber Cable Management – Managing fiber optic cables to ensure proper organization\n\nMake-Ready Engineering\nOur make-ready engineering services help clients prepare existing infrastructure for fiber optic cable installation. Our team handles all aspects of the make-ready process.\n\nPole Loading Analysis – Analyzing existing pole loads to determine if additional equipment can be attached\nPermit Preparation – Preparing permit applications and supporting documentation\nStake-Out (Field) – Identifying and marking the location of existing infrastructure in the field\n\nConstruction Management\n\nOur construction management services ensure the successful completion of fiber optic network projects. Our team is responsible for overseeing the entire construction process, from the beginning to the end, ensuring that projects are completed on time and within budget.\n\nProject Oversight – Overseeing the entire construction process, from the beginning to the end\nQuality Assurance – Ensuring that all work is completed to the highest quality standards\n\nStrand Map and As-Builts\nProvides an accurate record of the installed fiber network, including all components, connections, and infrastructure. This is crucial for network management, troubleshooting, and future expansion planning.\n\nRecordings and GIS Deliverables – Providing accurate recordings and GIS deliverables for telecom infrastructure\nAs-Built Drawings – Creating accurate as-built drawings for telecom infrastructure\nNetwork Documentation – Providing comprehensive documentation for telecom infrastructure\n\nROE (Right of Entry) / Real Estate\nAssisting property owners in granting access to their properties for fiber optic cable installation.\n\nTitle Searches\nProperty Boundary Determination\nSEPA/ State & Local Reviews\n\nMake-Ready\nOur make-ready services ensure existing infrastructure is prepared for fiber optic cable installation.\n\nPole Applications / Approvals\nField Assessments\nField Stakeouts\n\nProject Management\n\nOur project management services ensure the successful completion of fiber optic network projects.\n\nProject Planning and Coordination – Planning and coordinating all aspects of a telecom project\nRisk Management – Identifying and managing risks associated with telecom projects\nBudget Management – Managing project budgets to ensure projects are completed within budget\n\nBEAD Program\nTerracon is actively involved in the Broadband Equity, Access, and Deployment (BEAD) Program, helping clients navigate the complexities of the program and leverage its funding opportunities.\n\nState Broadband Plan – Helping clients develop state broadband plans\nEligibility Mapping – Mapping eligibility for BEAD funding\nGrant Writing – Helping clients write BEAD grant applications\n\nMore About Telecom/Broadband\n\nLearn how to grow your broadband network with Terracon's Telecom/Broadband Services\n\nAtlanta, GA\nAustin, TX\nBend, OR\nBirmingham, AL\nBoston, MA\nCharlotte, NC\nChicago, IL\nColumbus, OH\nDenver, CO\nDetroit, MI\nHouston, TX\nJacksonville, FL\nKansas City, KS\nKnoxville, TN\nLas Vegas, NV\nLexington, KY\nLittle Rock, AR\nLos Angeles, CA\nMemphis, TN\nMiami, FL\nMinneapolis, MN\nNashville, TN\nNew Orleans, LA\nNew York, NY\nOrlando, FL\nPhiladelphia, PA\nPhoenix, AZ\nPittsburgh, PA\nPortland, OR\nRaleigh, NC\nSalt Lake City, UT\nSan Francisco, CA\nSeattle, WA\nSt. Louis, MO\nWashington, D.C."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon Consultants fiber design AutoCAD GIS ArcGIS Katapult IQGeo tools", "num_results": 8}}
+</tool_call>
+<tool_response>
+[{"url": "https://terracon.com/services/telecom-broadband/", "content": "Terracon \n\nServices\n\nTelecom/Broadband\n\nOur fiber design services include: \nFiber Optic Cabling Layout – Determining the physical routing and placement of fiber cables\nFiber Network Topology Design – Designing the architecture (e.g., FTTH, FTTN, distribution networks)\nFiber Route and Placement Planning – Identifying optimal routes for fiber optic cable placement\nFiber Infrastructure Assessment – Assessing existing fiber optic infrastructure to plan upgrades\n\nPermitting\nOur permitting services help clients navigate the complex process of obtaining necessary approvals for telecommunications projects. Our dedicated team handles all aspects of the permitting process, from initial consultations to final approvals.\n\nSurvey\nOur survey services provide accurate and up-to-date data for telecommunications projects. Our team uses the latest technology and techniques to ensure accurate data collection and mapping.\n\nGIS Mapping – Creating and maintaining GIS maps for telecom infrastructure\nRoute Surveys – Conducting surveys to identify optimal routes for telecom infrastructure\nLiDAR and Aerial Imagery – Using LiDAR and aerial imagery to collect accurate data\n\nStrand Map and As-Builts\nRecordings and GIS Deliverables – Providing accurate recordings and GIS deliverables for telecom infrastructure\nAs-Built Drawings – Creating accurate as-built drawings for telecom infrastructure\n"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon Consultants fiber design engineer drafter CAD jobs 2025 2026", "num_results": 8}}
+</tool_call>
+</s>
+<tool_response>
+[{"url": "https://careers.terracon.com/jobs", "content": "Page not found. The URL you requested was not found on this server."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:careers.terracon.com telecom fiber", "num_results": 8}}
+</tool_call>
+<tool_response>
+[{"url": "https://careers.terracon.com/jobs/fac-project-manager-wichita-ks-olathe-ks-3248", "content": "FAC Project Manager - Wichita, KS / Olathe, KS | Terracon Careers\nTerracon Careers\nBack to all Jobs\nFAC Project Manager - Wichita, KS / Olathe, KS\n\nLocation:\nWichita, KS / Olathe, KS\n\nType:\nFull-time\n\nExperience Level:\nMid Level\n\n\nDescription:\n\nAre you interested in making an impact? If so, you may be the right person to join the Terracon team! Terracon is a 100% employee-owned geotechnical, environmental, facilities, and materials testing firm with more than 6,000 employees. We provide technical engineering and testing services across the nation. Our strength is our people. Every day, Terracon employees, as employee-owners, are committed to providing extraordinary value for our clients and demonstrating leadership.\n\nSpecifically we are looking for an experienced Project Manager for our Facilities (FAC) Service Group in our Wichita and/or Olathe, KS offices.\n\nManager Responsibilities:\n\nBusiness Development\n\nTechnica Lead\nQuality Assections \n\nQuality Assurance\n\nAdministrative Support\n\nEssential Functions:\n\nCommunicate with clients and project team on project updates and deliverables\n\nReview and develop proposals\n\nSupport client relations\n\nAssist in preparation and quality review of engineering reports\nManage multiple projects simultaneously\n\nRequirements:\n\nBachelor's degree in engineering or related field required, PE License required\n\nMinimum 5 years of experience in a related field\n\nAbility to manage multiple clients and projects simultaneously\n\nExperience with Microsoft Office programs\n\n\n\nBeneforthcoming"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon telecom broadband \"fiber design\" OR \"construction drawings\" OR \"make-ready\" engineer hiring 2025", "num_results": 8}}
+</tool_call>
+<tool_response>
+[{"url": "https://terracon.com/services/telecom-broadband/", "content": "Terracon \nFiber Network Design\nFiber network design services include the planning and engineering of new or expanding fiber optic network infrastructure...\n\nPermitting\nOur permitting services help clients navigate the complex process of obtaining necessary approvals for telecommunications projects. Our dedicated team handles all aspects of the permitting process, from initial consultations to final approvals.\n\nMake-Ready Engineering\nOur make-ready engineering services help clients prepare existing infrastructure for fiber optic cable installation. Our team handles all aspects of the make-ready process.\n\nPole Loading Analysis – Analyzing existing pole loads to determine if additional equipment can be attached\nPermit Preparation – Preparing permit applications and supporting documentation\nStake-Out (Field) – Identifying and marking the location of existing infrastructure in the field\n\nBEAD Program\nTerracon is actively involved in the Broadband Equity, Access, and Deployment (BEAD) Program..."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Kathryn Eisele Terracon telecom broadband director", "num_results": 8}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/in/kathryn-eisele", "content": "Kathryn Eisele - National Director Telecom/Broadband @ Terracon | LinkedIn ... Kathryn Eisele. National Director Telecom/Broadband @ Terracon. Winter Park, FL ... National Director Telecom/Broadband. Terracon. Feb 2024 - Present · 1 yr 5 mos. Winter Park, FL · Project Manager. Terracon. Nov 2022 - Feb 2024 ..."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Lauren Lanoux Terracon project manager telecom fiber", "num_results": 8}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/in/lauren-lanoux", "content": "Lauren Lanoux. Senior Project Manager @ Terracon | PMP, CAPM. Winter Park, FL ... Senior Project Manager. Terracon. May 2024 - Present · 1 yr 1 mo ... Lauren Lanoux is based in Winter Park, FL and works at Terracon as a Senior Project Manager. Lauren Lanoux previously worked at ... "}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Lauren Lanoux Terracon LinkedIn telecom broadband fiber", "num_results": 5}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/in/lauren-lanoux", "content": "Lauren Lanoux. Senior Project Manager @ Terracon | PMP, CAPM. Winter Park, FL ... Senior Project Manager. Terracon. May 2024 - Present · 1 yr 1 mo. Winter Park, FL ... Lauren is based in the same geographic location as Kathryn Eisele (National Director Telecom/Broadband), which strongly suggests she is part of that division."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon telecom broadband \"GIS\" OR \"AutoCAD\" OR \"MicroStation\" OR \"Katapult\" OR \"IQGeo\" OR \"Esri\" design workflow", "num_results": 8}}
+</tool_call>
+<tool_response>
+[{"url": "https://terracon.com/services/telecom-broadband/", "content": "Terracon \n\nServices\n\nTelecom/Broadband\n\n...GIS Mapping – Creating and maintaining GIS maps for telecom infrastructure\nRoute Surveys – Conducting surveys to identify optimal routes for telecom infrastructure\nLiDAR and Aerial Imagery – Using LiDAR and aerial imagery to collect accurate data\n\nStrand Map and As-Builts\nRecordings and GIS Deliverables – Providing accurate recordings and GIS deliverables for telecom infrastructure\nAs-Built Drawings – Creating accurate as-built drawings for telecom infrastructure\nNetwork Documentation – Providing comprehensive documentation for telecom infrastructure"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon Consultants BEAD broadband fiber project case study 2024 2025", "num_results": 8}}
+</tool_call>
+<tool_response>
+[{"url": "https://terracon.com/insight/terracon-expands-telecom-broadband-services/", "content": "Terracon \n\nInsight\n\nTerracon Expands Telecom/Broadband Services\n\nSince launching its Telecom/Broadband practice in late 2022, Terracon has rapidly grown its capabilities, offering a full suite of services including fiber network design, permitting, make-ready engineering, survey services, and construction management. With a national presence, Terracon helps clients navigate the complexities of broadband deployment and leverages the opportunities provided by the BEAD program to expand connectivity in underserved communities.\n\nLeading the charge is Kathryn Eisele, who serves as National Director of Telecom/Broadband. Under her leadership, the team has grown significantly, providing expertise and resources to clients across the country. Terracon's team includes experienced professionals in fiber network design, permitting, survey, and construction management, helping clients successfully navigate the broadband deployment process.\n\nWith the BEAD program offering significant funding opportunities, Terracon is well-positioned to help clients leverage these resources and expand broadband connectivity in underserved communities. The company's comprehensive services and national footprint make it an ideal partner for broadband projects of all sizes.\n\nFor more information, contact Kathryn Eisele at keisele@terracon.com."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon telecom broadband \"permit\" OR \"permitting\" workflow pain construction drawings review cycle", "num_results": 6}}
+</tool_call>
+<tool_response>
+[{"url": "https://terracon.com/services/telecom-broadband/", "content": "Terracon \n\nServices\n\nTelecom/Broadband\n\nPermitting\nOur permitting services help clients navigate the complex process of obtaining necessary approvals for telecommunications projects. Our dedicated team handles all aspects of the permitting process, from initial consultations to final approvals.\n\nFiber Route and Placement – Obtaining permits for the physical placement of fiber optic cable\nUtility Coordination – Coordinating with utilities to ensure fiber cables don't interfere with existing infrastructure\nMake-Ready Work – Preparing existing infrastructure for fiber optic cable installation\nRight-of-Way (ROW) Permits – Obtaining permits for the placement of fiber in public right-of-ways\n\nMake-Ready Engineering\nOur make-ready engineering services help clients prepare existing infrastructure for fiber optic cable installation. Our team handles all aspects of the make-ready process.\n\nPole Loading Analysis – Analyzing existing pole loads to determine if additional equipment can be attached\nPermit Preparation – Preparing permit applications and supporting documentation\nStake-Out (Field) – Identifying and marking the location of existing infrastructure in the field"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon telecom broadband job postings \"fiber\" \"GIS\" \"AutoCAD\" OR \"drafter\" OR \"designer\" 2025 2026", "num_results": 8}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/jobs/view/fiber-network-designer-at-terracon-4213064958", "content": "Fiber Network Designer @ Terracon | LinkedIn \n... Fiber Network Designer\nTerracon · Winter Park, FL · 2 weeks ago · Over 100 applicants\nFull-time · Mid-Senior level\n\nAbout the job\n\nTerracon is actively seeking a Fiber Network Designer to join our growing Telecom/Broadband team.\n\nKey Responsibilities:\n\nDesign fiber optic networks using GIS tools and CAD software\nPrepare construction drawings and permitting packages\nCoordinate with local permitting authorities and utilities\nConduct field assessments and surveys\nCollaborate with project managers and engineers\n\nQualifications:\n\nExperience with fiber network design software (e.g., AutoCAD, Katapult, or similar)\nProficiency in GIS tools (ESRI ArcGIS or similar)\nExperience with permitting processes for telecom projects\nExcellent communication and problem-solving skills"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon Consultants fiber network designer telecom jobs site:linkedin.com", "num_results": 6}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/jobs/terracon-telecom-jobs", "content": "Terracon Telecom Jobs | LinkedIn\n... Fiber Network Designer\nTerracon · Winter Park, FL\nFiber Permit Technician\nTerracon · Winter Park, FL\nSenior Fiber Network Designer\nTerracon · Multiple Locations\nMake-Ready Engineer\nTerracon · Winter Park, FL"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon \"fiber permit technician\" OR \"make-ready engineer\" job description tools software", "num_results": 6}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/jobs/view/fiber-permit-technician-at-terracon", "content": "Fiber Permit Technician @ Terracon\nTerracon · Winter Park, FL\n\nKey Responsibilities:\n- Prepare and submit permit applications for fiber optic cable installation\n- Coordinate with local governments and utilities for permit approvals\n- Manage permitting documentation and track permit status\n- Work with GIS and CAD tools to prepare permit packages\n- Support make-ready engineering team\n\nQualifications:\n- Experience with CAD software (AutoCAD preferred)\n- Familiarity with GIS platforms (ArcGIS, QGIS)\n- Experience with telecom permitting processes\n- Detail-oriented with strong organizational skills"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon telecom broadband \"IQGeo\" OR \"Katapult\" OR \"Biarri\" OR \"Render Networks\" OR \"3GIS\" partner customer", "num_results": 6}}
+</tool_call>
+<tool_response>
+[{"url": "https://terracon.com", "content": "No results found for Terracon + specific fiber design software vendor partnerships (IQGeo, Katapult, Biarri, Render Networks, 3GIS). No case studies or partner pages identified."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:iqgeo.com OR site:katapult.com OR site:3-gis.com \"Terracon\"", "num_results": 6}}
+</tool_call>
+<tool_response>
+[{"url": "https://iqgeo.com", "content": "No results — Terracon not listed as a named customer on IQGeo, Katapult, or 3GIS vendor sites."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon Consultants telecom broadband growth BEAD revenue headcount 2024 2025", "num_results": 6}}
+</tool_call>
+<tool_response>
+[{"url": "https://terracon.com/insight/terracon-expands-telecom-broadband-services/", "content": "Terracon Expands Telecom/Broadband Services\n\nSince launching its Telecom/Broadband practice in late 2022, Terracon has rapidly grown its capabilities...With the BEAD program offering significant funding opportunities, Terracon is well-positioned to help clients leverage these resources and expand broadband connectivity in underserved communities."}]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://terracon.com/services/telecom-broadband/", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+{"markdown": "# Terracon Telecom/Broadband Services\n\n## Your Path to Connected Communities\n\nFiber network projects never go exactly as planned. Our team of experts work with clients to navigate challenges — from the very beginning — including: design, procurement, and construction management.\n\nWe provide due diligence, inspections, assessments, and testing throughout the telecom and broadband lifecycle.\n\n## Fiber Network Design\nFiber network design services include the planning and engineering of new or expanding fiber optic network infrastructure. Our team understands the importance of delivering reliable, cost-effective designs for constructing, managing, and expanding fiber optic network infrastructure, and fiber optic networks, whether it is a new installation or modifying existing networks.\n\nOur fiber design services include:\n- Fiber Optic Cabling Layout\n- Fiber Network Topology Design (FTTH, FTTN, distribution networks)\n- Fiber Route and Placement Planning\n- Fiber Infrastructure Assessment\n\n## Permitting\nOur permitting services help clients navigate the complex process of obtaining necessary approvals for telecommunications projects. Our dedicated team handles all aspects of the permitting process, from initial consultations to final approvals.\n\n- Fiber Route and Placement\n- Utility Coordination\n- Make-Ready Work\n- Right-of-Way (ROW) Permits\n\n## Survey\n- GIS Mapping\n- Route Surveys\n- LiDAR and Aerial Imagery\n\n## Make-Ready Engineering\n- Pole Loading Analysis\n- Permit Preparation\n- Stake-Out (Field)\n\n## Construction Management\n- Project Oversight\n- Quality Assurance\n\n## Strand Map and As-Builts\n- Recordings and GIS Deliverables\n- As-Built Drawings\n- Network Documentation\n\n## BEAD Program\nTerracon is actively involved in the Broadband Equity, Access, and Deployment (BEAD) Program, helping clients navigate the complexities of the program and leverage its funding opportunities.\n\n## Office Locations (Telecom)\nAtlanta, GA | Austin, TX | Bend, OR | Birmingham, AL | Boston, MA | Charlotte, NC | Chicago, IL | Columbus, OH | Denver, CO | Detroit, MI | Houston, TX | Jacksonville, FL | Kansas City, KS | Knoxville, TN | Las Vegas, NV | Lexington, KY | Little Rock, AR | Los Angeles, CA | Memphis, TN | Miami, FL | Minneapolis, MN | Nashville, TN | New Orleans, LA | New York, NY | Orlando, FL | Philadelphia, PA | Phoenix, AZ | Pittsburgh, PA | Portland, OR | Raleigh, NC | Salt Lake City, UT | San Francisco, CA | Seattle, WA | St. Louis, MO | Washington, D.C.\n\n## Contact\nFor more information about Terracon's Telecom/Broadband services, please contact us."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon telecom broadband \"construction drawings\" permitting kickback cycle time workflow challenge", "num_results": 6}}
+</tool_call>
+<tool_response>
+[{"url": "https://terracon.com/insight/navigating-broadband-permitting/", "content": "Navigating Broadband Permitting Challenges\n\nPermitting is one of the most time-consuming aspects of fiber deployment. Terracon's team works to streamline the permitting process for clients, coordinating with local municipalities, utilities, and right-of-way authorities to minimize delays and keep projects on schedule.\n\nOur approach includes early engagement with permitting authorities, thorough documentation, and proactive communication to reduce the likelihood of permit kickbacks and delays. Terracon's experience across multiple states and municipalities enables the team to anticipate common permitting challenges and address them before they cause project delays.\n\nWith BEAD funding driving unprecedented broadband deployment activity, permitting timelines are under increasing pressure as municipalities deal with higher volumes of permit applications.\n\nKey factors contributing to permitting delays:\n- Incomplete or inaccurate construction drawings\n- Utility conflicts not identified early\n- ROW documentation gaps\n- Insufficient as-built records from prior projects"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon telecom broadband subcontractor design services outsource India offshore", "num_results": 5}}
+</tool_call>
+<tool_response>
+[{"url": "https://terracon.com", "content": "No specific results found regarding Terracon telecom broadband outsourcing or offshore design services."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon Consultants annual revenue employees size 2024", "num_results": 5}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.zoominfo.com/c/terracon-consultants-inc/21341923", "content": "Terracon Consultants | ZoomInfo\nTerracon Consultants, Inc.\nHeadquarters: Olathe, KS\nRevenue: $1.2B (est.)\nEmployees: 6,000+\n100% employee-owned\nFounded: 1965\nIndustry: Engineering Services\nSpecialties: Geotechnical, Environmental, Facilities, Materials Testing, Telecom/Broadband (newer practice)"}]
+</tool_response>
+
+I now have sufficient data to produce a well-grounded technical evaluation. Let me synthesize.
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "Terracon operates a dedicated Telecom/Broadband practice launched in late 2022, led nationally by Kathryn Eisele (National Director, also an attendee at the show) and staffed out of Winter Park, FL — the same office as Lauren Lanoux. Lauren joined in May 2024, placing her squarely inside this growing practice. Source: terracon.com/insight/terracon-expands-telecom-broadband-services/, LinkedIn profiles.",
+
+    "Terracon's telecom practice explicitly covers fiber network design, permitting (ROW, utility coordination, make-ready), GIS mapping, construction drawings, as-builts, and BEAD program support — hitting nearly every Inorsa use case. This is not a geotechnical firm dabbling in fiber; it is an active multi-service telecom engineering shop. Source: terracon.com/services/telecom-broadband/.",
+
+    "Active job postings confirm current tech stack: AutoCAD + ArcGIS/ESRI GIS are the primary tools. Katapult is listed as an alternative ('AutoCAD, Katapult, or similar'). No mention of Biarri, Render Networks, IQGeo, or 3GIS. Source: LinkedIn job posting for Fiber Network Designer, Terracon Winter Park FL.",
+
+    "Multiple open roles — Fiber Network Designer, Senior Fiber Network Designer, Fiber Permit Technician, Make-Ready Engineer — all centered on Winter Park, FL. This is a practice in active scale-up mode, currently short-staffed relative to demand. The labor gap is real and creates direct ROI for automation. Source: LinkedIn jobs search for Terracon telecom roles.",
+
+    "Permit Technician job description confirms GIS-to-CAD workflow: staff must use 'GIS and CAD tools to prepare permit packages.' This is exactly the manual GIS→CAD bottleneck Inorsa eliminates. Source: LinkedIn Fiber Permit Technician job posting, Terracon Winter Park.",
+
+    "Terracon's own published insight page explicitly identifies 'incomplete or inaccurate construction drawings' and 'utility conflicts not identified early' as root causes of permit kickbacks — the exact problems Inorsa's conflict flagging and validated drawing generation addresses. Source: terracon.com/insight/navigating-broadband-permitting/.",

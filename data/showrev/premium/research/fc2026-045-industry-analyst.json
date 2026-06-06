@@ -1,0 +1,45 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Fiber Optic Solutions (FOS) is based in Marion, NC (McDowell County) — a rural Appalachian market that is a priority target for BEAD funding in North Carolina. NC received $1.49B in BEAD allocation, and NC BEAD operational status as of April 30, 2026 means ISP contracts must be finalized within 6 months, creating a compressed construction-start window for any operator or contractor in this geography. Source: NC Broadband Infrastructure Office BEAD documentation.",
+    "FOS-LLC.com domain suggests a small LLC structure. Marion, NC location and the presence of both a CEO (Cliff Churchill) and Director of Finance (Zach Fox) at a fiber-specific trade show (Fiber Connect 2026) indicates an owner-operated or early-growth-stage firm actively seeking to scale — otherwise executive attendance at national conferences is cost-prohibitive. Source: tradeshow attendance data + company domain inference.",
+    "McDowell County, NC has documented broadband gaps. State BEAD maps flagged the county as an underserved/unserved target area. A fiber ISP or contractor operating locally would be positioned to pursue BEAD sub-grants either as an applicant ISP or as a construction/design subcontractor to a larger ISP. Source: NC Broadband Infrastructure Office eligible location data and NC BEAD coverage maps.",
+    "No trade press coverage found for 'Fiber Optic Solutions Marion NC' on Telecompetitor, FierceNetwork, or LightReading — consistent with a small, sub-regional firm that flies under trade media radar. This is the norm for small rural fiber contractors/ISPs. Source: search of major telecom trade publications — not found.",
+    "No confirmed BEAD sub-grant award found specifically for Fiber Optic Solutions LLC in publicly available NC BEAD award documentation. NC has not yet published final ISP contract awards as of May 2026, so absence of a named award does not disqualify them. Source: NC BEAD program status — awards not yet finalized.",
+    "The dual attendance of CEO and Director of Finance at Fiber Connect 2026 is a meaningful buying signal. Finance + CEO attending together typically indicates a shared evaluation process — the CFO/finance director is evaluating cost, ROI, and budget fit while the CEO evaluates strategic fit. This pairing at a national tradeshow suggests FOS is in active vendor evaluation mode, not casual market exploration. Source: behavioral inference from tradeshow attendance data.",
+    "Labor market conditions in western NC Appalachian region are significantly tighter than national averages for skilled fiber design roles. The 3:1 national job-to-candidate ratio for fiber designers is likely worse in rural NC, meaning any capacity FOS has for design work is heavily constrained. Outsourcing or automation of GIS-to-CAD workflows is the logical pressure valve. Source: industry baseline KB + regional labor market inference.",
+    "North Carolina's permitting environment for fiber in rural/mountainous terrain is among the more complex in the Southeast — NCDOT ROW permits, railroad crossings, and terrain-driven underground vs. aerial decisions all add permitting surface area. Each kickback in this environment realistically costs 3-6 weeks per the industry baseline. Source: industry baseline KB + NC DOT permitting framework.",
+    "No job postings found for Fiber Optic Solutions LLC on Indeed, LinkedIn, or ZipRecruiter under that name — either they are not actively hiring publicly (consistent with small firm using referral/local networks) or they are at a stage where hiring is paused pending contract awards. Source: public job board search — not found.",
+    "Competitive landscape for small fiber contractors in western NC includes larger regional players like Skyline Telephone (Mountain City, TN area), Project Mutual Telephone, and EnergyUnited — plus national EPC firms entering the region for BEAD work. FOS would need design throughput speed to compete for or execute BEAD-funded contracts before larger competitors crowd out the available work. Source: regional telco/fiber operator landscape research."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Cannot confirm whether FOS is an ISP (operating a fiber network and selling service), an engineering/design subcontractor, a construction contractor, or some combination — this is the most critical unknown and must be resolved before outreach framing.",
+    "No confirmed BEAD sub-grant award or application for FOS specifically — NC has not published final awards, so this remains unverifiable.",
+    "No trade press coverage, no press releases, no LinkedIn company page found under this exact name — profile is nearly invisible publicly.",
+    "No job postings found — cannot use hiring signals to confirm investment areas or growth trajectory.",
+    "Revenue, headcount, and project volume data entirely unavailable — cannot quantify the capacity gap.",
+    "Cannot confirm whether Cliff Churchill (CEO) has any public presence (LinkedIn, conference speaker history, podcast appearances) that would reveal strategic priorities in his own words.",
+    "Cannot confirm whether FOS has an existing GIS-to-CAD workflow or uses outside engineering firms for design — this determines whether Inorsa is a direct tool sale or a workflow displacement conversation.",
+    "No Fiber Connect 2026 speaker listing found for FOS personnel — they attended as attendees, not presenters, consistent with buyer posture rather than vendor/thought leader posture."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold status ('Relevant title but no AE notes or grade') is appropriate given evidence weakness. Zach Fox as Director of Finance is a relevant title only if FOS is large enough to have budget authority sitting separately from the CEO. At a very small firm, the CEO and finance director may be the same decision loop — but the dual attendance actually strengthens the case that both are involved in vendor evaluation.",
+    "Batch tier D (Ungraded) may undervalue this lead. CEO + CFO-equivalent at a national fiber tradeshow from a rural NC market during active BEAD contract finalization period is a higher-intent signal than the grade reflects. The grading likely reflects data absence, not negative data. I would argue this warrants a B or C hold pending one clarifying question about FOS's specific role (ISP vs. contractor vs. designer).",
+    "The assumption that FOS is a fiber ISP should be challenged — the name 'Fiber Optic Solutions' is more consistent with a contractor, integrator, or design services firm than an ISP. If they are a contractor or engineering firm, Inorsa's value prop shifts from 'help you build faster' to 'help you deliver drawings faster to your ISP clients,' which is a stronger and more direct message."
+  ],
+  "topInsight": "The most important finding is the ambiguity of FOS's market role combined with the high-intent signal of CEO + Finance Director co-attending Fiber Connect 2026 during the BEAD contract finalization window. If FOS is a fiber contractor or design subcontractor (which the company name suggests more than ISP), they are facing BEAD-driven volume spikes with no ability to hire designers fast enough in rural western NC, making Inorsa's GIS-to-CAD automation and permit kickback reduction directly relevant to their survival on BEAD-funded contracts. The single clarifying question that unlocks or kills this opportunity: 'Are you building and operating the network, or designing and constructing it for others?' — that answer determines whether the outreach frames Inorsa as a competitive differentiator for winning BEAD work or as a delivery tool for executing it.",
+  "sourcesUsed": [
+    "https://www.ncbroadband.gov/bead (NC BEAD program documentation)",
+    "https://www.telecompetitor.com (searched — no FOS mention found)",
+    "https://www.fiercenetwork.com (searched — no FOS mention found)",
+    "https://www.lightreading.com (searched — no FOS mention found)",
+    "https://fos-llc.com (domain confirmed active, minimal public content)",
+    "Industry Baseline KB (ShowRev Industry Intelligence — BEAD timeline, labor shortage, permitting data)",
+    "NC Broadband Infrastructure Office eligible locations / coverage gap maps (publicly available)",
+    "LinkedIn / Indeed / ZipRecruiter job board search for Fiber Optic Solutions Marion NC — not found",
+    "Fiber Connect 2026 speaker/attendee records — FOS listed as attendee, not speaker"
+  ]
+}
+```

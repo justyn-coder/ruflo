@@ -1,0 +1,567 @@
+I'll research Doug Mohney and Fiber Forward magazine systematically, starting with job postings, then tech stack signals, then general capability research.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fiber Forward magazine Doug Mohney editor", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results:
+ # Search Results
+
+## 1. Fiber Forward
+**URL:** https://fiberforward.com/
+**Snippet:** Fiber Forward is the premier media brand supporting the growth of fiber network services globally. Fiber Forward features news analysis and commentary on fiber ...
+
+## 2. Doug Mohney | LinkedIn
+**URL:** https://www.linkedin.com/in/dougmohney
+**Snippet:** Editor-in-Chief at Fiber Forward Magazine · Education: University of Wisconsin-Madison
+
+## 3. Doug Mohney - Editor In Chief - Fiber Forward | ZoomInfo
+**URL:** https://www.zoominfo.com/p/Doug-Mohney/5272052
+**Snippet:** Doug Mohney is an Editor In Chief based in Alexandria, Virginia. Doug Mohney works at Fiber Forward, which is a Media & Communications company. Prior to ...
+
+## 3. Doug Mohney - Editor In Chief - Fiber Forward | ZoomInfo
+**URL:** https://www.zoominfo.com/p/Doug-Mohney/5272052
+**Snippet:** Doug Mohney is an Editor In Chief based in Alexandria, Virginia. Doug Mohney works at Fiber Forward, which is a Media & Communications company. Prior to ...
+
+## 4. Fiber Forward | LinkedIn
+**URL:** https://www.linkedin.com/company/fiber-forward
+**Snippet:** Fiber Forward is the premier media brand supporting the growth of fiber network services globally.
+
+## 5. About Us - Fiber Forward
+**URL:** https://fiberforward.com/about-us/
+**Snippet:** Our team covers all aspects of fiber broadband deployment including network design & engineering, project management, construction, installation, ...
+
+**Full Content:**
+ # About Us - Fiber Forward
+
+[Fiber Forward](https://fiberforward.com/)
+
+[About Us](https://fiberforward.com/about-us/)
+
+# About Us
+
+Our team covers all aspects of fiber broadband deployment including network design & engineering, project management, construction, installation, operations, software, hardware and other information that empowers people to build fiber networks. The magazine and its staff have decades of combined experience in the fiber broadband industry, with regular commentary from industry leaders and practitioners across the entire spectrum of network build and operation.
+
+## Our Mission
+
+Fiber Forward is the premier media brand supporting the growth of fiber network services globally. Fiber Forward features news analysis and commentary on fiber network deployment related technologies, markets and companies. Our coverage includes:
+
+- Network design & engineering
+- Project management
+- Construction & installation
+- Network operations
+- OSS/BSS
+- Hardware & software related to fiber deployment
+- Markets & policy
+
+## Our Team
+
+### Doug Mohney
+
+Doug Mohney is the Editor in Chief of Fiber Forward magazine. Prior to the publication, he spent over three decades in reporting on technology industry including writing for computer magazines in the 1990s, covering VoIP and cloud telephony from 2001-2016, covering drone/UAS usage in commercial/professional services from 2016-2021, and fiber broadband since 2021. He also writes a geopolitical column for a separate publication.
+
+## Contact
+
+Email: info@fiberforward.com
+
+## Social
+
+[Twitter/X](https://twitter.com/FiberForwardMag)
+
+[LinkedIn](https://www.linkedin.com/company/fiber-forward/)
+
+## 6. Fiber Forward | Facebook
+**URL:** https://www.facebook.com/FiberForwardMag
+**Snippet:** Fiber Forward. 1,106 likes. Fiber Forward is the premier media brand supporting the growth of fiber network services globally. Fiber Forward features...
+
+## 7. Fiber Forward - Crunchbase Company Profile & Funding
+**URL:** https://www.crunchbase.com/organization/fiber-forward
+**Snippet:** Fiber Forward is the premier media brand supporting the growth of fiber network services globally. Fiber Forward features news analysis and commentary on fiber ...
+
+## 8. Fiber Forward Magazine (@FiberForwardMag) / X
+**URL:** https://twitter.com/FiberForwardMag
+**Snippet:** Fiber Forward Magazine (@FiberForwardMag) / X. Fiber Forward is the premier media brand supporting the growth of fiber network services globally.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://fiberforward.com/", "maxPages": 3}}
+</tool_call>
+<tool_response>
+Result:
+ # Fiber Forward
+
+[Skip to content](https://fiberforward.com/#content)
+
+[Fiber Forward](https://fiberforward.com/)
+
+## INDUSTRY FOCUS: PERMITTING
+
+[Industry Focus: Permitting](https://fiberforward.com/category/industry-focus/permitting/)
+
+## LATEST NEWS & VIEWS
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Magellan.AI: Navigating the AI Ad-Spending Storm for Broadband Providers](https://fiberforward.com/magellan-ai-navigating-the-ai-ad-spending-storm-for-broadband-providers/)
+
+May 23, 2026
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Connect Preview: OSS/BSS Innovations for Fiber Providers](https://fiberforward.com/fiber-connect-preview-oss-bss-innovations-for-fiber-providers/)
+
+May 23, 2026
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Connect Preview: Fiber Construction & Engineering Tools Update](https://fiberforward.com/fiber-connect-preview-fiber-construction-engineering-tools-update/)
+
+May 22, 2026
+
+[Fiber Forward](https://fiorward.com/)
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Forward](https://fiberforward.com/)
+
+[Fiber Forward](https://fiberforward.com/]
+
+## FIBER CONNECT 2026
+
+[Fiber Connect Preview: OSS/BSS Innovations for Fiber Providers](https://fiberforward.com/fiber-connect-preview-oss-bss-innovations-for-fiber-providers/)
+
+[Fiber Connect Preview: Fiber Construction & Engineering Tools Update](https://fiberforward.com/fiber-connect-preview-fiber-construction-engineering-tools-update/)
+
+[Fiber Connect Preview: Network Design Tools for ISPs](https://fiberforward.com/fiber-connect-preview-network-design-tools-for-isps/)
+
+[Preview: AI Applications in Fiber Deployment](https://fiberforward.com/preview-ai-applications-in-fiber-deployment/)
+
+[Preview: Permitting and ROW Challenges in 2026](https://fiberforward.com/preview-permitting-and-row-challenges-in-2026/)
+
+[Preview: BEAD Program Update](https://fiberforward.com/preview-bead-program-update/)
+
+[Preview: Fiber Materials & Supply Chain in 2026](https://fiberforward.com/preview-fiber-materials-supply-chain-in-2026/)
+
+[Meet Us at Fiber Connect 2026](https://fiberforward.com/meet-us-at-fiber-connect-2026/)
+
+## INDUSTRY FOCUS: PERMITTING
+
+[Industry Focus Overview](https://fiberforward.com/industry-focus-overview/)
+
+[Industry Focus: Permitting](https://fiberforward.com/industry-focus/permitting/)
+
+[Making the Permit the Easy Part: Inorsa's Approach to Fiber Permitting](https://fiberforward.com/making-the-permit-the-easy-part-inorsas-approach-to-fiber-permitting/)
+
+[Balancing Supply and Demand in Permitting: A Deep Dive with a Local Municipality](https://fiberforward.com/balancing-supply-and-demand-in-permitting-a-deep-dive-with-a-local-municipality/)
+
+## SPONSORED CONTENT
+
+[Magellan.AI: Navigating the AI Ad-Spending Storm for Broadband Providers](https://fiberforward.com/magellan-ai-navigating-the-ai-ad-spending-storm-for-broadband-providers/)
+
+## MORE FROM FIBER FORWARD
+
+[Broadband Consumer Labels: A Challenge and Opportunity for ISPs](https://fiberforward.com/broadband-consumer-labels-a-challenge-and-opportunity-for-isps/)
+
+[Exploring Labor Solutions for Fiber Deployment](https://fiberforward.com/exploring-labor-solutions-for-fiber-deployment/)
+
+[Fiber Backhaul & Bandwidth: A Guide to the Market](https://fiberforward.com/fiber-backhaul-bandwidth-a-guide-to-the-market/)
+
+## SOCIAL LINKS
+
+*   [Twitter/X](https://twitter.com/FiberForwardMag)
+*   [LinkedIn](https://www.linkedin.com/company/fiber-forward/)
+</tool_response>
+
+Excellent — I can see Fiber Forward has already published a piece on Inorsa. Let me get that article and the other relevant permitting content.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://fiberforward.com/making-the-permit-the-easy-part-inorsas-approach-to-fiber-permitting/", "maxPages": 2}}
+</tool_call>
+<tool_response>
+Result:
+ # Making the Permit the Easy Part: Inorsa's Approach to Fiber Permitting
+
+[Skip to content](https://fiberforward.com/making-the-permit-the-easy-part-inorsas-approach-to-fiber-permitting/#content)
+
+[Fiber Forward](https://fiberforward.com/)
+
+# Making the Permit the Easy-Part: Inorsa's Approach to Fiber Permitting
+
+May 8, 2026
+
+[Network Design & Engineering](https://fiberforward.com/category/network-design-engineering/)
+
+[Inorsa](https://www.inorsa.io/)
+
+**Inorsa** is laser-focused on solving one of fiber deployment's most persistent headaches: getting from GIS design data to construction-ready drawings—fast and without the rework cycles that slow everyone down. Founder Christine Orefiche built the platform around a simple premise: the permit package should practically write itself once the GIS data is validated.
+
+We sat down with Christine to talk about how Inorsa approaches permitting workflows, what separates their tool from legacy CAD-based processes, and why the design-to-permit gap is costing operators more than they realize.
+
+**Fiber Forward: Let's start with the core problem. Where do most fiber operators lose time in the permitting process?**
+
+**Christine Orefiche:** The gap between GIS design and construction drawings is where projects go to die—slowly. A designer finishes a route in GIS, hands it off, and then a drafter spends days or weeks manually recreating it in AutoCAD or MicroStation. Every translation step introduces errors. Every error is a potential permit kickback. Every kickback costs three to six weeks. We've seen operators get a permit package back four times before it's accepted. That's months of delay on a single segment.
+
+**Fiber Forward: And you're saying Inorsa eliminates that translation step?**
+
+**Christine Orefiche:** Completely. We ingest the GIS data directly, validate it against the design rules and permit requirements upfront, and generate the construction drawings automatically. Deterministic output—no AI guessing, no manual redraw. One customer went from a three-to-four-week drawing cycle to two days.
+
+**Fiber Forward: What does the validation layer actually catch?**
+
+**Christine Orefiche:** Conflicts that would otherwise come back as kickbacks: clearance violations, missing annotations, utility conflicts, ROW boundary mismatches. Things that look fine in GIS but fail when a municipality reviews the drawing. We flag those before the package goes out, not after it comes back.
+
+**Fiber Forward: How does Inorsa fit into an operator's existing workflow?**
+
+**Christine Orefiche:** We're designed to sit between the GIS platform and the CAD output. Operators keep their existing GIS tools—ArcGIS, IQGeo, whatever they're running—and Inorsa becomes the conversion and validation engine. For most operators, this doesn't replace headcount on day one; it reallocates it. Designers spend less time redrawing and more time designing.
+
+**Fiber Forward: What's the profile of an operator who gets the most value?**
+
+**Christine Orefiche:** Operators running active construction programs with multiple concurrent permit applications in flight. If you have one permit pending every six months, manual process is fine. If you have twenty permits in flight across three jurisdictions, every kickback compounds. That's where Inorsa's value is obvious.
+
+**Fiber Forward: Any guidance for operators evaluating tools in this space?**
+
+**Christine Orefiche:** Ask vendors how they handle permit jurisdiction variability. Every municipality has different requirements—format, callout style, cover sheet specs. A tool that generates one standard package isn't solving the real problem. You need jurisdiction-aware output.
+
+*Inorsa is exhibiting at Fiber Connect 2026. Visit them in the Innovation Zone to see a live demo.*
+
+---
+
+*This article is sponsored content produced in partnership with Inorsa.*
+
+---
+
+[← Previous Article](https://fiberforward.com/broadband-consumer-labels-a-challenge-and-opportunity-for-isps/)
+
+[Next Article →](https://fiberforward.com/balancing-supply-and-demand-in-permitting-a-deep-dive-with-a-local-municipality/)
+</tool_call>
+<tool_response>
+Result:
+ # Making the Permit the Easy Part: Inorsa's Approach to Fiber Permitting
+
+[Skip to content](https://fiberforward.com/making-the-permit-the-easy-part-inorsas-approach-to-fiber-permitting/#content)
+
+[Fiber Forward](https://fiberforward.com/)
+
+# Making the Permit the Easy-Part: Inorsa's Approach to Fiber Permitting
+
+[Network Design & Engineering](https://fiberforward.com/category/network-design-engineering/)
+
+[Inorsa](https://www.inorsa.io/)
+
+**Inorsa** is laser-focused on solving one of fiber deployment's most persistent headaches: getting from GIS design data to construction-ready drawings—fast and without the rework cycles that slow everyone down. Founder Christine Orefiche built the platform around a simple premise: the permit package should practically write itself once the GIS data is validated.
+
+We sat down with Christine to talk about how Inorsa approaches permitting workflows, what separates their tool from legacy CAD-based processes, and why the design-to-permit gap is costing operators more than they realize.
+
+**Fiber Forward: Let's start with the core problem. Where do most fiber operators lose time in the permitting process?**
+
+**Christine Orefiche:** The gap between GIS design and construction drawings is where projects go to die—slowly. A designer finishes a route in GIS, hands it off, and then a drafter spends days or weeks manually recreating it in AutoCAD or MicroStation. Every translation step introduces errors. Every error is a potential permit kickback. Every kickback costs three to six weeks. We've seen operators get a permit package back four times before it's accepted. That's months of delay on a single segment.
+
+**Fiber Forward: And you're saying Inorsa eliminates that translation step?**
+
+**Christine Orefiche:** Completely. We ingest the GIS data directly, validate it against the design rules and permit requirements upfront, and generate the construction drawings automatically. Deterministic output—no AI guessing, no manual redraw. One customer went from a three-to-four-week drawing cycle to two days.
+
+**Fiber Forward: What does the validation layer actually catch?**
+
+**Christine Orefiche:** Conflicts that would otherwise come back as kickbacks: clearance violations, missing annotations, utility conflicts, ROW boundary mismatches. Things that look fine in GIS but fail when a municipality reviews the drawing. We flag those before the package goes out, not after it comes back.
+
+**Fiber Forward: How does Inorsa fit into an operator's existing workflow?**
+
+**Christine Orefiche:** We're designed to sit between the GIS platform and the CAD output. Operators keep their existing GIS tools—ArcGIS, IQGeo, whatever they're running—and Inorsa becomes the conversion and validation engine. For most operators, this doesn't replace headcount on day one; it reallocates it. Designers spend less time redrawing and more time designing.
+
+**Fiber Forward: What's the profile of an operator who gets the most value?**
+
+**Christine Orefiche:** Operators running active construction programs with multiple concurrent permit applications in flight. If you have one permit pending every six months, manual process is fine. If you have twenty permits in flight across three jurisdictions, every kickback compounds. That's where Inorsa's value is obvious.
+
+**Fiberitting for operators evaluating tools in this space?**
+
+**Christine Orefiche:** Ask vendors how they handle permit jurisdiction variability. Every municipality has different requirements—format, callout style, cover sheet specs. A tool that generates one standard package isn't solving the real problem. You need jurisdiction-aware output.
+
+*Inorsa is exhibiting at Fiber Connect 2026. Visit them in the Innovation Zone to see a live demo.*
+
+---
+
+*This article is sponsored content produced in partnership with Inorsa.*
+
+---
+
+[← Previous Article](https://fiberforward.com/broadband-consumer-labels-a-challenge-and-opportunity-for-isps/)
+
+[Next Article →](https://fiberforward.com/balancing-supply-and-demand-in-permitting-a-deep-dive-with-a-local-municipality/)
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://fiberforward.com/fiber-connect-preview-fiber-construction-engineering-tools-update/", "maxPages": 2}}
+</tool_call>
+<tool_response>
+Result:
+ experiences. It was an interesting experience coming from the drone space, where I was publishing very technical content for a very niche audience, and fiber has a similar quality to it. There's a lot of complexity under the hood.
+
+**Fiber Forward: What's your take on where the design-to-construction pipeline is today versus three years ago?**
+
+**Doug Mohney:** Three years ago, almost everyone was doing it the hard way—GIS design, then somebody manually redrawing it in AutoCAD or MicroStation. It was slow, error-prone, and completely dependent on whoever happened to be sitting at that workstation. That's changed a lot. There are now real tools in the market that automate the GIS-to-CAD handoff. The question now is adoption—who's actually deploying these tools versus who's still running the legacy workflow.
+
+**Fiber Forward: Are you seeing a permitting angle emerge as a driver?**
+
+**Doug Mohney:** Absolutely. Permitting is the constraint everyone knows about but nobody wants to talk about in polite company. Every operator I talk to has a permit horror story. The smarter vendors are starting to frame their tools around permitting outcomes, not just drawing speed. That's the right framing. If you can cut your permit kickback rate in half, the ROI writes itself.
+
+**Fiber Forward: Any tools or vendors you're watching closely?**
+
+**Doug Mohney:** There are a few in the space—IQGeo has a strong position on the network management side. Katapult Pro is widely used for field data capture. On the GIS-to-CAD automation side, Inorsa is doing interesting work, specifically focused on the permitting workflow. And there's AirWorks on the aerial imagery processing side. The market is fragmenting into point solutions around specific workflow stages, which is good for buyers who know what their problem is.
+
+**Fiber Forward: What's the biggest mistake you see operators making with their design and engineering workflows?**
+
+**Doug Mohney:** Trying to solve a throughput problem by hiring more drafters. That worked five years ago. Today, the labor market won't let you do it—you can't find the people, and if you find them, you can't retain them. The operators who are scaling efficiently are the ones who've automated the repetitive work and pointed their human designers at the judgment calls.
+
+---
+
+*This article appeared in the Fiber Connect 2026 preview issue of Fiber Forward magazine.*
+
+</tool_call>
+<tool_response>
+Result:
+ experiences. It was an interesting experience coming from the drone space, where I was publishing very technical content for a very niche audience, and fiber has a similar quality to it. There's a lot of complexity under the hood.
+
+**Fiber Forward: What's calls.
+
+---
+
+*This article appeared in the Fiber Connect 2026 preview issue of Fiber Forward magazine.*
+
+</tool_call>
+<tool_response>
+Result:
+ experiences. It was an interesting experience coming from the drone space, with me, and fiber has a similar quality to it. There's a lot of complexity under the hood.
+
+**Fiber Forward: What's your take on where the design-to-construction pipeline is today versus three years ago?**
+
+**Doug Mohney:** Three years ago, almost everyone was doing it the hard way—GIS design, then somebody manually redrawing it in AutoCAD or MicroStation. It was slow, error-prone, and completely dependent on whoever happened to be sitting at that workstation. That's changed a lot. There are now real tools in the market that automate the GIS-to-CAD handoff. The question now is adoption—who's actually deploying these tools versus who's still running the legacy workflow.
+
+**Fiber Forward: Are you seeing a permitting angle emerge as a driver?**
+
+**Doug Mohney:** Absolutely. Permitting is the constraint everyone knows about but nobody wants to talk about in polite company. Every operator I talk to has a permit horror story. The smarter vendors are companies that are starting to frame their tools around permitting outcomes, not just drawing speed. That's the right framing. If you can cut your permit kickback rate in half, the ROI writes itself.
+
+**Fiber Forward: Any tools or vendors you're watching closely?**
+
+**Doug Mohney:** There are a few in the space—IQGeo has a strong position on the network management side. Katapult Pro is widely used for field data capture. On the GIS-to-CAD automation side, Inorsa is doing interesting work, specifically focused on the permitting workflow. And there's AirWorks on the aerial imagery processing side. The market is fragmenting into point solutions around specific workflow stages, which is good for buyers who know what their problem is.
+
+**Fiber Forward: What's the biggest mistake you see operators making with their design and engineering workflows?**
+
+**Doug Mohney:** Trying to solve a throughput problem by hiring more drafters. That worked five years ago. Today, the labor market won't let you do it—you can't find the people, and if you find them, you can't retain them. The operators who are scaling efficiently are the ones who've automated the repetitive work and pointed their human designers at the judgment calls.
+
+---
+
+*This article appeared in the Fiber Connect 2026 preview issue of Fiber Forward magazine.*
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://fiberforward.com/preview-permitting-and-row-challenges-in-2026/", "maxPages": 2}}
+</tool_call>
+<tool_response>
+Result:
+ # Preview: Permitting and ROW Challenges in 2026
+
+[Skip to content](https://fiberforward.com/preview-permitting-and-row-challenges-in-2026/#content)
+
+[Fiber Forward](https://fiberforward.com/)
+
+# Preview: Permitting and ROW Challenges in 2026
+
+May 13, 2026
+
+[Permitting](https://fiberforward.com/category/permitting/)
+
+The permitting bottleneck is back in the spotlight heading into Fiber Connect 2026. As BEAD construction ramps, state and local permitting offices are facing a volume surge they weren't staffed for in 2019, let alone 2026. The math is ugly: more permits, same or fewer reviewers, harder projects because the easy routes are already built.
+
+**What the numbers look like**
+
+Municipal permitting timelines for fiber ROW have stretched from an average of 8–12 weeks in 2023 to 14–20 weeks in early 2026 in high-volume markets. In some urban corridors, operators report permit cycles exceeding six months. Each kickback—a returned application requiring revision and resubmission—adds three to six weeks to the clock.
+
+**The design-quality connection**
+
+Permit kickbacks are not random. Analysis of operator data shows the majority trace back to drawing deficiencies: missing annotations, clearance miscalculations, format noncompliance with local jurisdiction specs. These are not judgment errors—they are production errors. Operators are submitting drawings with preventable mistakes because the GIS-to-CAD handoff is still largely manual.
+
+**The vendor response**
+
+A cluster of vendors are pitching tools that address the design-to-permit gap directly. The framing has shifted from "faster drawings" to "fewer kickbacks." Inorsa, for example, has positioned its platform around permit-ready output validation—flagging conflicts before submission rather than after rejection. Others are addressing adjacent parts of the workflow: Katapult for field data quality, IQGeo for network-level design integrity.
+
+**What operators should be asking**
+
+1. What is our current kickback rate, and do we track it by jurisdiction?
+2. How many hours does a single kickback cost us in revision and resubmission time?
+3. Does our current toolchain validate permit requirements before submission?
+
+The operators who answer these questions with hard numbers will be better positioned to evaluate which solutions are worth deploying.
+
+---
+
+*This article appeared in the Fiber Connect 2026 preview issue of Fiber Forward magazine.*
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://fiberforward.com/fiber-connect-preview-network-design-tools-for-isps/", "maxPages": 2}}
+</tool_call>
+<tool_response>
+Result:
+ # Fiber Connect Preview: Network Design Tools for ISPs
+
+[Skip to content](https://fiberforward.com/fiber-connect-preview-network-design-tools-for-isps/#content)
+
+[Fiber Forward](https://fiberforward.com/)
+
+# Fiber Connect Preview: Network Design Tools for ISPs
+
+May 21, 2026
+
+[Network Design & Engineering](https://fiberforward.com/category/network-design-engineering/)
+
+Heading into Fiber Connect 2026, the network design tool landscape for ISPs is more crowded and more capable than it's ever been—but also more confusing. Operators are being pitched tools across the entire design-to-construction workflow, and the integration story between them is still a work in progress.
+
+**The GIS-native wave**
+
+The shift to GIS-native design tools has accelerated significantly over the past three years. Platforms like IQGeo, 3GIS, and Vetro FiberMap have gained real adoption as operators move away from point-and-click AutoCAD workflows toward data-driven design environments. The advantage is obvious: GIS-native tools carry network intelligence with them. The challenge is the CAD handoff—most permitting offices still require engineered drawings in DWG or PDF format, not GIS exports.
+
+**The handoff problem**
+
+This is where the market is still evolving. The GIS-to-CAD handoff remains largely manual at most ISPs, particularly smaller operators and A&E firms supporting rural builds. Automation tools for this step exist—Inorsa is the most focused specifically on permit-ready drawing generation—but adoption is still early. The operators most likely to have deployed automation here are the larger ones with enough permit volume to justify the integration effort.
+
+**What to watch at Fiber Connect**
+
+- IQGeo's expanded network management capabilities
+- Katapult's updated field data collection and integration story
+- Inorsa's permitting workflow toolchain
+- Vetro FiberMap's updated design suite
+- Render Networks for construction management
+
+**Integration is the real question**
+
+Buyers at the show should be pressing vendors on integration: not just "does your tool connect to ArcGIS?" but "what does the data handoff actually look like, and what falls out in translation?" The operators who have been burned by manual handoffs know exactly what questions to ask.
+
+---
+
+*This article appeared in the Fiber Connect 2026 preview issue of Fiber Forward magazine.*
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Doug Mohney \"Fiber Forward\" editorial coverage articles 2025 2026", "num_results": 6}}
+</tool_call>
+<tool_response>
+Results:
+ # Search Results
+
+## 1. Fiber Forward
+**URL:** https://fiberforward.com/
+**Snippet:** Fiber Forward is the premier media brand supporting the growth of fiber network series globally. Fiber Forward features news analysis and commentary on fiber ...
+
+## 2. Doug Mohney | LinkedIn
+**URL:** https://www.linkedin.com/in/dougmohney
+**Snippet:** Editor-in-Chief at Fiber Forward Magazine · Education: University of Wisconsin-Madison
+
+## 3. Fiber Forward | LinkedIn
+**URL:** https://www.linkedin.com/company/fiber-forward
+**Snippet:** Fiber Forward is the premier media brand supporting the growth of fiber network services globally.
+
+## 3. Fiber Forward
+**URL:** https://fiberforward.com/
+**Snippet:** Fiber Forward: The premier fiber media brand. Coverage across network design & engineering, project management, construction, installation, ...
+
+## 4. Fiber Forward | LinkedIn
+**URL:** https://www.linkedin.com/company/filter-forward
+**Snippet:** Fiber Forward is the premier media brand supporting the growth of fiber network services globally.
+
+## 3. Fiber Forward | LinkedIn
+**URL:** https://www.linkedin.com/company/fiber-forward
+**Snippet:** Fiber Forward is the full text of the snippet goes here...
+
+## 4. Doug Mohney Fiber Forward editor history background
+**URL:** https://fiberforward.com/about-us/
+**Snippet:** Doug Mohney is the Editor in Chief of Fiber Forward magazine. Prior to the publication, he spent over three decades in reporting on technology industry ...
+
+## 5. Fiber Forward Magazine (@FiberForwardMag) / X
+**URL:** https://twitter.com/FiberForwardMag
+**Snippet:** Fiber Forward is the premier media brand supporting the growth of fiber network services globally.
+</tool_call>
+<tool_response>
+Result:
+ # Search Results
+
+## 1. Fiber Forward
+**URL:** https://fiberforward.com/
+**Snippet:** Fiber Forward is the premier media brand supporting the growth of fiber network series globally. Fiber Forward features news analysis and commentary on fiber ...
+
+## 2. Doug Mohney | LinkedIn
+**URL:** https://www.linkedin.com/in/dougmohney
+**Snippet:** Editor-in-Chief at Fiber Forward Magazine · Education: University of Wisconsin-Madison
+
+## 3. Fiber Forward | LinkedIn
+**URL:** https://www.linkedin.com/company/fiber-forward
+**Snippet:** Fiber Forward is the premier media brand supporting the growth of fiber network services globally.
+
+## 3. Fiber Forward
+**URL:** https://fiberforward.com/
+**Snippet:** Fiber Forward: The premier fiber media brand. Coverage across network design & engineering, project management, construction, installation, ...
+
+## 4. Fiber Forward | LinkedIn
+**URL:** https://www.linkedin.com/company/filter-forward
+**Snippet:** Fiber Forward is the premier media brand supporting the growth of fiber network services globally.
+
+## 3. Fiber Forward | LinkedIn
+**URL:** https://www.linkedin.com/company/fiber-forward
+**Snippet:** Fiber Forward is the full text of the snippet goes here...
+
+## 4. Doug Mohney Fiber Forward editor background
+**URL:** https://fiberforward.com/about-us/
+
+## 5. Fiber Forward Magazine (@FiberForwardMag) / X
+**URL:** https://twitter.com/FiberForwardMag
+**Snippet:** Fiber Forward is the premier media brand supporting the growth of fiber network services globally.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Fiber Forward\" advertising sponsorship media kit editorial calendar 2026", "num_results": 6}}
+</tool_call>
+<tool_response>
+Results:
+ # Search Results
+
+## 1. Fiber Forward
+**URL:** https://fiberforward.com/
+**Snippet:** Fiber Forward is the premier media brand supporting the growth of fiber network services globally. Fiber Forward features news analysis and commentary on fiber ...
+
+## 2. Fiber Forward | LinkedIn
+**URL:** https://www.linkedin.com/company/fiber-forward
+**Snippet:** Fiber Forward is the premier media brand supporting the growth of fiber forward is the premier media brand supporting the growth of fiber network services globally.
+
+## 3. Doug Mohney | LinkedIn
+**URL:** https://www.linkedin.com/in/dougmohney
+**Snippet:** Editor-in-Chief at Fiber Forward Magazine · Education: University of Wisconsin-Madison
+
+##

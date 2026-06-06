@@ -1,0 +1,41 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Salvatore Orefiche holds the title 'Director, Business Development – IoT, Smart Infrastructure, Industrial Monitoring' at Westell Technologies (Aurora, IL). This is a BD/commercialization role, not an engineering or operations role — meaning he is most likely identifying partnership, channel, or integration opportunities rather than directly procuring design software. Source: lead record + Westell public company profile.",
+    "Westell Technologies is NOT a fiber ISP, CLEC, or A&E engineering firm. Westell is a hardware/technology company historically known for telecom edge equipment (DSL, network enclosures, remote monitoring units). Their current product lines include ActiveLink (remote monitoring/management for cell sites and distributed networks), industrial IoT sensors, and smart infrastructure solutions. Source: westell.com product pages and company overview.",
+    "Westell's go-to-market in 2024-2026 has pivoted toward smart infrastructure monitoring — power, HVAC, environmental sensing for telecom infrastructure. Their IoT/industrial monitoring products are sold to tower companies, utilities, municipalities, and enterprises — not to fiber construction crews or GIS/CAD design teams. Source: westell.com/products and recent press releases.",
+    "Orefiche's title specifically covers IoT, Smart Infrastructure, and Industrial Monitoring — the three fastest-growing segments for Westell. This suggests he is driving new business verticals for Westell's hardware/sensor products, not buying design or permitting software for internal use. Source: lead record title analysis + Westell product portfolio.",
+    "Westell has no meaningful fiber construction or network design division. They do not build or design fiber networks; they sell monitoring and management hardware to those who do. The GIS-to-CAD workflow pain that Inorsa solves does not map to Westell's internal operations. Source: westell.com, no fiber construction division found.",
+    "Salvatore Orefiche's LinkedIn profile (not directly scraped but inferable from title and company) suggests a BD/partnerships profile focused on selling Westell's IoT products into new verticals. He may have attended Fiber Connect 2026 as a vendor looking to sell into the fiber operator audience — not as a buyer of design tools. Source: title + conference attendee behavior inference.",
+    "Westell is a small-to-mid cap public company (WSTL on NASDAQ, ~$30M-$50M revenue range historically). Budget authority for software procurement outside core product lines would likely sit with a VP of IT, VP of Operations, or the CTO/COO — not a Director of BD. Orefiche's budget control is likely limited to partnership/channel spend, not software licensing. Source: Westell investor relations / NASDAQ filings.",
+    "No direct quote from Orefiche found in trade press (bbcmag.com, lightreading.com, etisoftware.com, or Broadband Communities). No speaker/panel appearances at Fiber Connect 2026 found for this name. Source: search not returning results — not found.",
+    "ICP classification of 'hold' appears well-founded: Westell attends fiber industry conferences as a VENDOR, not as a fiber builder or designer. Orefiche's attendance is most plausibly for lead generation for Westell's own products, not to purchase design/permitting software. Source: company profile + title analysis.",
+    "Potential indirect angle: Westell sells into fiber operators and municipalities. If Inorsa is building a partner ecosystem or looking for channel partners who touch fiber operators, Orefiche could be a referral/channel relationship — not an end-user sale. However, this is a stretch and outside Inorsa's stated motion. Source: inference from Westell's channel-facing BD role."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Could not confirm Orefiche's specific LinkedIn profile URL or career history prior to Westell — no direct scrape available.",
+    "Could not find any public quotes, podcast appearances, or panel presentations by Salvatore Orefiche at any conference.",
+    "Could not determine whether Westell has any internal GIS, CAD, or fiber network design function (e.g., for their own infrastructure) — though this seems unlikely given their business model.",
+    "No booth scan data available to identify other Westell attendees at Fiber Connect 2026 who might be more relevant contacts.",
+    "Could not confirm Orefiche's tenure at Westell or prior companies — career arc unknown.",
+    "Did not find any BEAD-related initiatives or fiber construction partnerships announced by Westell that would create an indirect hook."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP 'hold' designation is correct and should likely be downgraded to 'not qualified' for Inorsa's core motion. Westell is a hardware vendor to the fiber ecosystem, not a fiber builder, ISP, or engineering firm. Inorsa's value prop (GIS-to-CAD, permitting cycle reduction, construction drawing generation) has no internal operational fit at Westell.",
+    "Batch Tier D (Ungraded) is appropriate — there is no signal this contact has budget or authority to purchase design/permitting software, and no evidence of internal fiber design operations at Westell.",
+    "The instinct to treat conference attendees as fiber buyers should be resisted here. Fiber Connect draws a large vendor/supplier audience. Westell's presence is almost certainly as an exhibitor or business development team targeting fiber operators — not as a prospect for tools like Inorsa.",
+    "Any outreach treating Orefiche as a typical fiber operator or A&E engineering buyer would be poorly targeted and likely to generate a confused or negative response."
+  ],
+  "topInsight": "Westell Technologies is a hardware/IoT vendor to the telecom and fiber ecosystem — not a fiber builder, ISP, or engineering firm. Salvatore Orefiche is a Business Development Director selling Westell's monitoring products into smart infrastructure verticals. He almost certainly attended Fiber Connect 2026 to sell, not to buy. Inorsa's GIS-to-CAD and permitting workflow value prop has no identifiable fit for his role or his company's operations. Recommend deprioritizing this contact for direct Inorsa outreach unless a partnership/channel angle is being actively explored — in which case a single low-effort email noting Inorsa's operator customer base as a potential referral network is the maximum appropriate investment.",
+  "sourcesUsed": [
+    "https://www.westell.com/products",
+    "https://www.westell.com/about",
+    "https://ir.westell.com (NASDAQ: WSTL investor relations)",
+    "Lead record: Salvatore Orefiche, Director BD IoT/Smart Infrastructure/Industrial Monitoring, Westell Technologies",
+    "Industry baseline: Fiber Connect 2026 attendee profile inference",
+    "Westell product portfolio: ActiveLink, Industrial Monitoring, Smart Infrastructure — westell.com"
+  ]
+}
+```

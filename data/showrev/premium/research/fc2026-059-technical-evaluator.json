@@ -1,42 +1,377 @@
-I have enough data to compile the Technical Evaluator findings. Here is the output:
+I'll systematically research Hilliary's technical stack and workflow, starting with job postings, then vendor case studies, then direct site research.
 
-```json
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "Hilliary Exchange fiber Oklahoma hiring careers AutoCAD GIS design", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
 {
-  "role": "Technical Evaluator",
-  "keyFindings": [
-    "Hilliary's open engineering roles are 100% IP/transport layer — CCNP/CCIE, BGP, OSPF, MPLS, DWDM. Zero OSP designer, GIS technician, or fiber drafter postings found on hilliary.com/careers, Indeed, or LinkedIn. This is the single strongest signal that Hilliary outsources its OSP design and permit-drawing work rather than running an in-house design team. Source: hilliary.com/careers/network-engineer/, hilliary.com/careers/network-engineer-2-lawton-ok/",
-    "Centillion Solutions provides exactly the workflow Inorsa targets: AutoCAD, ESRI ArcGIS, 3-GIS, BST-CAD, Bentley Comms — covering 'high-level & low-level designs, construction drawings, and permit preparation' for FTTx/FTTH. They are an IQGeo reseller/partner AND a construction-drawing vendor. If Hilliary is a Centillion client, they are already inside the exact workflow Inorsa would touch. Source: centillionsolutions.com/wireline-fttx/",
-    "Centillion Solutions was acquired by Osmose Utilities Services in October 2025. Osmose is a utility asset-management company, not a telecom-native engineering firm. Post-acquisition vendor disruption — pricing changes, service model shifts, talent attrition — is a credible risk for any Centillion client right now. This creates a potential opening: if Adam is evaluating his OSP design vendor relationship post-acquisition, Inorsa enters that conversation at a structurally advantageous moment. Source: osmose.com/news/osmose-acquires-centillion-solutions-inc",
-    "IQGeo is a network planning and management platform — it handles network inventory, field operations, and design workflows. It does NOT generate permit-ready construction drawings or run permit-package validation. IQGeo's Fiber Connect 2026 preview focused on a 'Unified Fieldworker App' and autonomous AI agents for data quality and network planning — further confirming it operates upstream of permit generation. Source: iqgeo.com/news/iqgeo-to-preview-unified-fieldworker-app-at-fiber-connect-2026",
-    "The NVIDIA reference in the booth note ('something with NVIDIA that seems similar to what we do') most likely points to a NOC or network operations AI tool — not a fiber design or permit-drawing tool. NVIDIA's telecom AI focus is on network configuration, NOC automation, and inference optimization. Hilliary's IP-heavy engineering team would plausibly be evaluating NVIDIA-accelerated NOC tools. This is a different category than Inorsa entirely, which explains Adam's own uncertainty ('seems similar... although the video caused confusion'). Source: blogs.nvidia.com/blog/telecom-agentic-ai-for-network-operations/, build.nvidia.com/nvidia/telco-network-configuration"
-  ],
-  "evidenceStrength": "moderate",
-  "gaps": [
-    "No confirmed named Hilliary-Centillion customer relationship found — the Brain data 'Centillion just publicly endorsed' fragment could not be sourced to a Hilliary-specific reference. It may refer to Centillion's IQGeo partnership announcement, not a Hilliary endorsement.",
-    "Cannot confirm whether Hilliary uses Centillion, CHR Solutions, Entrust Solutions Group, or another OSP design vendor — no case study, press release, or job posting names their design partner.",
-    "The specific NVIDIA tool Adam referenced at the booth remains unidentified. No Hilliary-NVIDIA partnership or product deployment found anywhere in public records.",
-    "Hilliary's careers page did not render active job listings at time of fetch — only general copy. Job posting content is stale or gated. Cannot confirm whether any OSP/GIS design roles have been posted historically.",
-    "No visibility into whether Centillion's Osmose acquisition has affected Hilliary's vendor relationship — no press, no comment from either party about customer continuity."
-  ],
-  "challengesToOtherFindings": [
-    "AE Proxy connects 'Centillion just publicly endorsed' to a Hilliary-Centillion tool relationship. This is unsupported. The Brain fragment is almost certainly a scrape artifact from Centillion's own IQGeo case study announcement, not a Hilliary statement. The Hilliary-Centillion relationship is plausible but unconfirmed — it should be framed as a hypothesis, not a finding.",
-    "AE Proxy frames the NVIDIA confusion as evidence Adam is evaluating AI-powered design tools similar to Inorsa. The technical evidence does not support this. NVIDIA's telecom AI product line is NOC and network operations focused — not permit-drawing generation. The confusion at the booth is more likely a category mismatch (Adam saw a network operations AI demo and partially mapped it to what Inorsa does) than evidence he is actively evaluating Inorsa-adjacent tools.",
-    "AE Proxy concludes Inorsa and IQGeo are 'not the same category.' Correct directionally, but the boundary deserves sharper specification for the pitch: IQGeo handles planning and field management upstream; Inorsa handles validated drawing output and permit-package generation downstream. These can coexist. If Hilliary is already on IQGeo via Centillion, the pitch is 'Inorsa plugs into the back end of your IQGeo workflow' — not 'replace IQGeo.'",
-    "The outsourced-design hypothesis (no in-house OSP designers found) significantly changes the Inorsa pitch framing. AE Proxy's 'Cavazos is a builder who knows the pain from inside the work' framing assumes he owns the design workflow directly. But if his team outsources to Centillion, he experiences permit pain as a downstream outcome (delays, kickbacks) rather than as a workflow actor. The pitch should lead with permit kickback cost-per-week impact, not with design workflow efficiency."
-  ],
-  "topInsight": "Hilliary almost certainly outsources its fiber construction drawing and permit preparation work — their engineering team is IP/transport, not OSP design. The likely vendor is Centillion Solutions (or a firm like it), which was just acquired by Osmose in October 2025, creating near-term vendor uncertainty. Inorsa's pitch to Adam should not position against IQGeo or NVIDIA — those are different categories. The single-sentence value statement: 'Whatever firm prepares your construction drawings today, Inorsa validates them before submission and eliminates the permit kickbacks that are costing your 11-county buildout 3-6 weeks per return.' The Osmose acquisition gives Adam a concrete reason to be evaluating his design vendor stack right now.",
-  "sourcesUsed": [
-    "https://hilliary.com/careers/network-engineer/",
-    "https://hilliary.com/careers/network-engineer-2-lawton-ok/",
-    "https://hilliary.com/careers/",
-    "https://www.centillionsolutions.com/wireline-fttx/",
-    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
-    "https://finance.yahoo.com/news/osmose-acquires-centillion-solutions-inc-140000981.html",
-    "https://www.iqgeo.com/customer-stories/centillion-solutions",
-    "https://www.iqgeo.com/news/iqgeo-to-preview-unified-fieldworker-app-at-fiber-connect-2026",
-    "https://blogs.nvidia.com/blog/telecom-agentic-ai-for-network-operations/",
-    "https://build.nvidia.com/nvidia/telco-network-configuration",
-    "https://hilliary.com/careers/network-operations-center-engineer-lawton-ok/"
+  "query": "Hilliary Exchange fiber Oklahoma hiring careers AutoCAD GIS design",
+  "results": [
+    {
+      "url": "https://www.ziprecruiter.com/c/Hilliary-Exchange,-Inc./Jobs",
+      "title": "Jobs at Hilliary Exchange, Inc.",
+      "content": "Hilliary Exchange, Inc. Jobs  \nHilliary Exchange, Inc. Company Overview  \n\nHilliary Exchange, Inc. is headquartered in Lawton, OK and has 1 location.\nWe were unable to load jobs at this time.  \n\nPopular Searches  \nData Analyst Jobs  \nAnalyst Jobs  \nEngineer Jobs  \nHR Jobs  \nAccountant Jobs",
+      "score": 0.7232
+    },
+    {
+      "url": "https://hilliary.com/",
+      "title": "Hilliary | Rural Internet - Fiber - TV - Phone",
+      "content": "Hilliary | Rural Internet - Fiber - TV - Phone\n\nHilliary\nMenu\n\nFor Home\nFor Business\nSupport\nAbout\nContact\nCareers\n\n\nPure Local, Pure Fast\nFiber to the Home\n\nThe fastest internet on the planet, made to fit your community. At Hilliary, we live, work, and play here, too.\n\n\nInternet\nInternet\n\n\nCheck Availability\n\n\nTV\n\n\nPhone\n\n\nBusiness\n\n\nSupport\n\n\nAbout Hilliary\n\n\nCareers\n\n\n\n\nFor Home\n\nInternet\n\n\n2 Gig\n\n\n1 Gig\n\n\n500 Mbps\n\n\n200 Mbps\n\n\nTV\n\n\nPhone\n\n\nFor Business\n\n\nInternet\n\n\nBusiness Phone\n\n\nSupport\n\n\nKnowledge Base\n\n\nNetwork Status\n\n\nContact Support\n\n",
+      "score": 0.6695
+    },
+    {
+      "url": "https://www.linkedin.com/company/hilliary-exchange-inc-",
+      "title": "Hilliary Exchange, Inc. | LinkedIn",
+      "content": "Hilliary Exchange, Inc. | 502 followers on LinkedIn. We are a Telecommunications Company | Hilliary is a telecommunications company based in Lawton, Oklahoma. We offer a variety of services including fiber internet, cable TV, and voice (telephone) services to residential and business customers in southwest Oklahoma.",
+      "score": 0.0965
+    }
   ]
 }
-```
+</tool_response>
+
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "Hilliary Exchange Lawton Oklahoma fiber design engineering team tools stack", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
+{
+  "query": "Hilliary Exchange Lawton Oklahoma fiber design engineering team tools stack",
+  "search_depth": "advanced",
+  "results": [
+    {
+      "url": "https://hilliary.com/about",
+      "title": "About | Hilliary",
+      "content": "About | Hilliary\n\nHilliary\nMenu\n\nFor Home\nFor Business\n\nSupport\nAbout\nContact\nCareers\n\n\nAbout Hilliary\n\nWe were founded in 1949 as a rural telephone cooperative serving southwest Oklahoma. Our mission has always been connecting communities and people together. We have always believed that those in rural communities deserve the same access to technology as those in metropolitan areas.\n\nWe are proud to invest in our communities across southwest Oklahoma, now building our fiber network to provide next-generation services to our customers.\n\nCurrently, Hilliary has 3 community locations in Lawton, Elgin, and Cache.\n\nContact\n\nOK\n\n© 2025 Hilliary",
+      "score": 0.6618
+    },
+    {
+      "url": "https://hilliary.com/",
+      "https://hilliary.com/": "Hilliary | Rural Internet - Fiber - TV - Phone",
+      "title": "Hilliary | Rural Internet - Fiber - TV - Phone",
+      "content": "Hilliary | Rural Internet - Fiber - TV - Phone\n\nHilliary\nMenu\n\nFor Home\nFor Business\nSupport\nAbout\nContact\nCareers\n\n\nPure Local, Pure Fast\nFiber to the Home\n\nThe fastest internet on the planet, made to fit your community. At Hilliary, we live, work, and play here, too.\n                \n\nInternet\nInternet\n\n\nCheck Availability\n\n\nTV\n\n\nPhone\n\n\nBusiness\n\n\nSupport\n\n\nAbout Hilliary\n\n\nCareers\n\n\n\n\nFor Home\n\n\nInternet\n\n\n2 Gig\n\n\n1 Gig\n\n\n500 Mbsp\n\n\n200 Mbps\n\n\nTV\n\n\nPhone\n\n\nFor Business\n\n\nInternet\and \nBusiness Phone\n\n\nSupport\n\n\nKnowledge Base\n\n\nNetwork Status\n\n\nContact Support\n\n",
+      "score": 0.5803
+    },
+    {
+      "url": "https://www.linkedin.com/company/hilliary-exchange-inc-",
+      "title": "Hilliary Exchange, Inc. | LinkedIn",
+      "content": "Hilliary Exchange, Inc. | 502 followers on LinkedIn. We are a Telecommunications Company | Hilliary is a telecommunications company based in Lawton, Oklahoma. We offered a variety of services including fiber internet, cable TV, and voice (telephone) services to residential and business customers in southwest Oklahoma.",
+      "score": 0.3523
+    }
+  ]
+}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://hilliary.com/careers", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "metadata": {
+    "title": "Careers | Hilliary",
+    "description": "Hilliary | Careers",
+    "sourceURL": "https://hilliary.com/careers",
+    "statusCode": 200
+  },
+  "markdown": "# Careers\n\n## Join Our Team\n\nHilliary is constantly growing and looking for qualified candidates. Take a look at the open positions below and apply online.\n\nCurrent Openings\n\n© 2025 Hilliary"
+}
+</tool_response>
+
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "\"Hilliary\" OR \"Hilliary Exchange\" site:linkedin.com/jobs fiber design GIS CAD", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
+{
+  "query": "\"Hilliary\" OR \"Hilliary Exchange\" site:linkedin.com/jobs fiber design GIS CAD",
+  "search_depth": "advanced",
+  "results": [
+    {
+      "url": "https://www.linkedin.com/company/hilliary-exchange-inc-",
+      "title": "Hilliary Exchange, Inc. | LinkedIn",
+      "content": "Hilliary Exchange, Inc. | 502 followers on LinkedIn. We are a Telecommunications Company | Hilliary is a telecommunications company based in Lawton, Oklahoma. We offered a variety of services including fiber internet, cable TV, and voice (telephone) services to residential and business customers in southwest Oklahoma.",
+      "score": 0.5978
+    }
+  ]
+}
+</tool_call>
+<tool_response>
+No tool call was made.
+</tool_response>
+
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "Hilliary Exchange BEAD funding Oklahoma fiber construction 2025 2026", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
+{
+  "query": "Hilliary Exchange BEAD funding Oklahoma fiber construction 2025 2026",
+  "search_depth": "advanced",
+  "results": [
+    {
+      "url": "https://www.bbbreakingprogress.com/content/coverage-map",
+      "title": "Broadband Breaking Progress",
+      "content": "This map provides an overview of what broadband progress has been achieved for the nation and what is left to complete.",
+      "score": 0.3621
+    },
+    {
+      "url": "https://broadbandnow.com/report/municipal-broadband-networks/",
+      "title": "Community Broadband Networks: 2024 Report - BroadbandNow",
+      "content": "Community broadband networks, also known as municipal broadband or public broadband, are networks built and operated by the government or local organizations to offer high-speed internet access to members of the community.\nMunicipal broadband networks can be categorized into four types: utility-owned (using existing power/water infrastructure), public-private partnerships, community-owned (operated by local government or authority), and cooperatives (member-owned with shared costs). These types can sometimes overlap, as some networks may have both private and public ownership characteristics.\nBroadbandNow examined 600+ U.S. communities to compile a complete picture of the municipal broadband networks in the United States. For 2024, BroadbandNow found 724 community networks across the U.S., with more than 400 of them offering a residential fiber option.\nThree states that have the largest number of municipal networks include Texas (74 networks), Virginia (63 networks), and North Carolina (44 networks).\n\n## Largest Municipal Broadband Networks\n\n### Vermonters Telecommunications (VTC)\n\nVermonters Telecommunications (VTC)\n\nSurge is a fixed wireless access (FWA) broadband service provider that serves the rural communities and businesses of Vermont. Surge provides internet services to a wide variety of customers including residential, hospitality, municipal, and corporate clients. VTC currently provides service to 3,000+ locations throughout Vermont.\n\n",
+      "score": 0.3094
+    },
+    {
+      "url": "https://broadbandnow.com/report/municipal-broadband-networks/",
+      "url_2": "https://broadbandnow.com/report/municipal-broadband-projects/",
+      "title": "Community Broadband Networks: 2024 Report - BroadbandNow",
+      "content": "Community broadband networks, not found in the search results. \"Hilliary Exchange\" broadband networks have not been found in the search results.",
+      "score": 0.27
+    }
+  ]
+}
+</tool_response>
+
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "Hilliary Exchange Oklahoma BEAD ReConnect grant award fiber network", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
+{
+  "query": "Hilliary Exchange Oklahoma BEAD ReConnect grant award fiber network",
+  "search_depth": "advanced",
+  "results": [
+    {
+      "url": "https://www.fcc.gov/reports-research/maps/connect-america-fund-phase-ii-polygon-data/",
+      "title": "Connect America Fund Phase II Polygon Data | Federal Communications Commission",
+      "content": "Connect America Fund Phase II Polygon Data\nHome\nReports & Research\nMaps\nConnect America Fund Phase II Polygon Data\nThe following data represents the locations eligible for Connect America Fund Phase II (CAF II) support. Eligible locations are unserved areas in census blocks that were reported in FCC Form 477 as having no wireline broadband service at 25/3 Mbps or above.",
+      "score": 0.4072
+    },
+    {
+      "url": "https://broadbandusa.ntia.doc.gov/sites/default/files/2022-05/BroadbandUSA_Grant_Program_Summary.pdf",
+      "title": "Federal Broadband Funding Programs Summary",
+      "content": "Federal Broadband Funding Programs Summary\nPage 1 of 24\nThe following summary provides information on selected federal funding programs relevant to broadband development. For each program, this summary includes: basic information; funding source; applicant eligibility; purpose of funding; matching requirement; application information. The information is compiled from public documents, and some details may have changed since this summary was last updated. For additional details, please contact each agency directly.\n\n",
+      "score": 0.3485
+    },
+    {
+      "url": "https://www.usda.gov/reconnect",
+      "title": "ReConnect Loan and Grant Program",
+      "content": "The ReConnect Program provides loans and grants to facilitate broadband deployment in rural areas. Eligible applicants include: Incorporated organizations, Limited liability organizations, Cooperative or mutual organizations, Indian Tribes or Tribal Organizations, State or Local Governments and their subdivisions and agencies, Territories and Commonwealths and Economic Development Authorities.",
+      "score": 0.2762
+    }
+  ]
+}
+</tool_response>
+
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "\"Hilliary\" Oklahoma fiber award grant USDA ReConnect NTIA broadband", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
+{
+  "query": "\"Hilliary\" Oklahoma fiber award grant USDA ReConnect NTIA broadband",
+  "search_depth": "advanced",
+  "results": [
+    {
+      "url": "https://reconnect.usda.gov/s/funded-projects",
+      "title": "Funded Projects | ReConnect Program",
+      "content": "Funded Projects | ReConnect Program\n\nSearch for projects funded by the ReConnect Program\n\nReConnect Program | Funded Projects\n\nSearch funded projects\n\nProject Name\n\nOrganization Name\n\nState\n\nRound\n\nSearch\nClear\n\nProject Name\n\nOrganization Name\n\nState\n\nFiscal Year\n\nFunding Type\n\nTotal Award Amount\n\nTotal Project Cost\n\nService Area",
+      "score": 0.4297
+    },
+    {
+      "url": "https://broadbandusa.ntia.doc.gov/sites/default/files/2022-05/BroadbandUSA_Grant_Program_Summary.pdf",
+      "title": "Federal Broadband Funding Programs Summary",
+      "content": "Federal Broadband Funding Programs Summary\n\nPage 1 of 24\nThe following program summary provides information on selected federal funding programs relevant to broadband development. For each program, this summary includes: basic information; funding source; applicant eligibility; purpose of funding; matching requirement; application information. The information is compiled from public documents, and some details may have changed since this summary was last updated. For additional details, please contact each agency directly.\n",
+      "score": 0.3282
+    }
+  ]
+}
+</tool_response>
+
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "Hilliary Exchange Inc Oklahoma broadband award funding announcement", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
+{
+  "query": "Hilliary Exchange Inc Oklahoma broadband award funding announcement",
+  "search_depth": "advanced",
+  "results": {
+    "results": [
+      {
+        "url": "https://hilliary.com/about",
+        "title": "About | Hilliary",
+        "content": "We were founded in 1949 as a rural telephone cooperative serving southwest Oklahoma. Our mission has always been connecting communities and people together. We have always believed that those in rural communities deserve the same access to technology as those in metropolitan areas.\n\nWe are proud to invest in our communities across southwest Oklahoma, now building our fiber network to provide next-generation services to our customers.\n\nCurrently, Hilliary has 3 community locations in Lawton, Elgin, and Cache.",
+        "score": 0.6471
+      },
+      {
+        "url": "https://statewidereachok.com/team/",
+        "title": "Team – StateWide Reach OK",
+        "content": "Team – StateWide Reach OK\n\nOur Team\n\nStateWide Reach is a consortium of rural telecommunications companies organized to complete the massive undertaking of bringing broadband connectivity to all Oklahomans. With BEAD funding comes a responsibility to build and operate to demanding government standards.\n\nStateWide Reach is comprised of six rural telephone companies: Pine Telephone, OzarksGo, CNTC, TCT, SandHills, and Hilliary. Collectively, these companies have been providing telecom services in rural Oklahoma for over 350 years. Our combined expertise and resources enable us to efficiently and cost-effectively serve our rural customers while delivering the highest level of customer service.",
+        "score": 0.5748
+      },
+      {
+        "url": "https://statewidereachok.com/",
+        "title": "StateWide Reach OK",
+        "content": "StateWide Reach is a consortium of rural telecommunications companies organized to complete the massive undertaking of bringing broadband connectivity to all Oklahomans. With BEAD funding comes a responsibility to build and operate to demanding government standards.\n\nStateWide Reach is comprised of six rural telephone companies: Pine Telephone, OzarksGo, CNTC, TCT, SandHills, and Hilliary. Collectively, these companies have been providing telecom services in rural Oklahoma for over 350 years. Our combined expertise and resources enable us to efficiently and cost-effectively serve our rural customers while delivering the highest level of customer service.",
+        "score": 0.5543
+      },
+      {
+        "url": "https://statewidereachok.com/team/",
+        "title": "Team – StateWide Reach OK",
+        "content": "StateWide Reach is a consortium of rural telecommunications company organized to complete the massive undertaking of bringing broadband connectivity to all Oklahomans.",
+        "score": 0.4965
+      }
+    ]
+  }
+}
+</tool_response>
+
+Excellent find — StateWide Reach is a key discovery. Let me dig deeper.
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://statewidereachok.com/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "metadata": {
+    "title": "StateWide Reach OK",
+    "description": "StateWide Reach is a consortium of rural telecommunications companies organized to complete the massive undertaking of bringing broadband connectivity to all Oklahomans.",
+    "sourceURL": "https://statewidereachok.com/",
+    "statusCode": 200
+  },
+  "markdown": "# StateWide Reach OK\n\n[Skip to content](#content)\n\n[StateWide Reach](https://statewidereachok.com/)\n\n* Home\n* [About](https://statewidereachok.com/about/)\n* [Team](https://statewidereachok.com/team/)\n* [Contact](https://statewidereachok.com/contact/)\n\n# StateWide Reach is the future of rural broadband in Oklahoma.\n\nStateWide Reach is a consortium of rural telecommunications companies organized to complete the massive undertaking of bringing broadband connectivity to all Oklahomans. With BEAD funding comes a responsibility to build and operate to demanding government standards.\n\nStateWide Reach is comprised of six rural telephone companies: Pine Telephone, OzarksGo, CNTC, TCT, SandHills, and Hilliary. Collectively, these companies have been providing telecom services in rural Oklahoma for over 350 years. Our combined expertise and resources enable us to efficiently and cost-effectively serve our rural customers while delivering the highest level of customer service.\n\nFunding Partners\n\n© 2025 StateWide Reach\n\n[Privacy Policy](https://statewidereachok.com/privacy-policy/)\n"
+}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://statewidereachok.com/about/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "metadata": {
+    "title": "About – StateWide Reach OK",
+    "description": "StateWide Reach is a consortium of rural telecommunications companies organized to complete the massive undertaking of bringing broadband connectivity to all Oklahomans.",
+    "sourceURL": "https://statewidereachok.com/about/",
+    "statusCode": 200
+  },
+  "markdown": "# About – StateWide Reach OK\n\n[Skip to content](#content)\n\n[StateWide Reach](https://statewidereachok.com/)\n\n* Home\n* [About](https://statewidereachok.com/about/)\n* [Team](https://statewidereachok.com/team/)\n* [Contact](https://statewidereachok.com/contact/)\n\n## About StateWide Reach\n\nStateWide Reach is committed to expanding internet access in rural Oklahoma by leveraging BEAD funding and pooling the resources and expertise of six rural telephone companies. Our mission is to bridge the digital divide and ensure all Oklahomans have access to reliable, high-speed internet.\n\nOur member companies—Pine Telephone, OzarksGo, CNTC, TCT, SandHills, and Hilliary—bring deep local knowledge, established infrastructure, and decades of experience serving rural communities. Together, we are positioned to make a significant impact on broadband access across the state.\n\n© 2025 StateWide Reach\n\n[Privacy Policy](https://statewidereachok.com/privacy-policy/)\n"
+}
+</tool_response>
+
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "StateWide Reach Oklahoma BEAD funding award amount fiber construction", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
+{
+  "query": "StateWide Reach Oklahoma BEAD funding award amount fiber construction",
+  "search_depth": "advanced",
+  "results": [
+    {
+      "url": "https://statewidereachok.com/",
+      "title": "StateWide Reach OK",
+      "content": "StateWide Reach is a consortium of rural telecommunications companies organized to complete the massive undertaking of bringing broadband connectivity to all Oklahomans. With BEAD funding comes a responsibility to build and operate to demanding government standards.\n\nStateWide Reach is comprised of six rural telephone companies: Pine Telephone, OzarksGo, CNTC, TCT, SandHills, and Hilliary. Collectively, these companies have been providing telecom services in rural Oklahoma for over 350 years. Our combined expertise and resources enable us to efficiently and cost-effectively serve our rural customers while delivering the highest level of customer service.",
+      "score": 0.6854
+    },
+    {
+      "url": "https://statewidereachok.com/team/",
+      "title": "Team – StateWide Reach OK",
+      "content": "StateWide Reach is a consortium of rural telecommunications companies organized to complete the massive undertaking of bringing broadband connectivity to all Oklahomans.\n\nStateWide Reach is comprised of six rural telephone companies: Pine Telephone, OzarksGo, CNTC, TCT, SandHills, and Hilliary. Collectively, these companies have been certification to build and operate to demanding government standards.",
+      "score": 0.5897
+$$
+    },
+    {
+      "url": "https://www.tbr.org/sites/default/files/2024-06/broadband-state-profiles-june-2024.pdf",
+      "title": "Broadband State Profiles - June 2024",
+      "content": "Broadband State Profiles - June 2024\n\nThe Broadband State Profiles provide a snapshot of broadband infrastructure, adoption, and digital inclusion work across all 50 states. Each state profile includes a section on broadband funding and selected broadband programs. The profiles describe the state's Broadband Equity, Access, and Deployment (BEAD) Program allocation, the Digital Equity Act (DEA) Program allocation, and other relevant BEAD-related information.\n\nOklahoma received $683,057,831 in BEAD funding.",
+      "score": 0.5302
+    }
+  ]
+}
+</tool_response>
+
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "Oklahoma BEAD subgrantee list \"Hilliary\" OR \"StateWide Reach\" ISP selection 2025 2026", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
+{
+  "query": "Oklahoma BEAD subgrantee list \"Hilliary\" OR \"StateWide Reach\" ISP selection 2025 2026",
+  "search_depth": "advanced",
+  "results": [
+    {
+      "url": "https://oklahoma.gov/obo/BEAD.html",
+      "title": "BEAD Program - Oklahoma Broadband Office",
+      "content": "Oklahoma's BEAD Program\n\nThe Broadband Equity, Access, and Deployment (BEAD) Program is a $42.45 billion program established by the Infrastructure Investment and Jobs Act (IIJA) of 2021 to fund broadband planning and deployment in unserved and underserved areas. Oklahoma received $683,057,831 in BEAD funding to deploy broadband across the state.\n\nOklahoma's BEAD Initial Proposal was approved by the NTIA on January 30, 2025, and is currently in the process of selecting ISPs to deploy broadband in eligible areas. Eligible ISPs were able to submit applications for funding between April 28, 2025, and June 27, 2025. Oklahoma is currently reviewing applications and selecting ISPs.\n\nFor Approved ISP applications (Volume 1), click here for a list of approved applications.\n\nFor Approved ISP applications (Volume 2), click here for a list of approved applications.\n\nFor Approved ISP applications (Volume 3), click here for a list of approved applications.",
+      "score": 0.7956
+    },
+    {
+      "url": "https://oklahoma.gov/obo/BEAD.html",
+      "title": "BEAD Program - Oklahoma Broadband Office",
+      "content": "Oklahoma's BEAD Program\n\nThe Broadband Equity, Access, and Deployment (BEAD) Program is a $42.45 billion program established by the Infrastructure Investment and Jobs Act (IIJA) of 2021 to fund broadband planning and deployment in unserved and underserved areas. Oklahoma received $683,057,831 in BEAD funding to deploy broadband across the state.\n\nOklahoma's BEAD Initial Proposal was approved by the NTIA on January 30, 2025, and is currently in the business of selecting ISPs to deploy broadband in eligible areas. Eligible ISPs were able to submit applications for funding between April 28, 2025, and June 27, 2025. Oklahoma is currently reviewing applications and selecting ISPs.\n\n",
+      "score": 0.7643
+    },
+    {
+      "url": "https://oklahoma.gov/obo/BEAD.html",
+      "title": "BEAD Program - Oklahoma Bead Office",
+      "content": "For Approved ISP applications (Volume 1), click here for a list of approved applications. For Approved ISP applications (Volume 2), click here for a list of approved applications.",
+      "score": 0.7187
+    }
+  ]
+}
+</tool_response>
+
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "Oklahoma BEAD approved ISP applications Hilliary StateWide Reach volume 1 2 3", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
+{
+  "query": "Oklahoma BEAD approved ISP applications Hilliary StateWide Reach volume 1 2 3",
+  "search_depth": "advanced",
+  "results": [
+    {
+      "url": "https://oklahoma.gov/obo/BEAD.html",
+      "title": "BEAD Program - Oklahoma Broadband Office",
+      "content": "Oklahoma's BEAD Program\n\nThe Broadband Equity, Access, and Deployment (BEAD) Program is a $42.45 billion program established by the Infrastructure Investment and Jobs Act (IIJA) of 2021 to fund broadband planning and deployment in unserved and underserved areas. Oklahoma received $683,057,831 in BEAD funding to deploy broadband across the state.\n\nOklahoma's BEAD Initial Proposal was approved by the NTIA on January 30, 2025, and is currently in the process of selecting ISPs to deploy broadband in eligible areas. Eligible ISPs were out to submit applications for funding between April 28, 2025, and June 27, 2025. Oklahoma is currently reviewing applications and selecting ISPs.\n\nFor Approved ISP applications (Volume 1), click here for a list of approved applications.\n\nFor Approved ISP applications (Volume 2), click here for a list of approved applications.\n\nFor Approved ISP applications (Volume 3), click here for a list of approved applications.",
+      "score": 0.7801
+    }
+  ]
+}
+</tool_response>
+
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "Adam Cavazos Hilliary CTO fiber GIS AutoCAD network design", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
+{
+  "query": "Adam Cavazos Hilliary CTO fiber GIS AutoCAD network design",
+  "search_depth": "advanced"
+  "results": [
+    {
+      "url": "https://www.linkedin.com/in/adam-cavazos",
+      "title": "Adam Cavazos - Hilliary Exchange, Inc. | LinkedIn",
+      "content": "Adam Cavazos. CTO/SVP at Hilliary Exchange, Inc. | Driving Innovation in Telecommunications & IT Infrastructure. Lawton, Oklahoma, United States. Hilliary Exchange, Inc. 500+ connections.",
+      "score": 0.7212
+    }
+  ]
+}
+</tool_response>
+
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "Adam Cavazos Hilliary LinkedIn background experience technology", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
+{
+  "query": "Adam Cavazos Hilliary LinkedIn background experience technology",
+  "search_depth": "advanced",
+  "results": [
+    {
+      "url": "https://www.linkedin.com/in/adam-cavazos",
+      "title": "Adam Cavazos - Hilliary Exchange, Inc. | LinkedIn",
+      "content": "Adam Cavazos. CTO/SVP at Hilliary Exchange, Inc. | Driving Innovation in Telecommunications & IT Infrastructure. Lawton, Oklahoma, United States. Hilliary Exchange, Inc. 500+ connections.",
+      "score": 0.7437
+    }
+  ]
+}
+</tool_response>
+
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "Hilliary Exchange \"Nvidia\" OR \"ESRI\" OR \"ArcGIS\" OR \"Katapult\" OR \"IQGeo\" OR \"Vetro\" fiber network design", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
+{
+  "query": "Hilliary Exchange \"Nvidia\" OR \"ESRI\" OR \"ArcGIS\" OR \"Katapult\" OR \"IQGeo\" OR \"Vetro\" fiber network design",
+  "search_depth": "advanced",
+  "results": [
+    {
+      "url": "https://www.linkedin.com/company/hilliary-exchange-inc-",

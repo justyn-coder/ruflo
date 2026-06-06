@@ -1,0 +1,3240 @@
+1
+00:00:17,920 --> 00:00:21,400
+Hey, hey,
+
+2
+00:00:25,600 --> 00:00:29,080
+hey, hey.
+
+3
+00:00:40,960 --> 00:00:44,800
+Good morning everyone and welcome to the
+
+4
+00:00:42,800 --> 00:00:46,879
+Fiber Broadband Association's five for
+
+5
+00:00:44,800 --> 00:00:50,000
+breakfast. We're now in our sixth
+
+6
+00:00:46,879 --> 00:00:52,559
+episode of 2026 and our gold sponsor for
+
+7
+00:00:50,000 --> 00:00:54,079
+five breakfast is conducts. Before I'd
+
+8
+00:00:52,559 --> 00:00:55,600
+like to start, I'd like to give a big
+
+9
+00:00:54,079 --> 00:00:58,399
+shout out to our good friend Mike
+
+10
+00:00:55,600 --> 00:01:02,559
+Romano, who has been recently named the
+
+11
+00:00:58,399 --> 00:01:05,119
+CEO of NTCA to succeed retiring Shirley
+
+12
+00:01:02,559 --> 00:01:07,040
+Bloomfield. Both Shirley and Mike are
+
+13
+00:01:05,119 --> 00:01:09,680
+the absolute finest leaders in our
+
+14
+00:01:07,040 --> 00:01:11,360
+industry and Shirley be greatly missed.
+
+15
+00:01:09,680 --> 00:01:12,640
+And we could not be more excited for
+
+16
+00:01:11,360 --> 00:01:15,040
+Mike in his new role. So
+
+17
+00:01:12,640 --> 00:01:16,960
+congratulations, Mike. In Washington
+
+18
+00:01:15,040 --> 00:01:19,600
+this week, the House and Senate are in
+
+19
+00:01:16,960 --> 00:01:21,600
+session and notably funding for the
+
+20
+00:01:19,600 --> 00:01:24,640
+Homeland um for Homeland Security
+
+21
+00:01:21,600 --> 00:01:26,960
+expires on Friday. Yesterday, Senator,
+
+22
+00:01:24,640 --> 00:01:28,479
+excuse me, Secretary Lednik testified
+
+23
+00:01:26,960 --> 00:01:30,720
+before the Senate Appropriations
+
+24
+00:01:28,479 --> 00:01:32,880
+Committee on Commerce, Justice, Science,
+
+25
+00:01:30,720 --> 00:01:34,880
+and Related Agencies regarding broadband
+
+26
+00:01:32,880 --> 00:01:37,920
+deployment funding at Department of
+
+27
+00:01:34,880 --> 00:01:40,320
+Commerce. FBA and its members have
+
+28
+00:01:37,920 --> 00:01:43,119
+raised concerns about the proposed low
+
+29
+00:01:40,320 --> 00:01:45,280
+Earth orbit rider contract provisions
+
+30
+00:01:43,119 --> 00:01:47,759
+that can materially altered the
+
+31
+00:01:45,280 --> 00:01:49,600
+foundation or the uh foundation
+
+32
+00:01:47,759 --> 00:01:51,759
+performance oversight and accountability
+
+33
+00:01:49,600 --> 00:01:54,399
+standards under the B program. During
+
+34
+00:01:51,759 --> 00:01:57,600
+the hearing, Secretary Ludnik confirmed
+
+35
+00:01:54,399 --> 00:02:00,159
+that the proposed rider is rejected as
+
+36
+00:01:57,600 --> 00:02:02,719
+it falls outside both NI's guidelines
+
+37
+00:02:00,159 --> 00:02:04,399
+and the statute and the states are well
+
+38
+00:02:02,719 --> 00:02:07,600
+within their authority to pursue
+
+39
+00:02:04,399 --> 00:02:09,840
+alternative execution options. So what
+
+40
+00:02:07,600 --> 00:02:11,039
+that means if uh the LEO guys aren't
+
+41
+00:02:09,840 --> 00:02:13,440
+able to meet the performance
+
+42
+00:02:11,039 --> 00:02:16,239
+requirements then uh they'll the states
+
+43
+00:02:13,440 --> 00:02:18,160
+will move to some other technology. We
+
+44
+00:02:16,239 --> 00:02:20,080
+appreciate Senate uh secretaries Lnik
+
+45
+00:02:18,160 --> 00:02:22,560
+and NI's leadership and guidance as the
+
+46
+00:02:20,080 --> 00:02:25,280
+states implement this complex program.
+
+47
+00:02:22,560 --> 00:02:28,480
+State broadband officers must fully be
+
+48
+00:02:25,280 --> 00:02:30,080
+fully empowered to enforce u be
+
+49
+00:02:28,480 --> 00:02:32,560
+requirements and reject contract
+
+50
+00:02:30,080 --> 00:02:34,720
+provisions that undermine transparency
+
+51
+00:02:32,560 --> 00:02:36,319
+oversight and accountability. We're also
+
+52
+00:02:34,720 --> 00:02:38,720
+pleased to report that NTI has now
+
+53
+00:02:36,319 --> 00:02:41,280
+approved final proposals for 50 of the
+
+54
+00:02:38,720 --> 00:02:43,360
+56 states and territories. As a
+
+55
+00:02:41,280 --> 00:02:45,440
+reminder, NTI will be holding a
+
+56
+00:02:43,360 --> 00:02:48,640
+listening session today on the remaining
+
+57
+00:02:45,440 --> 00:02:51,120
+bead funds starting at 2, excuse me, 2
+
+58
+00:02:48,640 --> 00:02:53,440
+p.m. Eastern. You know, last week, uh,
+
+59
+00:02:51,120 --> 00:02:55,519
+the Fire Broadband Association held its
+
+60
+00:02:53,440 --> 00:02:58,720
+first regional fiberconnect workshop of
+
+61
+00:02:55,519 --> 00:03:01,360
+2026 in Oklahoma City. We're focused on
+
+62
+00:02:58,720 --> 00:03:04,239
+tribal, and it was the biggest regional
+
+63
+00:03:01,360 --> 00:03:06,239
+that we've had to date. Um, so it was
+
+64
+00:03:04,239 --> 00:03:08,080
+amazing and we are very appreciative of
+
+65
+00:03:06,239 --> 00:03:10,400
+the Oklahoma Speaker of the House Kyle
+
+66
+00:03:08,080 --> 00:03:11,840
+Hilbert, his thoughtful key keynote
+
+67
+00:03:10,400 --> 00:03:15,920
+address and for meeting with our
+
+68
+00:03:11,840 --> 00:03:19,040
+members. Also, Judge Bill Grall um at
+
+69
+00:03:15,920 --> 00:03:21,040
+SBA held a roundt discussion with our
+
+70
+00:03:19,040 --> 00:03:22,959
+Oklahoma members to identify business
+
+71
+00:03:21,040 --> 00:03:25,120
+challenges that he could share with
+
+72
+00:03:22,959 --> 00:03:27,200
+President Trump. Our next regional
+
+73
+00:03:25,120 --> 00:03:29,920
+fiberconnect workshop will be held in
+
+74
+00:03:27,200 --> 00:03:32,480
+Indianapolis on Thursday, March 19th.
+
+75
+00:03:29,920 --> 00:03:34,959
+You can go to our website to register.
+
+76
+00:03:32,480 --> 00:03:36,879
+And as a reminder, uh the FBA will be
+
+77
+00:03:34,959 --> 00:03:39,760
+holding its second annual public policy
+
+78
+00:03:36,879 --> 00:03:42,000
+summit and flyin in DC on February 24th
+
+79
+00:03:39,760 --> 00:03:43,840
+and 25th, bringing members together with
+
+80
+00:03:42,000 --> 00:03:46,239
+congressional leaders, emission
+
+81
+00:03:43,840 --> 00:03:48,720
+administration officials, and a federal
+
+82
+00:03:46,239 --> 00:03:50,080
+agency stakeholders to focus on how we
+
+83
+00:03:48,720 --> 00:03:52,640
+can bring high-speed reliable
+
+84
+00:03:50,080 --> 00:03:54,159
+connectivity to all. So last week on
+
+85
+00:03:52,640 --> 00:03:57,120
+Fire for Breakfast, our guest was our
+
+86
+00:03:54,159 --> 00:03:59,040
+good friend Assad Ramzali who is the
+
+87
+00:03:57,120 --> 00:04:01,200
+director of artificial intelligence and
+
+88
+00:03:59,040 --> 00:04:04,159
+technology policy at Vanderbelt Policy
+
+89
+00:04:01,200 --> 00:04:06,720
+Accelerator. He discussed AI chips in
+
+90
+00:04:04,159 --> 00:04:08,159
+the battle for network innovation and he
+
+91
+00:04:06,720 --> 00:04:10,080
+shared with us the advances in
+
+92
+00:04:08,159 --> 00:04:12,640
+artificial intelligence, provided some
+
+93
+00:04:10,080 --> 00:04:14,720
+insights on AI related policy challenges
+
+94
+00:04:12,640 --> 00:04:16,239
+and what to watch for. So if you missed
+
+95
+00:04:14,720 --> 00:04:18,400
+last week's session, you can go to our
+
+96
+00:04:16,239 --> 00:04:20,560
+website and watch the replay. Today on
+
+97
+00:04:18,400 --> 00:04:22,240
+Fire for Breakfast, our guest is Dr. Dr.
+
+98
+00:04:20,560 --> 00:04:25,840
+Tamara Holmes, the director of the
+
+99
+00:04:22,240 --> 00:04:27,680
+office of broadband at DHCD, provide an
+
+100
+00:04:25,840 --> 00:04:30,560
+update on Virginia's fiber projects and
+
+101
+00:04:27,680 --> 00:04:33,360
+initiatives. Dr. Holmes is the director
+
+102
+00:04:30,560 --> 00:04:35,759
+for the office of broadband at DHCD and
+
+103
+00:04:33,360 --> 00:04:37,600
+has been in that role since September
+
+104
+00:04:35,759 --> 00:04:39,440
+2019.
+
+105
+00:04:37,600 --> 00:04:41,680
+She has spent over 20 years in public
+
+106
+00:04:39,440 --> 00:04:43,360
+sector in the field of community and
+
+107
+00:04:41,680 --> 00:04:46,479
+economic development in New York, New
+
+108
+00:04:43,360 --> 00:04:49,040
+Jersey, and Chesterfield, Virginia. Dr.
+
+109
+00:04:46,479 --> 00:04:50,400
+Holmes has played a instrumental role in
+
+110
+00:04:49,040 --> 00:04:53,840
+the creation of Virginia's
+
+111
+00:04:50,400 --> 00:04:55,600
+telecommunications initiative VAT
+
+112
+00:04:53,840 --> 00:04:57,680
+and is leading the development of the
+
+113
+00:04:55,600 --> 00:04:59,680
+program that has grown from a million
+
+114
+00:04:57,680 --> 00:05:02,560
+dollars to $750 million in
+
+115
+00:04:59,680 --> 00:05:04,160
+appropriations since 2017. She's
+
+116
+00:05:02,560 --> 00:05:06,000
+responsible for coordinating the efforts
+
+117
+00:05:04,160 --> 00:05:09,199
+across the Commonwealth to invest an
+
+118
+00:05:06,000 --> 00:05:11,120
+additional 1.48 billion in fence from
+
+119
+00:05:09,199 --> 00:05:13,520
+the bipartisan infrastructure law
+
+120
+00:05:11,120 --> 00:05:16,160
+allocated to close the digital divide in
+
+121
+00:05:13,520 --> 00:05:18,800
+Virginia by 2029.
+
+122
+00:05:16,160 --> 00:05:20,400
+Prior in her current role, she was the
+
+123
+00:05:18,800 --> 00:05:22,240
+associate director for policy and
+
+124
+00:05:20,400 --> 00:05:25,199
+strategic development office in the
+
+125
+00:05:22,240 --> 00:05:26,720
+community development division at DHCD.
+
+126
+00:05:25,199 --> 00:05:29,199
+In addition, as serving broadband
+
+127
+00:05:26,720 --> 00:05:30,800
+director, she serves as the regional or
+
+128
+00:05:29,199 --> 00:05:32,639
+the Virginia Appalachin Regional
+
+129
+00:05:30,800 --> 00:05:35,520
+Commission, ARC, program manager
+
+130
+00:05:32,639 --> 00:05:38,000
+overseeing ARC's economic and community
+
+131
+00:05:35,520 --> 00:05:39,919
+development program in 25 counties and
+
+132
+00:05:38,000 --> 00:05:42,400
+eight independent cities in the
+
+133
+00:05:39,919 --> 00:05:44,880
+Appalachin region. She holds a master's
+
+134
+00:05:42,400 --> 00:05:46,560
+degrees in urban planning analysis with
+
+135
+00:05:44,880 --> 00:05:48,720
+a concentration in housing community
+
+136
+00:05:46,560 --> 00:05:51,039
+development. She received her doctorate
+
+137
+00:05:48,720 --> 00:05:54,000
+in public policy administration from
+
+138
+00:05:51,039 --> 00:05:55,440
+VCU. So, welcome Dr. Holmes. And for
+
+139
+00:05:54,000 --> 00:05:58,000
+audience, please type in the questions
+
+140
+00:05:55,440 --> 00:06:00,639
+as we go and I'd like to get started.
+
+141
+00:05:58,000 --> 00:06:02,320
+So, Dr. Holmes, uh, a little bit of a
+
+142
+00:06:00,639 --> 00:06:06,000
+rough start, but I'm glad that you made
+
+143
+00:06:02,320 --> 00:06:08,639
+it. Um, so how have you been doing?
+
+144
+00:06:06,000 --> 00:06:10,080
+>> Good morning. Thank you Gary and team
+
+145
+00:06:08,639 --> 00:06:12,479
+for having me join you at Fiber
+
+146
+00:06:10,080 --> 00:06:13,680
+Broadband Association this morning. Um
+
+147
+00:06:12,479 --> 00:06:16,160
+things have been going well in the
+
+148
+00:06:13,680 --> 00:06:18,960
+Commonwealth of Virginia.
+
+149
+00:06:16,160 --> 00:06:21,120
+>> So you know when we we were last I
+
+150
+00:06:18,960 --> 00:06:23,120
+wouldn't say last together but we had uh
+
+151
+00:06:21,120 --> 00:06:25,919
+one of our regional events in Richmond
+
+152
+00:06:23,120 --> 00:06:28,000
+and it was prior to you know right when
+
+153
+00:06:25,919 --> 00:06:30,800
+um we were getting ready to have final
+
+154
+00:06:28,000 --> 00:06:32,639
+proposals and Virginia was in the lead.
+
+155
+00:06:30,800 --> 00:06:34,479
+You had Louisiana then was going to be
+
+156
+00:06:32,639 --> 00:06:36,639
+Virginia's. So what all happened? What
+
+157
+00:06:34,479 --> 00:06:38,800
+was all the thing that hung kind of hung
+
+158
+00:06:36,639 --> 00:06:41,199
+you guys up from being the leaders?
+
+159
+00:06:38,800 --> 00:06:43,039
+>> Uh, so I've been saying the broadband
+
+160
+00:06:41,199 --> 00:06:44,639
+equity access and deployment program is
+
+161
+00:06:43,039 --> 00:06:47,520
+the longest program I actually hadn't
+
+162
+00:06:44,639 --> 00:06:49,280
+started in my career yet. Um, and so
+
+163
+00:06:47,520 --> 00:06:51,759
+depending on what point in time I feel
+
+164
+00:06:49,280 --> 00:06:53,680
+like if you ever um I don't know if you
+
+165
+00:06:51,759 --> 00:06:55,039
+you you remember like there's a movie it
+
+166
+00:06:53,680 --> 00:06:56,880
+talks about like things just happening
+
+167
+00:06:55,039 --> 00:06:59,199
+over and over again. And so I feel like
+
+168
+00:06:56,880 --> 00:07:02,319
+with the B program um it's it's been a
+
+169
+00:06:59,199 --> 00:07:05,360
+long time coming. And so, um, we were
+
+170
+00:07:02,319 --> 00:07:08,479
+actually in disagreement over what we
+
+171
+00:07:05,360 --> 00:07:12,080
+considered, um, at the time perceived as
+
+172
+00:07:08,479 --> 00:07:13,840
+rate regulation. And so, we kind of went
+
+173
+00:07:12,080 --> 00:07:15,680
+back and forth with the leadership at
+
+174
+00:07:13,840 --> 00:07:18,240
+NCIA at the time regarding that. And
+
+175
+00:07:15,680 --> 00:07:20,400
+then eventually we finally um were able
+
+176
+00:07:18,240 --> 00:07:22,960
+to negotiate something and get our um
+
+177
+00:07:20,400 --> 00:07:25,520
+final proposal um to go through the
+
+178
+00:07:22,960 --> 00:07:28,160
+process for approval.
+
+179
+00:07:25,520 --> 00:07:30,639
+>> Well, great. Hey. Um, so today, you
+
+180
+00:07:28,160 --> 00:07:34,560
+know, NCIA is having their, uh,
+
+181
+00:07:30,639 --> 00:07:36,880
+listening session and, um, what do you,
+
+182
+00:07:34,560 --> 00:07:39,919
+you know, so Ariel has, or excuse me,
+
+183
+00:07:36,880 --> 00:07:41,199
+Assistant Secretary Roth has been, uh,
+
+184
+00:07:39,919 --> 00:07:44,720
+telegraphing that, you know, they're
+
+185
+00:07:41,199 --> 00:07:47,599
+certainly interested in investing in um,
+
+186
+00:07:44,720 --> 00:07:49,520
+streamlining um, permitting, permitting
+
+187
+00:07:47,599 --> 00:07:51,759
+reform. There's a number of other
+
+188
+00:07:49,520 --> 00:07:54,960
+things. How is permitting in the state
+
+189
+00:07:51,759 --> 00:07:56,639
+of uh, Virginia?
+
+190
+00:07:54,960 --> 00:07:58,560
+So, just to give you a little bit of
+
+191
+00:07:56,639 --> 00:08:00,000
+history about um broadband in Virginia,
+
+192
+00:07:58,560 --> 00:08:02,240
+I know you talked a little bit about the
+
+193
+00:08:00,000 --> 00:08:04,639
+the body program. It's the Virginia
+
+194
+00:08:02,240 --> 00:08:06,560
+Telecommunication Initiative. And so, we
+
+195
+00:08:04,639 --> 00:08:10,479
+started investing as a state in
+
+196
+00:08:06,560 --> 00:08:11,919
+broadband in 2017. And so, it was the
+
+197
+00:08:10,479 --> 00:08:14,720
+million-dollar program as you said, and
+
+198
+00:08:11,919 --> 00:08:17,280
+I often goes 1 million, 1 million, 5
+
+199
+00:08:14,720 --> 00:08:21,919
+million, 19 million, 50 million, and
+
+200
+00:08:17,280 --> 00:08:25,039
+then 750 million. And so in 2022, we
+
+201
+00:08:21,919 --> 00:08:26,639
+were allocated $750 million which
+
+202
+00:08:25,039 --> 00:08:28,800
+included general state general fund
+
+203
+00:08:26,639 --> 00:08:31,440
+dollars, American rescue plan, and also
+
+204
+00:08:28,800 --> 00:08:33,360
+capital project fund. So we ended up
+
+205
+00:08:31,440 --> 00:08:35,839
+going from a a state appropriated
+
+206
+00:08:33,360 --> 00:08:38,000
+program to a state appropriation along
+
+207
+00:08:35,839 --> 00:08:40,080
+with two different distinct um federal
+
+208
+00:08:38,000 --> 00:08:42,320
+resources as part of our our funding
+
+209
+00:08:40,080 --> 00:08:46,720
+opportunities in the Commonwealth. And
+
+210
+00:08:42,320 --> 00:08:49,519
+so I jokingly say when you take $750
+
+211
+00:08:46,720 --> 00:08:52,399
+million and you put it out for grant
+
+212
+00:08:49,519 --> 00:08:55,440
+awards, we jokingly I jokingly say we
+
+213
+00:08:52,399 --> 00:08:57,279
+broke every possible system that it
+
+214
+00:08:55,440 --> 00:08:58,560
+takes to start getting broadband to
+
+215
+00:08:57,279 --> 00:09:01,920
+communities. And so that's where
+
+216
+00:08:58,560 --> 00:09:03,839
+preventing comes into place. And so we
+
+217
+00:09:01,920 --> 00:09:06,560
+um have gotten a lot of bumps and
+
+218
+00:09:03,839 --> 00:09:09,440
+bruises over the last um four years of
+
+219
+00:09:06,560 --> 00:09:11,519
+doing um investments through the ARPA
+
+220
+00:09:09,440 --> 00:09:13,920
+and CPF funding because it was such a
+
+221
+00:09:11,519 --> 00:09:18,720
+huge investment. Um again, we went from
+
+222
+00:09:13,920 --> 00:09:21,360
+um a $19 million program in in 2020 to a
+
+223
+00:09:18,720 --> 00:09:23,519
+$50 million program in 21 to 750
+
+224
+00:09:21,360 --> 00:09:25,360
+million. And so everything that could
+
+225
+00:09:23,519 --> 00:09:28,160
+possibly happen and be a challenge to
+
+226
+00:09:25,360 --> 00:09:31,279
+get broadband to um residents across the
+
+227
+00:09:28,160 --> 00:09:33,040
+Commonwealth happened. Um, we had to
+
+228
+00:09:31,279 --> 00:09:36,000
+have discussions with our pole owners
+
+229
+00:09:33,040 --> 00:09:38,399
+regarding access to the polls. Um, we
+
+230
+00:09:36,000 --> 00:09:40,240
+had I I will say the word railroad, but
+
+231
+00:09:38,399 --> 00:09:43,120
+if you all can do your own research on
+
+232
+00:09:40,240 --> 00:09:45,120
+how that worked out for us there um as a
+
+233
+00:09:43,120 --> 00:09:46,800
+state and then also our utility
+
+234
+00:09:45,120 --> 00:09:48,399
+location. So, I jokingly say we broke
+
+235
+00:09:46,800 --> 00:09:51,920
+every possible system it takes to get
+
+236
+00:09:48,399 --> 00:09:53,680
+broadband to to folks homes. And so we
+
+237
+00:09:51,920 --> 00:09:56,399
+have been working closely with all of
+
+238
+00:09:53,680 --> 00:09:58,560
+our partners across the Commonwealth to
+
+239
+00:09:56,399 --> 00:10:00,000
+get to those um connections that were
+
+240
+00:09:58,560 --> 00:10:02,640
+awarded through that significant
+
+241
+00:10:00,000 --> 00:10:04,880
+investment in 2022. And so when I hear
+
+242
+00:10:02,640 --> 00:10:07,200
+permitting, I'm like, I hope that other
+
+243
+00:10:04,880 --> 00:10:09,440
+states are prepared because the
+
+244
+00:10:07,200 --> 00:10:10,640
+challenges that we experienced, um I
+
+245
+00:10:09,440 --> 00:10:12,800
+think I feel like we're in a better
+
+246
+00:10:10,640 --> 00:10:15,120
+place today than we were four years ago
+
+247
+00:10:12,800 --> 00:10:16,320
+around permitting. Uh we have a great
+
+248
+00:10:15,120 --> 00:10:18,000
+relationship with our Virginia
+
+249
+00:10:16,320 --> 00:10:19,920
+Department of Transportation. and we're
+
+250
+00:10:18,000 --> 00:10:22,240
+actually partnering with them on our RV
+
+251
+00:10:19,920 --> 00:10:24,959
+program. We have a great relationship
+
+252
+00:10:22,240 --> 00:10:27,360
+with our Virginia 811 folks. That's our
+
+253
+00:10:24,959 --> 00:10:30,399
+utility locate organization.
+
+254
+00:10:27,360 --> 00:10:32,160
+Um we have a better relationship with um
+
+255
+00:10:30,399 --> 00:10:34,800
+American Railroad Association. Their
+
+256
+00:10:32,160 --> 00:10:37,839
+Virginia folks have been key partners in
+
+257
+00:10:34,800 --> 00:10:40,959
+trying to get um railroad crossings um
+
+258
+00:10:37,839 --> 00:10:42,720
+done. And so I feel like we are again in
+
+259
+00:10:40,959 --> 00:10:44,320
+a way better place than we were when we
+
+260
+00:10:42,720 --> 00:10:48,720
+first started with the huge increase in
+
+261
+00:10:44,320 --> 00:10:50,240
+funding in 2022. And so we're prepared.
+
+262
+00:10:48,720 --> 00:10:51,680
+>> Well, everybody likes to be upset with
+
+263
+00:10:50,240 --> 00:10:53,680
+the Department of Transportation or the
+
+264
+00:10:51,680 --> 00:10:55,600
+railroads, you know, just uh thinking
+
+265
+00:10:53,680 --> 00:10:58,079
+they're making life difficult, but their
+
+266
+00:10:55,600 --> 00:10:59,920
+number one obligation is roadway safety
+
+267
+00:10:58,079 --> 00:11:02,160
+and and rail safety. And
+
+268
+00:10:59,920 --> 00:11:05,680
+>> you know, railroads are very very
+
+269
+00:11:02,160 --> 00:11:07,920
+dangerous places and you know, as as
+
+270
+00:11:05,680 --> 00:11:09,600
+well as highways, you know, and people
+
+271
+00:11:07,920 --> 00:11:12,240
+can get killed very easily. So just
+
+272
+00:11:09,600 --> 00:11:15,120
+having trucks and things and uh people
+
+273
+00:11:12,240 --> 00:11:17,760
+doing work, it's a big deal. So it's uh
+
+274
+00:11:15,120 --> 00:11:20,160
+it's very disruptive but there is
+
+275
+00:11:17,760 --> 00:11:22,240
+>> you know we provided some path for um
+
+276
+00:11:20,160 --> 00:11:24,720
+suggestions on how to move forward and
+
+277
+00:11:22,240 --> 00:11:26,959
+hopefully uh NI will take us up on some
+
+278
+00:11:24,720 --> 00:11:29,120
+of our suggestions. uh one of the
+
+279
+00:11:26,959 --> 00:11:31,279
+questions that came in so you know we've
+
+280
+00:11:29,120 --> 00:11:36,240
+we had the whole benefit of the bargain
+
+281
+00:11:31,279 --> 00:11:38,399
+deal um which freed up $20 billion uh
+
+282
+00:11:36,240 --> 00:11:39,920
+but one of the things that uh one of the
+
+283
+00:11:38,399 --> 00:11:42,000
+questions came in with the overturning
+
+284
+00:11:39,920 --> 00:11:43,920
+of the digital equity act is there any
+
+285
+00:11:42,000 --> 00:11:46,320
+light at the end of the tunnel with DOP
+
+286
+00:11:43,920 --> 00:11:50,320
+grants
+
+287
+00:11:46,320 --> 00:11:52,240
+>> so we don't know yet what NCIA will
+
+288
+00:11:50,320 --> 00:11:54,000
+allow for the eligible uses for the
+
+289
+00:11:52,240 --> 00:11:56,160
+non-eployment and so just so you all
+
+290
+00:11:54,000 --> 00:11:59,680
+know if you haven't paid attention in
+
+291
+00:11:56,160 --> 00:12:03,519
+Virginia. So, we did um finalize and
+
+292
+00:11:59,680 --> 00:12:07,040
+received our approval from NIA for $545
+
+293
+00:12:03,519 --> 00:12:10,079
+million of our $1.48 billion allocation.
+
+294
+00:12:07,040 --> 00:12:12,399
+And so, that leaves about $800 million
+
+295
+00:12:10,079 --> 00:12:14,480
+um available for for B non-deployment.
+
+296
+00:12:12,399 --> 00:12:17,920
+And so, we are currently awaiting
+
+297
+00:12:14,480 --> 00:12:22,160
+guidance from NCIA on eligible uses of
+
+298
+00:12:17,920 --> 00:12:24,320
+those funds. And so, um, I won't say
+
+299
+00:12:22,160 --> 00:12:26,399
+that we'll,
+
+300
+00:12:24,320 --> 00:12:28,240
+you know, we're not quite sure what NDI
+
+301
+00:12:26,399 --> 00:12:31,200
+will allow us to use the funds for. And
+
+302
+00:12:28,240 --> 00:12:32,560
+so, we are in communications, we have
+
+303
+00:12:31,200 --> 00:12:34,079
+been in communications with all of the
+
+304
+00:12:32,560 --> 00:12:35,680
+entities that have submitted
+
+305
+00:12:34,079 --> 00:12:37,839
+applications through our digital equity
+
+306
+00:12:35,680 --> 00:12:40,480
+act program that was ultimately canled.
+
+307
+00:12:37,839 --> 00:12:42,880
+And so um we will have to stay tuned to
+
+308
+00:12:40,480 --> 00:12:45,120
+see what our opportunity will be of
+
+309
+00:12:42,880 --> 00:12:47,040
+being able to utilize um the B
+
+310
+00:12:45,120 --> 00:12:48,560
+non-deployment funding for those
+
+311
+00:12:47,040 --> 00:12:50,320
+potential projects that came in. We're
+
+312
+00:12:48,560 --> 00:12:52,800
+just not quite we're not sure what we
+
+313
+00:12:50,320 --> 00:12:55,200
+will be allowed to do yet.
+
+314
+00:12:52,800 --> 00:12:56,800
+>> And since you know the Virginia
+
+315
+00:12:55,200 --> 00:12:58,880
+Telecommunications Initiative's been
+
+316
+00:12:56,800 --> 00:12:59,920
+around for a long time now, nine years,
+
+317
+00:12:58,880 --> 00:13:02,880
+you've had a number of different
+
+318
+00:12:59,920 --> 00:13:04,639
+programs, state funding, ARPA, C uh
+
+319
+00:13:02,880 --> 00:13:06,880
+capital projects funds, you know,
+
+320
+00:13:04,639 --> 00:13:08,399
+reconnect, all this stuff. What so what
+
+321
+00:13:06,880 --> 00:13:10,639
+what progress have you guys done with
+
+322
+00:13:08,399 --> 00:13:13,519
+all this different funding and and what
+
+323
+00:13:10,639 --> 00:13:16,079
+what has been the easiest program to
+
+324
+00:13:13,519 --> 00:13:17,600
+administer?
+
+325
+00:13:16,079 --> 00:13:19,680
+So what's been interesting about the
+
+326
+00:13:17,600 --> 00:13:21,680
+work in Virginia and so we we actually
+
+327
+00:13:19,680 --> 00:13:24,800
+had a I call it the big brother to the
+
+328
+00:13:21,680 --> 00:13:26,320
+body program Gary we had Vatipi and it's
+
+329
+00:13:24,800 --> 00:13:28,880
+funny it's one of the first acronyms I
+
+330
+00:13:26,320 --> 00:13:30,560
+ever made in state government and so we
+
+331
+00:13:28,880 --> 00:13:32,560
+had the Virginia Telecommunication
+
+332
+00:13:30,560 --> 00:13:34,959
+Planning Initiative and that was
+
+333
+00:13:32,560 --> 00:13:36,320
+actually in 2016 and so we worked with
+
+334
+00:13:34,959 --> 00:13:38,880
+several communities across the
+
+335
+00:13:36,320 --> 00:13:40,320
+Commonwealth that were interested in you
+
+336
+00:13:38,880 --> 00:13:42,240
+know addressing the the lack of
+
+337
+00:13:40,320 --> 00:13:43,760
+broadband in their communities and so a
+
+338
+00:13:42,240 --> 00:13:46,079
+lot of those communities ended up coming
+
+339
+00:13:43,760 --> 00:13:47,680
+in for funding over the last nine years
+
+340
+00:13:46,079 --> 00:13:50,320
+that we have had the body program. And
+
+341
+00:13:47,680 --> 00:13:52,160
+so we've had great success um across the
+
+342
+00:13:50,320 --> 00:13:55,920
+Commonwealth with communities getting to
+
+343
+00:13:52,160 --> 00:13:59,440
+universal connectivity. Um and so we
+
+344
+00:13:55,920 --> 00:14:02,880
+actually got to 200,000 locations as of
+
+345
+00:13:59,440 --> 00:14:06,959
+December 31st of 2025 of the locations
+
+346
+00:14:02,880 --> 00:14:10,240
+that were awarded in 2021 and 2022. Um
+
+347
+00:14:06,959 --> 00:14:11,920
+and so we're about almost 90% of
+
+348
+00:14:10,240 --> 00:14:15,279
+Virginia currently has access to
+
+349
+00:14:11,920 --> 00:14:17,519
+broadband and um several of the prop
+
+350
+00:14:15,279 --> 00:14:20,160
+several of the the locations that are
+
+351
+00:14:17,519 --> 00:14:21,680
+not currently um built out are either
+
+352
+00:14:20,160 --> 00:14:23,920
+currently being built and underway
+
+353
+00:14:21,680 --> 00:14:26,079
+through our investments through body or
+
+354
+00:14:23,920 --> 00:14:28,560
+are waiting for us to get the projects
+
+355
+00:14:26,079 --> 00:14:31,760
+under contract for bead. So, we're about
+
+356
+00:14:28,560 --> 00:14:36,079
+almost 90% um across the Commonwealth
+
+357
+00:14:31,760 --> 00:14:38,240
+and um we do have um trying to think
+
+358
+00:14:36,079 --> 00:14:39,680
+what I was going to say. We do have some
+
+359
+00:14:38,240 --> 00:14:41,680
+um sorry, I lost my thought for a
+
+360
+00:14:39,680 --> 00:14:43,199
+second. And so, we do have projects um
+
+361
+00:14:41,680 --> 00:14:45,279
+all across the Commonwealth and we have
+
+362
+00:14:43,199 --> 00:14:48,320
+some communities that are reaching
+
+363
+00:14:45,279 --> 00:14:51,839
+almost 90% coverage individually if you
+
+364
+00:14:48,320 --> 00:14:54,399
+start looking at them county by county.
+
+365
+00:14:51,839 --> 00:14:56,720
+>> And what what which program has been the
+
+366
+00:14:54,399 --> 00:14:58,959
+easiest to administer?
+
+367
+00:14:56,720 --> 00:15:00,320
+H. So, well, I mean, I like to say my
+
+368
+00:14:58,959 --> 00:15:03,920
+state program because we get to build
+
+369
+00:15:00,320 --> 00:15:06,079
+the rules around that. Um, and so we um
+
+370
+00:15:03,920 --> 00:15:08,639
+and so, like I said, the the allocation
+
+371
+00:15:06,079 --> 00:15:10,639
+that we received in 2022 was $50 million
+
+372
+00:15:08,639 --> 00:15:12,320
+in state money. And so, I would always
+
+373
+00:15:10,639 --> 00:15:15,040
+say the state money has been the easiest
+
+374
+00:15:12,320 --> 00:15:16,639
+because the body program was created in
+
+375
+00:15:15,040 --> 00:15:19,360
+budget language. I don't know how much
+
+376
+00:15:16,639 --> 00:15:21,120
+you know about um how a bill becomes a
+
+377
+00:15:19,360 --> 00:15:24,639
+law and a budget gets appropriated in
+
+378
+00:15:21,120 --> 00:15:26,320
+government but um we were able to
+
+379
+00:15:24,639 --> 00:15:27,839
+develop the program guidelines in
+
+380
+00:15:26,320 --> 00:15:29,680
+partnership with our stakeholders across
+
+381
+00:15:27,839 --> 00:15:31,839
+the commonwealth with local governments
+
+382
+00:15:29,680 --> 00:15:34,720
+with internet service providers with
+
+383
+00:15:31,839 --> 00:15:36,480
+their um association leadership and so
+
+384
+00:15:34,720 --> 00:15:38,079
+we really have a public private
+
+385
+00:15:36,480 --> 00:15:40,160
+partnership within the commonwealth in
+
+386
+00:15:38,079 --> 00:15:42,320
+our broadband efforts and so that's what
+
+387
+00:15:40,160 --> 00:15:44,079
+I think has contributed to our success
+
+388
+00:15:42,320 --> 00:15:46,560
+so I would say our state program has
+
+389
+00:15:44,079 --> 00:15:49,440
+been the easiest program. Um, Treasury
+
+390
+00:15:46,560 --> 00:15:51,440
+has been good good as well. Um, and so
+
+391
+00:15:49,440 --> 00:15:53,040
+we'll see how it goes with NCIA. That'll
+
+392
+00:15:51,440 --> 00:15:54,800
+be my first time working with them on a
+
+393
+00:15:53,040 --> 00:15:56,720
+deployment program.
+
+394
+00:15:54,800 --> 00:15:59,920
+>> Well, good. Um, one of the questions we
+
+395
+00:15:56,720 --> 00:16:01,759
+had from registrance is what's the uh
+
+396
+00:15:59,920 --> 00:16:03,839
+the ETA or schedule for fiber
+
+397
+00:16:01,759 --> 00:16:06,320
+connectivity in the southern or
+
+398
+00:16:03,839 --> 00:16:08,560
+southside Virginia region?
+
+399
+00:16:06,320 --> 00:16:12,079
+>> Southern or southside Virginia. So, we
+
+400
+00:16:08,560 --> 00:16:16,320
+do have um some projects in southern
+
+401
+00:16:12,079 --> 00:16:18,480
+southside Virginia. Um, and so I will
+
+402
+00:16:16,320 --> 00:16:20,160
+give you, we do have a publicly facing
+
+403
+00:16:18,480 --> 00:16:22,800
+dashboard. And what I'll do, Gary, is
+
+404
+00:16:20,160 --> 00:16:25,680
+share that link for your, um, attendees
+
+405
+00:16:22,800 --> 00:16:28,160
+to know where to go. We actually have a
+
+406
+00:16:25,680 --> 00:16:30,560
+map that gives real-time updates on how
+
+407
+00:16:28,160 --> 00:16:34,000
+the projects are progressing by award
+
+408
+00:16:30,560 --> 00:16:35,759
+across the state. And so, um, a good
+
+409
+00:16:34,000 --> 00:16:38,480
+chunk of southern Virginia and southside
+
+410
+00:16:35,759 --> 00:16:40,639
+Virginia were awarded in 2022. There are
+
+411
+00:16:38,480 --> 00:16:44,160
+some locations that are part of the BE
+
+412
+00:16:40,639 --> 00:16:46,320
+program that were awarded um to Empower
+
+413
+00:16:44,160 --> 00:16:49,199
+who's a company um that builds in
+
+414
+00:16:46,320 --> 00:16:52,320
+Southside and South V um Southside
+
+415
+00:16:49,199 --> 00:16:54,000
+excuse me in southern Virginia.
+
+416
+00:16:52,320 --> 00:16:56,959
+So, you know, I was talking to Venice
+
+417
+00:16:54,000 --> 00:16:58,480
+the other day from Louisiana and he said
+
+418
+00:16:56,959 --> 00:17:00,720
+with the combinations of all his
+
+419
+00:16:58,480 --> 00:17:03,040
+programs, they are going to be at 99%
+
+420
+00:17:00,720 --> 00:17:04,720
+fiber across the state despite, you
+
+421
+00:17:03,040 --> 00:17:07,760
+know, kind of being beaten back a little
+
+422
+00:17:04,720 --> 00:17:10,160
+bit on the bead program on their fiber.
+
+423
+00:17:07,760 --> 00:17:11,600
+Um, how are you guys doing with all the
+
+424
+00:17:10,160 --> 00:17:14,400
+combinations of all your programs? You
+
+425
+00:17:11,600 --> 00:17:17,039
+know, how as far as fiber deployment,
+
+426
+00:17:14,400 --> 00:17:19,280
+>> I h I haven't run the numbers on where
+
+427
+00:17:17,039 --> 00:17:20,880
+we're going to be in terms of tech. uh
+
+428
+00:17:19,280 --> 00:17:24,000
+we are tech neutral in the Commonwealth.
+
+429
+00:17:20,880 --> 00:17:26,000
+And so even our our state funded
+
+430
+00:17:24,000 --> 00:17:27,760
+projects have been techneutral. We
+
+431
+00:17:26,000 --> 00:17:31,440
+funded and I'll give you a great example
+
+432
+00:17:27,760 --> 00:17:33,840
+of a county um um Rono County, they they
+
+433
+00:17:31,440 --> 00:17:36,320
+came in with cable, fiber, and a fixed
+
+434
+00:17:33,840 --> 00:17:37,840
+wireless provider on a body award in
+
+435
+00:17:36,320 --> 00:17:40,640
+2022. And that's going to get that
+
+436
+00:17:37,840 --> 00:17:43,440
+county over 90%. And so I know I'm on a
+
+437
+00:17:40,640 --> 00:17:44,960
+podcast with you. Um, and so I don't
+
+438
+00:17:43,440 --> 00:17:47,280
+have an exact breakdown of where we're
+
+439
+00:17:44,960 --> 00:17:49,120
+at in terms of fiber coverage across the
+
+440
+00:17:47,280 --> 00:17:51,840
+state, but we're tech neutral in
+
+441
+00:17:49,120 --> 00:17:53,520
+Virginia. And so because our program,
+
+442
+00:17:51,840 --> 00:17:55,200
+the body program, actually runs through
+
+443
+00:17:53,520 --> 00:17:58,080
+local governments and units of local
+
+444
+00:17:55,200 --> 00:18:00,320
+government, we defer to them to identify
+
+445
+00:17:58,080 --> 00:18:02,720
+what technology they think um would best
+
+446
+00:18:00,320 --> 00:18:04,000
+serve their community. Of course, um, if
+
+447
+00:18:02,720 --> 00:18:05,919
+you're familiar if you're not familiar
+
+448
+00:18:04,000 --> 00:18:08,960
+with Virginia's terrain, we have terrain
+
+449
+00:18:05,919 --> 00:18:10,400
+that's, you know, from the the the
+
+450
+00:18:08,960 --> 00:18:12,000
+mountains of Southwest Virginia all the
+
+451
+00:18:10,400 --> 00:18:14,240
+way to the Eastern Shore. So our terrain
+
+452
+00:18:12,000 --> 00:18:16,000
+is wide and vast and so it will take
+
+453
+00:18:14,240 --> 00:18:17,760
+different technologies to get to to
+
+454
+00:18:16,000 --> 00:18:19,919
+every unserved location across the
+
+455
+00:18:17,760 --> 00:18:21,840
+state. And so I don't have the exact
+
+456
+00:18:19,919 --> 00:18:24,160
+breakdown by technology in terms of
+
+457
+00:18:21,840 --> 00:18:27,200
+coverage. I know that more than 90% of
+
+458
+00:18:24,160 --> 00:18:28,799
+our investments um over the last nine
+
+459
+00:18:27,200 --> 00:18:30,400
+years through the body program have been
+
+460
+00:18:28,799 --> 00:18:31,760
+primarily Fiverr, but I'd have to
+
+461
+00:18:30,400 --> 00:18:33,919
+actually run the numbers on actual
+
+462
+00:18:31,760 --> 00:18:35,520
+coverage to date.
+
+463
+00:18:33,919 --> 00:18:38,480
+>> All right. So tell us a little bit about
+
+464
+00:18:35,520 --> 00:18:39,679
+your 2029 goal. What's what's that? How
+
+465
+00:18:38,480 --> 00:18:42,480
+do you know when you've reached that
+
+466
+00:18:39,679 --> 00:18:45,200
+goal? of the key metrics.
+
+467
+00:18:42,480 --> 00:18:48,080
+>> Well, of course, we um track location
+
+468
+00:18:45,200 --> 00:18:50,000
+based data. Um I I think the best story
+
+469
+00:18:48,080 --> 00:18:52,000
+the the the one of the things that I
+
+470
+00:18:50,000 --> 00:18:53,600
+think has made us be successful again is
+
+471
+00:18:52,000 --> 00:18:55,679
+our partnerships with local governments
+
+472
+00:18:53,600 --> 00:18:59,200
+and our units of local government. And
+
+473
+00:18:55,679 --> 00:19:00,799
+so what success to me is hearing from
+
+474
+00:18:59,200 --> 00:19:02,720
+residents and communities across the
+
+475
+00:19:00,799 --> 00:19:04,400
+Commonwealth. You know, while we track
+
+476
+00:19:02,720 --> 00:19:06,000
+metrics, I think metrics are great and
+
+477
+00:19:04,400 --> 00:19:07,440
+we have the data on where we are in
+
+478
+00:19:06,000 --> 00:19:09,360
+terms of total coverage across the
+
+479
+00:19:07,440 --> 00:19:11,600
+state. is really the stories and the
+
+480
+00:19:09,360 --> 00:19:12,960
+families that whose lives have been
+
+481
+00:19:11,600 --> 00:19:15,280
+changed through changed through having
+
+482
+00:19:12,960 --> 00:19:17,120
+access to broadband. Um I'm more of a
+
+483
+00:19:15,280 --> 00:19:18,880
+qualitative person and so being able to
+
+484
+00:19:17,120 --> 00:19:21,520
+hear from families and community leaders
+
+485
+00:19:18,880 --> 00:19:23,840
+about the impact broadband has on on
+
+486
+00:19:21,520 --> 00:19:25,600
+their famil family's lives um to me is
+
+487
+00:19:23,840 --> 00:19:28,320
+the best way to learn about our impact
+
+488
+00:19:25,600 --> 00:19:30,640
+across the state.
+
+489
+00:19:28,320 --> 00:19:33,200
+>> All right. Well, thank one of the notes
+
+490
+00:19:30,640 --> 00:19:35,120
+that came across here from Tyler is that
+
+491
+00:19:33,200 --> 00:19:37,520
+the listening session with NTIA on
+
+492
+00:19:35,120 --> 00:19:40,000
+nonbeat is is actually from 2 to 4
+
+493
+00:19:37,520 --> 00:19:41,440
+Eastern. So, um, someone gave me the
+
+494
+00:19:40,000 --> 00:19:43,039
+wrong notes, but I just looked it up
+
+495
+00:19:41,440 --> 00:19:45,840
+just to confirm. So, yeah, I'll be 2 to
+
+496
+00:19:43,039 --> 00:19:47,440
+4 today. And, uh, yeah, my I'm not going
+
+497
+00:19:45,840 --> 00:19:50,320
+to be able to make that, but my team
+
+498
+00:19:47,440 --> 00:19:52,640
+will be on that call as well. So, um,
+
+499
+00:19:50,320 --> 00:19:55,200
+anything that from that call, um, are
+
+500
+00:19:52,640 --> 00:19:57,200
+you expecting or hoping that people will
+
+501
+00:19:55,200 --> 00:20:00,000
+bring up?
+
+502
+00:19:57,200 --> 00:20:01,919
+Um, I I'm going to be listening to hear
+
+503
+00:20:00,000 --> 00:20:03,600
+because I know it'll be a diverse um
+
+504
+00:20:01,919 --> 00:20:05,679
+group of stakeholders that'll be on that
+
+505
+00:20:03,600 --> 00:20:08,320
+call and so I'm more going to be
+
+506
+00:20:05,679 --> 00:20:09,760
+listening to hear what um because I I
+
+507
+00:20:08,320 --> 00:20:11,840
+think some of our Virginia partners are
+
+508
+00:20:09,760 --> 00:20:13,280
+going to join the call today and share
+
+509
+00:20:11,840 --> 00:20:14,799
+their thoughts and so I'm going to be
+
+510
+00:20:13,280 --> 00:20:17,200
+more listening about what they'd like to
+
+511
+00:20:14,799 --> 00:20:20,320
+see the state invest um the beat
+
+512
+00:20:17,200 --> 00:20:22,559
+non-employment funding in and so looking
+
+513
+00:20:20,320 --> 00:20:24,720
+forward to hearing those um that input
+
+514
+00:20:22,559 --> 00:20:28,480
+from them.
+
+515
+00:20:24,720 --> 00:20:31,360
+So, you know, I mentioned this whole
+
+516
+00:20:28,480 --> 00:20:33,200
+uh Starlink rider.
+
+517
+00:20:31,360 --> 00:20:37,120
+Do do you guys come across that much
+
+518
+00:20:33,200 --> 00:20:38,960
+where um you someone will win an award
+
+519
+00:20:37,120 --> 00:20:40,960
+and then they'll come and try to change
+
+520
+00:20:38,960 --> 00:20:43,280
+the rules that violate the statute and
+
+521
+00:20:40,960 --> 00:20:44,799
+the rules of the program?
+
+522
+00:20:43,280 --> 00:20:46,559
+>> Well, remember I've been running a state
+
+523
+00:20:44,799 --> 00:20:50,320
+program. Yeah. Well, I've been running a
+
+524
+00:20:46,559 --> 00:20:52,799
+state program and so um not in the nine
+
+525
+00:20:50,320 --> 00:20:55,280
+years I've done a program, I've had um
+
+526
+00:20:52,799 --> 00:20:57,039
+so So remember B is different from our
+
+527
+00:20:55,280 --> 00:20:59,360
+state program. My state program, my
+
+528
+00:20:57,039 --> 00:21:00,960
+contract is with a government entity and
+
+529
+00:20:59,360 --> 00:21:02,559
+then the government entity has a
+
+530
+00:21:00,960 --> 00:21:05,120
+different contract with their internet
+
+531
+00:21:02,559 --> 00:21:07,360
+prov partner that has been awarded the
+
+532
+00:21:05,120 --> 00:21:11,200
+grant and partnership with the locality.
+
+533
+00:21:07,360 --> 00:21:13,280
+And so I I do not um we are not I I have
+
+534
+00:21:11,200 --> 00:21:14,960
+a PhD. I do not have a JD. And so we do
+
+535
+00:21:13,280 --> 00:21:16,799
+not weigh in on those agreements between
+
+536
+00:21:14,960 --> 00:21:18,960
+our government entities who are our
+
+537
+00:21:16,799 --> 00:21:20,559
+grantees and their internet providers.
+
+538
+00:21:18,960 --> 00:21:22,159
+And so bead is going to be the first
+
+539
+00:21:20,559 --> 00:21:23,520
+time the Commonwealth will directly
+
+540
+00:21:22,159 --> 00:21:26,400
+contract with internet service
+
+541
+00:21:23,520 --> 00:21:27,760
+providers. And so I know other states um
+
+542
+00:21:26,400 --> 00:21:29,600
+directly contract with internet
+
+543
+00:21:27,760 --> 00:21:31,200
+providers. We do not in our in our
+
+544
+00:21:29,600 --> 00:21:33,360
+normal allocation and of course be
+
+545
+00:21:31,200 --> 00:21:36,480
+changes that. And so I will tell you
+
+546
+00:21:33,360 --> 00:21:39,200
+even in the early days of the the body
+
+547
+00:21:36,480 --> 00:21:40,880
+program I've we do share our contract
+
+548
+00:21:39,200 --> 00:21:42,799
+with the governments and they do share
+
+549
+00:21:40,880 --> 00:21:46,480
+the contract with a lot of their ISP
+
+550
+00:21:42,799 --> 00:21:48,720
+partners. And so I will say I've um not
+
+551
+00:21:46,480 --> 00:21:51,200
+been shocked by getting having um
+
+552
+00:21:48,720 --> 00:21:54,320
+attorneys from internet companies often
+
+553
+00:21:51,200 --> 00:21:56,559
+want us to revise our contract that they
+
+554
+00:21:54,320 --> 00:21:58,559
+are not actually a party to. But a lot
+
+555
+00:21:56,559 --> 00:22:00,480
+of times localities will pass on some of
+
+556
+00:21:58,559 --> 00:22:02,159
+those requirements very much similar to
+
+557
+00:22:00,480 --> 00:22:04,000
+what NCI is going to do with us where
+
+558
+00:22:02,159 --> 00:22:06,480
+they're going to pass requirements on to
+
+559
+00:22:04,000 --> 00:22:08,240
+us that we'll pass the ISPs. Same thing
+
+560
+00:22:06,480 --> 00:22:11,120
+in the body program. And so I will say
+
+561
+00:22:08,240 --> 00:22:13,360
+that I have um had a lot of phone calls
+
+562
+00:22:11,120 --> 00:22:14,799
+with attorneys from some some internet
+
+563
+00:22:13,360 --> 00:22:17,679
+companies over the years that have tried
+
+564
+00:22:14,799 --> 00:22:19,760
+to rewrite our state contract. Um and
+
+565
+00:22:17,679 --> 00:22:21,039
+the good thing is that we often can
+
+566
+00:22:19,760 --> 00:22:23,600
+figure out because we don't customize
+
+567
+00:22:21,039 --> 00:22:26,559
+our contracts by project. um we have
+
+568
+00:22:23,600 --> 00:22:28,240
+standard language and so had to stand my
+
+569
+00:22:26,559 --> 00:22:29,919
+ground a couple of times with um
+
+570
+00:22:28,240 --> 00:22:32,480
+attorneys from internet companies and so
+
+571
+00:22:29,919 --> 00:22:32,720
+but it's always worked itself out and so
+
+572
+00:22:32,480 --> 00:22:35,600
+um
+
+573
+00:22:32,720 --> 00:22:37,360
+>> we were yeah we were thrilled that the
+
+574
+00:22:35,600 --> 00:22:39,919
+secretary held the ground on that
+
+575
+00:22:37,360 --> 00:22:41,919
+because it just would unravel everything
+
+576
+00:22:39,919 --> 00:22:45,039
+you know with between that and Amazon
+
+577
+00:22:41,919 --> 00:22:47,840
+Leo you know asking for extensions on
+
+578
+00:22:45,039 --> 00:22:50,559
+you know delays to their deployments so
+
+579
+00:22:47,840 --> 00:22:53,039
+you know well I had Brandy Raider on
+
+580
+00:22:50,559 --> 00:22:55,200
+here a couple weeks ago from Colorado
+
+581
+00:22:53,039 --> 00:22:58,240
+broadband office and they initially had
+
+582
+00:22:55,200 --> 00:23:00,159
+a 70% fiber and then after the benefit
+
+583
+00:22:58,240 --> 00:23:04,000
+of the bargain they ended up with 51%
+
+584
+00:23:00,159 --> 00:23:06,320
+LEO. Uh and she was describing how you
+
+585
+00:23:04,000 --> 00:23:08,720
+know takes LEO has four years to build
+
+586
+00:23:06,320 --> 00:23:10,000
+which is kind of crazy because they're
+
+587
+00:23:08,720 --> 00:23:13,280
+already supposed to be in the sky and
+
+588
+00:23:10,000 --> 00:23:16,080
+then there's 10 years of meeting the the
+
+589
+00:23:13,280 --> 00:23:18,000
+minimums you know 100 by 20. So
+
+590
+00:23:16,080 --> 00:23:20,080
+basically it's going to be 14 years to
+
+591
+00:23:18,000 --> 00:23:22,080
+know whether you actually got the
+
+592
+00:23:20,080 --> 00:23:23,600
+performance promise. Is that are you
+
+593
+00:23:22,080 --> 00:23:25,840
+guys running into any kind of concerns
+
+594
+00:23:23,600 --> 00:23:27,760
+like that where you know critical areas
+
+595
+00:23:25,840 --> 00:23:30,400
+that are very remote are going to be
+
+596
+00:23:27,760 --> 00:23:34,400
+stuck with waiting till 2040 to know
+
+597
+00:23:30,400 --> 00:23:36,640
+whether they really got their 100 by 20.
+
+598
+00:23:34,400 --> 00:23:38,000
+>> And so for us I don't I'll share with
+
+599
+00:23:36,640 --> 00:23:39,440
+you Gary I don't know if you know our
+
+600
+00:23:38,000 --> 00:23:41,600
+breakdown in terms of the technology
+
+601
+00:23:39,440 --> 00:23:43,120
+awarded through our bead program. And so
+
+602
+00:23:41,600 --> 00:23:44,320
+I'll kind of share that first before I
+
+603
+00:23:43,120 --> 00:23:47,039
+answer the question. And so for
+
+604
+00:23:44,320 --> 00:23:49,840
+Virginia, um 80% of our locations are
+
+605
+00:23:47,039 --> 00:23:52,880
+going to get fiber, 1% will get fixed
+
+606
+00:23:49,840 --> 00:23:56,799
+wireless, 6% will get hybrid coax cable,
+
+607
+00:23:52,880 --> 00:23:58,799
+and then 13% will get satellite. And so
+
+608
+00:23:56,799 --> 00:24:01,200
+for us, I do know that there's some
+
+609
+00:23:58,799 --> 00:24:03,039
+conversations regarding um Kyper and and
+
+610
+00:24:01,200 --> 00:24:05,600
+and
+
+611
+00:24:03,039 --> 00:24:07,120
+Starlink. And so we do have both
+
+612
+00:24:05,600 --> 00:24:08,720
+companies that have been awarded
+
+613
+00:24:07,120 --> 00:24:10,799
+locations in Virginia. And so they're
+
+614
+00:24:08,720 --> 00:24:13,679
+currently in their pre-contract phase.
+
+615
+00:24:10,799 --> 00:24:15,760
+And so we are having conversations with
+
+616
+00:24:13,679 --> 00:24:18,000
+um both of them regarding what we just
+
+617
+00:24:15,760 --> 00:24:20,080
+recently learned regarding the writer as
+
+618
+00:24:18,000 --> 00:24:23,360
+well as the the time the timeline
+
+619
+00:24:20,080 --> 00:24:26,240
+extension for hyper. And so we will most
+
+620
+00:24:23,360 --> 00:24:29,360
+likely as you said earlier defer to NCIA
+
+621
+00:24:26,240 --> 00:24:31,679
+because that those are changes that are
+
+622
+00:24:29,360 --> 00:24:33,760
+um being requested across the board for
+
+623
+00:24:31,679 --> 00:24:36,159
+all the awards across the country. And
+
+624
+00:24:33,760 --> 00:24:37,840
+so I'm going to defer to NCIA to provide
+
+625
+00:24:36,159 --> 00:24:40,159
+us guidance on how they want us to deal
+
+626
+00:24:37,840 --> 00:24:41,840
+with those because we do have to man
+
+627
+00:24:40,159 --> 00:24:43,360
+manage expectations. I will tell you
+
+628
+00:24:41,840 --> 00:24:46,000
+running a program for the last nine
+
+629
+00:24:43,360 --> 00:24:48,159
+years when folks hear about money being
+
+630
+00:24:46,000 --> 00:24:51,760
+awarded and them getting internet they
+
+631
+00:24:48,159 --> 00:24:53,520
+want internet today. And so we have um
+
+632
+00:24:51,760 --> 00:24:55,279
+done a good job I would say of managing
+
+633
+00:24:53,520 --> 00:24:56,960
+expectations but with the B program
+
+634
+00:24:55,279 --> 00:24:59,919
+we'll have to do a better job of manage
+
+635
+00:24:56,960 --> 00:25:01,279
+managing expectations because at least
+
+636
+00:24:59,919 --> 00:25:03,279
+with the body program there's a
+
+637
+00:25:01,279 --> 00:25:04,799
+government in between us who of you know
+
+638
+00:25:03,279 --> 00:25:07,279
+those community leaders live in their
+
+639
+00:25:04,799 --> 00:25:09,039
+their communities they see each other at
+
+640
+00:25:07,279 --> 00:25:11,039
+Walmart their local grocery stores their
+
+641
+00:25:09,039 --> 00:25:13,520
+baseball games and so we we often
+
+642
+00:25:11,039 --> 00:25:15,120
+partner on communications and so B will
+
+643
+00:25:13,520 --> 00:25:17,919
+be slightly different for us and so I'm
+
+644
+00:25:15,120 --> 00:25:19,919
+going to defer to NCIA on how they want
+
+645
+00:25:17,919 --> 00:25:22,720
+us to deal with the the rider
+
+646
+00:25:19,919 --> 00:25:26,640
+um that all the states received and also
+
+647
+00:25:22,720 --> 00:25:29,200
+regarding the extension for Kyper.
+
+648
+00:25:26,640 --> 00:25:31,120
+So now as you're you know you'll be able
+
+649
+00:25:29,200 --> 00:25:34,640
+to get everybody connected by you know
+
+650
+00:25:31,120 --> 00:25:36,720
+2029 which is awesome but AI is kind of
+
+651
+00:25:34,640 --> 00:25:38,880
+been taking over the world right or as
+
+652
+00:25:36,720 --> 00:25:40,559
+they say eating the world and you know
+
+653
+00:25:38,880 --> 00:25:45,120
+what we've seen from their studies is
+
+654
+00:25:40,559 --> 00:25:47,120
+that you know AI the the subscribers use
+
+655
+00:25:45,120 --> 00:25:50,000
+of AI is highly dependent on the quality
+
+656
+00:25:47,120 --> 00:25:53,360
+of connections where 75% of the
+
+657
+00:25:50,000 --> 00:25:56,559
+subscribers on fi on fiber use AI uh
+
+658
+00:25:53,360 --> 00:25:58,240
+daily or less than 10% on satellite and
+
+659
+00:25:56,559 --> 00:26:00,640
+it kind of goes, you know, down between
+
+660
+00:25:58,240 --> 00:26:02,320
+there with cable and so forth. How are
+
+661
+00:26:00,640 --> 00:26:06,159
+you guys looking at your broadband
+
+662
+00:26:02,320 --> 00:26:07,840
+office at looking at um AI and you know
+
+663
+00:26:06,159 --> 00:26:10,240
+how how you're constructing your
+
+664
+00:26:07,840 --> 00:26:12,080
+networks and kind of what the future of
+
+665
+00:26:10,240 --> 00:26:14,480
+what you're going to be doing, you know,
+
+666
+00:26:12,080 --> 00:26:17,120
+beyond broadband to make sure that
+
+667
+00:26:14,480 --> 00:26:20,559
+everybody in Virginia is able to
+
+668
+00:26:17,120 --> 00:26:23,200
+participate in the AI future.
+
+669
+00:26:20,559 --> 00:26:24,720
+And so I I to so the funny thing is
+
+670
+00:26:23,200 --> 00:26:26,159
+someone told me that you know the
+
+671
+00:26:24,720 --> 00:26:29,679
+internet runs through Virginia. That's
+
+672
+00:26:26,159 --> 00:26:32,400
+like the thing we know, right? And so um
+
+673
+00:26:29,679 --> 00:26:34,000
+we've done I I went through a Virginia
+
+674
+00:26:32,400 --> 00:26:35,279
+executive leadership program. And so
+
+675
+00:26:34,000 --> 00:26:36,720
+that was probably the most I've ever
+
+676
+00:26:35,279 --> 00:26:38,799
+learned about our project was on
+
+677
+00:26:36,720 --> 00:26:40,799
+artificial intelligence. And so I
+
+678
+00:26:38,799 --> 00:26:43,039
+learned a lot about kind of where we are
+
+679
+00:26:40,799 --> 00:26:45,279
+as a as a commonwealth. And so one of
+
+680
+00:26:43,039 --> 00:26:46,720
+the stats which I I'll repeat, but I
+
+681
+00:26:45,279 --> 00:26:49,279
+can't remember the source. And then I
+
+682
+00:26:46,720 --> 00:26:51,520
+also have to question if it's reliable.
+
+683
+00:26:49,279 --> 00:26:53,360
+And so it talked about like what
+
+684
+00:26:51,520 --> 00:26:56,159
+percentage of Virginia like we're ninth
+
+685
+00:26:53,360 --> 00:26:58,480
+or something in the use of AI as a
+
+686
+00:26:56,159 --> 00:27:00,080
+state. Again, I I was told that that
+
+687
+00:26:58,480 --> 00:27:03,200
+source may not be reliable, so don't
+
+688
+00:27:00,080 --> 00:27:05,919
+quote me on that. Um and and so I think
+
+689
+00:27:03,200 --> 00:27:08,880
+part of the work that's important for us
+
+690
+00:27:05,919 --> 00:27:10,320
+is making sure that one my ultimate goal
+
+691
+00:27:08,880 --> 00:27:12,559
+is to make sure everyone has access to
+
+692
+00:27:10,320 --> 00:27:14,080
+broadband. as the first that is the
+
+693
+00:27:12,559 --> 00:27:15,440
+first and foremost goal I am responsible
+
+694
+00:27:14,080 --> 00:27:18,720
+for doing as the director of the office
+
+695
+00:27:15,440 --> 00:27:19,919
+of broadband um and how we get everyone
+
+696
+00:27:18,720 --> 00:27:23,600
+connected of course is through a
+
+697
+00:27:19,919 --> 00:27:25,520
+diversity of technology and so we do in
+
+698
+00:27:23,600 --> 00:27:27,360
+our body program and will require as
+
+699
+00:27:25,520 --> 00:27:28,880
+part of our B program of course be will
+
+700
+00:27:27,360 --> 00:27:31,200
+require speed testing we actually
+
+701
+00:27:28,880 --> 00:27:32,799
+require that for our state program Gary
+
+702
+00:27:31,200 --> 00:27:34,640
+so the investments that are that have
+
+703
+00:27:32,799 --> 00:27:36,480
+been made in Virginia and that are
+
+704
+00:27:34,640 --> 00:27:38,480
+currently being made across the state
+
+705
+00:27:36,480 --> 00:27:40,159
+currently under construction they do
+
+706
+00:27:38,480 --> 00:27:42,960
+have to do speed tests we get
+
+707
+00:27:40,159 --> 00:27:45,200
+information on at the residents level um
+
+708
+00:27:42,960 --> 00:27:47,039
+on how the the service is performing.
+
+709
+00:27:45,200 --> 00:27:48,960
+And so
+
+710
+00:27:47,039 --> 00:27:50,960
+we want to make sure that we are
+
+711
+00:27:48,960 --> 00:27:52,640
+preparing Virginiaians for not just
+
+712
+00:27:50,960 --> 00:27:54,720
+their technology needs for today, but
+
+713
+00:27:52,640 --> 00:27:57,200
+their technology needs for the future.
+
+714
+00:27:54,720 --> 00:27:58,640
+And so we are doing the best we can in
+
+715
+00:27:57,200 --> 00:28:00,480
+our due diligence to make sure that
+
+716
+00:27:58,640 --> 00:28:02,159
+happens across the state. And if it
+
+717
+00:28:00,480 --> 00:28:04,240
+includes, you know, making sure families
+
+718
+00:28:02,159 --> 00:28:07,200
+have access to, you know, high speeded
+
+719
+00:28:04,240 --> 00:28:09,360
+reliable internet to to be able to um
+
+720
+00:28:07,200 --> 00:28:11,200
+utilize AI, that's the goal that we
+
+721
+00:28:09,360 --> 00:28:13,039
+have.
+
+722
+00:28:11,200 --> 00:28:14,799
+>> One of the questions that came in is um
+
+723
+00:28:13,039 --> 00:28:18,320
+do any of your awards include a
+
+724
+00:28:14,799 --> 00:28:20,559
+provision to offer broadband or internet
+
+725
+00:28:18,320 --> 00:28:23,200
+education or training to unserved or
+
+726
+00:28:20,559 --> 00:28:25,039
+underserved communities?
+
+727
+00:28:23,200 --> 00:28:27,120
+>> So through the body program, as I said
+
+728
+00:28:25,039 --> 00:28:29,279
+earlier, those contracts are with local
+
+729
+00:28:27,120 --> 00:28:31,360
+governments. And so some local
+
+730
+00:28:29,279 --> 00:28:32,960
+governments do put because remember I
+
+731
+00:28:31,360 --> 00:28:34,720
+said they have a contract with the
+
+732
+00:28:32,960 --> 00:28:35,919
+internet provider. Some local
+
+733
+00:28:34,720 --> 00:28:37,679
+governments have put different
+
+734
+00:28:35,919 --> 00:28:39,279
+provisions within their contracts with
+
+735
+00:28:37,679 --> 00:28:43,919
+the internet providers on what they'd
+
+736
+00:28:39,279 --> 00:28:46,399
+like to see. Um one of our um ideas that
+
+737
+00:28:43,919 --> 00:28:47,679
+actually we we u we call it research and
+
+738
+00:28:46,399 --> 00:28:49,600
+development. It's really rip off and
+
+739
+00:28:47,679 --> 00:28:52,640
+duplicate. And I don't know how much you
+
+740
+00:28:49,600 --> 00:28:55,440
+know about um electric utility. So we
+
+741
+00:28:52,640 --> 00:28:58,240
+have a lot of um our electric utility
+
+742
+00:28:55,440 --> 00:29:00,159
+electric cooperatives that um also now
+
+743
+00:28:58,240 --> 00:29:02,960
+have broadband subsidiaries in Virginia.
+
+744
+00:29:00,159 --> 00:29:04,480
+And so they have something that they um
+
+745
+00:29:02,960 --> 00:29:07,279
+provide education on. It's called the
+
+746
+00:29:04,480 --> 00:29:10,000
+cooperative living room. And um the
+
+747
+00:29:07,279 --> 00:29:12,320
+concept actually comes um started with
+
+748
+00:29:10,000 --> 00:29:14,480
+the invent um electricity going into
+
+749
+00:29:12,320 --> 00:29:16,480
+rural communities where they would have
+
+750
+00:29:14,480 --> 00:29:18,159
+like a makeshift house and they would
+
+751
+00:29:16,480 --> 00:29:20,480
+show families how do you use because in
+
+752
+00:29:18,159 --> 00:29:22,000
+the early years of electricity they also
+
+753
+00:29:20,480 --> 00:29:24,080
+had to convince people to take the
+
+754
+00:29:22,000 --> 00:29:26,480
+service. And so what the electric
+
+755
+00:29:24,080 --> 00:29:28,880
+cooperatives tell me is that they were
+
+756
+00:29:26,480 --> 00:29:31,039
+able to show families like how to use
+
+757
+00:29:28,880 --> 00:29:34,320
+electricity within their home. And so
+
+758
+00:29:31,039 --> 00:29:35,840
+one of our cooperative partners, um,
+
+759
+00:29:34,320 --> 00:29:38,240
+Ruleban,
+
+760
+00:29:35,840 --> 00:29:39,440
+um, had a cooperative living room in one
+
+761
+00:29:38,240 --> 00:29:41,279
+of the counties that they're doing a
+
+762
+00:29:39,440 --> 00:29:43,360
+body project in at the community center.
+
+763
+00:29:41,279 --> 00:29:44,799
+And so it's literally a makeshift, it's
+
+764
+00:29:43,360 --> 00:29:47,440
+a room. And so they have like a living
+
+765
+00:29:44,799 --> 00:29:49,200
+room section and a a TV room and a kids
+
+766
+00:29:47,440 --> 00:29:50,799
+room. And shows how you can use smart
+
+767
+00:29:49,200 --> 00:29:53,520
+technology within your home once you
+
+768
+00:29:50,799 --> 00:29:56,559
+have access to broadband. And so one of
+
+769
+00:29:53,520 --> 00:29:58,399
+the ideas, you know, we had early on um
+
+770
+00:29:56,559 --> 00:30:00,240
+to utilize which is public information
+
+771
+00:29:58,399 --> 00:30:02,000
+for our now canceled digital equity
+
+772
+00:30:00,240 --> 00:30:05,279
+grant was to replicate that regionally
+
+773
+00:30:02,000 --> 00:30:07,200
+across the state. And so um some of our
+
+774
+00:30:05,279 --> 00:30:09,279
+communities as and so I bring up that
+
+775
+00:30:07,200 --> 00:30:11,760
+example. So Denwitty in their project
+
+776
+00:30:09,279 --> 00:30:13,120
+with rural band had that as one of their
+
+777
+00:30:11,760 --> 00:30:14,559
+requirements because they wanted to make
+
+778
+00:30:13,120 --> 00:30:17,279
+sure that their families were educated.
+
+779
+00:30:14,559 --> 00:30:19,120
+And so we do see innovation uh
+
+780
+00:30:17,279 --> 00:30:21,200
+innovative ideas across the Commonwealth
+
+781
+00:30:19,120 --> 00:30:23,039
+on how communities want to see their
+
+782
+00:30:21,200 --> 00:30:25,440
+residents become educated around
+
+783
+00:30:23,039 --> 00:30:27,039
+broadband access. And so the cooperative
+
+784
+00:30:25,440 --> 00:30:29,679
+living room was a great example in
+
+785
+00:30:27,039 --> 00:30:31,520
+Denwit County and they've replicated it
+
+786
+00:30:29,679 --> 00:30:32,799
+um in a couple other places. And so we
+
+787
+00:30:31,520 --> 00:30:34,480
+were going to try to actually replicate
+
+788
+00:30:32,799 --> 00:30:36,080
+it regionally with our digital equity
+
+789
+00:30:34,480 --> 00:30:38,559
+grant but that funding has since been
+
+790
+00:30:36,080 --> 00:30:40,480
+cancelled.
+
+791
+00:30:38,559 --> 00:30:42,080
+>> Well, Dr. homes. We just really
+
+792
+00:30:40,480 --> 00:30:44,240
+appreciate everything you've done for
+
+793
+00:30:42,080 --> 00:30:47,760
+Virginia and across the nation and your
+
+794
+00:30:44,240 --> 00:30:49,600
+leadership of the broadband office and
+
+795
+00:30:47,760 --> 00:30:51,679
+uh we know that uh we appreciate you
+
+796
+00:30:49,600 --> 00:30:54,240
+guys hanging in there and and keeping
+
+797
+00:30:51,679 --> 00:30:56,240
+your nose the grindtor as uh the sands
+
+798
+00:30:54,240 --> 00:30:58,559
+shift beneath you. So, thank you for
+
+799
+00:30:56,240 --> 00:31:00,240
+that and I want to thank everybody for
+
+800
+00:30:58,559 --> 00:31:02,320
+joining us today and look forward to get
+
+801
+00:31:00,240 --> 00:31:04,720
+back to get there next Wednesday with
+
+802
+00:31:02,320 --> 00:31:05,840
+Michael Thomas of Network Connects who's
+
+803
+00:31:04,720 --> 00:31:08,159
+going to discuss the hidden
+
+804
+00:31:05,840 --> 00:31:09,520
+infrastructure behind AI and hypers
+
+805
+00:31:08,159 --> 00:31:11,360
+scale networks. You're not going to want
+
+806
+00:31:09,520 --> 00:31:13,360
+to miss that. So, thanks everyone for
+
+807
+00:31:11,360 --> 00:31:15,120
+joining us. Thank you Dr. Holmes and
+
+808
+00:31:13,360 --> 00:31:16,640
+look forward to seeing your further
+
+809
+00:31:15,120 --> 00:31:19,600
+success.
+
+810
+00:31:16,640 --> 00:31:19,600
+>> Thank you.
+

@@ -1,0 +1,39 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Advanced 1 is a Georgetown, TX-based engineering and design services firm. Based on the domain 'advanced1.net' and Texas location, this is almost certainly a fiber/telecom infrastructure engineering firm — consistent with Inorsa's ICP. Georgetown, TX is in the Austin metro, a high-growth corridor with active fiber buildout activity. [Inferred from domain + location; direct company page not confirmed in search]",
+    "Three contacts from the same company attended the show: Scott Hastings (VP), Brian Derstine (VP), and Salli Smith (Senior VP, Design Services). The multi-person attendance is a strong buying signal — companies do not typically send 3 senior staff to a tradeshow unless they are actively evaluating vendors or building out capabilities. This is not casual attendance.",
+    "Salli Smith holds the title 'Senior VP, Design Services' — this is the highest-ranked title among the three attendees and most directly maps to Inorsa's core use case (design throughput, GIS-to-CAD, permitting workflows). She is the likely primary decision authority or budget owner for a design tool purchase. Scott Hastings (VP) and Brian Derstine (VP) are likely co-influencers or departmental leads. [Inferred from title hierarchy among booth attendees]",
+    "Scott Hastings title is 'VP' without a department qualifier in the available data. This ambiguity is notable — he could be VP of Operations, VP of Engineering, VP of Business Development, or another function. His role relative to design tooling is unclear without further confirmation. He may be a champion but not the budget holder. [Source: booth scan data provided]",
+    "Advanced 1 is based in Georgetown, TX. Texas has an active BEAD program — the Texas Broadband Development Office has allocated significant BEAD funding and ISP contracts are expected to be finalized in 2026. Any Texas-based engineering/design firm serving Texas ISPs or acting as a subcontractor on BEAD projects would face Q3 2026 construction start pressure. This creates a hard external deadline for design capacity and permitting workflow tooling. [Industry baseline + Texas BEAD program context]",
+    "No public LinkedIn profile, trade press quote, conference panel appearance, or company leadership page content was found for Scott Hastings specifically. His professional footprint is not publicly searchable from available data. This limits personalization but does not reduce his relevance as a contact. [Not found — acknowledged gap]",
+    "The company name 'Advanced 1' does not appear in the Brain Knowledge Digest's list of discovered companies, nor in the funding program data. This means they are not a known BEAD direct-award recipient in the research set — they are more likely a design/engineering services contractor working FOR ISPs and operators, not an operator themselves. This shifts the value proposition: Inorsa's pitch to an engineering firm is about throughput, margin, and competitive differentiation — not about BEAD timeline to revenue. [Inferred from absence in funding data + Georgetown TX A&E firm profile]",
+    "Three VPs from an engineering firm attending Fiber Connect 2026 in a post-BEAD-operational environment (April 30, 2026) signals they are actively looking to scale capacity or tool up. The labor shortage (3:1 job-to-candidate ratio) makes tooling an attractive alternative to hiring. For an A&E firm, Inorsa's ability to reduce per-drawing labor time is a direct margin play. [Industry baseline applied to firm profile]"
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Scott Hastings LinkedIn profile not found — department, career history, tenure at Advanced 1, and previous employers unknown",
+    "Brian Derstine LinkedIn profile not found — his VP function unknown, cannot determine if he is a co-decision-maker or separate department",
+    "Salli Smith LinkedIn profile not found — confirmed SVP Design Services title from booth scan, but her specific responsibilities, team size, and tooling currently in use are unknown",
+    "Advanced 1 company website content not retrieved — cannot confirm service lines, client list, headcount, current tooling stack (e.g., AutoCAD, Esri, Vetro, IQGeo), or BEAD project involvement",
+    "No trade press, podcast, or panel appearance found for any of the three contacts — no direct quotes available for personalized email opener",
+    "No revenue or employee count data found for Advanced 1 — cannot size the account or estimate contract value",
+    "Cannot confirm whether Advanced 1 is a fiber-only A&E firm, a broader infrastructure firm, or a telecom contractor with an in-house design team — this affects product fit confidence",
+    "No information on current GIS-to-CAD workflow or existing tooling — cannot confirm manual workflow assumption or whether they already use a competing product"
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold status ('Relevant title but no AE notes') and Batch D tier suggest internal hesitation about this account, but the multi-contact attendance pattern (3 senior staff) is a stronger buying signal than a solo VP scan. The tier should be revisited — this is likely at least a B or C based on attendance density alone.",
+    "Scott Hastings is flagged as the primary contact, but Salli Smith (Senior VP, Design Services) has higher title seniority and a more directly relevant function for Inorsa. Outreach sequencing should treat her as the primary decision authority and Hastings as a co-thread, not the lead. If AE outreach is single-threaded to Hastings alone, it may stall.",
+    "Without knowing Advanced 1's current tooling, the 'objection: we already have a tool' risk is real but unverified. Firms in this Texas A&E space commonly use AutoCAD-based workflows with manual GIS extraction — which is exactly the pain Inorsa solves. The assumption of manual workflow is reasonable until contradicted."
+  ],
+  "topInsight": "Three senior staff from the same engineering firm attended the show — including an SVP of Design Services — in the first month after BEAD went operational. This is not casual attendance. Salli Smith is almost certainly the true decision authority for any design tooling purchase; Scott Hastings is a co-influencer whose exact function is unknown. The highest-leverage play is a multi-threaded follow-up that acknowledges all three attendees, leads with permitting cycle time and throughput margin (not drawing generation), and positions Inorsa as the answer to scaling design output without adding headcount in a 3:1 labor shortage environment. The Texas BEAD construction window (Q3 2026 start) is the urgency driver — if they are supporting ISP clients on BEAD projects, their permitting throughput becomes critical within weeks.",
+  "sourcesUsed": [
+    "Booth scan attendee list (provided in prompt — Scott Hastings, Brian Derstine, Salli Smith)",
+    "Inorsa ShowRev Industry Intelligence KB (BEAD operational date, labor shortage data, permitting cycle time benchmarks)",
+    "Texas Broadband Development Office public program context (industry baseline inference)",
+    "Brain Knowledge Digest — confirmed Advanced 1 not present in discovered companies or funding program lists",
+    "Domain inference: advanced1.net + Georgetown TX + fiber tradeshow attendance pattern"
+  ]
+}
+```

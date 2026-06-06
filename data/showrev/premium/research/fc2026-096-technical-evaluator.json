@@ -1,0 +1,681 @@
+I'll research Pure Integration systematically, starting with job postings, then tech stack signals, then capabilities.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration fiber network engineering hiring careers site:linkedin.com/jobs", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/jobs/view/4101618748
+Title: Network Engineer at Pure Integration
+Snippet: Apply for Network Engineer at Pure Integration. ... See if you qualify for this job. ... 2-5 years of Carrier Ethernet, MPLS, Fiber/Optical, or wireless experience ...
+
+Result 2:
+URL: https://www.linkedin.com/jobs/view/4128786834
+Title: Network Engineer at Pure Integration
+Snippet: Apply for Network Engineer at Pure Integration. ... 2-5 years of Carrier Ethernet, MPLS, Fiber/Optical, or wireless experience...
+
+Result 3:
+URL: https://www.linkedin.com/jobs/view/4101618748/?trk=jobs_biz_prem_srch
+Title: Network Engineer at Pure Integration
+Snippet: Apply for Network Engineer at Pure Integration. ... See if you qualify for this job. ... 2-5 years of Carrier Ethernet, MPLS, Fiber/Optical, or career experience ...
+
+Result 4:
+URL: https://www.linkedin.com/jobs/view/4218553013
+Title: Director, Network Architecture at Pure Integration
+Snippet: Apply for Director, Network Architecture at Pure Integration. ... Fiber/Optical, cable, or wireless experience ...
+
+Result call 5:
+URL: https://www.linkedin.com/jobs/view/4218553013/?trk=jobs_biz_prem_srch
+Title: Director, Network Architecture at Pure Integration
+Snippet: Apply for Director, Network Architecture at Pure Integration. ... Fiber/Optical, cable, or wireless experience ...
+
+Result 6:
+URL: https://www.linkedin.com/jobs/view/4245028131
+Title: Systems Engineer - OSP Design at Pure Integration
+Snippet: Apply for Systems Engineer - OSP Design at Pure Integration. ... Fiber network knowledge, cable/fiber plant understanding, OSP engineering background ...
+
+Result 7:
+URL: https://www.linkedin.com/jobs/view/4245028131/?trk=jobs_biz_prem_srch
+Title: Systems Engineer - OSP Design at Pure Integration
+Snippet: Apply for Systems Engineer - OSP Design at Pure Integration. ... Fiber network knowledge, cable/fiber plant understanding, OSP engineering background ...
+
+Result 8:
+URL: https://www.linkedin.com/jobs: Pure Integration Jobs
+Title: Pure Integration Jobs
+Snippet: Apply for jobs at Pure Integration. ... Technology. Reston, VA. Follow. 51-200 employees. ...
+
+Result 9:
+URL: https://www.linkedin.com/jobs/view/4209720484
+Title: Director of Sales at Pure Integration
+Snippet: Apply for Director of Sales at Pure Integration. ... pure integration careers ...
+
+Result 8:
+URL: https://www.linkedin.com/jobs/view/4218553013/?trk=jobs_biz_prem_srch
+Title: Director, Network Architecture at Pure Integration
+Snippet: Apply for Director, Network Architecture at Pure Integration. ...
+
+</tool_response>
+
+Excellent — "Systems Engineer - OSP Design" is a critical hit. Let me pull that job posting in detail.
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/jobs/view/4245028131", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Request failed: Navigation timeout of 30000 ms exceeded
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration \"Systems Engineer OSP Design\" job posting requirements tools", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/jobs/view/4245028131
+Title: Systems Engineer - OSP Design at Pure Integration
+Snippet: Apply for Systems Engineer - OSP Design at Pure Integration. ... Fiber network knowledge, cable/fiber plant understanding, OSP engineering background ...
+
+Result 2:
+URL: https://www.linkedin.com/jobs/view/4245028131/?trk=jobs_biz_prem_srch
+Title: Systems Engineer - OSP Design at Pure Integration
+Snippet: Apply for Systems Engineer - OSP Design at Pure Integration. ... Fiber network knowledge, cable/fiber plant understanding, OSP engineering background ...
+
+Result 3:
+URL: https://www.linkedin.com/jobs/view/4245028131/?refId=UBvnBdChJjH6Bc%2FovBk%2FqQ%3D%3D&trackingId=Kcvkl1PEqAGEZ6KS7jZ4dA%3D%3D
+Title: Systems Engineer - OSP Design at Pure Integration
+Snippet: Apply for Systems Engineer - OSP Design at Pure Integration. ... Fiber network knowledge, cable/fiber plant understanding, OSP engineering background ...
+
+Result 4:
+URL: https://www.linkedin.com/jobs/view/4245028131/?refId=QVK6vlLdIvXtJNXZL5fXeQ%3D%3D&trackingId=JmVlN6bdxFKbGBqb3kkjww%3D%3D
+Title: Systems Engineer - OSP Design at Pure Integration
+Snippet: Apply for Systems Engineer - OSP Design at Pure Integration. ... Fiber network knowledge, cable/fiber plant understanding, OSP engineering background ...
+
+Result 5:
+URL: https://www.linkedin.com/jobs/view/4245028131/?refId=QVK6vlLdIvXtJNXZL5fXeQ%3D%3D&trackingId=hBYIZGqhd6g6lLTlc7g7dA%3D%3D
+Title: Systems Engineer - OSP Design at Pure Integration
+Snippet: Systems Engineer - OSP Design at Pure Integration. ... Fiber network knowledge, cable/fiber plant understanding, OSP engineering background ...
+
+Result 6:
+URL: https://www.linkedin.com/jobs/view/4245028131/?refId=QVK6vlLdIvXtJNXZL5Xeq%3D%3D&trackingId=5cIK6bdxFKbGBqb3kkjww%3D%3D
+Title: Systems Engineer - OSP Design at Pure Integration
+Snippet: Systems Engineer - OSP Design at Pure Integration. ... Apply for Systems Engineer - OSP Design at Pure Integration. ... Fiber network knowledge, cable/fiber plant ...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration OSP Design engineer AutoCAD GIS Katapult \"construction drawings\" OR \"fiber design\" OR \"permitting\"", "num_results": 10}}
+</tool_call>
+<tool_response>
+
+No results found.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration pureintegration.com fiber OSP design engineering services", "num_results": 10}}
+</tool_call>
+<tool_response>
+
+Result 1:
+URL: https://pureintegration.com/
+Title: Home | Pure Integration
+Snippet: We are a technology services and solutions firm delivering expertise in networking, unified communications, data center, cloud, security, and managed services.
+
+Result 2:
+URL: https://pureintegration.com/services/
+Title: Services | Pure Integration
+Snippet: Our expert teams leverage proven methodologies to plan, design, implement, and manage solutions, ensuring that our customers' needs are met. IT Solution ...
+
+Result 3:
+URL: https://pureintegration.com/services/it-solution-integrators/networking/
+Title: Networking | Pure Integration
+Snippet: Our networking team is focused on delivering key technologies which span the enterprise and service provider domains. Technology partnerships span ...
+
+Result call 4:
+URL: https://pureintegration.com/about-us/
+Title: About Us | Pure Integration
+Snippet: Pure Integration is a technology services and solutions firm. Pure Integration designs, deploys and manages enterprise and service provider networks. ...
+
+Result 5:
+URL: https://pureintegration.com/industries/cable-telco/
+Title: Cable & Telco | Pure Integration
+Snippet: Pure Integration supports cable and telco companies with end-to-end technology solutions including design, deployment, and ongoing management of complex network ...
+
+Result 6:
+URL: https://pureintegration.com/industries/cable-telco/
+Title: Cable & Telco | Pure Integration
+Snippet: Pure Integration supports cable and telco companies with end-to-end technology solutions including design, deployment, and ongoing management of complex network ...
+
+Result 7:com:
+URL: https://pureintegration.com/industries/federal/
+Title: Federal | Pure Integration
+Snippet: Pure Integration supports federal agencies with end-to-end technology solutions, including network design, cybersecurity, unified communications, and cloud ...
+
+Result 8:
+URL: https://pureintegration.com/partners/
+Title: Partners | Pure_Integration
+Snippet: Pure Integration has extensive experience in developing, planning, and implementing complex solutions and offers a vendor-agnostic approach for our customers.
+
+Result 9:
+URL: https://pureintegration.com/industries/
+Title: Industries | Pure Integration
+Snippet: Pure Integration aligns its expertise and capabilities to the specific needs of each client. Industries we serve include cable & telco, education, enterprise ...
+
+Result 9:
+URL: https://pureintegration.com/industries/cable-telco/
+Title: Cable & Telco | Pure Integration
+Snippet: Pure Integration supports cable and telco companies with end-to-end technology solutions including design, deployment, and ongoing management of complex network ...
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://pureintegration.com/industries/cable-telco/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+# Cable & Telco | Pure Integration
+
+[Skip to content](https://pureintegration.com/industries/cable-telco/#main)
+
+[Pure Integration](https://pureintegration.com/)
+
+* [About](https://pureintegration.com/about-us/)
+* [Services](https://pureintegration.com/services/)
+* [Industries](https://pureintegration.com/industries/)
+* [Partners](https://pureintegration.com/partners/)
+* [Careers](https://pureintegration.com/careers/)
+* [Blog](https://pureintegration.com/blog/)
+* [Contact](https://pureintegration.com/contact/)
+
+## Cable & Telco Industry
+
+Enabling Digital Transformation in Cable & Telco
+
+Pure Integration supports cable and telco companies with end-to-end technology solutions including design, deployment, and ongoing management of complex network infrastructure. Our team of specialized engineers brings deep expertise in telecommunications, enabling seamless integration of new technologies into existing frameworks.
+
+### Key Capabilities in Cable & Telco
+
+**Network Design and Planning**
+
+Pure Integration expertly designs and plans scalable, high-performance networks tailored to the unique needs of cable and telco providers. This includes thorough analysis and strategic planning for fiber optic, HFC, and IP/MPLS networks, ensuring optimal coverage, capacity, and reliability.
+
+**OSP Engineering and Design**
+
+Pure Integration delivers expert OSP (Outside Plant) engineering and design services, encompassing the complete lifecycle of physical network infrastructure. This includes aerial and underground fiber deployment, conduit systems, splice locations, and detailed construction documentation.
+
+**Technology Integration and Deployment**
+
+From initial assessment to final deployment, Pure Integration handles comprehensive integration projects, including fiber-to-the-premises (FTTP) and distributed access architecture (DAA) deployments.
+
+**Ongoing Network Management and Optimization**
+
+Leveraging advanced monitoring and analytics tools, Pure Integration provides continuous network management and optimization services to ensure peak performance and reliability.
+
+### **Why Choose Pure Integration?**
+
+**Industry Expertise**: Pure Integration's engineers bring years of specialized experience in cable and telco, ensuring that our clients benefit from the latest advancements and best practices in the industry.
+
+**Custom Solutions**: We understand that each client has unique needs. Pure Integration tailors its solutions to address specific challenges, from large-scale fiber rollouts to targeted technology enhancements.
+
+**Proven Track Record**: Our extensive portfolio of successful projects across various sectors demonstrates our ability to deliver complex solutions reliably and efficiently.
+
+**End-to-End Service**: We provide comprehensive services from consulting and design through deployment and ongoing management, ensuring a seamless experience and consistent quality throughout the project lifecycle.
+
+### **Cable & Telco Solutions**
+
+**Fiber Optic Infrastructure**
+
+Pure Integration offers comprehensive fiber optic infrastructure services, including design, installation, and management of fiber networks. Our team specializes in various fiber configurations, from single-mode to multi-mode, ensuring optimal performance for both short and long-distance communications.
+
+**HFC Network Solutions**
+
+We provide robust HFC (Hybrid Fiber-Coaxial) network solutions, offering design, optimization, and management of hybrid networks that efficiently combine the capabilities of fiber optic and coaxial cable technologies.
+
+**IP/MPLS Network Design**
+
+Our IP/MPLS network design services cover the full spectrum of planning, implementing, and managing scalable and reliable IP/MPLS networks, suitable for a wide range of applications from enterprise connectivity to service provider backbone networks.
+
+**DAA (Distributed Access Architecture)**
+
+Pure Integration excels in implementing DAA solutions, including Remote-PHY and Remote-MAC-PHY architectures, crucial for modernizing HFC networks to increase capacity and improve service delivery.
+
+**Fronthaul and Backhaul Solutions**
+
+We design and implement fronthaul and backhaul solutions for mobile and fixed network operators, ensuring robust connectivity from access points to core networks, with a focus on reliability and scalability.
+
+**GPON/XGS-PON Architecture**
+
+Pure Integration provides specialized services in GPON and XGS-PON technologies, enabling high-speed fiber to the premises solutions. Our expertise covers design, deployment, and management of PON architectures.
+
+**Network Topology Design and Analysis**
+
+Our services include detailed network topology design and analysis, helping clients to optimize their network infrastructure for maximum efficiency, scalability, and reliability.
+
+**Structured Cabling and Physical Layer Solutions**
+
+Pure Integration offers structured cabling and physical layer solutions to establish a reliable foundation for network communications, adhering to the latest industry standards for cable management, testing, and documentation.
+
+### Related Blog Posts
+
+[View All](https://pureintegration.com/blog/)
+
+[![The Rising Tide of Broadband in Rural America](https://pureintegration.com/wp-content/uploads/2024/12/The-Rising-Tide-of-Broadband-in-Rural-America.png)](https://pureintegration.com/blog/the-rising-tide-of-broadband-in-rural-america/)
+
+#### [The Rising Tide of Broadband in Rural America](https://pureintegration.com/blog/the-rising-tide-of-broadband-in-rural-america/)
+
+December 17, 2024
+
+[![What is BEAD?](https://pureintegration.com/blog/what-is-bead/)
+
+#### [What is BEAD?](https://pureintegration.com/blog/what-is-bead/)
+
+July 18, 2023
+
+[![The Future of Rural Connectivity: BEAD Program Opportunities and Challenges](https://pureintegration.com/blog/the-future-of-rural-connectivity-bead-program-opportunities-and-challenges/)
+
+#### [The Future of Rural Bezand Connectivity: BEAD Program Opportunities and Challenges](https://pureintegration.com/blog/the-future-of-rural-connectivity-bead-program-opportunities-and-challenges/)
+
+December 13, 2024
+
+### Connect With Us
+
+Let's discuss how Pure Integration can help with your network infrastructure needs.
+
+[Contact Us](https://pureintegration.com/contact/)
+
+</tool_response>
+
+This is highly relevant. Pure Integration does OSP engineering and design explicitly. Let me dig into their services page and job postings more.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://pureintegration.com/services/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+# Services | Pure Integration
+
+[Skip to content](https://pureintegration.com/services/#main)
+
+[Pure Integration](https://pureintegration.com/)
+
+* [About](https://pureintegration.com/about-us/)
+* [Services](https://pureintegration.com/services/)
+* [Industries](https://pureintegration.com/industries/)
+* [Partners](https://pureintegration.com/partners/)
+* [Careers](https://pureintegration.com/careers/)
+* [Blog](https://pureintegration.com/blog/)
+* [Contact](https://pureintegration.com/contact/)
+
+## Our Services
+
+IT Solution Integrators
+
+Pure Integration designs, deploys and manages enterprise and service provider networks utilizing industry-leading solutions. Our expert teams leverage proven methodologies to plan, design, implement, and manage solutions, ensuring that our customers' needs are met.
+
+[Networking](https://pureintegration.com/services/it-solution-integrators/networking/)
+
+[Data Center](https://pureintegration.com/services/it-solution-integrators/data-center/)
+
+[Unified Communications](https://pureintegration.com/services/it-solution-integrators/unified-communications/)
+
+[Security](https://pureintegration.com/services/it-solution-integrators/security/)
+
+[Cloud Solutions](https://pureintegration.com/services/it-solution-integrators/cloud-solutions/)
+
+[Managed Services](https://pureintegration.com/services/it-solution-integrators/managed-services/)
+
+Engineering
+
+Pure Integration's engineering teams focus on designing, deploying, and operating complex networks for enterprise and service providers.
+
+[OSP Engineering](https://pureintegration.com/services/engineering/osp-engineering/)
+
+[Planning & Optimization](https://pureintegration.com/services/engineering/planning-and-optimization/)
+
+[Program Management](https://pureintegration.com/services/engineering/program-management/)
+
+[Technical Field Services](https://pureintegration.com/services/engineering/technical-field-services/)
+
+Professional Services
+
+Pure Integration delivers unique insights and specialized support for complex technical challenges.
+
+[Technical Consulting](https://pureintegration.com/services/professional-services/technical-consulting/)
+
+[Technical Staffing](https://pureintegration.com/services/professional-services/technical-staffing/)
+
+[Staff Augmentation](https://pureintegration.com/services/professional-services/staff-augmentation/)
+
+### Connect With Us
+
+Let's discuss how Pure Integration can help with your network infrastructure needs.
+
+[Contact Us](https://pureintegration.com/contact/)
+
+</tool_call>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://pureintegration.com/services/engineering/osp-engineering/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+# OSP Engineering | Pure Integration
+
+[Skip to content](https://pureintegration.com/services/engineering/osp-engineering/#main)
+
+[Pure Integration](https://pureintegration.com/)
+
+* [About](https://pureintegration.com/about-us/)
+* [Services](https://pureintegration.com/services/)
+* [Industries](https://pureintegration.com/services/)
+* [Partners](https://pureintegration.com/partners/)
+* [Careers](https://pureintegration.com/careers/)
+* [Blog](https://pureintegration.com/blog/)
+* [Contact](https://pureintegration.com/contact/)
+
+## OSP Engineering
+
+Our OSP engineering teams focus on designing, deploying, and operating complex outside plant networks for cable operators and telcos.
+
+### Key Capabilities
+
+**Make-Ready Engineering**
+
+Pure Integration provides comprehensive make-ready engineering services to prepare existing infrastructure for new fiber deployments. Our make-ready assessments and designs ensure that utility poles and conduits are ready to support new installations, meeting safety and regulatory standards.
+
+**Strand Mapping**
+
+Pure Integration's strand mapping services provide accurate documentation and analysis of existing fiber optic strands. Our team uses specialized tools to map and verify the status of each strand in a network, ensuring that all fibers are accounted for and optimally utilized.
+
+**Fiber Design and Engineering**
+
+Pure Integration provides full-lifecycle fiber optic network design, from initial planning through permitting and into the detailed design phase. Our team specializes in creating designs for GPON and XGS-PON networks, tailored to the specific needs of cable operators and telcos.
+
+**Network Documentation and Recordkeeping**
+
+Our network documentation and recordkeeping services provide comprehensive and accurate records of network infrastructure. This includes creating and maintaining detailed schematics, diagrams, and databases of network components, configurations, and topologies.
+
+**Construction Drawing Production**
+
+Pure Integration specializes in producing detailed construction drawings for network infrastructure projects. These drawings provide the necessary guidance for installation teams, covering all aspects of the physical network layout.
+
+**Permitting**
+
+Our permitting services streamline the process of obtaining necessary approvals for network installations. We work with local authorities to ensure compliance with regulations, handling all documentation and coordination to ensure the project can proceed without unnecessary delays.
+
+### Why Pure Integration for OSP?
+
+**Experienced Team**: Our engineers have extensive backgrounds in cable and telco industries, with deep expertise in OSP design and implementation.
+
+**Cutting-Edge Tools**: We utilize the latest technology and design tools to provide accurate and efficient engineering services.
+
+**Comprehensive Service**: From make-ready engineering to construction drawing production, we offer a full suite of OSP services.
+
+**Quality Assurance**: We implement rigorous QA processes to ensure all designs and documents meet the highest standards.
+
+**Agile and Adaptive**: Our team is adept at handling changes and challenges, ensuring project success despite unforeseen complications.
+
+**Compliance and Safety**: We prioritize compliance with all relevant regulations and safety standards.
+
+### Related Projects & Case Studies
+
+No related projects found.
+
+**Connect With Us**
+
+Let's discuss how Pure Integration can help with your network infrastructure needs.
+
+[Contact Us](https://pureintegration.com/contact/)
+
+</tool_call>
+
+This is a perfect match for Inorsa. Now let me get the specific tools and tech stack by looking at the OSP Design job posting more carefully, and searching for technology mentions.
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Pure Integration\" AutoCAD OR MicroStation OR \"ArcGIS\" OR \"Katapult\" OR \"IQGeo\" OR \"3GIS\" fiber design tools", "num_results": 10}}
+</tool_call>
+<tool_response>
+No results found.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration pureintegration.com \"AutoCAD\" OR \"GIS\" OR \"Katapult\" OR \"Esri\" engineering tools", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://pureintegration.com/partners/
+Title: Partners | Pure_Integration
+Snippet: Pure Integration has extensive experience in developing, planning, and implementing complex solutions and offers a vendor-agnostic approach for our customers.
+
+Result 2:
+URL: https://www.linkedin.com/company/pure-integration
+Title: Pure Integration | LinkedIn
+Snippet: Pure Integration is a technology services and solutions firm. Pure Integration designs, deploys and manages enterprise and service provider networks. ...
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://pureintegration.com/partners/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+# Partners | Pure_Integration
+
+[Skip to content](https://pureintegration.com/partners/#main)
+
+[Pure Integration](https://pureintegration.com/)
+
+* [About](https://pureintegration.com/partners/#)
+* [Services](https://pureintegration.com/partners/#)
+* [Industries](https://pureintegration.com/partners/#)
+* [Partners](https://pureintegration.com/partners/)
+* [Careers](https://pureintegration.com/careers/)
+* [Blog](https://pureintegration.com/blog/)
+* [Contact](https://pureintegration.com/contact/)
+
+## Technology Partners
+
+Pure Integration has extensive experience in developing, planning, and implementing complex solutions and offers a vendor-agnostic approach for our customers.
+
+Cisco
+
+Juniper Networks
+
+Ciena
+
+ADTRAN
+
+Calix
+
+Ribbon Communications
+
+Commscope
+
+Corning
+
+VIAVI Solutions
+
+Harmonic
+
+Aruba Networks
+
+F5 Networks
+
+Palo Alto Networks
+
+Fortinet
+
+Checkpoint
+
+Zscaler
+
+NEC
+
+Polycom
+
+Avaya
+
+Lumen
+
+### Connect With Us
+
+Let's discuss how Pure Integration can help with your network infrastructure needs.
+
+[Contact Us](https://pureintegration.com/contact/)
+
+</tool_call>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://pureintegration.com/careers/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+# Careers | Pure Integration
+
+[Skip to content](https://pureintegration.com/careers/#main)
+
+[Pure Integration](https://pureintegration.com/)
+
+* [About](https://pureintegration.com/about-us/)
+* [Services](https://pureintegration.com/services/)
+* [Industries](https://pureintegration.com/industries/)
+* [Partners](https://pureintegration.com/partners/)
+* [Careers](https://pureintegration.com/careers/)
+* [Blog](https://pureintegration.com/blog/)
+  * [RSS](https://pureintegration.com/feed/)
+* [Contact](https://pureintegration.com/contact/)
+
+## Careers
+
+At Pure Integration, we believe in a culture that allows our talented team to focus on delivering excellent services to our customers.
+
+[View Open Positions](https://recruiting.paylocity.com/Recruiting/Jobs/All/56965c2a-b92b-4f3c-9720-7a42a3ff19de)
+
+### Connect With Us
+
+Let's discuss how Pure Integration can help with your network infrastructure needs.
+
+[Contact Us](https://pureintegration.com/contact/)
+
+</tool_call>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://recruiting.paylocity.com/Recruiting/Jobs/All/56965c2a-b92b-4f3c-9720-7a42a3ff19de", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+# Pure Integration
+
+## Senior Systems Engineer - OSP Design
+
+**Location:** Remote
+
+**Job Type:** Full-Time
+
+**Salary:** $100,000-$120,000
+
+**Posted on:** 05/09/2025
+
+### Job Description
+
+Pure Integration is looking for a highly skilled and motivated Senior Systems Engineer - OSP Design to join our growing team. The ideal candidate is an experienced outside plant (OSP) engineer with a strong background in fiber optic network design, specifically within the cable TV or telecom sector. This role involves managing the design process from conception through permitting and construction, ensuring projects are completed on time, within budget, and in compliance with all relevant regulations.
+
+**Responsibilities:**
+
+* Create and review OSP designs, including fiber distribution, splice mapping, and network topology diagrams
+* Develop detailed construction drawings and permits packages
+* Conduct field surveys and gather data for network design and permitting purposes
+* Work with local municipalities and utility companies to obtain required permits
+* Coordinate with project managers and construction teams to deliver projects on schedule
+* Review and approve permit applications, ensuring compliance with local regulations
+* Assist in the development of design standards and documentation procedures
+* Perform quality checks on design documentation and construction drawings
+* Stay current with industry trends and technologies
+
+**Requirements:**
+
+* 5-10 years of experience in OSP design and engineering, specifically in the cable or telecom industries
+* Proficiency in design tools such as AutoCAD, MicroStation, or similar
+* Experience with GIS tools, preferably ArcGIS or similar platforms
+* Strong understanding of fiber optic network design, including GPON/XGS-PON architectures
+* Knowledge of permitting processes and regulations for both aerial and underground construction
+* Ability to read and interpret engineering drawings and construction documents
+* Strong project management and communication skills
+* Ability to work independently and as part of a team in a fast-paced environment
+
+**Preferred Qualifications:**
+
+* Experience with design software specific to the cable or telecom industry (e.g., Bentley, QGIS, or similar)
+* Familiarity with make-ready engineering and pole attachment requirements
+* Experience working with cable TV operators (MSOs) or telcos
+
+### Apply
+
+Please click the button below to apply for this position.
+
+[Apply Now](https://recruiting.paylocity.com/Recruiting/Jobs/Details/2984244)
+
+</tool_response>
+
+Excellent — this is gold. AutoCAD, MicroStation, ArcGIS confirmed. Now let me check the other open positions and the Director of Network Architecture post.
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration \"Director Network Architecture\" job posting OR LinkedIn fiber OSP requirements 2025 2026", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/jobs/view/4218553013
+Title: Director, Network Architecture at Pure Integration
+Snippet: Apply for Director, Network Architecture at Pure Intelligence. ... Fiber/Optical, cable, or wireless experience ...
+
+Result 2:
+URL: https://www.linkedin.com/jobs/view/4218553013/?trk=jobs_biz_prem_srch
+Title: Director, Network Architecture at Pure Integration
+Snippet: Apply for Director, Network Architecture at Pure Integration. ... Fiber/Optical, cable, or wireless experience ...
+
+Result 3:
+URL: https://www.linkedin.com/jobs/view/4218553013/?refId=UBvnBdChJjH6Bc%2FovBk%2FqQ%3D%3D&trackingId=3CeU8H6YMaRIwDhlVlFM2Q%3D%3D
+Title: Director, Network Architecture at Pure Integration
+Snippet: Apply for Director, Network Architecture at Pure Integration. ... Fiber/Optical, cable, or wireless experience ...
+
+Result 4:
+URL: https://www.linkedin.com/jobs/view/4218553013/?refId=3Dxh5L8EvxCxGmFR6xqvaw%3D%3D&trackingId=3CeU8H6YMaRIwDhlVlFM2Q%3D%3D
+Title: Director, Network Architecture at Pure Integration
+Snippet: Apply for Director, Network Architecture at Pure Integration. ... Fiber/Optical, cable, or wireless experience ...
+
+Result 5:
+URL: https://www.linkedin.com/jobs/view/4218553013/?refId=3Dxh5L8EvxCxGmFR6xqvaw%3D%3D&trackingId=hBYIZGqhd6g6lLTlc7g7dA%3D%3D
+Title: Title: Director, Network Architecture at Pure Integration
+Snippet: Apply for Director, Network Architecture at Pure Integration. ...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration Rob Wiggins OR \"Rob Woggins\" VP Networks Platforms LinkedIn fiber OSP", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/rob-wiggins-13a8b64
+Title: Rob Wiggins - Pure Integration | LinkedIn
+Snippet: Rob Wiggins. VP, Networks & Platforms at Pure Integration. Greater Dallas-Fort Worth ... · Pure Integration · Ciena Corporation · Verizon · Cisco · MCI (now ...
+</tool_result>
+
+Result 2:
+URL: https://www.linkedin.com/in/rob-wiggins-13a8b64/
+Title: Rob Wiggins - Pure Integration | LinkedIn
+Snippet: Rob Wiggins. VP, Networks & Platforms at Pure Integration. Greater Dallas-Fort Worth ... · Pure Integration · Ciena Corporation · Verizon · Cisco · MCI ...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration Michael LaPierre \"Sr. Director Architecture\" fiber LinkedIn", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/michael-lapierre-70399524
+Title: Michael LaPierre - Pure Integration | LinkedIn
+Snippet: Sr. Director, Architecture and Solutions at Pure Integration | Driving Innovation in Fiber Design, OSP Engineering, and Telecommunications Network Architecture.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration BEAD broadband program fiber deployment case study project", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://pureintegration.com/blog/the-rising-tide-of-broadband-in-rural-america/
+Title: The Rising Tide of Broadband in Rural America | Pure Integration
+Snippet: BEAD funding is making historically unprofitable rural deployments more viable, and operators are seeking experienced design and construction partners to navigate ...
+
+Result 2:
+URL: https://pureintegration.com

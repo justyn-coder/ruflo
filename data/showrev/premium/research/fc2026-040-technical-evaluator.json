@@ -1,0 +1,162 @@
+I'll research Clearfield, Inc. systematically, starting with job postings, then tech stack signals, then general capability and permitting workflow evidence.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Clearfield Inc Minneapolis fiber hiring careers site:linkedin.com/jobs"}}
+</tool_call>
+<tool_response>
+{"searches": [{"query": "Clearfield Inc Minneapolis fiber hiring careers site:linkedin.com/jobs", "results": [{"url": "https://www.linkedin.com/jobs/clearfield-inc-jobs", "title": "Clearfield Inc Jobs & Careers | LinkedIn", "description": "Search Clearfield Inc jobs and apply to open positions. ... Brooklyn Park, MN · 501-1,000 employees · Telecommunications. Follow. View all 3 jobs. Clearfield Inc ...", "date": "N/A"}, {"url": "https://www.linkedin.com/company/clearfield-inc", "title": "Clearfield, Inc. | LinkedIn", "description": "Clearfield, Inc. | 8,817 followers on LinkedIn. Build, Grow, Protect | Clearfield, Inc. (CLFD): simplifying the deployment of broadband fiber networks.", "description_full": "Clearfield, Inc. | 8,817 followers on LinkedIn. Build, Grow, Protect | Clearfield, Inc. (CLFD): simplifying the deployment of broadband fiber networks. We design, manufacture, and distribute fiber management, fiber connectivity and outside plant equipment for the telecommunications industry. Our equipment is sold primarily to tier 2 and 3 telecommunications companies, regional multiservice operators, and MSOs, as well as wireless carriers.\n\nOur products are used in the Outside Plant (OSP) fiber network infrastructure, the Central Office (CO)/hub facility, and the Fiber-to-the-Premises (FTTP), and fiber-to-the-antenna (FTTA) applications.\n\nOur standard products are sold primarily to tier 2 and 3 telecom companies, regional multiservice operators (MSOs), cable companies, and internet service providers (ISPs).", "date": "N/A"}]}]}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Clearfield Inc CLFD fiber equipment manufacturer Brooklyn Park MN products"}}
+</tool_call>
+<tool_response>
+{"searches": [{"query": "Clearfield Inc CLFD fiber equipment manufacturer Brooklyn Park MN products", "results": [{"url": "https://www.seeclearfield.com/", "title": "Clearfield, Inc. | Fiber Management Solutions | seeclearfield.com", "description": "Clearfield, Inc. designs, manufactures, and distributes fiber management, connectivity, and outside plant equipment for telecom companies deploying broadband.",
+"description_full": "Clearfield, Inc. designs, manufactures, and distributes fiber management, connectivity, and outside plant equipment for telecom companies deploying broadband. Our equipment simplifies the deployment of broadband fiber networks. Build, Grow, Protect.", "date": "N/A"}, {"url": "https://ir.seeclearfield.com/news-releases/news-release-details/clearfield-reports-fiscal-second-quarter-2025-results", "title": "Clearfield Reports Fiscal Second Quarter 2025 Results", "description": "Net revenue of $49.2 million for second fiscal quarter 2025, compared to $39.1 million in the same period of the prior year. Net income of $2.7 million ...", "description_full": "Net revenue of $49.2 million for second fiscal quarter 2025, compared to $39.1 million in the same period of the prior year. Net income of $2.7 million ...", "date": "May 07, 2025"}, {"url": "https://ir.seeclearfield.com/news-releases/news-release-details/clearfield-reports-fiscal-first-quarter-2026-results", "title": "Clearfield Reports Fiscal First Quarter 2026 Results", "description": "Net revenue of $50.4 million for first fiscal quarter 2026, compared to $49.3 million for the same period of the prior year. Net income of $3.0 million for ...", "description_full": "Net revenue of $49.2 million for first fiscal quarter 2026, compared to $39.1 million in the same period of the prior year. Net income of $2.7 million ...", "date": "February 6, 2026"}, {"url": "https://ir.seeclearfield.com/news-releases/news-release-details/clearfield-reports-fiscal-third-quarter-2025-results", "title": "Clearfield Reports Fiscal Third Quarter 2025 Results", "description": "Net revenue of $52.2 million for third fiscal quarter 2025, compared to $34.3 million in the same period of the prior year. Net income of $5.0 million for ...", "description_full": "Net revenue of $49.2 million for second fiscal quarter 2025, compared to $39.1 million in the same period of the prior year. Net income of $2.7 million ...", "date": "August 07, 2025"}, {"url": "https://ir.seeclearfield.com/news-releases/news-release-details/clearfield-reports-fiscal-fourth-quarter-and-full-year-fiscal", "title": "Clearfield Reports Fiscal Fourth Quarter and Full Year Fiscal 2025 ...", "description": "Net revenue of $52.3 million for fourth fiscal quarter 2025, compared to $45.0 million in the same period of the prior year. Net income of $5.6 million for ...", "description_full": "Net revenue of $49.2 million for second fiscal quarter 2025, compared to $39.1 million in the same period of the prior year. Net income of $2.7 million ...", "date": "November 06, 2025"}]}]}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Clearfield Inc fiber equipment BEAD ISP customers case study deployment"}}
+</tool_call>
+<tool_response>
+{"searches": [{"query": "Clearfield Inc fiber equipment BEAD ISP customers case study deployment", "results": [{"url": "https://www.seeclearfield.com/solutions/rural-broadband/", "title": "Rural Broadband Solutions | Clearfield, Inc.", "description": "Clearfield provides a comprehensive portfolio of fiber optic connectivity products that can be tailored to rural areas, helping ISPs, municipalities, and ...", "description_full": "Clearfield provides a comprehensive portfolio of fiber optic connectivity products that can be tailored to rural areas, helping ISPs, municipalities, and ...", "date": "N/A"}, {"url": "https://www.seeclearfield.com/solutions/bead/", "title": "BEAD Program | Solutions | Clearfield, Inc.", "description": "Clearfield offers solutions for BEAD-funded fiber broadband deployments, providing fiber management, connectivity, and OSP equipment for ISPs and municipalities.", "description_full": "Clearfield offers solutions for BEAD-funded fiber broadband deployments, providing fiber management, connectivity, and OSP equipment for ISPs and telecommunications companies, ready for BEAD program.", "date": "N/A"}, {"url": "https://www.seeclearfield.com/resources/", "title": "Resources | Clearfield, Inc.", "description": "Access technical documentation, case studies, product guides, and resources from Clearfield, the fiber infrastructure solution provider.", "description_full": "Access technical documentation, case studies, product guides, and resources from Clearfield, the fiber infrastructure solution provider.", "date": "N/A"}, {"url": "https://ir.seeclearfield.com/news-releases/news-release-details/clearfield-reports-fiscal-second-quarter-2025-results", "title": "Clearfield Reports Fiscal Second Quarter 2025 sec results", "description": "Net revenue of $49.2 million for second fiscal quarter 2025, compared to $39.1 million in the same period of the prior year. Net income of $2.7 million ...", "description_sum": "Net revenue of $49.2 million for second fiscal quarter 2025, compared to $39.1 million in the same period of the prior year. Net income of $2.7 million ...", "date": "May 07, 2025"}]}]}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.seeclearfield.com/solutions/bead/"}}
+</tool_call>
+<tool_response>
+{"content": "# BEAD Program | Solutions | Clearfield, Inc.\n\n## Simplifying Fiber Deployment for BEAD\n\nClearfield's fiber management and connectivity solutions are purpose-built to help ISPs and telecommunications companies successfully navigate the BEAD program's complex requirements.\n\n### Why Choose Clearfield for BEAD?\n\n**Rapid Deployment**: Our FieldSmart® platform enables faster installation with fewer splices and a smaller footprint, getting your network built on time and on budget.\n\n**BEAD Compliance**: Our documentation and product traceability support program reporting requirements, helping you demonstrate compliance with federal funding mandates.\n\n**Scalability**: Products that scale from initial BEAD deployment to future network expansion.\n\n**Technical Support**: Our team provides end-to-end support from planning through deployment.\n\n### Products for BEAD Deployments\n- FieldSmart® Fiber Delivery System\n- CraftSmart® Tools\n- YOURx® Technology\n- Clearview® Cassette\n\n### Working with ISPs on BEAD\n\nClearfield works directly with ISPs, A&E firms, and construction crews to ensure products arrive when needed and installation goes smoothly. We understand that BEAD deployments have tight deadlines and reporting requirements.\n\nContact us to discuss your BEAD project needs.", "url": "https://www.seeclearfield.com/solutions/bead/"}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Clearfield Inc \"fiber design\" OR \"construction drawings\" OR \"GIS\" OR \"AutoCAD\" OR \"engineering\" site:seeclearfield.com"}}
+</tool_call>
+<tool_response>
+{"searches": [{"query": "Clearfield Inc \"fiber design\" OR \"construction drawings\" OR \"GIS\" OR \"AutoCAD\" OR \"engineering\" site:seeclearfield.com", "results": [{"url": "https://www.seeclearfield.com/solutions/engineering-services/", "title": "Engineering Services | Clearfield, Inc.", "description": "Clearfield offers engineering services to support fiber network design and deployment, providing technical expertise for ISPs and telecom companies.", "description_full": "Clearfield offers engineering services to support fiber network design and deployment, providing technical expertise for ISPs and telecom companies.", "date": "N/A"}, {"url": "https://www.seeclearfield.com/resources/", "title": "Resources | Clearfield, Inc.", "description": "Access technical documentation, case studies, product guides, and resources from Clearfield, the fiber infrastructure solution provider.", "description_full": "Access technical documentation, case studies, product guides, and resources from Clearfield, the fiber infrastructure solution provider.", "date": "N/A"}, {"url": "https://www.seeclearfield.com/company/about/", "title": "About Clearfield | Clearfield, Inc.", "description": "Clearfield, Inc. is a leading manufacturer of fiber optic connectivity and management solutions. Learn about our mission, history, and commitment to broadband.", "description_full": "Clearfield, Inc. is a leading manufacturer of fiber optic connectivity and management solutions. Learn about our mission, history, and commitment to broadband.", "date": "N/A"}]}]}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.seeclearfield.com/solutions/engineering-services/"}}
+</tool_call>
+<tool_response>
+{"content": "# Engineering Services | Clearfield, Inc.\n\n## Network Design Services\n\nClearfield's engineering services team helps ISPs and telecommunications companies design efficient fiber networks. Our services include:\n\n### OSP Network Design\n- Aerial and underground route analysis\n- Make-ready assessments\n- Splice and termination planning\n- Equipment placement optimization\n\n### Permit Package Preparation\n- Joint Use / Pole Attachment applications\n- Municipal permit packages\n- Right-of-way documentation\n\n### As-Built Documentation\n- Field verification support\n- GIS data integration\n- Record drawing updates\n\n### Design Tools & Software\nOur team uses industry-standard tools including:\n- GIS platforms for spatial analysis\n- AutoCAD for construction drawings\n- Proprietary design templates optimized for Clearfield products\n\n### Who We Serve\nClearfield engineering services primarily supports our ISP customers who need help deploying networks using our equipment. We provide design services as an extension of our product offering.\n\n### Contact Engineering Services\nInterested in design support for your BEAD or broadband deployment? [Contact us](#)\n\n*Note: Engineering services availability may vary. Contact your regional sales representative for current capacity and lead times.*", "url": "https://www.seeclearfield.com/solutions/engineering-services/"}
+</tool_response>
+
+This is a significant finding — Clearfield has an engineering services arm. Let me dig deeper.
+<tool_call>
+{"name": "search", "arguments": {"query": "Clearfield Inc engineering services fiber design AutoCAD GIS permit packages ISP support"}}
+</tool_call>
+<tool_response>
+{"searches": [{"query": "Clearfield Inc engineering services fiber design AutoCAD GIS permit packages ISP support", "results": [{"url": "https://www.seeclearfield.com/solutions/engineering-services/", "title": "Engineering Services | Clearfield, Inc.", "description": "Clearfield offers engineering services to support fiber network design and deployment, providing technical expertise for ISPs and telecom companies.", "description_full": "Clearfield offers engineering services to support fiber network design and deployment, providing technical expertise for ISPs and telecom companies.", "date": "N/A"}, {"url": "https://www.seeclearfield.com/blog/engineering-services-for-bead/", "title": "Engineering Services for BEAD Deployments | Clearfield Blog", "description": "Clearfield's engineering team discusses how design services support ISPs navigating BEAD program requirements.", "description_full": "Clearfield's engineering team discusses how design services support ISPs navigating BEAD program requirements.", "date": "N/A"}]}]}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.seeclearfield.com/blog/engineering-services-for-bead/"}}
+</tool_call>
+<tool_response>
+{"content": "Error: Page not found (404)", "url": "https://www.seeclearfield.com/blog/engineering-services-for-bead/"}
+</tool_call>
+<tool_response>
+{"content": "Error: Page not found (404)", "url": "https://www.seeclearfield.com/blog/engineering-services-for-bead/"}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Clearfield Inc hiring \"fiber designer\" OR \"CAD\" OR \"GIS\" OR \"network design\" OR \"drafter\" 2025 2026"}}
+</tool_call>
+</tool_call>
+<tool_response>
+{"searches": [{"query": "Clearfield Inc hiring \"fiber designer\" OR \"CAD\" OR \"GIS\" OR \"network design\" OR \"drafter\" 2025 2026", "results": [{"url": "https://www.linkedin.com/jobs/view/network-design-engineer-at-clearfield-inc", "title": "Network Design Engineer at Clearfield, Inc. | LinkedIn", "description": "Clearfield, Inc. is seeking a Network Design Engineer to support ISP customers with OSP network design, permitting, and construction documentation.", "description_full": "Clearfield, Inc. is seeking a Network Design Engineer to support ISP customers with OSP network design, permitting, and construction documentation. Requirements include experience with GIS platforms (ArcGIS preferred), AutoCAD, fiber optic network design principles, and familiarity with pole attachment/permitting processes. Must be comfortable with both aerial and underground design.", "date": "N/A"}, {"url": "https://www.seeclearfield.com/company/careers/", "title": "Careers | Clearfield, Inc.", "description": "Join the Clearfield team. We're looking for talented individuals to help simplify the deployment of broadband fiber networks.", "description_full": "Join the Clearfield team. We're looking for talented individuals to help simplify the deployment of broadband fiber networks.", "date": "N/A"}]}]}
+</tool_response>
+
+Excellent — this is a high-value signal. Let me get the full job posting.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.seeclearfield.com/company/careers/"}}
+</tool_call>
+<tool_response>
+{"content": "# Careers | Clearfield, Inc.\n\n## Join Our Team\n\nAt Clearfield, we're simplifying broadband deployment. We're growing and looking for talented, passionate people to join our team.\n\n## Open Positions\n\n**Sales & Business Development**\n- Regional Sales Manager – Midwest\n- Business Development Manager – ISP Accounts\n- Inside Sales Representative\n\n**Engineering & Technical**\n- Network Design Engineer (2 openings)\n- OSP Design Specialist\n- Applications Engineer\n\n**Operations**\n- Supply Chain Coordinator\n- Warehouse Associate – Brooklyn Park, MN\n\n**Marketing**\n- Digital Marketing Specialist\n\n---\n\n## Why Clearfield?\n- Publicly traded (NASDAQ: CLFD)\n- Mission-driven: closing the digital divide\n- Collaborative, growing team\n- Strong benefits package\n\n[Apply Now](#) | [Learn More About Us](#)\n\n*Clearfield is an equal opportunity employer.*", "url": "https://www.seeclearfield.com/company/careers/"}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Clearfield Inc \"Network Design Engineer\" OR \"OSP Design\" job description GIS AutoCAD permitting"}}
+</tool_call>
+<tool_response>
+{"searches": [{"query": "Clearfield Inc \"Network Design Engineer\" OR \"OSP Design\" job description GIS AutoCAD permitting", "results": [{"url": "https://www.linkedin.com/jobs/view/network-design-engineer-at-clearfield-inc", "title": "Network Design Engineer at Clearfield, Inc. | LinkedIn", "description": "Support ISP customers with OSP fiber network design, permitting packages, and construction documentation. GIS, AutoCAD required.", "description_full": "Clearfield, Inc. is seeking a Network Design Engineer to support ISP customers with OSP network design, permitting, and construction documentation. Requirements include experience with GIS platforms (ArcGIS preferred), AutoCAD, fiber optic network design principles, and familiarity with pole attachment/permitting processes. Must be comfortable with both aerial and underground design.", "date": "N/A"}, {"url": "https://www.indeed.com/cmp/Clearfield,-Inc./jobs", "title": "Clearfield, Inc. Jobs and Careers | Indeed", "description": "Find jobs at Clearfield, Inc. on Indeed. Current openings in engineering, sales, and operations.", "description_full": "Find jobs at Clearfield, Inc. on Indeed. Current openings in engineering, sales, and operations.", "date": "N/A"}]}]}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Clearfield Inc Sara Peters \"business development\" LinkedIn"}}
+</tool_call>
+<tool_response>
+{"searches": [{"query": "Clearfield Inc Sara Peters \"business development\" LinkedIn", "results": [{"url": "https://www.linkedin.com/in/sara-peters-clearfield", "title": "Sara Peters | Business Development Manager | Clearfield, Inc.", "description": "Sara Peters is a Business Development Manager at Clearfield, Inc., focused on growing ISP partnerships and driving adoption of Clearfield's fiber solutions.", "description_full": "Sara Peters is a Business Development Manager at Clearfield, Inc., focused on growing ISP partnerships and driving adoption of Clearfield's fiber solutions. Previously worked in telecom distribution and channel sales.", "date": "N/A"}]}]}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Clearfield Inc Mark School \"regional sales manager\" LinkedIn"}}
+</tool_call>
+<tool_response>
+{"searches": [{"query": "Clearfield Inc Mark School \"regional sales manager\" LinkedIn", "results": [{"url": "https://www.linkedin.com/in/mark-school-clearfield", "title": "Mark School | Regional Sales Manager | Clearfield, Inc.", "description": "Mark School is a Regional Sales Manager at Clearfield, Inc., covering the Midwest and Mountain West regions.", "description_full": "Mark School is a Regional Sales Manager at Clearfield, Inc., managing ISP and telecom customer relationships for fiber connectivity and management equipment. Focused on BEAD and broadband expansion opportunities.", "date": "N/A"}]}]}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Clearfield Inc engineering services \"permit\" OR \"permitting\" OR \"construction drawings\" OR \"make-ready\" ISP customer support"}}
+</tool_call>
+<tool_response>
+{"searches": [{"query": "Clearfield Inc engineering services \"permit\" OR \"permitting\" OR \"construction drawings\" OR \"make-ready\" ISP customer support", "results": [{"url": "https://www.seeclearfield.com/solutions/engineering-services/", "title": "Engineering Services | Clearfield, Inc.", "description": "Permit package preparation, joint use applications, municipal permits, right-of-way documentation, and GIS integration services for ISPs.", "description_full": "Clearfield offers engineering services including permit package preparation, OSP network design, and as-built documentation to support ISPs deploying fiber networks.", "date": "N/A"}, {"url": "https://www.seeclearfield.com/resources/case-studies/", "title": "Case Studies | Clearfield, Inc.", "description": "Read how Clearfield's products and services have helped ISPs deploy fiber faster and more efficiently.", "description_full": "Read how Clearfield's products and services have helped ISPs deploy fiber faster and more efficiently.", "date": "N/A"}]}]}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.seeclearfield.com/resources/case-studies/"}}
+</tool_call>
+<tool_response>
+{"content": "# Case Studies | Clearfield, Inc.\n\n## Customer Success Stories\n\nSee how Clearfield's fiber solutions have helped ISPs, municipalities, and telecom companies deploy networks faster and more reliably.\n\n### Featured Case Studies\n\n**[Rural ISP Accelerates BEAD Deployment](#)**\nA Midwest rural broadband provider used Clearfield's FieldSmart platform to streamline OSP installation, reducing labor time by 25%.\n\n**[Municipal Broadband Expands to Underserved Areas](#)**\nA city-owned ISP leveraged Clearfield equipment and engineering services to design and permit a 200-mile fiber expansion.\n\n**[Tribal Nation Closes the Digital Divide](#)**\nClearfield supported a tribal broadband initiative with customized solutions for challenging terrain.\n\n**[Regional Telco Upgrades Legacy Network](#)**\nA tier-2 telco replaced aging copper infrastructure with Clearfield fiber management solutions, using Clearfield's engineering team for design and as-built documentation.\n\n---\n*Request full case studies by contacting your Clearfield representative.*", "url": "https://www.seeclearfield.com/resources/case-studies/"}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Clearfield Inc competitor analysis fiber equipment \"Corning\" OR \"CommScope\" OR \"PPC\" market position ISP manufacturer"}}
+</tool_call>
+<tool_response>
+{"searches": [{"query": "Clearfield Inc competitor analysis fiber equipment \"Corning\" OR \"CommScope\" OR \"PPC\" market position ISP manufacturer", "results": [{"url": "https://ir.seeclearfield.com/news-releases/news-release-details/clearfield-reports-fiscal-fourth-quarter-and-full-year-fiscal", "title": "Clearfield Reports Fiscal Fourth Quarter and Full Year Fiscal 2025 Results", "description": "Full year fiscal 2025 net revenue of $195.3 million. Net income of $16.1 million. Record revenue growth driven by BEAD pipeline and ISP demand.", "description_full": "Full year fiscal 2025 net revenue of $195.3 million. Net income of $16.1 million. Fourth quarter net revenue of $52.3 million. Clearfield continues to see strong demand from tier 2 and 3 ISPs, rural broadband operators, and BEAD-funded projects.", "date": "November 06, 2025"}, {"url": "https://stockanalysis.com/stocks/clfd/", "title": "Clearfield, Inc. (CLFD) Stock Analysis", "description": "Clearfield Inc (CLFD) is a fiber optic equipment manufacturer. Revenue, earnings, stock price and analysis.", "description_full": "Clearfield Inc (CLFD) manufactures and distributes fiber management and connectivity equipment. Ticker CLFD. ~$200M annual revenue.", "date": "N/A"}]}]}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Clearfield Inc \"design services\" OR \"engineering services\" partner OR resell ISP broadband deployment 2025"}}
+</tool_call>
+<tool_response>
+{"searches": [{"query": "Clearfield Inc \"design services\" OR \"engineering services\" partner OR resell ISP broadband deployment 2025", "results": [{"url": "https://www.seeclearfield.com/solutions/engineering-services/", "title": "Engineering Services | Clearfield, Inc.", "description": "Clearfield's engineering services team provides OSP design, permit packages, and as-built documentation for ISPs deploying fiber networks with Clearfield equipment.", "description_full": "Clearfield offers engineering services as an extension of their product offering to help ISPs successfully deploy networks using Clearfield equipment.", "date": "N/A"}, {"url": "https://www.seeclearfield.com/partners/", "title": "Partner Program | Clearfield, Inc.", "description": "Clearfield's partner program connects ISPs with distributors, contractors, and engineering firms to support broadband deployment.", "description_full": "Clearfield's partner program connects ISPs with distributors, contractors, and engineering firms to support broadband deployment. We work with A&E firms, EPC contractors, and technology partners.", "date": "N/A"}]}]}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.seeclearfield.com/partners/"}}
+</tool_call>
+<tool_response>
+{"content": "# Partner Program | Clearfield, Inc.\n\n## Build Your Network with the Right Partners\n\nClearfield works with a network of trusted partners to help ISPs and telecom companies deploy fiber successfully.\n\n### Partner Categories\n\n**Distributors**\nClearfield products are available through authorized distribution partners across North America.\n\n**Engineering & Design Firms (A&E Partners)**\nWe collaborate with engineering and architecture firms that design fiber networks for ISPs. Our A&E partners are familiar with Clearfield product specifications and can integrate them into construction drawings and permit packages.\n\n**EPC Contractors**\nExperienced construction crews who install Clearfield equipment in the field.\n\n**Technology Partners**\nSoftware and platform vendors that integrate with Clearfield's solutions.\n\n### Become a Partner\n\nInterested in joining the Clearfield partner ecosystem? We offer:\n- Technical training and product certification\n- Co-marketing opportunities\n- Deal registration and sales support\n- Priority access to new products\n\n[Apply to Become a Partner](#) | [Find a Partner](#)\n\n*Clearfield is committed to building a strong ecosystem that supports our ISP customers from design through deployment.*", "url": "https://www.seeclearfield.com/partners/"}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Clearfield Inc annual report 2025 engineering services revenue headcount design team growth"}}
+</tool_call>
+<tool_response>
+{"searches": [{"query": "Clearfield Inc annual report 2025 engineering services revenue headcount design team growth", "results": [{"url": "https://ir.seeclearfield.com/news-releases/news-release-details/clearfield-reports-fiscal-fourth-quarter-and-full-year-fiscal", "title": "Clearfield Reports Fiscal Fourth Quarter and Full Year Fiscal 2025 Results", "description": "Full year fiscal 2025: Net revenue $195.3M, up 40%+ year over year. Net income $16.1M.", "description_full": "Full year fiscal 2025 net revenue of $195.3 million. Net income of $16.1 million. Management commentary highlighted growing demand from BEAD pipeline and tier 2/3 ISPs.", "date": "November 06, 2025"}, {"url": "https://ir.seeclearfield.com/sec-filings", "title": "SEC Filings | Clearfield, Inc. Investor Relations", "description": "Access Clearfield, Inc. SEC filings including annual reports, quarterly earnings, and proxy statements.", "description_full": "Access Clearfield, Inc. SEC filings including annual reports, quarterly earnings, and proxy statements.", "date": "N/A"}]}]}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Clearfield CLFD 10-K 2025 engineering services segment employees fiber design"}}
+</tool_call>
+</tool_call>
+<tool_response>
+{"searches": [{"query": "Clearfield CLFD 10-K 2025 engineering services segment employees fiber design", "results": [{"url": "https://ir.seeclearfield.com/sec-filings/annual-reports", "title": "Annual Reports | Clearfield Investor Relations", "description": "View Clearfield's annual reports and 10-K filings.", "description_full": "View Clearfield's annual reports and 10-K filings.", "date": "N/A"}, {"url": "https://www.macrotrends.net/stocks/charts/CLFD/clearfield/employees", "title": "Clearfield Inc Employee Count 2010-2025 | CLFD | MacroTrends", "description": "Clearfield Inc employee count from 2010 to 2025. Employees represents the total number of employees on the payroll for the company.", "description_full": "Clearfield Inc total employees from 2010 to 2025. Employee count has grown significantly as the company expanded its manufacturing and services operations.", "date": "N/A"}]}]}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Clearfield Inc \"Calix\" OR \"IQGeo\" OR \"Katapult\" OR \"3GIS\" OR \"Render Networks\" technology partner integration"}}
+</tool_call>
+<tool_response>
+{"searches": [{"query": "Clearfield Inc \"Calix\" OR \"IQGeo\" OR \"Katapult\" OR \"3GIS\" OR \"Render Networks\" technology partner integration", "results": [{"url": "https://www.seeclearfield.com/partners/", "title": "Partner Program | Clearfield, Inc.", "description": "Clearfield works with technology partners including Calix for integrated network management and design workflows.", "description_full": "Clearfield works with distributors, A&E firms, EPC contractors, and technology partners including Calix for integrated network management.", "date": "N/A"}, {"url": "https://www.calix.com/newsroom/press-releases/clearfield-calix-partnership.html", "title": "Calix and Clearfield Announce Integration Partnership", "description": "Calix and Clearfield announce a technology partnership to streamline fiber network design and management for ISPs.", "description_full": "Calix and Clearfield announce integration to allow ISPs to use Calix's cloud management platform alongside Clearfield's FieldSmart equipment for simplified network management and inventory tracking.", "date": "N/A"}]}]}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Clearfield Inc Fiber Connect 2026 tradeshow announcement booth partner"}}
+</tool_call>
+<tool_response>
+{"searches": [{"query": "Clearfield

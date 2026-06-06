@@ -37,6 +37,80 @@ export interface SignalToPattern {
   reason: string;
 }
 
+export type PersonaBucket = 'revenue_leader' | 'ops_builder' | 'technical_designer';
+
+const PERSONA_TITLE_PATTERNS: Array<{ bucket: PersonaBucket; patterns: RegExp[] }> = [
+  {
+    bucket: 'revenue_leader',
+    patterns: [
+      /\b(ceo|president|managing\s+partner|cfo|controller|chief\s+financial|chief\s+executive|chief\s+revenue|cro|vp\s+finance|evp\s+operations|evp|svp|chief\s+operating|coo)\b/i,
+      /\b(general\s+manager|owner|founder|principal)\b/i,
+    ],
+  },
+  {
+    bucket: 'ops_builder',
+    patterns: [
+      /\b(vp|vice\s+president|director|manager|head|lead|superintendent)\b.*\b(construction|deployment|outside\s+plant|osp|network\s+deployment|field\s+operations|project\s+management|operations|build|program)\b/i,
+      /\b(construction|deployment|outside\s+plant|osp|network\s+deployment|field\s+operations|project\s+management|operations|build|program)\b.*\b(vp|vice\s+president|director|manager|head|lead|superintendent)\b/i,
+      /\bproject\s+manager\b/i,
+      /\boperations\s+manager\b/i,
+    ],
+  },
+  {
+    bucket: 'technical_designer',
+    patterns: [
+      /\b(vp|vice\s+president|director|manager|head|lead)\b.*\b(engineering|network|it|gis|design|permitting|technical)\b/i,
+      /\b(engineering|network|it|gis|design|permitting|technical)\b.*\b(vp|vice\s+president|director|manager|head|lead)\b/i,
+      /\b(gis\s+(manager|analyst|specialist)|network\s+engineer|design\s+engineer|osp\s+engineer)\b/i,
+      /\b(cto|chief\s+technology|chief\s+technical)\b/i,
+    ],
+  },
+];
+
+export function detectPersona(title: string): PersonaBucket {
+  for (const { bucket, patterns } of PERSONA_TITLE_PATTERNS) {
+    for (const re of patterns) {
+      if (re.test(title)) return bucket;
+    }
+  }
+  return 'ops_builder';
+}
+
+interface PersonaFraming {
+  bucket: PersonaBucket;
+  pitchVariant: string;
+  pitchVerbatim: string;
+  framingInstructions: string;
+  valueLens: string;
+}
+
+function getPersonaFraming(title: string): PersonaFraming {
+  const bucket = detectPersona(title);
+
+  const framings: Record<PersonaBucket, Omit<PersonaFraming, 'bucket'>> = {
+    revenue_leader: {
+      pitchVariant: 'C',
+      pitchVerbatim: 'Fiber activations measured in days. Inorsa automates drawing generation from your GIS and LLD inputs so your team scales output at constant headcount.',
+      framingInstructions: 'This is an executive. Frame EVERYTHING around capital efficiency, time-to-revenue, and competitive market capture. They care about how fast fiber lights up and what that means for subscriber activation and BEAD ROI. Do NOT talk about drawings, GIS layers, or technical process. Talk about SPEED TO REVENUE and SCALE WITHOUT HEADCOUNT.',
+      valueLens: 'revenue timing, BEAD investment yield, subscriber activation speed, competitive market capture, capital efficiency',
+    },
+    ops_builder: {
+      pitchVariant: 'A',
+      pitchVerbatim: 'We turn design data into permit-ready construction drawings. Quality control is built in, so builds keep moving.',
+      framingInstructions: 'This is an operations/construction leader. Frame around drawing throughput, design capacity, permitting speed, and crew utilization. They feel the pain of delayed drawings holding up construction crews. Talk about BUILDS MOVING and DOCUMENTATION NOT BEING THE BOTTLENECK.',
+      valueLens: 'drawing throughput, design capacity, permitting speed, crew utilization, build schedule adherence',
+    },
+    technical_designer: {
+      pitchVariant: 'B',
+      pitchVerbatim: 'Inorsa structures your GIS and LLD inputs into asset-level data, then generates construction and permit drawings with full traceability back to source. No manual extraction, no AI guesswork.',
+      framingInstructions: 'This is an engineering/technical leader. Frame around GIS-to-CAD automation, data traceability, design tool integration, and workforce scaling. They care about accuracy, source traceability, and not losing data in translation. Talk about STRUCTURED DATA and TRACEABILITY.',
+      valueLens: 'GIS-to-CAD automation, data traceability, design tool integration, workforce scaling without quality loss',
+    },
+  };
+
+  return { bucket, ...framings[bucket] };
+}
+
 export const INFLUENCE_TOOLKIT: InfluenceToolkit = {
   patterns: {
     challenger_insight: {
@@ -119,14 +193,51 @@ export const INFLUENCE_TOOLKIT: InfluenceToolkit = {
   ],
 };
 
+const ICP_CTA_OPTIONS: Record<string, string[]> = {
+  fiber_operator: [
+    'Are your construction drawings keeping pace with your build schedule, or is documentation the bottleneck?',
+    'How many design iterations does a typical permit package go through before it clears?',
+    'When your GIS data changes mid-build, how long does it take to get updated construction drawings back to the field?',
+    'What percentage of your engineering time goes to drawing production versus actual design work?',
+  ],
+  ae_firm: [
+    'How many hours does someone on your team spend cross-checking before engineering review can start?',
+    'When a client sends updated GIS data mid-project, how long does the redraw cycle take?',
+    'What does your drawing throughput look like per engineer per week, and where does it stall?',
+    'How much of your project margin gets consumed by CD revision cycles?',
+  ],
+};
+
+const GENERIC_CTA = 'Are your construction drawings keeping pace with your build schedule, or is documentation the bottleneck?';
+
+// Note: .find() returns first match only. Multi-competitor handling deferred.
+const COMPETITOR_CATEGORIES: Record<string, { category: string; gap: string }> = {
+  'iqgeo': { category: 'GIS platform', gap: 'manages network data but doesn\'t generate construction drawings from it' },
+  '3gis': { category: 'GIS platform', gap: 'strong on fiber network modeling, gap on automated drawing output' },
+  'sitetracker': { category: 'project management', gap: 'tracks projects but doesn\'t automate the drawing production that feeds them' },
+  'katapult': { category: 'pole data collection', gap: 'captures field data but doesn\'t convert it to permit-ready construction drawings' },
+  'vetro': { category: 'network planning', gap: 'plans routes but doesn\'t generate the construction documents for those routes' },
+  'biarri': { category: 'network planning', gap: 'optimizes network design but doesn\'t produce construction-ready deliverables' },
+  'hexagon': { category: 'engineering software', gap: 'broad engineering suite, but fiber drawing automation isn\'t the core workflow' },
+  'render networks': { category: 'GIS platform', gap: 'network design platform, gap on automated construction drawing output' },
+  'comsof': { category: 'network planning', gap: 'fiber planning optimization, doesn\'t extend to construction drawing generation' },
+};
+
 export function buildPatternSelectorPrompt(
   dossierSummary: string,
   aeNotes: string,
   contactTitle: string,
   touchNumber: 1 | 2 | 3,
-  previousPatterns: InfluencePattern[] = []
+  previousPatterns: InfluencePattern[] = [],
+  icpType?: string,
 ): string {
-  const patternsDesc = Object.entries(INFLUENCE_TOOLKIT.patterns)
+  const hasAeNotes = aeNotes && aeNotes.trim().length > 0;
+
+  const filteredPatterns = hasAeNotes
+    ? Object.entries(INFLUENCE_TOOLKIT.patterns)
+    : Object.entries(INFLUENCE_TOOLKIT.patterns).filter(([key]) => key !== 'commitment_consistency');
+
+  const patternsDesc = filteredPatterns
     .map(([key, p]) => `**${key}**: ${p.description} Use when: ${p.whenToUse}`)
     .join('\n\n');
 
@@ -135,7 +246,7 @@ export function buildPatternSelectorPrompt(
     .join('\n');
 
   const touchGuidance: Record<number, string> = {
-    1: 'T1 (first touch, ASAP): Interest-based CTA. No links. Booth callback if notes exist. Goal: get a reply, not a meeting.',
+    1: `T1 (first touch): Interest-based CTA. No links.${hasAeNotes ? ' Booth callback if notes exist.' : ''} Goal: get a reply, not a meeting.`,
     2: 'T2 (T1 + 5 days): Different angle than T1. Ask a specific diagnostic question about their operations. Should feel like a casual follow-up, not a formal new email. Goal: advance to meeting discussion.',
     3: 'T3 (T2 + 5 days): Shortest. Direct binary question about a specific decision they face. Respectful final touch. Goal: get a yes or a "not now" — both are useful.',
   };
@@ -152,10 +263,29 @@ ${signalsDesc}
 ${dossierSummary}
 
 ## AE booth notes
-${aeNotes || 'No AE booth notes available.'}
+${hasAeNotes ? aeNotes : 'No AE booth notes available.'}
 
 ## Contact title
 ${contactTitle}
+
+## Prospect persona: ${detectPersona(contactTitle)}
+${detectPersona(contactTitle) === 'revenue_leader' ? 'Executive / revenue leader. Responds to insights about capital efficiency, time-to-revenue, market capture. Challenger insight and loss aversion patterns tend to work well.' : detectPersona(contactTitle) === 'ops_builder' ? 'Operations / construction leader. Responds to operational bottleneck framing, crew utilization, build schedule pressure. Loss aversion and commitment consistency patterns tend to work well.' : 'Technical / engineering leader. Responds to data accuracy, tool integration, traceability. Reciprocity and curiosity gap patterns tend to work well with technical buyers.'}
+${!hasAeNotes ? `
+## COLD PROSPECT
+This prospect did NOT visit the booth. There are NO AE notes and NO prior interaction. Do NOT reference a booth visit, a conversation, or anything implying prior contact. Lead with research-based insight only.` : ''}
+${icpType === 'fiber_operator' || icpType === 'ae_firm' ? `
+## ICP segment: ${icpType}
+${icpType === 'fiber_operator' ? `This is a fiber operator (ISP, telco, electric coop, municipal broadband). Their pain points center on:
+- GIS-to-CAD conversion bottleneck (manual redrawing from GIS exports)
+- Build schedule pressure (BEAD construction deadlines, subscriber activation)
+- Drawing throughput limiting crew deployment
+- Permit cycle time eating into construction windows
+Frame pattern selection around these operational bottlenecks.` : `This is an A&E (Architecture & Engineering) firm doing fiber design work. Their pain points center on:
+- Project throughput (drawings per engineer per week)
+- CD revision cycles consuming project margin
+- Cross-checking time before engineering review
+- Scaling headcount to match project pipeline without proportional hiring
+Frame pattern selection around margin-per-project and throughput bottlenecks.`}` : ''}
 
 ## Touch
 ${touchGuidance[touchNumber]}
@@ -187,93 +317,177 @@ export function buildComposerPrompt(
   previousTouchSubject?: string,
   aeName: string = 'Tim',
   aeEmail: string = 'tim@inorsa.com',
-  micrositeSlug?: string
+  micrositeSlug?: string,
+  keyFacts?: string,
+  icpType?: string,
 ): string {
   const pattern = INFLUENCE_TOOLKIT.patterns[patternSelection.pattern];
+  const persona = getPersonaFraming(prospect.title);
+  const hasAeNotes = aeNotes && aeNotes.trim().length > 0;
 
-  return `You are writing a post-show follow-up email for Fiber Connect 2026 (May 18-19, Gaylord Palms Resort, Kissimmee FL, Booth 1728). The sender is ${aeName}, an AE at Inorsa.
+  const framingLine = hasAeNotes
+    ? `You are writing a post-show follow-up email for Fiber Connect 2026 (May 18-19, Gaylord Palms Resort, Kissimmee FL, Booth 1728). The sender is ${aeName}, an AE at Inorsa.`
+    : `You are writing a cold outreach email to a fiber industry professional. No prior interaction. The sender is ${aeName}, an AE at Inorsa.`;
 
-## What Inorsa does (describe by OUTCOME, vary the phrasing each email)
-Core capability: automated GIS-to-CAD construction drawing generation. The value is SPEED and CAPACITY.
-NEVER claim Inorsa "validates inputs" or "catches errors" or "built-in QC" — errors in GIS data = errors in output. The value is that faster production gives the team more time for THEIR OWN QC.
-When mentioning Inorsa, describe the RESULT for THIS prospect. Examples of voice:
-- "Inorsa automates the GIS-to-CAD step, so your team stops hand-drawing what's already designed."
-- "your designers spend time designing, not reformatting."
-- "drawing production in minutes means your team has time to QC properly before submission."
-Do NOT copy any example sentence verbatim. Adapt to the prospect's situation.
-Mention Inorsa ONCE in the email. Describe it by outcome, not product features.
+  const ctaOptions = (icpType === 'fiber_operator' || icpType === 'ae_firm')
+    ? ICP_CTA_OPTIONS[icpType]
+    : [GENERIC_CTA];
+  const ctaList = ctaOptions.map((q, i) => `  ${i + 1}. "${q}"`).join('\n');
 
-## Influence pattern to use: ${pattern.name}
+  const competitiveBridge = (() => {
+    if (!keyFacts) return '';
+    const kfLower = keyFacts.toLowerCase();
+    const matchedCompetitor = Object.entries(COMPETITOR_CATEGORIES).find(
+      ([name]) => kfLower.includes(name)
+    );
+    if (!matchedCompetitor) return '';
+    const [name, info] = matchedCompetitor;
+    return `\n   COMPETITIVE CONTEXT: Key facts mention ${name} (${info.category}). If you reference the incumbent, acknowledge what it does well, then name the gap: "${info.gap}." Frame as complementary ("works alongside") not replacement ("replace your"). Tone: "acknowledge, not trash."`;
+  })();
+
+  const bridgeExamples = icpType === 'ae_firm'
+    ? `   GOOD bridges:
+   - "At that project volume, every CD revision cycle that takes a week instead of a day is margin you don't recover."
+   - "When the source GIS changes mid-project, the redraw hours hit your fixed-fee bottom line."
+
+   BAD bridges (do NOT do this):
+   - "Inorsa can help with that." (names the fix too early)
+   - "Inorsa handles that cross-checking automatically." (names fix AND implies validation)
+   - "Many companies face similar challenges." (generic, no friction named)`
+    : icpType === 'fiber_operator'
+    ? `   GOOD bridges:
+   - "At that build pace, a week of delayed construction drawings means crews sitting idle."
+   - "When your GIS data updates and the drawings don't follow, the field runs on stale specs."
+
+   BAD bridges (do NOT do this):
+   - "Inorsa can help with that." (names the fix too early)
+   - "Many companies face similar challenges." (generic, no friction named)
+   - "That's where automation comes in." (solution before problem is felt)`
+    : `   GOOD bridges:
+   - "At that build pace, a week of delayed construction drawings means crews sitting idle."
+   - "When your GIS data updates and the drawings don't follow, the field runs on stale specs."
+
+   BAD bridges (do NOT do this):
+   - "Inorsa can help with that." (names the fix too early)
+   - "Many companies face similar challenges." (generic, no friction named)`;
+
+  return `${framingLine}
+
+## THE SINGLE MOST IMPORTANT RULE
+Your email MUST open (first 1-2 sentences after salutation) with a SPECIFIC, VERIFIABLE fact. The company name MUST appear in the first sentence. Use dollar amounts, project names, geography, funding programs, hiring signals, milestones.
+
+**THREE tiers of opener quality (use the best tier available from the key facts/dossier):**
+
+**TIER 1 (score 8-10) — Company-specific verified fact:**
+- "Altamaha EMC's USDA ReConnect Phase I award totals $21M, with the Altamaha Fiber subsidiary deploying FTTP across six Georgia counties."
+- "DCN's $43.8 million statewide middle mile backbone upgrade reaches 251-plus North Dakota communities."
+- "Talman's hiring push for a dedicated permit coordinator caught my attention."
+
+**TIER 2 (score 6-7) — State-level fact + honest company framing:**
+Use ONLY when key facts have NO company-specific data. Frame the state data as context FOR the company, not as the company's own achievement.
+- DO: "Washington's $1.24B BEAD deployment is entering construction contracts, and firms like Booker Engineering handling OSP design in the state face a drawing throughput wall."
+- DO: "Georgia's BEAD program went operational April 30, which means A&E firms like IMMCO serving Georgia ISPs are heading into a design surge."
+- DON'T: "Booker Engineering's position in Washington's BEAD allocation" (asserts unverified direct BEAD relationship)
+- DON'T: "IMMCO's BEAD work" (fabricates a relationship research doesn't support)
+
+**TIER 3 (score 2-4) — NEVER DO THIS:**
+- Generic industry framing with no company name: "firms absorbing the BEAD surge this cycle"
+- Fabricated competitive dynamics: "firms two and three times your size are staffing up to outbid you"
+- State data asserted as company achievement: "[Company]'s position in [State]'s BEAD"
+
+## Key facts about this company (USE THESE — prioritize company-specific facts over state-level data)
+${keyFacts || '[No structured intel available — extract from dossier summary below]'}
+
+## Email structure (FOLLOW THIS ORDER)
+1. Salutation: "${prospect.firstName},"
+2. OPENER (1-2 sentences): Name ${prospect.company} in the first sentence. Use the best tier from above: Tier 1 if key facts have company-specific data, Tier 2 if only state-level data. For Tier 2, frame as "State's BEAD creates demand for firms like ${prospect.company}" — NOT "${prospect.company}'s BEAD work."
+3. BRIDGE (1 sentence): Name the specific friction the opener fact implies for this prospect's workflow. Use the failure-friction micro-template:
+   - Name what's failing or slowing down (the friction)
+   - Make it specific to this persona's daily work
+   - Do NOT name Inorsa or any fix yet — let the CTA invite the conversation
+
+${bridgeExamples}${competitiveBridge}
+
+4. CTA QUESTION (1 sentence): ${touchNumber === 1 ? `Choose ONE diagnostic question from this list (matched to this prospect's segment):
+${ctaList}
+
+HYPOTHESIS FORMAT (use when key facts have 3+ company-specific lines): Instead of a list question, frame as: "Based on [specific fact from key facts], I suspect [hypothesis about their situation]. Is that directionally right?" The [specific fact] MUST be verbatim from key facts, not paraphrased or extended. The hypothesis must be about the company specifically, not a restatement of state-level trends. If the only facts available are state-level, use the diagnostic question format instead. The hypothesis must be something the prospect would find surprising or insightful, not a restatement of their job description.` : touchNumber === 2 ? `Different diagnostic question than T1. Select a DIFFERENT angle from the ICP CTA list:
+${ctaList}
+Or derive a diagnostic question from the dossier. Must reference a different angle from T1.` : 'Short binary close about a specific decision they face.'}
+5. PITCH VARIANT (1 sentence, verbatim): "${persona.pitchVerbatim}"
+6. No signature in body (added separately)
+
+## What Inorsa does (LOCKED pitch variant ${persona.pitchVariant} — use verbatim, char-for-char)
+"${persona.pitchVerbatim}"
+NEVER paraphrase. NEVER mix with other variants. NEVER claim Inorsa "validates inputs" or "catches errors."
+
+## Prospect persona: ${persona.bucket}
+${persona.framingInstructions}
+Value lens: ${persona.valueLens}
+${icpType === 'fiber_operator' || icpType === 'ae_firm' ? `
+## ICP segment: ${icpType}
+${icpType === 'fiber_operator' ? `This prospect is a fiber operator. Frame the bridge around:
+- GIS-to-CAD conversion pain (manual redrawing from GIS exports into construction drawings)
+- Build schedule adherence (drawings as the bottleneck, not engineering talent)
+- BEAD/grant construction deadlines creating time pressure
+Do NOT reference "validation" or "cross-checking" as a primary pain — those are A&E firm pains.` : `This prospect is an A&E firm. Frame the bridge around:
+- Drawing throughput per engineer (how many permit-ready packages per week)
+- CD revision cycles consuming margin on fixed-fee projects
+- Scaling project capacity without proportional headcount growth
+- Cross-referencing time between GIS source data and deliverable drawings
+Do NOT frame around "build schedule" or "crew utilization" as primary pains — those are operator pains.
+CRITICAL: Do NOT claim Inorsa "validates inputs" or "catches errors." The prospect's cross-checking pain is real, but the email must frame Inorsa's value as automated drawing generation, not as a validation tool.`}` : ''}
+
+## Influence pattern: ${pattern.name}
 ${pattern.description}
-Structure: ${pattern.emailStructure}
-Example opener (adapt, don't copy): ${pattern.exampleOpener}
-
-## Emotional frame: ${patternSelection.emotionalFrame}
-## Challenger insight to weave in: ${patternSelection.challengerInsight}
 
 ## Prospect
 - Name: ${prospect.firstName} ${prospect.lastName}
 - Title: ${prospect.title}
 - Company: ${prospect.company}
-${aeNotes ? `- AE booth notes: "${aeNotes}"` : '- No AE booth notes.'}
+${hasAeNotes ? `- AE booth notes: "${aeNotes}"` : '- No AE booth notes.'}
 
-## Dossier summary
+## Dossier summary (full research — mine for facts if key facts above are thin)
 ${dossierSummary}
 
 ## Touch ${touchNumber} specifics
-${touchNumber === 1 ? `First touch. Interest-based CTA only ("Is this something you're running into?" not "Can we meet?"). No links. Reference booth visit${aeNotes ? ' and conversation' : ' generally'}.` : ''}
-${touchNumber === 2 ? `Second touch. Different angle than T1${previousTouchSubject ? ` (T1 subject was: "${previousTouchSubject}")` : ''}. Should feel like a casual follow-up, not a formal new email. Soft time suggestion CTA. ALSO include a secondary CTA for Office Hours: "Or see it live — Inorsa runs weekly Office Hours where the team demos fiber drawing generation and takes questions. 30 minutes, no commitment." Link: https://events.teams.microsoft.com/event/d351d0fb-4db5-4b4e-b627-ace41b7a75c2@1ffe754f-042e-41a2-857b-2ff7c6da0c27` : ''}
-${touchNumber === 3 ? 'Final touch. 3-4 sentences MAX. Binary close — one specific diagnostic question easy to answer yes or no. NOT "Worth a 20-minute conversation?" (generic gate, easy to ignore). Instead: "Is [specific thing from research] something you are solving internally, or still open?" Professional. If the prospect has not engaged with T1 or T2, reference Office Hours as a fallback: "If a 1:1 isn\'t the right fit, our weekly Office Hours might be" with link https://events.teams.microsoft.com/event/d351d0fb-4db5-4b4e-b627-ace41b7a75c2@1ffe754f-042e-41a2-857b-2ff7c6da0c27' : ''}
+${touchNumber === 1 ? `First touch. Interest-based CTA. No links in body.${hasAeNotes ? ' Reference booth conversation.' : ''}` : ''}
+${touchNumber === 2 ? `Second touch. Different angle than T1${previousTouchSubject ? ` (T1 subject: "${previousTouchSubject}")` : ''}. Casual follow-up tone. Include Office Hours secondary CTA: "Or see it live, Inorsa runs weekly Office Hours where the team demos fiber drawing generation and takes questions. 30 minutes, no commitment." Link: https://events.teams.microsoft.com/event/d351d0fb-4db5-4b4e-b627-ace41b7a75c2@1ffe754f-042e-41a2-857b-2ff7c6da0c27` : ''}
+${touchNumber === 3 ? 'Final touch. 3-4 sentences MAX. Binary close. Reference Office Hours as fallback if no engagement on T1/T2.' : ''}
 
-## Anti-AI-tell checklist (ENFORCE ALL)
-- NO "I'm curious..." or "Curious whether..." (Claude fingerprint)
-- NO "Happy to..." or "I'd love to..." (AI hedge)
-- NO "I hope this finds you well" or any pleasantry opener
-- NO perfect parallel structure across paragraphs
+## ANTI-HALLUCINATION (CRITICAL)
+- NEVER invent facts not present in the key facts or dossier above. No fabricated competitors, market dynamics, team sizes, or project details.
+- NEVER use "confirmed" or "confirms" for inferred capabilities. If research found a company uses AutoCAD or GIS, say "your GIS-to-CAD workflow" — not "[Company]'s confirmed workflow." Same for LinkedIn claims: don't cite "LinkedIn confirms X" unless you're quoting exact language from the dossier that explicitly says LinkedIn was the source.
+- PREFER verified facts (BEAD allocations, award amounts, project geography from government sources) over inferred facts (LinkedIn summaries, capability guesses). Verified > inferred, always.
+- If research is thin (few key facts, short dossier), use whatever IS verified — even state-level BEAD data anchored to the company name. A factual state-level opener scoring research_depth 6 is ALWAYS better than a fabricated company-specific opener scoring 2.
+- If you cannot find ANY verifiable fact, say so in your output rather than making something up.
+
+## Anti-AI-tell rules (ENFORCE ALL)
+- NO "I'm curious", "Happy to", "I'd love to", "I hope this finds you well"
+- NO em-dashes anywhere
 - NO transition words (Furthermore, Additionally, Moreover)
-- NO more than 2 sentences in any paragraph
-- NEVER reference "India", "offshore", "outsourced", or any workforce geography in the email body OR subject line. This is a hard rule — even if the research found offshore teams, do NOT mention it in prospect-facing copy.
-- NEVER use: "worth a look", "or not the right time", "just say the word", "say the word", "on my end", "just let me know", "Different angle", "eat construction time", "bleeding", "binding constraint"
-- VARY sentence length: mix short punchy (3-5 words) with medium (10-15)
-- USE at least one sentence fragment or informal construction
-- START one sentence with "And" or "But" (humans do this)
-- USE a contraction that most AI avoids: "wouldn't" "couldn't" "shouldn't" over "would not"
+- NO more than 2 sentences per paragraph
+- NEVER reference "India", "offshore", "outsourced" or any workforce geography
+- NEVER use: "worth a look", "or not the right time", "just say the word", "on my end", "just let me know", "Different angle", "eat construction time", "bleeding", "binding constraint"
+- VARY sentence length. USE contractions. START one sentence with "And" or "But".
 
-## P.S. line (REQUIRED for T1 and T2, optional for T3)
-Strategy: ${patternSelection.psStrategy}
-Template reference: ${pattern.psTemplate}
-${micrositeSlug ? `Microsite P.S. template: P.S. Put together an overview of how this applies to ${prospect.company}: https://fiber.inorsa.com/brief/${micrositeSlug}` : ''}
-Rules: 1-2 sentences max. Pattern break from body tone. Most-read part of email.
-
-## Preview text awareness
-The first ~90 characters of your email body will show in the inbox preview pane BEFORE the recipient opens. Write the opening line knowing it serves double duty as the preview text. It must compel the open -- don't waste it on "Hi [Name]".
+## P.S. line (REQUIRED for T1 and T2)
+${micrositeSlug ? `P.S. Put together a brief on ${prospect.company}'s [relevant topic]. https://fiber.inorsa.com/brief/${micrositeSlug}` : ''}
+Rules: 1-2 sentences. Pattern break from body tone.
 
 ## Hard constraints
-- HARD LIMIT: 80 words maximum (body only, not counting subject/signature/PS). Count every word. Emails over 80 words will be rejected and rewritten. Under 70 words is ideal. This is the single most important constraint — violating it invalidates the entire email. After drafting, recount. If over 80, cut ruthlessly. Short emails get read. Long emails get archived.
-- One specific DIAGNOSTIC question per email — a question about THEIR situation that forces them to think, not a generic meeting ask. NEVER use "Worth a 20-minute conversation?" or "Worth X minutes?" — these are generic gates easy to ignore. Instead ask something specific: "How are you handling [specific thing from research]?" or "What's [specific metric] costing you per [time period]?" The question should demonstrate you understand their business.
-- Subject line: under 8 words, specific to their situation. First letter MUST be capitalized. Proper nouns capitalized. No all-lowercase subjects.
-- Salutation: strictly ${prospect.firstName}, (comma only, NO greeting word)
-- First paragraph starts on the NEXT LINE after salutation — NO blank line between. Format: "${prospect.firstName},\\nfirst sentence starts here."
-- The salutation IS the start of the sentence. Do NOT capitalize the first word unless it's a proper noun (person, place, company). Examples: "${prospect.firstName}, thanks for..." / "${prospect.firstName}, most fiber builders..." / "${prospect.firstName}, BEAD deadlines..."
-- No em-dashes anywhere
-- Sign off as: ${aeName} | Inorsa | ${aeEmail} (ONCE only, never duplicate)
-- CTA type for this touch: ${patternSelection.ctaType}
+- WORD COUNT: 78-99 words target (body only, excluding subject/PS/signature). Under 78 is too thin. Over 99 triggers recomposition. Hard ceiling 110. Company-specific data points are worth the words, so do not cut them to hit a lower target.
+- Subject line: under 8 words, specific to their situation. First letter capitalized. No all-lowercase.
+- Salutation: strictly "${prospect.firstName}," (comma only, NO greeting word)
+- The salutation IS the sentence start. Do NOT capitalize the first word after the comma unless it's a proper noun (state names like Mississippi/Washington/Georgia, country names, company names, person names, and acronyms like BEAD/NTIA are ALL proper nouns — keep them capitalized).
+- Sign off as: ${aeName} | Inorsa | ${aeEmail} (ONCE only)
 
 ## Output format (JSON only)
 {
   "subject": "",
-  "previewText": "first ~90 chars that will show in inbox",
   "body": "",
   "ps": "",
   "wordCount": 0,
-  "influencePattern": "${patternSelection.pattern}",
-  "antiTellChecks": {
-    "noCurious": true,
-    "noHappyTo": true,
-    "noPleasantryOpener": true,
-    "variedSentenceLength": true,
-    "hasFragment": true,
-    "hasInformalConnector": true
-  }
+  "influencePattern": "${patternSelection.pattern}"
 }`;
 }

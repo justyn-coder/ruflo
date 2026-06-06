@@ -1,0 +1,3332 @@
+1
+00:00:13,599 --> 00:00:16,599
+Heat.
+
+2
+00:00:18,320 --> 00:00:21,320
+Hey, Heat.
+
+3
+00:00:41,520 --> 00:00:45,520
+Well, good morning everyone and welcome
+
+4
+00:00:43,040 --> 00:00:47,120
+to the Fiber Broadband Association's
+
+5
+00:00:45,520 --> 00:00:50,320
+Five for Breakfast. We're now in our
+
+6
+00:00:47,120 --> 00:00:52,960
+eighth episode of 2026. The gold sponsor
+
+7
+00:00:50,320 --> 00:00:56,960
+of Five for Breakfast is Conducts. So
+
+8
+00:00:52,960 --> 00:00:59,039
+after nearly five years, five, we are
+
+9
+00:00:56,960 --> 00:01:01,760
+starting to see the actual checks being
+
+10
+00:00:59,039 --> 00:01:04,080
+cut to service providers in Louisiana
+
+11
+00:01:01,760 --> 00:01:06,400
+with the NTI bead program. So
+
+12
+00:01:04,080 --> 00:01:08,080
+congratulations to Venith and Thomas and
+
+13
+00:01:06,400 --> 00:01:10,080
+the whole crew at the Louisiana
+
+14
+00:01:08,080 --> 00:01:12,240
+Broadband Office and all the state
+
+15
+00:01:10,080 --> 00:01:14,080
+broadband offices for all your efforts
+
+16
+00:01:12,240 --> 00:01:16,799
+to finally get the beat funding to the
+
+17
+00:01:14,080 --> 00:01:18,320
+finish line. It's exciting times. And
+
+18
+00:01:16,799 --> 00:01:20,880
+yesterday, the Fiber Broadband
+
+19
+00:01:18,320 --> 00:01:23,920
+Association hosted its annual public
+
+20
+00:01:20,880 --> 00:01:27,200
+policy summit and flyin in DC at the uh
+
+21
+00:01:23,920 --> 00:01:29,680
+AT&T Center right on Capitol Hill. And
+
+22
+00:01:27,200 --> 00:01:31,759
+today we're holding our DC flyin on the
+
+23
+00:01:29,680 --> 00:01:34,000
+hill. So our policy summit, we heard
+
+24
+00:01:31,759 --> 00:01:35,920
+from chairman Richard Hudson from North
+
+25
+00:01:34,000 --> 00:01:39,600
+Carolina. He's always a great advocate
+
+26
+00:01:35,920 --> 00:01:41,920
+for broadband. Uh the beat champion uh
+
+27
+00:01:39,600 --> 00:01:43,920
+Senator Shelley Bore Capo from West
+
+28
+00:01:41,920 --> 00:01:48,640
+Virginia. You know, West Virginia is
+
+29
+00:01:43,920 --> 00:01:51,119
+just amazing in their fiber um locations
+
+30
+00:01:48,640 --> 00:01:54,240
+with their bead program. Also, we heard
+
+31
+00:01:51,119 --> 00:01:57,520
+from FCC Commissioner Olivia Trustee,
+
+32
+00:01:54,240 --> 00:02:00,000
+broadband leader Cong Congresswoman uh
+
+33
+00:01:57,520 --> 00:02:02,640
+Jennifer Mlullen from Virginia, NTI
+
+34
+00:02:00,000 --> 00:02:04,719
+Chief of Staff Brooke Donalan, uh
+
+35
+00:02:02,640 --> 00:02:08,560
+Speaker Mike Johnson from Louisiana,
+
+36
+00:02:04,719 --> 00:02:10,800
+policy advisor Cyrus Artis, and um we
+
+37
+00:02:08,560 --> 00:02:13,200
+also had a great interesting talk from
+
+38
+00:02:10,800 --> 00:02:16,560
+chief uh Washington correspondent from
+
+39
+00:02:13,200 --> 00:02:19,200
+New York Times, Carl Hol. So, uh, really
+
+40
+00:02:16,560 --> 00:02:20,560
+great policy summit as always and
+
+41
+00:02:19,200 --> 00:02:22,959
+hopefully you guys can join us next
+
+42
+00:02:20,560 --> 00:02:25,760
+year. And last week on fire for
+
+43
+00:02:22,959 --> 00:02:27,680
+breakfast, our guest was Michael Thomas
+
+44
+00:02:25,760 --> 00:02:29,920
+from Network Connects who discussed the
+
+45
+00:02:27,680 --> 00:02:32,239
+hidden infrastructure behind AI and
+
+46
+00:02:29,920 --> 00:02:34,640
+hyperscaling our networks. Michael and
+
+47
+00:02:32,239 --> 00:02:36,560
+his team are currently all hunkered down
+
+48
+00:02:34,640 --> 00:02:38,800
+in Abalene, Texas where they are
+
+49
+00:02:36,560 --> 00:02:40,720
+deploying inline amplifier shelters.
+
+50
+00:02:38,800 --> 00:02:43,680
+That's so you get those about every 50
+
+51
+00:02:40,720 --> 00:02:46,560
+miles in these big fiber deployments uh
+
+52
+00:02:43,680 --> 00:02:49,360
+for the mass deployment of fiber for the
+
+53
+00:02:46,560 --> 00:02:52,160
+half a trillion dollar Stargate AI data
+
+54
+00:02:49,360 --> 00:02:55,040
+center project. So that's a a big
+
+55
+00:02:52,160 --> 00:02:56,640
+hyperscaler project down in well I think
+
+56
+00:02:55,040 --> 00:02:58,080
+it's the largest in the world. So
+
+57
+00:02:56,640 --> 00:02:59,840
+exciting things going on there. So if
+
+58
+00:02:58,080 --> 00:03:02,080
+you missed that session you can go to
+
+59
+00:02:59,840 --> 00:03:04,239
+our website and watch the replay. Today
+
+60
+00:03:02,080 --> 00:03:07,360
+on Fire for Breakfast, our guest is our
+
+61
+00:03:04,239 --> 00:03:09,599
+good friend Ernesto Falcon from the
+
+62
+00:03:07,360 --> 00:03:11,760
+California PUC to discuss broadband
+
+63
+00:03:09,599 --> 00:03:15,680
+competition and pricing strategies in
+
+64
+00:03:11,760 --> 00:03:17,200
+California's urban markets. Uh Ernesto
+
+65
+00:03:15,680 --> 00:03:18,959
+is the program manager for the
+
+66
+00:03:17,200 --> 00:03:21,200
+communications and broadband policy
+
+67
+00:03:18,959 --> 00:03:23,120
+branch of the public advocacies office
+
+68
+00:03:21,200 --> 00:03:25,200
+within the California Public Utilities
+
+69
+00:03:23,120 --> 00:03:27,200
+Commission. His team focused on
+
+70
+00:03:25,200 --> 00:03:29,760
+protecting customers of communications
+
+71
+00:03:27,200 --> 00:03:32,080
+company in California by analyzing and
+
+72
+00:03:29,760 --> 00:03:34,159
+recommending solutions in several areas
+
+73
+00:03:32,080 --> 00:03:35,760
+including improving service quality,
+
+74
+00:03:34,159 --> 00:03:38,560
+advancing broadband access and
+
+75
+00:03:35,760 --> 00:03:41,120
+affordability and participating in the
+
+76
+00:03:38,560 --> 00:03:43,599
+CPU and legislative proceedings to
+
+77
+00:03:41,120 --> 00:03:45,760
+address customer needs and challenges.
+
+78
+00:03:43,599 --> 00:03:48,480
+Uh Ernesto was the former senior
+
+79
+00:03:45,760 --> 00:03:51,680
+legislative counsel at the electronic uh
+
+80
+00:03:48,480 --> 00:03:53,440
+frontier foundation EFF with the primary
+
+81
+00:03:51,680 --> 00:03:55,200
+focus on intellectual property, open
+
+82
+00:03:53,440 --> 00:03:57,120
+internet issues, privacy, broadband
+
+83
+00:03:55,200 --> 00:04:00,480
+access, artificial intelligence and
+
+84
+00:03:57,120 --> 00:04:02,480
+competition policy. Uh he represent EFS
+
+85
+00:04:00,480 --> 00:04:04,799
+advocacy on behalf of its members and
+
+86
+00:04:02,480 --> 00:04:06,480
+consumers for free and open internet
+
+87
+00:04:04,799 --> 00:04:09,360
+before the state legislature and
+
+88
+00:04:06,480 --> 00:04:10,640
+congress. Prior to FF, Ernesto worked in
+
+89
+00:04:09,360 --> 00:04:13,439
+the United States House of
+
+90
+00:04:10,640 --> 00:04:16,320
+Representatives and for nonprofit public
+
+91
+00:04:13,439 --> 00:04:18,079
+knowledge in Washington DC. So, welcome
+
+92
+00:04:16,320 --> 00:04:20,160
+Ernie. It's great to have you here.
+
+93
+00:04:18,079 --> 00:04:23,120
+Haven't talked to you in a few months
+
+94
+00:04:20,160 --> 00:04:24,479
+now. Um, so great to catch up. And for
+
+95
+00:04:23,120 --> 00:04:26,080
+audience, please type in your questions
+
+96
+00:04:24,479 --> 00:04:28,880
+and go. We'll work those in discussions.
+
+97
+00:04:26,080 --> 00:04:30,479
+With that, I will turn it over to
+
+98
+00:04:28,880 --> 00:04:32,320
+Ernesto.
+
+99
+00:04:30,479 --> 00:04:34,160
+>> Hey Gary, thanks and thanks for for
+
+100
+00:04:32,320 --> 00:04:37,360
+having me and thanks for uh inviting me
+
+101
+00:04:34,160 --> 00:04:39,759
+here. Um, yeah, I'll give a bit of the
+
+102
+00:04:37,360 --> 00:04:41,280
+background of my what my team does at
+
+103
+00:04:39,759 --> 00:04:43,520
+the public advocates office, which is
+
+104
+00:04:41,280 --> 00:04:45,759
+kind of like a an agency within an
+
+105
+00:04:43,520 --> 00:04:49,199
+agency. We're part of the PUC, but we're
+
+106
+00:04:45,759 --> 00:04:51,280
+statutoily independent. We are uh we are
+
+107
+00:04:49,199 --> 00:04:54,400
+directed by a governor appointed Senate
+
+108
+00:04:51,280 --> 00:04:57,280
+confirmed uh director. So, um, separate
+
+109
+00:04:54,400 --> 00:05:00,960
+from the five commissioners. And, you
+
+110
+00:04:57,280 --> 00:05:02,560
+know, I do think of our mandate and our
+
+111
+00:05:00,960 --> 00:05:05,199
+work really is to think about how do we
+
+112
+00:05:02,560 --> 00:05:06,960
+bring down consumer prices? uh how do we
+
+113
+00:05:05,199 --> 00:05:09,199
+improve quality of service in the
+
+114
+00:05:06,960 --> 00:05:12,240
+communications infrastructure space uh
+
+115
+00:05:09,199 --> 00:05:13,680
+and public safety is is kind of near and
+
+116
+00:05:12,240 --> 00:05:15,600
+dear an important mission of the
+
+117
+00:05:13,680 --> 00:05:18,720
+commission. So we do a lot of work
+
+118
+00:05:15,600 --> 00:05:21,280
+particularly with the aid of all of fire
+
+119
+00:05:18,720 --> 00:05:24,479
+season and things of that nature. So in
+
+120
+00:05:21,280 --> 00:05:27,840
+this work what we did uh my one of my
+
+121
+00:05:24,479 --> 00:05:30,080
+senior researchers uh Bishia Yei uh
+
+122
+00:05:27,840 --> 00:05:32,160
+teamed up with the UN University of
+
+123
+00:05:30,080 --> 00:05:34,720
+California Santa Barbara uh to utilize
+
+124
+00:05:32,160 --> 00:05:38,720
+what's called the broadband query tool
+
+125
+00:05:34,720 --> 00:05:41,360
+and what that tool does is it it scans
+
+126
+00:05:38,720 --> 00:05:42,639
+in real time dynamic pricing just like
+
+127
+00:05:41,360 --> 00:05:45,840
+what is happening in the promotional
+
+128
+00:05:42,639 --> 00:05:48,720
+rates at an address level um we're able
+
+129
+00:05:45,840 --> 00:05:50,560
+to collect a fairly large sample of data
+
+130
+00:05:48,720 --> 00:05:52,639
+well into the multiple thousands
+
+131
+00:05:50,560 --> 00:05:54,000
+uh kind of spread throughout the state
+
+132
+00:05:52,639 --> 00:05:56,000
+uh to give us real statistically
+
+133
+00:05:54,000 --> 00:05:58,320
+relevant information here on what's
+
+134
+00:05:56,000 --> 00:05:59,360
+happening and what are the contours of
+
+135
+00:05:58,320 --> 00:06:01,280
+what we were looking at in terms of
+
+136
+00:05:59,360 --> 00:06:03,280
+competition in the urban markets. We
+
+137
+00:06:01,280 --> 00:06:07,120
+chose urban market specifically to kind
+
+138
+00:06:03,280 --> 00:06:08,800
+of set aside the question of you know is
+
+139
+00:06:07,120 --> 00:06:10,560
+it too rural or is it too expensive to
+
+140
+00:06:08,800 --> 00:06:12,000
+deploy or any of the you know
+
+141
+00:06:10,560 --> 00:06:13,680
+traditional cost barriers uh
+
+142
+00:06:12,000 --> 00:06:16,800
+particularly for highspeed internet you
+
+143
+00:06:13,680 --> 00:06:18,479
+know next generation networks and uh you
+
+144
+00:06:16,800 --> 00:06:20,639
+spread out our analysis in our our four
+
+145
+00:06:18,479 --> 00:06:22,639
+four major cities throughout the you
+
+146
+00:06:20,639 --> 00:06:24,880
+know throughout the state and this this
+
+147
+00:06:22,639 --> 00:06:28,400
+was a new study that builds off kind of
+
+148
+00:06:24,880 --> 00:06:31,039
+traditional work we've done and um one
+
+149
+00:06:28,400 --> 00:06:33,840
+of the sorry one sec One of the things
+
+150
+00:06:31,039 --> 00:06:38,319
+we do on an annual basis is Oh, hold on.
+
+151
+00:06:33,840 --> 00:06:39,919
+I believe it's one slide back here. Um,
+
+152
+00:06:38,319 --> 00:06:42,000
+okay. It seems to be skipping that slide
+
+153
+00:06:39,919 --> 00:06:43,840
+for some reason, but what we I'll I'll
+
+154
+00:06:42,000 --> 00:06:46,560
+kind of explain what we do on an annual
+
+155
+00:06:43,840 --> 00:06:49,440
+basis. We collect kind of consumer
+
+156
+00:06:46,560 --> 00:06:51,840
+pricing information large and see where
+
+157
+00:06:49,440 --> 00:06:53,440
+the trend lines are on um what
+
+158
+00:06:51,840 --> 00:06:55,520
+Californians are paying. You know, is it
+
+159
+00:06:53,440 --> 00:06:59,840
+going up? Is it going down? How do we
+
+160
+00:06:55,520 --> 00:07:02,720
+compare amongst the 50 states? uh in our
+
+161
+00:06:59,840 --> 00:07:04,720
+latest report we issued uh at the end of
+
+162
+00:07:02,720 --> 00:07:06,080
+last year, you know, found that
+
+163
+00:07:04,720 --> 00:07:08,000
+California was losing a bit of its
+
+164
+00:07:06,080 --> 00:07:09,199
+competitive edge on pricing. Uh some
+
+165
+00:07:08,000 --> 00:07:11,919
+states, a handful of states were
+
+166
+00:07:09,199 --> 00:07:13,520
+starting to get ahead of us in terms of
+
+167
+00:07:11,919 --> 00:07:15,360
+kind of average pricing, particularly,
+
+168
+00:07:13,520 --> 00:07:19,520
+you know, in the higher speeds.
+
+169
+00:07:15,360 --> 00:07:21,360
+>> And the the concern, you know, the the
+
+170
+00:07:19,520 --> 00:07:23,520
+next real mission for us is to to
+
+171
+00:07:21,360 --> 00:07:27,039
+dissect why and where and what can the
+
+172
+00:07:23,520 --> 00:07:28,800
+state do to respond. And so part of the
+
+173
+00:07:27,039 --> 00:07:30,080
+analysis within that analysis was
+
+174
+00:07:28,800 --> 00:07:31,280
+looking at these urban markets to see
+
+175
+00:07:30,080 --> 00:07:33,199
+what what is actually happening on
+
+176
+00:07:31,280 --> 00:07:36,000
+prices and why what are the kind of the
+
+177
+00:07:33,199 --> 00:07:39,120
+elements in the ground. And one thing
+
+178
+00:07:36,000 --> 00:07:40,560
+that was notable was um the fiber
+
+179
+00:07:39,120 --> 00:07:43,360
+broadband association had this study
+
+180
+00:07:40,560 --> 00:07:46,319
+showing that we were uh kind of fi you
+
+181
+00:07:43,360 --> 00:07:47,680
+know not necessarily fiber poor but not
+
+182
+00:07:46,319 --> 00:07:49,759
+ahead of the curve in terms of fiber
+
+183
+00:07:47,680 --> 00:07:52,800
+penetration meaning the number of
+
+184
+00:07:49,759 --> 00:07:55,039
+California customers who have access to
+
+185
+00:07:52,800 --> 00:07:56,560
+uh fiber to the home is is not on par
+
+186
+00:07:55,039 --> 00:07:58,960
+with with the rest of the country. And
+
+187
+00:07:56,560 --> 00:08:01,360
+so what does that mean in terms of
+
+188
+00:07:58,960 --> 00:08:02,639
+competition and where does where does
+
+189
+00:08:01,360 --> 00:08:04,400
+the source of competition happen? you
+
+190
+00:08:02,639 --> 00:08:06,160
+know, we were getting a lot of
+
+191
+00:08:04,400 --> 00:08:08,479
+assertions of fixed wireless broadband
+
+192
+00:08:06,160 --> 00:08:10,080
+making a serious impact in the market,
+
+193
+00:08:08,479 --> 00:08:11,759
+you know, so we look into that, testing
+
+194
+00:08:10,080 --> 00:08:14,560
+the whether that whether that's true and
+
+195
+00:08:11,759 --> 00:08:16,240
+to what extent that's true. Um, and my
+
+196
+00:08:14,560 --> 00:08:18,560
+background, I've I've done a lot of, you
+
+197
+00:08:16,240 --> 00:08:20,720
+know, infrastructure analysis and work
+
+198
+00:08:18,560 --> 00:08:23,039
+in the fiber space. And so figuring out
+
+199
+00:08:20,720 --> 00:08:24,720
+how to fix up where California is and
+
+200
+00:08:23,039 --> 00:08:26,720
+get us further along is is kind of a
+
+201
+00:08:24,720 --> 00:08:30,479
+near and dear project of my of mine, you
+
+202
+00:08:26,720 --> 00:08:34,479
+know, dating back many years. So
+
+203
+00:08:30,479 --> 00:08:39,519
+what we did find was
+
+204
+00:08:34,479 --> 00:08:41,120
+when the incumb the gigabit tier appears
+
+205
+00:08:39,519 --> 00:08:43,760
+to be where the center gravity of
+
+206
+00:08:41,120 --> 00:08:45,519
+competition and pricing is happening. Um
+
+207
+00:08:43,760 --> 00:08:47,680
+this is like a snapshot of the data but
+
+208
+00:08:45,519 --> 00:08:50,399
+let me I'll kind of summarize um some
+
+209
+00:08:47,680 --> 00:08:53,440
+key findings here. when a cable company
+
+210
+00:08:50,399 --> 00:08:55,200
+that's offering a gigabit service uh
+
+211
+00:08:53,440 --> 00:08:58,160
+when they're facing competition from
+
+212
+00:08:55,200 --> 00:09:00,080
+slower what we call sub gigabit options
+
+213
+00:08:58,160 --> 00:09:03,120
+uh fixed wireless broadband satellite
+
+214
+00:09:00,080 --> 00:09:05,600
+for example there is not a noticeable
+
+215
+00:09:03,120 --> 00:09:07,279
+change in their pricing structure uh
+
+216
+00:09:05,600 --> 00:09:09,279
+while there's data showing there's some
+
+217
+00:09:07,279 --> 00:09:11,600
+churn in terms of people leaving cable
+
+218
+00:09:09,279 --> 00:09:14,080
+for fixed wireless broadband uh the
+
+219
+00:09:11,600 --> 00:09:16,080
+reality is it does not appear that cable
+
+220
+00:09:14,080 --> 00:09:18,800
+really does much about their pricing
+
+221
+00:09:16,080 --> 00:09:20,800
+structure across the board however that
+
+222
+00:09:18,800 --> 00:09:22,480
+is not sure when there's at least one
+
+223
+00:09:20,800 --> 00:09:24,000
+alternative gigabit provider. And
+
+224
+00:09:22,480 --> 00:09:27,040
+traditionally that that tends to be a
+
+225
+00:09:24,000 --> 00:09:30,560
+fiber entity uh coming in. And so what
+
+226
+00:09:27,040 --> 00:09:32,800
+the data was showing us was when when
+
+227
+00:09:30,560 --> 00:09:35,360
+there is limited to no competition, even
+
+228
+00:09:32,800 --> 00:09:37,760
+with promotional pricing, it was it was
+
+229
+00:09:35,360 --> 00:09:40,480
+consistently higher across the board.
+
+230
+00:09:37,760 --> 00:09:42,560
+However, the moment there is a at least
+
+231
+00:09:40,480 --> 00:09:45,279
+a duopoly, you know, two two gigabit
+
+232
+00:09:42,560 --> 00:09:47,760
+options uh primarily driven by fiber,
+
+233
+00:09:45,279 --> 00:09:49,360
+that's when the pricing structure of the
+
+234
+00:09:47,760 --> 00:09:51,519
+existing, you know, gigabit and you
+
+235
+00:09:49,360 --> 00:09:53,920
+know, incumbent uh really starts to
+
+236
+00:09:51,519 --> 00:09:56,320
+change. You know, on average, we were
+
+237
+00:09:53,920 --> 00:10:00,399
+seeing prices go down anywhere between
+
+238
+00:09:56,320 --> 00:10:01,600
+$15 to $40 a month um in in the areas
+
+239
+00:10:00,399 --> 00:10:03,120
+where you're seeing at least two
+
+240
+00:10:01,600 --> 00:10:06,000
+options, even more so when there's
+
+241
+00:10:03,120 --> 00:10:08,240
+three. the Bay Area is um quite
+
+242
+00:10:06,000 --> 00:10:09,760
+competitive in terms of you know having
+
+243
+00:10:08,240 --> 00:10:13,120
+at least three options some places even
+
+244
+00:10:09,760 --> 00:10:17,040
+having four options
+
+245
+00:10:13,120 --> 00:10:19,360
+and so looking at the number of
+
+246
+00:10:17,040 --> 00:10:21,440
+residents who are you know essentially
+
+247
+00:10:19,360 --> 00:10:23,920
+lacking fiber and and that is kind of a
+
+248
+00:10:21,440 --> 00:10:25,120
+proxy for lacking uh 2 gigabit options
+
+249
+00:10:23,920 --> 00:10:27,600
+uh because traditionally cable has
+
+250
+00:10:25,120 --> 00:10:29,440
+already upgraded to docs 3.1 uh they're
+
+251
+00:10:27,600 --> 00:10:31,760
+rolling at doc 4.0 know in some places
+
+252
+00:10:29,440 --> 00:10:34,800
+now you know they're already kind of at
+
+253
+00:10:31,760 --> 00:10:36,320
+the gigabit level and above. Um this is
+
+254
+00:10:34,800 --> 00:10:39,760
+kind of the spread of the state in terms
+
+255
+00:10:36,320 --> 00:10:42,240
+of where the fiber entry would make a a
+
+256
+00:10:39,760 --> 00:10:44,160
+real difference in pricing. If if the
+
+257
+00:10:42,240 --> 00:10:45,920
+responsiveness of the pattern where
+
+258
+00:10:44,160 --> 00:10:48,240
+there's a second option at a gigabit or
+
+259
+00:10:45,920 --> 00:10:51,839
+higher level uh comes in primarily from
+
+260
+00:10:48,240 --> 00:10:54,160
+fiber entry. Our calculation is the
+
+261
+00:10:51,839 --> 00:10:55,920
+number of residents that would save
+
+262
+00:10:54,160 --> 00:10:57,760
+money. Kind of the total calculated
+
+263
+00:10:55,920 --> 00:10:59,040
+estimation is is well over a billion
+
+264
+00:10:57,760 --> 00:11:01,440
+dollars in consumer savings. You know,
+
+265
+00:10:59,040 --> 00:11:03,200
+driven by, you know, the reduction of
+
+266
+00:11:01,440 --> 00:11:05,760
+pricing as a means of retaining
+
+267
+00:11:03,200 --> 00:11:08,720
+retaining those customers by cable and
+
+268
+00:11:05,760 --> 00:11:10,640
+the, you know, promotional aggressive
+
+269
+00:11:08,720 --> 00:11:12,000
+first bid price of the new entrance
+
+270
+00:11:10,640 --> 00:11:14,640
+that's trying to acquire those
+
+271
+00:11:12,000 --> 00:11:16,399
+customers. So, for us, it's it's a
+
+272
+00:11:14,640 --> 00:11:19,600
+fairly significant amount of money that
+
+273
+00:11:16,399 --> 00:11:22,800
+would um you know, save customers from
+
+274
+00:11:19,600 --> 00:11:24,640
+competition. It also is likely a large
+
+275
+00:11:22,800 --> 00:11:27,200
+source of the drag in terms of
+
+276
+00:11:24,640 --> 00:11:31,360
+California falling uh a little further
+
+277
+00:11:27,200 --> 00:11:33,839
+behind in kind of competitive pricing.
+
+278
+00:11:31,360 --> 00:11:35,040
+Oh, and and this is the the broadband
+
+279
+00:11:33,839 --> 00:11:37,440
+pricing report I was mentioning earlier.
+
+280
+00:11:35,040 --> 00:11:39,360
+This is traditionally what we've done in
+
+281
+00:11:37,440 --> 00:11:40,880
+terms of analyzing lots of different
+
+282
+00:11:39,360 --> 00:11:42,320
+options, lots of different speed tiers
+
+283
+00:11:40,880 --> 00:11:45,920
+and kind of where the subscriber
+
+284
+00:11:42,320 --> 00:11:47,839
+population is located um and and kind of
+
+285
+00:11:45,920 --> 00:11:50,240
+the trends on pricing. And so as I
+
+286
+00:11:47,839 --> 00:11:54,079
+mentioned earlier, uh we know we were
+
+287
+00:11:50,240 --> 00:11:55,920
+seeing a a throughput line of our our
+
+288
+00:11:54,079 --> 00:11:58,160
+ranking and competition in terms of
+
+289
+00:11:55,920 --> 00:11:59,360
+compar comparison to the other 50 states
+
+290
+00:11:58,160 --> 00:12:01,279
+or the number of states that are
+
+291
+00:11:59,360 --> 00:12:04,240
+participating in territories that are
+
+292
+00:12:01,279 --> 00:12:06,880
+participating in these um the FCC's
+
+293
+00:12:04,240 --> 00:12:09,360
+urban rate survey. um you know we were
+
+294
+00:12:06,880 --> 00:12:11,360
+seeing the the the slippage of our of
+
+295
+00:12:09,360 --> 00:12:16,120
+our previous leadership in this space
+
+296
+00:12:11,360 --> 00:12:16,120
+and and kind of you know slight decline
+
+297
+00:12:16,320 --> 00:12:20,880
+and so as I mentioned earlier the
+
+298
+00:12:18,959 --> 00:12:22,639
+calculated savings this is generally how
+
+299
+00:12:20,880 --> 00:12:24,880
+you know using kind of the the FCC's
+
+300
+00:12:22,639 --> 00:12:26,639
+public data on you know g essentially
+
+301
+00:12:24,880 --> 00:12:28,880
+areas that have a single gigabit option
+
+302
+00:12:26,639 --> 00:12:30,160
+which carrier uh or cable company you
+
+303
+00:12:28,880 --> 00:12:32,000
+know exists in those areas it's it's
+
+304
+00:12:30,160 --> 00:12:34,000
+predominantly cable uh which indicates
+
+305
+00:12:32,000 --> 00:12:36,000
+it's not really uh there's not really a
+
+306
+00:12:34,000 --> 00:12:38,160
+set of of sole fiber fiber gigabit
+
+307
+00:12:36,000 --> 00:12:40,160
+entities out there. Uh it's primarily in
+
+308
+00:12:38,160 --> 00:12:41,760
+the cable space. And so this is how we
+
+309
+00:12:40,160 --> 00:12:44,959
+kind of came up with the calculation of
+
+310
+00:12:41,760 --> 00:12:49,120
+the total uh cost savings by you know
+
+311
+00:12:44,959 --> 00:12:52,079
+benchmarking an average of showing the
+
+312
+00:12:49,120 --> 00:12:54,160
+range of price decreasing that occurs
+
+313
+00:12:52,079 --> 00:12:57,200
+with the carriers when they face
+
+314
+00:12:54,160 --> 00:12:59,360
+competition. And we opted to average
+
+315
+00:12:57,200 --> 00:13:03,440
+across 300 500 gigabit for a couple
+
+316
+00:12:59,360 --> 00:13:06,639
+reasons. one the center of gravity of um
+
+317
+00:13:03,440 --> 00:13:09,360
+consumers at this point uh a a a
+
+318
+00:13:06,639 --> 00:13:12,560
+minority of people use 100 megabits or
+
+319
+00:13:09,360 --> 00:13:15,760
+or lower in terms of internet access. Uh
+
+320
+00:13:12,560 --> 00:13:18,880
+I would say today about 75% of
+
+321
+00:13:15,760 --> 00:13:21,040
+Californians subscribe to 300 or above
+
+322
+00:13:18,880 --> 00:13:23,839
+in terms of broadband. uh almost half
+
+323
+00:13:21,040 --> 00:13:25,839
+are are at 500 above which I think is
+
+324
+00:13:23,839 --> 00:13:28,800
+very important for policy makers to
+
+325
+00:13:25,839 --> 00:13:31,200
+recognize because we allow
+
+326
+00:13:28,800 --> 00:13:32,800
+you know how many 100 down 20 up options
+
+327
+00:13:31,200 --> 00:13:34,480
+are out there as a means of assessing
+
+328
+00:13:32,800 --> 00:13:36,079
+you know how healthy the market is or or
+
+329
+00:13:34,480 --> 00:13:39,120
+do we need to do more to promote
+
+330
+00:13:36,079 --> 00:13:40,959
+infrastructure and you know I I can say
+
+331
+00:13:39,120 --> 00:13:42,639
+with a pretty uh high degree of
+
+332
+00:13:40,959 --> 00:13:43,680
+confidence based on where subscribers
+
+333
+00:13:42,639 --> 00:13:47,040
+are and kind of where the consumer
+
+334
+00:13:43,680 --> 00:13:49,519
+demand is uh in the state at large the
+
+335
+00:13:47,040 --> 00:13:51,200
+the gra the center of gravity is is
+
+336
+00:13:49,519 --> 00:13:53,519
+right? You moving towards the gigabit
+
+337
+00:13:51,200 --> 00:13:55,279
+era. Um I think in a short handful of
+
+338
+00:13:53,519 --> 00:13:57,120
+years at this point just given the the
+
+339
+00:13:55,279 --> 00:14:00,000
+shift that continues to move upward with
+
+340
+00:13:57,120 --> 00:14:01,440
+consumer the consumer usage um what
+
+341
+00:14:00,000 --> 00:14:02,959
+people are buying in terms of what and
+
+342
+00:14:01,440 --> 00:14:06,639
+which I think reflects what they need
+
+343
+00:14:02,959 --> 00:14:08,240
+and and need often. Um, you know, we are
+
+344
+00:14:06,639 --> 00:14:10,480
+going to be at a point where the gigabit
+
+345
+00:14:08,240 --> 00:14:11,839
+is a pretty standard product that almost
+
+346
+00:14:10,480 --> 00:14:14,720
+everyone would like to have as like
+
+347
+00:14:11,839 --> 00:14:17,839
+their standard offering, which again, I
+
+348
+00:14:14,720 --> 00:14:20,240
+think explains why sub gigabit offerings
+
+349
+00:14:17,839 --> 00:14:22,639
+are not really forcing cable to rejigger
+
+350
+00:14:20,240 --> 00:14:24,399
+their prices or or respond. I think they
+
+351
+00:14:22,639 --> 00:14:26,160
+the industry knows that's where the
+
+352
+00:14:24,399 --> 00:14:28,320
+consumers are heading to and they're
+
+353
+00:14:26,160 --> 00:14:30,959
+well situated to capture the lion share
+
+354
+00:14:28,320 --> 00:14:32,399
+of of revenue in that respect. So yeah,
+
+355
+00:14:30,959 --> 00:14:35,199
+I mean that's that's essentially like
+
+356
+00:14:32,399 --> 00:14:37,680
+the the key findings of our study. Um,
+
+357
+00:14:35,199 --> 00:14:39,920
+you know, we're exploring ways that uh
+
+358
+00:14:37,680 --> 00:14:42,800
+promote more fiber uh deployment. One
+
+359
+00:14:39,920 --> 00:14:45,199
+example is uh we recently came out with
+
+360
+00:14:42,800 --> 00:14:46,959
+a joint agreement with AT&T on the
+
+361
+00:14:45,199 --> 00:14:50,000
+carrier blast resort proceeding. So this
+
+362
+00:14:46,959 --> 00:14:53,600
+is the legacy obligation to uh
+
+363
+00:14:50,000 --> 00:14:55,279
+universally serve voice. um the in
+
+364
+00:14:53,600 --> 00:14:56,959
+public local exchange carriers like they
+
+365
+00:14:55,279 --> 00:14:59,839
+you know AT&T bank our largest provider
+
+366
+00:14:56,959 --> 00:15:02,639
+in the state of California has often you
+
+367
+00:14:59,839 --> 00:15:04,240
+know referred to these you know legacy
+
+368
+00:15:02,639 --> 00:15:07,839
+obligations as a restraint on the
+
+369
+00:15:04,240 --> 00:15:09,680
+ability to deploy more fiber. Um my pro
+
+370
+00:15:07,839 --> 00:15:11,199
+position in in terms of working with
+
+371
+00:15:09,680 --> 00:15:13,360
+them to come up to an agreement to
+
+372
+00:15:11,199 --> 00:15:15,519
+present to the commission has been if if
+
+373
+00:15:13,360 --> 00:15:17,199
+if true and I and I think there was a
+
+374
+00:15:15,519 --> 00:15:18,639
+layer a layer of truth there. Well then
+
+375
+00:15:17,199 --> 00:15:21,040
+we need to have a structured mean of
+
+376
+00:15:18,639 --> 00:15:23,120
+transitioning as much of the copper
+
+377
+00:15:21,040 --> 00:15:26,079
+copper network over to fiber and have
+
+378
+00:15:23,120 --> 00:15:27,839
+some concrete means of of of
+
+379
+00:15:26,079 --> 00:15:31,040
+facilitating that transition. So you
+
+380
+00:15:27,839 --> 00:15:32,880
+know our hopes is um you know coler will
+
+381
+00:15:31,040 --> 00:15:34,320
+be you know the the evolution of colar
+
+382
+00:15:32,880 --> 00:15:37,199
+to kind of modernize broadband
+
+383
+00:15:34,320 --> 00:15:39,120
+regulation will facilitate accelerated
+
+384
+00:15:37,199 --> 00:15:40,720
+deployment of fiber which then delivers
+
+385
+00:15:39,120 --> 00:15:42,399
+lower cost you know lower cost offerings
+
+386
+00:15:40,720 --> 00:15:43,760
+to consumers and you know fulfills our
+
+387
+00:15:42,399 --> 00:15:46,639
+main mandate which is to bring down
+
+388
+00:15:43,760 --> 00:15:48,880
+prices. Um, so you know that that is
+
+389
+00:15:46,639 --> 00:15:50,560
+that is work that is beginning and and I
+
+390
+00:15:48,880 --> 00:15:52,160
+think we're going to continue to explore
+
+391
+00:15:50,560 --> 00:15:54,560
+other ways that we can help you know at
+
+392
+00:15:52,160 --> 00:15:56,880
+least get people to two options and in
+
+393
+00:15:54,560 --> 00:15:58,240
+some respects uh you know there there
+
+394
+00:15:56,880 --> 00:15:59,600
+will be a point where we can try and
+
+395
+00:15:58,240 --> 00:16:02,000
+think about how to get the third option
+
+396
+00:15:59,600 --> 00:16:05,360
+as well.
+
+397
+00:16:02,000 --> 00:16:07,440
+Well, Ernie, this is super interesting
+
+398
+00:16:05,360 --> 00:16:10,639
+and it kind of matches some of our
+
+399
+00:16:07,440 --> 00:16:14,079
+research. Um, you know, in our latest
+
+400
+00:16:10,639 --> 00:16:15,839
+study, um, attach rates. So, when you,
+
+401
+00:16:14,079 --> 00:16:19,279
+you know, you're when you have fiber
+
+402
+00:16:15,839 --> 00:16:22,160
+deploy, um, what we're seeing is that,
+
+403
+00:16:19,279 --> 00:16:25,519
+um, fiber providers get about 45%
+
+404
+00:16:22,160 --> 00:16:27,440
+uptake. Uh, you know, so most business
+
+405
+00:16:25,519 --> 00:16:30,399
+models are, you know, assume somewhere
+
+406
+00:16:27,440 --> 00:16:32,240
+between 25 and 40%. So right off the bat
+
+407
+00:16:30,399 --> 00:16:35,120
+they're able to beat their business
+
+408
+00:16:32,240 --> 00:16:37,360
+model with 45%. But what's really
+
+409
+00:16:35,120 --> 00:16:40,240
+interesting is that when you have more
+
+410
+00:16:37,360 --> 00:16:43,759
+than one fiber provider in a re in
+
+411
+00:16:40,240 --> 00:16:45,440
+location um take rates go from 45% to
+
+412
+00:16:43,759 --> 00:16:47,360
+61%.
+
+413
+00:16:45,440 --> 00:16:50,320
+Which shows that there's plenty of
+
+414
+00:16:47,360 --> 00:16:54,639
+business for more than one fiber
+
+415
+00:16:50,320 --> 00:16:58,320
+operator um in a community. And you know
+
+416
+00:16:54,639 --> 00:17:01,199
+further if I look at just like AT&T had
+
+417
+00:16:58,320 --> 00:17:05,120
+their earnings report looked amazing um
+
+418
+00:17:01,199 --> 00:17:07,919
+this quarter that um so what they say is
+
+419
+00:17:05,120 --> 00:17:10,400
+that not only when they deploy fiber are
+
+420
+00:17:07,919 --> 00:17:12,400
+they're they getting better uptake um
+
+421
+00:17:10,400 --> 00:17:13,520
+they're getting more average revenue per
+
+422
+00:17:12,400 --> 00:17:15,120
+user because they're be able to sell
+
+423
+00:17:13,520 --> 00:17:19,199
+more services like streaming services
+
+424
+00:17:15,120 --> 00:17:21,760
+and so forth. But also uh 42% of their
+
+425
+00:17:19,199 --> 00:17:23,439
+fiber subscribers are also subscribing
+
+426
+00:17:21,760 --> 00:17:25,919
+to their wireless. So they're mobile
+
+427
+00:17:23,439 --> 00:17:28,400
+wireless. So you have more ARPO, you
+
+428
+00:17:25,919 --> 00:17:30,880
+have lower cost from ARPO um from lower
+
+429
+00:17:28,400 --> 00:17:33,440
+opex and you're getting selling more
+
+430
+00:17:30,880 --> 00:17:35,440
+services, more attach rates, and you're
+
+431
+00:17:33,440 --> 00:17:38,240
+able to reduce the carbon footprint. So
+
+432
+00:17:35,440 --> 00:17:42,080
+it seems like winwinwinwin
+
+433
+00:17:38,240 --> 00:17:44,559
+for providers. And then also I I have to
+
+434
+00:17:42,080 --> 00:17:48,160
+note the the providers you have on here
+
+435
+00:17:44,559 --> 00:17:52,320
+are all benefiting from uh President
+
+436
+00:17:48,160 --> 00:17:54,160
+Trump's uh tax benefits that he had in
+
+437
+00:17:52,320 --> 00:17:57,200
+the one big beautiful bill that he had
+
+438
+00:17:54,160 --> 00:17:59,760
+100% bonus depreciation that provided
+
+439
+00:17:57,200 --> 00:18:04,320
+these providers with billions of dollars
+
+440
+00:17:59,760 --> 00:18:08,080
+of free tax flow. Um, for example, um,
+
+441
+00:18:04,320 --> 00:18:11,120
+AT&T had $18 billion in free cash flow
+
+442
+00:18:08,080 --> 00:18:13,679
+in 2026. Um, and they're expected to get
+
+443
+00:18:11,120 --> 00:18:16,160
+about 19 billion and 21 billion in the
+
+444
+00:18:13,679 --> 00:18:17,840
+two years going beyond this. And, um,
+
+445
+00:18:16,160 --> 00:18:19,520
+you know, so we see similar numbers on
+
+446
+00:18:17,840 --> 00:18:22,160
+large companies like these cable
+
+447
+00:18:19,520 --> 00:18:24,720
+operators. So, uh, a lot of free cash
+
+448
+00:18:22,160 --> 00:18:26,400
+flow to invest in fiber. um great for
+
+449
+00:18:24,720 --> 00:18:30,000
+the consumers being able to lower their
+
+450
+00:18:26,400 --> 00:18:32,080
+bills and um great for the also the
+
+451
+00:18:30,000 --> 00:18:33,360
+profitability of their shareholders on
+
+452
+00:18:32,080 --> 00:18:36,480
+you know being able to sell all these
+
+453
+00:18:33,360 --> 00:18:38,240
+other services. So um it seems to fit
+
+454
+00:18:36,480 --> 00:18:40,559
+right like double to tail right into
+
+455
+00:18:38,240 --> 00:18:43,679
+kind of our analysis.
+
+456
+00:18:40,559 --> 00:18:45,840
+Yeah, a a kind of a consistent principle
+
+457
+00:18:43,679 --> 00:18:48,080
+at the PUC in terms of its, you know,
+
+458
+00:18:45,840 --> 00:18:50,240
+its oversight of of kind of critical
+
+459
+00:18:48,080 --> 00:18:53,600
+infrastructure in in communications,
+
+460
+00:18:50,240 --> 00:18:56,880
+energy, and water. Um, is there's there
+
+461
+00:18:53,600 --> 00:18:59,280
+the the appropriate like means of
+
+462
+00:18:56,880 --> 00:19:01,440
+benefit has to be a shared benefit
+
+463
+00:18:59,280 --> 00:19:04,559
+between the what we call the rateayer or
+
+464
+00:19:01,440 --> 00:19:08,400
+the customer and the shareholders. And
+
+465
+00:19:04,559 --> 00:19:11,600
+so the transition from kind of legacy
+
+466
+00:19:08,400 --> 00:19:14,720
+copper to fiber really presented a a a
+
+467
+00:19:11,600 --> 00:19:17,120
+sweet spot there that I think facilitate
+
+468
+00:19:14,720 --> 00:19:19,200
+our ability to negotiate a a really good
+
+469
+00:19:17,120 --> 00:19:20,960
+proposal between the company and and the
+
+470
+00:19:19,200 --> 00:19:22,799
+and what we offer for the commission to
+
+471
+00:19:20,960 --> 00:19:24,080
+review. You although the commission will
+
+472
+00:19:22,799 --> 00:19:26,240
+will make it decisions you know later
+
+473
+00:19:24,080 --> 00:19:30,640
+this year in terms of carry last resort.
+
+474
+00:19:26,240 --> 00:19:32,160
+But on paper, what uh AT&T and the
+
+475
+00:19:30,640 --> 00:19:35,679
+public advocates office were willing to
+
+476
+00:19:32,160 --> 00:19:38,799
+agree to was a structured transition
+
+477
+00:19:35,679 --> 00:19:40,880
+of um kind of legacy, you know, voice
+
+478
+00:19:38,799 --> 00:19:43,919
+obligations in areas that are
+
+479
+00:19:40,880 --> 00:19:46,400
+predominantly uh g you know, gigabit
+
+480
+00:19:43,919 --> 00:19:48,080
+soul gigabit territory. Um you know, you
+
+481
+00:19:46,400 --> 00:19:49,520
+know, we give or take we have millions
+
+482
+00:19:48,080 --> 00:19:51,120
+of of households in in the state of
+
+483
+00:19:49,520 --> 00:19:54,880
+California, but are mostly sle gigabit
+
+484
+00:19:51,120 --> 00:19:56,720
+under cable. And uh AT&T's commitment
+
+485
+00:19:54,880 --> 00:19:58,400
+under that structure, you know, will
+
+486
+00:19:56,720 --> 00:20:00,720
+fully committed would would exceed, you
+
+487
+00:19:58,400 --> 00:20:04,160
+know, 1 million fiber lines in 10 years.
+
+488
+00:20:00,720 --> 00:20:06,000
+And so it is it is very much a, you
+
+489
+00:20:04,160 --> 00:20:08,160
+know, I know they want to build it. I
+
+490
+00:20:06,000 --> 00:20:11,120
+know the customers benefit from it
+
+491
+00:20:08,160 --> 00:20:13,280
+existing in and the entry and this data
+
+492
+00:20:11,120 --> 00:20:14,720
+we were able to produce in January which
+
+493
+00:20:13,280 --> 00:20:17,039
+is kind of fortuitous timing because we
+
+494
+00:20:14,720 --> 00:20:18,640
+we didn't really plan it to coincide
+
+495
+00:20:17,039 --> 00:20:21,360
+with with certain proceedings at that
+
+496
+00:20:18,640 --> 00:20:22,880
+timing because this took months of uh
+
+497
+00:20:21,360 --> 00:20:26,160
+work with our academic partners to pull
+
+498
+00:20:22,880 --> 00:20:28,159
+together. But it really pointed out that
+
+499
+00:20:26,160 --> 00:20:29,760
+there was a cognizable benefit to the
+
+500
+00:20:28,159 --> 00:20:31,840
+consumer if they received at least two
+
+501
+00:20:29,760 --> 00:20:33,440
+gigabit options and fiber being kind of
+
+502
+00:20:31,840 --> 00:20:36,240
+the main entry of that of that second
+
+503
+00:20:33,440 --> 00:20:37,679
+choice. The other thing that was, you
+
+504
+00:20:36,240 --> 00:20:40,480
+know, just to kind of stress the point a
+
+505
+00:20:37,679 --> 00:20:44,320
+bit was surprising though was to the
+
+506
+00:20:40,480 --> 00:20:46,960
+extent that fixed wireless broadband um
+
+507
+00:20:44,320 --> 00:20:49,520
+was just was not moving prices. You
+
+508
+00:20:46,960 --> 00:20:51,120
+know, so there's one thing to say uh you
+
+509
+00:20:49,520 --> 00:20:53,440
+people were leaving one service to the
+
+510
+00:20:51,120 --> 00:20:56,000
+other, but the but the real fundamental
+
+511
+00:20:53,440 --> 00:20:57,679
+for us was was it making the existing
+
+512
+00:20:56,000 --> 00:21:00,320
+customers, you know, who were
+
+513
+00:20:57,679 --> 00:21:02,000
+subscribing to cable in in large parts
+
+514
+00:21:00,320 --> 00:21:03,200
+um were they receiving the benefits of
+
+515
+00:21:02,000 --> 00:21:04,880
+competition which should come from
+
+516
+00:21:03,200 --> 00:21:06,880
+lowering prices in response to
+
+517
+00:21:04,880 --> 00:21:08,480
+competitive entry and we just we were
+
+518
+00:21:06,880 --> 00:21:10,640
+unable to detect any meaningful movement
+
+519
+00:21:08,480 --> 00:21:13,520
+from sub gigabit services was we call
+
+520
+00:21:10,640 --> 00:21:16,799
+them. You know what's interesting is
+
+521
+00:21:13,520 --> 00:21:18,720
+when I look at our research um and even
+
+522
+00:21:16,799 --> 00:21:20,880
+like recon analytics has done some
+
+523
+00:21:18,720 --> 00:21:23,280
+really good studies and it really one of
+
+524
+00:21:20,880 --> 00:21:27,520
+the things they u produced here last
+
+525
+00:21:23,280 --> 00:21:30,559
+fall was showing that the type of you
+
+526
+00:21:27,520 --> 00:21:33,840
+know your behavior on fiber versus
+
+527
+00:21:30,559 --> 00:21:38,000
+lesser quality connectivity. So like on
+
+528
+00:21:33,840 --> 00:21:40,880
+fiber one is 75% of fiber users are
+
+529
+00:21:38,000 --> 00:21:43,919
+using AI daily and they also are using
+
+530
+00:21:40,880 --> 00:21:45,840
+these you know largely on laptops or you
+
+531
+00:21:43,919 --> 00:21:47,440
+know some kind of desktop or you know so
+
+532
+00:21:45,840 --> 00:21:50,559
+they're doing work from home they're
+
+533
+00:21:47,440 --> 00:21:53,760
+doing telealth they're doing um online
+
+534
+00:21:50,559 --> 00:21:55,840
+education you know video game I mean
+
+535
+00:21:53,760 --> 00:21:58,240
+they're using these very rich media kind
+
+536
+00:21:55,840 --> 00:22:00,320
+of applications where I run the when you
+
+537
+00:21:58,240 --> 00:22:05,280
+look down at fix wireless or even cable
+
+538
+00:22:00,320 --> 00:22:09,760
+fix wireless and um LEO uh like less
+
+539
+00:22:05,280 --> 00:22:12,640
+than 10% of LEO subscribers use AI daily
+
+540
+00:22:09,760 --> 00:22:15,600
+and they're most of the LEO providers
+
+541
+00:22:12,640 --> 00:22:17,840
+are using their cell phone. So it's you
+
+542
+00:22:15,600 --> 00:22:19,919
+know you're you're you're a different
+
+543
+00:22:17,840 --> 00:22:21,520
+kind of subscriber when you don't care
+
+544
+00:22:19,919 --> 00:22:23,200
+about the quality of your broadband
+
+545
+00:22:21,520 --> 00:22:25,600
+connection or you only have a low
+
+546
+00:22:23,200 --> 00:22:28,480
+quality connection available to you. And
+
+547
+00:22:25,600 --> 00:22:31,039
+so that's where you you know I think
+
+548
+00:22:28,480 --> 00:22:33,440
+where your study kind of zeroed in on
+
+549
+00:22:31,039 --> 00:22:36,880
+gigabit. You know the other part of this
+
+550
+00:22:33,440 --> 00:22:39,200
+I think is interesting is you know back
+
+551
+00:22:36,880 --> 00:22:40,640
+in 2010 right Blair Leven's you know
+
+552
+00:22:39,200 --> 00:22:42,880
+when he's doing the national broadband
+
+553
+00:22:40,640 --> 00:22:48,240
+plan broadband was defined as one
+
+554
+00:22:42,880 --> 00:22:51,120
+megabit right and you know right now we
+
+555
+00:22:48,240 --> 00:22:53,520
+are deploying 10 gigabit symmetric
+
+556
+00:22:51,120 --> 00:22:55,600
+networks and this will be the first year
+
+557
+00:22:53,520 --> 00:22:58,799
+that we're get into volume deployment of
+
+558
+00:22:55,600 --> 00:23:01,120
+25 gigs networks and so we're going to
+
+559
+00:22:58,799 --> 00:23:03,600
+see these you know I have five gigs a
+
+560
+00:23:01,120 --> 00:23:06,320
+metric to my house and I'm paying the
+
+561
+00:23:03,600 --> 00:23:09,039
+same price as I was paying to the cable
+
+562
+00:23:06,320 --> 00:23:11,280
+provider. And what the deep dark secret
+
+563
+00:23:09,039 --> 00:23:13,760
+of cable is they never tell you what the
+
+564
+00:23:11,280 --> 00:23:15,600
+upstream is. Um right you know my
+
+565
+00:23:13,760 --> 00:23:16,960
+service was called superfast and I'm
+
+566
+00:23:15,600 --> 00:23:20,000
+trying to figure out all the fine print
+
+567
+00:23:16,960 --> 00:23:21,760
+what superfast means but um you know
+
+568
+00:23:20,000 --> 00:23:24,320
+it's it's when you you're subscribing to
+
+569
+00:23:21,760 --> 00:23:26,960
+a gigabit service but you have such poor
+
+570
+00:23:24,320 --> 00:23:29,840
+upstream that I couldn't do um my
+
+571
+00:23:26,960 --> 00:23:31,120
+teleahalth sessions you know and so you
+
+572
+00:23:29,840 --> 00:23:34,559
+know that's the thing that doesn't come
+
+573
+00:23:31,120 --> 00:23:37,039
+out on these that um when you see a
+
+574
+00:23:34,559 --> 00:23:38,480
+cable and you know what the speed is
+
+575
+00:23:37,039 --> 00:23:40,559
+they're not talking about symmetric
+
+576
+00:23:38,480 --> 00:23:42,640
+they're just talking about the down
+
+577
+00:23:40,559 --> 00:23:44,799
+downstream speeds.
+
+578
+00:23:42,640 --> 00:23:47,760
+Yeah, I think so. That's an area that I
+
+579
+00:23:44,799 --> 00:23:50,159
+think we are um we are considering how
+
+580
+00:23:47,760 --> 00:23:52,080
+to study and kind of break apart uh
+
+581
+00:23:50,159 --> 00:23:54,080
+specifically
+
+582
+00:23:52,080 --> 00:23:56,240
+the
+
+583
+00:23:54,080 --> 00:23:57,760
+use cases and usefulness of the axis.
+
+584
+00:23:56,240 --> 00:24:00,159
+So, you know, we're we're getting past
+
+585
+00:23:57,760 --> 00:24:02,640
+the point, you know, with bead coming in
+
+586
+00:24:00,159 --> 00:24:05,200
+and, you know, California has kind of
+
+587
+00:24:02,640 --> 00:24:07,760
+parallel grant programs to the federal
+
+588
+00:24:05,200 --> 00:24:09,120
+system on almost every regard. You we
+
+589
+00:24:07,760 --> 00:24:11,279
+fund broadband infrastructure and we
+
+590
+00:24:09,120 --> 00:24:15,760
+also subsidize uh life. We have our own
+
+591
+00:24:11,279 --> 00:24:17,600
+lifeline program for example and the
+
+592
+00:24:15,760 --> 00:24:18,720
+use cases or or you know how do you
+
+593
+00:24:17,600 --> 00:24:20,400
+maintain particular for like the
+
+594
+00:24:18,720 --> 00:24:23,039
+low-inccome population you know which is
+
+595
+00:24:20,400 --> 00:24:24,480
+the special emphasis for us um how do we
+
+596
+00:24:23,039 --> 00:24:26,000
+ensure they're able to use the fullness
+
+597
+00:24:24,480 --> 00:24:27,520
+of the internet and kind of the fullness
+
+598
+00:24:26,000 --> 00:24:32,400
+of the opportunities that the internet's
+
+599
+00:24:27,520 --> 00:24:34,480
+supposed to create and I do think the
+
+600
+00:24:32,400 --> 00:24:36,559
+you know kind of the advent of AI tools
+
+601
+00:24:34,480 --> 00:24:38,320
+and kind of the learning opportunities
+
+602
+00:24:36,559 --> 00:24:39,760
+there and and you look at just what's
+
+603
+00:24:38,320 --> 00:24:42,240
+happening with video sharing at this
+
+604
+00:24:39,760 --> 00:24:44,240
+stage Those are massive files. Um, you
+
+605
+00:24:42,240 --> 00:24:45,679
+know, I get I get frustrated. I I have a
+
+606
+00:24:44,240 --> 00:24:48,720
+you know, not the best upload speed on
+
+607
+00:24:45,679 --> 00:24:51,440
+my in my connection here. And, uh, if I
+
+608
+00:24:48,720 --> 00:24:53,760
+needed to analyze a substantive document
+
+609
+00:24:51,440 --> 00:24:56,400
+or or something of a, you know, sizable
+
+610
+00:24:53,760 --> 00:24:58,559
+nature, uploading it to the tool in the
+
+611
+00:24:56,400 --> 00:25:00,720
+first place just to begin the analysis
+
+612
+00:24:58,559 --> 00:25:02,799
+is is a drag. I mean, it's it's it's a
+
+613
+00:25:00,720 --> 00:25:04,559
+it's a it's a delay that then I have to
+
+614
+00:25:02,799 --> 00:25:06,480
+kind of just go do something else while
+
+615
+00:25:04,559 --> 00:25:07,760
+I'm waiting for it. And I, you know, I
+
+616
+00:25:06,480 --> 00:25:10,320
+have a pretty good internet connection.
+
+617
+00:25:07,760 --> 00:25:11,919
+I I actually am pretty uh satisfied for
+
+618
+00:25:10,320 --> 00:25:14,799
+the most part. But you know with each
+
+619
+00:25:11,919 --> 00:25:17,760
+passing year as as the demand cycle
+
+620
+00:25:14,799 --> 00:25:19,520
+grows and and the applications and the
+
+621
+00:25:17,760 --> 00:25:22,080
+intensivity of those applications
+
+622
+00:25:19,520 --> 00:25:23,919
+continue to advance um you know I'm
+
+623
+00:25:22,080 --> 00:25:26,159
+going to need to keep going up. Uh and
+
+624
+00:25:23,919 --> 00:25:27,760
+that's something we're trying to you get
+
+625
+00:25:26,159 --> 00:25:31,520
+a handle on kind of what is like an
+
+626
+00:25:27,760 --> 00:25:33,039
+essential minimum of service more than
+
+627
+00:25:31,520 --> 00:25:35,039
+you know I could say with confidence
+
+628
+00:25:33,039 --> 00:25:37,600
+it's not 10020 up anymore. It's it's
+
+629
+00:25:35,039 --> 00:25:39,679
+moved past that at this point. Um, yeah,
+
+630
+00:25:37,600 --> 00:25:41,760
+but how do we how do we be more dynamic
+
+631
+00:25:39,679 --> 00:25:43,120
+as as regulators to
+
+632
+00:25:41,760 --> 00:25:44,320
+>> assess whether the community is at a
+
+633
+00:25:43,120 --> 00:25:45,520
+point where they're really ensuring
+
+634
+00:25:44,320 --> 00:25:47,440
+everyone has the full benefit of the
+
+635
+00:25:45,520 --> 00:25:49,279
+internet?
+
+636
+00:25:47,440 --> 00:25:52,480
+>> Well, I mean, I think AI is such a
+
+637
+00:25:49,279 --> 00:25:55,039
+gamecher and it's going to disrupt every
+
+638
+00:25:52,480 --> 00:25:56,640
+model. I mean, even just websites, you
+
+639
+00:25:55,039 --> 00:26:00,720
+know, you never know who goes to website
+
+640
+00:25:56,640 --> 00:26:02,480
+anymore, right? You use uh your AI
+
+641
+00:26:00,720 --> 00:26:03,760
+search and be able to get all the
+
+642
+00:26:02,480 --> 00:26:06,000
+information you need versus going to
+
+643
+00:26:03,760 --> 00:26:08,240
+individual websites. the way the
+
+644
+00:26:06,000 --> 00:26:11,760
+internet's monetized even it's going to
+
+645
+00:26:08,240 --> 00:26:14,000
+disrupt the monopolies that um Android
+
+646
+00:26:11,760 --> 00:26:16,400
+and and the iPhone have on the cell
+
+647
+00:26:14,000 --> 00:26:19,600
+phone market. So it's it's going to be a
+
+648
+00:26:16,400 --> 00:26:21,279
+big disruptor and I think you know we'll
+
+649
+00:26:19,600 --> 00:26:24,880
+start seeing quality of connections
+
+650
+00:26:21,279 --> 00:26:26,559
+become paramount. Um so one thing you
+
+651
+00:26:24,880 --> 00:26:27,919
+know if I look at your study it's pretty
+
+652
+00:26:26,559 --> 00:26:29,919
+straightforward. to use a bunch of
+
+653
+00:26:27,919 --> 00:26:32,559
+university guys. You guys can't, you
+
+654
+00:26:29,919 --> 00:26:34,799
+know, I think it's intuitively obvious
+
+655
+00:26:32,559 --> 00:26:37,279
+that you, you know, you're not going to
+
+656
+00:26:34,799 --> 00:26:39,279
+see any price movement. If uh inferior
+
+657
+00:26:37,279 --> 00:26:41,679
+service comes to market, why would you
+
+658
+00:26:39,279 --> 00:26:43,760
+bother changing prices? But if a real
+
+659
+00:26:41,679 --> 00:26:45,919
+threat like you know you put a
+
+660
+00:26:43,760 --> 00:26:47,919
+McDonald's across from a Burger King or
+
+661
+00:26:45,919 --> 00:26:50,320
+a Walgreens across from a Eards or
+
+662
+00:26:47,919 --> 00:26:52,400
+whatever the you know every you can take
+
+663
+00:26:50,320 --> 00:26:55,360
+any industry and you put the competition
+
+664
+00:26:52,400 --> 00:26:58,640
+across you're going to get um stronger
+
+665
+00:26:55,360 --> 00:27:03,200
+more consumerfriendly pricing. Um but I
+
+666
+00:26:58,640 --> 00:27:06,000
+did see a blog from a bunch of ACL guys
+
+667
+00:27:03,200 --> 00:27:10,640
+that kind of weren't too happy with this
+
+668
+00:27:06,000 --> 00:27:10,799
+study. Um any comments on that or
+
+669
+00:27:10,640 --> 00:27:14,480
+I
+
+670
+00:27:10,799 --> 00:27:18,880
+>> mean I think it boils down to um there
+
+671
+00:27:14,480 --> 00:27:21,600
+is this this I think theory to say
+
+672
+00:27:18,880 --> 00:27:23,360
+um you know a bunch of low options is
+
+673
+00:27:21,600 --> 00:27:25,120
+sufficient to consider competition and
+
+674
+00:27:23,360 --> 00:27:26,480
+then and and why are we complaining when
+
+675
+00:27:25,120 --> 00:27:30,000
+we're talking about you know when we
+
+676
+00:27:26,480 --> 00:27:32,640
+obsess of the gigabit tier. Um and I I
+
+677
+00:27:30,000 --> 00:27:34,000
+guess my my response to that is the
+
+678
+00:27:32,640 --> 00:27:35,440
+these companies wouldn't be offering a
+
+679
+00:27:34,000 --> 00:27:36,480
+gigabit service if there wasn't demand
+
+680
+00:27:35,440 --> 00:27:38,720
+for it.
+
+681
+00:27:36,480 --> 00:27:41,120
+And um you know I think next month we'll
+
+682
+00:27:38,720 --> 00:27:44,320
+probably put out more on showing where
+
+683
+00:27:41,120 --> 00:27:45,840
+the demand is in in terms of the state
+
+684
+00:27:44,320 --> 00:27:49,039
+in terms of the population but you know
+
+685
+00:27:45,840 --> 00:27:51,039
+like I said it's about 75% of all uh
+
+686
+00:27:49,039 --> 00:27:53,600
+people who buy broadband in California
+
+687
+00:27:51,039 --> 00:27:56,000
+are are purchasing speeds at 300 500 or
+
+688
+00:27:53,600 --> 00:27:57,679
+gigabit. um you know the market exists
+
+689
+00:27:56,000 --> 00:27:59,440
+because the demand exists and so to say
+
+690
+00:27:57,679 --> 00:28:00,480
+we should be focusing on you know I
+
+691
+00:27:59,440 --> 00:28:01,919
+would say inferior or kind of
+
+692
+00:28:00,480 --> 00:28:04,960
+yesterday's speeds as a means of
+
+693
+00:28:01,919 --> 00:28:06,640
+assessing kind of where uh where things
+
+694
+00:28:04,960 --> 00:28:09,200
+are at and where competition is at where
+
+695
+00:28:06,640 --> 00:28:11,120
+pricing because that uh really is is
+
+696
+00:28:09,200 --> 00:28:14,799
+missing you know who are the buyers and
+
+697
+00:28:11,120 --> 00:28:16,559
+and what are they buying um the future
+
+698
+00:28:14,799 --> 00:28:18,080
+is is always going to head upwards in
+
+699
+00:28:16,559 --> 00:28:21,039
+terms of the demand the internet's kind
+
+700
+00:28:18,080 --> 00:28:22,720
+of demonstrated that for for decades um
+
+701
+00:28:21,039 --> 00:28:24,240
+you know be I think recognized that in
+
+702
+00:28:22,720 --> 00:28:26,159
+terms of the priority broadband
+
+703
+00:28:24,240 --> 00:28:29,200
+project's provisioning of scalability
+
+704
+00:28:26,159 --> 00:28:30,559
+recognizing we will always need more um
+
+705
+00:28:29,200 --> 00:28:33,200
+you know and as you pointed out
+
+706
+00:28:30,559 --> 00:28:36,399
+correctly you know in the age of AI and
+
+707
+00:28:33,200 --> 00:28:39,039
+kind of these new generation of services
+
+708
+00:28:36,399 --> 00:28:41,600
+we we can I think we can all agree with
+
+709
+00:28:39,039 --> 00:28:44,080
+confidence we're going to be moving a
+
+710
+00:28:41,600 --> 00:28:47,120
+lot more data you know in the next year
+
+711
+00:28:44,080 --> 00:28:48,399
+than we are even this year and each year
+
+712
+00:28:47,120 --> 00:28:51,679
+we'll continue to kind of break these
+
+713
+00:28:48,399 --> 00:28:54,399
+new thresholds one thing I also have
+
+714
+00:28:51,679 --> 00:28:56,640
+been interested to kind of see is um
+
+715
+00:28:54,399 --> 00:28:58,720
+it's not so much just fiber entry and it
+
+716
+00:28:56,640 --> 00:29:01,440
+and its own isolation that creates a
+
+717
+00:28:58,720 --> 00:29:04,159
+benefit. I also think that is a reason
+
+718
+00:29:01,440 --> 00:29:05,760
+why cable is rolling out DOC's 4.0 right
+
+719
+00:29:04,159 --> 00:29:07,279
+which is where they're going to you 10
+
+720
+00:29:05,760 --> 00:29:10,159
+gigabit and beyond and symmetrical
+
+721
+00:29:07,279 --> 00:29:12,799
+speeds and essentially replicating what
+
+722
+00:29:10,159 --> 00:29:14,080
+fiber companies are doing you know now
+
+723
+00:29:12,799 --> 00:29:16,000
+um they wouldn't be rolling that out
+
+724
+00:29:14,080 --> 00:29:17,760
+unless that's they recognize that's
+
+725
+00:29:16,000 --> 00:29:19,200
+where the consumers are going to go uh
+
+726
+00:29:17,760 --> 00:29:21,440
+at the end of the day. So, I just think
+
+727
+00:29:19,200 --> 00:29:23,520
+it's it's kind of arguing yesterday's
+
+728
+00:29:21,440 --> 00:29:26,480
+battles if we if we continue to look at
+
+729
+00:29:23,520 --> 00:29:28,559
+the FCC standard as a a means of
+
+730
+00:29:26,480 --> 00:29:31,279
+assessing whether things are in a good
+
+731
+00:29:28,559 --> 00:29:33,440
+place uh for for consumers at this
+
+732
+00:29:31,279 --> 00:29:35,279
+stage.
+
+733
+00:29:33,440 --> 00:29:37,200
+Yeah, it's you know it's really
+
+734
+00:29:35,279 --> 00:29:39,919
+frustrating with some of the policy
+
+735
+00:29:37,200 --> 00:29:42,320
+federal policy makers that uh for
+
+736
+00:29:39,919 --> 00:29:45,840
+example end of last week the farm bill
+
+737
+00:29:42,320 --> 00:29:49,679
+text came out and uh for broadband you
+
+738
+00:29:45,840 --> 00:29:51,360
+know for USDA they were suggesting 50 by
+
+739
+00:29:49,679 --> 00:29:54,080
+25
+
+740
+00:29:51,360 --> 00:29:57,600
+and it's just like these guys are
+
+741
+00:29:54,080 --> 00:29:59,279
+supposed to be protecting farmers not
+
+742
+00:29:57,600 --> 00:30:01,279
+relegating them to not be able to
+
+743
+00:29:59,279 --> 00:30:03,039
+leverage you know precision farming and
+
+744
+00:30:01,279 --> 00:30:04,960
+all the you know when you start to do
+
+745
+00:30:03,039 --> 00:30:06,960
+digital twins and all the data that's
+
+746
+00:30:04,960 --> 00:30:09,840
+going to be on farms, you're really
+
+747
+00:30:06,960 --> 00:30:12,640
+going to try to screw guys over with
+
+748
+00:30:09,840 --> 00:30:14,880
+things that are beyond a decade ago. I
+
+749
+00:30:12,640 --> 00:30:17,440
+mean, it's it's crazy. But um
+
+750
+00:30:14,880 --> 00:30:19,039
+>> yeah and if you look at the
+
+751
+00:30:17,440 --> 00:30:21,520
+international markets and kind of you
+
+752
+00:30:19,039 --> 00:30:24,559
+know we should be getting to a point
+
+753
+00:30:21,520 --> 00:30:26,320
+where the the speed becomes irrelevant
+
+754
+00:30:24,559 --> 00:30:29,039
+because the infrastructure can scale
+
+755
+00:30:26,320 --> 00:30:30,480
+consistently in a way that makes me met
+
+756
+00:30:29,039 --> 00:30:31,919
+measuring speed as the level of
+
+757
+00:30:30,480 --> 00:30:34,159
+deployment kind of an irrelevant
+
+758
+00:30:31,919 --> 00:30:38,320
+exercise. Uh we should be migrating
+
+759
+00:30:34,159 --> 00:30:39,840
+towards latency and um you know the
+
+760
+00:30:38,320 --> 00:30:42,000
+level of instantaneousness of the
+
+761
+00:30:39,840 --> 00:30:44,320
+response and you know uptime and things
+
+762
+00:30:42,000 --> 00:30:46,640
+like that. But yeah, the US is still a
+
+763
+00:30:44,320 --> 00:30:49,919
+little backwards, I think, on
+
+764
+00:30:46,640 --> 00:30:52,880
+recognizing how how far behind we can
+
+765
+00:30:49,919 --> 00:30:54,880
+be. And I think what's what is shocking
+
+766
+00:30:52,880 --> 00:30:58,159
+sometimes is, you know, you go back to
+
+767
+00:30:54,880 --> 00:30:59,279
+your state-by-state study, the fact of
+
+768
+00:30:58,159 --> 00:31:00,960
+the matter is some states have really
+
+769
+00:30:59,279 --> 00:31:02,799
+already figured this out. Um, I think
+
+770
+00:31:00,960 --> 00:31:04,880
+I'm always using North Dakota as an
+
+771
+00:31:02,799 --> 00:31:07,520
+example when I have to talk to um policy
+
+772
+00:31:04,880 --> 00:31:10,880
+makers in Sacramento who, you know, I
+
+773
+00:31:07,520 --> 00:31:13,760
+think uh suffer from the perpetual low
+
+774
+00:31:10,880 --> 00:31:16,159
+expectations of what we could have um to
+
+775
+00:31:13,760 --> 00:31:17,600
+say, you know, how did a small rural
+
+776
+00:31:16,159 --> 00:31:19,760
+state with, you know, kind of a fraction
+
+777
+00:31:17,600 --> 00:31:22,559
+of the funding, a fraction of the
+
+778
+00:31:19,760 --> 00:31:23,840
+resources of our state, how does it get
+
+779
+00:31:22,559 --> 00:31:25,440
+to a point where nearly everyone has a
+
+780
+00:31:23,840 --> 00:31:27,679
+gigabit fiber connection at this point,
+
+781
+00:31:25,440 --> 00:31:29,440
+right? It's it's policy. It's it's
+
+782
+00:31:27,679 --> 00:31:31,840
+rights away management. It's it's how we
+
+783
+00:31:29,440 --> 00:31:33,520
+handle the emphasis of allowing this
+
+784
+00:31:31,840 --> 00:31:34,960
+infrastructure to build. Um you
+
+785
+00:31:33,520 --> 00:31:36,960
+California is a big state with lots of
+
+786
+00:31:34,960 --> 00:31:38,799
+different variables that play into it.
+
+787
+00:31:36,960 --> 00:31:41,600
+But if we don't set the expectations
+
+788
+00:31:38,799 --> 00:31:43,600
+correct, the policy the policy and the
+
+789
+00:31:41,600 --> 00:31:46,000
+outcomes almost never follow and and I
+
+790
+00:31:43,600 --> 00:31:47,840
+think that's always a a per kind of a
+
+791
+00:31:46,000 --> 00:31:49,919
+perpetual fight in in this space. But
+
+792
+00:31:47,840 --> 00:31:53,760
+one but I hope that in our you know not
+
+793
+00:31:49,919 --> 00:31:55,519
+too distant future we get past. But um
+
+794
+00:31:53,760 --> 00:31:56,960
+it is it is a point where we need to
+
+795
+00:31:55,519 --> 00:31:58,080
+move away from lowest common denominator
+
+796
+00:31:56,960 --> 00:32:00,159
+being good enough simply because we
+
+797
+00:31:58,080 --> 00:32:01,600
+we'll always come back and have to spend
+
+798
+00:32:00,159 --> 00:32:03,679
+the money again and again and again
+
+799
+00:32:01,600 --> 00:32:05,279
+until we finally get it right.
+
+800
+00:32:03,679 --> 00:32:08,960
+>> Well, that's the thing we've seen with
+
+801
+00:32:05,279 --> 00:32:11,760
+any funding program uh broadband subsidy
+
+802
+00:32:08,960 --> 00:32:13,919
+is anytime you don't invest in fiber
+
+803
+00:32:11,760 --> 00:32:16,320
+you're funding those same locations over
+
+804
+00:32:13,919 --> 00:32:18,720
+and over again. you know whether it's
+
+805
+00:32:16,320 --> 00:32:22,159
+one megabit or four by one or 10 by one
+
+806
+00:32:18,720 --> 00:32:26,240
+or 253 or 100 by 20 or you know on on
+
+807
+00:32:22,159 --> 00:32:29,919
+versus just do it once. I mean that's
+
+808
+00:32:26,240 --> 00:32:32,640
+but you know it's the life we live here
+
+809
+00:32:29,919 --> 00:32:34,960
+is to make room for uh you know all
+
+810
+00:32:32,640 --> 00:32:37,600
+constituents. But listen, um, we're out
+
+811
+00:32:34,960 --> 00:32:39,120
+of time, Ernie, but I really appreciate,
+
+812
+00:32:37,600 --> 00:32:41,279
+uh, I always enjoy every, you know,
+
+813
+00:32:39,120 --> 00:32:43,120
+everything that you work on and, uh, I
+
+814
+00:32:41,279 --> 00:32:45,679
+appreciate the great work that you and
+
+815
+00:32:43,120 --> 00:32:48,320
+your colleagues at California PC are
+
+816
+00:32:45,679 --> 00:32:50,000
+doing to advance broadband in your state
+
+817
+00:32:48,320 --> 00:32:53,880
+and, uh, so thank you for that and
+
+818
+00:32:50,000 --> 00:32:53,880
+thanks for sharing your report.
+
+819
+00:32:54,000 --> 00:32:58,480
+>> Come on and and and thank you for the
+
+820
+00:32:55,840 --> 00:33:00,000
+opportunity to present to your audience.
+
+821
+00:32:58,480 --> 00:33:01,039
+>> Well, I want to thank everybody for
+
+822
+00:33:00,000 --> 00:33:03,039
+joining us today. look forward to
+
+823
+00:33:01,039 --> 00:33:05,440
+getting back together next Wednesday
+
+824
+00:33:03,039 --> 00:33:07,440
+with one of my favorite people um the
+
+825
+00:33:05,440 --> 00:33:09,279
+Fiber Broadband Association's former
+
+826
+00:33:07,440 --> 00:33:11,919
+chairman and our current treasurer Jimmy
+
+827
+00:33:09,279 --> 00:33:14,480
+Todd who is the CEO of NEXTE. He's going
+
+828
+00:33:11,919 --> 00:33:17,120
+to discuss getting a front row seat to
+
+829
+00:33:14,480 --> 00:33:19,039
+the telecom evolution 75 years in the
+
+830
+00:33:17,120 --> 00:33:20,640
+making. So that's going to be fun. Look
+
+831
+00:33:19,039 --> 00:33:23,279
+forward to seeing you next Wednesday.
+
+832
+00:33:20,640 --> 00:33:26,440
+Thanks everyone and u Ernie, we'll see
+
+833
+00:33:23,279 --> 00:33:26,440
+you soon.
+

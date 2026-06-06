@@ -1,0 +1,43 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Advanced 1 (advanced1.net) is a telecom engineering and design services firm based in Georgetown, TX. They appear to operate primarily as a design/engineering subcontractor for fiber and broadband infrastructure projects — meaning they are a services firm, not an operator. This makes them a potential channel partner or a competitor-adjacent firm rather than a direct Inorsa ICP (which targets operators deploying fiber). Source: advanced1.net domain inference + Georgetown TX location context.",
+    "Salli Smith holds the title Senior VP, Design Services — this is a Design/Document persona. At a firm whose core product IS design services, this person is almost certainly the operational lead for engineering throughput, drawing production, QC, and delivery timelines. She likely owns or heavily influences tooling decisions that affect her team's output quality and speed. Source: title analysis.",
+    "Two other contacts from the same company attended the show: Scott Hastings (VP) and Brian Derstine (VP). Three attendees from one firm at a fiber-focused tradeshow is a strong buying signal — this was not a casual visit. Multiple VPs suggests company-level evaluation, not individual curiosity. Source: booth scan list provided in prospect context.",
+    "The labor shortage baseline (3:1 job-to-candidate ratio, 58,000 new roles needed by 2032) hits design services firms harder than operators — their entire revenue model depends on designer throughput. If Inorsa can compress GIS-to-CAD cycle time, it directly expands Advanced 1's billable capacity without adding headcount. This is the margin argument. Source: ShowRev Industry Intelligence KB.",
+    "BEAD operational as of April 30, 2026, with state ISP contracts finalizing within 6 months and construction starts Q3 2026. A design services firm like Advanced 1 would be downstream of ISP contract awards — meaning their pipeline is about to surge. The question is whether they have the production capacity to handle it. Inorsa's throughput argument is highly timely. Source: ShowRev Industry Intelligence KB.",
+    "Permitting workflow pain is the priority signal from Fiber Connect 2026 feedback. A design services firm that delivers permit packages to municipalities on behalf of operator clients would feel permit kickbacks as both a cost (rework labor) and a reputational risk (they look bad to their clients). Inorsa's conflict-flagging and 3-4 week to 2-day permit review cycle reduction is a direct pain-point match. Source: Inorsa client value prop + Fiber Connect 2026 feedback.",
+    "No direct quote, LinkedIn profile, panel appearance, or trade press interview found for Salli Smith specifically. Her LinkedIn presence is not surfaced in available research data. Source: Brain Knowledge Digest search — not found.",
+    "Advanced 1 does not appear in the Brain Knowledge Digest's 34 discovered companies, suggesting they have not been previously researched or engaged by Inorsa's pipeline. This is a cold-to-warm conversion scenario despite the in-person tradeshow contact. Source: company list cross-reference — not found.",
+    "Title hierarchy at Advanced 1: Salli Smith (SVP, Design Services) is likely a direct report to a C-suite executive (CEO/COO/President). Scott Hastings and Brian Derstine are both VPs — they may be peers or direct reports to Salli, or they may represent other business units (Sales, Operations, BD). The three-person attendance pattern suggests coordinated evaluation by a leadership team, not siloed individuals. Source: org inference from titles + multi-contact booth scan.",
+    "As SVP of Design Services at a firm that sells design services, Salli Smith's budget authority is likely tied to operational tooling (software licenses, workflow tools, QC platforms) rather than capital expenditure. Her budget cycle may align with fiscal year renewal cycles or be triggered by a project surge requiring capacity decisions. No specific fiscal year data found for Advanced 1. Source: inference from firm type — not confirmed."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No LinkedIn profile found or confirmed for Salli Smith — cannot verify tenure, career history, or previous companies",
+    "No trade press quotes, panel appearances, or podcast mentions found for Salli Smith",
+    "Advanced 1's revenue, headcount, and client roster are not found in available research data — cannot confirm firm size or whether they have existing GIS-to-CAD tooling",
+    "Scott Hastings and Brian Derstine VP titles are listed without department context — unclear if they are peers or reports to Salli, or whether they represent Sales/BD (suggesting active vendor evaluation) vs. Operations (suggesting implementation review)",
+    "No information on Advanced 1's current tech stack — do they use IQGeo, ArcGIS, AutoCAD, or a competing workflow automation tool? 'We already have a tool' objection probability is unknown without this",
+    "Advanced 1's BEAD exposure (direct contract vs. subcontract to ISPs) is unknown — this affects urgency timeline significantly",
+    "No fiscal year or budget cycle data for Advanced 1",
+    "Cannot confirm whether Advanced 1 is purely a fiber design firm or handles other infrastructure (tower, cellular, utilities) — Inorsa is fiber-only, so scope alignment matters",
+    "No AE booth notes available — unknown what was discussed at the show, what demo was given, or what level of interest was expressed in person"
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold status ('Relevant title but no AE notes or grade') may underweight this lead. Three VPs from a design services firm attending a fiber tradeshow together is an unusually strong cluster signal. The absence of AE notes is a data gap, not evidence of low intent — this should be treated as a moderate-to-warm lead pending research, not a cold D-tier batch.",
+    "The 'design services firm as customer' hypothesis is non-obvious for Inorsa (which typically targets operators), but should not be dismissed. A firm like Advanced 1 that produces permit and construction drawings on behalf of operator clients has exactly the permitting workflow pain Inorsa solves — and would have a stronger ROI case than operators because their margin directly depends on throughput and rework avoidance. The ICP framing may need to expand.",
+    "Salli Smith as SVP Design Services may actually have more tooling budget authority than a comparable title at an operator, because at a services firm the design workflow IS the product. The budget argument is cleaner, not weaker."
+  ],
+  "topInsight": "Three leaders from a design services firm — the SVP of Design Services plus two VPs — attended the same fiber tradeshow together. This is coordinated evaluation behavior, not casual attendance. Advanced 1's entire revenue model depends on engineering throughput, so Inorsa's permit cycle compression (3-4 weeks to 2 days) and conflict-flagging before rework maps directly to their margin and client retention. With BEAD construction starting Q3 2026, they are about to face a volume surge they likely cannot staff into fast enough. The email to Salli Smith should lead with capacity-under-surge framing — 'your clients' BEAD projects are coming, your designers are already scarce, here's how you deliver more without hiring' — not generic drawing automation.",
+  "sourcesUsed": [
+    "advanced1.net (domain inference only — no deep content retrieved)",
+    "ShowRev Industry Intelligence KB (BEAD timeline, labor shortage baseline, permitting constraint data)",
+    "Inorsa client value proposition and Fiber Connect 2026 feedback (provided in prompt)",
+    "Prospect context: booth scan list (Scott Hastings, Brian Derstine co-attendance)",
+    "Brain Knowledge Digest — Advanced 1 not found in 34 discovered companies",
+    "Brain Knowledge Digest — Salli Smith not found in 380 entities"
+  ]
+}
+```

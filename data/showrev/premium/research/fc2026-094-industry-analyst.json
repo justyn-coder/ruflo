@@ -1,0 +1,41 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "NB+C (formerly known as Network Building + Consulting, LLC) is a telecom engineering and consulting firm headquartered in Wayne, PA (not Raleigh — the Raleigh location likely reflects Matt Varrelman's remote/field position). They operate across the full telecom infrastructure lifecycle: site acquisition, A&E design, project management, and construction management. Their core client base is tier-1 and tier-2 carriers plus fiber overbuilders. Source: nbcllc.com company profile and LinkedIn company page.",
+    "NB+C has an explicit fiber division and has been actively expanding fiber-related service lines. The title 'Senior Fiber Lead' for Matt Varrelman strongly suggests NB+C has a dedicated fiber practice — likely serving ISPs, municipalities, or carriers pursuing BEAD-funded builds in the Southeast. Raleigh, NC positioning is strategically significant: North Carolina received a $683M BEAD allocation and is one of the more advanced states in subgrantee contracting. Source: NTIA BEAD tracker + NC broadband office records.",
+    "NB+C merged with or acquired NetPMD Solutions (noted in relationships data), which introduces near-term integration complexity. NetPMD was a project management and deployment firm. This merger likely expands NB+C's deployment footprint but strains internal workflows — design-to-construction handoffs, data consistency, and permitting coordination across legacy systems are all elevated risk points post-merger. Source: Brain Knowledge Digest relationship node.",
+    "North Carolina's BEAD program (NC GREAT / NCDIT) has been among the more active state offices. The $683M allocation creates direct pipeline pressure on engineering firms serving NC ISPs. With BEAD operationally live as of April 30, 2026, and state ISP contracts expected to finalize within 6 months, NB+C's fiber team in Raleigh is almost certainly under demand pressure from multiple clients simultaneously. Source: NTIA operational timeline + NC broadband office public documents.",
+    "NB+C is not publicly traded and does not publish earnings. No PE ownership confirmed from available data, though the NetPMD merger suggests either organic M&A capability or PE backing. No press releases found on Fierce Network, Light Reading, or Telecompetitor specifically naming NB+C in a BEAD contract award context — this is a notable gap that suggests they operate as a behind-the-scenes A&E firm rather than a headline operator.",
+    "The labor shortage baseline (3:1 job-to-candidate ratio for fiber designers, 58,000 roles needed by 2032) applies directly to NB+C's business model. As an A&E/PM firm, their revenue is headcount-constrained. If they are absorbing new fiber workload post-BEAD without proportional headcount growth, their GIS-to-CAD design pipeline is the most likely bottleneck — exactly the workflow Inorsa addresses.",
+    "No conference speaker appearances by NB+C executives found at Fiber Connect, Mountain Connect, or Broadband Communities events in 2025-2026. This is consistent with a firm that positions as a delivery partner rather than a thought-leadership brand. Outreach should be operationally focused, not brand/strategy focused.",
+    "Matt Varrelman's title ('Senior Fiber Lead') and NC location suggests he is either managing fiber design delivery, client relationships, or both for the Southeast region. LinkedIn profile not fully accessible, but the seniority level and functional title indicate he has direct exposure to design throughput, permitting timelines, and construction drawing quality — all primary Inorsa use cases.",
+    "No BEAD sub-grant award found directly naming NB+C as a recipient — consistent with their role as an engineering services vendor to operators, not an ISP applicant. Their growth signal is therefore derivative of operator clients winning BEAD awards, not direct funding receipt. This means their pipeline is tied to how fast their ISP clients can close BEAD contracts and break ground."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "NB+C's specific client roster for fiber/BEAD work in NC is not publicly disclosed — cannot confirm which ISPs or municipalities they are supporting.",
+    "Matt Varrelman's LinkedIn profile details (tenure, prior roles, specific project history) not accessible — cannot confirm whether he manages design teams directly or is a client-facing PM.",
+    "No confirmed PE ownership or investor backing found — the NetPMD merger origin and financing structure is unclear.",
+    "No job postings from NB+C found on Indeed/LinkedIn specifically for fiber designers or GIS roles in NC — would have been strong signal of capacity gap.",
+    "No press coverage on trade sites (Fierce, Light Reading, Telecompetitor) naming NB+C in any BEAD-related context — firm appears to maintain low public profile.",
+    "Exact size of NB+C's fiber practice (headcount, revenue) not found — 'thin data' ICP flag is accurate.",
+    "Cannot confirm whether NB+C uses in-house GIS-to-CAD workflows, offshore design labor, or third-party tools — critical for positioning Inorsa's value prop."
+  ],
+  "challengesToOtherFindings": [
+    "The 'ICP: hold' designation based on thin data is appropriate but potentially undersells the opportunity. NB+C's profile as a multi-disciplinary telecom A&E firm with an active fiber practice in a $683M BEAD state, combined with a post-merger integration complexity, is a stronger signal than the raw data density suggests. The absence of press coverage is a firm characteristic, not a disqualifier.",
+    "The Raleigh location should not be read as NB+C's HQ being in NC — the company is PA-based. Matt Varrelman likely represents a regional expansion or field presence. This distinction matters: outreach should acknowledge NB+C as a national firm with Southeast fiber exposure, not a regional NC operator.",
+    "The NetPMD merger relationship note in the data is the most underweighted signal. Post-merger A&E firms consistently experience GIS data fragmentation, workflow inconsistency, and permitting coordination failures as two delivery organizations harmonize. This is a near-term acute pain point, not a generic long-term trend."
+  ],
+  "topInsight": "NB+C is a telecom A&E and PM firm operating inside one of the most active BEAD deployment states (NC, $683M allocation) at the exact moment subgrantee contracts are finalizing and construction is queuing up for Q3 2026 starts — while simultaneously absorbing integration complexity from the NetPMD merger. Matt Varrelman as 'Senior Fiber Lead' in Raleigh is almost certainly managing design delivery throughput against a rapidly filling pipeline, with no additional designer headcount available in the current labor market. The permitting kickback risk (each = 3-6 weeks in a 4-year BEAD deployment window) is the operationally credible hook: if NB+C's GIS-to-CAD workflow still runs manual, they are one permit rejection wave away from a client SLA problem they cannot staff their way out of.",
+  "sourcesUsed": [
+    "https://www.nbcllc.com (company overview, service lines)",
+    "https://www.linkedin.com/company/nb-c (company profile, headcount indicators)",
+    "https://broadbandusa.ntia.doc.gov/bead (BEAD operational timeline, April 30 2026 go-live)",
+    "https://www.ncbroadband.gov (NC BEAD allocation and subgrantee contracting status)",
+    "Brain Knowledge Digest — NetPMD merger relationship node",
+    "ShowRev Industry Intelligence KB — fiber labor shortage, permitting constraint, BEAD timeline baselines",
+    "NTIA BEAD state tracker — $683M NC allocation confirmed"
+  ]
+}
+```

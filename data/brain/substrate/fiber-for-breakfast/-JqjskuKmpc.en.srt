@@ -1,0 +1,2888 @@
+1
+00:00:04,680 --> 00:00:17,449
+[Music]
+
+2
+00:00:17,920 --> 00:00:20,400
+Hey,
+
+3
+00:00:24,600 --> 00:00:43,120
+hey, hey, hey.
+
+4
+00:00:27,870 --> 00:00:44,879
+[Music]
+
+5
+00:00:43,120 --> 00:00:47,039
+Well, good morning everyone and welcome
+
+6
+00:00:44,879 --> 00:00:49,200
+to the Fiber Broadband Association's
+
+7
+00:00:47,039 --> 00:00:52,239
+Fire for Breakfast. We're now in our
+
+8
+00:00:49,200 --> 00:00:53,760
+21st episode of 2025. Before we kick
+
+9
+00:00:52,239 --> 00:00:55,840
+off, I'd like to thank Westco, the
+
+10
+00:00:53,760 --> 00:00:57,440
+platinum sponsor fire for breakfast.
+
+11
+00:00:55,840 --> 00:00:59,840
+Well, in Washington this morning, there
+
+12
+00:00:57,440 --> 00:01:01,760
+are two key hearings related to fiber
+
+13
+00:00:59,840 --> 00:01:03,760
+broadband which will be take place in
+
+14
+00:01:01,760 --> 00:01:05,360
+Congress. The House Appropriations
+
+15
+00:01:03,760 --> 00:01:08,159
+Committee will hold an oversight hearing
+
+16
+00:01:05,360 --> 00:01:10,159
+of the FCC with Chairman Carr as their
+
+17
+00:01:08,159 --> 00:01:12,080
+witness. Also in the House, the
+
+18
+00:01:10,159 --> 00:01:14,159
+Subcommittee on Commerce, Manufacturing,
+
+19
+00:01:12,080 --> 00:01:17,280
+and Trade will hold the educational
+
+20
+00:01:14,159 --> 00:01:20,080
+hearing on AI. In preparation, the Fiber
+
+21
+00:01:17,280 --> 00:01:22,799
+Broadband Association has shared our AI
+
+22
+00:01:20,080 --> 00:01:25,680
+and fiber report with the subcommittee.
+
+23
+00:01:22,799 --> 00:01:28,080
+And recently, Senate leaders continued
+
+24
+00:01:25,680 --> 00:01:30,799
+to urge NTI to move quickly as possible
+
+25
+00:01:28,080 --> 00:01:33,040
+on releasing the bead funding. US
+
+26
+00:01:30,799 --> 00:01:35,600
+Senator Shelley Moore Capido of West
+
+27
+00:01:33,040 --> 00:01:37,520
+Virginia recently sent a letter to US
+
+28
+00:01:35,600 --> 00:01:39,759
+Secretary of Commerce Howard Lutnik
+
+29
+00:01:37,520 --> 00:01:41,680
+asking for an expedited review and
+
+30
+00:01:39,759 --> 00:01:44,880
+updated guidance for the beat program
+
+31
+00:01:41,680 --> 00:01:47,759
+urging that West Virginia not have to
+
+32
+00:01:44,880 --> 00:01:50,000
+wait on significant or have significant
+
+33
+00:01:47,759 --> 00:01:52,720
+revisions to its application.
+
+34
+00:01:50,000 --> 00:01:56,000
+Additionally, a letter from nine Senate
+
+35
+00:01:52,720 --> 00:01:58,000
+Democrats led by Senator Jackie Rosen of
+
+36
+00:01:56,000 --> 00:02:00,719
+Nevada was sent on Friday to President
+
+37
+00:01:58,000 --> 00:02:02,719
+Trump with a similar request. You know,
+
+38
+00:02:00,719 --> 00:02:04,640
+further related to bead, state broadband
+
+39
+00:02:02,719 --> 00:02:08,440
+officers were notified that the digital
+
+40
+00:02:04,640 --> 00:02:10,959
+equity act fund would be ended
+
+41
+00:02:08,440 --> 00:02:14,239
+immediately. Additionally, top tech
+
+42
+00:02:10,959 --> 00:02:15,760
+leaders including Open AI's Sam Alman
+
+43
+00:02:14,239 --> 00:02:18,480
+appeared before the Senate Commerce
+
+44
+00:02:15,760 --> 00:02:20,319
+Committee. Lawmakers focus on topics
+
+45
+00:02:18,480 --> 00:02:23,120
+such as advancing US global
+
+46
+00:02:20,319 --> 00:02:25,120
+competitiveness and AI, light touch
+
+47
+00:02:23,120 --> 00:02:28,160
+regulations, permitting challenges, and
+
+48
+00:02:25,120 --> 00:02:30,560
+workforce issues. Most notably, Senator
+
+49
+00:02:28,160 --> 00:02:33,920
+Morgan of Kansas noted that rural areas
+
+50
+00:02:30,560 --> 00:02:37,360
+lack sufficient broadband and AI
+
+51
+00:02:33,920 --> 00:02:39,280
+requires broadband. So, we're now just
+
+52
+00:02:37,360 --> 00:02:41,920
+weeks, well, not even weeks, a week and
+
+53
+00:02:39,280 --> 00:02:45,040
+a half away from Fiberconnect 2025 in
+
+54
+00:02:41,920 --> 00:02:48,080
+Nashville, which kicks off on June 1st.
+
+55
+00:02:45,040 --> 00:02:49,920
+and we continue to set uh new attendance
+
+56
+00:02:48,080 --> 00:02:53,200
+records every year for the past five
+
+57
+00:02:49,920 --> 00:02:55,120
+years and 2025 will be no exception.
+
+58
+00:02:53,200 --> 00:02:57,519
+That's going to be between five and
+
+59
+00:02:55,120 --> 00:02:59,560
+6,000 of our closest friends. So, if you
+
+60
+00:02:57,519 --> 00:03:01,879
+haven't registered, please go to
+
+61
+00:02:59,560 --> 00:03:03,920
+fiberblad.org under events and register
+
+62
+00:03:01,879 --> 00:03:07,360
+today. Uh you're not going to want to
+
+63
+00:03:03,920 --> 00:03:09,040
+miss uh fiberconnect 2025. So, after the
+
+64
+00:03:07,360 --> 00:03:10,640
+the big event in Nashville, we'll
+
+65
+00:03:09,040 --> 00:03:14,080
+continue to work our way around North
+
+66
+00:03:10,640 --> 00:03:15,840
+America. So far, regional workshops in
+
+67
+00:03:14,080 --> 00:03:18,000
+San Antonio and Philly have been sold
+
+68
+00:03:15,840 --> 00:03:20,959
+out, and our next regional workshop will
+
+69
+00:03:18,000 --> 00:03:22,879
+be in Anchorage, Alaska on July 17th.
+
+70
+00:03:20,959 --> 00:03:25,760
+After Anchorage, we'll be in Toronto in
+
+71
+00:03:22,879 --> 00:03:28,720
+August, Spokane in September, Scottsdale
+
+72
+00:03:25,760 --> 00:03:30,640
+in October, Kansas City in November, and
+
+73
+00:03:28,720 --> 00:03:33,760
+Palm Springs will be our premier member
+
+74
+00:03:30,640 --> 00:03:35,680
+meeting December 8th and 9th. You know,
+
+75
+00:03:33,760 --> 00:03:37,360
+last week I showed this fiber
+
+76
+00:03:35,680 --> 00:03:38,440
+availability map. David, can you put
+
+77
+00:03:37,360 --> 00:03:41,680
+that map
+
+78
+00:03:38,440 --> 00:03:44,720
+up? And you know, we'll this today we'll
+
+79
+00:03:41,680 --> 00:03:49,519
+be discussing Oklahoma. From a study,
+
+80
+00:03:44,720 --> 00:03:53,920
+Oklahoma had 3.2% fiber in 2013, which
+
+81
+00:03:49,519 --> 00:03:55,879
+increased to 11.6% fiber by 2016, and
+
+82
+00:03:53,920 --> 00:03:57,799
+has greatly improved to
+
+83
+00:03:55,879 --> 00:04:02,799
+64.2% by
+
+84
+00:03:57,799 --> 00:04:08,280
+2024. Oklahoma plans to get to 95% fiber
+
+85
+00:04:02,799 --> 00:04:10,560
+by 2028. As of June 2024, Oklahoma had
+
+86
+00:04:08,280 --> 00:04:13,040
+250,000 unserved and underserved
+
+87
+00:04:10,560 --> 00:04:15,760
+locations, which is about 15% of the
+
+88
+00:04:13,040 --> 00:04:17,120
+families of the state. So today on Fire
+
+89
+00:04:15,760 --> 00:04:19,160
+for Breakfast, our guest is Mike
+
+90
+00:04:17,120 --> 00:04:21,919
+Sanders, the executive director of the
+
+91
+00:04:19,160 --> 00:04:23,600
+Oklahoma Office to discuss Fiber
+
+92
+00:04:21,919 --> 00:04:25,840
+Forward, Oklahoma's bold path to
+
+93
+00:04:23,600 --> 00:04:27,840
+statewide connectivity. But before I
+
+94
+00:04:25,840 --> 00:04:29,520
+formulate today's guest, I'd like to
+
+95
+00:04:27,840 --> 00:04:30,720
+introduce David Norris from team to walk
+
+96
+00:04:29,520 --> 00:04:32,639
+us through house some housekeeping
+
+97
+00:04:30,720 --> 00:04:34,160
+items.
+
+98
+00:04:32,639 --> 00:04:35,680
+Thank you very much, Gary, and thank you
+
+99
+00:04:34,160 --> 00:04:38,160
+to everyone who's joined us today. We
+
+100
+00:04:35,680 --> 00:04:39,919
+appreciate it. Uh before I go over a few
+
+101
+00:04:38,160 --> 00:04:41,520
+logistics, we'd like to just once again
+
+102
+00:04:39,919 --> 00:04:43,440
+thank our platinum sponsor, Fiber for
+
+103
+00:04:41,520 --> 00:04:44,800
+Breakfast West Co. Now, please keep in
+
+104
+00:04:43,440 --> 00:04:47,280
+mind as a participant, you are in
+
+105
+00:04:44,800 --> 00:04:48,479
+listenon mode today. To ask a question,
+
+106
+00:04:47,280 --> 00:04:50,479
+please type it into the question box,
+
+107
+00:04:48,479 --> 00:04:52,160
+which is located in the lower left hand
+
+108
+00:04:50,479 --> 00:04:53,840
+side of your screen, and we will have a
+
+109
+00:04:52,160 --> 00:04:55,680
+Q&A session with our panelists at the
+
+110
+00:04:53,840 --> 00:04:57,040
+end of today's presentation. This
+
+111
+00:04:55,680 --> 00:04:58,400
+presentation is also being recorded and
+
+112
+00:04:57,040 --> 00:05:00,320
+will be available on FDA's website
+
+113
+00:04:58,400 --> 00:05:01,759
+within 24 to 48 hours and you can find
+
+114
+00:05:00,320 --> 00:05:04,560
+that recording in the events tab under
+
+115
+00:05:01,759 --> 00:05:05,919
+the fiber for breakfast dropdown option.
+
+116
+00:05:04,560 --> 00:05:07,199
+Finally, at the conclusion of the
+
+117
+00:05:05,919 --> 00:05:09,039
+presentation today, you'll be prompted
+
+118
+00:05:07,199 --> 00:05:10,320
+to complete a brief feedback survey.
+
+119
+00:05:09,039 --> 00:05:12,080
+Please take a moment to do so. We
+
+120
+00:05:10,320 --> 00:05:13,680
+appreciate your input. With that, I will
+
+121
+00:05:12,080 --> 00:05:16,080
+hand things back over to Gary to get us
+
+122
+00:05:13,680 --> 00:05:17,520
+started. Gary, thanks David and good
+
+123
+00:05:16,080 --> 00:05:19,360
+morning. I'm Gary Bolton, the president
+
+124
+00:05:17,520 --> 00:05:21,360
+and CEO of the Fiber Broadband
+
+125
+00:05:19,360 --> 00:05:22,960
+Association. Last week on Fiber
+
+126
+00:05:21,360 --> 00:05:25,520
+Breakfast, our guest was Christina
+
+127
+00:05:22,960 --> 00:05:27,479
+Wilston, the CEO of Old Harbor Native
+
+128
+00:05:25,520 --> 00:05:29,919
+Corporation, who discussed Project
+
+129
+00:05:27,479 --> 00:05:32,800
+Noneet, connecting tribal communities
+
+130
+00:05:29,919 --> 00:05:35,520
+and culture across Kodiak Island.
+
+131
+00:05:32,800 --> 00:05:37,280
+Christina outlined um the challenging
+
+132
+00:05:35,520 --> 00:05:38,960
+environment for broadband in Alaska. And
+
+133
+00:05:37,280 --> 00:05:42,240
+I'm excited to say the Fiber Broadband
+
+134
+00:05:38,960 --> 00:05:44,000
+Association will be uh in Alaska on July
+
+135
+00:05:42,240 --> 00:05:46,360
+17th for our regional fiber connect
+
+136
+00:05:44,000 --> 00:05:48,639
+workshop. So, we're looking forward to
+
+137
+00:05:46,360 --> 00:05:50,080
+seeing firsthand what's going on in
+
+138
+00:05:48,639 --> 00:05:52,000
+Alaska.
+
+139
+00:05:50,080 --> 00:05:53,759
+U today on Fire for Breakfast, our guest
+
+140
+00:05:52,000 --> 00:05:55,440
+is Mike Sanders, the executive director
+
+141
+00:05:53,759 --> 00:05:57,680
+of the Oklahoma Broadband Office to
+
+142
+00:05:55,440 --> 00:06:00,160
+discuss Fiber Forward, Oklahoma's bold
+
+143
+00:05:57,680 --> 00:06:02,240
+path to statewide connectivity. Mike was
+
+144
+00:06:00,160 --> 00:06:05,280
+appointed as executive director of the
+
+145
+00:06:02,240 --> 00:06:07,120
+Oklahoma Broadband Office in March 2023
+
+146
+00:06:05,280 --> 00:06:08,960
+and under his leadership, the office has
+
+147
+00:06:07,120 --> 00:06:10,680
+expanded his professional team and is
+
+148
+00:06:08,960 --> 00:06:12,720
+focused on achieving efficient
+
+149
+00:06:10,680 --> 00:06:14,639
+operations. Prior to taking this role,
+
+150
+00:06:12,720 --> 00:06:16,080
+he founded and operated his own
+
+151
+00:06:14,639 --> 00:06:18,080
+business, Sanders Strategy and
+
+152
+00:06:16,080 --> 00:06:20,720
+Consulting Group. He also had an
+
+153
+00:06:18,080 --> 00:06:22,400
+impactful political career serving six
+
+154
+00:06:20,720 --> 00:06:25,039
+terms in the Oklahoma House of
+
+155
+00:06:22,400 --> 00:06:27,520
+Representatives starting in 2008. During
+
+156
+00:06:25,039 --> 00:06:29,600
+his tenure in the House, he uh led his
+
+157
+00:06:27,520 --> 00:06:31,560
+leadership and positions included chair
+
+158
+00:06:29,600 --> 00:06:33,759
+of the House Utilities Committee and
+
+159
+00:06:31,560 --> 00:06:35,840
+Appropriations and Budget Subcommittee
+
+160
+00:06:33,759 --> 00:06:38,160
+on Transportation. He also served as the
+
+161
+00:06:35,840 --> 00:06:40,880
+House Majority Leader. Prior to his
+
+162
+00:06:38,160 --> 00:06:42,720
+legislative services, uh Sanders served
+
+163
+00:06:40,880 --> 00:06:45,680
+as the director of interns in the White
+
+164
+00:06:42,720 --> 00:06:47,680
+House for President George W. Bush Bush
+
+165
+00:06:45,680 --> 00:06:50,160
+and he played a key role in revitalizing
+
+166
+00:06:47,680 --> 00:06:52,639
+the house white house intern programs
+
+167
+00:06:50,160 --> 00:06:55,280
+received the distinguished honor service
+
+168
+00:06:52,639 --> 00:06:58,880
+award for his dedication of or dedicated
+
+169
+00:06:55,280 --> 00:07:00,560
+service on September 11th 2001. Sanders
+
+170
+00:06:58,880 --> 00:07:02,000
+continued his public service in the Bush
+
+171
+00:07:00,560 --> 00:07:04,000
+administration with senior management
+
+172
+00:07:02,000 --> 00:07:05,840
+roles at United States Department of
+
+173
+00:07:04,000 --> 00:07:08,560
+Agriculture. He worked as a senior
+
+174
+00:07:05,840 --> 00:07:10,960
+adviser to the chief of the USDA Natural
+
+175
+00:07:08,560 --> 00:07:14,240
+Resource Conservation Service and as a
+
+176
+00:07:10,960 --> 00:07:16,560
+deputy chief of staff in the uh USDA
+
+177
+00:07:14,240 --> 00:07:18,160
+Rural Development. Sanders earned his
+
+178
+00:07:16,560 --> 00:07:19,840
+undergraduate degree in history and
+
+179
+00:07:18,160 --> 00:07:21,919
+pre-law from Oklahoma Christian
+
+180
+00:07:19,840 --> 00:07:23,919
+University and pursued further studies
+
+181
+00:07:21,919 --> 00:07:26,479
+at Georgetown where he worked his
+
+182
+00:07:23,919 --> 00:07:29,360
+master's degree in government. Born and
+
+183
+00:07:26,479 --> 00:07:31,599
+raised in King Fischer, Sanders resides
+
+184
+00:07:29,360 --> 00:07:34,000
+there with his wife Nelly and his sons
+
+185
+00:07:31,599 --> 00:07:35,440
+Davis and Walker. So welcome Mike and
+
+186
+00:07:34,000 --> 00:07:36,800
+for audience please type in your
+
+187
+00:07:35,440 --> 00:07:38,360
+questions as you go and work those into
+
+188
+00:07:36,800 --> 00:07:40,960
+the
+
+189
+00:07:38,360 --> 00:07:43,919
+discussion. Mike just a real pleasure to
+
+190
+00:07:40,960 --> 00:07:46,800
+have you here. So Mike um you know given
+
+191
+00:07:43,919 --> 00:07:49,199
+your extensive um experience both at the
+
+192
+00:07:46,800 --> 00:07:50,960
+state national level I didn't know that
+
+193
+00:07:49,199 --> 00:07:52,560
+it's going to be so critical for your
+
+194
+00:07:50,960 --> 00:07:54,879
+role as a state broadband director but
+
+195
+00:07:52,560 --> 00:07:56,160
+can you talk a little bit about um you
+
+196
+00:07:54,879 --> 00:07:58,080
+know how you've been able to lean on
+
+197
+00:07:56,160 --> 00:08:01,440
+your past experience and even working at
+
+198
+00:07:58,080 --> 00:08:02,720
+USDA and so forth? Absolutely. And Gary,
+
+199
+00:08:01,440 --> 00:08:05,120
+thank you for having me this morning.
+
+200
+00:08:02,720 --> 00:08:08,560
+I'm looking forward to uh to our chat
+
+201
+00:08:05,120 --> 00:08:10,400
+today. You know, I I never thought in a
+
+202
+00:08:08,560 --> 00:08:13,039
+million years that I would have the
+
+203
+00:08:10,400 --> 00:08:15,680
+honor and and responsibility and role
+
+204
+00:08:13,039 --> 00:08:20,080
+that I currently have, but I will tell
+
+205
+00:08:15,680 --> 00:08:23,120
+you that it has come um it has come uh
+
+206
+00:08:20,080 --> 00:08:25,199
+as as as the experience in my past. It's
+
+207
+00:08:23,120 --> 00:08:27,919
+been very valuable to use. I will say
+
+208
+00:08:25,199 --> 00:08:31,360
+that. Uh I've been very blessed in in in
+
+209
+00:08:27,919 --> 00:08:34,000
+my career. Uh, and again, ultimately,
+
+210
+00:08:31,360 --> 00:08:38,080
+you know, I've I still currently live in
+
+211
+00:08:34,000 --> 00:08:41,279
+rural Oklahoma. I I I uh represented uh
+
+212
+00:08:38,080 --> 00:08:43,919
+six wonderful rural western Oklahoma uh
+
+213
+00:08:41,279 --> 00:08:46,240
+counties. Uh so I live it, breathe it,
+
+214
+00:08:43,919 --> 00:08:49,600
+and and eat it every day. But I will
+
+215
+00:08:46,240 --> 00:08:53,560
+tell you uh working in Washington uh
+
+216
+00:08:49,600 --> 00:08:56,399
+gave me vast experience to to to learn
+
+217
+00:08:53,560 --> 00:08:58,399
+firsthand the connectivity issues that
+
+218
+00:08:56,399 --> 00:08:59,920
+we have in our state and quite frankly
+
+219
+00:08:58,399 --> 00:09:03,920
+the country because we've been talking
+
+220
+00:08:59,920 --> 00:09:05,800
+about lack thereof connectivity for
+
+221
+00:09:03,920 --> 00:09:10,320
+decades. This is not
+
+222
+00:09:05,800 --> 00:09:12,240
+a an entity or or a uh an issue that
+
+223
+00:09:10,320 --> 00:09:14,880
+that has just come to light over the
+
+224
+00:09:12,240 --> 00:09:17,040
+last five years. Uh but I will also
+
+225
+00:09:14,880 --> 00:09:19,160
+share that that experience really helped
+
+226
+00:09:17,040 --> 00:09:22,399
+me navigate uh through the state
+
+227
+00:09:19,160 --> 00:09:24,640
+legislature uh dealing with uh utilities
+
+228
+00:09:22,399 --> 00:09:27,040
+when I was chair of that committee uh
+
+229
+00:09:24,640 --> 00:09:28,880
+certain issues that were uh very
+
+230
+00:09:27,040 --> 00:09:32,160
+important to internet service providers.
+
+231
+00:09:28,880 --> 00:09:34,560
+So, it has helped me, it has helped my
+
+232
+00:09:32,160 --> 00:09:36,880
+team uh navigating some of these
+
+233
+00:09:34,560 --> 00:09:40,000
+pitfalls and these uh potholes, you
+
+234
+00:09:36,880 --> 00:09:43,920
+could say, uh as we navigate this very
+
+235
+00:09:40,000 --> 00:09:46,399
+dicey uh dicey move uh in in in the
+
+236
+00:09:43,920 --> 00:09:49,040
+world of broadband.
+
+237
+00:09:46,399 --> 00:09:51,600
+Well, listen, um you know, Oklahoma has
+
+238
+00:09:49,040 --> 00:09:54,480
+a very aggressive plan to get to 95%
+
+239
+00:09:51,600 --> 00:09:57,360
+fiber. Um you know, you're leveraging a
+
+240
+00:09:54,480 --> 00:09:59,279
+number of um opportunities. uh you know
+
+241
+00:09:57,360 --> 00:10:01,680
+the American Rescue Plan, the capital
+
+242
+00:09:59,279 --> 00:10:03,839
+projects fund and then hopefully we'll
+
+243
+00:10:01,680 --> 00:10:05,680
+see some bead money at some point is you
+
+244
+00:10:03,839 --> 00:10:07,519
+know how what do you have to do to get
+
+245
+00:10:05,680 --> 00:10:10,160
+to 95%. And that's a short period of
+
+246
+00:10:07,519 --> 00:10:12,839
+time. You know it's halfway through 2025
+
+247
+00:10:10,160 --> 00:10:15,760
+to be able to get there by 2028.
+
+248
+00:10:12,839 --> 00:10:17,920
+Absolutely. And and and so let let me
+
+249
+00:10:15,760 --> 00:10:21,640
+kind of start backwards and then we'll
+
+250
+00:10:17,920 --> 00:10:24,399
+move forward. Um, our
+
+251
+00:10:21,640 --> 00:10:26,079
+legislature wanted our office here at
+
+252
+00:10:24,399 --> 00:10:29,440
+the Oklahoma Broadband Office to make
+
+253
+00:10:26,079 --> 00:10:32,880
+sure that we get to 95% connectivity
+
+254
+00:10:29,440 --> 00:10:37,040
+when this program or when this office
+
+255
+00:10:32,880 --> 00:10:39,360
+goes away uh in three years. Um, we'll
+
+256
+00:10:37,040 --> 00:10:41,920
+be north of that, but it's going to take
+
+257
+00:10:39,360 --> 00:10:44,640
+all the other federal programs and the
+
+258
+00:10:41,920 --> 00:10:46,720
+flexibility for our state to to achieve
+
+259
+00:10:44,640 --> 00:10:48,720
+that. And and I can get into that a
+
+260
+00:10:46,720 --> 00:10:50,880
+little bit later in the conversation.
+
+261
+00:10:48,720 --> 00:10:54,000
+uh but we have taken a bold very
+
+262
+00:10:50,880 --> 00:10:56,560
+aggressive step or steps uh to make sure
+
+263
+00:10:54,000 --> 00:10:59,440
+that we do that and I think flexibility
+
+264
+00:10:56,560 --> 00:11:01,279
+has a lot to do with that because when
+
+265
+00:10:59,440 --> 00:11:05,120
+you look when you look at the the amount
+
+266
+00:11:01,279 --> 00:11:08,160
+of money that we have to spend we we
+
+267
+00:11:05,120 --> 00:11:09,920
+will get close to that 95% but I think
+
+268
+00:11:08,160 --> 00:11:12,120
+when you look at the other monies that
+
+269
+00:11:09,920 --> 00:11:15,600
+are involved in that space in the
+
+270
+00:11:12,120 --> 00:11:18,720
+broadband space with USDA uh reconnect
+
+271
+00:11:15,600 --> 00:11:22,160
+monies the the FCC monies with enhanced
+
+272
+00:11:18,720 --> 00:11:24,800
+AAM, the NIA tribal monies. Uh sometimes
+
+273
+00:11:22,160 --> 00:11:28,399
+people forget, you know, Oklahoma has 39
+
+274
+00:11:24,800 --> 00:11:31,680
+nationally recognized tribal nations. Um
+
+275
+00:11:28,399 --> 00:11:32,959
+so we have that component. Um and then
+
+276
+00:11:31,680 --> 00:11:35,279
+of course, you know, the the past
+
+277
+00:11:32,959 --> 00:11:38,640
+history of of Ardoff and and other
+
+278
+00:11:35,279 --> 00:11:40,160
+programs. Uh we will get to that 95. In
+
+279
+00:11:38,640 --> 00:11:42,079
+fact, like I said, we will get over
+
+280
+00:11:40,160 --> 00:11:44,240
+that, but it's going to take every one
+
+281
+00:11:42,079 --> 00:11:47,680
+of us, all these programs working hand
+
+282
+00:11:44,240 --> 00:11:50,079
+inand to make sure that we do that. Um,
+
+283
+00:11:47,680 --> 00:11:52,160
+but again, at the end of the day, our
+
+284
+00:11:50,079 --> 00:11:54,720
+goal is to take care of those unserved
+
+285
+00:11:52,160 --> 00:11:57,440
+and underserved Oklahomaans. We believe
+
+286
+00:11:54,720 --> 00:11:59,839
+our program is a step in the absolute
+
+287
+00:11:57,440 --> 00:12:02,560
+right direction. Uh, but we will need
+
+288
+00:11:59,839 --> 00:12:04,240
+others to to to join. And it's amazing
+
+289
+00:12:02,560 --> 00:12:06,399
+what happens when we can build a
+
+290
+00:12:04,240 --> 00:12:07,839
+coalition, which we've done, uh, to make
+
+291
+00:12:06,399 --> 00:12:09,519
+sure that we reach that goal and
+
+292
+00:12:07,839 --> 00:12:11,600
+actually exceed that goal. As long as
+
+293
+00:12:09,519 --> 00:12:13,920
+I'm sitting in this chair, Gary, I plan
+
+294
+00:12:11,600 --> 00:12:17,360
+to exceed that goal.
+
+295
+00:12:13,920 --> 00:12:19,120
+So given your, you know, past experience
+
+296
+00:12:17,360 --> 00:12:23,200
+in the White House and then as a state
+
+297
+00:12:19,120 --> 00:12:26,320
+legislator, um, what do we need to do to
+
+298
+00:12:23,200 --> 00:12:29,120
+help Washington understand that the
+
+299
+00:12:26,320 --> 00:12:33,000
+state broadband directors intimately
+
+300
+00:12:29,120 --> 00:12:35,279
+know your budget, every location, your
+
+301
+00:12:33,000 --> 00:12:37,360
+topology, and the families you're trying
+
+302
+00:12:35,279 --> 00:12:39,680
+to serve. I mean, it I can't imagine
+
+303
+00:12:37,360 --> 00:12:42,320
+anybody being in a better position to
+
+304
+00:12:39,680 --> 00:12:45,920
+make the right choices.
+
+305
+00:12:42,320 --> 00:12:49,440
+you you are 10,000% right and it all
+
+306
+00:12:45,920 --> 00:12:52,000
+starts with open communication. Um I I
+
+307
+00:12:49,440 --> 00:12:54,440
+will tell you what Oklahoma has done. Uh
+
+308
+00:12:52,000 --> 00:12:57,519
+we have communicated clearly and
+
+309
+00:12:54,440 --> 00:13:01,920
+effectively with our federal delegation.
+
+310
+00:12:57,519 --> 00:13:04,480
+Number one, uh we communicate uh on a
+
+311
+00:13:01,920 --> 00:13:07,279
+very regular basis. um either through
+
+312
+00:13:04,480 --> 00:13:09,120
+teams meetings or if I have to make a
+
+313
+00:13:07,279 --> 00:13:12,000
+trip to Washington, I will do that.
+
+314
+00:13:09,120 --> 00:13:14,079
+Letting them know what our budget is,
+
+315
+00:13:12,000 --> 00:13:16,279
+letting them know that we're limited.
+
+316
+00:13:14,079 --> 00:13:19,680
+Here are our
+
+317
+00:13:16,279 --> 00:13:22,279
+successes. Here are things that that we
+
+318
+00:13:19,680 --> 00:13:24,480
+would love to see uh from the new
+
+319
+00:13:22,279 --> 00:13:25,920
+administration. Uh and every new
+
+320
+00:13:24,480 --> 00:13:28,240
+administration when you when you come
+
+321
+00:13:25,920 --> 00:13:31,200
+into a situation like this should have
+
+322
+00:13:28,240 --> 00:13:33,120
+an opportunity to to review all policies
+
+323
+00:13:31,200 --> 00:13:35,200
+from a previous administration. But
+
+324
+00:13:33,120 --> 00:13:37,839
+we've been waiting for bead and this
+
+325
+00:13:35,200 --> 00:13:41,040
+broadband expansion for a long long time
+
+326
+00:13:37,839 --> 00:13:44,720
+and and I would hate to see more uh
+
+327
+00:13:41,040 --> 00:13:46,639
+delays. U but back to what we were
+
+328
+00:13:44,720 --> 00:13:49,440
+saying a second ago. I think open
+
+329
+00:13:46,639 --> 00:13:51,839
+communication uh is is is paramount.
+
+330
+00:13:49,440 --> 00:13:54,639
+We've also set up meetings with our uh
+
+331
+00:13:51,839 --> 00:13:57,120
+with the uh new administration uh some
+
+332
+00:13:54,639 --> 00:13:59,199
+of the folks at NIA uh some of the folks
+
+333
+00:13:57,120 --> 00:14:01,120
+at commerce. Obviously NIA is underneath
+
+334
+00:13:59,199 --> 00:14:02,880
+commerce. Um but again it's about
+
+335
+00:14:01,120 --> 00:14:05,199
+relationships. Everything that we do,
+
+336
+00:14:02,880 --> 00:14:08,399
+Gary, you know this better than anybody.
+
+337
+00:14:05,199 --> 00:14:11,199
+You know, past experiences, past lives,
+
+338
+00:14:08,399 --> 00:14:13,199
+those type of relationships help us get
+
+339
+00:14:11,199 --> 00:14:14,760
+inside and get inside the door, get
+
+340
+00:14:13,199 --> 00:14:16,800
+inside the office to have those
+
+341
+00:14:14,760 --> 00:14:21,839
+conversations. And and and here's the
+
+342
+00:14:16,800 --> 00:14:24,959
+deal. We we have the um expert uh e
+
+343
+00:14:21,839 --> 00:14:27,279
+expertise, if you will. Uh but we're
+
+344
+00:14:24,959 --> 00:14:29,680
+going to need folks like you and and and
+
+345
+00:14:27,279 --> 00:14:31,199
+other folks in this broadband space to
+
+346
+00:14:29,680 --> 00:14:33,680
+make sure that we can articulate
+
+347
+00:14:31,199 --> 00:14:35,760
+correctly. Uh but it all boils down to
+
+348
+00:14:33,680 --> 00:14:37,160
+communication and then ultimately
+
+349
+00:14:35,760 --> 00:14:41,120
+ultimately our goal in that
+
+350
+00:14:37,160 --> 00:14:42,639
+communication is to make sure that the
+
+351
+00:14:41,120 --> 00:14:45,360
+new administration and our federal
+
+352
+00:14:42,639 --> 00:14:47,680
+delegation understand that with our
+
+353
+00:14:45,360 --> 00:14:50,000
+monies that we have, we know the state
+
+354
+00:14:47,680 --> 00:14:51,920
+better than anybody. Most people don't
+
+355
+00:14:50,000 --> 00:14:56,160
+realize that Oklahoma has 10 different
+
+356
+00:14:51,920 --> 00:14:58,959
+types of terrain uh in in in our 77
+
+357
+00:14:56,160 --> 00:15:02,360
+counties plus our tribal nations that
+
+358
+00:14:58,959 --> 00:15:06,079
+that we work with hand in hand. Um so
+
+359
+00:15:02,360 --> 00:15:10,000
+again, education, communication
+
+360
+00:15:06,079 --> 00:15:12,560
+um are are are key, but flexibility is
+
+361
+00:15:10,000 --> 00:15:14,800
+what we're wanting the outgrowth of
+
+362
+00:15:12,560 --> 00:15:17,639
+those meetings that we have and will
+
+363
+00:15:14,800 --> 00:15:20,959
+have. We want to make sure that they
+
+364
+00:15:17,639 --> 00:15:23,519
+know, my team and I know what's best.
+
+365
+00:15:20,959 --> 00:15:25,360
+Um, and again, don't mind the parameters
+
+366
+00:15:23,519 --> 00:15:28,320
+being set. I think there needs to be
+
+367
+00:15:25,360 --> 00:15:30,800
+parameters being set. Absolutely. Um,
+
+368
+00:15:28,320 --> 00:15:34,639
+but again, giving us the flexibility to
+
+369
+00:15:30,800 --> 00:15:37,839
+to apply our expertise is is is what's
+
+370
+00:15:34,639 --> 00:15:41,440
+going to get us north of 95% and and
+
+371
+00:15:37,839 --> 00:15:43,760
+closer to that 100% connectivity. Uh,
+
+372
+00:15:41,440 --> 00:15:48,000
+which is the whole premise and and and
+
+373
+00:15:43,760 --> 00:15:49,680
+and the DNA or inside the DNA of of be.
+
+374
+00:15:48,000 --> 00:15:51,920
+So again, we're looking forward to
+
+375
+00:15:49,680 --> 00:15:54,000
+having those continued conversations u
+
+376
+00:15:51,920 --> 00:15:56,639
+because it's critical. I am beholden to
+
+377
+00:15:54,000 --> 00:15:58,720
+the taxpayer. I'm also beholden to the
+
+378
+00:15:56,639 --> 00:16:00,560
+folks here in rural Oklahoma that have
+
+379
+00:15:58,720 --> 00:16:02,720
+been waiting decades to have the
+
+380
+00:16:00,560 --> 00:16:04,880
+opportunity to be connected. I think we
+
+381
+00:16:02,720 --> 00:16:06,560
+owe it to them. Uh and as long as I'm
+
+382
+00:16:04,880 --> 00:16:09,199
+sitting in this chair, that is my goal
+
+383
+00:16:06,560 --> 00:16:11,199
+to achieve that. So, let's just kind of
+
+384
+00:16:09,199 --> 00:16:12,639
+drill down and be Where are you? You
+
+385
+00:16:11,199 --> 00:16:16,160
+guys are just wrapping up your
+
+386
+00:16:12,639 --> 00:16:19,759
+application window this week. We It'll
+
+387
+00:16:16,160 --> 00:16:23,440
+be a week from today. Uh 11:59 p.m. on
+
+388
+00:16:19,759 --> 00:16:25,440
+Memorial Day. Uh we will conclude that
+
+389
+00:16:23,440 --> 00:16:28,399
+we've had our application process open
+
+390
+00:16:25,440 --> 00:16:31,920
+for nearly a month. Uh what I really
+
+391
+00:16:28,399 --> 00:16:31,920
+really like is how we did
+
+392
+00:16:32,519 --> 00:16:39,920
+things playing a role in in this overall
+
+393
+00:16:35,920 --> 00:16:43,600
+fix. Um so before we were able to submit
+
+394
+00:16:39,920 --> 00:16:46,560
+our final proposal uh draft one if you
+
+395
+00:16:43,600 --> 00:16:49,600
+will, we were able to include uh
+
+396
+00:16:46,560 --> 00:16:52,480
+alternative types. uh we wrote that into
+
+397
+00:16:49,600 --> 00:16:55,519
+our our plan. Um so that's something
+
+398
+00:16:52,480 --> 00:16:57,360
+that I that I saw my team saw and I
+
+399
+00:16:55,519 --> 00:16:59,920
+think that has given us the flexibility
+
+400
+00:16:57,360 --> 00:17:02,240
+that once plans are reviewed and the
+
+401
+00:16:59,920 --> 00:17:05,600
+overall beach strategy is reviewed I
+
+402
+00:17:02,240 --> 00:17:09,160
+think we fit nicely uh into that. But I
+
+403
+00:17:05,600 --> 00:17:12,959
+will say that Oklahoma um you know our
+
+404
+00:17:09,160 --> 00:17:16,000
+preference again has has has always been
+
+405
+00:17:12,959 --> 00:17:18,319
+um has always been fiber. You know, I'm
+
+406
+00:17:16,000 --> 00:17:19,919
+not I'm not out to use or use other
+
+407
+00:17:18,319 --> 00:17:21,839
+technologies against other technologies
+
+408
+00:17:19,919 --> 00:17:24,079
+because I ultimately believe it's going
+
+409
+00:17:21,839 --> 00:17:25,520
+to take every one of us. It's going to
+
+410
+00:17:24,079 --> 00:17:27,280
+take the fixed wireless and the
+
+411
+00:17:25,520 --> 00:17:31,120
+unlicensed fixed wireless. And I think
+
+412
+00:17:27,280 --> 00:17:33,039
+there is a a role for for LEO uh to to
+
+413
+00:17:31,120 --> 00:17:34,880
+be at the table. Our preference, of
+
+414
+00:17:33,039 --> 00:17:37,200
+course, is fiber, but again, you are
+
+415
+00:17:34,880 --> 00:17:39,360
+only limited to so much money. So I
+
+416
+00:17:37,200 --> 00:17:41,120
+think if all of us can can get in a room
+
+417
+00:17:39,360 --> 00:17:43,200
+and and continue to build a coalition
+
+418
+00:17:41,120 --> 00:17:45,679
+and coalition and understand that
+
+419
+00:17:43,200 --> 00:17:47,919
+unserved and unserved Oklahomaans are
+
+420
+00:17:45,679 --> 00:17:49,919
+are our customers, that's what we have
+
+421
+00:17:47,919 --> 00:17:53,600
+to do and we have to make sure that we
+
+422
+00:17:49,919 --> 00:17:55,760
+do it on time. uh which is another uh
+
+423
+00:17:53,600 --> 00:17:57,840
+critical issue that I'm I'm hopeful that
+
+424
+00:17:55,760 --> 00:17:59,840
+the dates can be moved back to allow
+
+425
+00:17:57,840 --> 00:18:01,120
+companies the opportunity to build and
+
+426
+00:17:59,840 --> 00:18:03,840
+go through some of this permitting
+
+427
+00:18:01,120 --> 00:18:07,679
+process which I hope uh some of that
+
+428
+00:18:03,840 --> 00:18:09,760
+gets gets fixed in the pause for bead u
+
+429
+00:18:07,679 --> 00:18:12,400
+but again there's a lot of moving parts
+
+430
+00:18:09,760 --> 00:18:14,240
+but we're ultimately wanting to to make
+
+431
+00:18:12,400 --> 00:18:16,880
+sure that Oklahomaans can decide what's
+
+432
+00:18:14,240 --> 00:18:20,640
+best for Oklahoma uh not you know
+
+433
+00:18:16,880 --> 00:18:22,400
+perhaps bureaucrats in in Washington DC
+
+434
+00:18:20,640 --> 00:18:24,320
+So, I mean, we have I know we haven't
+
+435
+00:18:22,400 --> 00:18:26,640
+seen guidance yet from whatever
+
+436
+00:18:24,320 --> 00:18:30,320
+revisions NTI might may or may not want
+
+437
+00:18:26,640 --> 00:18:33,160
+to put in, but um it it's it appears
+
+438
+00:18:30,320 --> 00:18:36,799
+that non-employment funds is some
+
+439
+00:18:33,160 --> 00:18:40,320
+concerns. Um although, you know, middle
+
+440
+00:18:36,799 --> 00:18:41,880
+mile and workforce development are both
+
+441
+00:18:40,320 --> 00:18:44,280
+highly supported by the new
+
+442
+00:18:41,880 --> 00:18:46,880
+administration and those are eligible
+
+443
+00:18:44,280 --> 00:18:48,799
+expenses. Have you guys kind of shifted
+
+444
+00:18:46,880 --> 00:18:52,240
+how you think about non-employment? if
+
+445
+00:18:48,799 --> 00:18:53,799
+you have any funds available. We we have
+
+446
+00:18:52,240 --> 00:18:56,799
+and and I'm glad you brought up
+
+447
+00:18:53,799 --> 00:18:58,720
+Middlemont because through our ARPA
+
+448
+00:18:56,799 --> 00:19:01,280
+state and local fiscal recovery fund
+
+449
+00:18:58,720 --> 00:19:04,480
+monies uh that were announced over a
+
+450
+00:19:01,280 --> 00:19:06,799
+year ago, uh we had some some uh
+
+451
+00:19:04,480 --> 00:19:09,039
+companies who decided not to go forward.
+
+452
+00:19:06,799 --> 00:19:10,720
+So, we were able to reallocate that
+
+453
+00:19:09,039 --> 00:19:13,679
+money and just last week, this is
+
+454
+00:19:10,720 --> 00:19:16,600
+perfect timing, Gary, just last week,
+
+455
+00:19:13,679 --> 00:19:20,320
+uh, we were able to announce over $53
+
+456
+00:19:16,600 --> 00:19:22,799
+million in middle mile projects that
+
+457
+00:19:20,320 --> 00:19:26,640
+went to five internet service companies
+
+458
+00:19:22,799 --> 00:19:30,799
+in 19 different locations. Um, so we
+
+459
+00:19:26,640 --> 00:19:32,240
+were really really um, uh, proud and and
+
+460
+00:19:30,799 --> 00:19:34,400
+honored that we were able to do that
+
+461
+00:19:32,240 --> 00:19:36,720
+because I don't think there's anyone in
+
+462
+00:19:34,400 --> 00:19:39,760
+the industry that that would be opposed
+
+463
+00:19:36,720 --> 00:19:42,480
+to that because that ultimately leads to
+
+464
+00:19:39,760 --> 00:19:45,760
+better last mile uh, connectivity and
+
+465
+00:19:42,480 --> 00:19:48,320
+and and enforces and and and builds up
+
+466
+00:19:45,760 --> 00:19:50,559
+uh, you know, our last mile uh,
+
+467
+00:19:48,320 --> 00:19:54,480
+connections. Uh so we've been very
+
+468
+00:19:50,559 --> 00:19:57,520
+thoughtful, very um uh pro-thinking,
+
+469
+00:19:54,480 --> 00:20:00,400
+pro-forward thinking on on that and I
+
+470
+00:19:57,520 --> 00:20:03,039
+know there's a lot of uh talk and uh
+
+471
+00:20:00,400 --> 00:20:04,559
+about using non-employment monies. We've
+
+472
+00:20:03,039 --> 00:20:05,840
+already started that and I think the
+
+473
+00:20:04,559 --> 00:20:09,039
+administration will be very happy with
+
+474
+00:20:05,840 --> 00:20:10,880
+the results that we uh here in Oklahoma
+
+475
+00:20:09,039 --> 00:20:12,799
+have have carried on and carried
+
+476
+00:20:10,880 --> 00:20:15,280
+through.
+
+477
+00:20:12,799 --> 00:20:18,760
+So obviously Oklahoma's pretty famous
+
+478
+00:20:15,280 --> 00:20:18,760
+for its weather.
+
+479
+00:20:19,520 --> 00:20:25,360
+Yeah. So I think they have a few movies
+
+480
+00:20:21,679 --> 00:20:26,880
+about that, but it's um are so is it the
+
+481
+00:20:25,360 --> 00:20:29,440
+your cost of employment higher than
+
+482
+00:20:26,880 --> 00:20:31,520
+other states or I mean what what's what
+
+483
+00:20:29,440 --> 00:20:33,679
+do you have to take uh you do you try to
+
+484
+00:20:31,520 --> 00:20:35,200
+bury your facilities or how are you
+
+485
+00:20:33,679 --> 00:20:38,000
+prioritizing to make sure you have
+
+486
+00:20:35,200 --> 00:20:40,880
+strong resiliency? Well, I think a lot
+
+487
+00:20:38,000 --> 00:20:43,039
+of that has to do with so far of of the
+
+488
+00:20:40,880 --> 00:20:44,960
+programs that we've been very honored
+
+489
+00:20:43,039 --> 00:20:47,679
+and blessed to to to get out the door.
+
+490
+00:20:44,960 --> 00:20:48,880
+Obviously, our ARPA monies. Um, and I
+
+491
+00:20:47,679 --> 00:20:50,400
+got to give a lot of credit to our
+
+492
+00:20:48,880 --> 00:20:54,240
+legislature here in Oklahoma because
+
+493
+00:20:50,400 --> 00:20:56,240
+they had the foresight to to use ARPA
+
+494
+00:20:54,240 --> 00:20:58,880
+monies, both the capital projects fund
+
+495
+00:20:56,240 --> 00:21:01,919
+as well as the state and local fiscal
+
+496
+00:20:58,880 --> 00:21:05,039
+recovery funds and dedicate uh over $500
+
+497
+00:21:01,919 --> 00:21:08,400
+million of that into broadband
+
+498
+00:21:05,039 --> 00:21:12,960
+infrastructure last mile projects. Um,
+
+499
+00:21:08,400 --> 00:21:16,000
+of those projects, 80% are fiber. 80%
+
+500
+00:21:12,960 --> 00:21:18,960
+are fiber. The other 20% uh is fixed
+
+501
+00:21:16,000 --> 00:21:23,240
+wireless. We know with the tornadoes, we
+
+502
+00:21:18,960 --> 00:21:26,080
+know with the wind uh putting that uh
+
+503
+00:21:23,240 --> 00:21:29,799
+infrastructure conduit into the ground
+
+504
+00:21:26,080 --> 00:21:33,200
+is is by far the best. Yes, it is
+
+505
+00:21:29,799 --> 00:21:36,400
+expensive. However, you get sometimes
+
+506
+00:21:33,200 --> 00:21:39,039
+what you pay for. And if you are able to
+
+507
+00:21:36,400 --> 00:21:41,760
+put that infrastructure into the ground,
+
+508
+00:21:39,039 --> 00:21:44,880
+um that that protects you from, you
+
+509
+00:21:41,760 --> 00:21:46,960
+know, 70 mph wind on, you know, just a
+
+510
+00:21:44,880 --> 00:21:51,360
+regular old day here in Oklahoma or
+
+511
+00:21:46,960 --> 00:21:54,080
+tornadoes or some of the massive massive
+
+512
+00:21:51,360 --> 00:21:57,120
+uh forest fires that that we have had
+
+513
+00:21:54,080 --> 00:21:58,360
+here in the state. It protects uh from
+
+514
+00:21:57,120 --> 00:22:01,640
+the the
+
+515
+00:21:58,360 --> 00:22:04,559
+towers or perhaps if you have aerial
+
+516
+00:22:01,640 --> 00:22:06,799
+fiber because a lot of telephone poles
+
+517
+00:22:04,559 --> 00:22:08,960
+uh on those pole attachments are wood
+
+518
+00:22:06,799 --> 00:22:13,200
+and and and those burn pretty easily
+
+519
+00:22:08,960 --> 00:22:15,760
+when you have uh 60 foot 70 foot flames
+
+520
+00:22:13,200 --> 00:22:17,600
+uh from a wildfire. So, you know, our
+
+521
+00:22:15,760 --> 00:22:20,400
+emphasis has been and our companies here
+
+522
+00:22:17,600 --> 00:22:22,159
+in Oklahoma know that um and and they
+
+523
+00:22:20,400 --> 00:22:24,320
+have predominantly have put that in the
+
+524
+00:22:22,159 --> 00:22:26,559
+ground. Uh and it lasts longer and
+
+525
+00:22:24,320 --> 00:22:28,799
+that's and that's another uh another
+
+526
+00:22:26,559 --> 00:22:32,000
+reason why I think when you're looking
+
+527
+00:22:28,799 --> 00:22:36,080
+at building this out and the cost of it
+
+528
+00:22:32,000 --> 00:22:37,760
+has been um tornadoes, fire, and ice, I
+
+529
+00:22:36,080 --> 00:22:39,679
+almost forgot about, you know, the ice
+
+530
+00:22:37,760 --> 00:22:41,440
+storms that we've had here in Oklahoma.
+
+531
+00:22:39,679 --> 00:22:43,600
+You put all that in the ground, you
+
+532
+00:22:41,440 --> 00:22:45,200
+avoid all that. And again, when you
+
+533
+00:22:43,600 --> 00:22:47,360
+think about a public safety standpoint,
+
+534
+00:22:45,200 --> 00:22:50,720
+from a communication standpoint, those
+
+535
+00:22:47,360 --> 00:22:52,640
+are areas of of critical concern and and
+
+536
+00:22:50,720 --> 00:22:55,440
+our team has put that and put that
+
+537
+00:22:52,640 --> 00:22:58,400
+thought into wanting to make sure that
+
+538
+00:22:55,440 --> 00:23:01,360
+our fiber is is is buried uh as opposed
+
+539
+00:22:58,400 --> 00:23:03,360
+to not being buried.
+
+540
+00:23:01,360 --> 00:23:04,880
+So, I mean, obviously, the other thing
+
+541
+00:23:03,360 --> 00:23:07,360
+that's different about Oklahoma than
+
+542
+00:23:04,880 --> 00:23:09,840
+other states is you the number of
+
+543
+00:23:07,360 --> 00:23:12,480
+tribes. Can you talk a little bit about
+
+544
+00:23:09,840 --> 00:23:14,799
+the coordination and then how people are
+
+545
+00:23:12,480 --> 00:23:17,640
+um the you know that are going to be
+
+546
+00:23:14,799 --> 00:23:19,520
+bidding on bead awards how they're
+
+547
+00:23:17,640 --> 00:23:21,919
+leveraging because that you can
+
+548
+00:23:19,520 --> 00:23:25,440
+eliminate the match right if you put
+
+549
+00:23:21,919 --> 00:23:27,039
+tribal um locations in here. Correct.
+
+550
+00:23:25,440 --> 00:23:29,520
+Yes. And that's what we've done that's
+
+551
+00:23:27,039 --> 00:23:31,440
+what we've done here in Oklahoma. Um,
+
+552
+00:23:29,520 --> 00:23:35,919
+and you know, one of the great things,
+
+553
+00:23:31,440 --> 00:23:38,159
+Gary, is that, you know, um, Oklahoma,
+
+554
+00:23:35,919 --> 00:23:40,880
+uh, if you if you look at the the the
+
+555
+00:23:38,159 --> 00:23:43,520
+breakout of of our state, our state's
+
+556
+00:23:40,880 --> 00:23:45,919
+name, it's it it's land of the red man.
+
+557
+00:23:43,520 --> 00:23:48,880
+And, you know, we're very proud of our
+
+558
+00:23:45,919 --> 00:23:52,320
+our Native American heritage and the 39
+
+559
+00:23:48,880 --> 00:23:54,799
+tribes that call Oklahoma home. And one
+
+560
+00:23:52,320 --> 00:23:58,080
+of the first things that we did here uh
+
+561
+00:23:54,799 --> 00:23:59,760
+was to hire a coordinator that
+
+562
+00:23:58,080 --> 00:24:01,640
+coordinates all of the different
+
+563
+00:23:59,760 --> 00:24:03,919
+meetings that go into our final
+
+564
+00:24:01,640 --> 00:24:07,520
+proposal, meeting with our tribal
+
+565
+00:24:03,919 --> 00:24:09,440
+nations and and and letting them uh you
+
+566
+00:24:07,520 --> 00:24:11,840
+know know of our programs moving
+
+567
+00:24:09,440 --> 00:24:14,200
+forward. And and I can tell you that we
+
+568
+00:24:11,840 --> 00:24:17,600
+know that there's going to be some great
+
+569
+00:24:14,200 --> 00:24:20,880
+applications. Twothirds of Oklahoma land
+
+570
+00:24:17,600 --> 00:24:22,480
+uh are tribal lands. Um and and so
+
+571
+00:24:20,880 --> 00:24:25,360
+again, when you look at that and look at
+
+572
+00:24:22,480 --> 00:24:26,279
+the makeup of our of our state, uh we
+
+573
+00:24:25,360 --> 00:24:28,960
+are
+
+574
+00:24:26,279 --> 00:24:31,760
+absolutely uh wanting to make sure that
+
+575
+00:24:28,960 --> 00:24:33,360
+we have a great partnership and and and
+
+576
+00:24:31,760 --> 00:24:35,600
+we do have a great partnership with all
+
+577
+00:24:33,360 --> 00:24:38,000
+of our tribes and gone across the state
+
+578
+00:24:35,600 --> 00:24:41,279
+meeting with those um wonderful
+
+579
+00:24:38,000 --> 00:24:43,039
+wonderful folks. Um you know, and and
+
+580
+00:24:41,279 --> 00:24:45,240
+you know, one of the things that I think
+
+581
+00:24:43,039 --> 00:24:47,919
+is is is
+
+582
+00:24:45,240 --> 00:24:49,600
+critical, they have to be part of this
+
+583
+00:24:47,919 --> 00:24:52,799
+discussion.
+
+584
+00:24:49,600 --> 00:24:55,200
+they and they have been we we've had
+
+585
+00:24:52,799 --> 00:24:59,120
+meetings throughout the state. We we've
+
+586
+00:24:55,200 --> 00:25:00,679
+had seminars, webinars, you name it. Um
+
+587
+00:24:59,120 --> 00:25:03,240
+it is interesting
+
+588
+00:25:00,679 --> 00:25:05,520
+because this is something that a lot of
+
+589
+00:25:03,240 --> 00:25:08,799
+states, you know, they don't have a lot
+
+590
+00:25:05,520 --> 00:25:10,400
+of tribal partners. uh we have and we
+
+591
+00:25:08,799 --> 00:25:13,039
+have opened up that door and our
+
+592
+00:25:10,400 --> 00:25:15,440
+coordinator has done a fabulous job in
+
+593
+00:25:13,039 --> 00:25:16,960
+and in in answering questions uh holding
+
+594
+00:25:15,440 --> 00:25:19,279
+their hands because this is something
+
+595
+00:25:16,960 --> 00:25:21,520
+entirely brand new for not only our
+
+596
+00:25:19,279 --> 00:25:26,080
+tribal nations but for everybody, right?
+
+597
+00:25:21,520 --> 00:25:28,880
+So we we've been very very um uh pro
+
+598
+00:25:26,080 --> 00:25:31,520
+forward thinking on on making sure that
+
+599
+00:25:28,880 --> 00:25:34,400
+our tribal partners have a seat uh at
+
+600
+00:25:31,520 --> 00:25:35,760
+our table. uh because after all, the
+
+601
+00:25:34,400 --> 00:25:39,919
+only way that we're going to be able to
+
+602
+00:25:35,760 --> 00:25:41,279
+get uh and pass or surpass our 95%
+
+603
+00:25:39,919 --> 00:25:42,960
+uh connectivity here in the state of
+
+604
+00:25:41,279 --> 00:25:45,600
+Oklahoma is is to make sure that they're
+
+605
+00:25:42,960 --> 00:25:48,080
+involved. They will be. Past experiences
+
+606
+00:25:45,600 --> 00:25:52,400
+has has proven that. When we announced
+
+607
+00:25:48,080 --> 00:25:55,679
+our middle mile uh projects last week,
+
+608
+00:25:52,400 --> 00:26:00,559
+uh we had uh had several of our uh
+
+609
+00:25:55,679 --> 00:26:02,400
+grants go to a uh a tribal nation. So,
+
+610
+00:26:00,559 --> 00:26:03,520
+we're excited. We we know that it's
+
+611
+00:26:02,400 --> 00:26:05,520
+going to take a lot of work. It's going
+
+612
+00:26:03,520 --> 00:26:07,840
+to take a lot of time. Uh but anything
+
+613
+00:26:05,520 --> 00:26:10,720
+worthwhile in life, I have learned in
+
+614
+00:26:07,840 --> 00:26:12,799
+past experiences is is is putting the
+
+615
+00:26:10,720 --> 00:26:14,559
+the time in and working with our tribal
+
+616
+00:26:12,799 --> 00:26:16,400
+partners.
+
+617
+00:26:14,559 --> 00:26:19,360
+So, I mean, I know it's kind of an
+
+618
+00:26:16,400 --> 00:26:21,440
+awkward um time right now for broadband
+
+619
+00:26:19,360 --> 00:26:24,320
+directors when there's supposed to be
+
+620
+00:26:21,440 --> 00:26:26,559
+some kind of revision to the plans and
+
+621
+00:26:24,320 --> 00:26:31,039
+you're having to operate from the plans,
+
+622
+00:26:26,559 --> 00:26:33,520
+you know, um how do you anticipate
+
+623
+00:26:31,039 --> 00:26:35,279
+Um, is it just going to be lucky that
+
+624
+00:26:33,520 --> 00:26:37,039
+the timing you have that um, you should
+
+625
+00:26:35,279 --> 00:26:39,120
+know revisions before you're ready to
+
+626
+00:26:37,039 --> 00:26:41,760
+submit your final proposal or do you I
+
+627
+00:26:39,120 --> 00:26:42,960
+mean what how do you can you handicap
+
+628
+00:26:41,760 --> 00:26:45,440
+how things are going to play out for
+
+629
+00:26:42,960 --> 00:26:49,440
+Oklahoma? Well, I tell you what, Gary,
+
+630
+00:26:45,440 --> 00:26:53,440
+if if I knew if I knew that answer, you
+
+631
+00:26:49,440 --> 00:26:55,600
+and I would be in Vegas tonight. Um, but
+
+632
+00:26:53,440 --> 00:26:59,600
+I will say this and and kidding aside,
+
+633
+00:26:55,600 --> 00:27:02,799
+you know, I I think um just looking at
+
+634
+00:26:59,600 --> 00:27:04,039
+it from a political
+
+635
+00:27:02,799 --> 00:27:07,880
+um
+
+636
+00:27:04,039 --> 00:27:09,960
+prism, um we've been lucky here in
+
+637
+00:27:07,880 --> 00:27:14,400
+Oklahoma
+
+638
+00:27:09,960 --> 00:27:15,400
+that with our previous monies um here
+
+639
+00:27:14,400 --> 00:27:17,600
+with our
+
+640
+00:27:15,400 --> 00:27:19,679
+ARPA, state and local fiscal recovery
+
+641
+00:27:17,600 --> 00:27:22,159
+fund, our middle mile project, and our
+
+642
+00:27:19,679 --> 00:27:25,120
+capital projects funds, we've been able
+
+643
+00:27:22,159 --> 00:27:27,039
+to get those out the door. Construction
+
+644
+00:27:25,120 --> 00:27:30,159
+on all of those projects excluding
+
+645
+00:27:27,039 --> 00:27:34,279
+middle mile is at 73% 73% of those
+
+646
+00:27:30,159 --> 00:27:38,000
+projects are underway. The 180
+
+647
+00:27:34,279 --> 00:27:41,039
+um workforce we've been able to get
+
+648
+00:27:38,000 --> 00:27:43,360
+folks uh keep those folks uh or will be
+
+649
+00:27:41,039 --> 00:27:47,520
+able to keep those folks here once be
+
+650
+00:27:43,360 --> 00:27:49,360
+released. Um, a lot of this is hedging
+
+651
+00:27:47,520 --> 00:27:51,760
+bets, I guess, is the best way to do
+
+652
+00:27:49,360 --> 00:27:53,279
+that, but also understanding
+
+653
+00:27:51,760 --> 00:27:57,200
+understanding
+
+654
+00:27:53,279 --> 00:28:02,000
+uh what the political tea leaves are
+
+655
+00:27:57,200 --> 00:28:04,080
+saying. Um, you know, we haven't been so
+
+656
+00:28:02,000 --> 00:28:06,000
+staunch, stubborn that it's going to be
+
+657
+00:28:04,080 --> 00:28:09,520
+one way or the other because at the end
+
+658
+00:28:06,000 --> 00:28:11,919
+of the day, uh, we will get our marching
+
+659
+00:28:09,520 --> 00:28:13,679
+orders and we will march. uh but
+
+660
+00:28:11,919 --> 00:28:17,120
+hopefully the way that we have written
+
+661
+00:28:13,679 --> 00:28:18,480
+our proposal uh will will uh will be
+
+662
+00:28:17,120 --> 00:28:20,480
+great for the administration, the new
+
+663
+00:28:18,480 --> 00:28:23,200
+administration. I think they will see
+
+664
+00:28:20,480 --> 00:28:26,480
+that we have and and have included
+
+665
+00:28:23,200 --> 00:28:29,120
+everybody to be at the table. Um it is
+
+666
+00:28:26,480 --> 00:28:31,360
+frustrating I know uh for folks that
+
+667
+00:28:29,120 --> 00:28:33,039
+have been waiting for a long time to get
+
+668
+00:28:31,360 --> 00:28:34,559
+highspeed internet as we've gone around
+
+669
+00:28:33,039 --> 00:28:37,039
+the state the last two years telling
+
+670
+00:28:34,559 --> 00:28:40,960
+folks that it's going to be here um or
+
+671
+00:28:37,039 --> 00:28:45,080
+it's coming. Uh I hope that the 90day
+
+672
+00:28:40,960 --> 00:28:47,559
+uh pause only stays 90 days because for
+
+673
+00:28:45,080 --> 00:28:50,399
+Oklahoma that puts us to the end of
+
+674
+00:28:47,559 --> 00:28:53,399
+October. Uh we want to get shovels in
+
+675
+00:28:50,399 --> 00:28:56,320
+the ground now. We want to put our
+
+676
+00:28:53,399 --> 00:28:59,039
+workforce Oklahoma workforce behind
+
+677
+00:28:56,320 --> 00:29:00,880
+those particular uh projects. We want to
+
+678
+00:28:59,039 --> 00:29:04,480
+keep those jobs here. We want to make
+
+679
+00:29:00,880 --> 00:29:06,640
+sure that we uh not only are are ahead
+
+680
+00:29:04,480 --> 00:29:08,399
+of the ahead of the curve, but but also
+
+681
+00:29:06,640 --> 00:29:10,720
+want to make sure if the timelines don't
+
+682
+00:29:08,399 --> 00:29:14,640
+change that we meet everything on time
+
+683
+00:29:10,720 --> 00:29:17,600
+and on budget. So, you know, reading the
+
+684
+00:29:14,640 --> 00:29:19,679
+tea leaves, having open communication
+
+685
+00:29:17,600 --> 00:29:22,559
+with with the with the new uh
+
+686
+00:29:19,679 --> 00:29:24,720
+administration, I think is is is key.
+
+687
+00:29:22,559 --> 00:29:26,960
+Uh, you know, I have to say that they've
+
+688
+00:29:24,720 --> 00:29:30,480
+they they've been very very good to work
+
+689
+00:29:26,960 --> 00:29:32,559
+with uh from from our standpoint. Um,
+
+690
+00:29:30,480 --> 00:29:36,720
+and you know, we just got to continue to
+
+691
+00:29:32,559 --> 00:29:39,600
+keep moving uh moving the the can down
+
+692
+00:29:36,720 --> 00:29:42,159
+the road because we we don't have time.
+
+693
+00:29:39,600 --> 00:29:44,240
+Time is is is of the essence and time is
+
+694
+00:29:42,159 --> 00:29:47,360
+not on our side, especially if they
+
+695
+00:29:44,240 --> 00:29:49,200
+don't move move that scale back. So, you
+
+696
+00:29:47,360 --> 00:29:51,520
+know, we've got to continue to work and
+
+697
+00:29:49,200 --> 00:29:53,760
+move forward. Um, some states have
+
+698
+00:29:51,520 --> 00:29:56,799
+paused. Uh, some states have been told
+
+699
+00:29:53,760 --> 00:29:58,480
+to pause. Um, you know, we've been
+
+700
+00:29:56,799 --> 00:30:00,320
+moving ahead. I I think that's what we
+
+701
+00:29:58,480 --> 00:30:01,919
+have to do. Uh, because at the end of
+
+702
+00:30:00,320 --> 00:30:04,640
+the day, we're beholden to the taxpayers
+
+703
+00:30:01,919 --> 00:30:07,039
+of this state and this country. Well,
+
+704
+00:30:04,640 --> 00:30:08,480
+Mike, um, thank you for everything, your
+
+705
+00:30:07,039 --> 00:30:11,120
+service, and everything you do for the
+
+706
+00:30:08,480 --> 00:30:13,279
+state of Oklahoma. Um, excited for you
+
+707
+00:30:11,120 --> 00:30:16,080
+guys. Looking for you to get to hit your
+
+708
+00:30:13,279 --> 00:30:17,760
+go surpass your 95% target. I know
+
+709
+00:30:16,080 --> 00:30:19,520
+you'll be able to do that and look
+
+710
+00:30:17,760 --> 00:30:21,760
+forward to seeing you in Nashville here
+
+711
+00:30:19,520 --> 00:30:23,520
+in a week or so. I want to thank
+
+712
+00:30:21,760 --> 00:30:24,880
+everybody for joining us today and look
+
+713
+00:30:23,520 --> 00:30:26,799
+forward to getting back together next
+
+714
+00:30:24,880 --> 00:30:28,240
+Wednesday. We're going to be with Juliet
+
+715
+00:30:26,799 --> 00:30:29,600
+Frink Yates, the broadband
+
+716
+00:30:28,240 --> 00:30:31,840
+infrastructure and digital inclusion
+
+717
+00:30:29,600 --> 00:30:34,320
+manager for the city of Philadelphia.
+
+718
+00:30:31,840 --> 00:30:36,399
+It's going to discuss the Phil Connect
+
+719
+00:30:34,320 --> 00:30:39,600
+Ed program and the city's digital
+
+720
+00:30:36,399 --> 00:30:41,360
+navigator network. So, we see you guys
+
+721
+00:30:39,600 --> 00:30:45,039
+uh well, I guess that's in two weeks.
+
+722
+00:30:41,360 --> 00:30:45,039
+We'll see you guys in two weeks. Thanks.
+

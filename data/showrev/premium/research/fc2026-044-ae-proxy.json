@@ -1,0 +1,45 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Cliff Churchill is listed as CEO of Fiber Optic Solutions LLC (FOS LLC), based in Marion, NC (McDowell County) — a rural Appalachian region with significant unserved/underserved broadband gaps, making BEAD exposure very likely. Source: email domain fos-llc.com, Marion NC location context.",
+    "Zach Fox, Director of Finance, also attended the show from the same company. This is a strong multi-threading signal: Churchill (CEO) controls strategic buy decisions, Fox (Director of Finance) controls or gates budget approval. Two decision-layer contacts in one booth scan is unusually strong for a Tier D lead. Source: booth scan data provided.",
+    "Marion, NC sits in McDowell County. North Carolina received approximately $1.5B in BEAD allocation. NC BEAD subgrantee selection is underway as of Q1-Q2 2026, with ISP contracts expected mid-2026. A rural fiber contractor/ISP/design firm in McDowell County would almost certainly be positioned as a subgrantee, subcontractor, or construction partner on BEAD work — creating hard external deadlines. Source: NC BEAD timeline, NTIA BEAD operational date April 30, 2026.",
+    "FOS LLC as a company name ('Fiber Optic Solutions') and the Marion, NC footprint suggests a small-to-mid regional fiber contractor or ISP — not a large A&E firm. This persona bucket likely falls into 'Build' (field/construction execution) or a hybrid Build+Design shop that handles both design and deployment in-house for local utility or municipal clients. Source: company name, geography, CEO title at a small LLC.",
+    "Phone number (828) 215-2738 is a local Asheville/western NC area code, consistent with a boutique regional operation. No national brand presence found in prior Brain research — FOS LLC is not among the 28 discovered companies, suggesting they are a smaller operator not yet on Inorsa's radar. Source: company not in Brain KB, area code geography.",
+    "CEO at a small fiber LLC in rural NC almost certainly wears multiple hats — strategic decisions, vendor selection, and operational oversight likely all pass through Churchill. The presence of a Director of Finance (Fox) suggests the company is large enough to have separated financial oversight, but small enough that both roles attend the same tradeshow together. Source: org structure inference from title + show attendance pattern.",
+    "No LinkedIn profile, press quotes, panel appearances, or trade press mentions found for 'Cliff Churchill' + fiber or 'Cliff Churchill' + 'Fiber Optic Solutions' in available research. This is a low-public-profile operator — outreach must assume no prior brand awareness of Inorsa and cannot reference a known quote or public statement. Source: not found in Brain KB, no match in discovered company list.",
+    "BEAD operational as of April 30, 2026 means NC subgrantee contracts are likely being finalized now (May-June 2026). If FOS LLC is a construction or design subcontractor to a larger ISP grantee, their work authorization and scope definition could be happening in the next 60-90 days — creating a real urgency window for tooling decisions. Source: BEAD timeline, NC broadband office context.",
+    "The fact that both the CEO and Director of Finance attended Fiber Connect together suggests this is not a passive recon trip — they came with a buying posture or at minimum a vendor evaluation mindset. A CEO + Finance lead traveling together to a vendor-heavy tradeshow signals active procurement consideration. Source: booth scan pattern analysis.",
+    "Inorsa's strongest proof point for this persona: permit kickback reduction (3-6 weeks per kickback saved). For a small regional firm in rural NC with limited staff, a single permit return is disproportionately painful — they cannot absorb 3-6 week delays the way a large A&E firm can. This makes the permitting pain angle the highest-resonance hook. Source: Inorsa KB, industry baseline."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No LinkedIn profile confirmed for Cliff Churchill — tenure, career history, prior companies unknown. Cannot confirm whether Churchill is a founder/owner or a hired CEO.",
+    "FOS LLC company size (headcount, revenue) not found — unknown whether they are a 5-person shop or a 50-person regional operator.",
+    "FOS LLC's specific role in the fiber ecosystem is unconfirmed — could be a pure contractor, a design-only firm, a CLEC/ISP, or a hybrid. This materially affects which Inorsa capability to lead with.",
+    "No confirmation of whether FOS LLC has a BEAD subgrant, subcontract, or is pursuing one — BEAD urgency hypothesis is plausible but unverified.",
+    "No information on current design/drafting toolchain — unknown if they use AutoCAD, GIS workflows, or outsource design entirely.",
+    "Zach Fox (Director of Finance) LinkedIn profile and background not researched — gap in multi-threading intelligence.",
+    "No booth notes, AE conversation summary, or product interest signal from the show itself — cannot confirm what drew them to Inorsa's booth.",
+    "Company website or LinkedIn company page not confirmed as active — fos-llc.com domain exists (inferred from email) but content unknown.",
+    "No confirmed BEAD award amount or grant status for FOS LLC or associated ISP partners in McDowell County, NC."
+  ],
+  "challengesToOtherFindings": [
+    "The Tier D / ICP 'hold' grade likely reflects the absence of AE notes, not a genuine disqualification. A CEO + Director of Finance attending together from a rural NC fiber firm in May 2026 is structurally a higher-value signal than the grade implies. The grading system may be penalizing lack of information rather than lack of fit.",
+    "Without knowing FOS LLC's role (contractor vs. ISP vs. design firm), the Brain KB's general fiber company profiles are not directly applicable. Do not assume this company resembles Mohawk Networks, Ohio Gig, or other discovered operators — FOS LLC appears to be a smaller, more localized entity with a different buying profile.",
+    "The 'Design/Document' persona framing may not fully apply here. A CEO of a small rural fiber LLC is more likely a 'Build' persona who cares about crew utilization and project throughput — Inorsa's permitting cycle time reduction is the right angle, but it should be framed around keeping projects moving and revenue flowing, not engineering throughput per se."
+  ],
+  "topInsight": "Two decision-layer contacts (CEO + Director of Finance) from the same small rural NC fiber company attended the show together in May 2026 — the exact moment BEAD subgrantee contracting is activating in North Carolina. Churchill controls the strategic decision; Fox controls budget. This is not a passive lead: the travel investment signals active vendor evaluation. The outreach should open with the BEAD timing urgency (NC contracts finalizing now, construction starting Q3), frame Inorsa around permitting cycle time (not drawing generation), and address both contacts — Churchill on operational risk, Fox on cost of permit delays versus Inorsa's cost. Prioritize getting a 20-minute call before subgrantee work scopes are locked.",
+  "sourcesUsed": [
+    "Booth scan data (provided in prompt — Cliff Churchill CEO, Zach Fox Director of Finance, Fiber Optic Solutions, Marion NC)",
+    "NTIA BEAD program operational date: April 30, 2026 (industry baseline KB)",
+    "NC BEAD allocation and timeline: public NTIA/NCDIT records, referenced in industry baseline",
+    "Inorsa capability KB: permitting workflow, permit kickback reduction proof point (2 days vs. 3-4 weeks)",
+    "Industry baseline KB: labor shortage, fiber prices, permitting as binding constraint",
+    "Marion, NC / McDowell County geographic context: rural Appalachian broadband gap region (public broadband maps)",
+    "Area code 828: western NC geography (public telecom reference)",
+    "Brain Knowledge Digest: no entry found for FOS LLC, Cliff Churchill, or Fiber Optic Solutions — absence is itself a data point"
+  ]
+}
+```

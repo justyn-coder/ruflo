@@ -1,0 +1,31 @@
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "Zyxel Communications is a Taiwanese networking hardware manufacturer (routers, switches, CPE, ONTs, access points) — AE flag 'hardware vendor' is accurate and confirmed. Zyxel does not design, permit, or construct fiber networks; they manufacture the equipment that ISPs deploy. Source: zyxel.com product catalog and public company profile.",
+    "Andrew Cuellar holds a Sales Engineer title at Zyxel's Anaheim, CA office. Sales Engineers at hardware vendors are pre-sales technical resources — they demo equipment, assist with RFQs, and support channel partners. They do not manage GIS-to-CAD workflows, fiber construction drawings, or permitting pipelines. Source: Zyxel LinkedIn company page and standard SE role definitions in networking hardware.",
+    "Zyxel's fiber-adjacent product line (ONTs, OLTs, GPON/XGS-PON CPE) means they attend fiber trade shows legitimately as a supplier to ISPs — which explains tradeshow attendance — but their internal workflows are product development and sales, not outside-plant fiber design or permitting. Source: Zyxel product pages (zyxel.com/us).",
+    "No job postings found for GIS analysts, CAD drafters, fiber designers, or permitting specialists at Zyxel. Their engineering hires are firmware engineers, hardware engineers, and RF/network engineers — consistent with a hardware OEM, not a network operator or A&E firm. Source: LinkedIn Jobs search for Zyxel Communications.",
+    "No evidence of Zyxel using AutoCAD, MicroStation, ArcGIS, IQGeo, Katapult, Biarri, or any fiber design platform for infrastructure design workflows. Their internal tools would be EDA/PCB tools (Altium, Cadence, etc.) for hardware development — irrelevant to Inorsa's value proposition. Source: not found via any vendor case study or job posting signal.",
+    "Zyxel does not receive BEAD funding, does not hold construction contracts, and does not produce permit packages. They benefit from BEAD indirectly only if ISPs buy their equipment — but this creates no permitting or drawing workflow that Inorsa could address. Source: BEAD program structure (NTIA) and Zyxel business model.",
+    "ICP classification 'reject' is fully validated from a technical standpoint. There is no plausible integration scenario, no switching cost analysis needed, and no fiber design pain point that Inorsa could address at Zyxel."
+  ],
+  "evidenceStrength": "strong",
+  "gaps": [
+    "Andrew Cuellar's specific LinkedIn profile not individually verified — role inference based on title, company, and Zyxel Anaheim office contact details.",
+    "Could not confirm whether Cuellar has any side advisory or consulting relationships with ISPs or A&E firms that might create an indirect referral angle — unlikely but not searched.",
+    "No tradeshow booth conversation notes beyond the AE flag, so unknown whether any useful referral intelligence was captured at point of contact."
+  ],
+  "challengesToOtherFindings": [
+    "No other persona findings to challenge on this prospect. The AE flag is correct and all technical signals align: this is a hardware OEM with no fiber design, permitting, or construction drawing workflow. Any argument that Zyxel is a prospect because they 'serve ISPs' would be a category error — Inorsa sells to the operators and A&E firms doing the design work, not to their equipment suppliers.",
+    "The BEAD funding wave is real and relevant to Inorsa broadly, but it does not create opportunity here. Zyxel benefits from BEAD only as a downstream equipment vendor, which is entirely outside Inorsa's sales motion."
+  ],
+  "topInsight": "Zyxel is a hardware OEM with zero fiber design or permitting workflow — there is no product-market fit here, the ICP rejection is technically sound, and no outreach should be sent. The only marginal value from this contact would be if Cuellar could refer Inorsa to ISP customers he works with who are actively deploying BEAD-funded fiber networks and struggling with design-to-permit cycles — but even that is a low-probability referral play, not a direct sales opportunity.",
+  "sourcesUsed": [
+    "https://www.zyxel.com/us/en/",
+    "https://www.linkedin.com/company/zyxel-communications/",
+    "https://www.linkedin.com/jobs/search/?keywords=zyxel&location=United%20States",
+    "https://www.ntia.gov/broadband/bead-program"
+  ]
+}
+```

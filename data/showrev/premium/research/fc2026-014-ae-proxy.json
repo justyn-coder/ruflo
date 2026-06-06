@@ -1,1 +1,46 @@
-AE Proxy research agent running. It's searching for Troy Hoover's decision authority, BEAD award confirmation, ProDesign permitting evidence, and the Centillion/Osmose relationship. I'll synthesize into the JSON format when it returns.
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Troy Hoover holds the title Director of Operations at PCCI Group (Bonita Springs, FL), which positions him as an operational buyer with authority over workflow efficiency, crew utilization, and throughput — not purely a technical or financial buyer. Source: booth scan data + LinkedIn title inference.",
+    "PCCI Group (pccigroup.com) appears to be an engineering/design/construction services firm operating in the fiber/telecom infrastructure space based on ICP pass designation and AE notes. The firm name 'PCCI' is consistent with a mid-market A&E or OSP design contractor, not a direct ISP — meaning their pain is designer throughput and permit cycle time for client deliverables, not their own BEAD award. Source: ICP classification + company domain inference.",
+    "Brain entity 'PCCI specifically' is listed among discovered companies with a 'has' predicate, indicating some prior research was attempted but specific details were not fully resolved — this is a data gap, not a confirmation. Source: Brain Knowledge Digest entity list.",
+    "AE booth note (05/19/2026 11:26 AM) reads 'interested in looking deeper' — this is a mild positive signal but not a strong pull-through. No urgency language, no specific pain stated, no demo request. Troy engaged but did not self-qualify a problem. Source: AE booth notes.",
+    "Director of Operations at an OSP/A&E firm typically owns: crew scheduling, subcontractor coordination, drawing review cycles, QC workflows, and permit submission pipelines. He almost certainly sees kickback pain directly — every permit return lands in his queue or his team's queue. This is exactly Inorsa's permitting workflow value prop. Source: persona inference from title + industry baseline.",
+    "PCCI Group's location in Bonita Springs, FL (Southwest Florida) places them in a state (Florida) that is actively processing BEAD subgrant awards. Florida received ~$868M in BEAD funding. If PCCI serves Florida ISP clients, their pipeline is likely filling now with BEAD-driven fiber design work ahead of Q3 2026 construction start. Source: industry baseline (BEAD operational April 30, 2026) + Florida BEAD context.",
+    "No direct quote from Troy Hoover found in trade press, podcast appearances, or conference panels. LinkedIn profile details beyond title/company not publicly confirmed in available research. Source: Brain entity 'Troy Hoover's LinkedIn profile or career history' — listed but contents not resolved.",
+    "PCCI Group does not appear in the IQGeo, AirWorks, or Network AirWorks competitive context within the Brain digest, suggesting they are likely a services/contractor firm rather than a software buyer competing with those tools — they would be a user/buyer of design automation tools, not a competitor. Source: Brain entity cross-reference.",
+    "No second contact from PCCI Group identified in the booth scan list — Troy appears to be the sole attendee from PCCI at this event. This limits multi-threading options but also means Troy is likely the primary champion or the only organizational touchpoint available. Source: booth scan / companies discovered list (no duplicate PCCI entries).",
+    "Budget authority inference: Director of Operations at a firm this size (mid-market OSP/A&E contractor) likely has discretionary authority for operational tooling under a certain threshold (commonly $25K–$75K/year for SaaS/workflow tools) but would involve a VP/CEO/CFO for larger commitments or enterprise contracts. No CFO or VP Engineering from PCCI identified in scan data. Source: persona bucket inference + org structure pattern for mid-market A&E firms."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "PCCI Group's exact service lines (OSP design only? construction management? permitting services?) not confirmed — website not resolved in available research.",
+    "Troy Hoover's LinkedIn profile contents not retrieved — tenure at PCCI, prior employers, career trajectory unknown. Cannot confirm whether he's a recent hire (high urgency to prove value) or long-tenured (may have entrenched workflows).",
+    "No direct quote from Troy Hoover in any trade press, podcast, or conference panel — cannot craft a personalized opener from his own words.",
+    "PCCI Group headcount and revenue not confirmed — firm size determines whether they have in-house GIS/CAD designers or rely on subcontractors, which affects Inorsa's pitch framing.",
+    "PCCI's current tooling stack unknown — do they use IQGeo, Esri, AutoCAD manually, or something else? No evidence found of existing GIS-to-CAD workflow tool.",
+    "Whether PCCI holds active BEAD-adjacent contracts (as a design subcontractor to an ISP) or is pursuing them is unknown — this changes urgency framing significantly.",
+    "No org chart visibility — who does Troy report to? Is there a VP of Engineering or COO above him who would need to approve a tool purchase?",
+    "Phone number area code (309) is Peoria, IL — inconsistent with Bonita Springs, FL location. Could be a mobile number from a prior location or relocation. Not a disqualifier but worth noting for outreach accuracy.",
+    "Batch tier 'C (Ungraded)' suggests no firmographic scoring was applied — PCCI's revenue/employee count not in system, which limits ICP confidence beyond AE gut check."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP 'pass' designation should not be treated as strong confirmation — it is based on title match and AE notes alone, not verified firmographic data. PCCI could be a very small shop (2–5 designers) where Inorsa's ROI math doesn't pencil, or a mid-market firm with 50+ designers where it's a clear win. This distinction matters for prioritization and should be resolved before significant AE time is invested.",
+    "The Brain entity list includes 'PCCI specifically' suggesting prior research was initiated, but the entity description trails off ('PCCI specifically has') without resolution — this should not be interpreted as confirmed knowledge about PCCI. It is an unresolved research fragment.",
+    "The area code mismatch (309 = Peoria, IL vs. Bonita Springs, FL) is a minor flag. If PCCI has offices in multiple states or if Troy recently relocated, this is irrelevant. But if the record has data quality issues, the email (thoover@pccigroup.com) is the more reliable contact vector.",
+    "Batch tier 'C' combined with 'interested in looking deeper' booth note puts this in a middle-ground category — not a cold reactivation but not a hot lead. AE should treat this as a qualification call target, not a demo-ready prospect."
+  ],
+  "topInsight": "Troy Hoover is a Director of Operations at what appears to be an OSP design/engineering contractor in BEAD-active Florida — meaning his pain is not 'will we get funded?' but 'can we process the drawing volume and survive permit kickbacks at scale when BEAD construction contracts land?' That framing — operational throughput under a volume surge, not software features — is the hook. The AE's goal in the follow-up is not to pitch Inorsa's capabilities but to ask one question: 'When BEAD design work starts hitting your team in Q3, what's your current plan for keeping permit submissions clean at volume?' If Troy doesn't have a clean answer, the door is open. The booth note ('interested in looking deeper') confirms he's willing to engage — the AE needs to give him a reason to go deeper by naming his Q3 operational risk, not by leading with product.",
+  "sourcesUsed": [
+    "AE booth scan data (05/19/2026)",
+    "Brain Knowledge Digest entity list (411 entities, PCCI specifically entry)",
+    "ShowRev Industry Intelligence KB — BEAD timeline, labor shortage, permitting baseline",
+    "Inorsa value proposition brief",
+    "Persona inference: Director of Operations at mid-market A&E/OSP contractor",
+    "Florida BEAD funding context (public record, ~$868M allocation)",
+    "ICP classification: pass (Relevant title + AE notes present)",
+    "Batch tier: C (Ungraded) — firmographic scoring not applied"
+  ]
+}
+```

@@ -1,0 +1,41 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Advanced 1 (advanced1.net) is a Georgetown, TX-based engineering and design services firm serving the telecom/fiber sector. Based on the presence of a 'Senior VP, Design Services' (Salli Smith) and two VPs (Scott Hastings, Brian Derstine) at Fiber Connect 2026, the company has a meaningful design services practice — likely an A&E or design-build subcontractor serving ISPs, utilities, or municipal broadband operators rather than an operator itself. Georgetown, TX is within the Austin metro, a high-growth corridor with active BEAD and municipal broadband activity.",
+    "No direct trade press mentions found for 'Advanced 1' + fiber/broadband/BEAD on FierceNetwork, LightReading, or Telecompetitor. The company name is generic enough that search noise is high; no confirmed trade press profile could be established. Source: search attempts across named trade outlets returned no attributable results.",
+    "No BEAD sub-grant award found specifically for Advanced 1 in Texas or adjacent states. Texas BEAD allocation is $3.3B (one of the largest in the nation), and the Texas Broadband Development Office began ISP contract finalization in Q2 2026 per industry baseline. If Advanced 1 serves ISP clients pursuing BEAD contracts, their design workload is likely to spike sharply in Q3–Q4 2026 as construction deadlines activate.",
+    "Three attendees from Advanced 1 at Fiber Connect 2026 — including a Senior VP of Design Services — signals this is not a casual presence. Firms typically send senior design leaders to this show when they are actively evaluating design workflow tools, capacity solutions, or competitive positioning. The title 'Senior VP, Design Services' is directly in Inorsa's buyer profile.",
+    "Texas fiber market context: The Austin-Georgetown corridor has active broadband expansion from operators including Spectrum, AT&T Fiber, and multiple municipal/co-op ISPs. Texas received $3.3B in BEAD funding. Design services firms in this corridor are facing the same 3:1 labor shortage dynamic as the national baseline — and Georgetown specifically has seen rapid population growth that is driving infrastructure demand.",
+    "No job postings for Advanced 1 were found on LinkedIn or Indeed that could confirm current hiring focus or capacity signals. This is a data gap, not a negative signal — smaller engineering firms often do not post publicly or use regional/word-of-mouth hiring.",
+    "A&E firms of this profile (regional, design services focus, Texas-based) are increasingly squeezed by the same forces affecting larger peers: fiber price increases (40-80%) creating client budget pressure, labor scarcity (3+ year ramp for new designers), and permitting delays (8 weeks to 12+ months per jurisdiction). If Advanced 1 is doing permit-set drawing production, every kickback cycle is a direct hit to their throughput and client satisfaction.",
+    "The presence of Salli Smith as 'Senior VP, Design Services' is a strong buyer signal. This title implies direct ownership of design production workflows, staffing, and quality output — exactly the functions Inorsa addresses. Her attendance at Fiber Connect 2026 alongside two VPs suggests the firm is evaluating how to scale or modernize their design services practice."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No confirmed trade press profile or news mentions for Advanced 1 in fiber/broadband context — company may operate under a different trade name or DBA, or may be too small for trade press coverage.",
+    "No BEAD sub-grant award confirmed for Advanced 1 or their named clients.",
+    "No job postings found to confirm hiring trajectory or current capacity strain.",
+    "No revenue, headcount, or client roster data found — company size and scale are unconfirmed.",
+    "No information on whether Advanced 1 is a pure design services firm (A&E subcontractor), a design-build firm, or has operator/ISP components.",
+    "No conference speaker appearances found for Advanced 1 executives at Fiber Connect, Mountain Connect, or Broadband Communities.",
+    "No information on their current GIS-to-CAD workflow, software stack, or permitting process — all inferred from title/industry baseline, not confirmed.",
+    "The company website (advanced1.net) was not directly accessible during research; no service descriptions or case studies could be extracted."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold status ('relevant title but no AE notes or grade') is justified given the weak direct evidence — but the three-person senior delegation at Fiber Connect is a stronger signal than the grade implies. Attendance patterns at specialty shows like this are a leading indicator of active evaluation, not passive interest.",
+    "Without confirmed operator or ISP status, the BEAD urgency angle may be indirect — Advanced 1 likely benefits from BEAD as a downstream design services provider to ISPs, not as a direct awardee. The outreach framing should address 'your clients are entering BEAD construction season' rather than assuming Advanced 1 itself received funding.",
+    "The 'weak' evidence strength rating reflects data scarcity, not a negative company profile. A regional A&E firm with senior VPs attending a fiber-specific tradeshow is a qualified prospect by behavior even without a rich data footprint."
+  ],
+  "topInsight": "Advanced 1 sent three senior leaders — including a Senior VP of Design Services — to Fiber Connect 2026, which is strong behavioral evidence of active workflow or capacity evaluation. As a design services firm serving the Texas fiber market during peak BEAD construction ramp (Q3 2026 onward), their core constraint will be throughput: how many permit-ready drawing sets can they produce per week without adding headcount they cannot hire. That is Inorsa's exact wedge. The outreach should open on permitting cycle time and designer capacity, not drawing generation — framing Inorsa as the answer to 'how do you scale output when you can't find qualified designers and every permit kickback costs your client 3-6 weeks.'",
+  "sourcesUsed": [
+    "https://www.advanced1.net (attempted, content not fully accessible)",
+    "Industry baseline: ShowRev Industry Intelligence KB (BEAD timeline, labor shortage, permitting data)",
+    "Texas Broadband Development Office — BEAD state allocation reference ($3.3B)",
+    "Fiber Connect 2026 attendee data (Scott Hastings, Brian Derstine, Salli Smith — Advanced 1)",
+    "Search attempts: FierceNetwork, LightReading, Telecompetitor for 'Advanced 1 fiber' — no results returned",
+    "Search attempts: LinkedIn, Indeed for Advanced 1 job postings — no results returned",
+    "Search attempts: Texas BEAD sub-grant awards for Advanced 1 — no results returned"
+  ]
+}
+```

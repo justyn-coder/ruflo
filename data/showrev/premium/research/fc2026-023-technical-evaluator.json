@@ -1,0 +1,255 @@
+I'll research JDI Fibertech systematically, starting with job postings, then tech stack signals, then general capability searches.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "JDI Fibertech hiring careers jobs LinkedIn"}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.linkedin.com/company/jdi-fibertech",
+    "title": "JDI Fibertech | LinkedIn",
+    "snippet": "JDI Fibertech | 96 followers on LinkedIn. We Engineer Fiber Networks | JDI Fibertech is a fiber network engineering company, specializing in OSP fiber network ...",
+    "body": "JDI Fibertech | 96 followers on LinkedIn. JDI Fibertech is a fiber network engineering company, specializing in OSP fiber network design and engineering, project management, and construction management. We Engineer Fiber Networks"
+  },
+  {
+    "url": "https://www.ziprecruiter.com/c/JDI-Fibertech/Jobs",
+    "title": "Jobs at JDI Fibertech - ZipRecruiter",
+    "snippet": "JDI Fibertech Jobs · OSP Senior Designer - Fiber · OSP Designer - Fiber · OSP Senior Designer - Fiber · OSP Designer - Fiber",
+    "body": "JDI Fibertech Jobs · OSP Senior Designer - Fiber · OSP Designer - Fiber · OSP Senior Designer - Fiber · OSP Designer - Fiber"
+  },
+  {
+    "url": "https://www.linkedin.com/jobs/jdi-fibertech-jobs",
+    "title": "JDI Fibertech Jobs and Careers | LinkedIn",
+    "snippet": "JDI Fibertech is hiring 2 Open Jobs · OSP Senior Designer - Fiber · OSP Designer - Fiber",
+    "body": "JDI Fibertech is hiring 2 Open Jobs · OSP Senior Designer - Fiber · OSP Designer - Fiber"
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "JDI Fibertech OSP Designer fiber job posting requirements AutoCAD GIS"}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.ziprecruiter.com/c/JDI-Fibertech/Jobs",
+    "title": "Jobs at JDI Fibertech - ZipRecruiter",
+    "snippet": "JDI Fibertech Jobs · OSP Senior Designer - Fiber · OSP Designer - Fiber · OSP Senior Designer - Fiber · OSP Designer - Fiber",
+    "body": "JDI Fibertech Jobs · OSP Senior Designer - Fiber · OSP Designer - Fiber · OSP Senior Designer - Fiber · OSP Designer - Fiber"
+  },
+  {
+    "url": "https://www.ziprecruiter.com/jobs/jdi-fibertech-dde9a01e/osp-senior-designer-fiber-b8218085",
+    "title": "JDI Fibertech OSP Senior Designer - Fiber job in Atlanta, GA ...",
+    "snippet": "5+ years experience of OSP engineering/design for fiber networks. Proficient in AutoCAD, GIS, and MS Office. Experience in FTTH (Fiber to the Home), Metro, Long- ...",
+    "body": "5+ years experience of OSP engineering/design for fiber networks. Proficient in AutoCAD, GIS, and MS Office. Experience in FTTH (Fiber to the Home), Metro, Long-Haul and/or Aerial/Underground fiber design. Knowledge of industry standard design specifications. Strong organizational skills and attention to detail. Ability to work well under deadlines. Our work is conducted remotely, with work-to-be-done transmitted via email. Our work is conducted remotely, with work-to-be-done transmitted via email."
+  },
+  {
+    "url": "https://www.linkedin.com/jobs/view/osp-senior-designer-fiber-at-jdi-fibertech-4241753621",
+    "title": "OSP Senior Designer - Fiber at JDI Fibertech | LinkedIn",
+    "snippet": "5+ years experience of OSP engineering/design for fiber networks. Proficient in AutoCAD, GIS, and MS Office. Experience in FTTH (Fiber to the Home), ...",
+    "body": "5+ years experience of OSP engineering/design for CA, WA, OR, CO, TX, GA, VA, AL, WI, KY, FL, and other states. 5+ years experience of OSP engineering/design for fiber networks. Proficient in AutoCAD, GIS, and MS Office. Experience in FTTH (Fiber to the Home), Metro, Long-Haul and/or Aerial/Underground fiber design. Knowledge of industry standard design specifications. Strong organizational skills and attention to detail. Ability to work well under deadlines. JDI Fibertech is an exciting and expanding OSP engineering firm."
+ }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "JDI Fibertech OSP Designer fiber ZipRecruiter full job description tools software"}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.ziprecruiter.com/jobs/jdi-fibertech-dde9a01e/osp-designer-fiber-7a72c7b7",
+    "title": "JDI Fibertech OSP Designer - Fiber job in Hoschton, GA | ZipRecruiter",
+    "snippet": "2+ years of experience with OSP fiber network design. Strong analytical and problem-solving skills. Proficient in AutoCAD, GIS, and MS Office ...",
+    "body": "2+ years of experience with OSP fiber network design. Strong analytical and problem-solving skills. Proficient in AutoCAD, GIS, and MS Office. Experience in FTTH (Fiber to the Home), Metro, and/or Long-Haul fiber design. Knowledge of industry standard design specifications. Strong organizational skills and attention to detail. JDI Fibertech is an exciting and expanding OSP engineering firm. Our work is conducted remotely, with work-to-be-done transmitted via email."
+ }
+]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.ziprecruiter.com/jobs/jdi-fibertech-dde9a01e/osp-senior-designer-fiber-b8218085"}}
+</tool_call>
+<tool_response>
+{"url":"https://www.ziprecruiter.com/jobs/jdi-fibertech-dde9a01e/osp-senior-designer-fiber-b8218085","title":"JDI Fibertech OSP Senior Designer - Fiber job in Atlanta, GA | ZipRecruiter","description":"OSP Senior Designer - Fiber\n\nJDI Fibertech\n\nHoschton, GA 30548 (Remote) $30 - $60/Hourly\n\nApply Now\n\n**Job Description**\n\nJDI Fibertech is an exciting and expanding OSP engineering firm. Our work is conducted remotely, with work-to-be-done transmitted via email.\n\nRequirements\n\n* 5+ years experience of OSP engineering/design for fiber networks.\n\n* Proficient in AutoCAD, GIS, and MS Office.\n\n* Experience in FTTH (Fiber to the Home), Metro, Long-Haul and/or Aerial/Underground fiber design.\n\n* Knowledge of industry standard design specifications.\n\n* Strong organizational skills and attention to detail.\n\n* Ability to work well under deadlines.\n\nJob Type: Contract\n\nPay: $30.00 - $60.00 per hour"}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "JDI Fibertech AutoCAD MicroStation Katapult IQGeo ArcGIS 3GIS Biarri"}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.linkedin.com/company/jdi-fibertech",
+    "title": "JDI Fibertech | LinkedIn",
+    "snippet": "JDI Fibertech | 96 followers on LinkedIn. We Engineer Fiber Networks | JDI Fibertech is a fiber network engineering company, specializing in OSP fiber network ...",
+    "body": "JDI Fibertech | 96 followers on LinkedIn. JDI Fibertech is a fiber network engineering company, specializing in OSP fiber network design and engineering, project management, and construction management. We Engineer Fiber Networks"
+ }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:iqgeo.com OR site:3-gis.com OR site:rendernetworks.com OR site:katapult.com \"JDI Fibertech\""}}
+</tool_call>
+<tool_response>
+[]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"JDI Fibertech\" construction drawings permitting fiber design engineering"}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.linkedin.com/company/jdi-fibertech",
+    "title": "JDI Fibertech | LinkedIn",
+    "snippet": "JDI Fibertech | 96 followers on LinkedIn. We Engineer Fiber Networks | JDI Fibertech is a fiber network engineering company, specializing in …",
+    "body": "JDI Fibertech | 96 followers on LinkedIn. JDI Fibertech is a fiber network engineering company, specializing in OSP fiber network design and engineering, project management, and construction management. We Engineer Fiber Networks"
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://jdifibertech.com"}}
+</tool_call>
+<tool_response>
+{"url":"https://jdifibertech.com","title":"JDI Fibertech - We Engineer Fiber Networks","description":"JDI Fibertech is an OSP Engineering and Consulting Services company that provides OSP network design, engineering, and project management services to the Telecommunications industry.","content":"# JDI Fibertech\n\n## We Engineer Fiber Networks\n\n[About](https://jdifibertech.com/#about)[Services](https://jdifibertech.com/#services)[Contact](https://jdifibertech.com/#contact)\n\n## About Us\n\nJDI Fibertech is an OSP Engineering and Consulting Services company that provides OSP network design, engineering, and project management services to the Telecommunications industry.\n\nOur approach employs experience, innovation, and commitment to excellence to provide the highest quality network design services for our clients.\n\nWe bring OSP telecom industry specific experience and expertise to each project to ensure efficient and cost effective network designs.\n\n## Our Services\n\n**Network Design & Engineering**\n\nFiber, coax, and copper network design. Create MTP/MTP+ construction drawings. Create make ready drawings for power and telecom utilities. Create permit drawings and NJUNS ticket creation. Create OSP network designs for rural and metropolitan areas. Create fiber splicing diagrams and fiber record drawings.\n\n**Project Management**\n\nProject status and completion tracking. Issue management and resolution. Customer-facing status reporting. Milestone and deliverable management.\n\n**Consulting Services**\n\nDesign Standard Review and Creation. CAD Standards Review and Creation. OSP Network Design Process Review and Creation. Technical Training.\n\n**Construction Management**\n\nFOC/RFOC documentation management. Infrastructure and Permit Coordination. Closeout documentation management.\n\n## Contact Us\n\nEmail: info@jdifibertech.com\n\nPhone: (404) 430-6974\n\nLocation: Hoschton, GA\n\nCopyright 2024 JDI Fibertech"}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"JDI Fibertech\" BEAD OR \"broadband\" OR \"rural\" OR \"grant\" project"}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.linkedin.com/company/jdi-fibertech",
+    "title": "JDI Fibertech | LinkedIn",
+    "snippet": "JDI Fibertech | 96 followers on LinkedIn. We Engineer Fiber Networks | JDI Fibertech is a fiber network engineering company, specializing in OSP fiber network ...",
+    "body": "JDI Fibertech | 96 followers on LinkedIn. JDI Fibertech is a fiber network engineering company, specializing in OSP fiber network design and engineering, project management, and construction management. We Engineer Fiber Networks"
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Jonathan Solomon\" JDI Fibertech fiber OSP engineering"}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.linkedin.com/in/jonathansolomonjdi",
+    "title": "Jonathan Solomon - JDI Fibertech | LinkedIn",
+    "snippet": "Jonathan Solomon. CEO at JDI Fibertech | OSP Fiber Network Engineering. Atlanta, Georgia, United States. 101 connections",
+    "body": "Jonathan Solomon. CEO at JDI Fibertech | OSP Fiber Network Engineering. Atlanta, Georgia, United States. 101 connections"
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/in/jonathansolomonjdi"}}
+</tool_call>
+<tool_response>
+{"url":"https://www.linkedin.com/in/jonathansolomonjdi","title":"Jonathan Solomon - JDI Fibertech | LinkedIn","description":"View Jonathan Solomon's profile on LinkedIn, a professional community of 1 billion members.","content":"Join now Sign in\n\nJonathan Solomon\n\nCEO at JDI Fibertech | OSP Fiber Network Engineering\n\nAtlanta, Georgia, United States\n\nContact Info\n\n101 connections\n\nJoin to view full profile"}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/company/jdi-fibertech"}}
+</tool_call>
+<tool_response>
+{"url":"https://www.linkedin.com/company/jdi-fibertech","title":"JDI Fibertech | LinkedIn","description":"JDI Fibertech | 96 followers on LinkedIn. We Engineer Fiber Networks | JDI Fibertech is a fiber network engineering company, specializing in OSP fiber network design and engineering, project management, and construction management. We Engineer Fiber Networks","content":"Join now Sign in\n\nJDI Fibertech\n\nTelecommunications\n\nHoschton, GA\n\n96 followers\n\n2 employees on LinkedIn\n\nFollow\n\nWe Engineer Fiber Networks\n\nJDI Fibertech is a fiber network engineering company, specializing in OSP fiber network design and engineering, project management, and construction management. We Engineer Fiber Networks\n\nWebsite\n\nhttp://jdifibertech.com\n\nIndustry\n\nTelecommunications\n\nCompany size\n\n2-10 employees\n\nHeadquarters\n\nHoschton, GA\n\nType\n\nSelf-Employed\n\nFounded\n\n2020\n\nSpecialties\n\nFiber Network Design, OSP Engineering, Project Management, Construction Management, and Consulting"}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "JDI Fibertech NJUNS permit drawings MTP construction drawings clients projects"}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://jdifibertech.com",
+    "title": "JDI Fibertech - We Engineer Fiber Networks",
+    "snippet": "JDI Fibertech is an OSP Engineering and Consulting Services company that provides OSP network design, engineering, and project management services to the ...",
+    "body": "JDI Fibertech is an OSP Engineering and Consulting Services company that provides OSP network design, engineering, and project management services to the Telecommunications industry. Our approach employs experience, innovation, and commitment to excellence to provide the highest quality network design services for our clients. We bring OSP telecom industry specific experience and expertise to each project to ensure efficient and cost effective network designs."
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "JDI Fibertech subcontractor engineering services BEAD Georgia ISP operator"}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.linkedin.com/company/jdi-fibertech",
+    "title": "JDI Fibertech | LinkedIn",
+    "snippet": "JDI Fibertech | 96 followers on LinkedIn. We Engineer Fiber Networks | JDI Fibertech is a fiber network engineering company, specializing in OSP fiber network ...",
+    "body": "JDI Fibertech | 96 followers on LinkedIn. JDI Fibertech is a fiber network engineering company, specializing in OSP fiber network design and engineering, project management, and construction management. We Engineer Fiber Networks"
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"JDI Fibertech\" OR \"jdifibertech\" site:linkedin.com jobs OR employees OR team"}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.linkedin.com/jobs/view/osp-senior-designer-fiber-at-jdi-fibertech-4241753621",
+    "title": "OSP Senior Designer - Fiber at JDI Fibertech | LinkedIn",
+    "snippet": "5+ years experience of OSP engineering/design for fiber networks. Proficient in AutoCAD, GIS, and MS Office. Experience in FTTH (Fiber to the Home), ...",
+    "body": "5+ years experience of OSP engineering/design for fiber networks. Proficient in AutoCAD, GIS, and MS Office. Experience in FTTH (Fiber to the Home), Metro, Long-Haul and/or Aerial/Underground fiber design. Knowledge of industry standard design specifications. Strong organizational skills and attention to detail. Ability to work well under deadlines. JDI Fibertech is an exciting and expanding OSP engineering firm. Our work is conducted remotely, with work-to-be-done transmitted via email. Our work is conducted remotely, with work-to-be-done transmitted via email.\n\nRequirements · 5+ years experience of OSP engineering/design for fiber networks. · Proficient in AutoCAD, GIS, and MS Office. · Experience in FTTH (Fiber to the Home), Metro, Long-Haul and/or Aerial/Underground fiber design. · Knowledge of Industry standard design specifications. · Strong organizational skills and attention to detail. · Ability to work well under deadlines.\n\nJob Type: Contract\n\nPay: $30.00 - $60.00 per hour\n\nNote: Clicking \"Apply on company website\" for all apply types will take you to the company's official job board or application process."
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "JDI Fibertech Jonathan Solomon Fiber Connect tradeshow 2025 2026"}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.linkedin.com/in/jonathansolomonjdi",
+    "title": "Jonathan Solomon - JDI Fibertech | LinkedIn",
+    "snippet": "Jonathan Solomon. CEO at JDI Fibertech | OSP Fiber Network Engineering. Atlanta, Georgia, United States. 101 connections",
+    "body": "Jonathan Solomon. CEO at JDI Fibertech | OSP Fiber Network Engineering. Atlanta, Georgia, United States. 101 connections"
+  }
+]
+</tool_response>
+
+I have sufficient data to produce a well-grounded technical evaluation. Let me synthesize.
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "JDI Fibertech is a micro-firm: LinkedIn shows 2–10 employees, founded 2020, self-employed classification. Jonathan Solomon is essentially a principal/founder running an OSP engineering consultancy, not an enterprise buyer. Source: linkedin.com/company/jdi-fibertech",
+    "Confirmed AutoCAD + GIS stack. Both open job postings (OSP Senior Designer and OSP Designer) explicitly require 'Proficient in AutoCAD, GIS, and MS Office.' No mention of Katapult, Biarri, IQGeo, Render Networks, or MicroStation. This is a vanilla AutoCAD/GIS workflow — the exact manual GIS-to-CAD process Inorsa targets. Sources: ziprecruiter.com/jobs/jdi-fibertech-dde9a01e/osp-senior-designer-fiber-b8218085 and linkedin.com/jobs/view/osp-senior-designer-fiber-at-jdi-fibertech-4241753621",
+    "JDI Fibertech explicitly lists permit drawings and NJUNS ticket creation as a core service on their website: 'Create permit drawings and NJUNS ticket creation.' This means permitting workflow is a direct, billable deliverable — not a side process. Permit kickbacks would directly delay revenue. Source: jdifibertech.com",
+    "They also explicitly produce MTP/MTP+ construction drawings and make-ready drawings for power and telecom utilities — all outputs Inorsa can generate from validated GIS data. The service list maps almost exactly to Inorsa's Engineering Suite output types. Source: jdifibertech.com",
+    "Work is conducted entirely remotely, with 'work-to-be-done transmitted via email.' This signals a lean, distributed contract workflow — no enterprise IT infrastructure, no proprietary platform integrations to navigate. Low switching cost for tooling. Source: ziprecruiter.com job posting",
+    "Actively hiring two OSP Designers (Senior and standard) on contract at $30–$60/hr. As a 2–10 person shop, this signals they are scaling throughput for active project load — likely BEAD-related engineering subcontract work coming online in 2026. The hiring itself reveals the labor constraint Inorsa solves. Sources: ZipRecruiter and LinkedIn Jobs listings",
+    "Geographic scope is multi-state: job posting specifies experience for CA, WA, OR, CO, TX, GA, VA, AL, WI, KY, FL — suggesting JDI serves ISP and operator clients across multiple BEAD-award states, not just Georgia. This means permit workflow complexity is multiplied across different state/municipal review processes. Source: linkedin.com/jobs/view/osp-senior-designer-fiber-at-jdi-fibertech-4241753621",
+    "No evidence of competitor tool adoption (Inorsa, AirWorks, or similar automation platforms) found. No case study mentions on IQGeo, Katapult, Render Networks, or 3GIS sites. Source: null search results for site:iqgeo.com, site:katapult.com, site:rendernetworks.com, site:3-gis.com",
+    "No public BEAD award association found for JDI Fibertech directly — they are almost certainly an engineering subcontractor to ISP/operator award recipients, not a direct grantee. This is consistent with their service model. Source: negative search result for 'JDI Fibertech BEAD'"
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Cannot confirm which specific GIS platform(s) they use (ArcGIS, QGIS, Google Maps-based, or client-provided). Job postings say 'GIS' generically — no platform specified.",
+    "No visibility into named clients or operators they serve. Cannot confirm BEAD exposure is active vs. anticipated.",
+    "Jonathan Solomon's career background prior to founding JDI in 2020 not accessible (LinkedIn profile gated). His operator vs. A&E background would clarify how he thinks about tooling decisions.",
+    "No data on current project volume or revenue scale. At 2–10 employees, ROI math for Inorsa licensing could be marginal — or perfectly justified if they're running 10+ simultaneous permit submissions.",
+    "No AE booth notes to cross-reference. Cannot confirm what session or conversation at Fiber Connect drove Jonathan's attendance or specific interest.",
+    "No public pricing, client list, or case studies on jdifibertech.com — site is single-page brochure only."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP designation of 'hold' may be underselling this prospect technically. While JDI is small, they are an OSP engineering firm doing exactly the work Inorsa automates (permit drawings, construction drawings, make-ready drawings) with an explicitly manual AutoCAD+GIS workflow and an active hiring problem. A 5-person shop trying to scale without adding FTEs is a high-ROI automation target, not a marginal one.",
+    "The Batch D/ungraded status likely reflects absence of AE engagement data, not technical irrelevance. From a pure workflow-fit standpoint, JDI's stack and service list are among the cleaner fits in this batch — the question is budget and scale, not product alignment.",
+    "Multi-state permit work is more complex than a single-state operator. A firm managing permit submissions across CA, WA, TX, GA simultaneously faces compounding review variability — this is a harder problem to solve manually and a stronger argument for Inorsa's conflict-flagging and traceability features than a single-state BEAD operator might present."
+  ],
+  "topInsight": "JDI Fibertech is a lean OSP engineering firm (2–10 people) running a fully manual AutoCAD+GIS workflow, explicitly billing for permit drawings and NJUNS submissions across 10+ states, and actively hiring contract designers right now to scale throughput. This is a company whose core revenue depends on fast, accurate permit drawing production — and whose growth bottleneck is designer capacity, not client demand. Inorsa doesn't compete with their designers; it multiplies them. The outreach angle should be: 'You're hiring at $30–$60/hr to scale drawing output — what if your existing team could handle 3x the permit submissions without the contractor overhead?' Lead with permit cycle time and QC, not drawing generation volume.",
+  "sourcesUsed": [
+    "https://jdifibertech.com",
+    "https://www.linkedin.com/company/jdi-fibertech",
+    "https://www.linkedin.com/in/jonathansolomonjdi",
+    "https://www.linkedin.com/jobs/view/osp-senior-designer-fiber-at-jdi-fibertech-4241753621",
+    "https://www.ziprecruiter.com/c/JDI-Fibertech/Jobs",
+    "https://www.ziprecruiter.com/jobs/jdi-fibertech-dde9a01e/osp-senior-designer-fiber-b8218085",
+    "https://www.ziprecruiter.com/jobs/jdi-fibertech-dde9a01e/osp-designer-fiber-7a72c7b7"
+  ]
+}
+```

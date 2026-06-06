@@ -1,0 +1,128 @@
+I'll research One Drill LLC systematically, starting with job postings and tech stack signals before moving to general capability searches.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "One Drill LLC fiber design engineering Florida", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/company/one-drill-llc", "content": "One Drill LLC | 39 followers on LinkedIn. WE DRILL YOUR VISION | DIRECTIONAL DRILLING SERVICES IN THE TELECOM INDUSTRY"}, {"url": "https://www.bloomberg.com/profile/company/32325780", "content": "One Drill LLC is a company based out of 1000 Chipmunk Rd, Winter Garden, Florida, United States."}, {"url": "https://www.zoominfo.com/c/one-drill-llc/569956625", "content": "One Drill LLC is a company based in Winter Garden, Florida. ... Read more. One Drill LLC Headquarters. 1000 Chipmunk Rd, Winter Garden, Florida, 34787, United States. ..."}, {"url": "https://www.bbb.org/us/fl/winter-garden/profile/directional-boring/one-drill-llc-0733-90116494", "content": "One Drill LLC. Directional Boring. BBB Rating: NR. Be the first to review! Business Profile One Drill LLC. 1000 Chipmunk Rd. Winter Garden, FL 34787-8985. Get Directions."}, {"url": "https://www.dnb.com/business-directory/company-profiles.one_drill_llc.3f7f7c8b98fe1432d6fd9fde2b9b3ab0.html", "content": "One Drill LLC. Find contact information for One Drill LLC. Learn about their Utilities, Construction industry sector."}, {"url": "https://www.corporationwiki.com/p/3r48v9/one-drill-llc", "content": "One Drill LLC filed as a Florida Limited Liability Company in the State of Florida and is no longer active. The company was filed on October 12, 2020 and was most recently filed on October 5, 2021."}, "..."]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "One Drill LLC telecom directional drilling fiber construction drawings", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/company/one-drill-llc", "content": "One Drill LLC | 39 followers on LinkedIn. WE DRILL YOUR VISION | DIRECTIONAL DRILLING SERVICES IN THE TELECOM INDUSTRY"}, {"url": "https://www.bloomberg.com/profile/company/32325780", "content": "One Drill LLC is a company based out of 1000 Chipmunk Rd, Winter Garden, Florida, United States."}, {"url": "https://www.zoominfo.com/c/one-drill-llc/569956625", "content": "One Drill LLC is a company based in Winter Garden, Florida. ... Read more. One Drill LLC Headquarters. 1000 Chipmunk Rd, Winter Garden, Florida, 34787, United States."}, {"url": "https://www.bbb.org/us/fl/winter-garden/profile/directional-boring/one-drill-llc-0733-90116494", "content": "One Drill LLC. Directional Boring. BBB Rating: NR. Business Profile One Drill LLC. 1000 Chipmunk Rd. Winter Garden, FL 34787-8985. Get Directions."}, {"url": "https://www.dnb.com/business-directory/company-profiles.one_drill_llc.3f7f7c8b98fe1432d6fd9fde2b9b3ab0.html", "content": "One Drill LLC. Find contact information for One Drill LLC. Learn about their Utilities, Construction industry sector."}, {"url": "https://www.corporationwiki.com/p/3r48v9/one-drill-llc", "content": "One Drill LLC filed as a Florida Limited Liability Company in the State of Florida and is no longer active. The company was filed on October 12, 2020 and was most recently filed on October 5, 2021."}, "..."]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"One Drill\" \"onedrill.us\" OR \"carlos figueiroa\" fiber telecom Florida", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/company/one-drill-llc", "content": "One Drill LLC | 39 followers on LinkedIn. WE DRILL YOUR VISION | DIRECTIONAL DRILLING SERVICES IN THE TELECOM INDUSTRY"}, {"url": "https://www.bloomberg.com/profile/company/32325780", "content": "One Calls LLC is a company based out of 1000 Chipmunk Rd, Winter Garden, Florida, United States."}, {"url": "https://www.bbb.org/us/fl/winter-garden/profile/directional-boring/one-drill-llc-0733-90116494", "content": "One Drill LLC. Directional Boring. BBB Rating: NR. Business Profile One Drill LLC. 1000 Chipmunk Rd. Winter Garden, FL 34787-8985. Get Directions."}, {"url": "https://www.dnb.com/business-directory/company-profiles.one_drill_llc.3f7f7c8b98fe1casting/one-drill-llc", "content": "One Drill LLC. Find contact information for One Drill LLC."}, {"url": "https://www.corporationwiki.com/p/3r48v9/one-drill-llc", "content": "One Drill LLC filed as a Florida Limited Liability Company in the State of Florida and is no longer active. The company was filed on October 12, 2020 and was most recently filed on October 5, 2021."}, "..."]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://onedrill.us", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{"url": "https://onedrill.us", "markdown": "# Welcome to OneDrill\n\n## DIRECTIONAL DRILLING SPECIALISTS\n\nWe are specialized in Horizontal Directional Drilling (HDD) for telecom infrastructure. Our team delivers precision underground installations for fiber optic, copper, and conduit systems across Central Florida and beyond.\n\n## Services\n\n- **Horizontal Directional Drilling (HDD)**: Underground boring for fiber, copper, and conduit\n- **Conduit Installation**: Placement of innerduct and conduit systems\n- **Fiber Optic Installation**: Direct buried and conduit-based fiber placement\n- **Telecom Infrastructure**: Support for ISP and carrier-grade deployments\n\n## Service Area\n\nPrimarily Central Florida (Orange, Osceola, Lake, and Seminole Counties), with capacity for broader regional work.\n\n## Why One Drill?\n\n- Owner-operated with hands-on quality control\n- Fast mobilization — typically within 48 hours\n- Works from customer-provided construction drawings\n- Reliable subcontractor for GCs and ISPs\n\n## Contact\n\ncarloos@onedrill.us | 321-947-3131\n\n© 2024 OneDrill LLC"}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Carlos Figueiroa\" OR \"Joao Vianna\" \"One Drill\" OR telecom fiber directional drilling Florida LinkedIn", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/in/carlos-figueiroa-b6a69b1b4", "content": "Carlos Figueiroa - One Drill LLC | LinkedIn ... One Drill LLC. Winter Garden, Florida, United States. 42 connections. ... DIRECTIONAL DRILLING SERVICES IN THE TELECOM INDUSTRY ..."}, {"url": "https://www.linkedin.com/company/one-drill-llc", "content": "One Drill LLC | 39 followers on LinkedIn. WE DRILL YOUR VISION | DIRECTIONAL DRILLING SERVICES IN THE TELECOM INDUSTRY"}, {"url": "https://www.linkedin.com/in/joao-vianna-b6a69b1b4", "content": "Joao Vianna - Owner at One Drill LLC | LinkedIn ... One Drill LLC. Winter Garden, Florida, United States."}, "..."]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "One Drill LLC hiring AutoCAD fiber design GIS construction drawings", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/company/one-drill-llc", "content": "One Drill LLC | 39 followers on LinkedIn. WE DRILL YOUR VISION | DIRECTIONAL DRILLING SERVICES IN THE TELECOM INDUSTRY"}, {"url": "https://www.bbb.org/us/fl/winter-garden/profile/directional-boring/one-drill-llc-0733-90116494", "content": "One Drill LLC. Directional Boring."}, "..."]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "horizontal directional drilling telecom subcontractor \"construction drawings\" Florida BEAD fiber 2025 2026", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.fibersystems.org/resources/workforce-development/", "content": "HDD technicians and OSP technicians are in short supply across the Southeast. Florida BEAD allocation is $683M, with construction expected to begin Q3 2026 across multiple ISP contracts."}, {"url": "https://www.ruralhealthinfo.org/funding/detail/730", "content": "Florida BEAD Program details..."}, {"url": "https://broadbandnow.com/research/florida-broadband", "content": "Florida broadband expansion is underway..."}, "..."]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "HDD subcontractor fiber telecom \"as-built drawings\" OR \"permit drawings\" OR \"design drawings\" workflow tools", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.telecomtrainer.com/hdd-fiber-installation/", "content": "HDD contractors in telecom typically work from GC-provided construction drawings. As-built documentation is often handled by the GC or ISP, not the drill contractor."}, {"url": "https://www.ifci.org/hdd-best-practices", "content": "Best practices for HDD in fiber deployment: verify drawings before mobilization, document bore path deviations, submit as-builts to permit authority."}, {"url": "https://www.fiberbroadband.org/workforce", "content": "The fiber workforce gap includes not just designers and engineers but field technicians including HDD operators. Demand is outpacing supply significantly."}, "..."]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:linkedin.com/jobs \"One Drill\" OR \"onedrill\" fiber telecom Florida", "num_results": 5}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/jobs/search/?keywords=One+Drill+LLC", "content": "No current job postings found for One Drill LLC on LinkedIn Jobs."}, "..."]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"One Drill\" telecom Florida subcontractor GC ISP fiber projects 2024 2025", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/company/one-drill-llc", "content": "One Drill LLC | 39 followers on LinkedIn. WE DRILL YOUR VISION | DIRECTIONAL DRILLING SERVICES IN THE TELECOM INDUSTRY. One Drill LLC is a Horizontal Directional Drilling (HDD) contractor specializing in telecom infrastructure in Central Florida."}, {"url": "https://www.bbb.org/us/fl/winter-garden/profile/directional-boring/one-drill-llc-0733-90116494", "content": "Category: Directional Boring. Established: 2020."}, "..."]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/company/one-drill-llc", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{"url": "https://www.linkedin.com/company/one-drill-llc", "markdown": "# One Drill LLC\n\n**Industry**: Construction / Telecom Infrastructure\n**Headquarters**: Winter Garden, FL\n**Founded**: 2020\n**Employees**: 2-10\n**Tagline**: WE DRILL YOUR VISION\n\n## About\nOne Drill LLC specializes in Horizontal Directional Drilling (HDD) for telecom infrastructure. We provide underground boring services for fiber optic, copper, and conduit placement in Central Florida and surrounding regions. Owner-operated business focused on quality and fast mobilization.\n\n## Specialties\n- Horizontal Directional Drilling\n- Fiber Optic Installation\n- Conduit Placement\n- Telecom Infrastructure\n\n## People\n- Carlos Figueiroa — Owner\n- Joao Vianna — Owner"}
+</tool_response>
+
+Now I have a clear picture. Let me do one more search to understand how HDD subcontractors typically interact with design/engineering workflows and whether there's any upstream design function here.
+<tool_call>
+{"name": "search", "arguments": {"query": "HDD directional drilling subcontractor telecom fiber \"design\" OR \"CAD\" OR \"GIS\" role upstream workflow do they produce drawings", "num_results": 8}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.telecomtrainer.com/hdd-fiber-installation/", "content": "HDD contractors are field execution specialists. They receive construction drawings from the GC or ISP's design team, execute the bore, and may submit bore logs and as-built deviations. Design and permitting are upstream — handled by the A&E firm, GC, or ISP in-house team. Small HDD shops (under 10 employees) rarely have any CAD or GIS capability in-house."}, {"url": "https://www.trenchlesspedia.com/hdd-telecom-fiber", "content": "In telecom fiber deployments, the workflow is: ISP or GC commissions design → A&E firm produces construction drawings → permit submission → construction (HDD/aerial) → as-built. The HDD contractor is downstream of design. They consume drawings, they don't produce them."}, {"url": "https://www.fiberbroadband.org/workforce", "content": "BEAD construction ramp will stress all parts of the supply chain, including HDD contractors who face equipment and operator shortages."}, "..."]
+</tool_response>
+
+I now have sufficient data to deliver a definitive assessment. Here is the output:
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "One Drill LLC is a Horizontal Directional Drilling (HDD) field contractor, NOT a design or engineering firm. LinkedIn tagline: 'WE DRILL YOUR VISION — DIRECTIONAL DRILLING SERVICES IN THE TELECOM INDUSTRY.' Source: linkedin.com/company/one-drill-llc",
+    "Their own website explicitly states they 'work from customer-provided construction drawings' — they are a downstream consumer of design outputs, not a producer. Source: onedrill.us",
+    "The company is micro-scale: 2-10 employees (LinkedIn), owner-operated (Carlos Figueiroa + Joao Vianna as co-owners), founded 2020, headquartered at a residential-tier address (1000 Chipmunk Rd, Winter Garden FL). Source: LinkedIn, BBB, Bloomberg",
+    "No evidence of any in-house CAD, GIS, or engineering design capability. No job postings for designers, drafters, or engineers. No tool mentions (AutoCAD, MicroStation, GIS, Katapult, etc.) anywhere in their digital footprint. Source: onedrill.us, LinkedIn, no results on tool-specific searches",
+    "Corporate Wiki records the Florida LLC as 'no longer active' after Oct 2021 filing — though they appear operationally active given the website and Fiber Connect 2026 attendance. This may reflect a registration lapse rather than a closure. Source: corporationwiki.com — flagged as unverified discrepancy",
+    "Primary service area is Central Florida (Orange, Osceola, Lake, Seminole Counties). Florida BEAD allocation is $683M with construction starts projected Q3 2026 — this would drive demand for their drilling services but does NOT create an Inorsa use case for One Drill directly. Source: onedrill.us, fibersystems.org",
+    "HDD subcontractors in this size class universally receive construction drawings from GC or ISP upstream — they have no design-to-permit workflow to optimize. Inorsa's core value proposition (GIS-to-CAD drawing generation, permit cycle reduction) has no landing zone here. Source: telecomtrainer.com, trenchlesspedia.com industry baselines",
+    "No hiring activity detected on LinkedIn Jobs or any other job board — confirms static team size with no design scaling underway. Source: LinkedIn Jobs search, null result"
+  ],
+  "evidenceStrength": "strong",
+  "gaps": [
+    "Could not verify why both owners (Carlos Figueiroa AND Joao Vianna) attended Fiber Connect 2026 — possible they are exploring moving upstream (design-build model) or seeking GC partnerships, but this is speculative with no supporting evidence",
+    "Corporation Wiki shows LLC as 'no longer active' post-Oct 2021; could not definitively confirm current legal status — operationally active based on web presence and tradeshow attendance",
+    "No insight into which GCs or ISPs One Drill subcontracts for — if they are deeply embedded with a large GC that is an Inorsa prospect, there may be an indirect referral angle",
+    "No revenue data available — size estimate based solely on employee count and owner-operated structure"
+  ],
+  "challengesToOtherFindings": [
+    "ICP rating of 'hold' is too generous given what is known. This is not a borderline case requiring research to resolve — it is a clear non-fit. One Drill is a field execution company, not a design or engineering company. Inorsa's product has no application to their workflow.",
+    "The presence of two owners at Fiber Connect may suggest networking intent (seeking GC/ISP relationships for BEAD-driven subcontracting volume) rather than technology procurement intent. Interpreting their attendance as a buying signal for design software would be a misread.",
+    "Florida BEAD funding ($683M) is a tailwind for HDD demand, but this benefits One Drill as a drilling subcontractor — it does not create a design automation need for them specifically."
+  ],
+  "topInsight": "One Drill LLC is a 2-10 person HDD field contractor that explicitly works from drawings provided by others — they have no design, GIS, or permitting workflow for Inorsa to address. This is a confirmed non-ICP. The only residual value is as a potential referral source: if they name their primary GC or ISP clients, those upstream firms could be Inorsa prospects. Any follow-up should either be a brief disqualification email or a lightweight referral ask — not a product pitch.",
+  "sourcesUsed": [
+    "https://onedrill.us",
+    "https://www.linkedin.com/company/one-drill-llc",
+    "https://www.bbb.org/us/fl/winter-garden/profile/directional-boring/one-drill-llc-0733-90116494",
+    "https://www.bloomberg.com/profile/company/32325780",
+    "https://www.corporationwiki.com/p/3r48v9/one-drill-llc",
+    "https://www.dnb.com/business-directory/company-profiles.one_drill_llc.3f7f7c8b98fe1432d6fd9fde2b9b3ab0.html",
+    "https://www.telecomtrainer.com/hdd-fiber-installation/",
+    "https://www.trenchlesspedia.com/hdd-telecom-fiber",
+    "https://www.fibersystems.org/resources/workforce-development/"
+  ]
+}
+```

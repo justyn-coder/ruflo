@@ -1,0 +1,53 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Steve Smith holds the title 'Senior Director of OSP' at Fybercom — OSP (Outside Plant) leadership sits at the intersection of field execution, design throughput, and permit coordination. This title strongly suggests he is the primary operational buyer for design-to-construction tooling, not a purely technical or purely financial role. Source: tradeshow attendee record.",
+
+    "Vince Calkins (CTO) also attended Fiber Connect 2026 from Fybercom — this is a critical multi-thread signal. Two senior people at the same show means Fybercom was sending leadership, not just staff. CTO presence suggests the company is evaluating tools at a strategic level, not just at a departmental one. Calkins would likely need to sign off or co-sponsor any platform decision. Source: booth-scan list from show.",
+
+    "Fybercom is a fiber ISP/CLEC based in Idaho Falls, ID, operating in rural Idaho. Rural Idaho operators are in the BEAD sweet spot — Idaho's BEAD program (approximately $584M allocated) is in ISP contract finalization phase as of April 30, 2026. Fybercom almost certainly has BEAD exposure and is staring at Q3 2026 construction starts with a 4-year deployment clock. This is an externally imposed deadline that creates genuine urgency for design throughput tools. Source: NTIA BEAD program timeline; Idaho broadband office public records (inferred, not directly verified via live search).",
+
+    "Fybercom appears in prior Brain research as a known entity ('firm Fybercom has') but specific detail is sparse — no revenue, headcount, or org chart data surfaced. This is a Tier D / ungraded prospect, consistent with limited digital footprint. Small-to-mid-size rural fiber operators in Idaho often have 20-100 employees and lean engineering teams, which means design bottlenecks hit harder and faster than at larger A&E shops. Source: Brain digest (entity confirmed, specifics not found); industry baseline inference.",
+
+    "Steve Smith's specific LinkedIn profile, career history, and prior employer data were not retrievable in this research pass. No trade press quotes, podcast appearances, conference panels, or public statements attributed to Steve Smith at Fybercom were found. This is a low-digital-footprint contact — common for OSP directors at smaller rural operators. Source: search attempted, not found.",
+
+    "OSP Director persona maps to 'Build' persona bucket per research framework — this person cares about field crew utilization, permit cycle times, and keeping construction on schedule. They are likely experiencing the 3:1 labor shortage ratio for fiber designers acutely, given Idaho's limited local design talent pool. Outsourcing or tooling that multiplies existing staff output would resonate strongly. Source: ShowRev Industry Intelligence baseline; persona inference.",
+
+    "No AE booth notes exist — meaning neither Steve Smith nor Vince Calkins had a recorded conversation at the booth. This is a cold-warm lead: they attended (intent signal), but no qualification occurred. The outreach must do the discovery work that the booth conversation didn't. Source: lead record notation.",
+
+    "Idaho's rural geography and permitting environment is likely a pain amplifier. Rural permits often involve USDA/RUS coordination, county road departments, and state DOT — each with slow review cycles. A firm that can reduce permit kickbacks (Inorsa's 3-4 weeks → 2 days proof point) would have outsized value in a state where permit reviewers are scarce and backlogs are long. Source: industry permitting baseline; Idaho broadband infrastructure context (inferred)."
+  ],
+
+  "evidenceStrength": "weak",
+
+  "gaps": [
+    "Steve Smith LinkedIn profile: not found. No career history, tenure at Fybercom, or prior employer data available.",
+    "Fybercom company size, revenue, headcount: not confirmed. Estimated small-to-mid rural operator based on geography and footprint, but not verified.",
+    "Fybercom BEAD application status: not confirmed. Idaho BEAD ISP contract data not publicly resolved at time of this research pass.",
+    "Steve Smith conference appearances, panels, or public quotes: none found. No direct voice-of-customer signal available.",
+    "Vince Calkins (CTO) LinkedIn or background: not researched in this pass — represents an unverified multi-thread target.",
+    "Fybercom's current design tooling stack: unknown. Cannot assess 'we already have a tool' objection risk without more data.",
+    "Fybercom's engineering team size and whether they use in-house designers, outsourced A&E, or a hybrid: not confirmed.",
+    "Whether Fybercom attended Fiber Connect in prior years or this was a first-time presence: not known.",
+    "Budget cycle and fiscal year timing for Fybercom: unknown."
+  ],
+
+  "challengesToOtherFindings": [
+    "The Brain digest lists Fybercom as a known entity but provides no substantive detail. I would caution against treating 'firm Fybercom has' as meaningful qualification — it confirms existence, not readiness or fit.",
+    "The Tier D / 'hold' ICP grade likely reflects lack of AE engagement at the show, not actual disqualification. Two senior attendees (Director + CTO) from a rural Idaho fiber operator at a national show is a stronger intent signal than the grade implies. I would argue this should be re-evaluated to Tier C pending a single discovery call.",
+    "The absence of a recorded booth conversation is a gap, not a disqualifier — rural operators often walk shows without stopping because they don't want to be 'sold to' on the floor. Email outreach that leads with their operational problem (not Inorsa's product) is more likely to get a response than a standard follow-up."
+  ],
+
+  "topInsight": "Fybercom sent two senior leaders — an OSP Director and a CTO — to Fiber Connect 2026 from rural Idaho, which is a meaningful investment of time and money for a small operator. Idaho's BEAD program is in contract finalization right now, making Q3 2026 construction starts a hard external clock. Steve Smith, as OSP lead, is the person who will feel that clock most acutely in terms of design throughput and permit cycle time. The outreach should open with Idaho BEAD urgency and the permitting bottleneck — not drawing generation — and position Inorsa as the tool that keeps his crews moving instead of waiting on permit kickbacks. Copy Vince Calkins on the second touch or reference him explicitly to signal that Inorsa is aware of the leadership team and is speaking to a company-level problem, not just a departmental one.",
+
+  "sourcesUsed": [
+    "Tradeshow attendee/lead record (Steve Smith, Vince Calkins — Fybercom)",
+    "ShowRev Industry Intelligence KB — BEAD timeline, labor shortage baseline, permitting cycle data",
+    "NTIA BEAD program public documentation (Idaho allocation ~$584M, operational April 30 2026)",
+    "Brain Knowledge Digest — Fybercom entity confirmed, no detail",
+    "Persona framework (OSP Director → Build persona bucket)",
+    "Idaho broadband infrastructure context (inference, not direct source)"
+  ]
+}
+```

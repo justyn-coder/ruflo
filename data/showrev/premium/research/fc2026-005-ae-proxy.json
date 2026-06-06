@@ -1,0 +1,42 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Anish Kelkar is CRO at Render Networks, a construction management platform (SaaS) for fiber/broadband network deployment — Render competes in the field execution and project management layer, NOT the GIS-to-CAD design/drawing layer where Inorsa operates. This is a partnership or channel angle, not a pure end-customer angle. Source: rendernetworks.com, LinkedIn (inferred from title and company positioning).",
+    "Render Networks is an Australian-founded SaaS company (Melbourne HQ) with US operations, focused on digitizing field construction workflows — task management, contractor coordination, real-time progress tracking. Their platform is used by tier-1 operators and their subcontractors. Source: rendernetworks.com product pages and press releases.",
+    "As CRO, Kelkar owns revenue: new logos, partnerships, channel deals, and likely expansion ARR. He is NOT an engineering or operations buyer — he is a revenue leader. This means he evaluates Inorsa not as a tool his team uses, but as a partner that makes Render stickier, expands their ecosystem, or opens new market segments. Source: standard CRO mandate inference + Render's go-to-market model.",
+    "Render Networks raised a Series B (exact amount not publicly confirmed but estimated $15-25M range based on company scale and investor press) and has been actively expanding US market presence coinciding with BEAD ramp. Denver, CO location for Kelkar aligns with US commercial expansion. Source: Crunchbase profile (funding rounds) and LinkedIn geography.",
+    "Render Networks' platform picks up AFTER design is complete — field crews execute against a plan already finalized. Inorsa operates UPSTREAM: GIS validation, permit drawing generation, QC before construction starts. This upstream/downstream relationship creates a clean integration story: Inorsa outputs feed Render inputs. This is a technology partnership pitch, not a displacement pitch. Source: product positioning comparison between rendernetworks.com and inorsa product description.",
+    "BEAD urgency is directly relevant to Render's pipeline: their customers are ISPs and construction firms who will be deploying BEAD-funded fiber at scale starting Q3 2026. If those customers hit permitting bottlenecks upstream (which Inorsa solves), Render's own platform utilization and revenue recognition delays. Kelkar's pipeline is hostage to permit cycle times even if Render doesn't touch permitting directly. Source: BEAD operational timeline (April 30, 2026) + industry baseline.",
+    "Render Networks has a known integration with or relationship to field data and GIS layers — their platform ingests network designs for field crew assignment. A formal Inorsa-to-Render data handoff (validated GIS → permit drawings → Render field tasks) would be a compelling joint go-to-market story for both companies' sales teams targeting BEAD contractors. Source: Render product architecture (inferred from product documentation and demo materials on rendernetworks.com).",
+    "No direct quote from Anish Kelkar found in trade press, podcast, or conference transcript at time of research. His LinkedIn is present but content activity is not prominently indexed. He attended Fiber Connect 2026, which signals active US market engagement and awareness of the BEAD deployment landscape. Source: event attendee list (provided in prospect context).",
+    "Render Networks recently merged with or acquired NetPMD Solutions (per Relationships data in Brain), which creates near-term integration complexity. This is a double-edged signal: (1) Render is actively expanding capability/reach, (2) internal teams may be distracted or resource-constrained during integration. Kelkar as CRO will be managing combined go-to-market during this period — timing for a partnership conversation needs to acknowledge this. Source: Brain relationship data.",
+    "Render's competitive set includes Bentley AssetWise, Birdview, and niche fiber PM tools. IQGeo (also in Brain) is a GIS-to-field platform that overlaps both Render and Inorsa at different layers — worth flagging as a common conversation point Kelkar may raise."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No verified direct quote from Anish Kelkar about his stated priorities, challenges, or opinions — no podcast, panel transcript, or trade press interview found. Outreach opener cannot be a direct quote lift.",
+    "Exact Render Networks Series B funding amount not publicly confirmed — Crunchbase data may be incomplete.",
+    "NetPMD merger specifics (timing, scope, integration status) not fully documented in available sources — unclear how disruptive this is to Kelkar's current quarter.",
+    "Kelkar's tenure at Render Networks not confirmed (could be new hire in last 6-12 months, which would increase or decrease receptivity to new partnerships depending on his mandate).",
+    "Whether Render Networks already has a formal upstream design partner or integration (e.g., with IQGeo, Esri, or a CAD tool) is not confirmed — this is a critical gap. If they do, Inorsa needs a differentiation argument ready.",
+    "No confirmation of Render Networks' current customer list overlap with Inorsa's existing customers — a shared customer reference would be the strongest partnership opener.",
+    "Kelkar's specific role in evaluating technology partnerships vs. a VP of Partnerships or BD person is unknown — he may delegate this to someone else at Render."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP designation of 'hold' likely reflects that Render Networks is not a direct fiber operator/contractor customer of Inorsa — this is correct. However, treating this as a low-priority Batch D contact misses the partnership leverage. A CRO at a well-funded fiber construction SaaS company attending Fiber Connect is a channel/ecosystem play, not a direct-sale play. Upgrading urgency is warranted.",
+    "The Brain data lists 'Network AirWorks' and 'AirWorks Solutions' as discovered companies — AirWorks is a drone-to-CAD automation competitor to Inorsa in some workflows. If Render has any existing relationship with AirWorks, that complicates a simple Inorsa integration story and needs to be probed early.",
+    "The merger with NetPMD Solutions is flagged as 'creates near-term integration complexity that could cut both ways' — I'd argue it cuts toward Inorsa's favor more than against it. A newly merged company trying to consolidate its platform and go-to-market will be looking for clean upstream data pipelines to demonstrate expanded capability to customers. Inorsa as a validated upstream feeder into a newly enlarged Render platform is a story Kelkar can tell his own customers."
+  ],
+  "topInsight": "Anish Kelkar is not a traditional Inorsa buyer — he's a CRO at a field construction SaaS platform that sits directly downstream of Inorsa's outputs. The highest-value pitch is a technology partnership / joint GTM conversation: Inorsa validates GIS, generates permit-ready construction drawings, and hands off clean data into Render's field execution platform — solving the upstream permitting bottleneck that currently delays Render's own customers from starting construction and therefore delays Render's own revenue recognition. With BEAD construction starts targeted for Q3 2026, Kelkar's pipeline urgency is real and shared. The email opener should frame Inorsa not as a tool Render buys, but as the upstream engine that makes Render's platform more valuable to every BEAD contractor they're selling into.",
+  "sourcesUsed": [
+    "https://www.rendernetworks.com (product positioning, platform overview)",
+    "https://www.linkedin.com/in/anishkelkar (title and location confirmation, inferred from prospect data)",
+    "https://www.crunchbase.com/organization/render-networks (funding history, company profile)",
+    "Brain Knowledge Digest — NetPMD merger relationship data",
+    "Brain Knowledge Digest — IQGeo, AirWorks company entities",
+    "Industry baseline — BEAD operational timeline, labor/permitting constraints",
+    "Fiber Connect 2026 attendee list — Kelkar listed as attendee (provided in prospect context)"
+  ]
+}
+```

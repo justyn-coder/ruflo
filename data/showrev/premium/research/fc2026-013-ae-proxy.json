@@ -1,0 +1,42 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "TalentPartners (thetalentpartners.net) appears to be a staffing/recruiting firm based in Boynton Beach, FL — NOT a fiber operator, ISP, or engineering services firm. The company name and domain strongly suggest HR/talent acquisition services, which would place them outside Inorsa's ICP entirely. Source: domain name, email pattern, and company name inference.",
+    "Brett Sarubbi holds the title 'Managing Partner' — a title common in professional services firms (staffing, consulting, law). Combined with Jon Millet also holding 'Managing Partner,' the dual-partner structure is consistent with a boutique staffing or executive search firm, not a fiber deployment or A&E organization. Source: lead record structure.",
+    "Both attendees from this company (Brett Sarubbi and Jon Millet) carry 'Managing Partner' titles — suggesting a small, flat org with no subordinate engineering, operations, or design leadership. There is no signal of a GIS team, CAD department, or permit workflow to disrupt. Source: lead record.",
+    "No prior Brain Knowledge entry exists for TalentPartners, Brett Sarubbi, or Jon Millet — meaning this company has not appeared in any fiber industry research, press, or prior campaign touchpoints. Source: Brain Knowledge Digest (299 entities) — name not present.",
+    "Boynton Beach, FL is not a known fiber deployment hub or BEAD-active construction zone at the current stage. Florida's BEAD allocation is $166M (from funding data), but no connection between this firm and any Florida BEAD recipient has been found. Source: funding program data + location inference.",
+    "The email domain thetalentpartners.net (not .com) and phone number 561-346-2996 (561 = Palm Beach County, FL area code) are consistent with a small independent boutique firm, not a telecom or A&E company. Source: lead record.",
+    "No LinkedIn presence, no trade press quotes, no conference speaking history, and no fiber industry affiliation found for Brett Sarubbi or TalentPartners through available research. This is a significant gap that reinforces the hypothesis that this contact is not in Inorsa's target industry. Source: exhaustive name search — not found.",
+    "Hypothesis: TalentPartners may have attended Fiber Connect as a recruiter or workforce solutions vendor targeting fiber companies — not as a potential Inorsa customer. The 3:1 labor shortage and 58,000 new roles needed by 2032 make Fiber Connect an attractive venue for staffing firms. This would make them a non-buyer for Inorsa but potentially a vendor to Inorsa's other customers. Source: industry baseline + attendee profile inference."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Cannot confirm TalentPartners' industry sector with certainty — no website content accessible, no LinkedIn company page found, no trade press mentions.",
+    "Cannot verify whether TalentPartners has any fiber/telecom client base that might create an indirect relationship with Inorsa (e.g., they staff for fiber A&E firms).",
+    "No LinkedIn profile found for Brett Sarubbi to confirm career history, previous employers, or domain expertise.",
+    "No LinkedIn profile found for Jon Millet to corroborate or contrast with Brett's background.",
+    "No booth notes available — cannot determine what product/service discussions occurred at the show or why they scanned.",
+    "Unknown why TalentPartners attended Fiber Connect 2026 — attendee vs. exhibitor status not confirmed.",
+    "No funding history, client list, or revenue data available for TalentPartners.",
+    "Cannot confirm whether 'thetalentpartners.net' website is live or what services are listed — domain search did not return accessible content."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP tag of 'hold' is correct but may be too generous — based on available signals, this prospect is more likely a 'disqualify' than a 'hold.' A staffing firm has no GIS-to-CAD workflow, no permit drawings, no construction management function, and no use case for Inorsa's Engineering Suite or Data Suite. Unless TalentPartners is confirmed to staff fiber design teams (making them a potential channel or referral partner rather than a buyer), outreach investment is difficult to justify.",
+    "The Batch D / Ungraded tier assignment is appropriate, but the risk here is not just thin data — it may be wrong-industry data. Upgrading this to active research without first confirming industry fit would waste AE cycles.",
+    "If any other persona (e.g., Champion Finder) argues Brett Sarubbi could be an internal champion because he's a Managing Partner with authority, that logic doesn't hold — authority over what? A staffing firm's Managing Partner has no engineering procurement authority and no design workflow to optimize."
+  ],
+  "topInsight": "TalentPartners almost certainly is not a fiber operator, ISP, or A&E engineering firm — the company name, domain, dual Managing Partner structure, and complete absence from any fiber industry record strongly suggest this is a staffing/recruiting firm that attended Fiber Connect as a vendor or scout, not as a buyer. Before any outreach is crafted, the first step must be a 60-second LinkedIn verification of Brett Sarubbi or TalentPartners' actual business category. If confirmed as staffing, this lead should be moved to 'not ICP' and either archived or rerouted to a partnership/referral conversation (they may place designers at firms that ARE Inorsa customers). Do not invest AE time in a standard follow-up sequence until industry fit is confirmed.",
+  "sourcesUsed": [
+    "Lead record: Brett Sarubbi, Managing Partner, TalentPartners, brett@thetalentpartners.net, 561-346-2996",
+    "Lead record: Jon Millet, Managing Partner, TalentPartners (same company, same title)",
+    "Brain Knowledge Digest (299 entities) — TalentPartners not present",
+    "Inorsa industry baseline: fiber labor shortage, 58,000 roles needed by 2032, 3:1 job-to-candidate ratio",
+    "Funding program data: Florida BEAD $166M allocation",
+    "Domain inference: thetalentpartners.net — staffing/talent firm naming convention",
+    "Area code 561 = Palm Beach County, FL — consistent with Boynton Beach location",
+    "Fiber Connect 2026 context: staffing firms known to attend as recruiters targeting fiber workforce demand"
+  ]
+}
+```

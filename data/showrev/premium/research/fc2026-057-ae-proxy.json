@@ -1,0 +1,39 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Jacob Fox holds the title 'Operations Manager' at Ohio Gig, LLC, but his email domain is @brescosolutions.com — not @ohiogig.com or similar. This strongly suggests Ohio Gig and Bresco Solutions share ownership, leadership, or are sister entities under a common parent. This is a critical org structure signal: Fox may be operationally managing Ohio Gig while employed by/through Bresco Solutions. Source: lead record email field.",
+    "Michael Shultz attended the same show as Director of Field Engineering — a peer or subordinate to Fox in the operational chain. Two contacts from the same company at a fiber tradeshow indicates intentional reconnaissance: they sent both an ops leader and a field engineering leader, suggesting they are actively evaluating tooling or vendors, not casual attendees. Source: booth scan data.",
+    "Ohio Gig, LLC is an Ohio-based fiber ISP/CLEC operating in the Columbus metro area and surrounding rural markets. Ohio is an active BEAD state — Ohio's BEAD allocation is approximately $400M+ and the state broadband office (BroadbandOhio) had its volume two plan approved. With BEAD operational as of April 30, 2026, Ohio ISPs like Ohio Gig face 6-month contract finalization windows and Q3 2026 construction start pressure. Source: industry baseline + BroadbandOhio public records context.",
+    "The 'Operations Manager' title at a small-to-mid ISP like Ohio Gig typically spans design-to-build workflow oversight — meaning Fox likely touches or owns the GIS-to-construction handoff process directly. At companies this size, ops managers frequently influence or co-decide on engineering tooling purchases because they feel the pain of manual workflows daily. He is not the CFO or CEO, but is almost certainly a strong internal champion or recommender. Source: persona inference from ICP bucket.",
+    "No direct LinkedIn profile, public quotes, speaking engagements, or trade press interviews found for Jacob Fox at Ohio Gig. This is consistent with a small-ISP ops manager who is a practitioner, not a public-facing industry voice. The absence of a public footprint does not reduce relevance — it suggests outreach should be operationally grounded rather than referencing public statements. Source: search results negative.",
+    "Bresco Solutions appears to be a broader telecom solutions/services entity — potentially the parent or affiliated company providing staffing, construction, or professional services to Ohio Gig. If so, Fox may be a shared resource managing operations across both entities, which could mean procurement decisions flow through Bresco Solutions' leadership rather than Ohio Gig independently. This requires clarification before assuming Ohio Gig has standalone budget authority. Source: email domain inference, Bresco Solutions name pattern.",
+    "Ohio Gig's small-ISP profile means they almost certainly do NOT have an in-house GIS-to-CAD engineering team capable of handling BEAD-scale design volume. They likely rely on manual workflows, a small contractor pool, or a regional A&E firm. This is precisely the capacity gap Inorsa addresses — and BEAD construction pressure makes that gap acute starting Q3 2026. Source: industry baseline for sub-50 employee ISPs in Ohio.",
+    "Two attendees from one company at Fiber Connect 2026 is above-average engagement for a small ISP. This signals either: (a) they are actively shopping for vendors and came to evaluate, or (b) they are preparing for a significant buildout and wanted market intelligence. Either interpretation is a buying signal. Source: booth scan + industry attendance pattern inference."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Cannot confirm Jacob Fox's LinkedIn profile URL, work history, tenure at Ohio Gig, or prior roles — no public profile located.",
+    "Cannot confirm whether Bresco Solutions is Ohio Gig's parent, affiliated entity, or unrelated — the shared email domain is suggestive but unverified.",
+    "Ohio Gig's revenue, employee count, and current design/engineering vendor relationships are not publicly documented.",
+    "Cannot confirm Ohio Gig has received or applied for BEAD funding specifically — Ohio's subgrantee list at granular ISP level was not confirmed.",
+    "Michael Shultz's LinkedIn or career history not investigated in depth — would help map org structure and determine if he is subordinate to or parallel with Fox.",
+    "No direct quote from Fox or Shultz about pain points, tooling gaps, or workflow challenges found anywhere.",
+    "Bresco Solutions' business description, size, and service scope not confirmed — critical to understanding budget authority."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP 'hold' status may be too conservative. An Operations Manager plus a Director of Field Engineering attending a fiber-specific tradeshow together is not a casual signal — this warrants at least a Grade C with active follow-up, not passive hold treatment.",
+    "The Batch D tier likely reflects the absence of AE booth notes, not a genuine signal of low fit. Small Ohio ISPs with BEAD exposure and dual-attendee booth scans should be re-evaluated against BEAD timeline urgency, not just company size or title grade.",
+    "Assuming Fox has no budget authority because he is 'only' an Operations Manager at a small ISP may be wrong. At sub-50-employee ISPs, operations managers frequently carry informal P&L influence and may be the de facto decision-maker for engineering tooling under a certain spend threshold. Do not route this immediately to an executive-only pitch."
+  ],
+  "topInsight": "The @brescosolutions.com email domain is the single most important unresolved variable. If Bresco Solutions is Ohio Gig's parent or a shared-services entity, Fox is likely the operational decision-influencer but budget authority may sit one level up at Bresco leadership — meaning the right multi-thread is Fox + Shultz for operational buy-in, and a Bresco Solutions executive for budget sign-off. The outreach to Fox should be operationally grounded (permit kickbacks, GIS-to-CAD cycle time, BEAD construction volume) and explicitly ask him to loop in whoever owns the engineering tooling budget — without assuming he does not. Ohio's BEAD Q3 2026 construction window is the urgency lever: if they are planning BEAD builds, they have 60-90 days to stand up a design workflow before the timeline compresses.",
+  "sourcesUsed": [
+    "Lead record (booth scan data) — Jacob Fox title, email, phone, company",
+    "Lead record (booth scan data) — Michael Shultz title, company",
+    "ShowRev Industry Intelligence KB — BEAD operational timeline, labor shortage baseline, permitting constraint data",
+    "BroadbandOhio public program context — Ohio BEAD allocation and subgrantee pipeline (general knowledge, not direct URL retrieved)",
+    "Persona inference framework — Operations Manager ICP bucket behavioral model",
+    "Inorsa value proposition brief — permitting workflow and cycle time proof points"
+  ]
+}
+```

@@ -1,0 +1,49 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Advanced 1 is a Texas-based engineering and design services firm headquartered in Georgetown, TX. Their domain (advanced1.net) and the presence of a 'Senior VP, Design Services' title (Salli Smith) strongly indicate they are a design/A&E contractor serving telecom operators — making them a direct Inorsa prospect as a firm that converts GIS/field data into construction drawings. Source: company email domain + booth scan contact titles.",
+    "Three contacts from Advanced 1 attended the show: Brian Derstine (VP), Scott Hastings (VP), and Salli Smith (Senior VP, Design Services). The multi-person attendance signals genuine organizational investment in the show and likely active evaluation of tools or partnerships. Source: tradeshow contact list.",
+    "Salli Smith's title 'Senior VP, Design Services' is the most operationally relevant to Inorsa's core workflow — she likely owns design throughput, staffing, and quality control at the team level. Brian Derstine (VP) and Scott Hastings (VP) are likely business-line or operations leads. This is a committee buy: Salli is the technical champion candidate, Brian/Scott are likely business approvers. Source: title inference from booth scan.",
+    "Brian Derstine's title is 'VP' with no department qualifier visible in the scan data. This is consistent with either a VP of Operations, VP of Business Development, or VP of Engineering role — all three are plausible at a design services firm of this type. Without a department suffix, he likely represents the business/commercial side rather than the delivery side. Source: title parsing + persona inference.",
+    "Georgetown, TX headquarters is in the Austin metro corridor — a high-growth fiber deployment zone with active BEAD-funded builds across Texas. Texas received $683M in BEAD allocation ($683,057,831). Design services firms in this corridor are facing acute labor pressure. Source: BEAD funding data + geographic inference.",
+    "Texas BEAD program is now operational (as of April 30, 2026). ISP contracts must be finalized within 6 months, meaning construction starts are expected Q3 2026 with a 4-year deployment deadline. A design services firm like Advanced 1 serving Texas ISPs would be entering a high-volume, high-pressure design production period right now. Source: industry baseline.",
+    "No LinkedIn profile, trade press quote, podcast appearance, or speaking engagement record was found for Brian Derstine specifically. His name and company combination did not surface in accessible public records during this research cycle. Source: search attempt — not found.",
+    "No LinkedIn profile or public record was found for Scott Hastings (VP, Advanced 1) either. Salli Smith (Senior VP, Design Services) also did not surface in a verifiable trade press or LinkedIn record under that exact name + company combination. Source: search attempt — not found.",
+    "Advanced 1's website (advanced1.net) is not a high-visibility public presence; the company does not appear to have a prominent public leadership page, press release history, or investor profile indexed in accessible sources. This is consistent with a private, mid-market A&E services firm that operates through referral and contract relationships rather than public marketing. Source: domain-based inference + search attempt.",
+    "The firm's profile is consistent with the broader A&E engineering services M&A and offshoring trend: mid-market design shops in Texas are being squeezed by labor shortages (3:1 job-to-candidate ratio for fiber designers) and are actively evaluating automation and workflow tools to protect margins. Advanced 1 attending Fiber Connect 2026 with three senior people is a strong signal they are actively scouting for solutions. Source: industry baseline + attendance pattern."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No verified LinkedIn profile found for Brian Derstine — cannot confirm his exact department, tenure, reporting line, or previous companies.",
+    "No verified LinkedIn profile found for Scott Hastings or Salli Smith under Advanced 1.",
+    "Advanced 1's website does not appear to have a public leadership or team page with role descriptions that were accessible in this research cycle.",
+    "No direct quote from Brian Derstine, Scott Hastings, or Salli Smith in any trade press, podcast, panel, or conference record was found.",
+    "Cannot confirm whether Advanced 1 is primarily a GIS-to-CAD production shop, a full-service fiber engineering firm, or a hybrid contractor. This distinction matters for positioning Inorsa.",
+    "Cannot confirm whether Advanced 1 has existing tooling (e.g., IQGeo, AutoCAD, ArcGIS workflows) that would represent integration complexity or incumbent displacement.",
+    "Cannot confirm whether Advanced 1 is directly employed by ISPs/operators or acts as a subcontractor to larger A&E primes — this affects budget authority and buying process.",
+    "No revenue, headcount, or growth data found for Advanced 1 to size the opportunity.",
+    "Cannot confirm whether Advanced 1 has active BEAD-related contract wins that would create a near-term production surge and urgency for Inorsa."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold designation ('Relevant title but no AE notes or grade') likely reflects uncertainty about whether Advanced 1 is an operator or a design services firm. Based on the title 'Senior VP, Design Services' for Salli Smith, this company is almost certainly a design/A&E contractor, not an operator. That makes them a direct Inorsa workflow prospect, not a 'hold' — the hold status should be challenged and the account upgraded pending confirmation of firm type.",
+    "Batch tier D (Ungraded) undersells the multi-contact signal. Three senior attendees from the same company at a fiber trade show is not a casual walk-in — it represents deliberate organizational attendance and likely an active evaluation mindset. The tier should be reconsidered once the firm type is confirmed.",
+    "Without a department qualifier on Brian Derstine's VP title, there is a risk of treating him as the primary decision-maker when Salli Smith (Senior VP, Design Services) is almost certainly closer to the technical buy. Outreach should thread both, not default to Brian as the senior-most contact."
+  ],
+  "topInsight": "Three senior Advanced 1 leaders attended Fiber Connect 2026 together — including a 'Senior VP, Design Services' — at the exact moment Texas BEAD ($683M) is transitioning from planning to construction contract execution. This attendance pattern, combined with the Design Services title, strongly suggests Advanced 1 is a GIS-to-CAD design services firm entering a high-volume production surge with known labor constraints. The single best outreach move is to reference the multi-person attendance as a signal of shared organizational urgency, address Salli Smith as the technical champion on permitting cycle time (Inorsa's proof point: 3-4 weeks to 2 days), and position Brian Derstine on the business case — protecting margin and hitting BEAD deployment milestones without proportional headcount growth.",
+  "sourcesUsed": [
+    "Tradeshow contact/booth scan list (Advanced 1 — three contacts: Brian Derstine VP, Scott Hastings VP, Salli Smith Senior VP Design Services)",
+    "advanced1.net domain inference (private mid-market A&E firm, Georgetown TX)",
+    "Industry baseline: BEAD operational April 30 2026, 6-month ISP contract window, Q3 2026 construction start",
+    "BEAD funding data: Texas $683,057,831 allocation",
+    "Industry baseline: 3:1 labor shortage ratio, 58,000 designer roles needed by 2032",
+    "Inorsa proof point: permit review cycle reduction from 3-4 weeks to 2 days",
+    "Fiber Connect 2026 feedback: permitting workflows and cycle time are primary pain points",
+    "LinkedIn search for Brian Derstine + Advanced 1 — not found / not verified",
+    "LinkedIn search for Scott Hastings + Advanced 1 — not found / not verified",
+    "LinkedIn search for Salli Smith + Advanced 1 — not found / not verified",
+    "Trade press search (bbcmag.com, lightreading.com, etisoftware.com) for Brian Derstine — not found",
+    "Advanced 1 leadership/team page search — not accessible or not public"
+  ]
+}
+```

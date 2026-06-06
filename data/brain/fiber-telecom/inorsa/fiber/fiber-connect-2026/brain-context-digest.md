@@ -1,22 +1,249 @@
-Brain Knowledge Digest (34 entities)
+Brain Knowledge Digest (574 entities)
 
-## Companies discovered (1)
+## Companies discovered (55)
 - **Avatar Tech**: firm Avatar Tech is
+- **Mohawk Networks**: operator: Mohawk Networks is
+- **Centillion**: firm Centillion is
+- **IQGeo**: firm IQGeo is
+- **Troy Hoover's LinkedIn profile or career h**: firm Troy Hoover's LinkedIn profile or career his
+- **Profile & Funding. Avatar Tech LLC**: Company Profile & Funding. Avatar Tech LLC is
+- **Murali Nair's LinkedIn profile, career h**: firm Murali Nair's LinkedIn profile, career his
+- **PCCI specifically**: firm PCCI specifically has
+- **Network
 
-## Funding programs (6)
+AirWorks**: Company Network
+
+AirWorks has
+- **Ohio Gig**: firm Ohio Gig is
+- **Hilliary**: firm Hilliary is
+- **Hilliary specifically**: firm Hilliary specifically received
+- **Fybercom**: firm Fybercom has
+- **Javier Rojas's LinkedIn profile, career h**: firm Javier Rojas's LinkedIn profile, career his
+- **Mark School's specific LinkedIn profile or career h**: firm Mark School's specific LinkedIn profile or career his
+- **Description
+Hilliary Exchange, Inc**: Company Description
+Hilliary Exchange, Inc. is
+- **Network AirWorks**: Company Network AirWorks has
+- **Profile & Funding
+AirWorks Solutions**: Company Profile & Funding
+AirWorks Solutions is
+- **Mark School's specific LinkedIn profile, career h**: firm Mark School's specific LinkedIn profile, career his
+- **Jason Hart's specific LinkedIn profile or career h**: firm Jason Hart's specific LinkedIn profile or career his
+- **Raj Ahuja's LinkedIn profile or career h**: firm Raj Ahuja's LinkedIn profile or career his
+- **TalentPartners**: firm TalentPartners is
+- **CFO. Raymond's urgency**: ISP CFO. Raymond's urgency is
+- **BEAD exposure**: firm BEAD exposure is
+- **Monroe Snohom**: firm Monroe Snohomis
+- **BEAD**: firm BEAD is
+- **Pure Integration's revenue or headcount with prec**: firm Pure Integration's revenue or headcount with precis
+- **Chr**: firm Chris
+- **Orefiche's specific LinkedIn profile URL or career h**: firm Orefiche's specific LinkedIn profile URL or career his
+- **GM who**: firm GM who is
+- **Booker Engineering, LLC
+Jur**: Company: Booker Engineering, LLC
+Juris
+- **Reg**: Company
+Regis
+- **Rating
+Lighthouse Technologies**: Company
+Rating
+Lighthouse Technologies is
+- **Lighthouse Technologies**: Company
+Lighthouse Technologies is
+- **I talk to**: operator I talk to has
+- **Deanna Richter's exact tenure at LHTC or career h**: firm Deanna Richter's exact tenure at LHTC or career his
+- **Is th**: firm: Is this
+- **Michelle Usher's specific tenure at Dycom or career h**: firm Michelle Usher's specific tenure at Dycom or career his
+- **Jacob Fox's LinkedIn profile URL, work h**: firm Jacob Fox's LinkedIn profile URL, work his
+- **Washington state office locations or whether work**: firm Washington state office locations or whether work is
+- **Dan Gillan's full LinkedIn career h**: firm Dan Gillan's full LinkedIn career his
+- **Garth Naar's LinkedIn profile, career h**: firm Garth Naar's LinkedIn profile, career his
+- **Sara Peters' specific role scope or whether she**: firm Sara Peters' specific role scope or whether she has
+- **Scott Hastings' LinkedIn profile or career h**: firm Scott Hastings' LinkedIn profile or career his
+- **Booker**: firm Booker is
+- **Spencer Kariniemi's LinkedIn profile ex**: firm Spencer Kariniemi's LinkedIn profile exis
+- **Sara Peters' exact reporting line or who her direct manager**: firm Sara Peters' exact reporting line or who her direct manager is
+- **Booker Engineering**: firm: Booker Engineering is
+- **IMMCO's current headcount with prec**: firm IMMCO's current headcount with precis
+- **Spencer Kariniemi's LinkedIn profile or career h**: firm Spencer Kariniemi's LinkedIn profile or career his
+
+## Funding programs (71)
 - $25.5M award
 - $25.5M BEAD
 - $83M BEAD
 - $11.18M BEAD
 - $50M BEAD
 - $1B BEAD
+- $5,000,000 in funding
+- $5M TBCP
+- $683M in BEAD
+- $5,000,000 funding
+- $683M BEAD
+- $83M in BEAD
+- $5M grant
+- $683M allocation
+- $166M BEAD
+- $25.5M in BEAD
+- $11.18M allocation
+- $5M BEAD
+- $25.5M allocation
+- $683,057,831 in BEAD
+- $166M allocation
+- $1B in funding
+- $1,060,574,537 in BEAD
+- $1.06B in BEAD
+- $683,057,831 allocation
+- $1.06B BEAD
+- $1.06B allocation
+- $683,057,831 BEAD
+- $166M in BEAD
+- $1.186B BEAD
+- $1.186B in BEAD
+- $868M in BEAD
+- $1.5B in BEAD
+- $50M award
+- $1.5B BEAD
+- $3.3B in BEAD
+- $1.3B in BEAD
+- $1.3B allocation
+- $1.08B in BEAD
+- $1.2B in BEAD
+- $868M allocation
+- $1.05B allocation
+- $1.16B in BEAD
+- $1.5B funding
+- $1.16B BEAD
+- $1.16B allocation
+- $584M in BEAD
+- $583M in BEAD
+- $14,996,590 grant
+- $14,996,590 in grant
+- $1.49B in BEAD
+- $1.5B allocation
+- $625M in BEAD
+- $1.17B in BEAD
+- $800M in BEAD
+- $625M allocation
+- $1.24B BEAD
+- $1.2B allocation
+- $1.2B BEAD
+- $1.22B in BEAD
+- $1.18B in BEAD
+- $1.56B BEAD
+- $682M in BEAD
+- $147.3M in BEAD
+- $1.19B in BEAD
+- $672M in BEAD
+- $672M allocation
+- $1.19B allocation
+- $1.26B in BEAD
+- $133M allocation
+- $160M in BEAD
 
-## Relationships (3)
+## Relationships (81)
 - NetPMD Solutions creates near-term integration complexity that could cut both ways: merger with NetPMD Solutions creates near-term integration complexity that could cut both ways
 - NetPMD Solutions is live. The strategic rationale was explicit: merger with NetPMD Solutions is live. The strategic rationale was explicit 
 - Janan is about channel access to those: partnership with Janan is about channel access to those 
+- Janan described as 'channel access': partnership with Janan described as 'channel access' 
+- NetPMD Solutions, with integration complexity acknowledged as a near-term risk. Post-merger integration typically creates tool consolidation pressure: merger with NetPMD Solutions, with integration complexity acknowledged as a near-term risk. Post-merger integration typi
+- NetPMD Solutions is live: merger with NetPMD Solutions is live
+- Janan described as 'channel access' focused: partnership with Janan described as 'channel access' focused 
+- Janan: partnership with Janan
+- NetPMD Solutions. NetPMD is an active seller of OSP design tools and workflows, meaning Centillion just acquired both a capability and a competing toolset. Post-merger integration pressure is explicitly acknowledged as a near-term risk, which typically triggers tool consolidation reviews: merger with NetPMD Solutions. NetPMD is an active seller of OSP design tools and workflows, meaning Centillion just acqu
+- Janan described as 'channel access focused,' suggesting they are actively expanding their market reach into ISP: partnership with Janan described as 'channel access focused,' suggesting they are actively expanding their market reach 
+- NetPMD Solutions: merger with NetPMD Solutions 
+- Janan described explicitly as 'channel access' focused: partnership with Janan described explicitly as 'channel access' focused 
+- NetPMD Solutions. NetPMD is an active seller of OSP design tools and workflows, meaning Centillion now owns a competing: merger with NetPMD Solutions. NetPMD is an active seller of OSP design tools and workflows, meaning Centillion now owns 
+- Janan described as 'channel access focused,' suggesting active expansion into the ISP market. This implies they are pursuing new client segments: partnership with Janan described as 'channel access focused,' suggesting active expansion into the ISP market. This impl
+- NetPMD Solutions. NetPMD is an active seller of OSP design tools and workflows, meaning Centillion has simultaneously acquired a capability AND a competing internal toolset. Post-merger integration is explicitly acknowledged as a near-term risk in the Brain data. This is a classic tool consolidation trigger: merger with NetPMD Solutions. NetPMD is an active seller of OSP design tools and workflows, meaning Centillion has simul
+- Janan described as 'channel access focused,' suggesting they are expanding market reach into ISP: partnership with Janan described as 'channel access focused,' suggesting they are expanding market reach into ISP
+- NetPMD is described in brain data as creating 'near-term integration complexity that could cut both ways': merger with NetPMD is described in brain data as creating 'near-term integration complexity that could cut both ways' 
+- Janan described as 'channel access focused,' suggesting Centillion is actively building its delivery network to handle scaling project volume: partnership with Janan described as 'channel access focused,' suggesting Centillion is actively building its delivery ne
+- Centillion is flagged as a risk by brain data, but from a sales angle it may be net positive: merger with Centillion is flagged as a risk by brain data, but from a sales angle it may be net positive
+- Janan, a broadband consulting and program management firm, to expand channel access to rural ISPs and cooperatives pursuing BEAD-funded fiber deployments: partnership with Janan, a broadband consulting and program management firm, to expand channel access to rural ISPs and c
+- IQGeo and NetPMD: partnership between IQGeo and NetPMD
+- Avatar Tech and NetPMD: partnership between Avatar Tech and NetPMD
+- Centillion, the combined entity raised undisclosed growth capital explicitly targeting technology and tooling investment to 'improve throughput on permit-intensive projects.' This is a direct signal of budget allocation toward the exact problem Inorsa solves. The capital raise followed the acquisition, indicating Centillion: merger with Centillion, the combined entity raised undisclosed growth capital explicitly targeting technology and toolin
+- NetPMD Solutions is the most strategically significant competitive signal. NetPMD is an OSP design tool and workflow vendor. Centillion acquiring NetPMD creates a vertically integrated competitor that could attempt to own the field-data-to-permit-drawing stack: merger with NetPMD Solutions is the most strategically significant competitive signal. NetPMD is an OSP design tool and 
+- Janan' refers to a Centillion-AirWorks discussion or a separate relationship. This needs clarification before outreach: partnership with Janan' refers to a Centillion-AirWorks discussion or a separate relationship. This needs clarification 
+- NetPMD is flagged as creating tool consolidation pressure: merger with NetPMD is flagged as creating tool consolidation pressure 
+- Janan' entries should not be read as a formal signed partnership: partnership with Janan' entries should not be read as a formal signed partnership 
+- NVIDIA to leverage AI capabilities for fiber network design and management workflows: partnership with NVIDIA to leverage AI capabilities for fiber network design and management workflows.
 
-## Tools / platforms in use (23)
+ 
+- NetPMD Solutions and a Janan channel partnership as relevant competitive signals. For B: merger with NetPMD Solutions and a Janan channel partnership as relevant competitive signals. For B
+- NetPMD Solutions, which is explicitly described as an active seller of OSP design tools and workflows. This creates a 'competing toolset' problem internally: merger with NetPMD Solutions, which is explicitly described as an active seller of OSP design tools and workflows. This 
+- Janan, described explicitly as focused on 'channel access' to a specific customer segment: partnership with Janan, described explicitly as focused on 'channel access' to a specific customer segment 
+- NetPMD Solutions, expanding our project management and OSP design capabilities. The combined organization is currently integrating workflows and toolsets to deliver a unified service offering to clients: merger with NetPMD Solutions, expanding our project management and OSP design capabilities. The combined organization is
+- Janan to expand market access and serve clients in new geographic markets: partnership with Janan to expand market access and serve clients in new geographic markets.
+- NetPMD Solutions, expanding OSP design and project management capabilities. The combined firm will operate under the Centillion brand: merger with NetPMD Solutions, expanding OSP design and project management capabilities. The combined firm will operate u
+- NetPMD Solutions. Together, we bring expanded OSP design, project management, and engineering capabilities to our clients: merger with NetPMD Solutions. Together, we bring expanded OSP design, project management, and engineering capabilities t
+- NetPMD Solutions, a telecom engineering services firm specializing in outside plant design and project management: merger with NetPMD Solutions, a telecom engineering services firm specializing in outside plant design and project manag
+- Janan, described explicitly as 'channel access' focused: partnership with Janan, described explicitly as 'channel access' focused 
+- NetPMD Solutions. This strategic merger brings together two innovative companies, combining our expertise in telecommunications engineering and network design with NetPMD's proven project management and design tools and workflows for OSP design.
+
+The merger will enable us to offer our clients a more comprehensive suite of services, including: merger with NetPMD Solutions. This strategic merger brings together two innovative companies, combining our expertise in
+- Janan, expanding our channel access to fiber deployment clients: partnership with Janan, expanding our channel access to fiber deployment clients...
+
+- NetPMD Solutions is the most relevant competitive signal in the research corpus. NetPMD sells OSP design tools and workflows: merger with NetPMD Solutions is the most relevant competitive signal in the research corpus. NetPMD sells OSP design too
+- integration complexity acknowledged: merger with integration complexity acknowledged.
+- integration complexity and toolset conflict: merger with integration complexity and toolset conflict
+- NetPMD Solutions is live' with 'integration complexity acknowledged as a near-term risk.' This is not a future risk: merger with NetPMD Solutions is live' with 'integration complexity acknowledged as a near-term risk.' This is not a futu
+- NetPMD: partnership between NetPMD
+- NetPMD Solutions is live. The strategic rationale was explicit 
+
+Result: merger with NetPMD Solutions is live. The strategic rationale was explicit 
+
+Result 
+- Janan described as channel access focused.' This is a BD conversation first, AE conversation second: partnership with Janan described as channel access focused.' This is a BD conversation first, AE conversation second.
+- Janan described as 'channel access to those': partnership with Janan described as 'channel access to those' 
+- Centillion, described as 'channel access to those' operators, and Centillion has completed a merger with NetPMD Solutions: partnership with Centillion, described as 'channel access to those' operators, and Centillion has completed a merger wit
+- Centillion, which just merged with NetPMD: partnership with Centillion, which just merged with NetPMD 
+- any GIS-to-CAD automation vendor in the fiber construction drawing space as of May: partnership with any GIS-to-CAD automation vendor in the fiber construction drawing space as of May 
+- Biarri to serve their operator customers, or: partnership with Biarri to serve their operator customers, or 
+- NetPMD Solutions is live per relationship data in the Brain digest. The strategic rationale was described as explicit, but the integration creates 'near-term integration complexity that could cut both ways.' This is a major buying signal: merger with NetPMD Solutions is live per relationship data in the Brain digest. The strategic rationale was described as
+- NetPMD Solutions is live. The strategic rationale was explicit.': merger with NetPMD Solutions is live. The strategic rationale was explicit.'
+- Janan is described in the Brain digest as being 'about channel access.' This suggests Avatar Tech is actively expanding its go-to-market reach, likely to capture more BEAD-era project volume. A firm building channel partnerships is signaling growth intent and the need for scalable delivery infrastructure: partnership with Janan is described in the Brain digest as being 'about channel access.' This suggests Avatar Tech is ac
+- Janan described as channel access.': partnership with Janan described as channel access.'
+- NetPMD Solutions is live. The strategic rationale was explicit': merger with NetPMD Solutions is live. The strategic rationale was explicit'
+- NetPMD Solutions creates near-term integration complexity that could cut both ways': merger with NetPMD Solutions creates near-term integration complexity that could cut both ways'
+- Janan described as channel access': partnership with Janan described as channel access'
+- NetPMD Solutions that 'is live' and creates 'near-term integration complexity.' This is a significant signal: merger with NetPMD Solutions that 'is live' and creates 'near-term integration complexity.' This is a significant signal
+- NetPMD Solutions described as 'live' and creating 'near-term integration complexity': merger with NetPMD Solutions described as 'live' and creating 'near-term integration complexity' 
+- Janan is about channel access.': partnership with Janan is about channel access.'
+- Janan is about channel access to those': partnership with Janan is about channel access to those' 
+- Janan is about channel access to those' is truncated in Brain data: partnership with Janan is about channel access to those' is truncated in Brain data 
+- NetPMD Solutions creates near-term integration complexity.' NetPMD is a telecom project management and engineering software firm. If CED has any integration relationship with NetPMD, or if their ISP clients use NetPMD, this is a potential objection vector: merger with NetPMD Solutions creates near-term integration complexity.' NetPMD is a telecom project management and engin
+- NetPMD Solutions is flagged as 'creates near-term integration complexity that could cut both ways': merger with NetPMD Solutions is flagged as 'creates near-term integration complexity that could cut both ways' 
+- NetPMD Solutions, a recognized leader in project and program management for the fiber network industry. This strategic move combines Render Networks' construction execution platform with NetPMD's project management expertise, positioning the combined entity for significant growth as fiber and utility infrastructure spending accelerates worldwide.
+
+About the Role: merger with NetPMD Solutions, a recognized leader in project and program management for the fiber network industry. This
+- NetPMD Solutions, a recognized leader in project and program management for the fiber network industry. This strategic move combines Render Networks' construction execution platform with NetPMD's project management expertise.
+
+About the Role: merger with NetPMD Solutions, a recognized leader in project and program management for the fiber network industry. This
+- NetPMD Solutions, combining Render Networks' construction execution platform with NetPMD's project management expertise: merger with NetPMD Solutions, combining Render Networks' construction execution platform with NetPMD's project managemen
+- NetPMD Solutions, Render Networks has expanded its platform capabilities to include more comprehensive project management features: merger with NetPMD Solutions, Render Networks has expanded its platform capabilities to include more comprehensive proje
+- NetPMD Solutions on LinkedIn, highlighting the expanded capabilities of the combined entity: merger with NetPMD Solutions on LinkedIn, highlighting the expanded capabilities of the combined entity.
+
+
+- NetPMD Solutions, combining our construction execution platform with NetPMD's project management expertise: merger with NetPMD Solutions, combining our construction execution platform with NetPMD's project management expertise.
+
+- NetPMD Solutions creates near-term integration complexity': merger with NetPMD Solutions creates near-term integration complexity'
+- IQGeo: partnership with IQGeo.
+
+
+- any Inorsa-adjacent tool: partnership with any Inorsa-adjacent tool 
+- Inorsa: partnership with Inorsa.
+- NATE and accredited post-secondary colleges and universities across the country to advance our members' technical education and capabilities.
+
+Result: partnership between NATE and accredited post-secondary colleges and universities across the country to advance our membe
+- other technology stakeholders: partnership with other technology stakeholders.
+- two organizations sharing a booth. If TEC is a consortium or federation structure, their design coordination challenges are compounded: partnership between two organizations sharing a booth. If TEC is a consortium or federation structure, their design coor
+- Pure Integration: partnership with Pure Integration
+- VETRO FiberMap in: partnership with VETRO FiberMap in 
+- a larger anchor entity. Source: partnership with a larger anchor entity. Source
+
+## Tools / platforms in use (366)
 - case
 - engineering
 - those
@@ -40,6 +267,351 @@ Brain Knowledge Digest (34 entities)
 - IQGeo
 - generic
 - Booker uses
+- names and should not be attributed
+- GIS
+- any of these
+- signals
+- they cannot compete on compensation
+- any existing design
+- IQGeo or any specific GIS
+- case tied
+- platform
+- Inorsa would need
+- Centillion uses
+- reference in
+- internally
+- at Centillion versus being a referenced
+- case had not been
+- Centillion
+- administration services
+- OSP
+- and workflow
+- capabilities
+- of automated design
+- that shows access
+- ArcGIS and related Esri
+- integration services tailored
+- solutions
+- is designed
+- designed
+- OSP design
+- consolidation OSP design
+- stack is relevant
+- consolidation is real but secondary
+- they cannot hire enough designers
+- into design
+- NetPMD
+- cookies
+- the latest GIS and CAD
+- of these
+- requirements
+- any existing OSP design or permitting
+- the AI
+- development kit
+- GPU acceleration
+- the same team
+- engineer at EPAM
+- CAD
+- is a strong candidate
+- case suggests he is thinking about how
+- personal emails
+- of technology
+- one or more of these
+- engineering team has the capability
+- at PCCI
+- rationalization often create a window
+- for NetPMD or a
+- context
+- CAD and GIS technologies
+- streamlines pole data extraction
+- Runway
+
+Runway is designed
+- AirWorks
+- and competes
+- this
+- technology
+- that he believed was similar
+- that he perceived as similar
+- designers or outsource
+- or outsourced
+- NetPMD sells OSP design
+- personal email
+- Scoring Matrix
+- the
+- the latest
+- cookies and similar technologies
+- any automation
+- case Inorsa optimizes
+- a GIS
+- any workflow
+- or project tracking
+- and
+- Katapult
+- is the de facto standard
+- Esri
+- ArcGIS as their
+- more sticky
+- ArcGIS
+- integrators
+- IQGeo or a similar GIS network design
+- site search
+- other personas
+- that cuts their permit cycle from weeks
+- sale
+- they are NOT a direct buyer of design
+- for deploying fiber optic equipment
+- brings
+- Clearfield products
+- helps sequence work
+- tools
+- Biarri Networks enables designers
+- with Google Earth and similar
+- in GIS
+- with other
+- has been used
+- graph algorithms
+- helps manage the RFP process
+- the following
+- used by network planners and designers
+- has limited integration with other
+- can be difficult
+- of algorithms
+- of automated algorithms
+- now includes automated design checks
+- now includes enhanced GIS integration
+- evaluation
+- various GIS
+- any LLD automation or design templating
+- appears
+- marketed
+- relevant
+- the funding
+- of provisions requiring fund recipients
+- Cavazos mentioned may be an AI layer on
+- the state figure only as context
+- the funds
+- in fiber network design
+- GIS design
+- that
+- offshore labor
+- Knowledge of permitting processes
+- mentions found
+- hiring signals
+- their performance is tied
+- IQGeo or a similar GIS
+- design capacity
+- is the IQGeo
+- Core functionality
+- and algorithmic techniques
+- of advanced
+- mapping layers
+- the latest technology
+- ingests network designs
+- more valuable
+- Sales Manager
+- day
+- the Render Networks API
+- includes features
+- integrates with GIS data
+- used by fiber operators
+- an outside engineering firm
+- or any other
+- fiber optic technology
+- any GIS or design automation
+- advanced design
+- is explicitly used
+- of record
+- enables telecommunications companies
+- of choice
+- Lunder should be recommending
+- of OTDR
+- engineering capacity
+- construction drawings as inputs
+- for drawing generation
+- AutoCAD
+- the campaign
+- Inorsa themselves
+- consulting and related services
+- solutions and related services
+- of AutoCAD and GIS based
+- ArcGIS specifically or another GIS
+- or outsources entirely
+- they cannot afford
+- integrations
+- is used by ISPs and contractors
+- optimizes WHERE
+- tells operators what
+- vendor
+- is partly a response
+- other engineering
+- competitors
+- they compete
+- some analysts
+- they are accountable
+- specialized
+- specific
+- different design
+- Technologies may be evaluating vendors
+- Technologies sent three people
+- Inorsa
+- Technologies
+- company based in
+- there is nothing public
+- many
+- a specific GIS
+- her as an entry point
+- or looking
+- they are
+- any GIS
+- Incedo is a partner
+- and services
+- Incedo uses
+- the latest technology and techniques
+- Technologies is a
+- Proficiency in GIS
+- decisions but can approve workflow
+- case delivered back
+- GIS and CAD
+- a combination of
+- Katapult Pro
+- that can scale efficiently
+- they cannot scale headcount fast enough
+- related
+- landscape
+- connect
+- they lack the internal
+- entitlement services
+- but also means a single
+- an existing GIS
+- software
+- Inorsa as a
+- Integrator
+- discretion
+- Technologies turns out
+- is positioning
+- Technologies is looking
+- Technologies is positioned
+- Technologies is actively expanding
+- Katapult as a field data capture
+- stack was identified
+- buyer competing with those
+- advanced engineering
+- of AutoCAD and GIS
+- vendors and design automation companies
+- tool
+- of design
+- incumbent
+- GIS or mapping
+- using GIS
+- that Inorsa would need
+- would be wrong
+- AutoCAD and ArcGIS as primary design
+- ArcGIS and QGIS
+- like Inorsa needs
+- AEs
+- tooling directly affects their ability
+- the same organization is responsible
+- outside engineering firms
+- Render Networks
+- Biarri
+- these
+- automated drawing
+- or offer
+- design staff or fully outsources
+- used
+- design capacity and no scale advantages
+- contract engineering firms
+- as an engineering partner
+- drawing automation
+- permitting support or outsources
+- or named
+- Katapult Pro or any field collection
+- the answer determines which value prop
+- that exports
+- Biarri builds optimization
+- Biarri recommends
+- or compete with GIS
+- proprietary network design
+- that allows
+- that uses optimization algorithms
+- with deep industry expertise
+- Engineer
+- tools allow us
+- tools and services
+- proprietary
+- of optimization algorithms and GIS data
+- and automation are the key
+- optimization algorithms
+- the GIS data from Biarri Modelling
+- as a way
+- or fully outsources
+- mentions found on Glassdoor or Indeed
+- questions
+- automation
+- like Katapult Pro or IQGeo
+- their contractor could use
+- procurement budget
+- her partners can use
+- CAD internally
+- the data gap here is
+- different
+- of Google Earth Pro or basic GIS
+- mentions
+- assumptions
+- company means he is likely responsible
+- as a
+- vendor is under pressure
+- Biarri as a
+- exports
+- company selling
+- company is more likely
+- model means they scale through
+- more complete and sticky
+- tools allow them
+- BND
+- their
+- prospect
+- ESRI ArcGIS
+- AutoCAD vs MicroStation vs other CAD
+- it internally
+- mandate from a parent
+- knowledge
+- purchases
+- the team
+- or CAD
+- Bentley or specialty telco
+- mandates
+- or outsource
+- AutoCAD or another CAD
+- ownership found
+- independent firms are more likely
+- a soft confirmation question
+- there is no bench depth
+- there is no quote or public statement
+- version or
+- decisions
+- a competing drawing automation
+- would need
+- concern about automation ROI being
+- or outsources
+- a competing
+- one of the following
+- a hybrid or fully outsourced model
+- a different
+- it means no inherited enterprise
+- because those
+- any existing automation
+- purchaser but is highly likely
+- platforms
+- design team
+- with budget authority up
+- our job search and apply directly
+- mapping
+- of Esri ArcGIS
+- requirements found
+- IQGeo directly or if that
+- design capacity comparable
 
 ## Regulatory / funding landscape (1 entries)
 - BEAD award to serve the St.

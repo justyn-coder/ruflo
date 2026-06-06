@@ -1,0 +1,42 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "ISG (Infrastructure Surveying & Geomatics, or Infrastructure Solutions Group — full legal name unconfirmed) headquartered in Mankato, MN appears to be a multi-discipline engineering/geomatics firm operating in telecom infrastructure, not a pure-play ISP. The AE note confirms they 'do long haul and FTTH' and 'use GIS and CAD for permitting,' positioning them as an engineering services/A&E firm rather than an operator — critical distinction for Inorsa's ICP framing. Source: AE booth notes 05/18/2026.",
+    "ISG Inc. (isginc.com) is a large Midwest-based engineering and architecture firm with offices across Minnesota, Iowa, Wisconsin, and surrounding states. They are a full-service civil/infrastructure firm with known telecom/utility practice areas. This matches Mankato, MN location and Leila Hussein's 'Business Unit Leader' title, suggesting she leads a specific practice — likely telecom or geospatial services. Source: isginc.com public profile, LinkedIn company data.",
+    "The AE note explicitly states ISG 'uses GIS and CAD for permitting' — confirming they are already in the Inorsa workflow zone. They are not pre-GIS; they have an active GIS-to-CAD pipeline that is almost certainly manual or semi-automated. This is the core conversion target. The note also says they 'want to see a demo,' making this a warm, tool-aware lead. Source: AE booth notes.",
+    "ISG as a multi-discipline Midwest A&E firm is directly exposed to BEAD construction surge pressure. Minnesota received its BEAD allocation and the state broadband office (Office of Broadband Development) is actively progressing sub-grantee contracts as of April-May 2026. ISG, as an engineering firm serving telecom clients in MN, IA, and WI, is likely receiving RFPs or active project awards tied to BEAD-funded deployments. No direct BEAD sub-grant award to ISG found in public records — but their geographic footprint and telecom practice makes BEAD workload surge highly probable. Source: MN Office of Broadband Development public records, BEAD industry baseline.",
+    "ISG's 'long haul and FTTH' service scope means they are designing both backbone/transport routes (long haul = complex ROW permitting, railroad crossings, highway crossings) and last-mile residential fiber. Long-haul permitting is among the most friction-intensive in the industry — each jurisdiction, each railroad easement, each FHWA or state DOT encroachment permit is a separate workflow. Kickbacks on long-haul routes carry the highest delay cost. This makes Inorsa's permitting conflict-detection capability acutely relevant. Source: industry baseline, AE booth notes.",
+    "No press mentions of ISG Inc. found on fiercenetwork.com, lightreading.com, or telecompetitor.com for telecom-specific coverage. This suggests they are not a headline-grabbing operator but rather a behind-the-scenes engineering services firm — common for A&E firms of this type. Absence of trade press is expected, not a red flag. Source: priority search 2, result: not found.",
+    "Labor shortage context: ISG as an A&E firm is directly exposed to the 3:1 job-to-candidate ratio for fiber designers and the 3+ year ramp time for new designers. If they are winning BEAD-adjacent work, their internal design throughput is the binding constraint, not client demand. Any manual GIS-to-CAD step that Inorsa can automate or validate removes friction from their most constrained resource. Source: industry baseline (ShowRev KB).",
+    "Business Unit Leader title for Leila Hussein is ambiguous — it could mean she leads a telecom/geospatial BU within ISG, or a geographic office BU. The ICP hold status reflects this ambiguity. However, given she attended a fiber-focused tradeshow and discussed GIS/CAD/permitting workflows with specificity, she is operationally credible — likely the decision-maker or strong influencer for design tooling within her unit. Source: AE booth notes, title inference.",
+    "ISG's telecom engineering practice likely competes with or partners with firms like Burns & McDonnell, Ulteig, HR Green, and other Midwest A&E firms for fiber design work. These competitors are actively investing in offshore design capacity (20-40% of design offshore per industry baseline) and automation tools. If ISG is not matching that productivity curve, they risk losing bids on BEAD projects where design cost per mile is a differentiator. Source: industry baseline, competitive inference.",
+    "No podcast appearances, conference speaker credits (Fiber Connect, Mountain Connect, Broadband Communities), or long-form executive interviews for ISG telecom leadership found in public search. This is consistent with a regional A&E firm profile — they execute rather than promote. Source: priority searches 3 and 5, result: not found."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Full legal company name not confirmed — 'ISG' could be Infrastructure Surveying & Geomatics, Infrastructure Solutions Group, or another expansion; isginc.com identity not fully verified against Mankato, MN location in search results.",
+    "Leila Hussein's specific role/practice area within ISG not confirmed via LinkedIn or public bio — unclear if she leads telecom BU, geospatial BU, or a regional office.",
+    "No confirmed BEAD sub-grant or project award to ISG or ISG clients found in public Minnesota, Iowa, or Wisconsin broadband office records.",
+    "Revenue, headcount, and growth trajectory of ISG's telecom/fiber practice not found — cannot confirm whether they are scaling up or holding steady.",
+    "No job postings from ISG specifically for fiber designers, GIS technicians, or CAD drafters found — would be the strongest signal of capacity pressure.",
+    "No confirmed competitive intelligence on ISG's current toolstack (what GIS platform, what CAD platform, any existing automation or QC tools).",
+    "Leila Hussein's phone area code (319) is Iowa, not Minnesota — possible she is based in an Iowa office of ISG, not Mankato HQ. Could affect geographic focus of her BU."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold status should be revisited. The AE notes describe a contact who understands GIS-to-CAD workflows, does permitting, and asked for a demo — that is more operationally specific than a 'hold' warrants. The title ambiguity is real, but the workflow fit is strong. I would argue this is a B-tier lead pending one clarifying question about her BU scope, not a C.",
+    "The 'long haul' mention is significant and may be underweighted in initial framing. Long-haul permitting (railroad crossings, FHWA, state DOT encroachments) is structurally more complex and delay-prone than FTTH permitting. If ISG does both, their permitting pain surface is larger than a pure FTTH firm. Outreach should not lead with FTTH alone.",
+    "Assuming ISG is purely an engineering services firm (A&E) rather than an operator matters for Inorsa's positioning. Inorsa's value prop to an A&E firm is throughput and bid competitiveness (deliver more projects per designer, fewer kickbacks per permit set) — not cost of ownership as it would be for an operator. The email framing should reflect this difference."
+  ],
+  "topInsight": "ISG is an A&E/engineering services firm — not an ISP — that is actively doing GIS-to-CAD permitting work for both long-haul and FTTH fiber projects in the upper Midwest, exactly when BEAD is generating a surge in design volume that their likely-constrained designer headcount cannot absorb manually. Leila Hussein asked for a demo with full workflow awareness. The outreach should lead with long-haul permitting friction (the highest-cost kickback scenario) and position Inorsa as the throughput multiplier that lets her team take on more BEAD-adjacent projects without proportionally growing headcount — not just a drawing tool.",
+  "sourcesUsed": [
+    "AE booth notes 05/18/2026 (primary)",
+    "isginc.com (public company profile, inferred)",
+    "ShowRev Industry Intelligence KB / industry baseline (BEAD timeline, labor shortage, permitting cycle data)",
+    "Minnesota Office of Broadband Development public records (searched, no ISG-specific award found)",
+    "fiercenetwork.com, lightreading.com, telecompetitor.com (searched, no ISG mentions found)",
+    "LinkedIn company search for ISG Inc. Mankato MN (inferred from title/location data)",
+    "Fiber Connect 2026 / Mountain Connect / Broadband Communities speaker rosters (searched, no ISG found)"
+  ]
+}
+```

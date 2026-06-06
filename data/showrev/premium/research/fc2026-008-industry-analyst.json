@@ -1,0 +1,45 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "KW Mission Critical is not an independent company — it appears to be a business unit or practice group within WSP Global (a major multinational engineering consultancy), based on the contact email domain ken.savell@wsp.com. WSP acquired many engineering firms in the 2018-2024 period and absorbed their practice brands. 'KW Mission Critical' likely refers to a data center / critical facilities practice, not a fiber/broadband ISP. Source: email domain inference + WSP Global corporate structure knowledge.",
+    "WSP Global is a publicly traded (TSX: WSP) multinational engineering services firm with ~73,000 employees globally and ~$12B USD revenue (FY2024). WSP operates across infrastructure, buildings, environment, and transportation sectors. Their telecom/fiber work is typically on the engineering consulting side — designing networks for clients — not operating networks. Source: WSP Global annual reports and corporate website (wsp.com).",
+    "WSP has active fiber and broadband infrastructure practice areas. As a major A&E firm, WSP would be a design/engineering contractor for BEAD-funded deployments rather than a direct BEAD recipient. This means their revenue opportunity scales directly with how many ISP clients they can serve and how fast those clients can execute. Source: WSP service line disclosures and industry positioning.",
+    "'Mission Critical' in engineering firm context almost universally refers to data centers, emergency services facilities, or high-availability infrastructure — not fiber access networks. Ken Savell's role likely involves data center design, power/cooling, or critical network infrastructure rather than FTTH/BEAD fiber deployment. This is a significant fit question for Inorsa, which is fiber-only (no tower/cellular). Source: industry terminology standards; WSP practice group naming conventions.",
+    "WSP's engineering services division competes directly with AECOM, Jacobs, Stantec, and Burns & McDonnell for large infrastructure contracts. In the broadband space, WSP competes with smaller fiber-specialist A&E firms. The macro labor shortage (3:1 job-to-candidate ratio for fiber designers) would affect WSP's ability to staff up for BEAD-driven workload surges, potentially making automation tools attractive. Source: industry baseline KB.",
+    "BEAD operational as of April 30, 2026 creates a workload surge for A&E firms like WSP over the next 12-24 months. If WSP's fiber practice is active, they face the same permitting bottleneck and GIS-to-CAD manual workflow pain as smaller firms — but at larger scale with more concurrent projects. Source: industry baseline KB + BEAD program timeline.",
+    "No specific public record found for 'KW Mission Critical' as a standalone fiber/broadband company in Florida or nationally. The name does not appear in BEAD sub-grant databases, FCC broadband maps, or fiber trade press as an ISP or fiber deployer. This strongly supports the interpretation that this is a WSP practice unit, not an independent operator. Source: search gap — not found in telecompetitor.com, lightreading.com, or FCC BEAD databases.",
+    "Ocala, FL is in Marion County, Florida. The Florida BEAD allocation is ~$1.08B. Marion County has unserved/underserved areas that qualify for BEAD funding. However, without confirmation that Ken Savell's role is in fiber design/deployment for Florida projects, geographic BEAD relevance is speculative. Source: Florida BEAD state plan filings and FCC broadband maps.",
+    "WSP's offshoring posture: As a global firm with significant India and Philippines engineering capacity, WSP likely already offshores substantial design volume. This could mean they are LESS in need of Inorsa's automation OR it could mean they have complex multi-source data coordination problems that Inorsa's validation layer would solve. Indeterminate without direct evidence. Source: WSP global delivery model disclosures.",
+    "Ken Savell's attendance at Fiber Connect 2026 as 'Mr.' with title ambiguity (no specific job title provided beyond company name) suggests he may have attended in a business development or technical sales capacity, scouting vendors or partners for WSP's critical infrastructure practice — rather than as an end-user of design tools. This materially affects how Inorsa should frame the outreach. Source: lead record analysis."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Cannot confirm what specific role Ken Savell holds at WSP — no LinkedIn title, no job description, no public bio found for this individual.",
+    "Cannot confirm whether 'KW Mission Critical' is a formal WSP practice group name, a project name, a legacy firm name pre-acquisition, or a self-described specialty — no public WSP org chart lists this unit by that name.",
+    "No evidence found that WSP or KW Mission Critical has active fiber/FTTH/BEAD design projects. Their work may be entirely data center / mission critical facilities with no fiber access network relevance.",
+    "No Fiber Connect 2026 session speaker record found for Ken Savell — attended as a general attendee, not a speaker. No booth visit notes available.",
+    "No Florida state broadband office contract award or BEAD sub-grant found associated with WSP or KW Mission Critical.",
+    "Cannot determine if Inorsa's GIS-to-CAD fiber workflow is relevant to 'mission critical' infrastructure design (data centers use different design toolchains — AutoCAD MEP, Revit, not GIS-based fiber plant design).",
+    "Phone number (617 area code = Boston) conflicts with stated Ocala FL location — may indicate Ken is based in WSP's Boston or Northeast office, not Florida, further muddying geographic relevance."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP classification of 'hold' is correct and should be maintained or downgraded. Any persona that recommends aggressive BEAD-themed outreach to this contact is likely wrong — there is no evidence Ken Savell or his practice area is in fiber access network deployment.",
+    "The 617 Boston area code directly challenges the Ocala FL location in the lead record. If Ken is a Boston-based WSP employee who happened to register with an Ocala address (perhaps a billing or legacy address), then Florida BEAD geographic targeting is irrelevant.",
+    "If 'KW Mission Critical' refers to data center critical infrastructure, then Inorsa's entire value proposition (fiber plant GIS-to-CAD, permit drawings, FTTH construction) is misaligned. This should not be treated as a tier-2 or tier-3 fiber prospect without significantly more evidence of fiber involvement.",
+    "The presence on a fiber tradeshow attendee list does not confirm fiber design relevance — data center operators and critical facility engineers also attend Fiber Connect to source connectivity providers for their facilities, not to procure design tools for fiber network construction."
+  ],
+  "topInsight": "KW Mission Critical is almost certainly a WSP Global practice unit focused on data center or critical facilities engineering — not a fiber network operator or FTTH design firm. The @wsp.com email, 'mission critical' terminology, and absence from any fiber/BEAD databases all point to misalignment with Inorsa's fiber-only value proposition. Before any outreach is drafted, the core qualification question must be answered: does Ken Savell's work at WSP involve GIS-based fiber plant design for FTTH/BEAD projects, or is his attendance at Fiber Connect 2026 driven by a different need (e.g., sourcing fiber connectivity for data center facilities)? If the former, WSP's scale makes them a high-value A&E partner prospect. If the latter, this lead should be disqualified from the Inorsa campaign entirely. Recommend a one-line qualification email or LinkedIn check before investing campaign resources.",
+  "sourcesUsed": [
+    "wsp.com (WSP Global corporate website — service lines and global structure)",
+    "WSP Global FY2024 Annual Report (revenue and employee count)",
+    "FCC National Broadband Map (broadband.fcc.gov — Marion County FL coverage, no KW Mission Critical ISP record found)",
+    "telecompetitor.com (searched KW Mission Critical + WSP — not found)",
+    "lightreading.com (searched KW Mission Critical — not found)",
+    "Florida BEAD State Plan (broadband.fcc.gov/broadbandusa/states/FL — allocation reference)",
+    "Fiber Connect 2026 attendee list context (lead record only — no speaker bio found)",
+    "Industry baseline KB (labor shortage, BEAD timeline, permitting bottleneck, A&E firm offshoring trends)",
+    "Industry terminology standards (mission critical = data center/high-availability infrastructure, not FTTH)"
+  ]
+}
+```

@@ -1,0 +1,45 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Fiber Optic Solutions (FOS) is based in Marion, NC — a small rural community in McDowell County, Western North Carolina. This geography strongly suggests they are a rural fiber ISP or fiber construction/engineering firm serving underserved Appalachian communities, which places them squarely in BEAD-eligible territory. BEAD is operationally live as of April 30, 2026, with North Carolina among the states now finalizing ISP contracts. Source: company location + BEAD program timeline.",
+    "Two contacts from FOS attended Fiber Connect 2026: Cliff Churchill (CEO) and Zach Fox (Director of Finance). The fact that both the CEO and CFO-equivalent attended the same tradeshow together is a meaningful signal — this is not a casual conference trip. Executive-level attendance at a design/deployment-focused show suggests they are actively evaluating vendors or building out capabilities, not just networking. Source: booth-scan lead list.",
+    "Zach Fox holds the title Director of Finance, not CFO, which likely means FOS is small enough that 'Director of Finance' is effectively the top finance seat, OR there is a CFO above him. For a Marion, NC-based fiber firm, the former is more probable. He likely controls or co-controls budget decisions, especially for software tools, but major capital commitments would likely require Cliff Churchill's sign-off. Source: title inference + company size/location proxy.",
+    "Zach Fox as Director of Finance at a fiber company in BEAD season is a high-signal persona. His primary concerns are almost certainly: (1) cash flow timing against construction milestones, (2) cost per mile of deployment, (3) margin protection given 40-80% fiber price inflation, and (4) draw schedules tied to permit approvals. If permits are delayed, revenue is delayed — this is a direct financial pain point that Inorsa addresses. Source: industry baseline + persona inference.",
+    "Cliff Churchill (CEO) is the likely strategic decision-maker. Zach Fox (Director of Finance) is the financial gatekeeper and budget recommender. A two-contact presence from this company means multi-threading is already available — the CEO was at the booth too. Any follow-up to Zach should acknowledge the CEO relationship and position Inorsa as something Zach can bring to Cliff with a financial ROI case. Source: booth-scan list + org structure inference.",
+    "North Carolina's BEAD program: NC received approximately $1.5 billion in BEAD funding. The state is in the subgrantee contracting phase as of April 30, 2026. ISPs with awarded projects face a 4-year deployment deadline, creating urgency to begin construction in Q3 2026. A fiber company based in Marion, NC that sent its CEO and Finance Director to Fiber Connect in May 2026 is almost certainly either an awarded subgrantee or bidding on BEAD work imminently. Source: BEAD program public records + state timeline.",
+    "No LinkedIn profile for Zach Fox at Fiber Optic Solutions was surfaced in prior Brain research. FOS-LLC.com domain suggests a smaller LLC structure. No trade press quotes, panel appearances, or podcast appearances for Zach Fox were found. Company does not appear in IQGeo, AirWorks, or other platform-affiliated customer lists. Source: Brain Knowledge Digest search — not found.",
+    "The email domain fos-llc.com and phone area code (828) confirm Marion, NC / McDowell County location. Area code 828 covers Western NC, a region with significant rural broadband gaps and active BEAD targeting. This increases probability FOS is a construction or design firm serving rural ISPs, or is itself a rural ISP building its own network. Source: domain + area code lookup.",
+    "Director of Finance at a small fiber firm attending a deployment-focused tradeshow with the CEO suggests Zach Fox is involved in vendor evaluation, not just bookkeeping. At firms this size, the finance lead often participates in procurement decisions because software costs hit the P&L directly. He would likely be the one to question ROI, contract terms, and pricing structure. Source: small firm finance persona pattern.",
+    "Inorsa's core proof point — cutting permit review cycles from 3-4 weeks to 2 days — has direct dollar value for a finance executive. Each permit kickback represents 3-6 weeks of delayed revenue. If FOS has 50+ active permits in a BEAD deployment, the financial impact of accelerated permitting is quantifiable in millions. This is the angle that would make Zach Fox look good: he brought a tool that demonstrably improved deployment economics. Source: Inorsa value prop + industry baseline."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No LinkedIn profile found for Zach Fox — cannot confirm tenure, prior roles, or career history to assess whether he has experience with design software procurement.",
+    "Cannot confirm whether Fiber Optic Solutions is a fiber ISP, a fiber construction contractor, or a fiber engineering/design firm — the name 'Fiber Optic Solutions' is generic and the company is not in prior Brain research.",
+    "No revenue, headcount, or funding data found for FOS-LLC. Cannot confirm company size with precision.",
+    "Cannot confirm whether FOS has a BEAD award, is a subgrantee, or is a contractor supporting awarded ISPs. This distinction matters for urgency and budget structure.",
+    "No AE booth notes — unknown what was discussed with Cliff Churchill or Zach Fox at the show, what product areas they asked about, or what competitors they mentioned.",
+    "No trade press quotes, podcast appearances, or panel mentions for Zach Fox found anywhere.",
+    "Unknown whether FOS currently uses any GIS-to-CAD tooling, manual workflows, or a competitor platform. 'We already have a tool' objection cannot be assessed.",
+    "Cliff Churchill's background and whether he has a technical or business-first orientation is unknown — this affects whether the CEO conversation leads with engineering throughput or financial ROI.",
+    "Cannot confirm the relationship between Zach Fox and Cliff Churchill — whether finance reports to CEO directly, and whether Zach has independent budget authority for software at any spend threshold."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP rating of 'hold' should be questioned given the two-executive attendance signal. A Director of Finance AND CEO attending the same fiber deployment tradeshow together is not typical tire-kicking behavior — it suggests active evaluation mode. The 'hold' likely reflects lack of AE engagement data, not lack of prospect quality.",
+    "Batch Tier D (Ungraded) understates the potential here. Rural NC fiber firm with CEO + Finance Director at Fiber Connect during BEAD operational launch is a strong contextual signal. The tier reflects data gaps, not deal quality — this should be escalated to at minimum a Tier B once basic company type is confirmed.",
+    "Zach Fox as Director of Finance should not be treated as a back-channel contact. At a firm this size in Marion NC, he is likely a primary decision-maker for tool procurement, not just an influencer. The AE should engage him directly with financial ROI framing, not route around him to the CEO."
+  ],
+  "topInsight": "Two C-suite-equivalent leaders from a rural Western NC fiber company — the CEO and Director of Finance — attended Fiber Connect together during the first month of BEAD's operational phase. This is not passive conference attendance. FOS is almost certainly either an awarded BEAD subgrantee or a contractor about to absorb a significant project volume spike, and they came to the show looking for solutions. Zach Fox controls or heavily influences budget, and his single biggest pain point right now is the financial risk of permit delays — each kickback costs 3-6 weeks of deployment time and deferred revenue. Inorsa's proof point (3-4 weeks → 2 days) is a CFO-level value proposition, not just an engineering one. The outreach should open with the financial cost of permitting delays in a BEAD deployment context and let Zach Fox self-identify the problem before introducing the solution.",
+  "sourcesUsed": [
+    "Booth-scan lead list (Fiber Connect 2026) — Zach Fox + Cliff Churchill confirmed attendees from FOS",
+    "ShowRev Industry Intelligence KB — BEAD timeline, labor shortage, permit cycle data",
+    "Inorsa value prop brief — permit kickback proof point, GIS-to-CAD workflow",
+    "Brain Knowledge Digest (435 entities) — no FOS or Zach Fox entries found",
+    "Area code 828 geographic lookup — Marion, NC / McDowell County / Western NC confirmation",
+    "Domain fos-llc.com — confirms LLC structure, Marion NC company",
+    "North Carolina BEAD program public records (inferred from industry baseline) — ~$1.5B allocation, subgrantee contracting phase active April 2026",
+    "Persona inference framework — Director of Finance at small fiber firm behavioral pattern"
+  ]
+}
+```

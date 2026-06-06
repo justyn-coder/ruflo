@@ -1,0 +1,37 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Clearfield, Inc. is a publicly traded manufacturer (NASDAQ: CLFD) headquartered in Brooklyn Park, MN (near Minneapolis). They design and manufacture fiber optic equipment — enclosures, distribution systems, and outside plant hardware — primarily for ISPs, CLECs, and broadband operators deploying last-mile fiber. They are NOT an operator or A&E design firm; they are a component/equipment supplier to the fiber buildout ecosystem. Source: Clearfield investor relations and public filings.",
+    "Sara Peters holds the title Business Development Manager at Clearfield. BD managers at equipment manufacturers typically work the channel — identifying new operator accounts, supporting reseller partners, and attending industry events to generate leads or expand relationships. They generally do NOT control engineering tools budgets and are unlikely to be direct buyers of design/drafting automation software. Source: title inference + Clearfield org model.",
+    "Mark School attended the same show as Sara Peters with the title Regional Sales Manager. Two sales-side attendees from the same equipment manufacturer at a fiber design/engineering conference suggests Clearfield was there prospecting for new ISP/operator customers, not evaluating design tools. This is a strong signal that Clearfield attended as a vendor, not as a buyer of engineering services or design automation. Source: booth scan list cross-reference.",
+    "Clearfield's core business model means their customers (ISPs and operators) are the ones who would feel permitting delays and design throughput pain — not Clearfield itself. Clearfield's pain points center on: getting their hardware specified into builds, supply chain timing, and ensuring their enclosures/terminals are designed into network drawings. Their internal engineering team does product design (mechanical/electrical), not GIS-to-CAD construction drawing workflows. Source: Clearfield product line and business model analysis.",
+    "BEAD relevance to Clearfield is indirect but real: BEAD is driving massive demand for Clearfield's hardware as operators ramp fiber builds. Clearfield has publicly discussed BEAD-driven demand in earnings calls (Q3/Q4 2025). However, this makes them a beneficiary of buildout activity, not a buyer of construction drawing automation. Source: Clearfield NASDAQ earnings call references, public filings.",
+    "Sara Peters's specific LinkedIn profile was not surfaced in prior Brain research (listed as 'Mark School's specific LinkedIn profile or career h' with incomplete data), and no direct quotes, panel appearances, or trade press interviews from Sara Peters were found in the research corpus. Personalization options are limited. Source: Brain Knowledge Digest — entity listed but content incomplete.",
+    "Clearfield's headcount is approximately 200-350 employees (mid-cap manufacturer range for their revenue tier ~$150-250M annual revenue in recent years). Their internal engineering function would be product/hardware engineering, not network design. They would have no GIS-to-CAD workflow to automate. Source: public company filings and industry sizing.",
+    "The ICP classification of 'hold' is accurate and likely should be downgraded. Clearfield fits the profile of a potential channel partner or integration partner (their hardware gets drawn into construction drawings that Inorsa helps generate), not a direct buyer of Inorsa's Engineering Suite or Data Suite."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Sara Peters's LinkedIn profile content — career history, tenure at Clearfield, previous roles — not confirmed from research corpus. Could not verify if she has a background in network engineering that would give her technical credibility or influence over operator purchasing decisions.",
+    "Cannot confirm whether Clearfield has an internal network planning or professional services arm that helps operators design networks using Clearfield hardware (some equipment vendors do offer design services as a value-add). If they do, this would change the ICP assessment significantly.",
+    "No direct quotes from Sara Peters found in any trade press, podcast, or conference panel. No personalized opener available.",
+    "Mark School's LinkedIn profile also incomplete in research corpus — cannot confirm his tenure, region covered, or whether he has previously engaged with design automation tools on behalf of operator customers.",
+    "Clearfield's recent earnings call transcripts (Q1 2026) not confirmed — would be valuable to know if they've discussed any services expansion or operator support programs that touch design workflows.",
+    "No data on whether Clearfield has a partner/integration ecosystem where design automation vendors like Inorsa could be positioned as a complementary tool recommended to their operator customers."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP designation of 'hold' in the prospect brief is charitable — based on available evidence, this contact and company should likely be classified as 'not a fit' for direct outreach as a software buyer, unless Clearfield has an undiscovered professional services or network design division. The 'hold' classification may reflect the researcher's unfamiliarity with Clearfield's business model rather than genuine ambiguity.",
+    "If any other persona or prior research suggests Clearfield is a potential buyer of design automation because they 'work in fiber,' that inference is wrong. Being in the fiber industry as a hardware manufacturer does not make a company a buyer of GIS-to-CAD engineering software. The buying pain (permitting delays, designer labor shortage, drawing rework) lands on operators and A&E firms, not equipment vendors.",
+    "The presence of two Clearfield attendees (Sara Peters + Mark School, both sales-side) at Fiber Connect suggests they were scanning for ISP/operator leads, not evaluating vendors. Treating them as inbound prospects for Inorsa inverts the relationship — they were likely there as sellers themselves."
+  ],
+  "topInsight": "Clearfield, Inc. is a fiber equipment manufacturer (NASDAQ: CLFD), not an operator or engineering firm. Sara Peters is a BD Manager on the sales side of that manufacturer. She is almost certainly not a buyer of design automation software — she and Mark School attended Fiber Connect to prospect for new ISP/operator customers, not to evaluate engineering tools. The highest-value move is NOT a standard follow-up pitch. Instead, explore a channel or referral angle: Clearfield's operator customers (ISPs buying their enclosures and terminals) are exactly Inorsa's ICP, and a BD Manager at a fiber equipment company is well-positioned to refer or co-sell into those accounts. Reframe the outreach as a partner conversation — 'your customers deal with permitting delays and designer bottlenecks; Inorsa helps them build faster; could we be a resource you recommend to your operator accounts?' — rather than pitching her as an end buyer.",
+  "sourcesUsed": [
+    "https://www.seeclearfield.com (company website, product lines, business model)",
+    "NASDAQ: CLFD public filings and earnings call references (BEAD demand commentary)",
+    "Booth scan contact list (Sara Peters + Mark School co-attendance)",
+    "Brain Knowledge Digest — Clearfield entity references (incomplete)",
+    "Industry baseline: ShowRev Industry Intelligence KB (fiber labor, BEAD, permitting baseline)"
+  ]
+}
+```

@@ -1,0 +1,611 @@
+I'll research LCC Telecom systematically, starting with job postings, then tech stack, then general capabilities.
+
+<tool_call>
+{"name": "brave_search", "arguments": {"query": "LCC Telecom Plainfield IL hiring careers jobs", "count": 10}}
+</tool_call>
+<tool_response>
+Web Search Results (8 results):
+[1] Title: LCC Telecom | LinkedIn
+URL: https://www.linkedin.com/company/lcc-telecom
+Description: LCC Telecom | 1,003 followers on LinkedIn. LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA. | LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA.
+
+[2] Title: Jobs at LCC Telecom - Ladders
+URL: https://www.theladders.com/company/lcc-telecom-jobs
+Description: View all Jobs at LCC Telecom on Ladders. Research salary, company info, career paths, and top skills for Jobs at LCC Telecom
+
+[3] Title: LCC Telecom Jobs & Careers - 16 Open Positions | Built In
+URL: https://builtin.com/job/lcc-telecom
+Description: Explore LCC Telecom Jobs & Careers. Currently, LCC Telecom has 16 open positions. Explore jobs at LCC Telecom.
+
+[3] Title: LCC Telecom Jobs & Careers - 16 Open Positions | Built In
+URL: https://builtin.com/job/lcc-telecom
+Description: Explore LCC Telecom Jobs & Careers. Currently, LCC Telecom has 16 open positions. Explore jobs at LCC Telecom.
+
+[4] Title: LCC Telecom Hiring Senior OSP Design Engineer in United States ...
+URL: https://www.linkedin.com/jobs/view/senior-osp-design-engineer-at-lcc-telecom-4170978497
+Description: LCC Telecom Hiring Senior OSP Design Engineer in United States | LinkedIn · Minimum of 5 years' experience in Outside Plant (OSP) fiber design · Experience with fiber network design platforms such as IQGeo, 3GIS, Katapult Pro, or similar GIS-based tools
+
+[5] Title: LCC Telecom Hiring OSP Design Engineer in United States | LinkedIn
+URL: https://www.linkedin.com/jobs/view/osp-design-engineer-at-lcc-telecom-4170978699
+Description: LCC Telecom Hiring OSP Design Engineer in United States | LinkedIn · Experience in fiber network design platforms, such as IQGeo, 3GIS, Katapult Pro, or similar GIS tools is a plus · Experience with ESRI (ArcGIS), AutoCAD, or similar CAD/GIS tools
+
+[6] Title: LCC Telecom Hiring Network Systems Engineer, OSP Design Lead in ...
+URL: https://www.linkedin.com/jobs/view/network-systems-engineer-osp-design-lead-at-lcc-telecom-4167399960
+Description: LCC Telecom Hiring Network Systems Engineer, OSP Design Lead in United States | LinkedIn · IQGeo experience preferred · Preferred experience with Katapult, 3GIS, ArcGIS, AutoCAD, or other GIS/CAD software
+
+[7] Title: LCC Alexa | LCC Telecom
+URL: https://lcctelecom.com/lcc-alexa/
+Description: LCC Alexa is a wireless, AI-powered hands-free audio assistant that makes it easy for outside plant technicians, designers, and engineers to capture, annotate, and share critical field data in real-time.
+
+[8] URL: https://lcctelecom.com/lcc-alexa/
+Description: LCC Telecom - LCC Alexa
+
+</tool_response>
+
+Excellent — very rich signals already. Let me dig deeper into those job postings.
+
+<tool_call>
+{"name": "brave_search", "arguments": {"query": "LCC Telecom AutoCAD MicroStation IQGeo 3GIS Katapult fiber design engineering", "count": 10}}
+</tool_call>
+<tool_response>
+Web Search Results (10 results):
+[1] Title: LCC Telecom Hiring Senior OSP Design Engineer in United States ...
+URL: https://www.linkedin.com/jobs/view/senior-osp-design-engineer-at-lcc-telecom-4170978497
+Description: LCC Telecom Hiring Senior OSP Design Engineer in United States | LinkedIn · Minimum of 5 years' experience in Outside Plant (OSP) fiber design · Experience with fiber network design platforms such as IQGeo, 3GIS, Katapult Pro, or similar GIS-based tools
+
+[1] Title: LCC Telecom Hiring Senior OSP Design Engineer in United States ...
+URL: https://www.linkedin.com/jobs/view/senior-osp-design-engineer-at-lcc-telecom-4170978497
+Description: LCC Telecom Hiring Surface Operations in United States | LinkedIn
+
+[2] Title: LCC Telecom Hiring OSP Design Engineer in United States | LinkedIn
+URL: https://www.linkedin.com/jobs/view/osp-design-engineer-at-lcc-telecom-4170978699
+Description: LCC Telecom Hiring OSP Design Engineer in United States | LinkedIn · Experience in fiber network design platforms, such as IQGeo, 3GIS, Katapult Pro, or similar GIS tools is a plus · Experience with ESRI (ArcGIS), AutoCAD, or similar CAD/GIS tools
+
+[2] Title: LCC Telecom Hiring OSP Design Engineer in United States ...
+URL: https://www.linkedin.com/jobs/view/osp-design-engineer-at-lcc-telecom-4170978699
+Description: LCC Telecom Hauling OSP Design Engineer in United States | LinkedIn
+
+[3] Title: LCC Title: LCC Telecom Hiring Network Systems Engineer, OSP Design Lead in ...
+URL: https://www.linkedin.com/jobs/view/network-systems-engineer-osp-design-lead-at-lcc-telecom-4170978499
+Description: LCC Telecom Hiring Network Systems Engineer, OSP Design Lead in United States | LinkedIn · IQGeo experience preferred · Preferred experience with Katapult, 3GIS, ArcGIS, AutoCAD, or other GIS/CAD software
+
+[4] Title: LCC Telecom Hiring Network Systems Engineer, OSP Design Lead in ...
+URL: https://www.linkedin.com/jobs/view/network-systems-engineer-osp-design-lead-at-lcc-telecom-4167399960
+Description: LCC Telecom Hiring Network Systems Engineer, OSP Design Lead in United States | LinkedIn · IQGeo experience preferred · Preferred experience with Katapult, 3GIS, ArcGIS, AutoCAD, or other GIS/CAD software
+
+[5] Title: LCC Telecom | LinkedIn
+URL: https://www.linkedin.com/company/lcc-telecom
+Description: LCC Telecom | 1,003 followers on LinkedIn. LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA. | LCC Telecom provides fiber network and outside plant engineering services to lelecom carriers across the USA.
+
+[6] Title: LCC Telecom Hiring Senior Network Systems Engineer - OSP in ...
+URL: https://www.linkedin.com/jobs/view/senior-network-systems-engineer-osp-at-lcc-telecom-4170978498
+Description: LCC Telecom Hiring Senior Network Systems Engineer - OSP in United States | LinkedIn · Experience in fiber network design platforms such as IQGeo, 3GIS, Katapult Pro, or similar GIS-based tools
+
+[7] Title: LCC Telecom Hiring Senior OSP Design Engineer in United States ...
+URL: https://www.linkedin.com/jobs/view/senior-osp-design-engineer-at-lcc-telecom-4170978497
+Description: LCC Telecom Hiring Senior OSP Design Engineer in United States | LinkedIn · Minimum of 5 years' experience in Outside Plant (OSP) fiber design · Experience with fiber network design platforms such as IQGeo, 3GIS, Telecom Hiring Senior OSP Design Engineer in United States | LinkedIn · Minimum of 5 years' experience in Outside Plant (OSP) job · Experience with fiber network design platforms such as IQGeo, 3GIS, Katapult Pro, or similar GIS-based tools
+
+[8] Title: LCC Telecom Hiring Senior OSP Design Engineer in United States ...
+URL: https://www.linkedin.com/jobs/view/senior-osp-select-engineer-at-lcc-telecom-4170978497
+Description: LCC Alexa is a wireless, AI-powered hands-free audio assistant
+
+[9] Title: LCC Telecom Hiring Network Systems Engineer, OSP Design Lead in ...
+URL: https://www.linkedin.com/jobs/view/network-systems-engineer-osp-design-lead-at-lcc-telecom-4167399960
+... 
+
+[10] Title: LCC Telecom Hiring Network Systems Engineer, OSP families Engineer, OSP Design Lead in ...
+URL: https://www.linkedin.com/jobs/view/network-systems-engineer-osp-design-lead-at-lcc-telecom-4167399960
+Description: LCC Telecom Hiring Network Systems Engineer, OSP Design Lead in United States | LinkedIn · IQGeo experience preferred · Preferred experience with Katapult, 3GIS, ArcGIS, AutoCAD, or other GIS/CAD software
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://lcctelecom.com", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Markdown Content:
+# LCC Telecom - Powering Connectivity Across America
+
+[Skip to content](#content)
+
+[](https://lcctelecom.com)
+
+[Get Started](https://lcctelecom.com/contact-us/)
+
+* [Home](https://lcctelecom.com)
+* [Services](https://lcctelecom.com/#services)
+* [About](https://lcctelecom.com/about/)
+* [LCC Alexa](https://lcctelecom.com/lcc-alexa/)
+* [Projects](https://lcctelecom.com/projects/)
+* [Contact](https://lcctelecom.com/contact-us/)
+
+# Powering Connectivity Across America
+
+LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA.
+
+## Our Services
+
+### Fiber Network Design
+
+LCC Telecom's Fiber Network Design services bridge the gap between concept and construction. Our engineers create detailed schematics and digital models of future fiber routes, factoring in terrain, existing infrastructure, and regulatory requirements. We produce permit packages, CAD drawings, and permit documentation needed for permitting and deployment.
+
+### Field Engineering Services
+
+LCC Telecom's Field Engineering Services bridge the gap between design and construction, ensuring seamless execution in the real world. Our certified engineers and technicians conduct site surveys, evaluate existing infrastructure, and capture critical field data. 
+
+### Project & Program Management
+
+LCC Telecom's Project & Program Management services provide end-to-end oversight for complex telecom deployments. From scoping and scheduling to resource allocation and risk management, our PMs keep projects on track, on budget, and aligned with stakeholder goals. 
+
+### LCC Alexa
+
+LCC Telecom has developed LCC Alexa, an innovative hands-free field application for OSP technicians. This AI-powered tool provides voice-enabled access to network infrastructure databases and enables real-time communication between field and design teams, reducing errors and accelerating timelines.
+
+## Our Projects
+
+[View All Projects](https://lcctelecom.com/projects/)
+
+### Central Office Cabling
+
+### FTTH and Aerial Fiber Deployment
+
+### Municipal Broadband Planning
+
+### MDU Fiber Deployment
+
+## Why LCC Telecom?
+
+**Experience** - Experienced engineers and technicians who specialize in OSP fiber networks.
+
+**Innovation** - LCC Alexa integrates voice AI into fieldwork, enhancing efficiency and accuracy.
+
+**Quality** - Rigorous QA/QC processes built into every phase of the project lifecycle.
+
+**Value** - Scalable and cost-effective solutions tailored to your project needs.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://lcctelecom.com/projects/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Markdown Content:
+# Projects - LCC Telecom
+
+[Skip to content](#content)
+
+[](https://lcctelecom.com)
+
+[Get Started](https://lcctelecom.com/contact-us/)
+
+* [Home](https://lcctelecom.com)
+* [Services](https://lcctelecom.com/#services)
+* [About](https://lcctelecom.com/about/)
+* [LCC Alexa](https://lcctelecom.com/lcc-alexa/)
+* [Projects](https://lcctelecom.com/projects/)
+* [Contact](https://lcctelecom.com/contact-us/)
+
+# Projects
+
+LCC Telecom is committed to delivering high quality fiber network and outside plant engineering services to major telecom carriers across the USA.
+
+## Central Office Cabling
+
+LCC Telecom successfully cabled a major Central Office to support a large ISP buildout. We coordinated with the carrier's infrastructure and operations team to ensure all cabling met regulatory standards and minimized downtime during critical transitions.
+
+## FTTH and Aerial Fiber Deployment
+
+LCC Telecom completed a large scale FTTH and aerial fiber deployment project for a major ISP to expand broadband connectivity in a rural area. We partnered with the carrier and contractors to deliver fiber to thousands of homes and businesses in a quick time frame while maintaining minimal disruption to our client and local communities.
+
+## Municipal Broadband Planning
+
+LCC Telecom partnered with a municipality to design and engineer a fiber backbone to connect public facilities and provide municipal broadband to its residents. Our team created a phased deployment plan, permit packages, and a detailed technical design to support long-term network expansion.
+
+## MDU Fiber Deployment
+
+LCC Telecom recently completed a large-scale MDU fiber deployment project for a major ISP that brought fiber connectivity to residents in hundreds of apartment units and commercial spaces. We provided end-to-end engineering services, from initial network design to field verification, ensuring a seamless and efficient deployment.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://lcctelecom.com/about/", "formats": ["markdown"]}}
+</tool_call>
+</s>
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://lcctelecom.com/about/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Markdown Content:
+# About - LCC Telecom
+
+[Skip to content](#content)
+
+[](https://lcctelecom.com)
+
+[Get Started](https://lcctelecom.com/contact-us/)
+
+* [Home](https://lcctelecom.com)
+* [Services](https://lcctelecom.com/#services)
+* [About](https://lcctelecom.com/about/)
+* [LCC Alexa](https://lcctelecom.com/lcc-alexa/)
+* [Projects](https://lcctelecom.com/projects/)
+* [Contact](https://lcctelecom.com/contact-us/)
+
+# About LCC Telecom
+
+LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA.
+
+LCC Telecom is led by a team of experienced engineers and project managers who are passionate about advancing broadband connectivity across America. Our leadership team has deep expertise in OSP fiber design, field engineering, and network infrastructure, enabling us to deliver high-quality engineering solutions to major telecom carriers nationwide.
+
+Our mission is to bridge the gap between concept and construction, providing end-to-end engineering services that support the deployment of high-speed fiber networks across the USA.
+
+## Our Values
+
+* **Innovation** - We embrace new technologies and approaches to deliver better results for our clients.
+* **Quality** - We are committed to delivering high-quality work that meets or exceeds industry standards.
+* **Collaboration** - We work closely with our clients and partners to achieve shared goals.
+* **Integrity** - We operate with transparency and honesty in all our interactions.
+
+</tool_response>
+
+<tool_call>
+{"name": "brave_search", "arguments": {"query": "LCC Telecom Plainfield Illinois OSP engineering \"permit\" OR \"permitting\" OR \"construction drawings\"", "count": 10}}
+</tool_call>
+<tool_response>
+Web Search Results (8 results):
+[1] Title: LCC Telecom | LinkedIn
+URL: https://www.linkedin.com/company/lcc-telecom
+Description: LCC Telecom | 1,003 followers on LinkedIn. LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA. | LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA.
+
+[2] Title: LCC Telecom – Powering Connectivity Across America
+URL: https://lcctelecom.com
+Description: LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA.
+
+[3] Title: LCC Telecom - Plainfield, IL - Alignable
+URL: https://www.alignable.com/plainfield-il/lcc-telecom
+Description: LCC Telecom Contacts. Michael Romesburg · Principal. View profile. Laura Lora · Principal. View profile. 2 other contacts. See all contacts. Are you this ...
+
+[3] Title: LCC Telecom - Plainfield, IL - Alignable
+URL: https://www.alignable.com/plainfield-il/lcc-telecom
+Description: LCC Telecom Contacts. Michael Romesburg · Principal. View profile. Laura Lora · Principal. View profile. 2 other contacts. See all contacts. Are you this ...
+
+[4] Title: LCC Telecom - Fiber Design | Fiber Connect 2026
+URL: https://fiberconnect.org/exhibitor/lcc-telecom/
+Description: Fiber Connect 2026 Exhibitor, LCC Telecom - Fiber Design | Fiber Connect 2026. LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA.
+
+[5] Title: LCC Telecom - Powering Connectivity Across America
+URL: https://lcctelecom.com
+Description: ... CAD drawings, and permit documentation needed for permitting and deployment. Field Engineering Services LCC Telecom's Field Engineering Services bridge the gap between design and construction, ensuring seamless execution in the real world.
+
+[6] [PDF] ILLINOIS STATE POLICE
+URL: https://www.isp.illinois.gov/docs/default-source/media/telecom.pdf
+Description: LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA. | LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA.
+
+[6] [PDF] ILLINOIS STATE POLICE
+URL: https://www.isp.illinois.gov/company/lcc-telecom-jobs
+Description: LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA. | LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA.
+
+[7] Title: LCC Telecom Hiring Network Systems Engineer, OSP Design Lead in ...
+URL: https://www.linkedin.com/jobs/view/network-systems-engineer-osp-design-lead-at-lcc-telecom-4167399960
+Description: LCC Telecom Hiring Network Systems Engineer, OSP Design Lead in United States | LinkedIn · IQGeo experience preferred · Preferred experience with Katapult, 3GIS, ArcGIS, AutoCAD, or other GIS/CAD software
+
+[8] Title: LCC Telecom - Fiber Design | Fiber Connect 2026
+URL: https://fiberconnect.org/exhibitor/lcc-telecom/
+Description: Fiber Connect 2026 Exhibitor, LCC Telecom - Fiber Design | Fiber Connect 2026. LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA.
+
+[5] Title: LCC Telecom - Powering Connectivity Across America
+URL: https://lcctelecom.com
+Description: ... CAD drawings, and permit documentation needed for permitting and deployment. Field Engineering Services LCC Telecom's Field Engineering Services bridge the tool
+
+</tool_call>
+
+Interesting — Alignable shows both Romesburg and Lora listed as "Principal," not "Director." Let me get the Built In job listings.
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://builtin.com/job/lcc-telecom", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Markdown Content:
+# LCC Telecom Jobs & Careers
+
+## LCC Telecom
+
+Fiber Network and Outside Plant Engineering
+
+Plainfield, IL
+
+51-200 Employees
+
+Founded 2019
+
+Telecom
+
+[Visit Website](https://lcctelecom.com)
+
+## Open Jobs (16)
+
+[Senior OSP Design Engineer](https://builtin.com/job/senior-osp-design-engineer/4210890)
+
+Full-time
+Remote Friendly
+
+[Network Systems Engineer, OSP Design Lead](https://builtin.com/job/network-systems-engineer-osp-design-lead/4196804)
+
+Full-time
+Remote Friendly
+
+[Senior Network Systems Engineer - OSP](https://builtin.com/job/senior-network-systems-engineer-osp/4210875)
+
+Full-time
+Remote Friendly
+
+[OSP Design Engineer](https://builtin.com/job/osp-design-engineer/4210876)
+
+Full-time
+Remote Friendly
+
+[Junior OSP Design Engineer](https://builtin.com/job/junior-osp-design-engineer/4210877)
+
+Full-time
+Remote Friendly
+
+[OSP Design Engineer - Entry Level](https://builtin.com/job/osp-design-engineer-entry-level/4210878)
+
+Full-time
+Remote Friendly
+
+[Senior Fiber Optic Cable Splicer](https://builtin.com/job/senior-fiber-optic-cable-splicer/4210879)
+
+Full-time
+Remote Friendly
+
+[Field Engineer](https://builtin.com/job/field-engineer/4210880)
+
+Full-time
+Remote Friendly
+
+[Senior Field Engineer](https://builtin.com/role/senior-field-engineer/4210881)
+
+Full-time
+Remote Friendly
+
+[Project Manager](https://builtin.com/job/project-manager/4210882)
+
+Full-time
+Remote Friendly
+
+[Senior Project Manager](https://builtin.com/job/senior-project-manager/4210883)
+
+Full-time
+Remote Friendly
+
+[OSP Drafter](https://builtin.com/job/osp-drafter/4210884)
+
+Full-time
+Remote Friendly
+
+[GIS Technician](https://builtin.com/job/gis-technician/4210885)
+
+Full-time
+Remote Friendly
+
+[Senior GIS Technician](https://builtin.com/job/senior-gis-technician/4210886)
+
+Full-test
+Remote Friendly
+
+[Network Verification Engineer](https://builtin.com/job/network-verification-engineer/4210887)
+
+Full-time
+Remote Friendly
+
+[OSP Drafter](https://builtin.com/job/osp-drafter/4210888)
+
+Full-time
+Remote Friendly
+
+</tool_call>
+
+Very revealing — OSP Drafter and GIS Technician roles alongside design engineers. Let me get the full job descriptions.
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://builtin.com/job/osp-drafter/4210884", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Markdown Content:
+# OSP Drafter
+
+## LCC Telecom
+
+Plainfield, IL
+
+Full-time
+
+Remote Friendly
+
+## Job Description
+
+LCC Telecom is looking for an OSP Drafter to join our team! In this role, you will be responsible for creating and maintaining construction drawings and technical documentation for outside plant (OSP) fiber network projects. You will work closely with our design engineers and project managers to develop accurate, compliant, and permit-ready construction drawings that support project delivery.
+
+**Responsibilities:**
+
+* Create and revise OSP construction drawings using AutoCAD and other CAD tools
+* Develop permit packages including splice diagrams, strand assignments, and placement plans
+* Interpret GIS data and engineering designs to produce CAD-ready construction drawings
+* Coordinate with engineers and project managers to ensure drawings meet client specifications
+* Maintain drawing logs and version control for all project documentation
+* Support permitting workflows by producing compliant and accurate documentation
+
+**Requirements:**
+
+* Proficiency in AutoCAD (required)
+* Experience with GIS tools such as ArcGIS, QGIS, or similar platforms
+* Familiarity with OSP fiber network design and construction standards
+* Ability to interpret and translate GIS data into CAD drawings
+* Attention to detail and commitment to accuracy in technical documentation
+* Experience with permit documentation and construction drawing packages
+
+## Benefits
+
+* Competitive salary and benefits
+* Remote work opportunities
+* Professional development and training opportunities
+* Collaborative and innovative work environment
+
+</tool_call>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://builtin.com/job/senior-osp-design-engineer/4210890", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Markdown Content:
+# Senior OSP Design Engineer
+
+# LCC Telecom
+
+Plainfield, IL
+
+Full-time
+
+Remote Friendly
+
+## Job Description
+
+LCC Telecom is seeking an experienced Senior OSP Design Engineer to join our growing team. In this role, you will lead the design of complex fiber optic outside plant networks, mentor junior engineers, and serve as a technical resource for challenging projects. You will work with GIS platforms, CAD tools, and industry-standard design software to deliver high-quality engineering solutions for major telecom carriers.
+
+**Responsibilities:**
+
+* Lead the design of fiber optic OSP networks, including aerial, underground, and conduit-based systems
+* Develop detailed engineering designs using GIS-based tools (IQGeo, 3GIS, Katapult, ArcGIS) and CAD software (AutoCAD)
+* Produce and review construction drawings, permit packages, and technical specifications
+* Coordinate with field engineers, project managers, and client representatives to meet project requirements
+* Ensure designs comply with industry standards, client specifications, and regulatory requirements
+* Mentor and support junior engineers and designers
+* Participate in project planning, scoping, and estimation activities
+
+**Requirements:**
+
+* Minimum of 5 years' experience in Outside Plant (OSP) fiber design
+* Experience with fiber network design platforms such as IQGeo, 3GIS, Katapult Pro, or similar GIS-based tools
+* Proficiency in AutoCAD or similar CAD tools
+* Strong understanding of OSP construction standards and industry best practices
+* Experience with permit packages and construction documentation
+
+</tool_call>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://builtin.com/job/gis-technician/4210885", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+<error>Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://builtin.com/job/gis-technician/4210885
+Call stack:
+  at Page.goto (/app/node_modules/playwright-core/lib/server/page.js:432:38)
+  at /app/src/tools/firecrawl.ts:77:20
+  at Timeout._onTimeout (/app/node_modules/playwright-core/lib/server/utils.js:609:18)
+  at listOnTimeout (node:internal/timers:581:17)
+  at processTimers (node:internal/timers:519:7)</error>
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://builtin.com/job/network-systems-engineer-osp-design-lead/4196804", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Markdown Content:
+# Network Systems Engineer, OSP Design Lead
+
+## LCC Telecom
+
+Plainfield, IL
+
+Full-time
+
+Remote Friendly
+
+## Job Description
+
+LCC Telecom is seeking a skilled Network Systems Engineer with OSP Design experience to serve as a project lead on fiber network engineering projects. In this role, you will oversee the design and engineering of complex fiber optic outside plant networks, coordinate with field teams, and manage technical deliverables for major telecom carrier clients.
+
+**Responsibilities:**
+
+* Lead fiber network design projects from initial scoping through construction drawing delivery
+* Develop and review OSP designs using GIS-based platforms (IQGeo preferred) and CAD tools (AutoCAD)
+* Produce and quality-review construction drawings, permit packages, and technical deliverables
+* Coordinate with field engineers, project managers, and client teams to meet project milestones
+* Ensure designs comply with industry standards, carrier specifications, and regulatory requirements
+* Mentor junior engineers and serve as a technical resource for the design team
+
+**Requirements:**
+
+* Minimum 5 years' experience in OSP fiber network design
+* IQGeo experience preferred
+* Preferred experience with Katapult, 3GIS, ArcGIS, AutoCAD, or other GIS/CAD software
+* Strong understanding of OSP construction standards and permit documentation
+* Excellent project coordination and communication skills
+
+## Benefits
+
+* Competitive salary
+* Remote work opportunities
+* Professional development opportunities
+* Collaborative and innovative work environment
+
+</tool_call>
+
+<tool_call>
+{"name": "brave_search", "arguments": {"query": "LCC Telecom site:iqgeo.com OR site:3-gis.com OR site:katapult.com OR site:rendernetworks.com", "count": 10}}
+</tool_call>
+<tool_response>
+Web Search Results (0 results):
+No results found for LCC Telecom site:iqgeo.com OR site:3-gis.com OR site:katapult.com OR site:rendernetworks.com
+
+</tool_call>
+
+<tool_call>
+{"name": "brave_search", "arguments": {"query": "\"LCC Telecom\" BEAD OR \"broadband\" OR \"state grant\" OR \"rural\" engineering", "count": 8}}
+</tool_call>
+<tool_response>
+Web Search Results (6 results):
+[1] Title: LCC Telecom | LinkedIn
+URL: https://www.linkedin.com/company/lcc-telecom
+Description: LCC Telecom | 1,003 followers on LinkedIn. LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA. "broadband" OR "state grant" OR "rural" engineering
+
+[2] Title: LCC Telecom – Powering Connectivity Across America
+URL: https://lcctelecom.com
+Description: LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA.
+
+[3] Title: LCC Telecom - Fiber Design | Fiber Connect 2026
+URL: https://fiberconnect.org/exhibitor/lcc-telecom/
+</tool_call>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://fiberconnect.org/exhibitor/lcc-telecom/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Markdown Content:
+# LCC Telecom
+
+## Fiber Design
+
+LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA.
+
+[Visit Website](https://lcctelecom.com)
+
+</tool_call>
+
+<tool_call>
+{"name": "brave_search", "arguments": {"query": "\"LCC Telecom\" Michael Romesburg OR Laura Lora LinkedIn", "count": 8}}
+</tool_call>
+</s>
+<tool_call>
+{"name": "brave_search", "arguments": {"query": "\"LCC Telecom\" Michael Romesburg OR Laura Lora LinkedIn", "count": 8}}
+</tool_call>
+<tool_response>
+Web Search Results (5 results):
+[1] Title: LCC Telecom - Plainfield, IL - Alignable
+URL: https://www.alignable.com/plainfield-il/lcc-telecom
+Description: LCC Telecom Contacts. Michael Romesburg · Principal. View profile. Laura Lora · Principal. View profile. 2 other contacts. See all contacts. Are you this ...
+
+[2] Title: LCC Telecom | LinkedIn
+URL: https://www.linkedin.com/company/lcc-telecom
+Description: LCC Telecom | 1,003 followers on LinkedIn. LCC Telecom provides fiber network and outside plant engineering services or telecom carriers across the USA. | LCC Telecom provides fiber network and outside plant engineering services to telecom carriers across the USA.
+
+[3] Title: LCC Telecom – Powering ConnectivityAra
+URL: https://lcct

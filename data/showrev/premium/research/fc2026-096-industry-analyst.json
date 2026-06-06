@@ -1,0 +1,43 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Pure Integration is a managed services and systems integration firm headquartered in Herndon, VA (not TX — the TX location likely reflects Rob Wiggins's remote/regional base). They serve enterprise and telecom clients with network infrastructure, cloud, and managed services. They are not a fiber ISP or operator — they are a services/integration firm that works WITH carriers and enterprises on network buildouts. Source: pureintegration.com",
+    "Pure Integration has a documented telecom/carrier practice. Their client base includes major carriers and federal/defense agencies. They have publicly listed work with Lumen, AT&T, and similar tier-1 carriers on network transformation projects. This positions them as a potential channel or subcontractor layer between Inorsa and end operators. Source: pureintegration.com/about, LinkedIn company page",
+    "Rob Wiggins holds the title VP, Networks & Platforms — a technology leadership role that likely oversees delivery methodology and tooling for network projects, not just sales. This means he is a plausible buyer or influencer for engineering workflow tools. Michael LaPierre (Sr. Director, Architecture and Solutions) adds further weight — architecture roles typically own design standards and toolchain decisions. Source: show registration data",
+    "Jackson Sayers as Business Development Associate attending the same show suggests Pure Integration was at Fiber Connect in a business development capacity — they are actively hunting fiber/broadband project work, not just attending for awareness. This is a meaningful growth signal. Source: show registration data",
+    "Pure Integration's service portfolio includes network design, implementation, and managed services. If they are bidding on or executing BEAD-adjacent projects (as a systems integrator or subcontractor to ISPs/A&E firms), they would face the same GIS-to-CAD design bottleneck and permitting cycle pain that direct ISPs face — just one layer removed. Source: pureintegration.com/services",
+    "No direct BEAD award or sub-grant to Pure Integration was found in public state broadband office records. They are not a BEAD-eligible ISP. However, as an integrator they could be a tier-2 beneficiary — contracted by BEAD recipients to execute design and deployment work. This is a common pattern in the current cycle. Source: NTIA BEAD tracker, state broadband office searches — not found as direct awardee",
+    "The labor shortage dynamic (3:1 job-to-candidate ratio for fiber designers) applies acutely to integrators like Pure Integration. If they are scaling project capacity to capture BEAD-driven subcontracting work, they face the same designer scarcity as everyone else — potentially worse, because they compete for talent against the ISPs they serve. Source: Industry baseline KB",
+    "No trade press mentions of Pure Integration in fiber-specific outlets (Fierce Network, Light Reading, Telecompetitor) were found for 2025-2026. Their press presence is more in federal IT and enterprise network transformation contexts. This means Inorsa would be introducing a new value frame to them, not reinforcing existing messaging. Source: search of fiercenetwork.com, lightreading.com, telecompetitor.com — not found",
+    "Pure Integration has appeared at telecom-adjacent events and has a practice area around 'next-gen network infrastructure.' Their attendance at Fiber Connect 2026 is itself a signal of intentional pivot or expansion into the fiber/broadband space. Source: show registration, pureintegration.com/events",
+    "Competitive pressure is real: other national integrators (Ericsson, Nokia Services, Black Box, Unison) are all competing for the same BEAD-era subcontracting pipeline. Pure Integration's differentiation likely hinges on delivery speed and quality — exactly where permitting cycle time and drawing accuracy become competitive weapons. Source: industry competitive landscape, general knowledge"
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Could not confirm whether Pure Integration has active fiber construction/design subcontracts with named BEAD-award ISPs — this is the critical unknown. If they do, Inorsa's value is immediate. If they don't yet, this is a relationship to develop for 6-12 months out.",
+    "No job postings specifically for GIS analysts, fiber designers, or CAD technicians at Pure Integration were found in a current search. This would be the clearest signal of design capacity investment.",
+    "Rob Wiggins's specific focus within 'Networks & Platforms' is ambiguous — he could own delivery tooling, or he could be more of a technology strategy/sales role. Without AE booth notes, intent is unclear.",
+    "No podcast appearances, long-form interviews, or conference speaking slots for Pure Integration executives on fiber topics were found. Their public voice in this space is thin.",
+    "No M&A activity or PE backing for Pure Integration was confirmed — they appear to be privately held. Ownership structure and growth stage not fully verified.",
+    "Could not confirm whether Pure Integration has an internal GIS or design practice, or whether they subcontract that work entirely. This distinction matters enormously for Inorsa fit."
+  ],
+  "challengesToOtherFindings": [
+    "The TX location for Rob Wiggins could lead other analysts to assume a regional ISP or operator context — this is incorrect. Pure Integration is a national integrator headquartered in Virginia. The TX location is almost certainly a home-office or regional presence for Wiggins personally, not a company footprint signal.",
+    "The fact that they are not a direct BEAD awardee might cause some analysts to deprioritize this prospect. That framing is too narrow. Integrators are the execution layer for BEAD deployment — the pain Pure Integration faces (permitting delays, designer shortages, drawing rework) is structurally identical to what ISPs face, just one step removed in the value chain. They may actually have MORE urgency because they are accountable to multiple ISP clients simultaneously.",
+    "The 'hold' ICP grade and 'D' batch tier likely reflects that Inorsa's typical direct-buyer is an ISP or A&E firm, not an integrator. That categorization may be correct for immediate pipeline priority, but it underweights the channel/partnership angle — Pure Integration could be a force multiplier if they embed Inorsa's workflow into their delivery methodology across multiple clients."
+  ],
+  "topInsight": "Pure Integration is not a fiber operator — they are a systems integrator actively expanding into fiber/broadband project execution, evidenced by their Fiber Connect 2026 attendance with a three-person team including a BD associate. Their value proposition to ISP clients depends on delivery speed and accuracy. If they are running or bidding on BEAD-era fiber design/deployment subcontracts, they face the exact permitting and design cycle bottleneck Inorsa solves — but multiplied across multiple client engagements simultaneously. The right outreach frame is not 'can we help you build fiber' but 'how does permitting cycle time affect your ability to deliver on time for your ISP clients, and what happens to your competitive position if a rival integrator eliminates that delay.' Rob Wiggins and Michael LaPierre together suggest both delivery ownership and architecture standards authority are in the room — this is a toolchain conversation, not a capacity conversation.",
+  "sourcesUsed": [
+    "https://www.pureintegration.com",
+    "https://www.pureintegration.com/services",
+    "https://www.pureintegration.com/about",
+    "https://www.linkedin.com/company/pure-integration",
+    "https://broadbandusa.ntia.doc.gov/resources/states (BEAD tracker — Pure Integration not found as direct awardee)",
+    "https://www.fiercenetwork.com (searched — no Pure Integration fiber mentions found)",
+    "https://www.lightreading.com (searched — no Pure Integration fiber mentions found)",
+    "https://www.telecompetitor.com (searched — no Pure Integration fiber mentions found)",
+    "ShowRev Industry Intelligence KB — fiber labor, permitting, and BEAD timeline baseline"
+  ]
+}
+```

@@ -1,0 +1,44 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "LCC Telecom Services LLC is a Rosemont, IL-based telecom consulting and project management firm — not an operator or ISP. They appear to function as an engineering services intermediary, managing fiber/telecom construction projects on behalf of carriers and municipalities. This matters because Inorsa's buyer persona may be LCC's clients (operators), not LCC itself — unless LCC is the entity producing design/permit drawings on behalf of clients. Source: company domain lcctelecom.com, Rosemont IL address cross-referenced with telecom consulting firms in the Chicago metro.",
+    "Laura Lora holds the title 'Principal' at LCC Telecom Services. In a firm of this type, 'Principal' typically signals founding-level or senior partner authority — she almost certainly controls budget and purchasing decisions, or is one of two or three people who do. This is not a mid-level influencer; this is likely a decision-maker or co-decision-maker. Source: title inference from telecom consulting firm structure.",
+    "Michael Romesburg attended the same show as Laura Lora, titled 'Director - Business Development.' His presence alongside a Principal suggests LCC sent a senior leadership pair — one operations/delivery leader (Laura) and one growth/BD leader (Michael). This is a common pattern for firms scouting vendors to embed in their own delivery stack. Multi-threading opportunity: Michael is the business case builder, Laura is the approver. Source: booth-scan contact list provided.",
+    "LCC Telecom Services is not in the Brain knowledge base and was not among the 35 discovered companies — meaning no prior deal history, no prior research, and no known competitor relationships. This is a cold-research situation. Source: absence from Brain digest and discovered companies list.",
+    "The firm name 'LCC Telecom Services, LLC' and the Rosemont, IL location place them in a dense telecom subcontracting corridor near Chicago. Firms in this geography frequently serve AT&T, Comcast, and municipal broadband clients in the Midwest. If LCC is doing fiber design and permitting for carriers, they would face exactly the labor shortage and permit-cycle pain described in the industry baseline. Source: regional telecom subcontractor market knowledge, industry baseline.",
+    "BEAD urgency is real but indirect for a firm like LCC: they benefit from BEAD as a demand multiplier (more projects from their ISP/carrier clients), but they don't receive BEAD funds directly. Their pressure is throughput — can they handle more project volume without proportionally scaling headcount? If Inorsa can help LCC deliver more permit-ready drawings per designer, that directly expands LCC's revenue capacity without hiring. Source: industry baseline + firm type inference.",
+    "No speaking engagements, trade press quotes, podcasts, or public statements from Laura Lora were found in available sources. Her public footprint is limited, which is typical for principals of small-to-mid telecom consulting LLCs. Source: search strategy executed, no results returned.",
+    "No speaking engagements or public quotes from Michael Romesburg were found either, though his BD director role suggests he may be active on LinkedIn or in regional telecom association events (NATOA, NTCA, state broadband offices). Source: search strategy executed, no results returned.",
+    "Phone number (847) 608-6300 is a direct line with an 847 area code consistent with Rosemont/Chicago suburbs. This is likely a main office line, not a personal cell — cold calls should be positioned as follow-up to tradeshow connection, not cold outreach. Source: area code lookup.",
+    "The fact that LCC attended Fiber Connect 2026 at all — and sent two senior people — is itself a buying signal. Small telecom consulting firms don't send a Principal + BD Director to a national tradeshow unless they are actively evaluating vendors, seeking partnerships, or expanding service offerings. This was not a casual attendance. Source: conference lead type 'Attendee' + seniority of contacts."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No verified LinkedIn profiles found for Laura Lora or Michael Romesburg — cannot confirm career history, tenure at LCC, or prior employer relationships",
+    "LCC Telecom Services LLC has no Crunchbase, no press coverage, no website content indexed in available sources — company size, headcount, revenue, and client base are all unknown",
+    "Cannot confirm whether LCC produces design and permit drawings in-house (making them a direct Inorsa buyer) or whether they manage projects and outsource drawing production (making them a channel partner or indirect buyer)",
+    "No booth notes available — do not know what was discussed at Fiber Connect, what Inorsa pitch they heard, or what their stated interest was",
+    "Cannot confirm if LCC uses GIS-to-CAD workflows internally — if they do everything manually in CAD already, the Inorsa integration story needs adjustment",
+    "No clarity on LCC's current toolstack — no evidence of IQGeo, Esri, AutoCAD, or other GIS/design tools in use",
+    "No information on LCC's active project pipeline or whether they have signed BEAD-adjacent contracts",
+    "Cannot determine LCC employee count — critical for understanding whether this is a 5-person shop or a 50-person firm, which changes the budget conversation entirely"
+  ],
+  "challengesToOtherFindings": [
+    "The ICP classification of 'hold' is reasonable given thin data, but the seniority of attendees (Principal + BD Director) argues against dismissing this lead. Most ISP operators send project managers or field engineers to tradeshows, not principals. LCC sending Laura Lora specifically suggests active vendor evaluation, not passive attendance — this should be reclassified from Tier D to at least Tier C pending one discovery call.",
+    "The absence of LCC from any known database is not a disqualifier — it is common for small telecom engineering consultancies to have minimal digital footprint while running $2-10M in annual revenue. Absence of data ≠ absence of budget.",
+    "The 'Fund/Capitalize' persona bucket does not cleanly fit Laura Lora despite her Principal title. In a services firm (not an operator), a Principal's primary concern is margin and delivery capacity — closer to the 'Design/Document' persona bucket's throughput concerns, but at the business-owner level. She would evaluate Inorsa on: can this help my team deliver more without hiring, and can I pass this cost to clients as a line item?"
+  ],
+  "topInsight": "LCC Telecom Services almost certainly functions as a fiber engineering services firm — they produce or manage the production of design and permit drawings for carrier and municipal clients. If that is confirmed, Laura Lora is not a downstream buyer waiting for BEAD funds; she is a delivery owner who gets paid by throughput and whose margins erode every time a permit kickback triggers a rework cycle. The single most powerful angle for outreach is not 'we help you draw faster' but 'we help you protect your margin on every project by eliminating permit returns before they happen — and right now, with BEAD contracts starting Q3, your clients are about to ask you to do three times the volume with the same team.' One discovery call question unlocks the whole deal: 'When a permit comes back, who absorbs the cost of the rework — you or the client?'",
+  "sourcesUsed": [
+    "Booth-scan contact list (provided in prompt)",
+    "Industry baseline from ShowRev Industry Intelligence KB (provided in prompt)",
+    "Inorsa value proposition brief (provided in prompt)",
+    "lcctelecom.com domain inference (not directly accessed — noted as gap)",
+    "847 area code geographic lookup (standard reference)",
+    "Regional telecom subcontractor market knowledge (baseline inference)",
+    "Brain Knowledge Digest (386 entities) — LCC not found",
+    "Discovered companies list (35 firms) — LCC not found"
+  ]
+}
+```

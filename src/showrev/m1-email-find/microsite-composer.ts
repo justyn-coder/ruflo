@@ -38,29 +38,29 @@ const AE_DETAILS: Record<string, { title: string; phone: string; booking_url: st
   'Mike Rutski': {
     title: 'Sr. Account Executive',
     phone: '',
-    booking_url: 'https://meetings.hubspot.com/mike-rutski',
+    booking_url: 'https://meetings-na2.hubspot.com/michael-rutski/introduction',
     photo_url: '/assets/ae/mike-rutski.jpg',
   },
   'Nathan Dunn': {
     title: 'Sr. Account Executive',
     phone: '',
-    booking_url: 'https://meetings.hubspot.com/nathan-dunn',
+    booking_url: 'https://meetings-na2.hubspot.com/nathan970/introduction',
     photo_url: '/assets/ae/nathan-dunn.jpg',
   },
   'Lucas Spencer': {
     title: 'Sr. Account Executive',
     phone: '',
-    booking_url: 'https://meetings.hubspot.com/lucas-spencer',
+    booking_url: 'https://meetings-na2.hubspot.com/lucas-spencer/introduction',
     photo_url: '/assets/ae/lucas-spencer.jpg',
   },
 };
 
 const DEFAULT_CASE_STUDIES: CaseStudy[] = [
-  { id: 'cs-001', segment: 'fiber_operator', persona: 'build_pace', text: 'A fiber operator automated permit drawings and cut review cycles from 3 weeks to 2 days across 4 jurisdictions.', status: 'generated', approved_by: null },
-  { id: 'cs-002', segment: 'ae_firm', persona: 'drawings_quality', text: 'An A&E firm reduced first-pass permit rejection rates from 40% to under 5% by automating QC checks on construction drawings.', status: 'generated', approved_by: null },
-  { id: 'cs-003', segment: 'contractor', persona: 'build_pace', text: 'A multi-state contractor eliminated 3 weeks of crew idle time per project by getting permit-ready drawings before mobilization.', status: 'generated', approved_by: null },
-  { id: 'cs-004', segment: 'fiber_operator', persona: 'permit_cycle', text: 'A regional ISP expanding into 6 new municipalities automated jurisdictional permit variations and cut first-pass approval time by 60%.', status: 'generated', approved_by: null },
-  { id: 'cs-005', segment: 'fiber_operator', persona: 'cycle_time_exec', text: 'A fiber operator processing 200+ drawings per month reduced per-drawing cost by 40% and eliminated the 2-week QC bottleneck.', status: 'generated', approved_by: null },
+  { id: 'cs-001', segment: 'fiber_operator', persona: 'build_pace', text: 'A fiber operator cut construction drawing production from days to minutes, giving their team time to QC properly before jurisdictional submission.', status: 'generated', approved_by: null },
+  { id: 'cs-002', segment: 'ae_firm', persona: 'drawings_quality', text: 'An A&E firm compressed drawing turnaround from weeks to days, allowing them to take on 3 additional ISP clients without adding headcount.', status: 'generated', approved_by: null },
+  { id: 'cs-003', segment: 'contractor', persona: 'build_pace', text: 'A multi-state contractor kept drawings ahead of their construction schedule by automating the GIS-to-CAD step. Crews stopped waiting on documentation.', status: 'generated', approved_by: null },
+  { id: 'cs-004', segment: 'fiber_operator', persona: 'permit_cycle', text: 'A regional ISP expanding into 6 new municipalities standardized drawing output across all jurisdictions from a single GIS input process.', status: 'generated', approved_by: null },
+  { id: 'cs-005', segment: 'fiber_operator', persona: 'cycle_time_exec', text: 'A fiber operator processing 200+ drawings per month achieved 70% reduction in construction drawing cycle time with existing headcount.', status: 'generated', approved_by: null },
 ];
 
 function loadCaseStudies(brainDir: string): CaseStudy[] {

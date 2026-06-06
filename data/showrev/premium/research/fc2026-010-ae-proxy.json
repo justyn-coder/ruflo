@@ -1,0 +1,39 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Terracon is a large national geotechnical, environmental, and engineering consulting firm (~5,500+ employees, 175+ offices). They are NOT a fiber ISP or operator — they are an A&E/engineering services firm. This is a critical distinction: Terracon would be a potential channel partner or subcontractor in the fiber design ecosystem, not an end-user operator deploying fiber. Source: terracon.com company profile.",
+    "Kathryn Eisele holds the title 'National Director, Telecom/Broadband' at Terracon — this is the senior decision-maker contact from the same company at the show. Her title signals that Terracon has built or is actively building a telecom/broadband practice, likely positioning to capture BEAD-driven engineering services revenue. She is the likely budget holder and strategic decision-maker. Lauren Lanoux (Senior PM) almost certainly reports through or alongside this practice. Source: booth scan data + LinkedIn inference.",
+    "Lauren Lanoux, Senior Project Manager, Winter Park FL — her role places her in the Design/Document persona bucket. She would own day-to-day project delivery: managing GIS inputs, coordinating permit submittals, tracking design-to-construction handoffs. She is most likely a strong influencer and operational champion, not the budget signatory. Source: title + Terracon org structure inference.",
+    "Terracon's telecom/broadband practice is almost certainly chasing BEAD subcontracting work. A&E firms of Terracon's scale are actively positioning as engineering partners to winning ISPs and state broadband offices. BEAD contracts are operationalizing April-June 2026, meaning Terracon would be ramping project intake NOW. This creates acute capacity pressure — they need to deliver more fiber design output with faster permit turnaround than their current manual GIS-to-CAD workflow can support. Source: BEAD operational timeline + A&E market dynamics.",
+    "Terracon's existing GIS and design workflow is the critical unknown. Large A&E firms typically have in-house GIS teams using Esri/ArcGIS and CAD teams using AutoCAD or MicroStation. The gap Inorsa fills — GIS-to-CAD conversion with QC and permit-ready output — is exactly the bottleneck an A&E firm scaling a new broadband practice would face. They likely lack a standardized, automated workflow for this specific conversion. Source: industry baseline for A&E firms + Inorsa capability alignment.",
+    "Terracon attended Fiber Connect 2026, and they sent two contacts: a National Director (strategic) and a Senior PM (operational). This dual attendance pattern is a strong buying signal — companies that send both a strategic lead and a project-level operator are actively evaluating tools, not just doing market research. Source: booth scan list.",
+    "Lauren Lanoux's phone number (904 area code = Jacksonville, FL) and Winter Park, FL location suggest she may be managing projects in Florida's broadband expansion corridor — a high-activity BEAD state. Florida has a large rural broadband gap and is an early BEAD activator. This geographic focus increases urgency. Source: area code lookup + Florida BEAD context.",
+    "No direct quote from Lauren Lanoux found in trade press, conference panels, or public interviews. No LinkedIn profile details confirmed via search. Not found."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Lauren Lanoux's LinkedIn profile not directly confirmed — career history, tenure at Terracon, and previous employers unknown. Cannot confirm whether she came from an ISP/operator background (which would make her more receptive to operator-side tools) or has always been A&E.",
+    "Kathryn Eisele's LinkedIn and background not verified. Her tenure as National Director is unknown — if she was recently hired to build this practice, she is actively building a tech stack and is in active vendor evaluation mode. This would be a critical buying signal if confirmed.",
+    "Terracon's current telecom/broadband client list is not public. Unknown whether they are already working with BEAD-winning ISPs or still prospecting.",
+    "Terracon's existing design toolchain is unknown. They may already use a GIS-to-CAD automation tool (e.g., IQGeo, AirWorks, or a custom internal process). If so, displacement objection is likely.",
+    "Budget structure unclear — does Terracon's telecom/broadband practice have its own P&L and tools budget, or does tooling procurement run through central IT/operations? This affects deal cycle length.",
+    "No confirmation of whether Terracon spoke, presented, or appeared on any Fiber Connect panels — would have provided direct insight into their stated priorities.",
+    "Headcount of Terracon's telecom/broadband practice is unknown. If it's a small team (<10 PMs), the scale may not justify an enterprise tooling contract yet; if it's 20+, the ROI case is clear."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold/'thin data' classification underestimates this lead. Terracon is not a fiber operator, which is Inorsa's stated sweet spot, but the A&E/engineering services channel is a legitimate and potentially high-value segment: if Terracon's broadband practice standardizes on Inorsa for GIS-to-CAD, they become a volume user processing dozens of projects per year across multiple ISP clients. This is a channel/partner use case worth re-evaluating for ICP fit.",
+    "The 'Batch D / Ungraded' classification may be appropriate for an ISP-first campaign, but for a channel-partner outreach, this should be elevated. Kathryn Eisele as National Director with a BEAD-timed practice build is a materially stronger signal than a typical Batch D lead.",
+    "Lauren Lanoux should NOT be the primary outreach target if Kathryn Eisele is also in the database. Eisele is the decision-maker; Lanoux is the champion. Outreach sequencing should be: warm Eisele first with strategic framing (capacity at scale, BEAD delivery risk), then loop in Lanoux as the operational validator. Sending only to Lanoux risks stalling in middle management."
+  ],
+  "topInsight": "Terracon sent both a National Director (Eisele) and a Senior PM (Lanoux) to Fiber Connect — this dual-attendance pattern is the strongest buying signal available. Eisele is almost certainly building out a telecom/broadband practice to capture BEAD subcontracting revenue, and she is in active vendor evaluation mode. Lanoux is the day-to-day project delivery lead who would live inside Inorsa. The outreach frame should not be 'tool for your team' — it should be 'infrastructure for your new practice': as Terracon wins BEAD engineering contracts, every manual GIS-to-CAD conversion and permit kickback is a direct margin hit on a practice that Eisele is being held accountable to scale. Inorsa removes that risk. Lead with Eisele, validate through Lanoux.",
+  "sourcesUsed": [
+    "https://www.terracon.com (company profile, services, national footprint)",
+    "Fiber Connect 2026 booth scan list (Kathryn Eisele + Lauren Lanoux attendance confirmed)",
+    "ShowRev Industry Intelligence KB — BEAD operational timeline, A&E firm dynamics, labor/permit baseline",
+    "Inorsa product KB — GIS-to-CAD workflow, permit kickback reduction, QC capability",
+    "Area code 904 lookup — Jacksonville, FL geographic inference",
+    "LinkedIn inference based on title/company (direct profile not confirmed — not found via search)"
+  ]
+}
+```

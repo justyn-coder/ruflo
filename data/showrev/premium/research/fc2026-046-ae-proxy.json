@@ -1,0 +1,42 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Roberto Martinez holds the title 'Advisor, Strategy & Growth' at Lighthouse Technologies — this is a consultative/advisory role, not a line operator title. Advisors typically influence strategy and introductions but rarely hold direct budget authority. Decision authority likely sits with Denis Ryzhikov (CEO & President), who also attended the show. Source: booth scan list / lead record.",
+    "Denis Ryzhikov (CEO & President) attended the same tradeshow as Martinez and Tanya Pustakhod (Marketing Director). A three-person delegation from one company — including the CEO — signals genuine exploratory intent, not casual attendance. This is a meaningful buying signal. Source: booth scan list.",
+    "Lighthouse Technologies operates under the domain lh.tech, a premium short-domain that suggests an established, brand-conscious tech firm. The company name and Charlotte, NC headquarters are consistent with a mid-market IT services, telecom infrastructure, or network engineering company. However, no direct Lighthouse Technologies fiber/ISP profile was found in the Brain KB or prior research corpus, meaning their specific vertical (fiber contractor, A&E firm, ISP, or technology vendor) is unconfirmed. Source: lead record; not found in Brain KB.",
+    "Roberto Martinez's LinkedIn profile was not found or confirmed in available research. His title 'Advisor, Strategy & Growth' is consistent with either (a) a senior external advisor retained for business development or market expansion, or (b) an internal strategy executive. Either way, he is most likely a champion/influencer rather than the final economic buyer. Source: inference from title pattern; LinkedIn not confirmed.",
+    "Tanya Pustakhod's presence as Marketing Director alongside the CEO and a strategy advisor suggests Lighthouse Technologies may be evaluating vendors for a go-to-market partnership, a procurement decision with external communication implications, or a solution they intend to resell/integrate — not just use internally. This is an atypical attendee configuration for a pure end-user. Source: booth scan list; inference.",
+    "No BEAD funding award, grant application, or state program affiliation was found for Lighthouse Technologies in the funding programs corpus ($25.5M, $83M, $11.18M, $50M awards all linked to other named firms). If Lighthouse is a contractor or A&E firm serving ISPs, their BEAD urgency is derivative — they need volume from ISP clients who are under BEAD construction pressure. If they are an ISP, absence from funding records may mean they are in a state with delayed BEAD contracting. Source: funding programs list; not found.",
+    "Charlotte, NC location is relevant: North Carolina received a significant BEAD allocation (approximately $1.5B+), and the state is among those moving toward ISP subgrant contracting in 2026. Any fiber-adjacent firm in NC is likely feeling BEAD-driven pipeline pressure whether as deployer, contractor, or technology provider. Source: industry baseline + geographic inference.",
+    "No conference panel appearances, speaking credits, trade press quotes, or podcast mentions for Roberto Martinez were found in available data. His public footprint is either low or under a different name/spelling. Source: search strategy step 2 and 3; not found.",
+    "The persona bucket for 'Advisor, Strategy & Growth' maps closest to the Fund/Capitalize persona — someone focused on margin, growth levers, and timeline to revenue rather than day-to-day engineering throughput. If Lighthouse is scaling fiber design capacity, Martinez would care about whether Inorsa compresses the time-to-billable-output and whether it's a defensible capability they can sell through to clients. Source: persona inference from title.",
+    "Multi-threading opportunity is confirmed: three contacts from Lighthouse at the show (Martinez, Ryzhikov, Pustakhod). Ryzhikov as CEO is the economic buyer. Martinez is likely the internal champion or evaluator feeding Ryzhikov a recommendation. Pustakhod's presence may indicate they are evaluating Inorsa as something to market/position externally, suggesting a reseller, integrator, or white-label angle rather than purely internal use. Source: booth scan list; inference."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Lighthouse Technologies' specific vertical is unconfirmed — could be ISP, fiber contractor, A&E/engineering firm, IT services, or technology vendor. This is the most critical gap and must be resolved before outreach.",
+    "Roberto Martinez's LinkedIn profile not found — cannot confirm tenure, career history, prior companies, or whether 'Advisor' means external consultant or internal title.",
+    "No direct quotes from Martinez on record — no panel appearances, press interviews, or podcast mentions discovered.",
+    "Lighthouse Technologies' website (lh.tech) content, service lines, and client base were not available in the research corpus.",
+    "No confirmed BEAD funding relationship — unclear if Lighthouse is a deployer, contractor, or vendor to BEAD-funded ISPs.",
+    "Denis Ryzhikov's background and Lighthouse Technologies' founding story not confirmed in Brain KB.",
+    "Tanya Pustakhod's specific role focus (digital marketing, partner marketing, product marketing) not confirmed — affects whether the Marketing Director presence signals a reseller/channel intent.",
+    "Revenue, headcount, and company stage of Lighthouse Technologies not found."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold status ('Thin data') is correct and should not be overridden by the fact that the CEO attended. CEO presence at a tradeshow does not automatically confirm fit — Lighthouse could be a tangential IT firm or a technology vendor that builds competing tooling. The multi-person delegation is a positive signal but not a fit confirmation.",
+    "The 'Advisor' title is ambiguous. Some organizations use 'Advisor' for C-suite equivalents with board-level influence; others use it for part-time consultants with no budget authority. Treating Martinez as the primary contact is risky — Ryzhikov (CEO) is the cleaner economic buyer target and should be the primary sequence recipient, with Martinez as a parallel thread.",
+    "The Marketing Director's presence (Pustakhod) may be misread as brand/awareness interest. Given Inorsa's B2B engineering tool profile, a Marketing Director attending a fiber infrastructure show alongside the CEO and a strategy advisor more likely signals partner/channel evaluation, not a campaign vendor search. This should shape the angle: Inorsa as a capability they can deploy for clients or differentiate with, not just use internally."
+  ],
+  "topInsight": "Lighthouse Technologies sent three people to the show — CEO, Strategy Advisor, and Marketing Director — which is an atypical configuration for a pure end-user evaluating a design tool. This pattern suggests Lighthouse may be evaluating Inorsa as a capability to deploy for clients or integrate into a service offering, not just for internal use. The highest-leverage outreach angle is not 'use Inorsa to speed up your drawings' but rather 'here is how Inorsa becomes a differentiator in the service you deliver to fiber clients under BEAD pressure.' Target Ryzhikov as economic buyer, use Martinez as the champion thread, and frame the conversation around what Lighthouse sells — which requires confirming their vertical as the first call objective.",
+  "sourcesUsed": [
+    "Lead record / booth scan list (primary source for contact titles and company name)",
+    "Inorsa ShowRev Industry Intelligence KB — industry baseline (BEAD timeline, labor shortage, permitting constraint)",
+    "Brain Knowledge Digest — companies and funding programs corpus (confirmed Lighthouse Technologies not present)",
+    "Geographic inference: NC BEAD allocation context",
+    "Persona bucket framework from research instructions",
+    "lh.tech domain registration inference (not directly accessed — domain noted from email)"
+  ]
+}
+```

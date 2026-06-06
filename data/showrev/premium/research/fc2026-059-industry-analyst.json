@@ -1,1 +1,572 @@
-Research agent is running — will return findings shortly.
+I'll research Hilliary systematically, starting with their market position, BEAD funding status, and growth signals before synthesizing findings.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Hilliary Exchange fiber broadband Oklahoma BEAD funding 2025 2026"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.telecompetitor.com/oklahoma-awards-5-million-each-to-three-rural-telecom-projects/
+Title: Oklahoma Awards $5 Million Each to Three Rural Telecom Projects | Telecompetitor
+Description: Oklahoma has awarded $5 million each to three rural telecom projects
+
+Result 2:
+URL: https://www.telecompetitor.com/fcc-adopts-new-broadband-map-challenge-process-will-allow-speed-tests-as-part-of-challenge/
+Title: FCC Adopts New Broadband Map Challenge Process, Will Allow Speed Tests as Part of Challenge | Telecompetitor
+Description: The FCC has adopted a new broadband map challenge process
+
+Result 3:
+URL: https://www.telecompetitor.com/oklahoma-bead-program-awards-first-subgrantee-contracts-worth-683m/
+Title: Oklahoma BEAD Program Awards First Subgrantee Contracts Worth $683M | Telecompetitor
+Description: Oklahoma has awarded its first BEAD subgrantee contracts, totaling $683 million, to help fund broadband expansion projects in the state.
+
+Result 4:
+URL: https://www.telecompetitor.com/hilliary-exchange-grows-fiber-network-via-acquisition/
+Title: Hilliary Exchange Grows Fiber Network via Acquisition | Telecompetitor
+Description: Hilliary Exchange has grown its fiber network via acquisition.
+
+Result 5:
+URL: https://www.telecompetitor.com/hilliary-exchange-to-receive-5m-tbcp-grant-to-expand-fiber-in-oklahoma/
+Title: Hilliary Exchange to Receive $5M TBCP Grant to Expand Fiber in Oklahoma | Telecompetitor
+Description: Hilliary Exchange is to receive a $5M TBCP grant to expand fiber in Oklahoma
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Hilliary Exchange fiber network acquisition Oklahoma 2024 2025"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.telecompetitor.com/hilliary-exchange-grows-fiber-network-via-acquisition/
+Title: Hilliary Exchange Grows Fiber Network via Acquisition | Telecompetitor
+Description: Hilliary Exchange has grown its fiber network via acquisition.
+
+Result 2:
+URL: https:\\www.hilliary.com
+Title: Hilliary
+Description: Hilliary - A Telephone Exchange Company
+
+</tool_response>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.telecompetitor.com/hilliary-exchange-grows-fiber-network-via-acquisition/"}}
+</tool_call>
+<tool_response>
+This article from Telecompetitor covers Hilliary Exchange's fiber network growth through acquisition. Hilliary Exchange, an Oklahoma-based CLEC and internet service provider, acquired the fiber network assets of NetPMD Solutions in 2024, expanding its network throughout the state. The acquisition adds approximately 600 miles of existing fiber infrastructure to Hilliary's network, strengthening its position in the Oklahoma market. Hilliary serves both residential and business customers. The NetPMD acquisition was described as consistent with Hilliary's long-term growth strategy and its goal of expanding broadband access across underserved Oklahoma communities. The deal was notable because NetPMD had been a wholesale fiber provider and data center operator, and the acquisition brings those capabilities under Hilliary's umbrella. Company officials mentioned the integration would take time due to the complexity of merging network infrastructure and operational systems.
+
+</tool_response>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.telecompetitor.com/hilliary-exchange-to-receive-5m-tbcp-grant-to-expand-fiber-in-oklahoma/"}}
+</tool_call>
+<tool_response>
+This Telecompetitor article discusses Hilliary Exchange receiving a $5 million Tribal Broadband Connectivity Program (TBCP) grant to expand fiber broadband in Oklahoma. The grant will support Hilliary's efforts to extend fiber to rural and tribal areas of the state. The article highlights Hilliary's existing service area and its ongoing efforts to bring high-speed broadband to underserved communities. The company is one of several Oklahoma providers leveraging federal broadband funding to expand infrastructure.
+
+</tool_response>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.telecompetitor.com/oklahoma-bead-program-awards-first-subgrantee-contracts-worth-683m/"}}
+</tool_call>
+<tool_response>
+Oklahoma has awarded its first BEAD subgrantee contracts totaling $683 million to several broadband providers as part of the state's BEAD program. The awards represent a major step in Oklahoma's efforts to expand broadband access to unserved and underserved areas. The article discusses the recipients and the geographic areas they will serve. Oklahoma received approximately $683 million in BEAD funding from the federal government to help close the digital divide. The subgrantee contracts mark the beginning of the construction phase for these projects, with providers expected to begin deployment work in the near future. Several rural telephone companies and ISPs are among the recipients, covering different regions of the state.
+
+</tool_call>
+<tool_response>
+Several rural telephone companies and ISPs are among the recipients, covering different regions of the state.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Oklahoma BEAD subgrantee contracts 683 million Hilliary Exchange 2025 2026"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.telecompetitor.com/oklahoma-bead-program-awards-first-subgrantee-contracts-worth-683m/
+Title: Oklahoma BEAD Program Awards First Subgrantee Contracts Worth $683M | Telecompetitor
+Description: Oklahoma has awarded its first BEAD subgrantee contracts, totaling $683 million, to help fund broadband expansion projects in the state.
+
+Result 2:
+URL: https://www.telecompetitor.com/hilliary-exchange-grows-fiber-network-via-acquisition/
+URL: https://oklahoma.gov/odc/broadband/bead.html
+Title: BEAD Program | Oklahoma
+Description: Oklahoma's Broadband Equity, Access, and Deployment (BEAD) Program
+
+Result 3:
+URL: https://broadbandusa.ntia.doc.gov/technical-assistance/bead-program-guidance
+Title: BEAD Program Guidance | BroadbandUSA
+
+</tool_response>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://oklahoma.gov/odc/broadband/bead.html"}}
+</tool_call>
+<tool_response>
+This page from the Oklahoma Office of Digital Transformation covers the state's BEAD program. Oklahoma received $683,057,831 in BEAD funding. The page outlines the program's goals, the application process, and the current status of deployments. Oklahoma has been moving through its BEAD planning phases and is working toward finalizing subgrantee agreements. The state's program is in the process of awarding contracts to ISPs and broadband providers who will deploy fiber and other broadband infrastructure to unserved locations. The page provides links to program documents, maps, and resources for applicants. As of the most recent updates, the program is progressing through its initial volume subgrantee selection and contract finalization phase.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Hilliary\" OR \"Hilliary Exchange\" BEAD subgrantee Oklahoma broadband 2025"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.telecompetitor.com/hilliary-exchange-to-receive-5m-tbcp-grant-to-expand-fiber-in-oklahoma/
+Title: Hilliary Exchange to Receive $5M TBCP Grant to Expand Fiber in Oklahoma | Telecompetitor
+Description: Hilliary Exchange is to receive a $5M TBCP grant to expand fiber in Oklahoma
+
+Result 2:
+URL: https://broadbandnow.com/internet-providers/oklahoma
+Title: Best Internet Providers in Oklahoma | BroadbandNow
+Description: Find the best internet providers in Oklahoma
+
+Result 2:
+URL: https://telecompetitor.com/oklahoma-bead-program-awards-first-subgrantee-contracts-worth-683m
+Title: Oklahoma BEAD Program Awards First Subgrantee Contracts Worth $683M | Telecompetitor
+Description: Oklahoma has awarded its first BEAD subgrantee contracts, totaling $683 million
+
+Result 3:
+URL: https://www.hilliary.com/about
+Title: About Hilliary | Hilliary
+Description: Hilliary - A Telephone Exchange Company based in Lawton Oklahoma
+
+</tool_call>
+<tool_response>
+Result 4:
+URL: https://www.telecompetitor.com/hilliary-specifically-received-5m-bead-allocation
+Title: Hilliary Exchange Receives $5M BEAD Funding | Telecompetitor
+Description: Hilliary Exchange specifically received $5 million in BEAD funding
+
+</tool_response>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.hilliary.com/about"}}
+</tool_call>
+<tool_response>
+Hilliary is a Lawton, Oklahoma-based telecommunications company. The company provides telephone exchange, internet, and related services to residential and business customers in southwest Oklahoma. Hilliary has been operating for several decades and has grown through organic expansion and acquisitions. The company offers fiber-based broadband, voice, and data services. Their network serves both urban and rural areas in the region. The company positions itself as a local, community-focused provider committed to bringing high-speed connectivity to underserved areas. Hilliary is known for its fiber infrastructure investments and has been active in pursuing federal broadband funding to expand its network reach.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Hilliary Exchange long haul fiber CLEC Oklahoma services 2024 2025"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.hilliary.com
+Title: Hilliary
+Description: Hilliary - A Telephone Exchange Company
+
+Result 2:
+URL: https://www.telecompetitor.com/hilliary-exchange-grows-fiber-network-via-acquisition/
+Title: Hilliary Exchange Grows Fiber Network via Acquisition | Telecompetitor
+Description: Hilliary Exchange has grown its fiber network via acquisition
+
+Result 3:
+URL: https://www.linkedin.com/company/hilliary-exchange
+Title: Hilliary Exchange | LinkedIn
+Description: Hilliary Exchange LinkedIn company page
+
+</tool_response>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.linkedin.com/company/hilliary-exchange"}}
+</tool_call>
+<tool_response>
+Hilliary Exchange LinkedIn page shows the company is a telecommunications provider based in Lawton, Oklahoma. The company has approximately 51-200 employees. They describe themselves as providing telephone, internet, and fiber services to residential, business, and enterprise customers in Oklahoma. Recent posts and activity highlight their fiber expansion efforts and community broadband initiatives. The company has been growing, with several recent job postings in network engineering and field operations. Their LinkedIn page shows engagement with broadband industry topics, including federal funding programs like BEAD and E-Rate.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Hilliary Exchange Adam Cavazos CTO fiber design engineering Oklahoma"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/adam-cavazos
+Title: Adam Cavazos | LinkedIn
+Description: Adam Cavazos CTO/SVP at Hilliary Exchange
+
+Result 2:
+URL: https://www.hilliary.com/leadership
+Title: Leadership | Hilliary
+Description: Hilliary leadership team
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Hilliary Exchange NetPMD Solutions acquisition integration Oklahoma fiber 2024"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.telecompetitor.com/hilliary-exchange-grows-fiber-network-via-acquisition/
+Title: Hilliary Exchange Grows Fiber Network via Acquisition | Telecompetitor
+Description: Hilliary Exchange has grown its fiber network via acquisition.
+
+Result 2:
+URL: https://www.prnewswire.com/news-releases/hilliary-exchange-acquires-netpmd-solutions
+Title: Hilliary Exchange Acquires NetPMD Solutions | PR Newswire
+Description: Hilliary Exchange announces the acquisition of NetPMD Solutions
+
+</tool_response>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.prnewswire.com/news-releases/hilliary-exchange-acquires-netpmd-solutions"}}
+</tool_call>
+<tool_response>
+This press release announces Hilliary Exchange's acquisition of NetPMD Solutions. NetPMD Solutions was a provider of wholesale fiber services, data center colocation, and managed network services in Oklahoma. The acquisition strengthens Hilliary's fiber backbone, data center capabilities, and wholesale services portfolio. The combined company will serve a broader set of customers across Oklahoma. Hilliary's leadership emphasized the strategic fit and noted that the integration would expand both their enterprise and carrier services. The press release highlighted that the combined fiber network would exceed 800 miles in Oklahoma. Integration timelines were noted as ongoing, with full operational integration expected within 12-18 months of the acquisition close.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Oklahoma BEAD subgrantee list ISP awards 2025 2026 southwest Oklahoma"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://oklahoma.gov/odc/broadband/bead.html
+Title: BEAD Program | Oklahoma
+Description: Oklahoma's Broadband Equity, Access, and Deployment (BEAD) Program
+
+Result 2:
+URL: https://broadbandnow.com/research/oklahoma-bead-funding
+Title: Oklahoma BEAD Funding | BroadbandNow
+Description: Oklahoma BEAD funding overview
+
+Result 3:
+URL: https://www.telecompetitor.com/oklahoma-bead-program-awards-first-subgrantee-contracts-worth-683m/
+Title: Oklahoma BEAD Program Awards First Subgrantee Contracts Worth $683M | Telecompetitor
+Description: Oklahoma has awarded its first BEAD subgrantee contracts, totaling $683 million
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Hilliary Exchange job postings fiber design engineer GIS CAD 2025 2026"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.indeed.com/cmp/Hilliary-Exchange/jobs
+Title: Hilliary Exchange Jobs | Indeed
+Description: Job postings at Hilliary Exchange
+
+Result 2:
+URL: https://www.linkedin.com/jobs/hilliary-exchange-jobs
+Title: Hilliary Exchange Jobs | LinkedIn
+Description: Current job openings at Hilliary Exchange
+
+</tool_response>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.indeed.com/cmp/Hilliary-Exchange/jobs"}}
+</tool_call>
+<tool_response>
+Hilliary Exchange job postings on Indeed show openings in network engineering, field technician roles, and project management. The company is actively hiring for positions related to fiber network expansion and operations. Specific roles include fiber splicers, network engineers, and project coordinators. The postings emphasize experience with fiber optic installation, network design, and broadband deployment projects. Some listings mention familiarity with GIS mapping tools as a preferred qualification. The volume of postings suggests active expansion activity in line with their BEAD and acquisition-related growth plans.
+
+</tool_call>
+<tool_response>
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Hilliary Exchange fiber connect conference 2025 2026 broadband communities"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.fiberconnect.org/2025-agenda
+Title: Fiber Connect 2025 Agenda
+Description: Fiber Connect 2025 conference agenda
+
+Result 2:
+URL: https://www.lightreading.com/broadband/hilliary-exchange
+Title: Hilliary Exchange | Light Reading
+Description: Hilliary Exchange coverage on Light Reading
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Hilliary Exchange competitors southwest Oklahoma ISP fiber broadband"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.broadbandnow.com/internet-providers/oklahoma/lawton
+Title: Internet Providers in Lawton, OK | BroadbandNow
+Description: Internet providers in Lawton, Oklahoma
+
+Result 2:
+URL: https://www.telecompetitor.com/tag/oklahoma-broadband
+Title: Oklahoma Broadband | Telecompetitor
+Description: Oklahoma broadband news
+
+</tool_response>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.broadbandnow.com/internet-providers/oklahoma/lawton"}}
+</tool_call>
+<tool_response>
+Lawton, Oklahoma internet providers include AT&T, Cox Communications, Hilliary Exchange, and a few smaller providers. Hilliary Exchange is one of the primary fiber-based providers in the region. AT&T and Cox offer competing services, primarily cable and DSL in certain areas. Hilliary's fiber network is positioned as a premium option in the market. The competitive landscape shows Hilliary holding a differentiated position as a local fiber provider, while competing against national carriers with deeper resources. Access to federal broadband funding has given Hilliary an advantage in expanding into areas where larger carriers have not invested.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Hilliary\" Oklahoma broadband long haul fiber FTTH 2025 permit design construction"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.telecompetitor.com/hilliary-exchange-to-receive-5m-tbcp-grant-to-expand-fiber-in-oklahoma/
+Title: Hilliary Exchange to Receive $5M TBCP Grant to Expand Fiber in Oklahoma | Telecompetitor
+Description: Hilliary Exchange is to receive a $5M TBCP grant to expand fiber in Oklahoma
+
+Result 2:
+URL: https://www.hilliary.com/fiber
+Title: Fiber Services | Hilliary
+Description: Hilliary fiber internet services
+
+</tool_response>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.hilliary.com/fiber"}}
+</tool_call>
+<tool_response>
+Hilliary's fiber services page highlights their fiber optic internet offerings for residential and business customers. The company emphasizes symmetrical gigabit speeds, low latency, and reliability. They offer fiber to the home (FTTH) services and enterprise fiber solutions. The page promotes their local customer service and community-focused approach. Hilliary's fiber network covers parts of southwest Oklahoma, with ongoing expansion efforts. The company is investing in extending fiber to more homes and businesses, leveraging federal broadband funding to reach rural and underserved areas.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Oklahoma broadband office BEAD subgrantee announced Hilliary 2025 construction timeline"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://oklahoma.gov/odc/broadband/bead.html
+Title: BEAD Program | Oklahoma
+Description: Oklahoma's BEAD program page
+
+Result 2:
+URL: https://www.telecompetitor.com/oklahoma-bead-program-awards-first-subgrantee-contracts-worth-683m/
+Title: Oklahoma BEAD Program Awards First Subgrantee Contracts Worth $683M | Telecompetitor
+Description: Oklahoma's first BEAD subgrantee contracts worth $683M
+
+Result 3:
+URL: https://broadbandusa.ntia.doc.gov/states/oklahoma
+Title: Oklahoma | BroadbandUSA
+Description: NTIA broadband funding for Oklahoma
+
+</tool_response>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://broadbandusa.ntia.doc.gov/states/oklahoma"}}
+</tool_call>
+<tool_response>
+Oklahoma's NTIA broadband page shows the state has received $683,057,831 in BEAD funding. Oklahoma is actively working through its BEAD program phases, including subgrantee selection and contract finalization. The state's broadband office (Oklahoma Office of Digital Transformation) is overseeing the program. Oklahoma also received funding through the Digital Equity Act and other broadband programs. The page provides links to state program updates and contact information for the state broadband office. As of the available data, Oklahoma is in the process of moving from planning to implementation phases for BEAD-funded projects.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Hilliary Exchange revenue employees size Oklahoma telecom 2024"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.dnb.com/business-directory/company-profiles.hilliary_exchange_inc.html
+Title: Hilliary Exchange Inc | Dun & Bradstreet
+Description: Hilliary Exchange business profile
+
+Result 2:
+URL: https://www.crunchbase.com/organization/hilliary-exchange
+Title: Hilliary Exchange | Crunchbase
+Description: Hilliary Exchange company profile on Crunchbase
+
+Result 3:
+URL: https://www.linkedin.com/company/hilliary-exchange
+Title: Hilliary Exchange | LinkedIn
+Description: Hilliary Exchange LinkedIn page
+
+</tool_response>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.crunchbase.com/organization/hilliary-exchange"}}
+</tool_call>
+<tool_response>
+Hilliary Exchange on Crunchbase shows the company is a privately held telecommunications firm based in Lawton, Oklahoma. The company was founded in the 1990s and has grown to become a regional fiber and broadband provider. Employee count is listed in the 51-200 range. Funding information shows federal grant awards including the TBCP grant. No venture capital or private equity backing is noted. The company operates as an independent telephone exchange company (ILEC/CLEC) with a focus on fiber services in Oklahoma.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Hilliary Exchange Nvidia AI network technology 2025 OR 2026"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.hilliary.com
+Title: Hilliary
+Description: Hilliary - A Telephone Exchange Company
+
+Result 2:
+URL: https://developer.nvidia.com/networking/telecom
+Title: NVIDIA Networking for Telecom | NVIDIA
+Description: NVIDIA networking solutions for telecommunications
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Hilliary Exchange GIS fiber design tools workflow software 2024 2025"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.hilliary.com
+Title: Hilliary
+Description: Hilliary - A Telephone Exchange Company
+
+Result 2:
+URL: https://esri.com/en-us/industries/telecommunications
+Title: Telecom GIS Solutions | Esri
+Description: GIS solutions for telecommunications from Esri
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Oklahoma BEAD construction deadline 2026 permit requirements fiber deployment timeline"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://broadbandusa.ntia.doc.gov/technical-assistance/bead-program-guidance
+Title: BEAD Program Guidance | BroadbandUSA
+Description: NTIA BEAD program guidance documents
+
+Result 2:
+URL: https://www.ncsl.org/technology-and-communication/broadband-and-bead-program
+Title: BEAD Program | NCSL
+Description: NCSL overview of the BEAD program
+
+Result 3:
+URL: https://www.telecompetitor.com/bead-construction-timelines-state-broadband-offices-pressure-isps/
+Title: BEAD Construction Timelines: State Broadband Offices Pressure ISPs | Telecompetitor
+Description: State broadband offices are pressing ISPs on construction timelines for BEAD projects
+
+</tool_response>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.telecompetitor.com/bead-construction-timelines-state-broadband-offices-pressure-isps/"}}
+</tool_call>
+<tool_response>
+This article discusses the pressure state broadband offices are placing on ISPs to meet BEAD construction timelines. With BEAD becoming operational in April 2026, states have 6 months to finalize ISP contracts, with construction starts expected in Q3 2026 at the earliest. ISPs face a 4-year deployment deadline, creating urgency around mobilizing design, engineering, and permitting resources. The article notes that permitting is emerging as one of the most significant bottlenecks, with each permit review cycle taking 8 weeks to 12+ months depending on jurisdiction. ISPs that can accelerate their permit package preparation and reduce kickback cycles will have a significant advantage in meeting deadlines. State broadband offices are increasingly asking ISPs to demonstrate construction-readiness as part of their subgrantee agreements, adding further pressure to front-load design and permitting work.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Hilliary Exchange podcast interview Adam Cavazos broadband technology leadership"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.ruralfiberalliance.org/podcast
+Title: Rural Fiber Alliance Podcast
+Description: Rural Fiber Alliance podcast episodes
+
+Result 2:
+URL: https://broadbandbreakfast.com/hilliary
+Title: Hilliary | Broadband Breakfast
+Description: Hilliary coverage on Broadband Breakfast
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:telecompetitor.com OR site:lightreading.com OR site:broadbandbreakfast.com \"Hilliary\" 2025 2026"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.telecompetitor.com/hilliary-exchange-grows-fiber-network-via-acquisition/
+Title: Hilliary Exchange Grows Fiber Network via Acquisition | Telecompetitor
+Description: Hilliary Exchange has grown its fiber network via acquisition.
+
+Result 2:
+URL: https://www.telecompetitor.com/hilliary-exchange-to-receive-5m-tbcp-grant-to-expand-fiber-in-oklahoma/
+Title: Hilliary Exchange to Receive $5M TBCP Grant to Expand Fiber in Oklahoma | Telecompetitor
+Description: Hilliary Exchange to receive $5M TBCP grant
+
+Result 3:
+URL: https://broadbandbreakfast.com/hilliary-exchange-expands-fiber-oklahoma
+Title: Hilliary Exchange Expands Fiber in Oklahoma | Broadband Breakfast
+Description: Hilliary Exchange expanding fiber coverage in Oklahoma
+
+</tool_response>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://broadbandbreakfast.com/hilliary-exchange-expands-fiber-oklahoma"}}
+</tool_call>
+<tool_response>
+This article from Broadband Breakfast discusses Hilliary Exchange's fiber expansion efforts in Oklahoma. The company is leveraging federal broadband funding including TBCP grants and BEAD program allocations to extend fiber to unserved and underserved communities in southwest Oklahoma. The expansion encompasses both FTTH for residential customers and enterprise fiber services. Hilliary is positioning itself as a key regional provider and has been building out its network to handle increased capacity demands. The article mentions the NetPMD Solutions acquisition as a key component of their expanded fiber backbone strategy, allowing Hilliary to offer wholesale and carrier services in addition to retail broadband. The company's leadership has emphasized their commitment to rural connectivity and their ability to serve communities that larger national carriers have overlooked.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Hilliary Exchange Oklahoma permit ROW right of way broadband construction 2025"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://oklahoma.gov/odc/broadband/permits.html
+Title: Broadband Permitting in Oklahoma | Oklahoma
+Description: Oklahoma broadband permitting resources
+
+Result 2:
+URL: https://www.telecompetitor.com/oklahoma-broadband-permitting-challenges-2025
+Title: Oklahoma Broadband Permitting Challenges | Telecompetitor
+Description: Oklahoma broadband providers face permitting challenges in 2025
+
+</tool_response>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.telecompetitor.com/oklahoma-broadband-permitting-challenges-2025"}}
+</tool_call>
+<tool_response>
+This article discusses permitting challenges for broadband providers in Oklahoma in 2025. Oklahoma's diverse mix of tribal lands, federal lands (including significant areas managed by the Army Corps of Engineers and other federal agencies), and rural county jurisdictions creates a complex permitting environment. Providers operating in southwest Oklahoma, where Hilliary Exchange is based, face particular complexity due to the presence of tribal territories and military installations. These factors add layers to the permitting process that are not present in other parts of the state. The article notes that many smaller ISPs in Oklahoma are struggling to build the internal capacity needed to manage permit packages across multiple jurisdictions, and that mistakes or incomplete submissions are leading to costly kickback cycles. The state broadband office has been working with providers to streamline processes, but the underlying complexity of multi-jurisdictional permitting remains a major challenge.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Lawton Oklahoma Fort Sill tribal lands broadband fiber permitting complexity"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.army.mil/article/fort-sill-broadband
+Title: Fort Sill Broadband Initiative | U.S. Army
+Description: Fort Sill broadband connectivity
+
+Result 2:
+URL: https://www.comanchenation.com/broadband
+Title: Comanche Nation Broadband | Comanche Nation
+Description: Comanche Nation broadband initiatives
+
+Result 3:
+URL: https://www.telecompetitor.com/tribal-broadband-permitting-complexity-oklahoma
+Title: Tribal Broadband Permitting Complexity in Oklahoma | Telecompetitor
+Description: Tribal land permitting complexity for broadband in Oklahoma
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Hilliary Exchange Janan partnership channel fiber Oklahoma 2024 2025"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.hilliary.com
+Title: Hilliary
+Description: Hilliary - A Telephone Exchange Company
+
+Result 2:
+URL: https://www.janan.com/partners
+Title: Partners | Janan
+Description: Janan partner network
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Hilliary\" OR \"Hilliary Exchange\" design engineering capacity GIS CAD fiber drawings outsource"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.hilliary.com
+Title: Hilliary
+Description: Hilliary - A Telephone Exchange Company
+
+Result 2:
+URL: https://www.linkedin.com/company/hilliary-exchange/jobs
+Title: Hilliary Exchange Jobs | LinkedIn
+Description: Current job openings at Hilliary Exchange
+
+</tool_response>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.linkedin.com/company/hilliary-exchange/jobs"}}
+</tool_call>
+<tool_response>
+Hilliary Exchange's LinkedIn job postings include roles in network engineering, fiber optic technician, GIS analyst, and project management. The GIS analyst role specifically mentions experience with ESRI ArcGIS, fiber network data management, and network design support as key requirements. Other postings indicate the company is scaling up its

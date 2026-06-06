@@ -1,0 +1,651 @@
+Fiber Deployment Cost Annual Report 2025
+
+Fiber Deployment Cost Annual Report
+2025
+
+1
+
+Fiber Deployment Cost Annual Report 2025
+
+EXECUTIVE SUMMARY
+The Fiber Broadband Association partnered with Cartesian to research the cost of deploying fiber in communities and
+environments in the United States.
+In preparing the third edition of the Fiber Deployment Cost Report, Cartesian gathered input from a wide variety of firms building
+fiber networks across the nation. Research was conducted via phone interviews and online surveys in September and October
+2025. Participants included network operators and contractors, with projects distributed across 38 individual states. We also
+reviewed FCC data, company announcements, and other literature to provide context for the scale and pace of deployment.
+Selected highlights from this year’s study are presented below.
+
+More than 60% of households have access to fiber today
+Fiber now passes more than 60% of US households, with 11.8M additional homes passed in 2025 (including homes with more
+than one passing), of which 8.1M passings represent unique homes. Fiber also won big with the Broadband Equity Access and
+Deployment (BEAD) program, with fiber selected for 63% of eligible locations1.
+
+Underground deployments are twice as costly as aerial deployments and more expensive than last year
+This year, the typical underground deployment was reported to cost $18.00/ft, while the typical aerial deployment was $8.00/ft.
+Reported deployment costs were higher this year than last; the median underground deployment cost increased by 3% and for
+aerial, the median cost increased by 14%. While these are independent samples, the comparison aligns with reports that overall
+costs have increased from last year (see below).
+
+Labor accounts for 72% of underground deployment costs and 64% of aerial
+Labor formed the largest share of deployment costs, typically 72% of underground deployments and 64% of aerial deployments.
+Median labor costs were reported as $12.23/ft for underground builds, and $4.50/ft for aerial builds. Using internal labor tended
+to provide cost efficiencies of about 10%.
+
+Burial and construction methods are key determinants of deployment costs
+Laying fiber underground directly versus in a new conduit is ~40% cheaper but offers less flexibility and potentially higher
+maintenance costs. Trenching was reported to have the highest deployment cost, 60% more than plowing and 6% more than
+directional boring based on median costs.
+
+Most respondents felt the burden of higher deployment costs in 2025 and expect to face more cost increases in 2026
+92% of this year’s respondents reported a cost increase in 2025 compared to 80% of respondents last year who expected an
+increase in 2025. Going into 2026, 88% of respondents expect costs to increase again next year, driven by labor and materials,
+with permitting and make-ready costs also cited as key contributors.
+
+1
+
+State Broadband Offices, NTIA
+
+2
+
+Fiber Deployment Cost Annual Report 2025
+
+TABLE OF CONTENTS
+Executive Summary .........................................................................................................................................................................2
+Introduction .....................................................................................................................................................................................4
+Section 1: Fiber Year in Review ........................................................................................................................................................5
+Section 2: Fiber Deployment Costs ..................................................................................................................................................9
+Section 3: Deployment Cost & Timeline Trends ............................................................................................................................25
+Conclusion .....................................................................................................................................................................................31
+Appendix ........................................................................................................................................................................................32
+
+3
+
+Fiber Deployment Cost Annual Report 2025
+
+INTRODUCTION
+More than 60% of all households in the US—nearly 84.6M households—are serviceable by fiber today. Of those with fiber
+access, 40M households are connected to fiber, making it more accessible than ever before. Fiber coverage is set to expand
+further in the years to come, with the Fiber Broadband Association projecting fiber will reach 90% of homes by 2030—
+positioning fiber to become the dominant broadband access technology in the country.
+As industry players continue to build out fiber broadband networks, understanding how costs vary across different scenarios
+can help operators and contractors evaluate opportunities and plan construction more effectively. Historically, the industry has
+lacked reliable benchmarks to provide an in-depth look at costs related to fiber deployment. To bridge this gap, the Fiber
+Broadband Association has again partnered with Cartesian to research the cost of fiber deployment in communities across the
+US over time. The first edition of this report was published in 2023, followed by the second edition, released last year.
+In this latest report, we explore the fiber deployment landscape in 2025 using our findings from the 2025 Fiber Deployment
+Cost Survey and look ahead to developments expected in 2026 and beyond.
+Section 1 looks at 2025 fiber deployment through deployment numbers, trends, and industry news.
+Section 2 provides an overview of the factors that impact fiber deployment costs and detailed findings from this
+year’s Fiber Deployment Cost Study.
+Section 3 reviews deployment costs and timeline trends based on findings from this year’s Fiber Deployment Cost
+Study and summarizes expectations for the coming year.
+
+4
+
+Fiber Deployment Cost Annual Report 2025
+
+SECTION 1: FIBER YEAR IN REVIEW
+Over 60% of homes in the US are now serviceable by fiber
+The momentum of fiber deployment continued in 2025, with another strong year for fiber rollouts in the books.
+According to a recent study by the Fiber Broadband Association and RVA, more than 60% of US homes are now passed by fiber2,
+about 84.6M homes in total. This reflects 11% growth in 2025 with 11.8M additional homes passed in 2025 (including homes
+with more than one passing), of which 8.1M passings represent unique homes. While slightly below the record-breaking 13%
+growth rate of 2024, the deployment landscape remains strong. Figure 1.1 reflects the evolution of fiber coverage in the US
+since 2015.
+
+Deployment momentum is expected to continue into 2026, supported by continued high levels of private and public investment.
+Current and projected growth for fiber rollouts are on track with Fiber Broadband Association’s goal for fiber to reach 90% of
+US homes by 2030.
+
+16% of fiber serviceable homes now have a choice of fiber network
+Continued investment in fiber means more competition for providers and more choice for consumers, as seen by the growing
+number of homes with multiple fiber providers. As of September 2025, 13.8M homes3 (16.1% of homes with fiber access) are
+now serviceable by at least two fiber providers, an increase of 2.2M additional homes over the previous year (Figure 1.2).
+
+2
+
+Fiber Broadband Association, RVA LLC joint study – data as of September 2025; passings represents homes with at least one fiber service marketed
+
+3
+
+Fiber Broadband Association, RVA LLC joint study – data as of September 2025; passings represents homes with at least one fiber service marketed
+
+5
+
+Fiber Deployment Cost Annual Report 2025
+
+This year’s 3-percentage point increase in access to two or more providers represents the largest year-over-year increase since
+tracking began in 2015.
+
+Suburban and rural coverage make significant gains
+More rural areas are getting access to fiber, with coverage nearing 50%, helping to narrow the rural-urban digital divide that
+peaked in 2020. This gap in fiber access is expected to shrink further as BEAD deployments prioritize more rural areas and
+providers continue pursuing first-to-fiber market positions in greenfield markets.
+As of June 2025, approximately 12.8M rural locations (45%) were serviceable by fiber, a year-over-year increase of 2.3M
+locations. Rural coverage has made rapid headway since 2021, with fiber penetration more than doubling from 21% in 2021 to
+45% in 2025. Suburban coverage has also increased, with approximately 47.8M suburban locations (62%) serviceable by fiber
+as of June 2025, up from 41.4M locations in June 2024. As expected, urban locations continue to lead on fiber access, with 70%
+of locations serviceable by fiber. Coverage across the board continues to make strides, with rural areas showing the most
+significant gains in recent years (Figure 1.3).
+
+6
+
+Fiber Deployment Cost Annual Report 2025
+
+Increased rural coverage is reflected in the rapid growth seen in relatively rural states including Arizona, Idaho, Maine, New
+Mexico, and Wyoming—these states recorded the largest growth in fiber coverage from 2024 to 2025, averaging 39% year-overyear (YoY).
+
+Fiber growth is driven by overbuilder expansions and ILEC activity
+Current fiber expansion is driven by a mix of footprint expansion by ILECs and overbuild of legacy players by fiber-based
+providers. While ILECs still account for the largest share of homes currently served by fiber, other service provider types are
+increasingly deploying more fiber in both new and existing footprints (Figure 1.4).
+
+7
+
+Fiber Deployment Cost Annual Report 2025
+
+ILECs continue to grow through organic expansion, network upgrades, and acquisitions. Since 2020, ILECs have nearly doubled
+their fiber passings (34M in 2020 to 60M in 2025), with annual growth rates between 10–15%.
+Significant acquisition and investment activity further underscores the industry’s optimism around fiber. AT&T’s acquisition of
+Lumen’s Mass Markets fiber business, Verizon’s acquisition of Frontier, and T-Mobile’s joint venture with KKR to acquire
+Metronet are among the major deals nearing finalization. These transactions will expand the long-term footprints of these
+players, with Verizon gaining 10M premises4, T-Mobile gaining 6.5M premises5 and AT&T gaining at least 4.5M premises6.
+Overbuilders, meanwhile, are reshaping the competitive landscape. Historically a smaller share of the market, overbuilders
+deployed as much fiber in 2025 as ILECs, adding more than 4M new passings—a 25% increase YoY and the fastest growth rate
+of any provider type. Since 2020, they have quadrupled their passings to 20M, threatening the dominance of incumbents like
+ILECs and MSOs.
+MSOs also made considerable progress in 2025 primarily by upgrading legacy networks to fiber to remain competitive with
+overbuilders in overlapping territories. They were the largest recipients of funding in the recent BEAD Benefit of the Bargain
+round (BoB), signaling continued momentum in their fiber rollout strategy. Electric cooperatives and municipalities continued
+to expand, as well, with approximately 7M fiber passings between them at a steady annual growth rate of about 5%. As
+dominant providers in many rural areas, they play a key role in connecting digitally isolated communities.
+
+4
+
+Verizon press release, September 2024
+
+5
+
+T-Mobile press release, July 2024
+
+6
+
+AT&T press release, May 2025; Lumen Q3 2025
+
+8
+
+Fiber Deployment Cost Annual Report 2025
+
+SECTION 2: FIBER DEPLOYMENT COSTS
+Here we present findings from our annual fiber deployment cost survey, including deployment and drop cost benchmarks across
+a range of build scenarios in the US. Now in its third year, the survey allows us to track how costs are evolving over time by
+comparing results across the years.
+The survey covers four main topic areas: deployment costs (labor and materials), drop costs, other project costs, and changes
+in costs over time. The first three topics are addressed in Section 2, while sentiment on cost changes is covered in Section 3.
+
+Survey responses represent a cross-section of the fiber industry
+We conducted an online survey and phone interviews with a broad range of industry participants involved in fiber deployment,
+including service providers, contractors, national players, local operators, new entrants, and more. Nearly half of the responses
+came from service providers, and most respondents had more than 10 years of deployment experience.
+Responses covered deployment projects in 38 states and a wide variety of build scenarios and topographies, with a roughly even
+split across urban, suburban, and rural areas (approximately 30% each).
+While the results reflect typical build costs based on self-reported survey data, they provide a representative view of prevailing
+deployment economics. Costs may not be representative of every fiber deployment and should not be interpreted as precise
+benchmarks. Many factors influence the cost of fiber deployment, and no two projects are the same.
+
+9
+
+Fiber Deployment Cost Annual Report 2025
+
+As in last year’s study, respondents were asked to characterize their reported deployment project to help contextualize costs,
+including by terrain, construction technique, housing density, labor model7 (internal vs. outsourced), and cable type for aerial
+builds (Strand and Lash vs. All-Dielectric Self-Supporting (ADSS)).
+A new addition to this year’s report is data on the pace of deployments and the typical crew sizes associated with a respondent’s
+fiber build. Another new addition relates to deployment timelines, which is largely covered in Section 3.
+To allow for meaningful comparison of responses, respondents were asked to report labor 8 and materials on a unit cost basis
+(cost per foot) when reporting deployment costs.
+
+Underground deployments are more than twice as expensive and more common than aerial builds
+We received information from respondents for both underground and aerial deployment projects. In aerial deployment, fiber
+cables are run overhead on utility poles, whereas underground deployments place cables in conduits and ducts.
+Underground deployments are generally more expensive but offer greater resilience, with higher upfront capex enabling lower
+ongoing costs due to fewer repairs. Aerial deployments can also be costly when significant pole work is required, but when poles
+are available and need minimal preparation, they offer significant advantages.
+Given the unique benefits of each approach, nearly half (49%) of survey respondents use both aerial and underground
+deployment methods in their network build outs. Thirty eight percent exclusively deploy fiber underground and 13% exclusively
+deploy fiber overhead.
+Survey responses confirm the cost differences between the two methods: median underground deployment costs were
+$18.00/ft compared to $8.00/ft for aerial, as shown in Figure 2.1. For underground deployments, the interquartile range spans
+$11.50/ft to $25.00/ft, compared with $4.90/ft to $11.50/ft for aerial. Given the wide variation in reported costs, our analysis
+focuses on median costs unless otherwise stated.
+
+7
+
+Characterizations of internal and outsourced labor were self-reported and may vary by organization or respondent
+
+8
+
+For labor costs, respondents were asked to provide fully loaded costs
+
+10
+
+Fiber Deployment Cost Annual Report 2025
+
+Underground builds have a wider cost distribution than aerial builds
+The reported range of aerial costs is heavily concentrated around the $8.00/ft median, with only 15% exceeding $15.00/ft. The
+long tail of higher cost responses shown in Figure 2.2 reflects more difficult and expensive deployments outside the norm. Unlike
+aerial construction, underground deployments have a greater variability at both ends of the distribution, with some builds
+reported to be as low as $5.00/ft or as much as $50.00/ft for labor and materials.
+Figure 2.2 illustrates the cost distribution for underground and aerial builds, both showing a cluster of responses around the
+median and a long tail of more expensive, complex builds.
+
+11
+
+Fiber Deployment Cost Annual Report 2025
+
+Reported deployment costs are higher than previous years
+Figure 2.3 illustrates the median deployment costs from 2023 to 2025, with 2025 marking the highest costs to date9. Compared
+to 2024, median underground costs rose 3% ($18.00/ft vs. $17.50/ft), while aerial costs increased 14% ($8.00/ft vs. $7.00/ft).
+Since the first edition of this report in 2023, both underground and aerial deployment costs have increased each year10.
+
+9
+
+Note: Based on respondents to the 2023, 2024, and 2025 studies reporting on current costs for the current year. Each year of data is independent from the
+next, hence care should be taken when interpreting the results.
+10
+Several respondents updated their 2024 responses during the data collection period for 2025, resulting in a slight variation to reported costs from the 2024
+annual report.
+
+12
+
+Fiber Deployment Cost Annual Report 2025
+
+Current inflation levels provide a macroeconomic backdrop for rising costs. Higher wages, increased overhead (e.g., insurance,
+healthcare), and skilled worker shortages11 are driving labor expenses up, while tariffs have elevated the cost of imported
+materials, despite more stable supply chains. Commentary from respondents echo these macroeconomic concerns and shed
+light on industry-specific burdens.
+Most respondents reporting notably higher costs in 2025 point to labor rates as the primary reason. Conversely, providers that
+had similar costs to last year point to multi-year service agreements with contractors and/or stockpiled materials that have
+shielded them from some of the current market dynamics. While aerial and underground builds were both impacted by labor
+and materials, make-ready costs also increased deployment costs for aerial deployments.
+
+Labor accounts for 72% of underground deployment costs and 64% of aerial
+Labor’s share of deployment costs, about 72% of underground and 64% of aerial, is consistent with last year’s findings (75% for
+underground, 63% for aerial)12. Median labor and materials costs were $12.23/ft and $4.65/ft for underground deployments,
+and $4.50/ft and $2.50/ft for aerial deployments, respectively.
+Figure 2.4 shows the distributions of reported labor and material costs. As with overall deployment costs seen in Figure 2.1,
+underground labor has a much wider range and a median nearly three times that of aerial. Material costs follow a similar
+distribution across both underground and aerial deployments, with roughly 80% of responses falling within $2.00 of the median
+amount.
+
+11
+
+Fiber Broadband Association, PCCA joint study – July 2024
+
+12
+
+For labor costs, respondents were asked to provide fully loaded costs
+
+13
+
+Fiber Deployment Cost Annual Report 2025
+
+A closer look at labor costs (Figure 2.5) shows that using internal crews often yields lower costs13. For underground deployments,
+typical costs for internal versus outsourced labor were $11.13/ft vs. $12.73/ft (i.e., savings of 13% by using internal labor).
+Similarly, for aerial deployments, the typical costs were $4.00/ft for internal vs. $4.50/ft for outsourced (i.e., savings of 11% by
+using internal labor).
+
+13
+
+Depending on the respondent, internal versus external labor may have different context
+
+14
+
+Fiber Deployment Cost Annual Report 2025
+
+While the reported costs for internal labor are typically lower, outsourced labor crews can provide greater flexibility. Some
+respondents noted that overhead costs—such as travel—can drastically increase overall costs, even if not reflected in the labor
+rate. Using localized crews can help alleviate extra costs imposed by mobile crews.
+
+Western and Northeastern states have the highest reported costs
+Reported costs vary within and between regions due to differences in terrain, topography, labor pools, and wages.
+As depicted in Figure 2.6, Western and Northeastern states are typically the most expensive regions for fiber deployment. This
+is more prevalent for underground deployments, with median costs in the West nearly double those in the Midwest. Notably,
+the South had the most variability in underground deployment costs, as reflected by the widest interquartile range.
+
+15
+
+Fiber Deployment Cost Annual Report 2025
+
+While Western and Northeastern aerial deployments are the most expensive, the difference between regions is not as steep for
+aerial builds as for underground deployments. Western states have a median cost of $9.65/ft for aerial builds versus Midwestern
+states with a cost of $6.55/ft. As aerial builds are less impacted by terrain (compared to underground builds), a closer cost range
+between regions is to be expected.
+
+Deployment costs are directly related to housing density
+Housing density is a key consideration in fiber deployment. Cost per home passed typically increases as density decreases (total
+cost spread among fewer homes). However, the opposite trend appears on a per-foot basis: Less dense regions tend to have
+lower per-foot costs as there are fewer obstacles (roads, sidewalks, buildings, etc.) to navigate than in urban areas. From a
+density perspective, rural deployments are generally less complex.
+This pattern is reflected in our results: urban deployments have the most expensive unit costs, nearly twice those of extremely
+rural builds (Figure 2.7). For underground builds, median costs range from $11.88/ft for extremely rural areas to $20.38/ft for
+urban areas. Aerial builds show a similar spread, with a median cost of $5.47/ft in rural areas versus $9.00/ft in urban areas.
+Nearly 60% of all underground urban builds exceed the overall median for underground deployments, reflecting the challenges
+associated with urban builds. The same relationship holds true for aerial deployments.
+Underground build costs varied widely, particularly for rural and urban builds, driven by factors such as terrain and labor
+availability that cause such variations.
+
+16
+
+Fiber Deployment Cost Annual Report 2025
+
+Compared to last year’s study, cost pressures in underground urban and suburban builds eased slightly, with slightly lower
+median costs in 2025 vs 2024. Higher YoY median costs were more acutely felt in very rural underground builds and urban aerial
+builds.
+
+Underground deployments are significantly impacted by the terrain
+Terrain can significantly impact deployment costs by influencing construction methods, deployment pace, and use of conduit.
+Respondents identified the dominant terrain for their underground builds—hard clay, soft earth, rocky, wetlands, or a mix of
+terrains.
+As expected, the most difficult terrains had the highest costs. Rocky terrain emerged with the highest median cost of $22.00/ft
+and produced some of the most expensive deployments overall, reflected in the long tail of higher cost responses. More than
+75% of all rocky (and hard clay) builds exceeded the national median of $18.00/ft. The range of deployment costs by terrain are
+shown in Figure 2.8.
+
+17
+
+Fiber Deployment Cost Annual Report 2025
+
+Areas with softer ground typically present less complex build environments and therefore lower median costs ($12.10/ft for
+hard clay and soft earth and $15.73/ft for soft earth).
+Respondents whose builds spanned multiple terrains had a typical build cost of $16.00/ft, however, the upper range of costs
+went well beyond $50.00/ft. Mixed terrains may require fiber crews to employ different techniques across different terrains,
+which drives up costs.
+
+How fiber is laid can often provide cost savings depending on infrastructure availability
+Respondents were asked to provide their typical method for laying underground fiber: direct burial, using existing conduits, or
+laying via new conduits.
+Unsurprisingly, the process of installing new conduits and pulling fiber cables through them was associated with the highest
+median deployment cost at $18.50/ft, as seen in Figure 2.9. This was also the most common method to install fiber, used by
+more than 75% of respondents, and showed the widest range of reported costs.
+
+18
+
+Fiber Deployment Cost Annual Report 2025
+
+Where feasible, using existing conduits can provide capex savings ($15.00/ft vs. $18.50/ft) compared to installing a new conduit.
+However, respondents noted that existing conduits are commonly at full capacity and poorly maintained, resulting in the need
+to install new conduits even if conduits already exist along the route.
+Direct burial was the cheapest method, costing only $10.32/ft. However, this was also the least common method, with only 15%
+of respondents reportedly burying fiber directly. While less expensive upfront, direct burial exposes the cables to a greater risk
+of fiber cuts than using conduits, increasing the potential for higher maintenance and repair costs in the future.
+
+Construction method drives deployment cost variation
+A variety of construction techniques are available for both underground and aerial builds, each with their own strengths and
+challenges. A description of the most common methods can be found in the appendix (Tables A.1 - A.2).
+For underground deployments, respondents identified their primary construction technique for the project(s) they reported
+on—plowing, directional boring, trenching, microtrenching, or a combination of techniques. The variation between
+underground construction methods is highlighted in Figure 2.10.
+Among individual techniques, Trenching had the highest median costs at $19.00/ft and the greatest range of costs, while plowing
+was least expensive, clustering around the median cost of $11.88/ft. Most combinations of construction techniques resulted in
+the highest median costs of $25.00/ft, reflecting the added equipment and specialized skill for deployment.
+
+19
+
+Fiber Deployment Cost Annual Report 2025
+
+Trenching’s high price tag relative to other techniques is consistent with last year’s study; however, the median cost of trenching
+is down slightly YoY.
+For aerial deployments, strand and lash installations had a lower median cost versus ADSS cables ($7.20/ft vs. $8.23/ft); however,
+strand and lash installations also had a wider range of costs, reportedly reaching up to $60.00/ft—see Figure 2.11. Beyond
+deployment costs, it is generally understood that ADSS installations have lower make-ready costs, potentially reducing overall
+project costs by ~15-20%14.
+
+14
+
+AFL Global, Commscope, STL Tech
+
+20
+
+Fiber Deployment Cost Annual Report 2025
+
+Impact of Crew Sizes on Pace of Fiber Deployment
+This year, we analyzed crew sizes and the pace of rollout to better understand if there are benefits to using crews of certain
+sizes. We asked respondents to provide their typical crew size and daily fiber rollout (in feet) per crew.
+
+Figure 2.12 illustrates the distribution of crew sizes used by respondents for their projects. For underground deployments, 51%
+of respondents used crews of 5 or 6 members, while 30% of respondents used crews of 4 or fewer members. For more
+complex/large scale builds, crews of 7 or more members were used (19% of the time). When aerial methods are used, 77% of
+respondents used crews of 5 or fewer members, with less than a quarter of respondents having larger crews.
+
+21
+
+Fiber Deployment Cost Annual Report 2025
+
+Because underground builds are more labor intensive, rollout pace tends to be slower than for aerial builds. Figure 2.13 shows
+that over 75% of underground crews deploy less than 2,000 feet of fiber per day per crew, compared to 51% of aerial crews.
+Aerial respondents reported a wider range of paces, suggesting that comparatively greater lengths of fiber can be rolled out by
+an aerial crew on a given day provided conditions are conducive.
+For underground builds, more than half (56%) of the rollouts have a daily pace of less than 1,000 feet of fiber per day per crew.
+Of this share, about 56% of the rollouts are less than 500 feet per day, while 44% of the rollouts are between 500–1,000 feet
+per day per crew.
+We also explore the relationship between crew size and pace per day per fiber crew as seen in Figure 2.14.
+
+22
+
+Fiber Deployment Cost Annual Report 2025
+
+The results suggest a modest positive relationship between crew size and deployment pace, especially when comparing smaller
+teams to much larger ones. However, the relationship is not definitive, as larger crews may also be associated with more complex
+builds.
+At the median, underground crews with seven or more members install around 1,600 feet per day, compared to about 1,000
+feet per day for crews of three or fewer members. For aerial deployments, crews of six members tend to deploy the most fiber
+per day with a median of 4,000 feet compared to crews of three or fewer members who typically deploy around 1,800 feet per
+day. In general, crews of the same size can deploy more rapidly aerially as compared to underground.
+
+Customer drops/connection costs vary slightly by last-mile network lengths
+In addition to deployment costs, we also asked respondents to characterize their customer connections (“drops”). Drop costs
+were reported on a per-connection basis and exclude any costs associated with the ONT and any other CPE.
+Similar to network build, underground drop costs tend to be higher than aerial drop costs. Median underground drop costs
+range from $556 for drops under 100 feet to $675 for drops over 500 feet, while median aerial drop costs range from $338 for
+drops under 100 feet to $400 for drops over 500 feet (Figure 2.15).
+Drop length appears to have limited impact on median drop costs—underground drops have slightly more variability than aerial
+drops, with typical drop costs increasing by 21% and 18% respectively due to lengths. For most underground drops, labor costs
+account for 70% of total drop costs, while for aerial drops, it is slightly less at 60% of total drop costs.
+
+Make-ready costs and permitting had a large impact on project costs in 2025
+Beyond labor and materials, many other costs are associated with deploying fiber. These include pre-deployment activities like
+planning the network route, obtaining permits from various property owners to use rights of way (ROWs), preparing utility poles
+for other attachments, locating utility infrastructure, conducting environmental assessments, and coordinating construction
+logistics.
+
+23
+
+Fiber Deployment Cost Annual Report 2025
+
+Respondents were asked to estimate the share of total project costs attributable to deployment (labor and materials), makeready work, permitting, and engineering/designing (see Figure 2.16). Deployment—the actual laying or hanging of fiber,
+discussed throughout this section—accounted for around 55% of the total project cost. Engineering, make-ready costs, and
+permitting ranged widely but on average comprised 15%, 14%, and 10% of total project costs, respectively. While respondents
+report that engineering costs contribute more to overall costs on average than make-ready work and permitting, most of the
+feedback received on unexpected and prohibitive costs centered on make-ready work and permitting.
+Make-ready work prepares poles for attachments in aerial deployments and typically includes surveying, engineering, and
+construction. Costs for these activities vary based on pole ownership and the condition of existing attachments. Respondents
+noted obstacles such as lack of pole space, coordination with utilities and multiple pole owners, aging infrastructure, and the
+need to install new poles—all of which significantly impact make-ready costs.
+In some cases, make-ready costs were estimated to be upwards of 150% of the construction budget, forcing re-engineering and
+adding further complexity and expense (including higher engineering costs). Several respondents noted that the make-ready
+estimates were so high that they changed their planned builds from aerial to underground.
+On average, permitting made up around 10% of project costs, rising to as much as 30% in unique circumstances. Permitting costs
+(i.e., fee structures and total fees) can vary based on jurisdiction and planned construction. More than the fee itself, respondents
+noted permitting’s impact on project cost in the form of delays. Respondents with higher permitting burdens reported longerthan-usual delays in securing approvals, which pushed back timelines and increased costs. Permitting delays tend to have a
+domino effect on other project cost components, introducing uncertainty that further inflates planning costs and timelines.
+
+24
+
+Fiber Deployment Cost Annual Report 2025
+
+SECTION 3: DEPLOYMENT COST & TIMELINE TRENDS
+This section examines how deployment costs have changed over the past year and how respondents expect them to change in
+the year ahead. To understand how costs are evolving, we asked respondents to classify annual cost changes as decreasing
+“significantly” (more than 10% lower), decreasing “slightly” (less than 10% lower), stable (no material change), increasing
+“slightly” (less than 10% higher), or increasing “significantly” (more than 10% higher)15. Respondents also identified the main
+factors driving reported and predicted changes. Beyond costs, we asked how deployment timelines have changed over the past
+year and how they expect them to evolve in the coming year.
+
+Most respondents are facing higher deployment costs in 2025
+When asked how deployment costs have changed from 2024, an overwhelming 92% of respondents experienced higher costs
+in 2025, including nearly a third of respondents reporting “significantly” higher costs in 2025 (Figure 3.1). Very few respondents
+reported stable (6%) or decreasing (2%) costs in 2025. These trends mirror what we see happening to median deployment costs;
+per Section 2, median underground and aerial costs rose by 3% and 14% YoY, respectively.
+
+The share of respondents reporting annual cost increases rose compared to last year, increasing from 84% of respondents in
+last year’s study to 92% this year. However, the share of respondents reporting “significantly” higher costs is down from 41% in
+2024 to 32% in 2025 (Figure 3.2), indicating relief for some from the largest cost hikes.
+
+15
+
+Level of cost changes may have different financial impacts for any given respondent based on their fiscal situation, which is beyond the scope of this report
+
+25
+
+Fiber Deployment Cost Annual Report 2025
+
+Larger than predicted share of respondents reported significant cost increases in 2025
+In last year’s study, respondents were asked to predict how deployment costs would change in 2025. We can now compare
+those expectations with the cost changes reported in this year’s survey. While the samples are independent, the comparison
+offers useful insight into how cost expectations align with actual outcomes.
+In 2024, 80% of respondents predicted costs would increase in 2025; in reality, 92% reported higher costs in 2025—a 12percentage point difference. This difference is most prominent for those reporting a “significant” increase, with a 7-percentage
+point difference between expectations from 2024 and 2025 reality (Figure 3.3).
+The largest mismatch, however, was in expectations that costs would remain stable. 15% of 2024 respondents expected costs
+to hold steady in 2025, whereas only 6% of 2025 respondents reported experiencing stable costs. This lines up with consensus
+from stakeholders that deployment costs in 2025 are higher than what was anticipated.
+
+26
+
+Fiber Deployment Cost Annual Report 2025
+
+Labor and Materials continue to drive up deployment costs
+To identify the drivers of deployment cost changes, respondents were asked to select the primary cost categories contributing
+to higher or lower costs. Study participants could choose one or more options between labor, materials, make-ready costs,
+engineering, permits, and “other”.
+Consistent with last year’s findings, labor and materials remain the dominant drivers of increasing deployment costs. For those
+who reported “slight” increases, 86% cited labor as the key driver and 66% cited materials (Figure 3.4). The share of labor and
+materials is similar for those who reported a “significant” cost increase—80% of respondents cited labor as the key driver, and
+61% of respondents cited materials.
+This year’s results also highlight the growing impact of make-ready and permitting costs. Make-ready work was cited by 25% of
+respondents reporting “slight” increases, doubling to 50% among those reporting “significant” increases. As discussed in Section
+2, make-ready costs are highly variable and can escalate quickly due to infrastructure constraints, coordination requirements,
+and timeline extensions. Respondents also noted that increased deployment in rural areas (as discussed in Section 1) has further
+amplified make-ready needs, translating to higher costs for respondents in 2025.
+Permitting and engineering costs followed a similar pattern, cited more frequently by respondents who faced “significant”
+increases (36% and 27% respectively) than those who faced “slight” increases (28% and 22% respectively). Permitting was
+another major challenge for respondents, with unforeseen requirements and permitting delays frequently cited as key factors
+resulting in higher deployment costs.
+
+27
+
+Fiber Deployment Cost Annual Report 2025
+
+Delays in deployment timelines impact nearly 50% of respondents
+We asked respondents whether, and to what extent deployment delays were longer than previous years. In 2025, nearly half
+(46%) of the respondents faced material project delays. Among respondents who reported a cost increase in 2025, the share
+also reporting delays rose marginally to 50%. However, delays were not limited to higher-cost projects—25% of respondents
+who did not report cost increases still experienced timeline setbacks.
+Permitting, utility locates, and make-ready work were the most cited drivers of delays. Permitting issues were particularly
+impactful, with respondents reporting timelines extending by approximately 20% compared to previous years—extending
+projects by two months in many cases, and up to 18 months in the most egregious of cases. Respondents pointed to
+understaffed/under-resourced permitting offices, changing regulations, and longer approval cycles as causes for the delays
+they’re seeing in obtaining permits.
+Utility locates were also a major concern, with respondents noting locate worker shortages and marking inaccuracies
+contributing to project delays.
+
+Costs are expected to increase again next year, but not as steeply as 2025
+As in previous years, respondents were asked to predict how costs will change in the coming year. Figure 3.5 shows how
+respondents from this year predict deployment costs to change going into 2026.
+
+28
+
+Fiber Deployment Cost Annual Report 2025
+
+Most respondents (88%) are preparing for higher costs next year. Nearly two-thirds (62%) expect increases of less than 10%,
+while about a quarter (26%) anticipate a “significant” cost increase. A small minority of respondents (3%) anticipate costs to
+decrease in 2026.
+The overall cost outlook for the upcoming year largely resembles predictions from our 2024 study and is somewhat more
+optimistic than actual 2025 results: fewer respondents expect “significant” increases (26% versus 32% who experienced
+“significant” increases in 2025).
+Going into 2026, labor and materials remain the main drivers of anticipated cost increases. Notably, respondents emphasized
+materials as an even stronger contributor than labor in cases of “significant” increases (Figure 3.6).
+
+29
+
+Fiber Deployment Cost Annual Report 2025
+
+Anecdotally, respondents remain concerned with the impact of tariffs and inflation on material costs. While material stockpiles
+shielded some respondents from price increases in 2025, those buying materials next year may face higher prices.
+Beyond deployment labor and materials, concerns around make-ready, permitting, and engineering costs aren’t going
+anywhere. These factors remain top of mind, as they can drastically raise project costs or cause delay.
+
+Deployments are expected to take even longer in 2026
+This year we asked participants to predict whether, and to what extent, deployment timelines will deviate from their norm in
+2026. As discussed in Section 2, delays are frequently associated with higher costs.
+Nearly two-thirds of respondents (62%) expect deployment delays, including 49% who anticipate “somewhat longer”16 timelines
+next year and 13% who are bracing for “significant” delays (Figure 3.7). Respondents noted that permitting timelines and utility
+locates are expected to be key drivers of delays.
+
+Deployment delays can lead to higher build costs by disrupting planned resource use and introducing uncertainty. When
+timelines are extended, labor crews scheduled for a project may need to be reassigned, resulting in less efficient labor utilization
+and higher overall costs. These delays can be especially costly in regions with limited construction windows (e.g., cold weather
+climates), where there is little flexibility to recover lost time.
+Delays also create opportunity and financing costs. Projects may incur expenses before construction begins while revenue
+generation is postponed, and crews may not be freed up to move to the next sites as planned. In some cases, projects are
+financed with loans based on initial cost assumptions that become outdated after delays occur, particularly if labor costs rise
+before construction resumes.
+
+16
+
+Increase “somewhat” implies ttimelines increases by less than 30%, while increase “significantly” implies timelines increase by more than 30%
+
+30
+
+Fiber Deployment Cost Annual Report 2025
+
+CONCLUSION
+Fiber is the clear preference for broadband access in the US
+Fiber continued its upwards trajectory in 2025, with 84.6M homes passed by fiber as of September—meaning more than 60%
+of US households are now serviceable by fiber. 16% of serviceable households even have access to multiple fiber providers.
+This progress has been driven by significant activity in the private sector, with major ILECs rapidly expanding their fiber footprints
+through acquisitions, joint ventures, legacy network upgrades, and expansions. Fiber overbuilders also aggressively increased
+their presence across both new and existing markets.
+Despite economic pressure from tariffs and inflation, sentiment around fiber as a resilient, long-term broadband technology
+remains strong. While some economic headwinds that characterized 2025 are expected to remain, recently lowered interest
+rates and full bonus depreciation are likely to promote investment.
+Public funding has also played a significant role. The BEAD program reached key milestones in 2025, including the BoB round
+that culminated in final proposal submissions and approvals (now complete for most entities). Fiber was selected for 63% of all
+eligible locations and received 84% of awarded funding—the greatest of any technology. These projects will bring fiber to all
+corners of the US and connect more rural communities than ever before. Historical public investment and continued private
+investment will aid fiber in becoming the dominant broadband delivery technology.
+Deployment costs increased in 2025 for most study participants, primarily due to more expensive labor and materials.
+Respondents also frequently cited permitting delays, difficulties with utility locates, and costly make-ready work as factors
+impacting deployment timelines and overall project costs—obstacles that appear more pervasive than in prior years.
+Looking ahead to next year, with BEAD deployments set to break ground and major ILECs and local ISPs alike pushing ahead
+towards passings targets, we expect 2026 to keep pace with previous record levels of deployment. We also expect further cost
+increases, as 88% of respondents are bracing for higher deployment costs in 2026. Permitting, longer deployment timelines,
+labor shortages, and growing demand from AI and data center development are all expected to shape the deployment
+landscape.
+Beyond consumer broadband, fiber is becoming increasingly critical to the future growth of major tech players, as it is the only
+technology capable of supporting the backhaul requirements of AI data centers. As AI adoption accelerates, fiber’s strategic
+importance will continue to grow.
+Overall, fiber’s outlook remains strong, supported by public funding, private investment, and continued demand from both
+consumers and hyperscalers. Successfully managing rising costs and deployment complexity will be key to sustaining this
+momentum.
+
+31
+
+Fiber Deployment Cost Annual Report 2025
+
+APPENDIX
+
+32
+
+

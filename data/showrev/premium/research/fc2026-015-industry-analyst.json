@@ -1,0 +1,47 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Mountain, Ltd. (mountainltd.com) appears to be a Florida-based telecommunications and wireless infrastructure company. Based on available signals, the company operates in wireless/fiber network design and deployment services, consistent with Chris Lee's title of Director of Wireless. The Orlando/Tampa corridor positioning (phone prefix 813 = Tampa) suggests they serve the Florida market — a state with $683M in BEAD allocation and active broadband office activity. Source: domain lookup + area code analysis.",
+    "Florida's BEAD program became operational April 30, 2026, with a 6-month window for ISP contracts and construction starts expected Q3 2026. Mountain, Ltd., as a Florida-based telecom firm, is almost certainly embedded in or adjacent to this funding wave — either as a subcontractor, engineering services provider, or network operator. The $683M Florida BEAD allocation is among the larger state programs and creates immediate design/permitting volume pressure. Source: Industry Intelligence KB + Florida Broadband Office public records.",
+    "The contact title 'Director of Wireless' at a company named Mountain, Ltd. in a flat Florida geography creates an immediate anomaly worth noting: wireless-first firms in Florida are increasingly being forced into fiber hybrid deployments to qualify for BEAD funding, since BEAD strongly prefers end-to-end fiber. If Mountain, Ltd. is primarily a wireless ISP or wireless engineering firm, they may be in transition to fiber — exactly the moment when GIS-to-CAD workflow gaps become acute. Source: BEAD program rules (NTIA) + industry baseline.",
+    "No trade press mentions of Mountain, Ltd. found across FierceNetwork, LightReading, Telecompetitor, or Broadband Communities in the search window. This is a signal of a small-to-mid-tier operator or engineering services firm operating below industry media coverage thresholds. Companies at this tier are often under-resourced for the design/permitting surge BEAD is generating. Source: direct search, not found.",
+    "No verified BEAD sub-grant award for Mountain, Ltd. specifically was found in Florida broadband office public databases. This could mean (a) they are a services/engineering firm rather than an ISP applicant, (b) they are a subcontractor to a BEAD awardee and thus not named in primary award records, or (c) they have not yet secured funding. All three scenarios still create permitting workflow demand. Source: Florida BEAD sub-grant review, not found for this entity specifically.",
+    "Job posting activity for Mountain, Ltd. could not be confirmed via public job boards at the time of this analysis. Absence of visible postings at a firm of this size during the BEAD surge is itself a signal — it may indicate they are relying on subcontractors or existing team capacity rather than scaling headcount, which increases the pressure on per-designer throughput. Source: LinkedIn/Indeed search, not confirmed.",
+    "The broader Florida telecom market is experiencing the same labor dynamics as the national baseline: 3:1 job-to-candidate ratio for fiber designers, 58,000 new roles needed by 2032, and 3+ year ramp for new hires. Any firm in Florida doing fiber design work — or about to — faces a structural capacity ceiling that tools like Inorsa directly address. Source: Industry Intelligence KB.",
+    "Mountain, Ltd.'s Florida geography puts them in a permitting environment that includes municipal, county, and state-level right-of-way processes — Florida's permitting complexity is moderate-to-high, with urban corridors (Orlando, Tampa) known for multi-jurisdictional review cycles. Average permit review of 8-12+ weeks applies directly. Each kickback in this environment is a 3-6 week delay. Source: Industry Intelligence KB + Florida municipal permitting baseline.",
+    "Chris Lee's attendance at Fiber Connect 2026 as Director of Wireless is a strong signal of active market engagement and awareness of the fiber buildout wave. Wireless directors attending fiber-focused conferences are typically evaluating either network evolution (adding fiber) or workflow modernization for hybrid projects. This is not a passive attendee profile. Source: ShowRev lead data.",
+    "Competitive context: IQGeo is the dominant GIS-native platform in this space and likely the incumbent or aspirational platform for a firm of Mountain, Ltd.'s profile. AirWorks (drone-to-CAD) and offshore design shops are the other displacement threats. If Mountain, Ltd. is currently running manual GIS-to-CAD workflows or using a legacy platform, the BEAD volume surge makes the status quo unsustainable within 12-18 months. Source: Industry Intelligence KB + competitor landscape from Brain."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Mountain, Ltd. corporate profile: no Crunchbase, Pitchbook, or trade press record found. Cannot confirm revenue size, employee count, or PE/investor backing.",
+    "Cannot confirm whether Mountain, Ltd. is a network operator/ISP, an engineering services firm, or a hybrid. This distinction is critical for positioning Inorsa — operators care about deployment speed, engineering firms care about throughput per designer.",
+    "No verified BEAD sub-grant or funding announcement for Mountain, Ltd. specifically. Cannot confirm they are in active BEAD-funded deployment.",
+    "No job postings found — cannot confirm hiring signals or capacity gaps via workforce data.",
+    "No trade press, podcast, or conference speaker record found for Mountain, Ltd. or Chris Lee. Cannot extract direct executive quotes or stated priorities.",
+    "Cannot confirm whether 'Mountain, Ltd.' is a DBA, subsidiary, or legal entity — the name is generic and may yield false positives in searches. The mountainltd.com domain was not publicly profiled in accessible sources.",
+    "Unclear whether the 813 (Tampa) phone prefix vs. Orlando location reflects a headquarters/branch split or a personal mobile number. This affects geographic market assumptions.",
+    "No confirmation of specific competitors Mountain, Ltd. is facing in their local market or project pipeline."
+  ],
+  "challengesToOtherFindings": [
+    "The 'Director of Wireless' title could indicate this contact manages wireless infrastructure rather than fiber — if Mountain, Ltd. is primarily a tower/cellular firm, Inorsa's fiber-only positioning is a direct misalignment. The Brain knowledge base notes Inorsa serves 'fiber only (no tower/cellular).' This is the single biggest qualification risk for this lead and should be resolved before investing in deep personalization.",
+    "The ICP status of 'hold' is appropriate given the title ambiguity. A Director of Wireless at a potentially wireless-first firm is not a confirmed fiber buyer. Other personas should not assume fiber engagement without validating that Mountain, Ltd. has an active fiber program.",
+    "The Batch D / ungraded status likely reflects exactly this ambiguity — the title signals proximity to the market without confirming fiber-specific need. I would not upgrade this lead's priority until the wireless vs. fiber question is resolved.",
+    "Florida's $683M BEAD allocation is real, but without confirmation that Mountain, Ltd. is either an ISP applicant or a subcontractor to one, the BEAD urgency narrative is speculative for this specific prospect. Do not overstate funding exposure in outreach without a confirmation hook."
+  ],
+  "topInsight": "The defining risk and opportunity for this lead is the same thing: 'Director of Wireless' at a Florida firm attending a fiber conference in May 2026 is either a wireless-to-fiber transition signal (high value) or a misaligned title (disqualifying for Inorsa's fiber-only product). The outreach should be structured to resolve this binary quickly — acknowledge the wireless-fiber convergence dynamic in Florida's BEAD environment, ask a confirming question about their fiber program, and position Inorsa's permitting cycle reduction value only if fiber engagement is confirmed. Do not pitch fiber design tooling to a tower/cellular shop. The hook, if fiber is confirmed: Florida's BEAD construction surge starts Q3 2026, permitting is the bottleneck, and a Director of Wireless adding fiber to their scope for the first time is exactly the profile that gets buried in permit kickbacks without validated drawing workflows.",
+  "sourcesUsed": [
+    "ShowRev lead record: Mountain, Ltd. / Chris Lee / Director of Wireless / Orlando FL",
+    "Inorsa product brief (system prompt): fiber-only, GIS-to-CAD, permitting workflow, no tower/cellular",
+    "Industry Intelligence KB: BEAD operational April 30 2026, Florida $683M allocation, labor shortage baseline, permitting cycle data, fiber price increases",
+    "Brain Knowledge Digest: IQGeo, AirWorks, competitor landscape references",
+    "NTIA BEAD program rules: fiber preference for funding eligibility",
+    "Florida area code 813 = Tampa/Hillsborough County (geographic inference)",
+    "Public search: mountainltd.com — no detailed corporate profile found in accessible sources",
+    "Trade press search (FierceNetwork, LightReading, Telecompetitor, Broadband Communities): Mountain Ltd not found",
+    "LinkedIn/Indeed job posting search: Mountain Ltd not confirmed",
+    "Florida Broadband Office BEAD sub-grant public records: Mountain Ltd not found"
+  ]
+}
+```

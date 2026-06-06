@@ -1,1 +1,44 @@
-AE Proxy research running in the background across 7 parallel search vectors. Will have results shortly.
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Murali Nair's title 'Engineering Sales & Operations' at Lightbulb (Plano, TX) is a hybrid role — spans both technical delivery and sales/BD, suggesting he operates at the intersection of what tools are needed and whether they generate revenue or reduce cost. He likely influences tool selection and can champion internally, but may not hold final budget sign-off at a small company without a dedicated CTO or VP Engineering above him. Source: booth scan / lead record.",
+    "AE booth note (05/18/2026): 'looking for a demo, small company doing fiber and tower.' The explicit demo request is a strong near-term buying signal — this is not a passive contact. However, the 'fiber and tower' scope is a critical disqualifier risk: Inorsa is fiber-only. Tower/cellular workflows are out of scope. This must be addressed early to avoid wasted cycles. Source: AE booth notes.",
+    "Lightbulb is described as a 'small company' (per AE notes). At small firms, the person handling both engineering sales and operations typically wears multiple hats — they often ARE the decision-maker for tools under a certain dollar threshold, or they are the single most influential voice to the owner/principal. Budget authority is plausible but unconfirmed. Source: booth notes + small-company org structure inference.",
+    "Plano, TX headquarters. Texas BEAD allocation is $683M, and the state has been moving through its Initial Proposal process. Texas BEAD construction could begin Q3 2026. If Lightbulb is pursuing any BEAD subcontracting or design services work in Texas, there is a near-term deadline pressure that creates urgency for scalable permitting and drawing workflows. Source: industry baseline + Brain KB ($683M BEAD relationship entry).",
+    "Brain KB surfaces Murali Nair's LinkedIn profile as a discovered entity, but no specific career history, tenure, or prior employer details are populated in the digest — the entity is a stub. This means no verified prior-company context, no tenure length at Lightbulb, and no conference speaking history is confirmed. Source: Brain KB digest (entity stub only).",
+    "IQGeo appears in the Brain KB as a discovered firm. IQGeo is a direct GIS-to-network design platform competitor in this space — if Lightbulb is already using IQGeo or a similar platform, Inorsa's positioning shifts from 'new workflow' to 'output layer on top of your existing GIS tool.' This is a realistic integration scenario for a small engineering firm. Source: Brain KB entity list.",
+    "Centillion's merger with NetPMD Solutions (active, with integration complexity acknowledged) is relevant because NetPMD sells OSP design tools and workflows. If Lightbulb has any relationship with Centillion or NetPMD — plausible given the small engineering services market — there may be tool consolidation pressure that creates an opening for Inorsa. Source: Brain KB relationship entries.",
+    "The 'fiber and tower' scope stated at the booth is the single biggest scope mismatch flag. Inorsa is fiber-only. If a significant portion of Lightbulb's revenue comes from tower/cellular design, Inorsa's value is partial at best. The outreach must explicitly acknowledge this scope and reframe Inorsa's value for the fiber portion of their work — not try to oversell it as a full-firm solution. Source: AE notes + Inorsa product scope.",
+    "No trade press quotes, panel appearances, or public statements from Murali Nair were found in the Brain KB or entity digest. There is no 'voice of the customer' data point to anchor a personalized email opener. Outreach will need to rely on role-based inference rather than a direct quote. Source: research gap — not found.",
+    "Contact email is a Gmail address (uwriteme@gmail.com), not a company domain. This is common for small firms or individuals who use personal email for tradeshow registration, but it reduces confidence in company verification and makes deliverability and professionalism slightly higher risk. Phone number provided (214-417-3347) — direct outreach by phone may be more reliable for this contact. Source: lead record."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No verified LinkedIn profile data for Murali Nair — tenure at Lightbulb, career history, prior employers, and education are all unconfirmed.",
+    "Lightbulb company profile is essentially unknown — no website, employee count, revenue range, service geography, or client base confirmed. The only descriptor is 'small company doing fiber and tower' from AE notes.",
+    "No confirmation of whether Lightbulb is a design/engineering services firm, an ISP/operator, or a contractor. This matters significantly for ICP fit and buying context.",
+    "No public conference appearances, trade press quotes, or panels found for Murali Nair. Cannot anchor outreach to his stated priorities.",
+    "Budget authority is unconfirmed. At a small company, it could be Nair or it could be an owner/founder who was not at the booth.",
+    "No information on current tooling — whether Lightbulb uses GIS-to-CAD workflows manually, has a tool like IQGeo or Comsof, or relies on AutoCAD/microstation only.",
+    "Tower/cellular split of Lightbulb's work vs. fiber is unknown. If tower-dominant, Inorsa's addressable scope shrinks materially.",
+    "No confirmation of any BEAD-related contracts or pursuits by Lightbulb — the Texas $683M allocation is contextually relevant but not confirmed as a Lightbulb opportunity.",
+    "Gmail registration makes company domain and formal company verification impossible without additional lookup."
+  ],
+  "challengesToOtherFindings": [
+    "The 'demo request' should not be over-indexed as a strong close signal at this stage. At tradeshows, 'looking for a demo' is often a polite way of continuing a conversation — not a statement of active procurement. The batch tier is C (Ungraded), which is consistent with this being an exploratory contact rather than an in-cycle buyer.",
+    "The Brain KB entity list includes multiple large funding programs ($683M BEAD, $166M BEAD, etc.) but none are confirmed as directly tied to Lightbulb. It would be inaccurate to present these as Lightbulb's budget signals in outreach without verification — doing so would undermine credibility with a technical operator.",
+    "Centillion/NetPMD integration complexity is noted in the KB but there is zero evidence Lightbulb has any relationship with either firm. Including this angle in outreach without a confirmed connection would read as generic boilerplate, not intelligence.",
+    "The ICP pass designation (relevant title + AE notes present) is technically correct but should be treated as provisional. 'Engineering Sales & Operations' at a small firm doing tower AND fiber is borderline — the tower scope and small company size may limit deal size below Inorsa's threshold for a strong-fit account."
+  ],
+  "topInsight": "Murali Nair explicitly asked for a demo at the booth — that's the clearest near-term action trigger available. But the 'fiber and tower' scope is a product fit landmine: Inorsa is fiber-only. The highest-value move in outreach is to (1) honor the demo request quickly, (2) directly acknowledge the scope boundary ('we're fiber-specific — here's what that means for the fiber side of your work'), and (3) qualify whether fiber is a large enough portion of Lightbulb's work to make the demo worth both parties' time. If fiber is meaningful, the permitting cycle time proof point (3-4 weeks to 2 days) is the right hook for a small company where one permit kickback can stall a whole project. Don't bury the lead with BEAD macro-context — a small firm in Plano responds to concrete time savings, not funding program citations.",
+  "sourcesUsed": [
+    "AE booth scan notes (05/18/2026)",
+    "Lead record — contact details, title, company, location",
+    "Brain Knowledge Digest (145 entities) — Murali Nair entity stub, IQGeo entity, Centillion/NetPMD relationship entries, Texas $683M BEAD funding entry",
+    "Inorsa product scope definition (fiber-only, no tower/cellular)",
+    "ShowRev Industry Intelligence KB — BEAD operational timeline, labor shortage baseline, permitting constraint data, proof point (3-4 weeks to 2 days review cycle)",
+    "Small-company org structure inference (no external source — stated as inference)"
+  ]
+}
+```

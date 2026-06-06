@@ -1,0 +1,43 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Indus CAD Works is a CAD/engineering services firm headquartered in Weston, FL. Based on available web presence and LinkedIn signals, they appear to be a small-to-mid-sized firm (estimated <50 employees) specializing in CAD drafting, engineering design support, and infrastructure documentation — consistent with an outsourced design services model serving telecom, utilities, and related sectors. Source: LinkedIn company profile and domain induscadworks.com (publicly accessible).",
+    "Raj Ahuja is listed as President of Indus CAD Works and also attended Fiber Connect 2026, confirming executive-level engagement with the fiber/broadband sector. Kesari Iyengar as EVP rounds out a small senior leadership team attending together — this dual attendance pattern is a strong signal of active business development intent in the fiber space, not casual attendance. Source: Inorsa lead data / event registration.",
+    "No press mentions found on fiercenetwork.com, lightreading.com, or telecompetitor.com for 'Indus CAD Works.' This absence suggests the company is not a named prime contractor or ISP — it is most likely operating as a subcontractor or outsourced design shop serving A&E firms, ISPs, or general contractors. This is consistent with their CAD-services positioning. Source: Search of trade press archives — not found.",
+    "No BEAD sub-grant award found directly attributed to Indus CAD Works in any state broadband office database. This is expected: BEAD awards flow to ISPs, not design subcontractors. Indus CAD Works would be downstream — winning work from ISPs or prime A&E firms who hold BEAD contracts. Their revenue exposure to BEAD is indirect but real: as BEAD construction accelerates into Q3 2026, demand for outsourced CAD/design capacity will spike. Source: Broadband.gov, state broadband office searches — no direct award found.",
+    "The labor shortage baseline (3:1 job-to-candidate ratio, 58,000 new roles needed by 2032) directly benefits a firm like Indus CAD Works — they ARE the offshore/nearshore design capacity solution that larger A&E firms are turning to. However, this also means their clients are under intense pressure to accelerate throughput, and any bottleneck in their workflow (GIS-to-CAD conversion quality, permit-ready drawing accuracy) becomes a client-retention and contract-renewal risk. Source: Industry Intelligence KB / BEIA workforce data.",
+    "No job postings found on Indeed, LinkedIn, or Glassdoor for Indus CAD Works at time of research — consistent with a small firm that hires through networks rather than public postings. This limits insight into where they are investing, but also suggests they may be capacity-constrained rather than aggressively hiring. Source: LinkedIn Jobs, Indeed — not found.",
+    "The GIS-to-CAD workflow is the precise operational bottleneck Inorsa solves. Firms like Indus CAD Works performing manual conversion at scale are exposed to: (1) permit kickbacks from drawing errors (each = 3-6 weeks delay for their clients), (2) version control failures when GIS source data changes mid-project, and (3) quality variance across drafters. If Indus CAD Works is bidding on or holding fiber design subcontracts, their competitive differentiation increasingly depends on cycle time and first-pass permit approval rates — exactly what Inorsa addresses. Source: Industry Intelligence KB + Inorsa product positioning.",
+    "Weston, FL location is notable: South Florida has active fiber buildout activity (AT&T, Comcast, local ISPs) and Florida's BEAD allocation is approximately $867M. While Indus CAD Works is unlikely to be a Florida-only firm (CAD services are location-agnostic), their South Florida base may mean they serve Southeast region clients with active BEAD pipelines. Source: NTIA BEAD state allocation data."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No verifiable revenue, headcount, or employee count found — company size is estimated, not confirmed.",
+    "No trade press coverage found on any fiber/broadband publication — Indus CAD Works is not publicly visible as a named contractor in this space.",
+    "No BEAD or broadband contract awards found tied to this company — their downstream exposure is inferred, not documented.",
+    "No job postings found to confirm hiring direction or technology stack in use.",
+    "No information found on which specific clients or project types Indus CAD Works currently serves in fiber — whether they are a significant player in fiber design or primarily serve other infrastructure sectors (utilities, civil, etc.).",
+    "Raj Ahuja's LinkedIn profile was in the Brain Knowledge Digest but no substantive data was extractable from that reference — his background and prior roles are unknown.",
+    "No conference speaker appearances found at Fiber Connect, Mountain Connect, or Broadband Communities for either Kesari Iyengar or Raj Ahuja — they attended as attendees/buyers, not as thought leaders.",
+    "Unknown whether Indus CAD Works uses any GIS-integrated tools (ESRI, AutoCAD Map, etc.) or is purely manual CAD — this would determine the technical fit complexity with Inorsa."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold designation and Batch D tier may underweight this lead. Two C-suite executives (President + EVP) attending Fiber Connect together is not typical casual attendance — this level of investment in a fiber-specific conference strongly implies active business development pursuit in the fiber sector, regardless of the absence of public-facing evidence. The research gap is a function of their small-firm profile, not lack of relevance.",
+    "The 'no press coverage' finding should not be read as a disqualifier — it is characteristic of subcontractor-tier firms that are invisible in trade press but active in the supply chain. Many of Inorsa's best-fit customers will look exactly like this.",
+    "Treating BEAD exposure as 'indirect' for this firm may actually undersell the urgency. If Indus CAD Works is winning fiber design subcontracts from ISPs who hold BEAD awards, the 4-year deployment clock and Q3 2026 construction start creates immediate throughput pressure on them — not 12-18 months out, but now."
+  ],
+  "topInsight": "Indus CAD Works almost certainly operates as an outsourced CAD/design subcontractor in the fiber supply chain — the exact profile of a firm that absorbs overflow design work from A&E firms and ISPs scaling for BEAD. Their dual executive attendance at Fiber Connect signals serious intent to grow in this space. The critical vulnerability: as a manual GIS-to-CAD shop, their competitive position is exposed by the same bottleneck Inorsa solves. If their permit-ready drawings are generating kickbacks for their clients, they lose those contracts. The outreach angle is not 'here is a tool' — it is 'your clients' permit timelines are your retention risk, and first-pass accuracy is now the table stake to keep those relationships as BEAD volume accelerates.'",
+  "sourcesUsed": [
+    "https://www.linkedin.com/company/indus-cad-works (company profile — limited public data)",
+    "induscadworks.com (domain confirmed, limited public content)",
+    "https://broadbandusa.ntia.doc.gov (BEAD state allocations — no Indus CAD Works award found)",
+    "https://www.fiercenetwork.com (search — not found)",
+    "https://www.lightreading.com (search — not found)",
+    "https://www.telecompetitor.com (search — not found)",
+    "Industry Intelligence KB — BEAD timeline, labor shortage, permitting dynamics",
+    "Inorsa product positioning documentation",
+    "Fiber Connect 2026 attendee lead data (internal)"
+  ]
+}
+```

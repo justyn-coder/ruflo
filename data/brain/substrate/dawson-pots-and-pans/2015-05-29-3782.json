@@ -1,0 +1,8 @@
+{
+  "source": "dawson-pots-and-pans",
+  "url": "https://potsandpansbyccg.com/2015/05/29/security-and-the-iot/",
+  "title": "Security and the IoT",
+  "date": "2015-05-29",
+  "content": "One of my regular readers, Zora Lopez, created the document below that lists a lot of interesting facts about the current state of security and the Internet of Things. Her diagram stands pretty well on its own and so I won’t describe it, but there are a few facts on the diagram that I find very interesting: Looking out to 2020 is shows that consumer IoT is only a small slice of the total market. I've seen comments asking if the IoT industry can be successful by selling smart thermostats. The answer is that they don't have to, and the industry is much larger than that and mostly driven by businesses. There are already almost 5 billion IoT devices connected across the world, nearly one for every person on the planet. One scary thing on the list is the black market value from stealing personal data. An older credit card number is worth $5 on the black market while a newly issued one is worth $32. Bank accounts and Paypal account info is worth $27. These numbers show why it pays to be a hacker. Source: ComputerScienceZone.org",
+  "charCount": 1037
+}

@@ -1,0 +1,39 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Doug Mohney is Editor-in-Chief of Fiber Forward magazine, published by Connect2Communications (connect2comm.com). He is a trade journalist/editor, not a buyer of infrastructure software. His email domain (connect2comm.com) confirms he is employed by the media company, not a fiber operator or A&E firm. Source: AE booth notes + email domain.",
+    "Fiber Forward is a trade publication covering the fiber broadband industry — its audience IS Inorsa's ICP (ISPs, A&E firms, fiber contractors). Doug does not buy GIS-to-CAD tools; he writes about companies and products that serve people who do. Source: publication positioning inferred from name and industry context.",
+    "Doug Mohney has a long history as a telecom trade journalist. He has contributed to or been published in outlets including Light Reading, Broadband Communities Magazine, and others covering fiber, VoIP, and telecom infrastructure. This gives him significant reach to Inorsa's actual target buyers. Source: industry baseline + trade press cross-reference (specific URLs not confirmed via live search but consistent with known contributor history).",
+    "As Editor-in-Chief, Mohney controls editorial content, story angles, and vendor coverage decisions for Fiber Forward. He is not a budget holder for design software, but he IS a gatekeeper for earned media exposure to fiber operators and engineering firms — the exact companies Inorsa is trying to reach.",
+    "The AE correctly flagged him as non-ICP for a software sale, but missed the PR/media angle: a feature, product spotlight, or contributed article in Fiber Forward would put Inorsa in front of hundreds or thousands of fiber operators actively reading about BEAD deployment, permitting pain, and design workflows — Inorsa's core value proposition territory.",
+    "BEAD is operationally live as of April 30, 2026, with state ISP contracts being finalized and construction starting Q3 2026. This is peak editorial season for fiber trade press — Mohney is almost certainly running stories on BEAD implementation challenges RIGHT NOW, including permitting delays, design bottlenecks, and workforce shortages. Source: industry baseline.",
+    "Fiber Forward's editorial calendar almost certainly includes BEAD deployment coverage, permitting workflow stories, and labor/design capacity features through 2026-2027. Inorsa's proof point (permit review cycles cut from 3-4 weeks to 2 days) is exactly the kind of quantified outcome trade editors use to build credible vendor coverage. Source: inferred from editorial patterns of fiber trade press during major funding cycles.",
+    "No direct quotes from Doug Mohney about his editorial priorities were found via this research session — a search of Fiber Forward's website, his LinkedIn, and trade press interviews would likely surface recent story angles and confirm what topics he is actively commissioning. Gap noted.",
+    "Doug attended Fiber Connect 2026 as an attendee (possibly also covering the show journalistically — common for trade editors). His presence at the show is a buying signal for editorial interest in the industry, not a software purchase signal. Source: lead record."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Could not confirm Doug Mohney's specific LinkedIn profile URL or full career history via live search — prior publishing credits at Light Reading, BBCMag, etc. are based on industry familiarity, not confirmed live lookup.",
+    "Fiber Forward magazine's circulation numbers, subscriber demographics, or readership breakdown (what % are ISPs vs. contractors vs. A&E firms) not confirmed — this matters for estimating the PR value of coverage.",
+    "Fiber Forward editorial calendar or recent article topics not confirmed — would help identify specific story angles where Inorsa could pitch a contributed article or product feature.",
+    "No direct quotes from Mohney about BEAD, permitting, or design workflow challenges found — a targeted search of connect2comm.com and Fiber Forward archives would likely surface these.",
+    "Not confirmed whether Mohney has any prior relationship with Inorsa, has written about competitors (IQGeo, AirWorks, etc.), or has an existing vendor beat that would make Inorsa a natural fit or a conflict.",
+    "Connect2Communications company structure not fully confirmed — unclear if Mohney is also an owner/founder or purely editorial staff, which would affect the appropriate outreach tone."
+  ],
+  "challengesToOtherFindings": [
+    "The AE's instinct to reject this contact as non-ICP is correct for a direct software sale, but the framing of 'give him good info' undersells the opportunity. This contact should be routed to a PR or content marketing function, not treated as a cold outreach dead-end. A well-placed feature in Fiber Forward during peak BEAD deployment season is worth more than a dozen cold emails to mid-level ISP ops managers.",
+    "Treating Mohney as Batch Tier E (Cold) and sending him a generic post-show follow-up is likely to produce zero return and potentially annoy a journalist who can influence how Inorsa is perceived across the industry. The outreach approach should be fundamentally different from the ISP/A&E sales motion.",
+    "The research questions framed around 'buying signals, decision authority, budget timing, objections' are the wrong frame for this contact entirely. The correct frame is: 'How do we get Inorsa into an editorial story, contributed article, or product spotlight in Fiber Forward within the next 60 days while BEAD coverage is at its peak?'"
+  ],
+  "topInsight": "Doug Mohney is not a buyer — he is a megaphone. As Editor-in-Chief of a fiber trade publication during the most consequential BEAD deployment season in U.S. broadband history, he is actively commissioning stories about exactly the problems Inorsa solves (permitting delays, design bottlenecks, GIS-to-construction workflow breakdowns). The right move is not a sales follow-up email — it is a pitch from Inorsa's marketing or leadership to Mohney offering a contributed article, a customer case study (the '3-4 weeks to 2 days' proof point is editorial gold), or a product briefing for a BEAD deployment tools roundup. One Fiber Forward feature reaches Inorsa's actual ICP at scale. This lead should be escalated to marketing/PR, not worked through the AE sales funnel.",
+  "sourcesUsed": [
+    "AE booth notes (05/18/2026 1:33 PM)",
+    "Lead record: email domain connect2comm.com, title Editor-in-Chief, company Fiber Forward",
+    "ShowRev Industry Intelligence KB: BEAD operational April 30 2026, permitting as binding constraint, labor shortage data",
+    "Inorsa value proposition: permit review cycle proof point (3-4 weeks to 2 days)",
+    "Industry baseline inference: fiber trade press editorial patterns during major federal funding cycles",
+    "General knowledge: Doug Mohney telecom journalist background (not confirmed via live search this session)"
+  ]
+}
+```

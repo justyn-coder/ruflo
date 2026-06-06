@@ -1,0 +1,38 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "AE explicitly flagged this contact as 'hardware vendor' on 05/18/2026 at 4:15 PM and assigned ICP status: reject. This is the primary and controlling finding — the prospect is a vendor, not a buyer.",
+    "Zyxel Communications, Inc. is a Taiwan-headquartered networking hardware manufacturer (switches, routers, ONTs, CPE, Wi-Fi access points). Their products are sold INTO fiber/ISP networks, not used to design or permit them. Source: zyxel.com product portfolio, widely documented.",
+    "Andrew Cuellar holds the title 'Sales Engineer' at Zyxel — a pre-sales technical role. Sales Engineers at hardware vendors exist to support Zyxel's own sales motion, not to procure engineering software for internal use. They demo gear, write SOWs for customers, and answer technical objections. They do not own design toolchain procurement.",
+    "Anaheim, CA location is consistent with Zyxel's North American HQ at 1130 N Miller St, Anaheim, CA 92806. The phone number (714) 632-0882 matches Zyxel's known Anaheim office exchange. Source: public Zyxel contact records.",
+    "Zyxel has no apparent internal fiber design/GIS-to-CAD workflow that would benefit from Inorsa. Their design work, if any, would be network architecture for their own product validation labs — not permitting or construction drawing generation for ISP deployments.",
+    "No LinkedIn profile, conference speaking record, or trade press quote for 'Andrew Cuellar Zyxel' was found in accessible sources. Role is pre-sales/technical, which rarely produces public content. Source: not found via LinkedIn, LightReading, BBCMag, ETISoftware.",
+    "Zyxel is not an ISP, CLEC, fiber overbuilder, or A&E engineering firm. None of the BEAD funding programs tracked in Brain apply to Zyxel as a recipient. They may sell hardware to BEAD recipients, but they are a vendor in that supply chain, not a buyer of design software.",
+    "Decision authority for any software procurement at Zyxel would fall outside Andrew Cuellar's Sales Engineer role entirely. Internal IT or operations leadership would own such decisions, and the use case for Inorsa does not exist within Zyxel's business model.",
+    "Batch Tier E (Cold) assignment is appropriate and consistent with the ICP rejection. No warming signals exist in the data."
+  ],
+  "evidenceStrength": "strong",
+  "gaps": [
+    "No LinkedIn profile confirmed for Andrew Cuellar at Zyxel — cannot verify exact tenure, previous employers, or whether he has any background at an ISP or fiber operator that might create a referral angle.",
+    "Cannot confirm whether Andrew Cuellar attended Fiber Connect 2026 in a vendor capacity (staffing a booth) or as an individual attendee — this affects whether he scanned as a genuine prospect or was miscaptured in the scan flow.",
+    "No visibility into whether Zyxel has any internal engineering/design teams that might theoretically use GIS-to-CAD tooling for their own lab or test network documentation — assessed as unlikely but not fully verified.",
+    "No multi-thread contacts from Zyxel found in the booth scan list per available data."
+  ],
+  "challengesToOtherFindings": [
+    "There is no credible path to reframe this contact as an Inorsa buyer. Some follow-up logic might suggest 'partner angle' — i.e., Zyxel sells CPE to ISPs who need Inorsa, so Andrew could be a referral source. This is theoretically possible but operationally weak: Sales Engineers at hardware vendors have no incentive structure or workflow to refer software vendors, and this would consume AE time disproportionate to expected return.",
+    "The BEAD funding context tracked in Brain (Mohawk, Hilliary, Fybercom, Ohio Gig, etc.) is irrelevant to this contact. Zyxel may sell hardware into BEAD-funded networks, but that does not make Andrew Cuellar a decision-maker or even an influencer for Inorsa adoption.",
+    "IQ Geo, AirWorks, and similar competitive intelligence in Brain applies to Inorsa's actual ICP — this contact does not belong in that competitive landscape analysis."
+  ],
+  "topInsight": "This contact should not receive a post-show follow-up from Inorsa. The AE's on-site rejection ('hardware vendor') is accurate and well-founded. Andrew Cuellar is a Sales Engineer at a networking hardware manufacturer with no internal fiber design or permitting workflow, no budget authority for design software, and no organizational alignment with Inorsa's ICP. Any outreach would burn sender reputation and consume resources with zero realistic pipeline conversion probability. Recommend: suppress from all Inorsa follow-up sequences, mark do-not-contact for this campaign, and flag the scan capture process to reduce similar Batch E noise at future events.",
+  "sourcesUsed": [
+    "https://www.zyxel.com/us/en/ (product portfolio and company profile)",
+    "AE booth notes: 05/18/2026 4:15 PM — 'hardware vendor'",
+    "Prospect metadata: ICP = reject, Batch Tier = E (Cold)",
+    "General knowledge: Zyxel Communications corporate structure, Anaheim HQ, Sales Engineer role definition in hardware vendor context",
+    "Not found: LinkedIn profile for Andrew Cuellar at Zyxel",
+    "Not found: trade press quotes or conference appearances for Andrew Cuellar",
+    "Not found: multi-thread contacts from Zyxel in booth scan data"
+  ]
+}
+```

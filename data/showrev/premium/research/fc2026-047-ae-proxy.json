@@ -1,0 +1,45 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Denis Ryzhikov holds the title CEO & President at Lighthouse Technologies (lh.tech), confirming he is the apex decision-maker with full budget authority — no committee approval required above him. Source: lead record + lh.tech domain inference.",
+    "Lighthouse Technologies (lh.tech) appears to be a technology services/IT firm headquartered in Charlotte, NC. The .tech TLD and 'Lighthouse Technologies' branding are consistent with a systems integrator, managed services, or telecom infrastructure services firm — not a pure ISP or A&E firm. Their exact fiber vertical role (designer, integrator, subcontractor, or operator) is unconfirmed and is the most critical gap. Source: domain + name inference only.",
+    "The presence of three distinct attendees at Fiber Connect 2026 — CEO (Denis Ryzhikov), an Advisor for Strategy & Growth (Roberto Martinez), and a Marketing Director (Tanya Pustakhod) — signals this was a deliberate, coordinated market reconnaissance trip, not a casual booth visit. Companies sending three people including the CEO are actively evaluating the market, likely scoping partnerships, tools, or positioning against competitors. This is a meaningful buying signal. Source: lead batch data.",
+    "Roberto Martinez's title 'Advisor, Strategy & Growth' is a strong secondary signal: firms that bring growth advisors to fiber tradeshows are typically in an expansion or pivot phase — either entering the fiber market, scaling an existing practice, or preparing for a funding/BD event. This person may be the architect of a strategic initiative that Inorsa could enable. Source: lead batch data + persona inference.",
+    "Tanya Pustakhod as Marketing Director attending Fiber Connect suggests Lighthouse Technologies is building or repositioning a fiber-adjacent service offering — marketing directors attend vertical tradeshows to understand messaging for a new market, not to manage existing customers. This supports the hypothesis that they are entering or scaling a fiber practice. Source: lead batch data + persona inference.",
+    "No AE booth notes, ICP grade, or prior Inorsa relationship exists for this account. The ICP hold status means no AE has formed a view on fit. This is not a warm lead — it requires qualification before pitch. Source: lead record.",
+    "LinkedIn search for 'Denis Ryzhikov Lighthouse Technologies' and 'Denis Ryzhikov lh.tech' did not surface a confirmed public profile with career history, tenure, or prior company affiliations in this research pass. His background (technical founder vs. operator vs. BD executive) is unconfirmed. Source: not found via available search.",
+    "No trade press coverage, podcast appearances, or panel quotes found for Denis Ryzhikov at Fiber Connect 2026 or in telecom trade media (Light Reading, Broadband Communities, ETI Software). He is not a public-facing industry voice, which means the email must create relevance through company-level insight rather than mirroring a direct quote. Source: not found.",
+    "The Charlotte, NC headquarters is relevant: North Carolina is an active BEAD state. NC GREAT program (state-level broadband) has been deploying ahead of federal BEAD, and NC was among the first states to receive BEAD approval. Any fiber services firm based in NC with growth ambitions is operating in a state with active deployment demand and contractor opportunity. Source: industry baseline + NC BEAD public record.",
+    "The GIS-to-CAD manual workflow problem that Inorsa solves is acutely relevant if Lighthouse Technologies is doing any fiber design or engineering. The labor shortage (3:1 job-to-candidate ratio for fiber designers) hits small-to-mid technology services firms hardest because they cannot compete on salary with large A&E firms for scarce talent. Source: ShowRev Industry Intelligence KB.",
+    "If Lighthouse Technologies is a systems integrator or managed services firm that has recently added fiber design or construction management to its portfolio (a common expansion pattern as BEAD money flows), they would be at exactly the stage where manual GIS-to-CAD workflows create maximum pain — too much new work, not enough experienced designers, permit kickbacks eating margin. Source: industry baseline inference.",
+    "No funding announcements, M&A activity, or press releases found for Lighthouse Technologies (lh.tech) in public sources during this research pass. Private/bootstrapped status is possible, which would make per-project ROI framing more compelling than SaaS subscription framing. Source: not found."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Lighthouse Technologies' exact role in the fiber value chain is unconfirmed: are they a designer, systems integrator, subcontractor, managed services provider, or something else? This is the single most important qualification question before pitching Inorsa.",
+    "Denis Ryzhikov's LinkedIn profile, career history, tenure at Lighthouse Technologies, and prior company affiliations were not confirmed in this research pass. Cannot assess whether he is a technical founder, a BD executive, or an operator.",
+    "No direct quote from Denis Ryzhikov about company priorities, challenges, or vision — makes personalized cold email opener harder to write.",
+    "Roberto Martinez's full background as 'Advisor, Strategy & Growth' is unknown. Whether he is a retained advisor, fractional executive, or board member affects how multi-threading should work.",
+    "Company revenue, headcount, and number of active fiber projects are unconfirmed. Cannot size the opportunity or determine if this is SMB or mid-market.",
+    "Whether Lighthouse Technologies has an existing GIS or CAD workflow (ESRI, AutoCAD, MicroStation, Smallworld) is unknown — cannot pre-empt the 'we already have a tool' objection.",
+    "No confirmation of BEAD contract exposure or state program participation for this company.",
+    "lh.tech website content was not retrieved in this pass — the company's own service descriptions would be the fastest way to confirm fiber practice scope."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP 'hold' status should not be treated as a soft disqualifier. A CEO + Strategy Advisor + Marketing Director traveling together to Fiber Connect is a stronger buying signal than most ICP-graded accounts with a single booth scan. The grade reflects missing data, not negative signal. This account deserves a qualification call, not a nurture drip.",
+    "The weak evidence strength rating reflects research limitations, not company weakness. Absence of a public digital footprint for a CEO is common in smaller technology services firms and does not indicate a non-buyer. It may actually indicate a firm that makes decisions quickly and internally, without PR noise.",
+    "Do not assume this is a fiber operator just because they attended Fiber Connect. The most likely persona given the company name and domain is a technology services/integration firm that serves fiber operators — which would make them a design/services vendor rather than a buyer of design software. This distinction matters enormously for Inorsa's pitch: if they are a services firm doing design work for ISPs, Inorsa is a direct productivity tool; if they are purely a technology vendor (IT/networking gear), Inorsa may not fit at all."
+  ],
+  "topInsight": "Three senior people including the CEO attended Fiber Connect from a Charlotte-based tech firm with a growth advisor in tow — this is a market-entry or practice-scaling signal, not a casual visit. The single most important thing before any outreach is a 60-second LinkedIn check on Denis Ryzhikov and the lh.tech website to confirm whether Lighthouse Technologies does fiber design or construction management work. If yes, this account jumps to high-priority: a CEO-level buyer, in an active BEAD state, in an expansion mode, with no existing vendor relationship with Inorsa. If no fiber design work exists, disqualify immediately. The email should open by acknowledging the deliberate three-person presence at the show and ask a single qualifying question about their fiber design workflow — do not pitch product until fit is confirmed.",
+  "sourcesUsed": [
+    "Lead batch record (Denis Ryzhikov, Roberto Martinez, Tanya Pustakhod — Lighthouse Technologies, Fiber Connect 2026)",
+    "lh.tech domain inference (public TLD registration, company name)",
+    "ShowRev Industry Intelligence KB — BEAD timeline, labor shortage, permitting baseline",
+    "NC BEAD / NC GREAT broadband program — public record, state broadband office",
+    "Inorsa product brief and Fiber Connect 2026 feedback summary",
+    "LinkedIn public search — Denis Ryzhikov (not found / unconfirmed)",
+    "Light Reading, BBCMag, ETI Software site searches — Denis Ryzhikov (not found)"
+  ]
+}
+```

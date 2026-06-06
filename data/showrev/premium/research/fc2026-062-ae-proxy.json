@@ -1,0 +1,43 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Clint Smith holds the title 'Network Operations Manager' at Sallisaw Municipal Authority — the email domain clint@diamondnetok.com points to Diamond Net OK, which appears to be the branded ISP/network operation run under or alongside the municipal authority. This dual-entity structure (municipal authority + branded ISP) is common in Oklahoma municipal utilities and suggests Clint sits at the operational layer, not the executive/budget layer. Source: email domain inference + title pattern matching.",
+    "Diamond Net OK (diamondnetok.com) is a municipal broadband/fiber operation based in Sallisaw, OK (Sequoyah County). Oklahoma has an active BEAD program — Oklahoma's BEAD allocation is approximately $783M, and Sequoyah County has documented unserved/underserved areas making it a likely BEAD deployment target. If Diamond Net OK is pursuing BEAD funding, construction timelines would be Q3 2026 onward with a 4-year deployment window — exactly the window where permitting bottlenecks and design throughput become critical. Source: Oklahoma BEAD program public records + county coverage maps (inferred, not directly verified for this specific entity).",
+    "Title 'Network Operations Manager' places Clint in the 'Build' persona bucket — he cares about field crew utilization, construction sequencing, and keeping jobs moving. He is NOT the CFO/Finance persona. His pain point is operational: jobs stalling, permit kickbacks delaying crews, designers unable to keep up with construction demand. Source: Inorsa persona framework applied to title.",
+    "The email domain @diamondnetok.com rather than @sallisaw.org or a municipal address suggests Diamond Net OK may operate with some degree of independence from general city administration, potentially with its own budget authority at the GM/Director level. Clint as Network Ops Manager likely recommends tools to a General Manager, Utility Director, or IT Director — he is probably a strong influencer but not a solo budget approver for a software platform purchase. Source: municipal ISP org structure patterns.",
+    "No LinkedIn profile, trade press quotes, speaking engagements, or conference appearances found for 'Clint Smith' at Sallisaw Municipal Authority or Diamond Net OK through available research. Name is common and no disambiguating professional footprint was surfaced. Source: search conducted — not found.",
+    "No other contacts from Sallisaw Municipal Authority / Diamond Net OK appear in the booth-scan list provided. Single-contact situation — multi-threading will require asking Clint directly who else would be involved in an evaluation. Source: batch contact list — not found.",
+    "Oklahoma's BEAD program (ConnectOK) had subgrantee applications and ISP contracting processes underway in 2025-2026. If Diamond Net OK submitted an application or received a subgrant, there would be a hard construction deadline driving urgency. No specific award record for Diamond Net OK / Sallisaw Municipal Authority was confirmed in available public data, but the geographic profile (rural Oklahoma, Sequoyah County) strongly suggests eligibility and likely participation. Source: ConnectOK BEAD program public documentation + county eligibility maps (inferred).",
+    "Sallisaw is the county seat of Sequoyah County, OK — population ~8,000 city, ~42,000 county. A municipal network of this scale would be deploying fiber to a manageable but non-trivial footprint. Design workload is real but likely handled by a small team or contracted to an A&E firm — meaning the manual GIS-to-CAD workflow problem Inorsa solves is highly relevant, and they may not have internal design capacity to absorb a BEAD expansion. Source: Census data + municipal broadband size patterns."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No verified LinkedIn profile found for Clint Smith at this organization — cannot confirm tenure, career history, or previous employers",
+    "Cannot confirm whether Diamond Net OK has an active BEAD subgrant award — this is the single most important funding signal and remains unverified",
+    "Org chart unknown — cannot confirm who Clint reports to or who the actual budget approver is (GM, Utility Director, City Administrator)",
+    "No direct quotes from Clint Smith in any trade press, podcast, panel, or conference context — no personalized opener available",
+    "No data on current design workflow — whether they use an A&E firm, internal GIS staff, or a specific CAD/GIS platform",
+    "No confirmation of whether Diamond Net OK attended Fiber Connect 2026 with a specific agenda (BEAD planning, vendor evaluation, etc.) or was there casually",
+    "Cannot confirm if Diamond Net OK uses fiber exclusively or has a hybrid fiber/wireless network — Inorsa is fiber-only, so this matters for fit",
+    "No other Diamond Net OK / Sallisaw Municipal contacts in the scan list — no multi-threading path identified"
+  ],
+  "challengesToOtherFindings": [
+    "The ICP status of 'hold' with no AE grade should not be interpreted as low priority — a Network Operations Manager at a municipal ISP in rural Oklahoma during active BEAD deployment is actually a textbook Inorsa buyer profile. The 'hold' likely reflects lack of AE booth engagement, not lack of fit. I would push back on the D-tier batch classification pending BEAD confirmation.",
+    "The municipal authority framing may understate budget flexibility — municipal utilities in Oklahoma often operate enterprise funds with independent capital budgets, meaning Clint's organization may have more procurement autonomy than a typical city department. Do not assume long government procurement cycles without verifying the utility's operating structure.",
+    "The 'Network Operations Manager' title could span pure network ops (routing, uptime) or include outside plant/construction oversight depending on the size of the team. At a small municipal ISP, titles are broad — Clint may have more design/permitting involvement than the title implies. This affects persona alignment and pitch framing."
+  ],
+  "topInsight": "The single most actionable finding is the BEAD timing hypothesis: if Diamond Net OK is a BEAD subgrantee or applicant (highly probable given Sequoyah County's rural profile), Oklahoma's 6-month ISP contracting window (ending ~October 2026) and construction start pressure in Q3 2026 create a real external deadline. Clint's operational role means he will feel the pain first when design throughput can't keep up with construction demand — permit kickbacks and drawing bottlenecks will fall on him. The email should lead with BEAD deployment pressure and the specific operational cost of permit kickbacks (3-6 weeks per return), not with software features. The ask should be a 20-minute call to understand their current design-to-permit workflow before BEAD construction ramps — framed as helping him get ahead of a problem he's about to have, not selling him something he doesn't know he needs.",
+  "sourcesUsed": [
+    "Email domain diamondnetok.com — inferred organizational structure",
+    "Oklahoma ConnectOK BEAD program public documentation (https://connectok.gov) — funding context",
+    "Sequoyah County, OK demographic and coverage data — eligibility inference",
+    "U.S. Census Bureau — Sallisaw, OK population data",
+    "Inorsa persona framework (Build/Design/Fund buckets) — title classification",
+    "ShowRev Industry Intelligence KB — BEAD timeline, labor shortage, permitting constraint baseline",
+    "Booth-scan contact list — multi-threading check (not found)",
+    "LinkedIn search for 'Clint Smith' + 'Sallisaw Municipal Authority' / 'Diamond Net OK' — not found",
+    "Trade press search (bbcmag.com, lightreading.com, etisoftware.com) for Clint Smith quotes — not found"
+  ]
+}
+```

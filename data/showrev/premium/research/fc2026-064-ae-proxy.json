@@ -1,0 +1,51 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Deanna Richter holds the title Director of Marketing & Communications at LHTC Broadband (Latrobe, PA area / Donegal, PA). This is a marketing/comms role, NOT an engineering or operations title — she is almost certainly NOT the primary economic buyer for a CAD/GIS-to-drawing workflow tool like Inorsa. Her influence path likely runs through Matt Shearer (Director of Operations) or Matthew Mongell (Business Development Manager), both of whom also attended the show. Source: LHTC website / LinkedIn inference.",
+
+    "LHTC Broadband is a rural Pennsylvania CLEC/fiber operator serving Westmoreland, Fayette, and surrounding counties. They operate their own fiber plant and have been actively expanding broadband in underserved areas of southwestern PA. They are a realistic BEAD recipient or sub-recipient given their rural PA footprint. Source: lhtc.net public website and PA broadband office filings.",
+
+    "Pennsylvania's BEAD program is operational as of April 30, 2026, with the state in the ISP contract finalization window (6-month window). PA received ~$1.16B in BEAD funding. LHTC's rural Pennsylvania footprint places them squarely in contention for BEAD subgrant awards. If LHTC has a BEAD award or is pursuing one, construction drawing and permitting demand will spike in Q3–Q4 2026. Source: NTIA BEAD status + PA Broadband Development Authority public filings.",
+
+    "Matt Shearer (Director of Operations) is the more likely internal champion for Inorsa — operations titles at fiber ISPs own the build process, field crew scheduling, and permit submission workflows. Matthew Mongell (Business Development Manager) may be involved if BEAD pursuit is framed as a business development/grant capture initiative. Both attended the show alongside Richter, suggesting LHTC sent a multi-functional team — a positive signal of genuine evaluative intent. Source: Booth scan list provided in prospect context.",
+
+    "Deanna Richter's marketing/comms background means her primary framing for any vendor tool will be: 'How does this affect our story to regulators, grant agencies, or the public?' She may have attended Fiber Connect to understand the vendor landscape for BEAD-related communications or to support a broader organizational evaluation. Her presence alongside ops and biz dev contacts suggests she may be part of an internal committee rather than a solo evaluator. Source: Role/title inference + multi-contact booth scan pattern.",
+
+    "LHTC Broadband is a smaller independent operator (estimated under 10,000 fiber subscribers based on service territory size). This profile typically means: (a) lean internal engineering staff, likely 2–5 designers, (b) heavy reliance on outside plant (OSP) contractors for builds, (c) limited in-house GIS-to-CAD automation capability — still likely manual workflow. This is a sweet spot for Inorsa's value prop but also means budget scrutiny will be high. Source: lhtc.net service territory + industry baseline for small rural ILECs.",
+
+    "No direct quote from Deanna Richter found in trade press (BBCMag, Light Reading, Broadband Communities, ETI Software blog) or conference speaking records (Fiber Connect panels, NTCA, USTelecom). She does not appear to have a public-facing industry profile with stated priorities. Source: Search across lightreading.com, bbcmag.com, broadbandcommunities.com, and Fiber Connect 2025/2026 speaker lists — not found.",
+
+    "LHTC Broadband does not appear in recent M&A transaction databases or PE acquisition reports, suggesting they remain independently operated — a positive signal that internal decision-making is not frozen pending ownership change. Source: Crunchbase, BroadbandSearch.net, and trade press scan — no acquisition found.",
+
+    "Pennsylvania permitting complexity is a real pain point: PA municipalities vary widely in ROW permit processing times, and PennDOT highway occupancy permits are notoriously slow (8–16+ week review windows common). For a rural PA operator pursuing BEAD-funded construction, permitting velocity is a direct constraint on meeting deployment milestones. This is Inorsa's strongest angle with LHTC's ops team. Source: PennDOT highway occupancy permit process documentation + PA municipal code framework."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No direct quote or public statement from Deanna Richter about LHTC's operational challenges, vendor relationships, or build priorities — the ideal email opener does not exist from public sources.",
+    "Cannot confirm whether LHTC has received a BEAD subgrant award or LOI from PA Broadband Development Authority as of May 2026 — PA's subgrantee list may not be fully public yet.",
+    "Unknown whether LHTC uses an existing GIS platform (e.g., ArcGIS, IQGeo, Vetro FiberMap) or what their current design-to-permit workflow looks like — critical for objection framing.",
+    "Cannot confirm Deanna Richter's exact tenure at LHTC or career history prior to this role — LinkedIn profile not accessible without direct login; no public resume or bio found.",
+    "Unknown whether LHTC has an existing relationship with a design/engineering A&E firm that would be displaced or complemented by Inorsa — this is a common 'we already have someone doing this' objection.",
+    "Matt Shearer's specific responsibilities and whether he controls the engineering/OSP design budget are unconfirmed — title inference only.",
+    "No confirmation of LHTC's fiscal year or budget cycle timing, which would affect urgency framing."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold status ('Relevant title but no AE notes') likely reflects uncertainty about whether a marketing director belongs in the Inorsa funnel. I would challenge treating her as a low-priority contact: she attended alongside two more operationally-relevant contacts, which suggests she is part of an internal evaluation team or was vetting the vendor landscape for a BEAD communications initiative. She should be used as a warm introduction path to Shearer and Mongell, not bypassed.",
+    "The Batch D / Ungraded tier may underweight this account. LHTC's rural PA footprint + BEAD timing + small internal design team profile is actually a strong ICP match for Inorsa. The grading gap appears to be a research/notes gap, not a signal that the account lacks fit. I would recommend upgrading LHTC to at least a C-tier account pending a Shearer outreach response.",
+    "Do not lead outreach to Richter with permitting workflow pain — that will feel misaligned with her marketing role and will likely get no response. Instead, lead with BEAD milestone pressure and how Inorsa helps LHTC demonstrate deployment readiness to grant agencies (a story she can own and carry internally). This reframes the value prop through her lens."
+  ],
+  "topInsight": "Deanna Richter is a marketing director, not the buyer — but she attended the show alongside the Director of Operations (Shearer) and a Business Development Manager (Mongell), both of whom are closer to the actual purchase decision. The highest-value play is a Richter email that explicitly acknowledges her role and asks her to connect Inorsa with Shearer: frame it as 'helping LHTC tell a stronger BEAD deployment story by keeping construction on schedule.' The BEAD contract finalization window (PA is in the 6-month ISP contracting period right now) creates a genuine urgency anchor — if LHTC has a BEAD award or is pursuing one, they will need permit-ready construction drawings at scale before Q3 2026 construction starts, and their current manual workflow almost certainly cannot absorb that volume without slippage.",
+  "sourcesUsed": [
+    "https://www.lhtc.net (LHTC Broadband public website — service territory, company overview)",
+    "https://broadbandpa.com (PA Broadband Development Authority — BEAD program status and timeline)",
+    "https://www.internetforall.gov/program/bead-program (NTIA BEAD operational status, April 30 2026 milestone)",
+    "https://penndot.pa.gov/TravelInPA/PublicInvolvement/Pages/HighwayOccupancyPermits.aspx (PennDOT HOP permit process)",
+    "Fiber Connect 2025/2026 speaker/agenda pages — Richter not found as speaker",
+    "https://www.lightreading.com — Richter name search, not found",
+    "https://www.bbcmag.com — Richter name search, not found",
+    "Booth scan contact list provided in prospect brief (Shearer, Mongell co-attendance confirmed)",
+    "Industry baseline from ShowRev Industry Intelligence KB (BEAD timing, permitting constraints, labor shortage)"
+  ]
+}
+```

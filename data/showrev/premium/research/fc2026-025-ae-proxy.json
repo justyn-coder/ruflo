@@ -1,0 +1,45 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Dastan Shaimerdenov is Founder and CEO of Nomad Telecommunications, LLC — he is the sole decision-maker and budget authority by definition. No board approval layer or procurement committee likely exists at a founder-led LLC. Source: lead record + company name structure.",
+    "Nomad Telecommunications, LLC is registered in Georgia (Hoschton, GA — Jackson County, northeast Atlanta metro). Georgia's BEAD program is operational as of April 30, 2026, with ISP contract finalization expected within 6 months. If Nomad is pursuing BEAD subcontracting or direct awards, they face a Q3 2026 construction start window — creating real timeline pressure. Source: industry baseline + Georgia BEAD timeline.",
+    "Hoschton, GA is in a semi-rural corridor (Jackson County) that is a likely target zone for BEAD-funded rural broadband expansion. A fiber ISP or telecom services firm operating here is structurally exposed to BEAD workflow demands. Source: geographic inference + BEAD program structure.",
+    "Company name 'Nomad Telecommunications' suggests a lean, possibly field-services-oriented firm rather than a large A&E or design house. The word 'Nomad' combined with a founder-CEO in a small Georgia market suggests a small operator, subcontractor, or design/build firm — not a regional ILEC. Source: name inference + location context.",
+    "No LinkedIn profile for Dastan Shaimerdenov was confirmed in available research data. No trade press quotes, no Fiber Connect panel appearances, no podcast mentions found. This is a low-visibility founder operating below the media radar. Source: research attempt — not found.",
+    "No team page, org chart, or additional contacts from Nomad Telecommunications were surfaced in the companies-discovered list. This is likely a solo-founder or very small team operation. Source: booth-scan list review — Nomad not represented among 29 discovered companies.",
+    "As a Founder/CEO of a small telecom LLC, Shaimerdenov almost certainly wears multiple hats — operations, sales, and design oversight. This makes him the 'Design/Document' and 'Fund/Capitalize' persona simultaneously. He cares about throughput AND margins. Source: persona framework applied to small-firm founder profile.",
+    "The email domain nomadtelecom.net (not .com) is consistent with a lean startup or early-stage operator — .net domains in telecom are common for ISPs and small CLECs. Source: email domain analysis.",
+    "Georgia does not have a state-level broadband permitting pre-clearance system, meaning permit kickbacks from municipalities and counties are the primary deployment bottleneck. For a small firm without dedicated permitting staff, each 3-6 week kickback is disproportionately painful. Source: industry baseline + state context.",
+    "Batch tier D (Ungraded) and ICP status 'hold' indicate no AE has qualified this contact. The risk is he's a one-person shop with no design volume — but the upside is he may be actively scaling to capture BEAD work and needs infrastructure to do so. The CEO title warrants a qualifying conversation before deprioritizing. Source: lead record."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No LinkedIn profile found or verified for Dastan Shaimerdenov — cannot confirm career history, prior roles, or tenure at Nomad.",
+    "Company founding date unknown — cannot determine if Nomad is pre-revenue, early-stage, or established.",
+    "Revenue, headcount, and project volume for Nomad Telecommunications, LLC are unknown — critical for qualifying whether design throughput is a real pain point or premature.",
+    "No confirmation of whether Nomad is a fiber ISP, a fiber design subcontractor, a CLEC, or a field services firm. The service model is entirely unclear.",
+    "No BEAD application or award status found for Nomad — cannot confirm they are in the BEAD pipeline.",
+    "No Georgia Secretary of State filing details confirmed (registration date, members, registered agent) — would help establish company age and structure.",
+    "No other contacts from Nomad found in booth-scan list — cannot multi-thread.",
+    "No public statements, quotes, or interviews from Dastan Shaimerdenov on any topic found.",
+    "Phone area code 470 is Atlanta metro — consistent with Hoschton but does not clarify business model.",
+    "Cannot confirm whether Nomad has any existing GIS-to-CAD tooling or design workflow — 'we already have a tool' objection cannot be assessed."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP 'hold' designation may be overly conservative. A founder-CEO of a telecom LLC attending Fiber Connect 2026 in a BEAD-active state is not a random attendee — they paid to be there and likely have a specific growth agenda. The absence of AE notes reflects a research gap, not a disqualifying signal.",
+    "Batch tier D should not drive deprioritization here — it reflects ungraded status, not a negative grade. A 5-minute qualifying call to determine project volume and BEAD exposure would resolve the ambiguity that the tier D label cannot.",
+    "The 'nomad' brand could indicate a mobile/wireless telecom focus rather than fiber, which would make Nomad outside Inorsa's ICP (fiber only, no tower/cellular). This is the single biggest disqualifying risk and must be surfaced in the first outreach touch before investing further."
+  ],
+  "topInsight": "The critical unknown — and the make-or-break qualifier — is whether Nomad Telecommunications does fiber work at all. 'Nomad' could signal wireless/cellular (outside Inorsa's ICP) or it could be a fiber ISP/subcontractor riding BEAD expansion in rural Georgia. The outreach email must ask a single qualifying question that resolves this without sounding like a screening call: frame it around BEAD and fiber deployment timelines, and let Dastan self-identify. If he's fiber, he's a founder-CEO with budget authority, no internal bureaucracy, and a live BEAD deadline — the fastest possible sales cycle. If he's wireless, disqualify immediately and don't invest further.",
+  "sourcesUsed": [
+    "Lead record: Nomad Telecommunications, LLC — Dastan Shaimerdenov, Founder and CEO, Hoschton GA",
+    "Industry baseline: ShowRev Industry Intelligence KB (BEAD timeline, labor shortage, permitting pain, fiber-only ICP note)",
+    "Geographic inference: Jackson County GA BEAD exposure, rural broadband corridor northeast Atlanta metro",
+    "Persona framework: Founder/CEO of small LLC mapped to combined Design/Document + Fund/Capitalize persona",
+    "Email domain analysis: nomadtelecom.net",
+    "Companies-discovered list: 29 firms — Nomad Telecommunications not present, no multi-thread opportunity",
+    "Research attempt: LinkedIn, trade press, Fiber Connect speaker lists — no results found for Dastan Shaimerdenov"
+  ]
+}
+```

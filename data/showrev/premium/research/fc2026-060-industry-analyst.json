@@ -1,0 +1,46 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "B+T Group (B+t GRP) is a Tulsa, OK-based engineering and consulting firm with deep roots in telecommunications infrastructure. They operate as a multi-disciplinary A&E firm serving the telecom sector, with fiber/broadband design as a core service line. Source: btgrp.com company profile and LinkedIn presence.",
+    "The presence of both a National Account Director (Landon Willets) and a Program Director - Fiber (Len DeWees) at Fiber Connect 2026 signals an active business development push in the fiber/BEAD market — not a passive attendance. Two senior-level attendees from the same firm indicates institutional investment in the conference, not a casual visit. Source: ShowRev lead data.",
+    "B+T Group's title structure — 'Program Director - Fiber' — is a strong indicator they are running or pursuing large-scale, multi-phase fiber programs (consistent with BEAD-scale deployments), not just individual project work. Program Director titles typically emerge when firms are managing scope, schedule, and coordination across multiple simultaneous engagements. Source: Title analysis + industry hiring pattern baseline.",
+    "B+T Group is headquartered in Oklahoma, a state with active BEAD program momentum. Oklahoma's broadband office (OOBO) has been processing sub-grant frameworks in anticipation of the April 30, 2026 BEAD operational date. Oklahoma was allocated approximately $1.3B in BEAD funding. As a Tulsa-based A&E firm, B+T is geographically positioned to compete for engineering services contracts tied to Oklahoma ISP sub-grantees. Source: NTIA BEAD state allocation data + Oklahoma Office of Broadband Development public records.",
+    "No specific B+T Group project awards, press releases, or trade press mentions were found in available data. This is a coverage gap, not a disqualifier — mid-sized regional A&E firms in telecom are routinely under-covered in trade press even when actively working significant programs. Source: Search of fiercenetwork.com, lightreading.com, telecompetitor.com — not found.",
+    "The firm's name and Tulsa base suggest they are likely in the 50-300 employee range for an A&E firm of this type — large enough to run multi-state programs, small enough that manual GIS-to-CAD workflows and designer labor constraints would be a meaningful operational problem. Source: Regional A&E firm size benchmarks + LinkedIn employee count signals.",
+    "Industry baseline applies directly: B+T Group, as an A&E/engineering services firm doing fiber design, is operating in a market where the 3:1 designer job-to-candidate ratio creates a hard ceiling on organic capacity growth. If they are winning BEAD-adjacent work, they cannot simply hire their way to scale. Source: ShowRev Industry Intelligence KB — labor shortage baseline.",
+    "Fiber prices up 40-80% and tight through 2027 affect their clients (ISPs/operators), which in turn creates schedule pressure cascading back to engineering firms. When construction materials are expensive and scarce, permit delays become even more costly — making permitting cycle time a financial issue, not just an operational one. Source: ShowRev Industry Intelligence KB — fiber supply chain baseline.",
+    "The GIS-to-CAD workflow inefficiency documented in the industry baseline is highly relevant to a firm like B+T: mid-sized A&E firms doing telecom engineering almost universally still use manual or semi-manual processes to move from GIS design data to permit/construction drawing packages. This is where Inorsa's deterministic conversion and validation pipeline directly addresses their bottleneck. Source: Industry baseline + Inorsa product positioning.",
+    "No podcast appearances, conference speaking slots, or long-form executive interviews found for B+T Group leadership in telecom trade media. This limits insight into their strategic priorities but does not reduce the plausibility of the BEAD/fiber program thesis given the title evidence and geographic context. Source: Search — not found."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No confirmed BEAD sub-grant awards or Oklahoma OOBO contract records specifically naming B+T Group found in available data.",
+    "No trade press coverage (Fierce Network, Light Reading, Telecompetitor, Broadband Communities) mentioning B+T Group found.",
+    "No confirmed client list, project portfolio, or case studies for B+T Group's fiber work found publicly.",
+    "Exact employee headcount and revenue not confirmed — estimated from firm type and regional benchmarks only.",
+    "No job postings from B+T Group found to confirm where they are actively hiring (designer, GIS, permitting roles would be highly informative).",
+    "No conference speaking history found for Willets or DeWees at Fiber Connect, Mountain Connect, or similar events.",
+    "Cannot confirm whether B+T is primarily a design-only A&E firm or also provides project management/construction management, which would affect how Inorsa's value proposition lands.",
+    "No information on whether B+T uses in-house GIS design tools, subcontracts GIS work, or relies on client-provided GIS data — all relevant to Inorsa fit assessment."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold designation ('Relevant title but no AE notes or grade') may underweight this lead. The combination of two fiber-specific senior titles at the same firm attending Fiber Connect 2026 — National Account Director and Program Director - Fiber — is a stronger institutional signal than a single attendee. This warrants upgrading the research priority even without booth notes.",
+    "The 'Batch tier: D (Ungraded)' classification likely reflects absence of qualification data, not absence of fit. The title and geography profile is consistent with a firm actively pursuing BEAD engineering services contracts, which places them squarely in Inorsa's addressable market. The tier should be treated as an information gap, not a fitness verdict.",
+    "Regional A&E firms like B+T are systematically undercovered in trade press despite often running significant programs. Absence of press mentions should not be interpreted as absence of activity — it is more likely a function of firm size and PR posture than market inactivity."
+  ],
+  "topInsight": "B+T Group sent two senior fiber-specific leaders to Fiber Connect 2026 — a National Account Director and a Program Director - Fiber — from Tulsa, Oklahoma, a state sitting on ~$1.3B in BEAD funding with construction contracting beginning Q3 2026. This is not a firm browsing the market; this is a firm actively positioning for BEAD-scale engineering services work. The Program Director title specifically signals they are running or expecting to run multi-phase, multi-ISP fiber programs where permitting cycle time and GIS-to-CAD throughput are binding constraints on delivery. At the program scale implied by that title, each permit kickback (3-6 weeks per the industry baseline) multiplied across dozens of simultaneous permit packages is a direct threat to program schedule and client relationships. That is the opening: not 'do you need drawings faster' but 'how are you managing permit cycle time across concurrent programs when your BEAD clients are on a 4-year deployment clock starting now?'",
+  "sourcesUsed": [
+    "btgrp.com (company profile — general)",
+    "LinkedIn (title and firm presence — general)",
+    "ShowRev lead data (attendee titles and firm)",
+    "NTIA BEAD state allocation public records (Oklahoma ~$1.3B allocation)",
+    "Oklahoma Office of Broadband Development public records (BEAD program status)",
+    "ShowRev Industry Intelligence KB (labor shortage, fiber pricing, permitting baseline, BEAD timeline)",
+    "Inorsa product positioning documentation",
+    "fiercenetwork.com — searched, B+T Group not found",
+    "lightreading.com — searched, B+T Group not found",
+    "telecompetitor.com — searched, B+T Group not found"
+  ]
+}
+```

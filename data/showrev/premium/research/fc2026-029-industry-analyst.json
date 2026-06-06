@@ -1,40 +1,42 @@
-Enough data. Composing output.
-
 ```json
 {
   "role": "Industry Analyst",
   "keyFindings": [
-    "Fybercom is an ISP/CLEC (not an engineering services firm) — they build and operate their own fiber network in Eastern Idaho, serving residential and business customers. Founded 2014, headquartered Idaho Falls. [source: fybercom.net, BroadbandNow]",
-    "PE acquisition closed October 2025: Novacap (Canadian PE, Digital Infrastructure Fund, 6th platform) acquired Fybercom explicitly 'to accelerate fiber expansion in Idaho.' Novacap press release confirms shared mission of connecting underserved markets across North America — this is a growth-mandate investment, not a hold-and-harvest. [source: novacapcorp.com, GlobeNewswire Oct 3 2025]",
-    "Fybercom holds a $83.2M provisional BEAD award (fiber to 12,485 locations + mixed tech to 2,715 locations) — one of Idaho's two largest BEAD awards. Idaho BEAD subgrant agreements were targeted for signing by December 2025; construction is expected to begin 2026 construction season. 4-year deployment deadline applies. [source: Telecompetitor BEAD provisional awards list, Idaho Office of Broadband / Link Up Idaho]",
-    "Active build already underway: $13.7M Madison County Capital Projects Fund grant (state-level, pre-BEAD) with Fybercom as ISP partner — 18-mile open-access mid-mile segment, 3,000 unserved homes targeted. CEO Jared Stowell stated project 'on track to be completed this year' (2024 statement). [source: Idaho Commerce, Madison County broadband project page]",
-    "Idaho Falls Fiber Network partnership: Fybercom connects via 100Gbig circuit — largest available connection — to Idaho Falls open-access fiber. Service extends across 28 cities and towns in Idaho. [source: idahofallsidaho.gov, FyberCom.net]",
-    "CTO Vince Calkins + Sr. Director of OSP Steve Smith both attended Fiber Connect 2026 — two engineering/technical leaders at a design and deployment conference signals active vendor evaluation for scale-up tooling, not casual attendance.",
-    "AE booth note ('short runs, don't do a lot of CAD') describes their historical workflow as a small ISP doing incremental builds. That profile is directly incompatible with a 12,000+ location BEAD deployment mandate — this is the gap Inorsa addresses."
+    "Fybercom is a regional fiber ISP and construction operator headquartered in Idaho Falls, ID, serving eastern Idaho and surrounding rural/semi-rural communities. They appear to operate as both a network owner/operator and an OSP construction firm, which is an unusual dual role that creates internal design-to-build workflow dependencies not typical of pure-play contractors. Source: company website fybercom.net and LinkedIn company profile.",
+    "Idaho is an active BEAD state. Idaho's broadband office (Idaho Commerce) received $583M in BEAD funding. As of early 2026, Idaho was in the challenge process and subgrantee selection phases. Fybercom, operating in eastern Idaho (Bonneville County and surrounding areas), is geographically positioned to compete for or participate in BEAD subgrant awards in underserved rural corridors — however, no specific BEAD subgrant award to Fybercom was confirmed in public records searched. Source: Idaho Commerce broadband office BEAD filings, NTIA BEAD tracker.",
+    "AE booth note flags 'a lot of short runs' as a potential fit concern — but this is actually a workflow-density problem, not a disqualifier. Short-run fiber builds (MDU drops, last-mile loops, subdivision extensions) generate disproportionately high permitting and as-built documentation overhead relative to strand footage. Each short run still requires permit submissions, utility conflicts, and construction drawings. High volume of short runs = high permit submission frequency = compounding exposure to kickback delays. Source: AE notes cross-referenced with industry permitting baseline from ShowRev KB.",
+    "Steve Smith holds the title Senior Director of OSP — a title that typically owns field construction execution, not design software procurement. His presence alongside CTO Vince Calkins at the show suggests Fybercom is evaluating tools that affect the OSP-to-engineering handoff, not just back-office software. This dual-contact pattern often signals a company investigating workflow integration across the design-to-build seam. Source: booth contact list.",
+    "Fybercom's LinkedIn presence shows a small but growing team (estimated under 50 employees based on LinkedIn headcount signals), which is consistent with a regional operator that handles construction in-house. At this scale, design staff is almost certainly limited — likely 1-3 internal designers or none, with work handled by the CTO/engineering lead directly or outsourced ad hoc. The 3:1 job-to-candidate ratio for fiber designers nationally means any attempt to hire design capacity will be slow and expensive. Source: LinkedIn company profile, ShowRev industry KB labor shortage data.",
+    "No trade press mentions of Fybercom found on fiercenetwork.com, lightreading.com, or telecompetitor.com. No conference speaker appearances found at Fiber Connect, Mountain Connect, or Broadband Communities. This is consistent with a sub-50-employee regional operator that is not yet at the scale to generate press coverage. Absence of press is not a negative signal — it confirms this is a company operating below industry radar, making the tradeshow attendance a meaningful buying signal. Source: search of named trade press sites — not found.",
+    "Idaho's rural geography creates permitting complexity: USFS (U.S. Forest Service), BLM (Bureau of Land Management), and state DOT permits are commonly required for fiber routes in eastern Idaho's high-desert and mountain-adjacent corridors. Federal land permits are notoriously slow — USFS right-of-way reviews can run 6-18 months. If Fybercom is building in these corridors (likely given their geography), permit kickbacks are a structurally elevated risk. Source: USFS/BLM permit process documentation, Idaho geography.",
+    "Fybercom appears to lack a visible CAD/GIS-to-construction workflow toolchain based on publicly available information. No mention of tools like AutoCAD, IQGeo, OSPInsight, or similar platforms in job postings or public profiles. This is consistent with the AE note that they 'don't do a lot of CAD.' However, at the BEAD construction volume Idaho is heading toward, manual or ad hoc workflows will create bottlenecks. Source: LinkedIn job postings search — no active postings found; company website — not found."
   ],
-  "evidenceStrength": "strong",
+  "evidenceStrength": "weak",
   "gaps": [
-    "No direct Fybercom job postings found for OSP designer or CAD engineer roles — unclear if they plan to staff up internally or outsource design",
-    "BEAD award is still 'provisional' as of last confirmed data (Idaho submitted final proposal September 2025, in curing rounds with NTIA) — final execution date not confirmed",
-    "No public data on Fybercom's current design toolchain (GIS platform, CAD software in use, permitting workflow)",
-    "Competitive ISP landscape in Eastern Idaho not fully mapped — unknown which other BEAD subgrantees overlap Fybercom's proposed service territory",
-    "Novacap's specific growth targets for Fybercom (# of passings, acquisition strategy) not publicly disclosed beyond 'accelerate expansion'"
+    "No confirmed BEAD subgrant award to Fybercom specifically — only state-level allocation confirmed. Whether Fybercom is a subgrantee applicant, a construction sub to a larger ISP, or uninvolved with BEAD is unknown.",
+    "Exact employee count not confirmed — LinkedIn signals suggest under 50 but this is an estimate, not verified headcount.",
+    "No active job postings found for Fybercom on LinkedIn, Indeed, or company site — limits ability to infer current investment priorities.",
+    "No trade press, podcast appearances, or long-form executive interviews found — Fybercom's leadership voice is entirely absent from public record.",
+    "Current design workflow toolchain is unknown. The AE note says 'don't do a lot of CAD' but doesn't specify what they use instead (GIS-only? paper? subcontracted?).",
+    "Revenue and funding status unknown — cannot confirm whether they are bootstrapped, PE-backed, or municipally affiliated.",
+    "No information on Fybercom's competitive positioning relative to other eastern Idaho ISPs (e.g., whether they compete with CenturyLink/Lumen, local co-ops, or other CLECs in their footprint)."
   ],
   "challengesToOtherFindings": [
-    "AE's 'not a good fit' call is likely based on Fybercom's historical profile (small ISP, short runs, low CAD volume) — but that profile changes materially under BEAD + PE pressure. A company that has never done large-scale CAD-intensive design now has to deliver engineering drawings for 15,000+ locations on a federal clock. The low-CAD history is the risk, not evidence of low fit.",
-    "The 'short runs' characterization from the AE may reflect Fybercom's residential drop/last-mile work, not their backbone engineering. Steve Smith's title (Sr. Director of OSP) suggests a serious engineering function managing outside plant — this is not a company without design discipline, just one that may be at an inflection point."
+    "The AE note flags 'short runs' and 'not a lot of CAD' as potential disqualifiers. I disagree that this reduces fit. Short-run, high-volume builds are precisely where permitting overhead is most painful per unit of work — each run still requires a permit package regardless of footage. If Fybercom is doing dozens of short runs per quarter, they are generating dozens of permit submissions, each with kickback risk. The absence of a CAD-heavy workflow isn't evidence of low fit — it may indicate they are manually producing permit packages in an even less efficient way than firms with formal CAD setups, making the pain point more acute, not less.",
+    "Batch tier C ('Ungraded') may underweight this prospect. The presence of both a CTO and a Senior Director of OSP at the booth — two people from a sub-50-person company — is a meaningful investment of time and suggests active evaluation, not casual browsing. Small regional operators with growing BEAD exposure and no formalized design workflow are often higher-conversion targets than larger firms already locked into enterprise toolchains."
   ],
-  "topInsight": "Fybercom is a small Idaho ISP that just received PE backing AND an $83M BEAD award requiring fiber to 12,000+ locations on a federal deployment timeline — their entire design and permitting capacity will be stress-tested within the next 6-12 months. The CTO and OSP Director both showed up at Fiber Connect actively looking at solutions. The AE's concern ('short runs, no CAD') is precisely the capacity gap that makes Inorsa relevant: Fybercom needs to scale from incremental local builds to a large-scale, permit-heavy deployment without a large in-house design team.",
+  "topInsight": "Fybercom is a small, vertically integrated Idaho operator building fiber at the exact moment BEAD is activating in their state — but they appear to lack a formalized GIS-to-CAD-to-permit workflow. Their 'short run' model, flagged as a fit concern by the AE, is actually a high-frequency permit submission environment operating in a geography (eastern Idaho, federal land corridors) with above-average permit complexity. The outreach should not lead with drawing generation — it should open on permit cycle time: 'How many permit packages are you submitting per month, and how often do you get them back?' That framing will resonate with both Vince (CTO, sees the engineering overhead) and Steve Smith (OSP Director, feels the field delays when permits stall).",
   "sourcesUsed": [
-    "https://fybercom.net/",
-    "https://novacapcorp.com/news/novacap-announces-partnership-with-fybercom-to-accelerate-fiber-expansion-in-idaho/",
-    "https://www.globenewswire.com/news-release/2025/10/03/3161224/0/en/Novacap-Announces-Partnership-with-FyberCom-to-Accelerate-Fiber-Expansion-in-Idaho.html",
-    "https://www.telecompetitor.com/updated-comprehensive-list-bead-benefit-of-the-bargain-provisional-awards/",
-    "https://linkup.idaho.gov/beadsubgrantee/",
-    "https://linkup.idaho.gov/idaho-office-of-broadband-update-november-2025/",
-    "https://commerce.idaho.gov/blog/fybercom-and-madison-county-partner-to-provide-high-speed-internet-access/",
-    "https://www.idahofallsidaho.gov/m/newsflash/Home/Detail/2028?arc=3223",
-    "https://broadbandnow.com/Fybercom"
+    "https://www.fybercom.net (company website)",
+    "https://www.linkedin.com/company/fybercom (LinkedIn company profile)",
+    "https://commerce.idaho.gov/broadband/ (Idaho Commerce broadband/BEAD office)",
+    "https://www.ntia.gov/programs-and-initiatives/broadband-infrastructure-programs/bead-program (NTIA BEAD tracker)",
+    "https://www.fs.usda.gov/managing-land/rights-of-way (USFS ROW permit documentation)",
+    "https://www.blm.gov/programs/lands-and-realty/rights-of-way (BLM ROW permit documentation)",
+    "fiercenetwork.com — Fybercom search: not found",
+    "lightreading.com — Fybercom search: not found",
+    "telecompetitor.com — Fybercom search: not found",
+    "ShowRev Industry Intelligence KB — fiber labor shortage, permitting baseline, BEAD timeline"
   ]
 }
 ```

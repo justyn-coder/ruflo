@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync, existsSync, appendFileSync, mkdirSync } fr
 import { resolve, dirname } from 'path';
 
 export interface BrainEntity {
-  type: 'company' | 'funding' | 'relationship' | 'tool' | 'regulation' | 'person' | 'market_dynamic';
+  type: 'company' | 'funding' | 'relationship' | 'tool' | 'competitor_tool' | 'regulation' | 'person' | 'market_dynamic';
   name: string;
   facts: string[];
   sources: string[];
@@ -17,6 +17,19 @@ export interface BrainConfig {
 }
 
 const DEFAULT_BRAIN_DIR = resolve(dirname(new URL(import.meta.url).pathname), '../../../data/brain/fiber-telecom/inorsa/fiber/fiber-connect-2026');
+
+const KNOWN_COMPETITORS: Record<string, string> = {
+  'iqgeo': 'systems_of_record',
+  '3gis': 'systems_of_record',
+  'sitetracker': 'systems_of_record',
+  'katapult': 'systems_of_record',
+  'render networks': 'systems_of_record',
+  'biarri': 'systems_of_record',
+  'osmose': 'engineering_software',
+  'hexagon': 'engineering_software',
+  'vetro': 'systems_of_record',
+  'comsof': 'engineering_software',
+};
 
 function entityKey(entity: BrainEntity): string {
   return `${entity.type}::${entity.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
@@ -113,14 +126,36 @@ export function extractEntities(
   while ((match = toolPattern.exec(researchOutput)) !== null) {
     const toolName = match[1].trim().replace(/[.,]+$/, '');
     if (toolName.length > 2 && toolName.length < 40) {
+      const competitorCategory = KNOWN_COMPETITORS[toolName.toLowerCase()];
       entities.push({
-        type: 'tool',
+        type: competitorCategory ? 'competitor_tool' : 'tool',
         name: toolName,
         facts: [match[0].slice(0, 200)],
         sources: sources.slice(0, 2),
         firstSeen: prospectId,
         lastUpdated: now,
+        metadata: competitorCategory ? { competitor_category: competitorCategory } : undefined,
       });
+    }
+  }
+
+  // Direct competitor scan — catches competitors not matched by toolPattern regex
+  for (const [competitor, category] of Object.entries(KNOWN_COMPETITORS)) {
+    const re = new RegExp(`\\b${competitor.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+    if (re.test(researchOutput)) {
+      const displayName = competitor.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      const existingKey = `competitor_tool::${displayName.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
+      if (!entities.some(e => entityKey(e) === existingKey)) {
+        entities.push({
+          type: 'competitor_tool',
+          name: displayName,
+          facts: [`Competitor (${category}): ${displayName} mentioned in research`],
+          sources: sources.slice(0, 2),
+          firstSeen: prospectId,
+          lastUpdated: now,
+          metadata: { competitor_category: category },
+        });
+      }
     }
   }
 
@@ -213,6 +248,15 @@ export function generateDigest(brainDir: string): string {
     digest += `## Relationships (${relationships.length})\n`;
     for (const r of relationships) {
       digest += `- ${r.name}: ${r.facts[0]?.slice(0, 120) || ''}\n`;
+    }
+    digest += '\n';
+  }
+
+  const competitors = byType.get('competitor_tool') || [];
+  if (competitors.length > 0) {
+    digest += `## Known competitors in use (${competitors.length})\n`;
+    for (const c of competitors) {
+      digest += `- ${c.name}${c.metadata?.competitor_category ? ` (${c.metadata.competitor_category})` : ''}\n`;
     }
     digest += '\n';
   }

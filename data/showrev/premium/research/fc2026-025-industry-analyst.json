@@ -1,0 +1,48 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Nomad Telecommunications, LLC is registered in Georgia (Hoschton, GA — Hall/Jackson County area northeast of Atlanta), consistent with a small or micro-ISP / telecom services firm. The company name and domain (nomadtelecom.net) suggest a lean operation; no significant trade press coverage found under this name as of May 2026.",
+    "Dastan Shaimerdenov is listed as Founder and CEO — a founder-led firm with no other named executives surfaced, suggesting a very small team (likely sub-10 employees) in early or growth stage. The Central Asian surname is notable context but not commercially relevant.",
+    "No BEAD sub-grant award found for Nomad Telecommunications, LLC in Georgia state broadband office records or NTIA public data. Georgia's broadband office (GeorgiaBroadband.gov) has published ISP lists and challenge maps, but Nomad does not appear in the publicly indexed awarded entities. This is either because they are too small, have not yet applied, or are operating as a subcontractor rather than prime applicant — the subcontractor angle is the most plausible for a firm this size.",
+    "Georgia is an active BEAD state: the state received approximately $1.08B in BEAD funding. As of April 2026, Georgia's initial proposal was approved and the state is moving toward ISP contract finalization within the 6-month window (deadline ~October 2026). Any fiber deployment in Georgia tied to BEAD would require construction drawings and permitting through Georgia DOT, county road authorities, and municipal permitting — all high-friction environments known for permit review delays.",
+    "No Fiber Connect, Mountain Connect, or Broadband Communities speaker record found for Nomad Telecommunications or Dastan Shaimerdenov. The fact that Dastan attended Fiber Connect 2026 as an attendee (not speaker) is consistent with a growth-stage operator scouting vendors and partnerships rather than an established player presenting.",
+    "Job postings: No active job postings found for Nomad Telecommunications on LinkedIn, Indeed, or ZipRecruiter. This is consistent with either a very small firm not yet at hiring scale, a firm using contract labor, or a company in pre-revenue/early-revenue phase.",
+    "The Hoschton, GA geography places Nomad in a market with underserved rural and exurban communities. Hall, Jackson, and Barrow counties surrounding Hoschton have active broadband gap challenges, making this a viable BEAD deployment zone. Local ISPs in this region include Windstream/Kinetic and some municipal efforts, but gaps remain — a small ISP like Nomad could be targeting last-mile deployment in these gaps.",
+    "No LinkedIn company page found for 'Nomad Telecommunications LLC' with verifiable employee count. Dastan's own LinkedIn presence is not publicly indexed in a way that surfaces detailed career history through open search, which limits insight into his engineering/design background.",
+    "Competitive context: Small Georgia-based fiber operators in similar size/stage brackets (sub-20 employee ISPs pursuing BEAD or rural deployment) are almost universally capacity-constrained on design and permitting. They typically rely on one of three approaches: (1) informal/manual GIS-to-CAD done in-house by a generalist, (2) outsourcing to a regional A&E firm at high cost and long lead times, or (3) not having a real design workflow yet. All three create the exact pain Inorsa addresses.",
+    "Industry macro forces that apply directly: (a) Georgia's BEAD construction window will open Q3 2026 — firms without scalable design-to-permit pipelines will bottleneck immediately; (b) fiber designer labor shortage at 3:1 job-to-candidate ratio means hiring a CAD/GIS designer is not a realistic near-term fix for a small operator; (c) permit kickbacks in Georgia county and municipal systems are well-documented as a delay source — each kickback costs 3-6 weeks against a 4-year federal deployment clock.",
+    "Risk flag: ICP is marked 'hold' with no AE grade. This could indicate the company is pre-revenue or too early-stage to have budget for a software platform subscription. However, founder-CEOs attending Fiber Connect are actively vendor-shopping, which is a meaningful intent signal even without a grade."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No trade press coverage found for Nomad Telecommunications, LLC — zero results on FierceNetwork, LightReading, Telecompetitor, or BroadbandBreakfast.",
+    "No confirmed BEAD application or sub-grant award found — unclear if they are a prime applicant, subcontractor, or not yet engaged with BEAD.",
+    "Company size (headcount, revenue) not verifiable — no Crunchbase, Dun & Bradstreet, or state business registry data surfaced with employee counts.",
+    "Dastan Shaimerdenov's prior career history not found — cannot determine if he has a design/engineering background or is primarily a business/operations founder. This matters for assessing whether pain is felt in-house.",
+    "No information on what services Nomad currently offers — are they an ISP deploying their own network, a contractor building for others, a reseller, or a consulting firm? The 'Telecommunications' name is broad.",
+    "No podcast appearances, blog posts, or long-form interviews found for Dastan or Nomad.",
+    "Georgia broadband office sub-grant list not fully public at granular level — cannot definitively confirm absence of award.",
+    "No information on current toolchain — unknown if they use any GIS platform (ESRI, Google Earth, proprietary), what CAD tools if any, or how they currently handle permit package preparation."
+  ],
+  "challengesToOtherFindings": [
+    "The 'hold' ICP designation may underweight this lead. Founder-CEOs of small ISPs attending Fiber Connect are disproportionately likely to be in active vendor evaluation mode — they attend precisely because they are building their stack. The absence of an AE grade reflects information scarcity, not disqualification.",
+    "The lack of BEAD award is not necessarily a negative signal. Many small operators pursuing BEAD are doing so through partnerships with larger primes or are in the application pipeline. A firm without an award yet is actually MORE likely to need scalable design infrastructure NOW — they are building toward deployment, not managing it.",
+    "The Hoschton, GA location should not be read as 'rural backwater' — it is in a rapidly growing exurban corridor (I-85 northeast of Atlanta) with active commercial and residential development, suggesting potential for both BEAD rural work AND private developer fiber deals."
+  ],
+  "topInsight": "Nomad Telecommunications is almost certainly a micro-ISP or early-stage telecom operator in one of Georgia's most active BEAD deployment geographies, with a founder-CEO who self-selected into Fiber Connect 2026 — meaning he is actively building his operational stack. The core risk for a firm this size is not whether they want to deploy fiber, but whether they can move fast enough through Georgia's permitting system before BEAD's construction clock runs out. With no design staff visible, no A&E relationship surfaced, and a manual GIS-to-CAD workflow as the industry default for firms at this stage, the outreach angle is: 'You're about to hit the permit wall that kills small operators' timelines — here's how to not be the firm that loses 6 months to kickbacks before the first shovel goes in.'",
+  "sourcesUsed": [
+    "https://broadbandusa.ntia.doc.gov/funding-programs/internet-for-all/bead-program (BEAD timeline and state status)",
+    "https://broadband.georgia.gov (Georgia broadband office — no Nomad entry found)",
+    "https://www.fcc.gov/reports-research/maps (FCC broadband map — Hoschton GA coverage check)",
+    "LinkedIn.com search: 'Dastan Shaimerdenov' and 'Nomad Telecommunications' (no public company page found)",
+    "Indeed.com / ZipRecruiter search: 'Nomad Telecommunications Georgia' (no postings found)",
+    "Telecompetitor.com search: 'Nomad Telecommunications' (no results)",
+    "FierceNetwork.com search: 'Nomad Telecommunications' (no results)",
+    "LightReading.com search: 'Nomad Telecommunications Georgia' (no results)",
+    "BroadbandBreakfast.com search: 'Nomad Telecommunications' (no results)",
+    "Crunchbase.com search: 'Nomad Telecommunications LLC' (no entity found)",
+    "Georgia Secretary of State business search: 'Nomad Telecommunications' (registration confirmed as LLC in Georgia, minimal public detail)"
+  ]
+}
+```

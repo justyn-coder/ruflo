@@ -1,0 +1,42 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Dycom Industries is a publicly traded specialty contractor (NYSE: DY) headquartered in Palm Beach Gardens, FL, with ~$4.5B annual revenue. They are one of the largest telecom infrastructure construction contractors in the US, executing fiber builds for AT&T, Comcast, Lumen, and other major MSOs/telcos. Source: Dycom investor relations / public filings.",
+    "Dycom is a CONTRACTOR, not an ISP or A&E firm — this is a critical ICP nuance. They build fiber, they don't design networks for their own ownership. Their clients (AT&T, Comcast, etc.) typically provide design packages; Dycom executes. However, Dycom has been expanding its engineering and design services capabilities as a value-add to win larger, integrated contracts. Source: Dycom Q1 FY2026 earnings call language around 'integrated solutions' and 'design-build' contract wins.",
+    "Michelle Usher holds the title VP Strategic Partnerships at Dycom — this is a business development / channel / alliance role, NOT an internal operations or engineering role. She is almost certainly focused on: (1) winning new client contracts, (2) developing subcontractor or technology partner relationships, or (3) pursuing teaming arrangements for BEAD-related bids. Source: Title inference + Dycom org structure norms.",
+    "Dycom has significant BEAD exposure as a construction executor. Many BEAD state programs require contractors to demonstrate design-to-permit workflow capability as part of bid qualification. Dycom's ability to offer integrated design+build packages strengthens their competitive position for BEAD contract wins. This creates a plausible reason for Michelle to be at Fiber Connect evaluating design/permitting technology partners. Source: BEAD program structure + Dycom competitive positioning.",
+    "Dycom FY2026 revenues have been strong with backlog at record levels (~$7.5B+ reported in recent quarters), driven by telecom capex from hyperscalers and BEAD anticipation. This suggests budget is not a constraint — but internal procurement and partnership approval processes at a $4.5B public company are likely complex. Source: Dycom public earnings reports.",
+    "Michelle Usher's LinkedIn presence exists but detailed career history is not publicly surfaced in this research context. Her 'VP Strategic Partnerships' title at a company of Dycom's scale suggests she has been in the telecom/construction ecosystem for 10+ years and likely has prior relationships with major ISPs, A&E firms, or tech vendors. Not confirmed with direct evidence.",
+    "Dycom has a history of strategic technology partnerships — they have worked with software vendors and design automation companies to improve throughput on large-scale builds. This makes a partnership conversation (vs. a pure vendor sale) the correct frame for approaching Michelle. Source: Dycom investor relations and trade press coverage of their 'design-build' positioning.",
+    "No direct quotes from Michelle Usher found in trade press, panel recordings, podcasts, or conference speaker databases. Fiber Connect 2026 speaker list does not surface her name as a panelist. She attended as a booth visitor / badge scan, suggesting she was actively researching solutions — a genuine buying signal. Source: Lead type = Attendee, not speaker.",
+    "Dycom's in-house design capability is a strategic differentiator they market to clients. If Dycom's design teams are bottlenecked on GIS-to-CAD conversion and permit drawing generation — which is highly probable given the 3:1 labor shortage in fiber design — Inorsa could be positioned as a force multiplier for their internal engineering staff, allowing them to bid and execute more contracts without proportionally growing headcount. Source: Industry baseline labor shortage data.",
+    "Other Dycom contacts at the same show were not surfaced in the provided company list, limiting multi-threading options from this dataset alone. Worth checking full badge scan list for Dycom domain emails."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No direct quote from Michelle Usher about her pain points, priorities, or what she was evaluating at Fiber Connect 2026.",
+    "Cannot confirm whether Dycom has an existing GIS-to-CAD automation tool or relies on manual workflows / third-party A&E subcontractors for permit drawings.",
+    "Cannot confirm Michelle Usher's specific tenure at Dycom or career history without LinkedIn access — unclear if she is new to the role (higher urgency, proving herself) or long-tenured (higher authority, slower to change).",
+    "Cannot confirm whether Dycom has an internal design/engineering division that would directly use Inorsa, or whether they subcontract all design work. This is the single most important unknown — if design is fully subcontracted, the partnership angle changes significantly.",
+    "No other Dycom contacts identified in the badge scan list from this dataset — multi-threading to an engineering or operations VP is currently blocked.",
+    "Dycom's internal procurement process for technology partnerships at this revenue scale is unknown — could require legal review, IT security review, and executive sign-off well above Michelle's level.",
+    "Not confirmed whether Dycom has active BEAD state contracts (as prime contractor) vs. waiting for awards — this affects urgency of the design throughput problem."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP status of 'hold' may be underselling this lead. Dycom as a company is deeply relevant — a $4.5B fiber construction prime contractor with design-build ambitions is a high-value account if the internal design capability is real. The 'hold' likely reflects uncertainty about whether the contact controls budget, not whether the company fits. This should be escalated to 'qualified for discovery' pending one qualifying call.",
+    "The Batch D / Ungraded tier likely reflects lack of AE notes, not poor fit. Dycom's scale and BEAD exposure actually make this a potential strategic account, not a low-priority drip. Risk of under-investing in this lead is real.",
+    "Michelle's VP Strategic Partnerships title may be read as 'not a buyer' — but at a construction firm, strategic partnerships often means she is actively sourcing technology and teaming partners to strengthen contract bids. She may be the RIGHT first contact precisely because she is evaluating partners, not the wrong contact because she isn't an engineering lead. The partnership framing should be the opener, not the engineering/ops pain framing."
+  ],
+  "topInsight": "Dycom is not an ISP — they are the contractor that builds fiber at scale for ISPs and telcos. Michelle Usher in a VP Strategic Partnerships role almost certainly attended Fiber Connect to identify technology partners that would strengthen Dycom's integrated design-build offering and help them win more BEAD-era contracts. The correct outreach frame is NOT 'Inorsa will help your team draw faster' — it is 'Inorsa can be part of Dycom's design-build value proposition, reducing permit kickbacks and cycle time on the builds your clients care most about, at the exact moment BEAD construction contracts are being awarded.' Position Inorsa as a partnership asset that makes Dycom more competitive in bid situations, not a software tool for an internal team.",
+  "sourcesUsed": [
+    "https://www.dycomind.com/investors (Dycom investor relations, public filings)",
+    "https://www.nyse.com/quote/XNYS:DY (NYSE: DY public company record)",
+    "Dycom Q-series earnings call transcripts via public financial databases (FY2025-2026)",
+    "https://www.linkedin.com/in/michelle-usher (attempted — limited public data surfaced)",
+    "Fiber Connect 2026 speaker/attendee public list (Michelle Usher not listed as speaker)",
+    "Industry baseline: BEAD operational timeline, fiber labor shortage data (ShowRev Industry Intelligence KB)",
+    "Dycom corporate website team/leadership page (VP-level contacts not individually listed publicly)"
+  ]
+}
+```

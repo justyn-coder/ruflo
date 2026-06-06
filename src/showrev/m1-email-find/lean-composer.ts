@@ -62,7 +62,7 @@ ${brief.talkingPoints ? `Possible angles:\n${brief.talkingPoints}` : ''}
 
 What Inorsa does: automates GIS-to-CAD construction drawing generation. Dramatically faster (~10 min vs hours). Teams get more capacity and more time for their own QC. Does NOT validate inputs or catch errors — speed is the value. Fiber only.
 
-Write the email. Keep it under 80 words. End with ONE specific diagnostic question about THEIR situation (not "Worth a conversation?" or any generic ask). No fluff, no flattery, no "I hope this finds you well." Do NOT start with "Good meeting you" or any booth reference unless there are specific booth notes above.
+Write the email. Target 78-99 words (hard ceiling 110). MUST open with a specific, verifiable fact about THIS company from the context above (dollar amounts, projects, geography). End with ONE specific diagnostic question about THEIR situation (not "Worth a conversation?" or any generic ask). No fluff, no flattery, no "I hope this finds you well." Do NOT start with "Good meeting you" or any booth reference unless there are specific booth notes above.
 
 Output EXACTLY this format, nothing else — no commentary, no word count, no notes:
 
@@ -173,6 +173,7 @@ function postProcess(raw: string, brief: LeanBrief): { subject: string; body: st
   // Em-dash/en-dash cleanup (preserve number ranges)
   text = text.replace(/(\d)[–—](\d)/g, '$1-$2');
   text = text.replace(/[—–]/g, ',');
+  text = text.replace(/\s+,/g, ',');
 
   // Salutation join: "Name,\nbody" → "Name, body"
   text = text.replace(/^([A-Z][a-z]+,)\s*\n+\s*/m, '$1 ');
@@ -191,10 +192,10 @@ function postProcess(raw: string, brief: LeanBrief): { subject: string; body: st
   }
 
   if (ps) {
-    ps = ps.replace(/[—–]/g, ',');
+    ps = ps.replace(/[—–]/g, ',').replace(/\s+,/g, ',');
   }
   if (subject) {
-    subject = subject.replace(/[—–]/g, ',');
+    subject = subject.replace(/[—–]/g, ',').replace(/\s+,/g, ',');
   }
 
   return { subject, body: text, ps };

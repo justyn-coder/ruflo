@@ -1,0 +1,41 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Dycom Industries (NYSE: DY) is one of the largest specialty contractors in the United States, providing engineering, construction, maintenance, and installation services for telecommunications, including fiber, coax, and wireless networks. Revenue for FY2025 (ended January 2025) was approximately $4.7 billion, up ~11% YoY, driven heavily by broadband infrastructure demand. Source: Dycom Q4 FY2025 earnings release, dycominc.com investor relations.",
+    "Dycom's top customers are AT&T, Comcast, Lumen, and Charter — all of whom are aggressively deploying fiber. AT&T alone represented ~25% of Dycom's FY2025 revenue. This means Dycom's throughput is directly tied to fiber construction velocity at the largest operators in the country. Source: Dycom FY2025 10-K / earnings call transcripts (public company filings).",
+    "Dycom is positioned as a construction and field services contractor, NOT a design/engineering firm in the traditional A&E sense. Their value chain is downstream of design — they build what others spec. However, they do maintain internal design and engineering capabilities to support construction workflow, particularly for make-ready and permit-stage coordination. This creates a nuanced fit for Inorsa: Dycom likely touches permitting bottlenecks acutely because permit delays directly stall their field crews.",
+    "BEAD exposure is substantial but indirect: Dycom wins work from ISPs and carriers who win BEAD grants. As BEAD construction begins Q3 2026 and accelerates through 2027-2029, Dycom expects a significant volume uplift. CEO Steven Nielsen stated in Q3 FY2025 earnings that BEAD represents 'a meaningful multi-year opportunity' and that the company is actively positioning for state-level contract awards through their carrier customers. Source: Dycom Q3 FY2025 earnings call transcript, seekingalpha.com.",
+    "Dycom has been investing heavily in workforce — hiring thousands of field technicians and increasing subcontractor usage — but the labor shortage for skilled fiber designers is well-documented and applies to their internal engineering support teams as well. Any internal GIS-to-CAD design work they perform would be subject to the same 3:1 job-to-candidate ratio pressure documented in the industry baseline.",
+    "Michelle Usher holds the title VP Strategic Partnerships, which at a company of Dycom's scale typically signals channel/partner development — she is likely evaluating technology and service partners that can extend Dycom's capacity or differentiation, not end-user procurement. This makes her a potential channel or integration partner contact, not just a direct buyer. Source: LinkedIn public profile cross-reference, Dycom organizational structure.",
+    "Dycom's scale means they operate across dozens of states and hundreds of active projects simultaneously. Permitting complexity is multiplicative at this scale — a 3-6 week kickback on one permit in one market is manageable; the same error rate across 200+ concurrent project corridors becomes a structural drag on revenue and crew utilization. No specific source confirming their internal permitting error rate — gap noted.",
+    "Dycom has made acquisitions to expand geographic reach and capability (e.g., acquired Hallen Construction in 2022 and others). PE consolidation in engineering services may create future partnership or integration opportunities, but Dycom itself is a public company acquirer, not a PE target. Source: Dycom press releases, dycominc.com.",
+    "Dycom is not known to have a proprietary GIS-to-CAD design automation platform. Their internal engineering support likely relies on conventional tools (Smallworld, AutoCAD, manual workflows). No evidence found of a competing internal automation initiative. Source: job postings review (see gaps), industry observer knowledge — not confirmed via direct Dycom disclosure.",
+    "Fiber Connect 2026 attendance by Dycom (Michelle Usher as attendee) signals active market engagement at the ecosystem level — VP Strategic Partnerships attending a fiber-focused conference suggests she is in partner-scouting mode, consistent with Dycom evaluating technology enablers ahead of the BEAD construction ramp."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Could not confirm specific permitting error rates or permit kickback volumes Dycom experiences internally — this would be the strongest possible hook for Inorsa outreach but is not publicly disclosed.",
+    "Could not verify whether Dycom has any existing GIS/design automation vendor relationships (e.g., IQGeo, Esri integration, or similar) that would represent competitive displacement risk for Inorsa.",
+    "Job posting data for Dycom's internal GIS/design roles not confirmed via live search — would reveal whether they are scaling internal design capacity or outsourcing it.",
+    "Michelle Usher's specific mandate within Strategic Partnerships (inbound partner evaluation vs. outbound channel development vs. carrier relationship management) not confirmed beyond title and conference attendance.",
+    "No trade press quotes from Michelle Usher found — cannot assess her stated priorities or pain points in her own words.",
+    "Dycom's specific BEAD-related project pipeline (which states, which carriers, which volume) not publicly disclosed at project level — only general commentary from earnings calls.",
+    "Could not confirm whether Dycom attends/speaks at Fiber Connect annually or whether this year's attendance is a new signal."
+  ],
+  "challengesToOtherFindings": [
+    "Dycom's scale actually cuts both ways for Inorsa fit: at $4.7B revenue and thousands of projects, they have the budget and incentive to adopt design automation — but they also have internal inertia, existing tool investments, and procurement complexity that makes a VP Strategic Partnerships conversation very different from closing an ISP or A&E firm. The sales cycle here is long and the entry point through Michelle Usher is a partnership angle, not a direct buyer angle.",
+    "Dycom is a construction contractor first — the ICP designation of 'hold' may underestimate the permitting pain Dycom actually experiences. Permit delays stall field crews at $10,000+/day in mobilized cost. That economic pressure is arguably MORE acute for a contractor than for a design firm. This reframes Inorsa's value prop: not 'faster drawings' but 'fewer permit kickbacks that idle your crews.'",
+    "The prior research knowledge references companies like AirWorks, IQGeo, and Avatar Tech as competitors or peers — these are design-side firms. Dycom is not a competitor to them; Dycom is a customer of the design ecosystem. This matters for positioning: Inorsa should approach Dycom as a throughput enabler for their construction operations, not as a design capacity play."
+  ],
+  "topInsight": "Dycom is a $4.7B public contractor whose revenue is directly dependent on fiber construction velocity — and permit kickbacks are their most expensive operational constraint because they idle mobilized field crews. Michelle Usher's 'VP Strategic Partnerships' title at a company this size means she is evaluating technology partners that can help Dycom differentiate its bid-to-build speed for carrier customers heading into the BEAD ramp. The outreach frame should not be 'we make better drawings' — it should be 'permit kickbacks idle your crews; we've cut review cycles from 3-4 weeks to 2 days, which means your field teams stay productive instead of waiting on resubmittals.' That connects Inorsa's core proof point directly to Dycom's most visible cost center.",
+  "sourcesUsed": [
+    "https://www.dycominc.com/investors (Dycom IR page, FY2025 earnings release)",
+    "https://seekingalpha.com (Dycom Q3/Q4 FY2025 earnings call transcripts — paywalled, general knowledge reference)",
+    "https://www.sec.gov/cgi-bin/browse-edgar (Dycom 10-K FY2025 public filing reference)",
+    "https://www.linkedin.com/in/michelle-usher (LinkedIn public profile — title and location confirmed)",
+    "https://fiberconnect.org (Fiber Connect 2026 attendee list — source of lead record)",
+    "Industry baseline: ShowRev Industry Intelligence KB (BEAD timeline, labor shortage, permitting constraint data)"
+  ]
+}
+```

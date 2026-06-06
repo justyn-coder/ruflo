@@ -1,0 +1,42 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Deepika Chanamolu holds the title 'Director, Digital Engineering' at Incedo Inc., based in Ashburn, VA — a mid-senior individual contributor/manager level title that suggests she owns engineering delivery workflows but likely operates below VP/SVP budget authority. Source: tradeshow scan record.",
+    "Incedo Inc. is a technology services and consulting firm (~1,000-3,000 employees based on LinkedIn estimates), headquartered in Redwood City, CA with delivery centers in India. They serve telecom, financial services, and hi-tech verticals. Telecom digital engineering — including network design, OSS/BSS modernization, and GIS-based workflows — is a core practice area. Source: incedoinc.com public profile and LinkedIn company page.",
+    "Incedo's telecom practice explicitly targets fiber network operators as clients, providing services including network design, GIS data management, and engineering automation. This means Incedo is NOT an end-operator — they are an A&E/IT services firm that serves fiber ISPs. Inorsa's ICP fit shifts: Incedo is a potential reseller/delivery partner or a firm deploying Inorsa on behalf of ISP clients, not a direct network builder. Source: incedoinc.com/telecom and LinkedIn job postings.",
+    "Director of Digital Engineering at a services firm of this profile typically owns the toolchain and delivery methodology for engineering project execution — GIS-to-CAD workflows, design automation platforms, QC pipelines. This is precisely the persona who would evaluate Inorsa as a production platform embedded in their delivery stack. She is very likely a technical evaluator/recommender, not the final budget signatory.",
+    "Incedo has posted LinkedIn job descriptions referencing 'fiber network design,' 'GIS,' 'AutoCAD,' and 'OSP design' — indicating active fiber engineering practice with real design throughput that would benefit from Inorsa's GIS-to-CAD automation. Source: LinkedIn job postings (observed pattern, not a single URL confirmed).",
+    "No direct quote from Deepika Chanamolu found in trade press (Light Reading, BBCMag, ETI Software, Broadband Communities) or conference speaker records for Fiber Connect 2026. Her attendance at Fiber Connect as a non-speaker attendee suggests she was there to evaluate vendors/tools, not showcase a program — a buying posture, not a selling posture.",
+    "Ashburn, VA location is consistent with a delivery/client-facing role given Ashburn's concentration of data infrastructure clients and federal/enterprise telecom buyers. This may signal she manages East Coast or federal-adjacent client accounts.",
+    "Incedo's business model means their buying trigger is client pipeline: if they are winning fiber engineering contracts (BEAD-driven or otherwise), they need scalable production tooling. BEAD's April 30, 2026 operational date and Q3 2026 construction starts create a capacity crunch for A&E firms exactly like Incedo. If their ISP clients are gearing up, Incedo needs to 10x throughput without 10x headcount. Source: industry baseline + Incedo telecom practice inference.",
+    "Decision authority hypothesis: Deepika likely recommends to a VP of Engineering, CTO, or Practice Head (possibly India-based delivery leadership or a US-based practice lead). Budget authority for a tooling platform in a firm this size would typically sit at VP or above. Multi-threading to her manager or a parallel practice lead would strengthen the deal.",
+    "No other Incedo contacts found in the tradeshow scan list from the provided company data — she may be the sole attendee from Incedo, making her the single thread into the account. No multi-threading opportunity visible from available data."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No confirmed LinkedIn profile URL for Deepika Chanamolu — title and company confirmed via scan record only, not verified against live LinkedIn.",
+    "No direct quote from Deepika in any trade press, podcast, panel, or conference session found.",
+    "Cannot confirm her specific reporting line — who she reports to at Incedo is unknown (VP Engineering? CTO? Practice Head?).",
+    "Cannot confirm whether Incedo has active BEAD-related client contracts or is actively pitching ISPs on BEAD delivery work.",
+    "No revenue or headcount data for Incedo's telecom practice specifically — firm-wide estimates only.",
+    "No other Incedo contacts found in the tradeshow booth scan list to enable multi-threading.",
+    "Cannot confirm whether Incedo currently uses a competing GIS-to-CAD platform (e.g., IQGeo, AirWorks, or internal tools) — 'we already have a tool' objection risk is unquantified.",
+    "Unclear if Incedo does fiber design work in-house or purely manages/coordinates offshore teams in India — this affects how Inorsa would be positioned (as a US delivery tool vs. an offshore production platform)."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP classification of 'hold' may be underselling this contact. A Director of Digital Engineering at a telecom-focused A&E/IT services firm that actively runs fiber design workflows is arguably a stronger Inorsa prospect than a small ISP with limited volume — Incedo could deploy Inorsa across multiple client engagements, creating a multiplier effect. The 'hold' grade likely reflects missing AE notes, not genuine low fit.",
+    "The firm is not a fiber operator, which may initially seem like a fit miss — but Inorsa's value to an A&E/services firm is arguably higher than to a single ISP: Incedo would use Inorsa across many client projects, compressing cycle times and improving margins on a per-project basis. The pitch should be reframed from 'build your network faster' to 'deliver more fiber projects per headcount for your ISP clients.'",
+    "Batch Tier D (Ungraded) should be revisited. The firm's telecom digital engineering practice and the contact's title are both directly relevant to Inorsa's core use case. Downgrade appears to be a data-completeness artifact, not a fit signal."
+  ],
+  "topInsight": "Incedo is a telecom A&E/IT services firm, not a fiber operator — meaning Deepika Chanamolu's buying case for Inorsa is a production margin and throughput play, not an operator build play. If Incedo is winning or bidding on BEAD-era fiber design contracts, she needs to scale engineering output without proportional headcount growth. Inorsa embedded in Incedo's delivery stack would compress cycle time per project and reduce permit kickback risk across their entire client portfolio. The email opener should acknowledge that she's running engineering delivery for telecom clients (not building fiber herself) and ask specifically about how she's handling the surge in fiber design volume her clients are bringing to her team right now.",
+  "sourcesUsed": [
+    "https://www.incedoinc.com (company overview, telecom practice page)",
+    "https://www.linkedin.com/company/incedo-inc (company LinkedIn, headcount and practice inference)",
+    "Tradeshow scan record (title, location, email, phone — primary source for contact data)",
+    "Industry baseline KB (BEAD timeline, labor shortage, A&E offshoring trends)",
+    "LinkedIn job postings inference for Incedo telecom/fiber roles (pattern observed, no single URL confirmed)",
+    "Light Reading, BBCMag, ETI Software searched — no Deepika Chanamolu results found"
+  ]
+}
+```

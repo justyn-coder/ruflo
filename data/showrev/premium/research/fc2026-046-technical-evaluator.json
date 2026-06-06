@@ -1,0 +1,242 @@
+I'll research Lighthouse Technologies systematically, starting with job postings and tech stack signals before moving to broader capability searches.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Lighthouse Technologies Charlotte NC fiber engineering hiring careers", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/company/lighthouse-technologies-ltd", "content": "Lighthouse Technologies Ltd. | 4,944 followers on LinkedIn. We deliver award-winning, multi-award-winning projection mapping technology and visual effects globally | Lighthouse Technologies Ltd. is a globally recognised award-winning projection mapping technology and visual effects company. We deliver world-leading premium LED display, digital signage & AV solutions. Since our founding in 1998, we've been at the forefront of innovation in LED technology, digital signage, and AV solutions."}, {"url": "https://www.indeed.com/cmp/Lighthouse-Technologies", "content": "Lighthouse Technologies. 3.4 out of 5 stars. 3.4. Follow. Write a review. Snapshot; Why Join Us; 13 Jobs; Reviews; Salaries; Benefits; Q&A; Interviews; Photos ... Lighthouse Technologies is a leading provider of industry solutions through advanced web-based and mobile applications, clinical databases and web based portals. Lighthouse ..."}, {"url": "https://lighthouse.tech/careers/", "content": "We take care of our team. Work/life balance, competitive benefits package, 401K, generous PTO. If you\u2019re ready to make a difference, join our team! We serve our team and our community. View All Open Positions . ... Lighthouse Technologies, LLC is a Service-Disabled Veteran-Owned Small Business (SDVOSB) that provides IT, Data Analytics, and ..."}, {"url": "https://www.builtincolorado.com/company/lighthouse-technologies", "content": "Lighthouse Technologies\nColorado Springs, CO\nCompany Snapshot.\nEmployees\n51 - 200\nIndustry\nCyber Security, IT & Tech\n\nLighthouse Technologies is a cybersecurity-focused technology company that provides IT services and innovative solutions for commercial, governmental, and security needs. It focuses on security and trusted business solutions through advanced technology initiatives.\n\nOur company is based in Colorado Springs, CO\n\nLighthouse Technologies Mission Statement\nLighthouse Technologies will improve business processes through technology and innovation. Creating an environment that will inspire confidence, promote transparency and create community.\n\nAm I a good fit?"},{"url": "https://www.lighthousetech.com/about/", "content": "We are the preferred partner for developing client relationships and customized solutions that deliver tangible results and meet the challenges of today's enterprise. Headquartered in Katy, Texas, LighthouseTech is a technology solutions provider specializing in transforming businesses through unified communications, cloud computing, cybersecurity, and AV/IT solutions."},{"url": "https://www.linkedin.com/company/lh-tech", "content": "lh.tech | 237 followers on LinkedIn. | lh.tech is a company based out of Oman."}, {"url": "https://www.linkedin.com/company/lighthouse-technologies-llc", "content": "Lighthouse Technologies, LLC | 1,040 followers on LinkedIn. IT, Data Analytics, and Cybersecurity for National Security | Lighthouse Technologies, LLC is a Service-Disabled Veteran-Owned Small Business (SDVOSB) that provides IT, Data Analytics, and Cybersecurity solutions primarily focused on national security and the U.S. DoD."}, {"url": "https://www.lighthousetech.com/", "content": "LighthouseTech - Technology Solutions Provider. Headquartered in Katy, Texas, LighthouseTech is a technology solutions provider specializing in transforming businesses through unified communications, cloud computing, cybersecurity, and AV/IT solutions."}]
+</tool_response>
+
+The domain `lh.tech` is the key clue. Let me search more specifically using that domain and the contacts' names.
+<tool_call>
+{"name": "search", "arguments": {"query": "Denis Ryzhikov \"Lighthouse Technologies\" fiber telecom Charlotte", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/in/denisryzhikov", "content": "Denis Ryzhikov - Founder / CEO & President @ Lighthouse Technologies - Charlotte, NC - View Denis Ryzhikov's profile on RocketReach. Find contact info for Denis Ryzhikov - phone, email, work history, and more."}, {"url": "https://rocketreach.co/denis-ryzhikov-email_97036040", "content": "Denis Ryzhikov\nFounder / CEO & President @ Lighthouse Technologies\n Current employer:\nLighthouse Technologies\n\nWork Experience\nFounder / CEO & President\nLighthouse Technologies\nCurrent\n\nCo-Founder / COO at Centurion Consulting\n\n\n\n\n3 followers on RocketReach. "}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lighthouse Technologies\" lh.tech fiber telecom engineering Charlotte NC", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/company/lh-tech", "content": "lh.tech | 237 followers on LinkedIn. | lh.tech is a company based out of Oman."}, {"url": "https://lh.tech/", "content": "We believe in the power of data to guide informed, evidence-based decision-making. From research and development to assessment and evaluation, our solutions help organizations solve complex problems and deliver better outcomes. We\u2019re proud to serve clients across diverse sectors, including international development, education, workforce development, and government. We\h.tech is a company based out of Oman."}]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://lh.tech/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{"url": "https://lh.tech/", "markdown": "# Data-Driven Solutions for a Complex World\n\nWe believe in the power of data to guide informed, evidence-based decision-making. From research and development to assessment and evaluation, our solutions help organizations solve complex problems and deliver better outcomes. We\u2019re proud to serve clients across diverse sectors, including international development, education, workforce development, and government.\n\n[Learn More About LH Tech](/about)\n\n## Our Practice Areas\n\n## Our Capabilities\n\n## About LH Tech\n\nLH Tech is a small but mighty team of researchers, evaluators, and data experts committed to helping you understand what\u2019s working, what\u2019s not, and how to improve.\n\n## Our Team\n\n## News & Insights\n\n## Our Clients\n\n[Facebook](https://www.facebook.com/LHTechLLC)\n[LinkedIn](https://www.linkedin.com/company/lh-tech)\n\n\u00a9 2024 LH Tech, LLC"}
+</tool_response>
+
+This lh.tech is a research/data firm - not fiber related. Let me dig deeper into Denis Ryzhikov's company to find the actual company associated with the Fiber Connect attendees.
+<tool_call>
+{"name": "search", "arguments": {"query": "Denis Ryzhikov \"Lighthouse Technologies\" telecom fiber broadband", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://rocketreach.co/denis-ryzhikov-email_97036040", "content": "Denis Ryzhikov\nFounder / CEO & President @ Lighthouse Technologies\n Current employer:\nLighthouse Technologies\n\nWork Experience\Founder / CEO & President\nLighthouse Technologies\nCurrent\n\nCo-Founder / COO at Centurion Consulting\n\n\n\n\n3 followers on RocketReach. "}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Denis Ryzhikov CEO Charlotte NC company", "num_results": 10}}
+</tool_call>
+<tool_response>
+<error>Search engine error: {'type': 'search_engine_error', "message": "Search engine can't process this query"}</error>
+</tool_call>
+<tool_response>
+No output
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Denis Ryzhikov Charlotte NC LinkedIn Lighthouse", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://rocketreach.co/denis-ryzhikov-email_97036040", "content": "Denis Ryzhikov\nFounder / CEO & President @ Lighthouse Technologies\n Current employer:\nLighthouse Technologies\n\nWork Experience\nFounder / CEO & President\nLighthouse Technologies\nCurrent\n\nCo-Founder / COO at Centurion Consulting\n\n\n\n\n3 followers on RocketReach. "}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Roberto Martinez \"Lighthouse Technologies\" fiber advisor strategy", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://rocketreach.co/roberto-martinez-email_116777073", "content": "Roberto Martinez\nAdvisor, Strategy & Growth @ Lighthouse Technologies\n Current employer:\nLighthouse Technologies\n\nWork Experience\nAdvisor, Strategy & Growth\nLighthouse Technologies\nCurrent\n\n\n\n\n1 follower on RocketReach. "}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Tanya Pustakhod \"Lighthouse Technologies\" Charlotte marketing", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://rocketreach.co/tanya-pustakhod-email_18023030", "content": "Tanya Pustakhod\nMarketing Director @ Lighthouse Technologies\n Current employer:\nLighthouse Technologies\n\nWork Experience\nMarketing Director\nLighthouse Technologies\nCurrent\n\n\n\n\n0 followers on RocketReach. "}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lighthouse Technologies\" Charlotte NC telecom fiber broadband engineering site:linkedin.com", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/company/lighthouse-technologies-ltd", "content": "Lighthouse Technologies Ltd. | 4,944 followers on LinkedIn. We deliver award-winning, multi-award-winning projection mapping technology and visual effects globally | Lighthouse Technologies Ltd. is a globally recognised award-winning projection mapping technology and visual effects company. We deliver world-leading premium LED display, digital signage & AV solutions. Since our founding in 1998, we've been at the forefront of innovation in NLighthouse Technologies Ltd. is a globally recognised award-winning projection mapping technology and visual effects company. We deliver world-industrial quality LED technology, digital signage, and AV solutions."}, {"url": "https://www.linkedin.com/company/lh-tech", "content": "lh.tech | 237 followers on LinkedIn. | lh.tech is a company based out of Oman."}, {"url": "https://www.linkedin.com/company/lighthouse-technologies-llc", "content": "Lighthouse Technologies, LLC | 1,040 followers on LinkedIn. IT, Data Analytics, and Cybersecurity for National Security | Lighthouse Technologies, LLC is a Service-Disabled Veteran-Owned Small Business (SDVOSB) that provides IT, Data Analytics, and Cybersecurity solutions primarily focused on national security and the U.S. DoD."}, {"url": "https://www.linkedin.com/company/lighthouse-technologies-pty-ltd", "name": "lighthouse technologies pty", "content": "Lighthouse Technologies Pty Ltd | 1,057 followers on LinkedIn. Digital Strategy | Lighthouse Technologies Pty Ltd is a leading digital agency providing digital and digital marketing services."}, {"url": "https://www.linkedin.com/company/lighthouse-technologies-inc", "content": "Lighthouse Technologies Inc. | 1,126 followers on LinkedIn. Solutions That Shine | LinkedIn"}]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/company/lighthouse-technologies-inc", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{"url": "https://www.linkedin.com/company/lighthouse-technologies-inc", "markdown": "## Sign in to LinkedIn\n\n[Sign in](https://www.linkedin.com/login?session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fcompany%2Flighthouse-technologies-inc&trk=homepage-basic_sign-in-submit)\n\n[Forgot password?](https://www.linkedin.com/uas/request-password-reset?trk=homepage-basic_forgot-password)\n\nNew to LinkedIn?\n\n[Join now](https://www.linkedin.com/signup/cold-join?trk=homepage-basic_join-now&session_redirect=https%3A%2F%2Fwww%2Elinkedin%2Ecom%2Fcompany%2Flighthouse-technologies-inc)"}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lighthouse Technologies Inc\" Charlotte NC fiber broadband telecom", "num_results": 10}}
+</tool_call>
+<tool_response>
+<error>Search engine error: {'type': 'search_engine_error', "message": "Search engine can't process this query"}</error>
+</tool_call>
+<tool_response>
+No output
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Centurion Consulting Denis Ryzhikov Charlotte fiber broadband", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://rocketreach.co/centurion-consulting-profile_v7b1d9e9fd53e46d5", "content": "Centurion Consulting. Centurion Consulting is a company in the IT Services industry. Centurion Consulting website is www.centurionconsulting.com. Centurion Consulting has 4 contacts. Last updated: 2025-12-16."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lighthouse Technologies\" fiber optic construction drawings GIS CAD", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://lighthouse.tech/", "content": "Lighthouse Technologies, LLC is a Service-Disabled Veteran-Owned Small Business (SDVOSB) that provides IT, Data Analytics, and Cybersecurity solutions primarily focused on national security and the U.S. DoD. Lighthouse Technologies is a leading provider of industry solutions through advanced web-based and mobile applications, clinical databases and web based portals."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Roberto Martinez fiber advisor Charlotte NC 305 telecom broadband", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/in/roberto-martinez-55b7a91b3", "content": "Roberto Martinez - Advisor, Strategy & Growth at Lighthouse Technologies - Charlotte, NC - LinkedIn. View Roberto Martinez's full profile for free. ... Advisor, Strategy & Growth. Charlotte, NC. "}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lighthouse Technologies\" Denis Ryzhikov Fiber Connect 2026 telecom ISP", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://rocketreach.co/denis-ryzhikov-email_97036040", "content": "Denis Ryzhikov\nFounder / CEO & President @ Lighthouse Technologies\n Current employer:\nLighthouse Technologies\n\nWork Experience\nFounder / CEO & President\nLighthouse Technologies\nCurrent\n\nCo-Founder / COO at Centurion Consulting\n\n\n\n\n3 followers on RocketReach. "}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Denis Ryzhikov LinkedIn profile background experience", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/in/denisryzhikov", "content": "Denis Ryzhikov - Founder / CEO & President @ Lighthouse Technologies - Charlotte, NC - View Denis Ryzhikov's profile on RocketReach. Find contact info for Denis Ryzhikov - phone, email, work history, and more."}, {"url": "https://rocketreach.co/denis-ryzhikov-email_97036040", "content": "Denis Ryzhikov\nFounder / CEO & President @ Lighthouse Technologies\n Current employer:\nLighthouse Technologies\n\nWork Experience\nFounder / CEO & President\nLighthouse Technologies\nCurrent\n\nCo-Fewer followers on RocketReach. "}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lighthouse Technologies\" BEAD broadband ISP engineering design", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://lighthouse.tech/careers/", "content": "We take care of our team. Work/life balance, competitive benefits package, 401K, generous PTO. If you\u2019re ready to make a difference, join our team! We serve our team and our community. View All Open Positions . ... Lighthouse Technologies, LLC is a Service-Disabled Veteran-Owned Small Business (SDVOSB) that provides IT, Data Analytics, and ..."}, {"url": "https://lighthouse.tech/about/", "content": "Lighthouse Technologies, LLC is a Service-Disabled Veteran-Dying Small Business (SDVOSB) that provides IT, Data Analytics, and Cybersecurity solutions primarily focused on national security and the U.S. DoD. We are headquartered in the Washington, D.C. area and have offices across the country.\n\nWe have 20 years of experience delivering the highest quality results for our clients. We lighthouse.tech is a Service-Disabled Veteran-Owned Small Business (SDVOSB)."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:linkedin.com \"Lighthouse Technologies\" Charlotte fiber broadband", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/company/lighthouse-technologies-inc", "content": "Lighthouse Technologies Inc. | 1,126 followers on LinkedIn. Solutions That Shine | LinkedIn"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lighthouse Technologies\" \"Solutions That Shine\" Charlotte fiber telecom", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/company/lighthouse-technologies-inc", "content": "Lighthouse Technologies Inc. | 1,126 followers on LinkedIn. Solutions That Shine | LinkedIn"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lighthouse Technologies\" Charlotte NC founded Roberto Denis telecom consulting", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://rocketreach.co/lighthouse-technologies-profile_v7b8c5e4fd70e47f6", "content": "Lighthouse Technologies. Lighthouse Technologies is a company in the IT Services industry. Lighthouse Technologies website is www.lh.tech. Lighthouse Technologies has 3 contacts. Last updated: 2025-12-16."}]
+</tool_response>
+
+Interesting — RocketReach associates Lighthouse Technologies with `www.lh.tech`. Let me revisit the lh.tech site more carefully.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://lh.tech/about", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{"url": "https://lh.tech/about", "markdown": "# About LH Tech\n\n## Our Mission\n\nLH Tech's mission is to empower organizations to make data-driven decisions that improve lives. Our team of researchers, evaluators, and data experts are committed to helping you understand what's working, what's not, and how to improve.\n\n## Our History\n\nLH Tech was founded in 2019 and has grown into a boutique research and evaluation firm. We work with foundations, government agencies, international donors, and nonprofits to understand the impact of social programs.\n\n## Our Team\n\nOur team is made up of researchers, evaluators, and data experts with experience in international development, education, workforce development, and government. We are committed to helping you understand what's working, what's not, and how to improve.\n\n## Practice Areas\n\n- Research & Development\n- Assessment & Evaluation\n- Data Analytics\n- Program Evaluation\n\n## Our Clients\n\nWe serve clients across diverse sectors, including international development, education, workforce development, and government.\n\n[Facebook](https://www.facebook.com/LHTechLLC)\n[LinkedIn](https://www.linkedin.com/company/lh-tech)\n\n\u00a9 2024 LH Tech, LLC"}
+</tool_response>
+
+This lh.tech is not fiber-related at all — it's a research/evaluation firm. The RocketReach record connecting Denis Ryzhikov to `lh.tech` may be an aggregation error. Let me try different approaches to find the actual company.
+<tool_call>
+{"name": "search", "arguments": {"query": "Denis Ryzhikov Centurion Consulting Charlotte NC telecom fiber", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://rocketreach.co/centurion-consulting-profile_v7b1d9e9fd53e46d5", "content": "Centurion Consulting. Centurion Consulting is a company in the IT Services industry. Centurion Consulting website is www.centurionconsulting.com. Centurion Consulting has 4 contacts. Last updated: 2025-12-16."}]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.centurionconsulting.com", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{"url": "https://www.centurionconsulting.com", "markdown": "# Centurion Consulting Group | Federal IT & Staffing Services\n\n[Skip to main content](#main-content)\n\n[Centurion Consulting Group](https://www.centurionconsulting.com/)\n\n[Who We Are](https://www.centurionconsulting.com/who-we-are)[What We Do](https://www.centurionconsulting.com/what-we-do)[Jobs](https://www.centurionconsulting.com/jobs)[For Candidates](https://www.centurionconsulting at al)[Blogs](https://www.centurionconsulting.com/blogs)[Contact](https://www.centurionconsulting.com/contact)\n\n## Centurion Consulting Group\n\n### Your partner in Federal Government solutions\n\nCenturion Consulting Group (CCG) provides enterprise IT and staffing solutions for Federal Government agencies and commercial clients. With expertise in cybersecurity, cloud computing, and data analytics, we help organizations navigate complex technical challenges.\n\n[Learn More](https://www.centurionconsulting.com/who-we-are)\n\n## Centurion Consulting Group's Capabilities:\n\n### Cloud Computing\n\n### Cybersecurity\n\n### Data Analytics\n\n### IT Staffing\n\n## Recent Blogs\n\n[Why Cybersecurity Matters for Federal Agencies](https://www.centurionconsulting.com/blogs/why-cybersecurity-matters)\n[Cloud Migration Best Practices](https://www.centurionconsulting.com/blogs/cloud-migration-best-practices)\n\n[Who We Are](https://www.centurionconsulting.com/who-we-are) | [What We Do](https://www.centurionconsulting.com/what-we-do) | [Jobs](https://www.centurionconsulting.com/jobs) | [For Candidates](https://www.centurionconsulting.com/for-candidates) | [Blogs](https://www.centurionconsulting.com/blogs) | [Contact](https://www.centurionconsulting.com/contact)\n\n© 2024 Centurion Consulting Group"}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Tanya Pustakhod Charlotte NC marketing telecom", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/in/tanya-pustakhod", "content": "Tanya Pustakhod - Marketing Director at Lighthouse Technologies - Charlotte, NC - LinkedIn. View Tanya Pustakhod's full profile for free. ... Marketing Director. Charlotte, NC. "}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Tanya Pustakhod LinkedIn background experience company", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://rocketreach.co/tanya-pustakhod-email_18023030", "content": "Tanya Pustakhod\nMarketing Director @ Lighthouse Technologies\n Current employer:\nLighthouse Technologies\n\nWork Experience\nMarketing Director\nLighthouse Technologies\nCurrent\n\n\n\n\n0 followers on RocketReach. "}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lighthouse Technologies\" Charlotte NC website company overview", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://lighthouse.tech/", "content": "Lighthouse Technologies, LLC is a Service-Disabled Veteran-Owned Small Business (SDVOSB) that provides IT, Data Analytics, and Cybersecurity solutions primarily focused on national security and the U.S. DoD. Lighthouse Technologies is a leading provider of industry solutions through advanced web-based and mobile applications, clinical databases and web based portals."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lighthouse Technologies\" Inc Charlotte NC crunchbase OR zoominfo", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.crunchbase.com/organization/lighthouse-technologies-inc-9d60", "content": "Lighthouse Technologies Inc. ... Series A \u00b7 $7.5M ..."}, {"url": "https://www.zoominfo.com/c/lighthouse-technologies/476020793", "content": "Lighthouse Technologies ... ZoomInfo\u2019s database contains 2 contact records for Lighthouse Technologies ... Revenue: <$5M; Employees: 10; Founded: 2022; Industry: Telecommunications"}]
+</tool_response>
+
+This is promising — ZoomInfo shows a Lighthouse Technologies with <$5M revenue, 10 employees, founded 2022, in the **Telecommunications industry**. Let me investigate further.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.zoominfo.com/c/lighthouse-technologies/476020793", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{"url": "https://www.zoominfo.com/c/lighthouse-technologies/476020793", "markdown": "## Sign in to ZoomInfo\n\n[Sign in with Google](https://login.zoominfo.com/ziauth/google-oidc?redirecturi=https://www.zoominfo.com/c/lighthouse-technologies/476020793)\n\n[Sign in with Microsoft](https://login.zoominfo.com/ziauth/microsoft-oidc?redirecturi=https://www.zoominfo.com/c/lighthouse-technologies/476020793)\n\nOR\n\nEmail Address\n\nPassword\n\n[Forgot Password?](https://app.zoominfo.com/#/login/resetpassword)\n\nSign In\n\nNeed an account? [Sign up now](https://www.zoominfo.com/products/pricing?redirect=https%3A%2F%2Fwww.zoominfo.com%2Fc%2Flighthouse-technologies%2F476020793)\n\n© 2025 ZoomInfo Technologies LLC. All Rights Reserved. [Privacy Policy](https://www.zoominfo.com/about/privacy-policy) | [Terms and Conditions](https://www.zoominfo.com/about/terms-and-conditions) | [Privacy Center](https://privacyportal.zoominfo.com/) | [Do Not Sell](https://www.zoominfo.com/about/privacy-policy#optout) | [Cookie Preferences](javascript:;)"}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.crunchbase.com/organization/lighthouse-technologies-inc-9d60", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{"url": "https://www.crunchbase.com/organization/lighthouse-technologies-inc-9d60", "content": "Lighthouse Technologies Inc. | Crunchbase", "markdown": "Solutions that Shine\n\n## Overview\n\nLighthouse Technologies Inc. is a Software company based in Fort Lauderdale, Florida, United States.\n\n## Description\n\nSolutions that Shine\n\n## Semrush Traffic\n\n## Industries\n\n## Team\n\n## Investors\n\n## Competitors\n\n## Recent News\n\n[Sign in](https://www.crunchbase.com/login?redirectTo=%2Forganization%2Flighthouse-technologies-inc-9d60)\n\n[Create free account](https://www.crunchbase.com/register?redirectTo=%2Forganization%2Flighthouse-technologies-inc-9d60)\n\nRecent News\n\nSee all\n\nSign in to view more information about Lighthouse Technologies Inc."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lighthouse Technologies\" telecom fiber Charlotte founded 2022 zoominfo", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.zoominfo.com/c/lighthouse-technologies/476020793", "content": "Lighthouse Technologies ... ZoomInfo\u2019s database contains 2 contact records for Lighthouse Technologies ... Revenue: <$5M; Employees: 10; Founded: 2022; Industry: Telecommunications"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lighthouse Technologies\" telecom 2022 Charlotte \"fiber\" OR \"broadband\" OR \"ISP\"", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.zoominfo.com/c/lighthouse-technologies/476020793", "content": "Lighthouse Technologies ... ZoomInfo\u2019s database contains 2 contact records for Lighthouse Technologies ... Revenue: <$5M; Employees: 10; Founded: 2022; Industry: Telecommunications"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Denis Ryzhikov fiber broadband telecom startup Charlotte", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://rocketreach.co/denis-ryzhikov-email_97036040", "content": "Denis Ry

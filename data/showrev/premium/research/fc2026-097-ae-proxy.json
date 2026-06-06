@@ -1,0 +1,37 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Stephanie McCall holds the title 'Director of Events and Marketing' at NATE: The Communications Infrastructure Contractors Association (confirmed by AE booth note, 05/19/2026). This is a trade association role, not an operator or engineering firm role — NATE represents contractors who build fiber/telecom infrastructure, not companies that deploy or design fiber themselves.",
+    "NATE Home (natehome.com) is the umbrella brand for NATE: The Communications Infrastructure Contractors Association, a national trade association representing independent telecom contractors and tower climbers. Members include fiber construction crews, OSP contractors, and infrastructure builders — Inorsa's actual ICP — but NATE itself is not a buyer of design or permitting software.",
+    "As Director of Events and Marketing, McCall's functional domain is conference programming, sponsorships, exhibit hall management, and member communications — not engineering workflows, GIS data, or permit drawing generation. She has zero procurement authority over design tools.",
+    "AE correctly flagged this contact as ICP: reject on 05/19/2026. The flag is accurate. McCall is a tradeshow/association contact, likely encountered at or around a conference booth, not a prospective software buyer.",
+    "NATE's annual conference (NATE UNITE) is a major industry event where Inorsa could potentially exhibit or sponsor — which may be McCall's implicit value: she is a channel to NATE member companies (OSP contractors, fiber builders) who ARE Inorsa's ICP, not a direct buyer herself.",
+    "NATE membership base includes hundreds of independent telecom contractors engaged in fiber OSP construction — these member firms face exactly the labor shortage and permitting delay pain that Inorsa addresses. McCall controls access to this audience through sponsorship, exhibit, speaking slot, or member communications.",
+    "No LinkedIn profile, trade press quotes, or public speaking record for 'Stephanie McCall NATE' found in available sources. Her public footprint appears limited to association event promotion roles.",
+    "No budget authority identified for software procurement. McCall's budget likely covers event logistics, marketing collateral, and association communications — not engineering technology purchases."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "LinkedIn profile for Stephanie McCall not located — cannot confirm full career history, tenure at NATE, or prior roles that might indicate adjacent technical exposure",
+    "Cannot confirm whether NATE has any internal technology procurement for member-facing tools that McCall might influence",
+    "No direct quotes from McCall in trade press, podcasts, or conference panels found",
+    "NATE organizational chart not publicly available — cannot identify who internally (CEO, VP Membership) might be a higher-value contact for a partnership or sponsorship conversation",
+    "Cannot confirm whether any other booth scans from NATE exist in the batch that would represent member companies rather than the association itself",
+    "NATE UNITE 2026 conference dates and sponsorship availability not confirmed in available data"
+  ],
+  "challengesToOtherFindings": [
+    "The ICP reject flag is correct and should not be overridden. Unlike other rejected contacts who might still influence a decision, McCall's role is categorically outside the buyer chain for design/permitting software — she is an events professional at a trade association, not a fiber operator or A&E firm.",
+    "However, treating this as a purely dead lead misses a secondary opportunity: McCall controls access to NATE's member communication channels (newsletter, conference floor, session programming). Inorsa exhibiting at or sponsoring NATE UNITE would put them in front of hundreds of OSP contractor firms who are genuine ICP. The lead should be rerouted from 'prospect' to 'partnership/channel' — different motion entirely.",
+    "The industry baseline (BEAD urgency, labor shortage, permitting pain) is highly relevant to NATE's membership but does not apply to McCall personally as a buyer — she will not feel scheduling pressure from BEAD milestones the way an ISP engineering director would."
+  ],
+  "topInsight": "Stephanie McCall is correctly rejected as a direct sales prospect — she is an events and marketing director at a trade association with no authority over design or permitting software. However, she is a gatekeeper to NATE's membership of OSP contractors and fiber builders who ARE Inorsa's ICP. The right motion is not a post-show follow-up email selling Inorsa's product — it is a brief, respectful inquiry about NATE UNITE 2026 sponsorship, exhibitor, or speaking opportunities, positioning Inorsa as a vendor serving NATE's membership base. This converts a dead direct-sales lead into a channel development conversation that could produce multiple qualified member referrals.",
+  "sourcesUsed": [
+    "AE booth notes (05/19/2026 7:32 AM)",
+    "natehome.com (NATE association identity, membership description — general knowledge)",
+    "ICP reject flag in prospect record",
+    "NATE public profile as telecom contractor trade association (general industry knowledge)",
+    "ShowRev Industry Intelligence KB baseline (BEAD, labor shortage, permitting context applied to NATE member base)"
+  ]
+}
+```

@@ -1,0 +1,817 @@
+I'll research TalentPartners systematically, starting with the highest-signal searches first.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners fiber telecom engineering Boynton Beach Florida Jon Millet Brett Sarubbi"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/jon-millet-0ba72b95
+Title: Jon Millet - Managing Partner - TalentPartners | LinkedIn
+Description: Managing Partner at TalentPartners. Boynton Beach, Florida, United States. ... Jon Millet. Managing Partner at TalentPartners. Boynton Beach, Florida, United ...
+
+Result 2:
+URL: https://www.linkedin.com/company/thetalentpartners
+Title: TalentPartners | LinkedIn
+Description: TalentPartners | 1424 followers | Recruiting & Staffing | Boynton Beach, Florida | We are a professional services staffing and recruiting firm that ...
+
+Result 3:
+URL: https://www.linkedin.com/in/brett-sarubbi
+Title: Brett Sarubbi - Managing Partner - TalentPartners | LinkedIn
+Description: Managing Partner at TalentPartners. Boynton Beach, Florida ... TalentPartners. Boynton Beach, Florida, United States. Connect Brett Sarubbi. Managing Partner ...
+
+Result 4:
+URL: https://thetalentpartners.net/
+Title: TalentPartners
+Description: TalentPartners is a professional services staffing and recruiting firm that specializes in the telecommunications industry.
+
+Result 5:
+URL: https://thetalentpartners.net/about
+Title: About | TalentPartners
+Description: TalentPartners is a professional services staffing and recruiting firm that specializes in the telecommunications industry.
+
+Result 6:
+URL: https://thetalentpartners.net/services
+Title: Services | TalentPartners
+Description: TalentPartners is a professional services staffing and recruiting firm that specializes in the telecommunications industry.
+
+Result 7:
+URL: "No URL"
+Title: No title
+Description: Brett Sarubbi · Managing Partner at TalentPartners · Jon Millet · Managing Partner at TalentPartners · Dan Wells · Practice Lead, Broadband & Fiber Infrastructure · Lynda Raber · Director of Research.
+
+Result 8:
+URL: https://thetalentpartners.net/contact
+Title: Contact | TalentPartners
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://thetalentpartners.net/"}}
+</tool_call>
+<tool_response>
+Error: Navigation timeout of 30000 ms exceeded
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://thetalentpartners.net/services"}}
+</tool_call>
+<tool_response>
+Error: Navigation timeout of 30000 ms exceeded
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners thetalentpartners.net telecom staffing fiber broadband recruiting"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://thetalentpartners.net/
+Title: TalentPartners
+Description: TalentPartners is a professional services staffing and recruiting firm that specializes in the telecommunications industry.
+
+Result 2:
+URL: https://thetalentpartners.net/about
+Title: About | TalentPartners
+Description: TalentPartners is a professional services staffing and recrui
+
+Result 3:
+URL: https://thetalentpartners.net/services
+
+Result 4:
+URL: https://thetalentpartners.net/contact
+
+Result 5:
+URL: https://thetalentpartners.net/articles
+
+Result 6:
+URL: https://thetalentpartners.net/home-2
+
+Result 7:
+URL: https://thetalentpartners.net/team
+
+Result 8:
+URL: https://thetalentpartners.net/jobs
+
+Result 9:
+URL: https://thetalentpartners.net/featured-jobs
+
+Result 9:
+URL: https://thetalentpartners.net/featured-jobs
+
+Result 10:
+URL: https://thetalentpartners.net/articles/navigating-the-new-wave-of-broadband-funding-opportunities
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://thetalentpartners.net/about"}}
+</tool_call>
+<tool_response>
+Error: Navigation timeout of 30000 ms exceeded
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:thetalentpartners.net"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://thetalentpartners.net/
+Title: TalentPartners
+Description: TalentPartners is a professional services staffing and recruiting firm that specializes in the telecommunications industry.
+
+Result 2:
+URL: https://thetalentpartners.net/about
+Title: About | TalentPartners
+Description: TalentPartners is a professionalentices staffing and recruiting firm that specializes in the telecommunications industry. Jon Millet and Brett Sarubbi founded TalentPartners with the intention of building a firm that understands the intricacies of the industry and provides value to candidates, clients and partners.
+
+Result 3:
+URL: https://thetalentpartners.net/services
+Title: Services | TalentPartners
+Description: Direct Hire · Contract · Contract-to-Hire · Executive Search · Market Intelligence & Consulting · Fractional Leadership
+
+Result 4:
+URL: https://thetalentpartners.net/contact
+Title: Contact | TalentPartners
+
+Result 5:
+URL: https://thetalentpartners.net/articles
+Title: Articles | TalentPartners
+
+Result 6:
+URL: "No URL"
+Title: No title
+Description: Brett Sarubbi · Managing Partner · Jon Millet · Managing Partner · Dan Wells · Practice Lead, Broadband & Fiber Infrastructure · Lynda Raber · Director of Research
+
+Result 7:
+URL: https://thetalentpartners.net/home-2
+
+Result 8:
+URL: https://thetalentpartners.net/jobs
+Title: Jobs | TalentPartners
+Description: Practice Areas: Broadband/Fiber Infrastructure, OSP Engineering, Business Development, HR, Finance & Accounting, Sales & Marketing. Roles: All Roles. OSP ...
+
+Result 9:
+URL: https://thetalentpartners.net/featured-jobs
+Title: Featured Jobs | TalentPartners
+Description: CAD Designer (OSP Fiber) · AutoCAD Designer (OSP Fiber) · Make Ready Engineer · GIS Analyst · Fiber Design Engineer (OSP Fiber) · Fiber Project Manager
+
+Result 10:
+URL: https://thetalentpartners.net/articles/navigating-the-new-wave-of-broadband-funding-opportunities
+
+</tool_response>
+
+Excellent — this is critical. TalentPartners is a **staffing/recruiting firm** specializing in telecom, with a dedicated fiber/OSP engineering practice. Their featured jobs include CAD Designer, AutoCAD Designer, GIS Analyst, Fiber Design Engineer. Let me dig deeper.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://thetalentpartners.net/featured-jobs"}}
+</tool_call>
+<tool_response>
+Error: Navigation timeout of 30000 ms exceeded
+</tool_call>
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners thetalentpartners.net \"AutoCAD\" OR \"GIS\" OR \"fiber design\" OR \"OSP\" jobs"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://thetalentpartners.net/featured-jobs
+Title: Featured Jobs | TalentPartners
+Description: CAD Designer (OSP Fiber) · AutoCAD Designer (OSP Fiber) · Make Ready Engineer · GIS Analyst · Fiber Design Engineer (OSP Fiber) · Fiber Project Manager
+
+Result 2:
+URL: https://thetalentpartners.net/jobs
+Title: Jobs | TalentPartners
+Description: Practice Areas: Broadband/Fiber Infrastructure, OSP Engineering, Business Development, HR, Finance & Accounting, Sales & Marketing. Roles: All Roles. OSP ...
+
+Result 3:
+
+Result 4:
+URL: https://thetalentparters.net/articles
+Title: Articles | TalentPartners
+
+Result 3:
+URL: https://www.linkedin.com/company/thetalentpartners/jobs/
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners \"fiber design engineer\" OR \"OSP engineer\" OR \"CAD designer\" job posting 2025 2026"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://thetalentpartners.net/featured-jobs
+Title: Featured Jobs | TalentPartners
+Description: CAD Designer (OSP Fiber) · AutoCAD Designer (OSP Fiber) · Make Ready Engineer · GIS Analyst · Fiber Design Engineer (OSP Fiber) · Fiber Project Manager
+
+Result 2:
+URL: https://www.linkedin.com/company/thetalentpartners/jobs/
+
+Result 3:
+URL: https://jobright.ai/jobs/info/67e5a5685d1b7a51c618e7fa
+Title: CAD Designer (OSP Fiber) at TalentPartners - Jobright.ai
+Description: TalentPartners is actively hiring a CAD Designer (OSP Fiber) for an established Engineering firm that is rapidly growing due to BEAD funding. This is a full-time direct hire position. The designer will be primarily focused on Fiber to the Home design projects, ...
+
+Result 4:
+URL: https://jobright.ai/jobs/info/67e49cdc5f2d282c97ee9ef4
+Title: GIS Analyst at TalentPartners - Jobright.ai
+Description: TalentPartners is actively hiring a GIS Analyst for an established Engineering firm that is rapidly growing due to BEAD funding. This is a full-time direct hire position. The GIS Analyst will primarily be responsible for mapping, network analysis, and data ...
+
+Result 5:
+URL: https://jobright.ai/jobs/info/67e49cdc5f2d282c97ee9e5c
+Title: AutoCAD Designer (OSP Fiber) at TalentPartners - Jobright.com
+Description: TalentPartners is actively growing rapidly due to BEAD funding. This is a full-time direct hire position. The designer will be primarily focused on Fiber to the Home design projects, ...
+
+Result 6:
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://jobright.ai/jobs/info/67e5a5685d1b7a51c618e7fa"}}
+</tool_call>
+<tool_response>
+Title: CAD Designer (OSP Fiber) at TalentPartners
+URL: https://jobright.ai/jobs/info/67e5a5685d1b7a51c618e7fa
+
+CONTENT:
+
+ CAD Designer (OSP Fiber) at TalentPartners
+===============
+
+[](https://jobright.ai/jobs/info/67e5a5685d1b7a51c618e7fa)
+
+CAD Designer (OSP Fiber)
+========================
+
+TalentPartners
+
+•
+
+Raleigh-Durham, NC
+
+•
+
+Full-time
+
+•
+
+$60k - $75k/yr
+
+•
+
+Posted on Mar 27, 2025
+
+Apply Now
+
+Skills & Experience
+
+* AutoCAD
+* Bentley Microstation
+* Fiber Optic
+* OSP
+* FTTH/FTTX
+* Fiber to the Home
+* CAD
+
+About The Job
+
+**TalentPartners** is actively hiring a CAD Designer (OSP Fiber) for an established Engineering firm that is rapidly growing due to BEAD funding. This is a full-time direct hire position. The designer will be primarily focused on Fiber to the Home design projects, and reporting directly to the Design Lead for day-to-day tasks and project direction.
+
+**Role Title:** CAD Designer (OSP Fiber)
+
+**Location:** Raleigh-Durham, NC (On-Site)
+
+**Salary Range:** $60,000 - $75,000
+
+**Employment Type:** Full-time Direct Hire
+
+**Job Responsibilities:**
+• Create and revise CAD designs for Fiber to the Home (FTTH) projects.
+• Work directly with the project manager and field engineers to complete designs.
+• Follow company standards and guidelines for design quality.
+• Develop and maintain accurate construction documents.
+• Provide quality review of other team members' work.
+
+**Job Requirements:**
+
+* 2-3 years of OSP Fiber design experience
+* Proficiency in AutoCAD or MicroStation
+* Experience with FTTH/FTTX (preferred)
+* Knowledge of construction drawings and as-builts
+* Ability to work both independently and in a team environment
+
+**About TalentPartners:**
+TalentPartners is a professional services staffing and recruiting firm that specializes in the telecommunications industry. We are known for our industry specific expertise, consultative approach, and quality of candidates we provide to our clients.
+
+**Disclosure:** TalentPartners recruits on behalf of our clients. When applying to this position, you understand your resume and application will be shared with the client(s) for consideration.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://jobright.ai/jobs/info/67e49cdc5f2d282c97ee9ef4"}}
+</tool_call>
+<tool_response>
+Title: GIS Analyst at TalentPartners - Jobright.ai
+URL: https://jobright.ai/jobs/info/67e49cdc5f2d282c97ee9ef4
+
+CONTENT:
+
+ GIS Analyst at TalentPartners - Jobright.ai
+===============
+
+[](https://jobright.ai/jobs/info/67e49cdc5f2d282c97ee9ef4)
+
+GIS Analyst at TalentPartners
+==============================
+
+TalentPartners
+
+•
+
+Remote
+
+•
+
+Full-time
+
+•
+
+$50k - $70k/yr
+
+•
+
+Posted on Mar 26, 2025
+
+Apply Now
+
+Skills & Experience
+
+* ArcGIS
+* Fiber Optic
+* GIS
+* Telecom
+* CAD
+
+Skills & Experience
+
+* ArcGIS
+* Fiber Optic
+* GIS
+* Telecom
+* CAD
+
+About The Job
+
+**TalentPartners** is actively hiring a GIS Analyst for an established Engineering firm that is rapidly growing due to BEAD funding. This is a full-time direct hire position. The GIS Analyst will primarily be responsible for mapping, network analysis, and data management of fiber optic networks.
+
+**Role Title:** GIS Analyst
+
+**Location:** Remote
+
+**Salary Range:** $50,000 - $70,000
+
+**Employment Type:** Full-time Direct Hire
+
+**Job Responsibilities:**
+• Manage and maintain GIS databases for fiber optic networks
+• Perform network analysis and spatial data management
+• Create and update maps and geospatial data
+• Collaborate with engineering and project teams
+• Ensure data accuracy and integrity
+
+**Job Requirements:**
+
+* 2+ years of GIS experience in telecom or fiber optics
+* Proficiency in ArcGIS or similar GIS software
+* Strong understanding of fiber optic networks
+* Experience with CAD tools is a plus
+* Ability to communicate complex data clearly
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://jobright.ai/jobs/info/67e49cdc5f2d282c97ee9e5c"}}
+</tool_call>
+<tool_response>
+Title: AutoCAD Designer (OSP Fiber) at TalentPartners
+URL: https://jobright.ai/jobs/info/67e49cdc5f2d282c97ee9e5c
+
+CONTENT:
+
+ AutoCAD Designer (OSP Fiber) at TalentPartners - Jobright.com
+===============
+
+[](https://jobright.ai/jobs/info/67e49cdc5f2d282c97ee9e5c)
+
+AutoCAD Designer (OSP Fiber)
+=============================
+
+TalentPartners
+
+•
+
+Southeast US
+
+•
+
+Full-time
+
+$60k - $75k/yr
+
+•
+
+Posted on Mar 26, 2025
+
+Apply Now
+
+Skills
+
+* AutoCAD
+* Bentley Microstation
+* Fiber Optic
+* OSP
+* FTTH/FTTX
+* Fiber to the Home
+* CAD
+
+About The Job
+
+TalentPartners is actively growing rapidly due to BEAD funding. This is a full-time direct hire position. The designer will be primarily focused on Fiber to the Home design projects, and reporting directly to the Design Lead for day-to-day tasks and project direction.
+
+**Role Title:** AutoCAD Designer (OSP Fiber)
+
+**Location:** Southeast US (Hybrid/On-site)
+
+**Salary Range:** $60,000 - $75,000
+
+**Employment Type:** Full-time Direct-Hire
+
+**Job Responsibilities:**
+
+- Create and revise CAD designs for Fiber to the Home (FTTH) projects.
+- Work directly with the project manager and field engineers to complete designs.
+- Follow company standards and guidelines for design quality.
+- Develop and maintain accurate construction documents.
+- Provide quality review of other team members' work.
+
+**Job Requirements:**
+
+- 2-3 years of OSP Fiber design experience
+- Proficiency in AutoCAD or MicroStation
+- Experience with FTTH/FTTX (preferred)
+- Knowledge of construction drawings and as-builts
+- Ability to work both independently and in a team environment
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners \"Dan Wells\" broadband fiber infrastructure practice lead"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/dan-wells-6a9bb61b0
+Title: Dan Wells - Practice Lead, Broadband & Fiber Infrastructure - TalentPartners
+Description: Practice Lead, Broadband & Fiber Infrastructure. TalentPartners. Boynton Beach, Florida, United States.
+
+Result 2:
+URL: https://thetalentpartners.net/team
+Title: Team | TalentPartners
+Description: Brett Sarubbi · Managing Partner · Jon Millet · Managing Partner · Dan Wells · Practice Lead, Broadband & Fiber Infrastructure · Lynda Raber · Director of Research
+
+Result 2:
+URL: https://www.linkedin.com/in/brett-sarubbi
+
+Result 3:
+URL: https://www.linkedin.com/in/brett-sarubbi
+Title: Brett Sarubbi - Managing Partner - TalentPartners | LinkedIn
+Description: Managing Partner at TalentPartners. Boynton Beach, Florida, United States. Connect Brett Sarubbi. Managing Partner at TalentPartners ...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners fiber staffing BEAD clients engineering firms 2025 2026"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://thetalentpartners.net/articles/navigating-the-new-wave-of-broadband-funding-opportunities
+Title: Navigating the New Wave of Broadband Funding Opportunities | TalentPartners
+
+Result 2:
+URL: https://thetalentpartners.net/featured-jobs
+Title: Featured Jobs | TalentPartners
+Description: CAD Designer (OSP Fiber) · AutoCAD Designer (OSP Fiber) · Make Ready Engineer · GIS Analyst · Fiber Design Engineer (OSP Fiber) · Fiber Project Manager
+
+Result 3:
+URL: https://thetalentpartners.net/jobs
+Title: Jobs | TalentPartners
+Description: Practice Areas: Broadband/Fiber Infrastructure, OSP Engineering, Business Development, HR, Finance & Accounting, Sales & Marketing. Roles: All Roles. OSP ...
+
+Result 3:
+URL: https://thetalentpartners.net/jobs
+
+Result 4:
+URL: https://www.google.com/search?q=TalentPartners+fiber+staffing+BEAD+clients+engineering+firms+2025+2026
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://thetalentpartners.net/articles/navigating-the-new-wave-of-broadband-funding-opportunities"}}
+</tool_call>
+<tool_response>
+Error: Navigation timeout of 30000 ms exceeded
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"TalentPartners\" site:linkedin.com fiber OR broadband OR OSP engineering"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/company/thetalentpartners
+Title: TalentPartners | LinkedIn
+Description: TalentPartners | 1424 followers | Recruiting & Staffing | Boynton Beach, Florida | We are a professional services staffing and recruiting firm that ...
+
+Result 2:
+URL: https://www.linkedin.com/company/thetalentpartners/jobs/
+Title: TalentPartners Jobs | LinkedIn
+Description: Operations Manager, Fiber Infrastructure Engineering Project Manager Construction Manager (Fiber/Broadband) AutoCAD Designer (OSP Fiber) Make Ready ...
+
+Result 3:
+URL: https://www.linkedin.com/in/jon-millet-0ba72b95
+Title: Jon Millet - Managing Partner - TalentPartners | LinkedIn
+
+Result 4:
+URL: https://www.linkedin.com/in/brett-sarubbi
+Title: Brett Sarubbi - Managing Partner - TalentPartners | LinkedIn
+
+Result 5:
+URL: https://www.linkedin.com/in/dan-wells-6a9bb61b0
+Title: Dan Wells - Practice Lead, Broadband & Fiber Infrastructure - TalentPartners | LinkedIn
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners LinkedIn jobs \"Make Ready\" OR \"fiber design\" OR \"GIS\" OR \"AutoCAD\" OR \"permit\" OR \"construction drawings\""}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/company/thetalentpartners/jobs/
+Title: TalentPartners Jobs | LinkedIn
+Description: Operations Manager, Fiber Infrastructure Engineering Project Manager Construction Manager (Fiber/Broadband) AutoCAD Designer (OSP Fiber) Make Ready ...
+
+Result 2:
+URL: https://thetalentpartners.net/featured-jobs
+Title: Featured Jobs | TalentPartners
+Description: CAD Designer (OSP Fiber) · AutoCAD Designer (OSP Fiber) · Make Ready Engineer · GIS Analyst · Fiber Design Engineer (OSP Fiber) · Fiber Project Manager
+
+Result 3:
+URL: https://jobright.ai/jobs/info/67e49cdc5f2d282c97ee9e5c
+Title: AutoCAD Designer (OSP Fiber) at TalentPartners - Jobright.com
+
+Result 4:
+URL: https://jobright.com/j/make-ready-engineer-at-talentpartners-14219993
+
+Result 4:
+URL: https://jobright.com/j/make-ready-engineer-at-talentpartners-14219993
+
+Result 5:
+URL: https://jobright.ai/jobs/info/67e5a5685d1b7a51c618e7fa
+Title: CAD Designer (OSP Fiber) at TalentPartners - Jobright.ai
+
+Result 6:
+URL: https://jobright.ai/jobs/info/67e49cdc5f2d282c97ee9ef4
+Title: GIS Analyst at TalentPartners - Jobright.ai
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://jobright.com/j/make-ready-engineer-at-talentpartners-14219993"}}
+</tool_call>
+<tool_response>
+Title: Make Ready Engineer at TalentPartners
+URL: https://jobright.com/j/make-ready-engineer-at-talentpartners-14219993
+
+CONTENT:
+
+ Make Ready Engineer at TalentPartners
+===============
+
+Make Ready Engineer at TalentPartners
+
+Make Ready Engineer
+
+TalentPartners
+
+•
+
+Southeast US
+
+•
+
+Full-time
+
+•
+
+$60k - $75k/yr
+
+•
+
+Posted on Mar 27, 2025
+
+Apply Now
+
+Skills & Experience
+
+* Fiber Optic
+* OSP
+* Make-Ready
+* Engineering
+
+About The Job
+
+**TalentPartners** is actively hiring a Make Ready Engineer for an established Engineering firm that is rapidly growing due to BEAD funding.
+
+**Role Title:** Make Ready Engineer
+
+**Location:** Southeast US (Hybrid/On-site)
+
+**Salary Range:** $60,000 - $75,000
+
+**Employment Type:** Full-time Direct Hire
+
+**Job Responsibilities:**
+
+- Perform field assessments of poles and aerial plant.
+- Assess pole loading and make ready requirements.
+- Coordinate with utility companies for permitting.
+- Coordinate with engineering teams for design handoff.
+- Create detailed reports on make ready requirements.
+
+**Job Requirements:**
+
+- 2-3 years of make ready or aerial OSP experience
+- Knowledge of NESC and utility pole attachment regulations
+- Ability to assess and interpret construction drawings
+- Field work experience required
+- Understanding of permitting processes preferred
+
+</tool_call>
+<tool_response>
+Title: Make Ready Engineer at TalentPartners
+URL: https://jobright.com/j/make-ready-engineer-at-talentpartners-14219993
+
+CONTENT:
+
+ Make Ready Engineer at TalentPartners
+===============
+
+Make Ready Engineer at TalentPartners
+
+Make Ready Engineer
+
+TalentPartners
+
+•
+
+Southeast US
+
+•
+
+Full-time
+
+•
+
+$60k - $75k/yr
+
+•
+
+Posted on Mar 27, 2025
+
+Apply Now
+
+Skills & Experience
+
+* Fiber Optic
+* OSP
+* Make-Ready
+* Engineering
+
+About The Job
+
+**TalentPartners** is actively hiring a Make Ready Engineer for anEngineExperience: 2-3 years of make ready or aerial OSP experience
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Jon Millet TalentPartners background experience telecom staffing LinkedIn"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/jon-millet-0ba72b95
+Title: Jon Millet - Managing Partner - TalentPartners | LinkedIn
+Description: Managing Partner at TalentPartners. Boynton Beach, Florida, United States. ... Jon Millet. Managing Partner at TalentPartners. Boynton Beach, Florida, United States.
+
+Result 2:
+<No more results>
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Brett Sarubbi TalentPartners background telecom staffing prior experience"}}
+</tool_call>
+<tool_response>
+Result ="1":
+URL: https://www.linkedin.com/in/brett-sarubbi
+Title: Brett Sarubbi - Managing Partner - TalentPartners | LinkedIn
+Description: Managing Partner at TalentPartners. Boynton Beach, Florida, United States.
+
+Result 2:
+<No more results>
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners \"Fiber Connect\" OR \"FTTH\" conference 2025 2026 attendee exhibitor"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/posts/brett-sarubbi_fiberconnect2025-activity-7219756882441752578-gOd5
+Title: Brett Sarubbi on LinkedIn: #fiberconnect2025
+Description: Excited to be at Fiber Connect 2025 in Nashville! It's been great meeting so many amazing people...  #fiberconnect2025
+
+Result 2:
+URL: https://www.linkedin.com/posts/thetalentpartners_fiberconnect2025-broadband-fiber-activity-7219754726773936128-GJgV
+Title: TalentPartners on LinkedIn: #fiberconnect2025 #broadband #fiber ...
+Description: We're here at Fiber Connect 2025 in Nashville! #fiberconnect2025 #broadband #fiber
+
+Result 3:
+URL: https://www.linkedin.com/posts/brett-sarubbi_fiberconnect2025-activity-7219756882441752578-gOd5
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners clients \"engineering firm\" OR \"A&E\" OR \"design firm\" fiber broadband BEAD hiring"}}
+</tool_call>
+<tool_response>
+Result 1:
+<No results>
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners telecom recruiting \"market intelligence\" OR \"consulting\" fiber broadband workforce"}}
+</tool_call>
+<tool_response>
+Result ="1":
+URL: https://thetalentpartners.net/services
+Title: Services | TalentPartners
+Description: Direct Hire · Contract · Contract-to-Hire · Executive Search · Market Intelligence & Consulting · Fractional Leadership
+
+Result 2:
+URL: https://www.linkedin.com/company/thetalentpartners
+
+Result 3:
+URL: https://www.linkedin.com/in/jon-millet-0ba72b95
+
+Result 4:
+URL: https://www.linkedin.com/in/brett-sarubbi
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners LinkedIn posts 2025 2026 fiber broadband OSP engineering workforce BEAD"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/posts/thetalentpartners_fiberconnect2025-broadband-fiber-activity-7219754726773936128-GJgV
+Title: TalentPartners on LinkedIn: #fiberconnect2025 #broadband #fiber ...
+Description: We're here at Fiber Connect 2025 in Nashville! #fiberconnect2025 #broadband #fiber
+
+Result 2:
+URL: https://www.linkedin.com/posts/brett-sarubbi_fiberconnect2025-activity-7219756882441752578-gOd5
+Title: Brett Sarubbi on LinkedIn: #fiberconnect2025
+Description: Excited to be at Fiber Connect 2025 in Nashville! It's been great meeting so many amazing people...  #fiberconnect2025
+
+Result 3:
+URL: https://www.linkedin.com/posts/thetalentpartners_bead-broadband-workforce-activity-7152003059100352513-UHBs
+Title: TalentPartners on LinkedIn: #bead #broadband #workforce ...
+Description: In light of BEAD funding, what current hiring trends do you see in the broadband industry? And what do you expect in the future?
+
+Result 4:
+URL: https://www.linkedin.com/posts/thetalentpartners_broadband-fiber-ftth-activity-7071116625175027712-LGBT
+Title: TalentPartners on LinkedIn: #broadband #fiber #ftth ...
+Description: We are excited to announce TalentPartners has joined as a partner with a national broadband association. ...
+
+Result 4:
+URL: https://www.linkedin.com/posts/thetalentpartners_broadband-fiber-ftth-activity-7071116625175027712-LGBT
+
+Result 5:
+URL: https://www.linkedin.com/posts/thetalentpartners_broadband-ftth-fiberoptic-activity-7053052268671025152-CsCG
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners \"Inorsa\" OR \"IQGeo\" OR \"Katapult\" OR \"Render Networks\" OR \"3GIS\" OR \"Biarri\" telecom tools"}}
+</tool_call>
+<tool_response>
+Result 1:
+<No results>
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners fiber staffing \"permit\" OR \"permitting\" OR \"construction drawings\" OSP workforce"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://thetalentpartners

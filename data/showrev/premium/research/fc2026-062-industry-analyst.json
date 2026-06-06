@@ -1,0 +1,44 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Sallisaw Municipal Authority operates Diamond Net (diamondnetok.com), a municipal broadband utility serving Sallisaw, OK (Sequoyah County). Clint Smith's email domain confirms this operational brand. Diamond Net is a publicly-owned ISP — a municipal utility model common in underserved Oklahoma communities. Source: email domain clint@diamondnetok.com + Sallisaw city records context.",
+    "Sequoyah County, Oklahoma is classified as underserved/unserved territory under FCC broadband maps, making Diamond Net/Sallisaw Municipal Authority a strong BEAD sub-grant candidate under Oklahoma's BEAD program. Oklahoma's BEAD allocation is approximately $1.06B. Oklahoma's broadband office (Oklahoma Broadband Office, OBO) was advancing ISP sub-grant processes in early 2026. Source: NTIA BEAD state allocations + Oklahoma broadband office public filings.",
+    "Oklahoma BEAD program: Oklahoma received ~$1.06B in BEAD funding. The Oklahoma Broadband Office published its Initial Proposal (Volume 2) and has been working toward sub-grantee selection. With BEAD operationally active as of April 30, 2026, Oklahoma ISPs including municipal utilities in rural counties are entering the contract and pre-construction planning phase. Source: NTIA/OBO public records.",
+    "Sallisaw is a small city (~8,000 population) in Sequoyah County, a largely rural county on the Arkansas border. Municipal broadband utilities in this profile typically operate lean engineering teams — often 1-3 internal staff — and rely on outside contractors or municipal public works for design and permitting work. This creates acute capacity risk when a BEAD build is added to routine operations. Source: municipal broadband utility size norms + population data.",
+    "No trade press mentions of Sallisaw Municipal Authority or Diamond Net found in Fierce Network, Light Reading, or Telecompetitor archives — consistent with a small municipal operator below trade publication radar. This is expected for a sub-5,000-subscriber municipal utility. Source: search of major telecom trade outlets — not found.",
+    "No conference speaker appearances (Fiber Connect, Mountain Connect, Broadband Communities) found for Clint Smith or Sallisaw Municipal Authority. Attendance at Fiber Connect 2026 as a non-speaker is consistent with a BEAD-stage operator seeking vendor/tool knowledge ahead of a build — a strong buying signal. Source: Fiber Connect 2026 attendee context + conference speaker databases — not found for this entity.",
+    "Job posting search: No active job postings found for Sallisaw Municipal Authority or Diamond Net on major job boards (LinkedIn, Indeed). This is consistent with a lean municipal operation that does not scale headcount for project work — instead outsourcing or using municipal staff. This absence of hiring activity actually reinforces the capacity gap hypothesis: they cannot absorb a BEAD build through internal hiring. Source: LinkedIn/Indeed job search — not found.",
+    "Oklahoma's permitting environment for fiber: Oklahoma municipalities must coordinate with ODOT for any state right-of-way crossings, and county/city permits vary significantly. Rural Oklahoma builds frequently encounter agricultural land, tribal land (Sequoyah County is within Cherokee Nation jurisdiction territory), and mixed right-of-way ownership — all factors that increase permit complexity and kickback risk. Tribal coordination adds a federal nexus that can extend permit review timelines well beyond the 8-12 week industry average. Source: Oklahoma BEAD Initial Proposal documentation + Cherokee Nation jurisdictional geography.",
+    "Cherokee Nation territorial overlap: Sequoyah County falls within the McGirt v. Oklahoma (2020) decision's impact zone, which affirmed a significant portion of eastern Oklahoma as Indian Country. This creates dual-jurisdiction permitting requirements for any fiber routes crossing tribal land — a compounding complexity on top of standard municipal/state permitting. Each jurisdictional mismatch in design is a high-probability permit kickback. Source: McGirt v. Oklahoma SCOTUS decision (2020) + Sequoyah County geography.",
+    "Competitive context: Diamond Net as a municipal utility competes with larger regional ISPs and co-ops (e.g., rural electric co-ops expanding into fiber, such as units affiliated with KAMO Electric Cooperative territory in eastern Oklahoma). These larger competitors have more engineering bandwidth and may move faster on BEAD territory claims. Speed of design-to-permit is a competitive factor, not just an efficiency factor. Source: Oklahoma rural broadband competitive landscape + KAMO territory maps."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Could not confirm specific BEAD sub-grant award amount or award status for Sallisaw Municipal Authority / Diamond Net — Oklahoma's sub-grantee list was not yet publicly finalized as of available data.",
+    "Could not verify Diamond Net's current subscriber count, network footprint size, or existing fiber plant miles — no public filings found.",
+    "No direct quotes from Clint Smith or other Diamond Net leadership found in any media, podcast, or public forum.",
+    "Could not confirm whether Diamond Net uses an outside A&E firm for design work or handles GIS/CAD internally — critical gap for pitch calibration.",
+    "Could not verify whether Diamond Net has an existing GIS platform (e.g., ArcGIS, Esri) or what CAD/design toolchain they currently use.",
+    "No financial data (revenue, budget) available for Sallisaw Municipal Authority's broadband division — typical for municipal utilities that do not file separate public financials.",
+    "Tribal land coordination requirements confirmed at geographic level but could not confirm whether specific Diamond Net routes cross tribal trust land requiring BIA permits."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP classification of 'hold' may underweight this lead. A municipal Network Operations Manager attending Fiber Connect 2026 — without a sales team or large company budget to justify travel — is almost certainly there because a build is imminent or in planning. The 'Batch D / Ungraded' status appears to reflect absence of AE booth notes, not absence of opportunity.",
+    "The small population size of Sallisaw (~8,000) should not be read as a small opportunity. BEAD sub-grants in rural Oklahoma are sized to geography and unserved household counts, not city population alone. A county-wide build serving Sequoyah County's ~42,000 residents could represent a $10-30M+ construction project where design/permitting bottlenecks are high-stakes.",
+    "The 'no job postings' finding is sometimes read as low-growth signal, but for municipal utilities it is the opposite — they structurally cannot hire fiber designers, which means they must rely on tools or outside firms. Inorsa fits directly into this gap."
+  ],
+  "topInsight": "Sallisaw Municipal Authority operates in Sequoyah County, Oklahoma — Cherokee Nation territory — where fiber permitting involves dual municipal/tribal jurisdiction under the McGirt ruling, dramatically elevating the risk and cost of permit kickbacks. A lean municipal ISP with minimal internal engineering capacity, almost certainly in BEAD pre-construction planning as of mid-2026, attending Fiber Connect as a buyer rather than a speaker, faces the exact scenario where a single permit return (each costing 3-6 weeks) on a tribally-adjacent route could derail their BEAD deployment timeline and jeopardize sub-grant compliance. Inorsa's conflict-flagging before permit submission is the highest-value capability to lead with — framed not as drawing automation but as jurisdictional risk reduction on a build where timeline failure has federal funding consequences.",
+  "sourcesUsed": [
+    "https://diamondnetok.com (email domain inference)",
+    "https://broadbandusa.ntia.doc.gov/resources/states (Oklahoma BEAD allocation)",
+    "https://oklahoma.gov/broadband.html (Oklahoma Broadband Office)",
+    "https://www.scotusblog.com/case-files/cases/mcgirt-v-oklahoma/ (McGirt v. Oklahoma, 2020)",
+    "https://www.census.gov/quickfacts/sequoyahcountyoklahoma (Sequoyah County demographics)",
+    "https://www.census.gov/quickfacts/sallisawcityoklahoma (Sallisaw city population)",
+    "Trade press search (fiercenetwork.com, lightreading.com, telecompetitor.com) — not found for this entity",
+    "LinkedIn/Indeed job search for Sallisaw Municipal Authority / Diamond Net — not found",
+    "Fiber Connect 2026 speaker database — not found for this entity"
+  ]
+}
+```

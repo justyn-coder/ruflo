@@ -1,0 +1,725 @@
+I'll conduct systematic research on NB+C and Matt Varrelman, following the priority search order to build a technical profile.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C fiber engineering Raleigh NC nbcllc.com", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C nbcllc.com fiber construction drawings hiring AutoCAD CAD designer", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"NB+C\" OR \"NBC LLC\" fiber engineering careers jobs linkedin", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is A Full Service Engineering, Consulting, And Project Management Company. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world. Engineering Consulting And Project Management. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.nbcllc.com/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company.
+
+[NB+C](/)
+
+  * [Services](/#services)
+  * [About](/#about)
+  * [Team](/#team)
+  * [Work](/#work)
+  * [Partners](/#partners)
+  * [Careers](/#careers)
+  * [Contact](/#contact)
+
+
+
+# Connecting People to What Matters Most
+
+NB+C is a full service engineering, consulting, and project management company.
+
+## Our Services
+
+NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure.
+
+## Fiber Engineering
+
+We've been doing fiber and broadband engineering work since our founding in 2005. Our fiber engineering team uses the latest technology to design fiber networks with efficiency and accuracy.
+
+## Tower/Small Cell Engineering
+
+...
+
+## Project Management
+
+...
+
+## Permitting
+
+NB+C has an experienced permitting team who can handle most permitting entities across the United States. Our permitting team handles all aspects of permit preparation, submittal and follow-up, so clients can focus on construction. Our permitting team can work with most fiber engineering tools including Katapult Pro.
+
+## About NB+C
+
+Founded in 2005, NB+C has provided telecommunications engineering and project management services to carriers, operators, ISPs, internet providers, tower companies, and others. Our team of approximately 60 professionals is based throughout the United States, employing professionals in Pennsylvania, New Jersey, Virginia, and North Carolina.
+
+## Our Team
+
+...
+
+## Our Work
+
+...
+
+## Partners
+
+...
+
+## Careers
+
+...
+
+## Contact
+
+...
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.nbcllc.com/#careers", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company.
+
+[NB+C](/)
+
+  * [Services](/#services)
+  * [About](/#about)
+  * [Team](/#team)
+  * [Work](/#work)
+  * [Partners](/#partners)
+  * [Careers](/#careers)
+  * [Contact](/#contact)
+
+
+
+# Connecting People to What Matters Most
+
+NB+C is a full service engineering, consulting, and project management company.
+
+## Our Services
+
+NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure.
+
+## Fiber Engineering
+
+We've been doing fiber and broadband engineering work since our founding in 2005. Our fiber engineering team uses the latest technology to design fiber networks with efficiency and accuracy.
+
+## Tower/Small Cell Engineering
+
+...
+
+## Tower/Small Cell Engineering
+
+...
+
+## Project Management
+
+...
+
+## Permitting
+
+NB+C has an experienced permitting team who can handle most permitting entities across the United States. Our permitting team handles all aspects of permit preparation, submittal and follow-up, so clients can focus on construction. Our permitting team can work with most fiber engineering tools including Katapult Pro.
+
+## About NB+C
+
+Founded in 2005, NB+C has provided telecommunications engineering and project management services to carriers, operators, ISPs, internet providers, tower companies, and others. Our team of approximately 60 professionals is based throughout the United States, employing professionals in Pennsylvania, New Jersey, Virginia, and North Carolina.
+
+## Our Team
+
+...
+
+## Our Work
+
+...
+
+## Our Partners
+
+...
+
+## Careers
+
+...
+
+## Contact
+
+...
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:linkedin.com/jobs \"NB+C\" OR \"nbcllc\" fiber designer engineer", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"NB+C\" telecommunications engineering Katapult fiber design permitting", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:linkedin.com \"NB+C\" fiber engineer Raleigh", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: Matt Varrelman - Senior Fiber Lead - NB+C | LinkedIn
+URL: https://www.linkedin.com/in/matt-varrelman-a8b44619b
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:linkedin.com \"NB+C\" nbcllc employees fiber designer AutoCAD GIS", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: Matt Varrelman - Senior Fiber Lead - NB+C | LinkedIn
+URL: https://www.linkedin.com/in/matt-varrelman-a8b44619b
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"NB+C\" nbcllc fiber engineering ArcGIS MicroStation AutoCAD Katapult 3GIS IQGeo", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full site:linkedin.com service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"NB+C\" OR \"NB and C\" fiber broadband engineering case study client project 2024 2025", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "nbcllc.com partners technology Katapult IQGeo Render Networks fiber engineering tools", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"matt varrelman\" fiber engineer NB+C Raleigh NC background experience", "num_results": 10}}
+</tool_call>
+</s>
+<tool_response>
+Result 1:
+Title: Matt Varrelman - Senior Fiber Lead - NB+C | LinkedIn
+URL: https://www.linkedin.com/in/matt-varrelman-a8b44619b
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C nbcllc \"fiber connect\" OR \"FTTH\" OR \"BEAD\" 2024 2025 engineering", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:katapult.com NB+C OR nbcllc engineering partner fiber", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C telecommunications engineering LinkedIn employees fiber design team size", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C | LinkedIn
+URL: https://www.linkedin.com/company/nb-c
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C nbcllc fiber engineering BEAD broadband construction permit drawings 2025", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiqnitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"NB+C\" \"Katapult Pro\" fiber permitting engineering workflow", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C nbcllc partners page technology vendors telecom engineering", "num_results": 5}}
+</tool_call>
+<tool_response>
+Result 1:
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.nbcllc.com/#partners", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company.
+
+[NB+C](/)
+
+  * [Services](/#services)
+  * [About](/#about)
+  * [Team](/#team)
+  * [Work](/#work)
+  * [Partners](/#partners)
+  * [Careers](/#careers)
+  * [Contact](/#contact)
+
+
+
+# Connecting People to What Matters Most
+
+NB+C is a full service engineering, consulting, and project management company.
+
+## Our Services
+
+NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure.
+
+## Fiber Engineering
+
+We've been doing fiber and broadband engineering work since our founding in 2005. Our fiber engineering team uses the latest technology to design fiber networks with efficiency and accuracy.
+
+## Tower/Small Cell Engineering
+
+...
+
+## Project Management
+
+...
+
+## Permitting
+
+NB+C has an experienced permitting team who can handle most permitting entities across the United States. Our permitting team handles all aspects of permit preparation, submittal and follow-up, so clients can focus on construction. Our permitting team can work with most fiber engineering tools including Katapult Pro.
+
+## About NB+C
+
+Founded in 2005, NB+C has provided telecommunications engineering and project management services to carriers, operators, ISPs, internet providers, tower companies, and others. Our team of approximately 60 professionals is based throughout the United States, employing professionals in Pennsylvania, New Jersey, Virginia, and North Carolina.
+
+## Our Team
+
+...
+
+## Our Work
+
+...
+
+## Our Partners
+
+...
+
+## Careers
+
+...
+
+## Contact
+
+...
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"NB+C\" telecommunications \"construction drawings\" OR \"permit drawings\" OR \"make ready\" fiber engineer", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C nbcllc Pennsylvania New Jersey Virginia fiber engineering team hiring 2024 2025", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C consulting engineers Pennsylvania telecommunications linkedin jobs", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C | LinkedIn
+URL: https://www.linkedin.com/company/nb-c
+Result 2:
+Title: Matt Varrelman - Senior Fiber Lead - NB+C | LinkedIn
+URL: https://www.linkedin.com/in/matt-varrelman-a8b44619b
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:linkedin.com/jobs NB+C fiber designer engineer CAD", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C | LinkedIn
+URL: https://www.linkedin.com/company/nb-c
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"NB+C\" telecommunications fiber ISP BEAD rural broadband design subcontractor", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C fiber engineering Katapult Pro permitting OSP design GIS AutoCAD", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"NB and C\" OR \"NB&C\" telecommunications engineering fiber broadband", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C nbcllc team page fiber lead engineer staff", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiqnitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C fiber lead senior engineer linkedin Katapult Pro ArcGIS CAD workflow design", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C consulting ISP telecom engineering Virginia Pennsylvania projects clients network design", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"NB+C\" Katapult ArcGIS OR AutoCAD OR MicroStation fiber network design", "num_results": 5}}
+</tool_call>
+<tool_response>
+Result 1:
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C nbcllc work projects portfolio clients fiber broadband ISP operator", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+The website is a single-page JS app rendering section content dynamically — let me try scraping deeper sections.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.nbcllc.com/#work", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company.
+
+[NB+C](/)
+
+  * [Services](/#services)
+  * [About](/#about)
+  * [Team](/#team)
+  * [Work](/#work)
+  * [Partners](/#partners)
+  * [Careers](/#careers)
+  * [Contact](/#content)
+
+
+
+# Connecting People to What Matters Most
+
+NB+C is a full service engineering, consulting, and project management company.
+
+## Our Services
+
+NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure.
+
+## Fiber Engineering
+
+We've been doing fiber and broadband engineering work since our founding in 2005. Our fiber engineering team uses the latest technology to design fiber networks with efficiency and accuracy.
+
+## Tower/Small Cell Engineering
+
+...
+
+## Project Management
+
+...
+
+## Permitting
+
+NB+C has an experienced permitting team who can complete most permitting entities across the United States. Our permitting team handles all aspects of permit preparation, submittal and follow-up, so clients can focus on construction. Our permitting team can work with most fiber engineering tools including Katapult Pro.
+
+## About NB+C
+
+Founded in 2005, NB+C has provided telecommunications engineering and project management services to carriers, operators, ISPs, internet providers, tower companies, and others. Our team of approximately 60 professionals is based throughout the United States, employing professionals in Pennsylvania, New Jersey, Virginia, and North Carolina.
+
+## Our Team
+
+...
+
+## Our Work
+
+...
+
+## Our Partners
+
+...
+
+## Careers
+
+...
+
+## Contact
+
+...
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C \"senior fiber lead\" OR \"fiber engineering\" team linkedin employees tools used", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: Matt Varrelman - Senior Fiber Lead - NB+C | LinkedIn
+URL: https://www.linkedin.com/in/matt-varrelman-a8b44619b
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C telecommunications fiber lead permitting kickback construction drawing cycle time", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "nbcllc.com careers jobs fiber engineer openings 2025", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.nbcllc.com/careers", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company.
+
+[NB+C](/)
+
+  * [Services](/#services)
+  * [About](/#about)
+  * [Team](/#team)
+  * [Work](/#work)
+  * [Partners](/#partners)
+  * [Careers](/#careers)
+  * [Contact](/#contact)
+
+
+
+# Connecting People to What Matters Most
+
+NB+C is a full service engineering, consulting, and project management company.
+
+## Our Services
+
+NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure.
+
+## Fiber Engineering
+
+We've been doing fiber and broadband engineering work since our founding in 2005. Our fiber engineering team uses the latest technology to design fiber networks with efficiency and accuracy.
+
+## Tower/Small Cell Engineering
+
+...
+
+## Project Management
+
+...
+
+## Permitting
+
+NB+C has an experienced permitting team who can handle most permitting entities across the United States. Our permitting team handles all aspects of permit preparation, submittal and follow-up, so clients can focus on construction. Our permitting team can work with most fiber engineering tools including Katapult Pro.
+
+## About NB+C
+
+Founded in 2005, NB+C has provided telecommunications engineering and project management services to carriers, operators, ISPs, internet providers, tower companies, and others. Our team of approximately 60 professionals is based throughout the United States, employing professionals in Pennsylvania, New Jersey, Virginia, and North Carolina.
+
+## Our Team
+
+...
+
+## Our Work
+
+...
+
+## Our Partners
+
+...
+
+## Careers
+
+...
+
+## Contact
+
+...
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C nbcllc glass fiber telecom engineering google news press release 2024 2025", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"NB+C\" OR \"nbcllc\" fiber BEAD rural broadband engineering design permit drawings OSP", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C engineering ISP clients Mohawk Fybercom Ohio Gig subcontractor design partner", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C telecom consulting fiber tower cell 60 employees Pennsylvania founded 2005", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types-of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C nbcllc engineering telecom news awards contract 2024", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: NB+C — Consulting Engineers
+URL: https://www.nbcllc.com/
+Content: NB+C is a full service engineering, consulting, and project management company. NB+C provides engineering, consulting and project management services, including permitting, for all types of network infrastructure. NB+C is a full service engineering, consulting, and project management company. We approach each engagement as a true partner, not just another contractor. Our mission is to build a future where connectivity is ubiquitous and powerful enough to shape a better world.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C consulting engineers Katapult Pro partner certified reseller fiber design", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:katapult.com partner engineer consulting", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+Title: Katapult Pro: Aerial & Underground Fiber Design Software
+URL: https://katapult.com/
+Content: Katapult Pro is aerial and underground utility field data collection and fiber design software for ISPs and utility companies. Our platform performs OSP field data collection and fiber network design for ISPs & utility companies.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:katapult.com \"NB+C\" OR nbcllc OR \"consulting engineers\"", "num_results": 5}}
+</tool_call>
+<tool_response>
+Result 1:
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NB+C telecom OSP outside plant fiber design GIS LLD construction drawing workflow process", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+</tool_response>
+
+Based on my research, let me compile the findings. The website JS rendering limits what I can extract from the dynamic sections, but I've gathered meaningful signals from what's available.
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "NB+C explicitly lists Katapult Pro as a supported tool in their permitting service description: 'Our permitting team can work with most fiber engineering tools including Katapult Pro.' This is the only specific tool named on their public site and is their declared inbound data format for permitting workflows. Source: nbcllc.com",
+    "NB+C operates a dedicated permitting team that handles 'all aspects of permit preparation

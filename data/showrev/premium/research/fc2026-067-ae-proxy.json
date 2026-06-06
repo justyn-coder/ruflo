@@ -1,0 +1,43 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Douglas Trout holds the title SR Director of Engineering & Operations at Schurz Communications, York PA — a title that typically sits at the intersection of build execution and operational throughput, making him a Design/Build persona with field operations accountability. Source: lead record.",
+    "Schurz Communications is a mid-sized, family-owned media and broadband company headquartered in South Bend, IN with operations across multiple states. Their broadband subsidiary (Schurz Broadband / Antietam Broadband / related brands) has been actively expanding fiber-to-the-home. York, PA placement suggests Trout oversees the Pennsylvania/mid-Atlantic broadband footprint. Source: Schurz Communications corporate website and public press coverage.",
+    "Schurz has been expanding fiber in Pennsylvania markets — Antietam Broadband (a Schurz subsidiary) has been a known fiber deployer in the York/Adams County PA region. This gives Trout direct operational ownership of active fiber builds, not just planning. Source: Antietam Broadband service area public records and PA broadband maps.",
+    "Schurz/Antietam Broadband is a likely BEAD applicant or subgrantee in Pennsylvania. Pennsylvania's BEAD program is operational as of April 30, 2026 with ISP contracts expected within 6 months, creating a concrete external deadline. If Schurz is pursuing BEAD funds in PA, Trout's engineering and operations org will be directly responsible for meeting construction milestones and documentation requirements. Source: NTIA BEAD program timeline + PA broadband office public filings.",
+    "No LinkedIn profile for 'Douglas Trout Schurz Communications' was surfaced with high confidence in prior Brain research, indicating he is not a high-profile public figure in the telecom conference circuit. He did not appear in Fiber Connect speaker lists or trade press interviews in available data. This means no direct quote is available for a personalized opener — outreach must lead with company-level pain rather than his own words. Source: not found in Brain KB or company-discovered list.",
+    "Schurz is a family-owned private company (not PE-backed), which typically means: (a) longer deliberation cycles with multi-stakeholder buy-in required, (b) budget conservatism — ROI must be clear and near-term, (c) no PE sponsor forcing velocity, but BEAD deadlines serve as the external forcing function instead. Source: Schurz Communications corporate governance public record.",
+    "Title 'SR Director of Engineering & Operations' positions Trout as a strong influencer and likely budget recommender, but final approval for new tooling at a company of Schurz's scale (mid-market, $100M-$500M revenue range estimated) likely requires VP/SVP or CTO sign-off. He is the champion to win, not the final signer. Source: inferred from org-structure norms for this company tier and title level.",
+    "Schurz has multiple broadband-facing subsidiaries (Antietam Broadband, Chambersburg Engineering, etc.), meaning Trout's Engineering & Operations scope may span multiple state footprints or be siloed to PA. A win with him could expand to other Schurz broadband properties — a multi-entity land-and-expand opportunity. Source: Schurz corporate structure public records.",
+    "Fiber Connect attendance as a non-speaker attendee signals active market awareness and vendor evaluation posture — he came to learn and see the market, not to present. This is a buying-posture signal, not a thought-leadership signal. Source: lead record (Attendee type).",
+    "No AE booth notes means no stated pain, no demo request, and no urgency signal captured at the show. The ICP grade is 'hold' — meaning Inorsa's team saw the title as relevant but lacked enough context to grade up. Research must manufacture the conversation-starter that the booth interaction didn't create."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No verified LinkedIn profile URL for Douglas Trout — cannot confirm career history, tenure at Schurz, or prior company experience that might reveal tool preferences or pain points.",
+    "Cannot confirm whether Schurz/Antietam has applied for or received BEAD funding in Pennsylvania specifically — would dramatically sharpen urgency framing if confirmed.",
+    "No direct quote from Trout in any trade press, podcast, panel, or conference setting — no personalized opener available.",
+    "Cannot confirm who Trout reports to (VP Engineering? CTO? COO?) or whether there is a separate engineering director for design vs. operations — org chart not publicly available.",
+    "Unknown whether Schurz currently uses any GIS-to-CAD design automation tool (IQGeo, Vetro, Esri-based workflow, or purely manual). Cannot confirm 'we already have a tool' objection risk without this.",
+    "Cannot confirm whether Schurz uses in-house design staff, a third-party A&E firm, or a hybrid model — critical for framing Inorsa's value (if they outsource design, Inorsa may need to be positioned as a tool for the A&E firm, not Schurz directly).",
+    "No other Schurz contacts found in the booth-scan list from the companies-discovered data — single-threaded situation with no confirmed multi-thread path.",
+    "Schurz revenue and headcount not precisely confirmed — estimates only."
+  ],
+  "challengesToOtherFindings": [
+    "The Brain KB companies-discovered list does not include Schurz Communications, suggesting no prior deep research has been done on this account. All findings here are inferred from public record and persona modeling — treat as hypotheses, not confirmed intel.",
+    "ICP classification of 'hold' may be underselling this contact. SR Director of Engineering & Operations at an active fiber deployer with BEAD exposure in a live build state is a legitimate ICP target. The 'hold' likely reflects lack of AE notes, not actual disqualification. I would argue this should be upgraded to 'watch' pending BEAD confirmation.",
+    "The absence of Trout from speaking circuits should not be read as disengagement — mid-market operators at this title level rarely speak publicly. It reflects company culture (private, family-owned, media-heritage), not lack of buying authority or interest."
+  ],
+  "topInsight": "Douglas Trout runs engineering and operations for an active fiber deployer in Pennsylvania — a state where BEAD ISP contracts are being finalized right now (6-month window from April 30, 2026). If Schurz/Antietam is a BEAD participant, Trout's org faces a hard construction-start deadline in Q3 2026 with permit documentation and GIS-to-construction-drawing throughput as a binding constraint. He attended Fiber Connect as a buyer, not a speaker. The outreach angle is not 'here's a tool' — it is: 'BEAD timelines don't wait for manual GIS-to-CAD workflows. You have 4-6 months before construction must move. How is your permitting cycle holding up?' That framing respects his operational role, creates urgency without manufacturing it, and leads directly to Inorsa's core proof point (review cycles from 3-4 weeks to 2 days). First step: confirm BEAD application status for Antietam Broadband in PA before sending — that one data point converts this from a warm follow-up to a precision strike.",
+  "sourcesUsed": [
+    "https://www.schurz.com (corporate structure and subsidiary overview)",
+    "https://www.antietambroadband.com (PA service area and fiber expansion)",
+    "https://broadbandusa.ntia.gov/bead (BEAD program timeline and state deadlines)",
+    "https://dced.pa.gov/broadband (Pennsylvania broadband office public filings)",
+    "Lead record: Douglas Trout, SR Director Engineering & Operations, Schurz Communications, York PA, Fiber Connect 2026 Attendee",
+    "Industry baseline: ShowRev Industry Intelligence KB (BEAD operational April 30, 2026; labor and permitting constraints)",
+    "Brain Knowledge Digest (397 entities) — Schurz not found in companies-discovered list; no prior deep research on this account"
+  ]
+}
+```

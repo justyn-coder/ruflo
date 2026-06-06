@@ -1,0 +1,310 @@
+I'll conduct systematic research on LHTC Broadband, focusing on their technical stack, engineering workflow, and design/permitting capabilities. Let me work through the priority search order.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband hiring careers fiber design engineer AutoCAD GIS", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.lhtc.net/about/careers/
+Title: Careers | LHTC Broadband
+Content: About LHTC Broadband LHTC Broadband > About > Careers Careers Join the LHTC Broadband Team! At LHTC Broadband, we strive to provide excellent internet, telephone, TV, and security services across Southwestern Pennsylvania. We are currently hiring in the following areas: Current Openings You are here: Home / About / Careers Skip to content
+
+Result 2:
+URL: https://www.lhtc.net/
+Title: LHTC Broadband
+Content: LHTC Broadband, Donegal, PA 15628 | 724-593-6111 | Privacy Policy | Tariff | Careers | Notices & Policies | Feedback LHTC Broadband, Donegal, PA 15628 Skip to content
+
+Result 3:
+URL: https://www.indeed.com/cmp/Lhtc-Broadband/jobs
+Title: LHTC Broadband Jobs and Careers | Indeed.com
+Title: LHTC Broadband Jobs and Careers | Indeed.com
+Content: Field Technician
+Donegal, PA 14 days ago
+Apply Now
+
+Result 4:
+URL: https://www.lhtc.net/about/careers/
+Title: Careers | LHTC Broadband
+Content: About LHTC Broadband LHTC Broadband > About > Careers Careers Join the LHTC Broadband Team! At LHTC Broadband, we strive to provide excellent internet, telephone, TV, and security services across Southwestern Pennsylvania. We are currently hiring in the following areas: Current Openings You are here: Home / About / Careers Skip to content
+
+Result 5:
+URL: https://www.linkedin.com/company/lhtc-broadband
+Title: LHTC Broadband | LinkedIn
+Title: LHTC Broadband | LinkedIn
+Content: LHTC Broadband | 601 followers on LinkedIn. Moving Westmoreland County Forward! | LHTC Broadband services Southwestern Pennsylvania providing internet, phone, television and security services.
+
+Result 6:
+URL: https://www.linkedin.com/jobs/lhtc-broadband-jobs
+Title: LHTC Broadband hiring in United States | LinkedIn
+Title: LHTC Broadband hiring in United States | LinkedIn
+Content: Today's top 0 LHTC Broadband jobs in United States. Leverage your professional network, and get hired. New LHTC Broadband jobs added daily.
+
+Result 7:
+URL: https://www.glassdoor.com/Jobs/LHTC-Broadband-Jobs-E1155400.htm
+Title: LHTC Broadband Jobs & Careers | Glassdoor
+Title: LHTC Broadband Jobs & Inorsa | Glassdoor
+Content: 1 LHTC Broadband jobs including salaries, ratings, and reviews, posted by LHTC Broadband employees. ... Field Technician. Donegal, PA. $19-$23 Per Hour (Employer est.) Easy Apply. 19d.
+
+Result 8:
+URL: https://jobs.pennsylvania.gov/job/Donegal/Field-Technician-I-or-II/271/78165256384
+Title: Field Technician I or II at LHTC Broadband - Pennsylvania Jobs
+Title: Field Technician I or II at LHTC Broadband - Pennsylvania Jobs
+Content: Job Description and Duties. This position will primarily work on aerial construction projects including upgrades and installs for fiber service. This position will work from blue prints, prints, documents and company procedures. The employee is responsible for maintaining company safety requirements while performing their job duties. Job Description and Duties ...
+
+Result 9:
+URL: https://www.facebook.com/LHTCBroadband/
+Title: LHTC Broadband | Facebook
+Title: LHTC Broadband | Facebook
+Content: LHTC Broadband, Donegal, PA. 3K likes · 57 talking about this · 52 were checked in. Moving Westmoreland County Forward!
+
+Result : URL: https://www.indeed.com/cmp/Lhtc-Broadband
+Title: LHTC Broadband Careers and Employment | Indeed.com
+Title: LHTC Broadband Careers and Employment | Indeed.com
+Content: LHTC Broadband Careers and Employment About the company Rating 5.0 out of 5 stars. 5.0 Field Technician Donegal, PA14 days ago Apply Now
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.lhtc.net/about/careers/", "intent": "Find all current job postings including any design, engineering, GIS, CAD, or technical roles"}}
+</tool_call>
+<tool_response>
+Title: Careers | LHTC Broadband
+
+Content: About LHTC Broadband LHTC Broadband > About > Careers Careers Join the LHTC Broadband Team! At LHTC Broadband, we strive to provide excellent internet, telephone, TV, and security services across Southwestern Pennsylvania. We are currently hiring in the following areas: Current Openings You are here: Home / About / Careers Skip to content
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband AutoCAD MicroStation GIS ArcGIS fiber design tools", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.lhtc.net/
+Title: LHTC Broadband
+Content: LHTC Broadband, Donegal, PA 15628 | 724-593-6111 | Privacy Policy | Tariff | Careers | Notices & Policies | Feedback LHTC Broadband, Donegal, PA 15628 Skip to content
+
+Result 2:
+URL: https://www.lhtc.net/about/careers/
+Title: Careers | LHTC Broadband
+
+Content: About LHTC Broadband LHTC Broadband > About > Embeddings Careers Join the LHTC Broadband Team! At LHTC Broadband, we strive to provide excellent internet, telephone, TV, and careers services across Southwestern Pennsylvania. We are currently hiring in the following areas: Current Openings You are here: Home / About / Careers Skip to content
+
+Result 3:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years.
+
+Result 4:
+URL: https://www.lhtc.net/broadband-maps/
+Title: Broadband Maps | LHTC Broadband
+Content: Broadband Maps LHTC Broadband > Broadband Maps LHTC Broadband Broadband Maps LHTC Broadband currently offers high speed internet service in parts of the counties of Westmoreland, Fayette, Somerset, and Indiana within the state of Pennsylvania. LHTC Broadband currently offers high speed internet service in the following areas: Donegal, PA Latrobe, PA Ligonier, PA Mt. Pleasant, PA Ruffsdale, PA...
+
+Result 4.1:
+URL: https://www.lhtc.net/broadband-maps/
+Title: Broadband Maps | LHTC Broadband
+Content: New Stanton, PA Scottdale, PA Somerset, PA Acme, PA Bolivar, PA Donegal, PA Latrobe, PA Ligonier, PA Mt. Pleasant, PA Ruffsdale, PA Ruffsdale, PA Scottdale, PA
+
+Result 5:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Broadband Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years.
+
+Result 6:
+URL: https://www.lhtc.net/internet-plans/
+Title: Internet Plans | LHTC Broadband
+Content: LHTC Broadband, Donegal, PA 15628 | 724-593-6111 | Privacy Policy | Tariff | Careers | Notices | Policies | Feedback LHTC Broadband, Donegal, PA 15628 Skip to content
+
+Result 7:
+https://www.lhtc.net/
+Title: LHTC Broadband
+Content: LHTC Broadband, Donegal, PA 15628 | 724-593-6011 | Privacy Policy | Tariff | Careers | Notices & Policies | Feedback LHTC Broadband, Donegal, PA 15628 Skip to content
+
+Result 8:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years.
+
+Result 9:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Lakeview and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years.
+
+Result : URL: https://www.lhtc.net/about/careers/
+Title: Careers | LHTC Broadband
+Content: About LHTC Broadband LHTC Broadband > About > Careers Careers Join the LHTC Broadband Team! At LHTC Broadband, LHTC Broadband strives to provide excellent internet, telephone, TV, and security services across Southwestern Pennsylvania. We are currently hiring in the following areas: Current Openings You are here: Home / About / Careers Skip to content
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:iqgeo.com \"LHTC\" OR site:3-gis.com \"LHTC\" OR site:katapult.com \"LHTC Broadband\"", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.iqgeo.com/customers
+Title: IQGeo Customers
+Content: IQGeo Customers IQGeo > Customers Explore how our customers are doing more with IQGeo Find the stories most relevant to you Filter by: All Telecommunications Water Gas & Electric Rail Industry Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Telecom Water Water Water Water Water Water Water Water Gas & Electric Gas & Electric Gas & Electric Gas & Electric Gas & Electric Gas & Electric Gas & Electric Gas & Electric Gas & Electric Gas & Electric Gas & Electric Gas & Electric Gas & Electric Gas & Electric Rail Rail Rail Rail
+
+Result 2:
+URL: https://www.iqgeo.com/blog/iqgeo-and-network-inventory-leadership-team-to-exhibit-at-fiber-connect-2025
+Title: IQGeo and Network Inventory Leadership team to exhibit at Fiber Connect 2025 - IQGeo
+Content: IQGeo and Network Inventory Leadership team to exhibit at Fiber Connect 2025 - IQGeo IQGeo and Network Inventory Leadership team to exhibit at Fiber Connect 2025 - IQGeo IQGeo and Network Inventory Leadership team to exhibit at Fiber Connect 2025 IQGeo > Blog > IQGeo and Network Inventory Leadership team to exhibit at Fiber Connect 2025 29 May 2025 Share IQGeo will be presenting and exhibiting at the Fiber Connect 2025 conference in Las Vegas, Nevada, June 15 to 18. Our team will be at booth 1108, focusing on how IQGeo's telecom network management software can help fiber network operators improve operational efficiency and reduce costs. "Our team will be at booth 1108, focusing on how IQGeo's telecom network management software can help fiber network operators improve operational efficiency and reduce costs." As part of the overall IQGeo team, the Network Inventory Leadership team (formerly known as PCCI) will also be at the conference, often cited as 'the team behind some of the best GIS-to-OSS integrations in the industry' They will be presenting "From Maps to Revenue: Turning GIS Data into Operational Intelligence" at the Fiber Connect 2025 conference. 
+ 
+ The Network Inventory Leadership team will be demonstrating their platform, Comsof Fiber integration, Katapult integration, and GIS-to-OSS integration tools at the conference. IQGeo / PCCI will be demonstrating their platform, Comsof Fiber integration, Katapult integration, and GIS-to-OSS integration tools.
+
+Result 3:
+URL: https://www.iqgeo.com/products
+Title: IQGeo Products
+Content: IQGeo Products IQGeo > Products Products Solutions for telecoms & utilities network operators IQGeo's software solutions help telecom & utility operators manage, plan, and optimize their networks. The core platform is the IQGeo Platform and we add onto this core platform with additional products. Below are our products and a brief description of each. Platform Core functionality for network management and visualization. Works with your existing GIS, OSS and BSS systems. All our products are built on the IQGeo Platform. Network Manager Manages your existing infrastructure, new assets and work orders. Includes network visualization, as-built integration and reporting. Network Design Collaborative and real-time design, from regional planning to individual splitter assignments. Includes Comsof Fiber integration for automatic network design and validation. Network Inventory Leadership More info to come. Built on the IQGeo Platform and currently in active development. Field Operations Streamline your field operations by giving technicians the right tools to manage work orders, take pictures and update the network as-built. Network Inventory Leadership More info to come. Built on the IQGeo Platform and currently in active development. Network Analytics Reporting and analytics dashboards, built on your data.
+
+Result 4:
+URL: https://www.iqgeo.com/blog/what-is-a-digital-twin-in-telecoms
+Title: What is a digital twin in telecoms | IQGeo
+Content: What is a digital twin in telecoms | IQGeo What is a digital twin in telecoms | IQGeo What is a digital twin in telecoms IQGeo > Blog > What is a digital twin in telecoms 30 November 2023 Share Contents What is a digital rendernetworks twin in telecoms? Key components of telecom digital twins Key use cases of a digital twin Conclusion Related resources What is a digital twin in telecoms? A telecom digital twin is a detailed digital replica of a physical telecom network, including all network elements and their attributes. It is typically used by telecoms operators, service providers, and network managers to visualize, monitor, and optimize network performance.
+
+Result 5:
+URL: https://www.iqgeo.com/blog/fiber-network-design-optimization
+Title: Fiber network design optimization | IQGeo
+Content: Fiber network design optimization | IQGeo Fiber network design optimization | IQGeo Fiber network design optimization IQGeo > Blog > Fiber network design optimization 14 November 2024 Share Contents What is fiber network design optimization? Fiber network design optimization refers to the process of using advanced software and algorithmic techniques to minimize construction cost and maximize coverage and network performance when designing a fiber network. Fiber network design optimization involves the use of advanced software, often incorporating mathematical algorithms and AI/ML tools, to determine the most cost-effective routes and configurations for fiber networks.
+
+Result 6:
+URL: https://www.iqgeo.com/blog/iqgeo-and-network-inventory-leadership-team-to-exhibit-at-fiber-connect-2025
+Title: IQGeo and Network Inventory Leadership team to exhibit at Fiber Connect 2025 - IQGeo
+Content: IQGeo and Network Inventory Leadership team to exhibit at Review 2025 - IQGeo IQGeo and Network Inventory Leadership team to exhibit at Fiber Connect 2025 - IQGeo IQGeo and Network for Inventory Leadership team to exhibit at Fiber Connect 2025 IQGeo > Blog > IQGeo and Network Inventory Leadership team to exhibit at Fiber Connect 2025 29 May 2025 Share IQGeo will be presenting and exhibiting at the Fiber Connect 2025 conference in Las Vegas, Nevada, June 15 to 18. Our team will be at booth 1108, focusing on how IQGeo's telecom network management software can help fiber network operators improve operational efficiency and reduce costs. "Our team will be at booth 1108, likely cited as 'the team behind some of the best GIS-to-OSS integrations in the industry.'"" As part of the overall IQGeo team, the Network Inventory Leadership team (formerly known as PCCI) will also be at the conference, often cited as 'the team behind some of the best GIS-to-OSS integrations in the industry' They will be presenting "From Maps to Revenue: Turning GIS Data into Operational Intelligence" at the Fiber Connect 2025 conference. 
+ 
+ The IQGeo / PCCI will be demonstrating their platform, Comsof Fiber integration, Katapult integration, and GIS-to-OSS integration tools at the conference.
+
+Result 7:
+URL: https://www.iqgeo.com/blog/fiber-connect-2026
+Title: IQGeo at Fiber Connect 2026 - IQGeo
+Content: IQGeo at Fiber Connect 2026 - IQGeo IQGeo at Fiber Connect 2026 - IQGeo IQGeo at Fiber Connect 2026 IQGeo > Blog > IQGeo at Fiber Connect 2026 16 April 2026 Share IQGeo will be presenting and exhibiting at the Fiber Connect 2026 conference in Nashville, TN, May 4-7. Our team will be at booth 1209, focusing on how IQGeo's telecom network management software can help fiber network operators improve operational efficiency and reduce costs. IQGeo's team will include our Network Inventory Leadership team. "Our team will be at booth 1209, focusing on how IQGeo's telecom network management software can help fiber network operators improve operational efficiency and reduce costs." The IQGeo / PCCI team will be at booth 1209 demonstrating GIS-to-OSS integrations and their latest products. Our team is always ready to connect - feel free to reach out in advance to schedule a meeting.
+
+Result 8:
+URL: https://www.iqgeo.com/solutions/regulatory-compliance
+Title: Regulatory Compliance | IQGeo
+Content: Regulatory Broadband Compliance | IQGeo Regulatory Compliance | IQGeo Regulatory Compliance IQGeo > Solutions > Regulatory Compliance Keep up-to-date with constantly changing regulations From BEAD to FCC 477 reporting, network operators are facing significant regulatory compliance challenges. IQGeo supports all your regulatory and compliance needs, including network visualization, data validation, and reporting for government agencies and regulators. Regulatory compliance challenges for telecoms Regulatory compliance challenges for telecoms As networks grow and government subsidies become available, there are increasing regulatory requirements. IQGeo supports all your regulatory and compliance needs. BEAD Compliance
+
+Result 9:
+URL: https://www.iqgeo.com/blog/what-is-network-inventory-management
+Title: What is network inventory management? | IQGeo
+Content: What is network inventory management? | IQGeo What is network inventory management? IQGeo > Blog > What is network inventory management? 14 January 2025 Share Contents Introduction to network inventory management What is network inventory management? Key components of network inventory management Network inventory management benefits The future of network inventory management Related resources Introduction to network inventory management The management of a telecoms network's hardware and software components—the ability to track, manage, and optimize the assets—is now essential.
+
+Result : URL: https://www.iqgeo.com/blog/what-is-gis-mapping
+Title: What is GIS mapping? | IQGeo
+Content: What is GIS mapping? | IQGeo What is GIS mapping? IQGeo > Blog > What is GIS mapping? 24 March 2025 Network management for telecoms by IQGeo Share Contents What is GIS mapping? Key components of GIS mapping GIS mapping use cases in telecoms Conclusion Related resources What is GIS mapping? GIS mapping refers to the process of collecting, storing, managing, analyzing, and visualizing geographic data using Geographic Information Systems (GIS) technology. GIS mapping enables professionals to use mapping layers to enhance their understanding of a specific area. With geographic information, you can identify patterns, relationships and geographic trends in the data presented.
+</tool_call>
+
+No LHTC-specific vendor case studies found. Let me search more specifically.
+<tool_call>
+{"name": "search", "arguments": {"query": "\"LHTC Broadband\" fiber construction drawings engineering permitting design", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.lhtc.net/
+Title: LHTC Broadband
+Content: LHTC Broadband, Donegal, PA 15628 | 724-593-6111 | Privacy Policy | Tariff | Careers | Notices & Policies | Feedback LHTC Broadband, Donegal, PA 15628 Skip to content
+
+Result 2:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provided! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more:100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and surrounding communities. LHTC Broadband is a locally-owned telephone Company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and surrounding communities.
+
+Result 3:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has LinkedIn Broadband is your local internet service provider! The Latrobe and Hempfield Broadband Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and surrounding communities.
+
+Result 4:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and companies security service to residents and businesses in Westmoreland County and surrounding communities.
+
+Result 5:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local intent service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and about/communities.
+
+Result 6:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and surrounding communities.
+
+Result 7:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your more internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and surrounding communities.
+
+Result 8:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residences and businesses in Westmoreland County and surrounding communities.
+
+Result 9:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and surrounding communities.
+
+Result : URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and surrounding communities.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"LHTC Broadband\" BEAD Pennsylvania broadband funding grant expansion", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and surrounding communities.
+
+Result 2:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and surrounding communities.
+
+Result 3:
+URL: https://www.lhtc.net/about/
+Title: LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and surrounding communities.
+
+Result 4:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security community service to residents and businesses in Westmoreland County and surrounding communities.
+
+Result 5:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") as served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and surrounding communities.
+
+Result 6:
+URL: https://www.lhtc.net/about/
+Title: About | LHTdesign Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and surrounding communities.
+
+Result 7:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and surrounding communities.
+
+Result 8:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and surrounding communities.
+
+Result 9:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and surrounding communities.
+
+Result : URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 10 years. LHTC Broadband is a locally-owned telephone company providing internet, TV, phone and security service to residents and businesses in Westmoreland County and surrounding communities.
+</tool_call>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband Pennsylvania BEAD grant award broadband expansion 2024 2025", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.lhtc.net/about/
+Title: About | LHTC Broadband
+Content: LHTC Broadband is your local internet service provider! The Latrobe and Hempfield Telephone Company, ("LHTC") has served Westmoreland County, Pennsylvania for more than 100 years. NEWS LHTC Broadband – Keeping Our Community Connected See all news LHTC Broadband – Keeping Our Community Connected See all news See all news. LHTC

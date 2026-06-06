@@ -221,7 +221,7 @@ Also update pattern selector: when no aeNotes, exclude `commitment_consistency` 
 
 ### 2c. Activate ICP-aware prompt framing (influence.ts + run-pipeline.ts)
 
-**What:** Add ICP-segment blocks to `buildComposerPrompt` and `buildPatternSelectorPrompt`. For fiber_operator: GIS-to-CAD, build schedule, BEAD deadlines. For ae_firm: validation bottleneck, project throughput, CD revision overhead, margin-per-project.
+**What:** Add ICP-segment blocks to `buildComposerPrompt` and `buildPatternSelectorPrompt`. For fiber_operator: GIS-to-CAD, build schedule, BEAD deadlines. For ae_firm: cross-checking bottleneck, project throughput, CD revision overhead, margin-per-project. (Note: detailed spec in wave-2-specs.md is authoritative for implementation; this plan is summary-level.)
 
 Update run-pipeline.ts recompose paths (~lines 1601, 1736) to pass icpType.
 
@@ -238,7 +238,7 @@ Add 2 examples per ICP segment (good bridge vs bad bridge).
 
 ### 2e. Competitive bridge adaptation (influence.ts)
 
-**What:** Hard-code top 10 competitors to 6 playbook categories. Conditional block: when keyFacts mention a known competitor, bridge acknowledges incumbent + names the gap. Unknown competitors get standard bridge.
+**What:** Hard-code 9 competitors to 5 playbook categories (osmose removed — tower contamination vector). Conditional block: when keyFacts mention a known competitor, bridge acknowledges incumbent + names the gap. Unknown competitors get standard bridge.
 
 ### 2f. ICP-aware judge scoring — bonus only (judge.ts)
 

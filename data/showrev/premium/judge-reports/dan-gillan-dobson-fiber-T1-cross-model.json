@@ -1,0 +1,111 @@
+{
+  "prospectId": "dan-gillan-dobson-fiber",
+  "prospectName": "Dan Gillan",
+  "company": "Dobson Fiber",
+  "touchNumber": 1,
+  "verdicts": [
+    {
+      "model": "claude-sonnet",
+      "scores": {
+        "research_depth": 0,
+        "vp_connection": 0,
+        "tone": 0,
+        "conciseness": 0
+      },
+      "recommendation": "hold",
+      "mustFix": [
+        "Judge unavailable: judge-claude failed after 3 attempts: 400 {\"type\":\"error\",\"error\":{\"type\":\"inval"
+      ],
+      "strengths": [],
+      "raw": ""
+    },
+    {
+      "model": "gemini",
+      "scores": {
+        "research_depth": 10,
+        "vp_connection": 10,
+        "tone": 10,
+        "conciseness": 10
+      },
+      "recommendation": "send",
+      "mustFix": [
+        "Typo 'P.S. P.S.' should be 'P.S.'"
+      ],
+      "strengths": [
+        "The personalized brief in the P.S. is an elite demonstration of research.",
+        "Directly connects a technical process improvement (faster drawings) to a C-level business outcome (faster activations).",
+        "Confident, peer-to-peer tone appropriate for a CRO.",
+        "Extremely concise and high-impact; no wasted words.",
+        "Asks a sharp, specific question about a likely business bottleneck."
+      ],
+      "raw": "```json\n{\n  \"scores\": {\n    \"research_depth\": 10,\n    \"vp_connection\": 10,\n    \"tone\": 10,\n    \"conciseness\": 10\n  },\n  \"recommendation\": \"send\",\n  \"mustFix\": [\n    \"Typo 'P.S. P.S.' should be 'P.S.'\"\n  ],\n  \"strengths\": [\n    \"The personalized brief in the P.S. is an elite demonstration of research.\",\n    \"Directly connects a technical process improvement (faster drawings) to a C-level business outcome (faster activations).\",\n    \"Confident, peer-to-peer tone appropriate for a CRO.\",\n    \"Extremely concise and high-impact; no wasted words.\",\n    \"Asks a sharp, specific question about a likely business bottleneck.\"\n  ]\n}\n```"
+    },
+    {
+      "model": "gpt-5",
+      "scores": {
+        "research_depth": 5,
+        "vp_connection": 8,
+        "tone": 7,
+        "conciseness": 7
+      },
+      "recommendation": "hold",
+      "mustFix": [
+        "Lack of specific evidence or customization for Dobson Fiber"
+      ],
+      "strengths": [
+        "Clear value proposition connection",
+        "Professional and direct tone"
+      ],
+      "raw": "{\n  \"scores\": {\"research_depth\": 5, \"vp_connection\": 8, \"tone\": 7, \"conciseness\": 7},\n  \"recommendation\": \"hold\",\n  \"mustFix\": [\"Lack of specific evidence or customization for Dobson Fiber\"],\n  \"strengths\": [\"Clear value proposition connection\", \"Professional and direct tone\"]\n}"
+    },
+    {
+      "model": "grok",
+      "scores": {
+        "research_depth": 5,
+        "vp_connection": 7,
+        "tone": 6,
+        "conciseness": 7
+      },
+      "recommendation": "hold",
+      "mustFix": [
+        "Fix 'P.S. P.S.' typo",
+        "Integrate Dobson-specific research into body instead of P.S. link only"
+      ],
+      "strengths": [
+        "Subject under 8 words",
+        "Single clear question",
+        "No AI-tell phrases or em-dashes"
+      ],
+      "raw": "{\n  \"scores\": {\"research_depth\": 5, \"vp_connection\": 7, \"tone\": 6, \"conciseness\": 7},\n  \"recommendation\": \"hold\",\n  \"mustFix\": [\"Fix 'P.S. P.S.' typo\", \"Integrate Dobson-specific research into body instead of P.S. link only\"],\n  \"strengths\": [\"Subject under 8 words\", \"Single clear question\", \"No AI-tell phrases or em-dashes\"]\n}"
+    },
+    {
+      "model": "deepseek",
+      "scores": {
+        "research_depth": 8,
+        "vp_connection": 7,
+        "tone": 7,
+        "conciseness": 9
+      },
+      "recommendation": "send",
+      "mustFix": [
+        "Remove duplicate 'P.S.' in the postscript"
+      ],
+      "strengths": [
+        "Specific reference to Dobson Fiber in subject and body",
+        "Value prop tied directly to CRO's lever (faster construction starts, activations)",
+        "Concrete question about backlog shows research",
+        "Context brief link adds credibility without over-explaining"
+      ],
+      "raw": "{\n  \"scores\": {\n    \"research_depth\": 8,\n    \"vp_connection\": 7,\n    \"tone\": 7,\n    \"conciseness\": 9\n  },\n  \"recommendation\": \"send\",\n  \"mustFix\": [\n    \"Remove duplicate 'P.S.' in the postscript\"\n  ],\n  \"strengths\": [\n    \"Specific reference to Dobson Fiber in subject and body\",\n    \"Value prop tied directly to CRO's lever (faster construction starts, activations)\",\n    \"Concrete question about backlog shows research\",\n    \"Context brief link adds credibility without over-explaining\"\n  ]\n}"
+    }
+  ],
+  "consensus": "hold",
+  "divergence": [
+    "Split verdict: claude-sonnet=hold, gemini=send, gpt-5=hold, grok=hold, deepseek=send",
+    "research_depth: spread of 5 (claude-sonnet=0, gemini=10, gpt-5=5, grok=5, deepseek=8)",
+    "vp_connection: spread of 3 (claude-sonnet=0, gemini=10, gpt-5=8, grok=7, deepseek=7)",
+    "tone: spread of 4 (claude-sonnet=0, gemini=10, gpt-5=7, grok=6, deepseek=7)",
+    "conciseness: spread of 3 (claude-sonnet=0, gemini=10, gpt-5=7, grok=7, deepseek=9)"
+  ],
+  "judgedAt": "2026-06-05T19:02:09.536Z"
+}

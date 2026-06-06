@@ -1,9 +1,16 @@
 #!/usr/bin/env npx tsx
 
+// @deprecated — Use run-pipeline.ts instead. This file is kept for reference only.
+// run-pipeline.ts is the production pipeline. Features unique to this file
+// (Thompson Sampling, gap detection) are candidates for future merge into run-pipeline.ts.
+// Created: 2026-05-31. Deprecated: 2026-06-06 (Wave 1x).
+
 import { config as loadEnv } from 'dotenv';
 loadEnv({ path: new URL('.env', import.meta.url).pathname });
 
 /**
+ * @deprecated Use run-pipeline.ts instead.
+ *
  * Premium M1 Email Find Pipeline
  *
  * 3-persona STORM research → influence pattern selection → anti-tell composition → quality judge
@@ -29,9 +36,70 @@ import { buildDossierRow, validateBeforeWrite, dryRunPreview, writeDossierToSupa
 import { ingestResearchIntoBrain, loadBrainDigest } from './brain-ingest.js';
 import { structureIntelReport } from './intel-structurer.js';
 import { composeMicrositeContent, type MicrositeRow } from './microsite-composer.js';
+import { composeLean, type LeanBrief } from './lean-composer.js';
 
 const BASE_DIR = resolve(dirname(new URL(import.meta.url).pathname), '../../../data/showrev');
-const INORSA_VP_SUMMARY = `Inorsa converts GIS design data into CAD-ready construction drawings. Quality control is built in, so builds keep moving. Engineering Suite + Data Suite. Fiber only (no tower/cellular).`;
+const INORSA_VP_SUMMARY = `## What Inorsa does
+Inorsa automates the generation of construction drawings from GIS/LLD inputs. They ingest GIS data and produce construction-grade AutoCAD drawings. The core value is SPEED — accelerating production so teams can do more work, get paid sooner, and have more time for their own QC. Fiber only (no tower/cellular).
+
+CRITICAL: Inorsa does NOT validate inputs or catch errors in the GIS data. Errors in the network management tool translate directly as errors in the output. The value is acceleration and capacity, NOT quality assurance. Never claim Inorsa "catches errors" or "validates inputs" or "reduces permit returns." The product accelerates production, giving the customer MORE TIME to do their own QC before submission.
+
+## How it works (from sales deck, confirmed by Nick McManus, Dir. Customer Transformation)
+INGEST: GIS data (GeoPackage/shapefile or direct IQGeo integration) + CAD standards + jurisdictional standards.
+GENERATE: LLD GIS → formatted construction drawing packages (AutoCAD to YOUR standard + PDF for permitting). Drawing Agent reads point + line metadata, maps to CAD blocks, generates pages with cross-references and jurisdictional callouts.
++ NORA AI: Ask questions across your portfolio, get answers in seconds.
+
+## CRITICAL NUANCE (from Nick McManus, confirmed 2026-06-03)
+- Automation potential depends on how well the prospect leverages their network management tool. DO NOT promise a specific automation percentage without a file review. Say: "We partner with you to maximize automation based on your current systems."
+- "80% of the drafting lift" was in Nathan's sales deck but Nick says giving a percentage without a file review is a mistake. Use instead: "significant acceleration of drafting production" or cite the approved time metrics (~10 min, 70% cycle time reduction).
+- Drafters still finish the drawings. Inorsa accelerates production but drawings could still bottleneck if the finishing step is slow.
+- Any errors in the prospect's GIS/network management data will appear in Inorsa's output. Garbage in = garbage out. Never promise error-free output.
+
+## The real value proposition (Nick's framing)
+1. Revenue Acceleration — do the work faster, get paid sooner
+2. Revenue Generation — accept more work without adding headcount
+3. Opportunity — your team isn't stuck on this work, can do other things
+4. Mistake proofing — ONLY where a key input is missing (not general QA)
+
+## Proof points (approved for outreach)
+- ~10 min source data to preliminary drawing
+- 2-5x drafting scaling capacity with existing headcount
+- 70% reduction in construction drawing cycle time
+- "On longer-route fiber projects, a week of manual drafting can compress to minutes of automation plus your team's finishing work"
+- 40-50% of permit submissions rejected on first pass (industry reality per Nick) — Inorsa's speed gives teams more time for QC before submission
+
+## Pricing model
+Token-based SaaS (OPEX). No seat licenses. Pay-as-you-go. Per-unit cost drops at scale. Do NOT promise CAPEX treatment.
+Known objection (from Nick): "The price is not commensurate with delivered value." Product is recent and still growing into its pricing model. Focus on time/capacity ROI, not cost savings.
+
+## What Inorsa does NOT do (hard boundary — never claim these)
+- Route design (HLD or LLD generation)
+- Splicing diagrams
+- As-built reconciliation
+- Bore profiles and traffic control plans
+- Parcel-based plans
+- Fixing or normalizing bad GIS data
+- Input validation or error detection (except missing key inputs)
+- Conflict avoidance (utility GIS layers can be ingested but conflict avoidance is NOT supported today)
+
+## Prospect objections to prepare for
+1. "Our GIS data is conceptual, not construction-grade" — Network management tools are often conceptual. Creating CAD parity still requires drafter intervention. Counter: Inorsa maximizes what CAN be automated from their current data and partners to improve over time.
+2. "The price doesn't match the value yet" — Product is growing. Focus on time savings and capacity gain, not cost reduction.
+3. "We can't capitalize it" — It's SaaS/OPEX. Frame as: the throughput gain more than covers the OPEX.
+
+## Discovery questions that land with prospects (from Inorsa sales deck)
+1. How much of your QC cycle is spent catching simple human mistakes that consistent source documents could eliminate?
+2. Are your engineers carrying inconsistent inputs from source documents into deliverables, then catching them in redlines later?
+3. Are issues showing up after drawings are produced, forcing redesigns?
+4. Do LLDs and permit inputs vary across teams or markets, even for similar builds?
+
+## How the sales team talks about it
+Nathan Dunn: "GIS designs move fast, but converting them to construction-grade AutoCAD remains manual, slow, and different for each client's drawing standard."
+Lucas Spencer: "The bottleneck is not crews or equipment. It is whether CAD-ready drawings stay ahead of the construction schedule."
+Elevator pitch: "Speed without accuracy just creates more rework."
+
+## Integration points (safe to reference if prospect uses these)
+AutoCAD, IQGeo, SiteTracker, Egnyte, SharePoint. Do NOT claim integration with 3GIS or Katapult Pro.`;
 
 const AE_TERRITORY: Record<string, { name: string; email: string }> = {
   east: { name: 'Mike Rutski', email: 'mike@inorsa.com' },
@@ -76,14 +144,8 @@ const MODEL_MAP: Record<string, string> = {
   haiku: 'claude-haiku-4-5-20251001',
 };
 
-const COMPOSITION_HARD_CONSTRAINTS = `STRICT RULES — violations cause rejection:
-1. Email body MUST be under 80 words. Count every word before outputting. If over 80, cut sentences until under. This is non-negotiable.
-2. NEVER use em-dashes (—) or en-dashes (–) anywhere. Use commas, periods, or semicolons instead.
-3. Salutation is "[FirstName]," on its own line. Next line starts the body immediately, no blank line.
-4. NEVER reference India, offshore, outsourced, or workforce geography.
-5. Sign off ONCE only: "[AE Name] | Inorsa | [email]". Never duplicate the signature.
-6. Subject line: 8 words maximum.
-Count the words in your body text RIGHT NOW before outputting. If the count exceeds 80, revise.`;
+// COMPOSITION_HARD_CONSTRAINTS removed — was dead code (never passed to any function).
+// Real constraints live inline in buildComposerPrompt() in influence.ts.
 
 function executePromptCLI(prompt: string, model: string = 'sonnet', timeoutMs: number = 300000): string {
   const tmpFile = `/tmp/showrev-prompt-${Date.now()}-${Math.random().toString(36).slice(2, 6)}.md`;
@@ -136,6 +198,7 @@ interface PremiumConfig {
   singleProspect?: string;
   outputDir: string;
   runId: string;
+  composer?: 'full' | 'lean' | 'auto';
 }
 
 function generateRunId(): string {
@@ -263,9 +326,78 @@ async function processProspect(
       : '';
   }
 
+  // Load substrate context — SEMANTIC search via pgvector Edge Function
+  // Searches 6,512 chunks of industry intelligence by MEANING, not keywords
+  let substrateContext = '';
+  try {
+    const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
+    const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+    if (sbKey) {
+      // Build a natural-language query from prospect context
+      const semanticQuery = [
+        prospect.company,
+        prospect.title,
+        prospect.state ? `${prospect.state} fiber broadband` : 'fiber construction',
+        /engineer|design|A&E|consult/i.test(prospect.company + ' ' + prospect.title)
+          ? 'A&E engineering firm GIS to CAD drawing production capacity'
+          : 'fiber operator construction schedule permit drawing',
+      ].filter(Boolean).join('. ');
+
+      const subRes = await fetch(`${sbUrl}/functions/v1/search-substrate`, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${sbKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: semanticQuery, limit: 8 }),
+      });
+      if (subRes.ok) {
+        const subData = await subRes.json();
+        const subRows = subData.results || [];
+        if (subRows.length > 0) {
+          substrateContext = '\n\n## Industry intelligence (semantic search — podcasts, expert blogs, BEAD data)\n' +
+            subRows.map((r: any) => `**${r.title}** (${r.source}, ${r.published_date}, relevance: ${(r.similarity * 100).toFixed(0)}%):\n${r.content.slice(0, 600)}`).join('\n\n');
+          const avgSim = subRows.reduce((s: number, r: any) => s + (r.similarity || 0), 0) / subRows.length;
+          console.log(`  │  Substrate: ${subRows.length} semantic matches (avg relevance: ${(avgSim * 100).toFixed(0)}%)`);
+        }
+      }
+    }
+  } catch (err: any) {
+    console.log(`  │  Substrate: skip (${err.message?.slice(0, 40)})`);
+  }
+
+  // Load similar-prospect dossiers — match by segment + role, not recency
+  let similarProspectContext = '';
+  try {
+    const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
+    const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+    if (sbKey) {
+      // Match by ICP type: A&E roles get A&E examples, operator roles get operator examples
+      const isAE = /engineer|design|A&E|consult|drafting|CAD/i.test(prospect.title + ' ' + prospect.company);
+      const isExec = /CEO|COO|CFO|VP|SVP|President|Director|Head/i.test(prospect.title);
+      const personaFilter = isAE
+        ? 'persona_bucket=in.(build_pace,drawings_quality)'
+        : isExec
+          ? 'persona_bucket=in.(cycle_time_exec,capital_efficiency,program_leverage)'
+          : 'persona_bucket=in.(permit_cycle,build_pace)';
+
+      const simRes = await fetch(
+        `${sbUrl}/rest/v1/sr_engine_output?select=company,title,persona_bucket,influence_pattern_t1,intel_signal_strength,challenger_insight,research_summary&research_summary=not.is.null&company=neq.${encodeURIComponent(prospect.company)}&${personaFilter}&limit=3&order=created_at.desc`,
+        { headers: { apikey: sbKey, Authorization: `Bearer ${sbKey}` } }
+      );
+      if (simRes.ok) {
+        const similar: any[] = await simRes.json();
+        if (similar.length > 0) {
+          similarProspectContext = '\n\n## Similar prospects we researched previously (use as reference, not template)\n' +
+            similar.map((s: any) => `**${s.company}** (${s.title}): Signal=${s.intel_signal_strength}, Persona=${s.persona_bucket}, Pattern=${s.influence_pattern_t1}\nResearch: ${(s.research_summary || '').slice(0, 400)}\nChallenger insight: ${(s.challenger_insight || '').slice(0, 200)}`).join('\n\n');
+          console.log(`  │  Similar prospects: ${similar.length} dossiers (matched by ${isAE ? 'A&E' : isExec ? 'exec' : 'operator'} segment)`);
+        }
+      }
+    }
+  } catch {}
+
   const cacheableContent = [
     `## What Inorsa does\n${INORSA_VP_SUMMARY}`,
     brainContext || '',
+    substrateContext || '',
+    similarProspectContext || '',
   ].filter(Boolean).join('\n\n');
 
   if (cacheableContent) {
@@ -313,14 +445,86 @@ async function processProspect(
   const brainResult = await ingestResearchIntoBrain(personaResults, prospect.id, brainDir, prospectIndex, 10);
   console.log(`  │  ✓ Brain: +${brainResult.added} new, ${brainResult.updated} updated (${brainResult.total} total)${brainResult.agentDBStored ? ` [${brainResult.agentDBStored} → AgentDB]` : ''}${brainResult.digestRefreshed ? ' [digest refreshed]' : ''}`);
 
+  // PHASE 2c: Gap detection — trigger re-search if tools/competitors insufficient
+  const techFindings = personaResults['Technical Evaluator'] || '';
+  const toolGapIndicators = [
+    'insufficient data', 'not found', 'no confirmed', 'could not identify',
+    'unable to determine', 'no evidence of', 'unclear what tools',
+  ];
+  const hasToolGap = toolGapIndicators.some(indicator =>
+    techFindings.toLowerCase().includes(indicator) &&
+    (techFindings.toLowerCase().includes('tool') || techFindings.toLowerCase().includes('competitor') || techFindings.toLowerCase().includes('software'))
+  );
+  if (hasToolGap) {
+    console.log(`  │  Phase 2c: Tool/competitor gap detected — running acquisition/subsidiary search...`);
+    const acqPrompt = `You are researching whether ${prospect.company} owns, has acquired, or is a subsidiary of a company that operates technology platforms relevant to fiber/telecom engineering, GIS, or construction management.
+
+Search for:
+1. "${prospect.company}" acquired OR acquisition
+2. "${prospect.company}" subsidiary OR division OR portfolio company
+3. "${prospect.company}" owns OR merged with
+4. Parent company of "${prospect.company}" (if it is itself a subsidiary)
+
+Also check: does ${prospect.company} operate any technology platforms on separate domains (like Terracon owning Pivvot on pivvot.com)?
+
+Return JSON: { "acquisitions": [...], "subsidiaries": [...], "parentCompany": "..." or null, "technologyPlatforms": [...], "sources": [...] }
+If nothing found, return empty arrays. Do not guess.`;
+    try {
+      const acqResult = await executePrompt(acqPrompt, config.model, 120000, 'acquisition-search');
+      personaResults['Technical Evaluator'] += `\n\n## Acquisition/Subsidiary Search (Phase 2c gap-fill)\n${acqResult}`;
+      console.log(`  │  ✓ Acquisition search complete`);
+    } catch (err: any) {
+      console.log(`  │  ⚠ Acquisition search failed: ${err.message?.slice(0, 60)}`);
+    }
+  }
+
   // PHASE 3: Influence pattern selection for each touch
+  // Thompson Sampling: query Brain for pattern performance, suggest top patterns
+  let tsRecommendation = '';
+  try {
+    const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
+    const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+    if (sbKey) {
+      const patRes = await fetch(
+        `${sbUrl}/rest/v1/sr_brain_outreach_patterns?select=pattern_name,sample_size,success_rate,confidence,works_best_for,does_not_work_for&order=success_rate.desc`,
+        { headers: { apikey: sbKey, Authorization: `Bearer ${sbKey}` } }
+      );
+      if (patRes.ok) {
+        const patterns: any[] = await patRes.json();
+        if (patterns.length > 0) {
+          // Thompson Sampling: sample from Beta posteriors
+          const samples: Array<{ name: string; sample: number; rate: number; n: number }> = patterns.map((p: any) => {
+            const alpha = Math.round(p.success_rate * p.sample_size) + 1;
+            const beta = p.sample_size - Math.round(p.success_rate * p.sample_size) + 1;
+            // Beta approximation: use mean + noise proportional to variance
+            const mean = alpha / (alpha + beta);
+            const variance = (alpha * beta) / ((alpha + beta) ** 2 * (alpha + beta + 1));
+            const noise = (Math.random() - 0.5) * Math.sqrt(variance) * 4;
+            return { name: p.pattern_name, sample: Math.max(0, mean + noise), rate: p.success_rate, n: p.sample_size };
+          });
+          samples.sort((a, b) => b.sample - a.sample);
+
+          tsRecommendation = `\n\n## Brain recommendation (Thompson Sampling from ${patterns.length} patterns, ${patterns.reduce((s: number, p: any) => s + p.sample_size, 0)} prior sends)\n` +
+            `Ranked by sampled probability of reply:\n` +
+            samples.map((s, i) => `${i + 1}. **${s.name}** (${Math.round(s.rate * 100)}% reply rate, N=${s.n})${
+              patterns.find((p: any) => p.pattern_name === s.name)?.works_best_for ? ` — works best for: ${patterns.find((p: any) => p.pattern_name === s.name).works_best_for}` : ''
+            }`).join('\n') +
+            `\nUse these rankings as a strong prior. Override only if the specific prospect context demands a different pattern.`;
+
+          console.log(`  │  Thompson Sampling: top=${samples[0].name} (${Math.round(samples[0].rate * 100)}%, N=${samples[0].n})`);
+        }
+      }
+    }
+  } catch {}
+
   console.log(`  │  Phase 3: Influence pattern selection...`);
   const researchSummaryForPatterns = Object.values(personaResults).join('\n\n---\n\n');
-  const enrichedDossierSummary = `Company: ${prospect.company}. Title: ${prospect.title}.\n\nResearch findings:\n${researchSummaryForPatterns}\n\n${prospect.aeNotes ? `Booth notes: "${prospect.aeNotes}"` : 'No booth notes.'}${relatedNote}`;
+  const enrichedDossierSummary = `Company: ${prospect.company}. Title: ${prospect.title}.\n\nResearch findings:\n${researchSummaryForPatterns}\n\n${prospect.aeNotes ? `Booth notes: "${prospect.aeNotes}"` : 'No booth notes.'}${relatedNote}${tsRecommendation}`;
 
   const patternSelections: PatternSelection[] = [];
   for (const touchNum of [1, 2, 3] as const) {
-    const prompt = buildPatternSelectorPrompt(enrichedDossierSummary, prospect.aeNotes, prospect.title, touchNum);
+    const previousPatterns = patternSelections.map(p => p.pattern);
+    const prompt = buildPatternSelectorPrompt(enrichedDossierSummary, prospect.aeNotes, prospect.title, touchNum, previousPatterns);
     console.log(`  │  ⏳ T${touchNum} pattern selection...`);
     const result = await executePrompt(prompt, config.model, 300000, `T${touchNum}-pattern`);
 
@@ -341,15 +545,26 @@ async function processProspect(
     }
   }
 
-  // PHASE 4: Email composition (using actual pattern selections)
-  console.log(`  │  Phase 4: Email composition...`);
-
-  const emails: EmailOutput[] = [];
+  // PHASE 4: Email composition
+  // Hybrid: lean composer for Possible/Weak signals, full pipeline for Strong/Good
+  // Signal detected from raw research (Phase 5 structuring hasn't happened yet)
+  const researchText = Object.values(personaResults).join(' ').toLowerCase();
+  const signalHints = {
+    strong: (researchText.match(/signal.*strong|strong.*signal|high.*confidence/g) || []).length,
+    weak: (researchText.match(/signal.*weak|weak.*signal|low.*confidence|insufficient|poor.*fit/g) || []).length,
+  };
+  const useLean = config.composer === 'lean' || signalHints.weak > signalHints.strong;
 
   const ae = resolveAE(prospect);
-
-  // Generate microsite slug
   const micrositeSlug = prospect.company.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+  if (useLean) {
+    console.log(`  │  Phase 4: LEAN composition (signal: Possible/Weak)...`);
+  } else {
+    console.log(`  │  Phase 4: FULL composition (signal: Strong/Good)...`);
+  }
+
+  const emails: EmailOutput[] = [];
 
   const researchSummary = Object.values(personaResults).join('\n\n');
 
@@ -357,6 +572,36 @@ async function processProspect(
     const touchNum = (i + 1) as 1 | 2 | 3;
     const pattern = patternSelections[i];
 
+    // Lean composer path (Possible/Weak signals or --composer=lean)
+    if (useLean) {
+      const leanBrief: LeanBrief = {
+        prospect: { firstName: prospect.firstName, lastName: prospect.lastName, title: prospect.title, company: prospect.company },
+        companySummary: researchSummary.slice(0, 1500),
+        challengerInsight: pattern.challengerInsight || '',
+        talkingPoints: pattern.rationale || '',
+        fitRationale: pattern.emotionalFrame || '',
+        boothNotes: prospect.aeNotes || '',
+        ae: { name: ae.name, email: ae.email },
+        touchNumber: touchNum,
+        previousSubject: i > 0 ? emails[i - 1]?.subject : undefined,
+        micrositeSlug,
+      };
+      console.log(`  │  ⏳ T${touchNum} lean composing (${pattern.pattern})...`);
+      const lean = composeLean(leanBrief, config.model === 'opus' ? 'opus' : 'sonnet');
+      emails.push({
+        touchNumber: touchNum,
+        subject: lean.subject,
+        body: lean.body,
+        ps: lean.ps,
+        wordCount: lean.wordCount,
+        pattern: pattern.pattern,
+        antiTellChecks: [],
+      });
+      console.log(`  │  ✓ T${touchNum} lean composed (${lean.wordCount} words${lean.mechanicalPass ? '' : ', MECH FAIL: ' + lean.mechanicalFailures[0]})`);
+      continue;
+    }
+
+    // Full composer path (Strong/Good signals)
     const composerPrompt = buildComposerPrompt(
       pattern,
       researchSummary,
@@ -516,6 +761,76 @@ async function processProspect(
     }
   } catch (err: any) {
     console.log(`  │  ⚠ Tim Proxy failed: ${err.message?.slice(0, 60)}`);
+  }
+
+  // PHASE 7d: 5-Dimension LLM Judge Gate
+  console.log(`  │  Phase 7d: 5-dimension judge gate...`);
+  let judgeVerdict: any = null;
+  try {
+    const { judgeEmail } = await import('./judge.js');
+    const dossierForJudge = {
+      prospect: { firstName: prospect.firstName, lastName: prospect.lastName, title: prospect.title, company: prospect.company, aeNotes: prospect.aeNotes || '' },
+      company: { name: prospect.company },
+      jtbd: {
+        personaBucket: structuredDossier?.contact?.showrev_persona_classification || patternSelections[0]?.pattern || '',
+        primaryJTBD: patternSelections[0]?.challengerInsight || '',
+        vpConnection: patternSelections[0]?.rationale || '',
+        confidenceLevel: structuredDossier?.salesIntel?.showrev_signal_strength || 'medium',
+      },
+    };
+    const touchForJudge = {
+      touchNumber: 1,
+      subject: emails[0]?.subject || '',
+      body: emails[0]?.body || '',
+      ps: emails[0]?.ps || '',
+    };
+    const verdict = await judgeEmail(dossierForJudge as any, touchForJudge as any, config.model);
+    judgeVerdict = verdict;
+    const allScores = (verdict?.scores || []).map((s: any) => `${s.dimension}:${s.score}`).join(', ');
+    const rec = verdict?.recommendation || 'unknown';
+    const icon = rec === 'send' ? '✓' : rec === 'hold' ? '⚠' : '✗';
+    console.log(`  │  ${icon} Judge: ${rec.toUpperCase()} (${allScores})`);
+    if (verdict?.mustFix?.length > 0) {
+      for (const fix of verdict.mustFix) console.log(`  │    Fix: ${fix.slice(0, 80)}`);
+    }
+    if (rec === 'reject') {
+      console.log(`  │  ✗ JUDGE REJECTED — email needs rewrite before shipping`);
+    }
+  } catch (err: any) {
+    console.log(`  │  ⚠ Judge failed: ${err.message?.slice(0, 60)}`);
+  }
+
+  // PHASE 7e: Gemini spot-check (every 5th prospect)
+  if (prospectIndex % 5 === 0) {
+    console.log(`  │  Phase 7e: Gemini cross-model spot-check...`);
+    try {
+      const geminiKey = process.env.GEMINI_API_KEY;
+      if (geminiKey && emails[0]) {
+        const geminiPrompt = `Score this B2B sales email 1-10 on: research_depth, vp_connection, tone, conciseness, jtbd_alignment. Return JSON with scores array and recommendation (send/hold/reject). All ≥7 = send, any 5-6 = hold, any ≤4 = reject.\n\nSubject: ${emails[0].subject}\nBody: ${emails[0].body}\n\nProspect: ${prospect.firstName} ${prospect.lastName}, ${prospect.title} at ${prospect.company}`;
+        const gemRes = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=' + geminiKey, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ contents: [{ parts: [{ text: geminiPrompt }] }] }),
+        });
+        if (gemRes.ok) {
+          const gemData = await gemRes.json();
+          const gemText = gemData.candidates?.[0]?.content?.parts?.[0]?.text || '';
+          const gemJsonMatch = gemText.match(/\{[\s\S]*\}/);
+          if (gemJsonMatch) {
+            const gemVerdict = JSON.parse(gemJsonMatch[0]);
+            const gemRec = gemVerdict.recommendation || 'unknown';
+            const claudeRec = judgeVerdict?.recommendation || 'unknown';
+            const agree = gemRec === claudeRec;
+            console.log(`  │  ${agree ? '✓' : '⚠'} Gemini: ${gemRec.toUpperCase()}${agree ? ' (agrees with Claude)' : ` (DISAGREES — Claude said ${claudeRec.toUpperCase()})`}`);
+            if (!agree) {
+              console.log(`  │    ⚠ Cross-model divergence — flag for operator review`);
+            }
+          }
+        }
+      }
+    } catch (err: any) {
+      console.log(`  │  ⚠ Gemini spot-check failed: ${err.message?.slice(0, 60)}`);
+    }
   }
 
   // PHASE 8: Write output
@@ -735,6 +1050,7 @@ const config: PremiumConfig = {
   singleProspect: args.find(a => a.startsWith('--prospect='))?.split('=')[1],
   outputDir: resolve(BASE_DIR, 'premium'),
   runId: args.find(a => a.startsWith('--run-id='))?.split('=')[1] || generateRunId(),
+  composer: (args.find(a => a.startsWith('--composer='))?.split('=')[1] || 'auto') as 'full' | 'lean' | 'auto',
 };
 
 switch (command) {

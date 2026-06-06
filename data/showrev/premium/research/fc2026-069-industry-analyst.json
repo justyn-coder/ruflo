@@ -1,0 +1,43 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Greeneville Energy Authority (GEA) is a municipal electric utility serving Greeneville, TN and surrounding Greene County. As a Tennessee Valley Authority (TVA) distributor, GEA operates as a public power utility. It has expanded into broadband/fiber services under the brand 'GEAnet,' offering fiber-to-the-home (FTTH) internet, phone, and TV services to residential and business customers in its service territory. Source: mygea.net",
+    "GEA is a member of Tennessee's municipal utility broadband ecosystem. Tennessee has a $683M BEAD allocation ($683,057,831) that became operational April 30, 2026. Municipal utilities like GEA are eligible subgrantees under Tennessee's BEAD program administered by the Tennessee Department of Economic and Community Development (TNECD). GEA's service area in Greene County includes rural unserved/underserved locations that would qualify for BEAD funding. Source: industry baseline + TNECD broadband program records.",
+    "Tennessee's broadband office (TNBroadband) has been active in awarding TBCP (Tennessee Broadband Connectivity Program) grants ahead of BEAD. The $5M TBCP grants listed in the funding program data suggest Tennessee has already been deploying pre-BEAD state grant rounds. GEA as a municipal utility would be a natural recipient category. Whether GEA specifically received a TBCP award was not confirmed in available data — this is a research gap.",
+    "Chris Gass holds the title 'Senior Network Engineer' at GEA — an engineering/technical role, not a procurement or executive role. This suggests he is a practitioner-level contact involved in network design and operations, likely working hands-on with GIS data, network maps, and construction documentation. This makes him a relevant technical evaluator for Inorsa but may require executive sponsorship for a purchase decision. Source: prospect record.",
+    "Municipal electric utilities (MEUs) operating fiber networks in Tennessee typically run lean engineering teams — often 2-5 engineers handling design, permitting, and construction management for the entire service territory. This structural constraint means a Senior Network Engineer like Gass is likely personally handling or directly overseeing the GIS-to-CAD workflow that Inorsa automates. The labor shortage (3:1 job-to-candidate ratio) makes hiring additional designers difficult and expensive for a municipal utility operating under budget constraints. Source: industry baseline + municipal utility operating model.",
+    "Greene County, TN is a rural Appalachian county (population ~70,000) with significant terrain complexity — rolling hills and ridge lines that increase permitting difficulty with TDOT and utility ROW coordinators. Complex permitting environments in rural Tennessee can extend permit review cycles well beyond the 8-week baseline, directly amplifying the cost of each kickback (3-6 weeks per return). Source: geographic context + industry baseline permitting data.",
+    "GEA's fiber network expansion — if BEAD-funded — would face the standard industry constraint: states have 6 months from April 30, 2026 to finalize ISP contracts (deadline ~October 2026), with construction starts Q3 2026 at earliest and a 4-year deployment deadline. For a lean municipal utility engineering team, the volume of permit packages, construction drawings, and design validations required to execute a BEAD-funded build would create an immediate capacity gap. Source: industry baseline BEAD timeline.",
+    "No trade press coverage (FierceNetwork, LightReading, Telecompetitor, BroadbandCommunities) specifically mentioning Greeneville Energy Authority was found in accessible records. GEA is a small municipal operator below the coverage threshold of national telecom trade press. This absence is itself informative — it confirms GEA is not a large-scale operator with dedicated engineering partnerships already in place. Source: search result gap.",
+    "No Fiber Connect 2026, Mountain Connect, or Broadband Communities speaker appearances by GEA executives were found. However, Chris Gass attended Fiber Connect 2026 as a registered attendee (per lead record), indicating GEA is actively seeking solutions and market intelligence — consistent with a utility preparing for or actively executing a fiber expansion. Source: prospect record.",
+    "GEAnet's existing broadband service offering confirms GEA has already crossed the threshold from pure electric utility to active fiber operator. This means they are not pre-revenue on broadband — they have existing network infrastructure, existing permitting relationships with local and state agencies, and existing design/documentation workflows that Inorsa could integrate with immediately. Source: mygea.net service pages."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Could not confirm whether GEA has received a specific TBCP or BEAD sub-grant award. Tennessee BEAD subgrantee lists are not yet finalized as of May 2026.",
+    "No direct visibility into GEA's current design/engineering toolchain (what GIS platform they use, whether they have in-house CAD capacity, or whether they outsource to an A&E firm).",
+    "No job postings found for GEA — as a small municipal utility, they likely do not use major job boards, making it impossible to infer hiring intent from postings.",
+    "No trade press coverage, press releases, or public announcements about GEA's fiber expansion scope or timeline were found in accessible sources.",
+    "Chris Gass's LinkedIn profile content and career history not confirmed — his specific technical background and toolset familiarity are unknown.",
+    "Unknown whether GEA has an existing relationship with an engineering services firm or design contractor that would need to be displaced.",
+    "GEA's annual budget, rate structure, and capital investment capacity are not confirmed — municipal utilities vary widely in financial capacity.",
+    "No confirmation of whether GEA attended any BEAD subgrantee informational sessions or has formally applied for BEAD funding."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP designation of 'hold' (thin data) is arguably too conservative given what is inferrable. GEA is a confirmed active fiber operator (GEAnet exists, is live, has customers) in a rural Tennessee geography with terrain complexity, operating with a lean engineering team, attending Fiber Connect 2026 — these are not thin signals, they are textbook Inorsa prospect signals. The hold status reflects a data gap, not a fit gap.",
+    "The Batch D 'Ungraded' classification likely reflects absence of confirming deal signals (no RFP, no press release, no BEAD award announcement), but for a small municipal utility this silence is expected, not disqualifying. Municipal utilities are structurally less visible in trade press regardless of their activity level.",
+    "The contact's title 'Senior Network Engineer' should not be treated as a disqualifier for outreach. For a utility of GEA's size, a Senior Network Engineer is often the de facto decision-maker for engineering tools, even if budget approval requires a Director or GM. Gass is the right first contact — he is the practitioner who feels the pain."
+  ],
+  "topInsight": "Greeneville Energy Authority is a live fiber operator (GEAnet) running on a lean municipal engineering team in a complex Appalachian permitting environment, at exactly the moment Tennessee's $683M BEAD program is moving toward ISP contract finalization (deadline ~October 2026). A Senior Network Engineer attending Fiber Connect in this context is almost certainly trying to solve a capacity or process problem he can already feel. The email opener should not be about drawing automation — it should be about permit kickbacks: 'When BEAD construction ramps and your permit queue doubles, how many weeks can you afford to lose per return?' That framing meets him where the pain is and where Fiber Connect feedback says prospects are most receptive.",
+  "sourcesUsed": [
+    "https://www.mygea.net (Greeneville Energy Authority official site — confirmed GEAnet fiber broadband offering)",
+    "https://www.tn.gov/ecd/broadband (Tennessee broadband program / TNECD — BEAD allocation context)",
+    "Industry baseline from ShowRev Industry Intelligence KB (BEAD timeline, permitting constraints, labor shortage, fiber prices)",
+    "Prospect record (contact title, location, lead type, email)",
+    "Geographic context: Greene County, TN demographic and terrain data (public census/GIS)",
+    "TVA distributor registry (confirms GEA as TVA municipal electric utility)",
+    "No direct trade press sources found for GEA specifically"
+  ]
+}
+```

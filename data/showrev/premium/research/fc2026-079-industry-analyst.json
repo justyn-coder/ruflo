@@ -1,0 +1,44 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Rayco, Inc. (rayco-digs.com) is a Texas-based underground utility contractor — the '-digs' domain suffix is a strong indicator of a construction/excavation firm, not a design or engineering services firm. This positions them as a fiber construction subcontractor or general contractor rather than an ISP, operator, or A&E design firm. Source: domain inference + company name pattern consistent with excavation/civil construction branding.",
+    "Prosper, TX headquarters places Rayco in the DFW metroplex growth corridor — one of the fastest-growing suburban markets in the US. Texas has received a $683M BEAD allocation ($683,057,831), and the state broadband office (Texas Broadband Development Office) is in active ISP subgrant contracting phase as of April-May 2026. Construction contractors in this geography are positioned to receive BEAD-funded project work. Source: BEAD funding program data from research KB + Texas broadband allocation.",
+    "Two Rayco contacts attended the show: Jordan Raymond (SVP of Finance) and Jude Guidry (Director of Strategy and Business Development). Finance + Strategy leadership attending a fiber-focused tradeshow together is a strong signal of strategic investment evaluation — not routine attendance. This pairing typically indicates a company assessing new service lines, partnerships, or tools to support a growth push. Source: prospect context provided.",
+    "The Director of Strategy and Business Development title (Guidry) combined with SVP Finance (Raymond) attending Fiber Connect 2026 suggests Rayco may be evaluating whether to move up the value chain — from pure dig/installation into design-build or design-assist services, where margins are higher and contract capture is earlier. This is a common strategic move for established construction firms during a funding surge. Source: industry pattern analysis against BEAD construction ramp signals.",
+    "Texas BEAD construction start window is Q3 2026 at earliest, with a 4-year deployment deadline. Contractors in Texas who win BEAD-adjacent work will face compressed timelines requiring construction drawings to be permit-ready faster than manual GIS-to-CAD workflows allow. Each permit kickback costs 3-6 weeks — a critical pain point for a contractor whose revenue is tied to mobilization dates. Source: industry baseline (ShowRev KB) + Texas BEAD timeline.",
+    "No direct trade press coverage of Rayco, Inc. was findable in fiercenetwork.com, lightreading.com, or telecompetitor.com archives based on available research. This is consistent with a private, regional construction subcontractor that operates below trade press visibility thresholds. Source: search gap — not found.",
+    "No BEAD sub-grant award specifically naming Rayco, Inc. was found in available data. However, as a construction contractor, Rayco would not appear as a BEAD direct awardee — they would appear as a subcontractor to ISPs or municipalities who hold the awards. Their business development activity at Fiber Connect is more likely about positioning to capture subcontract work from BEAD winners. Source: BEAD program structure analysis.",
+    "Job posting data for Rayco not found in available research — this is a notable gap. For a construction firm ramping toward BEAD work, active hiring in fiber splicing, OTDR testing, or permit coordination would confirm growth trajectory. Absence of visible postings may indicate either a private hiring pipeline or early-stage ramp. Source: not found.",
+    "The fiber labor shortage (3:1 job-to-candidate ratio, 58,000 new roles needed by 2032) and fiber price increases (40-80% through 2027) create cost pressure on construction contractors. Rayco's finance leadership attending the show may reflect pressure to find efficiency tools that reduce rework costs — permit kickbacks and redesign cycles are particularly expensive for a contractor billing on mobilized crews. Source: ShowRev industry KB baseline.",
+    "Competitive context: Texas has a dense subcontractor ecosystem for fiber construction (Mastec, Dycom subsidiaries, and regional firms all competing for the same BEAD-driven work). Rayco's differentiation strategy likely depends on speed-to-mobilization and permit-ready drawing delivery. Firms that can produce or receive permit-ready drawings faster will win more work in a supply-constrained labor market. Source: industry pattern analysis."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No confirmed trade press coverage of Rayco, Inc. found — company operates below media visibility threshold typical of regional private contractors.",
+    "No confirmed BEAD subgrant award to Rayco — expected, since contractors receive subcontract work, not direct BEAD grants.",
+    "No job posting data found — cannot confirm active hiring trajectory or specific roles being built out.",
+    "No LinkedIn company page data, revenue estimates, or employee count confirmed — size of firm (small regional vs. mid-market scale contractor) is unverified.",
+    "No podcast appearances, conference speaking slots, or long-form executive interviews found for Rayco leadership.",
+    "Cannot confirm whether Rayco provides design-build services or is purely a construction/installation contractor — this distinction changes the Inorsa fit significantly.",
+    "No information on whether Rayco works directly with fiber optic/FTTH or focuses on broader utility construction (gas, electric, water) with fiber as one segment.",
+    "Cannot verify whether Rayco uses internal GIS/CAD design staff or relies entirely on third-party A&E firms for construction drawings — this is the critical gap for Inorsa fit assessment."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold status ('Relevant title but no AE notes or grade') may be overly conservative if Rayco is a construction contractor moving into design-build. SVP Finance + Director of Strategy attending together is not typical 'browsing' behavior — this pair signals capital allocation decision-making, which warrants elevation from Batch D.",
+    "The domain 'rayco-digs.com' could mislead analysis toward pure excavation if Rayco has since diversified into design-build or engineering services — the '-digs' branding may be legacy. Guidry's 'Strategy and Business Development' title suggests active diversification effort that shouldn't be dismissed.",
+    "Inorsa's ICP appears to target ISPs, operators, or A&E design firms. A construction contractor is a non-obvious fit — BUT: if Rayco is pursuing design-build contracts (a growing model in BEAD-funded projects where the contractor owns permitting), they become a direct Inorsa prospect. The outreach should probe this rather than assume a fit or a miss."
+  ],
+  "topInsight": "Rayco is almost certainly a Texas-based utility/fiber construction contractor, not a design firm — but the co-attendance of Finance (Raymond) and Strategy/BD (Guidry) at Fiber Connect 2026 is a strong signal they are evaluating a move into design-build or design-assist services to capture BEAD contract work earlier in the project lifecycle. If that hypothesis is correct, they will need permit-ready construction drawings produced faster than their current workflow allows, and every permit kickback directly delays crew mobilization and revenue recognition — making Inorsa's cycle-time reduction (3-4 weeks to 2 days) a direct financial argument to a Finance SVP. The outreach pivot should be: 'As you pursue BEAD construction contracts in Texas, are you owning the permitting workflow or depending on someone else to deliver permit-ready drawings on time?' That question opens the door without assuming a fit.",
+  "sourcesUsed": [
+    "rayco-digs.com (domain inference only — no deep crawl confirmed)",
+    "ShowRev Industry Intelligence KB — BEAD timeline, labor shortage, permitting baseline",
+    "Research KB funding programs — Texas $683,057,831 BEAD allocation",
+    "Prospect context document — contact titles and show attendance",
+    "Industry pattern analysis — construction contractor strategic behavior during funding surges",
+    "fiercenetwork.com — searched, not found",
+    "lightreading.com — searched, not found",
+    "telecompetitor.com — searched, not found"
+  ]
+}
+```

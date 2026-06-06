@@ -1,0 +1,2772 @@
+1
+00:00:17,920 --> 00:00:21,400
+Hey, hey,
+
+2
+00:00:25,600 --> 00:00:29,080
+hey, hey.
+
+3
+00:00:40,239 --> 00:00:44,239
+Good morning everyone and welcome to the
+
+4
+00:00:42,079 --> 00:00:45,760
+Fiber Broadband Association's Fire for
+
+5
+00:00:44,239 --> 00:00:48,879
+Breakfast. We're now in our ninth
+
+6
+00:00:45,760 --> 00:00:51,440
+episode of 2026. The gold sponsor for
+
+7
+00:00:48,879 --> 00:00:53,199
+Fiber Breakfast is Condex. You know,
+
+8
+00:00:51,440 --> 00:00:55,039
+Congress is in session this week and
+
+9
+00:00:53,199 --> 00:00:57,760
+yesterday the Senate Commerce Committee
+
+10
+00:00:55,039 --> 00:01:00,320
+held a hearing titled Less Hype, More
+
+11
+00:00:57,760 --> 00:01:01,920
+Help: AI that Improves Safety,
+
+12
+00:01:00,320 --> 00:01:04,320
+Productivity, and Care. It was convened
+
+13
+00:01:01,920 --> 00:01:06,080
+by US Senator Ted Bud from North
+
+14
+00:01:04,320 --> 00:01:07,840
+Carolina. He's chairman of the
+
+15
+00:01:06,080 --> 00:01:09,920
+subcommittee on science, manufacturing,
+
+16
+00:01:07,840 --> 00:01:12,080
+and competitiveness. And the hearing
+
+17
+00:01:09,920 --> 00:01:13,600
+explored how AI technology as
+
+18
+00:01:12,080 --> 00:01:15,920
+transformative as the internet is
+
+19
+00:01:13,600 --> 00:01:18,400
+improving Americans quality of life,
+
+20
+00:01:15,920 --> 00:01:20,240
+creating jobs, driving economic growth
+
+21
+00:01:18,400 --> 00:01:22,400
+with witnesses sharing real world
+
+22
+00:01:20,240 --> 00:01:25,040
+success stories in safety, productivity,
+
+23
+00:01:22,400 --> 00:01:27,200
+and healthcare. In the House, the farm
+
+24
+00:01:25,040 --> 00:01:29,360
+bill is currently being marked up in the
+
+25
+00:01:27,200 --> 00:01:31,920
+House Agricultural Committee with
+
+26
+00:01:29,360 --> 00:01:34,640
+leadership aiming for a floor vote
+
+27
+00:01:31,920 --> 00:01:36,880
+before the Easter recess. We appreciate
+
+28
+00:01:34,640 --> 00:01:40,320
+the current draft language funds and
+
+29
+00:01:36,880 --> 00:01:42,560
+codifies the USDA's Reconnect program.
+
+30
+00:01:40,320 --> 00:01:45,040
+Uh but the Fiber Broadband Association
+
+31
+00:01:42,560 --> 00:01:47,759
+is encouraging bipartisan Reconnect
+
+32
+00:01:45,040 --> 00:01:51,280
+America Act include in this legislation
+
+33
+00:01:47,759 --> 00:01:54,000
+that establishes 100 by 100 megabit
+
+34
+00:01:51,280 --> 00:01:56,960
+symmetric service versus the draft
+
+35
+00:01:54,000 --> 00:01:59,520
+language of 50 meg by 24. I don't know
+
+36
+00:01:56,960 --> 00:02:01,759
+where that came from, but it's crazy.
+
+37
+00:01:59,520 --> 00:02:04,159
+Um, so we want to make sure that rural
+
+38
+00:02:01,759 --> 00:02:07,920
+America receives the connectivity it
+
+39
+00:02:04,159 --> 00:02:10,879
+deserves. And at NTIA, we're now at 52
+
+40
+00:02:07,920 --> 00:02:14,160
+out of the 56 final proposals have been
+
+41
+00:02:10,879 --> 00:02:15,840
+approved. So, we're getting there and uh
+
+42
+00:02:14,160 --> 00:02:17,920
+making the significant progress in
+
+43
+00:02:15,840 --> 00:02:20,400
+moving the program forward. Following
+
+44
+00:02:17,920 --> 00:02:22,800
+approvals from NIST, 23 states have
+
+45
+00:02:20,400 --> 00:02:24,959
+countersigned their NTIM agreements and
+
+46
+00:02:22,800 --> 00:02:27,840
+officially begun contracting process
+
+47
+00:02:24,959 --> 00:02:29,599
+with subgrantees. So, this is moving
+
+48
+00:02:27,840 --> 00:02:32,000
+very quickly.
+
+49
+00:02:29,599 --> 00:02:34,000
+NTI is expected to release its B
+
+50
+00:02:32,000 --> 00:02:37,680
+non-eployment notice for the remaining
+
+51
+00:02:34,000 --> 00:02:39,599
+$21 billion on March 11th. Uh so
+
+52
+00:02:37,680 --> 00:02:41,599
+forthcoming guidance should clarify the
+
+53
+00:02:39,599 --> 00:02:44,000
+allowable uses for non-eployment funds
+
+54
+00:02:41,599 --> 00:02:46,319
+and provide directions and how the state
+
+55
+00:02:44,000 --> 00:02:49,040
+AI laws may impact eligibility for
+
+56
+00:02:46,319 --> 00:02:51,200
+accessing those funds. And last week on
+
+57
+00:02:49,040 --> 00:02:54,080
+Five for Breakfast, our guest was our
+
+58
+00:02:51,200 --> 00:02:56,239
+good buddy Ernesto Falcon uh from the
+
+59
+00:02:54,080 --> 00:02:58,080
+California PUC who discussed broadband
+
+60
+00:02:56,239 --> 00:03:00,800
+competit competitiveness and pricing
+
+61
+00:02:58,080 --> 00:03:03,440
+strategies in California urban markets.
+
+62
+00:03:00,800 --> 00:03:05,760
+The PUC's latest study found that if
+
+63
+00:03:03,440 --> 00:03:08,959
+each of the major cities in California
+
+64
+00:03:05,760 --> 00:03:10,879
+had multi- gigabit broadband providers,
+
+65
+00:03:08,959 --> 00:03:12,000
+it would save Californians over a
+
+66
+00:03:10,879 --> 00:03:14,400
+billion dollars a year in their
+
+67
+00:03:12,000 --> 00:03:16,159
+broadband service. So if you miss that,
+
+68
+00:03:14,400 --> 00:03:18,480
+you can go back into our website and
+
+69
+00:03:16,159 --> 00:03:20,800
+watch the replay. Today on Fire for
+
+70
+00:03:18,480 --> 00:03:22,720
+Breakfast, our guest is the Fiber
+
+71
+00:03:20,800 --> 00:03:25,120
+Broadband Association's former chairman
+
+72
+00:03:22,720 --> 00:03:27,440
+and current treasurer, Jimmy Todd, the
+
+73
+00:03:25,120 --> 00:03:29,680
+CEO of Next. He's going to discuss
+
+74
+00:03:27,440 --> 00:03:33,120
+getting a front row seat to the telecom
+
+75
+00:03:29,680 --> 00:03:36,159
+evolution 75 years in the making. Uh
+
+76
+00:03:33,120 --> 00:03:38,879
+Jimmy is general manager and CEO of Next
+
+77
+00:03:36,159 --> 00:03:41,280
+and brings 40 years of experience and
+
+78
+00:03:38,879 --> 00:03:43,040
+technology and communications. And under
+
+79
+00:03:41,280 --> 00:03:44,720
+Jimmy's leadership, NexTech has evolved
+
+80
+00:03:43,040 --> 00:03:46,879
+from a rural cooperative telephone
+
+81
+00:03:44,720 --> 00:03:49,280
+company into a leading communications
+
+82
+00:03:46,879 --> 00:03:51,360
+and technology provider, pioneering
+
+83
+00:03:49,280 --> 00:03:53,599
+fiber the home in rural America, now
+
+84
+00:03:51,360 --> 00:03:56,159
+delivering broadband across 11,000
+
+85
+00:03:53,599 --> 00:03:57,840
+square miles in Kansas. He oversees
+
+86
+00:03:56,159 --> 00:04:00,080
+strategic growth, innovation, and
+
+87
+00:03:57,840 --> 00:04:01,920
+diversification, including advanced data
+
+88
+00:04:00,080 --> 00:04:04,879
+center services, and nationwide
+
+89
+00:04:01,920 --> 00:04:07,040
+technical support. A recognized advocate
+
+90
+00:04:04,879 --> 00:04:09,360
+for telecommunications, fiber broadband,
+
+91
+00:04:07,040 --> 00:04:11,519
+Jimmy's served on numerous boards and
+
+92
+00:04:09,360 --> 00:04:15,439
+committee including the Kansas Fiber
+
+93
+00:04:11,519 --> 00:04:21,359
+Network, Nextec Wireless, W2ATA,
+
+94
+00:04:15,439 --> 00:04:23,759
+NT, NTCA, NRTC, NCSC, a lot of N
+
+95
+00:04:21,359 --> 00:04:25,919
+acronyms. US Telecom and the Fiber
+
+96
+00:04:23,759 --> 00:04:28,800
+Broadband Association. He was appointed
+
+97
+00:04:25,919 --> 00:04:30,560
+to the FCC's precision a task force and
+
+98
+00:04:28,800 --> 00:04:33,040
+beyond leadership uh industry
+
+99
+00:04:30,560 --> 00:04:34,880
+leadership. Jimmy actively contributes
+
+100
+00:04:33,040 --> 00:04:37,199
+to local and state initiatives to
+
+101
+00:04:34,880 --> 00:04:39,919
+various boards. Jimmy's undergraduate
+
+102
+00:04:37,199 --> 00:04:42,240
+education was at Oxford College of Emory
+
+103
+00:04:39,919 --> 00:04:44,080
+University and Chapman University. He
+
+104
+00:04:42,240 --> 00:04:46,880
+earned his MBA through the University of
+
+105
+00:04:44,080 --> 00:04:49,520
+Portland. And Jimmy's also a veteran
+
+106
+00:04:46,880 --> 00:04:51,840
+serving 10 years in the US Navy and 11
+
+107
+00:04:49,520 --> 00:04:54,000
+years in the US Army and Army National
+
+108
+00:04:51,840 --> 00:04:57,040
+Guard. So, thank you Jimmy for your
+
+109
+00:04:54,000 --> 00:04:58,880
+service not only for our nation and our
+
+110
+00:04:57,040 --> 00:05:00,720
+military but also for the Fiber
+
+111
+00:04:58,880 --> 00:05:02,960
+Broadband Association. you've been just
+
+112
+00:05:00,720 --> 00:05:06,080
+a tremendous force in kind of driving
+
+113
+00:05:02,960 --> 00:05:07,360
+our industry. So, thank you for that.
+
+114
+00:05:06,080 --> 00:05:09,680
+>> So, audience,
+
+115
+00:05:07,360 --> 00:05:11,440
+>> please type in your questions. Go and
+
+116
+00:05:09,680 --> 00:05:13,199
+we'll work those in discussion. So,
+
+117
+00:05:11,440 --> 00:05:14,560
+Jimmy is like one of my favorite people.
+
+118
+00:05:13,199 --> 00:05:16,639
+So, I've definitely been looking forward
+
+119
+00:05:14,560 --> 00:05:20,400
+to this discussion. Not that we don't
+
+120
+00:05:16,639 --> 00:05:22,479
+talk every day, but uh so welcome Jimmy.
+
+121
+00:05:20,400 --> 00:05:24,800
+>> Thanks Gary.
+
+122
+00:05:22,479 --> 00:05:26,720
+you know, we we were just talking about,
+
+123
+00:05:24,800 --> 00:05:28,800
+you know, when you were chairman, you
+
+124
+00:05:26,720 --> 00:05:34,000
+know, the chairman's keynote has kind of
+
+125
+00:05:28,800 --> 00:05:35,759
+become uh a you know, competition and uh
+
+126
+00:05:34,000 --> 00:05:38,400
+you know, with JJ kind of setting the
+
+127
+00:05:35,759 --> 00:05:41,120
+bar and then you rode in the big dog.
+
+128
+00:05:38,400 --> 00:05:42,639
+So, tell us a little bit about uh you
+
+129
+00:05:41,120 --> 00:05:45,520
+were just telling me what did you do
+
+130
+00:05:42,639 --> 00:05:46,880
+7,500 miles in August last year on on
+
+131
+00:05:45,520 --> 00:05:49,520
+your motorcycles?
+
+132
+00:05:46,880 --> 00:05:50,960
+>> Yes, sir. um got the opportunity. Well,
+
+133
+00:05:49,520 --> 00:05:53,199
+of course, you know, I rode the chopper
+
+134
+00:05:50,960 --> 00:05:55,840
+up to the Sturgeist Rally, but after
+
+135
+00:05:53,199 --> 00:05:58,560
+that, I had a little cross-country
+
+136
+00:05:55,840 --> 00:06:00,400
+venture that that uh took me from Kansas
+
+137
+00:05:58,560 --> 00:06:02,560
+to West Virginia, all the way down to
+
+138
+00:06:00,400 --> 00:06:06,000
+South Carolina, up to Maryland, over to
+
+139
+00:06:02,560 --> 00:06:08,319
+New Jersey, up to Toronto, over to uh
+
+140
+00:06:06,000 --> 00:06:10,800
+Portsouth, New Hampshire, and and then
+
+141
+00:06:08,319 --> 00:06:14,080
+Colorado Springs before coming home. So,
+
+142
+00:06:10,800 --> 00:06:16,240
+it was a it was a good ride.
+
+143
+00:06:14,080 --> 00:06:18,080
+>> Well, more power to you. Um, I don't
+
+144
+00:06:16,240 --> 00:06:20,000
+know that I can handle a motorcycle ride
+
+145
+00:06:18,080 --> 00:06:22,000
+all those miles.
+
+146
+00:06:20,000 --> 00:06:26,160
+So, how's Miss Shirley doing?
+
+147
+00:06:22,000 --> 00:06:28,000
+>> Doing well. Uh, it's uh it's that year
+
+148
+00:06:26,160 --> 00:06:29,280
+time of year where the sniffles and
+
+149
+00:06:28,000 --> 00:06:31,680
+stuff happen. She's been doing some
+
+150
+00:06:29,280 --> 00:06:34,000
+subbing at uh the local uh junior high
+
+151
+00:06:31,680 --> 00:06:36,319
+and grade schools and so of course she's
+
+152
+00:06:34,000 --> 00:06:38,880
+got to, you know, have the opportunity
+
+153
+00:06:36,319 --> 00:06:41,440
+to work through that. But, uh, she's
+
+154
+00:06:38,880 --> 00:06:44,800
+she's doing great. Thanks for asking.
+
+155
+00:06:41,440 --> 00:06:49,120
+Well, next tech uh just amazing company.
+
+156
+00:06:44,800 --> 00:06:51,360
+75 years. That's uh really impressive to
+
+157
+00:06:49,120 --> 00:06:53,840
+you know any business that can um
+
+158
+00:06:51,360 --> 00:06:57,280
+survive and evolve and be able to thrive
+
+159
+00:06:53,840 --> 00:06:59,280
+in 75 years. So when you look back what
+
+160
+00:06:57,280 --> 00:07:01,280
+would be the most defining moment or
+
+161
+00:06:59,280 --> 00:07:02,960
+decision and really set the trajectory
+
+162
+00:07:01,280 --> 00:07:04,560
+for the company's growth and staying
+
+163
+00:07:02,960 --> 00:07:06,639
+power?
+
+164
+00:07:04,560 --> 00:07:08,960
+>> You know there's there's a couple of
+
+165
+00:07:06,639 --> 00:07:11,199
+points Gary. I say at the very beginning
+
+166
+00:07:08,960 --> 00:07:14,319
+it was a commitment to serve in an area
+
+167
+00:07:11,199 --> 00:07:16,560
+that others wouldn't serve and through
+
+168
+00:07:14,319 --> 00:07:20,400
+that that's how rural telephone the
+
+169
+00:07:16,560 --> 00:07:22,160
+parent of Nexttec got started bringing
+
+170
+00:07:20,400 --> 00:07:25,599
+uh communications telephone
+
+171
+00:07:22,160 --> 00:07:28,880
+communications to very rural areas but
+
+172
+00:07:25,599 --> 00:07:33,199
+then you you look forward and our
+
+173
+00:07:28,880 --> 00:07:35,840
+engagement into fiber is is probably the
+
+174
+00:07:33,199 --> 00:07:40,400
+thing that really changed the game for
+
+175
+00:07:35,840 --> 00:07:42,560
+us. Um, now about the same time that we
+
+176
+00:07:40,400 --> 00:07:44,400
+were bringing fi, you know, we were the
+
+177
+00:07:42,560 --> 00:07:48,319
+first to bring fiber to a rural
+
+178
+00:07:44,400 --> 00:07:50,720
+community as as a as a means to provide
+
+179
+00:07:48,319 --> 00:07:53,919
+connectivity for for telecom and and
+
+180
+00:07:50,720 --> 00:07:55,840
+other services. You know, we were also
+
+181
+00:07:53,919 --> 00:07:59,440
+the first in the country to to
+
+182
+00:07:55,840 --> 00:08:02,240
+competitively serve in another market.
+
+183
+00:07:59,440 --> 00:08:04,800
+And so, you know, we we have a history
+
+184
+00:08:02,240 --> 00:08:07,599
+of of kind of being out there on the
+
+185
+00:08:04,800 --> 00:08:09,919
+edge, but I do believe when you kind of
+
+186
+00:08:07,599 --> 00:08:13,840
+look at our evolution
+
+187
+00:08:09,919 --> 00:08:16,560
+since the '9s, it has been, you know, a
+
+188
+00:08:13,840 --> 00:08:20,000
+fiber-based network that has put us in a
+
+189
+00:08:16,560 --> 00:08:23,599
+position uh to continue to evolve with
+
+190
+00:08:20,000 --> 00:08:28,560
+the technology that has changed quite
+
+191
+00:08:23,599 --> 00:08:31,280
+dramatically in in the past 30 years.
+
+192
+00:08:28,560 --> 00:08:33,279
+So when you u look at you know for some
+
+193
+00:08:31,280 --> 00:08:37,120
+of the folks that don't know next tech's
+
+194
+00:08:33,279 --> 00:08:38,880
+story um can you kind of just provide a
+
+195
+00:08:37,120 --> 00:08:41,279
+rough timeline of you know going from
+
+196
+00:08:38,880 --> 00:08:43,279
+the small telephone cooperative and to
+
+197
+00:08:41,279 --> 00:08:46,640
+kind of where you are today?
+
+198
+00:08:43,279 --> 00:08:51,360
+>> Sure. you know, uh
+
+199
+00:08:46,640 --> 00:08:56,080
+we got started in in 51 and through um
+
+200
+00:08:51,360 --> 00:08:57,760
+acquiring exchanges um rural exchanges
+
+201
+00:08:56,080 --> 00:08:59,920
+and buying some of those from some of
+
+202
+00:08:57,760 --> 00:09:03,040
+the larger providers who were were not
+
+203
+00:08:59,920 --> 00:09:07,040
+investing. We we built the cooperative
+
+204
+00:09:03,040 --> 00:09:10,240
+footprint which you know extends across
+
+205
+00:09:07,040 --> 00:09:15,519
+the northwest and north central part of
+
+206
+00:09:10,240 --> 00:09:18,640
+the state. And as we uh continued to
+
+207
+00:09:15,519 --> 00:09:20,240
+build out those communities and provide
+
+208
+00:09:18,640 --> 00:09:22,959
+the connectivity across those
+
+209
+00:09:20,240 --> 00:09:27,040
+communities, that's when we started uh
+
+210
+00:09:22,959 --> 00:09:29,120
+transitioning um into to the fiber. So
+
+211
+00:09:27,040 --> 00:09:32,560
+through the 70s, we were still acquiring
+
+212
+00:09:29,120 --> 00:09:36,959
+exchanges um from like Southwestern Bell
+
+213
+00:09:32,560 --> 00:09:40,320
+and and Sprint United. And then you know
+
+214
+00:09:36,959 --> 00:09:44,640
+in the 80s we started that transition in
+
+215
+00:09:40,320 --> 00:09:46,959
+into fiber um and and moving our step
+
+216
+00:09:44,640 --> 00:09:50,560
+switches to electronic switches which
+
+217
+00:09:46,959 --> 00:09:53,360
+eventually became IPbased uh switches.
+
+218
+00:09:50,560 --> 00:09:56,160
+You know all of that technology you know
+
+219
+00:09:53,360 --> 00:09:58,480
+really started advancing significantly
+
+220
+00:09:56,160 --> 00:10:01,040
+in the 80s and through the 90s. And of
+
+221
+00:09:58,480 --> 00:10:05,519
+course the 90s is when we brought fiber
+
+222
+00:10:01,040 --> 00:10:08,560
+to the home in in a rural community. And
+
+223
+00:10:05,519 --> 00:10:10,720
+so when you kind of look at that, that
+
+224
+00:10:08,560 --> 00:10:14,800
+was kind of an evolution into the
+
+225
+00:10:10,720 --> 00:10:19,519
+original building. through uh grants um
+
+226
+00:10:14,800 --> 00:10:23,120
+at the uh federal and state level, we're
+
+227
+00:10:19,519 --> 00:10:26,240
+able to expand providing services beyond
+
+228
+00:10:23,120 --> 00:10:29,839
+the cooperative footprint into the the
+
+229
+00:10:26,240 --> 00:10:32,880
+rural areas surrounding the cooperative.
+
+230
+00:10:29,839 --> 00:10:36,160
+And with that, uh the area that we began
+
+231
+00:10:32,880 --> 00:10:38,880
+to serve uh grew significantly.
+
+232
+00:10:36,160 --> 00:10:43,360
+And so we continued to find
+
+233
+00:10:38,880 --> 00:10:47,760
+opportunities to to leverage grants and
+
+234
+00:10:43,360 --> 00:10:49,839
+and and build into areas as an edge out
+
+235
+00:10:47,760 --> 00:10:52,160
+so that we could provide
+
+236
+00:10:49,839 --> 00:10:54,320
+state-of-the-art services to our
+
+237
+00:10:52,160 --> 00:10:57,040
+neighbors that quite honestly we're in
+
+238
+00:10:54,320 --> 00:11:00,399
+great need of it. So that has kind of
+
+239
+00:10:57,040 --> 00:11:03,120
+been our focus when it comes to you know
+
+240
+00:11:00,399 --> 00:11:06,959
+traditional uh telecom services that
+
+241
+00:11:03,120 --> 00:11:10,720
+commitment to serve but you know beyond
+
+242
+00:11:06,959 --> 00:11:15,839
+that we also had a commitment to serve
+
+243
+00:11:10,720 --> 00:11:18,560
+other needs. Um we were early in taking
+
+244
+00:11:15,839 --> 00:11:21,680
+a look at how does it affect our
+
+245
+00:11:18,560 --> 00:11:23,920
+business and the community the
+
+246
+00:11:21,680 --> 00:11:26,720
+businesses in the communities we serve.
+
+247
+00:11:23,920 --> 00:11:29,839
+So we started building our ITMS MSP
+
+248
+00:11:26,720 --> 00:11:33,200
+service which now we're the the biggest
+
+249
+00:11:29,839 --> 00:11:35,360
+ITMS MSP between Kansas City and Denver
+
+250
+00:11:33,200 --> 00:11:37,600
+and we provide those services across the
+
+251
+00:11:35,360 --> 00:11:40,959
+state as well into as into the
+
+252
+00:11:37,600 --> 00:11:43,279
+neighboring states. Um telephone
+
+253
+00:11:40,959 --> 00:11:45,360
+companies got into broadband, telephone
+
+254
+00:11:43,279 --> 00:11:47,120
+companies got into television, you know,
+
+255
+00:11:45,360 --> 00:11:50,880
+just like cable companies got into
+
+256
+00:11:47,120 --> 00:11:54,240
+broadband. And so with that evolution,
+
+257
+00:11:50,880 --> 00:11:59,200
+we had local content media that we did.
+
+258
+00:11:54,240 --> 00:12:01,279
+And from that, we transitioned our media
+
+259
+00:11:59,200 --> 00:12:03,600
+marketing team basically into an ad
+
+260
+00:12:01,279 --> 00:12:05,920
+agency. Because our local communities
+
+261
+00:12:03,600 --> 00:12:07,760
+needed that and we found a niche by
+
+262
+00:12:05,920 --> 00:12:09,920
+helping other broadband providers
+
+263
+00:12:07,760 --> 00:12:12,399
+because we're a broadband provider. We
+
+264
+00:12:09,920 --> 00:12:15,760
+kind of understand, you know, what they
+
+265
+00:12:12,399 --> 00:12:18,000
+need to to do to be successful. So we've
+
+266
+00:12:15,760 --> 00:12:20,720
+had a really good opportunity to grow in
+
+267
+00:12:18,000 --> 00:12:25,600
+that aspect. You know carrier services
+
+268
+00:12:20,720 --> 00:12:29,680
+we created a network u um monitoring uh
+
+269
+00:12:25,600 --> 00:12:31,360
+system our knock and through that there
+
+270
+00:12:29,680 --> 00:12:33,519
+were others who needed network
+
+271
+00:12:31,360 --> 00:12:36,560
+monitoring. So we continue to expand
+
+272
+00:12:33,519 --> 00:12:40,240
+that. So we have knock customers and
+
+273
+00:12:36,560 --> 00:12:43,680
+kalia customers from you know the across
+
+274
+00:12:40,240 --> 00:12:46,480
+the entire US. And so we just had a
+
+275
+00:12:43,680 --> 00:12:49,120
+commitment to take things that were
+
+276
+00:12:46,480 --> 00:12:51,680
+important to how we operated and things
+
+277
+00:12:49,120 --> 00:12:54,720
+that were needed in our communities and
+
+278
+00:12:51,680 --> 00:12:57,040
+just kind of grow that and expand that.
+
+279
+00:12:54,720 --> 00:12:59,600
+But it's all because of having a a
+
+280
+00:12:57,040 --> 00:13:02,240
+dedicated team of truly amazing
+
+281
+00:12:59,600 --> 00:13:05,600
+professionals that care about our
+
+282
+00:13:02,240 --> 00:13:07,839
+customers and our communities. Because I
+
+283
+00:13:05,600 --> 00:13:10,720
+don't care who you are, without a great
+
+284
+00:13:07,839 --> 00:13:13,760
+team, you don't have a great company.
+
+285
+00:13:10,720 --> 00:13:17,440
+And I get to brag on my my NextTech team
+
+286
+00:13:13,760 --> 00:13:20,320
+as often as I can because without their
+
+287
+00:13:17,440 --> 00:13:23,120
+abilities, without their care, you know,
+
+288
+00:13:20,320 --> 00:13:26,560
+NextTech would be average. And we are
+
+289
+00:13:23,120 --> 00:13:30,079
+not average. And so, you know, we
+
+290
+00:13:26,560 --> 00:13:31,920
+continue to try and invest in our team
+
+291
+00:13:30,079 --> 00:13:34,959
+uh through training, through leadership
+
+292
+00:13:31,920 --> 00:13:39,040
+development. We've had the pleasure of
+
+293
+00:13:34,959 --> 00:13:41,279
+having uh families that are that grew up
+
+294
+00:13:39,040 --> 00:13:43,120
+with NextTech and we've got
+
+295
+00:13:41,279 --> 00:13:45,760
+multi-generational
+
+296
+00:13:43,120 --> 00:13:47,920
+uh examples of where parents worked at
+
+297
+00:13:45,760 --> 00:13:50,720
+NextTech and their and their you know
+
+298
+00:13:47,920 --> 00:13:54,320
+their adult kids are are now part of the
+
+299
+00:13:50,720 --> 00:13:57,519
+team. You know, I I think of like uh the
+
+300
+00:13:54,320 --> 00:14:01,680
+Ellis's, uh the Bascals, the Normandons,
+
+301
+00:13:57,519 --> 00:14:03,920
+uh the Walters, um even recently, um the
+
+302
+00:14:01,680 --> 00:14:06,480
+Dempseies and and the Schneiders, you
+
+303
+00:14:03,920 --> 00:14:09,120
+know, and there are others that that
+
+304
+00:14:06,480 --> 00:14:11,760
+have been part of the Next Tech family
+
+305
+00:14:09,120 --> 00:14:14,160
+and now the next generation is part of
+
+306
+00:14:11,760 --> 00:14:16,959
+the Next Tech family. And and that's
+
+307
+00:14:14,160 --> 00:14:19,680
+that's exciting and unique because in
+
+308
+00:14:16,959 --> 00:14:23,279
+our rural areas, we want our young
+
+309
+00:14:19,680 --> 00:14:28,240
+people to stay local and we want them to
+
+310
+00:14:23,279 --> 00:14:31,040
+have great jobs. And the fact that they
+
+311
+00:14:28,240 --> 00:14:32,880
+saw positive in where their parents
+
+312
+00:14:31,040 --> 00:14:36,880
+worked or their grandparents worked in
+
+313
+00:14:32,880 --> 00:14:40,720
+some cases is is a huge positive telling
+
+314
+00:14:36,880 --> 00:14:43,600
+sign that I think that you know we have
+
+315
+00:14:40,720 --> 00:14:46,480
+set a good example for for the young
+
+316
+00:14:43,600 --> 00:14:48,720
+people to to say hey this there is great
+
+317
+00:14:46,480 --> 00:14:51,920
+opportunity here and this company can
+
+318
+00:14:48,720 --> 00:14:53,920
+can give you that opportunity. So, you
+
+319
+00:14:51,920 --> 00:14:57,279
+know, I'm just my hats off to my team
+
+320
+00:14:53,920 --> 00:14:59,760
+because they're they're just fantastic.
+
+321
+00:14:57,279 --> 00:15:01,760
+>> Well, yes. I mean, when you think about,
+
+322
+00:14:59,760 --> 00:15:05,360
+you know, quality organization, you
+
+323
+00:15:01,760 --> 00:15:07,760
+think about retention. And so when you
+
+324
+00:15:05,360 --> 00:15:09,839
+have um people that have not just been
+
+325
+00:15:07,760 --> 00:15:12,240
+there for their entire careers, but
+
+326
+00:15:09,839 --> 00:15:14,399
+their family members, their kids, and
+
+327
+00:15:12,240 --> 00:15:17,600
+the next generations join, that's quite
+
+328
+00:15:14,399 --> 00:15:19,920
+a testament to um not only your
+
+329
+00:15:17,600 --> 00:15:21,120
+leadership, but uh it looks like, you
+
+330
+00:15:19,920 --> 00:15:22,720
+know, from what you've told me, you've
+
+331
+00:15:21,120 --> 00:15:25,360
+been standing on the shoulders of some
+
+332
+00:15:22,720 --> 00:15:27,760
+giants over the past. So it's it just
+
+333
+00:15:25,360 --> 00:15:30,240
+has a a great track record of strong
+
+334
+00:15:27,760 --> 00:15:31,839
+leadership for the last 75 years.
+
+335
+00:15:30,240 --> 00:15:34,000
+>> Yes, sir.
+
+336
+00:15:31,839 --> 00:15:35,360
+So that's not easy to do is to come in
+
+337
+00:15:34,000 --> 00:15:37,120
+and fill big I mean you've been there
+
+338
+00:15:35,360 --> 00:15:39,920
+quite a while and you've really taken
+
+339
+00:15:37,120 --> 00:15:41,760
+things to the next level. Um so one of
+
+340
+00:15:39,920 --> 00:15:44,720
+the things that um one of the questions
+
+341
+00:15:41,760 --> 00:15:46,240
+came in from our good buddy Steve is if
+
+342
+00:15:44,720 --> 00:15:48,959
+you could look past over the last 10
+
+343
+00:15:46,240 --> 00:15:51,120
+years you know whether it's policy or
+
+344
+00:15:48,959 --> 00:15:52,639
+technology or response to customer
+
+345
+00:15:51,120 --> 00:15:55,680
+demand is there anything that you would
+
+346
+00:15:52,639 --> 00:15:57,279
+have done differently?
+
+347
+00:15:55,680 --> 00:15:59,440
+Hm.
+
+348
+00:15:57,279 --> 00:16:03,120
+I would probably have built fiber faster
+
+349
+00:15:59,440 --> 00:16:06,000
+even. You know, we um were able to
+
+350
+00:16:03,120 --> 00:16:07,759
+finish building out our cooperative um
+
+351
+00:16:06,000 --> 00:16:10,240
+our very last customer in our
+
+352
+00:16:07,759 --> 00:16:13,360
+cooperative a couple of years ago and we
+
+353
+00:16:10,240 --> 00:16:15,920
+had acquired a small uh telecom uh
+
+354
+00:16:13,360 --> 00:16:17,839
+company in central Kansas and in a
+
+355
+00:16:15,920 --> 00:16:22,639
+couple of years we brought them all the
+
+356
+00:16:17,839 --> 00:16:25,120
+way fiber to the home. I would say um
+
+357
+00:16:22,639 --> 00:16:28,800
+probably building fiber a little bit
+
+358
+00:16:25,120 --> 00:16:31,199
+faster and and then finding even more
+
+359
+00:16:28,800 --> 00:16:33,600
+opportunities to expand that
+
+360
+00:16:31,199 --> 00:16:36,959
+connectivity outside of our current
+
+361
+00:16:33,600 --> 00:16:39,120
+service footprint.
+
+362
+00:16:36,959 --> 00:16:42,560
+>> So can you talk a little bit about I
+
+363
+00:16:39,120 --> 00:16:44,079
+mean you know you're in rural Kansas
+
+364
+00:16:42,560 --> 00:16:45,519
+right? I mean it seems to me like when
+
+365
+00:16:44,079 --> 00:16:48,720
+you go to the airport you drive five
+
+366
+00:16:45,519 --> 00:16:50,480
+hours to Denver. So it's there's a lot
+
+367
+00:16:48,720 --> 00:16:53,600
+of windshield time between you and
+
+368
+00:16:50,480 --> 00:16:56,160
+Denver. What has fiber done for the
+
+369
+00:16:53,600 --> 00:16:59,120
+businesses and the communities across
+
+370
+00:16:56,160 --> 00:17:01,440
+you know the areas 11,000 miles square
+
+371
+00:16:59,120 --> 00:17:05,199
+miles that you serve?
+
+372
+00:17:01,440 --> 00:17:08,640
+You know, one of the the things that I
+
+373
+00:17:05,199 --> 00:17:12,000
+think it makes a huge difference is um
+
+374
+00:17:08,640 --> 00:17:16,160
+you see a lot of communities that um are
+
+375
+00:17:12,000 --> 00:17:19,600
+in rural areas that have have gone away.
+
+376
+00:17:16,160 --> 00:17:23,120
+And I think that our
+
+377
+00:17:19,600 --> 00:17:25,520
+our uh bringing fiber connectivity to
+
+378
+00:17:23,120 --> 00:17:29,840
+the communities that we serve helped
+
+379
+00:17:25,520 --> 00:17:32,720
+them stay uh viable. Um,
+
+380
+00:17:29,840 --> 00:17:35,600
+when you look at what happened during
+
+381
+00:17:32,720 --> 00:17:38,320
+COVID and connectivity was more
+
+382
+00:17:35,600 --> 00:17:41,120
+important than it had ever been, you
+
+383
+00:17:38,320 --> 00:17:43,679
+know, I I look at how that affected our
+
+384
+00:17:41,120 --> 00:17:47,360
+communities and the fact that we did
+
+385
+00:17:43,679 --> 00:17:50,240
+have good broadband uh service and you
+
+386
+00:17:47,360 --> 00:17:52,880
+know it there are areas that we have
+
+387
+00:17:50,240 --> 00:17:55,520
+reached out with with uh fixed wireless.
+
+388
+00:17:52,880 --> 00:17:58,880
+is not our preference but to get people
+
+389
+00:17:55,520 --> 00:18:01,360
+connected we have done that you know in
+
+390
+00:17:58,880 --> 00:18:04,000
+the big scheme of things whenever we can
+
+391
+00:18:01,360 --> 00:18:06,400
+afford we can put a a project together
+
+392
+00:18:04,000 --> 00:18:08,160
+to get them transition to fiber that's
+
+393
+00:18:06,400 --> 00:18:10,880
+always our preference and that's what we
+
+394
+00:18:08,160 --> 00:18:13,760
+always work towards because at the end
+
+395
+00:18:10,880 --> 00:18:17,280
+of the day we have seen people move to
+
+396
+00:18:13,760 --> 00:18:19,280
+our rural community for remote jobs that
+
+397
+00:18:17,280 --> 00:18:21,760
+because of the connectivity that we have
+
+398
+00:18:19,280 --> 00:18:24,240
+they can work anywhere in the world. We
+
+399
+00:18:21,760 --> 00:18:27,760
+have seen education enhanced. We have
+
+400
+00:18:24,240 --> 00:18:30,400
+seen the ability for folks to use
+
+401
+00:18:27,760 --> 00:18:34,000
+technology in their businesses uh
+
+402
+00:18:30,400 --> 00:18:36,880
+whether it be small town businesses um
+
+403
+00:18:34,000 --> 00:18:40,080
+or whether it be uh rural agricultural
+
+404
+00:18:36,880 --> 00:18:42,160
+type businesses. And so having that
+
+405
+00:18:40,080 --> 00:18:45,679
+state-of-the-art connectivity truly
+
+406
+00:18:42,160 --> 00:18:48,640
+facilitates those communities and those
+
+407
+00:18:45,679 --> 00:18:52,480
+businesses and those homes to to be
+
+408
+00:18:48,640 --> 00:18:55,280
+connected to what is quite honestly the
+
+409
+00:18:52,480 --> 00:18:58,960
+most important connectivity medium which
+
+410
+00:18:55,280 --> 00:19:01,120
+is the broadband network, the internet.
+
+411
+00:18:58,960 --> 00:19:02,640
+you know, one, you know, the fact that
+
+412
+00:19:01,120 --> 00:19:05,520
+I've had the opportunity to work with
+
+413
+00:19:02,640 --> 00:19:07,520
+you for the last several years, uh, the
+
+414
+00:19:05,520 --> 00:19:10,480
+one thing that's clear is you're always
+
+415
+00:19:07,520 --> 00:19:12,880
+looking forward on what's the latest
+
+416
+00:19:10,480 --> 00:19:15,600
+technology. Hence, you know, you created
+
+417
+00:19:12,880 --> 00:19:18,640
+our, uh, precision agriculture working
+
+418
+00:19:15,600 --> 00:19:20,720
+group. You led our, um, AI and emerging
+
+419
+00:19:18,640 --> 00:19:24,160
+tech. Um, you've been, you know, on the
+
+420
+00:19:20,720 --> 00:19:28,240
+FCC, you know, um, precision egg
+
+421
+00:19:24,160 --> 00:19:29,760
+committee. um what you know when you
+
+422
+00:19:28,240 --> 00:19:32,320
+think about Kansas, you think about
+
+423
+00:19:29,760 --> 00:19:34,720
+precision egg, you think about AI, kind
+
+424
+00:19:32,320 --> 00:19:37,760
+of what is or what are you seeing as the
+
+425
+00:19:34,720 --> 00:19:39,919
+future of you know how we're going to
+
+426
+00:19:37,760 --> 00:19:41,520
+evolve with with this technology and why
+
+427
+00:19:39,919 --> 00:19:45,679
+is it important to get fiber to all
+
+428
+00:19:41,520 --> 00:19:48,400
+these places? Well, when you think about
+
+429
+00:19:45,679 --> 00:19:51,120
+AI and you think of data centers and you
+
+430
+00:19:48,400 --> 00:19:54,080
+think of the amount of data that is
+
+431
+00:19:51,120 --> 00:19:56,640
+going to continue to exponentially grow
+
+432
+00:19:54,080 --> 00:19:59,120
+that goes across our networks, you have
+
+433
+00:19:56,640 --> 00:20:02,640
+to have a fiber infrastructure to
+
+434
+00:19:59,120 --> 00:20:06,240
+facilitate that. You know, we have seen
+
+435
+00:20:02,640 --> 00:20:08,880
+uh data centers going in um all over the
+
+436
+00:20:06,240 --> 00:20:11,520
+metro areas. We have heard more and more
+
+437
+00:20:08,880 --> 00:20:14,400
+discussions about looking to rural
+
+438
+00:20:11,520 --> 00:20:16,799
+communities um for data center
+
+439
+00:20:14,400 --> 00:20:18,160
+locations. Now there's different types
+
+440
+00:20:16,799 --> 00:20:20,000
+of data centers. You've got the
+
+441
+00:20:18,160 --> 00:20:22,000
+hyperscaler data centers, you got the
+
+442
+00:20:20,000 --> 00:20:25,039
+large government, the large enterprise,
+
+443
+00:20:22,000 --> 00:20:29,280
+but you also have more edge type data
+
+444
+00:20:25,039 --> 00:20:32,640
+centers. So, you know, it will depend on
+
+445
+00:20:29,280 --> 00:20:35,679
+who is wanting to plant that data center
+
+446
+00:20:32,640 --> 00:20:37,039
+as to what type of fiber connectivity is
+
+447
+00:20:35,679 --> 00:20:39,440
+needed. when you're looking at
+
+448
+00:20:37,039 --> 00:20:42,960
+hyperscalers, the fat count fiber is
+
+449
+00:20:39,440 --> 00:20:45,200
+absolutely critical. And yet, you know,
+
+450
+00:20:42,960 --> 00:20:47,280
+we have used a data center for our own
+
+451
+00:20:45,200 --> 00:20:50,480
+ITMS MSP customers and our own
+
+452
+00:20:47,280 --> 00:20:52,640
+operations for for many years, and it's
+
+453
+00:20:50,480 --> 00:20:54,480
+it's not quite as dense. So, you're
+
+454
+00:20:52,640 --> 00:20:56,159
+going to have different flavors of data
+
+455
+00:20:54,480 --> 00:20:58,480
+centers. I think you're going to see
+
+456
+00:20:56,159 --> 00:21:00,880
+more fat count fiber needed in the
+
+457
+00:20:58,480 --> 00:21:02,880
+future, which is different than how we,
+
+458
+00:21:00,880 --> 00:21:06,320
+you know, engineered things in the past,
+
+459
+00:21:02,880 --> 00:21:09,760
+right? So uh those are things that I see
+
+460
+00:21:06,320 --> 00:21:13,679
+will be changing. Um AI is going to
+
+461
+00:21:09,760 --> 00:21:17,440
+enhance capabilities uh for workforce.
+
+462
+00:21:13,679 --> 00:21:19,520
+Um you know we have uh embraced AI and
+
+463
+00:21:17,440 --> 00:21:22,400
+are using it in multiple different ways
+
+464
+00:21:19,520 --> 00:21:24,080
+in our organization and you know there's
+
+465
+00:21:22,400 --> 00:21:26,320
+a there's excitement and there's fear
+
+466
+00:21:24,080 --> 00:21:27,919
+with that right uh for some people
+
+467
+00:21:26,320 --> 00:21:30,799
+there's a fear okay is this going to
+
+468
+00:21:27,919 --> 00:21:32,799
+take my job and you know others are like
+
+469
+00:21:30,799 --> 00:21:35,440
+you know what you know is this going to
+
+470
+00:21:32,799 --> 00:21:38,240
+turn into Skynet and and the Terminator
+
+471
+00:21:35,440 --> 00:21:40,480
+you know and and so you know really it's
+
+472
+00:21:38,240 --> 00:21:43,679
+it's our job to help them understand
+
+473
+00:21:40,480 --> 00:21:46,960
+this is to enhance what we're able to do
+
+474
+00:21:43,679 --> 00:21:51,600
+um as as a team, as an organization. Um
+
+475
+00:21:46,960 --> 00:21:54,559
+if we're able to to leverage AI and you
+
+476
+00:21:51,600 --> 00:21:57,120
+know be able to adapt and evolve how we
+
+477
+00:21:54,559 --> 00:21:59,440
+do things, processes, procedures, then
+
+478
+00:21:57,120 --> 00:22:02,080
+it allows us to grow and scale and serve
+
+479
+00:21:59,440 --> 00:22:04,880
+more customers and do it at the same
+
+480
+00:22:02,080 --> 00:22:07,360
+level of quality that we've always
+
+481
+00:22:04,880 --> 00:22:09,200
+expected from ourselves.
+
+482
+00:22:07,360 --> 00:22:11,679
+Yeah, I would think you know as we move
+
+483
+00:22:09,200 --> 00:22:13,280
+forward the work that you're doing and
+
+484
+00:22:11,679 --> 00:22:17,280
+especially when you think about AI
+
+485
+00:22:13,280 --> 00:22:19,520
+digital twins and precision a this is
+
+486
+00:22:17,280 --> 00:22:22,480
+exactly what will save family farms you
+
+487
+00:22:19,520 --> 00:22:25,760
+know being able to maximize productivity
+
+488
+00:22:22,480 --> 00:22:29,039
+and efficiency to allow these uh farms
+
+489
+00:22:25,760 --> 00:22:31,919
+to continue continue to grow. Um, is
+
+490
+00:22:29,039 --> 00:22:34,480
+that I mean what it's pretty hard to go
+
+491
+00:22:31,919 --> 00:22:37,520
+and take family businesses and convince
+
+492
+00:22:34,480 --> 00:22:38,960
+people to embrace technology. Is that
+
+493
+00:22:37,520 --> 00:22:42,559
+what you're seeing? Or do you think the
+
+494
+00:22:38,960 --> 00:22:44,720
+farms in your area are quick to embrace?
+
+495
+00:22:42,559 --> 00:22:48,000
+>> I would I would not say quick to embrace
+
+496
+00:22:44,720 --> 00:22:49,520
+by any means. I I would say yes. It it
+
+497
+00:22:48,000 --> 00:22:51,360
+is going to be kind of one of those
+
+498
+00:22:49,520 --> 00:22:53,600
+generational shifts. I do believe
+
+499
+00:22:51,360 --> 00:22:56,159
+because the the young folks that have
+
+500
+00:22:53,600 --> 00:22:59,679
+been going to the a schools are learning
+
+501
+00:22:56,159 --> 00:23:01,440
+about a tech and and and yet it's going
+
+502
+00:22:59,679 --> 00:23:04,240
+to depend on when they're the ones
+
+503
+00:23:01,440 --> 00:23:07,280
+getting to to make the decisions back
+
+504
+00:23:04,240 --> 00:23:10,400
+home at the the family farm, right? Um,
+
+505
+00:23:07,280 --> 00:23:13,360
+but I know some who haven't employed a
+
+506
+00:23:10,400 --> 00:23:16,559
+technology. And you know, I've got a
+
+507
+00:23:13,360 --> 00:23:19,440
+friend who who actually runs a, you
+
+508
+00:23:16,559 --> 00:23:22,559
+know, a farming business for seed for
+
+509
+00:23:19,440 --> 00:23:25,760
+thousands of acres, oneman operation,
+
+510
+00:23:22,559 --> 00:23:27,840
+right? Because he uses technology. Now,
+
+511
+00:23:25,760 --> 00:23:30,320
+he has custom cutters come in during
+
+512
+00:23:27,840 --> 00:23:32,080
+harvest time, but when you look at the
+
+513
+00:23:30,320 --> 00:23:34,240
+the rest of the year running the
+
+514
+00:23:32,080 --> 00:23:37,360
+business, he's using technology to be
+
+515
+00:23:34,240 --> 00:23:42,000
+able to do that. And it's it's quite
+
+516
+00:23:37,360 --> 00:23:44,320
+amazing to to see how that is a for
+
+517
+00:23:42,000 --> 00:23:47,600
+force multiplier when it comes to to
+
+518
+00:23:44,320 --> 00:23:49,120
+running a farm these days.
+
+519
+00:23:47,600 --> 00:23:50,880
+Um, one of the questions came from the
+
+520
+00:23:49,120 --> 00:23:53,120
+audience. Are you seeing much neocloud
+
+521
+00:23:50,880 --> 00:23:56,559
+activity in your service area? And what
+
+522
+00:23:53,120 --> 00:23:59,120
+about AI factories? Um, and you know,
+
+523
+00:23:56,559 --> 00:24:01,600
+how are they differing from largecale
+
+524
+00:23:59,120 --> 00:24:04,000
+hyperscalers and the way fiber you know
+
+525
+00:24:01,600 --> 00:24:05,760
+is deployed?
+
+526
+00:24:04,000 --> 00:24:08,240
+>> Really in in our footprint. I haven't
+
+527
+00:24:05,760 --> 00:24:11,760
+seen a lot of that. Um, we're keeping an
+
+528
+00:24:08,240 --> 00:24:13,440
+eye on it to see how that develops. um
+
+529
+00:24:11,760 --> 00:24:15,360
+with the fact that we go from the west
+
+530
+00:24:13,440 --> 00:24:17,919
+side to the central part of the state,
+
+531
+00:24:15,360 --> 00:24:20,080
+we we feel that we're positioned that if
+
+532
+00:24:17,919 --> 00:24:22,400
+those continue to advance, you know,
+
+533
+00:24:20,080 --> 00:24:24,320
+into to central Kansas or western
+
+534
+00:24:22,400 --> 00:24:27,200
+Kansas, we'll be ready to to help
+
+535
+00:24:24,320 --> 00:24:29,279
+facilitate it. But, um at this time,
+
+536
+00:24:27,200 --> 00:24:32,960
+that's still more in the conceptual
+
+537
+00:24:29,279 --> 00:24:36,159
+phase as opposed to the actual um
+
+538
+00:24:32,960 --> 00:24:37,919
+happening in in our footprint.
+
+539
+00:24:36,159 --> 00:24:41,279
+And another question that came in for
+
+540
+00:24:37,919 --> 00:24:43,120
+the audience is um you know I don't know
+
+541
+00:24:41,279 --> 00:24:45,039
+if the you know you since you serve
+
+542
+00:24:43,120 --> 00:24:47,440
+Kansas they're asking about city of
+
+543
+00:24:45,039 --> 00:24:50,159
+Lawrence uh is that something that you
+
+544
+00:24:47,440 --> 00:24:52,880
+guys would be able to provide fiber uh
+
+545
+00:24:50,159 --> 00:24:56,960
+they have quite a bit of need for that.
+
+546
+00:24:52,880 --> 00:25:00,240
+>> We are not uh serving in Lawrence. Um we
+
+547
+00:24:56,960 --> 00:25:02,080
+are as far east as we go is as Salina.
+
+548
+00:25:00,240 --> 00:25:05,919
+Uh so that's the central part of the
+
+549
+00:25:02,080 --> 00:25:08,640
+state. Um but uh you know I do know that
+
+550
+00:25:05,919 --> 00:25:10,880
+there are others that have been serving
+
+551
+00:25:08,640 --> 00:25:13,679
+um serving Lawrence. I don't know that
+
+552
+00:25:10,880 --> 00:25:16,080
+it's been fully built out. But you know
+
+553
+00:25:13,679 --> 00:25:18,159
+when we when we are building in a
+
+554
+00:25:16,080 --> 00:25:20,159
+community our goal is to to build out
+
+555
+00:25:18,159 --> 00:25:22,159
+the entire community and serve that
+
+556
+00:25:20,159 --> 00:25:23,600
+entire community and and that's what
+
+557
+00:25:22,159 --> 00:25:25,760
+we're progressing on right now in
+
+558
+00:25:23,600 --> 00:25:27,600
+Salina.
+
+559
+00:25:25,760 --> 00:25:29,440
+>> All right. So 75 years the big
+
+560
+00:25:27,600 --> 00:25:32,159
+anniversary is coming up. So, do you
+
+561
+00:25:29,440 --> 00:25:33,200
+have um something big planned for your
+
+562
+00:25:32,159 --> 00:25:34,559
+team?
+
+563
+00:25:33,200 --> 00:25:36,720
+>> Well, you know, it's going to be a
+
+564
+00:25:34,559 --> 00:25:40,159
+year-long celebration. Uh we like to
+
+565
+00:25:36,720 --> 00:25:42,080
+celebrate things and uh you know, in the
+
+566
+00:25:40,159 --> 00:25:44,320
+past, we've done things in, you know,
+
+567
+00:25:42,080 --> 00:25:46,720
+the summer uh pool parties in the
+
+568
+00:25:44,320 --> 00:25:48,640
+communities that we serve. Uh we've
+
+569
+00:25:46,720 --> 00:25:50,799
+created, you know, a history wall in
+
+570
+00:25:48,640 --> 00:25:53,279
+some of our locations to kind of show
+
+571
+00:25:50,799 --> 00:25:56,240
+folks how we've how we've grown the
+
+572
+00:25:53,279 --> 00:26:00,480
+organization and and evolved.
+
+573
+00:25:56,240 --> 00:26:02,880
+um got our employee meeting uh tomorrow
+
+574
+00:26:00,480 --> 00:26:04,880
+and so we're going to be excited to you
+
+575
+00:26:02,880 --> 00:26:07,919
+know kind of reminisce and and then look
+
+576
+00:26:04,880 --> 00:26:10,080
+forward um we've got a new location
+
+577
+00:26:07,919 --> 00:26:12,400
+that's uh we're going to have a ribbon
+
+578
+00:26:10,080 --> 00:26:14,880
+cutting in June for our Sunflower
+
+579
+00:26:12,400 --> 00:26:17,600
+building in Salina and uh so that's
+
+580
+00:26:14,880 --> 00:26:19,039
+going to be a new tech location in the
+
+581
+00:26:17,600 --> 00:26:21,520
+central part of the state. So, we're
+
+582
+00:26:19,039 --> 00:26:24,080
+excited about that and and really it's
+
+583
+00:26:21,520 --> 00:26:26,000
+just, you know, um celebrating with the
+
+584
+00:26:24,080 --> 00:26:29,840
+communities that we've been a part of
+
+585
+00:26:26,000 --> 00:26:32,080
+for that 75 years and uh we we keep
+
+586
+00:26:29,840 --> 00:26:34,960
+growing that list of communities. So,
+
+587
+00:26:32,080 --> 00:26:37,760
+that's that's been exciting.
+
+588
+00:26:34,960 --> 00:26:39,520
+>> So, Jimmy, you know, I lean on you every
+
+589
+00:26:37,760 --> 00:26:42,000
+day. you know, you're just uh your
+
+590
+00:26:39,520 --> 00:26:44,000
+leadership and you know, I know how much
+
+591
+00:26:42,000 --> 00:26:48,080
+time you put into the fiber broadband
+
+592
+00:26:44,000 --> 00:26:50,960
+association yet you're on all these
+
+593
+00:26:48,080 --> 00:26:53,840
+boards and I know that you are not
+
+594
+00:26:50,960 --> 00:26:56,320
+someone who just is passive on a board.
+
+595
+00:26:53,840 --> 00:26:57,760
+You're very highly active. Um so you're
+
+596
+00:26:56,320 --> 00:26:59,520
+in a lot of working groups, you're in a
+
+597
+00:26:57,760 --> 00:27:02,000
+lot of boards, you're traveling all over
+
+598
+00:26:59,520 --> 00:27:05,679
+the country and you're running a highly
+
+599
+00:27:02,000 --> 00:27:09,279
+successful um business. So, so how are
+
+600
+00:27:05,679 --> 00:27:10,960
+you able to do all this stuff?
+
+601
+00:27:09,279 --> 00:27:13,360
+>> Remember I was talking about that great
+
+602
+00:27:10,960 --> 00:27:15,520
+team. Without that great team and
+
+603
+00:27:13,360 --> 00:27:19,679
+without the support of a board that
+
+604
+00:27:15,520 --> 00:27:23,840
+feels that it's important for us to help
+
+605
+00:27:19,679 --> 00:27:27,279
+um um influence industry uh it wouldn't
+
+606
+00:27:23,840 --> 00:27:29,840
+be possible. you know, I I am blessed to
+
+607
+00:27:27,279 --> 00:27:32,960
+have an amazing uh team of senior
+
+608
+00:27:29,840 --> 00:27:35,679
+leaders at our company and you know,
+
+609
+00:27:32,960 --> 00:27:38,400
+quite honestly, they they make sure that
+
+610
+00:27:35,679 --> 00:27:41,120
+everything is working well and uh I feel
+
+611
+00:27:38,400 --> 00:27:43,679
+like I'm just uh fortunate to have uh
+
+612
+00:27:41,120 --> 00:27:46,240
+that position and that opportunity and
+
+613
+00:27:43,679 --> 00:27:48,240
+it allows, you know, me to take our
+
+614
+00:27:46,240 --> 00:27:50,480
+perspective and and share it with
+
+615
+00:27:48,240 --> 00:27:52,960
+others.
+
+616
+00:27:50,480 --> 00:27:55,679
+Well, I I you know, not only do you have
+
+617
+00:27:52,960 --> 00:27:57,840
+kind of the top level leadership um
+
+618
+00:27:55,679 --> 00:28:01,039
+advice and qualities, I really
+
+619
+00:27:57,840 --> 00:28:03,360
+appreciate your attention to detail as
+
+620
+00:28:01,039 --> 00:28:05,279
+we are doing investment strategies and
+
+621
+00:28:03,360 --> 00:28:08,720
+all the other things. So, you know, it
+
+622
+00:28:05,279 --> 00:28:10,159
+seems like you're all these areas and
+
+623
+00:28:08,720 --> 00:28:12,320
+boards and things that you're
+
+624
+00:28:10,159 --> 00:28:16,240
+participating. It it really provides a
+
+625
+00:28:12,320 --> 00:28:18,240
+lot of uh great expertise as well as,
+
+626
+00:28:16,240 --> 00:28:20,320
+you know, I don't know anybody that's
+
+627
+00:28:18,240 --> 00:28:24,159
+served in both the Navy and Army and
+
+628
+00:28:20,320 --> 00:28:27,840
+National Guard. So, you certainly
+
+629
+00:28:24,159 --> 00:28:29,919
+>> maybe I'm confused. I don't know.
+
+630
+00:28:27,840 --> 00:28:33,840
+>> Shirley keeps you in line. I know that
+
+631
+00:28:29,919 --> 00:28:35,039
+for sure. All right. So 75 years been
+
+632
+00:28:33,840 --> 00:28:36,080
+amazing.
+
+633
+00:28:35,039 --> 00:28:38,880
+>> Yes sir.
+
+634
+00:28:36,080 --> 00:28:41,840
+>> What's gonna happen? What is kind of
+
+635
+00:28:38,880 --> 00:28:44,320
+your vision for the next 10 years I'll
+
+636
+00:28:41,840 --> 00:28:46,559
+call it or five whatever horizon you
+
+637
+00:28:44,320 --> 00:28:48,159
+want to talk about for next tax and in
+
+638
+00:28:46,559 --> 00:28:50,799
+rural America.
+
+639
+00:28:48,159 --> 00:28:53,120
+>> Well you know we're going to create um
+
+640
+00:28:50,799 --> 00:28:55,840
+more transport routes to reach further
+
+641
+00:28:53,120 --> 00:28:59,360
+than where we currently reach. Um
+
+642
+00:28:55,840 --> 00:29:02,640
+creating new opportunities in in larger
+
+643
+00:28:59,360 --> 00:29:06,159
+uh metro areas. Um we are going to
+
+644
+00:29:02,640 --> 00:29:08,640
+continue to expand our ITMS MSP services
+
+645
+00:29:06,159 --> 00:29:11,279
+because as you are fully aware of cyber
+
+646
+00:29:08,640 --> 00:29:15,120
+security and data protection network
+
+647
+00:29:11,279 --> 00:29:16,880
+security that is is huge. Um we've seen
+
+648
+00:29:15,120 --> 00:29:18,559
+a lot of growth in our security
+
+649
+00:29:16,880 --> 00:29:20,880
+surveillance and access control
+
+650
+00:29:18,559 --> 00:29:24,080
+business. So we're expanding that beyond
+
+651
+00:29:20,880 --> 00:29:27,120
+the the Kansas footprint. um our knock
+
+652
+00:29:24,080 --> 00:29:30,080
+services continue to be something that
+
+653
+00:29:27,120 --> 00:29:32,880
+um ISPs uh needs, you know, help with
+
+654
+00:29:30,080 --> 00:29:36,559
+and we're able to to provide that help
+
+655
+00:29:32,880 --> 00:29:39,919
+and expanding how we help uh with our
+
+656
+00:29:36,559 --> 00:29:43,039
+creative team when it comes to uh online
+
+657
+00:29:39,919 --> 00:29:45,919
+presence um and marketing their
+
+658
+00:29:43,039 --> 00:29:48,320
+businesses and again just finding ways
+
+659
+00:29:45,919 --> 00:29:51,279
+to to continue
+
+660
+00:29:48,320 --> 00:29:53,200
+to to grow what we're already doing. But
+
+661
+00:29:51,279 --> 00:29:55,600
+I got one other new line of business
+
+662
+00:29:53,200 --> 00:29:57,039
+that's premature to to share right now
+
+663
+00:29:55,600 --> 00:29:59,919
+because we're still vetting all the
+
+664
+00:29:57,039 --> 00:30:02,799
+details out, but uh we'll be making an
+
+665
+00:29:59,919 --> 00:30:05,520
+announcement on that fairly soon.
+
+666
+00:30:02,799 --> 00:30:07,360
+>> Well, Jimmy, I you know, I love
+
+667
+00:30:05,520 --> 00:30:09,440
+everything you do and I appreciate
+
+668
+00:30:07,360 --> 00:30:11,760
+everything you do for me and the Fiber
+
+669
+00:30:09,440 --> 00:30:14,159
+Broadband Association and the industry
+
+670
+00:30:11,760 --> 00:30:16,640
+and I love meeting your teammates at
+
+671
+00:30:14,159 --> 00:30:18,000
+Nextech. They're amazing and appreciate
+
+672
+00:30:16,640 --> 00:30:21,200
+you everything you guys are doing for
+
+673
+00:30:18,000 --> 00:30:23,440
+rural Kansas. Also, all our audience
+
+674
+00:30:21,200 --> 00:30:27,080
+seem to keep sending messages and go
+
+675
+00:30:23,440 --> 00:30:27,080
+dogs. So,
+
+676
+00:30:28,080 --> 00:30:32,080
+>> yes, sir. I'm I'm still a big Georgia
+
+677
+00:30:30,720 --> 00:30:33,520
+Bulldog fan.
+
+678
+00:30:32,080 --> 00:30:35,520
+>> Yeah. So, everybody knows you pretty
+
+679
+00:30:33,520 --> 00:30:37,120
+well. Well, thank you very much, Jimmy.
+
+680
+00:30:35,520 --> 00:30:39,200
+And again, thanks our audience for
+
+681
+00:30:37,120 --> 00:30:41,279
+joining us. And next week,
+
+682
+00:30:39,200 --> 00:30:43,760
+>> I'm excited. Um, one of my favorite
+
+683
+00:30:41,279 --> 00:30:46,080
+guests, Carol Maddie, Mattie Consulting,
+
+684
+00:30:43,760 --> 00:30:48,640
+former FCC, is going to be here to
+
+685
+00:30:46,080 --> 00:30:52,559
+discuss mission accomplished or mission
+
+686
+00:30:48,640 --> 00:30:54,640
+abandoned, life after bead to uh, Carol
+
+687
+00:30:52,559 --> 00:30:56,559
+has incredible insights from all her
+
+688
+00:30:54,640 --> 00:30:58,480
+years and working in the Hill or not in
+
+689
+00:30:56,559 --> 00:31:01,039
+the Hill, but into FCC and other things.
+
+690
+00:30:58,480 --> 00:31:02,240
+And um, so you guys are not going to
+
+691
+00:31:01,039 --> 00:31:04,640
+want to miss that. So, we'll see you
+
+692
+00:31:02,240 --> 00:31:08,880
+guys next Wednesday and Jimmy, I will
+
+693
+00:31:04,640 --> 00:31:08,880
+see you long before then. So,
+

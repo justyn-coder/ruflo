@@ -1,0 +1,45 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Pure Integration is a Reston, VA-based IT and network services firm — primarily a systems integrator serving enterprise and government clients, NOT a traditional ISP, CLEC, or fiber overbuilder. Their core business is technology consulting, network architecture, and managed services, with deep roots in the federal/public sector and commercial enterprise market. Source: pureintegration.com, LinkedIn company profile.",
+    "Pure Integration does have a telecom/broadband practice. Their website references network infrastructure work including fiber, and their presence at Fiber Connect 2026 (with three attendees including a VP of Networks & Platforms and Sr. Director of Architecture & Solutions) signals an active play into broadband/fiber infrastructure — likely as a systems integrator or program manager for fiber deployments rather than as a design-build contractor. Source: Fiber Connect 2026 attendance record.",
+    "The presence of Rob Woggins (VP, Networks & Platforms) and Michael LaPierre (Sr. Director, Architecture and Solutions) alongside a Business Development Associate (Jackson Sayers) at a fiber-specific tradeshow is a deliberate business development signal — this company is actively positioning to win broadband-related work, potentially BEAD-funded projects as a contractor, integrator, or program manager. Three attendees from one firm at this level indicates strategic intent, not casual attendance.",
+    "Pure Integration's federal/government background makes them a plausible candidate for BEAD-adjacent work: state broadband offices and large ISPs under BEAD often contract systems integrators for network design, program management, OSS/BSS integration, and engineering coordination. This positions Pure Integration downstream of BEAD awards — they would support ISPs or state entities executing BEAD deployments. Source: inference from company profile and attendance profile.",
+    "No direct evidence found of Pure Integration winning a BEAD sub-grant or holding a fiber overbuilder license. They are not listed in any state broadband office sub-award databases reviewed. This confirms they are a services/integration firm, not an end-beneficiary deploying fiber directly — but they could be supporting firms that are. Source: USAC BEAD tracker, state broadband office searches (VA, MD) — not found.",
+    "Job postings for Pure Integration (as of May 2026) show openings in network engineering, solutions architecture, and federal IT — consistent with their integrator model. No fiber design specialist or GIS technician roles found publicly, which suggests they likely would subcontract or partner for GIS-to-CAD design work rather than do it in-house. Source: LinkedIn Jobs, Indeed — review conducted.",
+    "Pure Integration's competitive set in the fiber-adjacent integrator space includes firms like Ciena, Calix (as a platform), Black Box, Presidio, and niche federal IT integrators. In the broadband program management space, they would compete with or complement firms like NTELOS, Telamon, or engineering firms like SAIC and Leidos who have broadband practices. Source: industry mapping, not direct confirmation.",
+    "The labor shortage dynamic (3:1 job-to-candidate ratio for fiber designers, 58,000 roles needed by 2032) hits firms like Pure Integration indirectly: if they are managing or supporting fiber deployment programs, their ISP or operator clients will face severe design bottlenecks that Pure Integration will be expected to solve or work around. Their credibility as an integration partner depends on having solutions to exactly this problem.",
+    "Pure Integration has approximately 200-500 employees based on LinkedIn headcount indicators and revenue estimates (~$50M-$150M range). This is large enough to have structured vendor relationships but small enough that each major program matters — a BEAD-related engagement would be a significant revenue event for them. Source: LinkedIn, Crunchbase (unverified exact figures).",
+    "No podcast appearances, trade press quotes, or conference speaker slots found for Pure Integration executives on fiber/broadband topics specifically — this limits visibility into their stated strategy. However, their Fiber Connect 2026 attendance itself is the strongest signal available. Source: fiercenetwork.com, lightreading.com, telecompetitor.com — searched, not found for fiber context."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Cannot confirm whether Pure Integration has active fiber deployment contracts or is still in business development / pipeline phase for broadband work.",
+    "No direct quotes from Rob Woggins or Michael LaPierre on fiber strategy, BEAD positioning, or design workflow challenges — limits ability to personalize beyond inference.",
+    "Exact revenue and headcount not publicly confirmed — estimates only.",
+    "Cannot determine whether Pure Integration has an existing GIS/CAD design workflow internally or relies entirely on subcontractors — this is the key question for Inorsa fit.",
+    "No evidence found of specific ISP clients or broadband operator relationships that Pure Integration supports — would sharpen the buyer's specific pain.",
+    "BEAD sub-award searches for VA and MD did not surface Pure Integration by name — could mean they are working as a second-tier subcontractor not captured in public records, or they have not yet won work.",
+    "Jackson Sayers' specific role focus (what segment he is developing business in) is not determinable from public sources — his BD scope could be entirely outside fiber."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP classification of 'hold' may be too conservative given the seniority of the other two attendees (VP + Sr. Director). A Business Development Associate attending alongside a VP of Networks typically means the BD associate is support staff for a strategic pursuit, not a casual badge scanner. The company likely warrants an upgrade to 'qualified prospect' pending one clarifying question about their fiber program scope.",
+    "Prior research tagging Pure Integration as a firm with uncertain revenue/headcount precision is accurate but should not be used to downgrade them — mid-market integrators in the $50M-$150M range with active federal practices are exactly the type of firm entering BEAD-adjacent services, and their size means Inorsa's pricing would not be out of reach.",
+    "The 'thin data' characterization is fair for Jackson Sayers individually, but the company itself has enough public signal to form a hypothesis. The right framing is: Pure Integration is a systems integrator making a deliberate move into broadband services, and their value to clients depends on solving the exact design throughput and permitting cycle problems Inorsa addresses — even if they are managing the problem on behalf of operators rather than experiencing it directly."
+  ],
+  "topInsight": "Pure Integration is a federal/enterprise IT integrator actively positioning into broadband/fiber program management — almost certainly to capture BEAD-era services revenue. Their value proposition to operator clients will depend on solving design bottlenecks and permitting cycle time problems they cannot solve with in-house GIS/CAD staff (they have none visible). Inorsa's fit here is not as a direct user tool but as a capability they can offer or recommend to their operator clients, or mandate in their program management SOWs. The outreach angle: 'You're about to be responsible for fiber program delivery at BEAD scale — your operator clients will hit permit kickbacks that blow your timelines. Here's how one firm cut review cycles from 3-4 weeks to 2 days.' Position Inorsa as the solution Pure Integration brings to the table, not just a vendor they evaluate.",
+  "sourcesUsed": [
+    "https://www.pureintegration.com",
+    "https://www.linkedin.com/company/pure-integration",
+    "https://www.crunchbase.com/organization/pure-integration",
+    "https://www.telecompetitor.com (searched — Pure Integration not found in fiber context)",
+    "https://www.lightreading.com (searched — not found)",
+    "https://www.fiercenetwork.com (searched — not found)",
+    "https://www.usac.org/high-cost/bead/ (BEAD sub-award tracker — Pure Integration not found)",
+    "Virginia Department of Housing and Community Development broadband office (searched — not found)",
+    "LinkedIn Jobs (Pure Integration open roles reviewed May 2026)",
+    "Fiber Connect 2026 attendance record (internal — three Pure Integration contacts confirmed)"
+  ]
+}
+```

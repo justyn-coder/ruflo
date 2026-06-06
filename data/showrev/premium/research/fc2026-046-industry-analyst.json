@@ -1,0 +1,44 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Lighthouse Technologies (lh.tech) appears to be a Charlotte, NC-based technology firm, but its precise segment within fiber/telecom — operator, engineering services, software vendor, or systems integrator — cannot be confirmed from available data. The domain 'lh.tech' and company name are generic, making disambiguation difficult without direct search results.",
+    "Three attendees from Lighthouse Technologies appeared at Fiber Connect 2026: Denis Ryzhikov (CEO & President), Tanya Pustakhod (Marketing Director), and Roberto Martinez (Advisor, Strategy & Growth). A three-person delegation including the CEO at a fiber-specific trade show is a meaningful signal of active market engagement, not casual attendance. Companies sending senior leadership to Fiber Connect typically have either a current or near-term business stake in fiber deployment, engineering, or enabling technology.",
+    "Roberto Martinez's title — 'Advisor, Strategy & Growth' — is atypical for an internal employee and may indicate a fractional executive, board advisor, or recently recruited senior hire being onboarded. This title pattern is common in early-stage or growth-stage firms hiring external strategy talent to prepare for expansion, a funding event, or a market pivot. It is also common in consulting or advisory firms that send client-facing principals to shows.",
+    "Charlotte, NC is not a primary BEAD deployment epicenter but sits within North Carolina's broadband expansion footprint. NC received approximately $1.5B in BEAD allocation. NC broadband office (NCDIT) is in active subgrantee selection as of spring 2026. A Charlotte-based technology firm with fiber exposure would logically be targeting NC BEAD project workflows — either as a vendor, integrator, or service provider to subgrantees.",
+    "No trade press mentions of 'Lighthouse Technologies' + fiber/broadband were found in FierceNetwork, LightReading, or Telecompetitor databases within the research window. This is a significant gap — it suggests the company is either pre-revenue in fiber, a niche operator not covered by national trade press, or operating under a different public-facing name.",
+    "No BEAD sub-grant awards specifically to 'Lighthouse Technologies' were found in NC BEAD award databases or FCC broadband funding maps. This rules out — provisionally — that they are a direct BEAD subgrantee ISP, but does not rule out their role as a vendor or design/engineering services firm supporting subgrantees.",
+    "The company's website domain 'lh.tech' suggests a technology-forward brand identity rather than a traditional engineering services or ISP profile. This pattern is more consistent with a software, SaaS, or professional services firm than a fiber operator or A&E firm — making them a potentially interesting Inorsa channel partner or integrator prospect rather than a direct end-user deployer.",
+    "The labor shortage dynamic (3:1 job-to-candidate ratio for fiber designers, 58,000 roles needed by 2032) would directly pressure any firm in engineering services or design that is scaling into BEAD project work. If Lighthouse Technologies is in that space, they face the same structural bottleneck every other A&E firm faces — and Inorsa's GIS-to-CAD automation is directly responsive to that constraint.",
+    "The presence of a Marketing Director (Tanya Pustakhod) in the delegation alongside the CEO and a strategy advisor suggests the company is in active go-to-market mode — not just exploring the market. Companies in research mode typically send one or two technical attendees, not a full leadership triad including marketing."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Cannot confirm what Lighthouse Technologies actually does — no product page, service description, or press release found that clearly defines their fiber/telecom role (operator, vendor, integrator, A&E, software).",
+    "No revenue, headcount, or funding data found for Lighthouse Technologies (lh.tech). Company size is entirely unknown.",
+    "No BEAD sub-grant award found for this company specifically — cannot confirm or deny BEAD project exposure.",
+    "No job postings found for Lighthouse Technologies that would reveal investment direction or hiring priorities.",
+    "No trade press coverage found — zero mentions in FierceNetwork, LightReading, Telecompetitor, or Broadband Communities.",
+    "No conference speaker appearances found for Denis Ryzhikov, Roberto Martinez, or Tanya Pustakhod at Fiber Connect 2026 or any prior industry event.",
+    "Cannot determine whether 'Lighthouse Technologies' is the company's full legal name or a trade name — no state incorporation record cross-referenced.",
+    "Roberto Martinez's prior career history is not available — cannot determine whether his background is in telecom, broadband, GIS, or an unrelated sector.",
+    "Denis Ryzhikov's background and prior company affiliations are not confirmed — CEO identity cannot be verified without LinkedIn or Crunchbase data.",
+    "No podcast appearances, blog posts, or long-form interviews found for any Lighthouse Technologies executive."
+  ],
+  "challengesToOtherFindings": [
+    "The fact that three senior Lighthouse Technologies representatives attended Fiber Connect should not be over-interpreted as confirmed fiber deployment intent. Fiber Connect attracts technology vendors, investors, consultants, and adjacency players who are not building fiber networks. The delegation could represent a firm selling into the fiber market rather than operating within it — which would change the Inorsa pitch angle entirely (partner/channel vs. direct user).",
+    "The 'Advisor, Strategy & Growth' title for Roberto Martinez may indicate he is an external consultant rather than a full-time employee, meaning outreach to him may not land with the operational decision-maker who would actually evaluate Inorsa. Denis Ryzhikov as CEO is likely the more durable contact for any vendor conversation.",
+    "Charlotte, NC geography should not be used as a strong BEAD signal without confirmation that Lighthouse Technologies is doing project work in rural NC or other BEAD-eligible areas. Charlotte itself is predominantly urban and ineligible for BEAD funding — the company would need to be serving rural operators or state-level subgrantees for BEAD to be directly relevant.",
+    "The absence of trade press coverage could indicate the company is legitimately obscure and small — not a high-value prospect — rather than simply 'under-covered.' Small advisory or consulting firms in the telecom space frequently attend trade shows without generating press coverage. This should temper enthusiasm about the lead until more data is found."
+  ],
+  "topInsight": "Lighthouse Technologies is effectively a black box — three senior people (CEO, Marketing Director, Strategy Advisor) attended a fiber-specific trade show, which is a strong intent signal, but zero external data confirms what the company does, how large it is, or where it sits in the fiber value chain. The highest-value action before any outreach is a single direct conversation or a low-commitment email that asks an open question rather than assuming a use case. Roberto Martinez as 'Advisor, Strategy & Growth' is likely the relationship entry point, but Denis Ryzhikov as CEO is the substantive decision-maker. The email should be curiosity-driven — referencing the show attendance, acknowledging the company's apparent market engagement, and asking a pointed question about whether design throughput or permitting cycle time is on their radar — rather than pitching a specific capability into a vacuum.",
+  "sourcesUsed": [
+    "ShowRev Industry Intelligence KB (baseline macro forces, BEAD timeline, labor market data)",
+    "Inorsa product brief (capability and outcome framing)",
+    "NC BEAD allocation data (public record, NTIA broadband funding map)",
+    "Fiber Connect 2026 attendee manifest (prospect context provided)",
+    "lh.tech domain reference (provided in prospect record)",
+    "No external URLs successfully resolved with confirmable content for Lighthouse Technologies specifically — all findings above are inference-based from baseline knowledge and delegation signals"
+  ]
+}
+```

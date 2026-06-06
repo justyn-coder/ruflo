@@ -1,0 +1,43 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Indus CAD Works is a CAD/drafting services firm based in Weston, FL — directly competitive-adjacent to Inorsa's output (construction drawings), but positioned as a services provider rather than a software buyer. This distinction is critical: they may be a channel partner candidate OR a direct competitor, not a traditional software prospect. Source: company name + domain inference, induscadworks.com",
+    "Raj Ahuja holds the title of President and also attended the show — this is the likely budget authority and final decision-maker. Kesari Iyengar as EVP is probably the operational or business development lead who would champion or recommend, not approve unilaterally. Both attended Fiber Connect 2026, indicating active interest in the fiber market. Source: booth scan list provided in prospect context.",
+    "Raj Ahuja's LinkedIn profile fragment appears in the Brain Knowledge Digest as a discovered entity ('Raj Ahuja's LinkedIn profile or career h'), suggesting prior research was initiated on him — but no detail was retained. This is a gap that should be closed before outreach. Source: Brain Knowledge Digest company list.",
+    "Indus CAD Works name structure ('CAD Works') strongly implies their core service is CAD drafting/production — the exact output Inorsa automates. If they are selling CAD drafting services to ISPs and A&E firms, Inorsa could either (a) threaten their labor model or (b) serve as infrastructure to scale their throughput without hiring. The sales angle depends entirely on whether they are a buyer of efficiency tools or a firm that would see Inorsa as a competitive threat to their billable hours. Source: company name analysis + Inorsa value prop alignment.",
+    "Weston, FL location is notable — South Florida is an active fiber deployment market with municipal broadband and private ISP expansion. No specific BEAD award tied to this firm was found, but their proximity to Florida's BEAD activity (Florida received a significant BEAD allocation) means their ISP clients are likely entering construction planning now. Source: industry baseline + geographic inference.",
+    "No LinkedIn profile, trade press quote, speaking record, or panel appearance was found for Kesari Iyengar specifically. The name is uncommon enough that a targeted search would likely surface results if a public profile existed — its absence suggests either a low public profile or a recently assumed role. Source: search attempted, not found.",
+    "No company website content, team page, or service description was independently verified beyond the domain and name. induscadworks.com was not crawled in this session. This is a material gap — the firm's actual service lines (fiber design, civil CAD, structural, telecom) are unknown from available data. Source: not found.",
+    "The ICP hold status ('Relevant title but no AE notes or grade') and Batch Tier D suggest the AE who scanned this badge did not have a substantive conversation. This is a cold follow-up, not a warm one. The email must do the qualification work the booth conversation did not. Source: prospect context metadata.",
+    "If Indus CAD Works is a design/drafting services firm serving ISPs or A&E primes, they face the exact labor shortage dynamic described in the industry baseline — 3:1 job-to-candidate ratio, 58,000 new roles needed by 2032. A firm selling CAD services would need to either raise prices, hire aggressively, or automate. Inorsa addresses the third path. Source: industry baseline inference applied to firm type.",
+    "The presence of both President (Raj Ahuja) and EVP (Kesari Iyengar) at the same tradeshow booth scan is a multi-threading opportunity. Outreach to Kesari should reference Raj's attendance and propose a call that includes both, avoiding the risk of Kesari being a gatekeeper who doesn't forward the message. Source: booth scan list + sales best practice."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No verified LinkedIn profile for Kesari Iyengar — role tenure, career history, and functional ownership (ops vs. BD vs. engineering) are unknown.",
+    "No verified LinkedIn profile details for Raj Ahuja despite his presence in Brain KB — decision authority assumed from title but not confirmed.",
+    "induscadworks.com not crawled — actual service lines, client types (ISPs, A&E primes, municipalities), and geographic focus are unconfirmed.",
+    "No trade press, podcast, panel, or conference speaking record found for either contact.",
+    "No revenue, headcount, or funding data found for Indus CAD Works — firm size and buying capacity are unknown.",
+    "Critical ambiguity unresolved: is Indus CAD Works a potential software buyer, a channel partner, or a competitor? This must be resolved before a sales angle can be locked.",
+    "No BEAD contract, subcontract, or ISP client relationship identified for this firm.",
+    "EVP title scope unknown — could mean Engineering VP, Executive VP of Operations, or Business Development. The functional domain determines who else would be in the buying committee."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP 'hold' designation implies the grading system flagged relevance based on title alone. I would push back on treating this as a qualified prospect until the firm type ambiguity is resolved — a CAD drafting services firm could be completely misaligned if their business model is selling the labor Inorsa replaces, in which case Inorsa threatens their revenue rather than solving their problem.",
+    "Batch Tier D should not be interpreted as low priority — it reflects absent AE notes, not confirmed disqualification. Two senior leaders (President + EVP) attending a fiber-specific show is a stronger signal than a single badge scan from a junior attendee at a general IT event.",
+    "I would not lead the email with permitting pain as the primary hook until the firm type is confirmed. If Indus CAD Works is a services firm (not an ISP or A&E prime), the permitting pain point belongs to their clients, not to them. The correct hook for a services firm is throughput and margin — how do they take on more BEAD-driven work without proportional headcount growth."
+  ],
+  "topInsight": "The firm name 'Indus CAD Works' signals this is almost certainly a CAD drafting services company, not an ISP or A&E engineering firm. This means the sales motion is fundamentally different: rather than selling Inorsa as a tool that fixes their permitting pain, the pitch is about enabling them to scale BEAD workload without hiring — positioning Inorsa as the production engine behind their service delivery. The email should open by acknowledging that their clients are entering BEAD construction now and ask whether their current production capacity can absorb the volume surge. If they say no, that's the entry point. The President (Raj Ahuja) should be cc'd or referenced directly — he is the budget decision-maker and was at the same show, making the outreach feel coordinated rather than cold.",
+  "sourcesUsed": [
+    "Prospect context metadata (provided)",
+    "Brain Knowledge Digest entity list (provided)",
+    "Industry baseline — ShowRev Industry Intelligence KB (provided)",
+    "Inorsa value proposition brief (provided)",
+    "induscadworks.com — domain referenced, not crawled in this session",
+    "Fiber Connect 2026 booth scan list (provided)",
+    "General inference from firm name, title structure, and geographic location"
+  ]
+}
+```

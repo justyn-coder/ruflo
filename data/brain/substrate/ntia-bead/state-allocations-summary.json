@@ -1,0 +1,18 @@
+{
+  "source": "ntia-bead-subgrantees",
+  "title": "BEAD State Allocations and Award Summary — Top 10 States",
+  "url": "https://brandergroup.net/2025/11/bead-broadband-status-awards-by-state-october-2025/",
+  "date": "2026",
+  "states": [
+    {"state": "Texas", "allocation": "$3.31B", "provisional_awards": "$1.27B", "locations_fiber": 123349, "locations_fwa": 53653, "locations_satellite": 65977, "top_recipient": "Nexstream ($407M)", "status": "Awards announced, construction expected Summer 2026"},
+    {"state": "California", "allocation": "$1.9B", "provisional_awards": "$1.57B", "locations": 339000, "fiber_pct": 44, "satellite_pct": 41, "fwa_pct": 15, "top_recipient": "Comcast ($400M)", "status": "Final Proposal submitted, pending NTIA approval"},
+    {"state": "Missouri", "allocation": "$1.74B", "provisional_awards": "$793.3M", "providers_selected": 42, "coverage": "100% eligible locations", "top_recipient": "Brightspeed ($117M)", "status": "Awards announced"},
+    {"state": "Michigan", "allocation": "$1.6B", "provisional_awards": "$919.1M", "top_recipient": "Strategic Management ($272M)", "status": "Largest state total as of Sep 2025"},
+    {"state": "North Carolina", "allocation": "$1.53B", "provisional_awards": "$408.5M", "locations": 93000, "top_recipient": "AT&T ($142M)", "status": "Awards announced"},
+    {"state": "Virginia", "allocation": "$1.48B", "provisional_awards": "$613.3M", "locations": 133742, "fiber_pct": 81, "top_recipient": "Virginia Everywhere ($171M)", "status": "Awards announced"},
+    {"state": "Alabama", "allocation": "$1.4B", "provisional_awards": "$530.7M", "fiber_pct": 67, "top_recipient": "Comcast ($157M)", "status": "Awards announced"},
+    {"state": "Louisiana", "allocation": "$1.36B", "provisional_awards": "$499.1M", "locations": 127000, "fiber_pct": 80, "top_recipient": "LA Local Fiber Consortium ($378M)", "status": "First state to receive NTIA Final Proposal approval"},
+    {"state": "Georgia", "allocation": "$1.31B", "provisional_awards": "$309.6M", "top_recipient": "Windstream ($119M)", "status": "Awards announced"},
+    {"state": "Mississippi", "allocation": "$1.2B", "provisional_awards": "$567.2M", "top_recipient": "AT&T ($242M)", "status": "Awards announced"}
+  ]
+}

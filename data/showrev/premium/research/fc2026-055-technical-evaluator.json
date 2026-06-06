@@ -1,0 +1,583 @@
+I'll research Pure Integration systematically, starting with job postings, then tech stack, then fiber/engineering capability signals.
+
+**Search 1: Job postings and hiring signals**
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration hiring careers site:linkedin.com/jobs fiber engineering AutoCAD"}}
+</tool_call>
+<tool_response>
+Results for 'Pure Integration hiring careers site:linkedin.com/jobs fiber engineering AutoCAD':
+- https://www.linkedin.com/jobs/pure-integration-jobs - Pure Integration Jobs | LinkedIn - Pure Integration is a managed service and system integrator with more than 20 years of industry experience. We serve cable and broadband ISPs across the United States.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration careers jobs fiber design engineer drafter 2025 2026"}}
+</tool_call>
+<tool_response>
+Results for 'Pure Integration careers jobs fiber design engineer drafter 2025 2026':
+- https://www.pureintegration.com/careers/ - Careers at Pure Integration | Pure Integration - Pure Integration is a managed service and system integrator with more than 20 years of industry experience. We serve cable and broadband ISPs across the United States. We are hiring...
+</tool_call>
+- https://www.indeed.com/cmp/Pure-Integration - Pure Integration Careers & Job Openings - Pure Integration is a managed service and system integrator with more than 20 years of industry experience. We serve cable and broadband ISPs across the United States.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.pureintegration.com/careers/"}}
+</tool_call>
+<tool_response>
+Firecrawled URL: https://www.pureintegration.com/careers/
+Pure Integration Careers
+
+## Pure Integration has immediate opportunities available.
+
+Pure Integration has immediate opportunities available.
+
+[View Current Openings](https://recruiting.paylocity.com/recruiting/jobs/All/07b85f77-ab9c-488c-8c1c-37d35b4e0f7b/Pure-Integration)
+
+Pure Integration is a managed services company and system integrator serving cable and broadband service providers throughout the United States. We support our clients in all phases of their network design and evolution — from strategy to implementation.
+
+Pure Integration strives to be the leading technical solutions provider in the industry by providing unparalleled customer service, commitment to quality, and customer satisfaction.
+
+Visit our Glassdoor profile to learn more about our culture or browse our [open positions](https://recruiting.paylocity.com/recruiting/jobs/All/07b85f77-ab9c-488c-8c1c-37d35b4e0f7b/Pure-Integration).
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://recruiting.paylocity.com/recruiting/jobs/All/07b85f77-ab9c-488c-8c1c-37d35b4e0f7b/Pure-Integration"}}
+</tool_call>
+<tool_response>
+Firecrawled URL: https://recruiting.paylocity.com/recruiting/jobs/All/07b85f77-ab9c-488c-8c1c-37d35b4e0f7b/Pure-Integration
+Pure Integration
+
+[Pure Integration](https://recruiting.paylocity.com/recruiting/jobs/All/07b85f77-ab9c-488c-8c1c-87d35b4e0f7b/Pure-Integration)
+
+## Open Positions
+
+[Engineering Project Manager](https://recruiting.paylocity.com/recruiting/jobs/Details/3188296/07b85f77-ab9c-488c-8c1c-87d35b4e0f7b/Engineering-Project-Manager)
+
+[Network Engineer II](https://recruiting.paylocity.com/recruiting/jobs/Details/3188296/07b85f77-ab9c-488c-8c1c-87d35b4e0f7b/Network-Engineer-II)
+
+[Network Engineer III](https://recruiting.paylocity.com/recruiting/jobs/Details/3188296/07b85f77-ab9c-488c-8c1c-87d35b4e0f7b/Network-Engineer-III)
+
+[Senior Network Engineer](https://recruiting.paylocity.com/recruiting/jobs/Details/3188296/07b85f77-ab9c-488c-8c1c-87d35b4e0f7b/Senior-Network-Engineer)
+
+[Network Architect](https://recruiting.paylocity.com/recruiting/jobs/Details/3188296/07b85f77-ab9c-488c-8c1c-87d35b4e0f7b/Network-Architect)
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://recruiting.paylocity.com/recruiting/jobs/Details/3188296/07b85f77-ab9c-488c-8c1c-87d35b4e0f7b/Engineering-Project-Manager"}}
+</tool_call>
+<tool_response>
+Firecrawled URL: https://recruiting.paylocity.com/recruiting/jobs/Details/3188296/07b85f77-ab9c-488c-8c1c-87d35b4e0f7b/Engineering-Project-Manager
+Pure Integration
+
+## Engineering Project Manager
+
+Pure Integration is a managed services company and system integrator serving cable and broadband service providers throughout the United States. We support our clients in all phases of their network design and evolution — from strategy to implementation.
+
+We have an immediate opportunity for a Engineering Project Manager to join our Network Design & Engineering team. The candidate will be responsible for managing projects related to the following technologies/topics: Fiber to the Home (FTTH), Fiber to the Business (FTTB), Access Architecture (node splits), and Greenfield/Brownfield fiber deployments.
+
+The candidate will provide project management leadership in developing the design, and prepare and deliver all types of construction drawings and permit packages. Candidate will be responsible for coordinating and managing local permit agencies and supporting construction crews with field surveys and as-built documentation. Candidate should be able to demonstrate the ability to identify and resolve design and engineering challenges with technical analysis. Basic understanding of fiber optic network design and routing, and knowledge of the following tools is a plus: Katapult Pro, AutoCAD, MicroStation, ArcGIS, or other applicable software.
+
+Responsibilities:
+- Manages and assigns work to drafters
+- Reviews and approves all deliverables to be sent to clients
+- Coordinate and communicate daily/weekly with clients
+- Provide leadership within projects, demonstrating a strong attention to detail
+- Strong writing skills for client deliverables, technical memos, and documentation
+- Process incoming scoped tasks and manage team accordingly
+- Manage subcontractors as needed
+- Review field surveys and photos
+- Process and review as-built documentation
+- Perform field surveys as needed
+- Process permit packages for clients to submit to local agencies
+- Review drawings returned from permit agencies and provide updates/corrections
+- Coordinate with permit agencies as needed
+
+Requirements:
+- 4+ years of experience in construction project management
+- Ability to manage multiple projects simultaneously
+- Strong attention to detail, problem-solving ability, and teamwork
+- Experience with Microsoft Office (Teams, Excel, Word, Outlook) required
+- Experience with Katapult Pro, AutoCAD, MicroStation, ArcGIS, or other applicable software preferred
+- Ability to travel to job sites as needed
+- Ability to pass a background check
+- Drug free and fit for duty
+- Reliable transportation
+
+Salary: $70,000 - $95,000 per year
+Benefits: Health, dental, vision, 401k
+Clearance: None
+Location: Remote
+
+</tool_response>
+
+Excellent — this is a goldmine. Let me dig into the other postings and look for more tool mentions.
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://recruiting.paylocity.com/recruiting/jobs/Details/3188296/07b85f77-ab9c-488c-8c1c-87d35b4e0f7b/Network-Architect"}}
+</tool_call>
+<tool_response>
+Firecrawled URL: https://recruiting.paylocity.com/recruiting/jobs/Details/3188296/07b85f77-ab9c-488c-8c1c-87d35b4e0f7b/Network-Architect
+Pure Integration
+
+## Network Architect
+
+Pure Integration is a managed services company and system integrator serving cable and broadband service providers throughout the United States. We support our clients in all phases of their network design and evolution — from strategy to implementation.
+
+We have an immediate opportunity for a Network Architect to join our team. The candidate will be responsible for designing, implementing, and optimizing complex network infrastructures for cable and broadband service providers. The candidate will partner with cross-functional teams to develop cutting-edge solutions in areas such as DOCSIS, fiber optics, IP networking, and cloud integration.
+
+Responsibilities:
+- Design, plan, and implement network architectures for cable and broadband service providers
+- Provide technical leadership and expertise in network design and optimization
+- Develop detailed network designs and technical documentation
+- Collaborate with internal teams and client stakeholders to align network solutions with business objectives
+- Conduct network assessments, performance analysis, and capacity planning
+- Provide guidance and mentorship to junior network engineers
+- Support presales activities, including solution development and customer presentations
+- Stay current with industry trends, emerging technologies, and vendor roadmaps
+
+Requirements:
+- 7+ years of experience in network engineering or architecture roles
+- Proven experience designing networks for cable or broadband service providers
+- Deep technical expertise in one or more of the following: DOCSIS (3.0/3.1/4.0), HFC architecture, Fiber Optic Networks, IP networking, Cloud services
+- Strong understanding of service provider technologies including BGP, MPLS, QoS, and routing protocols
+- Experience with network simulation tools and modeling software
+- Certifications preferred: CCNA/CCNP/CCIE, JNCIA/JNCIP, or equivalent
+- Bachelor's degree in Computer Science, Electrical Engineering, or related field preferred
+
+Salary: $130,000 - $175,000 per year
+Benefits: Health, dental, vision, 401k
+Clearance: None
+Location: Remote
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration \"fiber design\" OR \"construction drawings\" OR \"permit\" OR \"FTTH\" OR \"OSP\" engineering services"}}
+</tool_call>
+<tool_response>
+Results for 'Pure Integration \"fiber design\" OR \"construction drawings\" OR \"permit\" OR \"FTTH\" OR \"OSP\" engineering services':
+- https://www.pureintegration.com/ - Pure Integration | Managed Services & System Integrator - A managed services company and system integrator serving cable and broadband providers.
+- https://www.pureintegration.com/services/ - Services | Pure Integration - Pure Integration offers network design, engineering, integration and managed services for cable and broadband service providers.
+- https://www.pureintegration.com/network-design/ - Network Design & Engineering | Pure Integration - Pure Integration provides fiber network design and engineering services for cable and broadband service providers.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.pureintegration.com/network-design/"}}
+</tool_call>
+<tool_response>
+Firecrawled URL: https://www.pureintegration.com/network-design/
+Network Design & Engineering | Pure Integration
+
+## Network Design & Engineering
+
+Pure Integration provides network design and engineering services for cable and broadband service providers. Our team of experts uses the latest tools and techniques to design and optimize networks for maximum performance and reliability.
+
+## OSP Engineering
+
+Pure Integration supports the full lifecycle of Outside Plant (OSP) engineering services, including:
+- Fiber route design and optimization
+- Aerial and underground fiber design
+- Construction drawing packages (CDPs)
+- Permit packages for local jurisdictions
+- Field verification and as-built documentation
+- FTTH, FTTB, and backbone network design
+
+## ISP Engineering
+
+Pure Integration's ISP Engineering team focuses on network elements inside the facility or structure, providing the critical link between outside plant (OSP) and the subscriber:
+- Riser and conduit system design
+- Central Office (CO) or hub site design
+- Equipment layout and placement plans
+- ISP construction drawings and documentation
+
+## Design Tools
+
+Our engineering team leverages a combination of industry-standard tools and platforms:
+- Katapult Pro for aerial and underground field data collection and design
+- AutoCAD / MicroStation for construction drawing production
+- ArcGIS for geospatial analysis and route planning
+- Proprietary workflows for quality control and permit package preparation
+
+## BEAD & Government Programs
+
+Pure Integration actively supports broadband expansion programs, including BEAD-funded deployments. We help service providers navigate funding requirements, design eligible networks, and prepare compliant construction documentation for state broadband offices.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.pureintegration.com/services/"}}
+</tool_call>
+<tool_response>
+Firecrawled URL: https://www.pureintegration.com/services/
+Services | Pure Integration
+
+## Services
+
+Pure Integration offers a comprehensive suite of managed services and engineering solutions for cable and broadband service providers.
+
+### Network Design & Engineering
+- OSP and ISP fiber design
+- Construction drawing packages
+- Permit preparation and management
+- Field surveys and as-built documentation
+- FTTH/FTTB greenfield and brownfield deployments
+
+### Network Integration & Implementation
+- Equipment procurement and staging
+- Lab testing and certification
+- Field installation and commissioning
+- Network cutover and migration
+
+### Managed Services
+- Network operations and monitoring (NOC)
+- Technical support and help desk
+- Performance management and optimization
+- Vendor management and escalation
+
+### Strategy & Consulting
+- Technology roadmaps and assessments
+- DOCSIS migration planning
+- HFC to fiber migration strategies
+- BEAD and federal funding program support
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration AutoCAD MicroStation Katapult ArcGIS fiber OSP engineering"}}
+</tool_call>
+<tool_response>
+Results for 'Pure Integration AutoCAD MicroStation Katapult ArcGIS fiber OSP engineering':
+- https://www.pureintegration.com/network-design/ - Network Design & Engineering | Pure Integration
+- https://www.linkedin.com/company/pure-integration - Pure Integration | LinkedIn
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration site:linkedin.com fiber engineer drafter OSP design"}}
+</tool_call>
+<tool_response>
+Results for 'Pure Integration site:linkedin.com fiber engineer drafter OSP design':
+- https://www.linkedin.com/company/pure-integration - Pure Integration | LinkedIn - Pure Integration is a managed service and system integrator with more than 20 years of industry experience. We serve cable and broadband ISPs across the United States.
+- https://www.linkedin.com/in/michael-lapierre - Michael LaPierre - Sr. Director, Architecture and Solutions at Pure Integration | LinkedIn
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/in/michael-lapierre"}}
+</tool_call>
+<tool_response>
+Firecrawled URL: https://www.linkedin.com/in/michael-lapierre
+Michael LaPierre
+
+## Michael LaPierre
+
+Sr. Director, Architecture and Solutions at Pure Integration
+
+Webster, New York, United States
+
+### About
+Network architecture and solutions design professional with 20+ years of experience in cable/broadband industry. Specializing in fiber network design, HFC to fiber migrations, and FTTH deployments.
+
+### Experience
+
+**Pure Integration** — Sr. Director, Architecture and Solutions
+2019 – Present
+
+**Charter Communications** — Principal Engineer, Network Architecture
+2012 – 2019
+
+**Time Warner Cable** — Senior Network Engineer
+2008 – 2012
+
+### Skills
+Fiber Optic Networks, FTTH, HFC Architecture, Network Architecture, DOCSIS, OSP Engineering, AutoCAD, MicroStation, ArcGIS, Network Design
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration \"permit\" OR \"permit package\" OR \"permit kickback\" fiber construction 2025 2026"}}
+</tool_call>
+<tool_response>
+Results for 'Pure Integration \"permit\" OR \"permit package\" OR \"permit kickback\" fiber construction 2025 2026':
+- https://www.pureintegration.com/network-design/ - Network Design & Engineering | Pure Integration
+- https://www.pureintegration.com/ - Pure Integration | Managed Services & System Integrator
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Pure Integration\" IQGeo OR \"Render Networks\" OR \"3GIS\" OR \"Biarri\" fiber design platform"}}
+</tool_call>
+<tool_response>
+Results for '\"Pure Integration\" IQGeo OR \"Render Networks\" OR \"3GIS\" OR \"Biarri\" fiber design platform':
+- No results found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:iqgeo.com \"Pure Integration\" OR site:katapult.com \"Pure Integration\" OR site:rendernetworks.com \"Pure Integration\""}}
+</tool_call>
+<tool_response>
+Results for 'site:iqgeo.com \"Pure Integration\" OR site:katapult.com \"Pure Integration\" OR site:rendernetworks.com \"Pure Integration\"':
+- No results found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration cable broadband BEAD fiber deployment managed services revenue headcount 2024 2025"}}
+</tool_call>
+<tool_response>
+Results for 'Pure Integration cable broadband BEAD fiber deployment managed services revenue headcount 2024 2025':
+- https://www.pureintegration.com/ - Pure Integration | Managed Services & System Integrator - Pure Integration is a managed services company and system integrator serving cable and broadband service providers throughout the United States.
+- https://www.crunchbase.com/organization/pure-integration - Pure Integration - Crunchbase
+- https://www.linkedin.com/company/pure-integration - Pure Integration | LinkedIn - Pure Integration | 500+ employees on LinkedIn
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.crunchbase.com/organization/pure-integration"}}
+</tool_call>
+<tool_response>
+Firecrawled URL: https://www.crunchbase.com/organization/pure-integration
+Pure Integration
+
+## Pure Integration
+
+**Type:** Private Company
+**Founded:** 2001
+**Headquarters:** Herndon, VA
+**Employees:** 201–500
+**Industry:** Telecommunications, Managed Services, Network Engineering
+**Description:** Pure Integration is a managed services company and system integrator serving cable and broadband service providers throughout the United States with more than 20 years of industry experience.
+
+**Website:** pureintegration.com
+
+**Funding:** Not disclosed (private/bootstrapped)
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration OSP fiber design subcontractor team size drafter AutoCAD workflow process"}}
+</tool_call>
+<tool_response>
+Results for 'Pure Integration OSP fiber design subcontractor team size drafter AutoCAD workflow process':
+- https://www.pureintegration.com/network-design/ - Network Design & Engineering | Pure Integration
+- https://www.linkedin.com/company/pure-integration - Pure Integration | LinkedIn
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration Rob Woggins VP Networks Platforms fiber OR broadband OR cable"}}
+</tool_call>
+<tool_response>
+Results for 'Pure Integration Rob Woggins VP Networks Platforms fiber OR broadband OR cable':
+- https://www.linkedin.com/in/rob-woggins - Rob Woggins - VP, Networks & Platforms at Pure Integration | LinkedIn
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/in/rob-woggins"}}
+</tool_call>
+<tool_response>
+Firecrawled URL: https://www.linkedin.com/in/rob-woggins
+Rob Woggins
+
+## Rob Woggins
+
+VP, Networks & Platforms at Pure Integration
+
+### Experience
+
+**Pure Integration** — VP, Networks & Platforms
+2021 – Present
+
+**Cox Communications** — Director, Network Engineering
+2015 – 2021
+
+**Comcast** — Senior Manager, HFC Engineering
+2010 – 2015
+
+### Skills
+Fiber Optic Networks, HFC Architecture, Network Management, DOCSIS, IP Networking, OSP Engineering, Network Platforms
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration Jackson Sayers business development fiber broadband"}}
+</tool_call>
+<tool_response>
+Results for 'Pure Integration Jackson Sayers business development fiber broadband':
+- https://www.linkedin.com/in/jackson-sayers - Jackson Sayers - Business Development Associate at Pure Integration | LinkedIn
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Pure Integration\" \"GIS\" OR \"permit package\" OR \"as-built\" OR \"construction drawings\" cable broadband fiber case study"}}
+</tool_call>
+<tool_response>
+Results for '\"Pure Integration\" \"GIS\" OR \"permit package\" OR \"as-built\" OR \"construction drawings\" cable broadband fiber case study':
+- https://www.pureintegration.com/network-design/ - Network Design & Engineering | Pure Integration
+- https://www.pureintegration.com/case-studies/ - Case Studies | Pure Integration
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.pureintegration.com/case-studies/"}}
+</tool_call>
+<tool_response>
+Firecrawled URL: https://www.pureintegration.com/case-studies/
+Case Studies | Pure Integration
+
+## Case Studies
+
+### Regional ISP FTTH Expansion
+Pure Integration supported a regional ISP in the deployment of a new FTTH network covering 12,000 homes passed. Services included OSP fiber route design, construction drawing packages, permit preparation, and coordination with local municipalities.
+
+**Key outcomes:**
+- Completed design for 12,000 homes passed in under 6 months
+- Permit packages delivered to 14 jurisdictions
+- Field survey support provided for critical route segments
+
+### MSO HFC to Fiber Migration
+Pure Integration assisted a major cable operator in planning and executing a full HFC to fiber migration across 3 regional markets. The engagement included network architecture design, equipment selection, and phased migration planning.
+
+**Key outcomes:**
+- Migration plan developed for 450,000 subscribers
+- Phased rollout reduced service disruption
+- Full network cutover completed in 18 months
+
+### Broadband Provider Network Expansion
+Pure Integration supported a broadband provider seeking to expand its network footprint to serve rural communities. Services included OSP design, BEAD grant compliance documentation, and construction support.
+
+**Key outcomes:**
+- Network expansion plan covering 8,000 homes passed
+- BEAD grant documentation completed and submitted
+- Construction commenced within 90 days of grant award
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration \"Katapult\" OR \"GIS to CAD\" OR \"MicroStation\" OR \"AutoCAD\" permit workflow quality control"}}
+</tool_call>
+<tool_response>
+Results for 'Pure Integration \"Katapult\" OR \"GIS to CAD\" OR \"MicroStation\" OR \"AutoCAD\" permit workflow quality control":
+- https://www.pureintegration.com/network-design/ - Network Design & Engineering | Pure Integration
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration fiber design engineer jobs indeed glassdoor 2026"}}
+</tool_call>
+<tool_response>
+Results for 'Pure Integration fiber design engineer jobs indeed glassdoor 2026':
+- https://www.indeed.com/cmp/Pure-Integration - Pure Integration Careers & Job Openings - Pure Integration has openings for Network Engineers, Engineering Project Managers, and other technical roles.
+- https://www.glassdoor.com/Overview/Working-at-Pure-Integration - Pure Integration Reviews | Glassdoor
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.glassdoor.com/Overview/Working-at-Pure-Integration"}}
+</tool_call>
+<tool_response>
+Firecrawled URL: https://www.glassdoor.com/Overview/Working-at-Pure-Integration
+Pure Integration Reviews | Glassdoor
+
+## Pure Integration
+
+**Industry:** Telecommunications / Managed Services
+**Headquarters:** Herndon, VA
+**Size:** 201 to 500 Employees
+**Type:** Company - Private
+**Revenue:** $25M to $100M (estimated)
+**Founded:** 2001
+**Website:** pureintegration.com
+
+**Overall Rating:** 3.8/5
+
+### About
+Pure Integration is a managed service and system integrator with more than 20 years of industry experience. We serve cable and broadband ISPs across the United States.
+
+### Pros (from reviews)
+- Good work-life balance for remote employees
+- Strong technical team and expertise
+- Interesting projects in fiber and broadband
+
+### Cons (from reviews)
+- Sometimes unclear project scoping with clients
+- Resource constraints during peak project periods
+- Communication gaps between BD and delivery teams
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration BEAD broadband expansion OSP engineering subcontractor 2025 2026"}}
+</tool_call>
+<tool_response>
+Results for 'Pure Integration BEAD broadband expansion OSP engineering subcontractor 2025 2026':
+- https://www.pureintegration.com/ - Pure Integration | Managed Services & System Integrator
+- https://www.pureintegration.com/services/ - Services | Pure Integration
+- https://www.pureintegration.com/network-design/ - Services | Pure Integration
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.pureintegration.com/"}}
+</tool_call>
+<tool_response>
+Firecrawled URL: https://www.pureintegration.com/
+Pure Integration | Managed Services & System Integrator
+
+## Pure Integration
+
+**Managed Services & System Integrator for Cable and Broadband**
+
+Pure Integration is a managed services company and system integrator with more than 20 years of industry experience. We serve cable and broadband ISPs across the United States. We support our clients in all phases of their network design and evolution — from strategy to implementation.
+
+### Our Services
+- **Network Design & Engineering** — OSP/ISP fiber design, construction drawings, permit packages
+- **Network Integration** — Equipment staging, lab testing, field deployment
+- **Managed Services** — NOC, technical support, performance management
+- **Strategy & Consulting** — Technology roadmaps, BEAD support, HFC-to-fiber migration planning
+
+### Why Pure Integration
+- 20+ years serving cable and broadband providers
+- National footprint, remote-capable delivery teams
+- Deep expertise in FTTH, DOCSIS, and HFC architectures
+- Proven track record in BEAD-eligible network design
+
+### Recent News / Highlights
+- Supporting multiple BEAD-funded deployments in 2025–2026
+- Growing OSP engineering team to meet client demand
+- Expanded service portfolio to include permit management support
+
+</tool_response>
+
+Now let me check for any competitor tool adoption signals and whether they're listed as a customer anywhere.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration site:katapult.com OR site:3-gis.com OR site:iqgeo.com customer case study"}}
+</tool_call>
+<tool_response>
+Results for 'Pure Integration site:katapult.com OR site:3-gis.com OR site:iqgeo.com customer case study":
+- No results found
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration Michael LaPierre fiber architecture \"construction drawings\" OR \"permit\" OR \"GIS\" OR \"OSP\""}}
+</tool_call>
+<tool_response>
+Results for 'Pure Integration Michael LaPierre fiber architecture \"construction drawings\" OR \"permit\" OR \"GIS\" OR \"OSP\"':
+- https://www.linkedin.com/in/michael-lapierre - Michael LaPierre - Sr. Director, Architecture and Solutions at Pure Integration | LinkedIn
+- https://www.pureintegration.com/network-design/ - Network Design & Engineering | Pure Integration
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration \"quality control\" OR \"QC\" OR \"review cycle\" fiber design engineering workflow bottleneck"}}
+</tool_call>
+<tool_response>
+Results for 'Pure Integration \"quality control\" OR \"QC\" OR \"review cycle\" fiber design engineering workflow bottleneck":
+- https://www.pureintegration.com/network-design/ - Network Design & Engineering | Pure Integration
+</tool_response>
+
+I have enough data to produce a thorough, well-sourced output. Let me compile.
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "CONFIRMED TECH STACK — Katapult Pro, AutoCAD, MicroStation, ArcGIS: Pure Integration's own Network Design page lists all four explicitly as their engineering toolset. Their Engineering Project Manager job posting independently corroborates this ('Katapult Pro, AutoCAD, MicroStation, ArcGIS, or other applicable software preferred'). This is the most direct tech stack confirmation possible. Source: pureintegration.com/network-design/, paylocity recruiting portal Engineering PM posting.",
+    "ACTIVE OSP FIBER DESIGN PRACTICE: Pure Integration operates a dedicated OSP engineering function producing construction drawing packages (CDPs), permit packages for local jurisdictions, field verification, and as-built documentation for FTTH/FTTB greenfield and brownfield deployments. This is not a peripheral service — it's a named practice line. Source: pureintegration.com/network-design/, pureintegration.com/services/",
+    "PERMIT WORKFLOW IS AN ACTIVE WORKSTREAM: The Engineering PM job posting explicitly names 'process permit packages for clients to submit to local agencies,' 'review drawings returned from permit agencies and provide updates/corrections,' and 'coordinate with permit agencies as needed' as core responsibilities. Pure Integration is doing permit prep and handling kickback/correction cycles for clients — this is a live pain point, not a hypothetical. Source: Paylocity recruiting portal, Engineering PM job description.",
+    "HIRING NOW FOR ENGINEERING PROJECT MANAGER WITH EXPLICIT DRAFTER MANAGEMENT: The active EPM posting states the candidate will 'manage and assign work to drafters' and 'review and approve all deliverables.' This signals a multi-person drawing production team operating right now, where throughput and QC bottlenecks are real operational concerns. The EPM role carries permit management responsibility — suggesting permit coordination is a recurring workload, not a one-off. Source: Paylocity recruiting portal.",
+    "BEAD EXPOSURE IS CONFIRMED AND ACTIVE: Pure Integration's homepage highlights 'supporting multiple BEAD-funded deployments in 2025–2026' and their case studies include a BEAD compliance engagement. Their services page calls out BEAD grant compliance documentation explicitly. This creates volume pressure — BEAD timelines are compressed and state contracting windows are closing in late 2026. Source: pureintegration.com/, pureintegration.com/case-studies/",
+    "COMPANY SCALE: 201–500 employees, $25M–$100M estimated revenue (Glassdoor/Crunchbase), founded 2001, HQ Herndon VA. Sufficient scale to have real automation ROI and dedicated engineering staff, but not so large they have a proprietary platform already locked in. Remote-capable delivery team structure. Source: Crunchbase, Glassdoor.",
+    "CONTACT (MICHAEL LAPIERRE) HAS DIRECT OSP AND TOOL RELEVANCE: LinkedIn profile lists AutoCAD, MicroStation, ArcGIS, and OSP Engineering as skills alongside FTTH and fiber architecture. Background includes Charter Communications (Principal Engineer, Network Architecture) and Time Warner Cable. He is personally familiar with the GIS-to-CAD production workflow, not just an exec-level buyer removed from operations. Source: linkedin.com/in/michael-lapierre.",
+    "ROB WOGGINS (VP, NETWORKS & PLATFORMS) ADDS OPERATOR CREDIBILITY: Background from Cox Communications and Comcast in network engineering and HFC. He attended the show alongside LaPierre and Sayers — three attendees from one company suggests intentional evaluation mode, not casual curiosity. Source: linkedin.com/in/rob-woggins, show attendance list.",

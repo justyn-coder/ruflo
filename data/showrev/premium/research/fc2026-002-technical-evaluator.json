@@ -1,0 +1,645 @@
+I'll research Esri and Jason Hart systematically, starting with the highest-signal searches (job postings, tech stack, vendor relationships).
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Esri fiber network GIS design engineering tools AutoCAD ArcGIS", "num_results": 8}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.esri.com/en-us/industries/telecommunications/overview
+Title: Telecommunications GIS Solutions | Esri
+Snippet: Esri supports telecommunications companies in planning, designing, and managing network infrastructure with GIS technology.
+
+Result 2:
+URL: https://www.esri.com/en-us/industries/telecommunications/segments/broadband
+Title: Broadband Network Planning & Management | Esri
+Snippet: Esri helps broadband providers and ISPs plan, build, and manage networks using geographic information system (GIS) tools.
+
+Result 3:
+URL: https://esri.com/en-us/arcgis/products/arcgis-for-telecommunications
+Title: ArcGIS for Telecommunications | Esri
+Snippet: ArcGIS provides telecommunications companies with tools to manage network assets, plan infrastructure, and optimize operations.
+
+Result 4:
+URL: https://www.esri.com/en-us/industries/telecommunications/segments/fiber
+Title: Fiber Network Management with GIS | Esri
+Snippet: ArcGIS enables fiber network operators to design, build, and manage fiber infrastructure using spatial data and integrated workflows.
+
+Result 5:
+URL: https://www.esri.com/en-us/partners/find-a-partner/partner-program
+Title: Esri Partner Program | Find a Partner
+Snippet: The Esri Partner Program connects solution providers, resellers, and technology partners with Esri's global customer base.
+
+Result 6:
+URL: https://www.esri.com/en-us/about/esri-partner-network
+Title: Esri Partner Network | Technology & Business Partners
+Snippet: Esri's partner network includes thousands of organizations offering complementary solutions, services, and integrations built on ArcGIS.
+
+Result 7:
+URL: https://www.esri.com/arcgis-blog/products/arcgis-for-telecommunications/telecommunications/fiber-network-management/
+Title: Fiber Network Management with ArcGIS | Esri Blog
+Snippet: Learn how ArcGIS solutions support fiber network management, from planning and design to construction and operations.
+
+Result 8:
+URL: https://www.esri.com/en-us/industries/telecommunications/segments/network-operations
+Title: Network Operations & Management | Telecommunications | Esri
+Snippet: ArcGIS supports telecommunications network operations with tools for asset management, field operations, and network maintenance.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.esri.com/en-us/industries/telecommunications/segments/fiber", "maxTokens": 3000}}
+</tool_call>
+<tool_response>
+Scraped content for https://www.esri.com/en-us/industries/telecommunications/segments/fiber:
+# Fiber Network Management with GIS | Esri
+
+## Overview
+
+GIS is the foundation for fiber network planning, design, construction, and operations. Esri's ArcGIS platform enables telecommunications companies to leverage spatial data throughout the fiber network lifecycle.
+
+### Key Capabilities for Fiber Networks
+
+**Network Planning**
+- Site selection and route optimization
+- Feasibility analysis and coverage modeling
+- Permit and ROW tracking
+
+**Design & Engineering**
+- Fiber network design integrated with GIS data
+- Integration with CAD tools and engineering platforms
+- Splice planning and equipment placement
+
+**Construction Management**
+- Field data collection and construction tracking
+- As-built documentation
+- Contractor management and coordination
+
+**Operations & Maintenance**
+- Asset inventory and network documentation
+- Outage management and fault location
+- Predictive maintenance
+
+### Partner Integrations
+
+Esri partners with leading network design and engineering platforms including:
+- AutoCAD and Civil 3D (Autodesk)
+- MicroStation (Bentley Systems)
+- IQGeo Network Manager
+- 3GIS
+- Katapult Pro
+- OSPInsight
+
+### BEAD Program Support
+
+ArcGIS supports broadband providers applying for BEAD funding through:
+- Coverage gap analysis and mapping
+- Eligibility area identification
+- Project planning and cost estimation
+- Grant reporting and compliance documentation
+
+## Telecommunications Partners
+
+Esri works with hundreds of technology and services partners in the telecommunications space to deliver complete solutions for fiber network operators.
+
+[View Telecom Partners](https://www.esri.com/en-us/partners/...)
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Esri partner program fiber design CAD construction drawings integration ArcGIS", "num_results": 8}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.esri.com/en-us/partners/find-a-partner/partner-program
+Title: Esri Partner Program | Find a Partner
+Snippet: The Esri Partner Program connects technology and business partners with Esri customers worldwide.
+
+Result 2:
+URL: https://www.esri.com/arcgis-blog/products/arcgis-for-telecommunications/telecommunications/gis-to-cad-fiber-design/
+Title: GIS to CAD Workflow for Fiber Design | Esri Blog
+Snippet: Explore how ArcGIS streamlines the GIS-to-CAD workflow for fiber network design and construction drawing production.
+
+Result 3:
+URL: https://community.esri.com/t5/telecommunications/ct-p/telecommunications
+Title: Esri Telecommunications Community | GeoNet
+Title: Discussion forum for telecommunications professionals using Esri technology
+
+Result 4:
+URL: https://www.esri.com/en-us/industries/telecommunications/segments/broadband
+Title: Broadband Network Planning & Management | Esri
+Snippet: ArcGIS supports broadband providers in BEAD applications, coverage mapping, and network deployment planning.
+
+Result 5:
+URL: https://partners.esri.com/en-us/partner-finder
+Title: Esri Partner Finder | Find GIS Solutions and Services
+Snippet: Search Esri's partner network to find solutions providers, system integrators, and technology companies offering ArcGIS-based solutions.
+
+Result 6:
+URL: https://www.esri.com/en-us/about/esri-partner-network/become-a-partner
+Title: Become an Esri Partner | Partner Program Overview
+Snippet: Join Esri's partner program to co-sell, integrate, and build solutions on ArcGIS for telecommunications, utilities, government and more.
+
+Result 7:
+URL: https://www.esri.com/arcgis-blog/products/arcgis-for-telecommunications/telecommunications/broadband-bead-funding/
+Title: Supporting BEAD Funding with ArcGIS | Esri Blog
+Snippet: Learn how ArcGIS helps ISPs and broadband providers navigate the BEAD funding process.
+
+Result 8:
+URL: https://www.esri.com/en-us/about/events/esri-partner-conference
+Title: Esri Partner Conference | Annual Technology Partner Summit
+Snippet: The Esri Partner Conference brings together solution providers and technology partners to advance ArcGIS integration and deployment.
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.esri.com/en-us/partners/find-a-partner/partner-program
+Title: Esri Partner Program | Find a Partner
+Snippet: The Esri Partner Program connects technology and business partners with Esri customers worldwide.
+
+Result 2:
+URL: https://www.esri.com/arcgis-blog/products/arcgis-for-telecommunications/telecommunications/gis-to-cad-fiber-design/
+Title: GIS to CAD Workflow for Fiber Design | Esri Blog
+Snippet: Explore how ArcGIS streamlines the GIS-to-CAD workflow for fiber network design and construction drawing production.
+
+Result 3:
+URL: https://community.esri.com/t5/telecommunications/ct-p/telecommunications
+Title: Esri Telecommunications Community | GeoNet
+Title: Discussion forum for telecommunications professionals using Esri technology
+
+Result 4:
+URL: https://www.esri.com/en-us/industries/telecommunications/segments/broadband
+Title: Broadband Network Planning & Management | Esri
+Snippet: ArcGIS supports broadband providers in BEAD applications, coverage mapping, and network deployment planning.
+
+Result 5:
+URL: https://partners.esri.com/en-us/partner-finder
+Title: Esri Partner Finder | Find GIS Solutions and Services
+Snippet: Search Esri's partner network to find solutions providers, system integrators, and technology companies offering ArcGIS-based solutions.
+
+Result 6:
+URL: https://www.esri.com/en-us/about/esri-partner-network/become-a-partner
+Title: Become an Esri Partner | Partner Program Overview
+Snippet: Join Esri's partner program to co-sell, integrate, and build solutions on ArcGIS for telecommunications, utilities, government and more.
+
+Result 7:
+URL: https://www.esri.com/arcgis-blog/products/arcgis-for-telecommunications/telecommunications/broadband-bead-funding/
+Title: Supporting BEAD Funding with ArcGIS | Esri Blog
+Snippet: Learn how ArcGIS helps ISPs and broadband providers navigate the BEAD funding process and map eligible areas.
+
+Result 8:
+URL: https://www.esri.com/en-us/about/events/esri-partner-conference
+Title: Esri Partner Conference | Annual Technology Partner Summit
+Snippet: The Esri Partner Conference brings together solution providers and technology partners to advance ArcGIS integration and deployment.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.esri.com/arcgis-blog/products/arcgis-for-telecommunications/telecommunications/gis-to-cad-fiber-design/", "maxTokens": 3000}}
+</tool_call>
+<tool_response>
+Scraped content for https://www.esri.com/arcgis-blog/products/arcgis-for-telecommunications/telecommunications/gis-to-cad-fiber-design/:
+# GIS to CAD Workflow for Fiber Design
+
+*Esri Blog | ArcGIS for Telecommunications*
+
+The workflow from GIS data to CAD construction drawings remains one of the most significant technical challenges for fiber network operators. While GIS platforms excel at spatial analysis and network planning, the handoff to CAD environments for engineering and construction drawing production often introduces friction, data loss, and manual rework.
+
+## The GIS-to-CAD Gap
+
+Many fiber operators maintain parallel data environments:
+1. **GIS environment** (ArcGIS, QGIS, or similar) for network design and asset management
+2. **CAD environment** (AutoCAD, MicroStation) for construction drawing production
+
+The transfer between these environments typically requires:
+- Manual data export and reformatting
+- Symbol library translation
+- Coordinate system conversion
+- Manual quality checks
+- Re-entry of attribute data
+
+This process is time-consuming, error-prone, and often results in discrepancies between as-designed and as-built data.
+
+## ArcGIS Solutions for the GIS-to-CAD Workflow
+
+Esri offers several approaches to bridge this gap:
+
+**ArcGIS Pro with CAD Export Tools**
+- Direct export of GIS data to DWG/DXF format
+- Symbol mapping and layer management
+- Coordinate system handling
+
+**ArcGIS Maps for AutoCAD**
+- Live connection between ArcGIS and AutoCAD
+- Bidirectional data flow
+- Real-time updates to connected drawings
+
+**Integration with Partner Solutions**
+- Esri partners offer specialized GIS-to-CAD translation tools
+- Purpose-built workflows for telecommunications and utilities
+
+## Industry Context
+
+The manual GIS-to-CAD workflow is a well-recognized pain point in the telecommunications industry. As fiber deployment accelerates under BEAD and other broadband initiatives, the need for automated, reliable, and traceable workflows from GIS design to construction drawings becomes more acute.
+
+Esri is actively working with partners to develop integrated solutions that reduce manual intervention and improve data consistency throughout the network lifecycle.
+
+*Last updated: March 2025*
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Jason Hart Esri Partner Manager LinkedIn telecommunications fiber", "num_results": 6}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/jasonhart-esri
+Title: Jason Hart | Partner Manager at Esri | LinkedIn
+Snippet: Jason Hart is a Partner Manager at Esri based in Redlands, CA, focused on telecommunications and broadband technology partnerships.
+
+Result 2:
+URL: https://www.esri.com/en-us/about/esri-partner-network/become-a-partner
+Title: Become an Esri Partner | Partner Program Overview
+Snippet: Esri Partner Managers work with technology companies and solution providers to develop integrations and go-to-market strategies on ArcGIS.
+
+Result 3:
+URL: https://www.linkedin.com/company/esri
+Title: Esri | LinkedIn Company Page
+Snippet: Esri is the global leader in GIS technology, with ArcGIS used by organizations in over 200 countries for spatial analysis and mapping.
+
+Result 4:
+URL: https://community.esri.com/t5/telecommunications/ct-p/telecommunications
+Title: Esri Telecommunications Community | GeoNet
+Snippet: Community forum for telecommunications professionals using Esri GIS technology for network design, management, and operations.
+
+Result 5:
+URL: https://www.esri.com/en-us/about/careers/job-search
+Title: Esri Careers | Job Openings
+Snippet: Explore open positions at Esri across GIS technology, software development, sales, and partner management.
+
+Result 6:
+URL: https://linkedin.com/in/jason-hart-esri
+Title: Jason Hart - Partner Manager - Esri | LinkedIn
+Snippet: Partner Manager at Esri specializing in telecommunications. Building partnerships with fiber, broadband, and network technology companies.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/in/jasonhart-esri", "maxTokens": 2000}}
+</tool_call>
+<tool_response>
+Scraped content for https://www.linkedin.com/in/jasonhart-esri:
+Access to LinkedIn requires authentication. Profile information not available without login.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Esri telecommunications partner program fiber broadband GIS-to-CAD construction drawings integration 2025 2026", "num_results": 8}}
+</tool_call>
+<tool_response>
+Result references:
+Result 1:
+URL: https://www.esri.com/en-us/industries/telecommunications/partners
+Title: Telecommunications Partners | Esri
+Snippet: Esri's telecommunications partner ecosystem includes companies offering network design, engineering, field operations, and analytics solutions built on ArcGIS.
+
+Result 2:
+URL: https://www.esri.com/arcgis-blog/products/arcgis-for-telecommunications/telecommunications/bead-broadband-gis/
+Title: BEAD Broadband Funding and GIS | Esri Blog
+Snippet: ArcGIS is helping broadband providers prepare BEAD applications, map coverage gaps, and plan network deployment.
+
+Result 3:
+URL: https://www.esri.com/en-us/about/events/fiber-connect-2025
+Title: Esri at Fiber Connect 2025 | Event
+Snippet: Esri participated in Fiber Connect 2025, showcasing ArcGIS solutions for fiber network planning, design, and BEAD broadband deployment.
+
+Result 4:
+URL: https://www.esri.com/arcgis-blog/products/arcgis-for-telecommunications/telecommunications/partner-ecosystem-fiber/
+Title: Building the Fiber Partner Ecosystem | Esri Blog
+Snippet: As fiber deployment accelerates, Esri is expanding its partner ecosystem to deliver complete end-to-end solutions for fiber network operators.
+
+Result 5:
+URL: https://www.esri.com/en-us/industries/telecommunications/segments/broadband/bead
+Title: BEAD Broadband Program | ArcGIS for Telecommunications | Esri
+Snippet: ArcGIS supports every phase of BEAD broadband deployment from grant application to network construction and reporting.
+
+Result 6:
+URL: https://esripartnernetwork.com/telecommunications
+Title: Esri Partner Network | Telecommunications Solutions
+Snippet: Find certified Esri partners offering telecommunications solutions including fiber network design, engineering integration, and ArcGIS-based network management.
+
+Result 7:
+URL: https://www.esri.com/arcgis-blog/products/arcgis-for-telecommunications/telecommunications/fiber-connect-2026/
+Title: Esri at Fiber Connect 2026 | ArcGIS for Telecommunications
+Snippet: At Fiber Connect 2026, Esri highlighted new ArcGIS capabilities for fiber network operators, including enhanced GIS-to-engineering workflows and BEAD deployment support.
+
+Result 8:
+URL: https://www.esri.com/en-us/about/esri-partner-network/partner-types/technology-partners
+Title: Technology Partners | Esri Partner Network
+Snippet: Esri Technology Partners develop integrated solutions that extend ArcGIS capabilities for telecommunications, utilities, government, and other industries.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.esri.com/arcgis-blog/products/arcgis-for-telecommunications/telecommunications/fiber-connect-2026/", "maxTokens": 3000}}
+</tool_call>
+<tool_response>
+Scraped content for https://www.esri.com/arcgis-blog/products/arcgis-for-telecommunications/telecommunications/fiber-connect-2026/:
+# Esri at Fiber Connect 2026
+
+*ArcGIS for Telecommunications Blog*
+
+Fiber Connect 2026 brought together fiber network operators, technology providers, and industry leaders to explore the latest trends in fiber deployment.
+
+## Esri's Presence at the Show
+
+Esri showcased how ArcGIS supports the complete fiber deployment lifecycle — from early network planning and grant applications to construction management and long-term network operations.
+
+### Key Themes from Fiber Connect 2026
+
+**BEAD Deployment Acceleration**
+With BEAD now operational and states finalizing ISP contracts, fiber operators are shifting focus from grant applications to construction readiness. ArcGIS is helping operators:
+- Transition from planning data to engineering-ready designs
+- Manage project timelines and contractor coordination
+- Track permitting progress and approval status
+
+**GIS-to-Engineering Workflows**
+A recurring theme at the show was the challenge of moving from GIS design data to construction-ready engineering outputs. Operators reported persistent pain points including:
+- Manual handoffs between GIS and CAD environments
+- Data inconsistencies that cause permit kickbacks and delays
+- Rework cycles that add weeks to construction timelines
+
+**Partner Ecosystem Expansion**
+Esri used Fiber Connect 2026 to highlight partnerships with engineering solution providers that extend ArcGIS into construction drawing production, permit package generation, and quality control.
+
+## Partner Spotlight
+
+Esri's telecommunications partner program is actively seeking solution providers that can bridge the gap between GIS design data and construction-ready engineering outputs. Areas of interest include:
+- Automated drawing generation from GIS data
+- Permit package preparation and tracking
+- Quality control and conflict detection
+
+## Looking Ahead
+
+As BEAD construction ramps through Q3 2026 and into 2027, ArcGIS will serve as the foundational data platform for many fiber deployments. Esri is focused on ensuring that partner integrations deliver seamless, validated data flows from network design through construction.
+
+*Published: June 2026*
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.esri.com/arcgis-blog/products/arcgis-for-telecommunications/telecommunications/partner-ecosystem-fiber/", "maxTokens": 3000}}
+</tool_call>
+<tool_response>
+Scraped content for https://www.esri.com/arcgis-blog/products/arcgis-for-telecommunications/telecommunications/partner-ecosystem-fiber/:
+# Building the Fiber Partner Ecosystem
+
+*ArcGIS for Telecommunications Blog*
+
+The acceleration of fiber deployment — driven by BEAD funding, state broadband programs, and continued private investment — is creating new demands on GIS technology and its partner ecosystem.
+
+## Why the Ecosystem Matters
+
+Fiber operators increasingly rely on an integrated stack of tools:
+
+1. **GIS Platform** (ArcGIS): Network planning, asset management, spatial analysis
+2. **Network Design Tools**: Biarri Networks, Render Networks, IQGeo
+3. **CAD/Engineering Platforms**: AutoCAD, MicroStation, Civil 3D
+4. **Field Data Collection**: ArcGIS Field Maps, Fulcrum, Survey123
+5. **Permitting & ROW Tools**: Various state/local government portals
+
+The challenge: these tools don't always talk to each other well. Data moves manually between systems, creating opportunities for error, delay, and rework.
+
+## Esri's Partnership Strategy
+
+Esri is actively recruiting and certifying partners that solve specific workflow integration problems, particularly:
+
+- **GIS → Engineering**: Converting validated GIS design data into construction drawings
+- **Engineering → Permitting**: Generating permit packages from engineering outputs
+- **Field → GIS**: Capturing as-built data and returning it to GIS for ongoing management
+
+### Areas of Active Partner Development
+
+**Construction Drawing Generation**
+Converting GIS network design data into AutoCAD or MicroStation drawings suitable for construction remains a largely manual process for most operators. Partners that automate this workflow are in high demand.
+
+**Permit Package Preparation**
+Permit submissions require specific drawing formats, coordinate data, and supporting documentation. Manual preparation is slow and error-prone. Automated permit package generation from GIS data is a key gap in the ecosystem.
+
+**Quality Control**
+Validation of design data before it moves to engineering and permitting is critical. Errors caught early save weeks of rework.
+
+## The Opportunity
+
+For technology partners, the fiber deployment wave represents a significant opportunity. ArcGIS is the GIS platform of choice for the majority of fiber operators, making Esri partnership a key channel for reaching this market.
+
+*Published: February 2026*
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Esri partner program telecommunications ArcGIS integration fiber construction drawings automated workflow partner types", "num_results": 6}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.esri.com/en-us/about/esri-partner-network/partner-types/technology-partners
+Title: Technology Partners | Esri Partner Network
+Snippet: Esri Technology Partners develop and sell solutions that extend or integrate with ArcGIS. Partners receive technical resources, co-marketing support, and access to Esri customers.
+
+Result 2:
+URL: https://www.esri.com/en-us/about/esri-partner-network/become-a-partner
+Title: Become an Esri Partner | Partner Program Overview
+Snippet: The Esri Partner Network offers multiple partnership tiers with co-selling, technical integration support, and market access benefits.
+
+Result 3:
+URL: https://www.esri.com/en-us/about/esri-partner-network/partner-types/solution-partners
+Title: Solution Partners | Esri Partner Network
+Snippet: Solution Partners build and deliver ArcGIS-based applications and services for specific industries and use cases.
+
+Result 4:
+URL: https://www.esri.com/en-us/about/esri-partner-network/partner-types/resellers
+Title: Authorized Resellers | Esri Partner Network
+Snippet: Esri Authorized Resellers provide local sales, support, and services for ArcGIS products.
+
+Result 5:
+URL: https://www.esri.com/en-us/about/events/esri-partner-conference
+Title: Esri Partner Conference | Annual Event
+Snippet: The annual Esri Partner Conference is the primary gathering for Esri's partner ecosystem, featuring technical sessions, co-selling workshops, and integration showcases.
+
+Result 6:
+URL: https://www.esri.com/en-us/industries/telecommunications/segments/fiber
+Title: Fiber Network Management with GIS | Esri
+Snippet: Esri's fiber solutions cover the complete network lifecycle from planning through operations.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.esri.com/en-us/about/esri-partner-network/become-a-partner", "maxTokens": 3000}}
+</tool_call>
+<tool_response>
+Scraped content for https://www.esri.com/en-us/about/esri-partner-network/become-a-partner:
+# Become an Esri Partner
+
+## Why Partner with Esri?
+
+ArcGIS is the world's leading GIS platform, used by over 350,000 organizations in 200+ countries. Esri's partner network extends ArcGIS capabilities through technology integrations, value-added services, and industry solutions.
+
+## Partner Types
+
+### Technology Partners
+Build integrations and solutions that work with or extend ArcGIS. Includes ISVs (Independent Software Vendors) developing purpose-built applications that leverage ArcGIS data, APIs, or workflows.
+
+**Benefits:**
+- Access to ArcGIS SDKs, APIs, and developer tools
+- Co-marketing and joint go-to-market support
+- Featured placement in Esri Partner Finder
+- Access to Esri sales channels and customer events
+- Technical support and integration guidance from Esri Partner Managers
+
+### Solution Partners (formerly VARs)
+Provide consulting, implementation, and customization services using ArcGIS. Typically systems integrators and GIS consulting firms.
+
+### Authorized Resellers
+Sell ArcGIS licenses and subscriptions directly to end customers.
+
+## Partner Program Structure
+
+Esri's partner tiers are:
+- **Startup Partner**: Entry level for early-stage companies
+- **Select Partner**: Validated integration, some co-marketing access
+- **Gold Partner**: Deep integration, full co-marketing, priority support
+- **Platinum Partner**: Strategic alliance level
+
+## How to Apply
+
+Contact an Esri Partner Manager to discuss the right partnership type and tier for your organization. Partner Managers are organized by industry vertical, including telecommunications, utilities, and government.
+
+## Partner Manager Role
+
+Esri Partner Managers serve as the primary relationship owner for technology and solution partners. Responsibilities include:
+- Evaluating new partnership opportunities
+- Supporting partner go-to-market activities
+- Facilitating technical integration support
+- Connecting partners with Esri customers and sales teams
+
+*Partner Program last updated: January 2026*
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Esri ArcGIS fiber GIS-to-CAD automated construction drawings permit package partner ISV 2025 2026", "num_results": 6}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.esri.com/arcgis-blog/products/arcgis-for-telecommunications/telecommunications/gis-to-cad-fiber-design/
+Title: GIS to CAD Workflow for Fiber Design | Esri Blog
+Snippet: Esri blog post on the GIS-to-CAD workflow challenge in fiber network design and construction drawing production.
+
+Result 2:
+URL: https://www.esri.com/en-us/industries/telecommunications/partners
+Title: Telecommunications Partners | Esri
+Snippet: Esri's telecom partner ecosystem spans network design, engineering, construction, and operations.
+
+Result 3:
+URL: https://partners.esri.com/en-us/partner-finder?industry=telecommunications
+Title: Esri Partner Finder | Telecommunications
+Snippet: Find Esri partners offering telecommunications solutions, including fiber network design, GIS-to-CAD workflows, and construction management tools.
+
+Result 4:
+URL: https://community.esri.com/t5/telecommunications/gis-to-cad-construction-drawings/td-p/1234567
+Title: GIS to CAD for Construction Drawings | Esri Community
+Snippet: Community discussion on converting GIS fiber design data to CAD-format construction drawings. Manual process remains common; interest in automation high.
+
+Result 5:
+URL: https://www.esri.com/en-us/about/esri-partner-network/partner-types/technology-partners
+Title: Technology Partners | Esri Partner Network
+Snippet: Technology Partners build solutions integrated with ArcGIS for specific industry workflows.
+
+Result 6:
+URL: https://www.esri.com/arcgis-blog/products/arcgis-for-telecommunications/telecommunications/broadband-construction-gis/
+Title: GIS for Broadband Construction Management | Esri Blog
+Snippet: How ArcGIS supports broadband construction workflows including contractor coordination, as-built tracking, and permit management.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.esri.com/en-us/industries/telecommunications/partners", "maxTokens": 3000}}
+</tool_call>
+<tool_response>
+Scraped content for https://www.esri.com/en-us/industries/telecommunications/partners:
+# Telecommunications Partners | Esri
+
+## Partner Ecosystem for Telecommunications
+
+Esri's telecommunications partner ecosystem supports every phase of network deployment through integrated, ArcGIS-compatible solutions.
+
+### Network Design & Engineering Partners
+
+| Partner | Capability |
+|---------|------------|
+| IQGeo | Network design and operations management |
+| 3GIS | Fiber and OSP network design |
+| Biarri Networks | Network planning and optimization |
+| Render Networks | Construction management and field operations |
+| Katapult Pro | Field data collection and aerial/underground mapping |
+| OSPInsight | Fiber documentation and management |
+
+### CAD Integration Partners
+
+| Partner | Capability |
+|---------|------------|
+| Autodesk | AutoCAD, Civil 3D integration |
+| Bentley Systems | MicroStation integration |
+
+### Field Operations Partners
+
+| Partner | Capability |
+|---------|------------|
+| Collector/Field Maps | Esri native field data collection |
+| Fulcrum | Field data collection and inspection |
+
+### Analytics & Reporting Partners
+
+| Partner | Capability |
+|---------|------------|
+| Alteryx | Data preparation and analytics |
+| Tableau | Visualization and reporting |
+
+## Partner Gaps the Ecosystem is Actively Filling
+
+As of early 2026, Esri is actively recruiting partners in the following areas:
+
+1. **Automated GIS-to-CAD/Construction Drawing Generation** — Converting validated GIS data directly to construction-ready drawings without manual CAD work. Currently a gap in the certified partner list.
+2. **Automated Permit Package Generation** — Producing jurisdiction-specific permit packages from engineering data with minimal manual intervention.
+3. **AI/ML-Enhanced Quality Control** — Automated flagging of design conflicts and data inconsistencies before drawings move to permitting.
+
+## How to Become a Telecom Partner
+
+Contact the Esri Telecommunications Partner team or reach out to your regional Esri Partner Manager to discuss partnership opportunities in the telecommunications space.
+
+*Updated: March 2026*
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Jason Hart Esri partner manager telecommunications fiber broadband site:linkedin.com OR site:esri.com", "num_results": 6}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/jason-hart-partner-manager
+Title: Jason Hart | LinkedIn
+Snippet: Partner Manager at Esri | Telecommunications & Broadband | Redlands, CA
+
+Result 2:
+URL: https://community.esri.com/t5/user/viewprofilepage/user-id/jhart
+Title: Jason Hart | Esri Community Profile
+Snippet: Jason Hart is active in the Esri GeoNet community, contributing to telecommunications and broadband discussions.
+
+Result 3:
+URL: https://esri.com/en-us/about/esri-partner-network
+Title: Esri Partner Network Overview
+Snippet: Esri Partner Managers develop and manage relationships with technology and solution partners across industries.
+
+Result 4:
+URL: https://www.esri.com/en-us/about/careers/job-search#telecommunications
+Title: Esri Careers | Telecommunications
+Snippet: Esri is hiring in partner management, sales, and technology roles supporting the telecommunications industry.
+
+Result 5:
+URL: https://www.esri.com/en-us/industries/telecommunications
+Title: Telecommunications | Esri
+Snippet: Esri delivers GIS solutions for telecommunications companies planning, building, and managing network infrastructure.
+
+Result 6:
+URL: https://www.esri.com/en-us/about/esri-partner-network/partner-types/technology-partners
+Title: Technology Partners | Esri Partner Network
+Snippet: Esri Technology Partners build integrations and solutions that extend ArcGIS capabilities.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Esri Arc

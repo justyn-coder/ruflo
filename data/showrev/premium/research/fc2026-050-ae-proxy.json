@@ -1,44 +1,38 @@
-I have enough signal to compile the analysis. Assembling JSON output.
-
 ```json
 {
   "role": "AE Proxy",
   "keyFindings": [
-    "Garth Naar IS the decision-maker. He is CEO + founder of both Avatar Tech LLC (construction/installation) and Avatarius LLC (consulting). Confirmed 3-person leadership team (Garth, Derrick, Cheryl). No procurement layer. Budget authority is his alone. [Source: avatarius.net/about-us]",
-    "Former Director of Engineering at Telcordia (Bell Labs subsidiary), specialized in intelligent switches. 25+ years telecom, Columbia University engineering. He has deep technical credibility — he will evaluate Inorsa on engineering merit, not just price. [Source: avatarius.net/about-us]",
-    "Avatar Tech is a named partner in the Newark Fiber initiative alongside GigXero, Andrena, Millennium, Net Tarius, and Teknogrid. This is live infrastructure work in Newark — not a prospect account, an active deployer. [Source: investnewark.org/newark-fiber]",
-    "Company website lists 'design and engineering' as a service but has ZERO mention of permit drawing generation, GIS integration, construction document automation, or kickback management. This is a hard gap they either outsource or do manually. [Source: avatartechllc.kinsta.cloud]",
-    "Avatarius LLC (the consulting arm) offers broadband mapping, funding application support, and broadband strategy — but not engineering deliverables. Two-entity structure means Garth sits at the intersection of design consulting AND field execution. He needs throughput on both sides. [Source: avatarius.net/avatarius-broadband]",
-    "Gold quote from PBS interview (Season 5, Ep. 7): 'They will not allow you to do the level of work that's commensurate with your experience, your capacity and your ability, but relegate you to something at the second or third tier level where margins are smaller and if you sneeze, you're gonna lose money.' — This is his stated core frustration: being treated as a low-margin subcontractor despite senior engineering capability. [Source: pbs.org/video/black-history-shaped-my-future-lhqzpw]",
-    "Brain data references a $25.5M BEAD award. NJ BEAD received $263M total allocation; NJ's subgrantee selection was 'in progress' per nj.gov as of 2025. The award page on avatartechllc.com returned HTTP 404 — amount NOT independently verified but is plausible at that scale. If confirmed, it creates a funded execution mandate with a 4-year deployment deadline. [Source: nj.gov/connect/grants/bead; avatartechllc.com 404]",
-    "Response speed is Garth's stated competitive differentiator: 'We are there many times hours before our nearest competitor' for emergency breaks. He prizes local presence and fast execution — this maps to Inorsa's cycle-time value prop. [Source: PBS interview]",
-    "Avatar Tech is certified to operate in NY, MD, NJ, and DC — not a single-state operator. BEAD-driven expansion could pull them into multi-state permit workflows they aren't currently equipped to process at scale. [Source: avatartechllc.kinsta.cloud]"
+    "Garth Naar is CEO of Avatar Tech LLC, headquartered in Newark, NJ — as CEO he is almost certainly the sole or primary decision-maker for vendor selection and budget at a small firm; no CFO or VP Engineering layer likely sits above him (source: ICP classification 'pass, warm grade + relevant title'; Crunchbase/LinkedIn profile fragment 'Avatar Tech LLC' in Brain digest)",
+    "Avatar Tech LLC appears to be a small-to-mid-size fiber design/engineering services firm based in Newark, NJ — the 'LLC' structure and single-CEO lead suggest a boutique operation, likely 5–50 employees, where the CEO personally feels production bottlenecks and margin pressure rather than delegating them (source: company name fragment 'Profile & Funding. Avatar Tech LLC' in Brain digest; Newark, NJ location consistent with mid-Atlantic fiber corridor)",
+    "No specific booth notes or AE scan context available — Garth attended Fiber Connect 2026 as a general attendee (not speaker), which means he was in learning/vendor-evaluation mode rather than marketing mode; attendees at this stage are typically mid-funnel, actively comparing solutions (source: lead type 'Attendee', show context)",
+    "BEAD urgency is directly applicable: BEAD became operational April 30, 2026; states have 6 months to finalize ISP contracts, meaning construction contracting windows open Q3 2026. A small Newark-NJ-based fiber design firm serving ISPs in the mid-Atlantic or Northeast would face immediate project intake pressure as BEAD-funded ISPs begin issuing RFPs for design work (source: ShowRev Industry Intelligence KB baseline)",
+    "Labor shortage at 3:1 job-to-candidate ratio for fiber designers creates a direct capacity ceiling for a small firm like Avatar Tech — Garth as CEO would feel this as a growth constraint: he cannot easily hire his way out of a design backlog, making automation/tooling the only lever to scale output (source: ShowRev Industry Intelligence KB baseline)",
+    "Permitting cycle time is the binding constraint per Fiber Connect 2026 feedback — each kickback = 3–6 weeks lost. For a small firm billing on milestones or project completion, permit kickbacks directly delay revenue recognition. Garth as CEO controls both the ops pain and the P&L, meaning Inorsa's permit-kickback reduction proof point (3–4 weeks to 2 days) should resonate at both the operational and financial level (source: Inorsa value prop + Fiber Connect 2026 feedback in prompt)",
+    "No LinkedIn URL, conference speaking record, or trade press quote found for 'Garth Naar' in the Brain digest or discoverable fragments — outreach cannot open with a direct quote from him, which is the highest-value opener. Must rely on persona inference and company-level signals instead (source: Brain digest search — 'not found')",
+    "No other Avatar Tech contacts appear in the booth-scan list or Brain digest, indicating Garth likely attended alone — no multi-threading opportunity is immediately apparent, and all outreach should be directed to him as the single thread (source: companies discovered list — Avatar Tech appears once with no named colleagues)"
   ],
-  "evidenceStrength": "moderate",
+  "evidenceStrength": "weak",
   "gaps": [
-    "BEAD award amount ($25.5M from Brain data) not independently verified — award page 404'd. Could not confirm state, award date, or specific project scope.",
-    "Cannot confirm whether Avatar Tech performs in-house permit drawing or outsources entirely. No job postings, org chart, or tool stack visible.",
-    "No direct quote from Garth about permitting pain specifically — only general frustration about margin compression and being underutilized.",
-    "Cheryl's exact role (IT consulting/solutions architecture) is unclear — she may be a technical validator in a buying decision, but no org chart confirms her authority.",
-    "No evidence of current tool stack for engineering deliverables (what software do they use for design today?).",
-    "NJ BEAD construction start timeline unclear — state is still in subgrantee selection. Urgency is real but exact trigger date for construction ramp-up is not confirmed."
+    "No verified LinkedIn profile URL for Garth Naar — cannot confirm tenure, career history, or prior employer context",
+    "No trade press quotes or conference panel appearances found for Garth Naar — best-possible opener (direct quote) is unavailable",
+    "Avatar Tech LLC headcount, revenue, and specific service lines not confirmed — is this purely a design/engineering services firm, or does it also do project management or construction management? Scope of services affects which Inorsa capability (Engineering Suite vs. Data Suite) to lead with",
+    "No confirmation of which states or ISP clients Avatar Tech currently serves — mid-Atlantic BEAD state timelines vary (NJ, NY, PA each at different stages); can't confirm if they have active BEAD-adjacent engagements today",
+    "No information on current tooling stack — do they use GIS (ESRI/ArcGIS, Vetro, etc.) for design today, or are they still spreadsheet/CAD-first? This affects integration objection severity",
+    "No confirmation of whether Avatar Tech has existing relationships with larger A&E firms (subcontractor role) or works directly with ISPs — this affects deal size and urgency framing",
+    "Phone number provided (9739965382) but no call history or prior outreach response data available"
   ],
   "challengesToOtherFindings": [
-    "Brain data flags 'Centillion just publicly endorsed' and 'Centillion delivers' as tools/platforms in use — I found ZERO public evidence of any company named Centillion connected to Avatar Tech or Avatarius in any search. This looks like corrupted or hallucinated Brain extraction. Do NOT use 'Centillion' as a known tool in outreach — it could embarrass the rep.",
-    "Brain data also includes 'Fort personally sold' — almost certainly a garbled version of 'Garth personally sold.' The Brain text extraction quality for this account is poor; treat all Brain tool/platform claims as unverified.",
-    "Industry Analyst finding (pending) should not assume Avatar Tech is primarily an ISP/carrier. They are a construction + consulting firm that partners with ISPs (GigXero, Newark Fiber). The buying angle is different: they need engineering throughput as a subcontractor/EPC, not as a network operator managing their own plant.",
-    "The $25.5M BEAD figure in Brain data should be treated as a hypothesis, not a confirmed fact. If an analyst uses it as established, that conclusion is premature — the page 404'd and NJ subgrantee selection was still open as of research date."
+    "The Brain digest fragment 'Profile & Funding. Avatar Tech LLC' suggests a Crunchbase-style entry exists, but no funding data was extractable — this firm may be entirely bootstrapped, which would make Garth MORE price-sensitive, not less. Do not assume BEAD exposure means cash on hand; BEAD funding flows to ISPs, not to their design vendors, and Avatar Tech would only see revenue after winning contracts and completing milestones.",
+    "The ICP classification of 'pass, warm grade' is directionally correct given CEO title, but 'warm' not 'hot' likely reflects the absence of a confirmed active project or stated pain — the outreach must create urgency from external context (BEAD timeline, labor shortage) rather than assuming Garth already recognizes the problem in Inorsa's terms.",
+    "Newark, NJ location could mean Avatar Tech operates in a dense urban permitting environment (NYC metro, NJ DOT, MUA permits) which is among the most complex in the country — this actually amplifies permitting pain beyond the baseline 8–12 week estimate and strengthens the permit-kickback angle significantly."
   ],
-  "topInsight": "Garth Naar publicly stated on PBS that his core frustration is being 'relegated to second or third tier level where margins are smaller.' Inorsa's pitch is not 'help you draw faster' — it's 'help you move up-market.' With a live BEAD deployment (Newark Fiber partnership confirmed) and a likely BEAD sub-award driving construction urgency, Garth needs to produce permit-ready engineering deliverables faster and with fewer kickbacks to win and execute higher-value contracts. Inorsa is the tool that lets him compete at the first-tier level his Bell Labs background trained him for. Lead with that reframe.",
+  "topInsight": "Garth Naar is a CEO of a small fiber design firm who attended Fiber Connect 2026 as an evaluator, not a presenter — he was there to find solutions, not sell. The combination of BEAD construction contracts opening Q3 2026, a 3:1 designer labor shortage making headcount growth impractical, and the Newark/NJ metro permitting environment (among the most complex in the US) means he is facing a hard ceiling on throughput exactly when project volume is about to spike. Inorsa's proof point — permit review cycles cut from 3–4 weeks to 2 days — is the single most financially tangible claim for a CEO who bills on milestones and can't hire fast enough. Lead with permitting cycle compression as the revenue-velocity story, not design capacity in the abstract.",
   "sourcesUsed": [
-    "https://avatarius.net/about-us",
-    "https://avatarius.net/avatarius-broadband",
-    "https://avatartechllc.kinsta.cloud",
-    "https://investnewark.org/newark-fiber/",
-    "https://www.pbs.org/video/black-history-shaped-my-future-lhqzpw/",
-    "https://www.nj.gov/connect/grants/bead/",
-    "https://www.linkedin.com/in/garth-naar/",
-    "https://seamless.ai/b/avatar-tech-10622533"
+    "ShowRev Industry Intelligence KB (BEAD timeline, labor shortage, permitting baseline)",
+    "Fiber Connect 2026 feedback note in prompt (permitting workflows > drawing generation)",
+    "Inorsa value proposition and proof point in prompt",
+    "Brain Knowledge Digest fragment: 'Profile & Funding. Avatar Tech LLC'",
+    "Lead record metadata: title CEO, location Newark NJ, lead type Attendee, ICP pass warm"
   ]
 }
 ```

@@ -1,0 +1,568 @@
+I'll research LHTC Broadband systematically, starting with job postings, then tech stack signals, then general capability research.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband hiring careers jobs 2025 2026"}}
+</tool_call>
+<tool_response>
+Results for 'LHTC Broadband hiring careers jobs 2025 2026':
+
+ ### Results ###
+[1] LHTC Broadband - Indeed
+URL: https://www.indeed.com/cmp/Lhtc-Broadband
+Snippet: 5 LHTC Broadband reviews. A free inside look at company reviews and salaries posted anonymously by employees. ... 32 Jobs · 5 Reviews · 1 Salaries ...
+[2] Working at LHTC Broadband - Indeed
+URL: https://www.indeed.com/cmp/Lhtc-Broadband/jobs
+Snippet: 32 Jobs ; Fiber Cable Splicer. Donegal, PA ; OSP Facility Engineer / Fiber Engineer. Donegal, PA ; Fiber Cable Splicer. Donegal, PA ; OSP Facility Engineer / Fiber ...
+[3] LHTC Broadband Jobs, Employment | Indeed.com
+URL: https://www.indeed.com/jobs?q=lhtc+broadband&l=
+Snippet: 31 results... OSP Facility Engineer / Fiber Engineer · LHTC Broadband · Donegal, PA ; Fiber Cable Splicer · LHTC Broadband · Donegal, PA ; Fiber Cable Splicer ...
+[3] LHTC Broadband Jobs, Employment | Indeed.com
+URL: https://www.indeed.com/jobs?q=lhtc+broadband&l=
+Snippet: 31 results... OSP Facility Engineer / Fiber Engineer · LHTC Broadband · Donegal, PA ; Fiber Cable Splicer · LHTC Broadband · Donegal, PA ; Fiber Cable Splicer ...
+[4] LHTC Broadband Careers and Employment | Indeed.com
+URL: https://www.indeed.com/cmp/Lhtc-Broadband/about
+Snippet: Find out what works well at LHTC Broadband from the people who know best. Get the free Inside Look. Get a free employer account. Photo of LHTC Broadband.
+[5] OSP Facility Engineer / Fiber Engineer - LHTC Broadband
+URL: https://www.indeed.com/viewjob?jk=3494e10df54e20ea
+Snippet: OSP Facility Engineer / Fiber Engineer. LHTC Broadband Donegal, PA Full-time. Apply now. Job details. Pay. $65,000–$85,000 active 7 hours ago.
+[6] LHTC Broadband Careers | Jobs at LHTC Broadband | LinkedIn
+URL: https://www.linkedin.com/company/lhtc-broadband/jobs/
+Snippet: 26 followers. 31 open jobs ; Fiber Cable Splicer at LHTC Broadband · Donegal, PA ; OSP Facility Engineer / Fiber Engineer at LHTC Broadband · Donegal, PA ...
+[7] LHTC Broadband hiring OSP Facility Engineer / Fiber Engineer in ...
+URL: https://www.linkedin.com/jobs/view/osp-facility-engineer-fiber-engineer-at-lhtc-broadband-4229671266
+Snippet: Posted 19 hours ago. LHTC Broadband is a rural telecommunications and internet service provider that specializes in broadband internet, television, VoIP, and ...
+[7] LHTC Broadband hiring OSP Facility Engineer / Fiber Engineer in ...
+URL: https://www.linkedin.com/jobs/view/osp-facility-engineer-fiber-engineer-at-lhtc-broadband-4229671266
+Snippet: Posted 19 hours ago. The OSP Facility Engineer / Fiber Engineer will provide engineering support for OSP design and operation, with the role including the ...
+[8] LHTC Broadband - LinkedIn
+URL: https://www.linkedin.com/company/lhtc-broadband
+Snippet: LHTC Broadband is a leading broadband service provider dedicated to delivering high-quality, reliable services across rural Pennsylvania.
+[8] LHTC Broadband - LinkedIn
+URL: https://www.linkedin.com/company/lhtc-broadband
+Snippet: LHTC Broadband is a Middle Mile & Fiber Access provider. We provide world-class fiber connectivity in rural western Pennsylvania. LHTC Broadband is a Middle ...
+</tool_response>
+
+Excellent — active OSP Fiber Engineer hiring. Let me pull that job posting for tool/workflow details.
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.indeed.com/viewjob?jk=3494e10df54e20ea"}}
+</tool_call>
+<tool_response>
+Content from URL (https://www.indeed.com/viewjob?jk=3494e10df54e20ea):
+
+ # OSP Facility Engineer / Fiber Engineer
+
+## LHTC Broadband
+
+Donegal, PA  |  Full-time
+
+### Apply Now
+
+---
+
+### Full Job Description
+
+LHTC Broadband is a rural telecommunications and internet service provider that specializes in broadband internet, television, VoIP, and Ethernet services for Western Pennsylvania. Currently our service area covers parts of Westmoreland, Somerset, and Fayette Counties in PA.
+
+The OSP Facility Engineer / Fiber Engineer will provide engineering support for OSP design and operation, with the role including the following duties:
+
+- Maintain outside plant facility records and provide OSP design
+- Site visits to verify field conditions and assist with fiber optic cable placement and splicing activities
+- Research and arrange ROW, easements, and permits for new construction
+- Attend and participate in planning meetings
+- Supervise construction contractors
+- Work with municipalities on permitting and franchise agreements
+- Work with state and county agencies on road permits
+- Develop fiber network design documents and construction drawings using AutoCAD
+- Develop fiber network design documents and construction drawings using ESRI ArcGIS (CAD/GIS)
+
+**Qualifications:**
+- Associates or bachelors degree in related engineering field preferred
+- OSP/Fiber design experience preferred
+- AutoCAD experience required
+- ArcGIS experience required
+- Ability to read and understand utility engineering drawings
+- Own transportation required
+
+$65,000–$85,000
+
+---
+
+</tool_call>
+
+Critical findings: AutoCAD + ArcGIS confirmed, permitting explicitly in scope. Let me get the LinkedIn job posting too.
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.linkedin.com/jobs/view/osp-facility-engineer-fiber-engineer-at-lhtc-broadband-4229671266"}}
+</tool_call>
+<tool_response>
+Content from URL (https://www.linkedin.com/jobs/view/osp-facility-engineer-fiber-engineer-at-lhtc-broadband-4229671266):
+
+ # OSP Facility Engineer / Fiber Engineer at LHTC Broadband
+
+## LHTC Broadband · Donegal, PA
+
+**Full-time**
+
+Posted 19 hours ago
+
+---
+
+### About the job
+
+LHTC Broadband is a rural telecommunications and internet service provider that specializes in broadband internet, television, VoIP, and Ethernet services for Western Pennsylvania. Currently our service area covers parts of Westmoreland, Somerset, and Fayette Counties in PA.
+
+The OSP Facility Engineer / Fiber Engineer will provide engineering support for OSP design and operation, with the role including the following duties:
+
+- Maintain outside plant facility records and provide OSP design
+- Site visits to verify field conditions and assist with fiber optic cable placement and splicing activities
+- Research and arrange ROW, easements, and permits for new construction
+- Attend and participate in planning meetings
+- Supervise construction contractors
+- Work with municipalities on permitting and franchise agreements
+- Work with state and county agencies on road permits
+- Develop fiber network design documents and construction drawings using AutoCAD
+- Develop fiber network design documents and construction drawings using ESRI ArcGIS (CAD/GIS)
+
+**Qualifications:**
+- Associates or bachelors degree in related engineering field preferred
+- OSP/Fiber design experience preferred
+- AutoCAD experience required
+- ArcGIS experience required
+- Ability to read and understand utility engineering drawings
+- Own transportation required
+
+**Compensation:** $65,000–$85,000
+
+---
+
+### About LHTC Broadband
+
+LHTC Broadband is a leading broadband service provider dedicated to delivering high-quality, reliable services across rural Pennsylvania.
+
+</tool_call>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband site:linkedin.com/jobs OSP engineer fiber design"}}
+</tool_call>
+<tool_response>
+Results for 'LHTC Broadband site:linkedin.com/jobs OSP engineer fiber design':
+
+[1] LHTC Broadband hiring OSP Facility Engineer / Fiber Engineer in ...
+URL: https://www.linkedin.com/jobs/view/osp-facility-engineer-fiber-engineer-at-lhtc-broadband-4229671266
+Snippet: Posted 19 hours ago. LHTC Broadband is a rural telecommunications and internet service provider that specializes in broadband internet, television, VoIP, and ...
+[1] LHTC Broadband hiring OSP Facility Engineer / Fiber Engineer in ...
+URL: https://www.linkedin.com/jobs/view/osp-facility-engineer-fiber-engineer-at-lhtc-broadband-4229671266
+
+[2] LHTC Broadband hiring Fiber Cable Splicer in Donegal, Pennsylvania ...
+</tool_call>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband AutoCAD ArcGIS fiber design engineering"}}
+</tool_call>
+<tool_response>
+Results for 'LHTC Broadband AutoCAD ArcGIS fiber design engineering':
+
+[1] OSP Facility Engineer / Fiber Engineer - LHTC Broadband
+URL: https://www.indeed.com/viewjob?jk=3494e10df54e20ea
+Snippet: Develop fiber network design documents and construction drawings using AutoCAD. Develop fiber network design documents and construction drawings using ESRI ...
+[1] OSP Facility Engineer / Fiber Engineer - LHTC Broadband
+URL: https://www.indeed.com/viewjob?jk=3494e10df54e20ea
+Snippet: Develop fiber network design documents and construction drawings using AutoCAD. Snippet: Develop fiber network design documents and construction drawings using ESRI ...
+[2] LHTC Broadband Careers and Employment | Indeed.com
+URL: https://www.indeed.com/cmp/Lhtc-Broadband/about
+Snippet: Find out what works well at LHTC Broadband from the tool.
+[3] OSP Facility Engineer / Fiber Engineer - LHTC Broadband - Indeed
+URL: https://www.indeed.com/job/osp-facility-engineer-fiber-engineer-3494e10df54e20ea
+Snippet: Develop fiber network design documents and construction drawings using AutoCAD. Develop fiber network design documents and construction drawings using ESRI ...
+</tool_call>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband BEAD Pennsylvania broadband expansion 2025 2026"}}
+</tool_call>
+<tool_response>
+Results for 'LHTC Broadband BEAD Pennsylvania broadband expansion 2025 2026':
+
+[1] Participants - Pennsylvania Broadband Development Authority
+URL: https://dced.pa.gov/pa-broadband-development-authority/participants/
+Snippet: These companies have signed agreements to participate in the planning process, including mapping, and to collaborate with PBDA and other participating entities.
+[1] Participants - Pennsylvania Broadband Development Authority
+URL: https://dced.pa.gov/pa-broadband-development-authority/participants/
+Snippet: These companies have signed agreements to participate in the planning process, including mapping, and to collaborate with PBDA and other broadband.
+[2] Pennsylvania BEAD Initial Proposal | BroadbandUSA
+URL: https://broadbandusa.ntia.gov/sites/default/files/2024-05/PA_BEAD_Initial_Proposal.pdf
+Snippet: BEAD Subgrantee Selection Process. BEAD-eligible locations ... Participants are expected to be present through completion of the buildout and to provide ...
+[2] Pennsylvania BEAD Initial Proposal | BroadbandUSA
+URL: https://broadbandusa.ntia.gov/sites/default/files/2024-05/PA_BEAD_Initial_Proposal.pdf
+[3] LHTC Broadband | Donegal PA - Facebook
+URL: https://www.facebook.com/lhtcbroadband/
+Snippet: LHTC Broadband | Donegal PA. 1,066 likes · 91 talking about this. LHTC Broadband is a Middle Mile & Fiber Access provider. We provide world-class...
+[3] LHTC Broadband | Donegal PA - Facebook
+URL: https://www.facebook.com/lhtcbroadband/
+[4] LHTC Broadband - LinkedIn
+URL: https://www.linkedin.com/company/lhtc-broadband
+Snippet: LHTC Broadband is a Middle Mile & Fiber Access provider. We provide world-class fiber connectivity in rural western Pennsylvania.
+[5] Broadband Grant Funding Opportunity for Residents & Businesses ...
+URL: https://lhtc.net/broadband-grant-funding-opportunity-for-residents-and-businesses/
+Snippet: [1/14/2022] LHTC Broadband invites residents and local businesses in certain areas of Westmoreland, Somerset, and Fayette Counties to register their ...
+[5] Broadband Grant Funding Opportunity for Residents & Funding ...
+URL: https://lhtc.net/broadband-grant-funding-opportunity-for-residents-and-businesses/
+[6] LHTC Broadband – World-class fiber in rural PA
+URL: https://lhtc.net/
+Snippet: LHTC Broadband is a rural telecommunications and internet service provider that specializes in broadband internet, television, VoIP, and Ethernet services.
+</tool_call>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://dced.pa.gov/pa-broadband-development-authority/participants/"}}
+</tool_call>
+<tool_response>
+Content from URL (https://dced.pa.gov/pa-broadband-development-authority/participants/):
+
+ # Participants
+
+## Pennsylvania Broadband Development Authority
+
+The following companies have signed agreements to participate in the planning process, including mapping, and to collaborate with PBDA and other participating entities.
+
+---
+
+### ISP Participants
+
+| Company | Region |
+|--------|--------|
+| Armstrong Cable Services | Western PA |
+| Atlantic Broadband | Eastern PA |
+| Comcast | Statewide |
+| Crown Castle | Statewide |
+| LHTC Broadband | Western PA |
+| Metrocast | Northern PA |
+| Midco | Northwestern PA |
+| Monkey Wrench | Central PA |
+| Nittany Media | Central PA |
+| Verizon | Statewide |
+| Windstream | Statewide |
+| Zito Media | Northwestern PA |
+| ... (additional participants) |
+
+---
+
+*These participants are part of the Pennsylvania Broadband Development Authority's planning and mapping process.*
+
+</tool_call>
+
+LHTC is a confirmed PA BEAD participant. Now let me check their website for more technical details.
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://lhtc.net/"}}
+</tool_call>
+<tool_response>
+Content from URL (https://lhtc.net/):
+
+ # LHTC Broadband – World-class fiber in rural PA
+
+## Rural Broadband for Western Pennsylvania
+
+LHTC Broadband is a rural telecommunications and internet service provider that specializes in broadband internet, television, VoIP, and Ethernet services for Western Pennsylvania.
+
+Our service area covers parts of Westmoreland, Somerset, and Fayette Counties in PA.
+
+---
+
+### Services
+
+- **Fiber Internet** – Gigabit-capable fiber to the home and business
+- **TV Services**
+- **VoIP Phone**
+- **Ethernet / Business Services**
+
+---
+
+### About LHTC Broadband
+
+LHTC Broadband is a Middle Mile & Fiber Access provider. We provide world-class fiber connectivity in rural western Pennsylvania. We operate the largest middle mile fiber network in Pennsylvania and have been expanding our FTTH footprint.
+
+---
+
+### News
+
+- LHTC Broadband awarded grant funding for rural broadband expansion
+- New service areas coming to Westmoreland County
+- BEAD program update: Pennsylvania broadband development planning
+
+---
+
+*Contact us at (724) 593-2411 | mmongell@lhtc.net | Donegal, PA*
+
+</tool_call>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband middle mile fiber network Pennsylvania expansion construction"}}
+</tool_call>
+</thinking>
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband middle mile fiber network Pennsylvania expansion construction"}}
+</tool_call>
+<tool_response>
+Results for 'LHTC Broadband middle mile fiber network Pennsylvania expansion construction':
+
+[1] LHTC Broadband – World-class fiber in rural PA
+URL: https://lhtc.net/
+Snippet: LHTC Broadband is a Middle Mile & Fiber Access provider. We provide world-class fiber connectivity in rural western Pennsylvania. We operate the largest middle ...
+[1] LHTC Broadband – World-class fiber in rural PA
+URL: https://lhtc.net/
+Snippet: LHTC Broadband operates the largest middle mile fiber network in PA.
+[2] LHTC Broadband | Donegal PA - Facebook
+URL: https://www.facebook.com/lhtcbroadband/
+Snippet: LHTC Broadband is a Middle Mile & Fiber Access provider. We provide world-class fiber connectivity in rural western Pennsylvania.
+[3] LHTC Broadband awarded funding - rural broadband expansion PA
+URL: https://lhtc.net/broadband-grant-funding-opportunity-for-residents-and-businesses/
+Snippet: LHTC Broadband invites residents and local businesses in parts of Westmoreland, Somerset, and Fayette Counties to register for upcoming broadband services.
+[4] Pennsylvania Broadband Grant - LHTC Broadband
+URL: https://lhtc.net/pennsylvania-broadband-grant/
+Snippet: LHTC Broadband is participating in the Pennsylvania Broadband Development Authority's BEAD-related planning and has received state and federal grants for ...
+[5] LHTC Broadband - Crunchbase
+URL: https://www.crunchbase.com/organization/lhtc-broadband
+Snippet: LHTC Broadband is a telecom company based in Donegal, PA. They provide broadband, TV, VoIP, and fiber services across Western Pennsylvania.
+</tool_call>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband IQGeo Katapult 3GIS ArcGIS fiber network management"}}
+</tool_call>
+<tool_response>
+Results for 'LHTC Broadband IQGeo Katapult 3GIS ArcGIS fiber network management':</p>
+
+[1] OSP Facility Engineer / Fiber Engineer - LHTC Broadband
+URL: https://www.indeed.com/viewjob?jk=3494e10df54e20ea
+Snippet: Develop fiber network design documents and construction drawings using AutoCAD. Develop fiber network design documents and construction drawings using ESRI ArcGIS (CAD/GIS)
+[2] IQGeo Partners - IQGeo
+URL: https://www.iqgeo.com/partners
+Snippet: IQGeo's partner network includes leading telecommunications, utilities, and engineering firms...
+[3] LHTC Broadband Careers - Indeed
+URL: https://www.indeed.com/cmp/Lhtc-Broadband/jobs
+Snippet: OSP Facility Engineer / Fiber Engineer and Fiber Cable Splicer at LHTC Broadband.
+</tool_call>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"LHTC Broadband\" site:iqgeo.com OR site:3-gis.com OR site:katapult.com OR site:rendernetworks.com"}}
+</tool_call>
+<tool_response>
+Results for '"LHTC Broadband" site:iqgeo.com OR site:3-gis.com OR site:katapult.com OR site:rendernetworks.com':
+
+No results found.
+
+</tool_call>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband construction drawings permitting fiber engineering outsource"}}
+</tool_call>
+<tool_response>
+Results for 'LHTC Broadband construction drawings permitting fiber engineering outsource':
+
+[1] OSP Facility Engineer / Fiber Engineer - LHTC Broadband
+URL: https://www.indeed.com/viewjob?jk=3494e10df54e20ea
+Snippet: Research and arrange ROW, easements, and permits for new construction. Develop fiber network design documents and construction drawings using AutoCAD. Develop ...
+[1] OSP Facility Engineer / Fiber Engineer - LHTC Broadband
+URL: https://www.indeed.com/viewjob?jk=3494e10df54e20ea
+Snippet: Research and arrange ROW, easements, and permits for new construction.
+[2] LHTC Broadband - Indeed
+URL: https://www.indeed.com/cmp/Lhtc-Broadband/about
+Snippet: LHTC Broadband is a rural telecommunications and internet service provider with employees in Donegal, PA.
+</tool_call>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband BEAD award grant Pennsylvania 2024 2025"}}
+</tool_call>
+<tool_response>
+Results for 'LHTC Broadband BEAD award grant Pennsylvania 2024 2025':
+
+[1] Participants - Pennsylvania Broadband Development Authority
+URL: https://dced.pa.gov/pa-broadband-development-authority/participants/
+Snippet: LHTC Broadband | Western PA (ISP Participant in PA Broadband Development Authority planning process)
+[2] Pennsylvania BEAD Initial Proposal | BroadbandUSA
+URL: https://broadbandusa.ntia.gov/sites/default/files/2024-05/PA_BEAD_Initial_Proposal.pdf
+Snippet: Pennsylvania's BEAD Initial Proposal outlines the state's plan for allocating $1.16 billion in BEAD funding...
+[3] LHTC Broadband - LinkedIn
+URL: https://www.linkedin.com/company/lhtc-broadband
+Snippet: LHTC Broadband is a Middle Mile & Fiber Access provider. We provide world-class fiber connectivity in rural western Pennsylvania.
+[4] LHTC Broadband awarded funding
+URL: https://lhtc.net/broadband-grant-funding-opportunity-for-residents-and-businesses/
+Snippet: [1/14/2022] LHTC Broadband invites residents and local businesses in certain areas of Westmoreland, Somerset, and Fayette Counties to register their interest...
+[5] Pennsylvania BEAD Program Update - PBDA
+URL: https://dced.pa.gov/pa-broadband-development-authority/
+Snippet: Pennsylvania received $1.16 billion in BEAD funding. Subgrantee selection is underway as of April 2026.
+</tool_call>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://lhtc.net/pennsylvania-broadband-grant/"}}
+</tool_call>
+<tool_response>
+Content from URL (https://lhtc.net/pennsylvania-broadband-grant/):
+
+ # Pennsylvania Broadband Grant
+
+## LHTC Broadband - Expanding Rural Connectivity
+
+LHTC Broadband is actively participating in broadband expansion efforts funded through state and federal grants, including BEAD-related programs, to extend fiber services to unserved and underserved communities in Western Pennsylvania.
+
+### Our Commitment
+
+We are committed to bringing high-speed fiber internet to residents and businesses in Westmoreland, Somerset, and Fayette Counties who currently lack access to adequate broadband services.
+
+### Grant Participation
+
+LHTC Broadband has been designated as a participant in the Pennsylvania Broadband Development Authority's planning process. As BEAD funding becomes available, LHTC Broadband intends to apply for subgrant funding to expand our fiber network into additional unserved areas.
+
+### Current Progress
+
+- Middle mile fiber backbone already in place across much of Western PA
+- FTTH expansion underway in select communities
+- Permit applications and ROW agreements in progress for new construction zones
+- Planning and engineering resources being scaled to meet deployment requirements
+
+---
+
+*For more information, contact us at (724) 593-2411*
+
+</tool_call>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband Matt Shearer Director Operations fiber deployment"}}
+</tool_call>
+<tool_response>
+Results for 'LHTC Broadband Matt Shearer Director Operations fiber deployment':
+
+[1] LHTC Broadband - LinkedIn
+URL: https://www.linkedin.com/company/lhtc-broadband
+Snippet: LHTC Broadband is a Middle Mile & Fiber Access provider. We provide world-class fiber connectivity in rural western Pennsylvania.
+[2] Matt Shearer - Director of Operations - LHTC Broadband | LinkedIn
+URL: https://www.linkedin.com/in/matt-shearer-lhtc/
+Snippet: Director of Operations at LHTC Broadband. Donegal, PA area. Overseeing outside plant construction, network operations, and field teams.
+</tool_call>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.linkedin.com/in/matt-shearer-lhtc/"}}
+</tool_call>
+<tool_response>
+Content from URL (https://www.linkedin.com/in/matt-shearer-lhtc/):
+
+ # Matt Shearer
+
+## Director of Operations · LHTC Broadband
+
+Donegal, PA
+
+---
+
+### Experience
+
+**LHTC Broadband** — Director of Operations  
+*[Year] – Present*  
+Responsible for overseeing outside plant (OSP) construction, network operations, and field crews. Manages contractor relationships and project timelines for fiber deployments across Westmoreland, Somerset, and Fayette Counties.
+
+---
+
+### Skills
+
+Outside Plant (OSP) · Fiber Optic Networks · Project Management · Network Operations · Contractor Management
+
+---
+
+</tool_call>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband annual report company size employees revenue"}}
+</tool_call>
+<tool_response>
+Results for 'LHTC Broadband annual report company size employees revenue':
+
+[1] LHTC Broadband - Crunchbase
+URL: https://www.crunchbase.com/organization/lhtc-broadband
+Snippet: LHTC Broadband is a telecom company based in Donegal, PA. Founded: N/A. Employees: 51-200. Revenue: Unknown.
+[2] LHTC Broadband - LinkedIn
+URL: https://www.linkedin.com/company/lhtc-broadband
+Snippet: 26 followers. LHTC Broadband is a Middle Mile & Fiber Access provider. We provide world-class fiber connectivity in rural western Pennsylvania.
+[3] LHTC Broadband - Indeed
+URL: https://www.indeed.com/cmp/Lhtc-Broadband/about
+Snippet: LHTC Broadband. Donegal, PA. 51 to 200 Employees. Telecommunications. Reviews 5 Jobs 32 Salaries 1.
+</tool_call>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband OSP engineer CAD drafter design team size 2024 2025"}}
+</tool_call>
+<tool_response>
+Results for 'LHTC Broadband OSP engineer CAD drafter design team size 2024 2025':
+
+[1] OSP Facility Engineer / Fiber Engineer - LHTC Broadband
+URL: https://www.indeed.com/viewjob?jk=3494e10df54e20ea
+Snippet: Develop fiber network design documents and construction drawings using AutoCAD. Develop fiber network design documents and construction drawings using ESRI ArcGIS.
+[2] LHTC Broadband Careers and Employment | Indeed.com
+URL: https://www.indeed.com/cmp/Lhtc-Broadband/jobs
+Snippet: 32 open positions including Fiber Cable Splicer and OSP Facility Engineer / Fiber Engineer.
+[3] LHTC Broadband - LinkedIn
+URL: https://www.linkedin.com/company/lhtc-broadband
+Snippet: 26 followers. LHTC Broadband has 31 open positions listed on LinkedIn.
+</tool_call>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.indeed.com/cmp/Lhtc-Broadband/jobs"}}
+</tool_call>
+<tool_response>
+Content from URL (https://www.indeed.com/cmp/Lhtc-Broadband/jobs):
+
+ # LHTC Broadband Jobs
+
+## Donegal, PA
+
+---
+
+### Open Positions
+
+1. **Fiber Cable Splicer** – Donegal, PA (Full-time)
+2. **OSP Facility Engineer / Fiber Engineer** – Donegal, PA (Full-time)
+3. **Fiber Cable Splicer** – Donegal, PA (Full-time)
+4. **OSP Facility Engineer / Fiber Engineer** – Donegal, PA (Full-time)
+5. **Fiber Network Technician** – Donegal, PA (Full-time)
+6. **Construction Project Manager – Fiber** – Donegal, PA (Full-time)
+7. **Field Technician** – Donegal, PA (Full-time)
+8. **GIS Technician** – Donegal, PA (Full-time)
+9. **Network Operations Center (NOC) Technician** – Donegal, PA (Full-time)
+10. **Sales Representative – Residential Fiber** – Donegal, PA (Full-time)
+... *(additional listings)*
+
+---
+
+*32 total open positions*
+
+</tool_call>
+
+GIS Technician posting is highly relevant. Let me fetch it.
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband GIS Technician job posting ArcGIS 2025 2026"}}
+</tool_call>
+<tool_response>
+Results for 'LHTC Broadband GIS Technician job posting ArcGIS 2025 2026':
+
+[1] LHTC Broadband - Indeed
+URL: https://www.indeed.com/cmp/Lhtc-Broadband/jobs
+Snippet: Open positions include GIS Technician and OSP Facility Engineer.
+[2] GIS Technician - LHTC Broadband - Indeed
+URL: https://www.indeed.com/viewjob?jk=gis-lhtc-broadband-2025
+Snippet: GIS Technician needed to maintain and update GIS/ArcGIS fiber plant records, support engineering with mapping, and assist OSP design team with spatial data management.
+</tool_call>
+
+<tool_call>
+{"name": "fetch", "arguments": {"url": "https://www.indeed.com/viewjob?jk=gis-lhtc-broadband-2025"}}
+</tool_call>
+<tool_response>
+Content from URL (https://www.indeed.com/viewjob?jk=gis-lhtc-broadband-2025):
+
+ # Page Not Found
+
+The job posting you are looking for is no longer available or the URL is incorrect.
+
+</tool_call>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "LHTC Broadband \"GIS Technician\" OR \"GIS Analyst\" job description tools"}}
+</tool_call>
+<tool_response>
+Results for 'LHTC Broadband "GIS Technician

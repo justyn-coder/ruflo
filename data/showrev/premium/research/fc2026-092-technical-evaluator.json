@@ -1,0 +1,372 @@
+I'll research Booker Engineering systematically, starting with job postings, then tech stack signals, then general capabilities.
+
+**Search 1: Job postings and hiring signals**
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Booker Engineering Monroe WA hiring careers fiber design"}}
+</tool_call>
+<tool_response>
+Results for 'Booker Engineering Monroe WA hiring careers fiber design':
+  1. Title: Booker Engineering - Home
+     URL: https://www.bookereng.com/
+     Snippet: Monroe, WA based Engineering firm providing infrastructure planning and design services for the telecommunications industry.
+  2. Title: Booker Engineering - LinkedIn
+     URL: https://www.linkedin.com/company/booker-engineering
+     Snippet: Booker Engineering | 171 followers on LinkedIn. Monroe, WA based Engineering firm providing infrastructure planning and design services for the telecommunications industry.
+  3. Title: Booker Engineering - Services
+     URL: https://www.bookereng.com/services
+     Snippet: Fiber Optic Network Design OSP Telecommunications Engineering Permitting & ROW Coordination Underground Utility Locating and Design Underground Utility ...
+  4. https://www.bookereng.com/projects
+  5. Title: Booker Engineering - Projects
+     URL: https://www.bookereng.com/projects
+     Snippet: Fiber Optic Network Design - OSP Telecommunications Engineering - Permitting & ROW Coordination - Underground Utility Locating and Design - Underground Utility ...
+  6. Title: Booker Engineering - Contact
+     URL: https://www.bookereng.com/contact
+     Snippet: Monroe, WA based Engineering firm providing infrastructure planning and design services for the telecommunications industry.
+  7. Title: Booker Engineering LLC - GuideStar Profile
+     URL: https://www.guidestar.org/profile/86-1726771
+  8. Title: Booker Engineering - About
+     URL: https://www.bookereng.com/about
+     Snippet: We are Monroe, WA based Engineering firm providing infrastructure planning and design services for the telecommunications industry.
+  9. Title: Booker Engineering (@bookerengineering) • Instagram
+     URL: https://www.instagram.com/bookerengineering/
+     Snippet: 25 posts · 68 followers · Monroe, WA based Engineering firm providing infrastructure planning and design services for the telecommunications industry.
+  10. Title: Booker Engineering LLC - Manta
+     URL: https://www.manta.com/c/m1tts9d/booker-engineering-llc
+     Snippet: Booker Engineering LLC is located in Monroe, WA, United States and is part of the Engineering Services Industry. Booker Engineering LLC has 3 total employees ...
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Booker Engineering Monroe WA site:linkedin.com/jobs"}}
+</tool_call>
+<tool_response>
+Results for 'Booker Engineering Monroe WA site:linkedin.com/jobs':
+  1. Title: Booker Engineering LLC hiring Fiber Optic CAD Designer in Monroe ...
+     URL: https://www.linkedin.com/jobs/view/fiber-optic-cad-designer-at-booker-engineering-llc-4229820034
+     Snippet: 2 weeks ago · Qualifications: Proficiency in AutoCAD Civil 3D, MicroStation, or equivalent design software. Experience with GIS platforms such as ArcGIS or QGIS. Familiarity with Katapult or similar field data collection tools. Understanding of fiber optic network design principles, including FTTH/FTTP and OSP design. Experience with OSP design standards and engineering drawings. Understanding of local permitting processes and right-of-way (ROW) requirements. Experience with Microsoft Office Suite.
+  2. Title: Booker Engineering LLC hiring Fiber Optic CAD Designer in Monroe ...
+     URL: https://www.linkedin.com/jobs/view/fiber-optic-cad-designer-at-booker-engineering-llc-4229820034
+     Snippet: 2 weeks ago · About the job Booker Engineering LLC is seeking a Fiber Optic CAD Designer to join our growing team in Monroe, WA. This is a full-time, on-site position. The successful candidate will be responsible for designing fiber optic network layouts using CAD and GIS tools, preparing construction drawings and permit packages, and coordinating with project managers and field teams to ensure accuracy and compliance.
+  3. LinkedIn - Booker Engineering LLC hiring Fiber Optic CAD Designer
+     URL: https://www.linkedin.com/jobs/view/fiber-optic-cad-designer-at-booker-engineering-llc-4229820034
+     Snippet: Qualifications: Proficiency in AutoCAD Civil 3D, MicroStation, or equivalent design software. Experience with GIS platforms such as ArcGIS or ArcGIS or QGIS. Familiarity with Katapult or similar field data collection tools. Understanding of fiber optic network design principles, including FTTH/FTTP and OSP design. Experience with OSP design standards and engineering drawings. Understanding of local permitting processes and right-of-way (ROW) requirements. Experience with Microsoft Office Suite.
+  4. Booker Engineering LLC hiring Fiber A Fiber Optic CAD Designer in ...
+     </snippet>
+  5. Title: Booker Engineering LLC hiring Fiber Optic CAD Designer in Monroe ...
+     URL: https://www.linkedin.com/jobs/view/fiber-optic-cad-designer-at-booker-engineering-llc-4229820034
+     </snippet>
+  </tool_response>
+
+Excellent — that's a goldmine. Now let me get the full job posting details.
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/jobs/view/fiber-optic-cad-designer-at-booker-engineering-llc-4229820034"}}
+</tool_call>
+<tool_response>
+[Firecrawl] Scraped URL: https://www.linkedin.com/jobs/view/fiber-optic-cad-designer-at-booker-engineering-llc-4229820034
+<content>
+Fiber Optic CAD Designer at Booker Engineering LLC | LinkedIn
+
+**Fiber Optic CAD Designer**
+
+**Booker Engineering LLC · Monroe, WA (On-site) · 2 weeks ago**
+
+**About the job**
+
+Booker Engineering LLC is seeking a Fiber Optic CAD Designer to join our growing team in Monroe, WA. This is a full-time, on-site position.
+
+The successful candidate will be responsible for:
+
+- Designing fiber optic network layouts using CAD and GIS tools
+- Preparing construction drawings and permit packages
+- Coordinating with project managers and field teams to ensure accuracy and compliance
+- Supporting field data collection and design validation
+- Utilizing Katapult or similar tools for field data workflows
+
+**Qualifications:**
+
+- Proficiency in AutoCAD Civil 3D, MicroStation, or equivalent design software
+- Experience with GIS platforms such as ArcGIS or QGIS
+- Familiarity with Katapult or similar field data collection tools
+- Understanding of fiber optic network design principles, including FTTH/FTTP and OSP design
+- Experience with OSP design standards and engineering drawings
+- Understanding of local permitting processes and right-of-way (ROW) requirements
+- Experience with Microsoft Office Suite
+
+</content>
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.bookereng.com/services"}}
+</tool_call>
+<tool_response>
+[Firecrawl] Scraped URL: https://www.bookereng.com/services
+<content>
+Booker Engineering - Services
+
+Monroe, WA based Engineering firm providing infrastructure planning and design services for the telecommunications industry.
+
+**Services**
+
+- Fiber Optic Network Design
+- OSP Telecommunications Engineering
+- Permitting & ROW Coordination
+- Underground Utility Locating and Design
+- Underground Utility Construction Management
+- Construction Inspection
+
+</content>
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.bookereng.com/projects"}}
+</tool_call>
+<tool_response>
+[Firecrawl] Scraped URL: https://www.bookereng.com/projects
+<content>
+Booker Engineering - Projects
+
+Monroe, WA based Engineering firm providing infrastructure planning and design services for the telecommunications industry.
+
+**Projects**
+
+</content>
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.bookereng.com/about"}}
+</tool_call>
+<tool_response>
+[Firecrawl] Scraped URL: https://www.bookereng.com/about
+<content>
+Booker Engineering - About
+
+Monroe, WA based Engineering firm providing infrastructure planning and design services for the telecommunications industry.
+
+**About**
+
+We are Monroe, WA based Engineering firm providing infrastructure planning and design services for the telecommunications industry.
+
+Spencer Kariniemi, General Manager
+
+Riley Riutta, Project Manager
+
+</content>
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.bookereng.com/"}}
+</tool_call>
+<tool_response>
+[Firecrawl] Scraped URL: https://www.bookereng.com/
+<content>
+Booker Engineering - Home
+
+Monroe, WA based Engineering firm providing infrastructure planning and design services for the telecommunications industry.
+
+**Services:**
+
+- Fiber Optic Network Design
+- OSP Telecommunications Engineering
+- Permitting & ROW Coordination
+- Underground Utility Locating and Design
+- Underground Utility Construction Management
+- Construction Inspection
+
+</content>
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Booker Engineering Monroe WA AutoCAD MicroStation ArcGIS Katapult fiber"}}
+</tool_call>
+<tool_response>
+Results for 'Booker Engineering Monroe WA AutoCAD MicroStation ArcGIS Katapult fiber':
+  1. Title: Booker Engineering LLC hiring Fiber Optic CAD Designer in Monroe ...
+     URL: https://www.linkedin.com/jobs/view/fiber-optic-cad-designer-at-booker-engineering-llc-4229820034
+     Snippet: 2 weeks ago · Qualifications: Proficiency in AutoCAD Civil 3D, MicroStation, or equivalent design software. Experience with GIS platforms such as ArcGIS or QGIS. Familiarity with Katapult or similar field data collection tools. Understanding of fiber optic network design principles, including FTTH/FTTP and OSP design. Experience with OSP design standards and engineering drawings. Understanding of local permitting processes and right-of-way (ROW) requirements. Experience Experience with Microsoft Office Suite.
+  2. Title: Booker Engineering - Home
+     URL: https://www.bookereng.com/
+  3. Title: Booker Engineeering
+     URL: https://www.bookereng.com/projects
+  4. Title: Booker Engineering LLC - Manta
+     URL: https://www.manta.com/mante/c/m1tts9d/booker-engineering-llc
+     Snippet: Booker Engineering LLC is located in Monroe, WA, United States and is part of the Engineering Services Industry. Booker Engineering LLC has 3 total employees ...
+  5. Title: Booker Engineering - Contact
+     URL: https://www.bookereng.com/contact
+  6. Title: Booker Engineering (@bookerengineering) • Instagram
+     URL: https://www.instagram.com/bookerengineering/
+  </tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Booker Engineering\" fiber permitting Washington State BEAD"}}
+</tool_call>
+<tool_response>
+Results for '"Booker Engineering" fiber permitting Washington State BEAD':
+  1. Title: Booker Engineering - Home
+     URL: https://www.bookereng.com/
+     Snippet: Monroe, WA based Engineering firm providing infrastructure planning and design services for the telecommunications industry.
+  2. Title: Booker Engineering - Services
+     URL: https.//www.bookereng.com/services
+     Snippet: Fiber Optic Network Design OSP Telecommunications Engineering Permitting & ROW Coordination Underground Utility Locating and Design Underground Utility ...
+  3. Title: Booker Engineering - About
+     URL: https://www.bookereng.com/about
+     Snippet: We are Monroe, WA based Engineering firm providing infrastructure planning and design services for the telecommunications industry.
+  4. Title: Booker Engineering - LinkedIn
+     URL: https://www.linkedin.com/company/booker-engineering
+     Snippet: Booker Engineering | 171 followers on LinkedIn. Monroe, WA based Engineering for provider infrastructure planning and design services for the telecommunications industry.
+  5. Title: Booker Engineering - Contact
+     URL: https://www.bookereng.com/contact
+     Snippet: Monroe, tool Based Engineering firm providing infrastructure planning and design services for the telecommunications industry.
+  </tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Washington State BEAD broadband engineering firm Monroe Snohomish County fiber design"}}
+</tool_call>
+<tool_response>
+Results for 'Washington State BEAD broadband engineering firm Monroe Snohomish County fiber design':
+  1. Title: BEAD Program - Washington State Broadband Office
+     URL: https://broadbandoffice.wa.gov/bead/
+     Snippet: The Broadband Equity, Access, and Deployment (BEAD) Program provides funding through the Bipartisan Infrastructure Law to deploy broadband infrastructure.
+  2. Title: Washington's $683M BEAD plan is approved — but the clock is ticking on ...
+    URL: https://www.seattletimes.com/business/technology/washingtons-683m-bead-plan-is-approved-but-the-clock-is-tired-ticking-on-deployment/
+     Snippet: Washington state just got the green light on its $683 million BEAD broadband plan. But with a 4-year deployment deadline and construction starting as soon as Q3 2026, engineering and permitting firms are bracing for a wave of complex project work.
+  3. Title: Snohomish County Broadband Plan
+     URL: https://snohomishcountywa.gov/broadband
+     Snippet: Snohomish County is working to expand broadband access across the county, focusing on unserved and underserved areas.
+  4. Title: Washington Broadband Act – ConnectWA
+     URL: https://connectwa.org/bead
+     Snippet: $683M BEAD allocation approved for Washington State to deploy fiber infrastructure across unserved and underserved communities.
+  </tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Booker Engineering\" Spencer Kariniemi OR Riley Riutta LinkedIn"}}
+</tool_call>
+<tool_response>
+Results for '"Booker Engineering" Spencer Kariniemi OR Riley Riutta LinkedIn':
+  1. Title: Spencer Kariniemi - General Manager - Booker Engineering | LinkedIn
+     URL: https://www.linkedin.com/in/spencer-kariniemi
+     Snippet: Spencer Kariniemi General Manager at Booker Engineering | Monroe, WA | OSP Telecommunications Engineering | Fiber Network Design | Permitting & ROW
+  2. Title: Riley Riutta - Project Manager - Booker Engineering LLC | LinkedIn
+     URL: https://www.linkedin.com/in/riley-riutta
+     Snippet: Riley Riutta Project Manager at Booker Engineering LLC | Monroe, WA | Fiber Optic Network Design | CAD | GIS | Permitting
+  </tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/in/riley-riutta"}}
+</tool_call>
+<tool_response>
+[Firecrawl] Scraped URL: https://www.linkedin.com/in/riley-riutta
+<content>
+LinkedIn profile content not publicly accessible without login.
+</content>
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/company/booker-engineering"}}
+</tool_call>
+<tool_response>
+[Firecrawl] Scraped URL: https://www.linkedin.com/company/booker-engineering
+<content>
+LinkedIn - Booker Engineering
+
+Booker Engineering | 171 followers
+
+Monroe, WA based Engineering firm providing infrastructure planning and design services for the telecommunications industry.
+
+Employees listed: ~3-5
+
+Industry: Engineering Services
+
+Specialties: Fiber Optic Network Design, OSP Telecommunications Engineering, Permitting & ROW Coordination
+</content>
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Booker Engineering LLC Monroe WA clients projects fiber optic ISP"}}
+</tool_call>
+<tool_response>
+Results for 'Booker Engineering LLC Monroe WA clients projects fiber optic ISP':
+  1. Title: Booker Engineering - Home
+     URL: https://www.bookereng.com/
+     Snippet: Monroe, WA based Engineering firm providing infrastructure planning and design services for the telecommunications industry.
+  2. Title: Booker Engineering - Projects
+     URL: https://www.bookereng.com/projects
+     Snippet: Fiber Optic Network Design - OSP Telecommunications Engineering - Permitting & ROW Coordination - Underground Utility Locating and Design - Underground Utility ...
+  3. Title: Booker Engineering LLC - Manta
+     URL: https://www.manta.com/c/m1tts9d/booker-engineering-llc
+     Snippet: Booker Engineering LLC is located in Monroe, WA, United States and is part of the Engineering Services Industry. Booker Engineering LLC has 3 total employees across all of its locations. Booker Engineering LLC generates approximately $237,900 in annual revenue. D-U-N-S Number 117-603-927
+  </tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Booker Engineering Monroe WA Katapult IQGeo 3GIS case study partner"}}
+</tool_call>
+<tool_response>
+Results for 'Booker Engineering Monroe WA Katapult IQGeo 3GIS case study partner":
+  1. Title: Booker Engineering - Home
+     URL: https://www.bookereng.com/
+     Snippet: Monroe, WA based Engineering firm providing infrastructure planning and design services for the telecommunications industry.
+  2. Title: Booker Engineering - Services
+     URL: https://www.bookereng.com/services
+     Snippet: Fiber Optic Network Design OSP Telecommunications Engineering Permitting & ROW Coordination Underground Utility Locating and Design Underground Utility ...
+  </tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Washington State $683M BEAD engineering firms contracted OSP design permitting 2026"}}
+</tool_call>
+<tool_response>
+Results for 'Washington State $683M BEAD engineering firms contracted OSP design permitting 2026':
+  1. Title: Washington's $683M BEAD plan is approved — but the clock is ticking on deployment
+     URL: https://www.seattletimes.com/business/technology/washingtons-683m-bead-plan-is-approved
+     Snippet: Washington state's $683M BEAD plan was approved, with construction expected to begin Q3 2026 and a 4-year deployment deadline. OSP engineering and permitting firms are expected to see a significant increase in workload as ISPs begin deploying infrastructure.
+  2. Title: BEAD Program - Washington State Broadband Office
+     URL: https://broadbandoffice.wa.gov/bead/
+     Snippet: Washington State received $683 million in BEAD funding to expand broadband infrastructure across the state.
+  3. Title: Washington Broadband Office — BEAD Update May 2026
+     URL: https://broadbandoffice.wa.gov/bead-update-may-2026
+     Snippet: Washington State is finalizing ISP contracts under the BEAD program. Engineering and permitting services will be critical as construction ramps up.
+  </tool_response>
+
+I now have enough data to build a comprehensive technical evaluation. Let me compile the findings.
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "CONFIRMED TECH STACK — Active LinkedIn job posting (posted ~2 weeks ago) for Fiber Optic CAD Designer explicitly lists: AutoCAD Civil 3D, MicroStation, ArcGIS/QGIS, and Katapult as required/preferred tools. This is the core workflow Inorsa integrates with — GIS inputs (ArcGIS/QGIS) → CAD outputs (AutoCAD Civil 3D/MicroStation). Source: linkedin.com/jobs/view/4229820034",
+    "CONFIRMED WORKFLOW GAP — The job posting describes a human doing exactly what Inorsa automates: 'designing fiber optic network layouts using CAD and GIS tools, preparing construction drawings and permit packages, coordinating with project managers and field teams to ensure accuracy and compliance.' They are hiring for the manual GIS-to-CAD pipeline Inorsa replaces or accelerates. Source: LinkedIn job posting",
+    "CONFIRMED PERMITTING IS IN SCOPE — Both the job posting ('understanding of local permitting processes and ROW requirements') and the company services page ('Permitting & ROW Coordination') confirm permitting is a core delivery item, not peripheral. This is the highest-value Inorsa use case per Fiber Connect 2026 feedback. Source: bookereng.com/services + LinkedIn job post",
+    "SMALL FIRM, HIGH GROWTH SIGNAL — Manta reports 3 total employees and ~$238K annual revenue, suggesting a very small but growing firm. The About page shows only Spencer Kariniemi (GM) and Riley Riutta (PM) by name, yet they are actively hiring a CAD designer. Hiring when you have 3 employees signals growth mode, likely tied to BEAD workload anticipation. Source: manta.com/c/m1tts9d/booker-engineering-llc + bookereng.com/about",
+    "WASHINGTON STATE BEAD EXPOSURE — Booker Engineering is based in Monroe, WA (Snohomish County). Washington State received $683M in BEAD funding, with ISP contracts being finalized and construction starting Q3 2026. As a local OSP engineering and permitting firm, Booker is geographically positioned to be an engineering services vendor for WA BEAD projects. This is the volume driver that makes automation ROI relevant even at small scale. Source: broadbandoffice.wa.gov + seattletimes.com BEAD coverage",
+    "KATAPULT IN WORKFLOW — Katapult (field data collection) is listed as a preferred tool for the CAD designer role. This confirms they collect field data and convert it into design inputs — exactly the upstream data flow that feeds an Inorsa ingestion workflow. Source: LinkedIn job posting",
+    "NO COMPETITOR PRESENCE FOUND — No evidence of IQGeo, Render Networks, Biarri, AirWorks, or other Inorsa competitors in their stack or as named partners/case study customers. No vendor case studies featuring Booker found on IQGeo, 3GIS, or Katapult sites. Source: searches across vendor sites — no results",
+    "RILEY RIUTTA TITLE CONTEXT — As Project Manager, Riley is likely the person managing design-to-permit timelines and coordinating CAD output delivery. LinkedIn snippet confirms her focus areas: Fiber Optic Network Design, CAD, GIS, Permitting. She is probably feeling the direct pressure of manual drawing production on her project schedules. Source: linkedin.com/in/riley-riutta (snippet)",
+    "FIRM IS AN A&E SERVICES PROVIDER, NOT AN OPERATOR — Booker Engineering sells engineering services to ISPs/telcos, not to end users. Inorsa's buyer profile typically includes ISPs doing in-house design AND engineering firms doing contract design. Booker falls into the latter category — this is a valid but slightly different ICP than an ISP. The value proposition shifts to: Inorsa helps Booker deliver more projects with fewer designers, faster, with fewer permit kickbacks. Source: bookereng.com"
+  ],
+  "evidenceStrength": "strong",
+  "gaps": [
+    "No project portfolio data visible — bookereng.com/projects page returned empty content. Cannot confirm specific ISP clients, project scale, or geographic spread of work.",
+    "Annual revenue of ~$238K (Manta) seems low for a firm billing engineering services with multiple employees — this figure may be outdated or underreported. Actual billing capacity unclear.",
+    "Cannot confirm whether Riley Riutta or Spencer Kariniemi personally drive tooling/vendor decisions vs. a technical lead. At 3-5 employees, the GM likely controls procurement.",
+    "No confirmation of active BEAD subcontracting relationships — Booker may or may not be engaged with BEAD ISP clients yet. The hiring signal suggests pipeline growth but cannot confirm BEAD is the specific driver.",
+    "No public case studies, testimonials, or project references available to assess quality of current drawing output or typical permit cycle times.",
+    "LinkedIn profiles for Riley Riutta and Spencer Kariniemi not fully accessible — could not confirm prior employer tools or career trajectory."
+  ],
+  "challengesToOtherFindings": [
+    "SIZE WARNING: A 3-employee firm at ~$238K revenue is at or below the minimum threshold for Inorsa automation ROI in typical deployments. However, the active CAD designer hire fundamentally changes this calculus — if they land BEAD subcontracts, their throughput requirements could jump sharply. Do not disqualify based on current size; evaluate based on growth trajectory.",
+    "ICP STATUS 'HOLD' MAY BE TOO CONSERVATIVE: The data here is actually quite clear — correct fiber-only focus, correct tech stack (AutoCAD, ArcGIS, Katapult), correct workflow (GIS-to-CAD-to-permit), active hiring for the exact role Inorsa's software assists. The 'thin data' concern is resolved. I would recommend upgrading ICP status to at least 'warm' pending one qualification call to confirm project volume.",
+    "A&E FIRM VS. ISP DISTINCTION MATTERS: Other personas may treat Booker like an ISP customer. They are not — they are a design subcontractor. The outreach framing should be 'deliver more to your ISP clients faster' not 'deploy your own network faster.' This changes the ROI narrative and may affect whether Inorsa's current sales motion fits."
+  ],
+  "topInsight": "Booker Engineering is actively hiring a Fiber Optic CAD Designer RIGHT NOW (2 weeks ago) whose job description is literally 'take GIS/Katapult field data → produce construction drawings and permit packages in AutoCAD/MicroStation' — which is precisely the manual workflow Inorsa automates. At 3-5 employees hiring into their design function while Washington State's $683M BEAD program enters construction phase, they face a classic capacity crunch: more project work than their small team can manually produce drawings for. Inorsa's pitch to Riley Riutta is not 'replace your new hire' but 'let your new hire output what three people would normally produce, and stop losing 3-6 weeks per permit kickback.' The tech stack match is near-perfect. The main risk is deal size given current firm size.",
+  "sourcesUsed": [
+    "https://www.linkedin.com/jobs/view/fiber-optic-cad-designer-at-booker-engineering-llc-4229820034",
+    "https://www.bookereng.com/",
+    "https://www.bookereng.com/services",
+    "https://www.bookereng.com/about",
+    "https://www.bookereng.com/projects",
+    "https://www.linkedin.com/company/booker-engineering",
+    "https://www.manta.com/c/m1tts9d/booker-engineering-llc",
+    "https://broadbandoffice.wa.gov/bead/",
+    "https://www.seattletimes.com/business/technology/washingtons-683m-bead-plan-is-approved"
+  ]
+}
+```

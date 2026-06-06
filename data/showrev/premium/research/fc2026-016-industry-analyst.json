@@ -1,0 +1,37 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "One Drill LLC is registered in Florida (Winter Garden, FL — Orange County), a market that received $683M+ in BEAD allocation. The company name, dual-owner structure (Joao Vianna + Carlos Figueiroa), and attendance at a fiber trade show strongly suggest this is a construction/drilling subcontractor — likely horizontal directional drilling (HDD) or boring services — serving fiber and telecom deployment projects. This is a hypothesis based on naming convention and location; direct confirmation not found in public press. Source: company name inference + FL BEAD context.",
+    "Florida's BEAD program is operationally active as of April 30, 2026, with ISP contract finalization expected within 6 months. Construction starts are projected for Q3 2026 at the earliest, meaning HDD/boring contractors in Florida are entering a period of significantly elevated demand. One Drill LLC's presence at Fiber Connect 2026 is consistent with a contractor positioning for BEAD-driven fiber deployment work. Source: BEAD program timeline (industry baseline) + trade show attendance signal.",
+    "Orange County / Winter Garden, FL is in the greater Orlando metro — an area with dense suburban and rural edge markets that qualify for BEAD buildout. Florida's $683M BEAD allocation targets underserved and unserved areas, many of which require underground or conduit construction methods (HDD is common in suburban Florida due to road composition and permitting constraints). This makes One Drill a plausible subcontractor to ISPs and prime engineering/construction firms pursuing BEAD projects. Source: FL BEAD allocation data + geographic inference.",
+    "No press mentions, BEAD sub-grant awards, job postings, conference speaker appearances, or trade press coverage found for 'One Drill LLC' on fiercenetwork.com, lightreading.com, telecompetitor.com, or broadband-specific outlets. The company appears to operate below media visibility threshold — typical of small (<20 employee) specialty subcontractors. Source: search gap.",
+    "The labor shortage dynamic (3:1 job-to-candidate ratio for fiber designers; 58,000 new roles needed by 2032) applies upstream of One Drill's likely role. However, HDD/boring contractors face a parallel skilled trades shortage — licensed HDD operators and locators are also scarce. If One Drill is growing to capture BEAD work, they may be bidding projects where their prime contractors are bottlenecked on permitting and design — directly relevant to Inorsa's value proposition. Source: industry baseline + structural inference.",
+    "If One Drill operates as a construction subcontractor (not a designer or ISP), Inorsa's direct ICP fit is conditional: Inorsa's value is most direct to entities who own the permitting workflow (ISPs, prime A&E firms, general contractors managing permit submissions). However, HDD contractors who are scaling to act as construction-GC hybrids — or who are getting squeezed by upstream permit delays causing schedule compression on their end — are indirect beneficiaries and potential referral paths to prime contractors. Source: Inorsa product analysis + subcontractor workflow model.",
+    "Two owners attending the same trade show (Joao Vianna + Carlos Figueiroa) suggests a small, founder-led firm where both principals are active in business development. This is a high-touch, relationship-driven buying environment. No institutional ownership or PE backing signals found. Source: lead data + absence of press coverage."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No public web presence confirmed for One Drill LLC — no company website, LinkedIn company page, or Crunchbase profile found in available data.",
+    "Cannot confirm whether One Drill is HDD/boring, general fiber construction, aerial strand, or a mixed-services contractor. The 'drill' naming is the primary signal.",
+    "No BEAD sub-grant award found for One Drill LLC specifically — unclear if they are pursuing BEAD work directly or only as a sub to primes.",
+    "No job postings found — cannot infer growth trajectory or hiring direction.",
+    "Revenue, headcount, and project scale entirely unknown. Cannot assess whether they are a 5-person crew or a 50-person operation.",
+    "No conference speaker history, podcast appearances, or long-form interviews found for either Joao Vianna or Carlos Figueiroa.",
+    "Cannot confirm what specifically drew them to Fiber Connect 2026 — vendor sourcing, customer prospecting, or educational content."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold designation ('Thin data — needs research to determine fit') is correct and should be maintained. The instinct to treat trade show attendance as a buying signal is reasonable but insufficient here — drilling contractors attend fiber shows to find customers, not to buy software. Inorsa's outreach should be framed around their pain (permit-driven schedule compression hurting their crews) rather than assuming they are in the market for design tooling.",
+    "If One Drill is purely a field execution subcontractor with no design/permitting responsibility, they are outside Inorsa's direct ICP. However, they may be a high-value referral source to prime GCs or ISPs they work with — the email should probe for that relationship structure before investing heavily in direct qualification.",
+    "Florida's BEAD momentum is real, but construction starts in Q3 2026 at earliest means demand has not yet hit the field. One Drill may be in a pre-revenue pipeline-building phase, which could make them receptive to conversations about streamlining upstream workflows that affect their schedules — but they are unlikely to be a near-term buyer of software themselves."
+  ],
+  "topInsight": "One Drill LLC almost certainly attends Fiber Connect as a construction subcontractor (likely HDD/boring) seeking to position for BEAD-driven deployment contracts in Florida — not as a buyer of design or permitting software. The most valuable outreach angle is not selling Inorsa directly, but asking: 'Who are the prime GCs or ISPs giving you the most work, and are permit delays compressing your schedule?' That single question converts a weak direct prospect into a potential referral pipeline into Inorsa's actual ICP, while also testing whether One Drill has any hybrid GC role that would make them a direct fit.",
+  "sourcesUsed": [
+    "Industry baseline (ShowRev Industry Intelligence KB) — BEAD timeline, labor shortage, permitting constraint data",
+    "Lead record data — company name, contacts, location, trade show attendance",
+    "FL BEAD allocation public record — $683M state allocation",
+    "Inorsa product/ICP description — used to assess direct vs. indirect fit",
+    "Search gap noted: no results found on fiercenetwork.com, lightreading.com, telecompetitor.com, Crunchbase, or LinkedIn for 'One Drill LLC Winter Garden FL'"
+  ]
+}
+```

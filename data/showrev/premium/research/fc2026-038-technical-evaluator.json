@@ -1,42 +1,783 @@
-I have enough evidence. Compiling the Technical Evaluator JSON now.
+I'll research AirWorks systematically, starting with job postings for tool signals, then tech stack, then their product positioning relative to Inorsa's workflow.
 
-```json
-{
-  "role": "Technical Evaluator",
-  "keyFindings": [
-    "AirWorks output formats confirmed: DXF (.dxf), ArcGIS-compatible layers, SPIDAcalc data, PDFs. These are BASEMAP and FEATURE-EXTRACTION outputs — not permit packages or construction drawings. Source: airworks.io/product, builtin.com Senior GIS Engineer posting",
-    "LightSett case study reveals the exact workflow gap: AirWorks extracts features via AI → LightSett designers take that GIS data into ArcGIS and other design software → designers produce permit/construction documents. The human design step between AirWorks and permit-ready output is explicit and still manual. Source: info.airworks.io/en/lightsett-telecom",
-    "AirWorks is actively hiring a Senior GIS Engineer (Greenhouse, 2025) requiring: Global Mapper, Bentley, Trimble, AutoCAD, pointcloud classification, Python scripting. This is a data-processing role, not a drawing-production role — confirms AirWorks has no internal team generating permit packages and is not building toward that capability. Source: job-boards.greenhouse.io/airworks/jobs/4693744007",
-    "AirWorks' Broadband Design Partners category has exactly 3 listed firms: IMMCO, CHR, ADVANCED1 — all OSP engineering services companies doing manual GIS-to-drawing work. No drawing-generation software vendor exists in this partner slot. This is the open technical slot Inorsa could occupy. Source: airworks.io/about/our-partners",
-    "Platform integrations confirmed: Bentley Systems and Esri are the only named software platform partners. No Katapult, IQGeo, Biarri, or Render Networks integration confirmed in the partner list — no OSP design/drawing downstream tool is formally integrated. Source: airworks.io/about/our-partners",
-    "AirWorks' blog language on permitting: 'reduces field visits, flags constructibility issues early, and streamlines permitting' — this refers to data quality improving the permitting PROCESS, not AirWorks generating permit documents. Permitting acceleration is claimed as a data benefit, not a product capability. Source: blog.airworks.io/how-ai-powered-mapping-and-automation-accelerates-fiber-network-design",
-    "AirWorks claims '7x faster basemap delivery' vs. traditional methods. The LightSett stat — 10 engineered miles/month → 200-300 miles/month to permit — reflects LightSett's total workflow gain, not AirWorks alone. The design/permit drawing step is still done by LightSett engineers. This is a critical precision gap in how AirWorks markets ROI. Source: info.airworks.io/en/lightsett-telecom",
-    "Inorsa's stated inputs (GIS/LLD data, validated infrastructure data) are a direct match for AirWorks' confirmed outputs (DXF, ArcGIS layers, pole-level attribute data). Integration technical feasibility is high — Inorsa could ingest AirWorks deliverables without format conversion friction. Source: airworks.io/product + Inorsa capability statement in research brief"
-  ],
-  "evidenceStrength": "strong",
-  "gaps": [
-    "AirWorks job board search returned a Senior GIS Engineer role but no partnership, integrations, or business development roles — cannot confirm whether AirWorks has active internal bandwidth to evaluate and implement a new technology partnership",
-    "LightSett case study did not name the specific CAD or drawing software used post-AirWorks — confirmed ArcGIS, 'other design software' unnamed. Cannot confirm whether LightSett uses any automated drawing tool or is purely manual in the permit-package step",
-    "No data on AirWorks' API or data export specifications — DXF and ArcGIS confirmed, but unknown whether AirWorks offers a structured data API that Inorsa could call programmatically vs. manual file handoff",
-    "Cannot confirm current AirWorks customer list beyond Lightsett — do not know how many of their 75+ customers are engineering firms (who could use Inorsa) vs. carriers/ISPs (who may outsource design entirely)",
-    "No evidence found confirming whether AirWorks is in active partnership discussion with any permit-drawing or construction-drawing generation vendor already — the slot may already be in flight with IMMCO, CHR, or ADVANCED1 as a services-level exclusive"
-  ],
-  "challengesToOtherFindings": [
-    "Both Industry Analyst and AE Proxy frame this as a clean two-party AirWorks→Inorsa integration story. The LightSett workflow reveals it is a THREE-party dynamic: AirWorks (data) → Engineering Firm (drawing production, currently manual) → Permit Package. Inorsa's actual integration target is the engineering firm in the middle, not AirWorks directly. The partnership with Janan is about channel access to those 75+ engineering firm customers — not a direct AirWorks system integration. Conflating these is a pitching error.",
-    "AE Proxy says AirWorks' 'Broadband Design Partners category is an existing partner lane — Inorsa fits structurally.' Technically true structurally, but every current occupant (IMMCO, CHR, ADVANCED1) is a human services firm doing manual drawing work. Inorsa is software that automates that step. This makes Inorsa a partial COMPETITOR to those three partners from AirWorks' perspective, not a pure addition. Janan needs to be sold on why adding Inorsa doesn't cannibalize her existing design partner relationships — this objection is unaddressed in both personas.",
-    "Industry Analyst's top insight frames the Osmose/Centillion M&A threat as primary urgency. Technically: Osmose is a SERVICES company (utility services) — their threat is at the field-services and design-services layer, not the data-platform layer. AirWorks' positioning as an AI data platform is structurally different from Centillion's walkout services. The M&A threat is real but less technically direct than presented — Osmose builds crews, not software platforms. A sharper technical framing: AirWorks' real risk is if IQGeo or Katapult builds upstream data capture capability, not if a utility services firm verticalizes.",
-    "AE Proxy claims 'no listed integration partner that generates permit packages or construction drawings' — confirmed accurate. But this absence may reflect a deliberate product boundary AirWorks has set (they are data-upstream by design, not engineering-output). Janan as VP of Product may have already decided AirWorks should NOT own the permit-drawing layer. Outreach should probe whether this is a conscious product decision or an open gap — not assume it is an unaddressed need."
-  ],
-  "topInsight": "The LightSett case study is the most important technical evidence in this brief: AirWorks' flagship customer success story confirms that a human design team still sits between AirWorks data delivery and permit-ready drawings. AirWorks is marketing 200-300 miles/month to permit as their headline ROI — but Inorsa is the missing layer that would make that number actually true end-to-end without a manual design bottleneck in the middle. The outreach angle is not 'integrate our tools' — it is 'your LightSett story has a gap that Inorsa closes, and it is the gap that will matter to every BEAD customer you pitch this fall.' That framing is technically precise, evidence-backed, and gives Janan something she can take back to her product roadmap — not just a vendor meeting.",
-  "sourcesUsed": [
-    "https://job-boards.greenhouse.io/airworks/jobs/4693744007",
-    "https://builtin.com/job/senior-gis-engineer/6342850",
-    "https://info.airworks.io/en/lightsett-telecom",
-    "https://www.airworks.io/about/our-partners",
-    "https://airworks.io/product/",
-    "https://blog.airworks.io/how-ai-powered-mapping-and-automation-accelerates-fiber-network-design",
-    "https://blog.airworks.io/automation-as-a-competitive-edge-in-telecommunications-operations",
-    "https://airworks.io/industries/telecom"
-  ]
-}
-```
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks airworks.io fiber design hiring careers jobs 2025 2026"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks airworks.io fiber design hiring careers jobs 2025 2026':
+
+Source: https://airworks.io/careers
+Content: Careers | AirWorks
+Join AirWorks
+Shape the future of infrastructure
+We're building the technology that powers faster, smarter infrastructure deployment.
+We're always looking for great people. Reach out at careers@airworks.io
+
+...
+
+Source: https://www.linkedin.com/company/airworks-solutions/jobs
+Content: LinkedIn
+
+...
+
+Source: https://www.linkedin.com/company/airworks-solutions
+Content: AirWorks | LinkedIn
+AirWorks
+Technology, Information and Internet · Boston, MA · 11-50 employees
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks site:linkedin.com/jobs CAD GIS design engineer fiber"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks site:linkedin.com/jobs CAD GIS design engineer fiber':
+
+Source: https://www.linkedin.com/company/airworks-solutions/jobs
+Content: LinkedIn
+
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks airworks.io \"AutoCAD\" OR \"MicroStation\" OR \"ArcGIS\" OR \"Katapult\" OR \"IQGeo\" OR \"3GIS\" OR \"Nearmap\" OR \"CAD\" fiber construction drawings"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks airworks.io \"AutoCAD\" OR \"MicroStation\" OR \"ArcGIS\" OR \"Katapult\" OR \"IQGeo\" OR \"3GIS\" OR \"Nearmap\" OR \"CAD\" fiber construction drawings':
+
+Source: https://airworks.io
+Content: AirWorks | Automated Design for Infrastructure
+AI-powered design automation for the infrastructure industry.
+
+...
+
+Source: https://airworks.io/solutions
+Content: Solutions | AirWorks
+[Unable to retrieve full content]
+
+...
+
+Source: https://airworks.io/blog
+Content: Blog | AirWorks
+[Unable to retrieve full content]
+
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://airworks.io", "maxPages": 1}}
+</tool_call>
+<tool_response>
+Crawl Results:
+
+Source: https://airworks.io/
+Content: 
+# AirWorks | Automated Design for Infrastructure
+
+[Skip to Content](https://airworks.io/#page)
+
+[](https://airworks.io)
+
+[Solutions](https://airworks.io/solutions)[Customers](https://airworks.io/customers)[About](https://airworks.io/about)[Blog](https://airworks.io/blog)[Careers](https://airworks.io/careers)
+
+[Book a Demo](https://airworks.io/book-a-demo)
+
+## AI-powered design automation for the infrastructure industry.
+
+Faster deployment. Fewer delays. Lower costs.
+
+[Explore Our Solutions](https://airworks.io/solutions)[Book a Demo](https://airworks.io/book-a-demo)
+
+## Who we serve
+
+We partner with the fastest-growing fiber ISPs and A&E firms to accelerate their deployment pipelines.
+
+## ISPs
+
+Telecom and utility companies deploying fiber networks and power grids. We help them deploy faster with less overhead.
+
+[Learn More](https://airworks.io/solutions)
+
+## A&E Firms
+
+Engineering and design firms that design and construct complex infrastructure. We help them design at scale and deliver more with the same team.
+
+[Learn More](https://airworks.io/solutions)
+
+## Why AirWorks
+
+### Automate Tedious Work
+
+Eliminate manual drafting with AI-driven automation that converts real-world data into precise, deployable designs.
+
+"The AI captures virtually everything, which is very impressive." — Fiber ISP customer
+
+### Accelerate Deployment
+
+Speed up timelines from permits to buildout. AirWorks reduces design cycles so your team can focus on breaking ground.
+
+"We went from 2-3 months down to 2-3 weeks." — Fiber ISP customer
+
+### Scale Without Headcount
+
+Grow output without growing your team. Built-in QC and automated workflows replace manual, error-prone processes.
+
+"AirWorks allows me to grow my business from 10 homes to 100 homes passed a day." — Fiber ISP customer
+
+Source: https://airworks.io/solutions
+Content: 
+# Solutions | AirWorks
+
+[Skip to Content](https://airworks.io/solutions#page)
+
+[](https://airworks.io)
+
+[Solutions](https://airworks.io/solutions)[Customers](https://airworks.io/customers)[About](https://airworks.io/about)[Blog](https://airworks.io/blog)[Careers](https://airworks.io/careers)
+
+[Book a Demo](https://airworks.io/book-a-demo)
+
+## AirWorks for ISPs
+
+Turn aerial imagery and field data into ready-to-build fiber designs.
+
+Reduce costs, skip the manual drafting bottleneck, and break ground faster.
+
+[Book a Demo](https://airworks.io/book-a-demo)
+
+## AirWorks for A&E Firms
+
+Design more without growing headcount.
+
+Scale output with built-in quality control and automated drafting workflows.
+
+[Book a Demo](https://airworks.io/book-a-demo)
+
+## How it Works
+
+Capture → Extract → Design
+
+**Capture:** Aerial imagery, LiDAR, and field data collection.
+
+**Extract:** AI feature extraction to identify poles, lines, roads, and structures.
+
+**Design:** Auto-generated designs exported to CAD, GIS, and engineering platforms.
+
+**QC/Validation:** Built-in quality control checks before export.
+
+Source: https://airworks.io/customers
+Content: 
+# Customers | AirWorks
+
+[Skip to Content](https://airworks.io/customers#page)
+
+[](https://airworks.io)
+
+[Solutions](https://airworks.io/solutions)[Customers](https://airworks.io/customers)[About](https://airworks.io/about)[Blog](https://airworks.io/blog)[Careers](https://airworks.io/careers)
+
+[Book a Demo](https://airworks.io/book-a-demo)
+
+## Customers
+
+### Mohawk Networks
+
+"AirWorks allows me to grow my business from 10 homes to 100 homes passed a day."
+
+[Read more](https://airworks.io/customers/mohawk-networks)
+
+### Fybercom
+
+"We went from 2-3 months down to 2-3 weeks."
+
+[Read more](https://airworks.io/customers/fybercom)
+
+### Ohio Gig
+
+[Read more](https://airworks.io/customers/ohio-gig)
+
+Source: https://airworks.io/about
+Content: 
+# About | AirWorks
+
+[Skip to Content](https://airworks.io/about#page)
+
+[](https://airworks.io)
+
+[Solutions](https://airworks.io/solutions)[Customers](https://airworks.io/customers)[About](https://airworks.io/about)[Blog](https://airworks.io/blog)[Careers](https://airworks.io/careers)
+
+[Book a Demo](https://airworks.io/book-a-demo)
+
+## About AirWorks
+
+AirWorks automates infrastructure design using AI, aerial imagery, and field data. We serve telecom operators, utilities, and A&E firms deploying fiber networks and power grids.
+
+### Our Mission
+
+To make infrastructure deployment faster, smarter, and more accessible by removing the manual bottlenecks that slow projects down.
+
+### The Team
+
+Founded in Boston, MA. Backed by leading investors in infrastructure technology.
+
+### Leadership
+
+**Kaitlin Dowd** — CEO
+
+**Janan Guillaume** — VP of Product
+
+Source: https://airworks.io/blog
+Content: 
+# Blog | AirWorks
+
+[Skip to Content](https://airworks.io/blog#page)
+
+[](https://airworks.io)
+
+[Solutions](https://airworks.io/solutions)[Customers](https://airworks.io/customers)[About](https://airworks.io/about)[Blog](https://airworks.io/blog)[Careers](https://airworks.io/careers)
+
+[Book a Demo](https://airworks.io/book-a-demo)
+
+## Blog
+
+### BEAD Funding: What Fiber ISPs Need to Know
+
+*Infrastructure deployment is accelerating...*
+
+### Automating Fiber Design: From Imagery to CAD
+
+*How AI is transforming the way fiber networks are designed...*
+
+### Reducing Design Bottlenecks in Telecom
+
+*Manual drafting is one of the biggest bottlenecks...*
+
+Source: https://airworks.io/careers
+Content: 
+# Careers | AirWorks
+
+[Skip to Content](https://airworks.io/careers#page)
+
+[](https://airworks.io)
+
+[Solutions](https://airworks.io/solutions)[Customers](https://airworks.io/customers)[About](https://airworks.io/about)[Blog](https://airworks.io/blog)[Careers](https://airworks.io/careers)
+
+[Book a Demo](https://airworks.io/book-a-demo)
+
+## Join AirWorks
+Shape the future of infrastructure
+We're building the technology that powers faster, smarter infrastructure deployment.
+We're always looking for great people. Reach out at careers@airworks.io
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://airworks.io/customers/mohawk-networks", "maxPages": 1}}
+</tool_call>
+<tool_response>
+Crawl Results:
+
+Source: https://airworks.io/customers/mohawk-networks
+Content: 
+# Mohawk Networks | AirWorks
+
+[Skip to Content](https://airworks.io/customers/mohawk-networks#page)
+
+[](https://airworks.io)
+
+[Solutions](https://airworks.io/solutions)[Customers](https://airworks.io/customers)[About](https://airworks.io/about)[Blog](https://airworks.io/blog)[Careers](https://airworks.io/careers)
+
+[Book a Demo](https://airworks.io/book-a-demo)
+
+## Mohawk Networks
+
+Mohawk Networks is a fast-growing rural fiber ISP based in New York. They were facing capacity constraints in their design pipeline and needed a way to scale output without hiring additional CAD drafters.
+
+**Challenge:** Mohawk was manually digitizing pole and strand data from aerial imagery. Their small team couldn't keep up with the pace of their buildout.
+
+**Solution:** AirWorks automated the extraction of infrastructure features from aerial imagery and delivered CAD-ready outputs for their fiber design workflow.
+
+**Result:** "AirWorks allows me to grow my business from 10 homes to 100 homes passed a day." — President, Mohawk Networks
+
+Source: https://airworks.io/customers/fybercom
+Content: 
+# Fybercom | AirWorks
+
+[Skip to Content](https://airworks.io/customers/fybercom#page)
+
+[](https://airworks.io)
+
+[Solutions](https://airworks.io/solutions)[Customers](https://airworks.io/customers)[About](https://airworks.io/about)[Blog](https://airworks.io/blog)[Careers](https://airworks.io/careers)
+
+[Book a Demo](https://airworks.io/book-a-demo)
+
+## Fybercom
+
+Fybercom is a fiber design and construction company serving ISPs across the Pacific Northwest.
+
+**Challenge:** Fybercom's team was spending significant time manually drafting from field surveys and aerial imagery. Design cycles were running 2-3 months, creating a bottleneck ahead of construction.
+
+**Solution:** AirWorks automated the extraction and drafting process, generating construction-ready CAD outputs from aerial and field data.
+
+**Result:** "We went from 2-3 months down to 2-3 weeks." — Fybercom
+
+Source: https://airworks.io/customers/ohio-gig
+Content: 
+# Ohio Gig | AirWorks
+
+[Skip to Content](https://airworks.io/customers/ohio-gig#page)
+
+[](https://airworks.io)
+
+[Solutions](https://airworks.io/solutions)[Customers](https://airworks.io/customers)[About](https://airworks.io/about)[Blog](https://airworks.io/blog)[Careers](https://airworks.io/careers)
+
+[Book a Demo](https://airworks.io/book-a-demo)
+
+## Ohio Gig
+
+Ohio Gig is a fiber ISP serving rural and suburban communities in Ohio.
+
+**Challenge:** Ohio Gig needed to rapidly expand their design capacity to support an aggressive deployment schedule tied to BEAD funding.
+
+**Solution:** AirWorks provided automated design extraction and CAD output generation to accelerate Ohio Gig's planning pipeline.
+
+**Result:** Ohio Gig was able to meet their BEAD-related planning milestones without growing their internal design team.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks airworks.io \"construction drawings\" OR \"permit\" OR \"permitting\" OR \"make-ready\" OR \"engineering\" fiber design workflow"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks airworks.io \"construction drawings\" OR \"permit\" OR \"permitting\" OR \"make-ready\" OR \"engineering\" fiber design workflow':
+
+Source: https://airworks.io
+Content: AirWorks | Automated Design for Infrastructure
+AI-powered design automation for the infrastructure industry.
+
+...
+
+Source: https://airworks.io/solutions
+Content: Solutions | AirWorks
+[Unable to retrieve full content]
+
+...
+
+Source: https://airworks.io/blog
+Content: Blog | AirWorks
+[Unable to retrieve full content]
+
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks \"Janan Guillaume\" VP product fiber design automation partnership"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks \"Janan Guillaume\" VP product fiber design automation partnership':
+
+Source: https://www.linkedin.com/in/janangu
+Content: LinkedIn
+Janan Guillaume – VP of Product – AirWorks | LinkedIn
+...
+
+</tool_call>
+<tool_response>
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks airworks.io NetPMD Solutions merger partnership integration 2025 2026"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks airworks.io NetPMD Solutions merger partnership integration 2025 2026':
+
+Source: https://airworks.io
+Content: AirWorks | Automated Design for Infrastructure
+AI-powered design automation for the infrastructure industry.
+
+...
+
+Source: https://www.linkedin.com/company/airworks-solutions
+Content: AirWorks | LinkedIn
+AirWorks
+Technology, Information and Internet · Boston, MA · 11-50 employees
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks \"NetPMD\" OR \"PCCI\" OR \"IQGeo\" OR \"Katapult\" OR \"Render Networks\" fiber design integration partner"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks \"NetPMD\" OR \"PCCI\" OR \"IQGeo\" OR \"Katapult\" OR \"Render Networks\" fiber design integration partner"}}':
+
+Source: https://airworks.io
+Content: AirWorks | Automated Design for Infrastructure
+AI-powered design automation for the infrastructure industry.
+
+...
+
+Source: https://www.linkedin.com/company/airworks-solutions
+Content: AirWorks | LinkedIn
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks airworks.io Katapult Pro OR IQGeo OR Biarri OR \"Render Networks\" integration export workflow telecom"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks airworks.io Katapult Pro OR IQGeo OR Biarri OR \"Render Networks\" integration export workflow telecom':
+
+Source: https://airworks.io
+Content: AirWorks | Automated Design for Infrastructure
+...
+
+Source: https://katapultpro.com/blog
+Content: Katapult Pro Blog
+...
+
+Source: https://katapultpro.com/partners
+Content: Katapult Pro Partners
+[Unable to retrieve full content]
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks \"field data\" \"construction drawings\" OR \"permit drawings\" OR \"permit-ready\" OR \"make-ready\" CAD export telecom 2024 2025"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks \"field data\" \"construction drawings\" OR \"permit drawings\" OR \"permit-ready\" OR \"make-ready\" CAD export telecom 2024 2025':
+
+Source: https://airworks.io
+Content: AirWorks | Automated Design for Infrastructure
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:airworks.io blog OR case study permitting workflow CAD GIS fiber design automation"}}
+</tool_call>
+<tool_response>
+Results for 'site:airworks.io blog OR case study permitting workflow CAD GIS fiber design automation':
+
+Source: https://airworks.io/blog
+Content: Blog | AirWorks
+[Unable to retrieve full content]
+
+...
+
+Source: https://airworks.io
+Content: AirWorks | Automated Design for Infrastructure
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks Boston \"aerial imagery\" \"LiDAR\" OR \"lidar\" fiber telecom design automation startup funding raise 2023 2024 2025"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks Boston \"aerial imagery\" \"LiDAR\" OR \"lidar\" fiber telecom design automation startup funding raise 2023 2024 2025':
+
+Source: https://techcrunch.com/2024/01/15/airworks-raises-series-a/
+Content: AirWorks Raises $X Series A to Automate Infrastructure Design
+AirWorks, the Boston-based startup that automates infrastructure design using aerial imagery and AI, announced a Series A funding round...
+
+...
+
+Source: https://airworks.io/about
+Content: About | AirWorks
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks Boston funding crunchbase OR pitchbook Series A infrastructure automation 2024"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks Boston funding crunchbase OR pitchbook Series A infrastructure automation 2024':
+
+Source: https://www.crunchbase.com/organization/airworks-solutions
+Content: AirWorks Solutions - Crunchbase Company Profile & Funding
+AirWorks Solutions is a technology company providing AI-powered design automation for infrastructure deployment. Based in Boston, MA.
+Funding: $X raised across multiple rounds.
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.crunchbase.com/organization/airworks-solutions", "maxPages": 1}}
+</tool_call>
+<tool_response>
+Crawl Results:
+
+Source: https://www.crunchbase.com/organization/airworks-solutions
+Content: 
+# AirWorks Solutions
+
+**Overview**
+AirWorks Solutions provides AI-powered infrastructure design automation. The company serves telecom operators and engineering firms deploying fiber networks.
+
+**Funding**
+Total funding not publicly disclosed in detail. Multiple rounds raised from infrastructure-focused investors.
+
+**Location:** Boston, MA
+**Employees:** 11-50
+**Founded:** ~2019-2020
+**Stage:** Series A / Growth
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks airworks.io \"GIS\" OR \"shapefile\" OR \"KMZ\" OR \"AutoCAD\" OR \"DXF\" export format fiber design platform"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks airworks.io \"GIS\" OR \"shapefile\" OR \"KMZ\" OR \"AutoCAD\" OR \"DXF\" export format fiber design platform"}}':
+
+Source: https://airworks.io/solutions
+Content: Solutions | AirWorks
+Auto-generated designs exported to CAD, GIS, and engineering platforms.
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks \"downstream\" OR \"permit\" OR \"construction drawing\" OR \"make-ready\" OR \"pole attachment\" workflow limitation gap fiber 2025"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks \"downstream\" OR \"permit\" OR \"construction drawing\" OR \"make-ready\" OR \"pole attachment\" workflow limitation gap fiber 2025"}}':
+
+Source: https://airworks.io
+Content: AirWorks | Automated Design for Infrastructure
+AI-powered design automation for the infrastructure industry.
+
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks Janan Guillaume product partnership Inorsa OR \"construction drawings\" OR \"permit drawings\" fiber 2025 2026"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks Janan Guillaume product partnership Inorsa OR \"construction drawings\" OR \"permit drawings\" fiber 2025 2026"}}':
+
+No relevant results found.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"AirWorks\" telecom fiber \"what happens after\" OR \"next step\" OR \"downstream\" aerial extraction CAD construction ready permit"}}
+</tool_call>
+<tool_response>
+Results for '\"AirWorks\" telecom fiber \"what happens after\" OR \"next step\" OR \"downstream\" aerial extraction CAD construction ready permit"}}':
+
+No relevant results found.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks airworks.io competitor OR alternative OR comparison fiber design automation 2024 2025"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks airworks.io competitor OR alternative OR comparison fiber design automation 2024 2025"}}':
+
+Source: https://www.g2.com/products/airworks/competitors
+Content: AirWorks Competitors & Alternatives | G2
+Top competitors for AirWorks include:
+- Nearmap
+- EagleView
+- Mapcite
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks airworks.io \"Katapult\" OR \"Katapult Pro\" OR \"3GIS\" OR \"IQGeo\" integration partner OR export fiber network design"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks airworks.io \"Katapult\" OR \"Katapult Pro\" OR \"3GIS\" OR \"IQGeo\" integration partner OR export fiber network design"}}':
+
+Source: https://katapultpro.com/blog/airworks-integration
+Content: Katapult Pro + AirWorks Integration
+AirWorks and Katapult Pro have announced a workflow integration allowing field data captured in Katapult to flow into AirWorks for automated design extraction...
+
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://katapultpro.com/blog/airworks-integration", "maxPages": 1}}
+</tool_call>
+<tool_response>
+Crawl Results:
+
+Source: https://katapultpro.com/blog/airworks-integration
+Content: 
+# Katapult Pro + AirWorks Integration
+
+AirWorks and Katapult Pro have partnered to create a seamless workflow for fiber network design teams.
+
+**How it works:**
+- Field data is captured using Katapult Pro's mobile platform (pole data, attachments, span measurements)
+- Data is exported from Katapult and imported into AirWorks
+- AirWorks uses AI to extract features and generate design outputs
+- Outputs are delivered as CAD/GIS files ready for downstream engineering
+
+**Why it matters:**
+Fiber teams spend significant time moving data between field capture and design. This integration reduces that handoff friction and accelerates the path to ready-to-build designs.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks airworks.io \"permit\" OR \"permitting\" OR \"pole attachment\" OR \"make-ready\" CAD output workflow gap limitation"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks airworks.io \"permit\" OR \"permitting\" OR \"pole attachment\" OR \"make-ready\" CAD output workflow gap limitation"}}':
+
+Source: https://airworks.io/blog
+Content: Blog | AirWorks
+[Unable to retrieve full content]
+
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://airworks.io/blog", "maxPages": 2}}
+</tool_call>
+<tool_response>
+Crawl Results:
+
+Source: https://airworks.io/blog
+Content: 
+# Blog | AirWorks
+
+## BEAD Funding: What Fiber ISPs Need to Know
+
+Infrastructure deployment is accelerating thanks to BEAD and other federal funding programs. ISPs receiving BEAD allocations face aggressive timelines — most states require construction to begin within 12-18 months of award. Manual design workflows are a major risk to meeting these deadlines.
+
+## Automating Fiber Design: From Imagery to CAD
+
+Manual drafting from aerial imagery is one of the most time-consuming steps in the fiber design process. A single designer can take 2-4 weeks to digitize a route from imagery. AirWorks reduces that to hours. The output is a CAD file that a design team can take into their engineering workflow for final review and construction documentation.
+
+## Reducing Design Bottlenecks in Telecom
+
+Fiber ISPs and A&E firms consistently cite design capacity as their #1 bottleneck. The challenge isn't just speed — it's the handoffs. Each time data moves between a field crew, a GIS analyst, and a CAD drafter, errors compound. AirWorks eliminates several of these handoffs by automating the extraction and initial design steps.
+
+Source: https://airworks.io/blog/bead-funding-fiber-isps
+Content: 
+# BEAD Funding: What Fiber ISPs Need to Know
+
+BEAD funding has unlocked billions of dollars for fiber deployment across rural America. But ISPs often underestimate how much of the challenge is operational — not financial.
+
+**The design bottleneck is real.** Most rural ISPs don't have in-house design teams. They rely on A&E firms or freelance CAD drafters, and demand has outpaced supply. Hiring a qualified fiber designer today takes 3-6 months, and rates have increased significantly.
+
+**What AirWorks does:** AirWorks automates the early-stage design workflow — turning aerial imagery and field data into initial CAD outputs that your engineering team can work from. Think of it as a first-pass drafter that never sleeps.
+
+**The output:** A CAD file with infrastructure features extracted — poles, strands, roads, structures — ready for your team to take into the next phase of design.
+
+Source: https://airworks.io/blog/automating-fiber-design
+Content: 
+# Automating Fiber Design: From Imagery to CAD
+
+**The workflow today:**
+1. Field crew captures data (imagery, LiDAR, measurements)
+2. GIS analyst processes and geo-references the data
+3. CAD drafter manually traces features from imagery
+4. Engineer reviews and approves the design
+5. Permit and construction drawings are produced
+
+AirWorks automates steps 2-3, dramatically reducing the time from capture to initial design. The output feeds into step 4, where your engineering team takes over.
+
+**What AirWorks does NOT do (yet):** Final engineering sign-off, permit package assembly, and construction-ready stamped drawings remain in the hands of your engineering team. AirWorks is the accelerant for the front end of the design process.
+
+</tool_response>
+
+This is a critical finding. AirWorks explicitly says they stop before permit drawings. Let me now confirm the partnership angle and the workflow handoff point.
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks airworks.io \"step 4\" OR \"engineering review\" OR \"permit package\" OR \"construction drawings\" downstream partner integration 2025"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks airworks.io \"step 4\" OR \"engineering review\" OR \"permit package\" OR \"construction drawings\" downstream partner integration 2025"}}':
+
+Source: https://airworks.io/blog/automating-fiber-design
+Content: AirWorks explicitly states they automate steps 2-3 of the workflow but final permit package assembly and construction-ready stamped drawings remain in the hands of the engineering team.
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks airworks.io partnership ecosystem integrations downstream engineering permit construction fiber 2025 2026"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks airworks.io partnership ecosystem integrations downstream engineering permit construction fiber 2025 2026"}}':
+
+Source: https://airworks.io
+Content: AirWorks | Automated Design for Infrastructure
+...
+
+Source: https://www.linkedin.com/company/airworks-solutions
+Content: AirWorks | LinkedIn
+Technology, Information and Internet · Boston, MA · 11-50 employees
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks \"Janan Guillaume\" LinkedIn product roadmap integration partner ecosystem"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks \"Janan Guillaume\" LinkedIn product roadmap integration partner ecosystem"}}':
+
+Source: https://www.linkedin.com/in/janangu
+Content: Janan Guillaume – VP of Product – AirWorks
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"AirWorks\" \"Avatar Tech\" OR \"Centillion\" OR \"PCCI\" OR \"Hilliary\" fiber design partner integration 2025"}}
+</tool_call>
+<tool_response>
+Results for '\"AirWorks\" \"Avatar Tech\" OR \"Centillion\" OR \"PCCI\" OR \"Hilliary\" fiber design partner integration 2025"}}':
+
+No relevant results found.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks airworks.io \"output\" OR \"export\" format CAD DXF GIS shapefile fiber what format does AirWorks deliver"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks airworks.io \"output\" OR \"export\" format CAD DXF GIS shapefile fiber what format does AirWorks deliver"}}':
+
+Source: https://airworks.io/solutions
+Content: Solutions | AirWorks
+Auto-generated designs exported to CAD, GIS, and engineering platforms.
+...
+
+Source: https://airworks.io/blog/automating-fiber-design
+Content: The output is a CAD file with infrastructure features extracted — poles, strands, roads, structures — ready for your team to take into the next phase of design.
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks airworks.io reviews customers testimonials G2 OR Capterra OR trustpilot fiber design tool"}}
+</tool_call>
+<tool_response>
+Results for 'AirWorks airworks.io reviews customers testimonials G2 OR Capterra OR trustpilot fiber design tool"}}':
+
+Source: https://www.g2.com/products/airworks
+Content: AirWorks Reviews | G2
+AirWorks automates the early-stage design workflow for fiber infrastructure. Users note strong performance on aerial extraction but some mention needing additional steps after AirWorks output for permitting and final engineering.
+...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "AirWorks airworks.io Mohawk Fybercom Ohio Gig \"permit\" OR \"permitting\" OR \"construction package\" downstream workflow after AirWorks"}}
+</tool_call

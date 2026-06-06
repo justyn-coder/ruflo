@@ -9,6 +9,8 @@ const VALID_PERSONA_BUCKETS = [
   'build_pace', 'drawings_quality', 'permit_cycle', 'program_leverage',
   'cycle_time_exec', 'capital_efficiency', 'pass_through', 'connect_request',
 ];
+const VALID_AUTOMATION_LEVELS = ['manual', 'partial', 'moderate', 'high'];
+const VALID_PRODUCT_FIT = ['fiber_drawings', 'data_validation', 'engineering_credits', 'unknown'];
 
 function buildStructurerPrompt(
   analystOutput: string,
@@ -69,7 +71,8 @@ ${crossExamInsights.slice(0, 1500)}
     "showrev_competitive_landscape": "Tools/vendors in use. e.g. 'IQGeo (GIS), Centillion/Osmose (design).'",
     "showrev_key_projects": "Named projects with scale. e.g. 'TDS integration: 35,000 locations.'",
     "showrev_recent_news": "Last 12 months. One line per event.",
-    "showrev_external_deadlines": "Dates. e.g. 'BEAD construction Q3 2026. ISP contracts close Oct 2026.'"
+    "showrev_external_deadlines": "Dates. e.g. 'BEAD construction Q3 2026. ISP contracts close Oct 2026.'",
+    "showrev_automation_level": "manual | partial | moderate | high (manual: 0-20% automated, partial: 20-40%, moderate: 40-60%, high: >60%. Classify based on number of manual vs automated steps described.)"
   },
   "salesIntel": {
     "showrev_influence_pattern": "${patternSelections[0]?.pattern || ''}",
@@ -80,7 +83,8 @@ ${crossExamInsights.slice(0, 1500)}
     "showrev_fit_rationale": "One sentence. Why they fit or don't.",
     "showrev_next_best_action": "One specific step. Name the person. Name the action.",
     "showrev_risk_factors": "1. Risk. 2. Risk. Max 3.",
-    "showrev_multi_thread_contacts": "Name (Title). One per line."
+    "showrev_multi_thread_contacts": "Name (Title). One per line.",
+    "showrev_product_fit": "fiber_drawings | data_validation | engineering_credits | unknown (which Inorsa product best fits this prospect's primary need)"
   },
   "meta": {
     "showrev_research_confidence": "high | medium | low",
@@ -93,7 +97,9 @@ Rules:
 - Fields with insufficient data: use "[insufficient data]" — do NOT make up facts.
 - showrev_decision_authority MUST be exactly one of: Budget owner, Influencer, Champion, Unknown
 - showrev_signal_strength MUST be exactly one of: Strong, Good, Possible, Weak, No fit
-- showrev_persona_classification MUST be exactly one of: build_pace, drawings_quality, permit_cycle, program_leverage, cycle_time_exec, capital_efficiency, pass_through, connect_request`;
+- showrev_persona_classification MUST be exactly one of: build_pace, drawings_quality, permit_cycle, program_leverage, cycle_time_exec, capital_efficiency, pass_through, connect_request
+- showrev_automation_level MUST be exactly one of: manual, partial, moderate, high
+- showrev_product_fit MUST be exactly one of: fiber_drawings, data_validation, engineering_credits, unknown`;
 }
 
 function repairJSON(text: string): string {
@@ -140,6 +146,16 @@ function validateAndClean(parsed: any): { dossier: any; warnings: string[] } {
   if (contact.showrev_persona_classification && !VALID_PERSONA_BUCKETS.includes(contact.showrev_persona_classification)) {
     warnings.push(`Invalid persona "${contact.showrev_persona_classification}", defaulting to cycle_time_exec`);
     contact.showrev_persona_classification = 'cycle_time_exec';
+  }
+
+  if (company.showrev_automation_level && !VALID_AUTOMATION_LEVELS.includes(company.showrev_automation_level)) {
+    warnings.push(`Invalid automation_level "${company.showrev_automation_level}", defaulting to unknown`);
+    company.showrev_automation_level = 'unknown';
+  }
+
+  if (salesIntel.showrev_product_fit && !VALID_PRODUCT_FIT.includes(salesIntel.showrev_product_fit)) {
+    warnings.push(`Invalid product_fit "${salesIntel.showrev_product_fit}", defaulting to unknown`);
+    salesIntel.showrev_product_fit = 'unknown';
   }
 
   const insufficientFields: string[] = [];

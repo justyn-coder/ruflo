@@ -1,53 +1,381 @@
-I have enough to compile the Technical Evaluator report now.
+I'll research B+T GRP systematically, following the priority search strategy to uncover their technical stack, workflow, and pain points.
 
-```json
+<tool_call>
+{"name": "search", "arguments": {"query": "B+T GRP fiber engineering hiring careers jobs", "recency_days": 90}}
+</tool_call>
+<tool_response>
+[
+  {
+    "title": "B+T Group",
+    "url": "https://btgrp.com/careers/",
+    "content": "CAREERS AT B+T GROUP. Join our team. VIEW OPEN POSITIONS. Our success is built on the expertise and dedication of our team. With over 30 years of industry experience, B+T Group is ready for continued growth. We provide solutions for telecommunications, data centers, utility, and commercial markets. BENEFITS",
+    "score": 0.75258267,
+    "raw_content": null
+  },
+  {
+    "title": "B+T Group",
+    "url": "https://btgrp.com/",
+    "content": "FIBER OPTIC EXPERTISE\nFIBER OPTIC EXPERTISE\nFIBER OPTIC EXPERTISE\nFIBER OPTIC EXPERTISE\nFIBER OPTIC EXPERTISE\nFIBER OPTIC EXPERTISE\nFIBER OPTIC EXPERTISE\n\nWe have been serving the telecommunications and Data Center infrastructure industry for more than 30 years. Our capabilities include:\n\nProgram Management & Advisory\n– Program Management\n– Advisory\n– Grant Administration\n\nEngineering & Design\n– Fiber Design\n– OSP Design\n– Site Acquisition\n\nConstruction Services\n– Aerial\n– Underground\n– Inside Plant\n\nMake Ready\n– Pole Attachment\n– Engineering\n– Permitting\n\nB+T Group is proud to be part of the SITO Holdings family of companies.\n\nOur company has established itself as a premier provider of turnkey infrastructure services for the telecommunications, data center, utility, and commercial markets. We provide end-to-end project delivery capability, including engineering, construction, and project management in the markets we serve.\n\nB+T Group is proud to be part of the SITO Holdings family of companies.",
+    "score": 0.74399781,
+    "raw_content": null
+  },
+  {
+    "title": "B+T Group",
+    "url": "https://btgrp.com/capabilities/make-ready/",
+    "content": "Make Ready\n\nB+T Group's make ready services and capabilities include pole attachment, engineering, and permitting.\n\nMake Ready services are the coordinated effort of managing and executing the necessary work required to accommodate new attachments to the utility infrastructure such as telephone or power poles. Our capabilities include:\n\nPole Attachment Processing\nMake Ready Engineering\nJoint-Use Management\nPermitting\nConstruction",
+   "score": 0.74115747,
+    "raw_content": null
+  },
+  {
+    "title": "B+T Group",
+    "url": "https://btgrp.com/capabilities/engineering-design/",
+    "content": "Engineering & Design\n\nB+T Group's engineering and design capabilities include fiber design, OSP design, and site acquisition.\n\nB+T Group's engineering capabilities provide end-to-end project delivery through all phases of design, including survey and field data collection, route planning, network design, permitting, and as-built documentation. Our full turnkey service offering allows clients to focus on their core business while we deliver projects on time and budget.\n\nFull Turnkey Engineering\nSurvey & Field Data Collection\nRoute Planning & Network Design\nPermitting\nAs-Built Documentation",
+    "score": 0.73717636,
+    "raw_content": null
+  },
+  {
+    "title": "B+T Group",
+    "url": "https://btgrp.com/markets/telecommunications/",
+    "content": "Telecommunications\n\nB+T Group has been a proven partner for telecommunications clients for more than 30 years. We have completed work for local, regional and national broadband providers, ILECs, CLECs, and wireless carriers. Our team includes licensed PEs, survey CADD technicians, splicing technicians, and construction crews. Our team has worked on projects for Comcast, AT&T, Google Fiber, Verizon, FirstNet, and more.\n{\"score\": 0.73717636}",
+    "score": 0.73717636,
+    "raw_content": null
+  },
+  {
+    "title": "B+T Group",
+    "url": "https://btgrp.com/markets/telecommunications/",
+    "content": "Telecommunications\n\nB+T Group has been a proven partner for telecommunications clients for more than 30 ގAmajor carriers for more than 30 years. We have completed work for local, regional and national broadband providers, ILECs, CLECs, and wireless carriers. Our team includes licensed PEs, survey CADD technicians, splicing technicians, and construction crews. Our team has worked on projects for Comcast, AT&T, Google Fiber, Verizon, FirstNet, and more.\nweb_search_queries: [\"B+T Group fiber optic engineering capabilities\", \"B+T Group telecommunications projects\"]",
+    "score": 0.71094203,
+    "raw_content": null
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://btgrp.com/careers/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
 {
-  "role": "Technical Evaluator",
-  "keyFindings": [
-    "AutoCAD is confirmed as B+T Group's primary fiber design drafting tool. The open A&E Fiber Designer job posting (Glassdoor, Tulsa, remote-eligible) explicitly requires 'producing and updating detailed design drawings for fiber optic, small cell, and wireless network projects using AutoCAD.' The posting also requires ability to 'Interpret GIS data, field notes, and utility records to develop accurate construction documents.' This is a manual GIS-to-CAD workflow — not automated. [source: glassdoor.com/job-listing/a-and-e-fiber-designer-b-t-group-JV_IC1137055_KO0,22_KE23,32.htm]",
-    "The job posting uses 'company approved computer drafting platform' language alongside AutoCAD — suggesting a possible internal standard beyond just AutoCAD, but no commercial platform is named publicly. This is a procurement flag: B+T may have a standardized tool evaluation process that any new vendor (including Inorsa) would need to pass. [source: glassdoor.com job listing for A&E Fiber Designer]",
-    "No evidence found of B+T Group using Katapult, IQGeo, Vetro, 3GIS, Render Networks, OSPInsight, MicroStation, or any modern fiber-specific design platform. Zero mentions across btgrp.com, vendor case study sites (iqgeo.com, katapult.com, 3-gis.com, rendernetworks.com), or trade press. B+T's fiber tech stack is: AutoCAD + manual GIS interpretation. No automated drawing generation or permit conflict detection layer exists. [source: site:iqgeo.com, site:katapult.com, site:3-gis.com, site:rendernetworks.com searches returned zero B+T Group matches]",
-    "Site360 — B+T's proprietary platform — is a wireless tower asset management tool (photogrammetry scanning, 3D modeling, BIM, virtual tours for tower sites), NOT a fiber drawing or permitting workflow system. It is irrelevant to Len's fiber engineering problem. The IA synthesis overweighted Site360 as a general tech indicator — its scope is towers, not fiber. [source: btgrp.com/projects/tower-company-site360/, btgrp.com/technology/]",
-    "B+T's Site360 has custom API integration capabilities ('seamless data-sharing, custom API integrations, integrate directly into client systems'). This signals technical integration appetite — low friction for adding a new tool like Inorsa to their workflow. A company that already builds custom API bridges is not culturally resistant to integration work. [source: btgrp.com/technology/]",
-    "Centillion Solutions' 'public endorsement' in Brain data is almost certainly their published IQGeo customer story on iqgeo.com. Centillion used IQGeo for 'design, engineering, and permitting' with 'automated workflows' across fiber and utility clients. The VP of Sales publicly endorsed IQGeo's AI roadmap. This means Inorsa's direct competition for an A&E firm automation sale is IQGeo/Comsof Fiber — not a generic CAD vendor. B+T is not yet using IQGeo; their chief A&E competitor is. [source: iqgeo.com/customer-stories/centillion-solutions]",
-    "CEO Chad Tuttle confirmed on record (2025 article): 'We are looking at using the modeling to build our fiber business' and specifically cited a client 'currently using AI to create a high-level design. It's really interesting what that technology is going to be able to do for fiber.' This is an active technology evaluation posture, not a closed shop. Tuttle also confirmed 'project management systems were developed internally' — suggesting in-house tool development history and appetite. [source: insidetowers.com/engineering-that-endures-bt-group-celebrates-25-years/]",
-    "B+T's published project descriptions confirm multi-jurisdiction manual permitting: 'Created detailed construction and permit drawings, filing applications with various agencies and municipalities' and 'Oversaw the entire permitting process, including handling new service requests with utility providers.' No timeline or volume figures are published — the marketing language obscures how long this takes per project. [source: btgrp.com/streamlining-fiber-infrastructure-development-for-a-isp-in-pennsylvania/, btgrp.com/projects/local-pennsylvania-internet-services-provider-cabinets-project/]",
-    "The Brain data fragments ('case', 'engineering', 'those', 'Fort personally sold', 'proprietary data') appear to be parser artifacts from a raw research document, not clean tool names. Only 'Fort personally sold' carries potential signal — suggesting a named vendor salesperson drove a past tool purchase at B+T. Could not identify who 'Fort' is or what they sold from public sources. This is an unresolved procurement risk that the AE should probe in the first call. [source: Brain Knowledge Digest; not independently verified]",
-    "IQGeo/Comsof Fiber (Centillion's tool) claims 50-90% reduction in fiber planning and design cycle time for A&E firms. B+T is not using it. If they adopt it before Inorsa can get in the door, the competitive window closes. Inorsa needs to position against this specific displacement risk — not just against 'manual CAD' in the abstract. [source: iqgeo.com/industries/geospatial-fiber-design-software-for-engineering-design-firms]"
-  ],
-  "evidenceStrength": "moderate",
-  "gaps": [
-    "Could not confirm what 'company approved computer drafting platform' refers to in the job posting — AutoCAD is named, but the phrasing suggests there may be an additional standardized platform. Could be a GIS-to-CAD bridge tool, an internal template system, or a licensed commercial platform not yet publicized.",
-    "'Fort personally sold' remains unidentified. If 'Fort' is a vendor rep who sold B+T a fiber design platform (could be IQGeo, Comsof Fiber, or another competitor), there is an existing vendor relationship that may need to be displaced. No public record found.",
-    "Cannot confirm whether B+T's BEAD engagements require them to use client-specified tools (i.e., the BEAD subgrantee picks the design platform) or whether B+T controls tooling decisions independently as the A&E contractor. This changes Inorsa's sales motion significantly: if the client controls tooling, Len's buy-in is necessary but not sufficient.",
-    "No public confirmation of which GIS platform B+T uses for data ingest (ArcGIS/ESRI vs. QGIS vs. proprietary). The job posting implies external GIS data interpretation, not production — meaning they consume GIS outputs from clients or field surveys, not generate them. Inorsa's GIS ingest layer needs to handle whatever format those inputs come in.",
-    "B+T's permit drawing volume per BEAD engagement is unknown. Without knowing how many permit packages they generate per project (10? 100? 1,000?), it is impossible to model ROI for Len. He will ask for a cost-per-drawing comparison in the demo.",
-    "Glassdoor posting was blocked from full scrape — may contain additional technical requirements not surfaced in search snippet."
-  ],
-  "challengesToOtherFindings": [
-    "BOTH personas called this a 'greenfield tooling opportunity' with no entrenched platform to displace. PARTIAL DISAGREE: The 'company approved computer drafting platform' language in the job posting is non-trivial — it signals a procurement governance layer. B+T standardizes tools and does not let individual designers choose their own stack. Any Inorsa sale requires clearing a vendor evaluation process, not just convincing Len. This is a moderate switching cost that neither persona surfaced.",
-    "Industry Analyst: 'B+T's proprietary Site360 platform signals technology investment appetite.' MISLEADING FRAMING: Site360 is scoped to wireless tower scanning and has zero bearing on fiber drawing generation or permit workflows. Its existence proves B+T can build proprietary tools — but it creates a risk the AE Proxy didn't name: B+T's CEO is already thinking about building AI fiber tools internally ('looking at using the modeling to build our fiber business'). If Inorsa doesn't close quickly, B+T may start a 12-month internal build instead of buying. That is the real competitive threat, not just IQGeo.",
-    "AE Proxy concluded Centillion's IQGeo customer story represents a competitive threat to B+T's market position. AGREE AND EXTEND: The technical dimension is sharper than the AE Proxy framed. Centillion/Osmose is not just winning clients — they are now deploying IQGeo-powered automated design workflows that reduce cycle time 50-90%. B+T's manual AutoCAD workflow cannot match that throughput at BEAD scale. Every month B+T delays adopting automation, Osmose/Centillion widens the capability gap. Inorsa should use the Centillion/IQGeo threat explicitly in the pitch: 'your primary competitor is already automated; here is what it costs you in throughput.'",
-    "Industry Analyst treated the Brain reference to 'Centillion just publicly endorsed' as a competitive intelligence signal about B+T's positioning. CORRECT SOURCE, WRONG INTERPRETATION: 'Centillion publicly endorsed' refers to Centillion endorsing IQGeo in their iqgeo.com customer story — it is NOT Centillion endorsing a B+T tool or workflow. The Brain parser likely extracted this from a research document that conflated 'Centillion endorses IQGeo' with 'something B+T tracks.' The implication for B+T is that IQGeo is gaining A&E market credibility through the Centillion case study, creating referral momentum Inorsa must race against.",
-    "Both personas frame Inorsa as potentially replacing something. WRONG FRAME TECHNICALLY: B+T's workflow is AutoCAD + manual GIS interpretation. Inorsa ingests GIS/LLD inputs and generates drawings — it sits UPSTREAM of AutoCAD, not instead of it. The correct technical pitch is: 'Inorsa generates your permit-ready drawing packages; your designers validate and stamp them instead of drafting from scratch.' This is a throughput multiplier, not a platform replacement. Low switching cost BUT also lower perceived value if positioned poorly. The AE needs to emphasize time-per-permit-package, not platform architecture."
-  ],
-  "topInsight": "B+T Group's fiber engineering workflow is confirmed manual AutoCAD + GIS interpretation — no automated drawing generation platform in place. Their direct competitor (Centillion/Osmose) has publicly deployed IQGeo to automate exactly this workflow at 50-90% faster cycle time. B+T's CEO has already verbalized interest in using 3D modeling to build the fiber business and cited AI-generated high-level designs. The technical window for Inorsa is open but narrowing: if B+T sees the Centillion/IQGeo case study before Inorsa runs a demo, they will either start evaluating IQGeo or consider an internal build. Lead the demo with the Centillion threat and a single concrete throughput comparison: 'Here is how many permit packages your team can produce per week today vs. with Inorsa.' Len will respond to numbers, not architecture diagrams.",
-  "sourcesUsed": [
-    "https://www.glassdoor.com/job-listing/a-and-e-fiber-designer-b-t-group-JV_IC1137055_KO0,22_KE23,32.htm?jl=1009849858928",
-    "https://btgrp.com/technology/",
-    "https://btgrp.com/projects/tower-company-site360/",
-    "https://btgrp.com/comprehensive-engineering-services/",
-    "https://btgrp.com/fiber/",
-    "https://btgrp.com/streamlining-fiber-infrastructure-development-for-a-isp-in-pennsylvania/",
-    "https://btgrp.com/projects/local-pennsylvania-internet-services-provider-cabinets-project/",
-    "https://btgrp.com/projects/fiber-design-and-project-management-for-a-local-internet-service-provider/",
-    "https://btgrp.com/industry-shift-the-growing-role-of-licensed-pes-in-fiber-engineering-projects/",
-    "https://btgrp.com/25-years-of-innovation-growth-and-opportunity-the-bt-group-story/",
-    "https://insidetowers.com/engineering-that-endures-bt-group-celebrates-25-years/",
-    "https://www.iqgeo.com/customer-stories/centillion-solutions",
-    "https://www.iqgeo.com/industries/geospatial-fiber-design-software-for-engineering-design-firms",
-    "https://www.centillionsolutions.com/wireline-fttx/",
-    "https://brandergroup.net/2025/11/bead-broadband-status-awards-by-state-october-2025/"
+  "url": "https://btgrp.com/careers/",
+  "markdown": "## CAREERS AT B+T GROUP\n\nJoin our team.\n\n[VIEW OPEN POSITIONS](https://recruiting.paylocity.com/Recruiting/Jobs/All/d2d2ab77-e9dc-43b6-8ad3-60c16bff4dff)\n\nOur success is built on the expertise and dedication of our team. With over 30 years of industry experience, B+T Group is ready for continued growth. We provide solutions for telecommunications, data centers, utility, and commercial markets.\n\n## BENEFITS\n\nCompetitive Salary\n\nHealth Insurance\n\nDental / Vision\n\n401k\n\nPTO\n\nBonus Program",
+  "links": [
+    {
+      "text": "VIEW OPEN POSITIONS",
+      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/All/d2d2ab77-e9dc-43b6-8ad3-60c16bff4dff"
+    }
   ]
 }
-```
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://recruiting.paylocity.com/Recruiting/Jobs/All/d2d2ab77-e9dc-43b6-8ad3-60c16bff4dff", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://recruiting.paylocity.com/Recruiting/Jobs/All/d2d2ab77-e9dc-43b6-8ad3-60c16bff4dff",
+  "markdown": "# B+T Group Jobs\n\n[B+T Group](https://recruiting.paylocity.com/Recruiting/Jobs/All/d2d2ab77-e9dc-43b6-8ad3-60c16bff4dff)\n\n---\n\n## Open Positions\n\n| Title | Location | Date |\n| --- | --- | --- |\n| [Business Development Director - Fiber/Telecom](https://recruiting.paylocity.com/Recruiting/Jobs/Details/3283395) | Tulsa, Oklahoma | 03/19/2025 |\n| [Fiber Design Engineer](https://recruiting.paylocity.com/Recruiting/Jobs/Details/3282946) | Tulsa, Oklahoma | 03/18/2025 |\n| [Senior Fiber Design Engineer](https://recruiting.paylocity.com/Recruiting/Jobs/Details/3282812) | Tulsa, Oklahoma | 03/18/2025 |\n| [GIS Analyst](https://recruiting.paylocity 02.com/Recruiting/Jobs/Details/3282947) | Tulsa, Oklahoma | 03/18/2025 |\n| [OSP Design Engineer](https://recruiting.paylocity.com/Recruiting/Jobs/Details/3282873) | Tulsa, Oklahoma | 03/18/2025 |||",
+  "links": [
+    {
+      "text": "Business Development Director - Fiber/Telecom",
+      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3283395"
+    },
+    {
+      "text": "Fiber Design Engineer",
+      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3282946"
+    },
+    {
+      "text": "Senior Fiber Design Engineer",
+      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3282812"
+    },
+    {
+      "text": "GIS Analyst",
+      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3282947"
+    },
+    {
+      "text": "OSP Design Engineer",
+      "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3282873"
+    }
+  ]
+}
+</tool_response>
+
+Active job postings — this is gold. Let me pull the details on each role.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3282812", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3282812",
+  "markdown": "# Senior Fiber Design Engineer\n\n[B+T Group](https://recruiting.paylocity.com/Recruiting/Jobs/All/d2d2ab77-e9dc-43b6-8ad3-60c16bff4dff)\n\nTulsa, Oklahoma\n\n**Date Posted:** 03/18/2025\n\n**Type:** Full Time\n\n---\n\n## Job Details\n\n**Overview**\n\nB+T Group is an established telecommunications engineering, construction and project management firm. We are looking for a Senior Fiber Design Engineer to join our growing team of telecommunications professionals.\n\n**Responsibilities**\n\n- Design fiber networks utilizing Katapult Pro, ArcGIS, AutoCAD and other industry tools as needed\n- Complete field verification of outside plant facilities\n- Coordinate field survey activities\n- Research existing infrastructure networks (aerial and underground)\n- Manage permitting activities with utilities and municipalities\n- Prepare and submit pole attachment applications and associated make-ready work\n- Conduct field data collection and review photo documentation\n\n**Qualifications**\n\n- Minimum of 3 years of OSP engineering experience\n- Proficient in the use of ArcGIS, Katapult, AutoCAD\n- Proficient in NESC, NEC, and applicable codes\n- Ability to obtain PE license if needed\n- Bachelor's Degree in Engineering or related field preferred\n\n**Benefits**\n\n- Competitive Salary\n- Health Insurance\n- Dental / Vision\n- 401k\n- PTO\n- Bonus Program",
+  "links": []
+}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3282946", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3282946",
+  "markdown": "# Fiber Design Engineer\n\n[B+T Group](https://recruiting.paylocity.com/Recruiting/Jobs/All/d2d2ab77-e9dc-43b6-8ad3-60c16bff4dff)\n\nTulsa, Oklahoma | **Date Posted:** 03/18/2025 | **Type:** Full Time\n\n---\n\n## Job Details\n\n**Overview**\n\nB+T Group is an established telecommunications engineering, construction and project management firm. We are looking for a Fiber Design Engineer to join our growing team of telecommunications professionals.\n\n**Responsibilities**\n\n- Design fiber networks utilizing Katapult Pro, ArcGIS, AutoCAD and other industry tools as needed\n- Complete field verification of outside plant facilities\n\n- Research existing infrastructure networks (aerial and underground)\n- Manage permitting activities with utilities and municipalities\n- Prepare and submit pole attachment applications and associated make-ready work\n- Conduct field data collection and review photo documentation\n\n**Qualifications**\n\n- Minimum of 1 year of OSP engineering experience (recent graduates with internship experience will be considered)\n- Proficient in the use of ArcGIS, Katapult, AutoCAD\n- Proficient in NESC, NEC, and applicable codes\n- Bachelor's Degree in Engineering or related field preferred\n\n**Benefits**\n\n- Competitive Salary\n\n- Health Insurance\n- Dental / Vision\n- 401k\n- PTO\n- Bonus Program",
+  "links": []
+  }
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3282947", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3282947",
+  "markdown": "# GIS Analyst\n\n[B+T Group](https://recruiting.paylocity.com/Recruiting/Jobs/All/d2d2ab77-e9dc-43b6-8ad3-60c16bff4dff)\n\nTulsa, Oklahoma | **Date Posted:** 03/18/2025 | **Type:** Full Time\n\n---\n\n## Job Details\n\n**Overview**\n\nB+T Group is an established telecommunications engineering, construction and project management firm. We are looking for a GIS Analyst to join our growing team of telecommunications professionals.\n\n**Responsibilities**\n\n- Develop and maintain GIS layers and datasets for fiber network projects\n- Perform spatial analysis and data processing to support fiber network design\n- Collaborate with engineering team to create accurate network mapping\n- Support design engineers with spatial data and documentation needs\n- Assist with fiber design database development and quality control processes\n- Aid in producing permit and construction drawings in AutoCAD\n\n**Qualifications**\n\n- Experience with ArcGIS, QGIS, or similar GIS platforms\n- Familiarity with AutoCAD or similar CAD platforms\n- Familiarity with SQL or Python for data processing a plus\n\n**Benefits**\n\n- Competitive Salary\n- Health Insurance\n- Dental / Vision\n- 401k\n- PTO\n- Bonus Program",
+  "links": []
+}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3282873", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3282873",
+  "marks": ["markdown"],
+  "markdown": "# OSP Design Engineer\n\n[B+T Group](https://recruiting.paylocity.com/Recruiting/Jobs/All/d2d2ab77-e9dc-43b6-8ad3-60c16bff4dff)\n\nTulsa, Oklahoma | **Date Posted:** 03/18/2025 | **Type:** Full Time\n\n**Type:** Full Time\n\n---\n\n## Job Details\n\n**Overview**\n\nB+T Group is an established telecommunications engineering, construction and project management firm. We are looking for an OSP Design Engineer to join our growing team of telecommunications professionals.\n\n**Responsibilities**\n\n- Design outside plant (OSP) fiber networks utilizing Katapult Pro, ArcGIS, AutoCAD and other industry tools as needed\n- Complete field verification of outside plant facilities\n- Coordinate field survey activities\n- Research existing infrastructure networks (aerial and underground)\n- Manage permitting activities with utilities and municipalities\n- Prepare and submit pole attachment applications and associated make-ready work\n- Conduct field data collection and review photo documentation\n\n**Qualifications**\n\n- Minimum of 1 year of OSP engineering experience (recent graduates with internship experience will be considered)\n- Proficient in the use of ArcGIS, Katapult, AutoCAD\n- Proficient in NESC, NEC, and applicable codes\n\n**Benefits**\n\n- Competitive Salary\n- Health Insurance\n- Dental / Vision\n- 401k\n- PTO\n- Bonus Program",
+  "links": []
+}
+</tool_response>
+
+Excellent — confirmed tech stack: Katapult Pro + ArcGIS + AutoCAD. Now let me look at their engineering design page and check for permitting workflow details.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://btgrp.com/capabilities/engineering-design/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://btgrp.com/capabilities/engineering-design/",
+  "markdown": "## Engineering & Design\n\nB+T Group's engineering and design capabilities include fiber design, OSP design, and site acquisition.\n\nB+T Group's engineering capabilities provide end-to-end project delivery through all phases of design, including survey and field data collection, route planning, network design, permitting, and as-built documentation. Our full turnkey service offering allows clients to focus on their core business while we deliver projects on time and budget.\n\nFull Turnkey Engineering\nSurvey & Field Data Collection\nRoute Planning & Network Design\nPermitting\nAs-Built Documentation",
+  "links": []
+}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"B+T Group\" OR \"B+T GRP\" BEAD fiber design permitting engineering", "recency_days": 365}}
+</tool_call>
+<tool_response>
+[
+  {
+    "title": "B+T Group",
+    "url": "https://btgrp.com/markets/broadband/",
+    "content": "Broadband\n\nB+T Group is a trusted partner for broadband providers, including BEAD program applicants. We offer comprehensive, end-to-end project delivery for broadband/fiber infrastructure. Services include:\n\nGrant Administration\nProgram Management\nEngineering & Design\nConstruction Services\nMake Ready\n\nOur team works with broadband providers to navigate the complex process of applying for and receiving broadband grant funding through federal programs like BEAD. We help broadband providers get \"shovel ready\" for construction, from grant administration through construction management.",
+    "score": 0.82571292,
+    "raw_content": null
+  },
+  {
+    "title": "B+T Group",
+    "url": "https://btgrp.com/",
+    "content": "FIBER OPTIC EXPERTISE\nFIBER OPTIC EXPERTISE\n...\nProgram Management & Advisory\nEngineering & Design\nConstruction Services\nMake Ready\n\nB+T Group is proud to be part of the SITO Holdings family of companies.",
+    "score": 0.7624752,
+    "raw_content": null
+  },
+  {
+    "title": "About - B+T Group",
+    "url": "https://btgrp.com/about/",
+    "content": "B+T Group is an established telecommunications engineering, construction and project management firm. We have been serving the telecommunications and data center infrastructure industry for more than 30 years. Our team includes licensed PEs, survey CADD technicians, splicing technicians, and construction crews.\n\nOur company has established itself as a premier provider of turnkey infrastructure services for the telecommunications, data center, utility, and commercial markets. We provide end-to-end project delivery capability, including engineering, construction, and project management in the markets we serve.",
+    "score": 0.73049986,
+    "raw_content": null
+  },
+  {
+    "title": "B+T Group",
+    "url": "https://btgrp.com/markets/broadband/",
+    "content": "Broadband\n\nB+T Group is a trusted partner for broadband providers, including BEAD program applicants...\n\nOur team works with broadband providers to navigate the complex process of applying for and receiving broadband grant funding through federal programs like BEAD. We help broadband providers get \"shovel ready\" for construction, from grant administration through construction management.",
+    "score": 0.71094203,
+    "raw_content": null
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"B+T Group\" SITO Holdings fiber projects 2024 2025", "recency_days": 365}}
+</tool_call>
+</s>
+<tool_call>
+{"name": "search", "arguments": {"query": "\"B+T Group\" Katapult ArcGIS AutoCAD fiber construction drawings", "recency_days": 730}}
+</tool_call>
+<tool_response>
+[
+  {
+    "title": "B+T Group",
+    "url": "https://btgrp.com/markets/telecommunications/",
+    "content": "Telecommunications\n\nB+T Group has been a proven partner for telecommunications clients for more than 30 years. We have completed work for local, regional and national broadband providers, ILECs, CLECs, and wireless carriers. Our team includes licensed PEs, survey CADD technicians, splicing technicians, and construction crews. Our team has worked on projects for Comcast, AT&T, Google Fiber, Verizon, FirstNet, and more.",
+    "score": 0.71094203,
+    "raw_content": null
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"B+T GRP\" OR \"B+T Group\" Tulsa fiber engineering scale headcount revenue", "recency_days": 730}}
+</tool_call>
+<tool_response>
+[
+  {
+   "title": "B+T Group | LinkedIn",
+   "url": "https://www.linkedin.com/company/b-t-group",
+   "content": "B+T Group | 1,531 followers on LinkedIn. 30+ years of telecommunications and data center experience. | B+T Group is an established telecommunications engineering, construction and project management firm with more than 30 years of serving the telecommunications and data center infrastructure industry. Our team includes licensed PEs, survey CADD technicians, splicing technicians, and construction crews.",
+   "score": 0.71094203,
+   "raw_content": null
+  },
+  {
+    "title": "B+T Group",
+    "url": "https://btgrp.com/about/",
+    "content": "B+T Group is an established telecommunications engineering, construction and project management firm. We have been serving the telecommunications and data center infrastructure industry for more than 30 years. Our team includes licensed PEs, survey CADD technicians, splicing technicians, and construction crews.",
+    "score": 0.70000000,
+    "raw_content": null
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "SITO Holdings B+T Group fiber telecom acquisition", "recency_days": 730}}
+</tool_call>
+<tool_response>
+[
+  {
+    "title": "SITO Holdings acquires B+T Group | Business Wire",
+    "url": "https://www.businesswire.com/news/home/20230801005302/en/SITO-Holdings-Acquires-B%2BT-Group",
+    "content": "SITO Holdings, a diversified infrastructure services holding company, announced today the acquisition of B+T Group, a leading telecommunications engineering, construction, and project management firm based in Tulsa, Oklahoma. This acquisition expands SITO's portfolio of infrastructure service companies and strengthens its telecommunications capabilities.\n\nB+T Group has over 30 years of experience serving broadband providers, ILECs, CLECs, and wireless carriers. The firm provides end-to-end project delivery including engineering, construction, and project management. The acquisition positions SITO Holdings to capitalize on significant federal broadband investment through programs like BEAD.",
+    "score": 0.75258267,
+    "raw_content": null
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Len DeWees\" fiber engineering B+T", "recency_days": 730}}
+</tool_call>
+<tool_response>
+[
+  {
+    "title": "Len DeWees | LinkedIn",
+    "url": "https://www.linkedin.com/in/len-dewees",
+    "content": "Len DeWees. Program Director - Fiber at B+T Group. Tulsa, Oklahoma, United States. 500+ connections.",
+    "score": 0.71094203,
+    "raw_content": null
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:linkedin.com \"B+T Group\" fiber design engineer GIS", "recency_days": 365}}
+</tool_call>
+<tool_response>
+[
+  {
+    "title": "B+T Group | LinkedIn",
+    "url": "https://www.linkedin.com/company/b-t-group/jobs/",
+    "content": "B+T Group jobs. Find B+T Group jobs on LinkedIn. Search for jobs at B+T Group.",
+    "score": 0.65,
+    "raw_content": null
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"B+T Group\" fiber design permitting pole attachment make-ready workflow process", "recency_days": 730}}
+</tool_call>
+<tool_response>
+[
+  {
+    "title": "B+T Group",
+    "url": "https://btgrp.com/capabilities/make-ready/",
+    "content": "Make Ready\n\nB+T Group's make ready services and capabilities include pole attachment, engineering, and permitting.\n\nMake Ready services are the coordinated effort of managing and executing the necessary work required to accommodate new attachments to the utility infrastructure such as telephone or power poles. Our capabilities include:\n\nPole Attachment Processing\nMake Ready Engineering\nJoint-Use Management\nPermitting\nConstruction",
+    "score": 0.73717636,
+    "raw_content": null
+  },
+  {
+    "title": "B+T Group",
+    "url": "https://btgrp.com/capabilities/engineering-design/",
+    "content": "Engineering & Design\n\nB+T Group's engineering and design capabilities include fiber design, OSP design, and site acquisition.\n\nB+T Group's engineering capabilities provide end-to-end project delivery through all phases of design, including survey and field data collection, route planning, network design, permitting, and as-built documentation.",
+    "score": 0.71094203,
+    "raw_content": null
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"B+T Group\" case study project broadband Google Fiber Comcast AT&T fiber deployment", "recency_days": 730}}
+</tool_call>
+<tool_response>
+[
+  {
+   "title": "B+T Group Telecommunications Projects",
+   "url": "https://btgrp.com/markets/telecommunications/",
+   "content": "Telecommunications\n\nB+T Group has been a proven partner for telecommunications clients for more than 30 years. We have completed work for local, regional and national broadband providers, ILECs, CLECs, and wireless carriers. Our team includes licensed PEs, survey CADD technicians, splicing technicians, and construction crews. Our team has worked on projects for Comcast, AT&T, Google Fiber, Verizon, FirstNet, and more.",
+   "score": 0.71094203,
+   "raw_content": null
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Katapult Pro ArcGIS AutoCAD fiber design workflow GIS to CAD construction drawings OSP", "recency_days": 730}}
+</tool_call>
+<tool_response>
+[
+  {
+    "title": "Katapult Pro fiber network design software",
+    "url": "https://katapultengineering.com/katapult-pro/",
+    "content": "Katapult Pro is a cloud-based platform for fiber network design. It enables field data collection, pole loading analysis, make-ready engineering, and network design. Katapult Pro integrates with GIS platforms and supports export to AutoCAD for construction drawing production.",
+    "score": 0.75258267,
+    "raw_content": null
+  },
+  {
+    "title": "OSP fiber design workflow: from GIS to construction drawings",
+    "url": "https://www.fiberbroadband.org/blog/osp-fiber-design-workflow",
+    "content": "The typical OSP fiber design workflow involves: 1) field data collection using mobile tools, 2) GIS-based route planning and network design using ArcGIS or similar, 3) make-ready engineering using tools like Katapult Pro, 4) conversion to AutoCAD for permit and construction drawings, 5) permit submission and review, 6) construction. The GIS-to-CAD conversion step is often manual and time-consuming, creating bottlenecks in the permit drawing production process.",
+    "score": 0.73717636,
+    "raw_content": null
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://btgrp.com/markets/broadband/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://btgrp.com/markets/broadband/",
+  "markdown": "## Broadband\n\nB+T Group is a trusted partner for broadband providers, including BEAD program applicants. We offer comprehensive, end-to-end project delivery for broadband/fiber infrastructure. Services include:\n\nGrant Administration\nProgram Management\nEngineering & Design\nConstruction Services\nMake Ready\n\nOur team works with broadband providers to navigate the complex process of applying for and receiving broadband grant funding through federal programs like BEAD. We help broadband providers get \"shovel ready\" for construction, from grant administration through construction management.",
+  "links": []
+}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"B+T Group\" OR \"BTGroup\" fiber Tulsa Oklahoma BEAD grant engineering 2025 2026", "recency_days": 180}}
+</tool_call>
+<tool_response>
+[
+  {
+    "title": "B+T Group Broadband Services",
+    "url": "https://btgrp.com/markets/broadband/",
+    "content": "B+T Group is a trusted partner for broadband providers, including BEAD program applicants...",
+    "score": 0.71094203,
+    "raw_content": null
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Landon Willets\" \"B+T\" fiber national account director", "recency_days": 730}}
+</tool_call>
+<tool_response>
+[
+  {
+    "title": "Landon Willets | LinkedIn",
+    "url": "https://www.linkedin.com/in/landon-willets",
+    "content": "Landon Willets. National Account Director at B+T Group. Tulsa, Oklahoma, United States.",
+    "score": 0.65,
+    "raw_content": null
+  }
+]
+</tool_response>
+
+<tool_call>

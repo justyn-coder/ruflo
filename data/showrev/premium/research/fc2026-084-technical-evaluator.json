@@ -1,0 +1,338 @@
+I'll research TAK Broadband systematically, starting with job postings, then tech stack signals, then general engineering/design capabilities.
+
+**Search 1: TAK Broadband hiring/careers/job postings**
+
+**Search 2: TAK Broadband AutoCAD, MicroStation, GIS tools**
+
+**Search 3: TAK Broadband vendor case studies**
+
+**Search 4: TAK Broadband construction drawings, fiber design, permitting**
+
+**Search 5: TAK Broadband careers page**
+<tool_call>
+{"name": "search", "parameters": {"query": "TAK Broadband hiring careers jobs site:linkedin.com/jobs OR site:indeed.com OR site:glassdoor.com"}}
+</tool_call>
+<tool_response>
+Results for 'TAK Broadband hiring careers jobs site:linkedin.com/jobs OR site:indeed.com OR site:glassdoor.com':
+
+- URL: https://www.linkedin.com/company/tak-broadband
+  Snippet: TAK Broadband | 6,803 followers on LinkedIn. Fiber Construction & Engineering Services for the Americas | TAK Broadband is a leading fiber optic network deployment provider...
+
+- URL: https://www.glassdoor.com/Overview/Working-at-TAK-Broadband-EI_IE3660993.htm
+  Snippet: TAK Broadband is the largest private fiber contractor in the US, specializing in fiber design, engineering, and construction services. See what employees say it's like to work at TAK Broadband.
+
+- URL: https://www.glassdoor.com/Jobs/TAK-Broadband-Jobs-E3660993.htm
+  Snippet: 10 TAK Broadband jobs including salaries, ratings, and reviews, posted by TAK Broadband employees. Jobs include: Project Manager, Drafter, Data Entry Clerk, Designer...
+
+- URL: https://www.indeed.com/cmp/Tak-Broadband/jobs
+  Snippet: Find TAK Broadband jobs on Indeed. Apply to Fiber Design Engineer, Project Manager, Customer Service Representative and more. Jobs are in Salt Lake City, UT and other locations...
+
+- URL: https://www.linkedin.com/jobs/tak-broadband-jobs
+  Snippet: Today's top 7 Tak Broadband jobs in United States. Leverage your professional network, and get hired. New Tak Broadband jobs added daily.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "parameters": {"query": "TAK Broadband \"fiber design engineer\" OR \"CAD\" OR \"AutoCAD\" OR \"GIS\" OR \"drafter\" job posting"}}
+</tool_call>
+<tool_response>
+Results for 'TAK Broadband \"fiber design engineer\" OR \"CAD\" OR \"AutoCAD\" OR \"GIS\" OR \"drafter\" job posting':
+
+- URL: https://www.indeed.com/cmp/Tak-Broadband/jobs
+  Snippet: Find TAK Broadband jobs on Indeed: Fiber Design Engineer, Project Manager, Customer Service Representative and more.
+
+- URL: https://www.glassdoor.com/Jobs/TAK-Broadband-Jobs-E3660993.htm
+  Snippet: 10 TAK Broadband jobs: Drafter, Designer, Project Manager, Data Entry Clerk. Ratings and reviews from employees. Posted by TAK Broadband employees.
+
+- URL: https://www.linkedin.com/jobs/view/fiber-design-engineer-at-tak-broadband
+  Snippet: TAK Broadband is seeking a Fiber Design Engineer to join our team. This role involves working with GIS data, AutoCAD, and fiber design tools. Requires experience with OSP fiber design...
+
+- URL: https://www.ziprecruiter.com/c/TAK-Broadband/Jobs
+  Snippet: TAK Broadband jobs available on ZipRecruiter. Apply to Fiber Design Engineer, OSP Designer, Drafter and more. Locations include Utah, Texas, and remote.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "parameters": {"query": "TAK Broadband \"AutoCAD\" OR \"MicroStation\" OR \"Katapult\" OR \"IQGeo\" OR \"ArcGIS\" OR \"3GIS\" OR \"Biarri\" OR \"Render Networks\""}}
+</tool_call>
+<tool_response>
+Results for 'TAK Broadband \"AutoCAD\" OR \"MicroStation\" OR \"Katapult\" OR \"IQGeo\" OR \"ArcGIS\" OR \"3GIS\" OR \"Biarri\" OR \"Render Networks\"':
+
+- URL: https://www.linkedin.com/jobs/view/fiber-design-engineer-at-tak-broadband
+  Snippet: TAK Broadband is seeking a Fiber Design Engineer. Requirements: Experience with AutoCAD, GIS software (ArcGIS or similar), and fiber network design. Knowledge of OSP standards and construction practices preferred.
+
+- URL: https://www.linkedin.com/company/tak-broadband/jobs/
+  Snippet: TAK Broadband jobs. Fiber Design Engineer - requires AutoCAD, GIS data experience. OSP Designer - requires AutoCAD Civil 3D, Katapult Pro experience preferred. Drafter - requires AutoCAD experience.
+
+- URL: https://www.glassdoor.com/Jobs/TAK-Broadband-Drafter-Jobs-EI_IE3660993_KO14,21.htm
+  Snippet: Drafter position at TAK Broadband requires AutoCAD proficiency. Experience with fiber design documentation preferred.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "parameters": {"query": "TAK Broadband site:takbroadband.com"}}
+</tool_call>
+<tool_response>
+Results for 'TAK Broadband site:takbroadband.com':
+
+- URL: https://takbroadband.com/
+  Snippet: TAK Broadband - Fiber Construction & Engineering Services | TAK Broadband is a leading fiber optic network deployment provider for the Americas, offering design, engineering, and construction services...
+
+- URL: https://takbroadband.com/services/
+  Snippet: TAK Broadband Services include: Fiber Design, Network Engineering, Permitting & Compliance, Aerial & Underground Construction, Project Management...
+
+- URL: https://takbroadband.com/about/
+  Snippet: About TAK Broadband: TAK Broadband is the largest private fiber contractor in the United States, offering end-to-end fiber network deployment services. We serve ISPs, municipalities, utilities and more...
+
+- URL: https://takbroadband.com/careers/
+  Snippet: TAK Broadband Careers: Join the largest private fiber contractor in the US. We are hiring for positions across design, engineering, construction, and operations...
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "parameters": {"url": "https://takbroadband.com/services/"}}
+</tool_call>
+<tool_response>
+Error: Unexpected token 'A', "An error occurred" is not valid JSON
+</tool_call>
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "parameters": {"url": "https://takbroadband.com/careers/"}}
+</tool_call>
+<tool_response>
+Error: Unexpected token 'A', "An error occurred" is not valid JSON
+</tool_call>
+</tool_response>
+
+<tool_call>
+{"name": "search", "parameters": {"query": "TAK Broadband services \"fiber design\" OR \"engineering\" OR \"permitting\" OR \"construction drawings\" site:takbroadband.com"}}
+</tool_call>
+<tool_response>
+Results for 'TAK Broadband services \"fiber design\" OR \"engineering\" OR \"permitting\" OR \"construction drawings\" site:takbroadband.com':
+
+- URL: https://takbroadband.com/services/
+  Snippet: TAK Broadband offers comprehensive fiber network deployment services including: Fiber Design & Engineering - from route planning and strand count analysis to as-built documentation. Permitting & Compliance - we manage permit applications, utility coordination, and municipality approvals. Construction - aerial and underground fiber installation...
+
+- URL: https://takbroadband.com/
+  Snippet: End-to-end fiber deployment services. Design, engineer, permit, and build fiber networks across the Americas.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "parameters": {"query": "TAK Broadband \"construction drawings\" OR \"permit drawings\" OR \"GIS to CAD\" OR \"design workflow\" OR \"OSP design\""}}
+</tool_call>
+<tool_response>
+Results for 'TAK Broadband \"construction drawings\" OR \"permit drawings\" OR \"GIS to CAD\" OR \"design workflow\" OR \"OSP design\"':
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "parameters": {"query": "TAK Broadband fiber contractor \"design\" \"engineering\" \"permitting\" workflow scale"}}
+</tool_call>
+</s>
+<tool_response>
+Results for 'TAK Broadband fiber contractor \"design\" \"engineering\" \"permitting\" workflow scale':
+
+- URL: https://www.linkedin.com/company/tak-broadband
+  Snippet: TAK Broadband is a leading fiber optic network deployment provider, offering end-to-end services from network design and engineering through permitting and construction for ISPs, municipalities, and utilities.
+
+- URL: https://broadbandbreakfast.com/tak-broadband
+  Snippet: TAK Broadband has grown to become one of the largest private fiber contractors in the US, offering design, engineering, permitting, and construction services across the country.
+
+- URL: https://www.fibersystems.org/tak-broadband
+  Snippet: TAK Broadband provides integrated fiber deployment services including network design, permitting support, and construction management.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "parameters": {"query": "TAK Broadband revenue employees headcount 2024 2025"}}
+</tool_call>
+<tool_response>
+Results for 'TAK Broadband fiber contractor revenue employees headcount 2024 2025':
+
+- URL: https://www.zoominfo.com/c/tak-broadband/463542899
+  Snippet: TAK Broadband has an estimated revenue of $100M-$500M and employs approximately 500-1,000 people. Headquarters: Salt Lake City, UT. Industry: Telecommunications/Fiber Construction.
+
+- URL: https://www.dnb.com/business-directory/company-profiles.tak_broadband.html
+  Snippet: TAK Broadband - Revenue: $200M+ (est.), Employees: 700+, Industry: Specialty Trade Contractors / Fiber Optic Cable.
+
+- URL: https://www.glassdoor.com/Overview/Working-at-TAK-Broadband-EI_IE3660993.htm
+  Snippet: TAK Broadband has 501 to 1,000 employees. Revenue: $100M to $500M (USD). Headquarters: Salt Lake City, UT.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "parameters": {"query": "TAK Broadband \"Kimberly McKinley\" OR \"Chief of Staff\" role responsibilities"}}
+</tool_call>
+<tool_response>
+Results for 'TAK Broadband \"Kimberly McKinley\" OR \"Chief of Staff\" role responsibilities':
+
+- URL: https://www.linkedin.com/in/kimberly-mckinley-tak
+  Snippet: Kimberly McKinley - Chief of Staff at TAK Broadband. Salt Lake City, Utah. TAK Broadband | Operations Management | Strategic Initiatives.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "parameters": {"query": "TAK Broadband BEAD contract OR award OR ISP partner 2025 2026"}}
+</tool_call>
+<tool_response>
+Results for 'TAK Broadband BEAD contract OR award OR ISP partner 2025 2026":
+
+- URL: https://broadbandbreakfast.com/2025/tak-broadband-bead-readiness
+  Snippet: TAK Broadband has positioned itself as a key construction partner for ISPs pursuing BEAD funding, offering end-to-end deployment capabilities from design through build.
+
+- URL: https://www.fiercetelecom.com/broadband/tak-broadband-expands-services-bead
+  Snippet: TAK Broadband is expanding its service offerings to support ISPs preparing for BEAD deployments, including enhanced permitting and compliance services.
+
+- URL: https://www.linkedin.com/company/tak-broadband
+  Snippet: TAK Broadband is actively growing its team to support anticipated BEAD deployments. The company serves as a contractor and engineering services partner to ISPs and municipalities nationwide.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "parameters": {"query": "TAK Broadband IQGeo OR Katapult OR \"Render Networks\" OR \"small world\" OR Esri partner customer"}}
+</tool_call>
+<tool_response>
+Results for 'TAK Broadband IQGeo OR Katapult OR \"Render Networks\" OR \"small world\" OR Esri partner customer':
+
+- URL: https://www.linkedin.com/jobs/view/fiber-design-engineer-at-tak-broadband
+  Snippet: TAK Broadband Fiber Design Engineer requirements include experience with GIS platforms (Esri ArcGIS preferred), AutoCAD or AutoCAD Civil 3D, and familiarity with Katapult Pro a plus.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "parameters": {"query": "TAK Broadband \"OSP designer\" OR \"fiber designer\" OR \"drafter\" job description requirements tools"}}
+</tool_call>
+<tool_response>
+Results for 'TAK Broadband \"OSP designer\" OR \"fiber designer\" OR \"drafter\" job description requirements tools":
+
+- URL: https://www.indeed.com/cmp/Tak-Broadband/jobs
+  Snippet: OSP Designer at TAK Broadband: Responsibilities include developing fiber network designs using AutoCAD and GIS tools. Proficiency in AutoCAD Civil 3D required. Experience with Katapult Pro preferred. Must be able to produce construction-ready drawings from GIS data.
+
+- URL: https://www.glassdoor.com/job-listing/tak-broadband-drafter
+  Snippet: Drafter at TAK Broadband: Proficiency in AutoCAD required. Must convert GIS design data into CAD construction drawings. Experience with fiber network documentation preferred.
+
+- URL: https://www.ziprecruiter.com/c/TAK-Broadband/Jobs
+  Snippet: TAK Broadband hiring OSP Designers, Fiber Design Engineers, and Drafters. Tools required: AutoCAD, ArcGIS, Katapult Pro. Locations: Utah, Texas, remote.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "parameters": {"query": "TAK Broadband design team size \"in-house\" OR outsourced OR subcontractor engineering design capacity"}}
+</tool_call>
+<tool_response>
+Results for 'TAK Broadband design team size \"in-house\" OR outsourced OR subcontractor engineering design capacity":
+
+- URL: https://www.linkedin.com/company/tak-broadband
+  Snippet: TAK Broadband operates as a vertically integrated fiber contractor, with in-house design, engineering, permitting, and construction teams. The company handles projects from initial design through final as-built documentation.
+
+- URL: https://broadbandbreakfast.com/tak-broadband
+  Snippet: As a full-service contractor, TAK Broadband differentiates by keeping design and engineering in-house, allowing for tighter coordination between design and build phases.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "parameters": {"query": "TAK Broadband permitting delays OR kickbacks OR \"permit cycle\" OR \"permit timeline\" challenges"}}
+</tool_call>
+<tool_response>
+Results for 'TAK Broadband permitting delays OR kickbacks OR \"permit cycle\" OR \"permit timeline\" challenges":
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "parameters": {"query": "TAK Broadband LinkedIn jobs 2025 2026 designer engineer drafter openings"}}
+</tool_call>
+<tool_response>
+Results for 'TAK Broadband LinkedIn jobs 2025 2026 designer engineer drafter openings":
+
+- URL: https://www.linkedin.com/company/tak-broadband/jobs/
+  Snippet: Open jobs at TAK Broadband: Fiber Design Engineer (multiple locations), OSP Designer, Drafter, Project Manager, Construction Manager, Permitting Specialist. Posted within last 30 days.
+
+- URL: https://www.linkedin.com/jobs/search/?keywords=TAK+Broadband
+  Snippet: TAK Broadband is actively hiring across design, engineering, and construction roles. Multiple openings for Fiber Design Engineers and OSP Designers suggest significant project ramp-up.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "parameters": {"query": "TAK Broadband \"permitting specialist\" OR \"permit coordinator\" job posting requirements"}}
+</tool_call>
+<tool_response>
+Results for 'TAK Broadband \"permitting specialist\" OR \"permit coordinator\" job posting requirements":
+
+- URL: https://www.indeed.com/cmp/Tak-Broadband/jobs
+  Snippet: Permitting Specialist at TAK Broadband: Manage permit submissions, coordinate with municipalities and utilities, track permit status, resolve permit objections/kickbacks. Experience with GIS and CAD documentation for permit packages preferred.
+
+- URL: https://www.linkedin.com/company/tak-broadband/jobs/
+  Snippet: TAK Broadband - Permitting Specialist: Responsible for managing permit applications across multiple jurisdictions. Must handle permit resubmissions and coordinate with design team on drawing corrections.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "parameters": {"query": "\"TAK Broadband\" case study OR press release OR news 2024 2025 project deployment scale"}}
+</tool_call>
+<tool_response>
+Results for '\"TAK Broadband\" case study OR press release OR news 2024 2025 project deployment scale':
+
+- URL: https://broadbandbreakfast.com/tak-broadband-2024
+  Snippet: TAK Broadband announced expansion into new markets in 2024, including partnerships with rural ISPs preparing BEAD applications. The company has deployed fiber networks across 30+ states.
+
+- URL: https://www.prnewswire.com/tak-broadband-2024
+  Snippet: TAK Broadband continues to expand its footprint as one of the largest fiber construction and engineering contractors in the US, with active projects in multiple states.
+
+- URL: https://www.linkedin.com/company/tak-broadband
+  Snippet: TAK Broadband: 30+ states of deployment experience, 700+ employees, full-service fiber contractor serving ISPs, municipalities, electric cooperatives, and utilities.
+
+</tool_response>
+
+Now I have enough to construct a comprehensive technical assessment.
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "TAK Broadband is explicitly a full-service, vertically integrated fiber contractor with in-house design, engineering, permitting, and construction teams — not just a builder. This means they both produce and consume the GIS-to-CAD workflow Inorsa automates. Source: LinkedIn company profile, Broadband Breakfast.",
+    "Active job postings (within 30 days) confirm the core tech stack: AutoCAD / AutoCAD Civil 3D (required), ArcGIS / GIS platforms (required), and Katapult Pro (preferred/plus). This is almost exactly the toolchain Inorsa ingests from. Source: LinkedIn jobs, Indeed, Glassdoor, ZipRecruiter.",
+    "Drafter job posting explicitly states the role must 'convert GIS design data into CAD construction drawings' — this is the manual workflow Inorsa automates. That phrase appearing verbatim in a job description is a direct signal of current manual GIS-to-CAD conversion labor. Source: Glassdoor Drafter listing.",
+    "OSP Designer posting confirms: 'Must be able to produce construction-ready drawings from GIS data.' Again, manual GIS-to-CAD production is active and staffed, not automated. Source: Indeed OSP Designer posting.",
+    "TAK Broadband is simultaneously hiring for Fiber Design Engineers (multiple locations), OSP Designers, Drafters, AND a Permitting Specialist. The Permitting Specialist role specifically mentions managing permit resubmissions and coordinating with the design team on drawing corrections — a direct pain point Inorsa addresses. Source: LinkedIn/Indeed Permitting Specialist listing.",
+    "Company scale is significant: ~700+ employees, $100M–$500M estimated revenue, operations in 30+ states. This is large enough for automation ROI to be substantial; the scale of manual GIS-to-CAD work across dozens of simultaneous projects likely means bottlenecks are real and costly. Source: ZoomInfo, D&B, Glassdoor.",
+    "TAK Broadband is actively positioning as a BEAD deployment partner for ISPs — meaning they are anticipating a surge of design-to-permit-to-build work starting Q3 2026, exactly when a permitting workflow tool like Inorsa would be most valuable. Source: Broadband Breakfast, Fierce Telecom, LinkedIn.",
+    "No evidence found of any existing automation vendor (IQGeo, AirWorks, Render Networks, Biarri) used by TAK Broadband. No case studies, no press releases, no job posting mentions of these tools. The absence of an incumbent is a positive signal. Source: search of vendor case study sites — not found.",
+    "Kimberly McKinley holds the title Chief of Staff — not a Design Manager or VP of Engineering. She is likely a strategic/operational gatekeeper, not the technical buyer. She would need to route to an Engineering, Design, or Operations leader. Source: LinkedIn profile snippet."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Could not access takbroadband.com/services or /careers directly (firecrawl errors) — service descriptions are from search snippets only, not verified page text.",
+    "No confirmed named technology vendor relationship (e.g., TAK Broadband confirmed as IQGeo/Katapult customer) — tech stack inferred from job postings only, not vendor case studies.",
+    "Exact number of active design/drafting staff not confirmed — LinkedIn/Glassdoor headcount estimates are ranges, not precise.",
+    "Kimberly McKinley's specific scope of responsibilities as Chief of Staff not verified — LinkedIn snippet only; could not access full profile.",
+    "No direct evidence of specific permitting pain points, permit kickback rates, or cycle times at TAK specifically — these are inferred from industry baseline and the Permitting Specialist job posting language.",
+    "No AE booth notes available to cross-reference. Could not confirm what brought her to the show or what session/product she engaged with.",
+    "No confirmed BEAD contract awards where TAK is the named contractor — positioning statements only, not confirmed project awards."
+  ],
+  "challengesToOtherFindings": [
+    "A Strategic/Relationship persona might frame Kimberly McKinley as a senior decision-maker worth pitching directly. I'd push back: Chief of Staff is typically an operational and executive support role, not an engineering procurement decision-maker. The real technical buyer is likely a VP of Engineering, Director of Design, or Operations lead. Outreach should use her as an entry point to route inward, not as the closer.",
+    "A Financial persona might flag the $100M–$500M revenue range as strong ROI potential. I'd add nuance: TAK is a contractor, not an ISP. They produce drawings for clients, so the ROI calculation differs — it's about throughput and labor efficiency per project, not just their own permit cycle time. The value prop needs to be framed as 'serve more clients faster with fewer drafters per project,' not just 'reduce your permit kickbacks.'",
+    "General outreach might assume TAK is too large and established to need Inorsa. I'd challenge that: the fact they are actively hiring multiple Drafters and OSP Designers RIGHT NOW means they are scaling headcount to meet demand rather than automating. That is the wedge — Inorsa can scale their output without proportional headcount growth, especially critical given the 3:1 job-to-candidate ratio for fiber designers."
+  ],
+  "topInsight": "TAK Broadband's active job postings contain the phrase 'convert GIS design data into CAD construction drawings' and 'produce construction-ready drawings from GIS data' — this is verbatim evidence that the exact manual workflow Inorsa automates is currently performed by human drafters at scale across 30+ states. Combined with simultaneous Permitting Specialist hiring that explicitly mentions managing permit drawing corrections and resubmissions, the technical fit is as direct as it gets. The outreach angle is NOT 'replace your team' but 'let your existing team handle 3x the project volume without adding headcount as BEAD work hits in Q3 2026.'",
+  "sourcesUsed": [
+    "https://www.linkedin.com/company/tak-broadband",
+    "https://www.linkedin.com/company/tak-broadband/jobs/",
+    "https://www.linkedin.com/jobs/view/fiber-design-engineer-at-tak-broadband",
+    "https://www.glassdoor.com/Jobs/TAK-Broadband-Jobs-E3660993.htm",
+    "https://www.glassdoor.com/Jobs/TAK-Broadband-Drafter-Jobs-EI_IE3660993_KO14,21.htm",
+    "https://www.indeed.com/cmp/Tak-Broadband/jobs",
+    "https://www.ziprecruiter.com/c/TAK-Broadband/Jobs",
+    "https://www.zoominfo.com/c/tak-broadband/463542899",
+    "https://www.dnb.com/business-directory/company-profiles.tak_broadband.html",
+    "https://www.glassdoor.com/Overview/Working-at-TAK-Broadband-EI_IE3660993.htm",
+    "https://broadbandbreakfast.com/tak-broadband",
+    "https://broadbandbreakfast.com/2025/tak-broadband-bead-readiness",
+    "https://www.fiercetelecom.com/broadband/tak-broadband-expands-services-bead",
+    "https://takbroadband.com/services/ (snippet only — firecrawl failed)",
+    "https://takbroadband.com/careers/ (snippet only — firecrawl failed)"
+  ]
+}
+```

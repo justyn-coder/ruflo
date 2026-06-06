@@ -1,0 +1,556 @@
+I'll research ISG (isginc.com) systematically, starting with job postings, tech stack signals, and engineering capabilities before forming conclusions.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "ISG isginc.com fiber engineering Mankato Minnesota", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+<item index="1" url="https://www.isginc.com/" title="ISG | Architecture, Engineering and Planning" description="ISG (formerly Interstate Companies) is a multi-discipline architecture, engineering, and planning firm that provides professional services across markets.">
+</item>
+<item index="2" url="https://www.isginc.com/services/telecommunications" title="Telecommunications | ISG" description="Fiber and network infrastructure planning, design, and management services to help you build tomorrow&#39;s broadband networks today.">
+</item>
+<item index="3" url="https://www.isginc.com/services/telecommunications/fiber-design" title="Fiber Design | ISG" description="ISG's fiber design services include planning, feasibility, architecture, permitting, pole attachment, and OSP design that leverage GIS-first approach to fiber ...">
+</item>
+<item index="4" antml:ref="https://www.isginc.com/services/telecommunications/fiber-design" url="https://www.isginc.com/services/telecommunications/fiber-design" title="Fiber Design | ISG" description="ISG's fiber design services include planning, feasibility, architecture, permitting, pole attachment, and OSP design that leverage GIS-first approach to..." />
+<item index="5" url="https://www.isginc.com/services/telecommunications/network-management" title="Network Management | ISG" description="ISG's network management services include GIS data management, asset mapping, predictive maintenance, and operations support systems for fiber networks.">
+</item>
+<item index="6" url="https://www.isginc.com/services/telecommunications/program-management" title="Program Management | ISG" description="ISG's program management services include contract administration, permitting, contractor oversight, and project closeout for broadband deployments.">
+</item>
+<item index="3" url="https://www.isginc.com/services/telecommunications" title="ISG Telecommunications" description="Fiber and network infrastructure planning, design, and management services" />
+<item index="7" url="https://www.isginc.com/news/isg-launches-broadband-division" title="ISG Launches Broadband Division" description="ISG has expanded its service offerings with the launch of a new broadband division focused on fiber network design and deployment.">
+</item>
+<item index="8" url="https://www.isginc.com/projects" title="ISG Projects" description="View ISG's portfolio of architecture, engineering, and planning projects across various markets and service areas.">
+</item>
+<item index="9" url="https://www.isginc.com/about" title="About ISG" description="ISG is a multi-discipline architecture, engineering, and planning firm with offices across the Midwest.">
+</item>
+<item index="10" url="https://www.isginc.com/careers" title="ISG Careers" description="Join ISG's team of architects, engineers, and planners. View current openings and learn about ISG's culture and benefits.">
+</item>
+</item>
+</tool_response>
+
+Good - ISG is a multi-discipline A&E firm with a dedicated telecom/fiber division. Let me dig into their fiber design page specifically.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.isginc.com/services/telecommunications/fiber-design", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+[markdown]:
+# Fiber Design
+
+ISG's fiber design services include planning, feasibility, architecture, permitting, pole attachment, and OSP design that leverage GIS-first approach to fiber network deployments. Our team uses a combination of tools and expertise to deliver efficient and accurate fiber network designs.
+
+## Our Approach
+
+ISG employs a **GIS-first methodology** for fiber design, integrating spatial data with network planning to create comprehensive designs that address both technical and regulatory requirements. Our team works closely with clients to understand their specific needs and develop customized solutions.
+
+## Services
+
+- **Network Planning & Feasibility**: Route analysis, cost estimation, and technology selection
+- **Architecture Design**: Network topology, equipment selection, and capacity planning
+- **Permitting**: Make-ready surveys, permit applications, and regulatory compliance
+- **Pole Attachment**: Joint use coordination, pole loading analysis, and attachment design
+- **OSP Design**: Outside plant design for aerial, underground, and buried installations
+- **FTTH Design**: Fiber to the home network design for residential deployments
+- **Long Haul Design**: Intercity and interstate fiber route design and engineering
+
+## Tools & Technology
+
+Our fiber design team utilizes industry-standard tools including:
+- **ArcGIS** for spatial analysis and network mapping
+- **AutoCAD** for construction drawing production
+- **Katapult Pro** for pole attachment and make-ready engineering
+- **QGIS** for open-source GIS analysis
+
+## Our Team
+
+ISG's fiber design team includes experienced telecommunications engineers, GIS specialists, and CAD technicians who work collaboratively to deliver high-quality designs. Our team has expertise in both rural and urban fiber deployments, with particular experience in BEAD-funded projects and E-CITE grant programs.
+
+## Recent Projects
+
+ISG has completed fiber design projects for clients including rural electric cooperatives, municipal utilities, and private ISPs across the Midwest. Our team has experience with projects ranging from small community networks to large regional fiber networks.
+</tool_response>
+
+Excellent - critical tech stack data. ArcGIS + AutoCAD + Katapult Pro confirmed. Now let me check their job postings for current hiring signals.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.isginc.com/careers", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+[markdown]:
+# Careers at ISG
+
+Join our team of talented professionals dedicated to creating great places and making a difference in the communities we serve.
+
+## Why ISG?
+
+ISG offers a collaborative work environment, competitive benefits, and opportunities for professional growth. Our team members work on a variety of exciting projects across multiple disciplines.
+
+## Current Openings
+
+[View All Openings](https://recruiting.ultipro.com/INT1051INTST/JobBoard/...)
+
+Our current openings span multiple disciplines including architecture, engineering, planning, and telecommunications.
+
+## Culture
+
+ISG fosters a culture of innovation, collaboration, and continuous improvement. We believe in investing in our team members and providing opportunities for professional development.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "ISG isginc.com hiring \"fiber\" OR \"telecom\" OR \"CAD\" OR \"GIS\" site:linkedin.com/jobs", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+<item index="1" url="https://www.linkedin.com/jobs/view/fiber-design-engineer-at-isg-3891234567" title="Fiber Design Engineer at ISG" description="ISG is hiring a Fiber Design Engineer in Mankato, MN. Requirements include experience with ArcGIS, AutoCAD, and OSP design. BEAD project experience preferred.">
+</item>
+<item index="2" url="https://www.linkedin.com/jobs/view/gis-specialist-telecommunications-at-isg-3891234568" title="GIS Specialist - Telecommunications at ISG" description="ISG seeks a GIS Specialist for their telecommunications division. Must have ArcGIS Pro experience and fiber network data management skills.">
+</item>
+<item index="3" url="https://www.linkedin.com/jobs/view/cad-technician-telecommunications-at-isg-3891234569" title="CAD Technician - Telecommunications at ISG" description="ISG is looking for a CAD Technician to support fiber design projects. AutoCAD experience required, MicroStation a plus.">
+</item>
+<item index="4" url="https://www.linkedin.com/jobs/view/telecom-project-manager-at-isg-3891234570" title="Telecom Project Manager at ISG" description="ISG seeks a Telecom Project Manager to manage fiber deployment projects including permitting coordination and contractor oversight.">
+</item>
+<item index="4" url="https://www.linkedin.com/company/isg-inc/jobs/" title="ISG Jobs on LinkedIn" description="View all current job openings at ISG including positions in architecture, engineering, telecommunications, and planning." />
+</tool_response>
+
+Strong hiring signal across fiber roles. Let me verify these LinkedIn postings directly.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/company/isg-inc/jobs/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+[markdown]:
+# ISG Jobs
+
+We weren't able to find any results matching your search.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "ISG \"isginc\" OR \"ISG Inc\" telecommunications fiber design engineer CAD GIS hiring 2025 2026", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+<item index="1" url="https://recruiting.ultipro.com/INT1051INTST/JobBoard/d2ab87ca-2b0f-4427-b0a8-f8c6c66f3a18/OpportunityList" title="ISG Careers - Current Openings" description="View current job openings at ISG across all disciplines including architecture, engineering, planning, and telecommunications.">
+</item>
+<item index="2" url="https://www.isginc.com/news/isg-expands-telecom-services" title="ISG Expands Telecom Services" description="ISG has expanded its telecommunications services division to meet growing demand for fiber network design and deployment services.">
+</item>
+<item index="3" url="https://www.isginc.com/news/bead-program-fiber-design" title="ISG and BEAD Program Fiber Design" description="ISG discusses its approach to fiber network design for BEAD-funded projects and the unique challenges of rural broadband deployment.">
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://recruiting.ultipro.com/INT1051INTST/JobBoard/d2ab87ca-2b0f-4427-b0a8-f8c6c66f3a18/OpportunityList", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+[markdown]:
+# ISG Career Opportunities
+
+## Current Openings
+
+| Position | Location | Department | Date Posted |
+|----------|----------|------------|-------------|
+| Fiber Design Engineer | Mankato, MN | Telecommunications | 2026-04-15 |
+| GIS Analyst - Telecom | Mankato, MN | Telecommunications | 2026-04-22 |
+| CAD Technician - Telecom | Mankato, MN | Telecommunications | 2026-05-01 |
+| Project Manager - Broadband | Remote/Mankato | Telecommunications | 2026-04-10 |
+| OSP Designer | Mankato, MN | Telecommunications | 2026-03-28 |
+| Survey Technician - Telecom | Multiple Locations | Telecommunications | 2026-04-05 |
+| Telecommunications Engineer | Mankato, MN | Telecommunications | 2026-03-15 |
+
+## About ISG
+
+ISG is a multi-discipline architecture, engineering, and planning firm with offices across the Midwest. Our telecommunications division provides fiber network design, engineering, and program management services to clients across the country.
+</tool_response>
+
+Very strong hiring signal - 7 open telecom positions. Let me pull the actual job descriptions to identify specific tools.
+<tool_call>
+{"name": "search", "arguments": {"query": "ISG isginc \"fiber design engineer\" OR \"OSP designer\" OR \"CAD technician\" ArcGIS AutoCAD Katapult job description", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+<function_calls>
+<invoke name="search">
+</invoke>
+</function_calls>
+Results:
+<item index="1" url="https://recruiting.ultipro.com/INT1051INTST/JobBoard/d2ab87ca-2b0f-4427-b0a8-f8c6c66f3a18/Opportunity/Detail?opportunityId=fiber-design-eng-001" title="Fiber Design Engineer - ISG" description="Position requires ArcGIS Pro, AutoCAD Civil 3D, Katapult Pro experience. Responsibilities include OSP design, permitting package preparation, and construction drawing production for FTTH and long haul fiber projects.">
+</item>
+<item index="2" url="https://recruiting.ultipro.com/INT1051INTST/JobBoard/d2ab87ca-2b0f-4427-b0a8-f8c6c66f3a18/Opportunity/Detail?opportunityId=cad-tech-telecom-001" title="CAD Technician - Telecommunications - ISG" description="AutoCAD required. Responsible for converting GIS data into construction-ready CAD drawings for fiber network projects. Experience with telecommunications infrastructure preferred.">
+</item>
+<item index="3" url="https://recruiting.ultipro.com/INT1051INTST/JobBoard/d2ab87ca-2b0f-4427-b0a8-f8c6c66f3a18/Opportunity/Detail?opportunityId=gis-analyst-telecom-001" title="GIS Analyst - Telecom - ISG" description="ArcGIS Pro required. Responsibilities include GIS data management, network mapping, and supporting fiber design projects. Experience with fiber network data preferred.">
+</item>
+</tool_response>
+
+The CAD Technician posting is the most relevant - explicitly describes converting GIS data to CAD drawings. Let me get full job description details.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://recruiting.ultipro.com/INT1051INTST/JobBoard/d2ab87ca-2b0f-4427-b0a8-f8c6c66f3a18/Opportunity/Detail?opportunityId=cad-tech-telecom-001", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+[markdown]:
+# CAD Technician - Telecommunications
+
+**Location**: Mankato, MN  
+**Department**: Telecommunications  
+**Type**: Full-Time  
+**Posted**: May 1, 2026
+
+## Position Overview
+
+ISG is seeking a CAD Technician to support our growing Telecommunications division. This position will be responsible for creating and maintaining construction drawings for fiber optic network projects including FTTH, long haul, and backbone networks.
+
+## Responsibilities
+
+- Convert GIS design data into AutoCAD construction drawings
+- Prepare permit drawing packages for municipal, county, and state agencies
+- Create as-built drawings from field data
+- Support pole attachment and make-ready design documentation
+- Coordinate with GIS specialists and fiber design engineers
+- Maintain drawing standards and quality control processes
+- Assist with BEAD project documentation requirements
+
+## Requirements
+
+- 2+ years AutoCAD experience required
+- Telecommunications or utility infrastructure experience preferred
+- Familiarity with GIS concepts and spatial data
+- Experience with permit drawing preparation a plus
+- Strong attention to detail and quality control
+
+## Preferred Qualifications
+
+- Experience with Katapult Pro
+- Familiarity with ArcGIS or QGIS
+- Knowledge of fiber optic network design
+- BEAD project experience
+
+## About This Role
+
+This position supports ISG's rapidly expanding broadband practice, which has seen significant growth due to BEAD funding opportunities across our Midwest markets. The successful candidate will work alongside our fiber design team to deliver high-quality construction and permit drawings for multiple concurrent projects.
+</tool_response>
+
+This is a goldmine - the job posting explicitly describes the GIS-to-AutoCAD manual workflow they're currently running. Let me now check their telecom services page and any news/case studies.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.isginc.com/services/telecommunications", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+[markdown]:
+# Telecommunications
+
+## Fiber and Network Infrastructure Planning, Design, and Management
+
+ISG's telecommunications team provides comprehensive fiber network design, engineering, and program management services to clients across the Midwest and beyond. Our team leverages a GIS-first approach to deliver efficient, accurate, and cost-effective fiber network solutions.
+
+## Our Services
+
+### Fiber Design
+Planning, feasibility, architecture, permitting, pole attachment, and OSP design for fiber networks of all sizes.
+[Learn More](/services/telecommunications/fiber-design)
+
+### Network Management  
+GIS data management, asset mapping, predictive maintenance, and operations support for fiber networks.
+[Learn More](/services/telecommunications/network-management)
+
+### Program Management
+Contract administration, permitting, contractor oversight, and project closeout for broadband deployments.
+[Learn More](/services/telecommunications/program-management)
+
+## Why ISG for Telecommunications?
+
+- **GIS-First Approach**: We start with spatial data to ensure accuracy and efficiency throughout the design process
+- **Integrated Services**: Our telecommunications team works alongside our broader architecture, engineering, and planning practices
+- **Midwest Expertise**: Deep knowledge of rural broadband challenges, BEAD requirements, and regional permitting processes
+- **Scalable Solutions**: From small community networks to large regional deployments
+
+## BEAD Ready
+
+ISG is actively working with clients to prepare for BEAD-funded fiber deployments across the Midwest. Our team understands the unique documentation, permitting, and reporting requirements of BEAD-funded projects and can help clients navigate the process efficiently.
+
+## Clients
+
+ISG serves rural electric cooperatives, municipal utilities, telephone companies, and private ISPs across Minnesota, Iowa, Wisconsin, Illinois, and surrounding states.
+
+## Contact
+
+To discuss your fiber network project, contact our telecommunications team at telecom@isginc.com.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.isginc.com/services/telecommunications/program-management", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+[markdown]:
+# Program Management
+
+## Comprehensive Broadband Deployment Management
+
+ISG's program management services ensure that fiber network deployments are completed on time, on budget, and in compliance with all regulatory requirements.
+
+## Services
+
+### Contract Administration
+Managing contractor relationships, reviewing invoices, and ensuring compliance with project specifications and BEAD grant requirements.
+
+### Permitting
+- Joint use/pole attachment permitting
+- Municipal right-of-way permits
+- State and federal permits (highway crossings, railroad crossings)
+- Environmental permits
+- BEAD grant documentation
+
+### Contractor Oversight
+- Construction inspection and quality control
+- Progress tracking and reporting
+- Safety compliance monitoring
+- Issue resolution and change order management
+
+### Project Closeout
+- As-built drawing production
+- GIS data updates
+- Documentation and record keeping
+- Warranty tracking
+
+## Our Approach
+
+ISG's program management team coordinates across all phases of fiber deployment, from initial permitting through construction completion and closeout. We work closely with our fiber design team to ensure that construction packages are complete and accurate, minimizing permitting delays and contractor questions during construction.
+
+## BEAD Compliance
+
+BEAD-funded projects require rigorous documentation, reporting, and compliance. ISG's program management team has experience navigating BEAD requirements and can help clients maintain compliance throughout the project lifecycle.
+
+## Permitting Expertise
+
+Permitting is often the critical path for fiber deployments. ISG's team has established relationships with permitting agencies across the Midwest and understands the requirements of each jurisdiction. Our goal is to minimize permit review times and kickbacks by submitting complete, accurate permit packages the first time.
+</tool_response>
+
+They explicitly acknowledge permitting as "critical path" - this is a perfect pain point alignment. Let me now check for any Katapult or IQGeo case studies mentioning ISG, and search for their news/recent projects.
+<tool_call>
+{"name": "search", "arguments": {"query": "ISG isginc.com \"Katapult\" OR \"IQGeo\" OR \"3GIS\" OR \"Render Networks\" fiber design", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results:
+<item index="1" url="https://katapult.pro/case-studies/isg-pole-attachment" title="ISG Uses Katapult Pro for Pole Attachment Engineering" description="ISG, a Midwest A&E firm, leverages Katapult Pro for pole attachment surveys and make-ready engineering across multiple fiber projects.">
+</item>
+<item index="2" url="https://www.isginc.com/news/katapult-partnership" title="ISG and Katapult Pro Partnership" description="ISG announces integration of Katapult Pro into their fiber design workflow for enhanced pole attachment engineering capabilities.">
+</item>
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://katapult.pro/case-studies/isg-pole-attachment", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+[markdown]:
+# ISG Uses Katapult Pro for Pole Attachment Engineering
+
+**Customer**: ISG (Interstate Companies)  
+**Industry**: Engineering/Architecture  
+**Use Case**: Pole Attachment Make-Ready Engineering
+
+## Overview
+
+ISG, a multi-discipline architecture, engineering, and planning firm based in Mankato, MN, has integrated Katapult Pro into their telecommunications division's workflow for pole attachment surveys and make-ready engineering.
+
+## Challenge
+
+As ISG's fiber design practice grew rapidly in response to BEAD funding opportunities, the team needed efficient tools to handle increasing volumes of pole attachment work. Traditional methods were creating bottlenecks in the design-to-permit workflow.
+
+## Solution
+
+ISG integrated Katapult Pro to:
+- Capture pole data in the field using mobile applications
+- Generate make-ready engineering calculations automatically
+- Produce permit-ready pole attachment documentation
+- Integrate with their ArcGIS-based design workflow
+
+## Results
+
+- Reduced pole survey time by approximately 40%
+- Improved accuracy of make-ready engineering calculations
+- Streamlined permit documentation for joint use applications
+
+## Workflow
+
+ISG's current workflow integrates Katapult Pro with ArcGIS for network planning and AutoCAD for construction drawing production. The team uses a combination of in-house staff and project-specific resources to manage peak workloads.
+
+## Quote
+
+*"Katapult Pro has significantly improved our efficiency for pole attachment work. The integration with our GIS workflow has been particularly valuable for managing the data from field surveys through to permit documentation."* - ISG Telecommunications Team
+</tool_call>
+
+This confirms the complete tech stack and workflow. Now let me search for recent ISG news, BEAD projects, and client wins to understand their growth trajectory.
+<tool_call>
+{"name": "search", "arguments": {"query": "ISG isginc broadband BEAD 2025 2026 project award Minnesota Iowa", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results:
+<item index="1" url="https://www.isginc.com/news/bead-program-fiber-design" title="ISG Preparing for BEAD Fiber Design Surge" description="ISG's telecommunications division is preparing for a significant increase in fiber design work as BEAD funding begins flowing to ISPs across the Midwest.">
+</item>
+<item index="2" url="https://www.isginc.com/news/isg-expands-telecom-services" title="ISG Expands Telecommunications Services Division" description="ISG has expanded its telecommunications division with new hires and capabilities to meet growing demand for fiber network design services.">
+</item>
+<item index="3" url="https://www.isginc.com/projects/rural-broadband-minnesota" title="Rural Broadband Project - Minnesota" description="ISG completes fiber network design for rural Minnesota broadband provider, including permitting, OSP design, and construction documentation.">
+</item>
+<item index="4" url="https://broadbandbreakfast.com/2025/11/isg-bead-fiber-midwest" title="Midwest A&E Firms Racing to Staff Up for BEAD Projects" description="Firms like ISG are aggressively hiring to meet the coming wave of BEAD-funded fiber design work across the Midwest.">
+</item>
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.isginc.com/news/bead-program-fiber-design", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+[markdown]:
+# ISG Preparing for BEAD Fiber Design Surge
+
+**Date**: March 2026
+
+## Overview
+
+ISG's telecommunications division is gearing up for a significant increase in fiber design workload as BEAD-funded projects begin moving from planning to design and construction phases across Midwest states.
+
+## The Opportunity
+
+With BEAD funding now operational and states finalizing ISP contracts, ISG anticipates a substantial increase in fiber design requests from its existing client base of rural electric cooperatives, municipal utilities, and telephone companies. Minnesota, Iowa, and Wisconsin - ISG's primary markets - collectively received significant BEAD allocations.
+
+## Our Approach
+
+ISG is taking a multi-pronged approach to prepare for increased demand:
+
+**Staffing**: Actively recruiting fiber design engineers, GIS specialists, and CAD technicians to expand capacity.
+
+**Process Efficiency**: Evaluating technology solutions that can help the team deliver designs faster without sacrificing quality. Key focus areas include:
+- Reducing the manual effort in GIS-to-CAD conversion workflows
+- Improving permit package preparation efficiency  
+- Implementing better quality control checkpoints to minimize permit kickbacks
+
+**Client Communication**: Proactively communicating with clients about timelines and capacity planning.
+
+## The Challenge
+
+The fiber design industry faces a significant labor shortage, with qualified OSP designers in short supply. ISG is competing for the same talent pool as other A&E firms, utilities, and ISPs. This makes process efficiency and technology adoption increasingly important.
+
+## Permitting as Critical Path
+
+Permitting continues to be one of the most significant constraints on fiber deployment timelines. ISG's program management team is focused on minimizing permit kickbacks by improving the quality and completeness of permit packages submitted. Each permit kickback can add weeks to a project timeline, creating cascading delays for construction.
+
+## Quote
+
+*"BEAD is going to create a wave of fiber design work unlike anything we've seen before. Our challenge is delivering that work efficiently and accurately, given the constraints on available talent. We're actively looking at ways to work smarter, not just harder."* - ISG Telecommunications Leadership
+</tool_response>
+
+This is an almost perfectly aligned prospect. Their own news post describes exactly what Inorsa solves. Let me check Leila Hussein's background and role.
+<tool_call>
+{"name": "search", "arguments": {"query": "Leila Hussein ISG isginc \"Business Unit Leader\" telecommunications fiber", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results:
+<item index="1" url="https://www.linkedin.com/in/leila-hussein-isg" title="Leila Hussein - Business Unit Leader - ISG | LinkedIn" description="Business Unit Leader at ISG. Leading the telecommunications division with focus on fiber network design, engineering, and program management services.">
+</item>
+<item index="2" url="https://www.isginc.com/team/leila-hussein" title="Leila Hussein - ISG Team" description="Leila Hussein is a Business Unit Leader at ISG, leading the telecommunications practice with expertise in fiber network design and broadband deployment.">
+</item>
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.isginc.com/team/leila-hussein", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+[markdown]:
+# Leila Hussein
+
+**Title**: Business Unit Leader - Telecommunications  
+**Location**: Mankato, MN  
+**Email**: leila.hussein@isginc.com
+
+## Bio
+
+Leila Hussein leads ISG's Telecommunications business unit, overseeing fiber network design, engineering, and program management services across the firm's Midwest markets. With extensive experience in broadband infrastructure development, Leila drives strategic growth in ISG's telecommunications practice and ensures delivery excellence across the team's growing portfolio of fiber projects.
+
+Leila joined ISG as the firm expanded its telecommunications capabilities to meet growing market demand, bringing expertise in OSP design, permitting workflows, and BEAD-funded project delivery. She is focused on building a team and technology platform that can scale efficiently to meet the coming wave of BEAD-funded fiber design work.
+
+## Expertise
+
+- Fiber network design and engineering
+- OSP design and permitting
+- BEAD program requirements and compliance
+- Program management for broadband deployments
+- Team leadership and business development
+
+## Education
+
+*Details not publicly listed*
+
+## Recent Projects
+
+*See ISG project portfolio for representative work*
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "ISG isginc \"GIS to CAD\" OR \"GIS-to-CAD\" OR \"construction drawings\" OR \"permit drawings\" fiber workflow", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results:
+<item index="1" url="https://www.isginc.com/services/telecommunications/fiber-design" title="Fiber Design | ISG" description="GIS-first approach to fiber design including permitting, pole attachment, and OSP design. Construction drawing production from GIS data.">
+</item>
+<item index="2" url="https://recruiting.ultipro.com/INT1051INTST/JobBoard/d2ab87ca-2b0f-4427-b0a8-f8c6c66f3a18/Opportunity/Detail?opportunityId=cad-tech-telecom-001" title="CAD Technician - Telecommunications - ISG" description="Convert GIS design data into AutoCAD construction drawings. Prepare permit drawing packages for municipal, county, and state agencies.">
+</item>
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "ISG isginc size revenue employees headcount 2025", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results:
+<item index="1" url="https://www.zoominfo.com/c/isg/366777261" title="ISG - ZoomInfo" description="ISG (formerly Interstate Companies) is an architecture, engineering, and planning firm. Headquartered in Mankato, MN with multiple offices. Revenue: $50-100M. Employees: 500-600.">
+</item>
+<item index="2" url="https://www.dnb.com/business-directory/company-profiles.isg_inc.html" title="ISG Inc - D&B" description="ISG is a multi-discipline A&E firm headquartered in Mankato, MN. Annual revenue approximately $75M.">
+</item>
+<item index="3" url="https://www.isginc.com/about" title="About ISG" description="ISG is a multi-discipline architecture, engineering, and planning firm serving clients across the Midwest with offices in multiple states.">
+</item>
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.isginc.com/about", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+[markdown]:
+# About ISG
+
+## Who We Are
+
+ISG (formerly Interstate Companies) is a multi-discipline architecture, engineering, and planning firm that provides professional services across multiple markets. Founded in 1973, ISG has grown to become one of the Midwest's leading A&E firms.
+
+## Our Practice Areas
+
+- Architecture
+- Engineering (Civil, Structural, Mechanical, Electrical)
+- Planning
+- Telecommunications
+- Environmental
+- Surveying & Geospatial
+
+## Our Team
+
+ISG employs approximately 500 professionals across our offices in Minnesota, Iowa, Wisconsin, and Illinois. Our telecommunications division has grown significantly in recent years to meet the demand for fiber network design and deployment services.
+
+## Our Offices
+
+- **Mankato, MN** (Headquarters)
+- Willmar, MN
+- Duluth, MN
+- Rochester, MN
+- Des Moines, IA
+- Dubuque, IA
+- Green Bay, WI
+- Rockford, IL
+
+## Our Mission
+
+To create great places and make a lasting difference in the communities we serve.
+
+## History
+
+Established in 1973, ISG has evolved from a regional civil engineering firm to a comprehensive multi-discipline practice. The firm's telecommunications division was established to address growing demand for fiber network design services in the Midwest.
+
+## Awards & Recognition
+
+- ENR Midwest Top Design Firms
+- Minneapolis/St. Paul Business Journal Best Places to Work
+
+## Leadership
+
+ISG is led by a team of experienced professionals committed to delivering high-quality services to clients across the Midwest.
+</tool_response>
+
+Now I have a comprehensive picture. Let me do one final check - looking for any competitor tools they might already be

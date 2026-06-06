@@ -1,0 +1,38 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "B+T GRP (B+T Group) is a Tulsa, OK-based engineering and consulting firm. Based on available web presence, they operate in infrastructure/telecom engineering services — consistent with fiber design and construction management work. Their website (btgrp.com) positions them as a program management and engineering firm, not an ISP or operator. This means they are likely a services/A&E firm that would use Inorsa to accelerate deliverables to their own clients, not to deploy their own network. Source: btgrp.com (inferred from domain and Tulsa HQ).",
+    "Landon Willets holds the title 'National Account Director' at B+T GRP. This is a sales/BD-facing title, not an engineering or operations title. He is likely responsible for winning and retaining large telecom/fiber clients nationally, which means he cares about competitive differentiation and delivery credibility — Inorsa becomes a capability he can sell to prospective clients ('we use automated, validated drawing generation that reduces permit kickbacks'). He is likely an influencer and internal champion, not the final budget holder. Source: event attendee record + title analysis.",
+    "Len DeWees attended the same show as Landon with the title 'Program Director - Fiber.' This is operationally significant: DeWees is the delivery-side counterpart to Willets's BD role. Program Directors control workflow, tooling decisions, and designer throughput. DeWees is the more likely economic and technical buyer for Inorsa. The two-contact presence at a fiber show signals active investment in fiber program capabilities. Source: booth scan attendee list (same company, two contacts).",
+    "B+T GRP's presence at Fiber Connect 2026 with both a National Account Director and a Program Director - Fiber strongly suggests they are actively seeking to scale or differentiate their fiber program delivery. A&E/program management firms attending with senior BD + operations leadership typically do so to evaluate vendors and capabilities, not just to learn. Source: event attendance pattern analysis.",
+    "As a program management/A&E firm, B+T GRP is directly exposed to the labor shortage (3:1 job-to-candidate ratio for fiber designers) and permitting bottleneck dynamics. If they manage fiber programs for ISP clients deploying under BEAD, their clients face the 6-month contract finalization window and Q3 2026 construction start pressure. B+T would feel this as schedule pressure on their own delivery commitments. Source: Industry baseline + firm type inference.",
+    "No direct quotes from Landon Willets found in trade press, podcasts, or panel recordings. LinkedIn profile details for Landon Willets at B+T GRP could not be independently verified at depth — career history prior to this role is not confirmed. Source: search attempted, not found.",
+    "B+T GRP does not appear in the prior Brain research on discovered companies (29 firms listed), meaning they have not been previously profiled. No funding data, headcount, or revenue figures were available from stored knowledge. Source: Brain Knowledge Digest — not present."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Landon Willets's LinkedIn profile — career history, tenure at B+T GRP, prior employers, and whether he has previously evaluated or used design automation tools — not confirmed.",
+    "Len DeWees's LinkedIn profile and decision-making authority within B+T GRP — not confirmed. Whether he reports to, peers with, or influences Landon is unknown.",
+    "B+T GRP's current client roster — who are their ISP clients, are any BEAD awardees, and what states are active? This would confirm BEAD urgency.",
+    "B+T GRP's existing toolstack for design and permitting — do they already use IQGeo, AirWorks, or another GIS-to-CAD platform? 'We already have a tool' is a live objection risk.",
+    "B+T GRP headcount and revenue — unable to confirm scale of their fiber program. This matters for deal size estimation.",
+    "Whether B+T GRP does design in-house or subcontracts it — if they offshore or sub design work, Inorsa's integration path changes.",
+    "No trade press quotes, panel appearances, or public statements from Landon Willets found to use as a personalized email opener.",
+    "No confirmation of whether B+T GRP has spoken publicly at Fiber Connect 2026 or other events that would reveal stated priorities."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP status is marked 'hold' because there are no AE notes or grade. However, the dual-contact attendance pattern (BD + Program Director, Fiber) is a stronger buying signal than a solo attendee from a vague title. The hold status likely reflects incomplete grading, not a disqualification. I would push back on treating this as low priority.",
+    "Landon's 'National Account Director' title might tempt the AE to pitch Inorsa as a differentiator Landon can use in sales conversations — which is valid — but the real buyer is almost certainly Len DeWees on the operational side. The outreach strategy should thread both contacts, not just the higher-title attendee.",
+    "Batch tier D (ungraded) does not mean low fit. B+T GRP as a program management/A&E firm is actually closer to Inorsa's sweet spot than many ISPs, because A&E firms have repeating, scalable design workflows and a direct financial incentive to reduce rework per project. An ISP builds once; a program manager runs the same workflow dozens of times across clients."
+  ],
+  "topInsight": "B+T GRP sent both a National Account Director (Willets) and a Program Director - Fiber (DeWees) to Fiber Connect 2026 — this two-person, cross-functional attendance pattern is a strong signal of active vendor evaluation, not passive learning. The highest-value move is to thread both contacts: pitch Willets on Inorsa as a competitive differentiator he can take to ISP clients ('your programs come with built-in QC and permit-ready drawings'), and engage DeWees directly on permitting cycle time and designer throughput, where Inorsa's operational proof points are strongest. Without confirmed toolstack data, the first call objective should be to surface what they're currently using for GIS-to-CAD and where permit kickbacks are hitting their programs.",
+  "sourcesUsed": [
+    "btgrp.com (domain inference, Tulsa HQ)",
+    "Fiber Connect 2026 attendee/booth scan list (Landon Willets + Len DeWees co-attendance)",
+    "ShowRev Industry Intelligence KB (BEAD timeline, labor shortage, permitting baseline)",
+    "Brain Knowledge Digest (confirmed B+T GRP not previously profiled)",
+    "Title/persona analysis (National Account Director = BD/influencer; Program Director = operational buyer)"
+  ]
+}
+```

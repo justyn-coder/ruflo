@@ -102,17 +102,30 @@ export async function verifyAllClaims(
   const claims: VerifiedClaim[] = [];
   const blockers: string[] = [];
 
-  for (const claim of detected) {
-    console.log(`    ⏳ Verifying [${claim.type}]: "${claim.text.slice(0, 40)}..."`);
-    const result = await semanticVerifyClaim(claim.text, claim.type, company);
-    claims.push(result);
+  const BATCH_SIZE = 6;
+  for (let i = 0; i < detected.length; i += BATCH_SIZE) {
+    const batch = detected.slice(i, i + BATCH_SIZE);
+    for (const c of batch) console.log(`    ⏳ Verifying [${c.type}]: "${c.text.slice(0, 40)}..."`);
 
-    if (!result.verified && ['dollar_amount', 'bead_award', 'employee_count', 'acquisition'].includes(claim.type)) {
-      blockers.push(`${claim.type}: "${claim.text.slice(0, 60)}" — ${result.discrepancy || 'could not verify'}`);
+    const results = await Promise.allSettled(
+      batch.map(c => semanticVerifyClaim(c.text, c.type, company)),
+    );
+
+    for (let j = 0; j < results.length; j++) {
+      const r = results[j];
+      const claim = batch[j];
+      if (r.status === 'fulfilled') {
+        claims.push(r.value);
+        if (!r.value.verified && ['dollar_amount', 'bead_award', 'employee_count', 'acquisition'].includes(claim.type)) {
+          blockers.push(`${claim.type}: "${claim.text.slice(0, 60)}" — ${r.value.discrepancy || 'could not verify'}`);
+        }
+        const icon = r.value.verified ? '✓' : '⚠';
+        console.log(`    ${icon} ${r.value.tag}`);
+      } else {
+        claims.push({ claim: claim.text, claimType: claim.type, verified: false, confidence: 'unverified', sourceUrl: '', sourceSnippet: '', discrepancy: 'Batch error', tag: '[UNVERIFIED]' });
+        console.log(`    ⚠ [UNVERIFIED]`);
+      }
     }
-
-    const icon = result.verified ? '✓' : '⚠';
-    console.log(`    ${icon} ${result.tag}`);
   }
 
   const verified = claims.filter(c => c.verified).length;

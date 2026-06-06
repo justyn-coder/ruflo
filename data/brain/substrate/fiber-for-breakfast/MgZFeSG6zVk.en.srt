@@ -1,0 +1,3340 @@
+1
+00:00:04,640 --> 00:00:09,759
+[Music]
+
+2
+00:00:14,350 --> 00:00:17,449
+[Music]
+
+3
+00:00:17,920 --> 00:00:21,400
+Hey, hey,
+
+4
+00:00:25,600 --> 00:00:43,200
+hey, hey.
+
+5
+00:00:27,880 --> 00:00:44,719
+[Music]
+
+6
+00:00:43,200 --> 00:00:46,719
+Well, good morning everyone and welcome
+
+7
+00:00:44,719 --> 00:00:48,719
+to the Fiber Broadband Association's
+
+8
+00:00:46,719 --> 00:00:51,840
+five for breakfast. We're now in our
+
+9
+00:00:48,719 --> 00:00:53,199
+30th episode of 2025 and before we kick
+
+10
+00:00:51,840 --> 00:00:55,600
+off, I'd like to thank Wesco, the
+
+11
+00:00:53,199 --> 00:00:57,600
+platinum sponsor of Fiber for Breakfast.
+
+12
+00:00:55,600 --> 00:01:01,120
+Well, a lot is going on in Washington
+
+13
+00:00:57,600 --> 00:01:03,760
+DC. At NTI earlier this week, all 56
+
+14
+00:01:01,120 --> 00:01:05,680
+states and territories initial proposals
+
+15
+00:01:03,760 --> 00:01:07,840
+received the green light from NTI,
+
+16
+00:01:05,680 --> 00:01:10,159
+allowing them to advance to the benefit
+
+17
+00:01:07,840 --> 00:01:12,240
+of the bargain round, a critical step in
+
+18
+00:01:10,159 --> 00:01:14,960
+the BE application process under the
+
+19
+00:01:12,240 --> 00:01:18,159
+revised guidance. Final proposals are
+
+20
+00:01:14,960 --> 00:01:20,479
+due to NTI by September 4th. You know,
+
+21
+00:01:18,159 --> 00:01:23,119
+yesterday NTI hosted a virtual public
+
+22
+00:01:20,479 --> 00:01:25,520
+listening session titled Bolstering Data
+
+23
+00:01:23,119 --> 00:01:27,920
+Center Growth, Resiliency, and Security.
+
+24
+00:01:25,520 --> 00:01:29,920
+And the purpose of the listening session
+
+25
+00:01:27,920 --> 00:01:32,320
+uh was to seek input from a wide range
+
+26
+00:01:29,920 --> 00:01:34,400
+of stakeholders to inform an upcoming
+
+27
+00:01:32,320 --> 00:01:36,720
+NTI report outlining the challenges and
+
+28
+00:01:34,400 --> 00:01:39,040
+opportunities to data center growth,
+
+29
+00:01:36,720 --> 00:01:41,200
+resiliency, and security. So, I
+
+30
+00:01:39,040 --> 00:01:43,840
+delivered brief remarks emphasizing the
+
+31
+00:01:41,200 --> 00:01:45,200
+critical importance of access to fiber
+
+32
+00:01:43,840 --> 00:01:48,720
+in powering the next generation
+
+33
+00:01:45,200 --> 00:01:50,799
+technologies. Um, I really enjoyed Zo's
+
+34
+00:01:48,720 --> 00:01:52,960
+uh testimony where they explained how
+
+35
+00:01:50,799 --> 00:01:55,840
+critical it is to have fiber off and on
+
+36
+00:01:52,960 --> 00:01:57,840
+ramps for uh for AI to rural communities
+
+37
+00:01:55,840 --> 00:02:00,479
+to avoid what they call death loops,
+
+38
+00:01:57,840 --> 00:02:02,880
+which is when a rural community um are
+
+39
+00:02:00,479 --> 00:02:05,840
+not able to participate in the AI future
+
+40
+00:02:02,880 --> 00:02:08,560
+to lack of fiber connectivity.
+
+41
+00:02:05,840 --> 00:02:10,879
+So, in Congress, Ariel Roth is expected
+
+42
+00:02:08,560 --> 00:02:13,760
+to be confirmed as soon as this morning
+
+43
+00:02:10,879 --> 00:02:15,920
+as the NTI administrator and assistant
+
+44
+00:02:13,760 --> 00:02:18,319
+secretary of commerce. We look forward
+
+45
+00:02:15,920 --> 00:02:22,480
+to working with her as she takes on this
+
+46
+00:02:18,319 --> 00:02:24,560
+new leadership role at NTI. At the FCC,
+
+47
+00:02:22,480 --> 00:02:26,480
+uh they'll have their next open meeting
+
+48
+00:02:24,560 --> 00:02:28,720
+tomorrow where commissioners will vote
+
+49
+00:02:26,480 --> 00:02:31,360
+on a draft of their network
+
+50
+00:02:28,720 --> 00:02:34,000
+modernization NPRM notice of proposed
+
+51
+00:02:31,360 --> 00:02:36,000
+rulemaking. Uh FBA has been reviewing
+
+52
+00:02:34,000 --> 00:02:38,720
+the draft of their members to assess its
+
+53
+00:02:36,000 --> 00:02:41,280
+potential impact. You know, last week we
+
+54
+00:02:38,720 --> 00:02:43,519
+held an amazing regional fiberconnect
+
+55
+00:02:41,280 --> 00:02:45,599
+workshop in Anchorage, Alaska. You know,
+
+56
+00:02:43,519 --> 00:02:48,160
+it's clear that Alaska is unlike any
+
+57
+00:02:45,599 --> 00:02:50,400
+other state or territory in our nation.
+
+58
+00:02:48,160 --> 00:02:52,800
+You know, Alaska is twice the size of
+
+59
+00:02:50,400 --> 00:02:55,599
+Texas, but only has a population of
+
+60
+00:02:52,800 --> 00:02:58,640
+740,000 people versus 30 million in
+
+61
+00:02:55,599 --> 00:03:00,560
+Texas. Further, Alaska's topology is
+
+62
+00:02:58,640 --> 00:03:02,879
+quite diverse with lots of islands,
+
+63
+00:03:00,560 --> 00:03:05,440
+mountains, and tundra, not to mention a
+
+64
+00:03:02,879 --> 00:03:07,440
+very short build window. We learned a
+
+65
+00:03:05,440 --> 00:03:09,280
+lot from Thomas Lochner, the uh the
+
+66
+00:03:07,440 --> 00:03:10,959
+state's broadband director, who
+
+67
+00:03:09,280 --> 00:03:12,640
+described the challenging topology and
+
+68
+00:03:10,959 --> 00:03:15,120
+remoteness of the state's unserved and
+
+69
+00:03:12,640 --> 00:03:16,640
+underserved locations. More importantly,
+
+70
+00:03:15,120 --> 00:03:18,959
+we learned that in Alaska,
+
+71
+00:03:16,640 --> 00:03:20,560
+communications are life and death. You
+
+72
+00:03:18,959 --> 00:03:22,879
+know, there's no golden hour for
+
+73
+00:03:20,560 --> 00:03:24,640
+emergency rescues, and we greatly
+
+74
+00:03:22,879 --> 00:03:27,200
+appreciate the warm reception received
+
+75
+00:03:24,640 --> 00:03:28,800
+during our visit to the 49th state. We
+
+76
+00:03:27,200 --> 00:03:31,040
+will continue our road show in the Great
+
+77
+00:03:28,800 --> 00:03:33,280
+White North. We'll be in Toronto on
+
+78
+00:03:31,040 --> 00:03:35,040
+Tuesday, August 19th. We hopefully see
+
+79
+00:03:33,280 --> 00:03:37,840
+you there.
+
+80
+00:03:35,040 --> 00:03:40,480
+After Toronto, we'll be in Spokane on
+
+81
+00:03:37,840 --> 00:03:42,000
+September, Scottsdale in October, Kansas
+
+82
+00:03:40,480 --> 00:03:45,040
+City in November, and then we'll finish
+
+83
+00:03:42,000 --> 00:03:47,360
+here in Palm Springs um in December 8th
+
+84
+00:03:45,040 --> 00:03:50,080
+and 9th for our premier member meeting.
+
+85
+00:03:47,360 --> 00:03:54,159
+Today on fire for breakfast, our um
+
+86
+00:03:50,080 --> 00:03:56,560
+guest is Gav Juna, the chief operating
+
+87
+00:03:54,159 --> 00:03:59,040
+officer, Consolidate Communications,
+
+88
+00:03:56,560 --> 00:04:00,720
+discuss Fidium's transformation or
+
+89
+00:03:59,040 --> 00:04:02,879
+transforms New England's future with
+
+90
+00:04:00,720 --> 00:04:04,239
+fiber. Before I introduce today's guest,
+
+91
+00:04:02,879 --> 00:04:05,360
+I'd like to introduce David Norris from
+
+92
+00:04:04,239 --> 00:04:07,439
+our team who's going to walk us through
+
+93
+00:04:05,360 --> 00:04:08,799
+some housekeeping items.
+
+94
+00:04:07,439 --> 00:04:09,920
+>> Thank you very much, Gary, and thank you
+
+95
+00:04:08,799 --> 00:04:11,760
+to everyone who's joining us this
+
+96
+00:04:09,920 --> 00:04:13,200
+morning. Good morning. Before I go over
+
+97
+00:04:11,760 --> 00:04:14,799
+a few logistics, we'd like to once again
+
+98
+00:04:13,200 --> 00:04:16,959
+thank our platinum sponsor, Fiber for
+
+99
+00:04:14,799 --> 00:04:18,880
+Breakfast Wesco. Now, as participants,
+
+100
+00:04:16,959 --> 00:04:20,320
+you are in listenon mode today. However,
+
+101
+00:04:18,880 --> 00:04:21,440
+we want to hear from you. To ask a
+
+102
+00:04:20,320 --> 00:04:22,800
+question, please type it into the
+
+103
+00:04:21,440 --> 00:04:24,800
+question box, which is located in the
+
+104
+00:04:22,800 --> 00:04:26,240
+lower lefth hand side of your screen. We
+
+105
+00:04:24,800 --> 00:04:27,520
+will host a Q&A session with our
+
+106
+00:04:26,240 --> 00:04:29,759
+panelists at the end of today's
+
+107
+00:04:27,520 --> 00:04:31,120
+presentation. This presentation is also
+
+108
+00:04:29,759 --> 00:04:33,680
+being recorded and will be available on
+
+109
+00:04:31,120 --> 00:04:34,880
+FBA's website within 24 to 48 hours and
+
+110
+00:04:33,680 --> 00:04:36,560
+you can find that recording in the
+
+111
+00:04:34,880 --> 00:04:38,720
+events tab under the fiber for breakfast
+
+112
+00:04:36,560 --> 00:04:40,320
+dropdown option. Finally, at the
+
+113
+00:04:38,720 --> 00:04:41,680
+conclusion of today's webinar, you'll be
+
+114
+00:04:40,320 --> 00:04:43,360
+prompted to complete a brief feedback
+
+115
+00:04:41,680 --> 00:04:44,880
+survey. If you could take a moment to do
+
+116
+00:04:43,360 --> 00:04:46,639
+so, your responses really help us out
+
+117
+00:04:44,880 --> 00:04:48,000
+and we appreciate your input. And with
+
+118
+00:04:46,639 --> 00:04:50,320
+that, I will hand things back over to
+
+119
+00:04:48,000 --> 00:04:51,759
+Gary to once again get us started. Gary.
+
+120
+00:04:50,320 --> 00:04:53,440
+>> Thanks Dave and good morning. I'm Gary
+
+121
+00:04:51,759 --> 00:04:55,759
+Bolton, the president CEO of the Fiber
+
+122
+00:04:53,440 --> 00:04:58,880
+Broadband Association. Last week on Fire
+
+123
+00:04:55,759 --> 00:05:00,800
+for Breakfast, our guest was Al Alisa uh
+
+124
+00:04:58,880 --> 00:05:02,560
+Kennedy, the state broadband and digital
+
+125
+00:05:00,800 --> 00:05:04,400
+equity director for public service
+
+126
+00:05:02,560 --> 00:05:06,720
+commission of Wisconsin discuss
+
+127
+00:05:04,400 --> 00:05:08,479
+continuing to connect Wisconsin
+
+128
+00:05:06,720 --> 00:05:11,360
+strategies for statewide broadband
+
+129
+00:05:08,479 --> 00:05:13,039
+access. So Lisa shared with us where
+
+130
+00:05:11,360 --> 00:05:15,039
+they are with respect to their bead
+
+131
+00:05:13,039 --> 00:05:16,800
+process and next steps for Wisconsin. So
+
+132
+00:05:15,039 --> 00:05:19,039
+if you missed it, you can go to our
+
+133
+00:05:16,800 --> 00:05:22,960
+website and watch the replay. Today on
+
+134
+00:05:19,039 --> 00:05:24,320
+fire for breakfast our guest is Gav Juna
+
+135
+00:05:22,960 --> 00:05:26,400
+the chief operating officer at
+
+136
+00:05:24,320 --> 00:05:29,840
+consolidated communications who's going
+
+137
+00:05:26,400 --> 00:05:31,360
+to discuss Fidium's trans how fidium
+
+138
+00:05:29,840 --> 00:05:34,000
+transforms New England's future with
+
+139
+00:05:31,360 --> 00:05:36,320
+fiber. So G is the chief operating
+
+140
+00:05:34,000 --> 00:05:38,880
+officer at Consolidated and oversees the
+
+141
+00:05:36,320 --> 00:05:40,560
+Fidium consumer fiber business including
+
+142
+00:05:38,880 --> 00:05:42,560
+market development, product management,
+
+143
+00:05:40,560 --> 00:05:44,960
+marketing sales, call centers, customer
+
+144
+00:05:42,560 --> 00:05:47,120
+experience, base management as well as
+
+145
+00:05:44,960 --> 00:05:49,520
+field operations and information
+
+146
+00:05:47,120 --> 00:05:52,160
+technology. which supports enterprise.
+
+147
+00:05:49,520 --> 00:05:54,560
+So basically he does everything and G
+
+148
+00:05:52,160 --> 00:05:56,720
+joined the company in 2023 as president
+
+149
+00:05:54,560 --> 00:05:58,639
+of consolidated consumer and small
+
+150
+00:05:56,720 --> 00:06:00,880
+business organization.
+
+151
+00:05:58,639 --> 00:06:03,520
+Prior to joining the company, G served
+
+152
+00:06:00,880 --> 00:06:06,400
+as executive vice president and GM for
+
+153
+00:06:03,520 --> 00:06:09,039
+consumer and chief revenue officer at
+
+154
+00:06:06,400 --> 00:06:11,120
+Metronet where he was responsible for
+
+155
+00:06:09,039 --> 00:06:12,800
+building all consumer sales channels,
+
+156
+00:06:11,120 --> 00:06:14,720
+marketing, product management, MDU,
+
+157
+00:06:12,800 --> 00:06:18,160
+market expansion, customer care and
+
+158
+00:06:14,720 --> 00:06:20,880
+sales operation. As EV uh EVP of
+
+159
+00:06:18,160 --> 00:06:22,400
+consumer at Metronut, he led product
+
+160
+00:06:20,880 --> 00:06:25,199
+management, customer care and field
+
+161
+00:06:22,400 --> 00:06:27,120
+marketing. Junja al also held leadership
+
+162
+00:06:25,199 --> 00:06:29,759
+positions at rise broadband dish
+
+163
+00:06:27,120 --> 00:06:31,680
+networks and RJ group of companies a
+
+164
+00:06:29,759 --> 00:06:34,560
+retailer for T-Mobile and Sprint where
+
+165
+00:06:31,680 --> 00:06:36,720
+he led consumer and SMB sales channels
+
+166
+00:06:34,560 --> 00:06:40,639
+field marketing and overall go to market
+
+167
+00:06:36,720 --> 00:06:42,560
+strategy. Gorav has an MBA from Cornell
+
+168
+00:06:40,639 --> 00:06:45,039
+University and a BA from Trinity
+
+169
+00:06:42,560 --> 00:06:47,039
+College. So welcome G and for audience
+
+170
+00:06:45,039 --> 00:06:49,039
+please type in your questions you go and
+
+171
+00:06:47,039 --> 00:06:51,919
+we'll work those into the discussion. So
+
+172
+00:06:49,039 --> 00:06:54,400
+with that I will turn things over to G.
+
+173
+00:06:51,919 --> 00:06:56,000
+You bet, Gary. Thank you. Pleasure to be
+
+174
+00:06:54,400 --> 00:06:59,120
+here and really appreciate the
+
+175
+00:06:56,000 --> 00:07:01,680
+opportunity for uh Consolidated Infidium
+
+176
+00:06:59,120 --> 00:07:04,720
+to share our story. Um so that said,
+
+177
+00:07:01,680 --> 00:07:08,080
+I'll get right into it. Um this is an
+
+178
+00:07:04,720 --> 00:07:10,800
+overview on Consolidated and our fiber
+
+179
+00:07:08,080 --> 00:07:13,039
+brand specifically within Consolidated
+
+180
+00:07:10,800 --> 00:07:15,199
+is known as Fidian. So during this
+
+181
+00:07:13,039 --> 00:07:18,479
+presentation, you will see me refer to
+
+182
+00:07:15,199 --> 00:07:20,400
+our fiber business as Fidian. Um, all of
+
+183
+00:07:18,479 --> 00:07:22,560
+that to say, when you think about our
+
+184
+00:07:20,400 --> 00:07:25,280
+core business, our mission at
+
+185
+00:07:22,560 --> 00:07:27,360
+Consolidated is to bring broadband
+
+186
+00:07:25,280 --> 00:07:29,360
+infrastructure to unserved and
+
+187
+00:07:27,360 --> 00:07:31,599
+underserved communities throughout our
+
+188
+00:07:29,360 --> 00:07:34,160
+footprint. And we truly believe that
+
+189
+00:07:31,599 --> 00:07:36,720
+broadband infrastructure uh enables
+
+190
+00:07:34,160 --> 00:07:38,720
+people to live, work, and thrive in
+
+191
+00:07:36,720 --> 00:07:40,960
+communities, specifically underserved
+
+192
+00:07:38,720 --> 00:07:42,880
+and unserved communities, just so they
+
+193
+00:07:40,960 --> 00:07:46,800
+don't have to just so they don't have to
+
+194
+00:07:42,880 --> 00:07:48,400
+relocate um into urban centers. So we're
+
+195
+00:07:46,800 --> 00:07:51,199
+committed to the mission and what you
+
+196
+00:07:48,400 --> 00:07:53,039
+will see throughout uh this presentation
+
+197
+00:07:51,199 --> 00:07:55,440
+is that we have partnered with state
+
+198
+00:07:53,039 --> 00:07:57,919
+broadband offices, cities,
+
+199
+00:07:55,440 --> 00:07:59,520
+municipalities to again take broadband
+
+200
+00:07:57,919 --> 00:08:01,039
+infrastructure to these unserved
+
+201
+00:07:59,520 --> 00:08:02,479
+communities.
+
+202
+00:08:01,039 --> 00:08:05,440
+Consolidated has three different
+
+203
+00:08:02,479 --> 00:08:08,160
+business segments consumer, commercial
+
+204
+00:08:05,440 --> 00:08:10,879
+and carrier. So we will not go into a
+
+205
+00:08:08,160 --> 00:08:12,960
+town or a city just with one business
+
+206
+00:08:10,879 --> 00:08:15,039
+segment or one customer segment. We will
+
+207
+00:08:12,960 --> 00:08:16,960
+go in with all three. And that again
+
+208
+00:08:15,039 --> 00:08:19,520
+goes back to our mission of providing
+
+209
+00:08:16,960 --> 00:08:22,160
+critical broadband infrastructure for
+
+210
+00:08:19,520 --> 00:08:24,960
+rural communities to thrive. So a
+
+211
+00:08:22,160 --> 00:08:27,360
+consumer business, we have 2.6 million
+
+212
+00:08:24,960 --> 00:08:29,440
+passes as you'll see on this map. We we
+
+213
+00:08:27,360 --> 00:08:31,440
+have 2.6 million passes across the
+
+214
+00:08:29,440 --> 00:08:34,479
+country which is a combination of both
+
+215
+00:08:31,440 --> 00:08:38,479
+copper and fiber. We have upgraded more
+
+216
+00:08:34,479 --> 00:08:41,200
+than 50% 54% to be specific of our plant
+
+217
+00:08:38,479 --> 00:08:44,000
+to fiber. So that and that's currently
+
+218
+00:08:41,200 --> 00:08:46,720
+the case at 1.4 4 million passes with a
+
+219
+00:08:44,000 --> 00:08:48,800
+long-term goal of being an 80% plus
+
+220
+00:08:46,720 --> 00:08:50,560
+fiberized company which means that we
+
+221
+00:08:48,800 --> 00:08:53,680
+will have more than two million passes
+
+222
+00:08:50,560 --> 00:08:56,080
+on fiber by the end of 2027 or somewhere
+
+223
+00:08:53,680 --> 00:08:59,680
+in the range of 2028.
+
+224
+00:08:56,080 --> 00:09:02,080
+Um that's our story on consumer fiber.
+
+225
+00:08:59,680 --> 00:09:04,720
+We also again as I mentioned have a very
+
+226
+00:09:02,080 --> 00:09:06,480
+deep and thriving commercial business
+
+227
+00:09:04,720 --> 00:09:08,480
+and have a very deep and thriving
+
+228
+00:09:06,480 --> 00:09:11,200
+carrier business. And this goes back to
+
+229
+00:09:08,480 --> 00:09:13,839
+our philosophy of if rural communities
+
+230
+00:09:11,200 --> 00:09:15,440
+need to thrive, we don't just take our
+
+231
+00:09:13,839 --> 00:09:18,080
+residential or our consumer business
+
+232
+00:09:15,440 --> 00:09:20,480
+there. We go out to small businesses, we
+
+233
+00:09:18,080 --> 00:09:22,720
+go to hospitals, municipalities,
+
+234
+00:09:20,480 --> 00:09:25,200
+schools, and we provide commercial
+
+235
+00:09:22,720 --> 00:09:27,760
+services along with carrier circuits.
+
+236
+00:09:25,200 --> 00:09:30,720
+And 80% of our fiber circuits are unique
+
+237
+00:09:27,760 --> 00:09:33,600
+in the towns that we serve. So with that
+
+238
+00:09:30,720 --> 00:09:36,480
+said, um
+
+239
+00:09:33,600 --> 00:09:39,680
+I'll talk about our evolution. Back in
+
+240
+00:09:36,480 --> 00:09:42,160
+2020, only 11% of our footprint was
+
+241
+00:09:39,680 --> 00:09:44,800
+covered in fiber. When we think we
+
+242
+00:09:42,160 --> 00:09:46,720
+launched Fidium Fiber as our fiber brand
+
+243
+00:09:44,800 --> 00:09:48,640
+in 2021
+
+244
+00:09:46,720 --> 00:09:50,480
+and we have a new we have an investor,
+
+245
+00:09:48,640 --> 00:09:53,120
+we had investors at the time. We were a
+
+246
+00:09:50,480 --> 00:09:57,120
+publicly traded company. In December of
+
+247
+00:09:53,120 --> 00:09:58,800
+2024, we uh we went private. So our
+
+248
+00:09:57,120 --> 00:10:01,600
+investor and our partner search light
+
+249
+00:09:58,800 --> 00:10:03,680
+capital um who they were a great partner
+
+250
+00:10:01,600 --> 00:10:06,080
+even when we were a public company but
+
+251
+00:10:03,680 --> 00:10:08,160
+since we've been private again as I
+
+252
+00:10:06,080 --> 00:10:10,320
+mentioned we've upgraded more than 50%
+
+253
+00:10:08,160 --> 00:10:14,640
+of our plant to fiber with the goal to
+
+254
+00:10:10,320 --> 00:10:15,760
+be at 80%. and or 80% plus. And when
+
+255
+00:10:14,640 --> 00:10:18,000
+when you really think about our
+
+256
+00:10:15,760 --> 00:10:21,040
+long-term vision, which again is very
+
+257
+00:10:18,000 --> 00:10:24,240
+much uh in play, we are going to have a
+
+258
+00:10:21,040 --> 00:10:25,920
+futurep proof uh infrastructure which is
+
+259
+00:10:24,240 --> 00:10:28,320
+not only complemented with fiber
+
+260
+00:10:25,920 --> 00:10:30,880
+technology but a seamless customer
+
+261
+00:10:28,320 --> 00:10:33,279
+experience. And we truly believe that we
+
+262
+00:10:30,880 --> 00:10:35,200
+have put customers now at the heart of
+
+263
+00:10:33,279 --> 00:10:37,440
+every single thing that we do. We've
+
+264
+00:10:35,200 --> 00:10:39,839
+digitized the customer experience. We've
+
+265
+00:10:37,440 --> 00:10:42,079
+simplified processes. We've rationalized
+
+266
+00:10:39,839 --> 00:10:44,880
+the product portfolio. All of that to
+
+267
+00:10:42,079 --> 00:10:48,880
+say we truly want to be a nextgen fiber
+
+268
+00:10:44,880 --> 00:10:51,839
+company and we're well on our way.
+
+269
+00:10:48,880 --> 00:10:54,560
+Um our strategy is very simple. It's
+
+270
+00:10:51,839 --> 00:10:56,720
+hard to execute the strategy, but when I
+
+271
+00:10:54,560 --> 00:10:59,519
+think about the three legs of the stool
+
+272
+00:10:56,720 --> 00:11:01,440
+on the strategy again as I mentioned,
+
+273
+00:10:59,519 --> 00:11:04,240
+number one, it's about having the
+
+274
+00:11:01,440 --> 00:11:06,160
+fastest and the most reliable network in
+
+275
+00:11:04,240 --> 00:11:07,519
+the markets that we serve. And again,
+
+276
+00:11:06,160 --> 00:11:09,600
+the markets that we serve are more
+
+277
+00:11:07,519 --> 00:11:11,200
+underserved than more unserved and
+
+278
+00:11:09,600 --> 00:11:13,360
+underserved.
+
+279
+00:11:11,200 --> 00:11:15,279
+We want to and we are delivering an
+
+280
+00:11:13,360 --> 00:11:17,920
+exceptional customer experience. And
+
+281
+00:11:15,279 --> 00:11:19,440
+that's just not that's not just um
+
+282
+00:11:17,920 --> 00:11:20,959
+talking to a customer care
+
+283
+00:11:19,440 --> 00:11:23,600
+representative or talking to a tech
+
+284
+00:11:20,959 --> 00:11:26,079
+support uh representative. It's really a
+
+285
+00:11:23,600 --> 00:11:28,320
+culture across the organization where we
+
+286
+00:11:26,079 --> 00:11:30,399
+are customer first. And that just means
+
+287
+00:11:28,320 --> 00:11:32,959
+we put the customer even in a legal
+
+288
+00:11:30,399 --> 00:11:34,320
+contract, even in a vendor contract. We
+
+289
+00:11:32,959 --> 00:11:36,880
+want to make sure we're always thinking
+
+290
+00:11:34,320 --> 00:11:38,640
+about the customer experience. And then
+
+291
+00:11:36,880 --> 00:11:40,880
+last but not the least, we have
+
+292
+00:11:38,640 --> 00:11:43,760
+significantly as a telco, we have
+
+293
+00:11:40,880 --> 00:11:46,160
+significantly simplified our operations.
+
+294
+00:11:43,760 --> 00:11:48,640
+And in in the operations, I specifically
+
+295
+00:11:46,160 --> 00:11:50,720
+I'm talking about people. We're hiring
+
+296
+00:11:48,640 --> 00:11:53,519
+people that bring value and that again
+
+297
+00:11:50,720 --> 00:11:55,519
+will enable this this u uh exceptional
+
+298
+00:11:53,519 --> 00:11:58,480
+customer experience. I'm talking about
+
+299
+00:11:55,519 --> 00:12:01,440
+processes dramatically simplifying them
+
+300
+00:11:58,480 --> 00:12:03,360
+and for both time um to serve the
+
+301
+00:12:01,440 --> 00:12:05,760
+customer and for cost to serve the
+
+302
+00:12:03,360 --> 00:12:07,519
+customer. And then I'm talking about um
+
+303
+00:12:05,760 --> 00:12:09,519
+uh products. We've simplified our
+
+304
+00:12:07,519 --> 00:12:11,680
+product portfolio. So we when we go into
+
+305
+00:12:09,519 --> 00:12:14,160
+a city or a town again we're going in
+
+306
+00:12:11,680 --> 00:12:16,720
+with a multi-prong and a multi
+
+307
+00:12:14,160 --> 00:12:19,200
+multicustomer approach. Residential
+
+308
+00:12:16,720 --> 00:12:21,760
+customers, small and medium businesses,
+
+309
+00:12:19,200 --> 00:12:23,360
+enterprise businesses and and and
+
+310
+00:12:21,760 --> 00:12:25,040
+customers who want their own dedicated
+
+311
+00:12:23,360 --> 00:12:27,120
+circuits. So we've simplified the
+
+312
+00:12:25,040 --> 00:12:29,200
+product portfolio to cater to all
+
+313
+00:12:27,120 --> 00:12:31,920
+different customer segments and to do it
+
+314
+00:12:29,200 --> 00:12:34,160
+expeditiously.
+
+315
+00:12:31,920 --> 00:12:35,760
+Um really when I think about when I
+
+316
+00:12:34,160 --> 00:12:38,320
+think about our strengths at
+
+317
+00:12:35,760 --> 00:12:41,040
+consolidated that we have built it comes
+
+318
+00:12:38,320 --> 00:12:43,200
+down to five things. We believe we have
+
+319
+00:12:41,040 --> 00:12:45,680
+a unique and natural asset and I'll talk
+
+320
+00:12:43,200 --> 00:12:47,440
+about that. We have a proven
+
+321
+00:12:45,680 --> 00:12:50,399
+construction engine and again as I
+
+322
+00:12:47,440 --> 00:12:51,839
+mentioned 1.4 4 million which is 54% of
+
+323
+00:12:50,399 --> 00:12:55,600
+our footprint is already covered in
+
+324
+00:12:51,839 --> 00:12:57,519
+fiber with 80% or higher being the goal.
+
+325
+00:12:55,600 --> 00:13:00,000
+Um we have a proven customer acquisition
+
+326
+00:12:57,519 --> 00:13:01,680
+engine. So this is an execution muscle
+
+327
+00:13:00,000 --> 00:13:04,000
+that we have built over the last two
+
+328
+00:13:01,680 --> 00:13:06,560
+years and it continues to get stronger
+
+329
+00:13:04,000 --> 00:13:07,600
+year-over-year. Um where I've talked
+
+330
+00:13:06,560 --> 00:13:09,440
+about the exceptional customer
+
+331
+00:13:07,600 --> 00:13:11,519
+experience and I'll I'll validate that
+
+332
+00:13:09,440 --> 00:13:13,760
+through some NPS scores. And then last
+
+333
+00:13:11,519 --> 00:13:16,160
+but not the least, again as I mentioned,
+
+334
+00:13:13,760 --> 00:13:18,880
+we truly, you know, are are overlaying
+
+335
+00:13:16,160 --> 00:13:20,880
+our strong consumer business with a very
+
+336
+00:13:18,880 --> 00:13:24,320
+very robust and thriving commercial and
+
+337
+00:13:20,880 --> 00:13:27,519
+carrier business. So when I think about
+
+338
+00:13:24,320 --> 00:13:30,160
+us having a unique and natural asset, we
+
+339
+00:13:27,519 --> 00:13:32,639
+70% of our fiber build is happening in
+
+340
+00:13:30,160 --> 00:13:36,160
+Northern New England and in Northern New
+
+341
+00:13:32,639 --> 00:13:38,160
+England 90% of our plant is aerial. With
+
+342
+00:13:36,160 --> 00:13:40,560
+the aerial plant and the fact that we
+
+343
+00:13:38,160 --> 00:13:43,120
+have joint ownership of these poles, we
+
+344
+00:13:40,560 --> 00:13:44,800
+have unencumbered access to these poles
+
+345
+00:13:43,120 --> 00:13:46,639
+and because of our commercial business
+
+346
+00:13:44,800 --> 00:13:48,639
+and our carrier business, we have a
+
+347
+00:13:46,639 --> 00:13:51,120
+large core dense fiber network which is
+
+348
+00:13:48,639 --> 00:13:52,959
+the middle mile network. So, not only do
+
+349
+00:13:51,120 --> 00:13:55,360
+we have aerial infrastructure and access
+
+350
+00:13:52,959 --> 00:13:57,519
+to our pools for our last mile network,
+
+351
+00:13:55,360 --> 00:13:59,600
+we also have a large core dense dense
+
+352
+00:13:57,519 --> 00:14:01,839
+network for our middle mile network. And
+
+353
+00:13:59,600 --> 00:14:04,320
+as a result, what that gives us is
+
+354
+00:14:01,839 --> 00:14:08,560
+predictability of speed to build and
+
+355
+00:14:04,320 --> 00:14:11,120
+cost to build. We could literally um we
+
+356
+00:14:08,560 --> 00:14:13,360
+could literally work with a town and
+
+357
+00:14:11,120 --> 00:14:15,040
+choose and decide to build the town and
+
+358
+00:14:13,360 --> 00:14:16,880
+actually have it built within four to
+
+359
+00:14:15,040 --> 00:14:19,760
+six months. And there's again this
+
+360
+00:14:16,880 --> 00:14:21,920
+predictability of speed and cost versus,
+
+361
+00:14:19,760 --> 00:14:23,279
+you know, typically for any for anybody
+
+362
+00:14:21,920 --> 00:14:24,639
+else to go and build that town, it would
+
+363
+00:14:23,279 --> 00:14:26,800
+historically take them anywhere in the
+
+364
+00:14:24,639 --> 00:14:29,440
+range of 12 to 18 months, especially for
+
+365
+00:14:26,800 --> 00:14:31,600
+an aerial plant. All of that to say, we
+
+366
+00:14:29,440 --> 00:14:33,760
+believe we give customers predictability
+
+367
+00:14:31,600 --> 00:14:35,519
+and we believe we can get into a town,
+
+368
+00:14:33,760 --> 00:14:38,399
+choose to build a town and build it fast
+
+369
+00:14:35,519 --> 00:14:40,800
+and build it very economically.
+
+370
+00:14:38,399 --> 00:14:43,040
+What that then gives us is a robust
+
+371
+00:14:40,800 --> 00:14:44,880
+fiber construction engine. And I think
+
+372
+00:14:43,040 --> 00:14:47,519
+the big thing to point out here on this
+
+373
+00:14:44,880 --> 00:14:51,680
+slide and my big takeaway in this slide
+
+374
+00:14:47,519 --> 00:14:55,600
+is if you look at what we built in 2022,
+
+375
+00:14:51,680 --> 00:14:58,000
+we built 400,000 passes fiber passes in
+
+376
+00:14:55,600 --> 00:15:00,000
+the second year of our fiber build. And
+
+377
+00:14:58,000 --> 00:15:02,480
+again, from my experience or my past
+
+378
+00:15:00,000 --> 00:15:04,560
+experience as a fiber overbuilder, it
+
+379
+00:15:02,480 --> 00:15:07,440
+takes a long time to build 400,000
+
+380
+00:15:04,560 --> 00:15:10,000
+passes in one given year. All of this to
+
+381
+00:15:07,440 --> 00:15:12,320
+prove that we have the capability, we
+
+382
+00:15:10,000 --> 00:15:14,720
+have the speed to build a lot of fiber
+
+383
+00:15:12,320 --> 00:15:16,480
+passes and we're going to continue to do
+
+384
+00:15:14,720 --> 00:15:18,720
+that. And as I mentioned at the
+
+385
+00:15:16,480 --> 00:15:20,000
+beginning of the presentation that 2
+
+386
+00:15:18,720 --> 00:15:22,880
+million, we're going to be a fiber
+
+387
+00:15:20,000 --> 00:15:24,880
+provider with two million passes um that
+
+388
+00:15:22,880 --> 00:15:27,839
+will be fiberized across our eight state
+
+389
+00:15:24,880 --> 00:15:29,440
+footprint with 70% of it in Northern New
+
+390
+00:15:27,839 --> 00:15:32,320
+England.
+
+391
+00:15:29,440 --> 00:15:34,560
+So, you know, the question is with
+
+392
+00:15:32,320 --> 00:15:36,000
+Northern New England, what have we done?
+
+393
+00:15:34,560 --> 00:15:37,920
+And when I think about Northern New
+
+394
+00:15:36,000 --> 00:15:40,959
+England, we have part we have
+
+395
+00:15:37,920 --> 00:15:43,360
+specifically partnered with the Coods in
+
+396
+00:15:40,959 --> 00:15:45,680
+Vermont. And we've partnered with the
+
+397
+00:15:43,360 --> 00:15:47,600
+city, the c the county, and the state
+
+398
+00:15:45,680 --> 00:15:49,839
+broadband office in Maine and New
+
+399
+00:15:47,600 --> 00:15:52,320
+Hampshire. And again, we have taken
+
+400
+00:15:49,839 --> 00:15:54,560
+service to these unserved to unserved
+
+401
+00:15:52,320 --> 00:15:56,560
+and underserved communities where
+
+402
+00:15:54,560 --> 00:15:59,199
+typically fiber infrastructure would be
+
+403
+00:15:56,560 --> 00:16:01,040
+hard to take um and take uh uh
+
+404
+00:15:59,199 --> 00:16:03,040
+infrastructure to. We have worked with
+
+405
+00:16:01,040 --> 00:16:04,800
+those city and state broadband offices
+
+406
+00:16:03,040 --> 00:16:07,839
+to take our infrastructure to these
+
+407
+00:16:04,800 --> 00:16:11,120
+towns. And I'm incredibly proud of this.
+
+408
+00:16:07,839 --> 00:16:14,000
+The reason being is I truly believe that
+
+409
+00:16:11,120 --> 00:16:16,000
+rural communities are compared to the
+
+410
+00:16:14,000 --> 00:16:18,399
+larger urban centers are considered the
+
+411
+00:16:16,000 --> 00:16:19,839
+underdog. And I truly believe when I
+
+412
+00:16:18,399 --> 00:16:22,000
+think about the best stories and the
+
+413
+00:16:19,839 --> 00:16:24,959
+most inspiring stories when it comes to
+
+414
+00:16:22,000 --> 00:16:27,360
+communities or comes to sports or teams,
+
+415
+00:16:24,959 --> 00:16:29,120
+it all starts with being the underdog.
+
+416
+00:16:27,360 --> 00:16:31,040
+Point being is we're providing critical
+
+417
+00:16:29,120 --> 00:16:32,320
+infrastructure. We're doing it in
+
+418
+00:16:31,040 --> 00:16:34,720
+conjunction with these state and
+
+419
+00:16:32,320 --> 00:16:36,079
+broadband offices. And we're incredibly
+
+420
+00:16:34,720 --> 00:16:38,399
+we're incredibly proud to be the
+
+421
+00:16:36,079 --> 00:16:40,480
+provider of choice in these towns where
+
+422
+00:16:38,399 --> 00:16:41,920
+people don't need to relocate to biggest
+
+423
+00:16:40,480 --> 00:16:44,079
+to bigger centers to bigger urban
+
+424
+00:16:41,920 --> 00:16:46,160
+centers to realize what I believe is
+
+425
+00:16:44,079 --> 00:16:48,480
+their American dream, which is to get
+
+426
+00:16:46,160 --> 00:16:51,199
+their dream job, to get a quality
+
+427
+00:16:48,480 --> 00:16:53,519
+education, to get access to health care,
+
+428
+00:16:51,199 --> 00:16:55,199
+to get opportunity. they don't have to
+
+429
+00:16:53,519 --> 00:16:57,120
+move to larger towns because of the
+
+430
+00:16:55,199 --> 00:16:59,600
+fiber infrastructure that we provide.
+
+431
+00:16:57,120 --> 00:17:01,600
+And I want to sincerely thank the states
+
+432
+00:16:59,600 --> 00:17:02,800
+that have partnered with us and the
+
+433
+00:17:01,600 --> 00:17:04,559
+cities and the counties that have
+
+434
+00:17:02,800 --> 00:17:06,799
+partnered with us to provide this
+
+435
+00:17:04,559 --> 00:17:09,600
+critical infrastructure to these rural
+
+436
+00:17:06,799 --> 00:17:11,839
+communities.
+
+437
+00:17:09,600 --> 00:17:14,319
+So you know next up is providing
+
+438
+00:17:11,839 --> 00:17:16,240
+critical infrastructure is one thing but
+
+439
+00:17:14,319 --> 00:17:19,199
+then providing an exceptional customer
+
+440
+00:17:16,240 --> 00:17:20,880
+experience is is another thing and this
+
+441
+00:17:19,199 --> 00:17:23,280
+is the execution muscle that we have
+
+442
+00:17:20,880 --> 00:17:25,760
+built. you know, our NPS, our combined
+
+443
+00:17:23,280 --> 00:17:28,720
+NPS score across all our customer
+
+444
+00:17:25,760 --> 00:17:31,200
+interactions is at a 45. That is
+
+445
+00:17:28,720 --> 00:17:33,679
+dramatically higher than the cable goes.
+
+446
+00:17:31,200 --> 00:17:35,919
+And quite candidly, I believe that we're
+
+447
+00:17:33,679 --> 00:17:40,080
+just scratching the surface. I truly
+
+448
+00:17:35,919 --> 00:17:42,640
+believe that our goal is to be at 70 um
+
+449
+00:17:40,080 --> 00:17:44,080
+for NPS and that is very possible with
+
+450
+00:17:42,640 --> 00:17:45,919
+some of the initiatives that we are
+
+451
+00:17:44,080 --> 00:17:48,880
+undertaking. We have something called
+
+452
+00:17:45,919 --> 00:17:51,039
+the Fidia promise. It's all about making
+
+453
+00:17:48,880 --> 00:17:53,520
+sure that you can service customers
+
+454
+00:17:51,039 --> 00:17:55,760
+expeditious expeditiously on installs
+
+455
+00:17:53,520 --> 00:17:57,919
+and on repairs. It's making sure that
+
+456
+00:17:55,760 --> 00:17:59,919
+when you provide service to customers,
+
+457
+00:17:57,919 --> 00:18:02,000
+that service is certified by a
+
+458
+00:17:59,919 --> 00:18:04,559
+technician. It's really making sure that
+
+459
+00:18:02,000 --> 00:18:06,880
+your IT stack and your digital your your
+
+460
+00:18:04,559 --> 00:18:10,240
+experience is fully digitized. So when
+
+461
+00:18:06,880 --> 00:18:12,320
+customers call you for anything, there's
+
+462
+00:18:10,240 --> 00:18:13,919
+a single pane of glass where you know
+
+463
+00:18:12,320 --> 00:18:15,919
+the records are kept in one place and
+
+464
+00:18:13,919 --> 00:18:18,400
+they have immediate access to everything
+
+465
+00:18:15,919 --> 00:18:20,000
+that they need. All of that to say, we
+
+466
+00:18:18,400 --> 00:18:21,919
+truly believe that from an NPS
+
+467
+00:18:20,000 --> 00:18:23,840
+standpoint, we're already beating the
+
+468
+00:18:21,919 --> 00:18:27,400
+competition and we believe we're
+
+469
+00:18:23,840 --> 00:18:27,400
+scratching the surface.
+
+470
+00:18:27,440 --> 00:18:31,760
+I'm sorry. Um, so we talked a lot about
+
+471
+00:18:30,400 --> 00:18:34,160
+we talked a lot about the consumer
+
+472
+00:18:31,760 --> 00:18:36,480
+business, NPS. I've talked about how our
+
+473
+00:18:34,160 --> 00:18:38,320
+commercial and our carrier business is a
+
+474
+00:18:36,480 --> 00:18:40,559
+really strong overlay. In fact, if
+
+475
+00:18:38,320 --> 00:18:43,039
+anything, consolidated actually built
+
+476
+00:18:40,559 --> 00:18:44,880
+that business on commercial. So what you
+
+477
+00:18:43,039 --> 00:18:47,280
+will see over here and as I mentioned at
+
+478
+00:18:44,880 --> 00:18:49,679
+the beginning, 80% of our routes are
+
+479
+00:18:47,280 --> 00:18:51,440
+unique and when you when I on the
+
+480
+00:18:49,679 --> 00:18:53,360
+carrier business and then when I think
+
+481
+00:18:51,440 --> 00:18:55,200
+about our commercial business, the
+
+482
+00:18:53,360 --> 00:18:58,240
+average lifespan of a commercial
+
+483
+00:18:55,200 --> 00:19:00,799
+customer in our footprint is 16 years.
+
+484
+00:18:58,240 --> 00:19:02,160
+So all of this to say, we've got a
+
+485
+00:19:00,799 --> 00:19:04,240
+thriving commercial and carrier
+
+486
+00:19:02,160 --> 00:19:06,000
+business. We take our commercial and
+
+487
+00:19:04,240 --> 00:19:08,080
+carrier business into these communities
+
+488
+00:19:06,000 --> 00:19:09,919
+as we launch consumer. So we have a
+
+489
+00:19:08,080 --> 00:19:11,840
+multi-prong approach and we're doing
+
+490
+00:19:09,919 --> 00:19:13,360
+this for the benefit of the community
+
+491
+00:19:11,840 --> 00:19:14,880
+and obviously we're doing this for the
+
+492
+00:19:13,360 --> 00:19:18,360
+benefit of the states that we provide
+
+493
+00:19:14,880 --> 00:19:18,360
+our service in.
+
+494
+00:19:18,720 --> 00:19:23,760
+Um, and then the last thing I'll say is
+
+495
+00:19:21,039 --> 00:19:26,320
+it's great to be recognized since we've
+
+496
+00:19:23,760 --> 00:19:30,400
+un since we've gone on this mission back
+
+497
+00:19:26,320 --> 00:19:33,280
+in 2021, we have been recognized by uh
+
+498
+00:19:30,400 --> 00:19:35,360
+entities or institutions such as CNET
+
+499
+00:19:33,280 --> 00:19:37,120
+that have given us awards and accolades
+
+500
+00:19:35,360 --> 00:19:38,559
+for the service that we've provided in
+
+501
+00:19:37,120 --> 00:19:40,320
+states like New Hampshire and Maine.
+
+502
+00:19:38,559 --> 00:19:43,440
+Again, going back to to Northern New
+
+503
+00:19:40,320 --> 00:19:45,440
+England, we've been recognized by uh
+
+504
+00:19:43,440 --> 00:19:48,080
+we've been recognized by the US
+
+505
+00:19:45,440 --> 00:19:50,080
+Broadband Office um again for these
+
+506
+00:19:48,080 --> 00:19:51,840
+public private partnerships. So, so far
+
+507
+00:19:50,080 --> 00:19:53,919
+in the last four years, we have
+
+508
+00:19:51,840 --> 00:19:56,880
+partnered with these states um and
+
+509
+00:19:53,919 --> 00:19:59,840
+received up to $225 million in subsidy
+
+510
+00:19:56,880 --> 00:20:01,280
+to go and take um our service into these
+
+511
+00:19:59,840 --> 00:20:02,320
+unserved and underserved communities.
+
+512
+00:20:01,280 --> 00:20:05,039
+And we've been, you know, given
+
+513
+00:20:02,320 --> 00:20:07,200
+accolades by the states. We've also been
+
+514
+00:20:05,039 --> 00:20:09,600
+uh you know many of our employees or our
+
+515
+00:20:07,200 --> 00:20:11,520
+associates have also been recognized um
+
+516
+00:20:09,600 --> 00:20:13,280
+for outstanding awards for service that
+
+517
+00:20:11,520 --> 00:20:14,720
+they've done in their communities such
+
+518
+00:20:13,280 --> 00:20:17,520
+as the award that you can see over there
+
+519
+00:20:14,720 --> 00:20:20,000
+for outstanding women in business. Um
+
+520
+00:20:17,520 --> 00:20:22,400
+all of this to say um we're not done
+
+521
+00:20:20,000 --> 00:20:24,080
+yet. We have a long way to go but we're
+
+522
+00:20:22,400 --> 00:20:25,679
+well on we're well on our way on this
+
+523
+00:20:24,080 --> 00:20:27,440
+journey to provide service to
+
+524
+00:20:25,679 --> 00:20:30,240
+underserved communities in Northern New
+
+525
+00:20:27,440 --> 00:20:33,200
+England.
+
+526
+00:20:30,240 --> 00:20:35,520
+Um, the last thing I'll say is clearly
+
+527
+00:20:33,200 --> 00:20:37,520
+our mission is to provide service to
+
+528
+00:20:35,520 --> 00:20:39,840
+unserved and underserved communities and
+
+529
+00:20:37,520 --> 00:20:42,799
+enrich how they live, work, and thrive
+
+530
+00:20:39,840 --> 00:20:45,440
+in their communities. And our vision is
+
+531
+00:20:42,799 --> 00:20:48,159
+to be America's favorite fiber provider.
+
+532
+00:20:45,440 --> 00:20:50,240
+And that vision can only be realized if
+
+533
+00:20:48,159 --> 00:20:52,000
+not not only by providing our service,
+
+534
+00:20:50,240 --> 00:20:54,240
+but again, it goes back to the customer
+
+535
+00:20:52,000 --> 00:20:56,320
+experience and really making sure that
+
+536
+00:20:54,240 --> 00:20:58,720
+we can delight our customers across
+
+537
+00:20:56,320 --> 00:21:01,440
+every interaction. So we clearly have a
+
+538
+00:20:58,720 --> 00:21:03,280
+mission we which we're executing. We
+
+539
+00:21:01,440 --> 00:21:05,280
+clearly have our vision which we're
+
+540
+00:21:03,280 --> 00:21:07,039
+working towards. Um and I'm just
+
+541
+00:21:05,280 --> 00:21:08,960
+incredibly fortunate and excited, Gary,
+
+542
+00:21:07,039 --> 00:21:10,960
+to be presenting our story at
+
+543
+00:21:08,960 --> 00:21:14,520
+Consolidated Infidium with the rest of
+
+544
+00:21:10,960 --> 00:21:14,520
+the fiber community.
+
+545
+00:21:14,960 --> 00:21:21,200
+>> Well, G um I mean you had tremendous
+
+546
+00:21:18,240 --> 00:21:24,159
+success at Metronet and again it looks
+
+547
+00:21:21,200 --> 00:21:26,240
+like Consolidated is just rocketing. Um
+
+548
+00:21:24,159 --> 00:21:27,840
+can you talk a little bit on your slide
+
+549
+00:21:26,240 --> 00:21:30,000
+six you had talked about you had
+
+550
+00:21:27,840 --> 00:21:33,760
+fedinium states and then some operating
+
+551
+00:21:30,000 --> 00:21:35,760
+states. What's the difference?
+
+552
+00:21:33,760 --> 00:21:38,720
+>> Uh great question. I'll pull that back
+
+553
+00:21:35,760 --> 00:21:40,880
+to the slide. Give me one sec. Um so our
+
+554
+00:21:38,720 --> 00:21:42,799
+faded states Gary are the ones in green
+
+555
+00:21:40,880 --> 00:21:44,400
+and that's primarily where we are
+
+556
+00:21:42,799 --> 00:21:46,320
+converting a majority of our or
+
+557
+00:21:44,400 --> 00:21:48,880
+upgrading a majority of our copper plant
+
+558
+00:21:46,320 --> 00:21:51,120
+to fiber. the rest of the operating
+
+559
+00:21:48,880 --> 00:21:54,000
+states. We we have some fiber in those
+
+560
+00:21:51,120 --> 00:21:57,200
+states, but they're primarily our copper
+
+561
+00:21:54,000 --> 00:21:58,640
+states and our voice our parts are
+
+562
+00:21:57,200 --> 00:22:00,480
+states where we have parts of voice
+
+563
+00:21:58,640 --> 00:22:02,480
+service which we're still fully which
+
+564
+00:22:00,480 --> 00:22:03,600
+we're absolutely fully committed to. So
+
+565
+00:22:02,480 --> 00:22:05,280
+that's the difference between the
+
+566
+00:22:03,600 --> 00:22:07,679
+operating states which is primarily
+
+567
+00:22:05,280 --> 00:22:09,039
+copper and parts versus the fiber states
+
+568
+00:22:07,679 --> 00:22:11,039
+where we're converting most of our
+
+569
+00:22:09,039 --> 00:22:13,039
+copper plant to fiber.
+
+570
+00:22:11,039 --> 00:22:15,200
+So, do you see in the future that those
+
+571
+00:22:13,039 --> 00:22:17,360
+would become Fidium states as well or
+
+572
+00:22:15,200 --> 00:22:21,360
+how do you see those?
+
+573
+00:22:17,360 --> 00:22:23,120
+>> Um, we're evaluating that today. Um,
+
+574
+00:22:21,360 --> 00:22:24,960
+Gary, we're not, you know, I can't
+
+575
+00:22:23,120 --> 00:22:27,440
+commit to that today. We're evaluating
+
+576
+00:22:24,960 --> 00:22:30,080
+that. Our goal is, you know, we clearly
+
+577
+00:22:27,440 --> 00:22:32,480
+have an opportunity to convert 2 million
+
+578
+00:22:30,080 --> 00:22:34,799
+of our 2.6 million in the states
+
+579
+00:22:32,480 --> 00:22:36,720
+highlighted in green. And then once we
+
+580
+00:22:34,799 --> 00:22:38,400
+get to and and we've evaluated that
+
+581
+00:22:36,720 --> 00:22:40,799
+based on the opportunity, based on our
+
+582
+00:22:38,400 --> 00:22:42,799
+partnership with the state um broadband
+
+583
+00:22:40,799 --> 00:22:44,880
+offices and with the lead opportunity
+
+584
+00:22:42,799 --> 00:22:46,080
+that's ahead of us also and then once
+
+585
+00:22:44,880 --> 00:22:48,320
+we're once we're done with that
+
+586
+00:22:46,080 --> 00:22:50,000
+evaluation then we'll get to the states
+
+587
+00:22:48,320 --> 00:22:53,120
+and blue.
+
+588
+00:22:50,000 --> 00:22:56,480
+>> So search light um that's a Jeep pie
+
+589
+00:22:53,120 --> 00:22:59,840
+right back before he went um back into
+
+590
+00:22:56,480 --> 00:23:01,440
+uh the association business. But um so
+
+591
+00:22:59,840 --> 00:23:04,880
+what was the motivation to take
+
+592
+00:23:01,440 --> 00:23:08,159
+consolidated private?
+
+593
+00:23:04,880 --> 00:23:10,799
+>> Um so a couple of different things.
+
+594
+00:23:08,159 --> 00:23:12,720
+Number one is just a simp number one is
+
+595
+00:23:10,799 --> 00:23:15,520
+uh we already search light was already
+
+596
+00:23:12,720 --> 00:23:18,400
+they already owned 35% when we were a
+
+597
+00:23:15,520 --> 00:23:20,320
+publicly traded company they owned 35%
+
+598
+00:23:18,400 --> 00:23:23,760
+of our shares and again as I mentioned
+
+599
+00:23:20,320 --> 00:23:26,640
+since 2021 and they were a great partner
+
+600
+00:23:23,760 --> 00:23:29,280
+uh not just in terms of capital infusion
+
+601
+00:23:26,640 --> 00:23:31,039
+but also in terms of expertise they've
+
+602
+00:23:29,280 --> 00:23:33,280
+got they have great you know uh they
+
+603
+00:23:31,039 --> 00:23:35,360
+have great financial partners and great
+
+604
+00:23:33,280 --> 00:23:37,120
+financial expertise and great operating
+
+605
+00:23:35,360 --> 00:23:38,159
+expertise also through their operating
+
+606
+00:23:37,120 --> 00:23:40,400
+partners
+
+607
+00:23:38,159 --> 00:23:42,159
+So we gained a lot of insight and a lot
+
+608
+00:23:40,400 --> 00:23:44,880
+of knowledge from them and we were
+
+609
+00:23:42,159 --> 00:23:47,440
+executing our our business um you know
+
+610
+00:23:44,880 --> 00:23:50,240
+uh planning strategically planning with
+
+611
+00:23:47,440 --> 00:23:52,640
+them. Um we wanted to accelerate our
+
+612
+00:23:50,240 --> 00:23:54,640
+fiber expansion into the states that you
+
+613
+00:23:52,640 --> 00:23:56,799
+know we've referenced and talked about
+
+614
+00:23:54,640 --> 00:23:59,440
+and we we believe that with a simplified
+
+615
+00:23:56,799 --> 00:24:00,799
+capital structure being private um it
+
+616
+00:23:59,440 --> 00:24:04,559
+would really accel it would help us
+
+617
+00:24:00,799 --> 00:24:06,080
+accelerate um the fiber expansion and
+
+618
+00:24:04,559 --> 00:24:07,840
+then since we've been private so it was
+
+619
+00:24:06,080 --> 00:24:10,320
+really about a simplifying the capital
+
+620
+00:24:07,840 --> 00:24:11,760
+structure b is the operating experience
+
+621
+00:24:10,320 --> 00:24:13,840
+that they were also bringing to the
+
+622
+00:24:11,760 --> 00:24:16,000
+table and we wanted more of that and
+
+623
+00:24:13,840 --> 00:24:18,559
+then c is you know since we've gone
+
+624
+00:24:16,000 --> 00:24:21,120
+private we've already seen the benefits
+
+625
+00:24:18,559 --> 00:24:23,679
+of being a private company where you
+
+626
+00:24:21,120 --> 00:24:27,520
+know we've u uh we've gone through a
+
+627
+00:24:23,679 --> 00:24:29,120
+round of ABS um uh funding and had a
+
+628
+00:24:27,520 --> 00:24:30,799
+very successful outcome back in May
+
+629
+00:24:29,120 --> 00:24:33,279
+which is again further helping us
+
+630
+00:24:30,799 --> 00:24:35,279
+accelerate our fiber expansion um and
+
+631
+00:24:33,279 --> 00:24:36,799
+you know candidly it was just drawing a
+
+632
+00:24:35,279 --> 00:24:38,320
+more deeper partnership with search
+
+633
+00:24:36,799 --> 00:24:40,960
+light who we believed again from the
+
+634
+00:24:38,320 --> 00:24:42,640
+first place back in 2021 was already a
+
+635
+00:24:40,960 --> 00:24:44,400
+great partner
+
+636
+00:24:42,640 --> 00:24:47,600
+>> so you know you and I have discussed
+
+637
+00:24:44,400 --> 00:24:49,520
+that um the private equity
+
+638
+00:24:47,600 --> 00:24:52,480
+It's really a robust environment for
+
+639
+00:24:49,520 --> 00:24:54,480
+private equity and you know private
+
+640
+00:24:52,480 --> 00:24:56,960
+equity's raised more money in the first
+
+641
+00:24:54,480 --> 00:24:59,760
+half of 2025 than all of last year for
+
+642
+00:24:56,960 --> 00:25:01,840
+broadband infrastructure. So why is
+
+643
+00:24:59,760 --> 00:25:04,559
+investing in fiber so attractive to
+
+644
+00:25:01,840 --> 00:25:06,159
+private equity?
+
+645
+00:25:04,559 --> 00:25:09,440
+>> Yeah, I think you know I think it comes
+
+646
+00:25:06,159 --> 00:25:11,360
+down to um I mean I can't speak for the
+
+647
+00:25:09,440 --> 00:25:14,559
+I can't speak for the other PE firms out
+
+648
+00:25:11,360 --> 00:25:16,799
+there. Um I think it is a a u I think
+
+649
+00:25:14,559 --> 00:25:18,799
+it's an attractive investment back again
+
+650
+00:25:16,799 --> 00:25:21,120
+going back to my days at Metronet now
+
+651
+00:25:18,799 --> 00:25:23,600
+obviously it's at um consolidated
+
+652
+00:25:21,120 --> 00:25:25,600
+infidium I think it's it's attractive
+
+653
+00:25:23,600 --> 00:25:28,240
+because you're you know your cost of cap
+
+654
+00:25:25,600 --> 00:25:30,400
+based on your cost of capital and then
+
+655
+00:25:28,240 --> 00:25:32,799
+the fiber deployment and the you know
+
+656
+00:25:30,400 --> 00:25:34,080
+the free cash flow that you can gain and
+
+657
+00:25:32,799 --> 00:25:35,279
+you know more more so the customer
+
+658
+00:25:34,080 --> 00:25:37,120
+benefit that you can provide and then
+
+659
+00:25:35,279 --> 00:25:38,400
+the free cash flow that you can gain I
+
+660
+00:25:37,120 --> 00:25:41,279
+think there's obviously margin over
+
+661
+00:25:38,400 --> 00:25:43,679
+there for the for the PE firms uh but
+
+662
+00:25:41,279 --> 00:25:46,640
+putting The financial piece aside, I
+
+663
+00:25:43,679 --> 00:25:48,880
+think it's it's really about, you know,
+
+664
+00:25:46,640 --> 00:25:50,559
+a providing critical infrastructure. It
+
+665
+00:25:48,880 --> 00:25:52,320
+goes back to the mission and that's what
+
+666
+00:25:50,559 --> 00:25:55,120
+really drew me in the first place to
+
+667
+00:25:52,320 --> 00:25:58,000
+search light and to consolidate it uh
+
+668
+00:25:55,120 --> 00:25:59,520
+back in 2023 which is they were very
+
+669
+00:25:58,000 --> 00:26:01,200
+missionoriented
+
+670
+00:25:59,520 --> 00:26:03,440
+and I believe that when you have a PE
+
+671
+00:26:01,200 --> 00:26:05,840
+firm that is thinking about financial
+
+672
+00:26:03,440 --> 00:26:07,679
+returns of course but is also thinking
+
+673
+00:26:05,840 --> 00:26:09,840
+about the mission which is providing
+
+674
+00:26:07,679 --> 00:26:11,679
+critical infrastructure to unserved and
+
+675
+00:26:09,840 --> 00:26:14,559
+underserved communities and we're very
+
+676
+00:26:11,679 --> 00:26:17,440
+specific uh and very targeted about who
+
+677
+00:26:14,559 --> 00:26:20,240
+we want to serve and then number two is
+
+678
+00:26:17,440 --> 00:26:22,799
+outside in addition to the mission, they
+
+679
+00:26:20,240 --> 00:26:24,559
+really focus on the customer experience.
+
+680
+00:26:22,799 --> 00:26:25,760
+And I think that when you think about
+
+681
+00:26:24,559 --> 00:26:28,080
+when you when we think about the
+
+682
+00:26:25,760 --> 00:26:30,640
+industry, we're all focusing on fiber,
+
+683
+00:26:28,080 --> 00:26:32,400
+which is great, but then there's also a
+
+684
+00:26:30,640 --> 00:26:34,080
+fair amount of customer fatigue in terms
+
+685
+00:26:32,400 --> 00:26:37,760
+of the experience that customers have
+
+686
+00:26:34,080 --> 00:26:39,760
+with, you know, um uh the incumbents. So
+
+687
+00:26:37,760 --> 00:26:41,440
+when you when you find when I found a PE
+
+688
+00:26:39,760 --> 00:26:43,279
+firm like search light that is focusing
+
+689
+00:26:41,440 --> 00:26:45,120
+on obviously the financial returns as I
+
+690
+00:26:43,279 --> 00:26:46,559
+mentioned but is more so focusing on the
+
+691
+00:26:45,120 --> 00:26:49,520
+mission of providing critical
+
+692
+00:26:46,559 --> 00:26:51,679
+infrastructure and then focusing on the
+
+693
+00:26:49,520 --> 00:26:53,520
+vision of being the best provider from a
+
+694
+00:26:51,679 --> 00:26:55,679
+customer experience standpoint. I think
+
+695
+00:26:53,520 --> 00:26:57,360
+that's what makes you know PE firms
+
+696
+00:26:55,679 --> 00:26:59,360
+really thrive and that's what's making
+
+697
+00:26:57,360 --> 00:27:00,720
+us with search like really thrive as
+
+698
+00:26:59,360 --> 00:27:02,880
+partners.
+
+699
+00:27:00,720 --> 00:27:05,200
+>> Yeah I mean search light great partner.
+
+700
+00:27:02,880 --> 00:27:07,200
+Um so it also you know we are starting
+
+701
+00:27:05,200 --> 00:27:08,880
+to see the beginning of a market
+
+702
+00:27:07,200 --> 00:27:12,000
+consolidation cycle in the fiber
+
+703
+00:27:08,880 --> 00:27:15,200
+industry. Um how does that fit into your
+
+704
+00:27:12,000 --> 00:27:17,679
+market expansion strategy?
+
+705
+00:27:15,200 --> 00:27:19,440
+>> We are um the good news is we're fully
+
+706
+00:27:17,679 --> 00:27:22,559
+we're fully committed to our you know
+
+707
+00:27:19,440 --> 00:27:24,880
+80% fiberization plan um and we're and
+
+708
+00:27:22,559 --> 00:27:27,440
+we're well funded for that um through
+
+709
+00:27:24,880 --> 00:27:29,440
+both debt and equity. Um so that's
+
+710
+00:27:27,440 --> 00:27:32,400
+obviously good news. Anything that we do
+
+711
+00:27:29,440 --> 00:27:35,440
+on on M&A will be incremental. So in
+
+712
+00:27:32,400 --> 00:27:38,000
+other words, if we can get to 90% um
+
+713
+00:27:35,440 --> 00:27:40,159
+fiber through M&A, um we'll be fully
+
+714
+00:27:38,000 --> 00:27:42,400
+committed to do so. It has to make
+
+715
+00:27:40,159 --> 00:27:45,120
+stretch. It has to make sense for us
+
+716
+00:27:42,400 --> 00:27:46,559
+strategically any M&A. In other words,
+
+717
+00:27:45,120 --> 00:27:48,960
+you know, we have to be able to gain
+
+718
+00:27:46,559 --> 00:27:50,240
+operating leverage has to be contiguous
+
+719
+00:27:48,960 --> 00:27:51,840
+with our foot should be hopefully
+
+720
+00:27:50,240 --> 00:27:54,559
+contiguous with our footprint. We have
+
+721
+00:27:51,840 --> 00:27:56,480
+operating leverage. We have labor we we
+
+722
+00:27:54,559 --> 00:27:59,039
+can gain better labor utilization,
+
+723
+00:27:56,480 --> 00:28:00,559
+better marketing scale. um if it makes
+
+724
+00:27:59,039 --> 00:28:02,640
+sense for us, I think we'll definitely
+
+725
+00:28:00,559 --> 00:28:04,720
+entertain that. Um but at the moment,
+
+726
+00:28:02,640 --> 00:28:08,159
+we're fully committed to our 80% fiber
+
+727
+00:28:04,720 --> 00:28:11,120
+fiber plan that does not um include any
+
+728
+00:28:08,159 --> 00:28:13,120
+M&A. Any M&A in the future would be um
+
+729
+00:28:11,120 --> 00:28:15,360
+would be incremental to our plan.
+
+730
+00:28:13,120 --> 00:28:20,799
+>> So you mentioned free cash flow. So,
+
+731
+00:28:15,360 --> 00:28:23,360
+with the uh one big beautiful bill act,
+
+732
+00:28:20,799 --> 00:28:25,600
+the 100% bonus depreciation,
+
+733
+00:28:23,360 --> 00:28:28,799
+um that's going to free up a lot of uh
+
+734
+00:28:25,600 --> 00:28:30,480
+free cash flow for you guys. Is that So,
+
+735
+00:28:28,799 --> 00:28:33,520
+how do you are you going to be putting
+
+736
+00:28:30,480 --> 00:28:35,520
+um 15 to 20% of that back into fiber
+
+737
+00:28:33,520 --> 00:28:38,240
+investment or how do you see that?
+
+738
+00:28:35,520 --> 00:28:41,279
+>> We we absolutely are. For for us, this
+
+739
+00:28:38,240 --> 00:28:44,640
+is all about the flywheel. We want to be
+
+740
+00:28:41,279 --> 00:28:47,279
+able to reinvest all our proceeds into
+
+741
+00:28:44,640 --> 00:28:49,520
+the fiber build. So we will invest our
+
+742
+00:28:47,279 --> 00:28:52,000
+proceeds back into fiber build back into
+
+743
+00:28:49,520 --> 00:28:54,399
+enabling a better customer experience.
+
+744
+00:28:52,000 --> 00:28:56,399
+And number three is uh enabling a much
+
+745
+00:28:54,399 --> 00:28:57,919
+better employee experience within the
+
+746
+00:28:56,399 --> 00:29:00,080
+company. Those are the three things that
+
+747
+00:28:57,919 --> 00:29:02,080
+we're deeply investing in.
+
+748
+00:29:00,080 --> 00:29:03,600
+>> All we got a bunch of audience
+
+749
+00:29:02,080 --> 00:29:06,159
+questions. I'm going to start with our
+
+750
+00:29:03,600 --> 00:29:08,880
+good friend Christine. Your plans are to
+
+751
+00:29:06,159 --> 00:29:11,279
+reach 80% of your locations with fiber.
+
+752
+00:29:08,880 --> 00:29:12,880
+What are you planning for the last 20%
+
+753
+00:29:11,279 --> 00:29:14,480
+and how are you going to deal with
+
+754
+00:29:12,880 --> 00:29:16,240
+carrier of last resort requirements for
+
+755
+00:29:14,480 --> 00:29:19,120
+those 20%.
+
+756
+00:29:16,240 --> 00:29:21,039
+>> Sure. So we we will continue to provide
+
+757
+00:29:19,120 --> 00:29:24,159
+our copper infrastructure for the
+
+758
+00:29:21,039 --> 00:29:26,799
+remaining 20%. Uh and the reason why we
+
+759
+00:29:24,159 --> 00:29:28,720
+can't uh the reason why we're you know
+
+760
+00:29:26,799 --> 00:29:30,240
+the reason why we've chosen 80% is
+
+761
+00:29:28,720 --> 00:29:32,399
+because we have looked at our build
+
+762
+00:29:30,240 --> 00:29:35,039
+across these eight states and we've
+
+763
+00:29:32,399 --> 00:29:37,440
+selected how we can cover how we can
+
+764
+00:29:35,039 --> 00:29:40,640
+ubiquitously take our coverage to this
+
+765
+00:29:37,440 --> 00:29:42,320
+80%. The last 20% become somewhat cost
+
+766
+00:29:40,640 --> 00:29:43,520
+prohibitive and that's where we're
+
+767
+00:29:42,320 --> 00:29:45,840
+working with the state broadband
+
+768
+00:29:43,520 --> 00:29:47,520
+offices. We're working on bead and
+
+769
+00:29:45,840 --> 00:29:49,679
+different opportunities to still be able
+
+770
+00:29:47,520 --> 00:29:52,000
+to take fiber if we can
+
+771
+00:29:49,679 --> 00:29:53,600
+opportunistically to the other 20%. But
+
+772
+00:29:52,000 --> 00:29:56,720
+our goal is to continue to service the
+
+773
+00:29:53,600 --> 00:29:59,279
+other 20% with our carbon network.
+
+774
+00:29:56,720 --> 00:30:01,840
+>> And then uh clarification, did you say
+
+775
+00:29:59,279 --> 00:30:03,200
+225 million in subsidies over five
+
+776
+00:30:01,840 --> 00:30:05,679
+years?
+
+777
+00:30:03,200 --> 00:30:06,960
+>> Over the last five years? Yes. Yes.
+
+778
+00:30:05,679 --> 00:30:08,960
+>> All right. Now, here's another good
+
+779
+00:30:06,960 --> 00:30:10,720
+question. Uh how are you managing your
+
+780
+00:30:08,960 --> 00:30:12,080
+workforce demand specifically with
+
+781
+00:30:10,720 --> 00:30:14,799
+engineering instruction given the
+
+782
+00:30:12,080 --> 00:30:16,880
+increased need for these resources? What
+
+783
+00:30:14,799 --> 00:30:18,799
+have you accomplished? And the number of
+
+784
+00:30:16,880 --> 00:30:21,200
+passings per year is well, what you've
+
+785
+00:30:18,799 --> 00:30:23,360
+accomplished is impressive. So, how are
+
+786
+00:30:21,200 --> 00:30:25,360
+you dealing with the workforce?
+
+787
+00:30:23,360 --> 00:30:27,200
+>> We we have um you know, again, as I
+
+788
+00:30:25,360 --> 00:30:30,320
+mentioned, we're deeply investing in our
+
+789
+00:30:27,200 --> 00:30:32,399
+build, our technology stack um to
+
+790
+00:30:30,320 --> 00:30:33,919
+provide a simplified simplified and
+
+791
+00:30:32,399 --> 00:30:36,480
+better customer experience. And number
+
+792
+00:30:33,919 --> 00:30:38,240
+three is our employee experience. So, we
+
+793
+00:30:36,480 --> 00:30:40,320
+are augmenting in the engineering and
+
+794
+00:30:38,240 --> 00:30:42,320
+construction teams. We're augmenting our
+
+795
+00:30:40,320 --> 00:30:45,039
+internal teams, but then we're also
+
+796
+00:30:42,320 --> 00:30:47,440
+contracting out. And when we contract
+
+797
+00:30:45,039 --> 00:30:49,039
+out both construction and engineering,
+
+798
+00:30:47,440 --> 00:30:50,880
+we're providing we're providing
+
+799
+00:30:49,039 --> 00:30:52,559
+commitments. And because we're fully
+
+800
+00:30:50,880 --> 00:30:54,320
+committed to this build and it's well
+
+801
+00:30:52,559 --> 00:30:57,120
+funded, we can actually provide those
+
+802
+00:30:54,320 --> 00:30:59,679
+commitments in terms of longevity uh of
+
+803
+00:30:57,120 --> 00:31:01,600
+work along with the dedicated rate. So
+
+804
+00:30:59,679 --> 00:31:02,799
+we're investing in our internal teams
+
+805
+00:31:01,600 --> 00:31:04,720
+through learning and development
+
+806
+00:31:02,799 --> 00:31:06,799
+opportunities and guaranteed work. And
+
+807
+00:31:04,720 --> 00:31:08,640
+then we're augmenting through contractor
+
+808
+00:31:06,799 --> 00:31:10,320
+work that again we're guaranteeing the
+
+809
+00:31:08,640 --> 00:31:11,760
+work based on the fact that we've got a
+
+810
+00:31:10,320 --> 00:31:14,000
+dedicated build that we're fully
+
+811
+00:31:11,760 --> 00:31:15,520
+committed to.
+
+812
+00:31:14,000 --> 00:31:18,480
+>> There's a bunch of questions. hopefully
+
+813
+00:31:15,520 --> 00:31:20,720
+um you can get back to these folks um
+
+814
+00:31:18,480 --> 00:31:22,480
+afterwards. But gee, you know, I've
+
+815
+00:31:20,720 --> 00:31:24,880
+always been so impressed um with your
+
+816
+00:31:22,480 --> 00:31:27,039
+work and I really appreciate your light
+
+817
+00:31:24,880 --> 00:31:29,039
+talk at our conference last year. It was
+
+818
+00:31:27,039 --> 00:31:30,799
+amazing and thank you guys. Thank you
+
+819
+00:31:29,039 --> 00:31:32,480
+for spending your time with us today and
+
+820
+00:31:30,799 --> 00:31:33,840
+sharing your insight and knowledge and
+
+821
+00:31:32,480 --> 00:31:36,799
+really excited for what you guys are
+
+822
+00:31:33,840 --> 00:31:38,399
+doing with Vidinium Fiber. I I want to
+
+823
+00:31:36,799 --> 00:31:39,600
+thank everybody for joining us today and
+
+824
+00:31:38,399 --> 00:31:41,919
+look forward to getting back together
+
+825
+00:31:39,600 --> 00:31:44,880
+next Wednesday with Jim Martin, the
+
+826
+00:31:41,919 --> 00:31:46,720
+president CEO of City discuss bridging
+
+827
+00:31:44,880 --> 00:31:49,440
+the divide in the mountain state, city
+
+828
+00:31:46,720 --> 00:31:51,279
+net's role in rural broadband expansion.
+
+829
+00:31:49,440 --> 00:31:53,519
+So thanks for that. And I also just want
+
+830
+00:31:51,279 --> 00:31:55,760
+to shout out to all the state broadband
+
+831
+00:31:53,519 --> 00:31:57,679
+offices. Um just know you guys are
+
+832
+00:31:55,760 --> 00:31:59,840
+working your ass off to September 4th.
+
+833
+00:31:57,679 --> 00:32:01,840
+So we're we're thinking about you every
+
+834
+00:31:59,840 --> 00:32:05,919
+day and um appreciate all the hard work
+
+835
+00:32:01,840 --> 00:32:05,919
+you guys are doing. Thanks everyone.
+

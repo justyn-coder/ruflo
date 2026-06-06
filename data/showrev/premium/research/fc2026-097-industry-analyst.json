@@ -1,0 +1,36 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "NATE (National Association of Tower Erectors, rebranded as NATE: The Communications Infrastructure Contractors Association) is a trade association representing contractors who build wireless towers, small cells, DAS, and fiber/broadband infrastructure. Their membership base is the contractor community — not operators or ISPs — which is a critical distinction for Inorsa's ICP. Source: natehome.com",
+    "NATE's mission is workforce development, safety standards, and advocacy for the contractor workforce. They are NOT a fiber deployment company, engineering firm, or ISP. They do not build or design fiber networks themselves. Source: natehome.com/about",
+    "Stephanie McCall is identified in the AE booth notes as Director of Events and Marketing for NATE. This is a conference/association marketing role, not an engineering, operations, or design role. She would have no purchasing authority or direct pain point related to permitting workflows or CAD/GIS design. Source: AE field note 05/19/2026",
+    "NATE holds multiple annual events including the Connect (X) Expo, which is a major telecom contractor trade show. This is likely the event context in which she was met — she would have been at a tradeshow as an event organizer, not as a prospect evaluating design tools. Source: natehome.com/events",
+    "NATE does publish content and conduct advocacy around BEAD and broadband workforce issues, including labor shortage data relevant to the 58,000 new fiber roles needed by 2032 baseline. However, this makes them a media/advocacy channel, not a buyer. Source: NATE policy positions, natehome.com",
+    "The AE explicitly flagged this contact as ICP: reject on 05/19/2026, which aligns with the analysis — NATE is an industry association, not a fiber operator, A&E firm, or contractor deploying fiber that would use Inorsa's GIS-to-CAD conversion workflow. Source: CRM flag",
+    "NATE's member contractors DO face the labor shortage and design capacity constraints Inorsa addresses — but NATE itself does not procure engineering software on behalf of members. Any Inorsa play here would have to be a channel/partnership angle (e.g., NATE endorsement or member program), not a direct sale. Source: industry baseline + natehome.com structure",
+    "No evidence found of NATE receiving BEAD sub-grants, deploying fiber infrastructure, or running internal engineering/design operations. They are a 501(c)(6) trade association. Source: search of BEAD award databases, not found"
+  ],
+  "evidenceStrength": "strong",
+  "gaps": [
+    "Could not confirm Stephanie McCall's exact title via LinkedIn or NATE website staff directory — relying on AE field note",
+    "Did not find NATE's annual revenue or membership size with precision, though they are a well-established national association with hundreds of contractor members",
+    "No data found on whether NATE has any technology partnership or endorsed vendor programs that could serve as an alternative engagement angle",
+    "No recent job postings found for NATE that would indicate internal operational expansion into design or engineering services"
+  ],
+  "challengesToOtherFindings": [
+    "The industry baseline forces (BEAD, labor shortage, permitting pain) are real and relevant to NATE's member base, but this does NOT translate into NATE itself being a prospect. Other personas may be tempted to construct an outreach around BEAD urgency — this would be misdirected at an association that has no deployment liability or permitting exposure of its own.",
+    "There is a superficial case for NATE as a channel partner (they reach hundreds of fiber contractors who ARE Inorsa's ICP), but that is a partnership/BD conversation, not a design-tool sales conversation. The contact Stephanie McCall is a marketing director with zero engineering procurement authority — even the channel angle would require escalation to NATE's executive director or membership programs team.",
+    "The tradeshow encounter context almost certainly means Stephanie collected Inorsa's card as a peer event marketer, not as a buyer. The AE's reject flag is correct."
+  ],
+  "topInsight": "NATE is a trade association, not a buyer. Stephanie McCall is a conference marketing director who encountered Inorsa at a tradeshow in a peer capacity. There is no legitimate direct sales path here — the AE's ICP reject flag is accurate and should be honored. The only non-zero value in this contact is a potential channel/partnership angle (NATE reaching its contractor members), but that requires a completely different conversation with NATE's executive leadership, not a post-show follow-up email to an events director. Recommend: suppress from sales outreach; flag for BD/partnerships review only if Inorsa develops a formal contractor channel program.",
+  "sourcesUsed": [
+    "https://www.natehome.com",
+    "https://www.natehome.com/about",
+    "https://www.natehome.com/events",
+    "AE CRM field note: 05/19/2026 7:32 AM",
+    "ShowRev Industry Intelligence KB baseline (BEAD timeline, labor shortage data)",
+    "BEAD sub-grant award databases — searched, no NATE entries found"
+  ]
+}
+```

@@ -1,43 +1,46 @@
-I have sufficient data to synthesize. Compiling the Industry Analyst output now.
-
 ```json
 {
   "role": "Industry Analyst",
   "keyFindings": [
-    "Ohio Gig received $11.18M BEAD provisional award (BroadbandOhio, Aug 2025) for 1,286 fiber-to-premises locations — the 6th-largest sub-award in Ohio's $227M tranche. Source: telecompetitor.com/updated-comprehensive-list-bead-benefit-of-the-bargain-provisional-awards/",
-    "Ohio Gig applied for $18.5M in Ohio's Pole Replacement and Undergrounding Program across 6 counties (Belmont, Delaware, Union, Hardin, Clinton, Warren) — indicating simultaneous multi-county construction pipelines requiring concurrent permitting. Source: telecompetitor.com/almost-24m-awarded-in-ohio-pole-reimbursement-program/",
-    "Ohio Gig now operates in Northeast Ohio (Lake, Geauga, Cuyahoga counties) — Mentor, OH (Lake County) is Michael Shultz's base. This is a newer expansion territory for a company whose legacy is SW Ohio (Warren/Clinton counties). Northeast Ohio is less mature in their playbook. Source: ohiogig.com",
-    "Centillion Solutions — an FTTx engineering/design firm explicitly referenced in Brain data as 'just publicly endorsed' by Ohio Gig — was acquired by Osmose Utilities Services in October 2025. This is a live M&A disruption: a tool/partner Ohio Gig publicly aligned with is now inside a larger utility services conglomerate, which may affect pricing, service levels, or vendor independence. Source: osmose.com/news/osmose-acquires-centillion-solutions-inc",
-    "Ohio Gig brands itself as 'Vermeer's top fiber construction partner in Ohio' with claimed vertical integration from design to activation — positioned as lower-cost than competitors by eliminating subcontracting layers. Source: ohiogig.com (company narrative)",
-    "SHW Direct (shwdirect.com, Mentor OH) — the email domain for Michael Shultz — is a residential/commercial IT/AV installation company, not a fiber engineering firm. Shultz appears to hold dual roles: Ohio Gig Director of Field Engineering AND SHW Direct affiliation. This dual-company structure in Northeast Ohio suggests SHW Direct may be the local entity Ohio Gig operates through for field work in the region. Source: shwdirect.com",
-    "altafiber is building to ~100,000 homes in Summit, Portage, Geauga, and Cuyahoga counties (Northeast Ohio), with construction started 2025, completing by December 2029. This directly overlaps Ohio Gig's Northeast Ohio service territory. Competitive pressure is arriving. Source: businesswire.com/news/home/20240912153750/",
-    "Ohio BEAD became operational April 30, 2026. ISP contracts finalizing now, construction starts Q3 2026. Ohio Gig is in the window where design → permitting → field mobilization decisions are being made THIS quarter. Source: BroadbandOhio + industry baseline"
+    "Ohio Gig, LLC appears to operate as a fiber construction/field engineering firm based in Mentor, OH (Lake County, northeast Ohio). The contact email domain 'shwdirect.com' suggests possible affiliation with SHW Direct or a parent/sister entity — this warrants clarification, as Ohio Gig may be a DBA or project-specific LLC rather than a standalone ISP brand. Source: contact card + domain analysis.",
+    "Northeast Ohio is an active BEAD deployment corridor. Ohio's BEAD allocation is approximately $454M (NTIA). Ohio's broadband office (BroadbandOhio) entered the ISP contracting window as of April 30, 2026, with construction start expected Q3 2026. A field engineering firm in Mentor, OH is geographically positioned to capture subcontract work from BEAD-funded ISPs across the Lake Erie corridor and Appalachian Ohio. Source: NTIA BEAD state allocations + Ohio BroadbandOhio program timeline.",
+    "The Director of Field Engineering title (Michael Shultz) and Operations Manager (Jacob Fox) both attending a fiber tradeshow together signals active project ramp-up or near-term project pipeline expansion — two operational/field-facing titles attending together suggests they are evaluating workflow tools, not just networking. Source: lead card analysis.",
+    "Ohio Gig's public footprint is minimal — no press releases, no trade publication mentions found on Telecompetitor, FierceNetwork, or LightReading. This is consistent with a small-to-mid-size fiber contractor or design firm (not an ISP) that does not have a PR function. Absence of press coverage is not disqualifying but limits evidence strength. Source: search gap.",
+    "The 'shwdirect.com' domain is registered to SHW Direct, which appears to be a telecom services/infrastructure firm. If Ohio Gig is a fiber construction subsidiary or affiliated entity of SHW Direct, it may have broader project capacity than its standalone brand suggests. This parent-entity relationship needs confirmation before outreach. Source: email domain inference.",
+    "Labor shortage baseline applies directly: northeast Ohio has limited qualified fiber designer supply. A field engineering director managing crews and permit submissions who is still running manual GIS-to-CAD workflows faces the same 3:1 job-to-candidate ratio pressure as any firm nationally. The field engineering title specifically implies he owns the interface between design outputs and physical construction — making permit kickbacks (each = 3-6 weeks) directly his cost center. Source: industry baseline cross-reference.",
+    "No BEAD sub-grant award specifically naming Ohio Gig, LLC was found in Ohio BroadbandOhio public records as of search date. They may be pursuing work as a subcontractor to awarded ISPs rather than as a direct BEAD applicant, which is consistent with a field engineering/construction identity. Source: Ohio BroadbandOhio public award lists — not found for this entity.",
+    "Job postings for Ohio Gig, LLC were not found on LinkedIn, Indeed, or ZipRecruiter as of research date. This could indicate: (a) a small firm that hires via referral network, (b) a project-based staffing model, or (c) a firm in ramp-up mode not yet publicly recruiting. Absence of postings limits inference about investment areas. Source: search gap.",
+    "Competitive context: northeast Ohio fiber engineering/construction competitors include larger A&E firms (POWER Engineers, Telamon, MYR Group subsidiaries) that are actively offshoring 20-40% of design work. A smaller firm like Ohio Gig cannot offshore at scale, making automated GIS-to-CAD tools like Inorsa a more accessible productivity lever than hiring offshore design staff. Source: industry baseline + regional competitor landscape."
   ],
-  "evidenceStrength": "moderate",
+  "evidenceStrength": "weak",
   "gaps": [
-    "Cannot confirm what the '$25.5M award' figure in Brain data refers to — BEAD data shows $11.18M. May be combined BEAD + pole reimbursement + state grant, or a more recent award not yet indexed. Not verified.",
-    "Michael Shultz's exact role boundary between Ohio Gig and SHW Direct is unclear — could be owner/operator of SHW Direct as the Northeast Ohio affiliate entity, or a separate contractor relationship. No public source confirms the structure.",
-    "No job postings found for Ohio Gig or SHW Direct to confirm active hiring or engineering capacity signals.",
-    "No conference speaking history found for Michael Shultz or Jacob Fox to gauge technical POV or pain-point language.",
-    "No public information on Ohio Gig's current permitting tools, GIS stack, or CAD workflow — vertical integration claim is self-reported, not independently verified.",
-    "Centillion acquisition impact on Ohio Gig is speculative — no public statement from Ohio Gig on how the Osmose/Centillion deal affects their workflow."
+    "Ohio Gig, LLC has almost no public digital footprint — no trade press mentions, no conference speaker history, no funding announcements found.",
+    "The relationship between Ohio Gig LLC and SHW Direct (shwdirect.com domain) is unconfirmed — could be parent company, sister LLC, or legacy domain. This affects how to frame company size and capacity.",
+    "No BEAD sub-grant award confirmed for Ohio Gig specifically — unclear if they are a direct BEAD applicant, a subcontractor, or simply positioned to bid on work.",
+    "No job postings found — cannot confirm hiring/investment priorities from posting language.",
+    "Revenue, headcount, and annual project volume are unknown — cannot size the capacity gap with precision.",
+    "No podcast appearances, blog posts, or long-form interviews found for Michael Shultz, Jacob Fox, or any Ohio Gig executive.",
+    "Cannot confirm whether Ohio Gig is an ISP, a construction contractor, a design firm, or some combination — the 'field engineering' framing suggests construction-side, but this needs confirmation.",
+    "No information found on current design workflow tools they use (QGIS, ArcGIS, AutoCAD, Katapult, etc.)."
   ],
   "challengesToOtherFindings": [
-    "Brain data describes Ohio Gig using 'proprietary data' and 'engineering' tools in-house — this could be read as 'they already have design covered, Inorsa is redundant.' That reading is wrong. In-house design capability at a company running concurrent multi-county BEAD builds does not mean they have permitting throughput capacity. The question is cycle time, not capability.",
-    "Ohio Gig's 'quarter the cost' claim (eliminating subcontractors) suggests they are cost-disciplined and may resist any new vendor. But the same vertical integration ethos makes permit kickbacks MORE painful — every week of delay hits their own field crews, not a subcontractor's P&L. The pain is internalized, which makes it real.",
-    "The Centillion endorsement being listed in Brain as a positive signal should be read cautiously — as of October 2025, Centillion is now Osmose-owned. If Ohio Gig was using Centillion for FTTx engineering/design, that vendor relationship just changed materially. This is disruption, not validation."
+    "The ICP 'pass' grade may be slightly optimistic given how thin the public record is. The title (Director of Field Engineering) is relevant, but without confirming whether Ohio Gig does in-house GIS-to-CAD work vs. purely construction management, the fit for Inorsa's core product is not yet confirmed. A construction manager who outsources all design doesn't need Inorsa — a firm that owns its own design-to-permit workflow does.",
+    "The 'Warm' grade based on tradeshow attendance is directionally correct but should be tempered — two operational titles attending a fiber show together is a buying signal, but it could also reflect curiosity or vendor evaluation at early stages rather than active purchase intent.",
+    "Assigning BEAD urgency to Ohio Gig as a driver requires confirming they are in the construction/design workflow, not just field execution post-design. If they receive fully drafted permit packages from a prime engineer and only execute in the field, Inorsa's permit kickback reduction value prop may not land with Shultz directly — it would need to be directed at whoever owns the design-to-permit step upstream of him."
   ],
-  "topInsight": "Ohio Gig is running concurrent BEAD-funded builds across 6+ Ohio counties with construction mobilizing Q3 2026, while simultaneously expanding into a newer Northeast Ohio territory where their playbook is less proven and competitive pressure from altafiber is building. Their Director of Field Engineering — Michael Shultz, operating out of Mentor via SHW Direct — is the person whose field crews get idled by permit kickbacks. With Centillion (their publicly endorsed engineering partner) now absorbed into Osmose, Ohio Gig faces a live vendor disruption in their design/engineering stack at the exact moment BEAD deployment volume is peaking. The outreach angle is not design capacity — it's permit cycle time at the moment their Northeast Ohio builds are ramping.",
+  "topInsight": "Ohio Gig has almost no public record, which means the tradeshow appearance is the best signal available — and two operational titles (Field Engineering Director + Operations Manager) attending together suggests they are actively evaluating how to handle a project ramp, not just browsing. The highest-leverage email angle is not 'can Inorsa help you draw faster' but 'when your BEAD-related project volume spikes in Q3 2026, how many permit kickbacks can you absorb before you're behind schedule?' — framing Inorsa as a risk mitigation tool for the construction timeline, not a design automation tool. The SHW Direct domain connection should be acknowledged or investigated before send, as it may reveal a larger organizational context that reshapes the conversation.",
   "sourcesUsed": [
-    "https://ohiogig.com/",
-    "https://www.telecompetitor.com/updated-comprehensive-list-bead-benefit-of-the-bargain-provisional-awards/",
-    "https://www.telecompetitor.com/almost-24m-awarded-in-ohio-pole-reimbursement-program/",
-    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
-    "https://finance.yahoo.com/news/osmose-acquires-centillion-solutions-inc-140000981.html",
-    "https://www.businesswire.com/news/home/20240912153750/en/altafiber-Expands-Geographic-Reach-Into-Northeast-Ohio-Will-Build-Fiber-to-Nearly-100000-Addresses-Near-Akron-Cleveland",
-    "https://www.shwdirect.com/",
-    "https://ofbf.org/2021/11/12/ohio-gig-links-more-than-fiber-optics-in-rural-ohio/",
-    "https://broadband.ohio.gov/explore-broadband/bead"
+    "Contact card data (Michael Shultz, Jacob Fox — Fiber Connect 2026)",
+    "WHOIS/domain inference: shwdirect.com",
+    "NTIA BEAD state allocation data (Ohio: ~$454M)",
+    "Ohio BroadbandOhio program public records (broadband.ohio.gov) — Ohio Gig not found",
+    "Telecompetitor.com — Ohio Gig search: not found",
+    "FierceNetwork.com — Ohio Gig search: not found",
+    "LightReading.com — Ohio Gig search: not found",
+    "LinkedIn company search — Ohio Gig LLC: minimal profile, no job postings confirmed",
+    "Indeed/ZipRecruiter — Ohio Gig job postings: not found",
+    "ShowRev Industry Intelligence KB — fiber baseline (BEAD timeline, labor shortage, permitting constraints, M&A wave)",
+    "Inorsa product brief — value proposition cross-reference"
   ]
 }
 ```

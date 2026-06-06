@@ -1,0 +1,306 @@
+I'll research Westell Technologies systematically, starting with job postings, then tech stack signals, then fiber/design workflow evidence.
+
+**Search 1: Westell Technologies hiring/careers**
+
+**Search 2: Westell Technologies AutoCAD/GIS/fiber design tools**
+
+**Search 3: Westell vendor case studies**
+
+**Search 4: Westell construction drawings/fiber design/engineering**
+
+**Search 5: Westell careers page**
+<tool_call>
+{"name": "search", "arguments": {"query": "Westell Technologies hiring careers fiber design engineer 2025 2026", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results for 'Westell Technologies hiring careers fiber design engineer 2025 2026':
+
+Source: https://www.westell.com/about/careers/
+Content: Westell Technologies. Careers. Looking to join the Westell team? At Westell, we place the highest emphasis on employee well-being, innovation, and collaboration. We strive to create a supportive and dynamic work environment where every team member can thrive. We don't have any open positions at this time. If you are interested in working at Westell, please send your resume to careers@westell.com. ...
+
+Source: https://www.linkedin.com/company/westell-technologies
+Content: Westell Technologies is a provider of high-performance infrastructure solutions for telecommunications companies. We deliver best-in-class solutions through three business groups: EdgeLink®, OSP Solutions, and Cellenium®.
+Westell has 200+ employees on LinkedIn.
+...
+
+Source: https://www.indeed.com/cmp/Westell-Technologies/jobs
+Content: No results found for Westell Technologies jobs on Indeed.
+...
+
+Source: https://www.builtinchicago.org/company/westell-technologies
+Content: Westell Technologies Chicago area tech jobs. View all open jobs at Westell Technologies and company info. Westell Technologies is a Chicago area company with open jobs listed on Built In Chicago.
+...
+
+Source: https://www.glassdoor.com/Overview/Working-at-Westell-Technologies-EI_IE13278.htm
+Content: Westell Technologies has 200 employees. Westell Technologies is in the Telecommunications industry. Westell Technologies headquarters is located at 750 N Commons Dr Ste 100, Aurora, IL 60504.
+...
+
+Source: https://www.crunchbase.com/organization/westell-technologies
+Content: Westell Technologies is a company that provides infrastructure solutions for telecommunications companies. Their last funding was a Post-IPO Equity on August 14, 2017 for $5.5M.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Westell Technologies IoT smart infrastructure fiber OSP solutions products 2025", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results for 'Westell Technologies IoT smart infrastructure fiber OSP solutions products 2025':
+
+Content: Westell Technologies announces Q3 2024 financial results, reporting revenue growth in their EdgeLink and OSP Solutions business groups. The company continues to focus on telecom infrastructure products including fiber management solutions.
+...
+
+Source: https://www.westell.com/solutions/
+Content: Westell Technologies solutions page - provides infrastructure solutions for telecommunications companies through EdgeLink®, OSP Solutions, and Cellenium® business groups. Products include fiber management, wireless infrastructure, and network monitoring solutions.
+...
+
+Source: https://ir.westell.com/news-releases/news-release-details/westell-technologies-reports-fiscal-year-2024-financial-results
+Content: Westell Technologies Reports Fiscal Year 2024 Financial Results. Revenue for fiscal year 2024 was $53.4 million...
+...
+
+Source: https://www.westell.com/solutions/osp-solutions/
+Content: OSP Solutions from Westell Technologies provides fiber management products including fiber distribution hubs, fiber patch panels, and related hardware for outside plant fiber installations.
+...
+
+Source: https://www.westell.com/solutions/edgelink/
+Content: EdgeLink® from Westell Technologies provides intelligent cabinet solutions, power systems, and remote monitoring for telecom infrastructure at the network edge.
+...
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.westell.com/solutions/", "maxPages": 1}}
+</tool_call>
+<tool_response>
+Firecrawl result for https://www.westell.com/solutions/:
+
+# Solutions Overview
+
+## EdgeLink®
+Intelligent infrastructure solutions including cabinets, power systems, and remote monitoring for edge network deployments.
+
+## OSP Solutions  
+Outside plant fiber management products: fiber distribution hubs (FDH), fiber patch panels, splice closures, and fiber management hardware for FTTH deployments.
+
+## Cellenium®
+Solutions for small cell and DAS (Distributed Antenna System) deployments in wireless networks.
+
+## IoT / Smart Infrastructure / Industrial Monitoring
+Westell's newer business focus areas under development by the business development team, exploring IoT device integration, smart city applications, and industrial monitoring use cases leveraging their edge infrastructure expertise.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Westell Technologies AutoCAD GIS fiber design engineering drawings", "num_results": 6}}
+</tool_call>
+<tool_response>
+Results for 'Westell Technologies AutoCAD GIS fiber design engineering drawings':
+
+No specific results found linking Westell Technologies to AutoCAD, GIS platforms, or fiber design/engineering drawing workflows.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Westell Technologies \"construction drawings\" OR \"fiber design\" OR \"permit\" OR \"engineering services\"", "num_results": 6}}
+</tool_call>
+<tool_response>
+Results for 'Westell Technologies "construction drawings" OR "fiber design" OR "permit" OR "engineering services"':
+
+No results found linking Westell Technologies directly to construction drawings, fiber design workflows, or permitting services.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Westell Technologies OSP fiber distribution hub FTTH deployment partners integrators", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results for 'Westell Technologies OSP fiber distribution hub FTTH deployment partners integrators':
+
+Source: https://www.westell.com/solutions/osp-solutions/fiber-distribution-hub/
+Content: Westell's Fiber Distribution Hub (FDH) solutions are designed for FTTH deployments, providing high-density fiber management in outside plant environments. Products are sold to ISPs, CLECs, and telcos deploying fiber broadband networks.
+
+Source: https://www.calix.com/partners
+Content: [Calix partner page - no direct Westell reference]
+
+Source: https://www.commscope.com/
+Content: [CommScope - competitor in fiber hardware space]
+
+Source: https://www.westelltechnologies.com/ 
+Content: Redirect to westell.com
+
+Source: https://www.tdainc.com/
+Content: [TDA - unrelated]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Salvatore Orefiche Westell Technologies IoT LinkedIn", "num_results": 6}}
+</tool_call>
+<tool_response>
+Results for 'Salvatore Orefiche Westell Technologies IoT LinkedIn':
+
+Source: https://www.linkedin.com/in/salvatore-orefiche
+Content: Salvatore Orefiche - Director, Business Development - IoT, Smart Infrastructure, Industrial Monitoring at Westell Technologies. Aurora, IL. Background in business development for technology companies in the telecom and infrastructure space. 
+[Note: Full profile details not accessible without login]
+...
+</tool_call>
+<tool_response>
+Results for 'Salvatore Orefiche Westell Technologies IoT LinkedIn':
+
+Source: https://www.linkedin.com/in/salvatore-orefiche
+Content: Salvatore Orefiche - Director, Business Development - IoT, Smart Infrastructure, Industrial Monitoring at Westell Technologies. Aurora, IL. Background in business development for business development for technology companies in the telecom and infrastructure space.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Westell Technologies smart infrastructure IoT industrial monitoring use cases telecom 2024 2025", "num_results": 8}}
+</tool_call>
+</s>
+<tool_response>
+Results for 'Westell Technologies smart infrastructure IoT industrial monitoring use cases telecom 2024 2025':
+
+Source: https://www.westell.com/news/
+Content: Westell Technologies news page. Recent press releases cover product announcements for EdgeLink and OSP Solutions business lines. No specific IoT or smart infrastructure announcements found in 2024-2025.
+
+Source: https://ir.westell.com/
+Content: Investor relations page. Fiscal 2024 revenue: $53.4M. Company mentions strategic focus on expanding into IoT and smart infrastructure as growth areas beyond traditional telecom hardware.
+
+Source: https://www.businesswire.com/news/home/20240XXX
+Content: [No specific Westell IoT press release found]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://ir.westell.com/news-releases/news-release-details/westell-technologies-reports-fiscal-year-2024-financial-results", "maxPages": 1}}
+</tool_call>
+<tool_response>
+Firecrawl result for https://ir.westell.com/news-releases/news-release-details/westell-technologies-reports-fiscal-year-2024-financial-results:
+
+# Westell Technologies Reports Fiscal Year 2024 Financial Results
+
+**Aurora, IL – [Date]** – Westell Technologies, Inc. (NASDAQ: WSTL) today reported financial results for its fiscal year ended March 31, 2024.
+
+## Key Financial Highlights
+- **Total Revenue**: $53.4 million for fiscal year 2024
+- Revenue breakdown by segment: EdgeLink, OSP Solutions, Cellenium
+
+## Business Overview
+Westell continues to serve telecommunications companies with infrastructure solutions. The company noted ongoing investments in product development and exploring adjacent market opportunities.
+
+CEO commentary noted challenges in the broader telecom capital expenditure environment but expressed confidence in the company's product portfolio differentiation.
+
+[Full financial tables not retrieved]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Westell Technologies Cellenium EdgeLink OSP fiber ISP customer case study deployment", "num_results": 6}}
+</tool_call>
+<tool_response>
+Results for 'Westell Technologies Cellenium EdgeLink OSP fiber ISP customer case study deployment':
+
+Source: https://www.westell.com/resources/case-studies/
+Content: Westell Technologies case studies page. Case studies available for EdgeLink cabinet deployments at rural telcos and CLECs. OSP Solutions case studies show FDH deployments for FTTH buildouts at mid-size ISPs.
+
+Source: https://www.westell.com/resources/
+Content: Resources including white papers, case studies, data sheets. Topics include fiber management, remote monitoring, edge infrastructure.
+
+Source: https://ruraltelecom.org/
+Content: [Rural Telecom publication - no specific Westell article found in results]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Westell Technologies site:linkedin.com/jobs OR site:indeed.com OR site:glassdoor.com jobs 2025", "num_results": 6}}
+</tool_call>
+<tool_response>
+Results for 'Westell Technologies site:linkedin.com/jobs OR site:indeed.com OR site:glassdoor.com jobs 2025':
+
+Source: https://www.glassdoor.com/Jobs/Westell-Technologies-Jobs-E13278.htm
+Content: Westell Technologies jobs on Glassdoor. No current open positions listed as of search date.
+
+Source: https://www.linkedin.com/company/westell-technologies/jobs/
+Content: Westell Technologies LinkedIn jobs page. Current openings: [none listed in snippet - company appears to have minimal active hiring]
+
+Source: https://www.indeed.com/cmp/Westell-Technologies/jobs
+Content: No current job listings for Westell Technologies on Indeed.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Westell Technologies BEAD broadband funding ISP partner fiber deployment 2025 2026", "num_results": 6}}
+</tool_call>
+<tool_response>
+Results for 'Westell Technologies BEAD broadband funding ISP partner fiber deployment 2025 2026':
+
+No results found directly linking Westell Technologies to BEAD funding programs or broadband funding partnerships.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Westell\" fiber design GIS Katapult IQGeo 3GIS ArcGIS tools integration", "num_results": 6}}
+</tool_call>
+<tool_response>
+Results for '"Westell" fiber design GIS Katapult IQGeo 3GIS ArcGIS tools integration':
+
+No results found linking Westell to any of these GIS or fiber design tools.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.westell.com/about/careers/", "maxPages": 1}}
+</tool_call>
+<tool_response>
+Firecrawl result for https://www.westell.com/about/careers/:
+
+# Careers at Westell Technologies
+
+Looking to join the Westell team? At Westell, we place the highest emphasis on employee well-being, innovation, and collaboration. We strive to create a supportive and dynamic work environment where every team member can thrive.
+
+**We don't have any open positions at this time.**
+
+If you are interested in working at Westell, please send your resume to careers@westell.com.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Westell Technologies product fiber distribution hub ISP deployment design engineering workflow", "num_results": 6}}
+</tool_call>
+</s>
+<tool_response>
+Results for 'Westell Technologies product fiber distribution hub ISP deployment design engineering workflow':
+
+Source: https://www.westell.com/solutions/osp-solutions/
+Content: Westell's OSP Solutions include Fiber Distribution Hubs (FDHs), fiber patch panels, and splice management hardware. These are passive hardware components that are specified by network designers and installed by construction crews during FTTH buildouts. Westell does not appear to provide design services, engineering drawings, or permitting support — they manufacture the hardware that goes into those deployments.
+
+Source: https://www.fiberbroadband.org/
+Content: [Fiber Broadband Association - no Westell-specific content in snippet]
+</tool_response>
+
+Based on my research, I now have enough to deliver a well-grounded technical evaluation. The picture is notably different from a typical Inorsa prospect.
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "Westell Technologies is a HARDWARE MANUFACTURER, not a fiber design/engineering services firm or ISP — they make fiber distribution hubs (FDHs), splice closures, patch panels (OSP Solutions), intelligent cabinets (EdgeLink), and small cell/DAS equipment (Cellenium). Source: westell.com/solutions/",
+    "Westell has ~200 employees and ~$53.4M in FY2024 revenue (NASDAQ: WSTL), a mid-size telecom hardware company with no evidence of in-house fiber design, GIS, or CAD engineering workflows. Source: Glassdoor, ir.westell.com FY2024 results",
+    "Zero current job postings on careers page, Indeed, LinkedIn, or Glassdoor — company is NOT actively hiring engineers, CAD drafters, or GIS analysts, which means no evidence of an internal design team being built or expanded. Source: westell.com/careers, glassdoor.com, linkedin.com/company/westell-technologies/jobs",
+    "No evidence of AutoCAD, MicroStation, ArcGIS, Katapult, IQGeo, 3GIS, Render Networks, or any fiber design/GIS tool use at Westell — search across multiple tool-specific queries returned zero matches. Source: multiple searches",
+    "Contact Salvatore Orefiche is Director of Business Development for IoT, Smart Infrastructure, and Industrial Monitoring — a GROWTH/PARTNERSHIPS role focused on Westell's emerging market adjacencies, NOT a design operations, engineering, or IT role. Source: linkedin.com/in/salvatore-orefiche",
+    "Westell's fiber-related products (FDHs, patch panels) are passive hardware components specified by network designers at ISPs/telcos, then installed during construction. Westell itself does NOT produce construction drawings, permit packages, or GIS-to-CAD design outputs. Source: westell.com/solutions/osp-solutions",
+    "No BEAD program connection found — Westell sells hardware components that ISPs deploying BEAD-funded networks would use, but Westell is not a BEAD grant recipient or design/engineering contractor. Source: multiple searches, no results",
+    "Westell's three business lines (EdgeLink, OSP Solutions, Cellenium) are all hardware-centric. IoT/Smart Infrastructure is described as an emerging BD focus, not a deployed service line with engineering workflow requirements. Source: ir.westell.com FY2024 results, westell.com/solutions"
+  ],
+  "evidenceStrength": "strong",
+  "gaps": [
+    "Could not confirm whether Westell provides any engineering services or CAD drawing support alongside their hardware sales (e.g., do they help ISP customers with FDH placement drawings?) — their website does not mention this and no third-party sources corroborate it",
+    "Orefiche's full LinkedIn profile not accessible — unable to confirm prior roles, whether he came from a fiber design/engineering services background, or whether his IoT BD role involves any design workflow partnerships",
+    "Unknown whether Westell's ISP customers are the actual Inorsa targets — if Orefiche attended the tradeshow to identify tools to recommend to his customers, that's a different fit angle but still indirect",
+    "No detail on what 'IoT/Smart Infrastructure' initiative specifically involves — could potentially include network infrastructure data or GIS integration, but no evidence found"
+  ],
+  "challengesToOtherFindings": [
+    "The ICP designation of 'hold' is correct — but the reason may be more fundamental than just missing AE notes. Westell is likely a NON-FIT prospect, not merely an ungraded one. A Market Analyst persona might flag Westell as tangentially BEAD-adjacent (their hardware goes into BEAD deployments), but that does not translate into Inorsa design workflow pain",
+    "Salvatore's title 'Director, Business Development — IoT, Smart Infrastructure' sounds relevant at face value, but the 'Industrial Monitoring' qualifier signals he is likely pursuing smart grid, utility, or sensor network deals — not fiber permitting or GIS-to-CAD workflows. Any persona reading only his title and inferring design tool relevance would be wrong based on the evidence",
+    "If another persona suggests Westell as a channel partner (they sell hardware into ISPs who need Inorsa), that could have marginal merit, but Westell's BD focus is on hardware sales, not software partnerships — and Orefiche's IoT mandate is a poor fit for a fiber design automation partnership pitch"
+  ],
+  "topInsight": "Westell Technologies is a telecom hardware manufacturer, not a fiber design firm, engineering services provider, or ISP — they make the physical FDHs and panels that go INSIDE deployments designed by Inorsa's actual customers. Salvatore Orefiche's role is IoT/Smart Infrastructure business development, which has no overlap with GIS-to-CAD permitting workflows. There is no identifiable design engineering function, no relevant toolchain, and no permitting pain at Westell. This lead should be reclassified from 'hold' to 'disqualify' for Inorsa's fiber design automation product — the only possible alternative is a very indirect channel/referral angle (Westell knows the ISPs who need Inorsa), but that is speculative and resource-inefficient given Batch D priority.",
+  "sourcesUsed": [
+    "https://www.westell.com/solutions/",
+    "https://www.westell.com/solutions/osp-solutions/",
+    "https://www.westell.com/solutions/edgelink/",
+    "https://www.westell.com/about/careers/",
+    "https://ir.westell.com/news-releases/news-release-details/westell-technologies-reports-fiscal-year-2024-financial-results",
+    "https://www.linkedin.com/company/westell-technologies",
+    "https://www.linkedin.com/in/salvatore-orefiche",
+    "https://www.glassdoor.com/Overview/Working-at-Westell-Technologies-EI_IE13278.htm",
+    "https://www.indeed.com/cmp/Westell-Technologies/jobs",
+    "https://www.crunchbase.com/organization/westell-technologies"
+  ]
+}
+```

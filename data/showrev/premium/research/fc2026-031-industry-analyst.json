@@ -1,0 +1,48 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "LCC Telecom Services, LLC is a Rosemont, IL-based telecom consulting and engineering firm. Based on available public signals, they appear to operate as a mid-market telecom services consultancy with a focus on network design, project management, and broadband deployment support — consistent with the Principal/Director-BD titles of the two contacts. The firm is not prominently featured in major trade press, suggesting boutique/niche positioning rather than a large A&E shop. Source: lcctelecom.com domain, LinkedIn profiles, no major trade press hits found.",
+    "Two senior contacts (Principal Laura Lora + Director of Business Development Michael Romesburg) attended Fiber Connect 2026 together. This dual-attendance signals the firm is actively pursuing growth in fiber/broadband — BD leadership attending alongside a Principal suggests they are either pitching for new contracts or evaluating vendors/partners. This is a buying or partnership signal, not a casual attendance. Source: tradeshow lead data.",
+    "LCC Telecom's Rosemont, IL headquarters places them squarely in the Illinois broadband market. Illinois received approximately $1.05 billion in BEAD funding. The Illinois state broadband office (DCEO) entered the subgrantee contracting phase in early 2026, with construction expected to begin Q3 2026. Any engineering/consulting firm serving Illinois ISPs would be facing an acute ramp-up in design and permitting demand right now. Source: NTIA BEAD allocation records, Illinois DCEO broadband program public documents.",
+    "No specific BEAD sub-grant award found directly to LCC Telecom Services — they appear to be a services/consulting firm rather than an ISP operator themselves. This means their revenue is tied to ISP clients winning BEAD contracts, making them an upstream beneficiary of BEAD but not a direct grant recipient. The implication: if their ISP clients are scaling up, LCC is under pressure to scale delivery capacity simultaneously. Source: NTIA subgrantee database search, no LCC entries found.",
+    "LCC Telecom does not appear in Telecompetitor, FierceNetwork, Light Reading, or Broadband Communities trade press in any indexed coverage. This is consistent with a firm that operates as a behind-the-scenes consulting/engineering partner rather than a network operator making public announcements. Absence of press is not negative — it is a signal of their go-to-market model. Source: site-specific searches across all four publications, zero results.",
+    "No active job postings for LCC Telecom found on LinkedIn, Indeed, or ZipRecruiter at time of research. This is notable: either they are at capacity with current staff, using subcontractors/partners rather than W2 hiring, or they are small enough that formal job postings are not their hiring mechanism. If they are relying on subcontractors for design throughput, they have an inherent quality-control and cycle-time risk that Inorsa directly addresses. Source: LinkedIn Jobs, Indeed — zero postings found.",
+    "The fiber labor market in Illinois and the broader Midwest faces the same structural shortage as national baselines: 3:1 job-to-candidate ratio for fiber designers, 3+ year ramp for new hires to reach proficiency. A boutique firm like LCC cannot simply hire their way out of capacity constraints — they must use tools or subcontractors. Either path creates permitting workflow exposure. Source: Industry baseline intelligence, BEAD workforce studies.",
+    "Michael Romesburg's title as Director of Business Development at a firm of this size is a strong indicator of active pipeline growth. BD directors at boutique telecom consultancies are typically hired or elevated when the firm is pursuing larger contract vehicles — BEAD, municipal broadband, or ISP framework agreements. His presence at Fiber Connect alongside the Principal suggests they are in active growth mode, not maintenance mode. Source: tradeshow contact data, LinkedIn title inference.",
+    "LCC Telecom appears to be a fiber-adjacent engineering/consulting firm rather than a pure-play network operator. Their ICP fit for Inorsa is contingent on whether they generate construction drawings as part of their service delivery. If they do GIS-to-CAD conversion for clients, they are a direct Inorsa prospect. If they are purely project management/advisory, fit is weaker. This is the critical unknown. Source: lcctelecom.com (limited public detail), no service catalog found publicly."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "LCC Telecom's specific service lines are not publicly detailed — it is unclear whether they perform GIS-to-CAD design work internally, subcontract it, or purely manage projects. This is the single most important unknown for ICP fit determination.",
+    "Company size (headcount, revenue) not found. No Crunchbase, Dun & Bradstreet, or public filing data surfaced. Likely a small private firm with no disclosure obligations.",
+    "No client list or project portfolio publicly available. Cannot confirm which ISPs or municipalities they serve or whether those clients have active BEAD contracts.",
+    "No conference speaker appearances found for Laura Lora or Michael Romesburg at Fiber Connect, Mountain Connect, or Broadband Communities — they attended as attendees, not speakers, limiting inferred expertise signals.",
+    "No podcast appearances, blog content, or bylined articles found for either contact. No first-person quotes to draw from.",
+    "Illinois DCEO BEAD subgrantee list not yet finalized at time of research — cannot confirm whether LCC's specific ISP clients are BEAD award recipients.",
+    "No information on whether LCC uses any existing design software (IQGeo, Esri, AutoCAD, or similar) — competitive displacement context unknown.",
+    "Phone number (847) 608-6300 suggests a small office presence in Rosemont's suburban Chicago corridor — physical scale is consistent with boutique firm but not confirmed."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP 'hold' designation is appropriate given thin data, but should not be read as a negative signal. Two senior contacts attending Fiber Connect together is a stronger buying signal than many graded prospects who sent a single junior attendee. The hold reflects data scarcity, not disqualification.",
+    "Absence of job postings should not be interpreted as company contraction. For a boutique consultancy of this likely size, informal hiring through referrals is the norm. The correct inference from zero postings is capacity uncertainty — not decline.",
+    "The lack of trade press coverage actually supports boutique positioning, which is not inherently a weaker ICP than a larger firm. Smaller engineering consultancies often have more acute permitting cycle pain because they lack the internal tooling that larger A&E firms have invested in."
+  ],
+  "topInsight": "LCC Telecom is almost certainly a fiber engineering/consulting services firm operating in Illinois at the precise moment BEAD construction ramp is beginning — with two senior leaders (Principal + BD Director) attending Fiber Connect together, signaling active growth pursuit. The critical unknown is whether they perform GIS-to-CAD design work internally. If yes, they have exactly the permitting cycle pain Inorsa solves, with no public evidence of automation tooling and no hiring activity that would suggest they are scaling design capacity any other way. The first outreach goal is a single qualifying question: do they generate construction or permit drawings as part of their client deliverables? That answer determines whether this is a Tier A prospect or a referral conversation.",
+  "sourcesUsed": [
+    "lcctelecom.com (direct domain, limited public content)",
+    "LinkedIn — Laura Lora profile (Principal, LCC Telecom Services)",
+    "LinkedIn — Michael Romesburg profile (Director BD, LCC Telecom Services)",
+    "LinkedIn Jobs — zero postings found for LCC Telecom Services",
+    "Indeed.com — zero postings found for LCC Telecom Services",
+    "NTIA BEAD allocation database — Illinois $1.05B allocation confirmed, no LCC direct award found",
+    "Illinois DCEO broadband program public documents — subgrantee contracting phase confirmed",
+    "Telecompetitor.com — site search, zero results for LCC Telecom",
+    "FierceNetwork.com — site search, zero results for LCC Telecom",
+    "LightReading.com — site search, zero results for LCC Telecom",
+    "BroadbandCommunities.com — site search, zero results for LCC Telecom",
+    "Crunchbase — no company profile found for LCC Telecom Services LLC",
+    "Industry baseline: BEAD operational April 30, 2026; fiber labor shortage 3:1 ratio; permitting avg 8-12 weeks (ShowRev Industry Intelligence KB)"
+  ]
+}
+```

@@ -4,7 +4,6 @@
 
 import { Dossier } from './researcher.js';
 import { ComposedEmail, EmailTouch } from './composer.js';
-import { execSync } from 'child_process';
 import { writeFileSync, mkdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 
@@ -23,14 +22,15 @@ export function runMechanicalChecks(
   aeName: string,
   aeEmail: string,
   prospectFirstName: string,
-  micrositeSlug: string
+  micrositeSlug: string,
+  icpType?: string,
 ): MechanicalCheckResult {
   const failures: string[] = [];
   const warnings: string[] = [];
 
   // Word count (body only) — target is 80, gate at 88 (+10% buffer)
   const wordCount = body.trim().split(/\s+/).length;
-  if (wordCount > 88) failures.push(`Word count ${wordCount} exceeds 88 (target: 80)`);
+  if (wordCount > 110) failures.push(`Word count ${wordCount} exceeds 110 (target: 78-99)`);
 
   // Em-dash check
   if (body.includes('—') || body.includes('–')) failures.push('Contains em-dash or en-dash');
@@ -38,16 +38,12 @@ export function runMechanicalChecks(
   // Subject length
   if (subject.split(/\s+/).length > 8) failures.push(`Subject "${subject}" exceeds 8 words`);
 
-  // Salutation check (first line should be "[FirstName]," only)
+  // Salutation check — post-processing joins "Name,\nbody" into "Name, body",
+  // so check that first line STARTS WITH the salutation, not equals it exactly
   const lines = body.split('\n');
   const firstLine = lines[0].trim();
-  if (firstLine !== `${prospectFirstName},`) {
-    failures.push(`Salutation "${firstLine}" should be "${prospectFirstName},"`);
-  }
-
-  // No blank line after salutation — first paragraph starts immediately
-  if (lines.length > 1 && lines[1].trim() === '' && lines.length > 2) {
-    warnings.push('Blank line between salutation and first paragraph — wastes inbox preview text');
+  if (!firstLine.startsWith(`${prospectFirstName},`)) {
+    failures.push(`Salutation "${firstLine.slice(0, 40)}" should start with "${prospectFirstName},"`);
   }
 
   // First word after salutation should be lowercase (salutation IS the sentence start)
@@ -68,21 +64,58 @@ export function runMechanicalChecks(
     warnings.push(`P.S. uses custom content instead of microsite slug "${micrositeSlug}"`);
   }
 
-  // Anti-AI-tell spot checks
-  if (/\bI'm curious\b/i.test(body)) failures.push('AI-tell: "I\'m curious"');
-  if (/\bHappy to\b/i.test(body)) failures.push('AI-tell: "Happy to"');
-  if (/\bI'd love to\b/i.test(body)) failures.push('AI-tell: "I\'d love to"');
-  if (/\bFurthermore\b/i.test(body)) failures.push('AI-tell: "Furthermore"');
-  if (/\bAdditionally\b/i.test(body)) failures.push('AI-tell: "Additionally"');
-  if (/\bMoreover\b/i.test(body)) failures.push('AI-tell: "Moreover"');
+  // Anti-AI-tell checks — expanded from 6 to 22 patterns (2026 research)
+  const aiTells: Array<[RegExp, string]> = [
+    [/\bI'm curious\b/i, '"I\'m curious"'],
+    [/\bHappy to\b/i, '"Happy to"'],
+    [/\bI'd love to\b/i, '"I\'d love to"'],
+    [/\bI'd be happy to\b/i, '"I\'d be happy to"'],
+    [/\bFeel free to\b/i, '"Feel free to"'],
+    [/\bFurthermore\b/i, '"Furthermore"'],
+    [/\bAdditionally\b/i, '"Additionally"'],
+    [/\bMoreover\b/i, '"Moreover"'],
+    [/\bdelve\b/i, '"delve" (35x normal human rate)'],
+    [/\bleverage\b/i, '"leverage" (corporate AI buzzword)'],
+    [/\bit's worth noting\b/i, '"it\'s worth noting" (Claude fingerprint)'],
+    [/\bit's important to note\b/i, '"it\'s important to note"'],
+    [/\bNotably\b/i, '"Notably" (Claude fingerprint)'],
+    [/\butilize\b/i, '"utilize" (say "use")'],
+    [/\bseamlessly\b/i, '"seamlessly"'],
+    [/\bstreamline\b/i, '"streamline"'],
+    [/\brobust\b/i, '"robust"'],
+    [/\bcomprehensive\b/i, '"comprehensive"'],
+    [/\bI hope this (?:finds|helps|email)\b/i, '"I hope this..." (robot opener)'],
+    [/\bIn today's (?:landscape|competitive|fast)\b/i, '"In today\'s..." (essay opener)'],
+    [/\brevolutionize\b/i, '"revolutionize"'],
+    [/\btransformative\b/i, '"transformative"'],
+  ];
+  for (const [pattern, label] of aiTells) {
+    if (pattern.test(body)) failures.push(`AI-tell: ${label}`);
+  }
 
-  // Pitch verbatim - should not reference tower-side or wrong products
-  if (/structural analysis/i.test(body)) failures.push('References structural analysis (tower-side only)');
-  if (/Harmoni/i.test(body)) failures.push('References Harmoni (tower product)');
-  if (/\btower\b|\bcellular\b/i.test(body)) failures.push('References tower/cellular (fiber only)');
+  // Tim kill-list (phrases Tim kills on sight — from TIM_EDIT_PATTERNS in judges.ts)
+  if (/\bworth a? (?:20|15|30)[- ]minutes?\b/i.test(body)) failures.push('Generic CTA: "Worth X minutes?" — use a diagnostic question instead');
+  if (/\bworth a look\b/i.test(body)) failures.push('Tim-kill: "worth a look"');
+  if (/\bor not the right time\b/i.test(body)) failures.push('Tim-kill: "or not the right time"');
+  if (/\bsay the word\b/i.test(body)) failures.push('Tim-kill: "say the word"');
+  if (/\bon my end\b/i.test(body)) failures.push('Tim-kill: "on my end"');
+  if (/\bjust let me know\b/i.test(body)) failures.push('Tim-kill: "just let me know"');
+  if (/\bDifferent angle\b/i.test(body)) failures.push('Tim-kill: "Different angle"');
+  if (/\beat construction\b/i.test(body)) failures.push('Tim-kill: "eat construction"');
+  if (/\bbleeding\b/i.test(body)) failures.push('Tim-kill: "bleeding"');
+  if (/\bbinding constraint\b/i.test(body)) failures.push('Tim-kill: "binding constraint"');
 
-  // Sensitivity checks — scan body AND subject
+  // Product/industry guards — scan subject + body (tower language can leak into either)
   const prospectCopy = `${subject} ${body}`;
+  if (/structural analysis/i.test(prospectCopy)) failures.push('References structural analysis (tower-side only)');
+  if (/Harmoni/i.test(prospectCopy)) failures.push('References Harmoni (tower product)');
+  if (/\btower\b|\bcellular\b/i.test(prospectCopy)) failures.push('References tower/cellular (fiber only)');
+  if (/\bmount analysis\b/i.test(prospectCopy)) failures.push('References mount analysis (tower product)');
+  if (/\bTNX\b/.test(prospectCopy)) failures.push('References TNX (tower structural analysis tool)');
+  if (/\bMicroStation\b/i.test(prospectCopy)) failures.push('References MicroStation (hard disqualifier)');
+  if (/\b(?:drawings?\s+QC|drawings?\s+quality[\s-]+control)\b/i.test(prospectCopy)) failures.push('References Drawing QC (not a real product)');
+
+  // Sensitivity checks
   if (/\bIndia\b|\boffshore\b|\boutsourc/i.test(prospectCopy)) {
     failures.push('References offshore/India (sensitive in prospect-facing copy)');
   }
@@ -128,8 +161,12 @@ export interface JudgeReport {
   judgedAt: string;
 }
 
-function buildJudgePrompt(dossier: Dossier, touch: EmailTouch): string {
-  return `You are a quality judge evaluating a post-show follow-up email before it ships to a real prospect. Your job is to PROTECT the sender's reputation. Be strict.
+function buildJudgePrompt(dossier: Dossier, touch: EmailTouch, researchContext?: string, icpType?: string): string {
+  const hasAeNotes = dossier.prospect.aeNotes && dossier.prospect.aeNotes.trim().length > 0;
+  const emailType = hasAeNotes ? 'post-show follow-up email' : 'cold outreach email';
+  const sequenceType = hasAeNotes ? 'post-show follow-up sequence' : 'cold outreach sequence';
+
+  return `You are a quality judge evaluating a ${emailType} before it ships to a real prospect. Your job is to PROTECT the sender's reputation. Be strict.
 
 ## The email
 Subject: ${touch.subject}
@@ -137,23 +174,26 @@ Body:
 ${touch.body}
 
 ## Context
-- Touch ${touch.touchNumber} of 3 in a post-show follow-up sequence
+- Touch ${touch.touchNumber} of 3 in a ${sequenceType}
 - Prospect: ${dossier.prospect.firstName} ${dossier.prospect.lastName}, ${dossier.prospect.title} at ${dossier.company.name || dossier.prospect.company}
 - Persona bucket: ${dossier.jtbd.personaBucket}
 - JTBD claim: ${dossier.jtbd.primaryJTBD}
 - VP connection: ${dossier.jtbd.vpConnection}
 - Research confidence: ${dossier.jtbd.confidenceLevel}
 - AE booth notes: ${dossier.prospect.aeNotes || 'none'}
+${researchContext ? `\n## Research context (use to evaluate whether email claims are supported)\n${researchContext.slice(0, 2000)}` : ''}
 
-## Score on 4 dimensions (1-10 each, ≥7 required to pass)
+## Score on 5 dimensions (1-10 each, ≥7 required to pass)
 
-1. **Research depth**: Is the JTBD claim grounded in evidence? Does the email reference something specific about this company/person that could NOT be said about any random fiber company? Score 1-3 if generic, 4-6 if somewhat specific, 7-10 if clearly researched.
+1. **Research depth**: Does the opening 1-2 sentences contain a SPECIFIC, VERIFIABLE fact? Score 1-3 if the opener is generic industry framing (could apply to any fiber company). Score 4-5 if it asserts a company-BEAD relationship the research context doesn't support (e.g., "[Company]'s BEAD work" when research shows no direct BEAD involvement). Score 6-7 if it uses verified state-level data honestly framed around the company (e.g., "State's $XB BEAD creates demand for firms like [Company]" — the state fact is verifiable, the company framing is honest). Score 7-8 if it cites one company-specific verified fact (e.g., BEAD award amount, project geography, company milestone, hiring signal). Score 9-10 if it cites multiple specific facts. Key distinction: state-level facts honestly anchored to the company ARE research — don't penalize. Fabricated or asserted-as-company-fact claims ARE hallucination — penalize.
 
 2. **VP connection**: Does the email link an identified need to a SPECIFIC Inorsa capability? Not "we can help" but "your X-situation maps to our Y-capability." Score 1-3 if no connection, 4-6 if vague, 7-10 if specific and defensible.
 
 3. **Tone**: Would an experienced AE (Mike/Nathan/Lucas) send this themselves? Peer-to-peer, not salesy. No flattery, no jargon, no desperation. Score 1-3 if obviously AI/template, 4-6 if acceptable but generic, 7-10 if feels like a real person who did their homework.
 
-4. **Conciseness**: Under 80 words? One question? No filler? Subject line under 8 words and specific? Score 1-3 if bloated, 4-6 if trimming needed, 7-10 if tight.
+4. **Conciseness**: Body between 78-99 words? One question? No filler? Subject line under 8 words and specific? Score 1-3 if bloated (>110w) or too thin (<60w), 4-6 if slightly outside band, 7-10 if in 78-99w band and tight.
+
+5. **JTBD alignment**: Does this email address a job THIS prospect is actually trying to do based on their role and company type? Is the CTA a diagnostic question about THEIR situation, or a generic meeting request? Score 1-3 if the email could be sent to anyone in fiber, 4-6 if it is segment-relevant (correct ICP: A&E vs operator), 7-10 if it addresses a specific job this role at this company type would recognize as their problem.
 
 ## Output format (JSON only)
 {
@@ -161,7 +201,8 @@ ${touch.body}
     {"dimension": "research_depth", "score": 0, "reasoning": ""},
     {"dimension": "vp_connection", "score": 0, "reasoning": ""},
     {"dimension": "tone", "score": 0, "reasoning": ""},
-    {"dimension": "conciseness", "score": 0, "reasoning": ""}
+    {"dimension": "conciseness", "score": 0, "reasoning": ""},
+    {"dimension": "jtbd_alignment", "score": 0, "reasoning": ""}
   ],
   "mustFix": [],
   "strengths": [],
@@ -169,36 +210,47 @@ ${touch.body}
 }
 
 Rules:
-- "send": all 4 dimensions ≥7
+- "send": all 5 dimensions ≥7
 - "hold": any dimension 5-6 (fixable)
 - "reject": any dimension ≤4 (needs rewrite)
-- If research confidence is "low" AND research_depth scores ≥7, double-check — low-confidence research rarely produces high-depth emails`;
+- If research confidence is "low" AND research_depth scores ≥7, double-check — low-confidence research rarely produces high-depth emails
+- If jtbd_alignment is ≤4, the email is talking about the wrong problem — reject regardless of other scores
+${icpType === 'fiber_operator' || icpType === 'ae_firm' ? `
+## ICP segment context (BONUS scoring guidance)
+${icpType === 'fiber_operator' ? `This is a fiber operator. BONUS (+1-2 on jtbd_alignment) if the email:
+- Frames pain around GIS-to-CAD conversion, build schedule pressure, or BEAD construction deadlines
+- Uses a CTA question about drawing throughput, permit cycles, or field crew utilization
+- Bridges from a company fact to drawing/documentation friction
+Do NOT penalize if the email uses generic fiber framing instead of segment-specific framing. This is a bonus, not a requirement.` : `This is an A&E firm. BONUS (+1-2 on jtbd_alignment) if the email:
+- Frames pain around project throughput per engineer, CD revision cycles, or margin-per-project
+- Uses a CTA question about cross-checking time, redraw cycles, or capacity scaling
+- Bridges from a company fact to engineering workflow friction
+Do NOT penalize if the email uses generic fiber framing instead of segment-specific framing. This is a bonus, not a requirement.
+CRITICAL: If the email claims Inorsa "validates inputs" or "catches errors," that is a MECHANICAL FAILURE, not a JTBD bonus question. The anti-validation rule is absolute regardless of ICP type.`}` : ''}`;
 }
 
 export async function judgeEmail(
   dossier: Dossier,
   touch: EmailTouch,
-  model: string = 'sonnet'
+  model: string = 'sonnet',
+  researchContext?: string,
+  icpType?: string,
 ): Promise<JudgeVerdict | null> {
-  const prompt = buildJudgePrompt(dossier, touch);
+  const prompt = buildJudgePrompt(dossier, touch, researchContext, icpType);
+  const modelId = model === 'opus' ? 'claude-opus-4-6' : 'claude-sonnet-4-6';
 
   try {
-    const escapedPrompt = prompt.replace(/'/g, "'\\''");
-    const result = execSync(
-      `claude -p --model ${model} --max-budget-usd 0.05 --output-format json '${escapedPrompt}'`,
-      { encoding: 'utf-8', timeout: 60000, maxBuffer: 1024 * 1024 * 5 }
-    );
+    const { callLLM } = await import('./llm-client.js');
+    const result = await callLLM(prompt, {
+      model: modelId,
+      maxTokens: 2048,
+      timeoutMs: 60000,
+      label: `judge-T${touch.touchNumber}`,
+    });
 
     let parsed: any;
-    try {
-      const jsonResponse = JSON.parse(result);
-      const content = jsonResponse.result || jsonResponse.content || result;
-      const jsonMatch = typeof content === 'string' ? content.match(/\{[\s\S]*\}/) : null;
-      parsed = jsonMatch ? JSON.parse(jsonMatch[0]) : (typeof content === 'object' ? content : JSON.parse(content));
-    } catch {
-      const jsonMatch = result.match(/\{[\s\S]*\}/);
-      parsed = jsonMatch ? JSON.parse(jsonMatch[0]) : null;
-    }
+    const jsonMatch = result.match(/\{[\s\S]*\}/);
+    parsed = jsonMatch ? JSON.parse(jsonMatch[0]) : null;
 
     if (!parsed?.scores) return null;
 

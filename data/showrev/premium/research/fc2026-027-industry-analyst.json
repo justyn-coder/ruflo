@@ -1,0 +1,45 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Fatbeam is a Coeur d'Alene, ID-based fiber network operator (CLEC) founded around 2007, primarily serving enterprise, government, and carrier customers across the Inland Northwest (Idaho, Washington, Montana, Oregon). They operate a dark fiber and lit services network, positioning as a regional wholesale/enterprise fiber provider — not a last-mile FTTH ISP in the traditional sense. Source: fatbeam.com, Crunchbase profile.",
+    "Fatbeam's core business is enterprise dark fiber, managed services, and carrier Ethernet — meaning their design/engineering workflows feed commercial construction projects, not mass-deployment residential FTTH builds. However, BEAD-driven network expansion in rural Idaho and eastern Washington puts them in a position where network extensions and middle-mile fiber are directly relevant to their growth trajectory. Source: fatbeam.com service pages.",
+    "Idaho's BEAD allocation is approximately $583M (NTIA final allocation), and Idaho Broadband Office (IBO) is in initial planning and subgrantee selection phases as of early 2026. Fatbeam, as an established Idaho fiber CLEC, is a plausible BEAD subgrantee or middle-mile partner, though no specific BEAD award to Fatbeam was found in public records searched. Source: Idaho Broadband Office / broadbandusa.ntia.gov — specific Fatbeam award not confirmed.",
+    "Christopher Davis holds the title 'PMO' (Project Management Office) at Fatbeam. This is a strong signal: PMO leadership at a fiber operator is directly responsible for project delivery timelines, permit tracking, engineering coordination, and construction schedule adherence — all areas where GIS-to-CAD workflow friction and permit kickbacks create pain. A PMO title at a fiber company in 2026 almost certainly means they are managing multiple concurrent construction projects and feeling the scheduling pressure. Source: tradeshow lead data; LinkedIn search not fully resolved.",
+    "Fatbeam has historically grown through network extensions and strategic route builds rather than large FTTH subscriber acquisition. Their LinkedIn presence (approx. 50-150 employees estimated) and regional footprint suggest a mid-sized operator with a lean engineering team — meaning design and permitting capacity is likely constrained relative to any expansion agenda. Source: LinkedIn company page estimates; Crunchbase.",
+    "Eastern Washington and northern Idaho permitting environments involve a mix of county road departments, WSDOT, ITD (Idaho Transportation Department), and tribal land considerations — jurisdictions known for variable permit review timelines and inconsistent submittal requirements. This makes permit kickback risk materially higher than urban markets. Source: industry knowledge of Pacific Northwest permitting landscape; ITD/WSDOT public processes.",
+    "No Fiber Connect 2026 speaker listing or conference session featuring Fatbeam executives was found, meaning Davis's attendance was likely as a buyer/evaluator, not a presenter — consistent with a PMO actively evaluating vendor tools and workflows rather than broadcasting thought leadership. Source: fiberconnect.org 2026 agenda search — not found.",
+    "Fatbeam's competitive set in the Inland Northwest includes Lumen (legacy CenturyLink routes), Ziply Fiber (growing aggressively in WA/ID with PE backing from WaveDivision), and potentially Zayo for carrier routes. Ziply's aggressive expansion adds competitive pressure on Fatbeam's enterprise accounts, creating urgency to expand their own network footprint faster — which tightens design and permitting timelines. Source: Ziply Fiber press releases; Lumen restructuring news.",
+    "No recent M&A activity involving Fatbeam was found in public press. They appear to remain independently operated. No PE ownership confirmed. Source: Crunchbase, PitchBook summary — not found.",
+    "Fatbeam's job posting activity was not directly accessible in this search cycle. However, given their size and growth signals, active hiring of a PMO-level contact attending a fiber-specific tradeshow implies they are in an expansion or project-ramp phase — not a contraction phase. Source: inference from lead context; Indeed/LinkedIn job board searches inconclusive."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No confirmed BEAD subgrant award to Fatbeam specifically — Idaho BEAD subgrantee list not yet publicly finalized as of search date.",
+    "Christopher Davis's specific LinkedIn profile not fully resolved — tenure at Fatbeam, team size under PMO, and prior employer history not confirmed.",
+    "Fatbeam's current active project count, construction pipeline volume, and engineering vendor relationships not found in public sources.",
+    "No direct quotes from Fatbeam leadership on design capacity, permitting pain, or engineering workflow challenges — no podcast appearances or trade press interviews found.",
+    "Revenue and employee count not confirmed from primary sources — estimates based on indirect signals (LinkedIn, Crunchbase ranges).",
+    "No confirmed booth notes or conversation context from Fiber Connect 2026 — unclear what specific problem or interest prompted Davis's attendance."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP designation of 'hold' may be overly conservative. While Fatbeam is not a mass-market FTTH ISP (which would be the cleanest fit), their enterprise/carrier fiber construction activity — especially any BEAD middle-mile involvement — creates exactly the GIS-to-CAD and permitting workflow pain Inorsa addresses. PMO title is the strongest positive signal in this record and should upgrade the assessment.",
+    "The 'Thin data' characterization is accurate for firmographic depth but misleading as a fit signal. Fatbeam's geography (Idaho/WA), size (lean team), market position (regional fiber operator in expansion mode), and contact title (PMO) all point toward moderate-to-good fit, not disqualification. The absence of data is not the same as negative data.",
+    "Competing analyst framing that treats Fatbeam as 'just a carrier Ethernet provider' without FTTH relevance may underweight the middle-mile and network extension use case — both of which require the same GIS-to-construction-drawing workflow that Inorsa addresses."
+  ],
+  "topInsight": "Christopher Davis is a PMO at a regional fiber operator in a permitting-complex, multi-jurisdiction Pacific Northwest market, attending a fiber-specific tradeshow in 2026 — the single year when BEAD construction pressure converts from planning to execution. A PMO's job is to protect schedules. Every permit kickback in Idaho/Washington's mixed county-state-tribal permitting environment costs 3-6 weeks. The outreach hook is not 'we make drawings faster' — it is 'your construction schedule has no slack for permit returns, and we eliminate the most common reason permit packages get kicked back before they leave your desk.' Davis is the exact person who feels that pain daily and has budget authority or direct budget influence to solve it.",
+  "sourcesUsed": [
+    "https://www.fatbeam.com",
+    "https://www.crunchbase.com/organization/fatbeam",
+    "https://broadbandusa.ntia.gov/states-territories/idaho",
+    "https://broadband.idaho.gov",
+    "https://www.ziplyfiber.com/about/news",
+    "https://www.telecompetitor.com (Fatbeam search — limited results)",
+    "https://www.lightreading.com (Fatbeam search — not found)",
+    "https://fiberconnect.org (2026 agenda — Fatbeam not listed as speaker)",
+    "https://www.linkedin.com/company/fatbeam (company page, employee estimate)",
+    "https://itd.idaho.gov (permitting process reference)",
+    "https://wsdot.wa.gov (permitting process reference)"
+  ]
+}
+```

@@ -1,0 +1,44 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "TEC (The Energy Corp or Telephone & Electronics Corp — disambiguation needed) based in Jackson, MS. The domain tec.com and Jackson, MS location most likely points to Telephone Electronics Corporation, a rural telecom/fiber operator serving Mississippi. They appear to be a CLEC/fiber ISP with operations in the Southeast — not a power utility, despite 'Plant Operations' title. 'Plant' in telecom context = outside plant (OSP) infrastructure, making this highly relevant to Inorsa. Source: tec.com domain inference + telecom industry convention for 'Plant Operations'",
+    "Forrest Collier holds 'Senior Director Plant Operations' — in telecom/fiber, Plant Operations owns outside plant design, construction management, field crew deployment, and asset records. This is an OSP-centric role. He almost certainly touches or owns the GIS-to-construction drawing workflow directly. He is a strong operational influencer and likely the field-execution decision authority, even if capital budget requires CEO (Jonathan Solomon) sign-off. Source: industry title convention analysis",
+    "The booth scan list includes Jonathan Solomon (CEO) — the likely budget authority and final approver. With the CEO at the show, this suggests TEC is actively evaluating vendors, not just browsing. CEO attendance at Fiber Connect is a strong buying signal. Source: lead sheet multi-contact data",
+    "Salvatore Orefiche (Director, Business Development — IoT, Smart Infrastructure, Industrial Monitoring) is also present. His title suggests TEC may be diversifying beyond traditional fiber into smart infrastructure or BEAD-adjacent projects, which would increase design volume and complexity — directly amplifying Inorsa's value prop. Source: lead sheet multi-contact data",
+    "Denis Ryzhikov (CEO & President) and Garth Naar (CEO) are listed as separate contacts from TEC at the same show. Multiple CEOs from one company is unusual — suggests either TEC is a holding company with subsidiary entities, or some contacts are from partner/affiliated companies sharing the booth scan. This needs AE clarification, but if these are subsidiary operators, TEC may represent a multi-entity account with aggregated design volume. Source: lead sheet multi-contact data, anomaly flagged",
+    "Roberto Martinez (Advisor, Strategy & Growth) presence indicates TEC is in a strategic planning or expansion phase — advisors typically engage at inflection points: BEAD application, M&A, or major capital programs. This is a further buying signal for near-term infrastructure investment. Source: lead sheet role inference",
+    "Jackson, MS location places TEC squarely in a BEAD-priority state. Mississippi received approximately $1.16 billion in BEAD funding. Mississippi broadband office has been among the more active state broadband offices in the Southeast. BEAD operational as of April 30, 2026 means ISP contracts in Mississippi could be finalized within the 6-month window (by ~October 2026). Construction starts Q3–Q4 2026 are plausible. This creates a hard external deadline driving urgency for design capacity now. Source: NTIA BEAD program public records + ShowRev industry baseline",
+    "No direct LinkedIn profile, trade press quote, or public speaking record for Forrest Collier was confirmed through prior research knowledge. His profile did not surface in the Brain digest or discovered companies list. Source: Brain Knowledge Digest — not found",
+    "Persona bucket classification: Forrest Collier is a 'Build' persona (Plant Operations). Per ShowRev guidance, Build personas care about field crew utilization, permit cycle times, and not having crews idle waiting on drawings. Inorsa's core proof point — permit review cut from 3-4 weeks to 2 days — is precisely the pain point this persona feels most acutely. Source: ShowRev persona framework",
+    "Ted Rodriquez (Electronics Engineering Program Instructor) at the same show is an unusual contact for an ISP. Could indicate TEC is involved in workforce development or training programs — possibly relevant to the industry labor shortage (3:1 job-to-candidate ratio). If TEC is trying to build internal design capacity, Inorsa's automation angle (reducing dependence on scarce designers) becomes a strong secondary pitch. Source: lead sheet + ShowRev labor baseline"
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "TEC company identity not confirmed — tec.com may point to multiple entities. Must confirm: Is this Telephone Electronics Corporation (Jackson, MS telecom/fiber ISP) or another entity? Critical before outreach.",
+    "No confirmed LinkedIn profile for Forrest Collier. Tenure, career history, prior companies, and whether he has spoken publicly — all unknown.",
+    "No direct quote from Forrest Collier in any trade press, podcast, or panel. Email opener cannot be personalized with his own words.",
+    "Multiple CEOs (Denis Ryzhikov, Garth Naar, Jonathan Solomon) from 'TEC' at the same show is anomalous. Whether these represent subsidiaries, partners, or data errors is unresolved. Account structure unclear.",
+    "Budget authority and procurement process unknown. Does Forrest control an OSP capex budget directly, or does everything route through Jonathan Solomon (CEO)?",
+    "No confirmation of TEC's BEAD application status, award amount, or deployment timeline. Mississippi BEAD specifics for TEC not found.",
+    "Current design toolchain unknown — whether TEC uses GIS (Esri/ArcGIS, QGIS), CAD (AutoCAD, MicroStation), or a purpose-built OSP platform (IQGeo, Vetro, OSPInsight) is unverified.",
+    "Salvatore Orefiche's IoT/Smart Infrastructure role scope at TEC not clear — whether this is a separate business unit or integrated with fiber ops is unknown.",
+    "No revenue, headcount, or network miles data confirmed for TEC."
+  ],
+  "challengesToOtherFindings": [
+    "The lead sheet grades Forrest Collier as 'hold' (ICP relevant but ungraded). I would push back on the 'hold' classification given: (1) his title maps directly to OSP design workflow ownership, (2) a CEO from the same company attended the show, and (3) Mississippi BEAD funding creates a hard near-term deadline. The combination argues for upgrading to active outreach, not hold.",
+    "The presence of multiple 'CEO' contacts from TEC is a data quality flag I would raise before any account-level strategy is built. If Denis Ryzhikov and Garth Naar are from affiliated but separate companies, the 'multi-threading' play looks different than if they are all part of one org.",
+    "Salvatore Orefiche's title (IoT, Smart Infrastructure) might suggest TEC is not a pure fiber play — however, this actually increases potential Inorsa relevance if smart infrastructure deployments require permitted underground fiber runs and conduit work. I would not dismiss him as out-of-scope."
+  ],
+  "topInsight": "Jonathan Solomon (CEO) and Forrest Collier (Sr. Director Plant Operations) both attended Fiber Connect 2026 from the same Jackson, MS company. CEO presence at a vendor-heavy show is a strong active-evaluation signal, not casual attendance. Forrest's Plant Operations title in telecom means he owns the OSP construction and permitting workflow — the exact pain Inorsa addresses. Mississippi's ~$1.16B BEAD allocation creates a hard Q3–Q4 2026 construction start pressure. The single most important outreach angle: reach Forrest first with a field-crew-utilization framing ('your crews can't build what isn't permitted — every kickback costs you 3-6 weeks of deployment time'), then CC or separately engage Jonathan Solomon as the budget authority, using BEAD milestone urgency as the close driver.",
+  "sourcesUsed": [
+    "Lead sheet multi-contact data (Fiber Connect 2026 booth scan)",
+    "ShowRev Industry Intelligence KB — BEAD baseline, labor shortage data, permitting cycle data",
+    "ShowRev persona framework — Build persona definition",
+    "NTIA BEAD program public records (Mississippi ~$1.16B allocation, April 30 2026 operational date)",
+    "Telecom industry title convention — 'Plant Operations' = Outside Plant in CLEC/fiber context",
+    "Brain Knowledge Digest — Forrest Collier not found; TEC not found as named entity",
+    "tec.com domain inference — not directly accessed, inference only"
+  ]
+}
+```

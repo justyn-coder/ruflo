@@ -1,0 +1,42 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Joel Swanson holds the title 'Business Development Leader' at Globema — a BD-facing role, not an engineering or operations title. This signals he is a revenue/partnership driver, not a technical buyer or design workflow owner. He is unlikely to be the end decision-maker for a tool like Inorsa, but could be a champion or internal sponsor if he sees a margin or competitive positioning angle. Source: tradeshow lead record.",
+    "Globema is a Poland-headquartered GIS/network management software and services company with offices in the US (Parker, CO aligns with their North American presence). They serve telecom operators and utilities with OSS/BSS systems, network inventory, and GIS-based design tools. They are a technology vendor and services firm — NOT a fiber operator or ISP. This is a critical fit question: Inorsa sells to companies that generate construction drawings; Globema may be a potential channel partner, integrator, or competitor rather than a direct end-user. Source: globema.com public website and LinkedIn company profile.",
+    "Globema's core product portfolio includes ETI.NET (network inventory/OSS), GIS-based network design tools, and professional services around telecom infrastructure. Their tooling overlaps with the GIS-to-CAD workflow space where Inorsa operates. This creates an ambiguous competitive/partnership dynamic: Globema may view Inorsa as a complementary layer (for construction drawing generation) or as a competitive threat to their design services offering. Source: globema.com/solutions.",
+    "Globema has active North American market development — Joel Swanson's Parker, CO location and BD title strongly suggest he is their US business development point of contact, tasked with growing North American telecom/ISP partnerships or sales. Attending Fiber Connect 2026 is consistent with this mandate. Source: LinkedIn company page, tradeshow lead record.",
+    "No direct quote, podcast appearance, panel, or trade press interview found for Joel Swanson specifically. His LinkedIn profile is relatively thin from a public search perspective — no major speaking engagements surfaced. This limits ability to personalize with his own words. Source: LinkedIn search, Fiber Connect speaker list (not found in speaker roster).",
+    "Globema has prior relationships with major telecom operators in Europe (Orange, T-Mobile, Energa) and has been expanding US presence. If they are pursuing BEAD-era US fiber operators as clients for their GIS/OSS tools, Joel's attendance at Fiber Connect is a direct hunting motion — he is looking for US operator prospects or partnerships. This makes Inorsa either a potential co-sell partner (Globema brings GIS inventory, Inorsa handles construction drawing output) or a channel conversation. Source: globema.com/clients, company LinkedIn.",
+    "Budget authority: As a BD Leader (not VP or C-suite), Joel almost certainly does not hold budget authority for technology procurement. He influences partnership deals and may recommend tools or integrations to engineering or product leadership. The actual budget holder for any Inorsa licensing or services engagement would likely sit above him — a CTO, VP Engineering, or COO at Globema. Source: title analysis, standard BD role scope.",
+    "Buying timeline signal: Globema's North American expansion aligns with the BEAD deployment wave (2026-2030). If they are pitching US fiber operators on GIS/network inventory tools, they need their own stack to be credible and complete. A partnership or integration with Inorsa (construction drawing generation from GIS data) could strengthen their US value proposition. This creates a potential urgency window tied to BEAD contract award timelines (Q3 2026 onward). Source: industry baseline, globema.com.",
+    "Fit classification uncertainty: This lead should NOT be treated as a standard end-user/operator prospect. Globema is a software/services vendor. The correct ICP question is: (a) Do they use Inorsa themselves for internal design services delivery? (b) Could they resell or integrate Inorsa into their platform for US clients? (c) Are they a competitor? The answer determines the entire sales motion. Source: Globema product analysis."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No direct quote or public statement from Joel Swanson found — no podcast, panel, or trade press interview sourced.",
+    "Cannot confirm whether Globema has an internal CAD/construction drawing production practice in the US (which would make them a direct user prospect) vs. being purely a software/OSS vendor.",
+    "No LinkedIn profile detail depth available beyond title and location — tenure at Globema, prior companies, and career arc not confirmed.",
+    "Globema's exact North American revenue, headcount, or US client list is not publicly disclosed — hard to size the opportunity.",
+    "No other Globema contacts found on the tradeshow booth-scan list — cannot confirm multi-threading opportunity.",
+    "Unclear whether Globema has a US-based engineering services arm that produces construction drawings, or whether they are purely a software/data platform company.",
+    "No confirmation of which specific Fiber Connect sessions or tracks Joel attended — would help infer his current pain focus."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold / Batch D classification is correct but may be underselling a partnership angle. If Globema is positioning their GIS tools for US BEAD operators, an Inorsa integration partnership could be more valuable than a single operator sale — this should be explored before dismissing the lead.",
+    "Treating Joel as a standard 'Design/Document' persona would be wrong. His BD title places him squarely in a business development / partnership persona. The sales angle must shift from 'reduce your permit kickbacks' to 'strengthen your US market offering and close more operator deals' — a margin/competitive positioning frame, not a workflow pain frame.",
+    "The prior research brain shows IQGeo as a discovered company — IQGeo is a direct competitor to Globema in the GIS network management space. If Globema is aware of IQGeo's US traction, they may be more motivated to differentiate their stack (which an Inorsa integration could help). Worth noting as a potential competitive framing hook."
+  ],
+  "topInsight": "Globema is a GIS/OSS software and services vendor — NOT a fiber operator. Joel Swanson is their North American BD lead attending Fiber Connect to hunt US telecom partnerships or clients. This means the Inorsa conversation should be framed as a PARTNERSHIP or INTEGRATION pitch, not a standard end-user sale: 'When your US fiber operator clients need to go from your GIS inventory data to construction-ready permit drawings, Inorsa is the layer that closes that gap — and makes your platform stickier.' This reframe converts a thin, low-confidence lead into a potential channel/co-sell opportunity aligned with Globema's North American growth mandate. The immediate next step is a discovery call to determine whether Globema delivers design services internally (direct user) or is purely a platform play (integration/reseller conversation).",
+  "sourcesUsed": [
+    "https://www.globema.com",
+    "https://www.globema.com/solutions",
+    "https://www.globema.com/clients",
+    "https://www.linkedin.com/company/globema",
+    "Fiber Connect 2026 speaker roster (Joel Swanson not found)",
+    "Tradeshow lead record (title, location, email, phone)",
+    "ShowRev Industry Intelligence KB (industry baseline)",
+    "IQGeo company profile (competitive context)"
+  ]
+}
+```

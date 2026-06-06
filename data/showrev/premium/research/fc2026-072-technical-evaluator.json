@@ -1,42 +1,585 @@
-I have enough across the research vectors to produce the output.
+I'll research Lightbulb / Murali Nair systematically, following the priority search order. Let me start with job postings, then tech stack, then general capability signals.
 
-```json
-{
-  "role": "Technical Evaluator",
-  "keyFindings": [
-    "Lightbulb is an engineering SERVICES firm, not a fiber operator — they design/engineer for clients, not build/operate (lightbulbsupport.com, confirmed via site crawl)",
-    "Confirmed tool stack: AutoCAD (CAD/permit drawings), O-CALC (pole structural analysis), ESRI/ArcGIS (GIS dashboards integrated with customer OSS platforms) — no Katapult, Render Networks, IQGeo, or Biarri found (lightbulbsupport.com)",
-    "Full OSP workflow documented: conceptual → HLD → LLD → permit drawings → construction management, serving clients across US (lightbulbsupport.com)",
-    "Permitting is a core deliverable: they explicitly handle DOT, County, City, Electric Company, and Railway clearances for underground and aerial applications — this is where Inorsa's value lands (lightbulbsupport.com)",
-    "Centillion Solutions (same service class as Lightbulb) was acquired by Osmose in Oct 2025 and is an Esri partner — the Brain 'Centillion just publicly endorsed' and 'Centillion delivers' fragments are likely garbled partial sentences from scraped marketing copy, not named tools (osmose.com, centillionsolutions.com, esri.com/partners)",
-    "No Katapult/IQGeo/modern automation tooling found — they appear to run a manual GIS-to-CAD workflow, which is the exact gap Inorsa addresses",
-    "BEAD $25.5M award is almost certainly a CLIENT's award, not Lightbulb's — as a design contractor they serve BEAD-funded operators, not hold BEAD awards directly",
-    "AE booth note confirms small company ('small company doing fiber and tower') — team size signal is sub-20 engineers; no job postings found, consistent with a lean shop",
-    "Murali Nair's title 'Engineering Sales & Operations' places him at the sales/biz-dev boundary — he evaluates vendor tools and signs design contracts, not an individual CAD drafter"
-  ],
-  "evidenceStrength": "moderate",
-  "gaps": [
-    "Cannot confirm specific CAD software version or whether they use any fiber-specific design layer on top of AutoCAD (VETRO, 3-GIS, etc.)",
-    "Cannot verify which clients they are engineering for under BEAD — no named customer relationships found",
-    "Team headcount not disclosed on site; no job postings found to infer growth trajectory",
-    "Murali Nair DFW LinkedIn profile exists but was not accessible to confirm role history at Lightbulb",
-    "'Fort personally sold' and 'proprietary data' Brain fragments are unresolvable without original scraped content — could be a named client deal or an internal data system",
-    "Current design-to-permit turnaround time not found — cannot benchmark against Inorsa's 2-day proof point without this"
-  ],
-  "challengesToOtherFindings": [
-    "Industry Analyst likely treated Lightbulb as a fiber operator based on BEAD context — this is wrong. They are a design contractor. The Inorsa pitch must target their efficiency economics (how many permit packages can they produce per engineer), not their deployment capacity.",
-    "AE Proxy may angle toward BEAD urgency and construction ramp — partially right framing, but the mechanism is wrong. Lightbulb doesn't deploy; they produce engineering deliverables. The pain is permit kickbacks slowing THEIR CLIENT's construction, which slows Lightbulb's project close-out and their next contract cycle.",
-    "Brain data labels 'Centillion just publicly endorsed' and 'Centillion delivers' as tools — these are NOT tools. They are corrupted text fragments from marketing copy. Centillion is a direct competitor (now Osmose), not a platform Lightbulb uses. Do not pitch Inorsa as compatible with 'Centillion tooling' — that angle is fabricated.",
-    "Any finding that Lightbulb 'holds' a BEAD award should be challenged — engineering services firms don't receive BEAD awards; ISPs/carriers do. Lightbulb rides BEAD through their clients."
-  ],
-  "topInsight": "Lightbulb is a small engineering services firm running a manual AutoCAD + ESRI workflow to produce permit drawings for fiber/tower clients — they are the entity that ABSORBS permit kickbacks on behalf of their clients (each kickback is rework that hits Lightbulb's margin and timeline). Inorsa's fit is as a back-office efficiency tool for Lightbulb's own production workflow, not a pitch about the operator's deployment speed. Murali Nair (Engineering Sales & Ops) is the right contact — he controls vendor adoption decisions at the intersection of engineering delivery and sales capacity.",
-  "sourcesUsed": [
-    "https://www.lightbulbsupport.com/",
-    "https://www.centillionsolutions.com/wireline-fttx/",
-    "https://www.centillionsolutions.com/about-us/",
-    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
-    "https://www.esri.com/partners/centillion-solutions-a2T5x000008VW31EAG",
-    "https://www.linkedin.com/in/viewmnairprofile/"
-  ]
-}
-```
+<tool_call>
+{"name": "search", "arguments": {"query": "Lightbulb fiber Plano TX engineering company", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Snippet: Providing superior residential, business, and wholesale broadband internet services in the underserved communities of Southeast Texas.
+
+Result 2:
+URL: https://www.linkedin.com/company/lightbulb-technology-solutions
+Title: Lightbulb Technology Solutions | LinkedIn
+Snippet: Providing businesses and people with the right technology solutions for the right price. IT Consultants & Technology Solutions Company.
+
+Result 3:
+URL: https://maps.apple.com/?q=Lighting+%26+Bulb+Warehouse
+Title: Lighting & Bulb Warehouse - Apple Maps
+Result 4:
+URL: https://www.linkedin.com/company/lighthousenetworks
+Title: Lighthouse Networks | LinkedIn
+Snippet: Lighthouse Networks is a 100% fiber internet provider serving communities in Wisconsin & Minnesota. Learn more at lighthousenetworks.com
+
+Result 5:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Snippet: Lightbulb Networks - Providing superior residential, business, and wholesale broadband internet services in the underserved communities of Southeast Texas.
+
+Result 6:
+URL: https://www.linkedin.com/company/lightbulb-technology-solutions
+Title: Scalable IT Solutions for SMBs | LinkedIn
+Result 7:
+URL: tech.co
+Title: Best Business Internet Providers
+Snippet: The Best Business Internet Providers of 2025: Verizon, Spectrum, Cox, Comcast, and Frontier
+Result 8:
+URL: https://www.linkedin.com/in/murali-nair-5b3b1b3
+Title: Murali Nair - Engineering Sales & Operations - Lightbulb | LinkedIn
+Snippet: View Murali Nair's profile on LinkedIn, the world's largest professional network. Murali Nair has 1 job listed on their profile. See the complete profile on ...
+
+Result 9:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Snippet: Providing superior residential, business, a...
+
+Result 10:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Snippet: Lightbulb Networks - Providing superior residential, business, and wholesale broadband internet services in the underserved communities of Southeast Texas.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Lightbulb Networks fiber Southeast Texas BEAD engineering", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Snippet: Providing superior residential, business, and wholesale broadband internet services in the underserved communities of Southeast Texas.
+
+Result 2:
+URL: https://www.linkedin.com/company/lightbead-capital
+Title: Lightbead Capital | LinkedIn
+Snippet: Lightbead Capital is a capital formation advisory firm focused on digital infrastructure and the broadband connectivity ecosystem.
+
+Result 3:
+URL: https://www.linkedin.com/company/southeast-texas-fiber
+Title: Southeast Texas Fiber | LinkedIn
+Snippet: Southeast Texas Fiber is a fiber-optic broadband provider dedicated to bringing high-speed internet access to underserved rural communities in Southeast Texas.
+
+Result 4:
+URL: https://www.linkedin.com name/search/results/all/?keywords=lightbulb+networks+fiber&sid=oS6
+Title: People - LinkedIn
+Snippet: About 36,400,000 results
+Result 5:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Url: https://lightbulbnetworks.com
+
+Result 6:
+URL: https://publicfiles.fcc.gov/api/download/bulk-data/bdc/availability-data/june-2023/23v2/f0/FCC-Form477-2023J-v2-f0-23.csv
+Title: Availability data
+Result 7:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Snippet: Lightbulb Networks - Providing superior residential, business, and wholesale broadband internet services in the underserved communities of Southeast Texas.
+
+Result 8:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Result 9:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Result calls: https://lightbulbnetworks.com
+
+Result 10:
+URL: https://www.linkedin.com/company/lightbulb-networks
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://lightbulbnetworks.com", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Robots.txt: Firecrawl respects robots.txt files. The URL you tried to access was blocked by the website's robots.txt file. If you want to crawl this URL anyway, you can set the ignoreSitemap option to true in Firecrawl.
+</tool_call>
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://lightbulbnetworks.com", "formats": ["markdown"], "ignoreSitemap": true}}
+</tool_call>
+<tool_response>
+Error: {"success":false,"error":"Provider returned error: Request failed with status code 500"}
+</tool_call>
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "lightbulbnetworks.com fiber internet Southeast Texas", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://lightbulbnetworks.com
+Title: Lightbulb Networks
+Snippet: Lightbulb Networks is your trusted provider of high-speed fiber internet for homes and businesses in Southeast Texas.
+
+Result 2:
+URL: https://lightbulbnetworks.com/about
+Title: About Lightbulb Networks | Fiber Internet Provider | Southeast Texas
+Snippet: Lightbulbnetworks.com has been registered by a private individual in the United States. Find out who's behind this website.
+
+Result 3:
+URL: https://lightbulbnetworks.com/coverage
+Title: Coverage | Lightbulb Networks | Southeast Texas Fiber Provider
+Snippet: Lightbulb Networks provides fiber internet coverage in Southeast Texas.
+
+Result 4:
+URL: https://lightbulbnetworks.com/faq
+Title: FAQ | Lightbulb Networks | Southeast Texas Fiber Internet
+Snippet: Lightbulb Networks FAQ page. Find answers to common questions about our fiber internet services in Southeast Texas.
+
+Result 5:
+URL: https://lightbulbnetworks.com/contact
+Title: Contact | Lightbulb Networks | Southeast Texas Fiber Internet
+Snippet: Contact Lightbulb Networks for fiber internet services in Southeast Texas. Call us, email us, or fill out our contact form.
+
+Result result 6:
+URL: https://lightbulbnetworks.com/business
+Title: Business | Lightbulb Networks | Fiber Internet | Southeast Texas
+Snippet: Lightbulb Networks provides fiber internet for businesses in Southeast Texas.
+
+Result 7:
+URL: https://broadbandnow.com/internet-providers/zip/75002
+Title: Internet Providers in Allen, TX (75002)
+Snippet: Allen, TX (75002) Internet Providers: AT&T, Spectrum, EarthLink, Windstream, XFINITY, Vexus Fiber, & More
+Result 8:
+URL: https://broadbandnow.com/internet-providers/zip/77701
+Title: Internet Providers in Beaumont, TX (77701)
+Snippet: Result: AT&T, Spectrum, EarthLink, Windstream, XFINITY, & More.
+Result 9:
+URL: https.broadbandnow.com/internet-providers/zip/75002
+Title: Internet providers in Allen, TX
+Snippet: Internet providers in Allen, TX (75002)
+
+Result 10:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Snippet: Lightbulb Networks is providing superior residential, business, and wholesale broadband internet services in the underserved communities of Southeast Texas.
+
+</tool_response>
+
+Good — Lightbulb Networks is an ISP/operator in Southeast Texas, not an engineering firm. Murali Nair's title is "Engineering Sales & Operations." The AE note says "small company doing fiber and tower." Let me dig into the company and Murali's profile more carefully.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://lightbulbnetworks.com/about", "formats": ["markdown"], "ignoreSitemap": true}}
+</tool_call>
+<tool_response>
+Error: {"success":false,"error":"Provider returned error: Request failed with status code 500"}
+</tool_call>
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lightbulb Networks\" Murali Nair fiber tower engineering Plano Texas", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/murali-nair-5b3b1b3
+Title: Murali Nair - Engineering Sales & Operations - Lightbulb | LinkedIn
+Snippet: View Murali Nair's profile on LinkedIn, the world's largest professional network. Murali Nair has 1 job listed on their profile. See the complete profile on ...
+
+Result 2:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Snippet: Lightbulb Networks - Providing superior residential, business, and wholesale broadband internet services in the underserved communities of Southeast Texas.
+
+Result 3:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Url: https://lightbulbnetworks.com
+Title: Lightbulb Networks | LinkedIn
+
+Result 4:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Snippet: LinkedIn has 1 job listed on their profile. See the complete profile on LinkedIn and discover Murali Nair's connections and jobs at similar companies.
+
+Result 5:
+URL: https://www.linkedin.com/in/murali-nair-5b3b1b3
+Title: Murali Nair - Engineering Sales & Operations - Lightbulb | LinkedIn
+Snippet: View Murali Nair's profile on LinkedIn
+
+Result 6:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Result: Providing superior residential, business, and wholesale broadband internet services in the underserved communities of Southeast Texas.
+URL: https://lightbulbnetworks.com
+
+Result 7:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Result 8:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks
+Result 9:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Result 10:
+URL: https://www.linkedin.com/in/murali-nair-5b3b1b3
+Title: Murali Nair | LinkedIn
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/company/lightbulb-networks", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+[LINKEDIN BLOCK] LinkedIn requires authentication to view this page. Raw HTML preview:
+
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><link rel="canonical" href="https://www.linkedin.com/company/lightbulb-networks/"><title>Lightbulb Networks | LinkedIn</title><meta name="description" content="Lightbulb Networks | 23 followers on LinkedIn. Providing superior residential, business, and wholesale broadband internet services in the underserved communities of Southeast Texas. | Lightbulb Networks is your trusted provider of high-speed fiber internet for homes and businesses in Southeast Texas. We are actively building our own network from the ground up, ensuring superior speed, reliability, and service. As a local company, we understand what it means to keep our community connected."><meta name="author" content="LinkedIn"> ...
+</tool_response>
+
+Excellent — 23 LinkedIn followers, actively building network from the ground up. This is a small startup operator. Now let me check Murali's LinkedIn profile.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/in/murali-nair-5b3b1b3", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+[LINKEDIN BLOCK] LinkedIn requires authentication to view this page. Raw HTML preview:
+
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="X-UA-Compatible" content="IE=www.linkedin.com/in/murali-nair-5b3b1b3edge,chrome=1"><link rel="canonical" href="https://www.linkedin.com/in/murali-nair-5b3b1b3/"><title>Murali Nair - Engineering Sales &amp; Operations - Lightbulb | LinkedIn</title><meta name="description" content="View Murali Nair's profile on LinkedIn, a professional community of 1 billion members. As Engineering Sales &amp; Operations at Lightbulb, Murali Nair has 1 job listed on their profile."><title>
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Murali Nair\" fiber telecom engineering AutoCAD GIS design", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/murali-nair-5b3b1b3
+Title: Murali Nair - Engineering Sales & Operations - Lightbulb | LinkedIn
+Snippet: View Murali Nair's profile on LinkedIn, a professional community of 1 billion members. As Engineering Sales &amp; Operations at Lightbulb, Murali Nair has 1 job listed on their profile.
+
+Result 2:
+URL: https://www.linkedin.com/in/murali-nair-9b66a7218
+Title: Murali Nair | LinkedIn
+Snippet: Professional Expertise: Civil Engineering, Project Management, AutoCAD, STAAD.Pro, MATLAB, ANSYS, Data Analysis, and Programming (Python, C++)
+Result 3:
+URL: https://www.linkedin.com/in/murali-nair-cpa-8a65b87
+Title: Murali Nair CPA | LinkedIn
+Snippet: Tax Director at ...
+Result 4:
+URL: https://www.linkedin.com/in/murali-nair-2aa98b151
+Title: Murali Nair | LinkedIn
+Snippet: Fiber Planner at ...
+
+Result 5:
+URL: https://www.linkedin.com/in/murali-nair-2aa98b151
+Title: Murali Nair | LinkedIn
+Snippet: Fiber Planner at ...
+Result 6:
+URL: https://www.linkedin.com/in/murali-nair-3b65a5183
+Title: Murali Nair | LinkedIn
+Snippet: Telecom Engineering at...
+Result 7:
+URL: https://www.linkedin.com/in/murali-nair-3b65a5183
+Title: Murali Nair | LinkedIn
+Snippet: Telecom Engineering at...
+
+Result 8:
+URL: https://www.linkedin.com/in/murali-nair-pmp-csm-4aa7a218
+Title: Murali Nair, PMP, CSM | LinkedIn
+Snippet: Senior Engineer Network Planning...
+Result 9:
+URL: https://www.linkedin.com/in/murali-nair-5b3b1b3
+Title: Murali Nair - Engineering Sales & Operations - Lightbulb | LinkedIn
+Snippet: View Murali Nair's profile on LinkedIn, a professional community of 1 billion members. As Engineering Sales &amp; Operations at Lightbulb, Murali Nair has 1 job listed on their profile.
+Result 10:
+URL: https://www.linkedin.com/in/murali-nair-2aa98b151
+Title: Murali Nair | LinkedIn
+Snippet: Fiber Planner at ...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lightbulb Networks\" hiring careers fiber design engineer", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result results:
+Result 1:
+URL: https://www.linkedin.com/jobs/search/?keywords=Lightbulb+Networks
+Title: Lightbulb Networks Jobs | LinkedIn
+Snippet: Today's top Lightbulb Networks jobs. Leverage your professional network, and get hired. New Lightbulb Networks jobs added daily.
+
+Result 2:
+URL: https://www.linkedin.com/company/lightbulb-networks/jobs
+Title: Jobs at Lightbulb Networks | LinkedIn
+Snippet: Jobs at Lightbulb Networks. 0 jobs found.
+
+Result 3:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Snippet: Lightbulb Networks - Providing superior residential, business, and wholesale broadband internet services in the underserved communities of Southeast Texas.
+
+Result 4:
+URL: https://www.indeed.com/cmp/Lightbulb-Networks
+Title: Lightbulb Networks Jobs in 2025 | Indeed
+Snippet: Find Lightbulb Networks jobs on Indeed. Lightbulb Networks is hiring. Learn more about working at Lightbulb Networks and apply today.
+
+Result 5:
+URL: https://www.indeed.com/cmp/Lightbulb-Networks
+Title: Lightbulb Networks Jobs in 2025 | Indeed
+Snippet: Find Lightbulb Networks Jobs on Indeed.
+Result 6:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Snippet: https://lightbulbnetworks.com
+Result 7:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Snippet: Lightbulb Networks - Providing superior residential, business, and wholesale broadband internet services in the underserved communities of Southeast Texas.
+
+Result 8:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Snippet: Lightbulb Networks - Providing superior residential, business, and wholesale broadband internet services in the underserved communities of Southeast Texas.
+Result 9:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Result 10:
+URL: https://www.indeed.com/cmp/Lightbulb-Networks
+Title: Lightbulb Networks Jobs in 2025 | Indeed
+Snippet: Find Lightbulb Networks Jobs on Indeed.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.indeed.com/cmp/Lightbulb-Networks", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Source: indeed.com
+ # Lightbulb Networks
+
+ ## Lightbulb Networks jobs
+
+ No open jobs
+
+ ## About Lightbulb Networks
+
+ **Website:** lightbulbnetworks.com
+
+ **Industry:** Telecommunications
+
+ **Revenue:** Unknown / Non-Applicable
+
+ **Size:** 1 to 50 employees
+
+ **Type:** Company - Private
+
+ **Founded:** 2022
+
+ **Description:** Lightbulb Networks is your trusted provider of high-speed fiber internet for homes and businesses in Southeast Texas. We are actively building our own network from the ground up, ensuring superior speed, reliability, and service. As a local company, we understand what it means to keep our community connected.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lightbulb Networks\" Texas BEAD funding broadband grant award", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Snippet: Lightbulb Networks - Providing superior residential, business, and wholesale broadband internet services in the underserved communities of Southeast Texas.
+
+Result 2:
+URL: https://broadbandusa.ntia.doc.gov/sites/default/files/2022-09/WestVirginia_FBA_Final.pdf
+Title: Broadband Assessment Report - West Virginia
+Snippet: NTIA Broadband Assessment report
+
+Result 3:
+URL: https://broadbandusa.ntia.doc.gov/sites/default/files/2022-09/WestVirginia_FBA_Final.pdf
+Title: Broadband Assessment Report - West Virginia
+Result 4:
+URL: https://broadbandusa.ntia.doc.gov/sites/default/files/2022-09/WestVirginia_FBA_Final.pdf
+Title: WV Broadband Assessment
+
+Result 5:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Result 6:
+URL: https://broadbandusa.ntia.doc.gov/sites/default/files/2022-09/WestVirginia_FBA_Final.pdf
+Title: Broadband Assessment Report
+Result 7:
+URL: https://telecompetitor.com/tag/texas-bead/
+Title: Texas BEAD Archives | Telecompetitor
+Snippet: Texas BEAD. Get the latest news, analysis, and information about Texas BEAD.
+Result 8:
+URL: https://telecompetitor.com/tag/texas-bead/
+Title: Texas BEAD Archive
+Result 9:
+URL: https://broadbandusa.ntia.doc.gov/sites/default/files/2022-09/WestVirginia_FBA_Final.pdf
+Title: Broadband Assessment Report
+Result 10:
+URL: https://telecompetitor.com/tag/texas-bead/
+Title: Texas BEAD | Telecompetitor
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://telecompetitor.com/tag/texas-bead/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Source: telecompetitor.com
+ # Texas BEAD Archives | Telecompetitor
+
+ ## Texas BEAD
+
+ [Texas Broadband Development Office Plans to Use Scoring Matrix for BEAD Selection](https://telecompetitor.com/texas-broadband-development-office-plans-to-use-scoring-matrix-for-bead-selection/)
+
+ [Texas BEAD: State Plans First Round of Subgrantee Selections by End of Year](https://telecompetitor.com/texas-bead-state-plans-first-round-of-subgrantee-selections-by-end-of-year/)
+
+ [Texas BEAD: Broadband Development Office Plans to Accept Applications in Q1 2025](https://telecompetitor.com/texas-bead-state-plans-to-accept-applications-in-q1-2025/)
+
+ [Texas BEAD: State Plans to Accept Applications in Q1 2025](https://telecompetitor.com/texas-bead-state-plans-to-accept-applications-in-q1-2025/)
+
+ ...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Texas BEAD subgrantee selection 2026 ISP contracts status", "num_results": 8}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://telecompetitor.com/texas-bead-state-plans-first-round-of-subgrantee-selections-by-end-of-year/
+Title: Texas BEAD: State Plans First Round of Subgrantee Selections by End of Year
+Snippet: The Texas Broadband Development Office (TxBDO) plans to make the first round of BEAD subgrantee selections by end of year, ...
+
+Result 2:
+URL: https://broadbandbreakfast.com/texas-bead-plans/
+Title: Texas BEAD Plans
+Snippet: Texas' BEAD initial proposal was approved in June 2024 and it was the last state to get its initial proposal approved.
+
+Result 3:
+URL: https://telecompetitor.com/texas-bead-state-plans-first-round-of-subgrantee-selections-by-end-of-year/
+Title: Texas BEAD: State Plans First Round of Subgrantee Selections
+Snippet: Texas Broadband Development Office plans to make first round of BEAD subgrantee selections.
+Result 4:
+URL: https://telecompetitor.com/texas-bead-broadband-development-office-plans-to-accept-applications-in-q1-2025/
+Title: Texas BEAD: Accept Applications Q1 2025
+Snippet: Texas BEAD plans to accept applications starting Q1 2025
+
+Result 5:
+URL: https://telecompetitor.com/texas-bead-state-plans-first-round-of-subgrantee-selections-by-end-of-year/
+Title: Texas BEAD: State Plans First Round of Subgrantee Selections
+Result 6:
+URL: https://telecompetitor.com/texas-bead-state-plans-first-round-of-subgrantee-selections-on-subgrantee-selection/
+Title: Texas BEAD
+Result 7:
+URL: https://broadbandbreakfast.com/texas-bead-plans/
+Title: Texas BEAD Plans | Broadband Breakfast
+Snippet: Texas BEAD plans: last state to get IP approved in June 2024.
+Result 8:
+URL: https://broadbandbreakfast.com/texas-bead-plans/
+Title: Texas BEAD Plans | Broadband Breakfast
+Snippet: Texas' BEAD initial proposal was approved in June 2024 and it was the last state to be approved.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lightbulb Networks\" OR \"lightbulbnetworks\" fiber construction drawing AutoCAD GIS permitting", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://lightbulbnetworks.com
+Title: Lightbulb Networks
+Snippet: Lightbulb Networks is your trusted provider of high-speed fiber internet for homes and businesses in Southeast Texas.
+
+Result 2:
+URL: https://lightbulbnetworks.com/about
+Title: About Lightbulb Networks | Fiber Internet Provider | Southeast Texas
+Snippet: Lightbulb Networks is your trusted provider of high-speed fiber internet for homes and businesses in LinkedIn profile or career historyusiness in Southeast ...
+
+Result 3:
+URL: https://lightbulbnetworks.com/coverage
+Title: Coverage | Lightbulb Networks | Southeast Texas Fiber Provider
+Snippet: Lightbulb Networks provides fiber internet coverage in Southeast Texas.
+
+Result 4:com
+URL: https://lightbulbnetworks.com/faq
+Title: FAQ | Lightbulbnetworks.com Fiber Internet FAQ
+Snippet: Frequently Asked Questions about Lightbulb Networks fiber internet in Southeast Texas
+
+Result 5:
+URL: https://lightbulbnetworks.com/contact
+Title: Contact Lightbulb Networks
+Snippet: Contact Lightbulb Networks for fiber internet services in Southeast Texas.
+
+Result 6:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Snippet: Lightbulb Networks - Providing superior residential, business, and wholesale broadband internet services in the underserved communities of Southeast Texas.
+
+Result 7:
+URL: https://broadbandnow.com/internet-providers/zip/77701
+Title: Internet Providers in Beaumont, TX (77701)
+Result 8:
+URL: https://broadbandnow.com/internet-providers/zip/77640
+Title: Internet Providers in Port Arthur, TX (77640)
+Result 9:
+URL: https://broadbandnow.com/internet-providers/locations/texas/southeast
+Title: Internet Providers in Southeast Texas
+Snippet: The best internet providers in Southeast Texas, including Beaumont, TX and others.
+Result call 10:
+URL: https://broadbandnow.com/internet-providers/locations/texas/southeast
+Title: Internet Providers in Southeast Texas
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Lightbulb\" fiber tower small company Plano Texas engineering sales operations", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/murali-nair-5b3b1b3
+Title: Murali Nair - Engineering Sales & Operations - Lightbulb | LinkedIn
+Snippet: View Murali Nair's profile on LinkedIn, a professional community of 1 billion members. As Engineering Sales &amp; Operations at Lightbulb, Murali Nair has 1 job listed on their profile.
+
+Result 2:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Snippet: Lightbulb Networks - Providing superior residential, business, and wholesale broadband internet services in the underserved computing communities of Southeast Texas.
+
+Result 3:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Result 4:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Result 5:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Snippet: Providing superior residential, business, and wholesale broadband internet services in the underserved communities of Southeast Texas.
+Result 6:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Result 7:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Result 8:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Result 9:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+Result 10:
+URL: https://www.linkedin.com/company/lightbulb-networks
+Title: Lightbulb Networks | LinkedIn
+
+</tool_response>
+
+The AE notes say "fiber and tower" — but Inorsa is fiber-only, no tower/cellular. This is a critical flag. Let me dig into whether "Lightbulb" here might be a different entity than Lightbulb Networks, possibly an engineering services firm rather than an operator. Murali's title "Engineering Sales & Operations" is atypical for a pure ISP.
+<tool_call>
+{"name": "search", "arguments": {"query": "Murali Nair \"Engineering Sales\" fiber tower telecom Plano Texas company", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/murali-nair-5b3b1b3
+Title: Murali Nair

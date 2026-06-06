@@ -1,0 +1,47 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Integer Telecom Services, Inc. is headquartered in Plano, TX (Dallas metro). The company appears to be a telecom services/engineering firm — the name and domain 'integertel.com' suggest a small-to-mid-size telecom services provider or engineering contractor, likely in fiber/broadband infrastructure. No Crunchbase, PitchBook, or major press profile found, indicating a private, sub-50-person firm. Source: domain inference + no public funding records found.",
+    "Aditya Kumar holds the title 'VP' at Integer Telecom Services. Without a more specific title (VP Engineering, VP Operations, VP Sales), role scope is ambiguous. At a small telecom firm, a VP-level title often means one of 2-3 senior leaders — likely influential in or directly owning technology, operations, or delivery decisions. Source: lead record.",
+    "No LinkedIn profile for 'Aditya Kumar Integer Telecom Services' could be confirmed in public search results. A common name creates noise. No verified career history, tenure, or prior employer identified. This is a significant intelligence gap. Source: search attempt, not found.",
+    "No conference speaker record found for Aditya Kumar at Fiber Connect 2026 or prior events. He attended Fiber Connect 2026 as an attendee (not speaker), which is consistent with a buyer/evaluator posture rather than a vendor or advocate posture. Source: lead record (attendee designation) + speaker search, not found.",
+    "Integer Telecom Services does not appear in any BEAD subgrant award lists, state ISP selection announcements, or FCC broadband funding databases in available public records. This may mean they are a contractor/engineering services firm that works FOR ISPs rather than a direct BEAD recipient — which is actually a relevant ICP posture for Inorsa (they serve ISPs and their A&E contractors). Source: funding program list cross-reference + public BEAD award databases, not confirmed.",
+    "Plano, TX places Integer Telecom within Texas's broadband funding context. Texas received $683M in BEAD allocation ($683,057,831). Texas BEAD is now operational as of April 30, 2026, with ISP contracts to be finalized within 6 months. If Integer Telecom is an engineering services contractor supporting Texas ISPs, the construction pipeline is imminent (Q3 2026 earliest starts). Source: industry baseline + Texas BEAD allocation data from funding program list.",
+    "No trade press quotes, podcast appearances, or BBCMag/LightReading/ETISoftware mentions found for Aditya Kumar. No direct voice-of-customer material available to use as an email opener. Source: trade press search, not found.",
+    "No other Integer Telecom employees appear in the booth-scan list provided. Single-contact entry limits multi-threading options at this time. Source: prospect batch data.",
+    "The 'hold' ICP designation and 'D' batch tier reflect a lack of AE qualification notes — not a negative signal about the company. The title is relevant per the ICP note. The hold status means this contact needs fast qualification to determine whether to upgrade or deprioritize. Source: lead record metadata.",
+    "Given the small firm profile (Plano TX, private, no major press), Integer Telecom likely operates as a fiber engineering/construction management services firm or a small CLEC/WISP. If engineering services: they feel the 3:1 designer labor shortage acutely and likely do GIS-to-CAD work manually today. If operator: they face permit cycle pain directly. Either way, the BEAD construction ramp in Texas creates immediate capacity pressure. Source: industry baseline + firm profile inference."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No confirmed LinkedIn profile for Aditya Kumar at Integer Telecom Services — common name makes disambiguation difficult without more identifiers.",
+    "Company description/scope not confirmed from public sources — cannot verify whether Integer Telecom is an operator, engineering contractor, or managed services firm.",
+    "No org chart or leadership team page found — cannot identify who else is involved in technology/tool decisions.",
+    "No BEAD award or subgrant record found for Integer Telecom — cannot confirm direct funding relationship.",
+    "No direct quote or stated priority from Aditya Kumar found in any public forum.",
+    "Aditya Kumar's specific functional scope within 'VP' title unknown — could be VP of Engineering, VP of Operations, VP of Business Development, or VP of Sales.",
+    "Company headcount, revenue, and current toolchain (GIS/CAD software in use) unknown.",
+    "No confirmation of whether Integer Telecom uses in-house designers or outsources design/permitting work.",
+    "No booth scan notes from AE — no context on what Integer Telecom expressed interest in at Fiber Connect 2026."
+  ],
+  "challengesToOtherFindings": [
+    "The 'hold' ICP designation should not be treated as a soft pass. A VP at a small Texas telecom firm attending Fiber Connect 2026 — not exhibiting, just attending — is a buyer behavior signal, not a spectator signal. Small firms send decision-makers to trade shows, not middle managers. The lack of AE notes is a research gap, not a disqualifier.",
+    "The D-tier batch placement likely reflects grading based on company size or missing data, not deal quality. If Integer Telecom is a fiber engineering contractor serving Texas ISPs during BEAD ramp, the deal could punch above the tier — smaller firms often move faster and with less procurement friction than large ISPs.",
+    "Without confirming company type (operator vs. contractor), any assumption about their primary pain point risks misalignment. Do not lead with 'permit kickbacks' if they are a contractor selling to ISPs — their pain is more likely throughput, turnaround time, and capacity to take on more projects without adding headcount."
+  ],
+  "topInsight": "Integer Telecom Services is an unverified but plausible fiber engineering or telecom services firm in Plano, TX — a market sitting squarely in Texas's $683M BEAD deployment window that goes live Q3 2026. Aditya Kumar attended Fiber Connect 2026 as a buyer, not a vendor. The single most important action before sending any outreach is a 60-second LinkedIn confirmation of his actual functional title. If he owns engineering or delivery, lead with throughput/capacity. If he owns operations, lead with permit cycle time. If he owns business development, lead with competitive differentiation and winning more BEAD-adjacent contract work. Without that disambiguation, the outreach risks tone-misalignment. The email should be short, curiosity-driven, and ask one question: what's the bottleneck between their current design workflow and getting shovels in the ground before Q3.",
+  "sourcesUsed": [
+    "Lead record metadata (provided)",
+    "Industry baseline — ShowRev Industry Intelligence KB (provided)",
+    "Inorsa value proposition brief (provided)",
+    "Texas BEAD allocation — funding program list cross-reference ($683,057,831)",
+    "BEAD operational timeline — industry baseline (April 30, 2026 operational, 6-month ISP contract window)",
+    "Public search: 'Aditya Kumar Integer Telecom Services LinkedIn' — no confirmed match found",
+    "Public search: 'Integer Telecom Services Plano TX' — no major press profile found",
+    "Public search: 'Aditya Kumar Fiber Connect 2026 speaker' — not found",
+    "Public search: 'Integer Telecom Services BEAD award' — not found",
+    "Domain inference: integertel.com — private firm, no Crunchbase/PitchBook entry confirmed"
+  ]
+}
+```

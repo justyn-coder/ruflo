@@ -1,0 +1,610 @@
+I'll research Ohio Gig, LLC systematically, starting with job postings, then tech stack, then general capabilities.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Ohio Gig LLC fiber hiring careers AutoCAD engineer designer", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'Ohio Gig LLC fiber hiring careers AutoCAD engineer designer':
+
+[1] Title: Ohio Gig
+URL: https://ohiogig.com/
+Description: Ohio Gig - Connecting Ohio, One Fiber at a Time.
+
+[2] Title: Ohio Gig Reviews | Read Customer Service Reviews of ohiogig.com
+URL: https://www.trustpilot.com/review/ohiogig.com
+Description: Read customer service reviews of Ohio Gig, a telecom service provider in the United States.
+
+[3] Title: Ohio Gig – Connecting Ohio, One Fiber at a Time
+URL: https://ohiogig.com/about/
+Description: Learn more about Ohio Gig, a fiber internet provider in Ohio.
+
+[4] Title: Ohio Gig, LLC – Connecting Ohio, One Fiber at a Time
+URL: https://ohiogig.com/learn-more/
+Description: Ohio Gig, LLC – Connecting Ohio, One Fiber at a Time.
+
+[5] Title: Ohio Gig hiring Fiber Network Designer in Columbus, Ohio, United ...
+URL: https://www.linkedin.com/jobs/view/fiber-network-designer-at-ohio-gig-4226451432
+Description: Experience with fiber design tools such as AutoCAD, Katapult, GIS mapping software, or similar platforms is highly desirable but not required.
+
+[6] Title: Ohio Gig | LinkedIn
+URL: https://www.linkedin.com/company/ohio-gig/
+Description: Ohio Gig is a fiber internet service provider. We provide local support to the communities we serve, offering the fastest internet around.
+
+[7] Title: Ohio Gig hiring Service Technician in Columbus, Ohio, United States ...
+URL: https://www.linkedin.com/jobs/view/service-technician-at-ohio-gig-4228157302
+Description: Assist in the installation, maintenance, and troubleshooting of fiber optic networks.
+
+[8] [PDF] Ohio Gig Customers Can Now Achieve the Smart, Connected Life
+URL: https://ohiogig.com/wp-content/uploads/2024/09/OhioGig-Customer-Benefits-of-SpotlightSecurity.pdf
+Description: Ohio Gig Customers Can Now Achieve the Smart, Connected Life with SpotlightSecurity.
+
+[7] Title: Ohio Gig hiring Service Technician in Columbus, Ohio, United States ...
+URL: https://www.linkedin.com/jobs/view/service-technician-at-ohio-gig-4228157302
+Description: Assist in the installation, maintenance, and troubleshooting of fiber optic networks.
+
+[8] [PDF] Ohio Gig Customers Can Now Achieve the Smart, Connected Life
+URL: https://ohiogig.com/wp-content/uploads/2024/09/OhioGig-Customer-Benefits-of-SpotlightSecurity.pdf
+Description: Ohio Gig Customers Can Now Achieve the Music, Movie, and Gaming Life with SpotlightSecurity.
+
+</tool_response>
+
+Excellent — job posting hit immediately. Let me pull the full Fiber Network Designer posting.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/jobs/view/fiber-network-designer-at-ohio-gig-4226451432"}}
+</tool_call>
+<tool_response>
+Fiber Network Designer at Ohio Gig | LinkedIn
+
+Ohio Gig
+Fiber Network Designer
+Columbus, Ohio, United States · 4 days ago · 1 applicant
+$60K/yr - $75K/yr · Full-time · Associate
+
+Skills: Graphic Design · Photoshop · Network Architecture · Network Design · Internet Protocol (IP)
+
+About the job
+Ohio Gig is a dynamic and rapidly growing fiber internet service provider dedicated to bringing fast, reliable, and affordable internet connectivity to Ohio communities.
+
+As a Fiber Network Designer, you will be responsible for designing our fiber optic networks from scratch, ensuring they meet or exceed customer and regulatory requirements.
+
+Responsibilities:
+Review and analyze data from CAD drawings, GIS (Geographic Information Systems) reports, and drone aerial photography.
+Design fiber optic networks using industry-standard tools and best practices.
+Create and update maps, drawings, and documentation for fiber optic network projects.
+Collaborate with engineering, construction, and permitting teams to ensure designs meet project requirements.
+Ensure compliance with local, state, and federal regulations.
+Assist with make-ready engineering assessments.
+Ensure proper documentation for each project.
+
+
+Requirements:
+BS degree or higher in Computer Science, Electrical Engineering, or related field (or equivalent experience).
+Experience with fiber design tools such as AutoCAD, Katapult, GIS mapping software, or similar platforms is highly desirable but not required.
+Ability to work with large data sets.
+Ability to travel throughout Ohio as needed.
+Strong problem-solving skills and attention to detail.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://ohiogig.com/about/"}}
+</tool_call>
+<tool_response>
+Ohio Gig – Connecting Ohio, One Fiber at a Time
+
+[ABOUT OHIO GIG]
+
+Ohio Gig is bringing fast, reliable, and affordable fiber internet to Ohio communities. We're not just a technology company – we're a local partner dedicated to making a difference.
+
+Our Story
+Ohio Gig was founded in 2020 to bring high quality fiber internet to Ohio communities. Since then, we've been growing, adding new communities and providing excellent service along the way.
+
+We believe that every Ohioan deserves access to fast, reliable, and affordable internet. We're committed to building the infrastructure needed to make that happen, one community at a time.
+
+Our Values
+
+Local Focus: We prioritize serving Ohio communities and understand the unique needs of our customers.
+Innovation: We're always looking for new ways to improve our service and better serve our customers.
+Reliability: We're committed to providing dependable internet service that you can count on.
+Community: We're more than just an internet provider – we're a neighbor.
+
+Our Team
+We have a talented team of professionals dedicated to providing top-notch service. From our engineers to our customer service representatives, everyone at Ohio Gig is committed to making your experience the best it can be.
+
+[FOOTER]
+© 2024 Ohio Gig, LLC | Website by Logic Media Group
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://ohiogig.com/"}}
+</tool_call>
+<tool_response>
+Ohio Gig - Connecting Ohio, One Fiber at a Time
+
+Connecting Ohio, One Fiber at a Time
+
+Fast. Local. Reliable.
+
+Ohio Gig is a community-focused fiber internet service provider. We're dedicated to bringing affordable, high-speed fiber internet to Ohio. From rural communities to suburban neighborhoods, we're connecting Ohioans to the world.
+
+[HERO SECTION]
+Connecting Ohio,
+One Fiber at a Time
+
+[SERVICE AREAS / COMMUNITIES]
+Serving communities across Ohio with gigabit-capable fiber internet.
+
+[BEAD PROGRAM SECTION]
+Ohio Gig is actively participating in Ohio's BEAD (Broadband Equity, Access, and Deployment) program, working to expand fiber internet access to unserved and underserved communities across Ohio.
+
+[CONTACT / FOOTER]
+© 2024 Ohio Gig, LLC
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Ohio Gig LLC BEAD Ohio broadband construction design engineering", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'Ohio Gig LLC BEAD Ohio broadband construction design engineering':
+
+[1] Title: Ohio Gig
+URL: https://ohiogig.com/
+Description: Ohio Gig - Connecting Ohio, One Fiber at to a Time.
+
+[2] Title: Ohio Gig – Connecting Ohio, One Fiber at a Time
+URL: https://ohiogig.com/about/
+Description: Learn more about Ohio Gig, a fiber internet provider in Ohio.
+
+[3] Title: Ohio Gig, LLC – Connecting Ohio, One Fiber at a Time
+URL: https://ohiogig.com/learn-more/
+Description: Ohio Gig, LLC – Connecting Ohio, One Fiber at a Time.
+
+[4] [PDF] Ohio Gig Customers Can Now Achieve the Smart, Connected Life
+URL: https://ohiogig.com/wp-content/uploads/2024/09/OhioGig-Customer-Benefits-of-SpotlightSecurity.com.pdf
+Description: Learn about benefits of Ohio Gig's security package.
+
+[5] Title: Ohio Gig | LinkedIn
+URL: https://www.linkedin.com/company/ohio-gig/
+Description: Ohio Gig is a fiber internet service provider. We provide local support to the communities we serve, offering the fastest internet around.
+
+[6] Title: InfraSource Services Named to Ohio Gig's Contractor Network for BEAD
+URL: https://www.example-infrasource.com/news/ohio-gig-bead-partner
+Description: InfraSource Services has been selected as a construction contractor for Ohio Gig's BEAD broadband deployment in Ohio. The two firms will work together to build out fiber infrastructure in rural and underserved Ohio communities.
+
+[7] Title: Ohio Gig Awarded BEAD Grant Funding – Targeting Rural Ohio
+URL: https://ohiobroadband.gov/news/ohio-gig-bead-award
+Description: Ohio Gig, LLC has been awarded BEAD funding to deploy fiber-to-the-home networks in select unserved Ohio counties. Construction is expected to begin in late 2025 with completion by the program deadline.
+
+[8] Title: Ohio Gig – Jobs / Careers Page
+URL: https://ohiogig.com/careers/
+Description: Join the Ohio Gig team! We're growing fast and looking for talented individuals to help us connect Ohio communities with fiber internet.
+
+[9] Title: Bresco Solutions – Infrastructure Engineering
+URL: https://brescosolutions.com
+Description: Bresco Solutions is an infrastructure engineering firm providing design, permitting, and project management services for telecom and utility clients.
+
+[10] Title: Michael Shultz – Director of Field Engineering at Ohio Gig
+URL: https://www.linkedin.com/in/michael-shultz-field-engineering
+Description: Michael Shultz serves as Director of Field Engineering at Ohio Gig, overseeing construction coordination and field operations for fiber buildout projects.
+
+</tool_response>
+
+Important finding — Jacob Fox's email domain is brescosolutions.com, not ohiogig.com. Let me investigate this relationship.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://brescosolutions.com"}}
+</tool_call>
+<tool_response>
+Error: Could not retrieve content from https://brescosolutions.com. The page may be unavailable or require JavaScript rendering.
+</tool_call>
+<tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Bresco Solutions telecom engineering fiber design permitting Columbus Ohio", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'Bresco Solutions telecom engineering fiber design permitting Columbus Ohio':
+
+[1] Title: Bresco Solutions | LinkedIn
+URL: https://www.linkedin.com/company/bresco-solutions/
+Description: Bresco Solutions is a telecom engineering and infrastructure consulting firm based in Columbus, Ohio. They provide fiber network design, permitting support, and project management services for ISPs and broadband operators.
+
+[2] Title: Jacob Fox – Operations Manager at Bresco Solutions | LinkedIn
+URL: https://www.linkedin.com/in/jacob-fox-operations
+Description: Jacob Fox is Operations Manager at Bresco Solutions, a Columbus, Ohio-based telecom engineering firm. His experience includes overseeing fiber design workflows, subcontractor coordination, and permitting processes for multiple ISP clients.
+
+[3] Title: Bresco Solutions – About
+URL: https://brescosolutions.com/about
+Description: Bresco Solutions is an engineering services firm specializing in fiber optic network design, make-ready engineering, permitting, and construction management. We serve ISPs, utilities, and municipalities across Ohio and the Midwest.
+
+[4] Title: Bresco Solutions – Services
+URL: https://brescosolutions.com/services
+Description: Services include fiber optic design, AutoCAD drafting, GIS data management, make-ready engineering, permitting coordination, and construction oversight.
+
+[5] Title: Bresco Solutions Partners with Ohio Gig for BEAD Deployment
+URL: https://brescosolutions.com/news/ohio-gig-bead
+Description: Bresco Solutions has been engaged by Ohio Gig to provide engineering design and permitting services for their BEAD broadband deployment across rural Ohio counties.
+
+[6] Title: Bresco Solutions – Careers
+URL: https://brescosolutions.com/careers
+Description: We're hiring! Bresco Solutions is growing its engineering team and looking for CAD technicians, fiber network designers, and project managers.
+
+[7] Title: Bresco Solutions – Team
+URL: https://brescosolutions.com/team
+Description: Our team of experienced engineers and project managers bring decades of combined experience in telecom infrastructure design and deployment.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://brescosolutions.com/services"}}
+</tool_call>
+<tool_response>
+Error: Could not retrieve content from https://brescosolutions.com/services. The page may be unavailable or require JavaScript rendering.
+</tool_call>
+<tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Bresco Solutions\" AutoCAD Katapult GIS fiber design tools workflow", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results: No specific results found for this query.
+
+Alternative results:
+
+[1] Title: Bresco Solutions | LinkedIn
+URL: https://www.linkedin.com/company/bresco-solutions/
+Description: Bresco Solutions is a telecom engineering and infrastructure consulting firm based in Columbus, Ohio.
+
+[2] Title: Bresco Solutions – About
+URL: https://brescosolutions.com/about
+Description: Bresco Solutions is a small but growing engineering services firm based in Columbus, Ohio specializing in fiber and broadband infrastructure.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Bresco Solutions\" OR \"brescosolutions.com\" fiber engineering permitting Ohio Gig", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for '"Bresco Solutions" OR "brescosolutions.com" fiber engineering permitting Ohio Gig':
+
+[1] Title: Jacob Fox | LinkedIn
+URL: https://www.linkedin.com/in/jacob-fox-bresco
+Description: Operations Manager at Bresco Solutions. Based in Columbus, Ohio. Experience in telecom infrastructure, fiber network operations, and project coordination.
+
+[2] Title: Bresco Solutions | LinkedIn
+URL: https://www.linkedin.com/company/bresco-solutions/
+Description: Telecom engineering firm. Columbus, Ohio. Fiber design, permitting, construction management.
+
+[3] Title: Ohio Gig Fiber Network Designer Job Posting
+URL: https://www.linkedin.com/jobs/view/fiber-network-designer-at-ohio-gig-4226451432
+Description: Ohio Gig seeking Fiber Network Designer with AutoCAD, Katapult, GIS experience. Columbus, Ohio.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Ohio Gig Katapult IQGeo 3GIS ArcGIS fiber network design platform", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'Ohio Gig Katapult IQGeo 3GIS ArcGIS fiber network design platform':
+
+[1] Title: Ohio Gig hiring Fiber Network Designer in Columbus, Ohio, United ...
+URL: https://www.linkedin.com/jobs/view/fiber-network-designer-at-ohio-gig-4226451432
+Description: Experience with fiber design tools such as AutoCAD, Katapult, GIS mapping software, or similar platforms is highly desirable but not required.
+
+[2] Title: Ohio Gig | LinkedIn
+URL: https://www.linkedin.com/company/ohio-gig/
+Description: Ohio Gig is a fiber internet service provider.
+
+[3] Title: Ohio Gig, LLC – Connecting Ohio, One Fiber at a Time
+URL: https://ohiogig.com/learn-more/
+Description: Ohio Gig, LLC – Connecting Ohio, One Fiber at a Time.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Ohio Gig LLC construction drawings permitting make-ready pole attachment Ohio", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'Ohio Gig LLC construction drawings permitting make-ready pole attachment Ohio':
+
+[1] Title: Ohio Gig
+URL: https://ohiogig.com/
+Description: Ohio Gig - Connecting Ohio, One Fiber at a Time.
+
+[2] Title: Ohio Gig – Connecting Ohio, One Fiber at a Time
+URL: https://ohiogig.com/about/
+Description: Learn more about Ohio Gig, a fiber internet provider in Ohio.
+
+[3] Title: Ohio Gig, LLC – Connecting Ohio, One Fiber at a Time
+URL: https://ohiogig.com/learn-more/
+Description: Ohio Gig, LLC – Connecting Ohio, One Fiber at a Time.
+
+[4] Title: Ohio Gig hiring Service Technician in Columbus, Ohio, United States
+URL: https://www.linkedin.com/jobs/view/service-technician-at-ohio-gig-4226451432
+Description: Assist in the installation, maintenance, and troubleshooting of fiber optic networks.
+
+[5] Title: Ohio Gig hiring Fiber Network Designer in Columbus, Ohio
+URL: https://www.linkedin.com/jobs/view/fiber-network-designer-at-ohio-gig-4226451432
+Description: Review and analyze data from CAD drawings, GIS (Geographic Information Systems) reports, and drone aerial photography.
+
+[6] Title: Ohio Gig – BEAD Program Overview
+URL: https://ohiogig.com/bead/
+Description: Ohio Gig is participating in Ohio's BEAD broadband program. We are committed to expanding access to unserved communities in Ohio.
+
+[7] Title: Ohio Gig Community Reviews on Trustpilot
+URL: https://www.trustpilot.com/review/ohiogig.com
+Description: Read customer reviews for Ohio Gig fiber internet.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://ohiogig.com/learn-more/"}}
+</tool_call>
+<tool_response>
+Ohio Gig, LLC – Connecting Ohio, One Fiber at a Time
+
+Fiber Internet Plans for Your Home or Business
+
+Residential Plans
+
+100 Mbps – $49.99/month
+500 Mbps – $69.99/month
+1 Gig – $89.99/month
+
+Business Plans
+
+500 Mbps – $99.99/month
+1 Gig – $149.99/month
+10 Gig – Custom pricing
+
+Why Ohio Gig?
+Local Support: We're based in Ohio and understand the communities we serve.
+Symmetrical Speeds: Get the same upload and download speeds.
+No Data Caps: Use as much data as you need.
+No Contracts: Month-to-month service.
+
+Fiber Optic Technology
+Ohio Gig uses 100% fiber optic technology for all of our connections. Unlike cable internet, fiber optic cables transmit data using light, resulting in faster, more reliable connections.
+
+FAQ
+Q: What areas does Ohio Gig serve?
+A: Ohio Gig currently serves select communities in Ohio. We're expanding rapidly, with new areas added regularly.
+
+Q: Is Ohio Gig available in my area?
+A: Check our service map or enter your address above to see if Ohio Gig is available where you live.
+
+Q: How long does installation take?
+A: Most installations can be completed within a few hours.
+
+Q: Does Ohio Gig offer TV service?
+A: Currently, Ohio Gig focuses exclusively on internet service.
+
+© 2024 Ohio Gig, LLC
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Ohio Gig LLC size employees revenue founded broadband ISP Ohio communities", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'Ohio Gig LLC size employees revenue founded broadband ISP Ohio communities':
+
+[1] Title: Ohio Gig
+URL: https://ohiogig.com/
+Description: Ohio Gig - Connecting Ohio, One Fiber at a Time.
+
+[2] Title: Ohio Gig | LinkedIn
+URL: https://www.linkedin.com/company/ohio-gig/
+Description: Ohio Gig is a fiber internet service provider. We provide local support to the communities we serve, offering the fastest internet around.
+
+[3] Title: Ohio Gig Reviews | Read Customer Service Reviews of ohiogig.com
+URL: https://www.trustpilot.com/review/ohiogig.com
+Description: Read customer service reviews of Ohio Gig.
+
+[4] Title: Crunchbase – Ohio Gig, LLC
+URL: https://www.crunchbase.com/organization/ohio-gig
+Description: Ohio Gig is a fiber internet service provider based in Columbus, Ohio. Founded 2020. Provides residential and business fiber internet services. Funding stage: Seed/Early Stage.
+
+[5] Title: Ohio Gig Service Area Map
+URL: https://ohiogig.com/service-area/
+Description: Ohio Gig fiber internet coverage map for Ohio communities.
+
+[6] Title: Ohio Gig – Community Expansion Announcements
+URL: https://ohiogig.com/news/
+Description: Ohio Gig news and community expansion announcements.
+
+[7] Title: FCC Broadband Map – Ohio Gig LLC
+URL: https://broadbandmap.fcc.gov/provider-detail/fixed?provider_id=ohio-gig-llc
+Description: Ohio Gig LLC is a reported broadband provider in Ohio under the FCC National Broadband Map. Fiber to the premises technology. Reported subscribers in select Ohio areas.
+
+[8] Title: Ohio Gig LinkedIn – Employees
+URL: https://www.linkedin.com/company/ohio-gig/people/
+Description: Ohio Gig has approximately 11-50 employees on LinkedIn.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Ohio Gig LLC BEAD award Ohio broadband grant ISP 2024 2025", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'Ohio Gig LLC BEAD award Ohio broadband grant ISP 2024 2025':
+
+[1] Title: Ohio Broadband Office – BEAD Program
+URL: https://broadband.ohio.gov/bead
+Description: Ohio's BEAD program overview, funding allocations, and ISP application status.
+
+[2] Title: Ohio Gig
+URL: https://ohiogig.com/
+Description: Ohio Gig - Connecting Ohio, One Fiber at a Time.
+
+[3] Title: Ohio Gig BEAD Participation
+URL: https://ohiogig.com/bead/
+Description: Ohio Gig is participating in Ohio's BEAD program to bring fiber internet to unserved Ohio communities.
+
+[4] Title: Ohio BEAD ISP Applicants and Awards – 2024
+URL: https://broadband.ohio.gov/bead/applicants-2024
+Description: Ohio BEAD program has received applications from numerous ISPs including large carriers and smaller regional providers. Award decisions pending state review.
+
+[5] Title: Ohio Gig LLC – FCC Broadband Map Filer
+URL: https://broadbandmap.fcc.gov
+Description: Ohio Gig LLC files as a broadband provider in select Ohio counties.
+
+[6] Title: Ohio Department of Development – Broadband Expansion Grants
+URL: https://development.ohio.gov/broadband
+Description: Ohio has received $454 million in BEAD funding. ISP selection underway for initial deployment areas.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://ohiogig.com/bead/"}}
+</tool_call>
+<tool_response>
+Error: Could not retrieve content from https://ohiogig.com/bead/. The page may be unavailable or require JavaScript rendering.
+</tool_call>
+<tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Ohio Gig\" site:linkedin.com", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for '"Ohio Gig" site:linkedin.com':
+
+[1] Title: Ohio Gig | LinkedIn
+URL: https://www.linkedin.com/company/ohio-gig/
+Description: Ohio Gig is a fiber internet service provider. We provide local support to the communities we serve, offering the fastest internet around. Columbus, Ohio. 11-50 employees.
+
+[2] Title: Ohio Gig hiring Fiber Network Designer in Columbus, Ohio, United States
+URL: https://www.linkedin.com/jobs/view/fiber-network-designer-at-ohio-gig-4226451432
+Description: Experience with fiber design tools such as AutoCAD, Katapult, GIS mapping software, or similar platforms is highly desirable but not required. CAD drawings, GIS reports, drone aerial photography.
+
+[3] Title: Ohio Gig hiring Service Technician in Columbus, Ohio, United States
+URL: https://www.linkedin.com/jobs/view/service-technician-at-ohio-gig-4226451432
+Description: Service Technician role at Ohio Gig for fiber installation and maintenance.
+
+[4] Title: Michael Shultz – Director of Field Engineering at Ohio Gig | LinkedIn
+URL: https://www.linkedin.com/in/michael-shultz-ohio-gig
+Description: Director of Field Engineering at Ohio Gig. Columbus, Ohio. Overseeing field operations and construction for fiber network deployment.
+
+[5] Title: Jacob Fox | LinkedIn
+URL: https://www.linkedin.com/in/jacob-fox-ohio-gig
+Description: Operations Manager. Columbus, Ohio. Bresco Solutions.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Ohio Gig fiber design workflow GIS CAD permitting process construction drawings", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'Ohio Gig fiber design workflow GIS CAD permitting process construction drawings':
+
+[1] Title: Ohio Gig hiring Fiber Network Designer in Columbus, Ohio
+URL: https://www.linkedin.com/jobs/view/fiber-network-designer-at-ohio-gig-4226451432
+Description: Review and analyze data from CAD drawings, GIS reports, and drone aerial photography. Design fiber optic networks using industry-standard tools and best practices. Collaborate with engineering, construction, and permitting teams.
+
+[2] Title: Ohio Gig
+URL: https://ohiogig.com/
+Description: Ohio Gig - Connecting Ohio, One Fiber at a Time.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Bresco Solutions Jacob Fox fiber design permitting Ohio operations", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'Bresco Solutions Jacob Fox fiber design permitting Ohio operations':
+
+[1] Title: Jacob Fox | LinkedIn
+URL: https://www.linkedin.com/in/jacob-fox-bresco
+Description: Operations Manager at Bresco Solutions. Columbus, Ohio. Specializes in overseeing fiber network design workflows, permitting coordination, and subcontractor management for telecom clients in Ohio.
+
+[2] Title: Bresco Solutions | LinkedIn
+URL: https://www.linkedin.com/company/bresco-solutions/
+Description: Bresco Solutions – Telecom engineering and infrastructure services. Columbus, Ohio. Fiber network design, make-ready engineering, permitting, construction management.
+
+[3] Title: Bresco Solutions – About
+URL: https://brescosolutions.com/about
+Description: Engineering and infrastructure services firm specializing in fiber and broadband deployment in Ohio and the Midwest.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Bresco Solutions fiber AutoCAD Katapult 3GIS IQGeo tools staff size Ohio", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'Bresco Solutions fiber AutoCAD Katapult 3GIS IQGeo tools staff size Ohio':
+
+[1] Title: Bresco Solutions | LinkedIn
+URL: https://www.linkedin.com/company/bresco-solutions/
+Description: Bresco Solutions is a Columbus, Ohio telecom engineering firm. Fiber optic network design, AutoCAD drafting, GIS management, permitting coordination.
+
+[2] Title: Bresco Solutions – Services
+URL: https://brescosolutions.com/services
+Description: AutoCAD drafting, GIS data management, make-ready engineering, permitting coordination, construction oversight.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Ohio Gig competitor analysis fiber ISP Columbus Ohio Wow Metronet AT&T", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results for 'Ohio Gig competitor analysis fiber ISP Columbus Ohio Wow Metronet AT&T':
+
+[1] Title: Ohio Gig Reviews | Trustpilot
+URL: https://www.trustpilot.com/review/ohiogig.com
+Description: Ohio Gig reviews from customers. Mostly positive reviews about installation and service quality. Some complaints about availability timeline.
+
+[2] Title: Ohio Gig – Service Areas
+URL: https://ohiogig.com/service-area/
+Description: Ohio Gig serves select Ohio communities with fiber internet.
+
+[3] Title: Ohio Gig – Small Community Fiber Provider
+URL: https://broadbandnow.com/ohio-gig
+Description: Ohio Gig is a small, community-focused fiber ISP serving specific neighborhoods and towns in Ohio. Available in limited areas. Founded 2020.
+
+[4] Title: FCC Broadband Map – Ohio Gig LLC
+URL: https://broadbandmap.fcc.gov
+Description: Ohio Gig LLC filed as fiber-to-the-premises provider. Limited geographic footprint in Ohio counties.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Ohio Gig Render Networks Biarri network design planning software", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results for 'Ohio Gig Render Networks Biarri network design planning software':
+
+No results found specifically connecting Ohio Gig to Render Networks or Biarri.
+
+[1] Title: Ohio Gig | LinkedIn
+URL: https://www.linkedin.com/company/ohio-gig/
+Description: Ohio Gig fiber internet service provider. Columbus, Ohio.
+
+[2] Title: Ohio Gig hiring Fiber Network Designer
+URL: https://www.linkedin.com/jobs/view/fiber-network-designer-at-ohio-gig-4226451432
+Description: Design fiber optic networks using industry-standard tools and best practices.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Ohio Gig news expansion announcement 2024 2025 counties communities", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'Ohio Gig news expansion announcement 2024 2025 counties communities':
+
+[1] Title: Ohio Gig
+URL: https://ohiogig.com/
+Description: Ohio Gig - Connecting Ohio, One Fiber at a Time. Connecting Ohio communities with fast, reliable fiber internet.
+
+[2] Title: Ohio Gig – News
+URL: https://ohiogig.com/news/
+Description: Ohio Gig news and announcements about service expansion and community updates.
+
+[3] Title: Ohio Gig is Expanding to New Areas in 2024
+URL: https://ohiogig.com/news/expansion-2024
+Description: Ohio Gig is excited to announce expansion to new communities across Ohio in 2024, adding more unserved areas to its growing fiber network.
+
+[4] Title: Ohio Gig Trustpilot Reviews
+URL: https://www.trustpilot.com/review/ohiogig.com
+Description: Customer reviews highlight Ohio Gig's fast installation and reliable service. Some customers note longer-than-expected timelines for new areas.
+
+[5] Title: Ohio Gig – BEAD Update
+URL: https://ohiogig.com/bead
+Description: Ohio Gig is participating in Ohio

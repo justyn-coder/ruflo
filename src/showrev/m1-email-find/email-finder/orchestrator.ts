@@ -11,7 +11,7 @@
  * so the module is testable with no external deps beyond Node.js builtins.
  */
 
-import { resolveDomain } from './domain-resolver.js';
+import { resolveDomain, resolveDomainsFromMx } from './domain-resolver.js';
 import type { DomainResult } from './domain-resolver.js';
 import { generateCandidates, detectPatternFromWeb, inferPattern } from './pattern-detector.js';
 import type { EmailPattern, CandidateEmail, PatternResult } from './pattern-detector.js';
@@ -62,6 +62,9 @@ export interface OrchestratorOptions {
   apolloPeopleMatchFn?: (firstName: string, lastName: string, companyName: string, domain?: string) => Promise<ApolloFallbackResult>;
   millionVerifierFn?: (email: string) => Promise<{ quality: string; result: string }>;
   skipProviders?: string[];
+  apolloPrimary?: boolean;
+  domainHints?: Record<string, string>;
+  pipelineTimeoutMs?: number;
 }
 
 interface BatchSummary {
@@ -81,9 +84,7 @@ interface BatchSummary {
 
 const DEFAULT_CONCURRENCY = 3;
 const DEFAULT_DELAY_BETWEEN_DOMAINS_MS = 2_000;
-// Previously skipped Google Workspace (SMTP returns 250 for everything).
-// Now using M365 Autodiscover which works across providers via federation.
-// No providers need to be skipped by default.
+const DEFAULT_PIPELINE_TIMEOUT_MS = 60_000;
 const DEFAULT_SKIP_PROVIDERS: string[] = [];
 
 // ---------------------------------------------------------------------------
@@ -147,39 +148,138 @@ async function findEmailForContact(
   const smtpEnabled = options.smtpVerify !== false;
   const skipProviders = options.skipProviders ?? DEFAULT_SKIP_PROVIDERS;
 
+  const pipelineDeadline = Date.now() + (options.pipelineTimeoutMs ?? DEFAULT_PIPELINE_TIMEOUT_MS);
+  let apolloAlreadyTried = false;
+
   let domainResult: DomainResult | null = companyCache?.domain ?? null;
   let patternResult: PatternResult | null = companyCache?.pattern ?? null;
   let provider: MailProvider | null = companyCache?.provider ?? null;
   let emailsFromDomain: string[] = companyCache?.emailsFound ?? [];
 
   // -----------------------------------------------------------------------
-  // Step 1: DOMAIN RESOLUTION
+  // Step 0: APOLLO-PRIMARY (when enabled, try Apollo first before anything)
+  // -----------------------------------------------------------------------
+  if (options.apolloPrimary && options.apolloPeopleMatchFn) {
+    apolloAlreadyTried = true;
+    tacticsAttempted.push('apollo-primary');
+    console.log(`${prefix()} Step 0: Apollo-primary for ${contact.firstName} ${contact.lastName} @ ${contact.company}`);
+    try {
+      const apolloResult = await options.apolloPeopleMatchFn(
+        contact.firstName, contact.lastName, contact.company,
+      );
+      if (apolloResult.email) {
+        tacticsSucceeded.push('apollo-primary');
+        const apolloDomain = apolloResult.domain || apolloResult.email.split('@')[1];
+        console.log(`${prefix()} Step 0: Apollo returned ${apolloResult.email} (confidence=${apolloResult.confidence})`);
+
+        let mvQuality = 'skipped';
+        if (options.millionVerifierFn) {
+          try {
+            const mvResult = await options.millionVerifierFn(apolloResult.email);
+            mvQuality = mvResult.quality;
+            console.log(`${prefix()} Step 0: MV: ${apolloResult.email} = ${mvQuality}`);
+          } catch (err) {
+            console.log(`${prefix()} Step 0: MV error: ${err instanceof Error ? err.message : String(err)}`);
+          }
+        }
+
+        if (mvQuality !== 'bad') {
+          const confidence = apolloResult.confidence === 'high' ? 'green' as const
+            : apolloResult.confidence === 'medium' ? 'yellow' as const
+            : 'amber' as const;
+          return buildResult(contact, {
+            email: apolloResult.email,
+            confidence: mvQuality === 'good' ? 'green' : confidence,
+            domain: apolloDomain,
+            pattern: null,
+            verificationStatus: mvQuality === 'good' ? 'valid' : 'unverified',
+            mailProvider: `apollo:${apolloResult.source}`,
+            tacticsAttempted,
+            tacticsSucceeded,
+            duration: ms() - t0,
+          });
+        }
+        console.log(`${prefix()} Step 0: MV=bad, falling through to self-hosted pipeline`);
+      } else {
+        console.log(`${prefix()} Step 0: Apollo returned no match, falling through`);
+      }
+    } catch (err) {
+      console.log(`${prefix()} Step 0: Apollo error: ${err instanceof Error ? err.message : String(err)}`);
+    }
+  }
+
+  // -----------------------------------------------------------------------
+  // Step 1: DOMAIN RESOLUTION (with domain hints)
   // -----------------------------------------------------------------------
   if (!domainResult) {
-    tacticsAttempted.push('domain-resolution');
-    console.log(`${prefix()} Step 1: resolving domain for "${contact.company}"`);
-    const t1 = ms();
-
-    try {
-      domainResult = await resolveDomain(contact.company, contact.companyUrl, {
-        searchFn: options.searchFn,
-        fetchFn: options.fetchFn,
-        firstName: contact.firstName,
-        lastName: contact.lastName,
+    // Check pipeline timeout before expensive domain resolution
+    if (Date.now() > pipelineDeadline) {
+      console.log(`${prefix()} Pipeline timeout — skipping remaining steps`);
+      return buildResult(contact, {
+        email: null, confidence: 'not-found', domain: null, pattern: null,
+        verificationStatus: 'skipped', mailProvider: 'unknown',
+        tacticsAttempted, tacticsSucceeded, duration: ms() - t0,
       });
-    } catch (err) {
-      console.log(`${prefix()} Step 1 error: ${err instanceof Error ? err.message : String(err)}`);
     }
 
-    if (domainResult) {
-      tacticsSucceeded.push('domain-resolution');
-      emailsFromDomain = domainResult.emailsFound ?? [];
-      console.log(`${prefix()} Step 1 complete (${ms() - t1}ms): domain=${domainResult.domain}, confidence=${domainResult.confidence}`);
-    } else {
-      console.log(`${prefix()} Step 1 complete (${ms() - t1}ms): no domain found`);
+    tacticsAttempted.push('domain-resolution');
 
-      // Step 1b: APOLLO FALLBACK — try People Match when domain resolution fails entirely
-      if (options.apolloPeopleMatchFn) {
+    // Check domain hints first (known overrides from inventory/Focus 100)
+    // Try exact match, then strip common suffixes for fuzzy match
+    const companyKey = contact.company.toLowerCase().trim();
+    let hintDomain = options.domainHints?.[companyKey];
+    if (!hintDomain && options.domainHints) {
+      const SUFFIXES = [' inc.', ' inc', ' llc', ' llc.', ' corp', ' corp.', ' ltd.', ' ltd',
+        ' co.', ' co', ' group', ' communications', ' industries', ' services',
+        ' enterprises', ' solutions', ' networks', ' fiber', ' broadband', ' telecom'];
+      // Try stripping suffixes from search key
+      for (const suffix of SUFFIXES) {
+        if (companyKey.endsWith(suffix)) {
+          hintDomain = options.domainHints[companyKey.slice(0, -suffix.length)];
+          if (hintDomain) break;
+        }
+      }
+      // Try matching hint keys that start with search key (or vice versa)
+      if (!hintDomain) {
+        for (const [hk, hv] of Object.entries(options.domainHints)) {
+          if (hk.startsWith(companyKey) || companyKey.startsWith(hk)) {
+            hintDomain = hv;
+            break;
+          }
+        }
+      }
+    }
+    if (hintDomain) {
+      console.log(`${prefix()} Step 1: domain hint match for "${contact.company}" -> ${hintDomain}`);
+      domainResult = { domain: hintDomain, confidence: 'high' as const, source: 'domain-hint', emailsFound: [] };
+      tacticsSucceeded.push('domain-resolution (hint)');
+    }
+
+    if (!domainResult) {
+      console.log(`${prefix()} Step 1: resolving domain for "${contact.company}"`);
+      const t1 = ms();
+
+      try {
+        domainResult = await resolveDomain(contact.company, contact.companyUrl, {
+          searchFn: options.searchFn,
+          fetchFn: options.fetchFn,
+          firstName: contact.firstName,
+          lastName: contact.lastName,
+        });
+      } catch (err) {
+        console.log(`${prefix()} Step 1 error: ${err instanceof Error ? err.message : String(err)}`);
+      }
+
+      if (domainResult) {
+        tacticsSucceeded.push('domain-resolution');
+        emailsFromDomain = domainResult.emailsFound ?? [];
+        console.log(`${prefix()} Step 1 complete (${ms() - t1}ms): domain=${domainResult.domain}, confidence=${domainResult.confidence}`);
+      } else {
+        console.log(`${prefix()} Step 1 complete (${ms() - t1}ms): no domain found`);
+
+        // Step 1b: APOLLO FALLBACK — try People Match when domain resolution fails entirely
+        // Skip if Apollo was already tried as primary (Step 0)
+        if (!apolloAlreadyTried && options.apolloPeopleMatchFn) {
         tacticsAttempted.push('apollo-people-match (no-domain)');
         console.log(`${prefix()} Step 1b: Apollo People Match fallback for ${contact.firstName} ${contact.lastName} @ ${contact.company}`);
         try {
@@ -237,7 +337,8 @@ async function findEmailForContact(
         tacticsSucceeded,
         duration: ms() - t0,
       });
-    }
+      }
+    } // end inner if (!domainResult) — resolveDomain path
 
     // Populate cache for sibling contacts at same company
     if (companyCache) {
@@ -249,11 +350,67 @@ async function findEmailForContact(
     tacticsSucceeded.push('domain-resolution (cached)');
   }
 
-  const domain = domainResult.domain;
+  let domain = domainResult.domain;
+
+  // -----------------------------------------------------------------------
+  // Step 1c: MX-BASED DOMAIN VALIDATION
+  // If resolved domain has no MX or MX points to a different org domain,
+  // the website domain may not be the email domain. Track as alternative.
+  // -----------------------------------------------------------------------
+  const alternativeDomains: string[] = [];
+  try {
+    const mxRecords = await resolveDomainsFromMx(domain);
+    if (mxRecords && mxRecords.length > 0) {
+      tacticsAttempted.push('mx-validation');
+      const mxHosts = mxRecords.map(r => r.exchange.toLowerCase());
+      // Shared hosting providers — MX pointing here doesn't imply a different email domain
+      const SHARED_MX = ['google.com', 'googlemail.com', 'outlook.com', 'protection.outlook.com',
+        'pphosted.com', 'mimecast.com', 'mimecast.eu', 'barracuda.com', 'barracudanetworks.com',
+        'securemx.com', 'emailsrvr.com', 'zoho.com', 'zoho.eu', 'messagelabs.com',
+        'ppe-hosted.com', 'exclaimer.net', 'proofpoint.com', 'fireeyecloud.com',
+        'iphmx.com', 'trendmicro.com', 'spamh.com', 'sophos.com',
+        'mailanyone.net', 'mx25.net', 'reflexion.net', 'serverdata.net',
+        'registrar-servers.com', 'secureserver.net', 'emailfiltering.com'];
+      const isSharedMx = mxHosts.every(h => SHARED_MX.some(s => h.endsWith(`.${s}`) || h === s));
+      if (!isSharedMx) {
+        // Extract root domain from MX host — might reveal the real email domain
+        for (const mx of mxHosts) {
+          const parts = mx.split('.');
+          if (parts.length >= 2) {
+            const mxRoot = parts.slice(-2).join('.');
+            if (mxRoot !== domain && mxRoot !== 'com' && mxRoot !== 'net' && mxRoot !== 'org') {
+              // MX root differs from resolved domain — potential alternative
+              alternativeDomains.push(mxRoot);
+              console.log(`${prefix()} Step 1c: MX for ${domain} points to ${mx} — alternative domain: ${mxRoot}`);
+            }
+          }
+        }
+      }
+      if (alternativeDomains.length > 0) {
+        tacticsSucceeded.push('mx-validation (alt-domains)');
+      }
+    }
+  } catch {
+    // MX lookup failure is non-fatal
+  }
+  // Inject MX-discovered alternatives into domainResult for Step 6 to pick up
+  if (alternativeDomains.length > 0) {
+    const existing = domainResult.alternativeDomains ?? [];
+    const merged = Array.from(new Set([...existing, ...alternativeDomains]));
+    domainResult.alternativeDomains = merged;
+  }
 
   // -----------------------------------------------------------------------
   // Step 2: PATTERN DETECTION
   // -----------------------------------------------------------------------
+  if (Date.now() > pipelineDeadline) {
+    console.log(`${prefix()} Pipeline timeout after Step 1 — returning domain-only`);
+    return buildResult(contact, {
+      email: null, confidence: 'not-found', domain, pattern: null,
+      verificationStatus: 'skipped', mailProvider: 'unknown',
+      tacticsAttempted, tacticsSucceeded, duration: ms() - t0,
+    });
+  }
   if (!patternResult) {
     tacticsAttempted.push('pattern-detection');
     console.log(`${prefix()} Step 2: detecting email pattern for ${domain}`);
@@ -386,6 +543,17 @@ async function findEmailForContact(
   // -----------------------------------------------------------------------
   // Step 6: SMTP VERIFICATION (with alternative domain fallback)
   // -----------------------------------------------------------------------
+  if (Date.now() > pipelineDeadline) {
+    console.log(`${prefix()} Pipeline timeout before verification — returning best candidate unverified`);
+    const bestCandidate = candidates[0] ?? null;
+    return buildResult(contact, {
+      email: bestCandidate?.email ?? null,
+      confidence: bestCandidate ? 'amber' as const : 'not-found' as const,
+      domain, pattern: patternResult?.pattern ?? null,
+      verificationStatus: 'skipped', mailProvider: provider ?? 'unknown',
+      tacticsAttempted, tacticsSucceeded, duration: ms() - t0,
+    });
+  }
   const providerStr: string = provider ?? 'unknown';
 
   // Only skip entirely when verification is globally disabled
@@ -635,22 +803,29 @@ async function findEmailForContact(
 
   // Rank survivors and pick the best
   if (allSurvivors.length > 0) {
-    // Sort survivors by likelihood. For partial catch-all domains (multiple
-    // survivors), prefer SHORTER local parts — small fiber companies typically
-    // use first@ not first.last@. Data: 83-contact eval showed first@ (17%)
-    // and flast@ (33%) are common in fiber telecom alongside first.last@ (33%).
+    // Sort survivors by likelihood. Priority:
+    // 1. Exact input-name match (phil.arnholt > phillip.arnholt when input="Phil")
+    // 2. Dotted > non-dotted (firstname.lastname > firstname)
+    // 3. Penalize initials
+    // 4. Original candidate rank (pattern priority)
+    const inputFirst = contact.firstName.toLowerCase();
+    const inputLast = contact.lastName.toLowerCase();
     allSurvivors.sort((a, b) => {
-      const aLocal = a.candidate.email.split('@')[0];
-      const bLocal = b.candidate.email.split('@')[0];
-      // Penalize very short locals (initials like "vs@" or "gn@") — these are
-      // almost never real email patterns. Prefer first@ (3+ chars) over initials.
+      const aLocal = a.candidate.email.split('@')[0].toLowerCase();
+      const bLocal = b.candidate.email.split('@')[0].toLowerCase();
+      // Penalize initials (2 chars or less) — almost never real
       const aIsInitials = aLocal.length <= 2;
       const bIsInitials = bLocal.length <= 2;
       if (aIsInitials !== bIsInitials) return aIsInitials ? 1 : -1;
-      // Among non-initials, prefer shorter (first@ over first.last@)
-      const lenDiff = aLocal.length - bLocal.length;
-      if (lenDiff !== 0) return lenDiff;
-      // Break ties by original rank
+      // Prefer candidates that use the exact input first name
+      const aExactFirst = aLocal.startsWith(inputFirst + '.') || aLocal.startsWith(inputFirst + '@') || aLocal === inputFirst;
+      const bExactFirst = bLocal.startsWith(inputFirst + '.') || bLocal.startsWith(inputFirst + '@') || bLocal === inputFirst;
+      if (aExactFirst !== bExactFirst) return aExactFirst ? -1 : 1;
+      // Prefer dotted locals (firstname.lastname) over non-dotted (first, flast)
+      const aHasDot = aLocal.includes('.');
+      const bHasDot = bLocal.includes('.');
+      if (aHasDot !== bHasDot) return aHasDot ? -1 : 1;
+      // Among same-type, prefer original candidate rank (pattern priority order)
       if (a.candidate.rank !== b.candidate.rank) return a.candidate.rank - b.candidate.rank;
       return 0;
     });
@@ -710,7 +885,8 @@ async function findEmailForContact(
   }
 
   // All candidates across all domains exhausted — try Apollo People Match as last resort
-  if (options.apolloPeopleMatchFn) {
+  // Skip if Apollo was already tried as primary (Step 0)
+  if (!apolloAlreadyTried && options.apolloPeopleMatchFn) {
     tacticsAttempted.push('apollo-people-match (red-fallback)');
     console.log(`${prefix()} Step 7: Apollo People Match fallback (all self-hosted candidates failed)`);
     try {

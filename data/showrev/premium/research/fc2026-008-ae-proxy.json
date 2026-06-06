@@ -1,0 +1,47 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Ken Savell's email domain is wsp.com, not kwmissioncritical.com — this is a critical discrepancy. WSP Global is a major international engineering and professional services firm (NYSE: WSP) with ~67,000+ employees. 'KW Mission Critical' appears to be either a WSP practice group, a project team name, or a legacy brand absorbed into WSP. This means Ken Savell almost certainly works for WSP, not a standalone fiber ISP — materially affecting ICP fit. Source: wsp.com domain inference + public WSP company profile.",
+    "WSP Global has a dedicated 'Mission Critical' practice focused on data centers, critical facilities, and infrastructure — not fiber-to-the-home or broadband ISP build-outs. WSP's mission critical division handles design and engineering for hyperscale data centers, colocation, and enterprise-grade facilities. Source: wsp.com/en/services/mission-critical",
+    "WSP is an A&E (Architecture & Engineering) firm, not a network operator or ISP. This puts Ken Savell in the 'Design/Document' persona bucket — likely an engineer or project manager responsible for engineering throughput and drawing production, not a network operator or BEAD-funded ISP. However, WSP does perform civil/utility design work for telecom clients, which could include fiber infrastructure. Source: WSP service line descriptions, public.",
+    "Title listed as 'Mr.' with no functional title provided — this is a data quality gap. Without a LinkedIn-confirmed title, it is unknown whether Ken Savell is a Project Manager, Senior Engineer, Practice Lead, or Director. At WSP, decision authority and budget control vary sharply by seniority tier. Not found: specific title from LinkedIn or WSP directory.",
+    "WSP acquired multiple engineering firms in recent years (including Louis Berger, Ecology and Environment, POWER Engineers) — it is possible 'KW Mission Critical' is a legacy brand from an acquired entity that has since been integrated into WSP. This would mean Ken Savell may have been at a smaller firm where he had broader authority before being absorbed into a large corporate structure with more layers. Source: WSP M&A history, public press releases.",
+    "WSP's scale and internal tooling likely means they already have GIS/CAD infrastructure (Esri enterprise agreements, AutoCAD, MicroStation) and potentially internal standards that Inorsa would need to integrate with or displace. The 'we already have a tool' objection is highly probable. Source: industry baseline for large A&E firms + WSP IT scale inference.",
+    "WSP does have telecom infrastructure engineering as a service line — they work with telecom carriers, utilities, and municipalities on network design. This creates a plausible use case for Inorsa if WSP is performing fiber design work for clients (not as the operator, but as the A&E firm delivering construction drawings for ISP or utility clients). This would make Ken Savell a potential channel/delivery partner prospect rather than a direct operator. Source: WSP telecom services page, public.",
+    "No conference panel, speaker record, or trade press quote found for 'Ken Savell' in fiber/telecom context. No LinkedIn profile surfaced with sufficient detail to confirm title, tenure, or reporting structure. Evidence base is thin. Source: search inference, not found.",
+    "Phone number 617-897-9136 is a Boston area code — consistent with WSP's Boston office presence, though the listed location is Ocala, FL. This geographic mismatch may indicate remote work, a field assignment, or a data entry artifact. WSP has offices in both Boston and Florida. Source: WSP office directory, area code lookup.",
+    "Ocala, FL location is notable — Ocala is in Marion County, Florida, which is an active BEAD deployment region. Florida received approximately $868M in BEAD funding. If Ken Savell is based in Ocala working on telecom/fiber projects for WSP, he may be embedded in or supporting a regional fiber deployment — either for a municipality, utility, or ISP client of WSP. Source: NTIA BEAD state allocations, Florida broadband office public records."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No LinkedIn profile confirmed for Ken Savell with title, tenure, or reporting structure",
+    "No confirmation of what 'KW Mission Critical' refers to — WSP practice group, project name, or legacy brand not definitively resolved",
+    "No functional title available — 'Mr.' provides zero role signal",
+    "No direct quotes from Ken Savell in any trade press, podcast, or conference panel",
+    "No confirmation of whether Ken Savell works on fiber/telecom projects specifically or data center/facilities-only work within WSP's mission critical practice",
+    "No other KW Mission Critical or WSP contacts found in the booth-scan list to enable multi-threading",
+    "Budget authority completely unknown — large A&E firms like WSP have layered procurement; individual engineers rarely control vendor selection above a low threshold",
+    "No knowledge of whether WSP has an existing Inorsa-competitive tool (e.g., AirWorks, IQGeo, internal workflow) in their telecom design practice"
+  ],
+  "challengesToOtherFindings": [
+    "The ICP designation of 'hold' is appropriate but may be overly cautious — if WSP is performing fiber design work for BEAD-funded ISPs or municipalities in Florida, they represent a high-volume drawing production use case that is squarely in Inorsa's wheelhouse. The ICP should not be dismissed; it needs reclassification, not disqualification.",
+    "The 'Mission Critical' label should not be read as 'data centers only' without verification. At WSP, mission critical can include telecom infrastructure. The Ocala, FL location and fiber industry tradeshow attendance are stronger signals of telecom involvement than the practice name alone.",
+    "Without a confirmed title, any inference about decision authority is speculative. Treating this contact as a decision-maker would be premature; treating them as a gatekeeper to be nurtured toward an introduction is more appropriate given WSP's org structure.",
+    "The Boston phone number vs. Ocala location discrepancy is not necessarily a data error — WSP frequently deploys engineers regionally for large infrastructure projects. This may actually be a positive signal: Ken Savell may be embedded in a specific Florida fiber deployment."
+  ],
+  "topInsight": "Ken Savell works for WSP Global — a $10B+ international A&E firm — not a fiber ISP. His presence at a fiber industry tradeshow while located in Ocala, FL (an active BEAD deployment region) suggests he is working on telecom/fiber infrastructure projects for WSP clients, not as an operator. The most productive outreach angle is NOT direct-operator pitch but rather positioning Inorsa as a delivery efficiency tool for A&E firms managing high-volume fiber design for BEAD-funded clients. The message should acknowledge that WSP's clients are under BEAD construction pressure and that Inorsa helps A&E delivery teams reduce permit kickbacks and accelerate drawing cycles — making WSP's project delivery faster and more defensible. The 'we already have tools' objection should be preemptively addressed by leading with permit-kickback reduction (a workflow outcome, not a software replacement pitch). First step: verify title and confirm whether he touches fiber/telecom design specifically before investing in deep outreach.",
+  "sourcesUsed": [
+    "wsp.com (company profile, service lines, mission critical practice)",
+    "wsp.com/en/services/mission-critical (practice description)",
+    "wsp.com/en/offices (office locations, Boston and Florida presence)",
+    "NTIA BEAD state allocation records (Florida ~$868M, public)",
+    "WSP M&A press releases (Louis Berger, POWER Engineers acquisitions, public)",
+    "Area code 617 lookup (Boston, MA)",
+    "Marion County / Ocala FL broadband context (Florida broadband office, public)",
+    "LinkedIn search inference — Ken Savell profile not surfaced with sufficient detail",
+    "Fiber Connect 2026 attendee list context (lead source)",
+    "Industry baseline: large A&E firm tooling assumptions (Esri, AutoCAD, MicroStation standard)"
+  ]
+}
+```

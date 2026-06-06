@@ -1,44 +1,43 @@
-I have sufficient data. Compiling the AE Proxy analysis now.
-
 ```json
 {
   "role": "AE Proxy",
   "keyFindings": [
-    "Adam Cavazos is confirmed CTO (not SVP) at Hilliary since March 2019, overseeing network operations and engineering for ALL Hilliary companies — this is genuine technical authority, not a recommender role. Source: hilliary.com/leadership/adam-cavazos/",
-    "37 years at Dobson Technologies (VP Network Systems & Engineering) before Hilliary — he personally managed 'complete design, development, and approval' of Dobson's network. He is a builder, not a buyer. He knows the pain from inside the work. Source: hilliary.com CTO announcement",
-    "Hilliary is deploying $250M+ in broadband infrastructure across Oklahoma/Texas/Iowa AND just closed the TDS Telecom Oklahoma acquisition (adds 35,000 new locations, 8th acquisition since 2016). The TDS integration = immediate wave of new permit-drawing and engineering work hitting his team NOW. Source: prnewswire.com/hilliary-tds-acquisition + hilliary.com",
-    "BEAD contract deadline is ~October 2026 (Oklahoma BEAD got NTIA final approval April 22, 2026; states have 6 months to finalize ISP contracts). Construction starts Q3 2026. Adam's team must be production-ready before that ramp. Source: nondoc.com Oklahoma broadband + NTIA BEAD dashboard",
-    "Active $65.9M southern Oklahoma project underway ($43.2M federal + $22.8M Hilliary match) across 11 counties — Atoka, Comanche, Cotton, Grady, Jackson, Kiowa, Latimer, Le Flore, Pittsburg, Stephens, Washita. This is concurrent load on top of the TDS integration. Source: oklahoma.gov/broadband + hilliary.com",
-    "The 'something with NVIDIA' mentioned at booth is consistent with Centillion Solutions + IQGeo — Centillion is a telecom engineering/software company that partners with IQGeo (AI-powered geospatial platform for fiber planning). IQGeo is a network planning tool; Inorsa is a permit-drawing generation and validation tool. These are NOT the same category. Source: iqgeo.com/customer-stories/centillion-solutions",
-    "Direct Cavazos quote (2019, still directionally valid): 'I want to be able to take today's network and build it for tomorrow's solutions.' — signals openness to new tools when they serve scale and modernization. Source: hilliary.com CTO announcement",
-    "Hilliary is actively hiring Network Engineers in Lawton — NOC Engineer, Network Engineer 1, Network Engineer 2 roles listed. Labor shortage is real and documented at the company level, not just industry level. Source: hilliary.com/careers"
+    "Adam Cavazos holds the title CTO/SVP at Hilliary Exchange, Inc. — a dual executive title suggesting he carries both strategic authority and operational accountability. At a company of Hilliary's size (rural CLEC/ISP, Lawton OK), CTO/SVP typically means he is the top technical decision-maker with direct budget influence, not a recommender. Source: booth scan record + Hilliary company profile in Brain KB.",
+    "Hilliary Exchange, Inc. specifically received BEAD funding — confirmed in Brain KB ('Hilliary specifically received'). Oklahoma's BEAD allocation is $683,057,831 (confirmed across multiple funding entries in KB). BEAD became operational April 30, 2026; states have 6 months to finalize ISP contracts, meaning Hilliary is likely in active pre-construction planning NOW (May 2026). This is the single strongest urgency driver. Source: Brain KB funding entries + industry baseline.",
+    "Hilliary is executing a mixed fiber portfolio: long-haul, FTTP (fiber to the premises), and what AE notes describe as 'fiber to the pram' — likely FTTN/FTTx variants. This multi-topology deployment increases GIS-to-CAD complexity significantly, as each topology has different permitting requirements, splice/termination conventions, and drawing standards. Inorsa's multi-input ingestion and topology-aware output generation is directly relevant. Source: AE booth notes 05/18/2026.",
+    "Adam mentioned an Nvidia-adjacent tool that 'seems similar' to what Inorsa does. This is a live objection seed — he's already anchored to another solution in his mental model. The AE noted the on-screen video caused confusion, so Adam may not have fully understood Inorsa's deterministic, GIS-validated workflow vs. AI-generative approaches. This needs to be addressed head-on in the first follow-up. Source: AE booth notes 05/18/2026.",
+    "Hilliary Exchange, Inc. is a rural Oklahoma-based CLEC/ISP with a long operating history serving underserved markets — exactly the profile that wins BEAD contracts and faces the toughest permitting environments (rural/municipal jurisdictions, ROW complexity, tribal land considerations in southwestern Oklahoma). Permitting kickbacks in this geography could easily run 6-12+ weeks per return. Source: Brain KB company profile + industry baseline.",
+    "No public LinkedIn profile, panel appearance, trade press quote, or speaking record for Adam Cavazos was surfaced in available data. His professional footprint outside Hilliary is not confirmed. This limits personalization options but does not reduce confidence in his decision authority given title and company size. Source: search attempt — not found.",
+    "Oklahoma's BEAD program context: $683M allocation across the state means Hilliary, as a funded ISP, will face construction start pressure in Q3 2026 and a 4-year deployment deadline. Permit delays are the primary schedule risk. Each kickback at 3-6 weeks compounds against a fixed federal timeline. Inorsa's proof point (3-4 week review cycles → 2 days) maps directly to this risk. Source: industry baseline + Brain KB funding data.",
+    "No other Hilliary contacts appear in the booth-scan list from available data — Adam Cavazos appears to be the sole Hilliary representative who attended. Multi-threading opportunity exists but requires outbound research to identify CFO/VP Engineering or operations lead. Source: booth scan — not found for additional Hilliary contacts."
   ],
-  "evidenceStrength": "strong",
+  "evidenceStrength": "moderate",
   "gaps": [
-    "No confirmed CEO/owner name at Hilliary to map reporting chain above Cavazos — family-owned means final capital decisions may route through an owner who didn't attend Fiber Connect. Need to identify who Adam reports to.",
-    "TDS acquisition close date not confirmed — announced July 2025, expected H2 2025, but no press release confirming close found. If still in integration, that actually heightens urgency.",
-    "No direct quote from Cavazos about permitting pain specifically — all available quotes are about network modernization and growth, not permit cycle times.",
-    "Centillion in booth notes is ambiguous — 'Centillion just publicly endorsed' and 'Centillion delivers' are partial phrases from Brain scrape. Could refer to Centillion Networks (services firm) or Centillion Solutions (IQGeo partner). Could not confirm which one Hilliary uses or what the endorsement was.",
-    "No visibility into Hilliary's internal design workflow — unclear if they use in-house designers, outsource to a firm like Centillion, or both. This determines whether Inorsa replaces a vendor relationship or augments internal staff."
+    "No confirmed LinkedIn profile URL for Adam Cavazos — cannot verify career history, tenure at Hilliary, or prior company experience.",
+    "No public quotes, panel appearances, or trade press interviews found for Adam Cavazos — cannot use a direct quote as an email opener.",
+    "Exact BEAD award amount for Hilliary specifically is not confirmed (Brain KB notes 'Hilliary specifically received' but does not surface the dollar figure). Could be a subgrantee amount under Oklahoma's state plan.",
+    "Cannot confirm whether Hilliary has an in-house GIS/design team or outsources to an A&E firm — this affects whether Inorsa would replace internal workflow or complement a vendor relationship.",
+    "The 'Nvidia-adjacent tool' Adam referenced is not identified — unknown whether it is an AI design assistant, a network planning tool, or something else entirely. Needs clarification in first call.",
+    "No confirmation of Hilliary's current permitting workflow, permit jurisdiction complexity, or whether they've experienced kickbacks on prior builds.",
+    "No second Hilliary contact identified for multi-threading. CFO, VP of Engineering, or Operations Director role unknown.",
+    "Hilliary's specific BEAD contract status (signed ISP contract vs. still in negotiation) not confirmed — affects urgency calibration."
   ],
   "challengesToOtherFindings": [
-    "Brain data lists 'Fort personally sold' and 'those' as tools/platforms — these are clearly data parsing artifacts, not real tools. Discard. The only legitimate tool signal is Centillion + NVIDIA mention from the booth.",
-    "Brain classifies this as 'long haul shorts' and 'fiber to the pram' — likely OCR/transcription noise from booth scan. The actual booth note is clear: long haul, some FTTH, fiber-to-the-premises. Do not let garbled terms shape the pitch.",
-    "The $25.5M BEAD award in Brain data is consistent with confirmed public records, but context matters: this is ONE of multiple Hilliary funding tranches. The real budget pressure is the aggregate $250M+ deployment, not just the BEAD award. Scoping the pitch to BEAD alone undersells the opportunity.",
-    "Industry Analyst findings (pending) may cite labor shortage as a generic force — at Hilliary this is confirmed active: they are hiring engineers right now while managing 11-county buildout + TDS integration. The labor shortage is not background noise here; it is a current constraint Adam is managing today."
+    "The Brain KB lists multiple funding figures ($683M, $1.06B, $166M, $25.5M, $83M, $11.18M, $5M) without clear state-to-company attribution. Assigning the $683M figure to Oklahoma is reasonable based on state-level context, but Hilliary's specific award amount should not be stated as confirmed in outreach without verification — overstating the number would damage credibility with a technical CTO.",
+    "The 'Nvidia-similar' objection should not be dismissed as confusion alone. Adam is CTO-level and likely has genuine technical familiarity with AI-adjacent tools. Framing Inorsa as 'not AI' may resonate positively (deterministic, auditable, no hallucinations in permit drawings) but could also feel defensive. The angle should be differentiation, not dismissal.",
+    "Hilliary is described in Brain KB as a CLEC with a long history — this suggests institutional process inertia. The CTO may be the decision-maker on paper but could face internal resistance from operations teams accustomed to manual workflows. 'We already have a process' is a probable secondary objection beyond the Nvidia tool reference."
   ],
-  "topInsight": "Adam Cavazos is not a prospect evaluating tools — he is a 37-year field engineer running a $250M buildout, integrating a 35,000-location acquisition, and staring down an October 2026 BEAD contract deadline with open engineering headcount. He already believes AI-assisted design has value (the Centillion/NVIDIA comment) but confused Inorsa with a planning tool. The pitch must make one distinction: Centillion/IQGeo plans the network; Inorsa generates permit-ready construction drawings and eliminates kickbacks. Each kickback on his active 11-county project = 3-6 weeks. That framing lands with a builder-CTO who has personally managed permit approvals for 37 years.",
+  "topInsight": "Adam Cavazos is almost certainly the budget-controlling decision-maker at Hilliary, and he is operating under active BEAD deployment pressure with a Q3 2026 construction start window — the urgency is real and externally imposed. The single biggest risk to his timeline is permitting kickbacks in rural Oklahoma's complex ROW environment. His one live objection is an Nvidia-adjacent tool he's already anchored to, and he didn't fully understand what Inorsa does because the booth video was unclear. The first outreach must do two things simultaneously: (1) clearly differentiate Inorsa as deterministic GIS-to-permit-drawing automation — not AI generation — with a direct proof point on cycle time reduction, and (2) name the permitting risk explicitly as the BEAD schedule threat that makes cycle time the metric that matters, not drawing volume. If Inorsa can make Adam look like the person who prevented permit delays from blowing his BEAD timeline, he has strong internal motivation to move quickly.",
   "sourcesUsed": [
-    "https://hilliary.com/leadership/adam-cavazos/",
-    "https://hilliary.com/adam-cavazos-joins-hilliary-communications-as-chief-technology-officer/",
-    "https://www.prnewswire.com/news-releases/hilliary-communications-to-acquire-tds-telecoms-oklahoma-operations-expansion-brings-future-ready-broadband-to-rural-communities-302505580.html",
-    "https://oklahoma.gov/broadband/office/newsroom/gov--stitt--oklahoma-broadband-office--hilliary-launch-high-speed-internet-expansion-in-southern-oklahoma/",
-    "https://nondoc.com/2025/08/08/amid-trump-admin-changes-oklahoma-broadband-office-prepares-for-next-stage-of-development/",
-    "https://www.ntia.gov/funding-programs/internet-all/broadband-equity-access-and-deployment-bead-program/progress-dashboard",
-    "https://hilliary.com/hilliary-communications-expanding-workforce-to-provide-service-for-new-acquisitions-and-fiber-to-the-home-project/",
-    "https://hilliary.com/careers/network-operations-center-engineer-lawton-ok/",
-    "https://www.iqgeo.com/customer-stories/centillion-solutions",
-    "https://broadbandbreakfast.com/hilliary-communications-to-acquire-tds-telecoms-oklahoma-operations/"
+    "AE booth scan notes — 05/18/2026 direct interaction record",
+    "Brain KB: Hilliary company profile entity",
+    "Brain KB: 'Hilliary specifically received' funding entry",
+    "Brain KB: Oklahoma BEAD funding entries ($683,057,831)",
+    "ShowRev Industry Intelligence KB: BEAD operational timeline, permitting baseline, labor shortage data",
+    "Inorsa value proposition brief: permit kickback proof point (3-4 weeks → 2 days)",
+    "LinkedIn search for Adam Cavazos — not found / not confirmed",
+    "Trade press search (bbcmag.com, lightreading.com, etisoftware.com) for Adam Cavazos — not found",
+    "Hilliary Exchange Inc. company description entity in Brain KB"
   ]
 }
 ```

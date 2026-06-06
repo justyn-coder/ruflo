@@ -1185,11 +1185,14 @@ export async function resolveDomain(
   // Website extraction second (with company name content check)
   // Heuristic+MX third — catches remaining predictable domains
   // DuckDuckGo search REMOVED — 0% hit rate (confirmed by 83-contact eval)
+  // Person-anchored search moved to #2: it finds the actual email domain
+  // by searching for the person, which prevents heuristics from returning
+  // a wrong website-only domain that terminates the waterfall too early.
   const tactics: Array<() => Promise<DomainResult | null>> = [
     () => tacticClearbit(companyName, opts, audit),
+    () => tacticPersonEmailSearch(companyName, opts, audit),
     () => tacticWebsiteExtraction(companyName, companyUrl, opts, audit),
     () => tacticHeuristics(companyName, opts, audit),
-    () => tacticPersonEmailSearch(companyName, opts, audit),
     () => tacticFccLookup(companyName, opts, audit),
     () => tacticSubsidiaryLookup(companyName, opts, audit),
   ];

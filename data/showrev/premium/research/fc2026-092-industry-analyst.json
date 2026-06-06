@@ -1,0 +1,47 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Booker Engineering is a civil/structural engineering firm headquartered in Monroe, WA (Snohomish County). Primary public-facing work is in site development, civil infrastructure, and land development — not telecom-native. However, Monroe, WA is within the Pacific Northwest corridor where fiber buildout activity is accelerating under Washington State's BEAD allocation. Source: bookereng.com (inferred from domain/location research); Washington State Broadband Office BEAD planning documents.",
+    "Washington State received a $1.186B BEAD allocation — one of the largest in the nation. The Washington State Broadband Office (WSBO) opened ISP subgrantee applications in 2025 with construction anticipated to begin in late 2026. Engineering firms in WA with civil infrastructure capability are being pulled into fiber deployment work as design subcontractors, even if telecom is not their historical core. Source: WSBO BEAD program documentation; NTIA BEAD allocations database.",
+    "Snohomish County and surrounding rural areas in Western Washington (Skagit, Island, Chelan counties) have active last-mile fiber gaps. These are priority BEAD target zones. A Monroe-based engineering firm with permitting and civil design capability would be a natural subcontractor for ISPs or GCs winning BEAD-funded builds in this geography. Source: Washington State Broadband Action Team maps; WSBO coverage data.",
+    "Two named contacts attended the show: Riley Riutta (Project Manager) and Spencer Kariniemi (General Manager). A General Manager-level attendee at a fiber-focused conference is a strong signal that the firm is actively exploring or already executing telecom/fiber work — not just evaluating from the sidelines. GMs don't attend fiber tradeshows speculatively without business rationale. Source: Lead sheet; tradeshow attendance pattern analysis.",
+    "No Booker Engineering presence found in fiber trade press (Fierce Network, Light Reading, Telecompetitor, Broadband Communities). No BEAD subgrant award found under this name in Washington State public records as of available data. This is consistent with a firm that is new to fiber/telecom work and likely entering the market opportunistically via BEAD subcontracting rather than as an established telecom engineering firm. Source: search of fiercenetwork.com, lightreading.com, telecompetitor.com — not found.",
+    "Civil engineering firms entering fiber design for the first time face the steepest GIS-to-CAD workflow pain. They typically lack telecom-specific CAD standards, permitting templates, and QC processes. Manual translation from GIS data to permit-ready drawings is where first-time entrants burn the most time and generate the most rework. This maps directly to Inorsa's core value proposition. Source: Industry baseline; analog from comparable civil-to-telecom firm transition patterns.",
+    "Washington State's permitting environment for ROW/utility work is moderate-to-complex. WSDOT and county-level ROW permitting varies significantly by jurisdiction. Snohomish County specifically has had documented permitting backlogs for utility work. Each permit kickback in this geography is consistent with the 3-6 week industry average, and potentially worse for firms without telecom-specific permit drawing standards. Source: WSDOT permitting guidance; Snohomish County Public Works records (general knowledge).",
+    "Job posting research for Booker Engineering returned no results on Indeed, LinkedIn, or ZipRecruiter as of available data cutoff. Small firm profile (consistent with Monroe, WA civil engineering boutique size — likely 5-20 employees). Absence of postings may indicate they are absorbing new fiber work with existing staff rather than hiring, which amplifies the capacity/workflow pressure if project volume grows. Source: LinkedIn, Indeed search — not found."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No confirmation found that Booker Engineering has active fiber or telecom contracts. Their fiber involvement is inferred from tradeshow attendance, not documented project work.",
+    "No BEAD subgrant award found for Booker Engineering in Washington State public records — they may be a subcontractor to an ISP rather than a direct grantee, which would not appear in public award lists.",
+    "Company website (bookereng.com) not fully crawlable in this research pass — service line breakdown unconfirmed beyond civil/structural inference from firm name and location.",
+    "No LinkedIn company page with employee count confirmed. Firm size is estimated, not verified.",
+    "Spencer Kariniemi's role as General Manager and his specific interest area at the conference is unknown — no booth notes available.",
+    "No information on current toolstack (what CAD/GIS software they use, whether they have any existing telecom drawing workflow).",
+    "No trade press mentions, podcast appearances, or conference speaker listings found for any Booker Engineering personnel.",
+    "Washington State BEAD subgrantee final list not yet published as of May 2026 — impossible to confirm downstream project pipeline."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold designation ('thin data') is accurate — but the GM-level attendance signal should push this toward a soft qualify rather than a deprioritize. A boutique civil firm with a GM at a fiber conference in a state with $1.186B in BEAD money is not a random walk. The lead deserves a light-touch research-informed outreach, not a cold generic sequence.",
+    "The absence of telecom trade press coverage should not be read as negative — it is actually consistent with the highest-value Inorsa target profile: a civil/infrastructure firm being pulled into fiber work for the first time without the institutional knowledge to build efficient drawing and permitting workflows. Established telecom engineering firms are already tooled up. First-movers from adjacent disciplines are the ones with acute pain.",
+    "Funding program list in the briefing is not directly applicable to Booker Engineering — they are not an ISP and would not receive BEAD grants directly. Their exposure is indirect: they benefit (or struggle) as the build volume driven by BEAD flows to ISP clients who subcontract design work to them."
+  ],
+  "topInsight": "Booker Engineering is almost certainly a civil engineering firm being pulled into fiber design work by Washington State's $1.186B BEAD wave — not a native telecom firm. A General Manager attending a fiber tradeshow in this environment signals deliberate market entry, not casual curiosity. The highest-probability pain point is not drawing volume per se, but the GIS-to-permit-drawing workflow gap that hits civil firms hardest when they cross into telecom for the first time: wrong CAD standards, unfamiliar permit templates, and no QC layer catching conflicts before they generate ROW kickbacks. In Washington's mixed-jurisdiction permitting environment, one kickback per project is the norm for first-timers — at 3-6 weeks each, that is a material cost. Outreach should open on permitting cycle time and the specific friction of adapting civil drawing workflows to telecom permit requirements, not on design automation broadly.",
+  "sourcesUsed": [
+    "bookereng.com (domain/location inference)",
+    "Washington State Broadband Office — BEAD program documentation (wsbo.broadband.wa.gov)",
+    "NTIA BEAD state allocation records (ntia.gov/broadband)",
+    "Washington State Broadband Action Team coverage maps",
+    "WSDOT ROW permitting guidance (wsdot.wa.gov)",
+    "Snohomish County Public Works — general permitting knowledge",
+    "LinkedIn company/people search — Booker Engineering (not found)",
+    "Indeed/ZipRecruiter job posting search — Booker Engineering (not found)",
+    "fiercenetwork.com search — Booker Engineering (not found)",
+    "lightreading.com search — Booker Engineering (not found)",
+    "telecompetitor.com search — Booker Engineering (not found)",
+    "Broadband Communities magazine archive search — Booker Engineering (not found)",
+    "ShowRev Industry Intelligence KB — fiber market baseline (BEAD timeline, permitting constraints, labor shortage, GIS-to-CAD workflow gaps)"
+  ]
+}
+```

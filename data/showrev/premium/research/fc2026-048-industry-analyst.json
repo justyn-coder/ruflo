@@ -1,0 +1,44 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Lighthouse Technologies (lh.tech, Charlotte, NC) appears to be a small-to-mid-size technology firm. The domain 'lh.tech' is not prominently indexed in major telecom trade press (Fierce Network, Light Reading, Telecompetitor), suggesting they are not a Tier 1 operator or major A&E firm — more likely an integrator, consulting firm, or emerging fiber services company. Source: gap in trade press coverage confirmed via search baseline.",
+    "Three attendees from Lighthouse Technologies at Fiber Connect 2026 — CEO/President Denis Ryzhikov, Advisor for Strategy & Growth Roberto Martinez, and Marketing Director Tanya Pustakhod — indicates deliberate leadership-level attendance, not casual presence. A CEO + strategy advisor at a fiber-specific tradeshow signals active market evaluation, likely tied to BEAD positioning or a go-to-market pivot. Source: prospect context provided.",
+    "Charlotte, NC geography places Lighthouse Technologies within North Carolina's BEAD ecosystem. NC received approximately $1.5B in BEAD funding. The NC BEAD program entered its Initial Proposal phase in late 2025, with ISP contracts expected to finalize by Q3 2026. If Lighthouse is pursuing NC BEAD work (as a subcontractor, A&E firm, or ISP partner), they face immediate pressure to demonstrate design and permitting capacity. Source: NTIA BEAD program timeline + NC BEAD office public filings.",
+    "No specific BEAD sub-grant award found for 'Lighthouse Technologies' in NC broadband office public records. This could mean they are operating as a subcontractor/vendor rather than a direct ISP applicant — consistent with a company sending a Marketing Director and Strategy Advisor rather than an engineering or operations lead. Source: NC BEAD subgrantee lists reviewed; no match found.",
+    "The title 'Advisor, Strategy & Growth' for Roberto Martinez is an atypical tradeshow attendee role. Strategy advisors typically attend events when a company is evaluating new service lines, partnerships, or acquisitions — not routine operations. This signals Lighthouse may be in an active growth or pivot phase, potentially expanding into fiber design/deployment services. Source: inference from attendee role composition.",
+    "No job postings for 'Lighthouse Technologies' in fiber, broadband, or GIS design were surfaced in standard search channels (Indeed, LinkedIn public listings, lh.tech careers page). Absence of fiber-specific hiring ads may indicate: (a) they rely on subcontractors for technical work, (b) they are pre-scaling and evaluating tools before hiring, or (c) they are not yet operationally active in construction delivery. Source: job board searches, not found.",
+    "Industry baseline confirms: fiber designer labor shortage at 3:1 job-to-candidate ratio means any firm entering or scaling in fiber deployment cannot hire their way out of capacity problems in 12-18 months. If Lighthouse is positioning for BEAD work, they face the same structural constraint as every other firm — making automation and tool adoption a strategic necessity, not a nice-to-have. Source: ShowRev Industry Intelligence KB.",
+    "The domain lh.tech (rather than a .com telecom brand) and Charlotte HQ suggest a technology services or software-adjacent firm — possibly providing OSP design, network planning software, or systems integration to ISPs/utilities. This profile would make them a potential Inorsa channel partner or a firm building out a design services practice that needs automated drawing generation. Source: domain analysis + company name pattern.",
+    "No conference speaker appearances for Lighthouse Technologies or Denis Ryzhikov found at Fiber Connect, Mountain Connect, or Broadband Communities Summit in publicly available agendas. They attended as buyers/evaluators, not as industry voices — reinforcing the 'actively evaluating vendors' hypothesis. Source: conference agenda searches, not found."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No verified company description, website content, or LinkedIn company page data confirmed for Lighthouse Technologies / lh.tech — the company has very low public digital footprint.",
+    "Cannot confirm whether Lighthouse Technologies is an ISP, A&E engineering firm, technology vendor, or systems integrator without direct website or LinkedIn review.",
+    "No BEAD sub-grant award or state broadband office filing found linking Lighthouse Technologies to specific funded projects.",
+    "No job postings surfaced — cannot confirm hiring trajectory or technical staff composition.",
+    "Denis Ryzhikov's professional background (prior companies, tenure) not found in public sources — limits inference about the company's origin and strategic direction.",
+    "Roberto Martinez's advisory relationship (board advisor vs. paid consultant vs. interim executive) is unknown — affects how much weight to give the 'growth pivot' signal.",
+    "Cannot confirm revenue range, headcount, or funding status. No Crunchbase/PitchBook entry surfaced.",
+    "No trade press mentions, customer announcements, or project awards found — zero external validation of market activity."
+  ],
+  "challengesToOtherFindings": [
+    "The 'hold' ICP designation and Tier D batch rating may be overly conservative given that a CEO + Strategy Advisor attended Fiber Connect 2026 specifically. Leadership presence at a fiber-specific show is a stronger buying signal than title alone. Other personas may treat this as a cold outreach; I would argue the booth attendance pattern justifies treating this as a warm, qualified exploration.",
+    "Absence of evidence is not evidence of absence: the lack of trade press coverage does not mean Lighthouse is irrelevant — it may mean they are a private, early-stage, or deliberately low-profile firm. Small integrators and design service startups rarely appear in Light Reading or Fierce Network until they win a major contract.",
+    "If other personas assume Lighthouse is primarily an ISP based on tradeshow context, I would caution against that — the lh.tech domain, Charlotte location, and mixed attendee roles (marketing + strategy + CEO) are more consistent with a services/technology company than an operating ISP."
+  ],
+  "topInsight": "Lighthouse Technologies is a near-invisible company publicly, but sent three decision-influencing roles — CEO, Strategy Advisor, and Marketing Director — to a fiber-specific tradeshow simultaneously. That attendance pattern signals active strategic evaluation of the fiber market, likely tied to BEAD opportunity capture in North Carolina's ~$1.5B funding pipeline. Because they have no visible engineering hiring and no public project awards, the most probable scenario is that they are evaluating design/technology partnerships rather than building in-house capacity. Inorsa's pitch should not lead with 'we help designers go faster' — it should lead with 'if you're positioning for BEAD delivery without an in-house design team, here's how firms like yours close that gap without hiring into a 3:1 labor shortage.' The outreach to Tanya (Marketing Director) should acknowledge the strategic context her CEO was clearly evaluating at the show.",
+  "sourcesUsed": [
+    "ShowRev Industry Intelligence KB (industry baseline)",
+    "NTIA BEAD program public timeline and state allocation data",
+    "NC BEAD office public subgrantee/ISP applicant records (no match found)",
+    "Fiber Connect 2026 public agenda (no speaker listing found for Lighthouse Technologies)",
+    "lh.tech domain pattern analysis (no cached content confirmed)",
+    "LinkedIn public company search (no verified Lighthouse Technologies / lh.tech entity confirmed)",
+    "Crunchbase/PitchBook public records (no entry found)",
+    "Indeed/LinkedIn job postings search for Lighthouse Technologies fiber/broadband roles (not found)",
+    "Telecompetitor, Light Reading, Fierce Network archive searches for 'Lighthouse Technologies' broadband (not found)"
+  ]
+}
+```

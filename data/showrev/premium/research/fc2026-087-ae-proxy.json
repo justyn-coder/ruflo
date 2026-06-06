@@ -1,0 +1,43 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Jackson Sayers holds the title 'Business Development Associate' at Pure Integration — this is a junior-to-mid BD role, almost certainly not a budget holder. His function is likely pipeline sourcing, partner development, or solution positioning support. He would influence or flag opportunities upward, not approve spend. Source: conference attendee record.",
+    "Pure Integration is a Reston, VA-based IT services and systems integrator focused on the cable/broadband and media & entertainment verticals. They are a known vendor to tier-1 and tier-2 operators (Comcast, Cox, Liberty, etc.), providing network architecture, OSS/BSS integration, cloud, and managed services. They are NOT a fiber A&E firm or ISP — they are a technology integrator that serves operators. Source: pureintegration.com (inferred from known company profile).",
+    "Two senior contacts from Pure Integration also attended the show: Michael LaPierre (Sr. Director, Architecture and Solutions) and Rob Woggins (VP, Networks & Platforms). LaPierre and Woggins represent real decision authority on technology platforms and solutions. LaPierre's title directly suggests he owns the architecture and solutions layer — the most relevant function for an Inorsa conversation. Woggins as VP of Networks & Platforms likely controls or influences platform budget. Source: booth scan list provided in prospect context.",
+    "Pure Integration's operator-facing model means they could be an Inorsa channel/reseller prospect (selling Inorsa-powered services to their operator clients) OR a tools buyer if they are doing design/engineering work in-house for clients. The former is more strategically interesting and more likely given their integrator positioning. Source: pureintegration.com company profile (inferred).",
+    "As an integrator serving broadband operators, Pure Integration is directly exposed to BEAD pressure — their operator clients are deploying fiber aggressively and need faster design-to-permit throughput. Pure Integration may be positioning services around BEAD implementation support for operators. This creates indirect urgency: if their clients are under BEAD construction timelines, Pure Integration needs faster, cleaner design outputs to deliver. Source: BEAD baseline (April 30, 2026 operational) + company vertical.",
+    "Jackson Sayers at 'Business Development Associate' level is most likely attending a tradeshow to identify new vendor relationships, scout technology, or support senior colleagues — not to evaluate and purchase software. His presence alongside LaPierre and Woggins suggests he may have been supporting logistics or relationship coverage, not leading the evaluation. Source: role title analysis + multi-contact attendance pattern.",
+    "Pure Integration has historically partnered with vendors like AWS, Cisco, Amdocs, and Salesforce — large platform players. This suggests their technology intake process involves formal vendor evaluation and partnership agreements, not quick purchasing cycles. An Inorsa engagement would likely need to be positioned as a partner or embedded solution offering, not a direct seat license sale. Source: pureintegration.com partner page (inferred from known integrator model).",
+    "No public record found of Jackson Sayers speaking at Fiber Connect, appearing in trade press (Broadband Communities, Light Reading, ETI Software), or publishing LinkedIn content relevant to fiber design or permitting workflows. His digital footprint is thin for a BD role, which is common at associate level. Source: search attempted, not found.",
+    "Michael LaPierre (Sr. Director, Architecture and Solutions) is the highest-value target in this account for Inorsa. His title maps directly to the persona that cares about engineering throughput, solution architecture, and how tools integrate into delivery workflows. If Pure Integration is helping operators design or deploy fiber, LaPierre owns the question of what tooling supports that. Source: title analysis + booth scan list.",
+    "Rob Woggins as VP of Networks & Platforms likely has budget authority for platform investments. If Pure Integration is building a practice around fiber design services for BEAD-funded operators, Woggins would be involved in the build-vs-buy decision on tooling. Source: VP-level title + networks/platforms scope."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Cannot confirm whether Pure Integration is actively doing fiber design/engineering work (GIS-to-CAD workflows) for clients, or whether that function sits with their operator clients directly. This is the core ICP qualification gap.",
+    "No LinkedIn profile data found for Jackson Sayers — tenure, career history, and previous roles are unknown.",
+    "No direct quotes or public statements from Jackson Sayers, Michael LaPierre, or Rob Woggins about fiber design challenges, permitting pain, or tooling strategy.",
+    "Pure Integration revenue and headcount not confirmed with precision — Brain digest flagged this explicitly. Likely $50M–$200M range based on integrator profile, but unverified.",
+    "Cannot confirm whether Pure Integration has an existing GIS-to-CAD toolchain or uses a competitor product (IQGeo, AirWorks, etc.) in their delivery stack.",
+    "No confirmation of active BEAD-related service offerings or contracts at Pure Integration. Their exposure is inferred from their operator client base, not confirmed.",
+    "Michael LaPierre and Rob Woggins LinkedIn profiles not searched directly in this session — their specific mandates and stated priorities are unknown.",
+    "No confirmation of Pure Integration's partnership/reseller model structure — unclear if they have an established path to embed third-party tools in client deliverables."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP classification of 'hold' is correct but may be understating the strategic opportunity. Pure Integration is not a direct fiber ISP or A&E firm, which makes them a non-standard ICP for Inorsa — but as a channel partner or service delivery integrator, they could be a multiplier if they embed Inorsa in operator engagements. The hold status should trigger a channel/partner qualification conversation, not a standard ISP sales motion.",
+    "Jackson Sayers should NOT be the primary outreach target despite being the scanned contact. Following up only to Jackson risks the message dying at BD-associate level. LaPierre and Woggins are already in the contact list from the same show — the right play is to thread upward immediately, using Jackson as a courtesy CC or internal champion, not as the decision node.",
+    "Framing Inorsa purely as a 'drawing generation' tool would be wrong for this account. Pure Integration thinks in terms of service delivery, platforms, and client outcomes. The pitch must be framed as 'here is how this accelerates your operators' BEAD deployment timelines and reduces rework cost in your design services practice' — not 'here is a CAD automation tool.'"
+  ],
+  "topInsight": "Pure Integration is an IT systems integrator serving broadband operators — not a fiber ISP or A&E firm. Jackson Sayers (BD Associate) is not the decision-maker and almost certainly cannot buy. The real opportunity, if it exists, is a channel or embedded-services play with Michael LaPierre (Sr. Director, Architecture and Solutions) who owns the solution delivery layer and is the correct first call. The outreach strategy should skip past Jackson as the primary addressee and multi-thread to LaPierre immediately, with the angle: 'If your operator clients are deploying fiber under BEAD timelines, Inorsa can be the engine inside your design delivery practice that cuts permit review cycles and eliminates rework before it hits the field.'",
+  "sourcesUsed": [
+    "https://www.pureintegration.com (company profile, verticals, partner model — inferred, not session-searched)",
+    "Fiber Connect 2026 booth scan list (Jackson Sayers, Michael LaPierre, Rob Woggins — provided in prospect context)",
+    "ShowRev Industry Intelligence KB — BEAD baseline, labor/permitting constraints",
+    "Inorsa value proposition brief (provided in prompt)",
+    "Brain Knowledge Digest — Pure Integration revenue/headcount flagged as unverified",
+    "LinkedIn search for Jackson Sayers — not found / no substantive public profile located",
+    "Trade press search (lightreading.com, bbcmag.com, etisoftware.com) for Jackson Sayers — not found"
+  ]
+}
+```

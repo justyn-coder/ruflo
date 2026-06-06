@@ -1,0 +1,45 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Tanya Pustakhod holds the title 'Marketing Director' at Lighthouse Technologies (lh.tech) — this is a communications/demand-gen role, not an engineering, operations, or procurement role. She is almost certainly not a budget owner for design tooling or permitting workflow software. Source: lead record + title inference.",
+    "Denis Ryzhikov (CEO & President) was also present at the show. For a company of this apparent size, the CEO's presence at a fiber tradeshow alongside a Marketing Director strongly suggests Lighthouse Technologies is a growth-stage or early-commercial operator actively prospecting partnerships, vendors, or customers — not passively attending. Source: booth scan list (3 contacts from same company).",
+    "Roberto Martinez carries the title 'Advisor, Strategy & Growth' — advisory titles at smaller fiber companies often indicate a fractional or board-level resource brought in to support fundraising, BEAD positioning, or M&A readiness. This is a common pattern post-BEAD announcement. Source: booth scan list + industry baseline pattern.",
+    "The domain 'lh.tech' is a short, premium domain suggesting either a tech-forward brand identity or a rebranding effort — consistent with a company trying to signal modernity in a capital raise or partnership context. Source: email domain inference.",
+    "No public LinkedIn profile, trade press quotes, speaking engagements, or conference panel appearances were found for Tanya Pustakhod specifically. She does not appear in any indexed fiber industry media. Source: search yielded no results — 'not found' is the data.",
+    "No public information found for 'Lighthouse Technologies' (lh.tech) in fiber/broadband trade press (BBCMag, LightReading, Fierce Telecom, NTIA BEAD state filings). The company does not appear in any BEAD subgrantee or ISP applicant lists reviewed. Source: search yielded no results.",
+    "Lighthouse Technologies does not appear in the Brain Knowledge Digest's 36 discovered companies — meaning Inorsa has no prior research thread on this firm. It is a cold entity from Inorsa's perspective. Source: Brain digest review.",
+    "Three attendees from the same company at Fiber Connect 2026 (CEO, Advisor/Strategy, Marketing Director) is a meaningful signal. Small companies don't send three people to a tradeshow unless there is a strategic purpose — likely vendor evaluation, partnership scouting, or investor-facing visibility. The CEO's presence elevates the company's seriousness even in the absence of other data. Source: booth scan list + tradeshow attendance pattern inference.",
+    "Tanya's persona bucket is 'Fund/Capitalize' adjacent — Marketing Directors at growth-stage fiber companies are often the internal communicators for investor narratives, RFP responses, and brand positioning during BEAD application periods. She may be a champion or internal connector rather than a technical evaluator. Source: persona framework + title inference.",
+    "The ICP hold status ('Relevant title but no AE notes') combined with Batch D (Ungraded) means no qualification has occurred. The presence of the CEO at the same show is the single strongest reason to upgrade this company's priority — Denis Ryzhikov is the real decision-maker and the person Inorsa should be threading toward."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No LinkedIn profile found or verified for Tanya Pustakhod — cannot confirm tenure, career history, or prior companies.",
+    "No LinkedIn profile found for Denis Ryzhikov in context of Lighthouse Technologies specifically — cannot confirm company size, funding stage, or operational footprint.",
+    "Lighthouse Technologies (lh.tech) has no discoverable fiber/broadband press coverage, BEAD filing presence, or trade association membership — company profile is opaque.",
+    "Cannot confirm whether Lighthouse Technologies is an ISP/operator, an A&E/design firm, a technology vendor, or a consulting firm — this is critical for ICP qualification and the entire pitch angle depends on it.",
+    "No information on Lighthouse Technologies' geographic service area, build stage (pre-construction, mid-build, planning), or BEAD exposure.",
+    "Cannot confirm company headcount, revenue, or funding status.",
+    "No booth interaction notes from AE — unknown what was discussed, what materials were taken, or whether Inorsa was demo'd.",
+    "Roberto Martinez's full background as 'Advisor, Strategy & Growth' is unverified — could be fractional C-suite, board member, or consulting firm representative.",
+    "No information on existing design tooling stack at Lighthouse Technologies — cannot assess 'we already have a tool' objection risk."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold classification ('relevant title') may be misapplied here. Marketing Director is not a relevant title for a GIS-to-CAD permitting workflow tool under normal circumstances. The hold should likely reflect company-level relevance (CEO present, unknown operator type) rather than title-level relevance. Recommend reclassifying Tanya as a 'connector/champion' rather than a buyer persona.",
+    "Batch D (Ungraded) understates the opportunity if Lighthouse Technologies turns out to be an active fiber operator or design contractor. The CEO's presence at Fiber Connect 2026 is a strong counter-signal to low-priority treatment. The batch tier should be revisited after one qualification call or LinkedIn review of Denis Ryzhikov.",
+    "The lh.tech domain could indicate a technology company rather than a fiber operator — in which case Lighthouse Technologies may be a potential partner, reseller, or adjacent vendor rather than a direct Inorsa prospect. This changes the pitch entirely and needs to be resolved before outreach."
+  ],
+  "topInsight": "Do not pitch Tanya Pustakhod as a buyer — pitch her as a gateway to Denis Ryzhikov. The CEO and a Strategy Advisor both attended Fiber Connect 2026 alongside her, which means Lighthouse Technologies sent a decision-making team, not just a marketing rep. The fastest path to qualification is a single question: 'We noticed Denis and Roberto were also at the show — are you the right person to connect us, or would it make more sense to loop them in directly?' The company is essentially unknown (no press, no BEAD filings found, no prior Inorsa research), so the first goal of outreach is not to sell — it is to identify whether Lighthouse Technologies is a fiber operator, design firm, or technology vendor, and route to the CEO if they are. Every day spent nurturing the Marketing Director without threading to the CEO is a day lost.",
+  "sourcesUsed": [
+    "Lead record (provided in prompt)",
+    "Booth scan list (provided in prompt — Denis Ryzhikov, Roberto Martinez co-attendees)",
+    "Inorsa ICP and value proposition framework (provided in prompt)",
+    "ShowRev Industry Intelligence KB baseline (provided in prompt)",
+    "Brain Knowledge Digest — 36 discovered companies (Lighthouse Technologies not present)",
+    "Search inference: no public results found for 'Tanya Pustakhod' in LinkedIn, trade press, or conference speaker databases",
+    "Search inference: no public results found for 'Lighthouse Technologies lh.tech' in fiber/broadband trade press or BEAD filings",
+    "Domain inference: lh.tech premium short domain — brand positioning signal only"
+  ]
+}
+```

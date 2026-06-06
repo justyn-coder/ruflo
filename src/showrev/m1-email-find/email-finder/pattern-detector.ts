@@ -676,6 +676,63 @@ export function generateCandidates(
   return candidates;
 }
 
+// ─── DMARC Pattern Detection ────────────────────────────────────────────────
+
+/**
+ * Extract email pattern clues from DMARC rua=/ruf= reporting addresses.
+ *
+ * Many companies include a real person's email as the DMARC aggregate
+ * report destination. For example:
+ *   _dmarc.bookereng.com TXT "v=DMARC1; p=none; rua=mailto:spencer@bookereng.com"
+ *
+ * This reveals both the domain's email infrastructure AND the naming pattern.
+ * The caller should run found emails through `inferPattern()` if a known
+ * person at the domain can be matched.
+ */
+export async function detectPatternFromDmarc(domain: string): Promise<PatternResult | null> {
+  try {
+    const { promises: dns } = await import('dns');
+    const records = await dns.resolveTxt(`_dmarc.${domain}`);
+    const flat = records.map(r => r.join('')).join(' ');
+
+    // Extract rua= and ruf= email addresses
+    const emailMatches = flat.match(/(?:rua|ruf)=mailto:([^;,\s]+)/gi) || [];
+    const emails: string[] = [];
+    for (const match of emailMatches) {
+      const email = match.replace(/^(?:rua|ruf)=mailto:/i, '').trim();
+      if (email.includes('@') && email.split('@')[1] === domain) {
+        emails.push(email.toLowerCase());
+      }
+    }
+
+    if (emails.length === 0) return null;
+
+    // We found real email(s) at this domain from DMARC records.
+    // Try structural inference on the found emails.
+    const structuralResult = inferPatternFromSamples(emails.map(e => ({ email: e })));
+
+    if (structuralResult.pattern !== 'unknown') {
+      return {
+        pattern: structuralResult.pattern,
+        confidence: Math.min(structuralResult.confidence + 0.1, 0.85),
+        source: `dmarc-rua: inferred "${structuralResult.pattern}" from ${emails.join(', ')}`,
+        sampleEmails: emails,
+      };
+    }
+
+    // Structural inference didn't match — return the raw emails for the caller
+    // to match against known people at the domain via inferPattern()
+    return {
+      pattern: 'unknown',
+      confidence: 0.6,
+      source: 'dmarc-rua',
+      sampleEmails: emails,
+    };
+  } catch {
+    return null;
+  }
+}
+
 // ─── Orchestrator ────────────────────────────────────────────────────────────
 
 export interface DetectionInput {
@@ -697,7 +754,8 @@ export interface DetectionOutput {
  * Priority order:
  * 1. Known emails (highest confidence when names are known)
  * 2. Web scraping (real emails found on site)
- * 3. SPF analysis (weakest signal, provider heuristic only)
+ * 3. DMARC rua=/ruf= email extraction (DNS-based, no HTTP needed)
+ * 4. SPF analysis (weakest signal, provider heuristic only)
  *
  * Returns all pattern signals plus the single best pattern.
  */
@@ -724,7 +782,47 @@ export async function detectPattern(input: DetectionInput): Promise<DetectionOut
     }
   }
 
-  // Approach 3: SPF record
+  // Approach 3: DMARC rua=/ruf= emails (fallback when web scraping finds nothing)
+  // DNS-only, no HTTP fetch needed — fast and reliable
+  if (patterns.every(p => p.source.startsWith('known emails') || p.pattern === 'unknown')) {
+    try {
+      const dmarcResult = await detectPatternFromDmarc(input.domain);
+      if (dmarcResult) {
+        // If we have known people AND dmarc found emails, try to match
+        if (dmarcResult.pattern === 'unknown' && dmarcResult.sampleEmails?.length && input.knownEmails?.length) {
+          for (const sample of dmarcResult.sampleEmails) {
+            for (const known of input.knownEmails) {
+              if (known.firstName && known.lastName) {
+                const matched = inferPattern(sample, known.firstName, known.lastName);
+                if (matched !== 'unknown') {
+                  patterns.push({
+                    pattern: matched,
+                    confidence: 0.75,
+                    source: `dmarc-rua: matched "${matched}" via ${sample} against ${known.firstName} ${known.lastName}`,
+                    sampleEmails: dmarcResult.sampleEmails,
+                  });
+                  break;
+                }
+              }
+            }
+            if (patterns.some(p => p.source.startsWith('dmarc-rua: matched'))) break;
+          }
+        }
+
+        // If dmarc found a structural pattern on its own, keep it
+        if (dmarcResult.pattern !== 'unknown') {
+          patterns.push(dmarcResult);
+        } else if (dmarcResult.sampleEmails?.length && !patterns.some(p => p.source.startsWith('dmarc-rua'))) {
+          // Store even the unknown pattern — the sampleEmails are valuable
+          patterns.push(dmarcResult);
+        }
+      }
+    } catch {
+      // DMARC detection failed — not fatal
+    }
+  }
+
+  // Approach 4: SPF record
   if (input.spfRecord) {
     const spfResult = analyzeSpfRecord(input.spfRecord);
     if (spfResult) {

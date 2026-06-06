@@ -1,0 +1,40 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Rayco, Inc. (rayco-digs.com) is a Texas-based underground utility contractor — the 'digs' in the domain is a strong indicator of civil/excavation work. They are almost certainly a construction/OSP contractor, not an ISP or operator. This repositions the ICP: Rayco would be a subcontractor executing fiber builds for ISPs and telcos, not the network owner. Inorsa's pitch must address their role as a builder receiving GIS/design packages from clients, not generating them for end-users. Source: domain inference + company name pattern.",
+    "Jude Guidry holds the title Director of Strategy and Business Development — this is a Fund/Capitalize persona with a secondary influence on operational scaling decisions. At a contractor of this size, 'Strategy and BD' typically means he is evaluating new revenue streams, new client types, and competitive positioning. He is likely NOT the day-to-day design or engineering lead, but he would sponsor tools that help Rayco win more contracts or execute them more profitably. Source: title inference.",
+    "Jordan Raymond, SVP of Finance, also attended the show and scanned Inorsa's booth. This is a critical multi-threading signal. SVP of Finance attending a fiber tradeshow alongside BD indicates either (a) they are evaluating a significant capital or tooling investment, or (b) they are actively pursuing BEAD-funded work and the finance lead is doing due diligence on margin and cash flow implications. Either scenario means budget is in active discussion, not theoretical. Source: booth scan list.",
+    "Prosper, TX is a rapidly growing suburb north of Dallas in Collin County — one of the fastest-growing counties in the US. Texas received $683M in BEAD allocation ($683,057,831 confirmed in funding data). Texas BEAD is operational as of April 30, 2026, with ISP contracts expected within 6 months. A Texas-based contractor with a BD director actively attending fiber tradeshows in this window is almost certainly positioning to capture BEAD subcontract work. The timeline pressure is real and immediate. Source: funding data + location inference.",
+    "Rayco's domain 'rayco-digs.com' suggests a company that self-identifies as a digging/construction firm first. If they are receiving design packages from ISP clients and executing builds, their pain point is NOT drawing generation — it is receiving poor-quality or incomplete design packages that slow field crews, cause rework, or fail permit review. Inorsa's QC and conflict-flagging capabilities are directly relevant to this problem even from the contractor side, as they could validate incoming packages before mobilizing crews. Source: domain + contractor persona analysis.",
+    "No LinkedIn profile, trade press quotes, speaking engagements, or public statements from Jude Guidry were found in available research. His digital footprint appears minimal, which is common for BD directors at regional contractors. This limits the ability to personalize with a direct quote opener. Source: search attempt, not found.",
+    "The BD + Finance dual attendance pattern suggests Rayco is in a strategic evaluation mode — likely assessing whether to invest in tooling/capability that lets them bid on larger or more technically complex BEAD contracts. Inorsa could be positioned as a capability differentiator that allows Rayco to take on design-build contracts or validate incoming GIS packages faster, reducing their exposure to rework penalties and schedule risk."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No confirmed LinkedIn profile for Jude Guidry — cannot verify tenure, prior employers, or career trajectory",
+    "Rayco, Inc. website not confirmed as live or informative — company size, employee count, and service lines not verified from direct source",
+    "Cannot confirm whether Rayco performs any in-house fiber design or is purely a construction executor — this distinction changes the Inorsa pitch significantly",
+    "No trade press, podcast, or panel quotes from Jude Guidry found — no direct voice of the prospect available for personalized opener",
+    "Relationship between Rayco and specific ISP/operator clients not known — cannot identify which BEAD awards they might be positioned to subcontract under",
+    "Cannot confirm whether Rayco uses any existing GIS-to-CAD tooling or relies entirely on client-supplied packages",
+    "Jordan Raymond's full title and role scope not confirmed beyond 'SVP of Finance' from the booth scan list"
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold status ('Relevant title but no AE notes or grade') may undervalue this prospect. The combination of (1) BD director + (2) SVP Finance both scanning the booth + (3) Texas BEAD timing + (4) contractor identity creates a moderately strong buying signal that warrants an upgrade to at minimum a 'B' tier for follow-up prioritization.",
+    "If other research personas assume Rayco is an ISP or network operator based on tradeshow attendance, I would push back: the domain 'rayco-digs.com' strongly implies a construction/civil contractor. The sales motion should not lead with 'build your network faster' but rather 'protect your crews from bad packages and rework penalties' — a fundamentally different angle.",
+    "Jude Guidry's title suggests he is NOT the engineering buyer — he is the growth buyer. The pitch to him should be about winning more contracts and margin protection, not about design throughput. The permitting workflow pain is real but should be framed as 'your ISP clients will prefer you because you reduce their kickback risk,' not 'you'll draw faster.'"
+  ],
+  "topInsight": "Rayco is almost certainly a fiber construction contractor (not an ISP), and two attendees — BD Director plus SVP of Finance — both scanned the booth during active Texas BEAD deployment window. This dual-contact pattern with a finance executive present is the strongest buying-intent signal available. The outreach to Guidry should NOT lead with design throughput; it should lead with how Inorsa helps contractors protect margins and schedule commitments by catching design conflicts before crews are mobilized — framing Inorsa as a competitive differentiator for winning design-build BEAD subcontracts, not just a drawing tool.",
+  "sourcesUsed": [
+    "rayco-digs.com (domain inference only — direct site content not confirmed)",
+    "Booth scan list: Jordan Raymond, SVP of Finance, same company",
+    "Texas BEAD allocation: $683,057,831 (from funding data in research context)",
+    "BEAD operational date: April 30, 2026 (from ShowRev Industry Intelligence KB)",
+    "Prosper TX / Collin County growth data: general knowledge",
+    "Title/persona inference: Director of Strategy and BD = Fund/Capitalize persona per ShowRev framework",
+    "LinkedIn search for Jude Guidry: not found / no public profile confirmed",
+    "Trade press search (bbcmag.com, lightreading.com, etisoftware.com) for Jude Guidry: not found"
+  ]
+}
+```

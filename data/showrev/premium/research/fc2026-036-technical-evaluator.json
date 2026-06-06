@@ -1,0 +1,222 @@
+I'll research Terracon's technical stack, workflow, and engineering capabilities systematically before forming conclusions.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon telecom broadband fiber design engineering jobs hiring 2025 2026"}}
+</tool_call>
+<tool_response>
+[
+  {
+    "title": "Terracon's Telecom & Broadband Services - Nationwide Coverage",
+    "url": "https://www.terracon.com/services/telecom-broadband/",
+    "description": "Terracon provides comprehensive telecom and broadband services, including site evaluations, geotechnical investigations, environmental studies, and regulatory compliance for the nation's leading communications companies."
+  },
+  {
+    "title": "Terracon | LinkedIn",
+    "url": "https://www.linkedin.com/company/terracon/",
+    "description": "Terracon | 31,576 followers on LinkedIn. Building Excellence in Employee Ownership | Since 1965 | Terracon is an employee-owned geotechnical, environmental, facilities, and materials testing engineering firm with more than 175 offices and 7000+ employees nationwide. Consistently ranked among the top 50 engineering firms by ENR, Terracon is 100% employee-owned."
+  },
+  {
+    "title": "Terracon's Broadband & Telecommunications Consulting Services",
+    "url": "https://www.terracon.com/services/telecom-broadband/broadband-telecommunications-consulting/",
+    "description": "Terracon's consulting services assist broadband providers in navigating regulatory requirements, managing federal funding applications, and developing effective deployment strategies, offering expertise in BEAD funding consultation, feasibility studies, and deployment strategies."
+  },
+  {
+    "title": "Working at Terracon | Glassdoor",
+    "url": "https://www.glassdoor.com/Overview/Working-at-Terracon-EI_IE17219.htm",
+    "description": "See what employees say it's like to work at Terracon. Salaries, reviews, and more - all posted by employees working at Terracon."
+  },
+  {
+    "title": "Employee Testimonials | Terracon",
+    "url": "https://www.terracon.com/careers/employee-testimonials/",
+    "description": "Explore employee testimonials for Terracon, an employee-owned geotechnical, environmental, facilities, and materials testing engineering firm."
+  }
+],
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon telecom broadband AutoCAD MicroStation GIS ArcGIS fiber construction drawings"}}
+</tool_call>
+<tool_response>
+[
+  {
+    "title": "Terracon's Telecom & Broadband Services - Nationwide Coverage",
+    "url": "https://www.terracon.com/services/telecom-broadband/",
+    "description": "Terracon provides comprehensive telecom and broadband services, including site evaluations, geotechnical investigations, environmental studies, and regulatory compliance for the nation's leading communications companies."
+  },
+  {
+    "title": "Terracon's Broadband & Telecommunications Consulting Services",
+    "url": "https://www.terracon.com/services/telecom-broadband/broadband-telecommunications-consulting/",
+    "description": "Terracon's consulting services assist broadband providers in navigating regulatory requirements, managing federal funding applications, and developing effective deployment strategies, offering expertise in BEAD funding consultation, feasibility studies, and deployment strategies."
+  },
+  {
+    "title": "Terracon Broadband & Telecommunications: Geotechnical, Environmental ...",
+    "url": "https://www.terracon.com/wp-content/uploads/2024/02/Terracon-TelecomBroadband-Brochure-2023.pdf",
+    "description": "Terracon brings comprehensive capabilities to telecommunications projects, from initial planning to construction. Our extensive office network enables responsive, cost-effective project delivery with local knowledge and national resources."
+    },
+  {
+    "title": "Terracon's Broadband & Telecommunications Consulting Services",
+    "url": "https://www.terracon.com/services/telecom-broadband/broadband-telecommunications-consulting/",
+    "description": "Terracon's consulting services assist broadband providers in navigating regulatory requirements, managing federal funding applications, and developing effective deployment strategies, offering expertise in BEAD funding consultation, feasibility studies, and deployment strategies."
+  },
+  {
+    "title": "Terracon's Broadband & Telecommunications Consulting Services",
+    "url": "https://www "
+  }
+],
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.terracon.com/services/telecom-broadband/"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.terracon.com/services/telecom-broadband/",
+  "title": "Terracon's Telecom & Broadband Services - Nationwide Coverage",
+  "content": "Terracon's Telecom & Broadband Services - Nationwide Coverage\n\nSince 1965 | Terracon is an employee-owned geotechnical, environmental, facilities, and materials testing engineering firm.\n\nTelecom & Broadband\n\nWith dedicated telecom and broadband project teams and a wealth of technical expertise backed by more than 175 offices nationwide, Terracon offers the depth of a large firm with the responsiveness of a small firm.\n\nBroadband & Telecommunications Consulting\n\nAssisting broadband providers in navigating regulatory requirements, managing federal funding applications, and developing effective deployment strategies.\n\nSite Investigations\n\nGeotechnical investigations, site evaluations, materials testing, and more.\n\nConstruction Observation & Testing\n\nOn-site construction monitoring, materials testing, and verification.\n\nPermitting\n\nPermitting for telecommunications projects in state right-of-way, county, municipal, NCDOT (North Carolina), and more.\n\nSubsurface Utility Engineering\n\nIdentifying, locating, and resolving conflicts with existing underground utilities to prevent delays and cost overruns.\n\nRegulatory Compliance\n\nEnvironmental compliance, zoning assessments, regulatory permitting, and more.\n\nBIM/CAD Services\n\nProviding as-built documentation, 3D modeling, and design support for telecom infrastructure projects.\n\n\nCase Studies\n\nCurbside Fiber to the Home\n\nCase study available\n\nGround-Mounted Solar Project\n\nCase study available\n\nDriving Broadband Infrastructure Programs at Scale\n\nCase study available\n\n\nBroadband and Telecommunications Consulting\n\nExpand your organization's capabilities with the technical depth you need to make informed decisions throughout the broadband deployment process.\n\nFeasibility studies and needs assessments\n\nFunding applications and grant management\n\nSystem design and network planning\n\nEngineering design reviews\n\nDeployment strategies and planning\n\nStakeholder engagement\n\n\nSite Investigations\n\nTerracon's site investigation team delivers site-specific data for informed decisions throughout the project lifecycle.\n\nGeotechnical investigations\n\nBoring and test pit investigations\n\nRoute assessments\n\nEnvironmental screening\n\nSoil and bedrock characterization\n\nSlab and core sampling\n\nMaterials and laboratory testing\n\nThird-party geotechnical reviews\n\nConstruction layout and site staking\n\nCondition inspections\n\nConstruction Observation & Testing\n\nTerracon's materials testing, construction observation, and verification services ensure quality and standards are maintained throughout the construction process.\n\nConstruction materials testing\n\nSpecial inspections\n\nInspection by certified professionals\n\nIn-place density testing\n\nSite work inspections\n\nThird-party inspections and oversight\n\nContinuous or intermittent inspections\n\nPermitting\n\nTerracon's permitting experts provide permit support, documentation, and submissions for telecom projects in a variety of jurisdictions.\n\nState right-of-way permits\n\nCounty permits\n\nMunicipal permits\n\nNCDOT Permits (North Carolina)\n\nFederal land permits (USFS, BLM, NPS, BIA)\n\nRailroad crossing permits\n\nBridge/structural attachment permits\n
+
+\nSubsurface Utility Engineering\n\nTerracon's subsurface utility engineering team locates, maps, and resolves utility conflicts to prevent costly project delays.\n\nDesignation and location of underground utilities\n\nUtility design conflict resolution\n\nUnderground utility mapping\n\nAs-built surveys and verification\n\nSubsurface utility evaluation\n\n\nRegulatory Compliance\n\nTerracon's regulatory team ensures telecom projects comply with environmental, zoning, and other regulatory requirements.\n\nEnvironmental compliance\n\nZoning assessments\n\nRegulatory permitting\n\nHistoric preservation assessments\n\nESA and NHPA compliance\n\nWeeklands (sic) assessments\n\n\nBIM/CAD Services\n\nTerracon's BIM/CAD team provides as-built documentation, 3D modeling, and design support for telecom infrastructure projects.\n\nAs-built documentation\n\nDrawing production\n\nDesign modifications\n\n3D modeling/BIM\n\nField survey to drawing\n\nPoint cloud to CAD\n\n\nCase Studies\n\nCurbside Fiber to the Home\n\nDownload Case Study\n\nGround-Mounted Solar Project\n\nDownload Case Study\n\nDriving Broadband Infrastructure Programs at Scale\n\nDownload Case Study\n\n\nResource Library\n\nBroadband and Telecommunications Reference Guide\n\nDownload Now\n\nBroadband Funding Tool\n\nExplore Now\n\nWebinar: Navigating the BEAD Program\n\nWatch Now"
+}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.terracon.com/wp-content/uploads/2024/02/Terracon-TelecomBroadband-Brochure-2023.pdf"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.terracon.com/wp-content/uploads/2024/02/Terracon-TelecomBroadband-Brochure-2023.pdf",
+  "title": "Terracon Broadband & Telecommunications: Geotechnical, Environmental ...",
+  "content": "Terracon Broadband & Telecommunications\nGeotechnical | Environmental | Facilities | Materials Testing\n\nExpanding Internet Access\nAcross America\n\nTerracon brings comprehensive capabilities to telecommunications \nprojects, from initial planning to construction. Our extensive \noffice network enables responsive, cost-effective project delivery \nwith local knowledge and national resources.\n\nTerracon's National Programs Team provides our clients \nwith experienced project managers and technical experts \nwho have backgrounds in the telecommunications industry. \nOur team has managed, designed and constructed miles of \nfiber-optic infrastructure at a multi-state level.\n\nTerracon routinely coordinates with telecom providers, government \nagencies, and utility companies to facilitate seamless project \ndelivery.\n\nTerracon National Programs team specialties:\n• Fiber design\n• Make ready engineering\n• Permitting\n\n\nOur Expertise\nTerracon's telecom project teams provide comprehensive engineering \nand consulting services for telecommunications clients.\n\n\nRoute and Site Acquisition\n• Route analysis and planning\n• Site acquisition and easement coordination\n\n\nEngineering Design\n\n• Fiber design\n• Make ready engineering\n\nPermitting\n• State ROW permits\n• County permits\n\n• Municipal permits\n• Federal land permits\n\n\nConstruction Management\n\n• Construction materials testing\n• Special inspections\n\n\nBIM/CAD Services\n\n• Field survey to drawing\n• Fiber routes and conduits\n\n• As-built documentation\n\nSubsurface Utility Engineering\n\n• Designation and location \n• Underground utility mapping\n\n\nGeotechnical Investigations\n\n• Boring and test pit \ninvestigations\n• Soil and bedrock characterization\n\n\nEnvironmental Services\n\n• Environmental compliance\n• Historic preservation assessments\n\n\nRegulatory Compliance\n\n• Zoning assessments\n• Regulatory permitting\n\n\nNational Programs Case Studies\n\n\nFiber-to-the-Home Design – Connecticut\n\nTerracon supported a Connecticut ISP in the design and permitting \nof a fiber-to-the-home network serving approximately 3,500 subscribers.\n\nTerracon performed aerial make ready engineering, underground utility \nconflict analysis, and CAD drawing production for multiple municipalities, \nincluding coordination of 35 permit packages for submission to the \nstate DOT.\n\nFiber-to-the-Home Design – Connecticut case study specifics:\n• Aerial make ready engineering\n• Underground utility conflict analysis\n• CAD drawing production\n• 35 permit packages to state DOT\n• 3,500 subscribers\n\nFiber-to-the-Home Design – Large ISP\n\nTerracon is supporting one of the nation's largest broadband providers \nin the design and permitting of a residential fiber network.\n\nTerracon coordinated with nearly 200 municipalities for permit \nsubmissions, including coordination with state DOTs, counties, and \nmunicipal bodies across 4 states.\n\nFiber-to-the-Home Design – Large ISP case study specifics:\n• 200 municipalities\n• 4 states\n• State DOTs, counties, municipal bodies\n• Residential fiber network\n\n\nCurbside Fiber to the Home\n\nOne of the nation's top broadband providers engaged Terracon to \ndesign and permit a curbside fiber-to-the-home network.\n\nIn close collaboration with the client, Terracon developed customized \ndrawing templates in coordination with the client's GIS team. \n\nTerracon developed new systems and processes specifically for this \nwork, incorporating quality control, metadata, and standardization to \nproduce construction drawings and permit packages.\n\nTerracon's CAD team managed iterative drawing reviews, utilizing \nversioning and revision tracking, to bring permit submissions to \napproval-ready status quickly.\n\nCurbside Fiber to the Home case study specifics:\n• Customized drawing templates in coordination with client's GIS team\n• New systems and processes for QC, metadata, and standardization\n• Construction drawings and permit packages\n• CAD team managed iterative drawing reviews\n• Versioning and revision tracking\n• Approval-ready permit submissions\n\n\nDriving Broadband Infrastructure Programs at Scale\n\nTerracon supported a large broadband provider in the deployment of \na large-scale fiber-to-the-home network.\n\nTerracon's team coordinated with hundreds of municipalities, state \nagencies, and utility providers to secure permits and manage project \ncompliance.\n\nTerracon drove efficiencies across hundreds of permit applications in \nmultiple states by developing standardized processes, templates, and \nleveraging technology.\n\n\n"
+}
+</tool_response>
+
+Excellent — this is very revealing. Let me dig deeper into their tools, job postings, and Kathryn Eisele specifically.
+<tool_call>
+{"name": "search", "arguments": {"query": "Terracon site:linkedin.com/jobs telecom broadband fiber CAD GIS design"}}
+</tool_call>
+<tool_response>
+[
+  {
+    "title": "Terracon hiring in United States | LinkedIn",
+    "url": "https://www.linkedin.com/company/terracon/jobs/",
+    "description": "Today's top 44 Terracon jobs in United States. Leverage your professional network, and get hired. New Terracon jobs added daily."
+  },
+  {
+    "title": "Telecom CAD Technician - Job Search | Indeed",
+    "url": "https://www.indeed.com/q-Terracon-Telecom-CAD-l-Remote-jobs.html",
+    "description": "Find the best Terracon Telecom CAD jobs near you & 1-click apply to Terracon Telecom jobs on Indeed."
+  },
+  {
+    "title": "Senior Broadband Project Manager - LinkedIn",
+    "url": "https://www.linkedin.com/jobs/view/senior-broadband-project-manager-at-terracon-4075826551",
+    "description": "Senior Broadband Project Manager Terracon · Olathe, KS · Actively Recruiting · Engineering Services · 5,001-10,000 employees · Employee Owned. See jobs ..."
+  },
+  {
+    "title": "Broadband/Telecom Manager, Project Development - LinkedIn",
+    "url": "https://www.linkedin.com/jobs/view/broadband-telecom-manager-project-development-at-terracon-4172700380",
+    "description": "Broadband/Telecom Manager, Project Development Terracon · Olathe, KS · Actively Recruiting · Engineering Services · 5,001-10,000 employees · Employee Owned. See ..."
+  },
+  {
+    "title": "Broadband/Telecom Senior Designer - LinkedIn",
+    "url": "https://www.linkedin.com/jobs/view/broadband-telecom-senior-designer-at-terracon-4172701193",
+    "description": "Broadband/Telecom Senior Designer Terracon · Nationwide, US · Actively Recruiting · Engineering Services · 5,001-10,000 employees · Employee Owned. See jobs at ..."
+  },
+  {
+    "title": "Telecom Permit Specialist - LinkedIn",
+    "url": "https://www.linkedin.com/jobs/view/telecom-permit-specialist-at-terracon-4172695527",
+    "description": "Telecom Permit Specialist Terracon · Nationwide, US · Actively Recruiting · Engineering Services · 5,001-10,000 handles employees · Employee Owned. See jobs at ..."
+  },
+  {
+    "title": "Telecom Permit Specialist - LinkedIn",
+    "url": "https://www.linkedin.com/jobs/view/telecom-permit-specialist-at-terracon-4172697671",
+    "description": "Telecom Telecom Permit Specialist Terracon · Nationwide, US · Actively Recruiting · Engineering Services · 5,001-10,000 employees · Employee Owned. See jobs at ..."
+  }
+],
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/jobs/view/broadband-telecom-senior-designer-at-terracon-4172701193"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.linkedin.com/jobs/view/broadband-telecom-senior-designer-at-terracon-4172701193",
+  "title": "Broadband/Telecom Senior Designer",
+  "content": "Broadband/Telecom Senior Designer\n\nTerracon · Nationwide, US (On-site)\n\nApply\n\nSave\n\nShow more options\n\nBroadband/Telecom Senior Designer\n\nTerracon · Nationwide, US (On-site)\n\n5,001-10,000 employees · Engineering Services\n\n10 applicants\n\nPosted 4 days ago\n\nOnsite\n\nFull-time\n\nMid-Senior level\n\nSave\n\nApply\n\nAbout the job\n\nJob Description\n\nReporting to the Broadband/Telecom National Programs Manager, you will help design and manage fiber-to-the-home (FTTH) and fiber infrastructure projects for major telecom clients at a regional and national level. You will work with project managers and technical leads to produce high-quality construction drawings and develop and oversee processes that ensure quality, efficiency, and scalability as we grow our National Programs team.\n\nEssential Functions\nDesign FTTH and fiber infrastructure projects using CAD and GIS tools\nDevelop and maintain design standards and guidelines for fiber infrastructure projects\nConduct and oversee quality control reviews of CAD and GIS data\nCoordinate with project managers, field teams, and clients to ensure design accuracy and project success\nMentor CAD technicians and junior designers on Terracon processes and quality standards\nContribute to developing new tools and processes to improve efficiency and quality\nDevelop and maintain project templates, standards, and resources\nCollaborate with permit specialists to prepare permit applications, drawings, and supporting materials\n\nMinimum Qualifications\n3+ years in fiber network design (FTTH/FTTX preferred)\nExperience with fiber design platforms such as Katapult, Vetro, or similar\nProficiency in AutoCAD or MicroStation\nGIS experience (ArcGIS, QGIS, etc.)\nExperience with permit preparation and submission processes\n\nPreferred Qualifications\nExperience with Pole Attachment procedures, make-ready engineering, and one-call procedures\nExperience designing for multiple jurisdictions and permit types (state, county, municipal, federal)\nFamiliarity with NESC and standard telecom design practices\n\nAbout the Company\n\nDescription: Terracon is a 100% employee-owned consulting engineering firm providing geotechnical, environmental, facilities, and materials testing services.\n\nWebsite: https://terracon.com\n\nIndustry: Engineering Services"
+}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/jobs/view/telecom-permit-specialist-at-terracon-4172695527"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.linkedin.com/jobs/view/telecom-permit-specialist-at-terracon-4172695527",
+  "title": "Telecom Permit Specialist",
+  "content": "Telecom Permit Specialist\n\nTerracon · Nationwide, US (On-site)\n\nApply\n\nSave\n\nShow more options\n\nTerracon · Nationwide, US (On-site)\n\n5,001-10,000 employees · Engineering Services\n\n10 applicants\n\nPosted 4 days ago\n\nOnsite\n\nFull-time\n\nAssociate level\n\nSave\n\nApply\n\nAbout the job\n\nJob Description\n\nTerracon is building out its National Programs team and seeking Telecom Permit Specialists to support broadband and telecommunications projects for major telecom clients.\n\nAs a Telecom Permit Specialist, you will work closely with design and project management teams to prepare, submit, and manage permit applications for telecommunications infrastructure projects.\n\nEssential Functions\nPrepare permit applications and supporting documentation for telecom/broadband projects\nCoordinate with state, county, and municipal agencies for permit submissions and reviews\nTrack permit status and manage correspondence with permitting authorities\nReview design drawings for permit compliance and accuracy\nResolve permit deficiencies and resubmit applications as needed\nMaintain permit records and documentation\nCommunicate with clients regarding permit status and issues\n\nMinimum Qualifications\nExperience in telecom permitting (right-of-way, municipality, state DOT, federal lands, railroad)\nKnowledge of permit types: ROW, encroachment, conditional use, etc.\nAbility to read and interpret design drawings and CAD files\nStrong organizational and documentation skills\n\nPreferred Qualifications\nExperience with AutoCAD or MicroStation\nFamiliarity with GIS platforms (ArcGIS, QGIS)\nExperience with fiber network design workflows\n\nAbout the Company\n\nDescription: Terracon is a 100% employee-owned consulting engineering firm providing geotechnical, environmental, facilities, and materials testing services.\n\nWebsite: https://terracon.com\n\nIndustry: Engineering Services"
+}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/jobs/view/telecom-permit-specialist-at-terracon-4172697671"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.linkedin.com/jobs/view/telecom-permit-specialist-at-terracon-4172697671",
+  "title": "Telecom Permit Specialist",
+  "content": "Telecom Permit Specialist\n\nTerracon · Nationwide, US (On-site)\n\nApply\n\nSave\n\nShow more options\n\nTerracon · Nationwide, US (On-site)\n\n5,001-10,000 employees · Engineering Services\n\n5,001-10,000 employees · Engineering Services\n\n3 applicants\n\nPosted 4 days ago\n\nFull-time\n\nAssociate level\n\nSave\n\nApply\n\nAbout the job\n\nJob Description\n\nTerracon is building out its National Programs team and seeking Telecom Permit Specialists to support broadband and telecommunications projects for major telecom clients.\n\nAs a Telecom Permit Specialist, you will work closely with design and project management teams to prepare, submit, and manage permit applications for telecommunications infrastructure projects.\n\nEssential Functions\nPrepare permit applications and supporting documentation for telecom/broadband projects\nCoordinate with state, county, and municipal agencies for permit submissions and reviews\nTrack permit status and manage correspondence with permitting authorities\nReview design drawings for permit compliance and accuracy\nResolve permit deficiencies and resubmit applications as needed\n\nMinimum Qualifications\nExperience in telecom permitting (right-of-way, municipality, state DOT, federal lands, railroad)\nKnowledge of permit types: ROW, encroachment, conditional use, etc.\nAbility to read and interpret design drawings and CAD files\nStrong organizational and documentation skills\n\nPreferred Qualifications\nExperience with AutoCAD or MicroStation\nFamiliarity with GIS platforms (ArcGIS, QGIS)\nExperience with fiber network design workflows\n\nAbout the Company\n\nDescription: Terracon is a 100% employee-owned consulting engineering firm providing geotechnical, environmental, facilities, and materials testing services.\n\nWebsite: https://terracon.com\n\nIndustry: Engineering Services"
+}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/jobs/view/broadband-telecom-manager-project-development-at-terracon-4172700380"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.linkedin.com/jobs/view/broadband-telecom-manager-project-development-at-terracon-4172700380",
+  "title": "Broadband/Telecom Manager, Project Development",
+  "content": "Broadband/Telecom Manager, Project Development\n\nTerracon · Olathe, KS (On-site)\n\nApply\n\nSave\n\nShow more options\n\nTerracon · Olathe, KS (On-site)\n\n5,001-10,000 employees · Engineering Services\n\n18 applicants\n\nPosted 4 days ago\n\nOnsite\n\nFull-time\n\nMid-Senior level\n\nSave\\n\nApply\n\nAbout the job\n\nJob Description\n\nReporting to the Director of National Broadband Programs, the Broadband/Telecom Manager for Project Development will be responsible for developing new and existing client relationships, identifying project opportunities, and supporting the delivery of broadband and telecom projects at a national level.\n\nThis role is based in Olathe, KS.\n\nEssential Functions\nIdentify and pursue new project opportunities with existing and prospective clients\nDevelop and maintain client relationships with broadband providers, ISPs, and telecom companies\nLead and support proposal development for broadband and telecom projects\nCollaborate with technical staff to scope and price projects\nSupport or manage delivery for select projects as needed\nParticipate in industry events, conferences, and organizations to build market presence\n\nMinimum Qualifications\nExperience in broadband or telecom project development, sales, or business development\nKnowledge of fiber-to-the-home (FTTH/FTTX) design, permitting, and deployment workflows\nExperience working with or for ISPs, broadband providers, or telecom engineering firms\nAbility to read and interpret fiber design drawings\n\nPreferred Qualifications\nExperience with federal broadband funding programs (BEAD, RDOF, ReConnect, etc.)\nExperience with permitting workflows for telecom projects\nFamiliarity with GIS and CAD tools used in fiber design\n\nAbout the Company\n\nDescription: Terracon is a 100% employee-owned consulting engineering firm providing geotechnical, environmental, facilities, and materials testing services.\n\nWebsite: https://terracon.com\n\nIndustry: Engineering Services"
+}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Kathryn Eisele Terracon telecom broadband director LinkedIn"}}
+</tool_call>
+<tool_response>
+[
+  {
+   "title": "Kathryn Eisele - National Director of Telecommunications & Broadband ...",
+    "url": "https://www.linkedin.com/in/kathryn-eisele-58a27b15/",
+    "description": "National Director of Telecommunications & Broadband at Terracon · Experienced telecommunications and broadband professional with a focus on fiber network design, permitting, and project management. · Education: Rowan University"
+  },
+  {
+    "title": "Kathryn Eisele | LinkedIn",
+    "url": "https://www.linkedin.com/in/kathryn-eisele/",
+    "description": "View Kathryn Eisele's profile on LinkedIn, a professional community of 1 billion members."
+  },
+  {
+    "title": "Kathryn Eisele - National Director of Telecommunications ...",
+    "url": "https://nj.linkedin.com/in/kathryn-eisele-58a27b15",
+    "description": "National Director of Telecommunications & Broadband at Terracon · Experienced telecommunications and broadband professional with a focus on fiber network design, permitting, and project management. · Education: Rowan University"
+  }
+],
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/in/kathryn-eisele-58a27b15/"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.linkedin.com/in/kathryn-eisele-58a27b15/",
+  "title": "Kathryn Eisele - National Director of Telecommunications & Broadband at Terracon",
+  "content": "Kathryn Eisele\n\nNational Director of Telecommunications & Broadband at Terracon\n\nOlathe, KS\n\nExperience\n\nTerracon\nNational Director of Telecommunications & Broadband\n2022 – Present\n\nPrior Experience:\nTelcove / EarthLink / WindStream / Zayo (Telecom Carrier)\nTechnical roles in fiber network operations\n\nEducation: Rowan University\n\nConnections: 500+\n\nAbout: Experienced telecommunications and broadband professional with a focus on fiber network design, permitting, and project management."
+}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Lauren Lanoux Terracon Senior Project Manager telecom broadband LinkedIn"}}
+</tool_call>
+<tool_response>
+[
+  {
+    "title": "Lauren Lanoux - Senior Project Manager at Terracon | LinkedIn",
+    "url": "https://www.linkedin.com/in/lauren-lanoux/",
+    "description": "Senior Project Manager at Terr

@@ -1,0 +1,584 @@
+I'll research Globema systematically, starting with job postings, then tech stack, then capabilities. Let me work through the priority searches.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Globema hiring careers fiber design engineering jobs"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/company/globema/
+Title: Globema | LinkedIn
+Description: Globema | 1,561 followers on LinkedIn. Geospatial Software & Consulting for utilities & telecoms | Globema provides software consulting and related services to utilities and telecom networks. Our solutions help companies design, build, and manage complex infrastructure networks. We are a consulting and software solution provider. We ...
+
+Result 2:
+URL: https://globema.com/
+Title: Globema - Geospatial Software & Consulting for Utilities & Telecoms
+Description: Globema provides software solutions and related consulting services to utilities and telecom companies in infrastructure management. Our solutions help design, build and manage complex infrastructure networks. We are a consulting and software solution provider.
+
+Result 3:
+URL: https://globema.com/jobs/
+Title: Globema Jobs
+Description: · Business Development, US · Business Development Manager, US · Senior GIS Consultant – US Market · GIS Training Manager · Senior GIS Solutions Architect – US Market · Analyst/Developer for Power BI · Senior QGIS Developer · Quality Assurance Tester (Manual) · Network Topology Analyst · GIS Data Migration Specialist · GIS Database Specialist ...
+
+Result 4:
+URL: https://globema.com/solutions/
+Title: Solutions - Globema
+Description: GIS-Centric Network Management System for Utilities Fiber/HFC/Access Network Design IQGeo Fiber/HFC/Access Network Design OSPInsight Fiber/HFC/Access Network Design OSPInsight Fiber/HFC/Access Network Design Network Design & Management Telecom Asset Management Catalog/Ordering System Fiber/HFC/Access Network Design ...
+
+Result 5:
+URL: https://globema.com/jobs/senior-gis-solutions-architect-us-market/
+Title: Senior GIS Solutions Architect – US Market - Globema
+Description: Senior GIS Solutions Architect – US Market Globema is actively seeking a skilled and motivated Senior GIS Solutions Architect to join our growing US team. This role will focus primarily on the IQGeo platform but will also involve work with OSPInsight and other GIS-based solutions we provide. Specifically, you will be responsible for implementing and configuring IQGeo solutions for our ...
+
+Result 6:
+URL: https://globema.com/jobs/senior-qgis-developer/
+Job title: Senior QGIS Developer
+Company: Globema
+Description: Globema is looking for a talented and motivated Senior QGIS Developer to join our growing team. This position focuses on developing advanced GIS solutions using QGIS, with a strong emphasis on PyQGIS and plugin development.
+
+Result 7:
+URL: https://globema.com/jobs/business-development-us/
+Title: Business Development, US - Globema
+Description: Globema is seeking a driven and technically-oriented Business Development professional to join our growing US Market team. This person will help expand Globema's presence in the North American utility and telecom market. Role Overview: Act as a trusted advisor and ambassador to clients and prospects in the North American utility and telecom market Identify and develop new business opportunities ...
+
+Result 8:
+URL: https://globema.com/jobs/gis-training-manager/
+Title: GIS Training Manager - Globema
+Description:  · Trainer for IQGeo, OSPInsight and other GIS based tools. · Experience with major platforms: Esri ArcGIS, Trimble, Bentley, QGIS, OpenStreetMap · Experience with major telecom/utility GIS solutions: IQGeo (formerly Comsof), Comsof Fiber, OSPInsight, Trimble (NIS/UIS), Bentley OpenComms · Experience with FTTH design, brownfield & greenfield
+
+Result 9:
+URL: https://globema.com/jobs/senior-gis-consultant-us-market/
+Title: Senior GIS Consultant – US Market - Globema
+Description: Globema is actively seeking a skilled and motivated Senior GIS Consultant to join our growing US team. This role will focus primarily on the IQGeo platform but will also involve work with OSPInsight and other GIS-based solutions we provide.
+
+Result 10:
+URL: https://globema.com/jobs/business-development-manager-us/
+Title: Business Development Manager, US - Globema
+Description: Globema is seeking a driven and technically-oriented Business Development Manager to join its growing US Market team.
+</tool_response>
+
+Excellent — very rich initial data. Globema is clearly a GIS consulting/software firm, an IQGeo partner. Let me dig deeper into their solutions and tech stack.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://globema.com/solutions/"}}
+</tool_call>
+<tool_response>
+URL: https://globema.com/solutions/
+Title: Solutions - Globema
+Content: Solutions - Globema
+
+[iframe]
+
+[iframe]
+</tool_response>
+
+JS-rendered. Let me try the jobs page and specific solution pages for more detail.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://globema.com/jobs/senior-gis-solutions-architect-us-market/"}}
+</tool_call>
+<tool_response>
+URL: https://globema.com/jobs/senior-gis-solutions-architect-us-market/
+Title: Senior GIS Solutions Architect – US Market - Globema
+Content: Senior GIS Solutions Architect – US Market - Globema
+
+[iframe]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Globema IQGeo OSPInsight fiber design consulting solutions"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://globema.com/
+Title: Globema - Geospatial Software & Consulting for Utilities & Telecoms
+Description: Globema provides software solutions and related consulting services to utilities and telecom companies in infrastructure management. Our solutions help design, build and manage complex infrastructure networks. We are a consulting and software solution provider.
+
+Result 2:
+URL: https://www.linkedin.com/company/globema/
+
+Result 3:
+URL: https://globema.com/solutions/
+Title: Solutions - Globema
+Description: GIS-Centric Network Management System for Utilities Fiber/HFC/Access Network Design IQGeo Fiber/HFC/Access Network Design OSPInsight Fiber/WFi/Access Network Design OSPInsight Fiber/WFi/Access Network Design Network Design & Management Telecom Asset Management Catalog/Ordering System Fiber/HFC/Access Network Design ...
+
+Result 4:
+URL: https://globema.com/jobs/
+Title: Globema Jobs
+Description: · Business Development, US · Business Development Manager, US · Senior GIS Consultant – US Market · GIS Training Manager · Senior GIS Solutions Architect – US Market · Analyst/Developer for Power BI · Senior QGIS Developer · Quality Assurance Tester (Manual) · Network Topology Analyst · GIS Data Migration Specialist · GIS Database Specialist ...
+
+Result posted 2 hours ago:
+URL: https://globema.com/jobs/business-development-us/
+Title: Business Development, US - Globema
+Description: Globema is seeking a driven and technically-oriented Business Development professional to join our growing US Market team. This person will help expand Globema's presence in the North American utility and telecom market. Role Overview: Act as a trusted advisor and ambassador to clients and prospects in the North American utility and telecom market Identify and develop new business opportunities ...
+
+Result 5:
+URL: https://globema.com/jobs/gis-training-manager/
+Title: GIS Training Manager - Globema
+Description:  · Trainer for IQGeo, OSPInsight and other GIS based tools. · Experience with major platforms: Esri ArcGIS, Trimble, Bentley, QGIS, OpenStreetMap · Experience with major telecom/utility GIS solutions: IQGeo (formerly Comsof), Comsof Fiber, OSPInsight, Trimble (NIS/UIS), Bentley OpenComms · Experience with FTTH design, brownfield & greenfield
+
+Result 6:
+URL: https://globema.com/jobs/senior-gis-consultant-us-market/
+Title: Senior GIS Consultant – US Market - Globema
+Description: Globema is actively seeking a skilled and motivated Senior GIS Consultant to named customer. This role will focus primarily on the IQGeo platform but will also involve work with OSPInsight and other GIS-based solutions we provide.
+
+Result 7:
+URL://iqgeo.com/partners/
+Title: IQGeo Partners
+Description: ... Globema ...
+
+Result 7:
+URL: https://globema.com/jobs/senior-qgis-developer/
+Job title: Senior QGIS Developer
+Company: Globema
+Description: Globema is looking for a talented and motivated Senior QGIS Developer to join our growing team. This position focuses on developing advanced GIS solutions using QGIS, with a strong emphasis on PyQGIS and plugin development.
+
+Result 8:
+URL: https://globema.com/jobs/business-development-manager-us/
+Title: Business Development Manager, US - Globema
+Description: Globema is seeking a driven and technically-oriented Business Development Manager to join its growing US Market team.
+
+Result 9:
+URL: https://globema.com/jobs/network-topology-analyst/
+Title: Network Topology Analyst - Globema
+
+Result 10:
+URL: https://globema.com/jobs/gis-data-migration-specialist/
+Title: GIS Data Migration Specialist - Globema
+</tool_call>
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Globema \"construction drawings\" OR \"CAD\" OR \"AutoCAD\" OR \"permitting\" fiber telecom"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://globema.com/
+Title: Globema - Geospatial Software & Consulting for Utilities & Telecoms
+Description: Globema provides software solutions and related consulting services to utilities and telecom companies in infrastructure management. Our solutions help design, build and manage complex infrastructure networks. We are a consulting and software solution provider.
+
+Result 2:
+URL: https://www.linkedin.com/company/globema/
+Title: Globema | LinkedIn
+Description: Globema | 1,561 followers on LinkedIn. Geospatial Software & Consulting for Utilities & Telecoms | Globema provides software consulting and related services to utilities and telecom networks. Our solutions help companies design, build, and manage complex infrastructure networks. We are a consulting and software solution provider. We ...
+
+Result 3:
+URL: https://globema.com/jobs/
+Title: Globema Jobs
+Description: · Business Development, US · Business Development Manager, US · Senior GIS Consultant – US Market · GIS Training Manager · Senior GIS Solutions Architect – US Market · Analyst/Developer for Power BI · Senior QGIS Developer · Quality Assurance Tester (Manual) · Network Topology Analyst · GIS Data Migration Specialist · GIS Database Specialist ...
+
+Result 4:
+URL: https://globema.com/solutions/
+Title: Solutions - Globema
+Description: GIS-Centric Network Management System for Utilities Fiber/HFC/Access Network Design IQGeo Fiber/HFC/Access Network Design OSPInsight Fiber/HFC/Access Network Design OSPInsight Fiber/HFC/Access Network Design Network Design & Management Telecom Asset Management Catalog/Ordering System Fiber/HFC/Access Network Design ...
+
+Result 5:
+URL: https://globema.com/jobs/gis-training-manager/
+Title: GIS Training Manager - Globema
+Description:  · Downstream of GIS: Experience with major platforms: Esri ArcGIS, Trimble, Bentley, QGIS, OpenStreetMap · Experience with major telecom/utility GIS solutions: IQGeo (formerly Comsof), Comsof Fiber, OSPInsight, Trimble (NIS/UIS), Bentley OpenComms · Experience with FTTH design, brownfield & greenfield
+
+Result 6:
+URL: https://globema.com/jobs/senior-gis-solutions-architect-us-market/
+Title: Senior GIS Solutions Architect – US Market - Globema
+Description: Senior GIS Solutions Architect – US Market Globema is actively seeking a skilled and motivated Senior GIS Solutions Architect to join our growing US team. This role will focus primarily on the IQGeo platform but will also involve work with OSPInsight and other GIS-based solutions we provide. Specifically, you will be responsible for implementing and configuring IQGeo solutions for our ...
+
+Result 7:
+URL: https://globema.com/jobs/senior-gis-consultant-us-market/
+Title: Senior GIS Consultant – US Market - Globema
+Description: Globema is actively seeking a skilled and motivated Senior GIS Consultant to join our growing US team. This role will focus primarily on the IQGeo platform but will also involve work with OSPInsight and other GIS-based solutions we provide.
+
+Result 8:
+URL: https://globema.com/jobs/network-topology-analyst/
+Title: Network Topology Analyst - Globema
+
+Result 9:
+URL: https://globema.com/jobs/gis-data-migration-specialist/
+Title: GIS Data Migration Specialist - Globema
+
+Result 10:
+URL: https://globema.com/jobs/gis-database-specialist/
+Title: GIS Database Specialist - Globema
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:iqgeo.com Globema partner case study"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://iqgeo.com/partners/
+Title: Partners - IQGeo
+Description: Find an IQGeo partner near you. Our global network of strategic partners deliver IQGeo solutions tailored to your needs and business requirements.
+
+Result 2:
+URL: https://iqgeo.com/blog/tag/partner/
+Title: Partner content | IQGeo Blog
+Description: Partner | IQGeo Blog
+
+Result 3:
+URL: https://iqgeo.com/blog/category/partners/
+Title: Partners - IQGeo Blog
+Description: Partners | IQGeo Blog
+
+Result 4:
+URL: https://iqgeo.com/partners/globema/
+Title: Globema partner page at IQGeo
+Description: Globema partner page - IQGeo
+
+Result 5:
+URL: https://iqgeo.com/blog/tag/globema/
+Title: Globema Blog Posts - IQGeo
+Description: Globema | IQGeo Blog
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://iqgeo.com/partners/globema/"}}
+</tool_call>
+<tool_response>
+URL: https://iqgeo.com/partners/globema/
+Title: Globema - IQGeo
+Content: Globema - IQGeo
+
+[Home](/) > [Partners](/partners/) > Globema
+
+## Overview
+
+Globema has been an IQGeo partner since 2006, making it one of our longest-standing relationships. Globema has developed a deep knowledge and expertise of the IQGeo product set, and the ability to deliver sophisticated and complex network management implementations with a proven methodology.
+
+Globema is headquartered in Warsaw, Poland with offices in the USA, Canada and Bulgaria and serves clients in North America and Europe with many long-term engagements. Globema has a specialist team of consultants who focus exclusively on the IQGeo NMS and OSPInsight platforms.
+
+They deliver services including:
+
+*   Full-lifecycle IQGeo NMS implementations
+*   OSPInsight implementations
+*   Data migration
+*   Systems integration
+*   Custom development
+*   Training
+
+Globema serves clients including fiber-optic network operators, utilities, and cable operators.
+
+**Website:** globema.com
+**Email:** contact@globema.com
+**Phone:** +48 22 331 82 42
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://iqgeo.com/blog/tag/globema/"}}
+</tool_call>
+<tool_response>
+URL: https://iqgeo.com/blog/tag/globema/
+Title: Globema | IQGeo Blog
+Content: Globema | IQGeo Blog
+
+[Home](/) > [Blog](/blog/) > Globema
+
+## Posts tagged with Globema
+
+[**Webinar recap: IQGeo fiber network design with Globema**](/blog/webinar-recap-iqgeo-fiber-network-design-with-globema/)
+
+Published on October 7, 2024
+
+Globema and IQGeo co-hosted a webinar in September 2024 on fiber network design workflows and best practices using IQGeo.
+
+[**Globema becomes certified IQGeo partner for OSPInsight**](/blog/globema-becomes-certified-iqgeo-partner-for-ospinsight/)
+
+Published on March 12, 2024
+
+Globema has become an authorized reseller and implementation partner for OSPInsight, expanding its partnership with IQGeo.
+
+[**Webinar recap: OSPInsight fiber network design with Globema**](/blog/webinar-recap-ospinsight-fiber-network-design-with-globema/)
+
+Published on May 16, 2024
+
+Globema and IQGeo co-hosted a webinar in May 2024 on fiber network design with OSPInsight, attended by over 150 participants.
+
+Result 7:
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://iqgeo.com/blog/webinar-recap-iqgeo-fiber-network-design-with-globema/"}}
+</tool_call>
+<tool_response>
+URL: https://iqgeo.com/blog/webinar-recap-iqgeo-fiber-network-design-with-globema/
+Title: Webinar recap: IQGeo fiber network design with Globema | IQGeo Blog
+Content: Webinar recap: IQGeo fiber network design with Globema | IQGeo Blog
+
+[Home](/) > [Blog](/blog/) > Webinar recap: IQGeo fiber network design with Globema
+
+## Webinar recap: IQGeo fiber network design with Globema
+
+*Published on October 7, 2024*
+
+Globema and IQGeo co-hosted a webinar in September 2024. In the webinar, Globema's team demonstrated fiber network design workflows and best practices using the IQGeo platform. The webinar was attended by over 150 participants.
+
+Key topics covered:
+
+*   End-to-end fiber network design using IQGeo
+*   Integrating GIS data into the design workflow
+*   Network validation and quality assurance in IQGeo
+*   Exporting data for downstream use (construction, permitting, etc.)
+*   Customer case studies from Globema's implementations
+
+The webinar highlighted Globema's consulting expertise and deep knowledge of IQGeo's platform, particularly for fiber-optic network operators and cable operators in North America.
+
+The recording is available on request through IQGeo's website.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Globema \"construction\" OR \"permit\" OR \"as-built\" OR \"CAD\" fiber network design workflow"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://globema.com/
+Title: Globema - Geospatial Software & Consulting for Utilities & Telecoms
+Description: Globema provides software solutions and related consulting services to utilities and telecom companies in infrastructure management. Our solutions help design, build and manage complex infrastructure networks. We are a consulting and business solution provider.
+
+Result 2:
+URL: https://www.linkedin.com/company/globema/
+Title: Globema | LinkedIn
+Description: Globema | 1,561 followers on LinkedIn. Geospatial Software & Consulting for Utilities & Telecoms | Globema provides software consulting and related services to utilities and telecom networks. Our solutions help companies design, build, and manage complex infrastructure networks. We are a consulting and software solution provider. We ...
+
+Result 3:
+URL: https://globema.com/jobs/
+Title: Globema Jobs
+Description: · Business Development, US · Business Development Manager, Biz · Senior GIS Consultant – US Market · GIS Training Manager · Senior GIS Solutions Architect – US Market · Analyst/Developer for Power BI · Senior QGIS Developer · Quality Assurance Tester (Manual) · Network Topology Analyst · GIS Data Migration Specialist · GIS Database Specialist ...
+
+Result 4:
+URL: https://globema.com/solutions/
+Title: Solutions - Globema
+Description: GIS-Centric Network Management System for Utilities Fiber/HFC/Access Network Design IQGeo Fiber/HFC/Access Network Design OSPInsight Fiber/HFC/Access Network Design OSPInsight Fiber/HFC/Access Network Design Network Design & Management Telecom Asset Management Catalog/Ordering System Fiber/HFC/Access Network Design ...
+
+Result 5:
+URL: https://globema.com/jobs/gis-training-manager/
+Title: GIS Training Manager - Globema
+Description:  · Trainer for IQGeo, OSPInsight and other GIS based tools. · Experience with major platforms: Esri ArcGIS, Trimble, Bentley, QGIS, OpenStreetMap · Experience with major telecom/utility GIS solutions: IQGeo (formerly Comsof), ComsofGIS Fiber, OSPInsight, Trimble (NIS/UIS), Bentley OpenComms · Experience with FTTH design, brownfield & greenfield
+
+Result 6:
+URL: https://globema.com/jobs/senior-gis-solutions-architect-us-market/
+Title: Senior GIS Solutions Architect – US Market - Globema
+Description: Globema is actively seeking a skilled and motivated Senior GIS Solutions Architect to join their growing team. This role will focus primarily on the IQGeo platform but will also involve work with OSPInsight and other GIS-based solutions we provide. Specifically, you will be responsible for implementing and configuring IQGeo solutions for our ...
+
+Result 7:
+URL: https://globema.com/jobs/gis-data-migration-specialist/
+Title: GIS Data Migration Specialist - Globema
+
+Result 8:
+URL: "https://globema.com/jobs/network-topology-analyst/
+Title: Network Topology Analyst - Globema
+
+Result 9:
+URL: https://globema.com/blog/
+Title: Blog - Globema
+
+Result 10:
+URL: https://globema.com/contact-us/
+Title: Contact Us - Globema
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Globema \"IQGeo\" \"Comsof\" \"OSPInsight\" fiber design to construction export workflow"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://globema.com/
+Title: Globema - Geospatial Software & Consulting for Utilities & Telecoms
+Description: Globema provides software solutions and related consulting services to utilities and telecom companies in infrastructure management. Our solutions help design, build and manage complex infrastructure networks. We are a consulting and software solution provider. We ...
+
+Result 2:
+URL: https://www.globema.com/blog/
+Title: Blog - Globema
+
+Result 3:
+URL: https://iqgeo.com/blog/tag/globema/
+Title: Globema Blog Posts - IQGeo
+Description: Globema | IQGeo Blog
+
+Result 4:
+URL: https://globema.com/solutions/
+Title: Solutions - Globema
+
+Result 5:
+URL: https://iqgeo.com/partners/globema/
+Title: Globema - IQGeo Partner
+Description: Globema has been an IQGeo partner since 2006, making it one of our longest-standing relationships...
+
+Result 6:
+URL: https://globema.com/jobs/senior-gis-consultant-us-market/
+Title: Senior GIS Consultant – US Market - Globema
+
+Result 7:
+URL: https://globema.com/jobs/gis-training-manager/
+Title: GIS Training Manager - Globema
+
+Result 8:
+URL: https://globema.com/jobs/senior-gis-solutions-architect-us-market/
+Title: Senior GIS Solutions Architect – US Market - Globema
+
+Result 9:
+URL: https://iqgeo.com/blog/webinar-recap-iqgeo-fiber-network-design-with-globema/
+Title: Webinar recap: IQGeo fiber network design with Globema | IQGeo Blog
+
+Result 10:
+URL: https://globema.com/blog/
+Title: Blog - Globema
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Joel Swanson Globema LinkedIn fiber GIS"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/joel-swanson-globema/
+Title: Joel Swanson - Business Development Leader - Globema | LinkedIn
+Description: Joel Swanson Business Development Leader at Globema · Experience: Globema · Location: Parker, Colorado, United States · Connections: 500+ connections on LinkedIn. See Joel Swanson's full profile for free.
+
+Result 2:
+URL: https://globema.com/jobs/business-development-us/
+Title: Business Development, US - Globema
+Description: Globema is seeking a driven and technically-oriented Business Development professional to join our growing US Market team.
+
+Result 3:
+URL: https://globema.com/jobs/business-development-manager-us/
+Title: Business Development Manager, US - Globema
+Description: Globema is seeking a driven and technically-oriented Business Development professional join its growing US Market team.
+
+Result call>
+Result 4:
+URL: https://globema.com/
+Title: Globema - Geospatial Software & Consulting for Utilities & Telecoms
+Description: Globema provides software solutions and related consulting services to utilities and telecom companies in infrastructure management.
+
+Result 5:
+URL: https://www.linkedin.com/company/globema/
+Title: Globema | LinkedIn
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Globema \"BEAD\" OR \"broadband\" OR \"fiber construction\" US market 2024 2025"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://globema.com/
+Title: Globema - Geospatial Software & Consulting for Utilities & Telecoms
+Description: Globema provides software solutions and related services to utilities and telecom companies in infrastructure management. Our solutions help companies design, build, and manage complex infrastructure networks. We are a consulting and software solution provider.
+
+Result 2:
+URL: https://www.linkedin.com/company/globema/
+Title: Globema | LinkedIn
+Description: Globema | 1,561 followers on LinkedIn. Geospatial Software & Consulting for Utilities & Telecoms | Globema provides software consulting and related services to utilities and telecom networks. Our solutions help companies design, build, and manage complex infrastructure networks.
+
+Result 3:
+URL: https://globema.com/jobs/
+Title: Globema Jobs
+Description: · Business Development, US · Business Development Manager, US · Senior GIS Consultant – US Market · GIS Training Manager · Senior GIS Solutions Architect – US Market · Analyst/Developer for Power BI · Senior QGIS Developer · Senior QGIS Developer · Quality Assurance Tester (Manual) · Network Topology Analyst · GIS Data Migration Specialist · GIS Database Specialist ...
+
+Result 4:
+URL: https://globema.com/blog/
+Title: Blog - Globema
+Description: Globema blog – GIS, telecom, utilities, fiber design
+
+Result 5:
+URL: https://globema.com/jobs/senior-gis-consultant-us-market/
+Title: Senior GIS Consultant – US Market - Globema
+Description: Globema is actively seeking a skilled and motivated Senior GIS Consultant to join our growing US team. This role will focus primarily on the IQGeo platform but will also involve work with OSPInsight and other GIS-based solutions we provide.
+
+Result 6:
+URL: https://globema.com/jobs/business-development-us/
+Title: Business Development, US - Globema
+Description: Globema is seeking a driven and technically-oriented Business Development professional to join our growing US Market team. This person will help expand Globema's presence in the North American utility and telecom market.
+
+Result 7:
+URL: https://globema.com/jobs/business-development-manager-us/
+Title: Business Development Manager, "US - Globema
+Description: Globema is seeking a driven and technically-oriented Business Development Manager to join its growing US Market team.
+
+Result 8:
+URL: https://globema.com/jobs/senior-gis-solutions-architect-us-market/
+Title: Senior GIS Solutions Architect – US Market - Globema
+Description: Globema is actively seeking a skilled and motivated Senior GIS Solutions Architect to join our growing US team.
+
+Result 9:
+URL: https://globema.com/jobs/gis-training-manager/
+Title: GIS Training Manager - Globema
+
+Result 10:
+URL: https://globema.com/jobs/business-development-us/
+Title: Business Development, US - Globema
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://globema.com/blog/"}}
+</tool_call>
+<tool_response>
+URL: https://globema.com/blog/
+Title: Blog - Globema
+Content: Blog - Globema
+
+[iframe]
+
+[iframe]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Globema blog fiber network design GIS consulting case study"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://globema.com/
+Title: Globema - Geospatial Software & Consulting for Utilities & Telecoms
+Description: Globema provides software consulting and related services to utilities and telecom companies in infrastructure management. Our solutions help companies design, build, and manage complex infrastructure networks.
+
+Result 2:
+URL: https://globema.com/blog/
+Title: Blog - Globema
+
+Result 3:
+URL: https://iqgeo.com/blog/tag/globema/
+Title: Globema Blog Posts - IQGeo
+Description: Globema | IQGeo Blog
+
+Result 4:
+URL: https://iqgeo.com/blog/webinar-recap-iqgeo-fiber-network-design-with-globema/
+Title: Webinar recap: IQGeo fiber network design with Globema | IQGeo Blog
+Description: Globema and IQGeo co-hosted a webinar in September 2024 on fiber network design workflows and best practices using IQGeo.
+
+Result 5:
+URL: https://iqgeo.com/partners/globema/
+Title: Globema partner page - IQGeo
+Description: Globema has been an IQGeo partner since 2006, making it one of our longest-standing relationships.
+
+Result 6:
+URL: https://globema.com/jobs/senior-gis-consultant-us-market/
+Title: Senior GIS Consultant – US Market - Globema
+
+Result 7:
+URL: https://globema.com/jobs/gis-training-architect-us-market/
+Title: Senior GIS Solutions Architect – US Market - Globema
+
+Result 8:
+URL: https://globema.com/jobs/gis-training-manager/
+Title: GIS Training Manager - Globema
+
+Result 9:
+URL: https://globema.com/jobs/senior-gis-consultant-us-market/
+Title: Senior GIS Consultant – US Market - Globema
+
+Result 10:
+URL: https://globema.com/jobs/business-development-us/
+Title: Business Development, US - Globema
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Globema clients customers telecom fiber US operator IQGeo implementation"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://iqgeo.com/partners/globema/
+Title: Globema - IQGeo
+Content: Globema has been an IQGeo partner since 2006... Globema serves clients including fiber-optic network operators, utilities, and cable operators.
+
+Result 2:
+URL: https://globema.com/
+Title: Globema - Geospatial Software & Consulting for Utilities & Telecoms
+
+Result 3:
+URL:

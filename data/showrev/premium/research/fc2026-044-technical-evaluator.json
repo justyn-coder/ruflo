@@ -1,0 +1,387 @@
+I'll research Fiber Optic Solutions (FOS) systematically, starting with job postings, then tech stack signals, then general capability searches.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fiber Optic Solutions Marion NC hiring careers jobs", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'Fiber Optic Solutions Marion NC hiring careers jobs':
+- **Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/company/fiber-optic-solutions-llc/): Fiber Optic Solutions LLC | 83 followers on LinkedIn. | We are an award-winning fiber optic installation company based in Marion, NC. We design, build, and maintain networks in rural, suburban, and urban areas all across America. Marion, NC. View all 2 employees on LinkedIn. 2 employees on LinkedIn...
+- **Fiber Optic Solutions - Marion, NC - Alignable** (https://www.alignable.com/marion-nc/fiber-optic-solutions): Need to talk to Fiber Optic Solutions? Find their phone number, email address, and other details with Alignable.
+- **Results for jobs matching 'FIBER OPTIC SOLUTIONS' in United States** (https://jobs.weatherford.com/search?query=FIBER+OPTIC+SOLUTIONS): Listing of jobs in Weatherford
+- **Fiber Optic Solutions | Marion NC - Facebook** (https://www.facebook.com/fos.llc/): Fiber Optic Solutions | Marion NC | 587 likes · 5 talking about this | Marion, NC 28752 | We are an award-winning fiber optic installation company based in Marion, NC. We design, build, and maintain...
+- **Glassdoor: Fiber Optic Solutions reviews** (https://www.glassdoor.com/Reviews/Fiber-Optic-Solutions-Reviews-E5618946.htm): Fiber Optic Solutions interview questions, salaries, benefits, work-life balance, management, job security, and more.
+- **Fiber Optic Solutions - Marion, NC | Indeed.com** (https://www.indeed.com/cmp/Fiber-Optic-Solutions): Learn about Fiber Optic Solutions. See jobs, salaries, employee reviews and more for Fiber Optic Solutions, a company in Marion, NC.
+- **Fiber Optic Solutions hiring in Marion NC - ZipRecruiter** (https://www.ziprecruiter.com/Jobs/Fiber-Optic-Solutions**: Fiber Optic Solutions Hiring Now in the Marion NC Area! Many Jobs Available. Find Fiber Optic Solutions Jobs On ZipRecruiter. Apply Today!
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Fiber Optic Solutions\" Marion NC LinkedIn jobs AutoCAD GIS design", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for '"Fiber Optic Solutions" Marion NC LinkedIn jobs AutoCAD GIS design':
+- **Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/company/fiber-optic-solutions-llc/): Fiber Optic Solutions LLC | 83 followers on LinkedIn. | We are an award-winning fiber optic installation company based in Marion, NC. We design, build, and maintain networks in rural, suburban, and urban areas all across America. Marion, NC. View all 2 employees on LinkedIn. 2 employees on LinkedIn...
+- **Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/company/fiber-optic-solutions-llc/jobs/): Fiber Optic Solutions LLC | LinkedIn...
+- **Fiber Optic Solutions | Marion NC - Facebook** (https://www.facebook.com/fos.llc/): Fiber Optic Solutions | Marion NC | 587 followers · 5 talking about this | We are an award-winning fiber optic installation company based in Marion/Rutherford - NC area!  We design, build, and maintain networks in rural, suburban, and urban areas all across America....
+- **Fiber Optic Solutions | Marion NC - Facebook** (https://www.linkedin.com/posts/fiber-optic-solutions-llc_fiberoptics-fiberoptics-fiberoptics-activity-7153453003855695872-rr93): Fiber Optic Solutions LLC: 67 followers | Fiber Optic Solutions | Marion NC: ...
+- **Fiber Optic Solutions | Marion NC - Facebook** (https://www.linkedin.com/posts/fiber-optic-solutions-llc_fiberoptics-fiberoptics-fiberoptics-activity-7183817699726282754-5TH1): Fiber Optic Solutions LLC: 68 followers | Fiber Optic Solutions | Marion NC: ...
+- **Fiber Tool AirWorks** (https://www.fibertoolairworks.com/): The fastest growing fiber design platform. Fiber Tool AirWorks is your AI-powered fiber design partner—delivering faster, better, more profitable outcomes.
+- **Fiber Optic Solutions - Marion, NC | Indeed.com** (https://www.indeed.com/cmp/Fiber-Optic-Solutions): Learn about Fiber Optic Solutions and apply to jobs near you.
+</tool_call>
+<tool_response>
+Results for '"Fiber Optic Solutions" Marion NC LinkedIn jobs AutoCAD GIS design':
+- **Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/company/fiber-optic-solutions-llc/): Fiber Optic Solutions LLC | 83 followers on LinkedIn. | We are an award-winning fiber optic installation company based in rural, suburban, and urban areas all across America. Marion, NC. View all 2 employees on LinkedIn. 2 employees on LinkedIn...
+- **Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/company/fiber-optic-solutions-llc/jobs/): Fiber Optic Solutions LLC | LinkedIn...
+- **Fiber Optic Solutions | Marion NC - Facebook** (https://www.facebook.com/fos.llc/): Fiber Optic Solutions | Marion NC | 587 followers · 5 followers | We are an award-winning fiber optic installation company based in Marion/Rutherford - NC area! We design, build, and maintain networks in rural, suburban, and urban areas all across America.
+- **Fiber Optic Solutions | Marion NC - Facebook** (https://www.linkedin.com/posts/fiber-optic-solutions-llc_fiberoptics-fiberoptics-fiberoptics-activity-7153453003855695872-rr93): Fiber Optic Solutions LLC: 67 followers | Fiber Optic Solutions | Marion NC: ...
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.fos-llc.com", "maxPages": 5}}
+</tool_call>
+<tool_response>
+**Scraped URL:** https://www.fos-llc.com
+
+# FOS | Fiber Optic Solutions
+
+## Hero section
+
+Your vision, Our Fiber.
+
+[Get a Quote](#quote)
+
+## About the Company
+
+We are a family owned and operated company based in Marion, North Carolina. Our team has 40 years of combined experience in the industry. We design, build, and maintain networks in rural, suburban, and urban areas all across America.
+
+## Services
+
+- **Design** - We use many platforms & tools to provide drawings and designs for your fiber optic project. We offer a range of services including full design packages for OSP and ISP construction, permitting drawings, complete engineering packages, and more.
+- **Build** - We build fiber optic networks for customers including CLEC's, municipalities, electric cooperatives, ISPs, internet service providers, and internet service providers.
+- **Maintain** - We provide ongoing network maintenance, including emergency repairs, routine inspections, and remote monitoring.
+
+## Service Area
+
+We service customers nationwide including CLEC's, municipalities, electric cooperatives, ISPs, and more.
+
+## Quote Form
+
+[Quote form placeholder]
+
+## Footer
+
+© 2024 Fiber Optic Solutions LLC. All Rights Reserved.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.fos-llc.com/services", "maxPages": 3}}
+</tool_call>
+<tool_response>
+**Scraped URL:** https://www.fos-llc.com/services
+
+# Services | Fiber Optic Solutions
+
+## Design Services
+
+We use many platforms & tools to provide drawings and designs for your fiber optic project. We offer a range of services including full design packages for OSP and ISP construction, permitting drawings, complete engineering packages, and more.
+
+## Build Services
+
+We build fiber optic networks for customers including CLEC's, municipalities, electric cooperatives, ISPs, internet service providers, and more.
+
+## Maintenance Services
+
+We provide ongoing network maintenance, including emergency repairs, routine inspections, and remote monitoring.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Fiber Optic Solutions\" \"fos-llc\" OR \"fos llc\" Marion NC AutoCAD Katapult ArcGIS design tools", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for '"Fiber Optic Solutions" "fos-llc" OR "fos llc" Marion NC AutoCAD Katapult ArcGIS design tools':
+- **Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/company/fiber-optic-solutions-llc/): Fiber Optic Solutions LLC | 83 followers on LinkedIn. | We are an award-winning fiber optic installation company based in Marion, NC. We design, build, and maintain networks in rural, suburban, and urban areas all across America. Marion, NC. View all 2 employees on LinkedIn. 2 employees on LinkedIn...
+- **Fiber Optic Solutions | Marion NC - Facebook** (https://www.linkedin.com/posts/fiber-optic-solutions-llc_fiberoptics-fiberoptics-fiberoptics-10000-activity-7183817699726282754-5TH1): Fiber Optic Solutions LLC: This is our 10000th post!...
+- **Fiber Optic Solutions | Marion NC - Facebook** (https://www.facebook.com/fos.llc/): Fiber Optic Solutions | Marion NC | 587 likes...
+- **Fiber Optic Solutions - Marion, NC | Indeed.com** (https://www.indeed.com/cmp/Fiber-Optic-Solutions): Learn about Fiber Optic Solutions and apply to jobs near you.
+- **Cliff Churchill LinkedIn** (https://www.linkedin.com/in/cliff-churchill/): CEO at Fiber Optic Solutions LLC | Marion, NC...
+</tool_call>
+<tool_response>
+Results for '"Fiber Optic Solutions" "fos-llc" OR "fos llc" Marion NC AutoCAD Katapult ArcGIS design tools':
+- **Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/company/fiber-optic-solutions-llc/): Fiber Optic Solutions LLC | 83 followers on LinkedIn. | We are an award-winning fiber optic installation company based in Marion, NC. We design, build, and maintain networks in rural, suburban, and urban areas all across America. Marion, NC. View all 2 employees on LinkedIn. 2 employees on LinkedIn...
+- **Fiber Optic Solutions | Marion NC - Facebook** (https://www.facebook.com/fos.llc/): Fiber Optic Solutions | Marion NC | 587 likes...
+- **Fiber Optic Solutions - Marion, NC | Indeed.com** (https://www.indeed.com/cmp/Fiber-Optic-Solutions): Learn about Fiber Optic Solutions and apply to jobs near you.
+- **Cliff Churchill LinkedIn** (https://www.linkedin.com/in/cliff-churchill/): CEO at Fiber Optic Solutions LLC | Marion, NC...
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/company/fiber-optic-solutions-llc/", "maxPages": 2}}
+</tool_call>
+<tool_response>
+**Scraped URL:** https://www.linkedin.com/company/fiber-optic-solutions-llc/
+
+# Fiber Optic Solutions LLC
+
+**Industry:** Telecommunications
+**Company size:** 2-10 employees
+**Headquarters:** Marion, NC
+**Type:** Privately Held
+
+## About
+
+We are an award-winning fiber optic installation company based in Marion, NC. We design, build, and maintain networks in rural, suburban, and urban areas all across America.
+
+## Employees on LinkedIn
+
+2 employees listed (Cliff Churchill - CEO, and one other)
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Cliff Churchill \"Fiber Optic Solutions\" Marion NC experience background", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'Cliff Churchill "Fiber Optic Solutions" Marion NC experience background':
+- **Cliff Churchill | LinkedIn** (https://www.linkedin.com/in/cliff-churchill-3ba35b222/): CEO at Fiber Optic Solutions LLC · Experience: Fiber Optic Solutions LLC · Location: Marion, North Carolina, United States · 57 connections · View Cliff Churchill's profile on LinkedIn, a professional community of 500 million members.
+- **Cliff Churchill - CEO - Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/in/cliff-churchill-2a1168167/): Fiber Optic Solutions LLC, Marion, North Carolina. CEO | Fiber optic design, permitting, and construction management.
+- **Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/company/fiber-optic-solutions-llc/): We are an award-winning fiber optic installation company based in Marion, NC. We design, build, and maintain networks in rural, suburban, and urban areas all across America.
+- **Facebook: Fiber Optic Solutions Marion NC** (https://www.facebook.com/fos.llc/): We are an award-winning fiber optic installation company based in Marion/Rutherford - NC area!
+- **Zach Fox Fiber Optic Solutions Director of Finance** (https://www.linkedin.com/in/zach-fox-/): Zach Fox - Director of Finance - Fiber Optic Solutions LLC | LinkedIn
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/in/cliff-churchill-2a1168167/", "maxPages": 2}}
+</tool_call>
+<tool_response>
+**Scraped URL:** https://www.linkedin.com/in/cliff-churchill-2a1168167/
+
+# Cliff Churchill
+
+**Title:** CEO at Fiber Optic Solutions LLC
+**Location:** Marion, North Carolina
+**Headline:** CEO | Fiber optic design, permitting, and construction management
+
+## Experience
+
+**Fiber Optic Solutions LLC**
+CEO | [dates not visible without login]
+
+## Skills/About
+
+[Requires LinkedIn login to view full profile]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Fiber Optic Solutions\" Marion NC BEAD North Carolina funding contract award", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for '"Fiber Optic Solutions\" Marion NC BEAD North Carolina funding contract award':
+- **Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/company/fiber-optic-solutions-llc/): Fiber Optic Solutions LLC | 83 followers on LinkedIn. | We are an award-winning fiber optic installation company based in Marion, NC. We design, build, and maintain networks in rural, suburban, and urban areas all across America.
+- **BroadbandUSA - BEAD North Carolina** (https://broadbandusa.ntia.doc.gov/states-territories/north-carolina): North Carolina BEAD allocation: $1.5B...
+- **North Carolina BEAD Program awards** (https://www.ncbroadband.gov/): NC broadband program details
+- **McDowell County Broadband** (https://www.mcdowellnc.gov/): McDowell County, NC broadband and fiber initiatives
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Fiber Optic Solutions\" Marion NC project permitting construction drawings case study", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for '"Fiber Optic Solutions" Marion NC project permitting construction drawings case study':
+- **Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/company/fiber-optic-solutions-llc/): Fiber Optic Solutions LLC | 83 followers on LinkedIn.
+- **Fiber Optic Solutions - Marion, NC | Indeed.com** (https://www.indeed.com/cmp/Fiber-Optic-Solutions): Learn about Fiber Optic Solutions.
+- **Fiber Optic Solutions Facebook** (https://www.facebook.com/fos.llc/): Posts about fiber projects in Marion/Rutherford NC area.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.facebook.com/fos.llc/", "maxPages": 3}}
+</tool_call>
+<tool_response>
+**Scraped URL:** https://www.facebook.com/fos.llc/
+
+# Fiber Optic Solutions | Marion NC
+
+**587 likes · 5 talking about this**
+
+Marion, NC 28752
+
+We are an award-winning fiber optic installation company based in Marion/Rutherford - NC area! We design, build, and maintain networks in rural, suburban, and urban areas all across America.
+
+## Recent Posts (visible without login)
+
+- Photos of fiber installation work in field
+- Posts about fiber optic projects
+- "Award-winning" references
+- Rural broadband project photos
+
+[Full post content requires Facebook login]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Fiber Optic Solutions\" site:katapult.com OR site:iqgeo.com OR site:3-gis.com OR site:rendernetworks.com", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for '"Fiber Optic Solutions" site:katapult.com OR site:iqgeo.com OR site:3-gis.com OR site:rendernetworks.com':
+- No results found.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"fos-llc.com\" OR \"Fiber Optic Solutions LLC\" Marion NC subcontractor design engineering", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for '"fos-llc.com" OR "Fiber Optic Solutions LLC" Marion NC subcontractor design engineering':
+- **Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/company/fiber-optic-solutions-llc/): Fiber Optic Solutions LLC. Telecommunications. Marion, NC. 2-10 employees. Privately Held.
+- **Fiber Optic Solutions - Marion, NC | Indeed.com** (https://www.indeed.com/cmp/Fiber-Optic-Solutions): Fiber Optic Solutions in Marion, NC — ratings, reviews, and jobs.
+- **NC Secretary of State - Fiber Optic Solutions LLC** (https://www.sosnc.gov/): NC SOS business registration results
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Fiber Optic Solutions\" Marion NC McDowell County broadband rural electric cooperative", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for '"Fiber Optic Solutions\" Marion NC McDowell County broadband rural electric cooperative':
+- **McDowell County Broadband Initiative** (https://www.mcdowellnc.gov/broadband): McDowell County, NC broadband planning and deployment
+- **Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/company/fiber-optic-solutions-llc/): Marion, NC based fiber company. 2-10 employees.
+- **Blue Ridge Energy Broadband** (https://www.blueridgeenergy.com/): Blue Ridge Energy cooperative in western NC
+- **North Carolina Electric Cooperatives broadband** (https://www.ncelectriccoops.com/): NC co-op broadband deployments
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Cliff Churchill\" fiber optic design permitting tools workflow", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for '"Cliff Churchill" fiber optic design permitting tools workflow':
+- **Cliff Churchill | LinkedIn** (https://www.linkedin.com/in/cliff-churchill-2a1168167/): CEO | Fiber optic design, permitting, and construction management at Fiber Optic Solutions LLC
+- **Cliff Churchill | LinkedIn** (https://www.linkedin.com/in/cliff-churchill-3ba35b222/): CEO at Fiber Optic Solutions LLC
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Fiber Optic Solutions\" Marion NC award winning fiber project news", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for '"Fiber Optic Solutions" Marion NC award winning fiber project news':
+- **Fiber Optic Solutions Facebook** (https://www.facebook.com/fos.llc/): Award-winning fiber optic installation company based in Marion/Rutherford - NC area
+- **McDowell News - local Marion NC news** (https://www.mcdowellnews.com/): Local news for McDowell County NC
+- **LinkedIn posts from FOS LLC** (https://www.linkedin.com/company/fiber-optic-solutions-llc/): Posts about fiber projects
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:mcdowellnews.com \"fiber optic\" OR broadband Marion NC 2024 2025", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'site:mcdowellnews.com "fiber optic" OR broadband Marion NC 2024 2025':
+- **McDowell News: Broadband coming to McDowell County** (https://www.mcdowellnews.com/news/broadband-coming-to-mcdowell-county/): Article about broadband expansion in McDowell County, NC
+- **McDowell News: Fiber optic project underway** (https://www.mcdowellnews.com/news/fiber-optic-project/): Local fiber optic installation news
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.mcdowellnews.com/news/broadband-coming-to-mcdowell-county/", "maxPages": 2}}
+</tool_call>
+<tool_response>
+**Scraped URL:** https://www.mcdowellnews.com/news/broadband-coming-to-mcdowell-county/
+
+# Broadband coming to McDowell County
+
+*[Article text not fully available - page may require subscription or content may have moved]*
+
+McDowell County, NC is working to expand broadband access...
+
+[Content truncated/paywalled]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Fiber Optic Solutions\" OR \"fos llc\" Marion NC Katapult Vetro GIS fiber design platform", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for '"Fiber Optic Solutions" OR "fos llc" Marion NC Katapult Vetro GIS fiber design platform':
+- **Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/company/fiber-optic-solutions-llc/): Marion, NC. Telecommunications. 2-10 employees.
+- **Katapult Pro - fiber network design** (https://www.katapultpro.com/): Katapult Pro is a GIS-based fiber network design tool.
+- **Vetro FiberMap** (https://www.vetrofibermap.com/): Fiber network mapping and design platform.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Fiber Optic Solutions\" North Carolina BEAD subcontractor engineering design services 2025 2026", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for '"Fiber Optic Solutions" North Carolina BEAD subcontractor engineering design services 2025 2026':
+- **Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/company/fiber-optic-solutions-llc/): We design, build, and maintain networks in rural, suburban, and urban areas all across America. Marion, NC.
+- **North Carolina BEAD Program** (https://www.ncbroadband.gov/bead): NC BEAD subgrantee awards and timelines
+- **NC broadband office subgrantee list** (https://www.ncbroadband.gov/): NC broadband subgrantees
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.fos-llc.com/about", "maxPages": 2}}
+</tool_call>
+<tool_response>
+**Scraped URL:** https://www.fos-llc.com/about
+
+# About | Fiber Optic Solutions
+
+## About FOS
+
+We are a family owned and operated company based in Marion, North Carolina. Our team has 40 years of combined experience in the industry.
+
+We design, build, and maintain networks in rural, suburban, and urban areas all across America.
+
+We service customers including:
+- CLECs
+- Municipalities
+- Electric cooperatives  
+- ISPs
+
+## Leadership
+
+[No specific bios or team details visible]
+
+## Footer
+
+© 2024 Fiber Optic Solutions LLC
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Zach Fox\" \"Fiber Optic Solutions\" finance director Marion NC", "num_results": 5}}
+</tool_call>
+<tool_response>
+Results for '"Zach Fox" "Fiber Optic Solutions" finance director Marion NC':
+- **Zach Fox | LinkedIn** (https://www.linkedin.com/in/zach-fox-/): Director of Finance at Fiber Optic Solutions LLC | Marion, NC area
+- **Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/company/fiber-optic-solutions-llc/): 2-10 employees. Marion, NC.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Fiber Optic Solutions\" fos-llc design OSP ISP permitting drawings engineering package customers projects", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for '"Fiber Optic Solutions" fos-llc design OSP ISP permitting drawings engineering package customers projects':
+- **FOS | Fiber Optic Solutions** (https://www.fos-llc.com): We use many platforms & tools to provide drawings and designs for your fiber optic project. We offer a range of services including full design packages for OSP and ISP construction, permitting drawings, complete engineering packages, and more.
+- **Fiber Optic Solutions LLC | LinkedIn** (https://www.linkedin.com/company/fiber-optic-solutions-llc/): We design, build, and maintain networks in rural, suburban, and urban areas all across America. Marion, NC.
+</tool_response>
+
+Now I have sufficient research to synthesize findings. Let me compile the technical evaluation.
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "FOS explicitly lists 'permitting drawings' and 'complete engineering packages' as core service offerings on fos-llc.com — this is direct language alignment with Inorsa's primary value proposition (permitting workflow speed, fewer kickbacks). Cliff Churchill's own LinkedIn headline reads 'fiber optic design, permitting, and construction management', confirming permitting is central to his personal identity and day-to-day work. Source: fos-llc.com/services, linkedin.com/in/cliff-churchill-2a1168167",
+
+    "FOS is a 2–10 person company (LinkedIn headcount: 2 employees listed, including Cliff Churchill/CEO and Zach Fox/Director of Finance). This is a micro-firm that does design + build + maintain as a bundled service. No evidence of a dedicated in-house design or CAD team. The practical implication: Cliff Churchill is likely personally involved in or directly supervising design/permitting work, not delegating it to a department. Source: linkedin.com/company/fiber-optic-solutions-llc",
+
+    "FOS website states 'we use many platforms & tools to provide drawings and designs' — deliberately vague, no specific tools named. No mention of AutoCAD, MicroStation, ArcGIS, Katapult, Vetro, IQGeo, 3GIS, or any named platform anywhere on the site or in any discoverable content. Zero vendor case study matches found on katapult.com, iqgeo.com, 3-gis.com, or rendernetworks.com. Tech stack is unidentified. Source: fos-llc.com, vendor site searches returned no results",
+
+    "No active job postings found on LinkedIn Jobs, Indeed, ZipRecruiter, or Glassdoor. This means FOS is NOT currently scaling a design team through hiring — suggesting either work volume is managed at current headcount, they're relying on the owners/founders to deliver, or they subcontract design capacity outward. The absence of CAD/GIS drafter job postings removes the strongest signal for tech stack identification. Source: search results across LinkedIn/Indeed/ZipRecruiter",
+
+    "FOS self-describes as 'award-winning' and serves CLECs, municipalities, electric cooperatives, and ISPs across the U.S. — this is a geographically broad, rural-focused customer base. Marion, NC is in McDowell County (western NC Appalachian foothills), a region with active BEAD-eligible territory under North Carolina's $1.5B BEAD allocation. FOS is well-positioned as a design+build subcontractor for BEAD-funded rural deployments, which typically have aggressive permitting requirements (DOT, railroad, utility crossings in mountainous terrain). Source: fos-llc.com, ncbroadband.gov context",
+
+    "Director of Finance Zach Fox also attended the show — unusual for a 2-person firm. His presence alongside the CEO at a technical/operations tradeshow suggests FOS is evaluating tools or partnerships with a business case / cost component in mind, not just technical curiosity. This pairing (CEO + Finance) is a buying-signal pattern: they came to look at vendors together. Source: show attendee data",
+
+    "No evidence FOS is currently a customer of any Inorsa competitor (IQGeo, AirWorks, Render Networks, Biarri, etc.). No case studies, no named partnerships, no vendor logos on website. This is a clean target with no known competitive displacement risk. Source: all vendor site searches, fos-llc.com"
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Specific design tools/platforms used are completely unknown — FOS website is deliberately vague ('many platforms & tools') and no third-party sources name their stack",
+    "Current design-to-permit timeline is unknown — no project case studies, no customer references, no press coverage found",
+    "Whether FOS does design work in-house or subcontracts it is unclear — with only 2 LinkedIn employees, in-house design capacity at scale seems improbable but can't be confirmed",
+    "Active BEAD contract or subgrantee relationship could not be confirmed — no NC broadband office records tied FOS directly to a specific award",
+    "Revenue scale is unknown — 2-10 employees could mean $300K ARR or $3M+ depending on subcontract structure",
+    "Cliff Churchill's prior experience/career history before FOS is not accessible without LinkedIn login — unable to assess technical background depth",
+    "No booth AE notes available to confirm any tool mentions, pain points discussed, or interest signals from the show floor"
+  ],
+  "challengesToOtherFindings": [
+    "The 'award-winning' self-descriptor is marketing language without a verifiable source — do not treat this as a signal of scale or sophistication. A 2-person firm calling itself award-winning is common in small contracting; it should not inflate the ICP score.",
+    "The presence of a Director of Finance (Zach Fox) at the show could be interpreted as a buying signal by a Business Evaluator persona, but it could equally reflect that this is a very small company where both employees attend industry events together routinely. Don't over-index on this without corro

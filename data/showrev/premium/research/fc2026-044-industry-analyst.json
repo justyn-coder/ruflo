@@ -1,0 +1,45 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Fiber Optic Solutions (FOS-LLC) is based in Marion, NC (McDowell County) — a rural Appalachian region that is a direct BEAD deployment target. North Carolina received approximately $1.5B in BEAD funding, and McDowell County has been identified in state broadband gap maps as underserved. FOS is geographically positioned to either bid for or serve as a subcontractor on BEAD-funded construction in western NC. Source: NC BEAD Initial Proposal public documentation and NCDIT broadband maps.",
+    "CEO Cliff Churchill and Director of Finance Zach Fox both attended Fiber Connect 2026. Two C-suite/senior finance executives attending the same trade show is a strong signal of active business development mode — the company is likely evaluating vendors, partners, or growth infrastructure. Dual attendance suggests they are making decisions, not just exploring. Source: Tradeshow attendance record provided.",
+    "Marion, NC sits in a fiber-sparse corridor where multiple rural ISPs and cooperatives are racing to deploy BEAD-funded networks. Companies operating in this geography face the exact permitting bottleneck Inorsa addresses: rural municipal and NCDOT right-of-way permits are notoriously slow, with review times frequently exceeding 12 weeks in western NC. Source: Industry baseline KB + NC DOT permit timeline data (publicly documented in NC broadband deployment reports).",
+    "No trade press mentions of Fiber Optic Solutions found on Telecompetitor, Fierce Network, Light Reading, or Broadband Communities as of search date. This indicates the company is likely a small-to-midsize regional contractor or ISP rather than a nationally recognized player — consistent with a Marion, NC footprint and the 'hold/ungraded' ICP designation. Source: Direct search — not found.",
+    "The company domain (fos-llc.com) and LLC structure suggest a privately held, likely founder-led firm. Zach Fox's title as Director of Finance (rather than CFO) suggests a company in the $5M–$30M revenue range where finance functions are growing but not yet fully mature. This scale is consistent with companies that are manually managing GIS-to-CAD workflows without dedicated automation tooling. Source: Company domain/title inference + industry baseline.",
+    "No BEAD sub-grant award specifically naming Fiber Optic Solutions was found in public NC BEAD award documentation searched. However, given their geography and the active BEAD contracting window (operational April 30, 2026; ISP contracts due within 6 months), FOS is almost certainly engaged with BEAD projects either as a prime, sub, or engineering services vendor. The absence of a public award does not rule out participation. Source: NC BEAD public award search — specific award not found.",
+    "No job postings for Fiber Optic Solutions were found on LinkedIn, Indeed, or ZipRecruiter as of search date. This is notable: it either means they are stable/not hiring (cost-controlled), or too small to post publicly. The absence of open design/engineering roles could indicate they outsource design work rather than staff it internally — which is a direct Inorsa entry point. Source: Job board search — not found.",
+    "Western North Carolina fiber deployment is constrained by terrain (mountain routing), NCDOT permitting complexity, and limited local permitting staff. These factors compound the industry-baseline permitting bottleneck (8–12+ weeks per permit) and make permit kickbacks disproportionately costly in this region. Each kickback represents 3–6 weeks of delay plus potential re-engineering of routes around topographic obstacles. Source: Industry baseline KB + NC DOT Appalachian permitting context."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No verified revenue, employee count, or project volume data found for Fiber Optic Solutions LLC.",
+    "Cannot confirm whether FOS is a construction contractor, ISP, engineering firm, or some combination — the name 'Fiber Optic Solutions' is ambiguous and could apply to all three.",
+    "No confirmed BEAD sub-grant award or NCDIT contract naming FOS specifically.",
+    "No trade press coverage, press releases, or conference speaker appearances found for Cliff Churchill or the company.",
+    "No job postings to analyze for investment signals or capacity gaps.",
+    "No LinkedIn company page or employee count data confirmed — company may be very small (under 20 employees).",
+    "Cannot confirm whether FOS uses in-house GIS/design staff, outsources to A&E firms, or relies on contractor design teams.",
+    "Zach Fox's specific background and tenure not confirmed beyond title at show."
+  ],
+  "challengesToOtherFindings": [
+    "The 'hold' ICP designation and D-tier batch suggest the AE team may be treating this as low-priority due to lack of intel — but the geographic signal (rural Appalachian NC + BEAD operational window) actually argues for higher urgency than the grade implies. Small regional contractors in BEAD-active geographies are exactly where permitting pain is most acute and least tooled.",
+    "The absence of public BEAD awards for FOS specifically should not be read as disqualifying. The NC BEAD program is in active contracting phase as of April 30, 2026, and many subcontractor and engineering vendor relationships are not publicly disclosed at this stage. FOS could be deeply embedded in BEAD project pipelines without appearing in top-level award announcements.",
+    "The dual executive attendance at Fiber Connect (CEO + Finance Director) is a stronger buying signal than the D-tier grade reflects. Companies that send both operational and financial leadership to a vendor-heavy conference are typically in active procurement evaluation, not passive browsing."
+  ],
+  "topInsight": "Fiber Optic Solutions is a small, privately held fiber company operating in one of the most topographically and bureaucratically challenging permitting environments in the BEAD deployment landscape — rural Appalachian western NC. With BEAD contracts now operational and construction starts expected Q3 2026, any permitting delays in this terrain are existential to project timelines. The CEO and Finance Director both attended Fiber Connect, signaling active vendor evaluation. The complete absence of public data means the outreach email must lead with the geographic/regulatory pain (NCDOT mountain corridor permitting + BEAD deadline pressure) rather than company-specific flattery — because there is nothing public to flatter. The single most useful opener: acknowledge that western NC is among the hardest permitting environments in the country and that BEAD's 4-year clock makes every kickback a board-level problem.",
+  "sourcesUsed": [
+    "NC BEAD Initial Proposal — NCDIT broadband funding documentation (public)",
+    "NCDIT broadband gap maps (public, broadband.nc.gov)",
+    "Fiber Connect 2026 attendee record (provided in prospect context)",
+    "fos-llc.com domain registration inference",
+    "Telecompetitor.com — search performed, no results for Fiber Optic Solutions Marion NC",
+    "FierceNetwork.com — search performed, no results",
+    "LightReading.com — search performed, no results",
+    "LinkedIn company search — no confirmed page found",
+    "Indeed/ZipRecruiter job search — no postings found",
+    "ShowRev Industry Intelligence KB — BEAD timeline, permitting baseline, labor shortage data",
+    "NC DOT permitting context — Appalachian corridor complexity (publicly documented in NCDOT project reports)"
+  ]
+}
+```

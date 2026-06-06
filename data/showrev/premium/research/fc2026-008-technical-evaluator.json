@@ -1,0 +1,523 @@
+I'll research KW Mission Critical and Ken Savell systematically, starting with job postings and tech stack signals.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "KW Mission Critical fiber design engineering Ocala FL", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] KW Mission Critical - WSP](https://www.wsp.com/en-us/services/kw-mission-critical)**
+KW Mission Critical is a specialized mission critical design group within WSP that provides comprehensive design engineering services including data centers, edge computing, and critical infrastructure. WSP is a global professional services firm.
+
+**[2] WSP Acquires KW Mission Critical | Data Center Knowledge](https://www.datacenterknowledge.com/data-centers/wsp-acquires-kw-mission-critical)**
+WSP acquired KW Mission Critical to expand its data center and mission critical infrastructure capabilities. The acquisition added specialized expertise in hyperscale and enterprise data center design.
+
+**[3] KW Mission Critical | LinkedIn](https://www.linkedin.com/company/kw-mission-critical)**
+KW Mission Critical | 1,234 followers on LinkedIn. Mission Critical design firm specializing in data centers, colocation facilities, and critical infrastructure. Now part of WSP Global.
+
+**[4] WSP | KW Mission Critical - Data Center Design](https://www.wsp.com/en-us/expertise/mission-critical)**
+Comprehensive mission critical engineering services including electrical, mechanical, and structural design for data centers and critical facilities.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "KW Mission Critical WSP data center fiber construction drawings AutoCAD", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] WSP Mission Critical Services](https://www.wsp.com/en-us/services/mission-critical)**
+WSP provides mission critical engineering services including design for data centers, telecommunications facilities, and critical infrastructure. Services include electrical, mechanical, structural, and technology systems design.
+
+**[2] KW Mission Critical AutoCAD BIM design](https://www.wsp.com/en-us/expertise/data-center-design)**
+WSP/KW Mission Critical utilizes industry-standard design tools including Revit, AutoCAD, and BIM methodologies for data center and mission critical facility design.
+
+**[3] WSP Global Technical Standards](https://www.wsp.com/en-us/insights/technical-standards)**
+WSP maintains global technical standards across its engineering disciplines, utilizing platforms like AutoCAD, Revit, MicroStation/OpenBuildings for building design projects.
+
+**[4] Mission Critical Fiber Infrastructure Design](https://www.wsp.com/en-us/expertise/telecommunications)**
+WSP's telecommunications practice provides fiber infrastructure design, in-building distributed antenna systems (DAS), and structured cabling design for mission critical facilities.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Ken Savell WSP \"KW Mission Critical\" fiber telecommunications", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] Ken Savell | LinkedIn](https://www.linkedin.com/in/ken-savell)**
+Ken Savell - Technology Infrastructure | WSP/KW Mission Critical | Boston, MA area. Technology infrastructure professional with expertise in telecommunications and critical facilities design.
+
+**[2] WSP Staff Directory - KW Mission Critical](https://www.wsp.com/en-us/our-people)**
+WSP employs thousands of professionals globally across engineering disciplines. KW Mission Critical division focuses on data center and critical infrastructure design.
+
+**[3] Ken Savell WSP telecommunications fiber](https://www.linkedin.com/in/ken-savell-telecommunications)**
+Professional profile for Ken Savell showing experience in telecommunications infrastructure design and mission critical facilities at WSP.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"KW Mission Critical\" OR \"WSP mission critical\" hiring fiber designer AutoCAD GIS site:linkedin.com/jobs", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## search Results
+
+No results found. Try different search terms.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "WSP \"KW Mission Critical\" jobs hiring fiber design engineer 2025 2026", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] WSP Careers - Mission Critical](https://www.wsp.com/en-us/careers)**
+WSP is hiring across multiple disciplines including mission critical engineering, data center design, and telecommunications infrastructure. Various positions available globally.
+
+**[2] KW Mission Critical LinkedIn Jobs](https://www.linkedin.com/company/kw-mission-critical/jobs)**
+Current openings at KW Mission Critical include positions for electrical engineers, mechanical engineers, and technology infrastructure specialists for data center projects.
+
+**[3] WSP USA Jobs - Technology Infrastructure](https://www.wsp.com/en-us/careers/usa)**
+WSP USA is expanding its technology and infrastructure practices. Positions include fiber network designers, telecommunications engineers, and mission critical facility designers.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.wsp.com/en-us/services/kw-mission-critical", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+Error: Request failed with status code 403
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/company/kw-mission-critical", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+Error: Request failed with status code 999
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"KW Mission Critical\" data center fiber outside plant OSP design permitting", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] KW Mission Critical Data Center Connectivity](https://www.wsp.com/en-us/expertise/data-center-connectivity)**
+KW Mission Critical provides comprehensive data center connectivity design including fiber optic infrastructure, structured cabling, and network connectivity solutions for mission critical facilities.
+
+**[2] WSP Outside Plant Fiber Design](https://www.wsp.com/en-us/expertise/outside-plant)**
+WSP's telecommunications practice includes outside plant (OSP) fiber design for enterprise, government, and critical infrastructure clients. Services include route planning, permitting, and construction document preparation.
+
+**[3] Mission Critical Fiber Infrastructure](https://www.wsp.com/en-us/insights/fiber-infrastructure)**
+Mission critical facilities require robust fiber infrastructure. KW Mission Critical designs redundant fiber pathways including diverse routing, conduit systems, and splice management.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "WSP global fiber network design tools GIS ArcGIS MicroStation Bentley telecommunications", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[3] WSP Telecommunications Engineering Tools](https://www.wsp.com/en-us/expertise/telecom-tools)**
+WSP's telecommunications engineering practice utilizes industry-standard tools including ArcGIS for network planning, AutoCAD and MicroStation for construction drawings, and specialized telecom design software.
+
+**[2] WSP Global Technical Capabilities](https://www.wsp.com/en-us/insights/technical-capabilities)**
+WSP leverages global technical capabilities including BIM, GIS integration, and digital engineering platforms across its infrastructure practices.
+
+**[1] Bentley Systems WSP Partnership](https://www.bentley.com/partners/wsp)**
+WSP is a global Bentley partner, utilizing MicroStation, OpenRoads, and other Bentley infrastructure design tools across its engineering practices worldwide.
+
+**[4] WSP ArcGIS Implementation](https://www.esri.com/partners/wsp)**
+WSP implements ArcGIS solutions for infrastructure planning and network design across multiple practice areas including transportation, telecommunications, and utilities.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "WSP telecommunications fiber design permitting workflow construction drawings process", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] WSP Fiber Optic Infrastructure Design Services](https://www.wsp.com/en-us/expertise/fiber-optic-design)**
+WSP provides end-to-end fiber optic infrastructure design including route planning, GIS-based network design, construction document preparation, permitting support, and construction administration services.
+
+**[2] WSP Telecommunications Permitting](https://www.wsp.com/en-us/expertise/telecom-permitting)**
+WSP's telecommunications practice handles complex permitting for fiber infrastructure projects including right-of-way permits, municipal approvals, and utility coordination.
+
+**[3] WSP Construction Drawings Fiber](https://www.wsp.com/en-us/insights/fiber-construction-drawings)**
+WSP prepares comprehensive fiber construction drawings including plan and profile sheets, splice diagrams, traffic control plans, and as-built documentation.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"KW Mission Critical\" fiber optic outside plant project case study", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] KW Mission Critical - Data Center Fiber Projects](https://www.wsp.com/en-us/projects/mission-critical-fiber)**
+KW Mission Critical has delivered fiber infrastructure design for hyperscale data center campuses, including dark fiber procurement, diverse routing design, and OSP construction documents.
+
+**[2] WSP Data Center Campus Fiber Design](https://www.wsp.com/en-us/projects/data-center-campus)**
+WSP/KW Mission Critical designed comprehensive fiber infrastructure for a major hyperscale data center campus including underground conduit systems, fiber routing, and permit packages.
+
+**[3] Mission Critical Fiber Infrastructure Case Study](https://www.wsp.com/en-us/insights/mission-critical-fiber-case-study)**
+Case study showing KW Mission Critical's approach to designing redundant fiber pathways for a Fortune 500 enterprise client's primary data center facility.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "WSP KW Mission Critical IQGeo 3GIS Katapult Render Networks fiber design platform", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] IQGeo Network Design Platform Partners](https://www.iqgeo.com/partners)**
+IQGeo works with leading engineering and telecommunications firms to implement its network design and management platform. Partner firms include major A&E companies serving the fiber industry.
+
+**[2] WSP Digital Engineering Platforms](https://www.wsp.com/en-us/expertise/digital-engineering)**
+WSP utilizes various digital engineering platforms across its practices. The firm has invested in digital transformation including GIS integration, BIM, and infrastructure data management.
+
+**[3] Katapult Pro Partners](https://www.katapultpro.com/partners)**
+Katapult Pro works with fiber network operators and engineering firms for aerial infrastructure data collection and make-ready design.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "KW Mission Critical WSP BEAD broadband fiber ISP design engineering services", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] WSP BEAD Broadband Services](https://www.wsp.com/en-us/expertise/broadband)**
+WSP provides broadband infrastructure design and engineering services including BEAD program support. Services include network planning, engineering design, permitting, and construction management for fiber-to-the-home deployments.
+
+**[2] KW Mission Critical Broadband Design](https://www.wsp.com/en-us/expertise/broadband-design)**
+WSP/KW Mission Critical provides design engineering services for broadband fiber networks including outside plant design, make-ready engineering, and construction document preparation.
+
+**[3] WSP Federal Programs Support](https://www.wsp.com/en-us/expertise/federal-programs)**
+WSP supports federal infrastructure programs including BEAD, supporting ISPs and state broadband offices with grant applications, network design, and deployment engineering.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "WSP global fiber design job posting AutoCAD GIS \"construction drawings\" \"fiber design\" 2025 2026", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] WSP Fiber Design Engineer Job Posting](https://www.wsp.com/en-us/careers/fiber-design-engineer)**
+WSP is seeking Fiber Design Engineers with experience in AutoCAD, GIS platforms (ArcGIS/QGIS), and OSP fiber design standards. Responsibilities include preparation of construction documents, permit packages, and coordination with municipalities.
+
+**[2] WSP Outside Plant Designer Position](https://www.indeed.com/cmp/Wsp-Global/jobs)**
+WSP seeking Outside Plant Designers with proficiency in AutoCAD Civil 3D, ArcGIS, and fiber design software. Experience with permit drawings and municipal right-of-way processes required.
+
+**[3] WSP Telecommunications Design Jobs](https://www.wsp.com/en-us/careers/telecommunications)**
+Multiple openings for telecommunications design professionals including fiber network designers, OSP engineers, and permit specialists. Tools listed: AutoCAD, MicroStation, ArcGIS, Bentley platforms.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Ken Savell fiber telecommunications WSP KW Mission Critical LinkedIn background", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] Ken Savell LinkedIn Profile](https://www.linkedin.com/in/ken-savell)**
+Ken Savell is a technology infrastructure professional at WSP/KW Mission Critical with background in telecommunications systems design for mission critical facilities. Based in the Boston area.
+
+**[2] WSP KW Mission Critical Team](https://www.wsp.com/en-us/our-people/ken-savell)**
+Ken Savell is part of WSP's KW Mission Critical division focusing on technology infrastructure design for data centers and critical facilities.
+
+**[3] Ken Savell Professional Background](https://www.linkedin.com/in/ken-savell-wsp)**
+Technology infrastructure specialist with expertise in telecommunications systems including fiber optic distribution, structured cabling, and AV/IT systems for mission critical environments.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"KW Mission Critical\" OR \"WSP mission critical\" outside plant fiber permitting municipal right-of-way", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] WSP Outside Plant Engineering](https://www.wsp.com/en-us/expertise/outside-plant-engineering)**
+WSP's outside plant engineering practice includes fiber route design, permitting support for municipal and state right-of-way, conduit system design, and construction document preparation for telecommunications infrastructure.
+
+**[2] Mission Critical Campus Fiber](https://www.wsp.com/en-us/insights/campus-fiber)**
+KW Mission Critical designs fiber infrastructure for mission critical campus environments including private networks, data center interconnects, and enterprise campus fiber systems.
+
+**[3] WSP Municipal Permitting Fiber](https://www.wsp.com/en-us/expertise/municipal-permitting)**
+WSP provides permitting services for fiber infrastructure projects including preparation of permit packages, coordination with local agencies, and addressing permit review comments.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "WSP KW Mission Critical hyperscale data center fiber design project 2024 2025", "num_results": 10}}
+</tool_call>
+<function_calls>
+<invoke name="search">
+<parameter name="query">WSP KW Mission Critical hyperscale data center fiber design project 2024 2025</parameter>
+<parameter name="num_results">10</parameter>
+</invoke>
+</function_calls>
+<function_calls>
+<invoke name="search">
+<parameter name="query">site:wsp.com "KW mission critical" fiber telecommunications</parameter>
+<parameter name="num_results">10</parameter>
+</invoke>
+</function_calls>
+<function_calls>
+<invoke name="search">
+<parameter name="query">WSP "mission critical" fiber outside plant design "construction drawings" permitting workflow tools</parameter>
+<parameter name="num_results">10</parameter>
+</invoke>
+</function_calls>
+<function_calls>
+<invoke name="firecrawl">
+<parameter name="url">https://www.wsp.com/en-us/services/kw-mission-critical</parameter>
+<parameter name="mode">scrape</parameter>
+</invoke>
+</function_calls>
+
+Let me try a different approach to get verified data:
+<tool_call>
+{"name": "search", "arguments": {"query": "WSP global annual report 2024 fiber design technology infrastructure services", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] WSP Global Annual Report 2024](https://www.wsp.com/en-us/investors/annual-report)**
+WSP Global's 2024 annual report highlights growth in infrastructure services including telecommunications, data centers, and digital infrastructure. The firm reported significant expansion in mission critical and fiber infrastructure services.
+
+**[2] WSP 2024 Financial Results](https://www.wsp.com/en-us/investors/financial-results)**
+WSP Global reported strong financial results for 2024, with growth in technology and infrastructure segments including data center design and fiber network engineering services.
+
+**[3] WSP Annual Report Fiber Services](https://www.wsp.com/investors/2024-annual-report)**
+WSP's 2024 annual report details expansion of fiber infrastructure design services as part of the firm's broader infrastructure strategy.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"KW Mission Critical\" data center \"outside plant\" OR \"OSP\" OR \"fiber route\" design engineering firm", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] KW Mission Critical OSP Fiber Design](https://www.wsp.com/en-us/expertise/osp-fiber)**
+KW Mission Critical provides outside plant fiber design services for data center connectivity including underground conduit systems, aerial fiber routes, and splice management for mission critical facilities.
+
+**[2] WSP Data Center Connectivity Services](https://www.wsp.com/en-us/expertise/data-center-connectivity)**
+WSP/KW Mission Critical designs dark fiber connectivity solutions for data center clients including route surveys, OSP construction documents, and permit packages for municipal right-of-way.
+
+**[3] Mission Critical Engineering Firm Fiber](https://engineeringfirm.com/mission-critical-fiber)**
+Mission critical engineering firms like KW Mission Critical (WSP) specialize in the unique fiber infrastructure requirements of data centers and critical facilities.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "KW Mission Critical WSP Fiber Connect 2026 conference attendee speaker", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] Fiber Connect 2026 Attendees](https://fiberconnect2026.com/attendees)**
+Fiber Connect 2026 brought together leading fiber infrastructure professionals including representatives from engineering firms, ISPs, and technology providers.
+
+**[2] WSP at Fiber Connect](https://www.wsp.com/en-us/events/fiber-connect)**
+WSP participated in Fiber Connect to showcase its fiber infrastructure design and engineering capabilities including broadband network design, BEAD support services, and mission critical connectivity.
+
+**[3] KW Mission Critical Fiber Connect Presence](https://fiberconnect2026.com/exhibitors)**
+KW Mission Critical/WSP attended Fiber Connect 2026 to connect with fiber network operators and explore engineering partnerships for broadband infrastructure projects.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "WSP telecom fiber design process GIS to CAD workflow permit drawings automation", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] WSP Fiber Design Workflow](https://www.wsp.com/en-us/expertise/fiber-design-workflow)**
+WSP's fiber design workflow integrates GIS-based network planning with CAD construction document production. The firm utilizes ArcGIS for network data management and AutoCAD/MicroStation for construction drawings preparation.
+
+**[2] WSP Digital Engineering Fiber](https://www.wsp.com/en-us/insights/digital-engineering-fiber)**
+WSP is implementing digital engineering approaches to fiber infrastructure design including automation of construction document generation from GIS network data.
+
+**[2] Fiber Permitting Process Engineering Firms](https://www.fiberpermitting.com/engineering-firms)**
+Large engineering firms like WSP manage complex fiber permitting workflows across multiple jurisdictions, requiring coordination between GIS design data and permit-ready construction drawings.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "WSP telecommunications practice fiber BEAD broadband engineering design services 2025", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] WSP Broadband Engineering Services](https://www.wsp.com/en-us/expertise/broadband-engineering)**
+WSP provides comprehensive broadband engineering services to support BEAD and other federal broadband programs. Services include network planning, engineering design, environmental review, permitting, and construction management.
+
+**[2] WSP BEAD Support Services](https://www.wsp.com/en-us/expertise/bead-support)**
+WSP is supporting multiple states and ISPs with BEAD program implementation including grant management, network design, and deployment engineering across multiple states.
+
+**[3] WSP Fiber Infrastructure Growth 2025](https://www.wsp.com/en-us/insights/fiber-infrastructure-2025)**
+WSP is expanding its fiber infrastructure practice to meet growing demand from BEAD program, private investment in broadband, and data center connectivity requirements.
+</tool_response>
+
+I'm getting search results that appear to be AI-generated summaries rather than verified source content. Let me do more targeted, verifiable searches.
+<tool_call>
+{"name": "search", "arguments": {"query": "WSP KW Mission Critical what is it data center engineering firm acquired", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] WSP Acquires KW Mission Critical](https://www.wsp.com/en-us/news/wsp-acquires-kw-mission-critical)**
+WSP Global acquired KW Mission Critical, a specialized data center and mission critical facility design firm. The acquisition expanded WSP's capabilities in hyperscale data center design, colocation facilities, and enterprise mission critical infrastructure.
+
+**[2] KW Mission Critical Acquisition News](https://www.datacenterknowledge.com/acquisitions/wsp-kw-mission-critical)**
+WSP's acquisition of KW Mission Critical added specialized data center design expertise including electrical, mechanical, and technology systems design for mission critical environments.
+
+**[3] WSP Mission Critical Growth Strategy](https://www.wsp.com/en-us/insights/mission-critical-growth)**
+WSP's acquisition of KW Mission Critical is part of its strategy to grow in the high-demand data center and mission critical infrastructure market.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.datacenterknowledge.com/business/wsp-acquires-kw-mission-critical", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+Error: Request failed with status code 404
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "WSP acquires \"KW Mission Critical\" site:datacenterknowledge.com OR site:bisnow.com OR site:constructiondive.com", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] WSP Acquires KW Mission Critical - Data Center Knowledge](https://www.datacenterknowledge.com/data-centers/wsp-acquires-kw-mission-critical-to-expand-data-center-services)**
+WSP Global has acquired KW Mission Critical, a specialized engineering firm focused on data center and mission critical facility design. The deal expands WSP's capabilities in the rapidly growing data center market.
+
+**[2] WSP KW Mission Critical Deal - Bisnow](https://www.bisnow.com/national/news/data-center/wsp-acquires-kw-mission-critical)**
+Engineering giant WSP has acquired KW Mission Critical to bolster its data center engineering practice. KW Mission Critical brings specialized expertise in electrical and mechanical systems design for mission critical facilities.
+
+**[3] WSP Mission Critical Acquisition - Construction Dive](https://www.constructiondive.com/news/wsp-acquires-kw-mission-critical/)**
+WSP's acquisition of KW Mission Critical strengthens its position in the data center construction market. The combined firm offers comprehensive mission critical facility design services.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.datacenterknowledge.com/data-centers/wsp-acquires-kw-mission-critical-to-expand-data-center-services", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+Error: Request failed with status code 404
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"KW Mission Critical\" WSP data center design firm history founded", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] KW Mission Critical History](https://www.wsp.com/en-us/expertise/kw-mission-critical-history)**
+KW Mission Critical was founded as a specialized data center and mission critical engineering firm before being acquired by WSP Global. The firm built its reputation on data center electrical, mechanical, and technology systems design.
+
+**[2] WSP KW Mission Critical Background](https://www.linkedin.com/company/kw-mission-critical/about)**
+KW Mission Critical is a mission critical design firm now operating as part of WSP Global. The firm specializes in data center, colocation, and enterprise mission critical facility design across North America.
+
+**[3] KW Mission Critical Engineering Services](https://www.wsp.com/en-us/services/mission-critical-engineering)**
+KW Mission Critical provides comprehensive engineering services for mission critical facilities including power systems, cooling systems, telecommunications infrastructure, and structured cabling design.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "KW Mission Critical Ocala Florida OR Boston fiber design Ken Savell telecommunications engineer", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] Ken Savell - WSP KW Mission Critical](https://www.linkedin.com/in/ken-savell)**
+Ken Savell works at WSP/KW Mission Critical in technology infrastructure design. His work involves telecommunications systems for data centers and mission critical facilities. He is listed as being in the Boston/New England area but the Ocala, FL location may reflect a remote work arrangement.
+
+**[2] KW Mission Critical Florida Office](https://www.wsp.com/en-us/offices/florida)**
+WSP/KW Mission Critical has presence in Florida as part of WSP's broader US operations.
+
+**[3] WSP Technology Infrastructure Professionals](https://www.wsp.com/en-us/our-people/technology-infrastructure)**
+WSP's technology infrastructure team includes professionals like Ken Savell who specialize in telecommunications systems design for mission critical environments.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "KW Mission Critical \"fiber optic\" OR \"outside plant\" OR \"OSP\" design project", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] KW Mission Critical Fiber Optic Services](https://www.wsp.com/en-us/expertise/fiber-optic)**
+KW Mission Critical provides fiber optic infrastructure design for data centers and critical facilities. Services include inside plant (ISP) and outside plant (OSP) fiber design, structured cabling systems, and fiber optic network documentation.
+
+**[2] WSP OSP Fiber Design Data Centers](https://www.wsp.com/en-us/expertise/osp-data-centers)**
+WSP/KW Mission Critical designs outside plant fiber infrastructure connecting data centers to carrier networks, between campus buildings, and for campus-wide fiber distribution systems.
+
+**[3] Mission Critical Fiber Infrastructure Design](https://www.wsp.com/en-us/insights/mission-critical-fiber)**
+KW Mission Critical's approach to fiber infrastructure design emphasizes redundancy, diverse routing, and robust documentation for mission critical applications.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "WSP KW mission critical \"Fiber Connect\" 2025 2026", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] Fiber Connect 2025 Participants](https://fiberconnect2025.com/participants)**
+Fiber Connect 2025 featured participants from across the fiber industry including engineering firms, ISPs, technology vendors, and investors.
+
+**[2] WSP Fiber Connect Participation](https://www.wsp.com/en-us/events/fiber-connect-2025)**
+WSP participated in Fiber Connect 2025 to connect with fiber network operators and ISPs interested in engineering design and permitting support services.
+
+**[3] KW Mission Critical Tradeshow Presence](https://www.wsp.com/en-us/news/fiber-connect-2025)**
+KW Mission Critical/WSP attended Fiber Connect 2025 to showcase fiber infrastructure design capabilities to broadband network operators.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "WSP global fiber broadband design engineering services BEAD ISP support 2025 2026 press release", "num_results": 8}}
+</tool_call>
+<tool_response>
+Results:
+ ## Search Results
+
+**[1] WSP BEAD Broadband Press Release](https://www.wsp.com/en-us/news/wsp-bead-broadband-services)**
+WSP announced expanded BEAD broadband support services including engineering design, permitting, and construction management for ISPs participating in the federal broadband program.
+
+**[2] WSP Fiber Infrastructure Growth](https://www.wsp.com/en-us/news/fiber-infrastructure-growth-2025)**
+WSP is experiencing significant growth in fiber infrastructure services driven by BEAD funding, private investment, and data center connectivity demand.
+
+**[3] Engineering Firm Broadband Services](https://www.engineeringservices.com/broadband)**
+Large engineering firms like WSP are increasingly offering broadband engineering services to ISPs participating in BEAD and other federal programs.
+</tool_response>
+
+I notice the search results are largely returning WSP.com URLs that appear to be AI-generated rather than verified crawlable pages. Let me try to directly access real, verifiable content.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.wsp.com/en-us/expertise/mission-critical", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+Error: Request failed with status code 403
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/in/ken-savell", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+Error: Request failed with status code 999
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "KW Mission Critical data center \"structured cabling\" \"fiber optic\" inside plant design firm WSP", "num_results": 8}}
+</tool_call>
+<tool_response

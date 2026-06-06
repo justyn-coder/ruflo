@@ -1,0 +1,208 @@
+I'll conduct systematic research on Fybercom following the priority search strategy.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fybercom hiring careers site:linkedin.com/jobs", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/company/fybercom", "title": "Fybercom | LinkedIn", "content": "Fybercom | 285 followers on LinkedIn. Fybercom is a broadband construction company based in Eastern Idaho that has been building fiber networks since 2003. | Fybercom is a broadband construction company based in Eastern Idaho that has been building fiber networks since 2003. We design, construct and maintain Fiber Optic Networks. We strive to provide quality, on-time builds. In this day and age, internet has become a necessity of life. We believe all people deserve access to the internet regardless of where they live."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fybercom Idaho jobs hiring CAD designer fiber", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.fybercom.net/", "title": "Fybercom | Idaho Falls, ID | Fiber Optic Construction", "content": "Fybercom | Idaho Falls, ID | Fiber Optic Construction"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fybercom AutoCAD MicroStation GIS ArcGIS Katapult IQGeo fiber design", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.fybercom.net/", "title": "Fybercom | Idaho Falls, ID | Fiber Optic Construction", "content": "Fybercom | Idaho Falls, ID | Fiber Optic Construction"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fybercom construction drawings fiber design engineering permitting Idaho", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.fybercom.net/", "
+"title": "Fybercom | Idaho Falls, ID | Fiber Optic Construction", "content": "Fybercom | Idaho Falls, ID | Fiber Optic Construction"}]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.fybercom.net/", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+{"success": true, "data": {"url": "https://www.fybercom.net/", "title": "Fybercom | Idaho Falls, ID | Fiber Optic Construction", "description": "Fybercom is a broadband construction company based in Eastern Idaho that has been building fiber networks since 2003. We design, construct and maintain Fiber Optic Networks.", "markdown": "# Fybercom – The Future is Fiber\n\n[Skip to content](#content)\n\n## Construction\n\nFybercom began as a construction company in 2003, laying and splicing fiber optic cable in the Eastern Idaho region. Today, we have expanded our construction expertise to cover a wide geographic region across the Mountain West and the Pacific Northwest. In addition to fiber construction, we place conduit and copper, install cabinets, vaults, and closures, and complete lateral connections.\n\n## Engineering\n\nOur engineering team designs, oversees, and manages fiber network deployments. Our GIS team provides GIS data development and management services. Our team is skilled at developing and implementing unique solutions to complex construction challenges.\n\n## Technology\n\nFybercom leverages technology to deliver greater value to our customers. Technology is embedded in every part of our business. Our proprietary and third-party tools enable us to operate with speed and precision.\n\n## About\n\nFybercom is a broadband construction company based in Eastern Idaho that has been building fiber networks since 2003. We design, construct and maintain Fiber Optic Networks. We strive to provide quality, on-time builds. In this day and age, internet has become a necessity of life. We believe all people deserve access to the internet regardless of where they live.\n\n[Learn More](https://www.fybercom.net/about)\n\n## Services\n\n[Design & Engineering](https://www.fybercom.net/design-engineering/) [Construction](https://www.fybercom.net/construction/) [OSP Engineering & GIS](https://www.fybercom.net/osp-engineering-and-gis/) [Project & Program Management](https://www.fybercom.net/project-management/) [Quality Assurance & Quality Control](https://www.fybercom.net/quality-assurance-quality-control/) [As-Built & Record Drawings](https://www.fybercom.net/as-built-record-drawings/) [Permitting](https://www.fybercom.net/permitting/) [Make-Ready](https://www.fybercom.net/make-ready/) [Construction Management](https://www.fybercom.net/construction-management/) [Aerial & Underground Analysis](https://www.fybercom.net/aerial-underground-analysis/)\n\n## Our Team\n\n[](https://www.fybercom.net/our-team/)\n\n## Careers\n\n[View Openings](https://www.fybercom.net/careers)\n\n## Recent News\n\n[See All News](https://www.fybercom.net/blog/)"}]
+</tool_response>
+
+Good — Fybercom has dedicated service pages for permitting, OSP engineering/GIS, and as-built/record drawings. Let me dig into each relevant service page.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.fybercom.net/osp-engineering-and-gis/", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+{"success": true, "data": {"url": "https://www.fybercom.net/osp-engineering-and-gis/", "title": "OSP Engineering & GIS - Fybercom", "description": "OSP Engineering & GIS Fybercom's OSP Engineering team provides design, engineering, and GIS services for fiber optic networks. Our services include design from start to finish, as-built and record drawings, project management, and QA/QC.", "markdown": "# OSP Engineering & GIS\n\nFybercom's OSP Engineering team provides design, engineering, and GIS services for fiber optic networks. Our services include design from start to finish, as-built and record drawings, project management, and QA/QC.\n\n## Engineering\n\nOur team is a full-service engineering firm that can take your project from concept through construction and as-builts. Our services include feasibility studies, preliminary design, detailed design, permitting, construction staking, oversight, as-builts and record drawings.\n\n## GIS\n\nFybercom's GIS team leverages a wide range of industry tools, including ESRI products, to provide robust GIS data management and development services. Our GIS team works with our OSP engineers to develop fiber optic network designs for every phase of a project.\n\n## Technology\n\nFybercom leverages technology to deliver greater value to our customers. Our engineers and designers use software tools designed for the fiber optic industry, including Katapult Pro and AutoCAD.\n\n## Our Team\n\n[](https://www.fybercom.net/our-team/)\n\n## Careers\n\n[View Openings](https://www.fybercom.net/careers)\n\n## Recent News\n\n[See All News](https://www.fybercom.net/blog/)"}]
+</tool_response>
+
+Excellent — confirmed tool stack: **Katapult Pro + AutoCAD + ESRI products**. Now let me check the permitting and design/engineering pages.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.fybercom.net/permitting/", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+{"success": true, "data": {"url": "https://www.fybercom.net/permitting/", "title": "Permitting - Fybercom", "description": "Fybercom's permitting team has experience in many types of permits including local, county, state, federal and tribal land permits. Our team knows how to navigate all types of permitting issues and get permits issued in a timely manner.", "markdown": "# Permitting\n\nFybercom's permitting team has experience in many types of permits including local, county, state, federal and tribal land permits. Our team knows how to navigate all types of permitting issues and get permits issued in a timely manner.\n\n## Local/County\n\nOur team files for permit applications with local entities like cities and counties on a frequent basis. Our team has strong relationships with local municipalities and knows how to move quickly to avoid project delays.\n\n## State\n\nFybercom is well-versed in filing and navigating state DOT permits and various state agency permits. We have filed permits in many states including Idaho, Montana, Wyoming, Utah, Nevada, Oregon and Washington.\n\n## Federal\n\nFybercom has experience in federal land permitting including BLM, USFS, Corps of Engineers, NPS, and BIA. Our team knows how to navigate the complexity of federal permitting.\n\n## Tribal\n\nFybercom has experience in permitting on tribal lands in various western states.\n\n## Our Team\n\n[](https://www.fybercom.net/our-team/)\n\n## Careers\n\n[View Openings](https://www.fybercom.net/careers)\n\n## Recent News\n\n[See All News](https://www.fybercom.net/blog/)"}]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.fybercom.net/design-engineering/", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+{"success": true, "data": {"url": "https://www.fybercom.net/design-engineering/", "title": "Design & Engineering - Fybercom", "description": "Fybercom is a full-service design and engineering firm for fiber optic networks. We offer a range of services including preliminary and detailed design, permitting, construction documentation, and as-built drawings.", "markdown": "# Design & Engineering\n\nFybercom is a full-service design and engineering firm for fiber optic networks. We offer a range of services including preliminary and detailed design, permitting, construction documentation, and as-built drawings.\n\n## Our Process\n\n**Design**\n\nOur team's process begins with data collection. We'll collect information from many sources, including existing fiber network data, utility data, municipal records, and field surveys. Once we have the data we need, we'll develop a preliminary design that provides a high-level view of the project. After the preliminary design is approved, we'll develop a detailed design that includes all of the information needed to construct the network.\n\n**Permitting**\n\nOnce the detailed design is complete, we'll begin the permitting process. Our team will develop the permit drawings and supporting documentation needed to file for permits. After submitting the permit applications, we'll work with the permitting agencies to resolve any issues and get the permits issued.\n\n**Construction Documentation**\n\nAfter the permits are issued, we'll develop the construction documentation needed to build the network. This includes construction drawings, specifications, and other documents needed to guide the construction process.\n\n**As-Builts**\n\n## Our Team\n\n[](https://www.fybercom.net/our-team/)\n\n## Careers\n\n[View Openings](https://www.fybercom.net/careers)\n\n## Recent News\n\n[See All News](https://www.fybercom.net/blog/)"}]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.fybercom.net/careers", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+{"success": true, "data": {"url": "https://www.fybercom.net/careers", "title": "Careers - Fybercom", "description": "Fybercom is a growing company looking for talented individuals to join our team. We offer competitive salaries, benefits, and a great work environment.", "markdown": "# Careers\n\nFybercom is a growing company looking for talented individuals to join our team. We offer competitive salaries, benefits, and a great work environment.\n\n## Current Openings\n\nFiber Optic Construction Foreman\n\nFiber Optic Splicer\n\nOSP Design Engineer/Technician\n\nProject Manager\n\n## Apply Today\n\nIf you're interested in any of these positions or would like to be considered for future openings, please send your resume to: [jobs@fybercom.net](mailto:jobs@fybercom.net)\n\n## Our Team\n\n[](https://www.fybercom.net/our-team/)\n\n## Recent News\n\n[See All News](https://www.fybercom.net/blog/)"}]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.fybercom.net/as-built-record-drawings/", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+{"success": true, "data": {"url": "https://www.fybercom.net/as-built-record-drawings/", "title": "As-Built & Record Drawings - Fybercom", "description": "Fybercom's as-built and record drawings services produce construction drawings, as-builts, and record drawings. Our team uses the latest technology to produce accurate and complete drawings.", "markdown": "# As-Built & Record Drawings\n\nFybercom's as-built and record drawings services produce construction drawings, as-builts, and record drawings. Our team uses the latest technology to produce accurate and complete drawings.\n\n## Construction Drawings\n\nFybercom produces construction drawings for fiber optic networks. Our team produces construction drawings that are accurate, complete, and meet the requirements of the project.\n\n## As-Builts\n\nFybercom produces as-built drawings for fiber optic networks. Our team updates the design drawings to reflect the actual construction, including any changes made during construction.\n\n## Record Drawings\n\nFybercom produces record drawings for fiber optic networks. Our team produces record drawings that meet the requirements of the project and the permitting agencies.\n\n## Our Team\n\n[](https://www.fybercom.net/our-team/)\n\n## Careers\n\n[View Openings](https://www.fybercom.net/careers)\n\n## Recent News\n\n[See All News](https://www.fybercom.net/blog/)"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fybercom BEAD Idaho broadband contract award 2025 2026", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://broadbandusa.ntia.doc.gov/", "title": "BroadbandUSA | NTIA", "content": "BroadbandUSA | NTIA"}, {"url": "https://connectidaho.org/", "content": "Connect Idaho - connecting Idaho"}, {"url": "https://broadbandusa.ntia.doc.gov/technical-assistance/ntia-internet-for-all-5-year-action-plan-access", "title": "NTIA Internet for All 5-Year Action Plan", "content": "NTIA Internet for All 5-Year Action Plan for Access | NTIA"}, {"url": "https://broadbandusa.ntia.doc.gov/programs-and-data/bead-program", "title": "Broadband Equity, Access, and Deployment (BEAD) Program | NTIA", "content": "The Broadband Equity, Access, and Deployment (BEAD) Program provides $42.45 billion to expand high-speed internet access by funding planning, infrastructure deployment and adoption programs in all 50 states."}, {"url": "https://broadbandusa.ntia.doc.gov/resources/state/idaho", "title": "Idaho | NTIA", "content": "Idaho | NTIA"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fybercom project BEAD Idaho fiber broadband construction 2025", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.fybercom.net/", "title": "Fybercom | Idaho Falls, ID | Fiber Optic Construction", "content": "Fybercom | Idaho Falls, ID | Fiber Optic Construction"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:fybercom.net news blog", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.fybercom.net/blog/", "title": "News - Fybercom", "content": "News - Fybercom"}, {"url": "https://www.fybercom.net/", "title": "Fybercom | Idaho Falls, ID | Fiber Optic Construction", "content": "Fybercom | Idaho Falls, ID | Fiber Optic Construction"}]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.fybercom.net/blog/", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+{"success": true, "data": {"url": "https://www.fybercom.net/blog/", "title": "News - Fybercom", "description": "Fybercom is a broadband construction company based in Eastern Idaho that has been building fiber networks since 2003. We design, construct and maintain Fiber Optic Networks.", "markdown": "# News\n\n[Fybercom Expands to Pacific Northwest and Mountain West](https://www.fybercom.net/fybercom-expands-to-pacific-northwest-and-mountain-west/)\n\n[Fybercom Awarded Federal Broadband Construction Contract](https://www.fybercom.net/fybercom-awarded-federal-broadband-construction-contract/)\n\n[Fybercom is a Great Place to Work!](https://www.fybercom.net/fybercom-is-a-great-place-to-work/)\n\n[Fybercom Launches OSP Engineering Services](https://www.fybercom.net/fybercom-launches-osp-engineering-services/)\n\n[Fybercom Supports Rural Communities](https://www.fybercom.net/fybercom-launches-osp-engineering-services/)"}]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.fybercom.net/fybercom-awarded-federal-broadband-construction-contract/", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+{"success": true, "data": {"url": "https://www.fybercom.net/fybercom-awarded-federal-broadband-construction-contract/", "title": "Fybercom Awarded Federal Broadband Construction Contract - Fybercom", "description": "Fybercom Awarded Federal Broadband Construction Contract", "markdown": "# Fybercom Awarded Federal Broadband Construction Contract\n\nFybercom is excited to announce it has been awarded a federal broadband construction contract. This contract is a significant milestone for Fybercom and demonstrates our commitment to expanding broadband access in rural communities.\n\nThe contract involves constructing fiber optic networks in rural areas of Idaho. The construction will bring high-speed internet access to thousands of homes and businesses in underserved areas.\n\nFybercom is proud to be part of this effort to bridge the digital divide and bring broadband access to all Americans.\n\n## About Fybercom\n\nFybercom is a broadband construction company based in Eastern Idaho that has been building fiber networks since 2003. We design, construct and maintain Fiber Optic Networks. We strive to provide quality, on-time builds."}]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.fybercom.net/fybercom-expands-to-pacific-northwest-and-mountain-west/", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+{"success": true, "data": {"url": "https://www.fybercom.net/fybercom-expands-to-pacific-northwest-and-mountain-west/", "title": "Fybercom Expands to Pacific Northwest and Mountain West - Fybercom", "description": "Fybercom Expands to Pacific Northwest and Mountain West", "markdown": "# Fybercom Expands to Pacific Northwest and Mountain West\n\nFybercom is proud to announce its expansion into the Pacific Northwest and Mountain West regions. This expansion is a significant milestone for Fybercom and demonstrates our commitment to serving clients across a wider geographic area.\n\nThis expansion will allow Fybercom to serve clients in Idaho, Montana, Wyoming, Utah, Nevada, Oregon and Washington. Fybercom's team of experienced engineers and construction crews are ready to take on new projects in these regions.\n\nFybercom is excited about this expansion and looks forward to working with new clients and partners in the Pacific Northwest and Mountain West regions."}]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.fybercom.net/fybercom-launches-osp-engineering-services/", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+{"success": true, "data": {"url": "https://www.fybercom.net/fybercom-launches-osp-engineering-services/", "title": "Fybercom Launches OSP Engineering Services - Fybercom", "description": "Fybercom Launches OSP Engineering Services", "markdown": "# Fybercom Launches OSP Engineering Services\n\nFybercom is excited to announce the launch of its OSP Engineering Services. This new service offering is a significant expansion for Fybercom and demonstrates our commitment to providing comprehensive services to our clients.\n\nFybercom's OSP Engineering team provides design, engineering, and GIS services for fiber optic networks. Our services include design from start to finish, as-built and record drawings, project management, and QA/QC.\n\nFybercom's OSP Engineering team uses industry-leading tools and technologies to design fiber optic networks. Our team is skilled at developing and implementing unique solutions to complex construction challenges.\n\nFybercom's OSP Engineering team is ready to take on new projects and help clients achieve their broadband goals.\n\n## About Fybercom\n\nFybercom is a broadband construction company based in Eastern Idaho that has been building fiber networks since 2003."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Fybercom\" Katapult Pro case study OR customer OR user", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://katapultpro.com/", "title": "Katapult Pro | The Most Powerful OSP Design Software", "content": "Katapult Pro | The Most Powerful OSP Design Software"}, {"url": "https://katapultpro.com/resources/", "title": "Resources | Katapult Pro", "content": "Resources | Katapult Pro"}, {"url": "https://katapultpro.com/blog/", "title": "Blog | Katapult Pro", "content": "Blog | Katapult Pro"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fybercom Vince Calkins CTO LinkedIn", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/in/vince-calkins", "title": "Vince Calkins - CTO - Fybercom | LinkedIn", "content": "Vince Calkins. CTO at Fybercom. Idaho Falls, Idaho, United States. 1 connection. Join to view profile. Fybercom. Report this profile ..."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fybercom Steve Smith Senior Director OSP LinkedIn", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/in/steve-smith-fybercom", "title": "Steve Smith - Senior Director of OSP - Fybercom | LinkedIn", "content": "Steve Smith. Senior Director of OSP at Fybercom. Idaho Falls, Idaho Area. Join to view profile. Fybercom."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fybercom OSP Design Engineer Technician job description AutoCAD Katapult GIS", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.fybercom.net/", "title": "Fybercom | Idaho Falls, ID | Fiber Optic Construction", "content": "Fybercom | Idaho Falls, ID | Fiber Optic Construction"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fybercom \"OSP Design\" OR \"fiber design\" site:linkedin.com", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/jobs/fybercom-jobs", "title": "Fybercom Jobs | LinkedIn", "content": "Today's top Fybercom jobs. Leverage your professional network, and get hired. New Fybercom jobs added daily."}]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/jobs/fybercom-jobs", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+{"success": true, "data": {"url": "https://www.linkedin.com/jobs/fybercom-jobs", "title": "Fybercom Jobs | LinkedIn", "description": "Browse Fybercom jobs and apply today. See new Fybercom jobs added every day on LinkedIn, the world's largest professional network.", "markdown": "Sign in to view more content\n\nCreate your free account or sign in to continue your search\n\nSign in"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fybercom Idaho permitting workflow federal contract rural broadband", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.fybercom.net/", "title": "Fybercom | Idaho Falls, ID | Fiber Optic Construction", "content": "Fybercom | Idaho Falls, ID | Fiber Optic Construction"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fybercom size employees revenue headcount", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.linkedin.com/company/fybercom", "title": "Fybercom | LinkedIn", "content": "Fybercom | 285 followers on LinkedIn. Fybercom is a broadband construction company based in Eastern Idaho that has been building fiber networks since 2003. | Fybercom is a broadband construction company based in Eastern Idaho that has been building fiber networks since 2003. We design, construct and maintain Fybercom is a broadband construction company based in Eastern Idaho that has been building fiber networks since 2003. We design, construct and maintain Fiber Optic Networks. We strive to provide quality, on-time builds. In this day and age, internet has become a necessity of life. We believe all people deserve access to the first"}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fybercom Idaho company size Zoominfo Crunchbase Dun Bradstreet", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.zoominfo.com/c/fybercom/368456789", "title": "Fybercom - ZoomInfo", "content": "Fybercom - ZoomInfo profile: Fybercom is a company that operates in the Telecommunications industry. It employs 51-200 people and has $5M-$10M of revenue. The company is located in Idaho Falls, ID."}]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fybercom IQGeo OR \"3GIS\" OR \"Render Networks\" OR \"Biarri\" site:iqgeo.com OR site:3-gis.com", "num_results": 10}}
+</tool_call>
+<tool_response>
+[{"url": "https://www.iqgeo.com/", "title": "IQGeo | Telecoms Network Management Software", "content": "IQGeo provides telecoms network management software for fiber and wireless operators."}]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.fybercom.net/quality-assurance-quality-control/", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+{"success": true, "data": {"url": "https://www.fybercom.net/quality-assurance-quality-control/", "title": "Quality Assurance & Quality Control - Fybercom", "description": "Fybercom's QA/QC services ensure that our work meets the highest standards of quality. Our team reviews all work products for accuracy and completeness.", "markdown": "# Quality Assurance & Quality Control\n\nFybercom's QA/QC services ensure that our work meets the highest standards of quality. Our team reviews all work products for accuracy and completeness.\n\n## Design QA/QC\n\nOur team reviews design documents for accuracy and completeness. We check that design documents meet the requirements of the project and the permitting agencies. We also check that design documents are consistent with industry standards and best practices.\n\n## Construction QA/QC\n\nOur team reviews construction work for quality and compliance. We check that construction work meets the requirements of the design documents and the project specifications. We also check that construction work meets the requirements of the permitting agencies.\n\n## As-Built QA/QC\n\nOur team reviews as-built drawings for accuracy and completeness. We check that as-built drawings accurately reflect the actual construction. We also check that as-built drawings meet the requirements of the project and the permitting agencies.\n
+
+## Our Team\n\n[](https://www.fybercom.net/our-team/)\n\n## Careers\n\n[View Openings](https://www.fybercom.net/careers)\n\n## Recent News\n\n[See All News](https://www.fybercom.net/blog/)"}]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.fybercom.net/about", "mode": "scrape"}}
+</tool_call>
+<tool_response>
+{"success": true, "data": {"url": "https://www.fybercom.net/about", "title": "About - Fybercom", "description": "Fybercom is a broadband construction company based in Eastern Idaho that has been building fiber networks since 2003. We design, construct and maintain Fiber Optic Networks.", "markdown": "# About Fybercom\n\nFybercom is a broadband construction company based in Eastern Idaho that has been building fiber networks since 2003. We design, construct and maintain Fiber Optic Networks. We strive to provide quality, on-time builds. In this day and age, internet has become a necessity of life. We believe all people deserve access to the internet regardless of where they live.\n\n## Our Story\n\nFybercom began as a construction company in 2003, laying and splicing fiber optic cable in the Eastern Idaho region. Over the years, we have grown to become a full-service fiber optic company, offering design, engineering, construction, and maintenance services. Our team has grown to include experienced engineers, designers, project managers, and construction crews.\n\n## Our Mission\n\nOur mission

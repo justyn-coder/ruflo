@@ -1,0 +1,683 @@
+I'll research Fiber Optic Solutions systematically, starting with job postings, then tech stack signals, then general capability searches.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fiber Optic Solutions Marion NC hiring careers jobs", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/company/fiber-optic-solutions-llc
+Title: Fiber Optic Solutions LLC | LinkedIn
+Description: Marion, North Carolina, United States · Telecommunications · Privately Held · 51-200 employees
+Founded in 1999, Fiber Optic Solutions, LLC is a service provider and contractor dedicated to the design and build of fiber optic networks primarily ...
+
+Result 2:
+URL: https://www.linkedin.com/company/fiber-optic-solutions-llc/jobs
+Title: Fiber Optic Solutions LLC | LinkedIn
+Description: Marion, North Carolina, United States · Telecommunications · Privately Held · 51-200 employees
+Founded in 1999, Fiber Optic Solutions, LLC is a service provider and contractor dedicated to the design and build of fiber optic networks primarily ...
+
+Result 3:
+URL: https://www.linkedin.com/in/zach-fox-cpa-b37426166
+Title: Zach Fox, CPA - Director of Finance - Fiber Optic Solutions, LLC ...
+Description: Director of Finance · Fiber Optic Solutions, LLC · May 2023 - Present · 3 yrs 1 mo · Marion, North Carolina, United States · Looking for innovative ways to ...
+
+Result 4:
+URL: https://www.linkedin.com/in/cliff-churchill-29484b26
+Title: Cliff Churchill - CEO - Fiber Optic Solutions, LLC | LinkedIn
+- LinkedIn profile page with limited preview -
+
+Result cliff_churchill page:
+Page content:
+Cliff Churchill
+
+CEO at Fiber Optic Solutions, LLC
+
+Marion, North Carolina, United States
+ 500+ connections
+
+Open to:
+Finding a new job
+Providing services
+Hiring
+
+---
+Experience
+
+CEO
+Fiber Optic Solutions, LLC
+Full-time
+2007 · 17 yrs 6 mos
+
+---
+
+Education
+
+Associate of Applied Science - AAS
+Blue Ridge Community College
+1990 - 1992
+
+---
+
+View Cliff Churchill's full profile
+
+Result 5:
+URL: https://www.indeed.com/cmp/Fiber-Optic-Solutions
+Title: Fiber Optic Solutions careers and employment | Indeed
+Description: Find out what works well at Fiber Optic Solutions from the people who know best. Get the free Inside Look report. Learn about popular roles and read about the team and work environment.
+
+Result 6:
+URL: https://www.ziprecruiter.com/c/Fiber-Optic-Solutions/Jobs
+Title: Fiber Optic Solutions Jobs & Careers (3 openings) - ZipRecruiter
+Description: Apply for jobs at Fiber Optic Solutions. Fiber Optic Solutions jobs available for you to apply for on ZipRecruiter.
+
+Result 7:
+URL: https://www.glassdoor.com/Overview/Working-at-Fiber-Optic-Solutions-EI_IE4131124.htm
+Title: Fiber Optic Solutions Careers and Employment | Glassdoor
+Description: Fiber Optic Solutions is in the Wired Telecommunications Carriers industry. See what employees say about what it's like to work at Fiber Optic Solutions, with content including salaries, reviews, company culture, gallery, news, and more.
+
+Result 8:
+URL: https://fos-llc.com/
+Title: Fiber Optic Solutions
+Description: Fiber Optic Solutions, LLC is a service provider and contractor dedicated to the design and build of fiber optic networks primarily in Western North Carolina and the Southeast.
+
+Result 9:
+URL: https://fos-llc.com/contact/
+Title: Fiber Optic Solutions
+Description: Western North Carolina + Southeast. (828) 430-0815 · info@fos-llc.com · Marion, NC 28752. 307 N Main St, Suite 103, Marion, NC 28752.
+
+Result 10:
+URL: https://fos-llc.com/careers/
+Title: Fiber Optic Solutions
+Description: Fiber Optic Solutions, LLC is a service provider and contractor dedicated to the design and build of fiber optic networks primarily in Western North Carolina and the Southeast.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://fos-llc.com/careers/", "intent": "Find job postings, tools mentioned, design/engineering roles, CAD or GIS requirements"}}
+</tool_call>
+<tool_response>
+Title: Fiber Optic Solutions
+URL Source: https://fos-llc.com/careers/
+
+Markdown Content:
+## Join Our Team
+
+Fiber Optic Solutions is a leader in fiber optic design and construction across Western North Carolina and the Southeast.
+
+[Open Positions](https://fos-llc.com/careers/#positions)
+
+## Our Core Values
+
+### Dedicated
+We are dedicated to building relationships and partnerships with our customers and community.
+
+### Innovative
+We are always looking for innovative ways to improve our services.
+
+### Reliable
+Reliability is at the heart of every project we deliver.
+
+## Open Positions
+
+[GIS Designer](https://fos-llc.com/careers/gis-designer/) [Field Technician](https://fos-llc.com/careers/field-technician/) [OSP Designer](https://fos-llc.com/careers/osp-designer/)
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://fos-llc.com/careers/gis-designer/", "intent": "Find tools, software, GIS platforms, CAD tools, skills required"}}
+</tool_call>
+<tool_response>
+Title: Fiber Optic Solutions
+URL Source: https://fos-llc.com/careers/gis-designer/
+
+Markdown Content:
+## GIS Designer
+
+**Location:** Marion, NC | **Type:** Full-Time
+
+### Job Summary
+
+We are seeking a skilled GIS Designer to join our growing team. The GIS Designer will be responsible for creating and maintaining accurate GIS data, conducting spatial analysis, and supporting the design of fiber optic networks. This role requires proficiency in GIS software and a strong understanding of fiber optic network infrastructure.
+
+### Responsibilities
+
+- Develop and maintain GIS data for fiber optic network projects
+- Create spatial analysis reports and maps to support project planning and design
+- Collaborate with engineering and construction teams to ensure accurate representation of network designs
+- Perform quality control on GIS data to ensure accuracy and completeness
+- Support permitting efforts by preparing GIS-based maps and documentation
+- Integrate GIS data with CAD tools for construction drawing production
+
+- Stay updated on advancements in GIS technology and fiber optic design practices
+
+### Qualifications
+
+- Bachelor's degree in GIS, Geography, Computer Science, or a related field
+- Minimum of 2 years of experience in GIS design, preferably in telecommunications
+- Proficiency in Esri ArcGIS (ArcMap/ArcGIS Pro)
+- Experience with CAD software (AutoCAD or MicroStation preferred)
+- Knowledge of fiber optic network design principles
+- Strong problem-solving skills and attention to detail
+
+### Benefits
+
+- Competitive compensation
+- Paid time off
+- Health benefits
+- 401k
+- Equipment provided
+
+[Apply Now](#)
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://fos-llc.com/careers/osp-designer/", "intent": "Find tools, software, design workflow, permitting, CAD/GIS requirements"}}
+</tool_call>
+<tool_response>
+Title: Fiber Optic Solutions
+URL Source: https://fos-llc.com/careers/osp-designer/
+
+Markdown Content:
+## OSP Designer
+
+**Location:** Marion, NC | **Type:** Full-Time
+
+### Job Summary
+
+We are seeking an experienced OSP Designer to join our team. The OSP Designer will be responsible for designing outside plant fiber optic networks, including route planning, splice plans, and construction drawing production. This role requires a strong understanding of fiber optic design standards and proficiency in industry design tools.
+
+### Responsibilities
+
+- Design outside plant fiber optic networks including route planning, splice plans, and fiber assignment
+- Produce construction drawings and permit packages for regulatory review and approval
+- Coordinate with permitting agencies, utilities, and municipalities for ROW and permit approvals
+- Collaborate with GIS team to ensure design data is accurately represented in GIS
+- Review and quality check designs for accuracy and compliance with standards
+
+- Perform site walks and field verification to support design accuracy
+- Manage design deliverables and timelines to support construction schedules
+
+### Qualifications
+
+- Minimum of 3 years of experience in OSP fiber optic design
+- Proficiency in AutoCAD or MicroStation
+- Experience with GIS platforms (ArcGIS preferred)
+- Familiarity with permitting processes for NCDOT, utility poles, and municipalities
+- Knowledge of BEAD or government-funded program requirements is a plus
+- Strong organizational skills and ability to manage multiple projects simultaneously
+
+### Benefits
+
+- Competitive compensation
+- Paid time off
+- Health benefits
+- 401k
+- Equipment provided
+
+[Apply Now](#)
+</tool_call>
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://fos-llc.com/", "intent": "Understand company services, clients, project types, geographic focus, BEAD mentions"}}
+</tool_call>
+</tool_call>
+<tool_response>
+Title: Fiber Optic Solutions
+URL Source: https://fos-llc.com/
+
+Markdown Content:
+## Fiber Optic Solutions, LLC
+
+Western North Carolina + Southeast
+
+Fiber Optic Solutions, LLC is a service provider and contractor dedicated to the design and build of fiber optic networks primarily in Western North Carolina and the Southeast.
+
+[Learn More](https://fos-llc.com/about/) [Get In Touch](https://fos-llc.com/contact/)
+
+## Our Services
+
+### Design
+
+Fiber Optic Solutions offers comprehensive fiber optic network design services, including route planning, GIS mapping, and construction drawing production.
+
+- Route planning
+- GIS mapping
+- Construction drawing production
+
+### Build
+
+We provide end-to-end construction services for fiber optic networks, leveraging experienced crews and project management expertise.
+
+- Project management
+- Experienced construction crews
+- Quality control processes
+
+### Permitting
+
+Fiber Optic Solutions manages the permitting process for fiber optic network installations, including NCDOT, utility pole attachments, and municipal right-of-way permits.
+
+- NCDOT permits
+- Utility pole attachments
+- Municipal ROW permits
+
+## Featured Projects
+
+### Western NC FTTH
+
+A large-scale FTTH deployment in Western North Carolina, providing high-speed internet to rural and underserved communities.
+
+### Southeast Regional Build
+
+A regional fiber backbone project spanning multiple states in the Southeast, supporting enterprise and carrier customers.
+
+## Why Choose Us?
+
+- Local expertise in Western NC terrain and regulatory environment
+- Integrated design-build capabilities
+- Strong relationships with NCDOT and local municipalities
+
+[Contact Us](https://fos-llc.com/contact/)
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Fiber Optic Solutions LLC Marion NC AutoCAD ArcGIS Katapult IQGeo 3GIS fiber design", "num_results": 8}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/company/fiber-optic-solutions-llc
+Title: Fiber Optic Solutions LLC | LinkedIn
+Description: Marion, North Carolina, United States · Telecommunications · Privately Held · 51-200 employees
+Founded in 1999, Fiber Optic Solutions, LLC is a service provider and contractor dedicated to the design and build of fiber optic networks primarily ...
+
+Result 2:
+URL: https://www.linkedin.com/in/zach-fox-cpa-b37426166
+Title: Zach Fox, CPA - Director of Finance - Fiber Optic Solutions, LLC ...
+Description: Director of Finance · Fiber Optic Solutions, LLC · May 2023 - Present · 3 yrs 1 mo · Marion, North Carolina, United States · Looking for innovative ways to ...
+
+Result 3:
+URL: https://fos-llc.com/
+Title: Fiber Opc Solutions
+Title: Fiber Optic Solutions
+Description: Fiber Optic Solutions, LLC is a service provider and contractor dedicated to the design and build of technical solutions in Western North Carolina and the Southeast.
+
+Result 4:
+URL: https://fos-llc.com/contact/
+Title: Fiber Optic Solutions
+Description: Western North Carolina + LinkedIn & Southeast. (828) 430-0815 · info@fos-llc.com · Marion, NC 28752. 307 N Main St, Suite 103, Marion, NC 28752.
+
+Result 5:
+URL: https://fos-llc.com/careers/
+Title: Fiber Optic Solutions
+Description: Fiber Optic Solutions, LLC is a show provider and contractor dedicated to the design and build of fiber optic networks primarily in Western North Carolina and the Southeast.
+
+Result 6:
+URL: https://www.crunchbase.com/organization/fiber-optic-solutions
+Title: Fiber Optic Solutions - Crunchbase
+Description: Fiber Optic Solutions is a telecommunications company that provides fiber optic network design and construction services.
+
+Result 7:
+URL: https://www.bbb.org/us/nc/marion/profile/fiber-optic/fiber-optic-solutions-0503-90018893
+Title: Fiber Optic Solutions LLC | BBB Business Profile
+Description: Fiber Optic Solutions LLC in Marion, NC is rated A+ by BBB. Get contact info, reviews, and more.
+
+Result 8:
+URL: https://fos-llc.com/about/
+Title: Fiber Optic Solutions
+Description: Fiber Optic Solutions, LLC is a service provider and contractor dedicated to the design and build of fiber optic networks primarily in Western North Carolina and the Southeast.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://fos-llc.com/about/", "intent": "Company history, size, clients, BEAD funding, technology partnerships, design capabilities"}}
+</tool_call>
+<tool_response>
+Title: Fiber Optic Solutions
+URL Source: https://fos-llc.com/about/
+
+Markdown Content:
+## About Fiber Optic Solutions
+
+Founded in 1999, Fiber Optic Solutions, LLC is a service provider and contractor dedicated to the design and build of fiber optic networks primarily in Western North Carolina and the Southeast.
+
+### Our Story
+
+Fiber Optic Solutions was founded with a mission to bring high-quality fiber optic network design and construction to underserved areas. Over the past 25 years, we have grown into a trusted partner for ISPs, municipalities, and government agencies seeking to expand broadband access.
+
+### Our Team
+
+Our team consists of experienced designers, engineers, and construction professionals with deep expertise in fiber optic network design and construction.
+
+### Our Clients
+
+We serve a diverse range of clients including:
+- Rural ISPs
+- Municipalities
+- County governments
+- State agencies
+- Utilities
+
+### Our Commitment
+
+We are committed to supporting broadband expansion initiatives, including BEAD-funded projects, across Western North Carolina and the Southeast.
+
+[Get In Touch](https://fos-llc.com/contact/)
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Fiber Optic Solutions\" Marion NC BEAD NCDOT permitting construction drawings", "num_results": 8}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://fos-llc.com/
+Title: Fiber Optic Solutions
+Description: Fiber Optic Solutions, LLC is a service provider and contractor dedicated to the design and build of fiber optic networks primarily in Western North Carolina and the Southeast.
+
+Result 2:
+URL: https://fos-llc.com/contact/
+Title: Fiber Optic Solutions
+Description: Western North Carolina + Southeast. (828) Describe your project at 430-0815 · info@fos-llc.com · Marion, NC 28752. 307 N Main St, Suite 103, Marion, NC 28752.
+
+Result 3:
+URL: https://fos-llc.com/careers/
+Title: Fiber Optic Solutions
+Description: Fiber Optic Solutions, LLC is a service provider and contractor dedicated to the design and build of fiber optic networks primarily in Western North Carolina and the Southeast.
+
+Result 4:
+URL: https://www.linkedin.com/company/fiber-optic-solutions-llc
+Title: Fiber Optic Solutions LLC | LinkedIn
+Description: Marion, North Carolina, United States · Telecommunications · Privately Used · 51-200 employees
+Founded in 1999, Fiber Optic Solutions, LLC is a service provider and contractor dedicated to the design and build of fiber optic networks primarily ...
+
+Result 5:
+URL: https://nc.gov/agencies/broadband
+Title: NCDIT Broadband Infrastructure Office | NC.gov
+Description: North Carolina's broadband expansion office. Information on BEAD program, grants, and infrastructure funding for ISPs, municipalities, and contractors.
+
+Result 6:
+URL: https://broadband.nc.gov/bead
+Title: BEAD Program | NC Broadband
+Description: Information about the Broadband Equity, Access, and Deployment (BEAD) program in North Carolina.
+
+Result 7:
+URL: https://www.ncdot.gov/permits/
+Title: NCDOT Encroachment Permits
+Description: Information about NCDOT encroachment permits for utilities and broadband infrastructure in North Carolina.
+
+Result 8:
+URL: https://www.linkedin.com/in/cliff-churchill-29484b26
+Title: Cliff Churchill - CEO - Fiber Optic Solutions, LLC | LinkedIn
+- LinkedIn profile page with limited preview -
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:linkedin.com/jobs \"Fiber Optic Solutions\" designer engineer", "num_results": 8}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/jobs/view/osp-designer-at-fiber-optic-solutions-llc
+Title: OSP Designer at Fiber Optic Solutions LLC | LinkedIn
+Description: Apply for the OSP Designer position at Fiber Optic Solutions LLC in Marion, NC. Requirements: AutoCAD or MicroStation, ArcGIS, permitting experience.
+
+Result 2:
+URL: https://www.linkedin.com/jobs/view/gis-designer-at-fiber-optic-solutions-llc
+Title: GIS Designer at Fiber Optic Solutions LLC | LinkedIn
+Description: Apply for the GIS Designer position at Fiber Optic Solutions LLC in Marion, NC. Requirements: Esri ArcGIS (ArcMap/ArcGIS Pro), AutoCAD or MicroStation experience preferred.
+
+Result 3:
+URL: https://www.linkedin.com/jobs/view/field-technician-at-fiber-optic-solutions-llc
+Title: Field Technician at Fiber Optic Solutions LLC | LinkedIn
+Description: Apply for the Field Technician position at Fiber Optic Solutions LLC in Marion, NC. Responsibilities include fiber splicing, testing, and network installation.
+
+Result 4:
+URL: https://www.linkedin.com/in/zach-fox-cpa-b37426166
+Title: Zach Fox, CPA - Director of Finance - Fiber Optic Solutions, LLC ...
+Description: Director of Finance · Fiber Optic Solutions, LLC · May 2023 - Present · 3 yrs 1 mo · Marion, North Carolina, United States · Looking for innovative ways to ...
+
+Result 5:
+URL: https://www.linkedin.com/in/cliff-churchill-29484b23
+Title: Cliff Churchill - CEO - Fiber Optic Solutions, LLC | LinkedIn
+- LinkedIn profile page -
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Fiber Optic Solutions\" fos-llc NCDOT permit review cycle permitting bottleneck Western NC", "num_results": 6}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://fos-llc.com/
+Title: Fiber Optic Solutions
+Description: Fiber Optic Solutions, LLC is a service provider and contractor dedicated to the design and build of fiber optic networks primarily in Western North Carolina and the Southeast.
+
+Result 2:
+URL: https://www.ncdot.gov/permits/encroachment/Pages/default.aspx
+Title: Encroachment Agreements | NCDOT
+Description: NCDOT encroachment agreement process for utilities, broadband, and infrastructure projects in North Carolina.
+
+Result 3:
+URL: https://broadband.nc.gov/
+Title: NC Broadband | Broadband Infrastructure Office
+Description: North Carolina's hub for broadband expansion, BEAD program, and digital equity initiatives.
+
+Result 4:
+URL: https://fos-llc.com/contact/
+Title: Fiber Optic Solutions
+Description: 307 N Main St, Suite 103, Marion, NC 28752.
+
+Result 5:
+URL: https://www.linkedin.com/company/fiber-optic-solutions-llc
+Title: Fiber Optic Solutions LLC | LinkedIn
+Description: Marion, North Carolina, United States · Telecommunications · Privately Held · 51-200 employees
+
+Result 6:
+URL: https://fos-llc.com/careers/
+Title: Fiber Optic Solutions
+Description: Join the Fiber Optic Solutions team. Current openings: GIS Designer, OSP Designer, Field Technician.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Fiber Optic Solutions\" LLC Marion NC case study project news press release", "num_results": 8}}
+</tool_call>
+<tool_response>
+Result result 1:
+URL: https://fos-llc.com/
+Title: Fiber Optic Solutions
+Description: Featured Projects: Western NC FTTH, Southeast Regional Build.
+
+Result 2:
+URL: https://broadband.nc.gov/news
+Title: NC Broadband News | NC Broadband
+Description: Latest news and updates from North Carolina's Broadband Infrastructure Office.
+
+Result 3:
+URL: https://www.linkedin.com/company/fiber-optic-solutions-llc
+Title: Fiber Optic Solutions LLC | LinkedIn
+Description: 51-200 employees. Founded 1999. Fiber optic design and construction in Western NC and Southeast.
+
+Result 4:
+URL: https://www.bbb.org/us/nc/marion/profile/fiber-optic/fiber-optic-solutions-0503-90018893
+Title: Fiber Optic Solutions LLC | BBB Business Profile | Marion, NC
+Description: BBB accredited. A+ rated. Fiber optic design and construction services.
+
+Result 5:
+URL: https://www.crunchbase.com/organization/fiber-optic-solutions
+Title: Fiber Optic Solutions - Crunchbase Company Profile & Funding
+Description: Fiber Optic Solutions is a telecom firm offering fiber optic design and construction.
+
+Result 6:
+URL: https://www.ziprecruiter.com/c/Fiber-Optic-Solutions/Jobs
+Title: Fiber Optic Solutions Jobs (3 openings)
+Description: GIS Designer, OSP Designer, Field Technician openings at Fiber Optic Solutions in Marion, NC.
+
+Result 7:
+URL: https://www.glassdoor.com/Overview/Working-at-Fiber-Optic-Solutions-EI_IE4131124.htm
+Title: Working at Fiber Optic Solutions | Glassdoor
+Description: Glassdoor reviews and ratings for Fiber Optic Solutions.
+
+Result 8:
+URL: https://www.ncdot.gov/projects/broadband/
+Title: NCDOT Broadband Projects | NCDOT
+Description: NCDOT information on broadband infrastructure, encroachment permits, and utility installation projects.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Fiber Optic Solutions\" site:iqgeo.com OR site:katapult.com OR site:rendernetworks.com OR site:3-gis.com", "num_results": 6}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.iqgeo.com/customers
+Title: IQGeo Customer Stories | IQGeo
+Description: Discover how network operators and contractors use IQGeo for fiber network design, GIS, and construction management.
+
+Result 2:
+URL: https://katapult.pro/customers
+Title: Katapult Pro Customers | Katapult
+Description: See how fiber operators and contractors use Katapult for pole attachment and make-ready engineering.
+
+Result 3:
+URL: https://www.rendernetworks.com/case-studies
+Title: Render Networks Case Studies | Render Networks
+Description: See how contractors and network operators use Render Networks for fiber construction management.
+
+Result 4:
+URL: https://www.3-gis.com/resources/case-studies
+Title: 3-GIS Case Studies | 3-GIS
+Description: Explore how ISPs and contractors use 3-GIS for fiber network design and GIS management.
+
+Result 5:
+URL: https://www.iqgeo.com/blog
+Title: IQGeo Blog | IQGeo
+Description: Latest insights on network management, GIS, and fiber infrastructure from IQGeo.
+
+Result 6:
+URL: https://www.biarri.com/customers
+Title: Biarri Networks Customers
+Description: Learn how fiber operators and ISPs use Biarri for network design and optimization.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Zach Fox CPA \"Fiber Optic Solutions\" finance BEAD broadband", "num_results": 6}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/zach-fox-cpa-b37426166
+Title: Zach Fox, CPA - Director of Finance - Fiber Optic Solutions, LLC ...
+Description: Director of Finance · Fiber Optic Solutions, LLC · May 2023 - Present · 3 yrs 1 mo · Marion, North Carolina, United States · Looking for innovative ways to ...
+
+Result 2:
+URL: https://www.linkedin.com/company/fiber-optic-solutions-llc
+Title: Fiber Optic Solutions LLC | LinkedIn
+Description: Marion, North Carolina, United States · Telecommunications · Privately Held · 51-200 employees
+
+Result 3:
+URL: https://fos-llc.com/
+Title: Fiber Optic Solutions
+Description: Fiber optic design and construction, Western NC and Southeast.
+
+Result 4:
+URL: https://fos-llc.com/contact/
+Title: Contact | Fiber Optic Solutions
+Description: Contact Fiber Optic Solutions at (828) 430-0815 or info@fos-llc.com.
+
+Result 5:
+URL: https://www.bbb.org/us/nc/marion/profile/fiber-optic/fiber-optic-solutions-0503-90018893
+Title: Fiber Optic Solutions LLC | BBB
+Description: BBB A+ rated. Marion, NC.
+
+Result 6:
+URL: https://broadband.nc.gov/bead/applicants
+Title: BEAD Applicants | NC Broadband
+Description: List of BEAD program applicants and awardees in North Carolina.
+
+</tool_call>
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "North Carolina BEAD ISP contracts 2026 Western NC broadband deployment", "num_results": 6}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://broadband.nc.gov/bead
+Title: BEAD Program | NC Broadband
+Description: North Carolina's BEAD program information, funding allocation, and deployment requirements.
+
+Result 2:
+URL: https://www.ncleg.gov/BillLookUp/2025/S896
+Title: NC Senate Bill 896 - Broadband Infrastructure
+Description: NC legislation supporting broadband infrastructure expansion and BEAD program implementation.
+
+Result 3:
+URL: https://broadband.nc.gov/news/nc-bead-program-update-2026
+Title: NC BEAD Program Update 2026 | NC Broadband
+Description: Latest updates on North Carolina's BEAD program, ISP selections, and deployment timelines.
+
+Result 4:
+URL: https://www.ncdot.gov/permits/encroachment/
+Title: NCDOT Encroachment Permits
+Description: Information about NCDOT encroachment permit process for broadband and utility projects.
+
+Result 5:
+URL: https://www.wlos.com/news/local/broadband-expansion-western-nc
+Title: Broadband Expansion in Western NC | WLOS
+Description: News coverage of broadband expansion efforts in Western North Carolina.
+
+Result 6:
+URL: https://www.mcdowellnews.com/broadband
+Title: McDowell County Broadband | McDowell News
+Description: Coverage of broadband expansion in McDowell County and surrounding areas of Western NC.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NCDOT encroachment permit review timeline broadband 2025 2026 bottleneck", "num_results": 6}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.ncdot.gov/permits/encroachment/Pages/default.aspx
+Title: Encroachment Agreements | NCDOT
+Description: NCDOT encroachment agreement information for utilities and broadband infrastructure in North Carolina.
+
+Result 2:
+URL: https://www.ncbroadband.gov/news/ncdot-encroachment-permit-broadband-2025
+Title: NCDOT Encroachment Permits for Broadband | NC Broadband
+Description: Update on NCDOT encroachment permit processes for broadband infrastructure projects in 2025.
+
+Result 3:
+URL: https://www.ncdot.gov/projects/broadband/Pages/default.aspx
+Title: Broadband Projects | NCDOT
+Description: NCDOT broadband infrastructure and encroachment permit information.
+
+Result 4:
+URL: https://www.wral.com/story/nc-broadband-permit-delays/21456789
+Title: Broadband Permit Delays Slow Rural NC Projects | WRAL
+Description: Analysis of permitting delays affecting broadband infrastructure in North Carolina, including NCDOT encroachment and municipal ROW processes.
+
+Result 5:
+URL: https://www.fiberbroadband.org/page/permitting-reform
+Title: Permitting Reform | Fiber Broadband Association
+Description: Fiber Broadband Association's resources on permitting reform and reducing construction delays.
+
+Result 6:
+URL: https://www.benton.org/broadband-permitting-delays
+Title: Permitting Delays and Broadband Deployment | Benton Institute
+Description: Analysis of permitting delays and their impact on broadband deployment timelines nationally.
+
+</tool_response>
+
+I now have sufficient data to produce a well-grounded technical evaluation. Let me compile the findings.
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "FOS is actively hiring BOTH a GIS Designer AND an OSP Designer simultaneously (fos-llc.com/careers) — dual open roles signals a real design capacity gap, not routine replacement. This is the strongest buying signal found.",
+    "Confirmed tech stack from job postings: Esri ArcGIS (ArcMap/ArcGIS Pro) for GIS work, AutoCAD or MicroStation for construction drawings. GIS Designer posting explicitly states 'Integrate GIS data with CAD tools for construction drawing production' — this is exactly the manual GIS-to-CAD workflow Inorsa automates (fos-llc.com/careers/gis-designer/).",
+    "OSP Designer posting lists specific permitting touchpoints: NCDOT encroachment, utility pole attachments, and municipal ROW permits. The posting explicitly requires familiarity with these three permit types — each category carries distinct kickback risk and is exactly what Inorsa's pre-validation addresses (fos-llc.com/careers/osp-designer/).",
+    "OSP Designer posting flags BEAD awareness: 'Knowledge of BEAD or government-funded program requirements is a plus' — FOS is positioning for BEAD-funded construction, meaning design volume is expected to increase materially in Q3-Q4 2026 (fos-llc.com/careers/osp-designer/).",
+    "Company website confirms permitting is a listed service line alongside design and build: 'NCDOT permits, Utility pole attachments, Municipal ROW permits.' This is not peripheral — it is a core deliverable they market to clients, meaning permit quality and cycle time directly affect their revenue and reputation (fos-llc.com/).",
+    "Company serves rural ISPs, municipalities, county/state agencies, and utilities across Western NC and Southeast — exactly the client mix

@@ -1,0 +1,43 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Jonathan Solomon is listed as CEO of JDI Fibertech, headquartered in Hoschton, GA (Jackson County area, northeast of Atlanta). As CEO of what appears to be a small-to-mid-size fiber engineering/construction firm, he almost certainly holds unilateral budget authority for vendor and tooling decisions — no procurement committee or VP of Engineering above him to route through. Source: company name + title inference; Hoschton, GA address confirms small regional operator profile.",
+    "JDI Fibertech's name structure ('Fibertech') and location in Georgia are consistent with a fiber construction or fiber engineering subcontractor serving rural ISPs and BEAD-funded operators in the Southeast. Georgia has a $683M+ BEAD allocation (confirmed in funding program list). Construction starts expected Q3 2026 with a 4-year deployment clock now running. This creates direct external deadline pressure on JDI's pipeline capacity. Source: Georgia BEAD allocation ($683,057,831) from funding program data; industry baseline.",
+    "No LinkedIn profile for 'Jonathan Solomon JDI Fibertech' was confirmable through available research — the contact may have a minimal or private LinkedIn presence, which is common among founders/CEOs of small fiber construction firms. This limits persona depth but does not reduce decision-authority confidence. Source: search attempted, not found.",
+    "JDI Fibertech does not appear in trade press (Broadband Communities, Light Reading, ETI Software blog) as of available research. No public speaking engagements, panel appearances, or Fiber Connect speaker credits found for Jonathan Solomon. Source: search attempted, not found.",
+    "The company is based in Hoschton, GA — a rural/exurban area that is likely underserved and a candidate service territory under Georgia's BEAD subgrant program. This suggests JDI Fibertech may be both a deployment contractor AND potentially a grant applicant/ISP, meaning Solomon is managing multiple pressures simultaneously: winning work, executing on BEAD timelines, and controlling costs. Source: geographic inference + BEAD program structure.",
+    "The ICP designation is 'hold' — meaning the AE flagged the title as relevant but lacked enough information at the booth to grade. The booth scan alone (CEO, fiber company, Georgia) is a strong enough signal to treat this as a real prospect. The 'D' tier is a data gap, not a disqualifier. Source: lead metadata.",
+    "Labor shortage context: at 3:1 job-to-candidate ratio for fiber designers and 3+ year ramp time for new hires, a small firm like JDI Fibertech almost certainly cannot staff up to meet BEAD-driven design volume. Outsourcing or tooling is the only viable path. This is the core structural pain point Inorsa addresses. Source: industry baseline.",
+    "Permitting is the binding constraint industrywide. Each kickback costs 3-6 weeks. For a small CEO managing cash flow and milestone-based BEAD payments, permit kickbacks are a direct threat to revenue timing. Inorsa's proof point (3-4 week review cycle cut to 2 days) is highly relevant to this persona. Source: Inorsa value prop + industry baseline.",
+    "No other contacts from JDI Fibertech appear in the booth-scan list based on available data. Solomon appears to be the sole attendee from his company, which is consistent with a small firm where the CEO attends conferences alone. Source: lead metadata review — no multi-thread opportunity identified."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No verified LinkedIn profile found for Jonathan Solomon — cannot confirm career history, tenure at JDI Fibertech, or prior companies.",
+    "JDI Fibertech company website not confirmed — no team page, service description, or client list available to verify firm size, headcount, or exact service type (design-only vs. design+build vs. ISP).",
+    "No direct quote from Solomon found in any trade press, podcast, or panel — cannot personalize email opener with his own words.",
+    "Unknown whether JDI Fibertech is a subcontractor to ISPs, a self-performing ISP, or a pure engineering firm. This distinction changes the Inorsa pitch angle significantly.",
+    "No confirmation of specific BEAD contracts won or pursued by JDI Fibertech — cannot confirm external deadline pressure is real vs. hypothetical.",
+    "No AE booth notes — no intelligence on what Solomon said at the show, what he was shopping for, or what tools he currently uses.",
+    "Unknown current tooling stack — no way to assess 'we already have a tool' objection risk without knowing if they use ArcGIS, Katapult, Vetro, or manual CAD workflows.",
+    "Company founding date and revenue range unknown — cannot assess financial maturity or whether they can afford a SaaS/platform contract."
+  ],
+  "challengesToOtherFindings": [
+    "The 'D' batch tier and 'hold' ICP designation should not be treated as disqualifiers. The AE had no notes, not negative notes. A CEO of a fiber-named company in a BEAD-heavy state attending Fiber Connect 2026 is a strong enough signal to warrant a full outreach cycle. The tier reflects data absence, not prospect weakness.",
+    "The Brain Knowledge Digest and discovered companies list does not include JDI Fibertech — this means no prior research context exists for this firm, and any assumptions about their competitive set, tooling, or BEAD participation are inferred from geography and title alone. Claims based on those inferences should be held lightly.",
+    "Hoschton, GA is a small town (~2,000 pop.) in Jackson County. Treating JDI Fibertech as a 'rural ISP' may be wrong — they could be a metro Atlanta design subcontractor using a rural address. The pitch angle shifts depending on which is true."
+  ],
+  "topInsight": "Jonathan Solomon is a CEO with full budget authority at a fiber firm in Georgia — a state with $683M+ in BEAD funds now operational and a 4-year deployment clock running. He attended Fiber Connect 2026 without a team, which is characteristic of a founder-operator who is personally managing growth decisions. The single most important frame for outreach is not drawing generation — it is milestone risk: BEAD contracts have performance milestones tied to disbursements, and permit kickbacks (each 3-6 weeks) directly threaten his ability to hit those milestones and get paid. Inorsa's cycle-time proof point (3-4 weeks → 2 days) maps directly to that financial exposure. Lead with that, not features.",
+  "sourcesUsed": [
+    "Lead metadata: JDI Fibertech, Jonathan Solomon, CEO, Hoschton GA — provided in prompt",
+    "Industry baseline: ShowRev Industry Intelligence KB (labor shortage, permitting constraint, BEAD timeline) — provided in prompt",
+    "Funding program list: $683,057,831 Georgia BEAD allocation — provided in prompt",
+    "Inorsa value proposition and proof point (3-4 weeks to 2 days) — provided in prompt",
+    "LinkedIn search for 'Jonathan Solomon JDI Fibertech' — not found / not confirmable",
+    "Trade press search (bbcmag.com, lightreading.com, etisoftware.com) for Jonathan Solomon — not found",
+    "Fiber Connect 2026 speaker/panel search for Jonathan Solomon — not found",
+    "JDI Fibertech company website / team page — not confirmed"
+  ]
+}
+```

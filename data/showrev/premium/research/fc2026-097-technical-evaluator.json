@@ -1,0 +1,412 @@
+I'll research NATE: The Communications Infrastructure Contractors Association systematically, starting with what I know and then searching for specifics.
+
+**Initial hypothesis:** NATE is a trade association (not an ISP, contractor, or A&E firm), making them a non-buyer for Inorsa's core product. The AE already flagged this as a reject. My job is to confirm that assessment technically and identify if there's any indirect value path.
+<tool_call>
+{"name": "search", "arguments": {"query": "NATE Communications Infrastructure Contractors Association natehome.com fiber design tools"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.natehome.com/
+Title: NATE: The Communications Infrastructure Contractors Association
+Snippet: NATE: The Communications Infrastructure Contractors Association, formerly known as the National Association of Tower Erectors, represents approximately 1,000 communications infrastructure contracting firms throughout the United States.
+
+Result 2:
+URL: https://www.natehome.com/programs/nate-u
+Title: NATE University (NATE-U) - NATE
+Snippet: The NATE University (NATE-U) program is a partnership between NATE and accredited post-secondary colleges and universities across the country to advance our members' technical education and capabilities.
+
+Result 3:
+URL: https://www.natehome.com/programs/natehome
+Title: NATE: The Communications Infrastructure Contractors Association
+Snippet: NATE: The Communications Infrastructure Contractors Association is a nonprofit 501(c)(6) trade association that represents approximately 1,000 communications infrastructure contracting firms throughout the United States. NATE members are involved in the construction, modification and maintenance of communications infrastructure systems throughout the United States.
+
+Result 4:
+URL: https://www.natehome.com/members/
+Title: Members - NATE
+Result 5:
+URL: https://www.natehome.com/about/
+Title: About - NATE is the resource for communications contracting firms throughout the United States, providing training, advocacy, and professional development services.
+Snippet: Our members include wireless tower, small cell, DAS, fiber, and broadband companies. Our members are actively involved in the construction, modification, and maintenance of communications infrastructure systems throughout the United States.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NATE natehome.com events conference fiber broadband members 2026"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.natehome.com/events/nate-unity-2026/
+Title: NATE UNITY 2026 - NATE
+Snippet: NATE UNITY 2026. Join us in Dallas, TX! February 17-20, 2026 | Kay Bailey Hutchison Convention Center. NATE UNITY is NATE's Annual Conference and Exhibition. The event is industry's largest gathering of communications infrastructure contractors.
+
+Result 2:
+URL: https://www.natehome.com/events/
+Title: Events - NATE
+Snippet: Upcoming Events. Industry Events · NATE UNITY 2026.
+
+Result 3:
+URL: "https://natehome.com/events/nate-unity-2025/"
+Title: NATE UNITY 2025 - NATE
+Snippet: NATE UNITY 2025. Join us in Nashville, TN! February 10-13, 2025 | Music City Center. NATE UNITY is NATE's Annual Conference and Exhibition. The event is industry's largest gathering of communications infrastructure contractors.
+
+Result 4:
+URL: https://www.natehome.com/programs/workforce-development/
+Title: Workforce Development - NATE
+Snippet: The NATE Workforce Development program provides resources, tools, and training to help NATE members and their employees develop the skills needed to succeed in the communications infrastructure industry.
+
+Result 5:
+URL: https://www.natehome.com/programs/advocacy/
+Title: Advocacy - NATE
+Snippet: NATE's Advocacy Program is designed to help members navigate the complex regulatory environment surrounding the communications infrastructure industry. NATE advocates on behalf of its members on issues related to federal, state, and local regulations.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NATE natehome Stephanie McCall director events marketing"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/stephanie-mccall-ba26a3190
+Title: Stephanie McCall - NATE: The Communications Infrastructure Contractors ...
+Snippet: Stephanie McCall. Director of Marketing and Events at NATE: The Communications Infrastructure ... Education · Colorado State University-Pueblo. Experience. NATE ...
+
+Result 2:
+URL: https://www.natehome.com/about/staff/
+Title: Staff - NATE
+Snippet: Stephanie McCall Director of Marketing and Events Stephanie is responsible for all aspects of marketing and event management for NATE. This includes the coordination and management of major events like NATE UNITY, NATE CLIMB, and various state chapter events.
+
+Result 3:
+
+Result 4:
+URL: https://www.natehome.com/about/staff/
+Title: Staff - NATE
+Snippet: Stephanie McCall serves as the Director of Marketing and Events, overseeing all marketing activities and events for the association, including NATE UNITY, the industry's largest gathering of communications infrastructure contractors.
+
+Result 5:
+URL: https://www.natehome.com/about/staff/
+Title: Staff - NATE
+Snippet: Todd Schlekeway Executive Director; Stephanie McCall Director of Marketing and Events; [additional staff members listed]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NATE natehome.com fiber broadband members GIS design CAD tools technology"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.natehome.com/programs/natehome
+Title: NATE: The Communications Infrastructure Contractors Association
+Snippet: NATE members are involved in the construction, modification and maintenance of communications infrastructure systems throughout the United States.
+
+Result 2:
+URL: https://www.natehome.com/members/
+Title: Members - NATE
+Snippet: NATE member companies span a wide range of services including fiber, wireless towers, small cells, DAS, and broadband infrastructure.
+
+Result 3:
+URL: https://www.natehome.com/about/
+Title: About - NATE
+Snippet: Our members include wireless tower, small cell, DAS, fiber, and broadband companies.
+
+Result 4:
+URL: https://www.natehome.com/programs/workforce-development/
+Title: Workforce Development - NATE
+Snippet: Provides resources, tools, and training to support workforce development for communications infrastructure contractors.
+
+Result 5:
+URL: https://www.natehome.com/programs/advocacy/
+Title: Advocacy - NATE
+Snippet: NATE's Advocacy Program advocates on behalf of its members on issues related to federal, state, and local regulations.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NATE unity conference 2026 exhibitors sponsors fiber design software"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.natehome.com/events/nate-unity-2026/
+Title: NATE UNITY 2026 - NATE
+Snippet: NATE UNITY 2026. Join us in Dallas, TX! February 17-20, 2026 | Kay Bailey Hutchison Convention Center. NATE UNITY is NATE's Annual Conference and Exhibition. The event is industry's largest gathering of communications infrastructure contractors.
+
+Result result 2:
+URL: https://www.natehome.com/events/nate-unity-2026/exhibitors/
+Title: NATE UNITY 2026 Exhibitors
+Snippet: View the full list of exhibitors for NATE UNITY 2026 in Dallas, TX.
+
+Result 3:
+URL: https://www.natehome.com/events/nate-unity-2026/sponsors/
+Title: NATE UNITY 2026 Sponsors
+Snippet: View the NATE UNITY 2026 sponsors.
+
+Result 4:
+URL: https://natehome.com/programs/advocacy/bead
+Title: BEAD Program - NATE
+Snippet: NATE advocates for its members in the BEAD (Broadband Equity, Access, and Deployment) program, helping contractors navigate federal funding requirements and deployment challenges.
+
+Result 5:
+URL: https://natehome.com/events/nate-unity-2025/
+Title: NATE UNITY 2025 - NATE
+Snippet: NATE UNITY 2025 in Nashville, TN brought together communications infrastructure contractors for training, networking, and exhibition.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NATE natehome member benefits sponsorship exhibitor fiber design software vendor"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.natehome.com/members/member-benefits/
+Title: Member Benefits - NATE
+Snippet: NATE membership provides access to industry resources, training, advocacy, and networking opportunities for communications infrastructure contractors.
+
+Result 2:
+URL: https://www.natehome.com/events/nate-unity-2026/exhibit/
+Title: Exhibit at NATE UNITY 2026
+Snippet: Exhibit at NATE UNITY 2026 and connect with approximately 1,000 communications infrastructure contractors. Dallas, TX | February 17-20, 2026.
+
+Result 3:
+URL: https://www.natehome.com/members/
+Title: Members - NATE
+Snippet: NATE membership is open to companies involved in the construction, modification and maintenance of communications infrastructure systems.
+
+Result 4:
+URL: https://www.natehome.com/about/staff/
+Title: Staff - NATE
+Snippet: NATE staff contact information for the association's leadership team.
+
+Result 5:
+URL: https://www.natehome.com/programs/
+Title: Programs - NATE
+Snippet: NATE programs include advocacy, workforce development, safety, NATE University, and more.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NATE natehome \"hiring\" OR \"careers\" OR \"job openings\" site:natehome.com"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.natehome.com/about/careers/
+Title: Careers - NATE
+Snippet: Join the NATE team. NATE is a nonprofit trade association based in the Denver, CO area. We are always looking for talented individuals to join our team.
+
+Result 2:
+URL: https://www.natehome.com/about/
+Title: About - NATE
+Snippet: NATE: The Communications Infrastructure Contractors Association is a nonprofit 501(c)(6) trade association.
+
+Result 3:
+URL: https://www.natehome.com/members/
+Title: Members - NATE
+Snippet: Learn about NATE membership benefits.
+
+Result 4:
+URL: https://www.natehome.com/programs/
+Title: Programs - NATE
+Snippet: NATE programs support the communications infrastructure industry.
+
+Result 5:
+URL: https://www.natehome.com/about/staff/
+Title: Careers - NATE
+Snippet: Current job openings at NATE.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.natehome.com/about/careers/"}}
+</tool_call>
+<tool_response>
+**Firecrawl Result**
+
+URL: https://www.natehome.com/about/careers/
+Title: Careers - NATE
+
+# Careers
+
+Join the NATE team!
+
+NATE is a small staff organization working to serve approximately 1,000 member companies in the communications infrastructure industry.
+
+There are no open positions at this time.
+
+[Contact Us](https://www.natehome.com/contact/) if you are interested in future opportunities.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.natehome.com/about/"}}
+</tool_call>
+<tool_response>
+**Firecrawl Result**
+
+URL: https://www.natehome.com/about/
+Title: About - NATE
+
+# About NATE
+
+NATE: The Communications Infrastructure Contractors Association is a nonprofit 501(c)(6) trade association that represents approximately 1,000 communications infrastructure contracting firms throughout the United States. NATE members are involved in the construction, modification and maintenance of communications infrastructure systems throughout the United States. Our members include wireless tower, small cell, DAS, fiber, and broadband companies. Our members are actively involved in the construction, modification, and maintenance of communications infrastructure systems throughout the United States.
+
+NATE is a nonprofit trade association that is governed by a volunteer Board of Directors that is comprised of representatives from member companies throughout the United States. The organization is managed by a small staff that is headquartered in the Denver, Colorado area.
+
+## Mission
+
+NATE's mission is to advance the communications infrastructure industry through advocacy, education, safety, and workforce development.
+
+## History
+
+NATE was founded in 1995 as the National Association of Tower Erectors and has since expanded its scope to include all aspects of communications infrastructure contracting, including fiber, broadband, small cells, and DAS.
+
+## Programs
+
+- **Advocacy**: NATE advocates on behalf of its members on federal, state, and local regulatory issues.
+- **Safety**: NATE promotes safety standards and best practices for communications infrastructure contractors.
+- **Workforce Development**: NATE provides training and resources to help develop the communications infrastructure workforce.
+- **NATE University (NATE-U)**: NATE partners with accredited colleges and universities to advance technical education.
+
+## Staff
+
+NATE is managed by a small staff based in the Denver, Colorado area.
+
+- Todd Schlekeway, Executive Director
+- Stephanie McCall, Director of Marketing and Events
+- [Additional staff listed on staff page]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NATE natehome BEAD fiber broadband advocacy members construction contractors 2026"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://natehome.com/programs/advocacy/bead
+Title: BEAD Program - NATE
+Snippet: NATE advocates for its members related to the BEAD program, helping contractors understand requirements and deployment opportunities.
+
+Result 2:
+URL: https://natehome.com/news/
+Title: News - NATE
+Snippet: Latest news and updates from NATE.
+
+Result 3:
+URL: https://natehome.com/events/nate-unity-2026/
+Title: NATE UNITY 2026
+Snippet: NATE UNITY 2026 in Dallas, TX brought together communications infrastructure contractors for the industry's largest annual event.
+
+Result 4:
+URL: https://natehome.com/about/
+Title: About - NATE
+Snippet: NATE is a nonprofit 501(c)(6) trade association representing approximately 1,000 communications infrastructure contracting firms.
+
+Result 5:
+URL: https://natehome.com/programs/advocacy/
+Title: Advocacy - NATE
+Snippet: NATE advocates for communications infrastructure contractors on regulatory and legislative issues at the federal, state, and local levels.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "NATE unity 2026 exhibitor IQGeo OR Katapult OR \"Render Networks\" OR AirWorks OR fiber design software"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.natehome.com/events/nate-unity-2026/
+Title: NATE UNITY 2026 - NATE
+Snippet: NATE UNITY 2026. Join us in Dallas, TX! February 17-20, 2026 | Kay Bailey Hutchison Convention Center.
+
+Result 2:
+URL: https://natehome.com/events/nate-unity-2025/exhibitors/
+Title: NATE UNITY 2025 Exhibitors
+Snippet: View the full exhibitor list for NATE UNITY 2025 in Nashville, TN.
+
+Result 3:
+URL: https://natehome.com/events/nate-unity-2026/exhibitors/
+Title: NATE UNITY 2026 Exhibitors
+Snippet: View the full exhibitor list for NATE UNITY 2026 in Dallas, TX.
+
+Result 4:
+URL: https://www.natehome.com/events/nate-unity-2026/sponsors/
+Title: NATE UNITY 2026 Sponsors
+Snippet: View the full list of sponsors for NATE UNITY 2026.
+
+Result 5:
+URL: https://natehome.com/events/nate-unity-2025/
+Title: NATE UNITY 2025
+Snippet: NATE UNITY 2025 exhibitor and sponsor information.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://natehome.com/events/nate-unity-2026/exhibitors/"}}
+</tool_call>
+<tool_response>
+**Firecrawl Result**
+
+URL: https://natehome.com/events/nate-unity-2026/exhibitors/
+Title: NATE UNITY 2026 Exhibitors - NATE
+
+# NATE UNITY 2026 Exhibitors
+
+Below is a list of exhibitors for NATE UNITY 2026 held in Dallas, TX, February 17-20, 2026.
+
+[Exhibitor list content not fully rendered - JavaScript-dependent content]
+
+View the full exhibitor directory at the event page.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"NATE UNITY\" 2026 exhibitors list fiber design software GIS CAD Dallas"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.natehome.com/events/nate-unity-2026/
+Title: NATE UNITY 2026 - NATE
+Snippet: NATE UNITY 2026, Dallas TX, February 17-20, 2026. Industry's largest gathering of communications infrastructure contractors.
+
+Result 2:
+URL: https://natehome.com/events/nate-unity-2026/exhibitors/
+Title: NATE UNITY 2026 Exhibitors
+Snippet: List of exhibitors at NATE UNITY 2026.
+
+Result 3:
+URL: https://www.linkedin.com/posts/nate-the-communications-infrastructure-contractors-association
+Title: NATE LinkedIn
+Snippet: Posts from NATE's LinkedIn page about NATE UNITY 2026 and member updates.
+
+Result 4:
+URL: https://natehome.com/events/nate-unity-2026/sponsors/
+Title: NATE UNITY 2026 Sponsors
+Snippet: List of sponsors for NATE UNITY 2026 in Dallas, TX.
+
+Result 5:
+URL: https://natehome.com/news/
+Title: NATE News
+Snippet: NATE's latest news, press releases, and member updates.
+</tool_response>
+
+I have enough data to form a complete and definitive technical assessment. Let me compile the findings.
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "NATE is a nonprofit 501(c)(6) trade association, NOT an ISP, fiber contractor, or A&E engineering firm. They represent ~1,000 member companies but do not themselves design or build fiber infrastructure. Source: natehome.com/about/",
+    "Stephanie McCall is confirmed as Director of Marketing and Events — responsible for NATE UNITY conference, NATE CLIMB, and state chapter events. She has zero responsibility for design tooling, engineering workflows, or permitting. Source: natehome.com/about/staff/, LinkedIn profile.",
+    "NATE has no internal GIS, CAD, or fiber design function. They are a 'small staff organization' (their own description) headquartered near Denver. No engineering or design roles exist. Source: natehome.com/about/careers/ — zero open positions, no historical engineering job postings found.",
+    "NATE's member base does include fiber and broadband contractors (alongside tower, small cell, DAS) — meaning Inorsa's actual buyers ARE among NATE's ~1,000 member firms. NATE itself is a gateway to that audience, not a buyer. Source: natehome.com/about/",
+    "NATE UNITY 2026 (February, Dallas) is their flagship event — ~1,000 contractor attendees. Exhibitor sponsorship at NATE UNITY would be an alternative path for Inorsa to reach the actual buyer population, but Stephanie's role is event/sponsorship sales, not procurement of Inorsa's software. Source: natehome.com/events/nate-unity-2026/",
+    "No evidence of NATE using or procuring any fiber design software, GIS platforms, AutoCAD, MicroStation, IQGeo, Katapult, Render Networks, or any similar tools — consistent with them being an association with no engineering function.",
+    "NATE has an active BEAD advocacy program for its contractor members — confirming their membership is deeply exposed to BEAD deployment demands. This indirectly validates market opportunity within their membership, but does not change NATE's non-buyer status. Source: natehome.com/programs/advocacy/bead",
+    "AE flagged this lead as a reject at 05/19/2026 7:32 AM — this assessment fully confirms that judgment. There is no technical evaluation path that changes the outcome."
+  ],
+  "evidenceStrength": "strong",
+  "gaps": [
+    "Could not access full JS-rendered exhibitor list for NATE UNITY 2026 to confirm whether any Inorsa competitors (IQGeo, Katapult, AirWorks, etc.) have previously sponsored or exhibited — this would have been useful for channel strategy intelligence, not for prospect qualification.",
+    "Did not find a complete NATE staff directory count, but 'small staff organization' language on their own site confirms no engineering headcount worth investigating.",
+    "No insight into whether NATE has a vendor/partner program that could serve as a distribution or co-marketing channel for Inorsa (e.g., endorsed vendor program for members) — this was not researched as it's outside scope for a rejected lead."
+  ],
+  "challengesToOtherFindings": [
+    "If any other persona suggested NATE as a channel partner or referral source for Inorsa (because their 1,000 member firms include fiber contractors), that framing is technically sound but irrelevant to Stephanie McCall's role. Any channel/partnership conversation would require a different contact — likely NATE's Executive Director Todd Schlekeway or a membership director — and would be a partnership development pitch, not a product sale.",
+    "The ICP classification as 'reject' is correct and I have no grounds to challenge it. NATE does not design fiber, does not produce construction drawings, does not do permitting, and has no engineering staff. Inorsa's value proposition has zero application to NATE as an organization."
+  ],
+  "topInsight": "NATE is categorically a non-buyer for Inorsa's product — they are a trade association with a small event/advocacy staff and zero engineering function. Stephanie McCall is an event marketer, not a technical decision-maker. The only commercially relevant angle is that NATE's ~1,000 member companies include the exact fiber contractors Inorsa should be targeting, which makes NATE UNITY an interesting *sponsorship/exhibition* venue for Inorsa to reach real buyers — but that is a marketing channel conversation with Stephanie, not a software sale. Do not invest outreach resources in this contact for product sales; if pursuing the channel angle, reframe entirely as an exhibition/sponsorship inquiry.",
+  "sourcesUsed": [
+    "https://www.natehome.com/about/",
+    "https://www.natehome.com/about/staff/",
+    "https://www.natehome.com/about/careers/",
+    "https://www.natehome.com/events/nate-unity-2026/",
+    "https://natehome.com/programs/advocacy/bead",
+    "https://www.natehome.com/members/",
+    "https://www.linkedin.com/in/stephanie-mccall-ba26a3190"
+  ]
+}
+```

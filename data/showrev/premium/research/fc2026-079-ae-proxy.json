@@ -1,0 +1,43 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Jordan Raymond holds the title SVP of Finance at Rayco, Inc. — this is a Fund/Capitalize persona, not a Build or Design persona. His primary lens is margin protection, capital deployment efficiency, and return on investment, not engineering throughput per se. Source: lead record provided.",
+    "Rayco, Inc. operates under the domain rayco-digs.com, strongly suggesting a construction/excavation/underground utilities contractor — 'digs' is an explicit operational signal. This is likely a fiber contractor or civil construction firm serving telecoms, not an ISP or A&E firm directly. This changes the ICP framing: Rayco may be a subcontractor deploying fiber on behalf of ISPs or state BEAD recipients, making permitting cycle time a direct cost driver on their contracts. Source: email domain inference.",
+    "Prosper, TX (Collin County) is a high-growth suburban corridor north of Dallas in one of the fastest-expanding telecom build zones in the country. Texas received $683M+ in BEAD allocation. Construction-phase activity in this region is expected to intensify through Q3 2026 and into 2027. An SVP of Finance at a Texas-based dig firm in May 2026 is almost certainly experiencing contract backlog pressure and margin compression. Source: funding program list provided + geographic inference.",
+    "A second contact from the same company attended the show: Jude Guidry, Director of Strategy and Business Development. This is a strong multi-threading signal. Guidry's title suggests Rayco is actively evaluating partnerships, new service lines, or technology adoption — not just attending for general education. The pairing of Finance (Raymond) + Strategy/BD (Guidry) at a fiber tradeshow is a meaningful buying signal: this is likely a structured evaluation trip, not casual attendance. Source: booth scan list provided.",
+    "SVP of Finance at a contractor firm of this type typically controls or co-approves operational technology spend, especially tools that affect project cost, billing cycle, or contract compliance. Raymond is unlikely to be the sole decision-maker — the most probable structure is: Raymond approves budget/ROI case, while an operations or engineering lead (not identified yet) owns the workflow decision. Guidry may bridge both. Source: persona framework inference.",
+    "No direct quotes, LinkedIn profile data, speaking engagements, or trade press mentions were found for Jordan Raymond specifically. His digital footprint appears limited for a C-suite finance executive, which is common for finance leaders at mid-market construction firms. Source: search attempted, not found.",
+    "Rayco, Inc. with domain rayco-digs.com does not appear in the Brain Knowledge Digest's 22 discovered companies or among known BEAD recipients/operators, suggesting Rayco is a contractor/subcontractor rather than an ISP or overbuilder. This means Rayco's revenue depends on deploying fiber for clients who ARE the BEAD recipients — making permit kickbacks and cycle delays a direct hit to Rayco's contract margins and crew utilization, not just an inconvenience. Source: company list cross-reference + domain inference.",
+    "The labor shortage baseline (3:1 job-to-candidate ratio, 3+ year ramp for new designers) is acutely relevant to a contractor like Rayco. If they are running field crews and managing design/permitting internally or via subcontracted A&E, any tool that reduces rework or permit return cycles directly protects crew utilization — which is their most expensive variable cost. An SVP of Finance would understand this math immediately. Source: industry baseline provided.",
+    "BEAD operational as of April 30, 2026, with states having 6 months to finalize ISP contracts and construction starting Q3 2026 at earliest — for a contractor like Rayco, the window between ISP contract award and construction mobilization is exactly when permitting bottlenecks occur. Raymond attending Fiber Connect in May 2026 places him squarely in pre-mobilization planning mode. Source: industry baseline provided."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No LinkedIn profile data found for Jordan Raymond — tenure at Rayco, career history, and prior roles are unknown.",
+    "No trade press quotes, podcast appearances, or panel mentions found for Jordan Raymond.",
+    "Rayco, Inc. company size (employee count, revenue range, fleet/crew scale) is unknown — this matters significantly for deal size and whether Inorsa's throughput benefits apply at sufficient scale.",
+    "Unknown whether Rayco does design/permitting in-house or outsources entirely to A&E subcontractors. If fully outsourced, the direct pain point shifts — Rayco may need to influence their A&E subs to adopt Inorsa, rather than adopting it themselves.",
+    "No confirmed state(s) where Rayco is active for BEAD contracts — Texas is inferred from HQ location but they may operate multi-state.",
+    "Jude Guidry's LinkedIn or conference behavior not researched — unknown whether he attended any sessions, panels, or had prior Inorsa contact.",
+    "No information on Rayco's existing technology stack — whether they use GIS tools, CAD workflows, or any permitting management software.",
+    "ICP grade is 'hold' — no AE booth notes to confirm conversation quality or expressed interest level."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP classification of 'hold' may be underselling this lead. A contractor SVP of Finance attending a fiber-specific tradeshow with a Director of Strategy and BD colleague is not a casual attendee — the pairing suggests an active evaluation posture. The hold status likely reflects absence of AE notes, not absence of fit.",
+    "Inorsa's default framing is toward ISPs, overbuilders, and A&E firms. If Rayco is a pure contractor, the pitch needs to reframe: the value is not 'design throughput' but 'permit cycle time = crew idle time = margin loss.' Raymond as a finance leader will respond to a margin protection frame, not a design efficiency frame.",
+    "The Fund/Capitalize persona bucket (margins, timeline to revenue) is correct for Raymond, but the specific trigger is different from an ISP CFO. Raymond's urgency is contract-level: delayed permits mean delayed milestones, which may trigger liquidated damages clauses or delayed billing. This is more acute than an ISP's general throughput concern."
+  ],
+  "topInsight": "Rayco is almost certainly a fiber construction contractor (not an ISP), and the SVP of Finance + Director of Strategy attended together — this is a structured evaluation trip, not casual attendance. Raymond's pain is not design capacity; it's that permit kickbacks and cycle delays idle his field crews and compress contract margins. For a construction contractor, each 3-6 week permit delay has a hard dollar cost in crew downtime and delayed billing milestones. The email should open on that specific math — not on drawing generation — and position Inorsa as margin protection infrastructure ahead of the BEAD construction surge starting Q3 2026. Guidry should be cc'd or sequenced immediately after as the likely internal champion who will own the evaluation.",
+  "sourcesUsed": [
+    "Lead record provided (title, company, location, email, phone)",
+    "Booth scan list provided (Jude Guidry co-attendee)",
+    "Email domain inference: rayco-digs.com",
+    "Industry baseline: ShowRev Industry Intelligence KB (BEAD timeline, labor shortage, permit cycle data)",
+    "Funding programs list provided (Texas $683M BEAD allocation)",
+    "Brain Knowledge Digest (company cross-reference — Rayco not present)",
+    "Persona framework: Fund/Capitalize bucket definition",
+    "Geographic context: Prosper, TX / Collin County / Dallas metro fiber build activity"
+  ]
+}
+```

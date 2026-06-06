@@ -1,0 +1,3180 @@
+1
+00:00:13,599 --> 00:00:16,599
+Heat.
+
+2
+00:00:18,320 --> 00:00:21,320
+Heat.
+
+3
+00:00:41,360 --> 00:00:44,719
+Well, good morning everyone and welcome
+
+4
+00:00:42,719 --> 00:00:46,879
+to the Fiber Broadband Association's
+
+5
+00:00:44,719 --> 00:00:49,760
+Fire for Breakfast. We're now in our
+
+6
+00:00:46,879 --> 00:00:51,680
+seventh episode of 2026, the gold
+
+7
+00:00:49,760 --> 00:00:54,480
+sponsor for fiber for breakfast and his
+
+8
+00:00:51,680 --> 00:00:57,120
+conducts. While Congress is in recess
+
+9
+00:00:54,480 --> 00:00:59,600
+this week, today marks the fifth day of
+
+10
+00:00:57,120 --> 00:01:01,199
+the Homeland Security shutdown. You
+
+11
+00:00:59,600 --> 00:01:03,280
+know, fortunately, the federal agencies
+
+12
+00:01:01,199 --> 00:01:06,479
+that we've worked closely with, such as
+
+13
+00:01:03,280 --> 00:01:08,479
+F, the FCC and NIA, are not affected.
+
+14
+00:01:06,479 --> 00:01:11,439
+You know, last Thursday, February 11th,
+
+15
+00:01:08,479 --> 00:01:14,159
+NTI hosted their first listening session
+
+16
+00:01:11,439 --> 00:01:16,799
+on potential allowable uses of bead
+
+17
+00:01:14,159 --> 00:01:18,960
+non-employment funds. Over a thousand
+
+18
+00:01:16,799 --> 00:01:20,560
+participants attended and several FBA
+
+19
+00:01:18,960 --> 00:01:22,400
+members and allies spoke on our
+
+20
+00:01:20,560 --> 00:01:23,920
+priorities, including streamlining
+
+21
+00:01:22,400 --> 00:01:26,960
+federal, state, and local permitting,
+
+22
+00:01:23,920 --> 00:01:29,920
+investing in robust workforce programs,
+
+23
+00:01:26,960 --> 00:01:32,400
+and supporting adoption efforts. FBA
+
+24
+00:01:29,920 --> 00:01:35,119
+plans to attend NTI's new second
+
+25
+00:01:32,400 --> 00:01:37,280
+listening session today, February 18th,
+
+26
+00:01:35,119 --> 00:01:39,200
+and will continue to elevate our members
+
+27
+00:01:37,280 --> 00:01:42,799
+priorities and uses of non-employment
+
+28
+00:01:39,200 --> 00:01:45,040
+funds. On last Friday, the House
+
+29
+00:01:42,799 --> 00:01:47,280
+released the farm bill text. While we're
+
+30
+00:01:45,040 --> 00:01:50,799
+pleased to see the Rural Utility Service
+
+31
+00:01:47,280 --> 00:01:52,799
+Organization uh codify into law the
+
+32
+00:01:50,799 --> 00:01:54,799
+increased speed standards, we remain
+
+33
+00:01:52,799 --> 00:01:57,280
+hopeful that the future efforts will
+
+34
+00:01:54,799 --> 00:01:58,960
+emphasize the importance of symmetric
+
+35
+00:01:57,280 --> 00:02:01,200
+high-speed connectivity for rural
+
+36
+00:01:58,960 --> 00:02:03,360
+communities. FBA's been a strong
+
+37
+00:02:01,200 --> 00:02:06,000
+supporter of the bipartisan reconnecting
+
+38
+00:02:03,360 --> 00:02:08,800
+rural America act introduced by senators
+
+39
+00:02:06,000 --> 00:02:11,599
+Marshall Welsh and representatives nun
+
+40
+00:02:08,800 --> 00:02:13,440
+Vquest and Sorenson in the house that
+
+41
+00:02:11,599 --> 00:02:16,239
+would require our US programs to adopt
+
+42
+00:02:13,440 --> 00:02:17,680
+symmetrical speeds. Chairman Thompson of
+
+43
+00:02:16,239 --> 00:02:20,000
+the House Agriculture Committee is
+
+44
+00:02:17,680 --> 00:02:22,319
+aiming to mark up the bill on Monday,
+
+45
+00:02:20,000 --> 00:02:24,160
+February 23rd.
+
+46
+00:02:22,319 --> 00:02:26,480
+As a reminder, the Fiber Broadband
+
+47
+00:02:24,160 --> 00:02:29,680
+Association will be hosting its annual
+
+48
+00:02:26,480 --> 00:02:31,920
+public policy summit and flyin in DC on
+
+49
+00:02:29,680 --> 00:02:33,680
+Tuesday, February 24th, the same day as
+
+50
+00:02:31,920 --> 00:02:36,000
+the State of the Union, and we'll have
+
+51
+00:02:33,680 --> 00:02:39,680
+our fly in on the Hill the following day
+
+52
+00:02:36,000 --> 00:02:41,519
+on the 25th. And at our summit, um, our
+
+53
+00:02:39,680 --> 00:02:43,680
+members will hear from chairman Richard
+
+54
+00:02:41,519 --> 00:02:46,000
+Hudson from North Carolina, beat
+
+55
+00:02:43,680 --> 00:02:48,160
+champion Senator Shelby, excuse me,
+
+56
+00:02:46,000 --> 00:02:51,120
+Senator Shelby, that's Alabama, Senator
+
+57
+00:02:48,160 --> 00:02:53,920
+Shelley Moore Capital of West Virginia,
+
+58
+00:02:51,120 --> 00:02:56,239
+uh, FCC Commissioner Olivia Trustee,
+
+59
+00:02:53,920 --> 00:02:59,920
+Broadband Leader, Congressional Woman
+
+60
+00:02:56,239 --> 00:03:02,640
+Jennifer Mlelen from Virginia, NTI Chief
+
+61
+00:02:59,920 --> 00:03:04,959
+of Staff Brooke Dunelan, Speaker Mike
+
+62
+00:03:02,640 --> 00:03:07,760
+Johnson from Louisiana's policy advisor
+
+63
+00:03:04,959 --> 00:03:09,680
+Cyrus Arts, and Chief
+
+64
+00:03:07,760 --> 00:03:13,200
+Washington correspondents from the New
+
+65
+00:03:09,680 --> 00:03:14,480
+York Times, Carl Host. So, um I hope you
+
+66
+00:03:13,200 --> 00:03:16,959
+guys can join us. It's going to be a
+
+67
+00:03:14,480 --> 00:03:19,519
+great event and um we'll be there next
+
+68
+00:03:16,959 --> 00:03:22,159
+week. Last week on Fiber Breakfast, our
+
+69
+00:03:19,519 --> 00:03:24,239
+guest was Dr. Tamara Holmes, the
+
+70
+00:03:22,159 --> 00:03:26,000
+director for the office of broadband at
+
+71
+00:03:24,239 --> 00:03:28,080
+DHC
+
+72
+00:03:26,000 --> 00:03:29,680
+um in Virginia provide update on
+
+73
+00:03:28,080 --> 00:03:31,840
+Virginia's fiber projects and
+
+74
+00:03:29,680 --> 00:03:34,000
+initiative. You know, Dr. Holmes, great
+
+75
+00:03:31,840 --> 00:03:36,000
+friend of FBA, discussed the tremendous
+
+76
+00:03:34,000 --> 00:03:37,599
+progress that Virginia has accomplished
+
+77
+00:03:36,000 --> 00:03:39,920
+in connecting their states with funds
+
+78
+00:03:37,599 --> 00:03:41,360
+from state and federal programs. If you
+
+79
+00:03:39,920 --> 00:03:43,920
+missed that, you can go to our website
+
+80
+00:03:41,360 --> 00:03:46,400
+and see the replay. Today on Fire for
+
+81
+00:03:43,920 --> 00:03:48,640
+Breakfast, our guest is Michael Thomas
+
+82
+00:03:46,400 --> 00:03:51,200
+of Network Connects to discuss the
+
+83
+00:03:48,640 --> 00:03:54,080
+hidden infrastructure behind AI and
+
+84
+00:03:51,200 --> 00:03:56,000
+hypers scale networks. Michael is the
+
+85
+00:03:54,080 --> 00:03:57,599
+regional vice president of integration
+
+86
+00:03:56,000 --> 00:04:00,319
+services where he's responsible for
+
+87
+00:03:57,599 --> 00:04:02,640
+overseeing the ISP systems installed
+
+88
+00:04:00,319 --> 00:04:04,560
+across multiple disciplines and scopes.
+
+89
+00:04:02,640 --> 00:04:06,560
+During his more than 30-year tenure in
+
+90
+00:04:04,560 --> 00:04:08,640
+networking industry, he's managed inside
+
+91
+00:04:06,560 --> 00:04:10,400
+and outside plant technical teams,
+
+92
+00:04:08,640 --> 00:04:12,640
+engineering teams, vendors, call
+
+93
+00:04:10,400 --> 00:04:15,439
+centers, inter department relationships,
+
+94
+00:04:12,640 --> 00:04:17,359
+purchasing, budgeting, and planning. Uh
+
+95
+00:04:15,439 --> 00:04:19,040
+Michael served in the United States Air
+
+96
+00:04:17,359 --> 00:04:21,840
+Force. So thank you Michael for your
+
+97
+00:04:19,040 --> 00:04:23,440
+service. Then he moved into it in 1992
+
+98
+00:04:21,840 --> 00:04:26,080
+for a private firm. and then joined
+
+99
+00:04:23,440 --> 00:04:28,800
+Southwestern Bell Telephone, a name I
+
+100
+00:04:26,080 --> 00:04:32,160
+hadn't heard in a while. Now AT&T for a
+
+101
+00:04:28,800 --> 00:04:34,080
+24 year run. So I guess 30 years was 24
+
+102
+00:04:32,160 --> 00:04:38,720
+years. So I guess Michael, you have 54
+
+103
+00:04:34,080 --> 00:04:41,440
+years of uh experience. Wow. Um so a
+
+104
+00:04:38,720 --> 00:04:44,880
+bachelor degree. Michael's like 150
+
+105
+00:04:41,440 --> 00:04:46,880
+years old if you hadn't noticed that.
+
+106
+00:04:44,880 --> 00:04:48,240
+Michael has a bachelor degree in
+
+107
+00:04:46,880 --> 00:04:49,759
+business management information
+
+108
+00:04:48,240 --> 00:04:52,240
+technology from Western Governor
+
+109
+00:04:49,759 --> 00:04:54,320
+University. So with that, welcome
+
+110
+00:04:52,240 --> 00:04:57,520
+Michael. And for audience, please type
+
+111
+00:04:54,320 --> 00:04:59,199
+in your questions as we go.
+
+112
+00:04:57,520 --> 00:05:00,160
+>> Thanks. Appreciate it very much. Gary,
+
+113
+00:04:59,199 --> 00:05:02,720
+thank you for the introduction. And
+
+114
+00:05:00,160 --> 00:05:05,040
+yeah, not quite 150, but yeah, that 24
+
+115
+00:05:02,720 --> 00:05:08,040
+wide laid into that 30 plus for sure.
+
+116
+00:05:05,040 --> 00:05:08,040
+>> Okay,
+
+117
+00:05:08,240 --> 00:05:10,479
+>> all right, we'll let you kick things
+
+118
+00:05:09,440 --> 00:05:13,120
+off.
+
+119
+00:05:10,479 --> 00:05:14,800
+>> All right, cool. So, I just wanted to um
+
+120
+00:05:13,120 --> 00:05:16,639
+start talking about ILAS really quick.
+
+121
+00:05:14,800 --> 00:05:18,000
+So, this has been kind of a hot topic of
+
+122
+00:05:16,639 --> 00:05:19,759
+discussion and and it really kind of
+
+123
+00:05:18,000 --> 00:05:22,400
+aligns with the hyperscalers like we
+
+124
+00:05:19,759 --> 00:05:23,680
+were talking about before and and you
+
+125
+00:05:22,400 --> 00:05:26,000
+know, just to kind of give you guys an
+
+126
+00:05:23,680 --> 00:05:28,479
+idea right now, I'm in Abalene, Texas,
+
+127
+00:05:26,000 --> 00:05:31,039
+uh where this uh project Stargate has
+
+128
+00:05:28,479 --> 00:05:32,560
+gone this huge AI build and I have we
+
+129
+00:05:31,039 --> 00:05:34,800
+have teams out here that are actually
+
+130
+00:05:32,560 --> 00:05:36,160
+doing the the builds and we have teams
+
+131
+00:05:34,800 --> 00:05:38,160
+connecting these things together with
+
+132
+00:05:36,160 --> 00:05:39,759
+the ILAS turning up the circuits where
+
+133
+00:05:38,160 --> 00:05:42,320
+we connect these data centers together,
+
+134
+00:05:39,759 --> 00:05:43,840
+right? So, it's a a critical part of how
+
+135
+00:05:42,320 --> 00:05:46,400
+this goes. And we'll get into like how
+
+136
+00:05:43,840 --> 00:05:48,960
+those things work here in just a second.
+
+137
+00:05:46,400 --> 00:05:49,919
+The when we lay out the fiber itself, I
+
+138
+00:05:48,960 --> 00:05:51,759
+mean, when they lay out the fiber
+
+139
+00:05:49,919 --> 00:05:53,680
+itself, they have to amplify that
+
+140
+00:05:51,759 --> 00:05:56,479
+signal. And that's what the ILA is. It's
+
+141
+00:05:53,680 --> 00:05:58,240
+an inline amplifier, which is typically
+
+142
+00:05:56,479 --> 00:06:01,120
+located in a hut just like these that
+
+143
+00:05:58,240 --> 00:06:02,720
+are shown here on the shelter. We uh at
+
+144
+00:06:01,120 --> 00:06:05,520
+Network Connects, we build these things
+
+145
+00:06:02,720 --> 00:06:07,759
+out and we plan them and and help do uh
+
+146
+00:06:05,520 --> 00:06:09,520
+design and all that stuff as well. Then
+
+147
+00:06:07,759 --> 00:06:11,360
+there's just different stages of that.
+
+148
+00:06:09,520 --> 00:06:13,199
+So just kind of a real quick rundown of
+
+149
+00:06:11,360 --> 00:06:15,680
+what this critical component of these
+
+150
+00:06:13,199 --> 00:06:18,560
+things are um and what it takes to kind
+
+151
+00:06:15,680 --> 00:06:20,160
+of build them. So these are what typical
+
+152
+00:06:18,560 --> 00:06:21,520
+uh double-edge shelters actually look
+
+153
+00:06:20,160 --> 00:06:23,360
+like. These are a couple we placed
+
+154
+00:06:21,520 --> 00:06:25,360
+recently. Uh if you go ahead and change
+
+155
+00:06:23,360 --> 00:06:28,080
+the slide.
+
+156
+00:06:25,360 --> 00:06:29,840
+Now the key components here are we got
+
+157
+00:06:28,080 --> 00:06:31,360
+to figure out kind of where and how
+
+158
+00:06:29,840 --> 00:06:35,440
+we're going to implement these things.
+
+159
+00:06:31,360 --> 00:06:37,280
+So the wear is you know the fiber fiber
+
+160
+00:06:35,440 --> 00:06:38,720
+as it as it goes you're shooting light
+
+161
+00:06:37,280 --> 00:06:40,319
+down the fiber you have attenuation or
+
+162
+00:06:38,720 --> 00:06:43,759
+loss right and we've overcome that in
+
+163
+00:06:40,319 --> 00:06:45,280
+the past by regenerating signal. Um
+
+164
+00:06:43,759 --> 00:06:46,960
+that's where you take the light you
+
+165
+00:06:45,280 --> 00:06:48,720
+transfer it to electrical signal and you
+
+166
+00:06:46,960 --> 00:06:50,880
+recreate the light signal and retransmit
+
+167
+00:06:48,720 --> 00:06:53,120
+it. That creates an entirely new clean
+
+168
+00:06:50,880 --> 00:06:55,520
+signal. Uh but the problem is that
+
+169
+00:06:53,120 --> 00:06:57,440
+transition is channelized and it takes
+
+170
+00:06:55,520 --> 00:06:59,680
+time and we have enormous amounts of
+
+171
+00:06:57,440 --> 00:07:01,360
+bandwidth that we're trying to uh
+
+172
+00:06:59,680 --> 00:07:03,440
+transport. we can't get into that. So,
+
+173
+00:07:01,360 --> 00:07:05,120
+what they've done is come up with some
+
+174
+00:07:03,440 --> 00:07:06,960
+technology that was from back in the 50s
+
+175
+00:07:05,120 --> 00:07:10,400
+and kind of perfected in the late 80s,
+
+176
+00:07:06,960 --> 00:07:12,240
+early 90s where we amplify the light
+
+177
+00:07:10,400 --> 00:07:13,759
+kind of in an analog sort. We insert
+
+178
+00:07:12,240 --> 00:07:16,400
+photons,
+
+179
+00:07:13,759 --> 00:07:18,400
+it amplifies the light. So, that
+
+180
+00:07:16,400 --> 00:07:21,280
+amplifies the signal and it also
+
+181
+00:07:18,400 --> 00:07:24,160
+amplifies the noise, right? So, that's
+
+182
+00:07:21,280 --> 00:07:26,319
+where the ILAS come in. They have to be
+
+183
+00:07:24,160 --> 00:07:29,280
+uh a certain distance apart because of
+
+184
+00:07:26,319 --> 00:07:32,000
+kind of a a a noise budget, right? or a
+
+185
+00:07:29,280 --> 00:07:34,319
+loss budget rather um over overdo
+
+186
+00:07:32,000 --> 00:07:36,400
+because if you amplify signal and you
+
+187
+00:07:34,319 --> 00:07:37,840
+amplify noise, you let that noise and
+
+188
+00:07:36,400 --> 00:07:39,919
+signal get too close together, you
+
+189
+00:07:37,840 --> 00:07:41,440
+amplify them both, that noise just keeps
+
+190
+00:07:39,919 --> 00:07:42,560
+stepping all over your signal. So,
+
+191
+00:07:41,440 --> 00:07:44,160
+you're going to keep them close enough
+
+192
+00:07:42,560 --> 00:07:46,240
+together where your signal level and
+
+193
+00:07:44,160 --> 00:07:48,479
+your noise level are far apart so that
+
+194
+00:07:46,240 --> 00:07:51,120
+that delta is amplified as well. So, you
+
+195
+00:07:48,479 --> 00:07:53,599
+don't have to worry about u noise issues
+
+196
+00:07:51,120 --> 00:07:55,039
+as you go forward. So, as you can see on
+
+197
+00:07:53,599 --> 00:07:56,720
+here, there's a map with a green line
+
+198
+00:07:55,039 --> 00:07:59,680
+that just shows like a typical fiber
+
+199
+00:07:56,720 --> 00:08:02,160
+route and in a circle along this route.
+
+200
+00:07:59,680 --> 00:08:04,800
+Those circles are a general area and
+
+201
+00:08:02,160 --> 00:08:06,639
+they're roughly about 50 miles apart.
+
+202
+00:08:04,800 --> 00:08:11,039
+Right? The loss budget for attenuation
+
+203
+00:08:06,639 --> 00:08:12,639
+is about 23 dB as a not to exceed uh and
+
+204
+00:08:11,039 --> 00:08:16,000
+that roughly equates to about 80
+
+205
+00:08:12,639 --> 00:08:18,000
+kilometers or 50 miles 50 miles. Um it's
+
+206
+00:08:16,000 --> 00:08:20,400
+not an exact science. they can be placed
+
+207
+00:08:18,000 --> 00:08:21,680
+a little bit closer or a little bit
+
+208
+00:08:20,400 --> 00:08:23,120
+further away from the other one than
+
+209
+00:08:21,680 --> 00:08:26,000
+they have to be. It just kind of needs
+
+210
+00:08:23,120 --> 00:08:28,400
+to be in that budgeted area. Once they
+
+211
+00:08:26,000 --> 00:08:30,319
+set it down, they actually uh come back
+
+212
+00:08:28,400 --> 00:08:32,240
+and then we look at the actual design
+
+213
+00:08:30,319 --> 00:08:34,399
+for the inside and of these things and
+
+214
+00:08:32,240 --> 00:08:35,519
+how that's going to look with the number
+
+215
+00:08:34,399 --> 00:08:37,279
+of fibers that they're going to be
+
+216
+00:08:35,519 --> 00:08:38,880
+using. You know, where it's going to be
+
+217
+00:08:37,279 --> 00:08:41,200
+located, what the climate is and all
+
+218
+00:08:38,880 --> 00:08:42,640
+that stuff. Um, so we actually have
+
+219
+00:08:41,200 --> 00:08:44,159
+those things engineered. We do all this
+
+220
+00:08:42,640 --> 00:08:49,120
+stuff internally, but we have that all
+
+221
+00:08:44,159 --> 00:08:51,279
+that planning and engineering done. Um
+
+222
+00:08:49,120 --> 00:08:54,480
+go ahead and uh hit the hit the next
+
+223
+00:08:51,279 --> 00:08:55,760
+slide there. So uh part of our once we
+
+224
+00:08:54,480 --> 00:08:57,360
+actually have these things identified
+
+225
+00:08:55,760 --> 00:08:59,200
+and they pick a piece of land, buy the
+
+226
+00:08:57,360 --> 00:09:01,040
+land, we go out here and actually do the
+
+227
+00:08:59,200 --> 00:09:02,480
+construction on it that we have civil
+
+228
+00:09:01,040 --> 00:09:04,160
+workers. We go out here and make these
+
+229
+00:09:02,480 --> 00:09:06,560
+things actually happen from the middle
+
+230
+00:09:04,160 --> 00:09:09,839
+of nowhere. Uh go ahead and hit the next
+
+231
+00:09:06,560 --> 00:09:11,200
+one. Once we set the things uh set the
+
+232
+00:09:09,839 --> 00:09:12,800
+foundations down, we come in and
+
+233
+00:09:11,200 --> 00:09:14,399
+actually set the shelters down. A lot of
+
+234
+00:09:12,800 --> 00:09:16,000
+these things are preconfigured in a lot
+
+235
+00:09:14,399 --> 00:09:18,240
+of ways on the inside as much as we can
+
+236
+00:09:16,000 --> 00:09:19,680
+and externally to prevent amount of time
+
+237
+00:09:18,240 --> 00:09:22,880
+out in the field getting these things
+
+238
+00:09:19,680 --> 00:09:24,800
+installed um and really getting really
+
+239
+00:09:22,880 --> 00:09:26,399
+efficient about putting them in. But
+
+240
+00:09:24,800 --> 00:09:28,240
+this is just some pictures of actually
+
+241
+00:09:26,399 --> 00:09:30,320
+how you know we take and crane these
+
+242
+00:09:28,240 --> 00:09:32,640
+things over. They join them and then you
+
+243
+00:09:30,320 --> 00:09:35,440
+know put them together. And then the
+
+244
+00:09:32,640 --> 00:09:38,240
+last one there
+
+245
+00:09:35,440 --> 00:09:40,320
+is the internal fit out. So, um, there's
+
+246
+00:09:38,240 --> 00:09:42,720
+various configurations of this, but in
+
+247
+00:09:40,320 --> 00:09:44,480
+in in all reality, we're talking about
+
+248
+00:09:42,720 --> 00:09:46,560
+we're talking about a mini data center,
+
+249
+00:09:44,480 --> 00:09:47,839
+right? A little mini colo data center
+
+250
+00:09:46,560 --> 00:09:51,680
+that's sitting out in the middle of
+
+251
+00:09:47,839 --> 00:09:53,920
+nowhere that runs between 17 and 200
+
+252
+00:09:51,680 --> 00:09:55,440
+racks, kind of depending on what the the
+
+253
+00:09:53,920 --> 00:09:58,000
+use case is and what the customer's
+
+254
+00:09:55,440 --> 00:10:00,080
+needs are. And we engineer all of that
+
+255
+00:09:58,000 --> 00:10:01,519
+and and get all this stuff installed.
+
+256
+00:10:00,080 --> 00:10:03,600
+And these, you know, a lot of these
+
+257
+00:10:01,519 --> 00:10:05,440
+right here, you're showing DC power.
+
+258
+00:10:03,600 --> 00:10:06,880
+That is the preferred power of choice on
+
+259
+00:10:05,440 --> 00:10:08,720
+a lot of these things as well. just for
+
+260
+00:10:06,880 --> 00:10:11,040
+the stability and kind of getting back
+
+261
+00:10:08,720 --> 00:10:13,920
+into that old telco type mentality with
+
+262
+00:10:11,040 --> 00:10:16,959
+regard to uh stable power and utilizing
+
+263
+00:10:13,920 --> 00:10:18,480
+the DC just because it's cleaner. Um
+
+264
+00:10:16,959 --> 00:10:21,839
+plus when you install it looks a lot
+
+265
+00:10:18,480 --> 00:10:23,839
+prettier, right? So, all right, that's
+
+266
+00:10:21,839 --> 00:10:26,000
+so really that's kind of the that's kind
+
+267
+00:10:23,839 --> 00:10:28,880
+of the whole rundown on really kind of
+
+268
+00:10:26,000 --> 00:10:30,959
+how we how they're implemented, right?
+
+269
+00:10:28,880 --> 00:10:33,680
+And it's a really kind of a high level,
+
+270
+00:10:30,959 --> 00:10:35,440
+you know, 30,000 foot view of that. Um
+
+271
+00:10:33,680 --> 00:10:37,760
+there are a lot of other factors that go
+
+272
+00:10:35,440 --> 00:10:39,360
+into that you know that we support. So
+
+273
+00:10:37,760 --> 00:10:42,240
+you know be happy to take any questions
+
+274
+00:10:39,360 --> 00:10:44,560
+on that itself. So
+
+275
+00:10:42,240 --> 00:10:46,160
+>> well Michael let's start with um you
+
+276
+00:10:44,560 --> 00:10:50,720
+know you're down in I'm trying I'm
+
+277
+00:10:46,160 --> 00:10:53,360
+picturing um uh the uh what is it Billy
+
+278
+00:10:50,720 --> 00:10:55,839
+Bob Thornton kind of uh scenario where
+
+279
+00:10:53,360 --> 00:10:58,959
+you're down man there in Texas at
+
+280
+00:10:55,839 --> 00:11:01,680
+Stargate. Um, so you guys are all living
+
+281
+00:10:58,959 --> 00:11:04,399
+in a big house and trying to So this is
+
+282
+00:11:01,680 --> 00:11:06,000
+a half trillion dollar project. Can you
+
+283
+00:11:04,399 --> 00:11:08,720
+describe
+
+284
+00:11:06,000 --> 00:11:11,600
+what Stargate is at at high level and
+
+285
+00:11:08,720 --> 00:11:14,000
+then kind of how these inline amplifier
+
+286
+00:11:11,600 --> 00:11:16,959
+huts are, how they're using that as part
+
+287
+00:11:14,000 --> 00:11:19,680
+of that project.
+
+288
+00:11:16,959 --> 00:11:21,279
+>> So Stargate is a very large campus
+
+289
+00:11:19,680 --> 00:11:22,560
+build. I believe it's the largest campus
+
+290
+00:11:21,279 --> 00:11:23,680
+build in the world, if not one of the
+
+291
+00:11:22,560 --> 00:11:25,600
+largest one in the world now because
+
+292
+00:11:23,680 --> 00:11:27,600
+there's so many going these days. But
+
+293
+00:11:25,600 --> 00:11:30,399
+it's uh multiple buildings that are
+
+294
+00:11:27,600 --> 00:11:32,640
+interconnected, right? And they have the
+
+295
+00:11:30,399 --> 00:11:35,279
+GP the GPUs that they're using for the
+
+296
+00:11:32,640 --> 00:11:36,880
+AI in these buildings, but they they're
+
+297
+00:11:35,279 --> 00:11:39,440
+they're just connected together, right?
+
+298
+00:11:36,880 --> 00:11:42,800
+So it's just like one massive computer.
+
+299
+00:11:39,440 --> 00:11:45,279
+Um where the ILAS come into play is on
+
+300
+00:11:42,800 --> 00:11:46,640
+campus, you've in these places, not just
+
+301
+00:11:45,279 --> 00:11:48,079
+here, but elsewhere, you have multiple
+
+302
+00:11:46,640 --> 00:11:50,959
+buildings that are interconnected with
+
+303
+00:11:48,079 --> 00:11:52,399
+fiber optics u on campus. Well, those
+
+304
+00:11:50,959 --> 00:11:54,240
+are very short, right? You don't need
+
+305
+00:11:52,399 --> 00:11:55,920
+any amplification or anything like that.
+
+306
+00:11:54,240 --> 00:11:58,399
+the loss budget on those is non-existent
+
+307
+00:11:55,920 --> 00:12:01,200
+because it's only going a few hundred,
+
+308
+00:11:58,399 --> 00:12:03,680
+you know, yards. When you go from here
+
+309
+00:12:01,200 --> 00:12:07,040
+to the next place over that's in, let's
+
+310
+00:12:03,680 --> 00:12:09,920
+just say Louisiana or in in Nevada or
+
+311
+00:12:07,040 --> 00:12:11,760
+wherever, that long haul fiber, that's
+
+312
+00:12:09,920 --> 00:12:14,320
+where that loss comes into play. So,
+
+313
+00:12:11,760 --> 00:12:16,079
+when you shoot that light to that out of
+
+314
+00:12:14,320 --> 00:12:18,800
+this facility to go to the next
+
+315
+00:12:16,079 --> 00:12:21,120
+facility, they run the fiber out.
+
+316
+00:12:18,800 --> 00:12:23,760
+They've got to put these amplification
+
+317
+00:12:21,120 --> 00:12:25,760
+shelters on that link the entire way
+
+318
+00:12:23,760 --> 00:12:28,639
+roughly every 50 miles to maintain the
+
+319
+00:12:25,760 --> 00:12:30,800
+level of signal to to get back and
+
+320
+00:12:28,639 --> 00:12:33,360
+forth. So now once those things are
+
+321
+00:12:30,800 --> 00:12:35,040
+there, it connects two of these campuses
+
+322
+00:12:33,360 --> 00:12:36,720
+together, right? And then it's just
+
+323
+00:12:35,040 --> 00:12:39,440
+going to turn into like this web of
+
+324
+00:12:36,720 --> 00:12:40,959
+campuses or camp eye turned together as
+
+325
+00:12:39,440 --> 00:12:43,440
+well.
+
+326
+00:12:40,959 --> 00:12:47,600
+>> So you know the biggest cable I've seen
+
+327
+00:12:43,440 --> 00:12:53,560
+is 6912. So, six 6,912
+
+328
+00:12:47,600 --> 00:12:53,560
+fibers. What comes into these ILAS?
+
+329
+00:12:53,839 --> 00:13:00,079
+>> O, it really it really varies. A lot of
+
+330
+00:12:57,440 --> 00:13:02,720
+times we're dealing with 864s. Um, it
+
+331
+00:13:00,079 --> 00:13:04,320
+just the 6912s.
+
+332
+00:13:02,720 --> 00:13:05,680
+I haven't seen one with those yet, but
+
+333
+00:13:04,320 --> 00:13:08,079
+I'm not saying that's not outside of the
+
+334
+00:13:05,680 --> 00:13:11,279
+realm of possibility of of coming into
+
+335
+00:13:08,079 --> 00:13:12,880
+them. Um but typically they're not that
+
+336
+00:13:11,279 --> 00:13:15,040
+large when going into these sorts of
+
+337
+00:13:12,880 --> 00:13:16,560
+things because the size of the huts
+
+338
+00:13:15,040 --> 00:13:19,440
+limit the amount of fibers you can
+
+339
+00:13:16,560 --> 00:13:20,720
+actually amplify uh just due to the
+
+340
+00:13:19,440 --> 00:13:22,880
+space and power required for the
+
+341
+00:13:20,720 --> 00:13:27,279
+electronics, right? And understand that
+
+342
+00:13:22,880 --> 00:13:31,120
+these things are in these small 24 by by
+
+343
+00:13:27,279 --> 00:13:33,839
+36 huts that have a very limited ability
+
+344
+00:13:31,120 --> 00:13:35,200
+to provide cooling capacity and they're
+
+345
+00:13:33,839 --> 00:13:37,360
+out in the middle of nowhere. there's
+
+346
+00:13:35,200 --> 00:13:39,200
+like a large power budget to spend power
+
+347
+00:13:37,360 --> 00:13:41,120
+money or money on power to get
+
+348
+00:13:39,200 --> 00:13:42,959
+three-phase power out to these places a
+
+349
+00:13:41,120 --> 00:13:44,800
+lot of times. So, it's it's pretty
+
+350
+00:13:42,959 --> 00:13:48,880
+interesting.
+
+351
+00:13:44,800 --> 00:13:51,760
+>> So, in these huts, um these are largely
+
+352
+00:13:48,880 --> 00:13:53,920
+um line amplifiers, right? So, this is
+
+353
+00:13:51,760 --> 00:13:56,480
+really just regenerating the optical
+
+354
+00:13:53,920 --> 00:13:58,240
+signal to transmit. So, there's not not
+
+355
+00:13:56,480 --> 00:13:59,440
+full of GPUs or anything like that.
+
+356
+00:13:58,240 --> 00:14:00,000
+You're not doing any
+
+357
+00:13:59,440 --> 00:14:02,079
+>> no
+
+358
+00:14:00,000 --> 00:14:03,040
+>> large language models or any kind of
+
+359
+00:14:02,079 --> 00:14:04,480
+generative AI.
+
+360
+00:14:03,040 --> 00:14:06,560
+>> No, don't. there's strictly
+
+361
+00:14:04,480 --> 00:14:09,600
+amplification and connectivity. There
+
+362
+00:14:06,560 --> 00:14:11,680
+has been some use case on on proposed
+
+363
+00:14:09,600 --> 00:14:14,480
+use case for edge computing but it would
+
+364
+00:14:11,680 --> 00:14:16,320
+not in in so far as I've seen there's
+
+365
+00:14:14,480 --> 00:14:19,120
+not has not been nor would there be any
+
+366
+00:14:16,320 --> 00:14:19,600
+AI uh GPU placements for example in
+
+367
+00:14:19,120 --> 00:14:22,240
+these
+
+368
+00:14:19,600 --> 00:14:24,160
+>> okay so this is not a distributed AI
+
+369
+00:14:22,240 --> 00:14:27,199
+data center but it's largely for just
+
+370
+00:14:24,160 --> 00:14:29,360
+being able to move as you connect these
+
+371
+00:14:27,199 --> 00:14:31,920
+large data set of campuses you're just
+
+372
+00:14:29,360 --> 00:14:34,639
+being able to regenerate the signals
+
+373
+00:14:31,920 --> 00:14:35,839
+about every you said every 50 miles
+
+374
+00:14:34,639 --> 00:14:37,120
+>> right and you got to understand too
+
+375
+00:14:35,839 --> 00:14:39,519
+we're talking about a power budget,
+
+376
+00:14:37,120 --> 00:14:40,880
+right? So power and cooling. If I if I
+
+377
+00:14:39,519 --> 00:14:42,800
+have these things have a limited amount
+
+378
+00:14:40,880 --> 00:14:44,560
+of power and cooling, I'm going to make
+
+379
+00:14:42,800 --> 00:14:46,639
+absolutely certain that it's doing the
+
+380
+00:14:44,560 --> 00:14:48,000
+task that it needs to do. If I use that
+
+381
+00:14:46,639 --> 00:14:50,240
+power and cooling for some other
+
+382
+00:14:48,000 --> 00:14:52,560
+function, I lose capacity on the ability
+
+383
+00:14:50,240 --> 00:14:53,760
+to amplify, right? So that's that's
+
+384
+00:14:52,560 --> 00:14:56,000
+where we need to make sure it kind of
+
+385
+00:14:53,760 --> 00:14:58,959
+stays into that. Now that being said,
+
+386
+00:14:56,000 --> 00:15:01,120
+there has been a lot of of chatter and
+
+387
+00:14:58,959 --> 00:15:04,160
+use case about providing potentially
+
+388
+00:15:01,120 --> 00:15:06,000
+connectivity to like uh rural ISPs and
+
+389
+00:15:04,160 --> 00:15:08,160
+WISPs and things like that or
+
+390
+00:15:06,000 --> 00:15:09,680
+communities where they have like this
+
+391
+00:15:08,160 --> 00:15:10,639
+band, you know, like I said, these
+
+392
+00:15:09,680 --> 00:15:13,040
+things are going through the middle of
+
+393
+00:15:10,639 --> 00:15:15,199
+nowhere or I say that well they're going
+
+394
+00:15:13,040 --> 00:15:18,000
+between large cities. So there's like a
+
+395
+00:15:15,199 --> 00:15:20,079
+lot of rural area. So in these rural
+
+396
+00:15:18,000 --> 00:15:21,760
+areas, they could actually have uh
+
+397
+00:15:20,079 --> 00:15:23,440
+potential connectivity points in there
+
+398
+00:15:21,760 --> 00:15:25,040
+where they could actually get
+
+399
+00:15:23,440 --> 00:15:26,399
+connectivity into that bandwidth that's
+
+400
+00:15:25,040 --> 00:15:28,160
+just passing right by them, right? I
+
+401
+00:15:26,399 --> 00:15:29,600
+mean, there's just a information super
+
+402
+00:15:28,160 --> 00:15:32,000
+highway written right through the middle
+
+403
+00:15:29,600 --> 00:15:34,079
+of it. So there's the potential of
+
+404
+00:15:32,000 --> 00:15:36,959
+tapping into that.
+
+405
+00:15:34,079 --> 00:15:39,600
+>> All right. So there's a whole whack of
+
+406
+00:15:36,959 --> 00:15:40,480
+um technical questions here. So
+
+407
+00:15:39,600 --> 00:15:41,920
+>> yeah, I see that
+
+408
+00:15:40,480 --> 00:15:43,760
+>> totally anything would happen. All
+
+409
+00:15:41,920 --> 00:15:45,519
+right. So this one comes from the
+
+410
+00:15:43,760 --> 00:15:47,600
+audience is are you running coherent
+
+411
+00:15:45,519 --> 00:15:50,000
+DWDM technology for the long haul
+
+412
+00:15:47,600 --> 00:15:52,399
+network?
+
+413
+00:15:50,000 --> 00:15:53,759
+>> So that's outside of uh that's outside
+
+414
+00:15:52,399 --> 00:15:56,079
+of my expertise. I'm going to be honest
+
+415
+00:15:53,759 --> 00:15:59,120
+with you. So that's in the uh technology
+
+416
+00:15:56,079 --> 00:16:00,320
+space for um how the electronics what
+
+417
+00:15:59,120 --> 00:16:01,759
+electronics are using and what they're
+
+418
+00:16:00,320 --> 00:16:04,480
+actually transmitting over the fibers
+
+419
+00:16:01,759 --> 00:16:06,720
+and and frankly while I'm very
+
+420
+00:16:04,480 --> 00:16:08,480
+wellversed in in integration and all of
+
+421
+00:16:06,720 --> 00:16:11,360
+that that's that's a discipline that I'm
+
+422
+00:16:08,480 --> 00:16:14,800
+not experiencing. What about the power
+
+423
+00:16:11,360 --> 00:16:17,120
+requirements for these um ILAS? So, what
+
+424
+00:16:14,800 --> 00:16:19,279
+what are you doing for off on-site
+
+425
+00:16:17,120 --> 00:16:21,440
+generation?
+
+426
+00:16:19,279 --> 00:16:24,480
+>> So, typically right now they're they're
+
+427
+00:16:21,440 --> 00:16:26,560
+relying on commercial power um for most
+
+428
+00:16:24,480 --> 00:16:28,399
+everything that they're doing. And the
+
+429
+00:16:26,560 --> 00:16:30,880
+power budget really varies depending on
+
+430
+00:16:28,399 --> 00:16:32,720
+what the size of the shelter is. And the
+
+431
+00:16:30,880 --> 00:16:34,399
+design of that and the implement or the
+
+432
+00:16:32,720 --> 00:16:36,399
+design and engineering of these things
+
+433
+00:16:34,399 --> 00:16:38,480
+actually begins at that power budget,
+
+434
+00:16:36,399 --> 00:16:40,560
+right? how many cabinets and how many
+
+435
+00:16:38,480 --> 00:16:42,000
+amps and all of that, that all drives
+
+436
+00:16:40,560 --> 00:16:44,560
+into what the power budget's going to
+
+437
+00:16:42,000 --> 00:16:46,800
+be. Once we establish what that is and
+
+438
+00:16:44,560 --> 00:16:50,160
+we get from the commercial power power
+
+439
+00:16:46,800 --> 00:16:53,199
+uh companies that then we turn around
+
+440
+00:16:50,160 --> 00:16:54,480
+and have uh generation on site for
+
+441
+00:16:53,199 --> 00:16:56,240
+failure, right? So, you have diesel
+
+442
+00:16:54,480 --> 00:16:58,320
+generators are primary. I've seen a
+
+443
+00:16:56,240 --> 00:17:00,720
+couple of gas generators, but there are
+
+444
+00:16:58,320 --> 00:17:02,880
+new technologies coming out for on-site
+
+445
+00:17:00,720 --> 00:17:05,039
+power generation that we're looking at.
+
+446
+00:17:02,880 --> 00:17:06,559
+I don't know a lot about them yet. just
+
+447
+00:17:05,039 --> 00:17:09,039
+started to kind of dig into it, but it's
+
+448
+00:17:06,559 --> 00:17:11,120
+really exciting that you could wind up
+
+449
+00:17:09,039 --> 00:17:15,120
+having potentially a natural gas or a
+
+450
+00:17:11,120 --> 00:17:16,720
+propane connection at a facility and
+
+451
+00:17:15,120 --> 00:17:19,760
+generate all the power you need for that
+
+452
+00:17:16,720 --> 00:17:22,799
+facility without any external um
+
+453
+00:17:19,760 --> 00:17:25,520
+connections whatsoever.
+
+454
+00:17:22,799 --> 00:17:28,000
+>> And then um I got a there's a bunch of
+
+455
+00:17:25,520 --> 00:17:29,760
+quantum questions here, but u have you
+
+456
+00:17:28,000 --> 00:17:32,400
+seen interest in higher capacity or
+
+457
+00:17:29,760 --> 00:17:36,240
+higher quality ILAS in support of
+
+458
+00:17:32,400 --> 00:17:38,960
+quantum networking equipment? Uh,
+
+459
+00:17:36,240 --> 00:17:41,200
+>> I have not heard of any quantum
+
+460
+00:17:38,960 --> 00:17:43,679
+equipment that's out there in the ILAS
+
+461
+00:17:41,200 --> 00:17:46,000
+themselves because they're typically the
+
+462
+00:17:43,679 --> 00:17:48,080
+ILA electronics. I don't want to say
+
+463
+00:17:46,000 --> 00:17:50,000
+that's old technology, but it was
+
+464
+00:17:48,080 --> 00:17:51,280
+developed in the 50s and the seven in
+
+465
+00:17:50,000 --> 00:17:53,440
+the late 80s when it was kind of
+
+466
+00:17:51,280 --> 00:17:55,919
+perfected and employed and then really
+
+467
+00:17:53,440 --> 00:17:58,960
+into the late 90s and 2000 before it
+
+468
+00:17:55,919 --> 00:18:02,080
+actually uh really got legs. Right. So
+
+469
+00:17:58,960 --> 00:18:03,280
+it's it's as far as like different types
+
+470
+00:18:02,080 --> 00:18:05,600
+of electronics that they're going to use
+
+471
+00:18:03,280 --> 00:18:06,880
+to do that. I'm not I'm not going to be
+
+472
+00:18:05,600 --> 00:18:09,200
+able to know not.
+
+473
+00:18:06,880 --> 00:18:11,760
+>> So when you you put the ILAS, you know,
+
+474
+00:18:09,200 --> 00:18:14,559
+you're talking about 50 80 miles apart.
+
+475
+00:18:11,760 --> 00:18:16,640
+What factors might push that distance
+
+476
+00:18:14,559 --> 00:18:19,039
+longer or shorter?
+
+477
+00:18:16,640 --> 00:18:21,039
+>> That's a good question. So the um when
+
+478
+00:18:19,039 --> 00:18:22,160
+we're when we're doing the site
+
+479
+00:18:21,039 --> 00:18:23,600
+acquisition for these things and
+
+480
+00:18:22,160 --> 00:18:25,039
+actually in that circle that I was
+
+481
+00:18:23,600 --> 00:18:28,720
+showing and kind of determining what
+
+482
+00:18:25,039 --> 00:18:31,280
+that area is going to look like the what
+
+483
+00:18:28,720 --> 00:18:33,679
+that where that thing is located is
+
+484
+00:18:31,280 --> 00:18:35,600
+really based on what land is available
+
+485
+00:18:33,679 --> 00:18:37,440
+for purchase. What does the land look
+
+486
+00:18:35,600 --> 00:18:39,200
+like? You know how much is it going to
+
+487
+00:18:37,440 --> 00:18:40,559
+is there power available to it? Is there
+
+488
+00:18:39,200 --> 00:18:41,840
+something that we can there's a lot of
+
+489
+00:18:40,559 --> 00:18:44,320
+factors that go into that, but it's
+
+490
+00:18:41,840 --> 00:18:46,640
+really just the physical land piece
+
+491
+00:18:44,320 --> 00:18:49,280
+itself and the ability to use that
+
+492
+00:18:46,640 --> 00:18:51,919
+within that circle or that budgeted
+
+493
+00:18:49,280 --> 00:18:55,679
+space.
+
+494
+00:18:51,919 --> 00:18:58,320
+>> So given you know this whole AI is
+
+495
+00:18:55,679 --> 00:19:00,799
+eating the world um are you seeing that
+
+496
+00:18:58,320 --> 00:19:03,440
+the designs of the ILAS have changed
+
+497
+00:19:00,799 --> 00:19:05,600
+much?
+
+498
+00:19:03,440 --> 00:19:08,880
+>> The designs in ILAS have not changed
+
+499
+00:19:05,600 --> 00:19:11,520
+tremendously. Um we are starting to see
+
+500
+00:19:08,880 --> 00:19:13,200
+um some some compression in like the
+
+501
+00:19:11,520 --> 00:19:15,039
+electronics and miniaturization. So
+
+502
+00:19:13,200 --> 00:19:17,360
+you're starting to have more, you know,
+
+503
+00:19:15,039 --> 00:19:18,799
+more power consumption per cabinet on
+
+504
+00:19:17,360 --> 00:19:21,760
+certain builds that were being asked
+
+505
+00:19:18,799 --> 00:19:23,360
+for. Um that sort of thing is is
+
+506
+00:19:21,760 --> 00:19:25,840
+starting to happen. I know that they're
+
+507
+00:19:23,360 --> 00:19:28,640
+they're looking at like hybrid types of
+
+508
+00:19:25,840 --> 00:19:30,080
+these. Um again the technology and the
+
+509
+00:19:28,640 --> 00:19:31,679
+electronics internally I'm not that
+
+510
+00:19:30,080 --> 00:19:35,120
+aware of but I do know that they have
+
+511
+00:19:31,679 --> 00:19:37,360
+hybrid um amplifiers that they can you
+
+512
+00:19:35,120 --> 00:19:39,280
+know shoot over longer distances and you
+
+513
+00:19:37,360 --> 00:19:42,720
+know higher density that sort of thing.
+
+514
+00:19:39,280 --> 00:19:45,440
+So there are changes that are occurring
+
+515
+00:19:42,720 --> 00:19:48,480
+um as we speak. It's it's just kind of a
+
+516
+00:19:45,440 --> 00:19:50,559
+very interesting space to be in. It's um
+
+517
+00:19:48,480 --> 00:19:52,799
+also kind of these things are kind of
+
+518
+00:19:50,559 --> 00:19:55,039
+going two different ways as far as our
+
+519
+00:19:52,799 --> 00:19:58,000
+size. We've had people coming in asking
+
+520
+00:19:55,039 --> 00:19:59,440
+for very small versions of these uh just
+
+521
+00:19:58,000 --> 00:20:01,120
+a few racks and then we've had them
+
+522
+00:19:59,440 --> 00:20:03,039
+coming in with a couple of hundred racks
+
+523
+00:20:01,120 --> 00:20:06,160
+looking for basically a little micro
+
+524
+00:20:03,039 --> 00:20:07,679
+colo uh data center build that would you
+
+525
+00:20:06,160 --> 00:20:09,280
+know that would suffice to their needs
+
+526
+00:20:07,679 --> 00:20:12,480
+for whatever capacity they had. Kind of
+
+527
+00:20:09,280 --> 00:20:14,880
+going back to your 6912 question.
+
+528
+00:20:12,480 --> 00:20:16,960
+>> You know another audience question is um
+
+529
+00:20:14,880 --> 00:20:20,640
+do you know the average dB gain when
+
+530
+00:20:16,960 --> 00:20:22,640
+adding a EDFA or a fiber amplifier?
+
+531
+00:20:20,640 --> 00:20:24,640
+uh that I don't know the actual average
+
+532
+00:20:22,640 --> 00:20:27,360
+on that. No sir.
+
+533
+00:20:24,640 --> 00:20:29,360
+>> So when you're um you know what what
+
+534
+00:20:27,360 --> 00:20:31,280
+technical innovations you know optics,
+
+535
+00:20:29,360 --> 00:20:34,159
+power efficiencies, automation do you
+
+536
+00:20:31,280 --> 00:20:36,960
+think will impact the ILA design over
+
+537
+00:20:34,159 --> 00:20:40,960
+the next five years?
+
+538
+00:20:36,960 --> 00:20:42,799
+>> Wow. So that's a lot, right? Um so the
+
+539
+00:20:40,960 --> 00:20:44,799
+fiveyear the five-year thing there's
+
+540
+00:20:42,799 --> 00:20:46,320
+going to be so much activity. Um, one of
+
+541
+00:20:44,799 --> 00:20:49,360
+the things that I can see happening is
+
+542
+00:20:46,320 --> 00:20:51,520
+is that there's going to be more of a um
+
+543
+00:20:49,360 --> 00:20:53,919
+more of a dependency on on-site
+
+544
+00:20:51,520 --> 00:20:55,840
+generated power, right? I think that's
+
+545
+00:20:53,919 --> 00:20:57,440
+going to become more of a a thing.
+
+546
+00:20:55,840 --> 00:20:59,520
+There's also alternative battery
+
+547
+00:20:57,440 --> 00:21:01,440
+solutions that are going to provide some
+
+548
+00:20:59,520 --> 00:21:03,919
+additional support that will lower
+
+549
+00:21:01,440 --> 00:21:05,440
+operational costs. And then I think this
+
+550
+00:21:03,919 --> 00:21:07,600
+as we start to see these things and
+
+551
+00:21:05,440 --> 00:21:09,280
+electronics improve, you might start to
+
+552
+00:21:07,600 --> 00:21:12,799
+see them spread apart a little bit more
+
+553
+00:21:09,280 --> 00:21:14,799
+or gain more bandwidth. um the types of
+
+554
+00:21:12,799 --> 00:21:16,960
+cooling that we use are going to have to
+
+555
+00:21:14,799 --> 00:21:19,280
+change to be able to support some of the
+
+556
+00:21:16,960 --> 00:21:22,240
+newer higher density electronics with
+
+557
+00:21:19,280 --> 00:21:23,840
+more power consumption. Um and again in
+
+558
+00:21:22,240 --> 00:21:25,280
+these small spaces that's a real
+
+559
+00:21:23,840 --> 00:21:27,520
+problem, right? You got to remember
+
+560
+00:21:25,280 --> 00:21:29,600
+these things are like these little huts
+
+561
+00:21:27,520 --> 00:21:32,000
+in the middle of nowhere. So you've got
+
+562
+00:21:29,600 --> 00:21:33,200
+four concrete walls and a backpack air
+
+563
+00:21:32,000 --> 00:21:34,799
+conditioner on there that's pretty much
+
+564
+00:21:33,200 --> 00:21:36,480
+dependent upon ambient cooling. So
+
+565
+00:21:34,799 --> 00:21:38,799
+there's no really directed cooling in
+
+566
+00:21:36,480 --> 00:21:39,919
+there, no containment. So those sorts of
+
+567
+00:21:38,799 --> 00:21:44,080
+things are going to have to start to be
+
+568
+00:21:39,919 --> 00:21:46,880
+a part of of what we do, right? Uh to
+
+569
+00:21:44,080 --> 00:21:49,600
+compensate for those things.
+
+570
+00:21:46,880 --> 00:21:53,840
+>> Do you you know today I I assume that
+
+571
+00:21:49,600 --> 00:21:56,480
+these are um largely just dedicated for
+
+572
+00:21:53,840 --> 00:22:00,720
+these hyperscalers. But given that these
+
+573
+00:21:56,480 --> 00:22:03,679
+huts are in rural America where you need
+
+574
+00:22:00,720 --> 00:22:06,480
+um access to mobile wireless and
+
+575
+00:22:03,679 --> 00:22:08,880
+internet and things like that, do you uh
+
+576
+00:22:06,480 --> 00:22:11,679
+see that that that these would expand to
+
+577
+00:22:08,880 --> 00:22:14,320
+provide internet uh interconnections
+
+578
+00:22:11,679 --> 00:22:18,720
+internet connections um interconnect
+
+579
+00:22:14,320 --> 00:22:20,240
+connections so that people
+
+580
+00:22:18,720 --> 00:22:21,760
+>> Yeah. So that wouldn't surprise me at
+
+581
+00:22:20,240 --> 00:22:24,320
+all. And I think that that's definitely
+
+582
+00:22:21,760 --> 00:22:25,919
+where um I think that's definitely an
+
+583
+00:22:24,320 --> 00:22:28,480
+evolution that is going to start
+
+584
+00:22:25,919 --> 00:22:30,240
+happening. I think that the um the
+
+585
+00:22:28,480 --> 00:22:31,679
+hyperscalers where they're driving it,
+
+586
+00:22:30,240 --> 00:22:33,840
+they're not really the only people doing
+
+587
+00:22:31,679 --> 00:22:35,360
+it. You've got, you know, collocation
+
+588
+00:22:33,840 --> 00:22:36,640
+companies are big into this as well. And
+
+589
+00:22:35,360 --> 00:22:38,159
+you got to think about it from their
+
+590
+00:22:36,640 --> 00:22:40,240
+perspective too, right? I've got two
+
+591
+00:22:38,159 --> 00:22:42,080
+data centers. I'm leasing space in each
+
+592
+00:22:40,240 --> 00:22:44,720
+data center. If I have an interconnected
+
+593
+00:22:42,080 --> 00:22:46,320
+fiber between the two where I can,
+
+594
+00:22:44,720 --> 00:22:48,000
+that's going to drive real estate in
+
+595
+00:22:46,320 --> 00:22:49,679
+both sides of my business there. You
+
+596
+00:22:48,000 --> 00:22:51,200
+know what I'm saying? So they so the
+
+597
+00:22:49,679 --> 00:22:52,480
+collocations are in that as well. Then
+
+598
+00:22:51,200 --> 00:22:53,840
+when you start getting collocators in
+
+599
+00:22:52,480 --> 00:22:56,640
+there then that kind of opens the door
+
+600
+00:22:53,840 --> 00:22:58,880
+more for interconnected services along
+
+601
+00:22:56,640 --> 00:23:00,799
+that route as opposed to just inside the
+
+602
+00:22:58,880 --> 00:23:05,520
+both ends.
+
+603
+00:23:00,799 --> 00:23:07,679
+>> Uh so lots of questions about holocore.
+
+604
+00:23:05,520 --> 00:23:10,480
+Are you mostly seeing single mode fiber?
+
+605
+00:23:07,679 --> 00:23:11,440
+Are you seeing any uh holocore demand
+
+606
+00:23:10,480 --> 00:23:14,400
+yet for those?
+
+607
+00:23:11,440 --> 00:23:16,960
+>> It's uh it's single mode right now. Um,
+
+608
+00:23:14,400 --> 00:23:20,000
+we have a team that handles that. Our,
+
+609
+00:23:16,960 --> 00:23:21,440
+uh, our fiber team led up by Shane
+
+610
+00:23:20,000 --> 00:23:23,200
+Abbott's actually running into all that
+
+611
+00:23:21,440 --> 00:23:24,880
+stuff. So, I don't, um, I don't have
+
+612
+00:23:23,200 --> 00:23:27,120
+optics into if they're switched over or
+
+613
+00:23:24,880 --> 00:23:28,720
+how much of the holocore they're using.
+
+614
+00:23:27,120 --> 00:23:31,039
+Uh, but for right now, I know that it's
+
+615
+00:23:28,720 --> 00:23:33,280
+mostly glass.
+
+616
+00:23:31,039 --> 00:23:35,360
+>> And when your fiber comes in, do you
+
+617
+00:23:33,280 --> 00:23:36,799
+guys um, are these all connectorized or
+
+618
+00:23:35,360 --> 00:23:38,640
+do you guys splice them all in? And then
+
+619
+00:23:36,799 --> 00:23:40,960
+are they in fiber crossconnect cabinets
+
+620
+00:23:38,640 --> 00:23:42,400
+or how does that all work?
+
+621
+00:23:40,960 --> 00:23:44,559
+>> That's a very good question also. So,
+
+622
+00:23:42,400 --> 00:23:46,480
+no, we have LOSP teams that run the
+
+623
+00:23:44,559 --> 00:23:48,960
+fiber in. Um, it's not
+
+624
+00:23:46,480 --> 00:23:51,840
+pre-connectorized. Everything comes in,
+
+625
+00:23:48,960 --> 00:23:55,120
+uh, cut it in, splice it in, throw it
+
+626
+00:23:51,840 --> 00:23:58,400
+into an LTX, and then demarcation panel.
+
+627
+00:23:55,120 --> 00:24:00,640
+Um, and then whatever, you know, whether
+
+628
+00:23:58,400 --> 00:24:02,080
+it's a colo the customers are, or if
+
+629
+00:24:00,640 --> 00:24:04,720
+it's the customer themselves, they have
+
+630
+00:24:02,080 --> 00:24:06,960
+access to that at that point.
+
+631
+00:24:04,720 --> 00:24:09,200
+>> Another uh question for the audience is
+
+632
+00:24:06,960 --> 00:24:12,559
+what does the capex look like on a
+
+633
+00:24:09,200 --> 00:24:14,960
+typical ILA build?
+
+634
+00:24:12,559 --> 00:24:17,360
+Wow. That's I mean it varies just as
+
+635
+00:24:14,960 --> 00:24:21,200
+much as as the size and capacity, right?
+
+636
+00:24:17,360 --> 00:24:24,080
+I mean you're you're talking,
+
+637
+00:24:21,200 --> 00:24:25,679
+you know, the smaller lower ends. I
+
+638
+00:24:24,080 --> 00:24:29,760
+mean, you could be looking at right
+
+639
+00:24:25,679 --> 00:24:32,720
+around, you know, uh close to a million.
+
+640
+00:24:29,760 --> 00:24:34,880
+You're looking at things that go
+
+641
+00:24:32,720 --> 00:24:37,440
+significantly higher depending upon the
+
+642
+00:24:34,880 --> 00:24:39,760
+size and scope and and all of that. And
+
+643
+00:24:37,440 --> 00:24:41,679
+also some of the some of the design
+
+644
+00:24:39,760 --> 00:24:44,000
+requirements and power requirements from
+
+645
+00:24:41,679 --> 00:24:48,000
+the like from the hyperscaler customers
+
+646
+00:24:44,000 --> 00:24:52,559
+to to the implementation uh customers
+
+647
+00:24:48,000 --> 00:24:54,559
+that we have are um a lot right and and
+
+648
+00:24:52,559 --> 00:24:56,640
+those things can drive significant
+
+649
+00:24:54,559 --> 00:24:58,400
+expense. We've had I've had an instance
+
+650
+00:24:56,640 --> 00:25:01,200
+where we've had just the just the
+
+651
+00:24:58,400 --> 00:25:04,240
+battery portion of it was was well over
+
+652
+00:25:01,200 --> 00:25:06,240
+a million. Right. And it's so there's
+
+653
+00:25:04,240 --> 00:25:08,559
+like I said, it's just it's so broad. It
+
+654
+00:25:06,240 --> 00:25:11,360
+really kind of depends on a use case.
+
+655
+00:25:08,559 --> 00:25:13,520
+And um the best thing I would just say
+
+656
+00:25:11,360 --> 00:25:16,240
+is you just need to contact you know us
+
+657
+00:25:13,520 --> 00:25:18,320
+or somebody that has experience in in
+
+658
+00:25:16,240 --> 00:25:19,600
+consulting on these so you can get an
+
+659
+00:25:18,320 --> 00:25:21,360
+idea of what that's going to look like
+
+660
+00:25:19,600 --> 00:25:24,240
+for your company if you if you need to
+
+661
+00:25:21,360 --> 00:25:26,559
+have something done like this.
+
+662
+00:25:24,240 --> 00:25:28,559
+a lot of uh monitoring questions that
+
+663
+00:25:26,559 --> 00:25:30,240
+have come in like a fiber alarm
+
+664
+00:25:28,559 --> 00:25:31,919
+monitoring, you know, what's deployed
+
+665
+00:25:30,240 --> 00:25:34,480
+typically in the site and just overall
+
+666
+00:25:31,919 --> 00:25:36,320
+birectional monitoring. Uh so can you
+
+667
+00:25:34,480 --> 00:25:38,640
+talk a little bit about your fiber
+
+668
+00:25:36,320 --> 00:25:40,400
+monitoring?
+
+669
+00:25:38,640 --> 00:25:41,919
+>> So the fiber monitoring is all really
+
+670
+00:25:40,400 --> 00:25:43,840
+typically on the customer. we don't
+
+671
+00:25:41,919 --> 00:25:46,159
+really deal with that uh or the
+
+672
+00:25:43,840 --> 00:25:49,520
+electronics portion of that or I don't
+
+673
+00:25:46,159 --> 00:25:52,159
+necessarily but um there is uh we do
+
+674
+00:25:49,520 --> 00:25:54,799
+build into these things um SCADA and
+
+675
+00:25:52,159 --> 00:25:56,080
+also alarm access and you know all of
+
+676
+00:25:54,799 --> 00:25:58,320
+the stuff that they're going to need to
+
+677
+00:25:56,080 --> 00:26:00,159
+have um connectivity to be able to see
+
+678
+00:25:58,320 --> 00:26:02,640
+whatever it is they want to see at any
+
+679
+00:26:00,159 --> 00:26:06,320
+level.
+
+680
+00:26:02,640 --> 00:26:08,240
+>> All right, so here's one that's um
+
+681
+00:26:06,320 --> 00:26:10,960
+where does your responsibility start on
+
+682
+00:26:08,240 --> 00:26:14,559
+the DC property? Is it Zero Vault or in
+
+683
+00:26:10,960 --> 00:26:18,799
+the DC meet room?
+
+684
+00:26:14,559 --> 00:26:21,200
+>> Oh, that's a very good question. The DC.
+
+685
+00:26:18,799 --> 00:26:25,279
+So,
+
+686
+00:26:21,200 --> 00:26:26,480
+there's a meet me room. Um,
+
+687
+00:26:25,279 --> 00:26:27,760
+all right. So, I'm trying to All right.
+
+688
+00:26:26,480 --> 00:26:29,039
+So, it depends on the scope that we're
+
+689
+00:26:27,760 --> 00:26:30,880
+dealing. So, if we're if we're actually
+
+690
+00:26:29,039 --> 00:26:32,640
+doing the turnups on these things and
+
+691
+00:26:30,880 --> 00:26:34,400
+and understand my team goes and we do
+
+692
+00:26:32,640 --> 00:26:36,640
+the builds on them, you know, we've uh
+
+693
+00:26:34,400 --> 00:26:38,960
+we've got groups that do the all of it
+
+694
+00:26:36,640 --> 00:26:40,240
+and my team does all the inside plant
+
+695
+00:26:38,960 --> 00:26:41,840
+portion of it. So, they go build out the
+
+696
+00:26:40,240 --> 00:26:44,240
+inside portion and then I have another
+
+697
+00:26:41,840 --> 00:26:47,760
+team that goes and turns up the circuits
+
+698
+00:26:44,240 --> 00:26:50,799
+on, right? So, those guys will be going
+
+699
+00:26:47,760 --> 00:26:53,200
+into the DC meet room, right? That's
+
+700
+00:26:50,799 --> 00:26:56,640
+where that's where they'll go from to
+
+701
+00:26:53,200 --> 00:26:59,600
+turn those up.
+
+702
+00:26:56,640 --> 00:27:02,400
+Well, um, Michael, just a lot of
+
+703
+00:26:59,600 --> 00:27:04,559
+information here, a ton of questions.
+
+704
+00:27:02,400 --> 00:27:06,720
+So, um, this is definitely an area of
+
+705
+00:27:04,559 --> 00:27:09,760
+interest. U, so, if you're laying out
+
+706
+00:27:06,720 --> 00:27:13,840
+these huts every 50, 80 miles, that's a
+
+707
+00:27:09,760 --> 00:27:16,720
+lot of, um, right away. Uh, how do you
+
+708
+00:27:13,840 --> 00:27:18,080
+guys are you able to find spots that you
+
+709
+00:27:16,720 --> 00:27:20,799
+can put these? What's the footprint of
+
+710
+00:27:18,080 --> 00:27:23,520
+these? And, and how difficult it is to
+
+711
+00:27:20,799 --> 00:27:25,760
+be able to stand route and drop putts
+
+712
+00:27:23,520 --> 00:27:28,400
+every 50 miles?
+
+713
+00:27:25,760 --> 00:27:31,840
+Yeah. Well, it's it can be challenging,
+
+714
+00:27:28,400 --> 00:27:34,799
+right? Um, so man, so you got Billy Bob
+
+715
+00:27:31,840 --> 00:27:39,600
+Thornton. That's it, right?
+
+716
+00:27:34,799 --> 00:27:40,880
+>> For real. So, it's it's really a um
+
+717
+00:27:39,600 --> 00:27:43,679
+you know, I just lost my train of
+
+718
+00:27:40,880 --> 00:27:46,400
+thought there. All right. So,
+
+719
+00:27:43,679 --> 00:27:47,600
+every 50 miles, right? So, you're gonna
+
+720
+00:27:46,400 --> 00:27:48,400
+have to ask me that one again. I'm
+
+721
+00:27:47,600 --> 00:27:50,640
+sorry.
+
+722
+00:27:48,400 --> 00:27:52,799
+>> Oh, just about being able to get um a
+
+723
+00:27:50,640 --> 00:27:54,240
+place to drop your huts. So, you're
+
+724
+00:27:52,799 --> 00:27:55,120
+>> Oh, yeah. Yeah. Yeah. All right. Sorry.
+
+725
+00:27:54,240 --> 00:27:57,120
+Yes.
+
+726
+00:27:55,120 --> 00:27:59,360
+>> Right aways. So,
+
+727
+00:27:57,120 --> 00:28:01,520
+>> right. So, the so placing all that stuff
+
+728
+00:27:59,360 --> 00:28:03,120
+comes from our actual engineering team.
+
+729
+00:28:01,520 --> 00:28:04,799
+So, we have professional turfs team that
+
+730
+00:28:03,120 --> 00:28:06,720
+actually puts out and does the OSP
+
+731
+00:28:04,799 --> 00:28:08,080
+engineering for the route. When they do
+
+732
+00:28:06,720 --> 00:28:09,840
+that, they design and then they say,
+
+733
+00:28:08,080 --> 00:28:12,320
+"Okay, this is the budget in the circle
+
+734
+00:28:09,840 --> 00:28:16,159
+where that's going to be." And then
+
+735
+00:28:12,320 --> 00:28:18,480
+those go to uh the site acquisition team
+
+736
+00:28:16,159 --> 00:28:20,640
+that they actually go and and do all of
+
+737
+00:28:18,480 --> 00:28:22,960
+that business where they they go find
+
+738
+00:28:20,640 --> 00:28:25,039
+all those places and and put them all in
+
+739
+00:28:22,960 --> 00:28:26,880
+there. I think I have commercial power
+
+740
+00:28:25,039 --> 00:28:28,960
+and all that stuff. So, yeah.
+
+741
+00:28:26,880 --> 00:28:30,720
+>> Yeah. So, they do they do make sure
+
+742
+00:28:28,960 --> 00:28:32,159
+Yeah. So, there's a few things that they
+
+743
+00:28:30,720 --> 00:28:34,799
+need to make sure that it has commercial
+
+744
+00:28:32,159 --> 00:28:36,159
+power, you know. Obviously, um and I'll
+
+745
+00:28:34,799 --> 00:28:38,240
+be honest with you, we've built them
+
+746
+00:28:36,159 --> 00:28:41,360
+we've built them on mountains and we've
+
+747
+00:28:38,240 --> 00:28:44,880
+built in in swamps, literal swamps that
+
+748
+00:28:41,360 --> 00:28:47,520
+are just water you wouldn't believe. So,
+
+749
+00:28:44,880 --> 00:28:48,480
+it it it when I say, you know, where
+
+750
+00:28:47,520 --> 00:28:52,320
+these things are going to be and all
+
+751
+00:28:48,480 --> 00:28:54,799
+that, it's it's literally anywhere.
+
+752
+00:28:52,320 --> 00:28:57,360
+So it's interesting uh last question is
+
+753
+00:28:54,799 --> 00:29:01,120
+or observation maybe you know when I was
+
+754
+00:28:57,360 --> 00:29:03,760
+in um Austin I guess last year or a year
+
+755
+00:29:01,120 --> 00:29:06,480
+before last uh you know they were they
+
+756
+00:29:03,760 --> 00:29:09,360
+had such a grid issue in the past that
+
+757
+00:29:06,480 --> 00:29:11,120
+they say you know no data centers no you
+
+758
+00:29:09,360 --> 00:29:13,360
+know we can't do anything on the grid
+
+759
+00:29:11,120 --> 00:29:14,559
+now it's you know with administration
+
+760
+00:29:13,360 --> 00:29:16,720
+change they're like bring them on bring
+
+761
+00:29:14,559 --> 00:29:19,279
+them on so are you guys seeing any
+
+762
+00:29:16,720 --> 00:29:21,200
+issues with um the grid in Texas to be
+
+763
+00:29:19,279 --> 00:29:24,440
+able to support the world's biggest AI
+
+764
+00:29:21,200 --> 00:29:24,440
+data center.
+
+765
+00:29:24,480 --> 00:29:28,640
+>> No, not not that I've experienced. Not
+
+766
+00:29:27,120 --> 00:29:30,559
+that I've experienced.
+
+767
+00:29:28,640 --> 00:29:32,080
+>> Well, Michael, thank you so much. Uh,
+
+768
+00:29:30,559 --> 00:29:35,360
+thank the audience for a million
+
+769
+00:29:32,080 --> 00:29:37,840
+questions. All great questions.
+
+770
+00:29:35,360 --> 00:29:40,320
+>> Um, slide just came up with our next
+
+771
+00:29:37,840 --> 00:29:42,240
+regional uh, Fiberconnect workshop. We
+
+772
+00:29:40,320 --> 00:29:44,080
+had an amazing one. Oklahoma City, the
+
+773
+00:29:42,240 --> 00:29:47,039
+biggest one we've ever had. Uh,
+
+774
+00:29:44,080 --> 00:29:50,080
+Indiana's ahead of on registration, so
+
+775
+00:29:47,039 --> 00:29:52,000
+you better get registered ASAP. You
+
+776
+00:29:50,080 --> 00:29:55,200
+don't want that to be sold out on you.
+
+777
+00:29:52,000 --> 00:29:57,919
+That's in March 19th and then come fly
+
+778
+00:29:55,200 --> 00:30:00,880
+fishing with me in Bosezeman in July.
+
+779
+00:29:57,919 --> 00:30:02,880
+But thanks everyone. Uh Mike, thanks for
+
+780
+00:30:00,880 --> 00:30:05,440
+sharing your insights, expertise on
+
+781
+00:30:02,880 --> 00:30:06,880
+ILAS. And I look forward to getting back
+
+782
+00:30:05,440 --> 00:30:10,240
+together next Wednesday. We're going to
+
+783
+00:30:06,880 --> 00:30:12,000
+have our good friend Ernie Falconee of
+
+784
+00:30:10,240 --> 00:30:14,559
+the California PUC is going to be
+
+785
+00:30:12,000 --> 00:30:16,799
+discussing broadband competition and
+
+786
+00:30:14,559 --> 00:30:19,520
+pricing strategies in California's urban
+
+787
+00:30:16,799 --> 00:30:21,520
+market. So, uh, they just la dropped a
+
+788
+00:30:19,520 --> 00:30:23,919
+study that showed basically when you
+
+789
+00:30:21,520 --> 00:30:26,480
+have, uh, more than one gigabit
+
+790
+00:30:23,919 --> 00:30:28,960
+provider, um, across California, it
+
+791
+00:30:26,480 --> 00:30:31,200
+would save, um, consumers over a billion
+
+792
+00:30:28,960 --> 00:30:33,520
+dollars a year in their broadband
+
+793
+00:30:31,200 --> 00:30:35,520
+service. So, bring on all the gigabit
+
+794
+00:30:33,520 --> 00:30:38,559
+providers. Thanks everyone. We'll see
+
+795
+00:30:35,520 --> 00:30:38,559
+you guys next Wednesday.
+

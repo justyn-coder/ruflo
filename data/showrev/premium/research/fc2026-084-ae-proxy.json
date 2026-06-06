@@ -1,0 +1,47 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "TAK Broadband is a Lehi, UT-based fiber construction and engineering contractor (not an ISP/operator), founded ~2012. They build fiber networks for operators, municipalities, and ISPs — making them a design-production shop under sustained volume pressure, not an end-customer paying for connectivity. Source: TAK Broadband website / LinkedIn company page.",
+    "TAK Broadband describes itself as a full-service telecom contractor offering construction, engineering, and project management across fiber, coax, and outside plant. Their engineering team produces construction drawings — the exact workflow Inorsa addresses. Source: takbroadband.com company profile.",
+    "Kimberly McKinley holds the title Chief of Staff at TAK Broadband, Salt Lake City, UT. Chiefs of Staff at contractor firms of this size (~200-500 employees estimated) typically serve as executive force-multipliers — they coordinate across departments, manage strategic initiatives, and filter vendor access to the C-suite. They rarely own direct budget but heavily influence which vendors get an audience. Source: LinkedIn title inference; standard CoS functional profile.",
+    "No LinkedIn profile for 'Kimberly McKinley TAK Broadband' was confirmed in public search results at this time — her profile may be private, minimally populated, or recently changed. This is a gap. Source: search attempt, not found.",
+    "TAK Broadband attended Fiber Connect 2026 (evidenced by Kimberly McKinley being on the attendee list). This is a directional signal that leadership is actively monitoring industry trends, tooling, and vendor solutions — not a passive company. Source: Inorsa booth scan / event attendee list.",
+    "No speaking engagements, trade press quotes, or panel appearances for Kimberly McKinley were found in Fiber Connect programs, BBCMag, Light Reading, or ETI Software content. Her public profile is low. Source: search, not found.",
+    "TAK Broadband's business model means BEAD is a major tailwind — contractors win work when ISPs and municipalities get BEAD awards and need construction/engineering capacity. With BEAD operational as of April 30, 2026, and construction starts expected Q3 2026, TAK should be seeing or preparing for a volume surge in design-to-permit workloads. Source: BEAD program timeline (industry baseline) cross-referenced with TAK's contractor role.",
+    "Labor shortage (3:1 job-to-candidate ratio for fiber designers) hits TAK Broadband harder than operators — as a contractor, they win revenue by deploying crews and delivering drawings, not by holding spectrum or owning infrastructure. If they can't staff designers, they can't bill. Inorsa's workflow automation directly offsets this. Source: industry baseline KB.",
+    "Permitting cycle time is a direct business risk for a contractor: permit kickbacks delay construction starts, which delays revenue recognition and crew utilization. Each kickback = 3-6 weeks per the industry baseline. For a firm billing on project completion, this is margin erosion. Inorsa's permit-ready drawing generation and conflict flagging addresses this precisely. Source: industry baseline KB + Inorsa value prop.",
+    "TAK Broadband has no confirmed public Crunchbase, PitchBook, or funding profile — they appear to be privately held with no PE or VC backing disclosed. This means budget decisions likely flow through an owner/CEO or small executive team, and the CoS role is a gatekeeper to that circle. Source: search, no funding profile found.",
+    "No other TAK Broadband contacts appear on the booth-scan list provided — Kimberly McKinley is the sole lead from this company. Multi-threading will require cold outreach to engineering/operations leadership separately. Source: provided lead data."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Kimberly McKinley's LinkedIn profile was not confirmed — tenure, career history, and reporting line to CEO/COO are unknown.",
+    "TAK Broadband's internal org structure is not publicly documented — unclear who owns engineering, design production, or technology purchasing.",
+    "No direct quotes from McKinley or any TAK Broadband executive about design workflow pain, permitting, or tooling.",
+    "Company revenue and headcount are not publicly confirmed — size estimate (200-500 employees) is inferred from contractor profile and regional footprint.",
+    "No BEAD contract wins or project announcements confirmed for TAK Broadband — their exposure to BEAD volume is inferred from their contractor business model, not confirmed by press release.",
+    "No trade show speaking history or industry panel participation found for McKinley or TAK Broadband leadership.",
+    "It is unclear whether TAK Broadband uses an in-house design/engineering team or subcontracts design work — this determines whether Inorsa would replace internal workflow or compete with an existing subcontractor relationship.",
+    "No information on current tooling stack (AutoCAD, GIS platforms, design software in use) at TAK Broadband."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP designation of 'hold' is probably too conservative given TAK's contractor profile. A fiber construction contractor producing construction drawings at volume is a stronger Inorsa fit than many ISP operators who outsource design entirely — the pain of manual GIS-to-CAD conversion lives inside firms like TAK, not at operators. The grade should likely be upgraded pending org structure confirmation.",
+    "Chief of Staff as a title should not be dismissed as 'no budget authority.' At a privately held contractor in the 200-500 person range, the CoS is often the person who builds the business case for the CEO/owner and sponsors the vendor through evaluation. She may be more influential than her title suggests in a non-enterprise context.",
+    "The batch tier of D (Ungraded) reflects a data gap, not a fit gap. TAK Broadband's business model is highly aligned with Inorsa's core use case. The research deficit is about McKinley specifically, not about company relevance."
+  ],
+  "topInsight": "TAK Broadband is a fiber contractor — they produce construction drawings and manage permitting as core revenue-generating activities, not overhead. BEAD is about to send a volume wave directly at their design and permitting capacity. Kimberly McKinley as Chief of Staff is the right person to open a door, but the email should be framed around operational throughput and permit cycle time (not software features), and should explicitly ask for an introduction to whoever owns engineering delivery or project management — because that person controls the buying decision. The pitch to McKinley is: 'Help your engineering team absorb BEAD volume without hiring three designers you can't find.'",
+  "sourcesUsed": [
+    "https://www.takbroadband.com (company profile, service lines)",
+    "https://www.linkedin.com/company/tak-broadband (company LinkedIn, inferred headcount/structure)",
+    "Inorsa Fiber Connect 2026 booth scan attendee list (McKinley confirmed attendee)",
+    "ShowRev Industry Intelligence KB — BEAD timeline, labor shortage, permitting baseline",
+    "Inorsa value proposition brief (permit kickback reduction, GIS-to-CAD workflow)",
+    "Search: 'Kimberly McKinley TAK Broadband LinkedIn' — not confirmed",
+    "Search: 'Kimberly McKinley Fiber Connect speaker panel' — not found",
+    "Search: 'TAK Broadband Crunchbase funding' — not found",
+    "Search: 'TAK Broadband BEAD award contract' — not found",
+    "Search: 'TAK Broadband bbcmag lightreading etisoftware' — not found"
+  ]
+}
+```

@@ -1,0 +1,44 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Michael LaPierre holds the title 'Sr. Director, Architecture and Solutions' at Pure Integration — this is a classic technical pre-sales / solutions architecture role, not a pure engineering operations role. He likely owns technical direction and vendor evaluation, but budget authority almost certainly sits with Rob Woggins (VP, Networks & Platforms), who also attended the show. LaPierre is the influencer/recommender; Woggins is the economic buyer. Source: title analysis + org structure inference.",
+    "Pure Integration is a network integrator and managed services firm headquartered in Reston, VA, focused on federal, enterprise, and service provider clients. They are NOT a fiber ISP or operator — they are a systems integrator and professional services firm that designs and deploys network infrastructure for clients. This is a critical distinction: Inorsa's typical ICP is an ISP or A&E firm doing BEAD-funded fiber builds, not an integrator. Source: Pure Integration public website and company profile.",
+    "Pure Integration's core business includes network architecture, design, and deployment services — meaning they could potentially use Inorsa as a tool within their delivery workflow for fiber clients, similar to how an A&E firm would. However, their fiber-specific work versus their broader enterprise/federal network work is unclear from public sources. If a significant portion of their work is OSP/fiber for service providers, the fit improves substantially. Source: pureintegration.com service descriptions.",
+    "Rob Woggins (VP, Networks & Platforms) attended the show alongside LaPierre and a Business Development Associate (Jackson Sayers). A VP + Director + BDev Associate trio at a fiber tradeshow is a deliberate scouting mission — this company was actively evaluating vendors, not just passively attending. This elevates the signal strength of the attendance. The presence of a BDev Associate suggests they may be building a partner ecosystem, not just buying tools. Source: booth scan list provided.",
+    "LaPierre is based in Webster, NY (Rochester metro area) — not Reston, VA where Pure Integration is headquartered. This suggests he may be a remote hire or field-based solutions architect, potentially managing regional engagements. Webster, NY is near Rochester, which has some BEAD-relevant rural broadband geography. Source: lead record location field.",
+    "No direct quote from LaPierre found in trade press, podcast, panel appearances at Fiber Connect, or via light reading / BBCMag searches. His public LinkedIn footprint is limited based on available research. The most recent searchable signal is his attendance at Fiber Connect 2026 itself. Source: search negative result — not found.",
+    "Pure Integration has federal government clients (known from their website positioning) — this means they operate under procurement constraints that differ from commercial ISPs. If they are pursuing BEAD-adjacent work on behalf of state broadband offices or ISP clients, their procurement cycle may be longer and require vendor approval processes. Source: pureintegration.com positioning language.",
+    "The Business Development Associate (Jackson Sayers) at the show is a tell: Pure Integration may be evaluating Inorsa as a potential channel partner or subcontractor tool to embed in their service delivery, not just as an end-user license. This changes the sales motion — it could be a reseller/partnership conversation rather than a direct deployment conversation. Source: lead list role inference.",
+    "Pure Integration's revenue and headcount are not precisely confirmed in available sources — the company appears to be a mid-size integrator (estimated 200-500 employees, $50M-$150M revenue range based on comparable firms), but this is unverified. They are private. Source: gap — not confirmed.",
+    "LaPierre's title 'Architecture and Solutions' maps most closely to Inorsa's 'Design/Document' persona bucket — he cares about engineering throughput, drawing quality, and workflow efficiency. However, his solutions architecture role means he also has a commercial lens: how do tools improve the deliverable to the client and differentiate the firm's proposal? This dual lens (engineering + commercial positioning) is the hook. Source: persona bucket inference from title."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No direct quote from LaPierre in any trade press, podcast, or conference panel — cannot build a quote-led opener",
+    "Pure Integration's fiber-specific revenue mix is unknown — unclear what percentage of their work is OSP/fiber versus enterprise LAN/WAN or federal IT",
+    "LaPierre's LinkedIn profile details (tenure, prior companies, career trajectory) not accessible in current research — cannot confirm how long he has been in this role or where he came from",
+    "No AE booth notes available — unknown what was discussed at the show, whether a demo was seen, or what specific problem LaPierre expressed",
+    "Rob Woggins' specific scope at Pure Integration is unclear — does he own fiber/OSP specifically, or is Networks & Platforms broader (enterprise, federal)?",
+    "Cannot confirm whether Pure Integration is pursuing BEAD contracts directly, as a subcontractor, or advising clients on BEAD deployments",
+    "Jackson Sayers' role as BDev Associate — is he exploring a reseller/partner arrangement with Inorsa, or was he just attending for market awareness?",
+    "Pure Integration's current design toolchain is unknown — do they use IQGeo, Esri, AutoCAD, or a proprietary workflow?",
+    "No confirmation of active fiber projects or client wins in OSP/fiber space that would confirm deployment volume warranting Inorsa"
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold status ('Relevant title but no AE notes or grade') is probably correct given the uncertainty, but the multi-contact attendance (VP + Sr. Director + BDev) should push this toward active investigation rather than passive D-tier treatment — the signal pattern looks like a vendor evaluation trip, not casual attendance",
+    "LaPierre's Webster, NY location should not be dismissed as irrelevant — Rochester-area integrators do serve rural NY broadband providers who are BEAD recipients, and his geographic positioning may reflect active regional delivery responsibility, not just remote work",
+    "The company being an integrator rather than an ISP does NOT disqualify the opportunity — A&E firms and integrators that do OSP design for ISP clients are a legitimate Inorsa use case. The risk is that their fiber volume may be insufficient to justify the tool, not that the persona is wrong",
+    "If Pure Integration is exploring a partnership model (using Inorsa in their service delivery stack), the sales cycle is longer but the ACV and logo value could be higher — this should be clarified in the first call before treating this as a standard end-user deal"
+  ],
+  "topInsight": "Pure Integration is a network integrator, not an ISP — but a VP of Networks, a Sr. Director of Architecture, and a BDev Associate all attending a fiber tradeshow together is a deliberate vendor/partner scouting mission. The most valuable first call question is not 'do you want to buy Inorsa' but 'are you building fiber design into your service delivery for ISP clients, and are you looking for tools to differentiate that offering?' If yes, LaPierre is the technical champion and Woggins is the deal-maker. The outreach to LaPierre should acknowledge his role as the person who would evaluate whether the tool fits their engineering workflow, while flagging that Woggins was also at the show — threading both simultaneously avoids the single-contact trap on an ungraded account.",
+  "sourcesUsed": [
+    "https://www.pureintegration.com (company website, service descriptions, positioning)",
+    "Fiber Connect 2026 booth scan list (provided in lead context)",
+    "Lead record fields: title, location, email, phone (provided)",
+    "Industry baseline: ShowRev Industry Intelligence KB (provided)",
+    "Title/persona inference methodology (provided framework)",
+    "Search negative results: no LaPierre quote found in lightreading.com, bbcmag.com, etisoftware.com, or public conference panel databases"
+  ]
+}
+```

@@ -1,0 +1,45 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "LHTC Broadband (Lake Hamilton Telephone Company) is a Pennsylvania-based RLEC/CLEC serving rural Westmoreland and surrounding counties in southwestern PA. They offer fiber, DSL, and cable services — confirmed fiber operator, fits Inorsa ICP. Source: lhtc.net and PA PUC filings.",
+    "Matthew Mongell holds title 'Business Development Manager' — this is a growth/revenue-facing role, not engineering or operations. He is almost certainly a deal-sourcer or partnership person, not a design/permitting decision-maker. He can open doors but is unlikely to own a design tooling purchase. Source: title inference + standard telco org structure.",
+    "Matt Shearer (Director of Operations) is the more operationally relevant contact from the same booth scan. At a small RLEC like LHTC, the Director of Operations likely owns or heavily influences engineering workflows, contractor oversight, and permitting processes — the exact pain Inorsa solves. He is the higher-value threading target. Source: booth scan list, title inference.",
+    "Deanna Richter (Director of Marketing & Communications) is not a buying-side contact for Inorsa but confirms this was a multi-person booth presence — suggesting LHTC sent a delegation, which implies some degree of institutional interest in the show's content, not just casual attendance.",
+    "LHTC Broadband has a Pennsylvania BEAD exposure: PA received approximately $1.16B in BEAD funding. LHTC's rural Westmoreland County footprint places them squarely in the target geography for PA's rural broadband challenge areas. They are a likely BEAD subgrantee candidate or direct applicant. Source: NTIA BEAD allocations, PA broadband office announcements.",
+    "LHTC is a small independent telephone company — likely under 50 employees total, with a lean engineering team. At this scale, GIS-to-CAD workflows are almost certainly manual or semi-manual, done by 1-3 people or outsourced to a local engineering firm. This makes design throughput and permit kickbacks acutely painful — there is no bench depth to absorb rework cycles. Source: company size inference from service area + independent telco norms.",
+    "No LinkedIn profile for Matthew Mongell was found via public search — he has either a private or absent LinkedIn presence, which is common for BD roles at small rural telcos. This limits insight into his career history, tenure, and personal priorities. Source: search attempt, not found.",
+    "No conference speaking appearances, trade press quotes, or panel citations found for Matthew Mongell at Fiber Connect 2026 or other industry events. Source: search attempt, not found.",
+    "LHTC Broadband has been in operation since the early 1900s (Lake Hamilton Telephone Company origin) — legacy infrastructure, multi-decade operator. This means they likely have deep GIS data of varying vintage and quality, which is a known challenge for Inorsa's ingest/validation step. The validation and conflict-flagging capability may resonate strongly here. Source: lhtc.net company history.",
+    "Pennsylvania's broadband office (PEMA/PABBA) is actively processing BEAD subgrantee selections. The 6-month window from April 30, 2026 to finalize ISP contracts means LHTC, if applying, faces a hard Q3 2026 construction start pressure. This is a real external urgency driver if they have BEAD commitments. Source: NTIA BEAD operational timeline, PA broadband office."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Matthew Mongell LinkedIn profile not found — no career history, tenure, prior companies, or stated priorities available",
+    "No direct quotes from Mongell in trade press, podcasts, or conference panels",
+    "Cannot confirm whether LHTC has applied for or been awarded PA BEAD subgrantee status — PABBA has not published a public subgrantee list as of available data",
+    "No clarity on LHTC's current design/engineering workflow — whether they use in-house staff, a contract A&E firm, or a light internal GIS process",
+    "No visibility into LHTC's current tooling stack (do they use IQGeo, Esri, OSPInsight, or another GIS platform that Inorsa would need to ingest from?)",
+    "No confirmed budget authority for Mongell — his BD title suggests he does not own engineering tooling budget",
+    "Company headcount not confirmed — estimate of under 50 is inference, not verified",
+    "No information on whether LHTC has an active construction program underway or is in planning phase only",
+    "Booth interaction notes absent — unknown what drew Mongell (vs. Shearer) to the Inorsa booth specifically"
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold / Tier D classification is appropriate given thin data, but the presence of Matt Shearer (Director of Operations) at the same show changes the calculus — this should be re-evaluated as a multi-thread opportunity rather than a cold prospect. The company itself likely fits ICP; the contact is just the wrong primary.",
+    "The Business Development Manager title at a small RLEC may carry more internal authority than the title implies at a large ISP — in a 30-50 person company, a BD Manager sometimes wears multiple hats including vendor evaluation. This is not confirmed but shouldn't be dismissed entirely.",
+    "BEAD urgency is real as an industry force, but applying it generically to LHTC without confirming their BEAD status risks a hollow pitch. If they are not a BEAD applicant, leading with BEAD pressure will feel off-target. Confirm before using as the urgency hook."
+  ],
+  "topInsight": "Matthew Mongell is likely the wrong primary contact for Inorsa's value proposition — Matt Shearer (Director of Operations) is the operationally relevant decision-influencer who would own permitting workflows and engineering throughput pain. The outreach strategy should use Mongell as the opener and warm hand-off path to Shearer, not as the target himself. Frame the Mongell email as a 'following up from the show — wanted to make sure the right person at LHTC saw this' bridge that surfaces Inorsa's permit cycle reduction proof point and asks for a 20-minute call with Shearer included.",
+  "sourcesUsed": [
+    "https://www.lhtc.net",
+    "https://broadbandusa.ntia.gov/resources/states/pennsylvania (BEAD allocation)",
+    "PA broadband office / PABBA public announcements (general reference)",
+    "Fiber Connect 2026 booth scan list (provided in prompt)",
+    "Industry baseline knowledge from ShowRev Industry Intelligence KB (provided in prompt)",
+    "LinkedIn public search — Matthew Mongell — not found",
+    "Fiber Connect speaker/panel search — Matthew Mongell — not found",
+    "Trade press search (BBCMag, LightReading, ETISoftware) — Matthew Mongell — not found"
+  ]
+}
+```

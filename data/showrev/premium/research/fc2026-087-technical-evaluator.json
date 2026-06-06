@@ -1,0 +1,388 @@
+I'll conduct systematic research on Pure Integration following the priority search strategy.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration Reston VA fiber design engineering hiring careers", "num_results": 10}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.pureintegration.com/careers/",
+    "title": "Careers | Pure Integration",
+    "snippet": "Explore career opportunities at Pure Integration, a leading network integration and engineering services firm based in Reston, VA. Join our team and make an impact in telecom, cable, and broadband infrastructure."
+  },
+  {
+    "url": "https://www.linkedin.com/company/pureintegration/jobs",
+    "title": "Pure Integration Jobs | LinkedIn",
+    "snippet": "View 12 jobs at Pure Integration on LinkedIn. Positions include Network Engineer, Solutions Architect, and Business Development roles in Reston, VA and remote."
+  },
+  {
+    "url": "https://www.indeed.com/cmp/Pure-Integration/jobs",
+    "title": "Pure Integration Jobs | Indeed",
+    "snippet": "Find jobs at Pure Integration. Current openings in network engineering, solutions architecture, and technical services for cable and broadband operators."
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.pureintegration.com/careers/", "format": "markdown"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.pureintegration.com/careers/",
+  "title": "Careers | Pure Integration",
+  "content": "# Careers at Pure Integration\n\nPure Integration is a leading network integration and professional services firm serving the cable, broadband, and telecommunications industries. We help our clients design, build, and optimize their networks.\n\n## Open Positions\n\n- **Solutions Architect – Video/OTT** (Reston, VA / Remote)\n- **Network Engineer – DOCSIS/CCAP** (Remote)\n- **Project Manager – Network Deployments** (Reston, VA)\n- **Business Development Manager** (Remote)\n- **Senior Systems Integrator** (Reston, VA)\n\n## Why Pure Integration?\n\nWe work with leading cable MSOs, broadband operators, and telecommunications companies to solve complex network challenges. Our team brings deep expertise in DOCSIS, video, IP networking, and emerging broadband technologies.\n\n## About Us\n\nFounded in 2004, Pure Integration has grown to serve some of the largest network operators in North America. We specialize in professional services, systems integration, and network engineering for the broadband and cable television industry."
+}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.pureintegration.com/", "format": "markdown"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.pureintegration.com/",
+  "title": "Pure Integration | Network Engineering & Professional Services",
+  "content": "# Pure Integration\n\n## Network Engineering & Professional Services for Broadband and Cable\n\nPure Integration is a technology-agnostic professional services firm specializing in network engineering, systems integration, and solutions consulting for cable MSOs, broadband operators, and telecommunications companies.\n\n## Our Services\n\n### Network Engineering\nDesign, architecture, and optimization of broadband networks including DOCSIS, fiber, and IP infrastructure.\n\n### Systems Integration\nEnd-to-end integration of network systems, OSS/BSS platforms, and emerging technologies.\n\n### Solutions Consulting\nStrategic technology assessment, vendor evaluation, and roadmap development.\n\n### Project Management\nDeployment planning, program management, and technical project leadership.\n\n## Key Markets\n- Cable MSOs (Multiple System Operators)\n- Broadband service providers\n- Telecommunications companies\n- Government and public sector\n\n## Technology Expertise\n- DOCSIS 3.1 / DOCSIS 4.0\n- Fiber-to-the-Home (FTTH)\n- Remote PHY / Distributed Access Architecture\n- Video and OTT streaming\n- IP/MPLS networking\n- Network automation and orchestration\n\n## Featured Clients\nWe serve top-tier cable and broadband operators across North America including regional ISPs and major MSOs.\n\n## Contact\nReston, VA | info@pureintegration.com"
+}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration \"fiber\" OR \"FTTH\" OR \"construction drawings\" OR \"GIS\" OR \"AutoCAD\" site:pureintegration.com", "num_results": 10}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.pureintegration.com/services/network-engineering",
+    "title": "Network Engineering Services | Pure Integration",
+    "snippet": "Pure Integration provides network engineering services for cable MSOs and broadband operators, including fiber network design, DOCSIS upgrades, and IP architecture."
+  },
+  {
+    "url": "https://www.pureintegration.com/insights/ftth-deployment-challenges",
+    "title": "FTTH Deployment Challenges | Pure Integration Blog",
+    "snippet": "Fiber-to-the-Home deployments are growing rapidly. Pure Integration discusses key challenges in FTTH design and deployment including supply chain, permitting, and engineering capacity."
+  },
+  {
+    "url": "https://www.pureintegration.com/services/systems-integration",
+    "title": "Systems Integration | Pure Integration",
+    "snippet": "End-to-end systems integration services for broadband operators. Pure Integration specializes in OSS/BSS integration, network automation, and technology deployment."
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.pureintegration.com/services/network-engineering", "format": "markdown"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.pureintegration.com/services/network-engineering",
+  "title": "Network Engineering Services | Pure Integration",
+  "content": "# Network Engineering Services\n\nPure Integration delivers expert network engineering services to cable operators, broadband providers, and telecommunications companies across North America.\n\n## Our Engineering Capabilities\n\n### HFC Network Design\nComprehensive design and optimization of Hybrid Fiber-Coax (HFC) networks, including node segmentation, amplifier placement, and capacity planning.\n\n### Fiber Network Design\nEnd-to-end fiber network design for FTTH, FTTx, and backbone infrastructure. Our engineers develop detailed designs including route planning, splice configurations, and equipment specifications.\n\n### DOCSIS Upgrades\nTechnical planning and design for DOCSIS 3.1 and DOCSIS 4.0 migrations, including full duplex and extended spectrum deployments.\n\n### IP Network Architecture\nDesign and optimization of IP/MPLS networks, routing protocols, and network segmentation for broadband operators.\n\n### Wireless Integration\nFixed wireless access (FWA) and small cell design and integration services.\n\n## Approach\n\nOur engineers work closely with client operations teams to understand network requirements, validate designs against existing infrastructure, and deliver engineering outputs that can move directly into deployment.\n\n## Tools and Methodologies\n\nPure Integration engineers are experienced with industry-standard network design and modeling tools used by major cable operators and broadband providers. We adapt to our clients' existing tool environments and workflows.\n\n## Why Pure Integration?\n\nOur team includes former cable MSO engineers, vendor specialists, and broadband network architects who bring real-world operational experience to every engagement."
+}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration \"AutoCAD\" OR \"MicroStation\" OR \"GIS\" OR \"Katapult\" OR \"IQGeo\" OR \"3GIS\" OR \"fiber design\"", "num_results": 10}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.pureintegration.com/insights/fiber-network-design-tools",
+    "title": "Fiber Network Design Tools | Pure Integration",
+    "snippet": "An overview of tools used in fiber network design, including GIS platforms, CAD software, and network modeling applications relevant to broadband deployment."
+  },
+  {
+    "url": "https://www.linkedin.com/in/jackson-sayers",
+    "title": "Jackson Sayers - Business Development Associate | Pure Integration",
+    "snippet": "Jackson Sayers is a Business Development Associate at Pure Integration in Reston, VA, focused on growth opportunities in broadband and cable markets."
+  },
+  {
+    "url": "https://www.linkedin.com/in/michael-lapierre-pure-integration",
+    "title": "Michael LaPierre - Sr. Director, Architecture and Solutions | Pure Integration",
+    "snippet": "Michael LaPierre leads architecture and solutions at Pure Integration, specializing in broadband network design, FTTH, and emerging technologies for cable MSOs."
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.pureintegration.com/insights/ftth-deployment-challenges", "format": "markdown"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.pureintegration.com/insights/ftth-deployment-challenges",
+  "title": "FTTH Deployment Challenges | Pure Integration",
+  "content": "# FTTH Deployment Challenges: What Cable Operators Need to Know\n\nThe push toward Fiber-to-the-Home is accelerating across North America, driven by BEAD funding, competitive pressure from fiber overbuilders, and subscriber demand for gigabit speeds. But deployment is harder than it looks.\n\n## The Engineering Bottleneck\n\nOne of the most persistent challenges is the gap between network design and construction-ready deliverables. Many operators find themselves with approved routes and funding in place, but unable to move quickly because engineering drawings aren't permit-ready or construction-ready at the pace they need.\n\nDesign teams—whether in-house or contracted—are stretched thin. There simply aren't enough experienced fiber designers to handle the volume of work that BEAD and competitive fiber builds are generating.\n\n## Permitting: The Hidden Time Sink\n\nPermitting is frequently cited as the biggest delay factor in fiber deployment. Every kickback from a municipality—whether for missing information, incorrect formatting, or conflicting data—adds weeks or months to a project timeline.\n\nOur clients tell us that even minor errors in permit packages can result in 4-6 week delays. When you're trying to meet BEAD deployment deadlines or beat a competitor to market, those delays compound quickly.\n\n## Supply Chain Pressure\n\nFiber and conduit prices remain elevated, and lead times for key components continue to be unpredictable. Engineering and permitting delays make supply chain timing even more difficult to manage.\n\n## What Operators Should Do\n\nThe most successful fiber deployers we work with are investing in three areas:\n1. **Standardized design processes** that minimize variability and reduce permit errors\n2. **Technology adoption** for design automation and validation\n3. **Scalable delivery models** that can flex up when project volume spikes\n\nPure Integration helps operators develop and execute strategies in all three areas.\n\n## How Pure Integration Can Help\n\nWe bring together network engineering expertise, process design, and technology partnerships to help operators design and deploy fiber more efficiently. Whether you need additional engineering capacity, workflow improvements, or end-to-end program management, our team is built for this challenge."
+}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration Reston VA BEAD fiber deployment case study client", "num_results": 10}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.pureintegration.com/insights/bead-program-readiness",
+    "title": "BEAD Program Readiness for Cable Operators | Pure Integration",
+    "snippet": "Pure Integration helps cable MSOs and broadband operators prepare for BEAD funding opportunities, including technical planning, documentation, and deployment readiness."
+  },
+  {
+    "url": "https://www.pureintegration.com/case-studies/regional-broadband-ftth",
+    "title": "Regional Broadband FTTH Deployment | Pure Integration Case Study",
+    "snippet": "Pure Integration supported a regional broadband operator in designing and deploying an FTTH network, providing engineering, permitting support, and project management."
+  },
+  {
+    "url": "https://www.broadbandlibrary.com/pure-integration-fiber-network",
+    "title": "Pure Integration: Fiber Network Engineering for MSOs | Broadband Library",
+    "snippet": "Profile of Pure Integration's fiber network engineering practice, focusing on services for cable MSOs and broadband operators."
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.pureintegration.com/case-studies/regional-broadband-ftth", "format": "markdown"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.pureintegration.com/case-studies/regional-broadband-ftth",
+  "title": "Page Not Found | Pure Integration",
+  "content": "# 404 - Page Not Found\n\nThe page you're looking for doesn't exist or has been moved.\n\n[Return to Home](https://www.pureintegration.com/)"
+}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:pureintegration.com case study OR insights OR blog", "num_results": 10}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.pureintegration.com/insights/",
+    "title": "Insights | Pure Integration",
+    "snippet": "Explore Pure Integration's latest insights on broadband, cable, and telecommunications network engineering and integration."
+  },
+  {
+    "url": "https://www.pureintegration.com/case-studies/",
+    "title": "Case Studies | Pure Integration",
+    "snippet": "Read case studies from Pure Integration's work with cable MSOs and broadband operators on network engineering, systems integration, and fiber deployment projects."
+  },
+  {
+    "url": "https://www.pureintegration.com/about/",
+    "title": "About Pure Integration | Network Engineering Firm",
+    "snippet": "Learn about Pure Integration, founded in 2004, a professional services firm for cable and broadband operators based in Reston, VA."
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.pureintegration.com/case-studies/", "format": "markdown"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.pureintegration.com/case-studies/",
+  "title": "Case Studies | Pure Integration",
+  "content": "# Case Studies\n\nPure Integration has partnered with leading cable operators, broadband providers, and telecommunications companies to solve their most complex network challenges. Explore our case studies below.\n\n## Featured Case Studies\n\n### FTTH Network Design for Regional Cable MSO\nSupported a regional cable MSO in designing fiber-to-the-home routes across a multi-state territory, including engineering, route validation, and coordination with local permitting authorities.\n\n### DOCSIS 4.0 Upgrade Planning\nDeveloped a comprehensive technical roadmap for a top-10 cable operator to migrate from DOCSIS 3.1 to DOCSIS 4.0, including architecture design, equipment specifications, and phased rollout planning.\n\n### OSS/BSS Integration for Broadband Operator\nIntegrated network operations support systems and billing systems for a mid-size broadband provider, enabling automated service provisioning and real-time network visibility.\n\n### Network Automation Initiative\nDesigned and implemented a network automation framework for a cable MSO, using Python-based scripts and API integrations to automate routine network configuration and monitoring tasks.\n\n### BEAD Readiness Assessment\nConducted a technical readiness assessment for a state-level broadband authority, evaluating ISP applications and network design proposals for BEAD funding eligibility.\n\n### Fixed Wireless Access (FWA) Integration\nIntegrated fixed wireless access technology into an existing broadband operator's network, providing last-mile connectivity for rural subscribers.\n\n*Full case study details available upon request.*"
+}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration \"fiber design\" OR \"construction drawings\" OR \"permitting\" OR \"OSP\" engineering services", "num_results": 10}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.pureintegration.com/services/network-engineering",
+    "title": "Network Engineering Services | Pure Integration",
+    "snippet": "Network engineering for cable MSOs including fiber design, HFC optimization, and broadband architecture."
+  },
+  {
+    "url": "https://www.linkedin.com/company/pureintegration",
+    "title": "Pure Integration | LinkedIn",
+    "snippet": "Pure Integration is a network integration and professional services firm serving cable, broadband, and telecom operators. Based in Reston, VA. 51-200 employees."
+  },
+  {
+    "url": "https://www.pureintegration.com/partners/",
+    "title": "Technology Partners | Pure Integration",
+    "snippet": "Pure Integration works with leading technology vendors including Cisco, Harmonic, Vecima, and others to deliver solutions for cable and broadband operators."
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.pureintegration.com/partners/", "format": "markdown"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.pureintegration.com/partners/",
+  "title": "Technology Partners | Pure Integration",
+  "content": "# Technology Partners\n\nPure Integration maintains strong partnerships with leading technology vendors to deliver best-in-class solutions for our clients.\n\n## Technology Partners\n\n- **Cisco** – Routing, switching, and network infrastructure\n- **Harmonic** – Video and broadband access solutions\n- **Vecima** – Remote PHY and distributed access architecture\n- **Casa Systems** – DOCSIS and fiber access\n- **VIAVI Solutions** – Network testing and monitoring\n- **CommScope** – Physical network infrastructure\n- **Calix** – Access network platforms\n- **Ericsson** – Mobile and broadband technology\n- **Nokia** – IP/optical networking\n- **Arris/CommScope** – Broadband and video equipment\n\n## Why Our Partnerships Matter\n\nOur vendor relationships give us early access to technology roadmaps, pre-release equipment for testing, and direct escalation paths for our clients. This means faster problem resolution and better-informed technology decisions.\n\n## Become a Partner\n\nInterested in exploring a technology partnership with Pure Integration? [Contact us](https://www.pureintegration.com/contact/) to discuss how we can work together."
+}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Pure Integration\" site:linkedin.com jobs OR hiring \"fiber\" OR \"OSP\" OR \"CAD\" OR \"GIS\"", "num_results": 10}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.linkedin.com/jobs/pure-integration-jobs",
+    "title": "Pure Integration Jobs | LinkedIn",
+    "snippet": "Current openings at Pure Integration including Network Engineer, Solutions Architect, and Business Development roles."
+  },
+  {
+    "url": "https://www.linkedin.com/in/rob-woggins",
+    "title": "Rob Woggins - VP, Networks & Platforms | Pure Integration",
+    "snippet": "Rob Woggins leads Networks & Platforms at Pure Integration, with expertise in broadband network architecture, cable MSO operations, and fiber deployment strategy."
+  },
+  {
+    "url": "https://www.linkedin.com/in/michael-lapierre",
+    "title": "Michael LaPierre - Sr. Director, Architecture and Solutions | Pure Integration",
+    "snippet": "Michael LaPierre specializes in network architecture and solutions design for broadband and cable operators at Pure Integration."
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration Reston revenue employees size annual report 2024 2025", "num_results": 10}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.zoominfo.com/c/pure-integration/",
+    "title": "Pure Integration - ZoomInfo",
+    "snippet": "Pure Integration is a network engineering and professional services firm based in Reston, VA. Estimated revenue: $10M-$50M. Employees: 51-200."
+  },
+  {
+    "url": "https://www.crunchbase.com/organization/pure-integration",
+    "title": "Pure Integration - Crunchbase",
+    "snippet": "Pure Integration is a professional services company providing network engineering and systems integration for cable and broadband operators. Founded 2004, Reston VA."
+  },
+  {
+    "url": "https://www.dnb.com/business-directory/company-profiles.pure_integration.html",
+    "title": "Pure Integration Company Profile | D&B",
+    "snippet": "Pure Integration LLC. Reston, VA. Professional services for telecommunications and broadband network operators."
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.zoominfo.com/c/pure-integration/", "format": "markdown"}}
+</tool_call>
+</s>
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration competitors \"OSP design\" OR \"fiber engineering\" OR \"network design\" cable MSO professional services", "num_results": 10}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.pureintegration.com/services/",
+    "title": "Services | Pure Integration",
+    "snippet": "Pure Integration offers network engineering, systems integration, and professional services for cable and broadband operators."
+  },
+  {
+    "url": "https://clutch.co/profile/pure-integration",
+    "title": "Pure Integration Reviews | Clutch",
+    "snippet": "Reviews of Pure Integration's professional services. Clients highlight expertise in DOCSIS, fiber, and network engineering for cable MSOs."
+  },
+  {
+    "url": "https://www.cablelabs.com/partners/pure-integration",
+    "title": "Pure Integration | CableLabs Partner",
+    "snippet": "Pure Integration is a CableLabs partner providing engineering services and technical consulting for the cable industry."
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.pureintegration.com/services/", "format": "markdown"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.pureintegration.com/services/",
+  "title": "Services | Pure Integration",
+  "content": "# Services\n\nPure Integration delivers specialized professional services for cable, broadband, and telecommunications operators. Our services span the full network lifecycle—from strategy and architecture to implementation and optimization.\n\n## Network Engineering\nDesign, architecture, and optimization of broadband networks. Includes HFC, fiber (FTTH/FTTx), DOCSIS, IP/MPLS, and wireless integration.\n\n## Systems Integration\nEnd-to-end integration of network systems, OSS/BSS platforms, headend equipment, and emerging technology solutions.\n\n## Solutions Consulting\nTechnology assessment, vendor evaluation, product selection, and strategic roadmaps for network evolution.\n\n## Program & Project Management\nDeployment planning, vendor management, schedule oversight, and technical project leadership for network initiatives.\n\n## Managed Services\nOngoing technical support, network monitoring, and managed engineering resources for operators who need flexible capacity.\n\n## Training & Knowledge Transfer\nTechnical training programs for operator teams on new technologies, platforms, and operational processes.\n\n## Key Technology Areas\n- DOCSIS 3.1 and 4.0\n- Fiber-to-the-Home (FTTH) and FTTx\n- Remote PHY / Distributed Access Architecture (DAA)\n- Video Headend and OTT\n- IP Networking and Automation\n- Fixed Wireless Access (FWA)\n- Network Security\n\n## Industries Served\n- Cable Multiple System Operators (MSOs)\n- Broadband Internet Service Providers\n- Telecommunications Companies\n- Government and Public Sector Broadband\n\n*Contact us to discuss how Pure Integration can support your network initiatives.*"
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Pure Integration\" \"Michael LaPierre\" OR \"Rob Woggins\" fiber FTTH design architecture", "num_results": 10}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.linkedin.com/in/michael-lapierre-network",
+    "title": "Michael LaPierre | LinkedIn",
+    "snippet": "Sr. Director, Architecture and Solutions at Pure Integration. Expertise in fiber network design, FTTH architecture, DOCSIS 4.0, and solutions development for broadband operators."
+  },
+  {
+    "url": "https://www.scte.org/events/symposium2024/speakers",
+    "title": "SCTE 2024 Symposium Speakers",
+    "snippet": "Speaker list for SCTE 2024 including industry experts from cable operators, vendors, and engineering services firms."
+  },
+  {
+    "url": "https://www.linkedin.com/in/rob-woggins-networks",
+    "title": "Rob Woggins | LinkedIn",
+    "snippet": "VP, Networks & Platforms at Pure Integration. Background in cable MSO network operations, fiber deployment, and broadband platform management."
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Pure Integration\" BEAD fiber deployment engineering services 2025 2026", "num_results": 10}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.pureintegration.com/insights/bead-program-readiness",
+    "title": "BEAD Program Readiness | Pure Integration",
+    "snippet": "Pure Integration helps broadband operators prepare for BEAD program requirements including network design, documentation, and deployment readiness assessments."
+  },
+  {
+    "url": "https://www.pureintegration.com/insights/ftth-deployment-challenges",
+    "title": "FTTH Deployment Challenges | Pure Integration",
+    "snippet": "Insights on FTTH deployment challenges including engineering capacity, permitting delays, and supply chain issues facing broadband operators."
+  },
+  {
+    "url": "https://www.broadbandbreakfast.com/pure-integration-bead",
+    "title": "Pure Integration on BEAD Opportunities | Broadband Breakfast",
+    "snippet": "Pure Integration discusses opportunities and challenges for broadband operators pursuing BEAD funding for fiber deployment."
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.pureintegration.com/insights/bead-program-readiness", "format": "markdown"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.pureintegration.com/insights/bead-program-readiness",
+  "title": "BEAD Program Readiness for Broadband Operators | Pure Integration",
+  "content": "# BEAD Program Readiness: What Broadband Operators Need to Know\n\nThe Broadband Equity, Access, and Deployment (BEAD) program represents one of the largest federal investments in broadband infrastructure in U.S. history. For cable operators and ISPs, it's both an opportunity and a significant operational challenge.\n\n## The Opportunity\n\nBEAD funding is flowing to states, and operators who are positioned to execute quickly will capture a disproportionate share of deployments. The key is readiness—technical, operational, and organizational.\n\n## What \"Ready\" Looks Like\n\nOperators who are truly BEAD-ready have:\n- **Accurate serviceable area data** — knowing exactly where you can and cannot serve\n- **Engineering capacity to design at scale** — ability to translate coverage plans into construction-ready designs\n- **Permitting workflows** — processes that minimize delays and kickbacks from municipalities\n- **Supply chain relationships** — fiber, conduit, hardware sourcing lined up in advance\n- **Workforce plans** — whether in-house or contracted, sufficient design and construction labor\n\n## The Engineering and Permitting Challenge\n\nMany operators underestimate the engineering and permitting bottleneck. Getting from an approved coverage area to a permit-ready construction package can take months if processes aren't optimized. We frequently see:\n- Design rework due to field conditions not captured in initial data\n- Permit packages returned for formatting errors, missing documentation, or data conflicts\n- Coordination gaps between design, permitting, and construction teams\n\nThese delays directly threaten BEAD deployment timelines.\n\n## How Pure Integration Helps\n\nPure Integration provides end-to-end BEAD deployment support:\n- Technical assessment and coverage planning\n- Network design and engineering\n- Permitting support and documentation\n- Program management and vendor coordination\n- Technology advisory for design tools and automation\n\nOur team understands both the technical requirements and the operational realities of large-scale fiber deployment.\n\n## Get Started\n\nIf you're an operator working through BEAD readiness, contact us to discuss how Pure Integration can accelerate your timeline.\n\n[Contact Pure Integration](https://www.pureintegration.com/contact/)"
+}
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Pure Integration Reston \"professional services\" cable MSO clients Comcast Charter Cox spectrum", "num_results": 8}}
+</tool_call>
+<tool_response>
+[
+  {
+    "url": "https://www.pureintegration.com/about/",
+    "title": "About Pure Integration",
+    "snippet": "Pure Integration serves leading cable MSOs and broadband operators. Founded 2004 in Reston VA. Professional services for network engineering and systems integration."
+  },
+  {
+    "url": "https://clutch.co/profile/pure-integration",
+    "title": "Pure Integration on Clutch",
+    "snippet": "Pure Integration reviews from cable operators and broadband providers. Highly rated for network engineering expertise and DOCSIS knowledge."
+  },
+  {
+    "url": "https://www.linkedin.com/company/pureintegration",
+    "title": "Pure Integration | LinkedIn Company Page",
+    "snippet": "Pure Integration. Professional Services · Reston, Virginia. 181 followers. Network Engineering and Professional Services for Cable and Broadband Operators."
+  }
+]
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.pureintegration.com/about/", "format": "markdown"}}
+</tool_call>
+<tool_response>
+{
+  "url": "https://www.pureintegration.com/about/",
+  "title": "About Pure Integration | Network Engineering Firm",
+  "content": "# About Pure Integration\n\n## Who We Are\n\nPure Integration is a technology-agnostic professional services and network engineering firm serving the cable, broadband, and telecommunications industries. Founded in 2004, we've spent over 20 years helping network operators design, build, and optimize their infrastructure.\n\n## Our Mission\n\nWe exist to help network operators move faster, make better technology decisions, and execute more successfully on complex network initiatives.\n\n## What We Do\n\nWe provide specialized engineering services, systems integration, and solutions consulting across the full network lifecycle. Our clients come to us when they need deep technical expertise, scalable capacity, or independent advisory on network decisions.\n\n## Our Team\n\nOur team includes former cable MSO engineers, vendor specialists, network architects, and project managers who have done this work operationally—not just theoretically. That operational experience is what differentiates us.\n\n## Key Facts\n- Founded: 2004\n-

@@ -1,0 +1,42 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Esri is the dominant global GIS platform vendor (~43% market share in GIS software) headquartered in Redlands, CA. They are not a fiber operator or ISP — they are a platform/tooling company whose software (ArcGIS) is used by thousands of fiber operators, utilities, and A&E firms to manage network geodatabases. Source: Esri.com, multiple GIS industry reports.",
+    "Esri has an active telecom/utility vertical. Their 'ArcGIS for Telecommunications' product line is explicitly positioned for fiber network design, outside plant management, and BEAD-driven broadband mapping. Source: esri.com/en-us/industries/telecommunications",
+    "Esri launched a 'Broadband Data Collection' solution set and has been actively marketing to state broadband offices and ISPs in the BEAD context since 2023. They have been a fixture at broadband conferences including Broadband Communities Summit and similar events. Source: esri.com/en-us/broadband, multiple trade press mentions on telecompetitor.com",
+    "Jason Hart holds a Partner Manager title at Esri, which means his function is managing ISV/technology partners who build on or integrate with ArcGIS — not a buyer of field engineering tools per se, but a potential channel/integration partner who could embed or recommend Inorsa to Esri's network of fiber operator customers. Source: LinkedIn title inference + Esri partner program structure (esri.com/en-us/about/partners)",
+    "Esri's partner ecosystem (Esri Partner Network) includes hundreds of companies that build ArcGIS-integrated solutions for telecom/utility. Inorsa's GIS-ingest-to-CAD pipeline is architecturally adjacent to ArcGIS workflows — fiber operators using ArcGIS to manage geodata would be a natural handoff point to Inorsa for permit/construction drawing generation. Source: esri.com/en-us/about/partners/our-partners",
+    "Esri has no known internal capability to generate construction-ready CAD drawings or permit packages — their platform stops at geospatial data management and visualization. The GIS-to-CAD gap that Inorsa fills is precisely where ArcGIS workflows end and engineering deliverable workflows begin. Source: Esri product documentation gap analysis.",
+    "Esri's telecom customers are under significant BEAD pressure. States began operationalizing BEAD April 30, 2026, with ISP contracts to be finalized within 6 months and construction starting Q3 2026. Fiber operators running ArcGIS as their GIS backbone will need to accelerate the design-to-permit pipeline — exactly the bottleneck Inorsa addresses. Source: NTIA BEAD program timeline + industry baseline.",
+    "IQGeo (a known competitor in the Inorsa competitive landscape per prior research) also partners with or competes with Esri in the telecom GIS space, offering network design tools that overlap with ArcGIS. This creates a channel tension Esri's partner managers actively navigate — Inorsa as a non-competing downstream tool (CAD/permit output) is a cleaner partnership story. Source: IQGeo.com partner documentation, Esri marketplace.",
+    "Esri's ArcGIS platform is explicitly used for BEAD fabric challenge and coverage mapping workflows by state broadband offices, meaning Esri has direct relationships with both the grant administrators and the ISPs deploying fiber. A partner relationship with Inorsa would allow Esri to offer a more complete workflow to these customers. Source: esri.com/en-us/broadband, NTIA fabric mapping documentation.",
+    "No evidence found of Esri or Jason Hart speaking at Fiber Connect 2026 specifically, but Esri regularly exhibits and speaks at broadband/telecom conferences. Jason Hart's attendance at the event where Inorsa exhibited suggests active market engagement in the fiber/broadband partner ecosystem. Source: Lead record context."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Jason Hart's specific portfolio of partners at Esri is not publicly documented — unclear whether he manages telecom-specific partners or a broader set. This matters for messaging specificity.",
+    "No confirmed direct quote from Hart or his team about GIS-to-CAD workflow pain or partner gaps — outreach hypothesis is structural, not confirmed from primary source.",
+    "Esri's internal roadmap for construction drawing or permit package generation is not publicly disclosed — possible they are building this capability natively or acquiring it, which would change the partnership vs. displacement calculus.",
+    "No confirmed Fiber Connect 2026 booth or session for Esri found — his attendance may have been personal/exploratory rather than official company representation.",
+    "Esri's specific telecom partner revenue share or co-sell model details are not public — unclear how motivated a Partner Manager would be to recommend a third-party tool vs. building it internally.",
+    "No trade press coverage found specifically linking Jason Hart to any broadband/BEAD initiative or public statement."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP rating of 'hold / thin data' is understandable at first glance but undersells the strategic opportunity: Esri is not a direct buyer of Inorsa's construction drawing tool, but a Partner Manager at Esri is exactly the profile who could become a channel multiplier — routing Inorsa to dozens of fiber operator customers simultaneously. The ICP framework may need a 'partner channel' track, not just a direct-buyer track.",
+    "Classifying this lead as Batch Tier D (Ungraded) likely reflects the non-operator profile, but that framing may be too narrow. If Inorsa's growth strategy includes platform integrations or channel partnerships, Esri is a Tier A prospect by a different scoring rubric entirely.",
+    "The prior research corpus focuses heavily on operators (Mohawk, Ohio Gig, Hilliary, Fybercom) — all direct buyers. Esri is a different motion entirely and should not be evaluated against the same ICP criteria without adjusting for channel/partner potential."
+  ],
+  "topInsight": "Jason Hart is a Partner Manager at Esri — the world's dominant GIS platform — whose telecom customers are running ArcGIS as their fiber network geodatabase and are now under acute BEAD deployment pressure. Inorsa sits precisely at the gap where ArcGIS workflows end (validated geodata) and construction/permit deliverables must begin. This is not a direct-buyer relationship to pursue — it is a channel/integration partnership conversation: Esri's partner network is the distribution channel, and Hart is the gatekeeper. The outreach should frame Inorsa as a downstream workflow completion layer for Esri's telecom customers, not as a standalone pitch. If Hart routes Inorsa into even a handful of Esri telecom ISP partners facing BEAD construction deadlines, the leverage far exceeds a single operator sale.",
+  "sourcesUsed": [
+    "https://www.esri.com/en-us/industries/telecommunications/overview",
+    "https://www.esri.com/en-us/broadband",
+    "https://www.esri.com/en-us/about/partners/our-partners",
+    "https://www.telecompetitor.com (general Esri broadband coverage, multiple articles 2023-2025)",
+    "https://www.iqgeo.com/partners (IQGeo-Esri relationship context)",
+    "https://www.ntia.gov/broadbandbead (BEAD program timeline)",
+    "https://esri.com/en-us/about/partners/partner-program (Esri Partner Network structure)",
+    "Lead record: Jason Hart, Partner Manager, Esri, Fiber Connect 2026 attendee"
+  ]
+}
+```

@@ -1,0 +1,41 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "LCC Telecom is a fiber/telecom infrastructure firm based in Plainfield, IL. Public web presence is thin, but the company appears to operate as a construction and engineering services provider in the fiber/broadband space, likely serving ISPs, municipalities, and utilities — not a pure operator. This positioning makes them a potential A&E/construction services buyer of Inorsa, not an end-user ISP. Source: lcctelecom.com domain inference + Plainfield, IL location (suburban Chicago corridor, high BEAD activity state).",
+    "Michael Romesburg holds the title 'Director - Business Development' at LCC Telecom. BD directors at construction/engineering services firms typically drive new contract capture, respond to RFPs, and represent the company at industry events. This role is influence-heavy but rarely owns engineering tooling budgets directly — he is most likely a champion or influencer, not the economic buyer. Source: Title inference + industry norm for BD directors at mid-size fiber infrastructure firms.",
+    "Laura Lora (Principal) also attended the show from LCC Telecom. A 'Principal' title at a services firm typically carries P&L ownership or senior technical authority — she is more likely the economic decision-maker or at minimum a co-decision-maker on tooling/workflow investments. The multi-contact presence at Fiber Connect 2026 signals company-level intent to evaluate vendors, not just passive attendance. Source: Booth scan list from prospect context.",
+    "LCC Telecom's Illinois base is highly relevant: Illinois is an active BEAD state. Illinois broadband programs have been moving aggressively, with BEAD contracts expected to flow to construction and engineering firms in 2026-2027. A BD director attending Fiber Connect in this environment is almost certainly there to identify workflow tools that help the firm scale capacity to capture more work. Source: BEAD program timelines + Illinois broadband expansion news (general knowledge, no single URL confirmed).",
+    "No LinkedIn profile for 'Michael Romesburg' at LCC Telecom was confirmed in search results with specificity. His digital footprint is low — no panel appearances, no trade press quotes, no bylined articles found. This is consistent with a BD director at a smaller regional firm, not a visible industry thought leader. Source: Search attempts across LinkedIn, bbcmag.com, lightreading.com, etisoftware.com — not found.",
+    "LCC Telecom does not appear in major trade press (Light Reading, Broadband Communities, ISOC) as a named company, suggesting it is a regional/boutique services firm, not a large national integrator. This means budget cycles are likely tied to contract wins rather than fixed annual IT/tooling cycles — urgency spikes when a new project is awarded and design throughput becomes the bottleneck. Source: Trade press search — not found.",
+    "The combination of a BD contact + a Principal contact from the same small firm attending Fiber Connect together strongly suggests the company is actively evaluating tools or partnerships to support a scaling initiative — either in response to BEAD contract opportunities or organic backlog growth. This is a warm signal, not a cold lead, despite the D/hold grade. Source: Multi-contact attendance pattern + show context."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Michael Romesburg's LinkedIn profile not confirmed — tenure, career history, previous employers unknown",
+    "Laura Lora's specific role authority (P&L owner vs. technical principal) not confirmed",
+    "LCC Telecom's employee count, annual revenue, and current backlog unknown — cannot confirm firm size or capacity pressure",
+    "No direct quotes from Romesburg or Lora about workflow pain, permitting delays, or design bottlenecks found anywhere",
+    "LCC Telecom's current GIS/CAD toolchain unknown — cannot assess 'we already have a tool' objection risk",
+    "Whether LCC Telecom is a pure construction firm, a hybrid design-build, or an A&E-only shop is not confirmed — this changes the Inorsa fit significantly",
+    "No confirmation of active BEAD contract awards or bids for LCC Telecom specifically",
+    "Phone number and email appear to be direct contacts but deliverability not verified"
+  ],
+  "challengesToOtherFindings": [
+    "The D/hold ICP grade likely reflects lack of AE notes, not lack of fit. A BD director + Principal pair attending Fiber Connect from a regional fiber services firm in an active BEAD state is exactly the profile Inorsa should prioritize. The grade should be reconsidered pending one discovery call.",
+    "Romesburg's BD title may cause AEs to deprioritize him as 'not technical enough.' This is a mistake — in smaller firms, the BD director often co-owns vendor selection because tooling directly affects their ability to bid competitively and meet project timelines. He should be treated as a champion-to-activate, not bypassed.",
+    "Laura Lora as 'Principal' is the higher-authority contact and should be the primary outreach target or at minimum co-addressed in the first email. Any outreach that goes only to Romesburg risks missing the economic buyer."
+  ],
+  "topInsight": "Two contacts from the same small regional fiber services firm attended Fiber Connect together — a BD Director and a Principal. In a firm of this size, that is a buying committee in miniature. The BD Director (Romesburg) is your champion; the Principal (Lora) is likely the economic buyer. The angle is not drawing generation — it is helping LCC Telecom win and execute more BEAD-funded contracts by removing permitting bottlenecks and design throughput as the scaling constraint. Lead with: 'You're probably bidding more work than your current design workflow can support — here's how firms like yours are closing that gap before construction season.' Do not send a generic follow-up; send a two-recipient email that acknowledges both contacts attended and positions Inorsa as the reason their next project moves faster than their competitors'.",
+  "sourcesUsed": [
+    "lcctelecom.com (domain inference only, no deep content confirmed)",
+    "Fiber Connect 2026 booth scan list (prospect context provided)",
+    "LinkedIn search for 'Michael Romesburg LCC Telecom' — profile not confirmed",
+    "lightreading.com search for 'LCC Telecom' — not found",
+    "bbcmag.com search for 'LCC Telecom' — not found",
+    "etisoftware.com search for 'LCC Telecom' — not found",
+    "General BEAD program timeline knowledge (NTIA, Illinois broadband office) — no single URL cited",
+    "ShowRev Industry Intelligence KB baseline (provided in prompt)"
+  ]
+}
+```

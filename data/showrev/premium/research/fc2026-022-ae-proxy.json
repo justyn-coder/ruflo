@@ -1,0 +1,45 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Indus CAD Works, LLC is a CAD/engineering services firm based in Boca Raton, FL — the name 'Indus CAD Works' signals a drafting/technical services business, almost certainly providing outsourced CAD production to engineering or telecom clients. This makes them a COMPETITOR-ADJACENT or CHANNEL entity, not a direct fiber operator or ISP. Source: company name + domain inference (induscadworks.com).",
+    "Raj Ahuja holds the title 'President' of Indus CAD Works — at a small LLC of this type, President typically means founder/owner with full P&L authority. Budget decisions almost certainly flow through him directly. No CFO or procurement layer is expected at a firm of this profile. Source: lead card data.",
+    "Kesari Iyengar attended with the title EVP — two C-suite/exec-level attendees from the same small firm at Fiber Connect 2026 is a strong buying signal. This is not a casual tradeshow visit. They invested travel + registration for two senior people, indicating strategic intent. Source: booth scan list (multi-contact entry).",
+    "No LinkedIn profile for 'Raj Ahuja Indus CAD Works' could be confirmed via public search. The firm does not appear in Crunchbase, PitchBook, or standard trade press databases. This is consistent with a small, privately held offshore-adjacent CAD services firm that operates below media radar. Source: search attempt — not found.",
+    "Indus CAD Works LLC's Boca Raton location and the name structure ('Indus' commonly references Indian subcontinent heritage in US business naming) strongly suggests this is an onshore-registered firm with offshore delivery capacity — a classic nearshore/offshore CAD services model. If confirmed, they are a potential PARTNER or RESELLER channel, not just an end-user prospect. Source: naming convention pattern + FL LLC structure inference.",
+    "The firm's core business — if it is a CAD services provider — means their clients are engineering firms, A&E contractors, and possibly fiber operators who outsource design production. Inorsa's GIS-to-CAD automation would directly threaten their revenue model IF Indus CAD Works is a pure production shop. Alternatively, it would be a force-multiplier if they want to scale throughput without adding headcount. This is the critical fork in the road for sales positioning. Source: product analysis + ICP inference.",
+    "No direct quotes, panel appearances, press interviews, or speaking engagements found for Raj Ahuja or Kesari Iyengar at any telecom or fiber industry event prior to Fiber Connect 2026. Source: search — not found.",
+    "No BEAD funding tie discovered — Indus CAD Works does not appear in any BEAD subgrant, ISP award list, or state broadband office database. They are almost certainly not a BEAD recipient. However, their clients likely are, creating indirect urgency: if their operator clients are ramping BEAD construction in Q3 2026, Indus CAD Works faces the same throughput crunch — just one layer removed. Source: BEAD award databases — not found for this entity.",
+    "The ICP designation is 'hold (Thin data)' — this is accurate. Insufficient public data exists to confirm or deny fit without a discovery call. However, the signal of two senior execs at Fiber Connect in fiber-specific context is too strong to treat as noise. They came for a reason."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Cannot confirm Raj Ahuja's LinkedIn profile or career history — no public profile found under this name + company combination.",
+    "Cannot confirm Kesari Iyengar's LinkedIn profile or specific role beyond 'EVP' title on lead card.",
+    "Cannot confirm company size (headcount, revenue, client roster) — no Crunchbase, D&B, or ZoomInfo entry confirmed.",
+    "Cannot confirm whether Indus CAD Works is a pure CAD production shop, a design-engineering firm, or a software/tooling company — this distinction is critical to positioning.",
+    "No confirmed offshore delivery model — inference only based on naming convention and FL LLC structure.",
+    "No client names or vertical focus confirmed — do they serve fiber? Utility? Civil? Unknown.",
+    "No BEAD client exposure confirmed — cannot validate whether their pipeline includes BEAD-funded operators.",
+    "No prior tool stack identified — unknown whether they use ArcGIS, AutoCAD, Bentley, or any GIS-to-CAD automation.",
+    "No direct quote from Raj Ahuja or Kesari Iyengar about their challenges, priorities, or buying intent."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP designation 'hold' may be underweighting a meaningful signal: two senior executives from the same small firm attending a fiber-specific tradeshow is not consistent with casual curiosity. Most small CAD shops do not send their President AND EVP to Fiber Connect without strategic motivation. This warrants an upgrade from passive hold to active discovery.",
+    "If Indus CAD Works is a CAD services firm, the instinct to treat them as an operator prospect is wrong — but that doesn't mean they're a bad lead. It means the angle changes: they are a potential throughput buyer (scale their production without adding FTEs) or a channel partner (resell or embed Inorsa's output capability into their client delivery). The outreach must open with a question, not an assumption.",
+    "The BEAD urgency framing that works for operators may not land here. A CAD services firm doesn't have a BEAD award; their clients do. The correct urgency frame is: 'Your operator clients are about to flood you with BEAD construction drawings in Q3 2026 — can your current capacity absorb that volume?' This indirect urgency is actually more compelling to a services firm president than a funding deadline they don't control."
+  ],
+  "topInsight": "Indus CAD Works is almost certainly a CAD engineering services firm, not a fiber operator — meaning Inorsa is not selling to their network build, it's selling to their production business. Raj Ahuja as President/owner controls the budget entirely. The killer question for this contact is: 'How are you planning to handle the volume spike when your operator clients start releasing BEAD construction packages in Q3?' If they can't answer that confidently, Inorsa becomes a capacity insurance play, not just a software tool. Two senior execs at Fiber Connect means they already know change is coming. Get them on a call before they figure out a competing answer.",
+  "sourcesUsed": [
+    "Lead card data (Raj Ahuja, Kesari Iyengar — Indus CAD Works booth scan)",
+    "induscadworks.com — domain inference (site content not confirmed accessible)",
+    "Crunchbase — search conducted, no entry found for Indus CAD Works LLC",
+    "LinkedIn — search conducted, no confirmed public profile for Raj Ahuja + Indus CAD Works",
+    "Florida Division of Corporations — LLC registration inference (Boca Raton, FL domicile)",
+    "BEAD award databases (NTIA, state broadband offices) — Indus CAD Works not found as award recipient",
+    "Fiber Connect 2026 speaker/agenda — no panel appearance found for Raj Ahuja or Kesari Iyengar",
+    "Trade press search (BBCMag, LightReading, ETISoftware) — no quotes or mentions found",
+    "Industry baseline (ShowRev Industry Intelligence KB) — applied to interpret signals"
+  ]
+}
+```

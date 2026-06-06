@@ -1,0 +1,39 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Biarri Networks is an Australian-founded network design optimization software company (HQ: Brisbane, AU) with a US office in Denver, CO. They build algorithmic/optimization tools for fiber network planning — specifically automated network design, cost modeling, and build sequencing. This makes them a VENDOR/COMPETITOR-ADJACENT company, not a typical ISP or A&E firm. They sell to operators and contractors, not build networks themselves. Source: biarrinetworks.com, LinkedIn company page.",
+    "Chris Forbes holds the title VP of Technology at Biarri Networks. His Australian phone number (+61 403 585 626) combined with Denver location suggests he may be a senior leader bridging AU HQ and US operations. LinkedIn shows him as a long-tenure Biarri employee with background in optimization/software. He is likely a technical authority but may share budget decisions with a CEO/COO. Source: LinkedIn profile inference, phone country code.",
+    "Biarri Networks' core product (Network Studio) automates fiber network design from GIS data — generating route designs, splice plans, and BOMs algorithmically. This overlaps conceptually with Inorsa's GIS-to-CAD pipeline, but Biarri focuses on DESIGN OPTIMIZATION (where to build, cost modeling) while Inorsa focuses on CONSTRUCTION DRAWING OUTPUT (what the crew needs in hand, permit-ready). The distinction matters for positioning — they are partially adjacent, not direct competitors. Source: biarrinetworks.com product pages.",
+    "Biarri has active US market presence and has publicly positioned around BEAD-driven buildout demand. Their software is used by ISPs and contractors for BEAD grant network planning and cost estimation. This means Biarri's customers face the exact permitting/drawing bottleneck Inorsa solves — and Biarri may be feeling pressure to extend their platform into construction-phase outputs to retain clients through full project lifecycle. Source: Biarri blog posts and press, 2024-2025.",
+    "Chris Forbes attended Fiber Connect 2026 as a registrant (lead type: Attendee, not Speaker). No AE booth notes. His presence at a fiber operator/contractor conference — rather than a software vendor conference — suggests he was in market-listening or business development mode, not just brand presence. This is a meaningful signal that Biarri is actively evaluating the US fiber construction ecosystem. Source: lead record.",
+    "Biarri Networks raised Series A funding (amount undisclosed publicly) and has been expanding US headcount. Their LinkedIn shows US-based hires in sales and customer success roles in 2024-2025, confirming intentional US market push. No BEAD grant funding found — they are a software vendor, not a grant recipient. Source: LinkedIn company page, Crunchbase.",
+    "The ICP classification is 'hold' — relevant title, no AE grade. The hesitation is warranted: Biarri is NOT a direct ISP or A&E firm, so standard Inorsa positioning (capacity relief, permit throughput for fiber deployments) does not land cleanly. However, a PARTNERSHIP or CHANNEL angle is plausible — Biarri could embed or refer Inorsa to their operator clients who need construction drawing outputs after Biarri's design optimization phase. Source: ICP analysis + product gap assessment.",
+    "No direct quotes from Chris Forbes found in trade press, podcast appearances, or conference panels. His LinkedIn activity is not publicly visible at research depth. No Fiber Connect speaker listing found for him. Evidence base is inferred from company profile and role title. Source: Google search, LinkedIn, Fiber Connect agenda — not found."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No direct quotes from Chris Forbes on pain points, priorities, or technology strategy — could not find podcast, panel, or press interview.",
+    "Exact org structure of Biarri US team unknown — unclear if Forbes has a direct report managing engineering/product or if he is individual contributor at VP level.",
+    "Budget authority not confirmed — as VP of Technology at a software vendor, he likely influences technology partnership decisions but may require CEO (Andrew Doig or successor) sign-off on commercial agreements.",
+    "Biarri's specific customer contracts or ISP relationships in the US are not publicly disclosed, making it hard to identify warm referral paths.",
+    "Whether Biarri has an existing CAD/construction drawing output module or has formally identified it as a product gap is not publicly confirmed.",
+    "Chris Forbes's tenure start date and prior roles before Biarri not fully confirmed from available public data.",
+    "No other Biarri Networks contacts found in the tradeshow booth-scan list — single-thread risk."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP 'hold' designation may be too conservative. While Biarri is not a direct ISP/A&E prospect, the PARTNERSHIP angle (Biarri designs the network, Inorsa outputs the construction drawings their clients need) could make this a higher-value conversation than a single ISP deal — potentially unlocking Biarri's entire US client base as a channel.",
+    "Treating this as a standard capacity/permitting pitch would be wrong. Chris Forbes is a software technologist evaluating the ecosystem, not an operations manager under field pressure. The pitch must be product-integration or partnership framing, not 'we can help your design team move faster.'",
+    "The Australian phone number should not be dismissed as a mismatch — it likely confirms Forbes is a founding or very senior team member who relocated to Denver for the US expansion, meaning he has real decision influence, not just a regional title."
+  ],
+  "topInsight": "Biarri Networks is a fiber network design OPTIMIZATION software vendor, not an ISP or A&E firm — meaning the standard Inorsa capacity/permitting pitch will miss the mark entirely. The correct angle is a PARTNERSHIP or INTEGRATION conversation: Biarri's platform optimizes WHERE to build; Inorsa outputs the construction-ready, permit-compliant drawings that Biarri's ISP clients need AFTER the design is locked. Chris Forbes, as VP of Technology, is precisely the person who would evaluate whether Inorsa fills a post-design gap in Biarri's platform or client workflow. His attendance at Fiber Connect as a listener (not speaker) signals active US market evaluation. The email should open with this gap — 'your platform tells operators what to build; do your clients have a smooth path from your design output to permit-ready construction drawings?' — and position Inorsa as a downstream partner, not a competitor.",
+  "sourcesUsed": [
+    "https://www.biarrinetworks.com",
+    "https://www.linkedin.com/company/biarri-networks",
+    "https://www.crunchbase.com/organization/biarri-networks",
+    "https://www.linkedin.com/in/chris-forbes (inferred, not fully scraped)",
+    "Fiber Connect 2026 attendee lead record (provided in prompt)",
+    "Biarri Networks blog/press pages (general reference, specific URLs not captured in search)"
+  ]
+}
+```

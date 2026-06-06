@@ -1,0 +1,36 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Clearfield, Inc. is a publicly traded manufacturer (NASDAQ: CLFD) of fiber optic equipment — specifically fiber management, protection, and distribution hardware (e.g., FieldSmart cabinets, cassettes, pedestals). They are a VENDOR to ISPs and operators, not an ISP or operator themselves. This is a critical ICP flag: Clearfield sells the physical infrastructure that goes IN the ground, not the entity designing or permitting the network. Source: Clearfield investor relations / corporate website (seeclearfield.com).",
+    "Mark School holds the title Regional Sales Manager at Clearfield. This is a revenue-generating sales role oriented toward selling Clearfield's hardware products to telecom operators and ISPs. He is NOT an engineering manager, design lead, or operations buyer. His decision authority is over his own pipeline and customer relationships, not over purchasing design software tools. Source: LinkedIn title inference + company profile.",
+    "Sara Peters, also from Clearfield at the show, is titled Business Development Manager — similarly a revenue/sales-facing role. Two sales-side attendees from the same hardware vendor at a fiber deployment conference strongly suggests Clearfield was there to sell to ISPs and operators attending the show, not to buy software for their own internal use. Source: booth-scan list context.",
+    "Clearfield's internal workflow does not involve GIS-to-CAD permitting or construction drawing generation. Their core operation is manufacturing and selling passive fiber equipment. They do not have field design crews building fiber networks. The Inorsa value proposition (permit drawing generation, GIS validation, cycle time reduction) maps to engineering-heavy operators, ISPs, and A&E firms — not hardware manufacturers like Clearfield. Source: Clearfield product portfolio analysis.",
+    "Clearfield has publicly positioned itself as a partner to rural ISPs and BEAD-funded operators. They participate in industry events to reach these buyers. Mark School's attendance at Fiber Connect 2026 is almost certainly in a sales/business development capacity representing Clearfield's hardware line, not as a prospective buyer of engineering software. Source: Clearfield go-to-market positioning and trade show attendance patterns.",
+    "Clearfield reported revenue headwinds in 2024-2025 as the post-COVID fiber boom moderated and operators worked through inventory. BEAD deployment represents a significant demand catalyst for Clearfield's hardware — their sales team would be aggressively prospecting at Fiber Connect 2026 to reach BEAD-funded operators before construction cycles begin. This further confirms Mark School was there as a seller, not a buyer of software tools. Source: CLFD public earnings commentary.",
+    "No direct quote from Mark School found in trade press, podcasts, or panel appearances. LinkedIn profile data thin per Brain digest notation ('Mark School's specific LinkedIn profile or career history — not confirmed'). No conference speaker record found. Source: Brain digest, search gap."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Could not confirm Mark School's specific LinkedIn profile, career history, or tenure at Clearfield — Brain digest flagged this as unverified.",
+    "No direct quotes from Mark School in trade press, podcasts, or panel appearances found.",
+    "Cannot confirm whether Clearfield has any internal GIS or design operations team (e.g., if they offer design services as a value-add to operator customers) — this is an edge case worth a single verification check but unlikely.",
+    "Sara Peters' full role scope not confirmed — she could theoretically be involved in a partnership or reseller relationship, but no evidence found.",
+    "Did not find any evidence of Clearfield pursuing or internally using design automation or permitting software tools."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold designation ('Thin data — needs research to determine fit') was appropriately cautious, but based on research this is not a hold — it is likely a disqualify. Clearfield is a hardware manufacturer attending a deployment conference in a sales capacity. The ICP is not 'thin,' it is 'wrong vertical.' Upgrading to D-tier outreach would be a misallocation of AE time.",
+    "There is one edge-case scenario worth testing before full disqualification: if Clearfield has begun offering design or engineering support services to its smaller ISP customers as a differentiated sales motion (a known tactic among hardware vendors competing for BEAD wallet share), they might have an internal need for design tooling. However, there is no evidence of this in publicly available Clearfield materials, and it would be a stretch hypothesis requiring direct confirmation before building a campaign around it.",
+    "Brain digest listed 'Mark School's LinkedIn profile or career history' as a discovered company entity — this appears to be a parsing artifact, not a genuine company discovery. Should not be treated as a signal."
+  ],
+  "topInsight": "Clearfield is a fiber hardware manufacturer (NASDAQ: CLFD), not a network operator, ISP, or A&E firm. Mark School is a Regional Sales Manager selling Clearfield's passive fiber equipment to operators — he attended Fiber Connect 2026 as a vendor, not as a buyer of engineering software. Inorsa's value proposition has no natural landing point at Clearfield in its current form. Recommended action: flag as ICP-miss, deprioritize from follow-up sequence, and redirect effort toward the operators and ISPs that Clearfield itself sells to — those are the firms with GIS-to-CAD permitting pain and active BEAD deployment timelines.",
+  "sourcesUsed": [
+    "https://www.seeclearfield.com (corporate product/solution overview)",
+    "https://www.nasdaq.com/market-activity/stocks/clfd (CLFD public company profile)",
+    "Clearfield investor relations / earnings commentary (CLFD 2024-2025 revenue cycle context)",
+    "Fiber Connect 2026 attendee scan list (two Clearfield contacts, both sales-side titles)",
+    "Brain Knowledge Digest (Mark School LinkedIn — flagged as unverified/thin)",
+    "Industry baseline: ShowRev Industry Intelligence KB (hardware vendor go-to-market patterns at deployment conferences)"
+  ]
+}
+```

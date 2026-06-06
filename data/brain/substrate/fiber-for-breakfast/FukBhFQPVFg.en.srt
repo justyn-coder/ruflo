@@ -1,0 +1,3476 @@
+1
+00:00:06,530 --> 00:00:17,449
+[Music]
+
+2
+00:00:18,000 --> 00:00:20,480
+hey
+
+3
+00:00:24,720 --> 00:00:29,199
+hey hey hey
+
+4
+00:00:37,040 --> 00:00:41,780
+[Music]
+
+5
+00:00:42,280 --> 00:00:46,760
+hey well good morning and welcome to the
+
+6
+00:00:44,680 --> 00:00:49,600
+fiber Broadband associations fire for
+
+7
+00:00:46,760 --> 00:00:50,960
+breakfast we're now in our 14th episode
+
+8
+00:00:49,600 --> 00:00:53,160
+of
+
+9
+00:00:50,960 --> 00:00:55,160
+2025 and before we kick off I'd like to
+
+10
+00:00:53,160 --> 00:00:56,079
+thank Wesco the Platinum sponsor of five
+
+11
+00:00:55,160 --> 00:00:59,239
+for
+
+12
+00:00:56,079 --> 00:01:01,519
+breakfast so I'm here in Philadelphia
+
+13
+00:00:59,239 --> 00:01:05,000
+with my good friends Rich Williams from
+
+14
+00:01:01,519 --> 00:01:08,280
+C2C and also the FBA um conference
+
+15
+00:01:05,000 --> 00:01:11,080
+program director and Evan Freeman who is
+
+16
+00:01:08,280 --> 00:01:13,520
+the uh FBA board member but he's also
+
+17
+00:01:11,080 --> 00:01:16,840
+the 2025 conference chair and we're
+
+18
+00:01:13,520 --> 00:01:20,280
+going to be doing a live semi 5 for
+
+19
+00:01:16,840 --> 00:01:22,119
+breakfast so please join us for this uh
+
+20
+00:01:20,280 --> 00:01:23,360
+you know speaking of Philadelphia the
+
+21
+00:01:22,119 --> 00:01:26,960
+reason we're in Philadelphia is we're
+
+22
+00:01:23,360 --> 00:01:30,479
+having our second um Regional fiber
+
+23
+00:01:26,960 --> 00:01:32,880
+connect um workshop and uh again sold
+
+24
+00:01:30,479 --> 00:01:35,360
+out so San Antonio was a home run just
+
+25
+00:01:32,880 --> 00:01:37,720
+you know set a record and we've um
+
+26
+00:01:35,360 --> 00:01:39,840
+meeted maximum capacity and filled out
+
+27
+00:01:37,720 --> 00:01:43,040
+there so it's great and then coming up
+
+28
+00:01:39,840 --> 00:01:45,719
+what's next is we'll be on uh fiber day
+
+29
+00:01:43,040 --> 00:01:48,479
+on the hill on April 9th in DC and we'll
+
+30
+00:01:45,719 --> 00:01:51,439
+be in the RoR room last year we had over
+
+31
+00:01:48,479 --> 00:01:54,600
+350 members of Congress their staff the
+
+32
+00:01:51,439 --> 00:01:57,719
+administration Niti FCC and it's just a
+
+33
+00:01:54,600 --> 00:02:00,799
+great way to remind our key policy
+
+34
+00:01:57,719 --> 00:02:03,240
+makers why it's so critical that we use
+
+35
+00:02:00,799 --> 00:02:05,000
+Fiverr for building out our nation's
+
+36
+00:02:03,240 --> 00:02:08,920
+broad critical Broadband
+
+37
+00:02:05,000 --> 00:02:11,160
+infrastructure um you know after um
+
+38
+00:02:08,920 --> 00:02:12,760
+fiber Dan Hill we'll be going down to
+
+39
+00:02:11,160 --> 00:02:15,319
+Nashville and that's what we're going to
+
+40
+00:02:12,760 --> 00:02:18,800
+be talking about a lot today is uh June
+
+41
+00:02:15,319 --> 00:02:20,800
+1st to Fourth is our fiber connect 2025
+
+42
+00:02:18,800 --> 00:02:23,000
+event and it's going to be epic that's
+
+43
+00:02:20,800 --> 00:02:26,160
+rich and um Evan what are you talking
+
+44
+00:02:23,000 --> 00:02:29,959
+about and then after um Nashville will
+
+45
+00:02:26,160 --> 00:02:33,000
+be an Anchorage in July Toronto and
+
+46
+00:02:29,959 --> 00:02:36,280
+August Spokane in September uh Scottdale
+
+47
+00:02:33,000 --> 00:02:38,440
+in October and Kansas City in November
+
+48
+00:02:36,280 --> 00:02:40,680
+and then we finish the year out in Palm
+
+49
+00:02:38,440 --> 00:02:43,440
+Springs for our Premier member meeting
+
+50
+00:02:40,680 --> 00:02:45,720
+from December 9th and 10th or excuse me
+
+51
+00:02:43,440 --> 00:02:48,000
+8th and 9th so that brings us today's
+
+52
+00:02:45,720 --> 00:02:51,000
+fire for breakfast session with Evan
+
+53
+00:02:48,000 --> 00:02:54,159
+Freeman and Rich Williams to talk about
+
+54
+00:02:51,000 --> 00:02:57,400
+our fireside chat on the fiber connect
+
+55
+00:02:54,159 --> 00:02:59,840
+2025 hot seat so last week on fire for
+
+56
+00:02:57,400 --> 00:03:01,200
+breakfast Our Guest was John Willow the
+
+57
+00:02:59,840 --> 00:03:03,920
+the co-founder of the community
+
+58
+00:03:01,200 --> 00:03:06,280
+Broadband Action Network or cband who
+
+59
+00:03:03,920 --> 00:03:10,280
+shared her insights on breaking barriers
+
+60
+00:03:06,280 --> 00:03:12,560
+using AI to develop uh connected
+
+61
+00:03:10,280 --> 00:03:14,560
+collaboration so um that was a really
+
+62
+00:03:12,560 --> 00:03:16,000
+interesting topic and if you missed it
+
+63
+00:03:14,560 --> 00:03:18,200
+you can go to our website and watch the
+
+64
+00:03:16,000 --> 00:03:20,599
+replay today in five breakfast I have
+
+65
+00:03:18,200 --> 00:03:22,400
+our our good friends Evan Freeman uh
+
+66
+00:03:20,599 --> 00:03:24,879
+who's on our board of directors and our
+
+67
+00:03:22,400 --> 00:03:27,440
+conference chair and Rich Williams who's
+
+68
+00:03:24,879 --> 00:03:30,400
+our program director to talk about our
+
+69
+00:03:27,440 --> 00:03:33,120
+fiber connect 2025 program the fiber
+
+70
+00:03:30,400 --> 00:03:35,400
+connect 2025 hot seat and they'll talk a
+
+71
+00:03:33,120 --> 00:03:37,200
+little bit why we call it a hot seat um
+
+72
+00:03:35,400 --> 00:03:39,159
+so Evan is the vice president of
+
+73
+00:03:37,200 --> 00:03:42,360
+government fairs and community relations
+
+74
+00:03:39,159 --> 00:03:44,599
+at EPB in Chattanooga in this role Evan
+
+75
+00:03:42,360 --> 00:03:46,680
+leads the epb's government relations and
+
+76
+00:03:44,599 --> 00:03:49,000
+economic development he served on the
+
+77
+00:03:46,680 --> 00:03:49,799
+fiber Broadband association's board and
+
+78
+00:03:49,000 --> 00:03:53,480
+the
+
+79
+00:03:49,799 --> 00:03:55,360
+2025 U fiber connect chairman and Rich
+
+80
+00:03:53,480 --> 00:03:58,040
+Williams is the president of connect 2
+
+81
+00:03:55,360 --> 00:04:00,120
+Communications PR agency he works with
+
+82
+00:03:58,040 --> 00:04:02,640
+clients on messaging program devel vment
+
+83
+00:04:00,120 --> 00:04:05,680
+and goals and with the team uh at
+
+84
+00:04:02,640 --> 00:04:08,280
+connect 2 to ensure programs develop uh
+
+85
+00:04:05,680 --> 00:04:11,400
+match clients priorities in this role at
+
+86
+00:04:08,280 --> 00:04:14,000
+FBA conference Pro um program director
+
+87
+00:04:11,400 --> 00:04:15,400
+he works with the executive team uh the
+
+88
+00:04:14,000 --> 00:04:18,000
+conference committee and other
+
+89
+00:04:15,400 --> 00:04:19,720
+stakeholders to craft and curate the
+
+90
+00:04:18,000 --> 00:04:22,520
+agendas for the regional fiber connnect
+
+91
+00:04:19,720 --> 00:04:26,280
+workshops and for our fiber connect
+
+92
+00:04:22,520 --> 00:04:29,479
+granddaddy um big conference so welcome
+
+93
+00:04:26,280 --> 00:04:30,919
+Evan and Rich hey G thanks for having us
+
+94
+00:04:29,479 --> 00:04:32,720
+yeah well just you know we've had so
+
+95
+00:04:30,919 --> 00:04:34,120
+much fun working over the past year on
+
+96
+00:04:32,720 --> 00:04:36,039
+this conference and this is going to be
+
+97
+00:04:34,120 --> 00:04:37,919
+our best year ever ever so why don't I
+
+98
+00:04:36,039 --> 00:04:39,759
+just turn over to you guys and you can
+
+99
+00:04:37,919 --> 00:04:41,400
+tell us a little bit about why this
+
+100
+00:04:39,759 --> 00:04:43,479
+conference is going to be better than
+
+101
+00:04:41,400 --> 00:04:45,120
+we've ever had I think it's interesting
+
+102
+00:04:43,479 --> 00:04:46,160
+the the the amount of time I I don't
+
+103
+00:04:45,120 --> 00:04:47,440
+think people understand the amount of
+
+104
+00:04:46,160 --> 00:04:49,400
+time it takes to prep for one of these
+
+105
+00:04:47,440 --> 00:04:51,240
+conferences when you have 5,000 of your
+
+106
+00:04:49,400 --> 00:04:53,039
+closest friends coming and you're trying
+
+107
+00:04:51,240 --> 00:04:55,440
+to shape the the the narrative and the
+
+108
+00:04:53,039 --> 00:04:56,840
+conversations so they're meaningful 12
+
+109
+00:04:55,440 --> 00:04:58,720
+month 12 months in advance you're sort
+
+110
+00:04:56,840 --> 00:05:00,639
+of making assumptions on things going to
+
+111
+00:04:58,720 --> 00:05:02,560
+happen um you know one of the things I
+
+112
+00:05:00,639 --> 00:05:04,560
+think was a bonus for us is a lot's
+
+113
+00:05:02,560 --> 00:05:06,039
+happened the last six months and you
+
+114
+00:05:04,560 --> 00:05:07,360
+know fiber connect really is a place if
+
+115
+00:05:06,039 --> 00:05:09,240
+you want to figure out how this impacts
+
+116
+00:05:07,360 --> 00:05:10,600
+your business come to fiber connect
+
+117
+00:05:09,240 --> 00:05:12,320
+because you we have all the people there
+
+118
+00:05:10,600 --> 00:05:14,880
+that give you the answers so it's going
+
+119
+00:05:12,320 --> 00:05:16,840
+be a really exciting show yep no we're
+
+120
+00:05:14,880 --> 00:05:19,120
+we're really excited about it and and um
+
+121
+00:05:16,840 --> 00:05:21,199
+you know last year was a very successful
+
+122
+00:05:19,120 --> 00:05:23,479
+show and and got a lot of great feedback
+
+123
+00:05:21,199 --> 00:05:24,880
+and and so a lot of the content that um
+
+124
+00:05:23,479 --> 00:05:26,759
+is pretty popular we're bringing back
+
+125
+00:05:24,880 --> 00:05:28,759
+again this year but but adding some some
+
+126
+00:05:26,759 --> 00:05:31,520
+new things to it as well well that's
+
+127
+00:05:28,759 --> 00:05:33,960
+kind I think the big challenge is when
+
+128
+00:05:31,520 --> 00:05:36,360
+you've had such a great show last year
+
+129
+00:05:33,960 --> 00:05:39,440
+how do we take it up to the next level
+
+130
+00:05:36,360 --> 00:05:40,720
+it was it was um nerve-wracking honestly
+
+131
+00:05:39,440 --> 00:05:42,759
+because you had this is a great show
+
+132
+00:05:40,720 --> 00:05:44,560
+you're like well how do we top that and
+
+133
+00:05:42,759 --> 00:05:47,080
+so we really went to the well and how do
+
+134
+00:05:44,560 --> 00:05:49,160
+we top that and and I sort of joke with
+
+135
+00:05:47,080 --> 00:05:52,319
+the staff about this all the time is I'm
+
+136
+00:05:49,160 --> 00:05:55,120
+you know I'll give you 100 ideas and 90
+
+137
+00:05:52,319 --> 00:05:57,240
+of them will suck um but 10 will be
+
+138
+00:05:55,120 --> 00:05:59,199
+pretty good and of those maybe like T
+
+139
+00:05:57,240 --> 00:06:00,759
+may be generous it t maybe generous but
+
+140
+00:05:59,199 --> 00:06:02,520
+but four of them just only four of them
+
+141
+00:06:00,759 --> 00:06:05,160
+are feasible but like we had our
+
+142
+00:06:02,520 --> 00:06:07,560
+planning meeting um
+
+143
+00:06:05,160 --> 00:06:09,560
+and the scary part is we had a bunch of
+
+144
+00:06:07,560 --> 00:06:12,240
+ideas and we're doing all of them and
+
+145
+00:06:09,560 --> 00:06:14,080
+I'm like holy moly we're doing all of
+
+146
+00:06:12,240 --> 00:06:16,160
+them so there's so there's so much
+
+147
+00:06:14,080 --> 00:06:19,240
+that's new there's so much that's been
+
+148
+00:06:16,160 --> 00:06:21,160
+fine-tuned um you we've added components
+
+149
+00:06:19,240 --> 00:06:23,240
+the popular ponents we've added depth to
+
+150
+00:06:21,160 --> 00:06:24,560
+it um we've created new things that we
+
+151
+00:06:23,240 --> 00:06:26,080
+think are important to the community
+
+152
+00:06:24,560 --> 00:06:27,319
+that that we're going to do for the
+
+153
+00:06:26,080 --> 00:06:28,479
+first time and if they work we'll bring
+
+154
+00:06:27,319 --> 00:06:30,400
+them back if not we'll find something
+
+155
+00:06:28,479 --> 00:06:32,240
+different but we're really excited about
+
+156
+00:06:30,400 --> 00:06:34,960
+about what we have in store for you as
+
+157
+00:06:32,240 --> 00:06:39,240
+we light it up at fiber connect yeah so
+
+158
+00:06:34,960 --> 00:06:42,319
+talk about that why so um provide L
+
+159
+00:06:39,240 --> 00:06:43,840
+Insight on light it up yeah well we we
+
+160
+00:06:42,319 --> 00:06:45,479
+came with the the Light It Up theme this
+
+161
+00:06:43,840 --> 00:06:47,360
+year is because we're really thinking
+
+162
+00:06:45,479 --> 00:06:49,280
+about um last year you know the
+
+163
+00:06:47,360 --> 00:06:51,560
+conversation was was heavy on on the
+
+164
+00:06:49,280 --> 00:06:53,560
+beat funding that was coming down um but
+
+165
+00:06:51,560 --> 00:06:55,080
+this year we're really thinking about um
+
+166
+00:06:53,560 --> 00:06:56,919
+not just the B funding but if you think
+
+167
+00:06:55,080 --> 00:06:58,479
+about a lot of our members the big
+
+168
+00:06:56,919 --> 00:07:00,879
+announcements that you talk about with
+
+169
+00:06:58,479 --> 00:07:02,319
+the capex that they're investing in
+
+170
+00:07:00,879 --> 00:07:03,759
+building fiber throughout the country
+
+171
+00:07:02,319 --> 00:07:05,440
+and so this year is really going to be a
+
+172
+00:07:03,759 --> 00:07:07,160
+significant year where networks are
+
+173
+00:07:05,440 --> 00:07:09,080
+being light up and rural areas that have
+
+174
+00:07:07,160 --> 00:07:10,840
+never been covered and served in a
+
+175
+00:07:09,080 --> 00:07:12,919
+meaningful way are going to be served
+
+176
+00:07:10,840 --> 00:07:15,759
+and and so that's that's where we're a
+
+177
+00:07:12,919 --> 00:07:18,199
+basis of the the theme of light it up
+
+178
+00:07:15,759 --> 00:07:20,280
+I'm so really excited about that you
+
+179
+00:07:18,199 --> 00:07:22,319
+know when we were meeting in October
+
+180
+00:07:20,280 --> 00:07:25,160
+last year to really set this tone for
+
+181
+00:07:22,319 --> 00:07:26,240
+the conference what we we thought it was
+
+182
+00:07:25,160 --> 00:07:30,160
+going to be this is going to be a
+
+183
+00:07:26,240 --> 00:07:32,520
+pivotal moment in history and we want to
+
+184
+00:07:30,160 --> 00:07:35,240
+make sure that everybody who comes to
+
+185
+00:07:32,520 --> 00:07:37,000
+the conference you know it's like
+
+186
+00:07:35,240 --> 00:07:38,319
+Alabama football right they say well
+
+187
+00:07:37,000 --> 00:07:39,960
+I'll go to the national championship
+
+188
+00:07:38,319 --> 00:07:41,000
+game next year you know because they
+
+189
+00:07:39,960 --> 00:07:42,879
+just think that they just going to have
+
+190
+00:07:41,000 --> 00:07:44,280
+this great conference every year and we
+
+191
+00:07:42,879 --> 00:07:47,680
+don't want people to get in that mod we
+
+192
+00:07:44,280 --> 00:07:49,800
+want to people don't want to miss
+
+193
+00:07:47,680 --> 00:07:51,680
+2025 right because it is the year that
+
+194
+00:07:49,800 --> 00:07:53,039
+we're going to be lighting things up and
+
+195
+00:07:51,680 --> 00:07:54,440
+do you guys want to walk through some of
+
+196
+00:07:53,039 --> 00:07:56,280
+the what you what's going to be going on
+
+197
+00:07:54,440 --> 00:07:57,479
+at the event yeah sure absolutely yeah I
+
+198
+00:07:56,280 --> 00:07:59,199
+think it's important to lay out just you
+
+199
+00:07:57,479 --> 00:08:01,720
+know to your point with the the football
+
+200
+00:07:59,199 --> 00:08:03,280
+announ ology like that this has been a
+
+201
+00:08:01,720 --> 00:08:05,280
+successful event but one of the reasons
+
+202
+00:08:03,280 --> 00:08:06,840
+that fiber connect has continually
+
+203
+00:08:05,280 --> 00:08:09,280
+gotten better every year is that we
+
+204
+00:08:06,840 --> 00:08:11,560
+think about how can we create recreate
+
+205
+00:08:09,280 --> 00:08:13,680
+ourselves and not just s stick with the
+
+206
+00:08:11,560 --> 00:08:15,319
+status quo to be better well and also
+
+207
+00:08:13,680 --> 00:08:16,919
+make sure the conversations are about
+
+208
+00:08:15,319 --> 00:08:20,080
+things are important in industry and not
+
+209
+00:08:16,919 --> 00:08:21,960
+have conversations where people are just
+
+210
+00:08:20,080 --> 00:08:24,599
+talking about their companies right like
+
+211
+00:08:21,960 --> 00:08:25,720
+we really eliminated that ability that
+
+212
+00:08:24,599 --> 00:08:28,080
+when you go to conferences you hear
+
+213
+00:08:25,720 --> 00:08:30,199
+people talk about just their products
+
+214
+00:08:28,080 --> 00:08:32,279
+like if you want to do that buy you you
+
+215
+00:08:30,199 --> 00:08:34,399
+can book space on the expool stage
+
+216
+00:08:32,279 --> 00:08:37,000
+otherwise it's about meaningful things
+
+217
+00:08:34,399 --> 00:08:38,479
+in the in the market yep and just
+
+218
+00:08:37,000 --> 00:08:40,440
+jumping right in talk you know something
+
+219
+00:08:38,479 --> 00:08:42,519
+for everyone um and again one of the
+
+220
+00:08:40,440 --> 00:08:44,800
+things that we want to do uh to be able
+
+221
+00:08:42,519 --> 00:08:46,800
+to to to continue to grow our conference
+
+222
+00:08:44,800 --> 00:08:49,000
+is is have something for everyone in in
+
+223
+00:08:46,800 --> 00:08:51,800
+the industry and in their companies and
+
+224
+00:08:49,000 --> 00:08:53,760
+so with that you know having the the 10
+
+225
+00:08:51,800 --> 00:08:56,120
+different content specific things like
+
+226
+00:08:53,760 --> 00:08:58,079
+the state Broadband Summit uh the sea
+
+227
+00:08:56,120 --> 00:09:00,480
+sleep Summit which is specifically
+
+228
+00:08:58,079 --> 00:09:03,399
+geared towards the SE sea Suite level
+
+229
+00:09:00,480 --> 00:09:04,959
+and and and the content and just the uh
+
+230
+00:09:03,399 --> 00:09:06,600
+really excited about that one cu the
+
+231
+00:09:04,959 --> 00:09:08,760
+environment in there um there's going to
+
+232
+00:09:06,600 --> 00:09:10,360
+be a sea Suite lounge and so it's really
+
+233
+00:09:08,760 --> 00:09:12,240
+an opportunity for those folks to come
+
+234
+00:09:10,360 --> 00:09:14,680
+in and they could they could do their
+
+235
+00:09:12,240 --> 00:09:16,480
+business there do set meetings there U
+
+236
+00:09:14,680 --> 00:09:18,560
+you know if they have have a cocktail
+
+237
+00:09:16,480 --> 00:09:20,880
+have some coffee right you got a Bria
+
+238
+00:09:18,560 --> 00:09:22,360
+there well this is networking you know
+
+239
+00:09:20,880 --> 00:09:25,320
+when I like think about the sea Suite
+
+240
+00:09:22,360 --> 00:09:26,720
+Summit you know specifically you know
+
+241
+00:09:25,320 --> 00:09:29,040
+we've been working really hard to try to
+
+242
+00:09:26,720 --> 00:09:31,000
+hone that in so that it this becomes a
+
+243
+00:09:29,040 --> 00:09:33,040
+really great environment for the
+
+244
+00:09:31,000 --> 00:09:34,880
+executive team from All Our member
+
+245
+00:09:33,040 --> 00:09:38,519
+companies and everybody in the industry
+
+246
+00:09:34,880 --> 00:09:40,320
+to be able to show up and one if you're
+
+247
+00:09:38,519 --> 00:09:41,320
+you know if you're a CEO of a company
+
+248
+00:09:40,320 --> 00:09:42,640
+you got to be able to have an
+
+249
+00:09:41,320 --> 00:09:45,440
+environment where you can continue to
+
+250
+00:09:42,640 --> 00:09:46,959
+work and run your business so we have
+
+251
+00:09:45,440 --> 00:09:48,800
+the meeting rooms and try to have the
+
+252
+00:09:46,959 --> 00:09:50,560
+lounge but also you want to be able to
+
+253
+00:09:48,800 --> 00:09:52,120
+meet with your peers and that's again
+
+254
+00:09:50,560 --> 00:09:54,959
+you know being able to have a networking
+
+255
+00:09:52,120 --> 00:09:56,600
+Lounge that you can have you know a
+
+256
+00:09:54,959 --> 00:09:59,399
+snack and be able to chat with your
+
+257
+00:09:56,600 --> 00:10:03,800
+friends but then also to have the C
+
+258
+00:09:59,399 --> 00:10:05,959
+sweet Forum so that we bring in um some
+
+259
+00:10:03,800 --> 00:10:08,519
+folks they might not have access to and
+
+260
+00:10:05,959 --> 00:10:11,800
+be able to have those conversations with
+
+261
+00:10:08,519 --> 00:10:14,160
+125 other CEOs and Senior Executives and
+
+262
+00:10:11,800 --> 00:10:15,600
+then we've created we've now this year
+
+263
+00:10:14,160 --> 00:10:17,240
+we're going to have some networking
+
+264
+00:10:15,600 --> 00:10:19,279
+right afterwards so that those
+
+265
+00:10:17,240 --> 00:10:20,480
+conversations can move forward yeah
+
+266
+00:10:19,279 --> 00:10:22,399
+absolutely and we also have the tribal
+
+267
+00:10:20,480 --> 00:10:25,160
+Broadband networking lounge and the
+
+268
+00:10:22,399 --> 00:10:27,560
+state bro stop State Broadband officer
+
+269
+00:10:25,160 --> 00:10:28,920
+or office networking lounge and i' you
+
+270
+00:10:27,560 --> 00:10:30,279
+know I've been talking to a lot of State
+
+271
+00:10:28,920 --> 00:10:32,079
+broadband directors and they're really
+
+272
+00:10:30,279 --> 00:10:33,680
+excited about you know because while
+
+273
+00:10:32,079 --> 00:10:36,040
+they're you know each state is kind of
+
+274
+00:10:33,680 --> 00:10:37,920
+doing their own thing they like to be
+
+275
+00:10:36,040 --> 00:10:40,120
+able to you know collaborate with their
+
+276
+00:10:37,920 --> 00:10:41,320
+colleagues around the nation and these
+
+277
+00:10:40,120 --> 00:10:43,399
+kind of opportunities where they can
+
+278
+00:10:41,320 --> 00:10:46,000
+spend time in the you know State
+
+279
+00:10:43,399 --> 00:10:49,399
+Broadband Office lounge to you know
+
+280
+00:10:46,000 --> 00:10:51,399
+coordinate and to you know run ideas by
+
+281
+00:10:49,399 --> 00:10:53,880
+their other Broadband directors is a
+
+282
+00:10:51,399 --> 00:10:56,240
+great opportunity yeah I'm super excited
+
+283
+00:10:53,880 --> 00:10:57,959
+about the tribal Broadband as well we're
+
+284
+00:10:56,240 --> 00:10:59,680
+still you know we've been trying to amp
+
+285
+00:10:57,959 --> 00:11:01,800
+that up and I think you this is really
+
+286
+00:10:59,680 --> 00:11:03,279
+going to be a big breakup for us this
+
+287
+00:11:01,800 --> 00:11:04,920
+year and tribal is doing some really
+
+288
+00:11:03,279 --> 00:11:06,880
+cool things it is and we've got tribal
+
+289
+00:11:04,920 --> 00:11:09,200
+content throughout the conference so
+
+290
+00:11:06,880 --> 00:11:11,839
+from um on the main stage from the
+
+291
+00:11:09,200 --> 00:11:13,560
+public the Broadband policy Symposium to
+
+292
+00:11:11,839 --> 00:11:15,720
+its own track and the breakouts on
+
+293
+00:11:13,560 --> 00:11:16,839
+Monday afternoon so a lot of tribal
+
+294
+00:11:15,720 --> 00:11:18,440
+content so if that's something that is
+
+295
+00:11:16,839 --> 00:11:22,279
+important to your business either as a
+
+296
+00:11:18,440 --> 00:11:24,399
+tri tribal Broadband um operator or um
+
+297
+00:11:22,279 --> 00:11:26,639
+tribal Nation or you're an operator that
+
+298
+00:11:24,399 --> 00:11:27,920
+wants to sell into that market this is
+
+299
+00:11:26,639 --> 00:11:30,440
+the place to
+
+300
+00:11:27,920 --> 00:11:32,399
+come um and along the lines of the the
+
+301
+00:11:30,440 --> 00:11:34,200
+networking um just bringing back the the
+
+302
+00:11:32,399 --> 00:11:36,279
+meetups um that we're going to have like
+
+303
+00:11:34,200 --> 00:11:37,959
+after so I think one of the things that
+
+304
+00:11:36,279 --> 00:11:40,040
+folks find most valuable it's just an
+
+305
+00:11:37,959 --> 00:11:42,040
+opportunity to go and and meet new
+
+306
+00:11:40,040 --> 00:11:43,600
+people that are in in the industry and
+
+307
+00:11:42,040 --> 00:11:46,480
+and you know that they can relate to we
+
+308
+00:11:43,600 --> 00:11:48,240
+have the the fiber under 40 um which has
+
+309
+00:11:46,480 --> 00:11:50,720
+been growing a whole lot we're excited
+
+310
+00:11:48,240 --> 00:11:52,839
+about that so I'm almost out of that one
+
+311
+00:11:50,720 --> 00:11:55,000
+I'm almost timed out of that um but but
+
+312
+00:11:52,839 --> 00:11:57,120
+quite a few meetups and and so I really
+
+313
+00:11:55,000 --> 00:11:58,680
+encourage folks to continue to to to be
+
+314
+00:11:57,120 --> 00:12:00,800
+a part of those and and really get to
+
+315
+00:11:58,680 --> 00:12:02,120
+know each other well that's funny cuz
+
+316
+00:12:00,800 --> 00:12:04,160
+like you know at the regional events
+
+317
+00:12:02,120 --> 00:12:06,000
+we've started doing new member meetups
+
+318
+00:12:04,160 --> 00:12:08,480
+and new members old members everybody
+
+319
+00:12:06,000 --> 00:12:12,120
+shows up um tonight we had one of those
+
+320
+00:12:08,480 --> 00:12:14,440
+and it's just a party and uh it's
+
+321
+00:12:12,120 --> 00:12:15,920
+exciting to see how much energy and how
+
+322
+00:12:14,440 --> 00:12:18,000
+people want to come in early to be able
+
+323
+00:12:15,920 --> 00:12:20,240
+to spend time and get to know other
+
+324
+00:12:18,000 --> 00:12:22,000
+members of the industry so it's it's
+
+325
+00:12:20,240 --> 00:12:24,560
+kind of contagious I think one things
+
+326
+00:12:22,000 --> 00:12:26,399
+that's happened is that these Regional
+
+327
+00:12:24,560 --> 00:12:28,560
+events and the main show they become the
+
+328
+00:12:26,399 --> 00:12:30,199
+place where business gets done right and
+
+329
+00:12:28,560 --> 00:12:32,519
+when you have the CEO of a company and
+
+330
+00:12:30,199 --> 00:12:34,040
+you have the CTO and you have the sales
+
+331
+00:12:32,519 --> 00:12:35,399
+people and you have the product people
+
+332
+00:12:34,040 --> 00:12:37,160
+they can have all the conversations they
+
+333
+00:12:35,399 --> 00:12:39,600
+need to have to move their business
+
+334
+00:12:37,160 --> 00:12:41,040
+forward so instead of just being a place
+
+335
+00:12:39,600 --> 00:12:43,160
+where you sort of interact and then
+
+336
+00:12:41,040 --> 00:12:44,720
+follow up deals are done at Fiverr
+
+337
+00:12:43,160 --> 00:12:47,880
+connect and that's you know that's sort
+
+338
+00:12:44,720 --> 00:12:49,399
+of a rare commodity of a or attribute of
+
+339
+00:12:47,880 --> 00:12:50,920
+a conference and that's one of the
+
+340
+00:12:49,399 --> 00:12:52,199
+things I think so exciting just you know
+
+341
+00:12:50,920 --> 00:12:54,320
+like being you and I in the green room
+
+342
+00:12:52,199 --> 00:12:55,720
+all three of us in the Green Room a lot
+
+343
+00:12:54,320 --> 00:12:57,079
+just hearing the people have
+
+344
+00:12:55,720 --> 00:12:58,959
+conversations that haven't met before
+
+345
+00:12:57,079 --> 00:13:00,920
+and saying oh we got to do this oh if
+
+346
+00:12:58,959 --> 00:13:02,000
+you thought about this it's just those
+
+347
+00:13:00,920 --> 00:13:04,720
+time those type of like side
+
+348
+00:13:02,000 --> 00:13:06,519
+conversations are gold yeah you know
+
+349
+00:13:04,720 --> 00:13:09,160
+that's one of my favorite things about
+
+350
+00:13:06,519 --> 00:13:12,160
+the position we're in is that we get to
+
+351
+00:13:09,160 --> 00:13:13,880
+connect people that you know two amazing
+
+352
+00:13:12,160 --> 00:13:16,480
+people in an industry that never met and
+
+353
+00:13:13,880 --> 00:13:18,720
+just allow them to and be there to
+
+354
+00:13:16,480 --> 00:13:20,600
+witness that conversation that you know
+
+355
+00:13:18,720 --> 00:13:22,199
+kind of gets elevated to the next level
+
+356
+00:13:20,600 --> 00:13:25,279
+yeah pretty cool yeah and just adding
+
+357
+00:13:22,199 --> 00:13:26,800
+about that like I I think uh you know us
+
+358
+00:13:25,279 --> 00:13:28,000
+being here in Philly like it's it's
+
+359
+00:13:26,800 --> 00:13:30,000
+interesting the amount of people that
+
+360
+00:13:28,000 --> 00:13:32,199
+are this is their first FBA event that
+
+361
+00:13:30,000 --> 00:13:35,079
+they've attended and so you know they
+
+362
+00:13:32,199 --> 00:13:36,680
+they've been doing the job maybe not a
+
+363
+00:13:35,079 --> 00:13:38,320
+long time some folks have been doing it
+
+364
+00:13:36,680 --> 00:13:40,199
+a long time but they've kind of been
+
+365
+00:13:38,320 --> 00:13:41,440
+isolated in their in their area and
+
+366
+00:13:40,199 --> 00:13:43,240
+their Zone and so they're not really
+
+367
+00:13:41,440 --> 00:13:45,839
+hearing from what's going around in
+
+368
+00:13:43,240 --> 00:13:47,160
+other areas and so this really um this
+
+369
+00:13:45,839 --> 00:13:49,360
+and fiber connect is a really great
+
+370
+00:13:47,160 --> 00:13:51,480
+opportunity for for to grow incitement
+
+371
+00:13:49,360 --> 00:13:52,920
+with them just to to show that like hey
+
+372
+00:13:51,480 --> 00:13:54,360
+that there is validation in what you
+
+373
+00:13:52,920 --> 00:13:56,240
+have been doing and here are some new
+
+374
+00:13:54,360 --> 00:13:57,880
+new things you may learn and may be able
+
+375
+00:13:56,240 --> 00:14:00,800
+to share with
+
+376
+00:13:57,880 --> 00:14:02,240
+others and got talking about the Expo
+
+377
+00:14:00,800 --> 00:14:04,720
+the expo hall yeah the expo hall really
+
+378
+00:14:02,240 --> 00:14:07,360
+exciting like over 50,000 Square ft of
+
+379
+00:14:04,720 --> 00:14:09,839
+exp expo hall space um over 300
+
+380
+00:14:07,360 --> 00:14:12,199
+exhibitors um it's it's pretty exciting
+
+381
+00:14:09,839 --> 00:14:14,360
+and and just going down to the XO Hall
+
+382
+00:14:12,199 --> 00:14:17,360
+um it it's pretty exciting it's it's a
+
+383
+00:14:14,360 --> 00:14:19,600
+massive display um and and really great
+
+384
+00:14:17,360 --> 00:14:21,279
+to see the energy down there and just
+
+385
+00:14:19,600 --> 00:14:23,120
+the again the networking and and
+
+386
+00:14:21,279 --> 00:14:25,279
+business that's getting done uh at the
+
+387
+00:14:23,120 --> 00:14:26,720
+expo hall and then this year we're doing
+
+388
+00:14:25,279 --> 00:14:29,959
+a couple new things we're doing the
+
+389
+00:14:26,720 --> 00:14:32,079
+smart home um Expo um so to to be able
+
+390
+00:14:29,959 --> 00:14:33,800
+to walk through and and see some of the
+
+391
+00:14:32,079 --> 00:14:36,560
+Smart Home Products that that are
+
+392
+00:14:33,800 --> 00:14:38,480
+available and so that feeds back into
+
+393
+00:14:36,560 --> 00:14:41,120
+you have fiber you have connectivity you
+
+394
+00:14:38,480 --> 00:14:43,399
+have uh the Broadband uh speed at home
+
+395
+00:14:41,120 --> 00:14:44,959
+that fiber brings so what what can you
+
+396
+00:14:43,399 --> 00:14:47,160
+do with it and so here are some you know
+
+397
+00:14:44,959 --> 00:14:49,120
+devices thermostats things like that and
+
+398
+00:14:47,160 --> 00:14:50,519
+then the opop PAC Rodeo which is which
+
+399
+00:14:49,120 --> 00:14:53,519
+is going to be exciting first time we're
+
+400
+00:14:50,519 --> 00:14:56,040
+doing that yeah yeah not your normal
+
+401
+00:14:53,519 --> 00:14:58,519
+radio no there but really really great
+
+402
+00:14:56,040 --> 00:15:00,320
+for you know just to put out there and
+
+403
+00:14:58,519 --> 00:15:02,759
+and uh show the Workforce Development
+
+404
+00:15:00,320 --> 00:15:04,519
+opportuni well this is kind of the the
+
+405
+00:15:02,759 --> 00:15:07,160
+big breakout for Workforce Development
+
+406
+00:15:04,519 --> 00:15:09,120
+you know as funding starts to flow and
+
+407
+00:15:07,160 --> 00:15:10,839
+and we're starting to move that's where
+
+408
+00:15:09,120 --> 00:15:12,240
+you know we're starting to see a big
+
+409
+00:15:10,839 --> 00:15:14,759
+uptick in the need for Workforce
+
+410
+00:15:12,240 --> 00:15:16,880
+Development so I think the the breakout
+
+411
+00:15:14,759 --> 00:15:18,800
+Rodeo the Workforce Development Rodeo
+
+412
+00:15:16,880 --> 00:15:20,079
+optic path Rodeo would be fantastic it's
+
+413
+00:15:18,800 --> 00:15:23,240
+a great place for the graduates of the
+
+414
+00:15:20,079 --> 00:15:25,040
+program to Showcase their skills so and
+
+415
+00:15:23,240 --> 00:15:26,800
+then of course because we're Nashville
+
+416
+00:15:25,040 --> 00:15:28,319
+we've got great music again throughout
+
+417
+00:15:26,800 --> 00:15:31,319
+the conference you know we kick off with
+
+418
+00:15:28,319 --> 00:15:33,959
+the the welcome party um we have uh
+
+419
+00:15:31,319 --> 00:15:35,880
+Sophia Scott who is this you know rising
+
+420
+00:15:33,959 --> 00:15:38,800
+star in Nashville she's got hitu here on
+
+421
+00:15:35,880 --> 00:15:40,240
+the radio she's playing the opening um
+
+422
+00:15:38,800 --> 00:15:43,199
+party you don't want to miss that from 5
+
+423
+00:15:40,240 --> 00:15:46,800
+to se 5:30 to 7: on Sunday we've got an
+
+424
+00:15:43,199 --> 00:15:49,839
+amazing um Dive Bar Koke party on Monday
+
+425
+00:15:46,800 --> 00:15:52,600
+night and a light it up um party Tuesday
+
+426
+00:15:49,839 --> 00:15:54,560
+night we've got amazing musicians
+
+427
+00:15:52,600 --> 00:15:57,560
+playing the main stage on Monday Tuesday
+
+428
+00:15:54,560 --> 00:15:59,600
+Wednesday um and just amazing stuff and
+
+429
+00:15:57,560 --> 00:16:01,519
+then we also have an exclusive first
+
+430
+00:15:59,600 --> 00:16:02,759
+look of the thought wav documentary yeah
+
+431
+00:16:01,519 --> 00:16:03,639
+was there a slide in that or there is
+
+432
+00:16:02,759 --> 00:16:05,160
+we'll talk a little bit more than a
+
+433
+00:16:03,639 --> 00:16:07,680
+second but we'll have that on Monday
+
+434
+00:16:05,160 --> 00:16:10,800
+night um it's going to be amazing it'll
+
+435
+00:16:07,680 --> 00:16:11,800
+be popcorn um but it's a documentary
+
+436
+00:16:10,800 --> 00:16:12,959
+that we'll talk a little bit about more
+
+437
+00:16:11,800 --> 00:16:15,240
+later but that's something you want to
+
+438
+00:16:12,959 --> 00:16:20,120
+put on your calendar to be there for and
+
+439
+00:16:15,240 --> 00:16:21,800
+the last thing is um oh just star power
+
+440
+00:16:20,120 --> 00:16:23,680
+so one of the things again and this one
+
+441
+00:16:21,800 --> 00:16:25,199
+was not my idea so I'm not at all
+
+442
+00:16:23,680 --> 00:16:27,360
+stealing the credit of the person who
+
+443
+00:16:25,199 --> 00:16:28,639
+had this idea but it was not me um I
+
+444
+00:16:27,360 --> 00:16:32,079
+don't have the permission to say their
+
+445
+00:16:28,639 --> 00:16:35,440
+name on on this broadcast so I won't
+
+446
+00:16:32,079 --> 00:16:38,800
+David um but they uh is we have Sean
+
+447
+00:16:35,440 --> 00:16:41,600
+Evans from the um hot ones coming to do
+
+448
+00:16:38,800 --> 00:16:44,759
+the fiber broad the fiber Hot Seat um at
+
+449
+00:16:41,600 --> 00:16:46,199
+live on stage at fiber connect um and so
+
+450
+00:16:44,759 --> 00:16:47,279
+should have done a sample for breakfast
+
+451
+00:16:46,199 --> 00:16:48,560
+today oh that would have been good we
+
+452
+00:16:47,279 --> 00:16:51,160
+should have done this here yeah mock it
+
+453
+00:16:48,560 --> 00:16:54,040
+up yeah um e progressively hotter ring
+
+454
+00:16:51,160 --> 00:16:55,279
+wings and and answer pointed questions
+
+455
+00:16:54,040 --> 00:16:57,160
+about what's happening in the Broadband
+
+456
+00:16:55,279 --> 00:16:58,440
+industry so we're excited about that
+
+457
+00:16:57,160 --> 00:16:59,639
+we're bringing some star power to the
+
+458
+00:16:58,440 --> 00:17:01,680
+stage
+
+459
+00:16:59,639 --> 00:17:03,279
+yeah so Sean Evans is a guy that he
+
+460
+00:17:01,680 --> 00:17:04,240
+feeds you hot wings and you answer hard
+
+461
+00:17:03,279 --> 00:17:08,360
+questions he does yeah he's said
+
+462
+00:17:04,240 --> 00:17:09,640
+everyone from presidents to to uh movie
+
+463
+00:17:08,360 --> 00:17:12,760
+stars to
+
+464
+00:17:09,640 --> 00:17:16,199
+musicians it's it's a it's a huge
+
+465
+00:17:12,760 --> 00:17:18,799
+YouTube show that um he sells his own
+
+466
+00:17:16,199 --> 00:17:21,720
+hot sauce apparently but it's a big
+
+467
+00:17:18,799 --> 00:17:23,640
+thing which only you know Echoes the
+
+468
+00:17:21,720 --> 00:17:25,199
+star power that you bring with a Live
+
+469
+00:17:23,640 --> 00:17:27,760
+recorded five breakfast that you do on
+
+470
+00:17:25,199 --> 00:17:30,320
+the main stage that that we do build as
+
+471
+00:17:27,760 --> 00:17:32,960
+a state uh an homage to the Between Two
+
+472
+00:17:30,320 --> 00:17:35,200
+Ferns So He surround you with like
+
+473
+00:17:32,960 --> 00:17:38,600
+hundreds Ferns and well I was just
+
+474
+00:17:35,200 --> 00:17:41,120
+thinking on the on the hot ones uh your
+
+475
+00:17:38,600 --> 00:17:43,679
+former employee Taylor do not go
+
+476
+00:17:41,120 --> 00:17:45,960
+head-to-head with her on hot sauce I
+
+477
+00:17:43,679 --> 00:17:49,240
+lost that one but she is coming to fiber
+
+478
+00:17:45,960 --> 00:17:51,799
+this year she did with my favorite
+
+479
+00:17:49,240 --> 00:17:53,679
+branded panel mother mayor I deploy
+
+480
+00:17:51,799 --> 00:17:55,039
+fiber which I can never say we have
+
+481
+00:17:53,679 --> 00:17:56,840
+three mayors that will Jo right she
+
+482
+00:17:55,039 --> 00:17:58,840
+works for a mayor now yeah yeah she's
+
+483
+00:17:56,840 --> 00:18:00,320
+coming back all right great and then get
+
+484
+00:17:58,840 --> 00:18:02,960
+get into it like who's going to be there
+
+485
+00:18:00,320 --> 00:18:05,480
+and and really the the um fiber
+
+486
+00:18:02,960 --> 00:18:06,799
+ecosystem and again we try to go and get
+
+487
+00:18:05,480 --> 00:18:08,480
+you know the the folks that are going to
+
+488
+00:18:06,799 --> 00:18:11,039
+be doing it in the state and so our
+
+489
+00:18:08,480 --> 00:18:12,960
+state Broadband office we have over um I
+
+490
+00:18:11,039 --> 00:18:15,200
+know over 22 State Broadband offices
+
+491
+00:18:12,960 --> 00:18:16,840
+confirmed to 10 uh we're still working
+
+492
+00:18:15,200 --> 00:18:19,200
+on on others and I know they're going to
+
+493
+00:18:16,840 --> 00:18:21,799
+be uh getting in there but the you know
+
+494
+00:18:19,200 --> 00:18:23,679
+having that state Broadband um space for
+
+495
+00:18:21,799 --> 00:18:25,200
+them last year was really helpful
+
+496
+00:18:23,679 --> 00:18:26,840
+because they they really truly did get
+
+497
+00:18:25,200 --> 00:18:28,360
+get to connect people with their state
+
+498
+00:18:26,840 --> 00:18:29,960
+and they can go and have side
+
+499
+00:18:28,360 --> 00:18:32,000
+conversation and sit down and really get
+
+500
+00:18:29,960 --> 00:18:34,159
+to know each other um and so really
+
+501
+00:18:32,000 --> 00:18:36,039
+bringing that back I think is going to
+
+502
+00:18:34,159 --> 00:18:37,520
+encourage more more of those what I love
+
+503
+00:18:36,039 --> 00:18:41,039
+about having the state Broadband
+
+504
+00:18:37,520 --> 00:18:43,200
+directors there is it's really an
+
+505
+00:18:41,039 --> 00:18:44,960
+opportunity for us to celebrate them and
+
+506
+00:18:43,200 --> 00:18:47,720
+all the hard work they've done to put
+
+507
+00:18:44,960 --> 00:18:49,480
+these State programs together and it's a
+
+508
+00:18:47,720 --> 00:18:51,240
+lot of hard work and you know I I just
+
+509
+00:18:49,480 --> 00:18:53,280
+really one I want to show our
+
+510
+00:18:51,240 --> 00:18:55,760
+appreciation for everything to do but
+
+511
+00:18:53,280 --> 00:18:58,200
+also for our attendees it's a great way
+
+512
+00:18:55,760 --> 00:19:00,480
+to um be able to spend time and to you
+
+513
+00:18:58,200 --> 00:19:03,919
+know you can cover a lot of states in
+
+514
+00:19:00,480 --> 00:19:06,159
+one day and um get a you know just learn
+
+515
+00:19:03,919 --> 00:19:09,200
+a lot about how you know is if you're
+
+516
+00:19:06,159 --> 00:19:10,600
+deploying in a multi-state um Network
+
+517
+00:19:09,200 --> 00:19:12,080
+it's really good to be able to have
+
+518
+00:19:10,600 --> 00:19:13,760
+those relationships and be able to spend
+
+519
+00:19:12,080 --> 00:19:15,480
+a little bit time with these Broadband
+
+520
+00:19:13,760 --> 00:19:19,400
+directors yeah and they're excited about
+
+521
+00:19:15,480 --> 00:19:21,120
+coming so it should be good yeah exactly
+
+522
+00:19:19,400 --> 00:19:23,200
+um and we'll also have uh you know
+
+523
+00:19:21,120 --> 00:19:25,480
+another key factor is Network operators
+
+524
+00:19:23,200 --> 00:19:28,159
+and and so you know we have over 275
+
+525
+00:19:25,480 --> 00:19:29,520
+speakers and um over 85 of those are
+
+526
+00:19:28,159 --> 00:19:31,039
+going to be Network Network operators
+
+527
+00:19:29,520 --> 00:19:34,559
+and and hearing from what's going on
+
+528
+00:19:31,039 --> 00:19:37,159
+from um you know providers like like us
+
+529
+00:19:34,559 --> 00:19:38,679
+um and and others just to hear you know
+
+530
+00:19:37,159 --> 00:19:40,640
+what what are what they're experiencing
+
+531
+00:19:38,679 --> 00:19:42,600
+what their plans are to build out and
+
+532
+00:19:40,640 --> 00:19:44,000
+and the the cool thing about hearing
+
+533
+00:19:42,600 --> 00:19:46,080
+from Network operators is really the
+
+534
+00:19:44,000 --> 00:19:48,360
+Innovation that's happening uh because
+
+535
+00:19:46,080 --> 00:19:50,520
+our country is so big and the the
+
+536
+00:19:48,360 --> 00:19:52,480
+terrain is so different and everybody's
+
+537
+00:19:50,520 --> 00:19:53,960
+really approaching deploying their fiber
+
+538
+00:19:52,480 --> 00:19:55,799
+in a different way and so it's it's
+
+539
+00:19:53,960 --> 00:19:58,320
+pretty interesting to hear from from a
+
+540
+00:19:55,799 --> 00:20:00,480
+good good cross-section of folks um and
+
+541
+00:19:58,320 --> 00:20:03,159
+then we also have a lot of think tanks
+
+542
+00:20:00,480 --> 00:20:06,200
+coming like PE Pew um charitable trust
+
+543
+00:20:03,159 --> 00:20:08,600
+is is a group that is not not strangers
+
+544
+00:20:06,200 --> 00:20:11,080
+to fiber connect uh they've come down
+
+545
+00:20:08,600 --> 00:20:12,400
+quite a bit Catherine's good friends
+
+546
+00:20:11,080 --> 00:20:15,000
+yeah cather's good friends and so really
+
+547
+00:20:12,400 --> 00:20:17,840
+excited to um to have her be a part of
+
+548
+00:20:15,000 --> 00:20:19,360
+it and then um you know important uh
+
+549
+00:20:17,840 --> 00:20:21,320
+part of it is is having the media
+
+550
+00:20:19,360 --> 00:20:24,360
+Spotlight and so we we have a pretty
+
+551
+00:20:21,320 --> 00:20:26,480
+great media turnout um that's in the
+
+552
+00:20:24,360 --> 00:20:28,799
+Broadband industry and and so we expect
+
+553
+00:20:26,480 --> 00:20:30,760
+seems like last year we had around 60
+
+554
+00:20:28,799 --> 00:20:33,280
+analyst love more this year we already
+
+555
+00:20:30,760 --> 00:20:35,039
+more more and I think they really
+
+556
+00:20:33,280 --> 00:20:37,480
+appreciate the fact that you guys run a
+
+557
+00:20:35,039 --> 00:20:39,440
+great Press Room and allows you
+
+558
+00:20:37,480 --> 00:20:41,400
+attendees that have new interesting
+
+559
+00:20:39,440 --> 00:20:43,640
+things to talk about and share with the
+
+560
+00:20:41,400 --> 00:20:46,039
+press to get those interviews and for
+
+561
+00:20:43,640 --> 00:20:47,679
+them to reach a lot of our members and
+
+562
+00:20:46,039 --> 00:20:48,919
+people in the industry well we we
+
+563
+00:20:47,679 --> 00:20:50,320
+actively encourage the members to have
+
+564
+00:20:48,919 --> 00:20:52,280
+news because there's so many journalists
+
+565
+00:20:50,320 --> 00:20:53,600
+attending because it it's symbiotic
+
+566
+00:20:52,280 --> 00:20:55,400
+relationship they have to have news the
+
+567
+00:20:53,600 --> 00:20:56,480
+reporters can write about um they
+
+568
+00:20:55,400 --> 00:20:59,919
+certainly get great content from
+
+569
+00:20:56,480 --> 00:21:02,280
+watching the the sessions but um but
+
+570
+00:20:59,919 --> 00:21:05,520
+having news is important to them too so
+
+571
+00:21:02,280 --> 00:21:08,440
+well you know my favorite thing is the
+
+572
+00:21:05,520 --> 00:21:11,400
+light talks Network operator light talk
+
+573
+00:21:08,440 --> 00:21:13,320
+yeah so I mean just having the CEOs and
+
+574
+00:21:11,400 --> 00:21:15,880
+top Executives from some of the leading
+
+575
+00:21:13,320 --> 00:21:17,919
+Broadband providers to get up and talk
+
+576
+00:21:15,880 --> 00:21:20,640
+about some interesting topics whether
+
+577
+00:21:17,919 --> 00:21:23,080
+it's deployment challenges or just
+
+578
+00:21:20,640 --> 00:21:25,720
+overall strategy or just how they're
+
+579
+00:21:23,080 --> 00:21:29,279
+really approaching this Market is to me
+
+580
+00:21:25,720 --> 00:21:33,080
+really insightful and I think we provide
+
+581
+00:21:29,279 --> 00:21:36,320
+a fantastic platform for a CEO at any
+
+582
+00:21:33,080 --> 00:21:39,000
+level company to come because our stage
+
+583
+00:21:36,320 --> 00:21:40,640
+is going to be fantastic this year it's
+
+584
+00:21:39,000 --> 00:21:42,440
+going to be epic it's it's it's one of
+
+585
+00:21:40,640 --> 00:21:44,640
+the yeah I guess it's really hard to
+
+586
+00:21:42,440 --> 00:21:47,720
+explain how how great it's going to be
+
+587
+00:21:44,640 --> 00:21:49,320
+um and really proud of of of uh what's
+
+588
+00:21:47,720 --> 00:21:51,000
+going on there and and it's just going
+
+589
+00:21:49,320 --> 00:21:52,760
+to be really really exciting bring a lot
+
+590
+00:21:51,000 --> 00:21:55,200
+of energy well I mean we're going to
+
+591
+00:21:52,760 --> 00:21:57,320
+have a massive LED wall it's the
+
+592
+00:21:55,200 --> 00:21:59,360
+state-ofthe-art our av company just has
+
+593
+00:21:57,320 --> 00:22:01,840
+all this brand new stateoftheart
+
+594
+00:21:59,360 --> 00:22:05,240
+um you know LED screening that's going
+
+595
+00:22:01,840 --> 00:22:07,000
+to be incredible plus our whole AV setup
+
+596
+00:22:05,240 --> 00:22:08,520
+is really we really amped up because
+
+597
+00:22:07,000 --> 00:22:10,000
+we're not just being able to you know
+
+598
+00:22:08,520 --> 00:22:13,000
+let people show PowerPoints but we're
+
+599
+00:22:10,000 --> 00:22:14,880
+really creating a theater effect and we
+
+600
+00:22:13,000 --> 00:22:17,720
+have live entertainment so this all has
+
+601
+00:22:14,880 --> 00:22:20,240
+to be you know professional quality and
+
+602
+00:22:17,720 --> 00:22:22,039
+so it's I think for any presenter you
+
+603
+00:22:20,240 --> 00:22:23,760
+know if you're a CEO of a large company
+
+604
+00:22:22,039 --> 00:22:26,559
+or even a small company to be able to
+
+605
+00:22:23,760 --> 00:22:29,000
+stand on the stage with um you know I
+
+606
+00:22:26,559 --> 00:22:30,799
+call it Oscar quality production oh
+
+607
+00:22:29,000 --> 00:22:32,799
+absolutely absolutely I mean it's
+
+608
+00:22:30,799 --> 00:22:36,039
+actually where we're going to debut um
+
+609
+00:22:32,799 --> 00:22:37,679
+the new tomorrow starts Year song the uh
+
+610
+00:22:36,039 --> 00:22:40,760
+song about the impact fiber has on
+
+611
+00:22:37,679 --> 00:22:42,559
+communities and how it helps build we um
+
+612
+00:22:40,760 --> 00:22:44,640
+we were inspired by one of our members
+
+613
+00:22:42,559 --> 00:22:46,080
+who woke up with a dream and went to
+
+614
+00:22:44,640 --> 00:22:47,240
+chat GPT and asked them to write
+
+615
+00:22:46,080 --> 00:22:49,000
+something and I'm like wellit can't do
+
+616
+00:22:47,240 --> 00:22:51,080
+that so we hired two of our friends that
+
+617
+00:22:49,000 --> 00:22:52,279
+are that are songwriters that have
+
+618
+00:22:51,080 --> 00:22:54,919
+performed at fiber connect and they
+
+619
+00:22:52,279 --> 00:22:56,480
+wrote this amazing song called Tomorrow
+
+620
+00:22:54,919 --> 00:22:58,880
+uh
+
+621
+00:22:56,480 --> 00:23:02,039
+tomorrow oh my gosh what I said it and
+
+622
+00:22:58,880 --> 00:23:04,039
+went on my head um tomorrow starts here
+
+623
+00:23:02,039 --> 00:23:06,000
+that uh they'll debut live on stage on
+
+624
+00:23:04,039 --> 00:23:07,760
+Monday and um we'll have a version out
+
+625
+00:23:06,000 --> 00:23:09,480
+before that so people can hear it but
+
+626
+00:23:07,760 --> 00:23:10,799
+it's pretty exciting well it's kind of
+
+627
+00:23:09,480 --> 00:23:12,400
+neat we're in Nashville so of course
+
+628
+00:23:10,799 --> 00:23:14,039
+we're going to have singer songwriters
+
+629
+00:23:12,400 --> 00:23:17,200
+create our own music our own fiber
+
+630
+00:23:14,039 --> 00:23:18,400
+Connect Music and uh the whole audience
+
+631
+00:23:17,200 --> 00:23:19,799
+will be able to participate in this
+
+632
+00:23:18,400 --> 00:23:20,960
+it'll be great and we also got a
+
+633
+00:23:19,799 --> 00:23:22,360
+Representatives talking about tella
+
+634
+00:23:20,960 --> 00:23:25,919
+health and talking about Precision a and
+
+635
+00:23:22,360 --> 00:23:27,640
+talking about autonomous vehicles and um
+
+636
+00:23:25,919 --> 00:23:30,039
+we've got like I said three Mayors
+
+637
+00:23:27,640 --> 00:23:32,840
+including mayor of Danbury Connecticut
+
+638
+00:23:30,039 --> 00:23:34,679
+the mayor of West de Mo and the mayor of
+
+639
+00:23:32,840 --> 00:23:36,279
+Charlottesville um speaking so it's
+
+640
+00:23:34,679 --> 00:23:38,760
+really going to be just lots of
+
+641
+00:23:36,279 --> 00:23:40,320
+perspective lots of insights lots of
+
+642
+00:23:38,760 --> 00:23:42,799
+great information you can take back to
+
+643
+00:23:40,320 --> 00:23:43,720
+help inform your business and music so
+
+644
+00:23:42,799 --> 00:23:45,679
+again I think I talked about a little
+
+645
+00:23:43,720 --> 00:23:49,679
+bit but Sophia Scott amazing artist is
+
+646
+00:23:45,679 --> 00:23:52,720
+opening it up we've got the um so last
+
+647
+00:23:49,679 --> 00:23:55,240
+year I forget the name of the Audi Ryan
+
+648
+00:23:52,720 --> 00:23:56,760
+lkin played last year he was like the um
+
+649
+00:23:55,240 --> 00:23:58,720
+CMA artist of the year or something like
+
+650
+00:23:56,760 --> 00:24:01,480
+that his song the painter was nominated
+
+651
+00:23:58,720 --> 00:24:04,559
+for um song of the a um Cody Johnson
+
+652
+00:24:01,480 --> 00:24:06,480
+recorded it but he wrote it and so you
+
+653
+00:24:04,559 --> 00:24:09,679
+you got some amazing talent that people
+
+654
+00:24:06,480 --> 00:24:11,320
+up incomers that people so I mean to me
+
+655
+00:24:09,679 --> 00:24:14,200
+this is really one of the things that
+
+656
+00:24:11,320 --> 00:24:15,760
+sets fiber connect apart from any other
+
+657
+00:24:14,200 --> 00:24:19,919
+conference in the world the fact that we
+
+658
+00:24:15,760 --> 00:24:21,720
+do have live entertainment to really I
+
+659
+00:24:19,919 --> 00:24:24,799
+mean keep the energy up because we want
+
+660
+00:24:21,720 --> 00:24:25,919
+you know people are excited about um
+
+661
+00:24:24,799 --> 00:24:27,600
+what we're doing what we're
+
+662
+00:24:25,919 --> 00:24:30,000
+accomplishing you know this whole
+
+663
+00:24:27,600 --> 00:24:31,919
+industry you know I look at you know how
+
+664
+00:24:30,000 --> 00:24:33,600
+much time I have left in this industry
+
+665
+00:24:31,919 --> 00:24:35,240
+and I really am anxious to be able to
+
+666
+00:24:33,600 --> 00:24:37,799
+get everybody connected with fiber by
+
+667
+00:24:35,240 --> 00:24:39,840
+the end of the decade and just bringing
+
+668
+00:24:37,799 --> 00:24:41,480
+in Creative people these artists that
+
+669
+00:24:39,840 --> 00:24:43,760
+really kind of pump it up it just seems
+
+670
+00:24:41,480 --> 00:24:46,399
+like just adds an amazing element that
+
+671
+00:24:43,760 --> 00:24:47,320
+kind of do makes every moment memorable
+
+672
+00:24:46,399 --> 00:24:49,159
+right like we don't want you to come to
+
+673
+00:24:47,320 --> 00:24:50,520
+fiber connect and have a moment where
+
+674
+00:24:49,159 --> 00:24:52,480
+you don't experience something that
+
+675
+00:24:50,520 --> 00:24:54,000
+you're not seeing somewhere else right
+
+676
+00:24:52,480 --> 00:24:56,679
+so we really look at try and create once
+
+677
+00:24:54,000 --> 00:24:58,919
+you once you hit our door it's immersive
+
+678
+00:24:56,679 --> 00:25:00,960
+experience that that it's full of things
+
+679
+00:24:58,919 --> 00:25:03,919
+you didn't expect the thought waves
+
+680
+00:25:00,960 --> 00:25:05,279
+documentary so we had this idea um and
+
+681
+00:25:03,919 --> 00:25:07,240
+we were as we were planning fiber
+
+682
+00:25:05,279 --> 00:25:09,399
+connect and yeah you know a lot of
+
+683
+00:25:07,240 --> 00:25:11,320
+conversations on bead and and I was
+
+684
+00:25:09,399 --> 00:25:12,840
+thinking about this I was like it's not
+
+685
+00:25:11,320 --> 00:25:14,399
+it's not really about bead it's not
+
+686
+00:25:12,840 --> 00:25:16,240
+about the last three years because none
+
+687
+00:25:14,399 --> 00:25:19,320
+of this would impossible if it hadn't
+
+688
+00:25:16,240 --> 00:25:21,600
+been for 50 years of innovation creating
+
+689
+00:25:19,320 --> 00:25:23,320
+both fiber broadband and the internet
+
+690
+00:25:21,600 --> 00:25:26,760
+and all the people and stories and
+
+691
+00:25:23,320 --> 00:25:28,840
+effort and time and challenges these
+
+692
+00:25:26,760 --> 00:25:31,480
+people went through to create something
+
+693
+00:25:28,840 --> 00:25:33,200
+that allowed a program like be to Sol to
+
+694
+00:25:31,480 --> 00:25:34,960
+close the digital divide right and
+
+695
+00:25:33,200 --> 00:25:37,000
+there's lots of pivot Points in the
+
+696
+00:25:34,960 --> 00:25:40,760
+market that happen that these these
+
+697
+00:25:37,000 --> 00:25:44,559
+companies um evolved and and innovated
+
+698
+00:25:40,760 --> 00:25:46,679
+and passed regulations and laws and and
+
+699
+00:25:44,559 --> 00:25:48,840
+so we've spent the last several months
+
+700
+00:25:46,679 --> 00:25:50,600
+interviewing dozens of these people and
+
+701
+00:25:48,840 --> 00:25:52,000
+we've got more interviews over the next
+
+702
+00:25:50,600 --> 00:25:54,600
+two months and we are going to do an
+
+703
+00:25:52,000 --> 00:25:56,159
+exclusive first look of the docu short
+
+704
+00:25:54,600 --> 00:25:57,960
+at fiber connect and then do a panel
+
+705
+00:25:56,159 --> 00:26:01,120
+with some of our experts we interviewed
+
+706
+00:25:57,960 --> 00:26:04,760
+we we talked to vent surf we talked to
+
+707
+00:26:01,120 --> 00:26:07,559
+um Larry Irving to Blair Lan to um the
+
+708
+00:26:04,760 --> 00:26:09,679
+mayor of Charlottesville we talked to um
+
+709
+00:26:07,559 --> 00:26:12,000
+Dr Karen Ruban who's one of the Pioneers
+
+710
+00:26:09,679 --> 00:26:13,520
+in tellah health like all these great
+
+711
+00:26:12,000 --> 00:26:15,640
+people that that are sharing their
+
+712
+00:26:13,520 --> 00:26:18,520
+stories of what they did what they
+
+713
+00:26:15,640 --> 00:26:19,799
+thought they were doing um and you'll
+
+714
+00:26:18,520 --> 00:26:21,399
+see it first at fiber connnect but then
+
+715
+00:26:19,799 --> 00:26:23,520
+you'll see it next at hopefully film
+
+716
+00:26:21,399 --> 00:26:27,320
+festivals so we're pretty excited about
+
+717
+00:26:23,520 --> 00:26:30,720
+it well you know I tell you rich um this
+
+718
+00:26:27,320 --> 00:26:33,240
+documentary f documentaries genius and
+
+719
+00:26:30,720 --> 00:26:34,679
+um I don't use that term lightly because
+
+720
+00:26:33,240 --> 00:26:36,679
+um you know I've been you I got to be
+
+721
+00:26:34,679 --> 00:26:38,720
+stuck on a train for 10 hours and got to
+
+722
+00:26:36,679 --> 00:26:40,760
+listen to you know I was there for a lot
+
+723
+00:26:38,720 --> 00:26:43,960
+of the interviews but I got to watch the
+
+724
+00:26:40,760 --> 00:26:47,640
+raw footage from guys like Vin surf or a
+
+725
+00:26:43,960 --> 00:26:50,399
+je pie and you know the Blair 11 or you
+
+726
+00:26:47,640 --> 00:26:54,200
+know and it just or even Alan Davidson I
+
+727
+00:26:50,399 --> 00:26:56,640
+mean it's just amazing to listen to you
+
+728
+00:26:54,200 --> 00:27:00,399
+know vent surf talking about inventing
+
+729
+00:26:56,640 --> 00:27:02,559
+tcpip I mean it's it's crazy and uh
+
+730
+00:27:00,399 --> 00:27:03,919
+what's happened over the past you forget
+
+731
+00:27:02,559 --> 00:27:05,919
+about you know when you've had long
+
+732
+00:27:03,919 --> 00:27:08,720
+careers of all how all this stuff came
+
+733
+00:27:05,919 --> 00:27:10,520
+together and so I'm super excited about
+
+734
+00:27:08,720 --> 00:27:12,279
+thought waves and you know unveiling
+
+735
+00:27:10,520 --> 00:27:14,039
+this amazing documentary one of the
+
+736
+00:27:12,279 --> 00:27:15,840
+people we're talking to next month is
+
+737
+00:27:14,039 --> 00:27:18,600
+the woman who coined the phrase surf the
+
+738
+00:27:15,840 --> 00:27:21,880
+Internet her name is Jean Amore ply and
+
+739
+00:27:18,600 --> 00:27:23,720
+she's the net mom and she first was one
+
+740
+00:27:21,880 --> 00:27:26,200
+of the first people to introduce um
+
+741
+00:27:23,720 --> 00:27:28,320
+computers in the 80s to public libraries
+
+742
+00:27:26,200 --> 00:27:30,520
+and then the first to introduce internet
+
+743
+00:27:28,320 --> 00:27:32,640
+as a community anchor it just is I mean
+
+744
+00:27:30,520 --> 00:27:33,840
+just their stories and the it I just
+
+745
+00:27:32,640 --> 00:27:35,720
+you're gonna love it it's gonna be
+
+746
+00:27:33,840 --> 00:27:38,960
+amazing well you know it kind of
+
+747
+00:27:35,720 --> 00:27:40,960
+inspires me like I'll take Kevin my dog
+
+748
+00:27:38,960 --> 00:27:43,279
+for a walk and I'll listen to these
+
+749
+00:27:40,960 --> 00:27:45,880
+interviews and when you hear vent Surfer
+
+750
+00:27:43,279 --> 00:27:48,320
+Blair 11 talking about the moments and
+
+751
+00:27:45,880 --> 00:27:51,000
+time that changed everything you know
+
+752
+00:27:48,320 --> 00:27:52,600
+when Mark andreon created the browser
+
+753
+00:27:51,000 --> 00:27:55,200
+Mosaic browser that you can actually get
+
+754
+00:27:52,600 --> 00:27:58,240
+on the internet um the fact when the day
+
+755
+00:27:55,200 --> 00:28:02,000
+that Steve Jobs created the iPhone and
+
+756
+00:27:58,240 --> 00:28:03,399
+and now you know chat gbt and AI you
+
+757
+00:28:02,000 --> 00:28:06,200
+know you don't think about that being
+
+758
+00:28:03,399 --> 00:28:08,360
+another moment in time but we are at the
+
+759
+00:28:06,200 --> 00:28:09,799
+cusp of some really big things happening
+
+760
+00:28:08,360 --> 00:28:11,279
+no Nexus is something I'm really really
+
+761
+00:28:09,799 --> 00:28:12,919
+excited about because I love just when
+
+762
+00:28:11,279 --> 00:28:14,840
+it hasn't when you think it can't get
+
+763
+00:28:12,919 --> 00:28:16,480
+any better we had these ideas and we're
+
+764
+00:28:14,840 --> 00:28:19,480
+doing all of them so like's getting
+
+765
+00:28:16,480 --> 00:28:21,679
+better um you know really really a huge
+
+766
+00:28:19,480 --> 00:28:23,440
+Dolly Dolly Parton fan one from her
+
+767
+00:28:21,679 --> 00:28:25,760
+music but you know been being in
+
+768
+00:28:23,440 --> 00:28:28,519
+Tennessee and just the Legacy that she's
+
+769
+00:28:25,760 --> 00:28:30,159
+she's um built just as you know her
+
+770
+00:28:28,519 --> 00:28:32,200
+philanthropy and really caring and giv
+
+771
+00:28:30,159 --> 00:28:33,480
+it back to the community and so one of
+
+772
+00:28:32,200 --> 00:28:35,919
+one of her big projects is the
+
+773
+00:28:33,480 --> 00:28:38,080
+Imagination Library um which which for
+
+774
+00:28:35,919 --> 00:28:39,440
+folks that don't know you know for for
+
+775
+00:28:38,080 --> 00:28:40,960
+you know if you have a child
+
+776
+00:28:39,440 --> 00:28:44,679
+kindergarten through fifth grade I mean
+
+777
+00:28:40,960 --> 00:28:47,440
+I mean sorry uh from Z zero through five
+
+778
+00:28:44,679 --> 00:28:50,440
+yeah um you can get a free book in the
+
+779
+00:28:47,440 --> 00:28:51,919
+mail so you sign up and um you go to the
+
+780
+00:28:50,440 --> 00:28:53,559
+website you sign up and every month you
+
+781
+00:28:51,919 --> 00:28:55,080
+get a new book and it's a great
+
+782
+00:28:53,559 --> 00:28:56,960
+opportunity just saying you know talking
+
+783
+00:28:55,080 --> 00:28:59,200
+with them and learning about how the
+
+784
+00:28:56,960 --> 00:29:00,799
+literary literary scores have gone up
+
+785
+00:28:59,200 --> 00:29:02,080
+for not just the kids but for the
+
+786
+00:29:00,799 --> 00:29:04,640
+parents because this is an opportunity
+
+787
+00:29:02,080 --> 00:29:05,880
+for the parents to sit down and read and
+
+788
+00:29:04,640 --> 00:29:09,919
+some of these parents are learning to
+
+789
+00:29:05,880 --> 00:29:11,600
+read um proficiently um and so just that
+
+790
+00:29:09,919 --> 00:29:13,679
+that family bonding and and that
+
+791
+00:29:11,600 --> 00:29:15,399
+opportunity and so you ask hey what does
+
+792
+00:29:13,679 --> 00:29:18,279
+that have to do with like internet and
+
+793
+00:29:15,399 --> 00:29:20,679
+growing well to yeah everything so and
+
+794
+00:29:18,279 --> 00:29:22,760
+so for for families to be able to to use
+
+795
+00:29:20,679 --> 00:29:24,799
+the internet you know that being able to
+
+796
+00:29:22,760 --> 00:29:26,840
+being able to read being able to
+
+797
+00:29:24,799 --> 00:29:29,320
+interact together you think about
+
+798
+00:29:26,840 --> 00:29:32,559
+families um being involved with their
+
+799
+00:29:29,320 --> 00:29:34,399
+students um education and and homework
+
+800
+00:29:32,559 --> 00:29:36,200
+that's online and things like that so it
+
+801
+00:29:34,399 --> 00:29:37,679
+it's just it really is just a great
+
+802
+00:29:36,200 --> 00:29:40,159
+starting point for them to work together
+
+803
+00:29:37,679 --> 00:29:42,880
+and so with that we have uh NE mccauly
+
+804
+00:29:40,159 --> 00:29:44,399
+with um the Dollywood Foundation that's
+
+805
+00:29:42,880 --> 00:29:47,120
+going to come and speak to our women in
+
+806
+00:29:44,399 --> 00:29:48,880
+fiber luncheon and um actually some of
+
+807
+00:29:47,120 --> 00:29:50,320
+the proceeds of our ticket sales for
+
+808
+00:29:48,880 --> 00:29:52,679
+that is going to go towards the donation
+
+809
+00:29:50,320 --> 00:29:54,399
+to the imagination imagination library
+
+810
+00:29:52,679 --> 00:29:56,640
+and so really excited about that and
+
+811
+00:29:54,399 --> 00:29:58,320
+really really supporting to cause that
+
+812
+00:29:56,640 --> 00:30:00,600
+that Dolly's Champion not just in
+
+813
+00:29:58,320 --> 00:30:02,360
+Tennessee but all over the country it's
+
+814
+00:30:00,600 --> 00:30:04,240
+still growing 3 million books a month
+
+815
+00:30:02,360 --> 00:30:07,000
+Che so if you haven't signed up for
+
+816
+00:30:04,240 --> 00:30:09,360
+women in fiber lunch in at fber connect
+
+817
+00:30:07,000 --> 00:30:13,120
+whether you're a guy or girl please sign
+
+818
+00:30:09,360 --> 00:30:15,679
+up U as Evan said we're GNA have a huge
+
+819
+00:30:13,120 --> 00:30:18,760
+donation to that um cause from the
+
+820
+00:30:15,679 --> 00:30:20,279
+proceeds from that lunch in uh and again
+
+821
+00:30:18,760 --> 00:30:23,640
+dolly
+
+822
+00:30:20,279 --> 00:30:26,760
+is not not just music but her whole
+
+823
+00:30:23,640 --> 00:30:28,559
+personality her whole spirit is kind of
+
+824
+00:30:26,760 --> 00:30:30,399
+feels like the moment we're in time is
+
+825
+00:30:28,559 --> 00:30:32,600
+really to try to elevate the quality of
+
+826
+00:30:30,399 --> 00:30:34,440
+life for generations to come and that's
+
+827
+00:30:32,600 --> 00:30:37,159
+I think such a great fit between fiber
+
+828
+00:30:34,440 --> 00:30:38,399
+broadband and Dolly Parton and where
+
+829
+00:30:37,159 --> 00:30:41,120
+where we're trying to get the entire
+
+830
+00:30:38,399 --> 00:30:42,760
+energy industry and and we're excited
+
+831
+00:30:41,120 --> 00:30:44,399
+some more things too we'll announce
+
+832
+00:30:42,760 --> 00:30:46,120
+later on they're working on too so the
+
+833
+00:30:44,399 --> 00:30:47,480
+last day of the conference is the state
+
+834
+00:30:46,120 --> 00:30:49,679
+Broadband Summit and you don't want to
+
+835
+00:30:47,480 --> 00:30:50,919
+leave early because this is where you're
+
+836
+00:30:49,679 --> 00:30:52,799
+going to find out all the things you
+
+837
+00:30:50,919 --> 00:30:55,000
+need to know about bead are going to
+
+838
+00:30:52,799 --> 00:30:56,840
+happen here we've got five state barand
+
+839
+00:30:55,000 --> 00:30:58,880
+officers they'll be on a a state barand
+
+840
+00:30:56,840 --> 00:31:01,360
+panel we've got the three mayors that I
+
+841
+00:30:58,880 --> 00:31:04,760
+mentioned we've got um a really in-depth
+
+842
+00:31:01,360 --> 00:31:08,639
+panel with some experts as our um hosted
+
+843
+00:31:04,760 --> 00:31:10,360
+by Katie ESP from EPB um about outside
+
+844
+00:31:08,639 --> 00:31:11,960
+plant challenges um it's this going to
+
+845
+00:31:10,360 --> 00:31:14,720
+be a great last day but you definitely
+
+846
+00:31:11,960 --> 00:31:16,279
+don't want to miss that well rich and
+
+847
+00:31:14,720 --> 00:31:18,919
+Evan first of all I want to thank you
+
+848
+00:31:16,279 --> 00:31:20,840
+for the tremendously hard work you guys
+
+849
+00:31:18,919 --> 00:31:22,559
+have put in to be able to get our
+
+850
+00:31:20,840 --> 00:31:24,679
+conference and we have the deer and the
+
+851
+00:31:22,559 --> 00:31:26,000
+whole team behind you guys and David and
+
+852
+00:31:24,679 --> 00:31:27,919
+everybody that's been working on this
+
+853
+00:31:26,000 --> 00:31:30,159
+but this is going to be the best
+
+854
+00:31:27,919 --> 00:31:32,559
+conference in the world and I cannot
+
+855
+00:31:30,159 --> 00:31:33,760
+wait till June 1st to four so thank you
+
+856
+00:31:32,559 --> 00:31:35,639
+guys for all your hard work thanks for
+
+857
+00:31:33,760 --> 00:31:37,159
+sharing with our audience and I hope you
+
+858
+00:31:35,639 --> 00:31:38,360
+guys can get back together with us next
+
+859
+00:31:37,159 --> 00:31:40,799
+week we're going to be with Brian
+
+860
+00:31:38,360 --> 00:31:43,600
+Mitchell the Nevada state Broadband
+
+861
+00:31:40,799 --> 00:31:46,480
+director to talk about Nevada's gold
+
+862
+00:31:43,600 --> 00:31:49,320
+star Broadband plan so they are one of
+
+863
+00:31:46,480 --> 00:31:50,480
+the top two um top three states that
+
+864
+00:31:49,320 --> 00:31:52,279
+have been approved with their final
+
+865
+00:31:50,480 --> 00:31:53,600
+proposals for be and you're going to
+
+866
+00:31:52,279 --> 00:31:55,279
+want to hear from Brian so thanks
+
+867
+00:31:53,600 --> 00:31:57,440
+everyone we'll see you guys at fiber
+
+868
+00:31:55,279 --> 00:32:01,840
+connect June 1st through 4th and we'll
+
+869
+00:31:57,440 --> 00:32:01,840
+see you next week with Brian Mitchell
+

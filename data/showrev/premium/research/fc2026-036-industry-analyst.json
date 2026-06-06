@@ -1,0 +1,42 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Terracon is a large, privately held geotechnical, environmental, and construction materials engineering firm headquartered in Olathe, KS, with 175+ offices and ~6,000+ employees across the US. They are not a fiber ISP or operator — they are an engineering services firm providing subsurface investigation, environmental site assessment, and materials testing to infrastructure projects including telecom/broadband builds. Source: terracon.com/about, Terracon corporate profile.",
+    "Terracon launched a dedicated Telecommunications/Broadband practice, with Kathryn Eisele serving as National Director. This is a relatively recent vertical build-out within their broader infrastructure engineering business, likely formalized 2022-2024 in response to BEAD and rural broadband construction surge. The title 'National Director' signals this is a priority investment, not a legacy line. Source: Eisele LinkedIn title, terracon.com practice areas.",
+    "Terracon's telecom role is upstream of fiber design — they provide geotechnical reports (soil borings, bore path investigations for directional drilling), environmental clearances, and materials testing that are prerequisites for permit submissions and construction. This means they are directly embedded in the permitting and pre-construction workflow where Inorsa's permit kickback pain point lives. Source: Terracon service catalog, standard telecom A&E workflow knowledge.",
+    "Lauren Lanoux (Senior Project Manager, also attended Fiber Connect 2026) reinforces that Terracon has operational-level staff embedded in active broadband projects, not just business development. Her presence alongside the National Director at a trade show suggests active client engagement and project pipeline, not just prospecting. Source: Lead data provided.",
+    "Terracon's geotechnical and environmental work is often the long-lead item that triggers permit delays. If their subsurface reports are not correlated with the fiber design drawings in the permit package, mismatches create kickbacks. This is the exact friction point Inorsa's conflict-flagging and traceability output addresses. Source: Industry permitting workflow knowledge + Inorsa KB.",
+    "Terracon has historically served large infrastructure clients (highways, utilities, energy). Their expansion into telecom/broadband aligns with the BEAD-driven construction surge, which is projected to require hundreds of millions in geotechnical and environmental support work nationally over 2026-2030. This makes their telecom vertical a high-growth internal priority. Source: BEAD program structure, industry baseline KB.",
+    "Terracon is likely a subcontractor or teaming partner to prime engineering firms (A&E, OSP design firms) and directly to ISPs/carriers on BEAD projects. This positions them as a node in multi-firm project consortia — which means drawing coordination, version control, and permit package assembly across multiple parties is a real operational pain. Source: Standard A&E subcontract structure in broadband builds.",
+    "No specific BEAD sub-grant awards found for Terracon itself — they would not receive BEAD grants as a non-ISP engineering firm. Their revenue exposure comes from project work won by ISP clients who receive BEAD funding. This means their pipeline is tied to ISP award timelines, and the April 30, 2026 BEAD operationalization date is a direct upstream trigger for their project volume. Source: BEAD program rules, not-found signal on direct grant search.",
+    "Job postings for Terracon in telecom-adjacent roles (geotechnical engineer, project manager - broadband) have been observed on LinkedIn and Indeed in 2024-2025, consistent with a scaling telecom practice. Specific current postings not confirmed at search time but directionally consistent with a national director hire and practice buildout. Source: General LinkedIn search signal, not independently verified.",
+    "Terracon's competitors in the telecom geotechnical/environmental space include Kleinfelder, Cardno (now Stantec), GHD, and regional geotechnical firms. Larger A&E integrators (Telamon, Black & Veatch, Aecom) may encroach by offering full-stack services including geotech. This competitive pressure incentivizes Terracon to differentiate on speed and integration quality — which aligns with Inorsa's cycle-time value prop. Source: A&E competitive landscape knowledge."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Cannot confirm specific BEAD-funded ISP clients Terracon is currently supporting — this would sharpen the urgency framing significantly.",
+    "No direct quotes from Eisele or Terracon leadership about permitting pain, design coordination challenges, or technology investment priorities. No press releases, conference speaking appearances, or podcast appearances found for Terracon telecom practice specifically.",
+    "Exact headcount of Terracon's telecom practice is unknown — unclear if they have internal CAD/GIS capacity or rely entirely on prime contractors for drawing production.",
+    "No confirmed Fiber Connect 2026 speaker slot or booth presence for Terracon — they attended as an audience/prospect, not as exhibitors, limiting public signal.",
+    "Revenue figures for Terracon's telecom vertical are not publicly available (private company, no SEC filings).",
+    "Could not confirm whether Terracon has an internal GIS or design team, or whether they purely do field/lab work and hand off to separate design firms. This matters for scoping the Inorsa conversation."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP 'hold' rating and Tier D batch classification likely reflects uncertainty about whether Terracon is a direct buyer of Inorsa's product (GIS-to-CAD drawing generation). That concern is legitimate — Terracon's core business is geotechnical/environmental, not fiber OSP design. However, this underestimates the permitting workflow integration angle: Terracon's deliverables (bore logs, environmental reports, ROW clearances) must be reconciled with CAD permit drawings, and mismatches are a primary kickback driver. Terracon has strong incentive to ensure the permit packages their clients submit are conflict-free.",
+    "Prior research entities (Avatar Tech, AirWorks, IQGeo, etc.) are direct ISP/design software competitors to Inorsa. Terracon is NOT in that competitive set — they are a potential channel partner or warm referral node into ISP and prime A&E clients, not a direct Inorsa competitor. This distinction should shape outreach: Terracon may be as valuable as a partnership/referral source as they are as a direct software buyer.",
+    "The 'no AE notes' gap should not default to low-priority dismissal. Two named contacts at director and PM level attending a fiber-specific conference is a meaningful signal of active investment in this vertical, regardless of grading."
+  ],
+  "topInsight": "Terracon is not a fiber designer — they are the upstream permitting prerequisite. As National Director of Telecom/Broadband, Eisele is building out a practice whose revenue depends entirely on BEAD-funded ISP projects closing and starting construction. Her clients' permit packages routinely fail when geotechnical/environmental data doesn't reconcile with OSP design drawings — which is exactly the conflict-detection gap Inorsa closes. The right outreach frame is not 'we generate drawings' but 'we eliminate the permit kickbacks that happen when your bore path reports and the CAD permit set don't match — and we can prove a reduction from 3-4 week review cycles to 2 days.' This positions Inorsa as a tool that makes Terracon's clients move faster, which directly grows Terracon's billable project throughput in the BEAD window.",
+  "sourcesUsed": [
+    "https://www.terracon.com/services/telecommunications/",
+    "https://www.terracon.com/about/",
+    "LinkedIn profile: Kathryn Eisele, National Director Telecom/Broadband, Terracon",
+    "LinkedIn profile: Lauren Lanoux, Senior Project Manager, Terracon",
+    "Inorsa ShowRev Industry Intelligence KB (permitting workflow, cycle time data)",
+    "BEAD program operational timeline (NTIA, April 30 2026)",
+    "General A&E telecom subcontract structure (industry baseline knowledge)",
+    "LinkedIn/Indeed job posting signals for Terracon telecom roles (directional, not confirmed URL)"
+  ]
+}
+```

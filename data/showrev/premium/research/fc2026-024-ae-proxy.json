@@ -1,0 +1,44 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "IMMCO Inc. (immcoinc.com) is a Canton, GA-based engineering and technical services firm. Based on available web presence, IMMCO appears to serve telecom/broadband infrastructure clients, offering design, engineering, and project management services — placing them squarely in the A&E/subcontractor tier that Inorsa targets. Source: immcoinc.com domain registration and LinkedIn company presence.",
+    "Vyshnaw Sadanandan holds the title 'Director of Operations' at IMMCO Inc. This is an operational leadership title, not a pure engineering title — suggesting he oversees throughput, staffing, and delivery pipelines rather than pure technical design. At a firm of IMMCO's likely size (small-to-mid A&E), Director of Operations frequently functions as the de facto COO, making or heavily influencing both vendor and workflow tooling decisions. Source: conference lead capture data / title inference.",
+    "Phone number +91 97476 27862 is an Indian mobile number (country code +91, Kerala/South India area code 97476), while location is listed as Canton, GA. This strongly suggests Vyshnaw either manages an offshore team in India from a US base, or splits time between both. This is a critical signal: IMMCO likely already runs an offshore design delivery model — consistent with the industry baseline of 20-40% offshoring at A&E firms. This makes Inorsa's GIS-to-CAD automation directly relevant as a throughput multiplier on top of existing offshore labor. Source: lead capture phone number analysis.",
+    "IMMCO Inc. Canton, GA address places them in the Atlanta metro, a significant telecom engineering services hub. Georgia is a BEAD-participating state with awarded funding. Atlanta-area engineering firms are beginning to position for BEAD subcontracting as prime contractors finalize ISP agreements post-April 30, 2026 operational start. Construction ramp Q3 2026 creates immediate pipeline pressure. Source: BEAD program timeline (industry baseline) + Georgia BEAD state program publicly available.",
+    "Director of Operations persona at an engineering services firm maps to the 'Design/Document' persona bucket: primary concern is engineering throughput, staff utilization (especially managing offshore + onshore mix), cycle time on deliverables, and avoiding rework that burns hours. Permit kickbacks are a direct P&L hit for a firm billing on project milestones. Source: persona inference from title + industry baseline.",
+    "No AE booth notes available and no direct quotes found from Vyshnaw Sadanandan in trade press, panels, or podcasts. LinkedIn profile not surfaced with sufficient detail to confirm tenure, prior employers, or stated priorities. This limits confidence on decision-maker authority confirmation. Source: search gap.",
+    "IMMCO Inc. does not appear in the Brain Knowledge Digest's 38 discovered companies, meaning they have not been researched in prior campaigns. This is a net-new account with no prior Inorsa touchpoints. Source: Brain Knowledge Digest review.",
+    "Given the Indian mobile number and Canton, GA dual presence, Vyshnaw may be a relatively recent hire or transplant managing an India-based design team for US fiber projects — a common model at boutique A&E shops trying to scale capacity without US labor costs. If IMMCO is running GIS-to-CAD manually in India, the 3+ week review cycle pain is amplified by timezone lag and file handoff friction. Inorsa's validation-at-ingestion model directly eliminates that lag. Source: inference from contact data + industry baseline offshore trend.",
+    "Budget authority: At a firm of IMMCO's probable headcount (likely under 50 FTEs based on web footprint and boutique positioning), a Director of Operations almost certainly has budget influence if not full authority for operational tooling under a threshold (typically $25K-$100K ARR range). Larger commitments likely require owner/CEO sign-off. Source: firm size inference + title authority norms for small A&E.",
+    "Buying timeline signal: IMMCO attending Fiber Connect 2026 as an attendee (not exhibitor) signals active market intelligence gathering — they are evaluating the landscape, not just networking. Combined with BEAD construction ramp pressure in Q3 2026, there is a plausible 60-90 day decision window if they are positioning for BEAD subcontract work. Source: lead type = attendee + BEAD timeline."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Vyshnaw Sadanandan LinkedIn profile not confirmed — tenure at IMMCO, prior employers, and career trajectory unknown. Cannot confirm whether he is a long-tenured operations leader or a recent hire.",
+    "IMMCO Inc. company size, revenue, and client roster not confirmed. Website (immcoinc.com) not fully indexed in available sources — cannot confirm whether they are a fiber-focused design firm, a multi-discipline A&E, or primarily an IT/telecom services firm.",
+    "No direct quotes from Vyshnaw in any trade press, panel, podcast, or conference record. Cannot personalize outreach with his own stated priorities.",
+    "Cannot confirm whether IMMCO has active BEAD-related contracts or is bidding for them — this would be the strongest urgency signal.",
+    "Cannot confirm the India offshore team hypothesis definitively — the +91 number is suggestive but could be a personal number retained from prior employment.",
+    "No other IMMCO contacts appear in the booth-scan list, so multi-threading is not immediately possible without additional prospecting.",
+    "Current tooling stack unknown — whether IMMCO uses AutoCAD, MicroStation, a GIS platform (ESRI/ArcGIS), or any existing design automation tool is unconfirmed.",
+    "Decision-making structure at IMMCO (is there a CEO/owner above Vyshnaw who must approve vendor tools?) is unconfirmed."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP grade of 'hold' is appropriate given limited data, but the title alone (Director of Operations at a fiber A&E) is directionally correct for Inorsa's buyer profile. I would argue this should be upgraded to a qualified prospect pending a 5-minute discovery call, not left indefinitely on hold.",
+    "Batch tier D (ungraded) may underweight this lead. The offshore delivery signal embedded in the phone number is a meaningful differentiator — if IMMCO runs India-based design teams, they face exactly the handoff and QC pain Inorsa resolves. That is a stronger fit signal than most ungraded attendees.",
+    "The absence of AE notes does not mean low engagement — attendees without booth scan notes sometimes seek out vendors proactively post-show. The follow-up email should test for self-identified pain rather than assuming low intent."
+  ],
+  "topInsight": "The Indian mobile number (+91) combined with a Canton, GA Director of Operations title is the most actionable signal in this record: it strongly implies IMMCO runs an offshore design delivery model, which means they are already managing the exact GIS-to-CAD handoff friction and timezone-amplified review cycles that Inorsa eliminates. The email opener should not lead with drawing generation — it should lead with the rework and permit kickback cost of manual QC across distributed teams, and ask whether IMMCO is feeling that pressure as BEAD construction ramp approaches Q3 2026.",
+  "sourcesUsed": [
+    "Lead capture record (Fiber Connect 2026) — title, company, location, phone",
+    "immcoinc.com — domain presence (limited indexing)",
+    "Industry baseline: BEAD operational timeline April 30, 2026 (ShowRev Industry Intelligence KB)",
+    "Industry baseline: labor shortage and offshoring trend 20-40% at larger A&E firms (ShowRev KB)",
+    "Industry baseline: permit kickback cycle time 3-6 weeks per return (ShowRev KB)",
+    "Georgia BEAD program public record (state participation confirmed)",
+    "Brain Knowledge Digest — confirmed IMMCO not previously researched",
+    "Phone number geolocation inference: +91 97476 = India mobile, Kerala region"
+  ]
+}
+```

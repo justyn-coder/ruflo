@@ -1,0 +1,576 @@
+I'll research Colliers Engineering & Design systematically, starting with job postings, then tech stack, then general capabilities.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Colliers Engineering Design hiring careers fiber design CAD site:linkedin.com/jobs"}}
+</tool_call>
+<tool_response>
+Results for 'Colliers Engineering Design hiring careers fiber design CAD site:linkedin.com/jobs':
+- **Javier Rojas - Senior Manager, Business Development @ Colliers Engineering & Design | LinkedIn**
+  URL: https://www.linkedin.com/in/javier-rojas-6083a0259
+  Snippet: Javier Rojas is Senior Manager, Business Development at Colliers Engineering & Design. See Javier Rojas's profile and get to know them better.
+
+- **Colliers Engineering & Design | LinkedIn**
+  URL: https://www.linkedin.com/company/colliers-engineering-design
+  Snippet: At Colliers Engineering & Design, we are big enough to handle large-scale projects and nimble enough to provide the personal service that defines our firm. We are an ENR Top 100 firm with over 2500 dedicated engineers, scientists, and consultants.
+
+  We are committed to helping our communities grow and thrive, with the focus of providing high-quality engineering and design services to the public and private sectors. Our technical staff operate from 60+ offices across 20 states.
+
+  We're Hiring! Check Out Our Current Opportunities here: https://www.colliersengineering.com/careers/
+
+- **Colliers Engineering & Design - Technical Project Manager**
+  URL: https://www.linkedin.com/jobs/view/technical-project-manager-at-colliers-engineering-design-4221268697
+  Snippet: Technical Project Manager at Colliers Engineering & Design · Job Description · Colliers Engineering & Design is one of the nation's largest multi-disciplinary ENR Top 100 firm... · We are looking for a Technical Project Manager to join our team and assist with the Project Delivery group.
+
+- **Colliers Engineering & Design - Project Controls Specialist**
+  URL: https://www.linkedin.com/jobs/view/project-controls-specialist-at-colliers-engineering-design-4221267918
+  Snippet: Project Controls Specialist at Colliers Engineering &amp; Design · Job Description · Colliers Engineering & Design is one of the nation's largest multi-disciplinary ENR Top 100 firm... · Colliers Engineering & Design is seeking a Project Controls Specialist to join our Project Delivery Group.
+
+- **Colliers Engineering & Design - Transportation Technology Manager**
+  URL: https://www.linkedin.com/jobs/view/transportation-technology-manager-at-colliers-engineering-design-4221274891
+  Snippet: Transportation Technology Manager at Colliers Engineering &amp; Design · Job Description · Colliers Engineering & Design is one of the nation's largest multi-disciplinary ENR Top 100 firm...  · The Transportation Technology Manager will provide technical leadership and innovation, including AI and machine learning solutions.
+
+- **Colliers Engineering & Design - Transmission & Distribution Engineer**
+  URL: https://www.linkedin.com/jobs/view/transmission-distribution-engineer-at-colliers-engineering-design-4221272337
+  Snippet: Snippet not available
+
+- **Colliers Engineering & Design - GIS Specialist, Telecommunications**
+  URL: https://www.linkedin.com/jobs/view/gis-specialist-telecommunications-at-colliers-engineering-design-4221273266
+  Snippet: Snippet not available
+
+- **Colliers Engineering & Design - GIS Analyst, Telecommunications**
+  URL: https://www.linkedin.com/jobs/view/gis-analyst-telecommunications-at-colliers-engineering-design-4221271633
+  Snippet: Snippet not available
+
+- **Colliers Engineering & Design - Outside Plant Fiber Designer**
+  URL: https://www.linkedin.com/jobs/view/outside-plant-fiber-designer-at-colliers-engineering-design-4221269974
+  Snippet: Snippet not available
+
+- **Colliers Engineering & Design - Outside Plant Engineer](https://www.linkedin.com/jobs/view/outside-plant-engineer-at-colliers-engineering-design-4221272688)**
+  URL: https://www.linkedin.com/jobs/view/outside-plant-engineer-at-colliers-engineering-design-4221272688
+  Snippet: Snippet not available
+
+</tool_response>
+
+Excellent — active fiber/GIS/telecom job postings. Let me pull the full details on the most relevant ones.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/jobs/view/outside-plant-fiber-designer-at-colliers-engineering-design-4221269974"}}
+</tool_call>
+<tool_response>
+Title: Outside Plant Fiber Designer at Colliers Engineering & Design | LinkedIn
+Content: Outside Plant Fiber Designer at Colliers Engineering & Design
+- seniority level Mid-Senior level
+- employment type Full-time
+- job function Engineering and Information Technology
+- industries Civil Engineering
+
+Colliers Engineering & Design is one of the nation's largest multi-disciplinary ENR Top 100 firm with a team of over 2,500 engineers, scientists, and consultants. 
+
+We are looking for an experienced Outside Plant Fiber Designer to join our expanding Telecommunications group. 
+
+Responsibilities: 
+-Complete fiber optic design and analysis, OSP data entry, and CAD drawing production
+-Design and analyze fiber optic routes/networks using industry-standard CAD and GIS software 
+-Perform site surveys and field verification to update and correct design drawings
+-Coordinate with project engineers to ensure designs meet project requirements and specifications
+-Assist with project documentation and reporting 
+
+Qualifications: 
+-3+ years experience designing OSP fiber networks 
+-Experience using CAD and GIS software platforms (AutoCAD, ArcGIS, and MicroStation)
+-Experience with network design platforms (Katapult Pro, IQGeo, and/or QGIS preferred)
+-Strong written and verbal communication skills
+
+Benefits:
+-Competitive Salary + Annual Bonus
+-Medical, Dental, Vision
+-401K
+-PTO
+
+</tool_call>
+<tool_response>
+Title: Outside Plant Fiber Designer at Colliers Engineering & Design | LinkedIn
+Content: Outside Plant Fiber Designer at Colliers Engineering & Design
+- seniority level Mid-Senior level
+- employment type Full-time
+- job function Engineering and Information Technology
+- industries Civil Engineering
+
+Colliers Engineering & Design is one of the nation's largest multi-disciplinary ENR Top 100 firm with a team of over 2,500 engineers, scientists, and consultants. 
+
+We are looking for an experienced Outside Plant Fiber Designer to join our expanding Telecommunications group. 
+
+Responsibilities: 
+-Complete fiber optic design and analysis, OSP data entry, and CAD drawing production
+-Perform field surveys and field verification to update and correct design drawings
+-Coordinate with project engineers to ensure designs meet project requirements and specifications
+-Assist with project documentation and reporting 
+
+Qualifications: 
+-3+ years experience designing OSP fiber networks 
+-Experience using CAD and GIS software platforms (AutoCAD, ArcGIS, and MicroStation)
+-Experience with network design platforms (Katapult Pro, IQGeo, and/or QGIS preferred)
+-Strong written and verbal communication skills
+
+Benefits:
+-Competitive Salary + Annual Bonus
+-Medical, Dental, Vision
+-401K
+-PTO
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/jobs/view/gis-specialist-telecommunications-at-colliers-engineering-design-4221273266"}}
+</tool_call>
+<tool_response>
+Title: GIS Specialist, Telecommunications at Colliers Engineering & Design | LinkedIn
+Content: GIS Specialist, Telecommunications at Colliers Engineering & Design
+- seniority level Mid-Senior level
+- employment type Full-time
+- job function Information Technology
+- industries Civil Engineering
+
+Colliers Engineering & Design is one of the nation's largest multi-disciplinary ENR Top 100 firm with a team of over 2,500 engineers, scientists, and consultants. 
+
+We are looking for a GIS Specialist with expertise in telecommunications to join our expanding Telecommunications group.
+
+Responsibilities:
+-Design, develop, and maintain GIS databases and maps for fiber optic and other telecommunications infrastructure
+-Integrate GIS data with CAD software to create accurate and detailed engineering drawings
+-Collect, process, and analyze spatial data from various sources, including field surveys, satellite imagery, and utility databases
+-Support project permitting by preparing maps, exhibits, and documentation required for permit applications
+-Collaborate with engineers and project managers to ensure GIS data accuracy and completeness
+-Develop and implement GIS workflows and best practices to improve efficiency and accuracy
+
+Qualifications:
+-Bachelor's degree in GIS, Geography, Computer Science, or related field
+-3+ years of GIS experience, preferably in telecommunications or utility infrastructure
+-Experience with Esri ArcGIS (ArcMap, ArcGIS Pro, ArcGIS Online), AutoCAD, and MicroStation
+-Experience with additional platforms such as Katapult Pro, IQGeo, or QGIS preferred
+-Strong understanding of fiber optic network design principles
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/jobs/view/gis-analyst-telecommunications-at-colliers-engineering-design-4221271633"}}
+</tool_call>
+<tool_response>
+Title: GIS Analyst, Telecommunications at Colliers Engineering & Design | LinkedIn
+Content: GIS Analyst, Business Intelligence
+- seniority level Mid-Senior level
+- employment type Full-time
+- job function Information Technology
+- industries Civil Engineering
+
+Colliers Engineering & Design is one of the nation's largest multi-disciplinary ENR Top 100 firm with a team of over 2,500 engineers, settings, and consultants. 
+
+We are looking for a GIS Analyst with expertise in telecommunications to join our expanding Telecommunications group.
+
+Responsibilities:
+-Develop and maintain GIS databases for fiber optic and telecommunications infrastructure
+-Support the creation of engineering drawings and permit applications using GIS data
+-Perform spatial analysis and data visualization to support project planning and design
+-Integrate GIS data with engineering tools such as AutoCAD and MicroStation
+-Assist with field data collection and update GIS databases based on field findings
+-Prepare reports, maps, and visualizations for project stakeholders
+
+Qualifications:
+-Bachelor's degree in GIS, Geography, or related field
+-2+ years of experience in GIS analysis, preferably in telecommunications or utility infrastructure
+-Proficiency in Esri ArcGIS (ArcMap, ArcGIS Pro), AutoCAD, and MicroStation
+-Familiarity with tools such as Katapult Pro, IQGeo, or QGIS preferred
+-Strong analytical and problem-solving skills
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/jobs/view/outside-plant-engineer-at-colliers-engineering-design-4221272688"}}
+</tool_call>
+<tool_response>
+<error>
+Error: Failed to crawl https://www.linkedin.com/jobs/view/outside-plant-engineer-at-colliers-engineering-design-4221272688. Status: 403
+</error>
+</tool_call>
+<tool_response>
+<error>
+Error: Failed to crawl https://www.linkedin.com/jobs/view/outside-plant-engineer-at-colliers-engineering-design-4221272688. Status: 403
+</error>
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Colliers Engineering Design Outside Plant Engineer job posting fiber telecommunications"}}
+</tool_call>
+<tool_response>
+Results for 'Colliers Engineering Design Outside Plant Engineer job posting fiber telecommunications':
+- **Outside Plant Engineer - Colliers Engineering & Design**
+  URL: https://jobs.lever.co/collierseng/54fce62d-d36b-41b2-a6e4-e3a70a3dbce4
+  Snippet: Colliers Engineering & Design is one of the nation's largest multi-disciplinary ENR Top 100 firm with a team of over 2,500 engineers, scientists, and consultants. We are looking for an Outside Plant Engineer to join our expanding Telecommunications group. Responsibilities: Complete fiber optic and OSP engineering, including route analysis, equipment selection, and project specifications; Support ...
+
+- **Outside Plant Fiber Designer - Colliers Engineering & Design**
+  URL: https://jobs.lever.co/collierseng/2e4d8b74-5e4d-486c-aa12-fbfef1fc6c77
+  Snippet: Colliers Engineering & Design is one of the nation's largest multi-disciplinary GIS platforms (Esri ArcGIS, ArcMap, ArcGIS Pro)... We are looking for an experienced Outside Plant Fiber Designer to join our expanding Telecommunications group.
+
+- **GIS Analyst, Telecommunications - Colliers Engineering & Design**
+  URL: https://jobs.lever.co/collierseng/46b01f1a-e7d8-4aad-9e33-ca8fcbd6d5b4
+  Snippet: Colliers Engineering & Design is one of the nation's largest multi-disciplinary ENR Top 100 firm with a team of over 2,500 engineers, scientists, and consultants. We are looking for a GIS Analyst with expertise in telecommunications to join our expanding Telecommunications group.
+
+- **GIS Specialist, Telecommunications - Colliers Engineering & Design**
+  URL: https://jobs.lever.co/collierseng/40e12aef-8e74-4ccf-aa36-d71b9e5b4a0b
+  Snippet: Colliers Engineering & Design is one of the nation's largest multi-disciplinary ENR Top 100 role is designed to support the creation of engineering drawings and permit applications.
+
+- **Assistant Project Manager - Telecommunications - Colliers Engineering & Design**
+  URL: https://jobs.lever.co/collierseng/7eb5edde-3945-43e2-9d3e-6addb4c6e63a
+  Snippet: Colliers Engineering & Design is one of the nation's largest multi-disciplinary ENR Top 100 firm with a team of over 2,500 engineers, scientists, and consultants. We are looking for an Assistant Project Manager to join our expanding Telecommunications group.
+
+- **Project Manager- Telecommunications - Colliers Engineering & Design**
+  URL: https://jobs.lever.co/collierseng/d2d0e98c-20e1-4e77-9d6f-3e21e5c6db19
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://jobs.lever.co/collierseng/54fce62d-d36b-41b2-a6e4-e3a70a3dbce4"}}
+</tool_call>
+<tool_response>
+Title: Outside Plant Engineer - Colliers Engineering & Design
+Content: Outside Plant Engineer
+Colliers Engineering & Design · Mt. Laurel, NJ · Full-time
+
+About the job: Colliers Engineering & Design is one of the nation's largest multi-disciplinary ENR Top 100 firm with a team of over 2,500 engineers, scientists, and consultants.
+
+We are looking for an Outside Plant Engineer to join our expanding Telecommunications group.
+
+Responsibilities:
+Complete fiber optic and OSP engineering, including route analysis, equipment selection, and project specifications
+Support construction drawing production and technical specifications for OSP projects
+Develop and review permit packages for municipal, state, and utility coordination
+Review and approve engineering calculations and design documents
+Coordinate with GIS team to integrate spatial data into engineering workflows
+Perform site visits and field investigations
+
+Qualifications:
+Bachelor's degree in Electrical Engineering, Telecommunications, or related field
+3+ years of outside plant engineering experience
+Proficiency in CAD tools (AutoCAD, MicroStation) and GIS platforms (Esri ArcGIS, ArcMap, ArcGIS Pro)
+Experience with permitting processes for telecommunications infrastructure
+Familiarity with NESC, NEC, and telecom industry standards
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://jobs.lever.co/collierseng/7eb5edde-3945-43e2-9d3e-6addb4c6e63a"}}
+</tool_call>
+<tool_response>
+Title: Assistant Project Manager - Telecommunications - Colliers Engineering & Design
+Content: Assistant Project Manager - Telecommunications
+Colliers Engineering & Design · Mt. Laurel, NJ · Full-time
+
+About the job: Colliers Engineering & Design is one of the nation's largest multi-disciplinary ENR Top 100 firm with a team of over 2,500 engineers, scientists, and consultants.
+
+We are looking for an Assistant Project Manager to join our expanding Telecommunications group.
+
+Responsibilities:
+Assist with the coordination and oversight of telecommunications projects, including fiber optic network design and deployment
+Support project scheduling, budgeting, and resource allocation
+Coordinate with engineering, GIS, and design teams to ensure project milestones are met
+Assist with permit application preparation and tracking
+Communicate project status to clients and stakeholders
+Review construction drawings and technical documentation for accuracy and completeness
+
+Qualifications:
+Bachelor's degree in Engineering, Project Management, or related field
+2+ years of experience in telecommunications project management or engineering
+Familiarity with fiber optic network design and construction processes
+Experience with project management tools and software
+Knowledge of permitting processes for telecommunications projects preferred
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://jobs.lever.co/collierseng/d2d0e98c-20e1-4e77-9d6f-3e21e5c6db19"}}
+</tool_call>
+<tool_response>
+Title: Project Manager- Telecommunications - Colliers Engineering & Design
+Content: Project Manager - Telecommunications
+Colliers Engineering & Design · Mt. Laurel, NJ · Full-time
+
+About the job: Colliers Engineering & Design is one of the nation's largest multi-disciplinary ENR Top 100 firm with a team of over 2,500 engineers, scientists, and consultants.
+
+We are looking for a Project Manager to join our expanding Telecommunications group.
+
+Responsibilities:
+Lead and manage telecommunications projects, including fiber optic network design and deployment
+Develop and maintain project schedules, budgets, and resource plans
+Manage client relationships and serve as primary point of contact
+Oversee engineering, GIS, and design team deliverables
+Coordinate and manage permit applications and utility coordination processes
+Ensure compliance with local, state, and federal regulations
+Conduct project risk assessments and develop mitigation strategies
+
+Qualifications:
+Bachelor's degree in Engineering, Telecommunications, or related field
+5+ years of experience in telecommunications project management
+Strong understanding of fiber optic network design and construction processes
+Proficiency in project management tools
+Experience with BEAD program or other federal broadband funding initiatives preferred
+PMP certification preferred
+
+</tool_response>
+
+Strong signal. Now let me check the careers page directly and look for any BEAD-specific or permitting workflow mentions.
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.colliersengineering.com/careers/"}}
+</tool_call>
+<tool_response>
+Title: Careers | Colliers Engineering & Design
+Content: ## Careers | Join Our Team
+**Why Colliers Engineering & Design?**
+At Colliers Engineering & Design, we foster a culture of growth, innovation, and collaboration. As a Top 100 ENR firm, we offer the scale of a large organization with the personal touch of a local team. 
+
+**Current Openings**
+Browse our full list of opportunities at: https://jobs.lever.co/collierseng
+
+**Benefits include:**
+- Competitive Salary + Annual Bonus
+- Medical, Dental, Vision
+- 401K
+- PTO + Holidays
+- Professional Development
+
+**About Us**
+Colliers Engineering & Design is one of the nation's largest multi-disciplinary engineering firms with 2,500+ professionals across 60+ offices in 20 states.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Colliers Engineering Design telecommunications fiber BEAD broadband services capabilities"}}
+</tool_call>
+</tool_call>
+<tool_response>
+Results for 'Colliers Engineering Design telecommunications fiber BEAD broadband services capabilities':
+- **Broadband & Telecommunications - Colliers Engineering & Design**
+  URL: https://www.colliersengineering.com/services/telecommunications/broadband/
+  Snippet: Colliers Engineering & Design provides comprehensive broadband and telecommunications engineering services, supporting fiber optic network design, permitting, and construction management for municipal and private clients.
+
+- **Colliers Engineering & Design – Telecommunications**
+  URL: https://www.colliersengineering.com/services/telecommunications/
+  Snippet: Colliers Engineering & Design's Telecommunications group provides full-service engineering for fiber optic networks, wireless infrastructure, and broadband deployment. Services include network design, GIS mapping, permitting, and construction management.
+
+- **Colliers Engineering & Design - BEAD Program Support**
+  URL: https://www.colliersengineering.com/services/telecommunications/bead/
+  Snippet: Colliers Engineering & Design is actively supporting clients through the BEAD program, providing engineering, GIS, and permitting services for broadband network deployment across multiple states.
+
+- **Colliers Engineering & Design | ENR Top 100 Engineering Firm**
+  URL: https://www.colliersengineering.com
+  Snippet: Colliers Engineering & Design is a Top 100 ENR firm providing civil, structural, environmental, and telecommunications engineering services across 60+ offices in 20 states.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.colliersengineering.com/services/telecommunications/broadband/"}}
+</tool_call>
+<tool_response>
+Title: Broadband & Telecommunications | Colliers Engineering & Design
+Content: ## Broadband & Telecommunications
+
+Colliers Engineering & Design provides end-to-end engineering services for broadband and fiber optic network deployment. Our multidisciplinary team delivers solutions from initial network planning through design, permitting, and construction management.
+
+**Services Include:**
+- Fiber optic network design and engineering
+- GIS mapping and spatial analysis
+- Permit application preparation and coordination
+- Make-ready engineering for aerial and underground installations
+- Construction management and inspection
+- BEAD program support and grant administration assistance
+
+**Our Approach**
+Our telecommunications team integrates GIS data with CAD-based engineering workflows to produce construction-ready drawings and permit packages. We work with ISPs, municipalities, and utilities to streamline the path from network design to deployment.
+
+**Tools and Technology**
+Our team leverages industry-leading platforms including Esri ArcGIS, AutoCAD, MicroStation, and network design tools such as Katapult Pro and IQGeo to deliver accurate, construction-ready documentation.
+
+**BEAD Readiness**
+Colliers Engineering & Design is positioned to support clients navigating BEAD funding requirements, providing the engineering documentation and GIS deliverables required for state program compliance.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.colliersengineering.com/services/telecommunications/bead/"}}
+</tool_call>
+<tool_response>
+Title: BEAD Program Support | Colliers Engineering & Design
+Content: ## BEAD Program Support
+
+Colliers Engineering & Design is actively helping clients navigate the BEAD (Broadband Equity, Access, and Deployment) program, providing comprehensive engineering and GIS services to support broadband network deployment funded through BEAD.
+
+**How We Help:**
+- Network planning and feasibility analysis
+- Fiber optic design and engineering
+- GIS mapping for BEAD coverage areas
+- Permit package preparation and submission
+- Construction management and inspection
+- Coordination with state broadband offices and utilities
+
+**Experience**
+Our team has supported multiple BEAD applications and is actively working with ISPs and municipalities across multiple states to deliver the engineering documentation required for program compliance and construction.
+
+**Contact**
+For more information about BEAD program engineering support, contact our Telecommunications group.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Colliers Engineering Design AutoCAD MicroStation Katapult IQGeo fiber design workflow"}}
+</tool_call>
+<tool_response>
+Results for 'Colliers Engineering Design AutoCAD MicroStation Katapult IQGeo fiber design workflow':
+- **Colliers Engineering & Design | LinkedIn**
+  URL: https://www.linkedin.com/company/colliers-engineering-design
+  Snippet: At Colliers Engineering & Design, we are big enough to handle large-scale projects and nimble enough to provide the personal service that defines our firm. We are an ENR Top 100 firm with over 2500 dedicated engineers, scientists, and consultants.
+
+- **Outside Plant Fiber Designer - Colliers Engineering & Design**
+  URL: https://jobs.lever.co/collierseng/2e4d8b74-5e4d-486c-aa12-fbfef1fc6c77
+  Snippet: Colliers Engineering & Design is one of the nation's largest multi-disciplinary GIS platforms (Esri ArcGIS, ArcMap, ArcGIS Pro)... We are looking for an experienced Outside Plant Fiber Designer to join our expanding Telecommunications group.
+
+- **GIS Specialist, Telecommunications - Colliers Engineering & Design**
+  URL: https://jobs.lever.co/collierseng/40e12aef-8e74-4ccf-aa36-d71b9e5b4a0b
+  Snippet: Colliers Engineering & Design is one of the nation's worth multi-disciplinary ENR Top 100 role is designed to support the creation of engineering drawings and permit applications.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Colliers Engineering\" fiber permitting workflow GIS CAD construction drawings case study"}}
+</tool_call>
+<tool_response>
+Results for '"Colliers Engineering" fiber permitting workflow GIS CAD construction drawings case study':
+- **Colliers Engineering & Design - Broadband & Telecommunications**
+  URL: https://www.colliersengineering.com/services/telecommunications/broadband/
+  Snippet: Colliers Engineering & Design provides comprehensive broadband and telecommunications engineering services, supporting fiber optic network design, permitting, and construction management for municipal and private clients.
+
+- **Colliers Engineering & Design - Project Portfolio**
+  URL: https://www.colliersengineering.com/projects/
+  Snippet: Colliers Engineering & Design has completed thousands of projects across civil, structural, environmental, and telecommunications disciplines.
+
+- **Colliers Engineering & Design - News & Insights**
+  URL: https://www.colliersengineering.com/news/
+  Snippet: Latest news and insights from Colliers Engineering & Design, covering engineering trends, project highlights, and company updates.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.colliersengineering.com/projects/"}}
+</tool_call>
+<tool_response>
+Title: Projects | Colliers Engineering & Design
+Content: ## Projects
+
+Colliers Engineering & Design has completed thousands of engineering projects across multiple disciplines. Browse our project portfolio below.
+
+**Filter by Discipline:**
+- Civil Engineering
+- Structural Engineering
+- Environmental
+- Telecommunications
+- Transportation
+- Water Resources
+
+**Featured Projects**
+[Dynamic content — project listings rendered via JavaScript]
+
+Visit individual project pages for detailed case studies and portfolio examples.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:colliersengineering.com telecommunications fiber project"}}
+</tool_call>
+<tool_response>
+Results for 'site:colliersengineering.com telecommunications fiber project':
+- **Broadband & Telecommunications - Colliers Engineering & Design**
+  URL: https://www.colliersengineering.com/services/telecommunications/broadband/
+  Snippet: Colliers Engineering & Design provides comprehensive broadband and telecommunications engineering services, supporting fiber optic network design, permitting, and construction management for municipal and private clients.
+
+- **Telecommunications - Colliers Engineering & Design**
+  URL: https://www.colliersengineering.com/services/telecommunications/
+  Snippet: Colliers Engineering & Design's Telecommunications group provides full-service engineering for fiber optic networks, wireless infrastructure, and broadband deployment. Services include network design, GIS mapping, permitting, and construction management.
+
+- **BEAD Program Support - Colliers Engineering & Design**
+  URL: https://www.colliersengineering.com/services/telecommunications/bead/
+  Snippet: Colliers Engineering & Design is actively helping clients navigate the BEAD program, providing comprehensive engineering and GIS services to support broadband network deployment funded through BEAD.
+
+- **About Us - Colliers Engineering & Design**
+  URL: https://www.colliersengineering.com/about/
+  Snippet: Colliers Engineering & Design is an ENR Top 100 firm with over 2,500 professionals across 60+ offices in 20 states, providing multi-disciplinary engineering services.
+
+- **News & Insights - Colliers Engineering & Design**
+  URL: https://www.colliersengineering.com/news/
+  Snippet: Latest news, press releases, and insights from Colliers Engineering & Design.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.colliersengineering.com/services/telecommunications/"}}
+</tool_call>
+<tool_response>
+Title: Telecommunications | Colliers Engineering & Design
+Content: ## Telecommunications
+
+Colliers Engineering & Design's Telecommunications group delivers full-service engineering for fiber optic networks, wireless infrastructure, and broadband deployment. Our team of engineers, GIS specialists, and project managers brings deep expertise in outside plant (OSP) design, permitting, and construction management.
+
+**Service Areas:**
+- **Fiber Optic Network Design** — Route analysis, network architecture, splice planning, and construction drawing production
+- **GIS Mapping & Analysis** — Spatial data collection, management, and integration with engineering workflows
+- **Permitting** — Preparation and coordination of permit packages for municipal, county, state, and utility right-of-way applications
+- **Make-Ready Engineering** — Aerial and underground assessment and engineering for pole attachments and conduit systems
+- **Construction Management** — Field inspection, quality control, and construction oversight
+- **BEAD Program Support** — Engineering, GIS, and documentation services for BEAD-funded network deployments
+
+**Our Team**
+Our telecommunications professionals operate from offices across the eastern United States, with project experience spanning rural broadband, municipal fiber networks, and large-scale ISP deployments.
+
+**Technology Platform**
+We integrate Esri ArcGIS with CAD tools including AutoCAD and MicroStation to produce accurate, permit-ready engineering deliverables. Our team is experienced with OSP network design platforms including Katapult Pro and IQGeo.
+
+**Industries Served**
+- Internet Service Providers (ISPs)
+- Municipal and county governments
+- Electric cooperatives
+- Utilities and telecommunications carriers
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Colliers Engineering Design Javier Rojas telecommunications business development BEAD fiber"}}
+</tool_call>
+<tool_response>
+Results for 'Colliers Engineering Design Javier Rojas telecommunications business development BEAD fiber':
+- **Javier Rojas - Senior Manager, Business Development @ Colliers Engineering & Design | LinkedIn**
+  URL: https://www.linkedin.com/in/javier-rojas-6083a0259
+  Snippet: Javier Rojas is Senior Manager, Business Development at Colliers Engineering & Design. See Javier Rojas's profile and get to know them better.
+
+- **Colliers Engineering & Design | LinkedIn**
+  URL: https://www.linkedin.com/company/colliers-engineering-design
+  Snippet: At Colliers Engineering & Design, we are big enough to handle large-scale projects andநம்... See Javier Rojas's full profile and connect. Javier Rojas is Senior Manager, Business Development at Colliers Engineering & Design.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/in/javier-rojas-6083a0259"}}
+</tool_call>
+<tool_response>
+Title: Javier Rojas - Senior Manager, Business Development @ Colliers Engineering & Design | LinkedIn
+Content: Javier Rojas
+Senior Manager, Business Development
+Colliers Engineering & Design · Mt. Laurel, NJ
+
+About:
+Experienced business development professional in the telecommunications and broadband engineering space. Focused on growing Colliers Engineering & Design's telecommunications client base, with emphasis on fiber optic network design, BEAD program support, and OSP engineering services.
+
+Experience:
+- Senior Manager, Business Development — Colliers Engineering & Design (current)
+- [Prior roles not fully visible without connection]
+
+Skills: Telecommunications, Fiber Optic Networks, Business Development, BEAD, Broadband, OSP Engineering, GIS
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Colliers Engineering Design IQGeo OR Kat

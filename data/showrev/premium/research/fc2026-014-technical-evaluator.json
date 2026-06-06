@@ -1,48 +1,690 @@
-I have enough data. Compiling the Technical Evaluator JSON now.
+I'll research PCCI Group systematically, starting with job postings, then tech stack, then general capabilities.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "PCCI Group fiber engineering hiring careers AutoCAD GIS", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://pccigroup.com/
+Title: PCCI Group | Engineering & Construction Management
+Snippet: PCCI Group is an engineering consulting firm specializing in wireless communications, fiber optic network design, and RF engineering services.
+
+Result 2:
+URL: https://pccigroup.com/services/
+Title: Services | PCCI Group
+Snippet: Fiber Optic Network Design, RF Engineering, Construction Management, and more. PCCI Group offers comprehensive engineering and consulting services.
+
+Result 3:
+URL: https://www.linkedin.com/company/pcci-group
+Title: PCCI Group | LinkedIn
+Snippet: PCCI Group specializes in wireless communications and fiber optic network design. Based in Bonita Springs, FL.
+
+Result 4:
+URL: https://pccigroup.com/careers/
+Title: Careers | PCCI Group
+Snippet: Join our team at PCCI Group. We offer opportunities in engineering, design, and project management across fiber and wireless sectors.
+
+Result 5:
+URL: https://pccigroup.com/about/
+Title: About | PCCI Group
+Snippet: PCCI Group is a technology-driven engineering consulting firm with expertise in wireless communications, fiber optic network design, and construction management.
+
+Result 6:
+URL: https://www.linkedin.com/jobs/pcci-group-jobs
+Title: PCCI Group Jobs on LinkedIn
+Snippet: Explore open positions at PCCI Group in engineering, design, and operations roles.
+
+Result 7:
+URL: https://pccigroup.com/projects/
+Title: Projects | PCCI Group
+Snippet: PCCI Group project portfolio spanning wireless infrastructure, fiber optic design, and construction management across the US.
+
+Result 8:
+URL: https://glassdoor.com/Reviews/PCCI-Group-Reviews
+Title: PCCI Group Reviews | Glassdoor
+Snippet: Employee reviews for PCCI Group covering work culture, engineering roles, and management.
+
+Result 9:
+URL: https://pccigroup.com/contact/
+Title: Contact | PCCI Group
+Snippet: Contact PCCI Group for engineering and consulting services. Located in Bonita Springs, FL.
+
+Result 10:
+URL: https://www.zoominfo.com/c/pcci-group/123456
+Title: PCCI Group - ZoomInfo
+Snippet: PCCI Group company profile on ZoomInfo. Engineering consulting services for wireless and fiber markets.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://pccigroup.com/careers/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Error: Page not found or inaccessible
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://pccigroup.com/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Error: Page not found or inaccessible
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "PCCI Group \"fiber\" \"AutoCAD\" OR \"MicroStation\" OR \"ArcGIS\" OR \"Katapult\" OR \"IQGeo\" OR \"3GIS\"", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://pccigroup.com/services/
+Title: Services | PCCI Group
+Snippet: PCCI Group offers fiber optic network design, RF engineering, and construction management. Our team uses industry-standard tools for network design and analysis.
+
+Result 2:
+URL: https://www.linkedin.com/company/pcci-group
+Title: PCCI Group | LinkedIn
+Snippet: PCCI Group provides wireless and fiber optic engineering services. Technology stack includes GIS tools and CAD platforms for network design.
+
+Result 3:
+URL: https://pccigroup.com/about/
+Title: About | PCCI Group
+Snippet: PCCI Group uses advanced engineering tools and technologies for fiber optic network design including industry-standard GIS and CAD solutions.
+
+Result 4:
+URL: https://zoominfo.com/pcci-group
+Title: PCCI Group | ZoomInfo
+Snippet: PCCI Group company profile: engineering consulting in wireless and fiber. Team of approximately 25-50 employees.
+
+Result 5:
+URL: https://pccigroup.com/projects/
+Title: Projects | PCCI Group
+Snippet: PCCI Group has completed fiber optic design and construction management projects across multiple states, working with municipal clients and ISPs.
+
+Result 6:
+URL: https://www.linkedin.com/jobs/search/?keywords=PCCI+Group
+Title: Jobs at PCCI Group
+Snippet: Current openings include roles in fiber optic design, RF engineering, and project management. CAD and GIS skills listed as requirements.
+
+Result 7:
+URL: https://glassdoor.com/Reviews/PCCI-Group
+Title: PCCI Group Employee Reviews
+Snippet: Employees mention use of AutoCAD, GIS tools, and various network design platforms in their roles.
+
+Result 8:
+URL: https://www.indeed.com/cmp/Pcci-Group
+Title: PCCI Group Jobs and Career Info - Indeed
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "PCCI Group site:linkedin.com/jobs", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/jobs/view/fiber-optic-design-engineer-pcci-group
+Title: Fiber Optic Design Engineer - PCCI Group | LinkedIn
+Snippet: PCCI Group is hiring a Fiber Optic Design Engineer. Requirements include experience with AutoCAD, GIS platforms, and fiber network design. Must have knowledge of construction drawing production.
+
+Result 2:
+URL: https://www.linkedin.com/jobs/view/rf-engineer-pcci-group
+Title: RF Engineer - PCCI Group | LinkedIn
+Snippet: RF engineering position requiring knowledge of wireless network design and infrastructure.
+
+Result 3:
+URL: https://www.linkedin.com/jobs/view/project-manager-pcci-group
+Title: Project Manager - PCCI Group | LinkedIn
+Snippet: Project management role at PCCI Group overseeing fiber and wireless infrastructure projects from design through construction.
+
+Result 4:
+URL: https://www.linkedin.com/jobs/view/cad-designer-pcci-group
+Title: CAD Designer - PCCI Group | LinkedIn
+Snippet: CAD Designer position at PCCI Group. Required skills: AutoCAD, fiber optic design, construction drawings. Experience with GIS-to-CAD workflows preferred.
+
+Result 4:
+URL: https://www.linkedin.com/company/pcci-group/jobs/
+Title: PCCI Group Jobs | LinkedIn
+Snippet: PCCI Group current job openings across engineering, design, and operations functions.
+
+Result 5:
+URL: https://www.indeed.com/jobs?q=PCCI+Group&l=
+Title: PCCI Group Jobs on Indeed
+Snippet: Job postings from PCCI Group in fiber engineering and related fields.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"PCCI Group\" \"construction drawings\" OR \"fiber design\" OR \"permitting\" OR \"make-ready\"", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://pccigroup.com/services/
+Title: Services | PCCI Group
+Snippet: PCCI Group provides comprehensive engineering services including fiber optic network design, construction drawing production, permit documentation, and make-ready engineering for wireless and fiber projects.
+
+Result 2:
+URL: https://pccigroup.com/projects/
+Title: Projects | PCCI Group
+Snippet: Project examples include FTTH design, outside plant fiber network design, and construction management for municipal broadband and commercial ISP clients.
+
+Result 3:
+URL: https://www.linkedin.com/company/pcci-group
+Title: PCCI Group | LinkedIn
+Snippet: Engineering consulting firm specializing in wireless and fiber, providing design through construction support for network operators.
+
+Result 4:
+URL: https://fcw.com/broadband
+Title: FCW Broadband Coverage
+Snippet: Broadband infrastructure deployment and design trends.
+
+Result 5:
+URL: https://pccigroup.com/about/
+Title: About | PCCI Group
+Snippet: PCCI Group is committed to delivering high-quality engineering solutions from concept through construction for fiber and wireless infrastructure projects.
+
+Result 6:
+URL: https://broadbandbreakfast.com/
+Title: Broadband Breakfast
+Snippet: Coverage of BEAD program and broadband infrastructure policy.
+
+Result 7:
+URL: https://pccigroup.com/contact/
+Title: Contact | PCCI Group
+Snippet: Reach PCCI Group for engineering and consulting services.
+
+Result 8:
+URL: https://engineeringdirectory.net/pcci-group
+Title: PCCI Group Engineering Directory Listing
+Snippet: PCCI Group is listed as an engineering consulting firm providing fiber optic network design and wireless engineering services based in Florida.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://pccigroup.com/services/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Error: Page not found or inaccessible
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "PCCI Group Troy Hoover fiber engineering operations", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result ="1:
+URL: https://www.linkedin.com/in/troy-hoover-pcci
+Title: Troy Hoover - Director of Operations - PCCI Group | LinkedIn
+Snippet: Troy Hoover is the Director of Operations at PCCI Group, overseeing engineering and construction management operations for fiber and wireless projects. Based in Bonita Springs, FL.
+
+Result 2:
+URL: https://pccigroup.com/team/
+Title: Team | PCCI Group
+Snippet: Meet the PCCI Group leadership team including engineers, project managers, and operations staff.
+
+Result 3:
+URL: https://pccigroup.com/about/
+Title: About | PCCI Group
+Snippet: PCCI Group leadership team brings decades of combined experience in wireless communications and fiber optic network engineering.
+
+Result 4:
+URL: https://www.linkedin.com/company/pcci-group
+Title: PCCI Group | LinkedIn
+Snippet: PCCI Group has approximately 11-50 employees. Specializes in wireless communications and fiber optic engineering consulting.
+
+Result 5:
+URL: https://signalhire.com/companies/pcci-group
+Title: PCCI Group - SignalHire Company Profile
+Snippet: PCCI Group company profile with employee contacts and company details.
+
+Result 6:
+URL: https://rocketreach.co/pcci-group-profile
+Title: PCCI Group Company Profile - RocketReach
+Snippet: PCCI Group is a telecommunications engineering consulting firm based in Florida.
+
+Result 7:
+URL: https://www.linkedin.com/in/troyhoover
+Title: Troy Hoover | LinkedIn
+Snippet: Director of Operations at PCCI Group. Background in telecommunications engineering and project management.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"PCCI Group\" OR \"PCCI\" fiber optic BEAD broadband engineering 2025 2026", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://pccigroup.com/news/
+Title: News | PCCI Group
+Snippet: PCCI Group news and updates on fiber optic and wireless engineering projects.
+
+Result 2:
+URL: https://broadbandbreakfast.com/pcci
+Title: PCCI Broadband Coverage
+Snippet: No specific PCCI Group results found.
+
+Result 3:
+URL: https://www.linkedin.com/company/pcci-group
+Title: PCCI Group | LinkedIn
+Snippet: PCCI Group posts updates about fiber optic engineering projects and wireless infrastructure. Recent posts mention broadband deployment and network design services.
+
+Result 4:
+URL: https://www.ruralhealthinfo.org/broadband
+Title: Rural Broadband Information
+Snippet: General broadband deployment information.
+
+Result 5:
+URL: https://pccigroup.com/projects/
+Title: Projects | PCCI Group
+Snippet: PCCI Group project portfolio includes municipal fiber networks, commercial ISP design, and wireless infrastructure across multiple states.
+
+Result 6:
+URL: https://floridajobs.org/
+Title: Florida Jobs
+Snippet: General Florida employment information.
+
+Result 7:
+URL: https://pccigroup.com/about/
+Title: About | PCCI Group
+Snippet: PCCI Group engineering consulting firm with experience across wireless and fiber optic network design projects nationwide.
+
+Result 8:
+URL: https://statewidenetworks.com/consultants
+Title: Statewide Networks Consultants Directory
+Snippet: Directory of fiber and wireless engineering consultants.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "PCCI Group site:iqgeo.com OR site:3-gis.com OR site:rendernetworks.com OR site:katapult.com OR site:biarri.com", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.iqgeo.com/customers
+Title: IQGeo Customer Stories
+Snippet: IQGeo customers across fiber and wireless network operators and engineering firms. No specific PCCI Group mention found.
+
+Result 2:
+URL: https://www.katapult.com/case-studies
+Title: Katapult Case Studies
+Snippet: Katapult case studies and customer stories for pole attachment and make-ready engineering. No PCCI Group specific results.
+
+Result 3:
+URL: https://rendernetworks.com/customers
+Title: Render Networks Customers
+Snippet: Render Networks customer stories for fiber construction management. No PCCI Group mention.
+
+Result 4:
+URL: https://3-gis.com/partners
+Title: 3GIS Partners
+Snippet: 3GIS partner network for fiber GIS solutions. No PCCI Group mention found.
+
+Result 5:
+URL: https://biarri.com/case-studies
+Title: Biarri Networks Case Studies
+Snippet: Biarri Networks case studies for fiber network design optimization. No PCCI Group found.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "PCCI Group Bonita Springs Florida fiber wireless engineering company size revenue employees", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.zoominfo.com/c/pcci-group
+Title: PCCI Group - ZoomInfo Profile
+Snippet: PCCI Group is an engineering and technology consulting firm based in Bonita Springs, FL. Estimated 11-50 employees. Revenue estimated under $10M.
+
+Result 2:
+URL: https://www.linkedin.com/company/pcci-group
+Title: PCCI Group | LinkedIn
+Snippet: PCCI Group has 11-50 employees on LinkedIn. Specializes in wireless communications and fiber optic network design consulting.
+
+Result 3:
+URL: https://www.dnb.com/business-directory/company-profiles.pcci-group.html
+Title: PCCI Group - D&B Business Profile
+Snippet: PCCI Group engineering consulting company profile from Dun & Bradstreet.
+
+Result 4:
+URL: https://www.manta.com/c/pcci-group
+Title: PCCI Group on Manta
+Snippet: Small business profile for PCCI Group in engineering consulting.
+
+Result 5:
+URL: https://www.businesswire.com
+Title: BusinessWire
+Snippet: No specific PCCI Group press releases found.
+
+Result 6:
+URL: https://opencorporates.com/companies/us_fl/pcci-group
+Title: PCCI Group - OpenCorporates
+Snippet: Florida corporate registration for PCCI Group.
+
+Result 7:
+URL: https://clearbit.com/pcci-group
+Title: PCCI Group - Clearbit
+Snippet: PCCI Group company data: engineering consulting, fiber and wireless.
+
+Result 8:
+URL: https://www.indeed.com/cmp/Pcci-Group
+Title: PCCI Group on Indeed
+Snippet: PCCI Group company profile on Indeed showing open positions and employee reviews.
+
+Result 9:
+URL: https://builtwith.com/pccigroup.com
+Title: PCCI Group Website Technology Stack
+Snippet: Technology stack used by pccigroup.com website.
+
+Result 10:
+URL: https://crunchbase.com/organization/pcci-group
+Title: PCCI Group on Crunchbase
+Snippet: PCCI Group company profile. Engineering consulting for telecom infrastructure.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"PCCI\" telecom fiber engineering \"AutoCAD\" OR \"MicroStation\" OR \"GIS\" CAD designer job posting", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.indeed.com/jobs?q=fiber+optic+designer+AutoCAD&l=Bonita+Springs+FL
+Title: Fiber Optic Designer AutoCAD Jobs in Bonita Springs FL - Indeed
+Snippet: Job listings for fiber optic designers requiring AutoCAD skills in the Bonita Springs, FL area.
+
+Result 2:
+URL: https://www.linkedin.com/jobs/search/?keywords=fiber+optic+designer+AutoCAD&location=Bonita+Springs+FL
+Title: LinkedIn Jobs - Fiber Optic Designer AutoCAD Bonita Springs
+Snippet: Search results for fiber optic designer AutoCAD positions near Bonita Springs, FL.
+
+Result 3:
+URL: https://www.linkedin.com/jobs/view/fiber-optic-design-engineer-pcci-group-3847291
+Title: Fiber Optic Design Engineer at PCCI Group | LinkedIn
+Snippet: PCCI Group seeks Fiber Optic Design Engineer. Skills required: AutoCAD, GIS platforms (ArcGIS preferred), fiber network design, outside plant design, construction drawing production. Experience with permitting documentation preferred.
+
+Result 4:
+URL: https://www.indeed.com/viewjob?jk=pcci-cad-designer-fiber
+Title: CAD Designer - Fiber Optics - PCCI Group - Indeed
+Snippet: PCCI Group posting for CAD Designer specializing in fiber optics. Requirements: AutoCAD proficiency, experience with outside plant (OSP) fiber design, GIS data management, construction drawing sets.
+
+Result 5:
+URL: https://careerbuilder.com/jobs/pcci-group
+Title: PCCI Group Jobs - CareerBuilder
+Snippet: Engineering and design positions at PCCI Group.
+
+Result 6:
+URL: https://ziprecruiter.com/jobs/pcci-group
+Title: PCCI Group Jobs on ZipRecruiter
+Snippet: Current openings at PCCI Group in engineering and design.
+
+Result 7:
+URL: https://www.linkedin.com/jobs/view/rf-engineer-pcci
+Title: RF Engineer - PCCI Group | LinkedIn
+Snippet: RF engineering role at PCCI Group requiring wireless network design experience.
+
+Result 8:
+URL: https://www.glassdoor.com/Reviews/PCCI-Group-Reviews
+Title: PCCI Group Employee Reviews - Glassdoor
+Snippet: Employee reviews mention fast-paced environment, multiple simultaneous projects, tight deadlines.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "PCCI Group \"outside plant\" OR \"OSP\" OR \"FTTH\" fiber design projects clients", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://pccigroup.com/services/
+Title: Services | PCCI Group
+Snippet: PCCI Group provides outside plant (OSP) fiber design, FTTH network design, RF engineering, and construction management services.
+
+Result 2:
+URL: https://pccigroup.com/projects/
+Title: Projects | PCCI Group
+Snippet: PCCI Group project portfolio includes FTTH designs for ISPs, municipal broadband networks, and commercial fiber deployments.
+
+Result 3:
+URL: https://www.linkedin.com/company/pcci-group
+Title: PCCI Group | LinkedIn
+Snippet: PCCI Group offers outside plant fiber design, FTTH, and wireless engineering services to ISPs, municipalities, and commercial clients across the US.
+
+Result 4:
+URL: https://statewidenetworks.com/
+Title: Statewide Networks
+Snippet: General statewide network coverage.
+
+Result 5:
+URL: https://telecompetitor.com/pcci-group
+Title: Telecompetitor - PCCI Group
+Snippet: No specific PCCI Group mentions in Telecompetitor coverage.
+
+Result 6:
+URL: https://broadbandnow.com/isp-list
+Title: BroadbandNow ISP Directory
+Snippet: General ISP directory, no specific PCCI Group reference.
+
+Result 7:
+URL: https://pccigroup.com/about/
+Title: About | PCCI Group
+Snippet: With experience in both wireless and wireline infrastructure, PCCI Group has supported clients from initial design through final construction across the continental US.
+
+Result 8:
+URL: https://ruralhealthinfo.org/assets/
+Title: Rural Health Info
+Snippet: Not relevant.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "PCCI Group fiber GIS to CAD workflow permitting design cycle time bottleneck", "num_results": 8}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://pccigroup.com/services/
+Title: Services | PCCI Group
+Snippet: PCCI Group's fiber optic design services include GIS-based network design, CAD drawing production, and permitting support for fiber deployments.
+
+Result 2:
+URL: https://www.linkedin.com/company/pcci-group
+Title: PCCI Group | LinkedIn
+Snippet: Engineering consulting for fiber and wireless. GIS and CAD-based design workflows for outside plant networks.
+
+Result 3:
+URL: https://pccigroup.com/projects/
+Title: Projects | PCCI Group
+Snippet: PCCI Group has delivered fiber network designs and construction document packages for clients across multiple states.
+
+Result 4:
+URL: https://broadbandbreakfast.com/
+Title: Broadband Breakfast
+Snippet: General broadband coverage.
+
+Result 5:
+URL: https://fiberconnect2026.com/
+Title: Fiber Connect 2026
+Snippet: Industry event coverage and exhibitor information.
+
+Result 6:
+URL: https://pccigroup.com/about/
+Title: About | PCCI Group
+Snippet: PCCI Group provides end-to-end engineering solutions for fiber optic and wireless network deployment projects.
+
+Result 7:
+URL: https://www.linkedin.com/jobs/view/gis-fiber-designer-pcci-group
+Title: GIS Fiber Designer - PCCI Group | LinkedIn
+Snippet: PCCI Group hiring GIS Fiber Designer. Required skills: ArcGIS or QGIS, fiber network design, OSP experience, ability to convert GIS data to CAD construction drawings.
+
+Result 8:
+URL: https://www.indeed.com/jobs?q=PCCI+Group+GIS+fiber
+Title: PCCI Group GIS Fiber Jobs - Indeed
+Snippet: GIS and fiber design roles at PCCI Group.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "PCCI Group Glassdoor reviews tools workflow design process", "num_results": 8}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.glassdoor.com/Reviews/PCCI-Group-Reviews-E123456.htm
+Title: PCCI Group Reviews | Glassdoor
+Snippet: Overall rating 3.8/5. Employee reviews mention: fast-paced, good team, use of AutoCAD and GIS tools. Some reviews mention tight project timelines and high workload.
+
+Result 2:
+URL: https://www.glassdoor.com/Salary/PCCI-Group-Salaries.htm
+Title: PCCI Group Salaries - Glassdoor
+Snippet: Salary data for PCCI Group positions including design engineers, project managers, and operations staff.
+
+Result 3:
+URL: https://www.glassdoor.com/Jobs/PCCI-Group-Jobs.htm
+Title: PCCI Group Jobs - Glassdoor
+Snippet: Available positions at PCCI Group in engineering and design.
+
+Result 4:
+URL: https://www.indeed.com/cmp/Pcci-Group/reviews
+Title: PCCI Group Reviews on Indeed
+Snippet: Employee reviews of PCCI Group covering work environment, management, and role specifics.
+
+Result 5:
+URL: https://www.comparably.com/companies/pcci-group
+Title: PCCI Group on Comparably
+Snippet: Company culture and employee sentiment data for PCCI Group.
+
+Result 6:
+URL: https://www.linkedin.com/company/pcci-group
+Title: PCCI Group LinkedIn Page
+Snippet: Company updates and employee information for PCCI Group.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.linkedin.com/company/pcci-group", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Error: Requires authentication or access restricted
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Troy Hoover PCCI Group LinkedIn Director Operations background career", "num_results": 8}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/troy-hoover-b4a2b1
+Title: Troy Hoover - Director of Operations - PCCI Group | LinkedIn
+Snippet: Troy Hoover has experience in telecommunications engineering and operations management. Current role: Director of Operations at PCCI Group. Previous experience in wireless and fiber infrastructure.
+
+Result 2:
+URL: https://pccigroup.com/team/
+Title: PCCI Group Team
+Snippet: PCCI Group leadership and team members including engineering and operations staff.
+
+Result 3:
+URL: https://www.linkedin.com/pub/troy-hoover/
+Title: Troy Hoover LinkedIn Profile
+Snippet: Director of Operations specializing in engineering operations for telecom infrastructure projects.
+
+Result 4:
+URL: https://rocketreach.co/troy-hoover-email
+Title: Troy Hoover - PCCI Group - RocketReach
+Snippet: Troy Hoover contact information and professional background at PCCI Group.
+
+Result 5:
+URL: https://signalhire.com/profiles/troy-hoover
+Title: Troy Hoover - PCCI Group - SignalHire
+Snippet: Troy Hoover professional profile. Director of Operations at PCCI Group in telecommunications engineering.
+
+Result 6:
+URL: https://pccigroup.com/about/
+Title: About | PCCI Group
+Snippet: PCCI Group team and leadership with background in wireless and fiber optic engineering.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"PCCI\" OR \"PCCI Group\" fiber engineering firm Florida wireless CAD designer GIS technician job 2025 2026", "num_results": 10}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/jobs/view/fiber-optic-design-engineer-pcci-3901234
+Title: Fiber Optic Design Engineer - PCCI Group | LinkedIn
+Snippet: PCCI Group: Seeking experienced Fiber Optic Design Engineer. Required: AutoCAD LT or full AutoCAD, ArcGIS, OSP fiber design experience, knowledge of construction drawing sets and permit packages. Preferred: FTTH design, municipal client experience.
+
+Result 2:
+URL: https://www.indeed.com/viewjob?jk=pcci-gis-cad-fiber-2025
+Title: GIS/CAD Fiber Designer - PCCI Group - Indeed
+Snippet: PCCI Group hiring GIS/CAD Fiber Designer. Role involves converting GIS design data into CAD construction drawings. Required: AutoCAD, ArcGIS or similar GIS platform, OSP experience. Pay range: $60,000-$85,000/year.
+
+Result 3:
+URL: https://www.linkedin.com/jobs/view/cad-drafter-pcci-group
+Title: CAD Drafter - Fiber Optics - PCCI Group | LinkedIn
+Snippet: Entry to mid-level CAD Drafter for fiber optic construction drawings. Skills: AutoCAD, fiber network knowledge, detail-oriented. PCCI Group, Bonita Springs FL or remote.
+
+Result 4:
+URL: https://ziprecruiter.com/jobs/pcci-group-fiber-designer
+Title: Fiber Designer - PCCI Group on ZipRecruiter
+Snippet: PCCI Group fiber designer role. GIS data interpretation, CAD drawing production, permit documentation support.
+
+Result 5:
+URL: https://www.glassdoor.com/Jobs/PCCI-Group-Fiber-Designer-Jobs
+Title: PCCI Group Fiber Designer Jobs - Glassdoor
+Snippet: Fiber design roles at PCCI Group with AutoCAD and GIS requirements.
+
+Result 6:
+URL: https://careerbuilder.com/jobs/pcci-fiber-cad
+Title: PCCI Group CAD Jobs - CareerBuilder
+Snippet: CAD and GIS design roles at PCCI Group.
+
+Result 7:
+URL: https://www.builtinaustin.com/job/pcci-group
+Title: PCCI Group Jobs on Built In
+Snippet: Engineering and design roles at PCCI Group.
+
+Result 8:
+URL: https://www.tealhq.com/jobs/pcci-group
+Title: PCCI Group Jobs on Teal HQ
+Snippet: Current job openings at PCCI Group.
+
+Result 9:
+URL: https://engineeringjobs.com/pcci-group-fiber
+Title: PCCI Group Fiber Engineering Jobs
+Snippet: Fiber engineering and design positions at PCCI Group.
+
+Result 10:
+URL: https://broadbandrecruiters.com/companies/pcci-group
+Title: PCCI Group on Broadband Recruiters
+Snippet: Telecom and broadband engineering roles at PCCI Group.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "PCCI Group clients ISP municipal broadband projects portfolio case study", "num_results": 8}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://pccigroup.com/projects/
+Title: Projects | PCCI Group
+Snippet: PCCI Group has served ISPs, municipalities, and commercial operators with fiber optic design and construction management services. Project types include FTTH, backbone fiber, and wireless infrastructure.
+
+Result 2:
+URL: https://www.linkedin.com/company/pcci-group
+Title: PCCI Group | LinkedIn
+Snippet: PCCI Group serves clients across the US including ISPs, municipalities, electric cooperatives, and wireless carriers.
+
+Result 3:
+URL: https://pccigroup.com/about/
+Title: About | PCCI Group
+Snippet: PCCI Group works with a range of clients in the fiber and wireless space, helping them move from design through deployment.
+
+Result 4:
+URL: https://broadbandsearch.net/consultants/pcci-group
+Title: PCCI Group - Broadband Consultant Directory
+Snippet: PCCI Group listed as fiber optic network design and wireless engineering consultant.
+
+Result 5:
+URL: https://ruralbroadband.org/consultants
+Title: Rural Broadband Consultants
+Snippet: Directory of rural broadband consultants. PCCI Group not specifically listed.
+
+Result 6:
+URL: https://revenuebasedcapital.com/
+Title: Revenue Based Capital
+Snippet: Not relevant.
+
+Result 7:
+URL: https://www.linkedin.com/posts/pcci-group
+Title: PCCI Group Posts on LinkedIn
+Snippet: PCCI Group shares project updates and engineering insights on LinkedIn.
+
+Result 8:
+URL: https://fiberbroadband.org/members
+Title: Fiber Broadband Association Members
+Snippet: Fiber Broadband Association member directory. PCCI Group not specifically listed.
+</tool_response>
+
+Based on all research conducted, here is my technical evaluation:
 
 ```json
 {
   "role": "Technical Evaluator",
-  "keyFindings": [
-    "ProDesign confirmed 7-tool manual OSP stack: AutoCAD, SpatialNET, Microstation, Bentley Comms V8I, Lode Data, Katapult Pro, 3GIS. No automated GIS-to-permit pipeline exists in any publicly listed capability. Every tool handles a discrete step with manual handoff between each. Source: pccigroup.com/services/prodesign/, prodesign-engineering.com",
-    "Troy Hoover is the named contact on Katapult Engineering's vendor registry for ProDesign — email thoover@pccigroup.com. He personally manages the Katapult Pro relationship, confirming he controls platform decisions, not just personnel. Source: katapultengineering.com/vendor-list/prodesign-engineering-inc",
-    "ProDesign has 40+ full-time employees and 150+ years combined staff experience. This is the threshold where automation ROI becomes real: enough volume to amortize implementation, enough headcount to free rather than eliminate. Source: katapultengineering.com/vendor-list/prodesign-engineering-inc",
-    "ProDesign's Katapult vendor profile lists HQ as Georgetown, KY — not Bonita Springs, FL. The FL contact address in the AE notes likely reflects Troy attending Fiber Connect (Bonita Springs-area venue), not a FL-based office. This matters for outreach timing: Troy operates on Eastern time from KY. Source: katapultengineering.com/vendor-list/prodesign-engineering-inc",
-    "ProDesign covers all 6 US regions (Northeast, Southeast, Midwest, Southwest, Rocky Mountains, West Coast). National scale at 40+ staff running a 7-platform manual stack means permit bottlenecks compound across multiple concurrent state/municipal jurisdictions — not just one. Source: katapultengineering.com/vendor-list/prodesign-engineering-inc",
-    "No automated drawing generation, no AI layer, no GIS-to-permit automation tool found in any public source. ProDesign listed 'permitting' as a service but no tooling for automated permit-conflict detection or flagging is mentioned anywhere. This is greenfield. Source: pccigroup.com/services/prodesign/, prodesign-engineering.com",
-    "ProDesign hired a Permit Specialist in Sept 2024, confirming permitting was a recognized capacity bottleneck requiring headcount, not technology, to solve at that time. That framing is the entry point: what's changed since the hire, and is headcount still the answer with BEAD volume incoming? Source: linkedin.com/posts/pcci-prodesign_permit-specialist-activity-7235000815495622656-R9Js",
-    "Osmose/Centillion now offers full-lifecycle OSP: pre-design walkout, OSP design, make-ready and permitting, post-construction — with offshore India design center. If ProDesign competes for third-party engineering contracts, they now face a scaled, offshore-backed competitor with lower labor costs. If Centillion was a referral peer, that network just shifted allegiances. Source: osmose.com/news/osmose-acquires-centillion-solutions-inc",
-    "No Inorsa competitors found in ProDesign's current stack. AlphaSTAR, Valore, Integrated Wireless Development, Crafton Communications are Inorsa's listed competitors but none appear in any ProDesign or PCCI public documentation. ProDesign has not adopted any AI-generated drawing tool. Source: ZoomInfo Inorsa competitor list, pccigroup.com",
-    "ProDesign annual revenue approximately $7.2M (2025 estimate). This is mid-market — large enough for a tool investment, small enough that permitting delays on a single large BEAD project are materially damaging. Source: rocketreach.co/prodesign-engineering-profile"
-  ],
-  "evidenceStrength": "strong",
-  "gaps": [
-    "Inorsa's specific ingestion compatibility with ProDesign's 7-tool stack is unconfirmed. Katapult Pro and 3GIS use proprietary data formats. If Inorsa only ingests standard GIS shapefiles or KMZ, a data-format translation step is required — adding switching cost the outreach cannot ignore.",
-    "Current ProDesign team headcount under Troy is unknown. The '40+ full-time employees' is company-wide. Troy's direct design/drafting team size today is not confirmed — could be 10 or 35.",
-    "ProDesign's specific permit submission workflow is not public: do they submit through a state broadband portal, municipal systems, or manually? Without this, it's unclear where exactly Inorsa's conflict-flagging would intercept their process.",
-    "The exact PCCI-Centillion relationship (competitor vs. subcontractor vs. referral) cannot be confirmed from public sources. 'Brain data' flags are ambiguous — 'Centillion just publicly endorsed' could mean a LinkedIn post praising Centillion, not a contract relationship.",
-    "ProDesign's in-house BEAD project pipeline size is unknown. If ProDesign is serving external telco clients on BEAD (not just Tel-Star/i5 Fiber), the volume of concurrent BEAD engineering work is much higher — but this isn't publicly quantified.",
-    "Troy's current sentiment toward automation is unknown. As Director of a 40+ person engineering firm, he may frame Inorsa as a headcount threat to his team, not an efficiency gain. No public statements found on his openness to AI tooling."
-  ],
-  "challengesToOtherFindings": [
-    "Industry Analyst frames Centillion as a direct ProDesign competitor. This is likely correct, but the 'Brain data' noting Centillion endorsed PCCI could indicate a referral or subcontract relationship rather than pure competition. These two scenarios have opposite implications for outreach: if Centillion was a competitor, Osmose acquisition is a threat signal; if Centillion was a partner/subcontractor, Troy just lost a supply-chain partner. The outreach angle differs materially — confirm before assuming.",
-    "Industry Analyst says Troy 'previously managed 27 designers.' Confirmed from PCCI bio. But this was at a prior firm, not ProDesign. Do not assume ProDesign's current team is 27 — it could be smaller or larger. The '40+ employees company-wide' from the Katapult vendor page is the more current signal, and includes construction + management, not just designers.",
-    "AE Proxy's finding status is listed as incomplete ('will synthesize when agent returns'). The one data point I can challenge: the contact address shows Bonita Springs, FL — but Katapult's vendor page clearly lists Georgetown, KY as ProDesign HQ. Troy likely attended Fiber Connect in the Bonita Springs area but is Kentucky-based. This affects outreach timing and context.",
-    "The Industry Analyst notes 'Fort personally sold' from Brain data as a possible Metro Connect Fort Lauderdale Inorsa touchpoint. As a Technical Evaluator, I'd flag this differently: 'Fort' in the Brain tools list ('Fort personally sold') may be a corrupted transcription of a platform name ('Fortra,' 'Forterra,' or a vendor rep's name), not a metro city reference. Do not over-interpret Brain data artifacts as confirmed facts.",
-    "The $25.5M BEAD award listed twice in Brain data is plausibly a single award listed redundantly (as '$25.5M award' and '$25.5M BEAD'). Industry Analyst flags this correctly. From a technical standpoint: even one $25.5M BEAD award implies a deployment footprint that would stress ProDesign's current manual stack — a single large BEAD project at that scale typically requires 500-2,000 construction drawing sets. That volume alone would create measurable permitting lag under the current 7-tool manual workflow."
-  ],
-  "topInsight": "Troy Hoover is ProDesign's named Katapult Pro vendor contact — he is simultaneously the technical stack owner AND the permitting operations manager for a 40+ person national firm running 7 disconnected manual tools with no automation layer. The integration ask is not 'replace your stack' — it is 'add a validation and permit-conflict layer on top of the GIS data you already collect in Katapult and 3GIS.' The single technical question that gates the deal: can Inorsa ingest Katapult Pro and 3GIS native formats without a ProDesign workflow change? If yes, switching cost is near-zero and the outreach frames as pure capacity upside on BEAD volume. If no, the switching cost conversation must happen before any close.",
-  "sourcesUsed": [
-    "https://pccigroup.com/services/prodesign/",
-    "https://pccigroup.com/our-team/team-bios/",
-    "https://www.katapultengineering.com/vendor-list/prodesign-engineering-inc",
-    "https://prodesign-engineering.com/careers/",
-    "https://prodesign-engineering.com/",
-    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
-    "https://www.linkedin.com/posts/pcci-prodesign_permit-specialist-activity-7235000815495622656-R9Js",
-    "https://www.linkedin.com/in/troy-hoover-ba30a023/",
-    "https://rocketreach.co/prodesign-engineering-profile_b41c2de0ff6924c8",
-    "https://inorsa.com/product/"
-  ]
-}
-```
+  "keyFindings":

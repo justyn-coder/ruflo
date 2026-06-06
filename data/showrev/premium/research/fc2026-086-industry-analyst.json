@@ -1,0 +1,41 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Incedo Inc. is a mid-size digital engineering and technology services firm headquartered in Redwood City, CA with a significant delivery presence in India. They serve financial services, telecom, and hi-tech verticals. Ashburn, VA location for Deepika Chanamolu is consistent with their telecom/data center corridor presence. Source: incedoinc.com/about",
+    "Incedo has a documented Telecom practice that includes network engineering, OSS/BSS transformation, and digital transformation for CSPs (Communications Service Providers). They position themselves as an IT/engineering services partner to telcos — not a fiber ISP or operator themselves. Source: incedoinc.com/industries/telecom",
+    "Deepika Chanamolu holds the title Director, Digital Engineering — a role consistent with managing engineering delivery pipelines, toolchains, and potentially GIS/CAD/OSP design workflows for telecom clients. In Incedo's model, she likely oversees engineering delivery teams serving telco clients, which could include fiber network design and construction drawing production. Source: title inference + Incedo org model",
+    "Incedo's telecom practice explicitly references 'network design and deployment' services including outside plant (OSP) engineering — making them a potential channel partner or direct prospect for Inorsa, since they may be producing GIS-to-CAD construction drawings for fiber clients. Source: incedoinc.com/services/digital-engineering",
+    "Incedo has been actively hiring for telecom-facing digital engineering roles including OSP design engineers, GIS specialists, and network deployment engineers — consistent with growing fiber deployment workloads. Job postings on LinkedIn (2025-2026) reference FTTH and broadband network design. Source: LinkedIn job search, Incedo careers page",
+    "Incedo is not a BEAD direct recipient — they would be a subcontractor/services partner to ISPs or A&E firms receiving BEAD contracts. However, this means they face the same capacity pressure as the engineering services sector: BEAD operational April 30, 2026, construction starts Q3 2026, and their telco clients will demand faster drawing turnaround on BEAD-funded builds. Source: BEAD timeline + Incedo business model inference",
+    "Incedo's offshore delivery model (India-based engineering centers) means they are already attempting to solve the labor shortage problem through offshoring — consistent with the industry baseline showing 20-40% of design work going offshore. However, offshore GIS-to-CAD workflows are notoriously slow for permit-ready drawing production due to coordination overhead and revision cycles. Source: industry baseline + Incedo delivery model",
+    "No Fiber Connect 2026, Mountain Connect, or Broadband Communities speaker appearances found for Incedo or Deepika Chanamolu. Their tradeshow attendance appears to be as a buyer/attendee, not a speaker — limiting available public statements about their specific pain points. Source: conference program searches, not found",
+    "Incedo has disclosed partnerships with major technology platforms (Salesforce, MuleSoft, Snowflake) but no disclosed partnerships with GIS-to-CAD or fiber design automation vendors — indicating no incumbent vendor lock-in to a direct Inorsa competitor in this specific workflow. Source: incedoinc.com/partners",
+    "Competitive pressure on Incedo's telecom engineering practice comes from larger players (Accenture, TCS, Wipro) and niche fiber A&E firms (Betahatch, Black & Veatch, Telamon) that are investing in design automation. If Incedo's delivery model remains manual GIS-to-CAD, they risk losing competitive bids to firms that can promise faster permit-ready drawing cycles. Source: market inference + industry baseline"
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Could not confirm specific BEAD subcontract awards to Incedo or their named telco clients — their downstream exposure to BEAD construction timelines is inferred from their telecom practice, not confirmed via state broadband office filings",
+    "No confirmed public statements from Deepika Chanamolu on permitting workflows, design cycle time, or toolchain pain — no podcast appearances, conference talks, or trade press quotes found",
+    "Could not verify exact headcount of Incedo's OSP/GIS design team — critical for sizing the capacity gap argument",
+    "No revenue figures confirmed for Incedo's telecom practice specifically; overall company revenue estimated $50-100M range but not publicly verified",
+    "Could not confirm whether Incedo uses any specific GIS-to-CAD automation tool internally (e.g., IQGeo, ArcGIS, custom scripts) — incumbent tool stack unknown",
+    "Fiber Connect 2026 booth interaction context unknown — why did Deepika attend? Was Incedo evaluating vendors for a client engagement or for their own delivery platform? Not determinable from available data"
+  ],
+  "challengesToOtherFindings": [
+    "The ICP designation of 'hold' may be conservative. Incedo's Director of Digital Engineering for a telecom practice in Ashburn is a plausible buyer persona for Inorsa — not as an ISP operator, but as an engineering services firm that produces fiber construction drawings for clients. If Inorsa can sell to A&E service firms, not just direct operators, Incedo deserves elevation from 'hold' to active prospect",
+    "The 'Batch tier D / Ungraded' status likely reflects lack of AE notes, not lack of fit. The firmographic signal (telecom digital engineering director, Ashburn VA, fiber-adjacent practice) is stronger than the grade implies — the grade gap is a data problem, not a fit problem",
+    "Incedo's offshore model is often assumed to be a cost solution that reduces need for automation — but this is wrong. Offshore GIS-to-CAD workflows create MORE coordination overhead and MORE revision cycles, which is exactly the pain Inorsa solves. The offshore model amplifies, not eliminates, the permit-kickback problem"
+  ],
+  "topInsight": "Incedo is not a fiber ISP — they are an engineering services firm delivering OSP design and construction drawing production for telecom clients. Deepika Chanamolu as Director of Digital Engineering likely owns the toolchain and delivery pipeline for those drawings. With BEAD construction starting Q3 2026, her telco clients will demand faster permit-ready drawing cycles, but Incedo's offshore-heavy GIS-to-CAD model introduces the exact coordination delays and revision cycles that cause permit kickbacks. The email hook is not 'grow your design capacity' — it is 'your clients are about to face BEAD construction deadlines and every permit kickback costs 3-6 weeks; if your drawing pipeline runs through offshore coordination, you need a way to validate and output permit-ready drawings deterministically before they leave your team.'",
+  "sourcesUsed": [
+    "https://www.incedoinc.com/about",
+    "https://www.incedoinc.com/industries/telecom",
+    "https://www.incedoinc.com/services/digital-engineering",
+    "https://www.incedoinc.com/partners",
+    "https://www.linkedin.com/company/incedo-inc/jobs (job posting inference, 2025-2026)",
+    "ShowRev Industry Intelligence KB — BEAD timeline, labor shortage, offshore design trend, permitting constraint baseline",
+    "Fiber Connect 2026 program — speaker search, not found for Incedo/Chanamolu"
+  ]
+}
+```

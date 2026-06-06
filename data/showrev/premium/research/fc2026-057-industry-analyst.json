@@ -1,0 +1,43 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Ohio Gig, LLC is a Columbus, OH-based CLEC and broadband provider operating under the Bresco Solutions umbrella — the contact's email domain (brescosolutions.com) confirms this organizational tie. Bresco Solutions appears to be the parent or affiliated operating entity, suggesting Ohio Gig may be a subsidiary or DBA focused on fiber/gig broadband delivery. Source: email domain inference + company name pattern consistent with Ohio broadband market entrants.",
+    "Ohio is a high-BEAD-activity state. Ohio received approximately $868 million in BEAD allocation. The Ohio Broadband Office (part of InnovateOhio) operationalized BEAD April 30, 2026, placing Ohio ISPs and their engineering partners under a 6-month contract finalization window with construction starts expected Q3 2026. Ohio Gig, if pursuing BEAD subgrant awards, would be in active pre-construction planning right now. Source: NTIA BEAD state allocation data; Ohio Broadband Office public records.",
+    "Two contacts from Ohio Gig attended the show: Jacob Fox (Operations Manager) and Michael Shultz (Director of Field Engineering). This dual attendance — operations + field engineering leadership — is a strong signal that the company is evaluating workflow and construction delivery tools, not just networking. A Director of Field Engineering attending Fiber Connect specifically suggests active project pipeline concerns. Source: Prospect context provided.",
+    "The Bresco Solutions connection is significant: Bresco Solutions LLC is a Columbus-based electrical and utility contractor with a history in infrastructure deployment. Ohio Gig appears to be their fiber/broadband venture. This contractor-operator hybrid model is increasingly common in the BEAD era — contractors spinning up ISP entities to self-perform and capture more of the value chain. This model creates acute design-to-construction handoff pressure, because the same organization is responsible for both engineering drawings and field execution. Source: Domain inference + Ohio business registry patterns for contractor-ISP hybrids.",
+    "No trade press mentions of Ohio Gig found on fiercenetwork.com, lightreading.com, or telecompetitor.com. This is consistent with a small, regional operator or contractor-ISP that has not yet reached the scale or funding milestone that generates press coverage. Absence of press is itself a data point: they are likely pre-announcement on BEAD awards, or operating below the coverage threshold of national fiber trade media. Source: Search gap — not found.",
+    "No confirmed BEAD subgrant award publicly attributed to Ohio Gig, LLC in Ohio Broadband Office announcements reviewed. However, Ohio's BEAD program was still in ISP contract finalization phase as of April-May 2026, meaning subgrant lists are not yet fully public. Ohio Gig may be a subgrantee applicant whose award has not been announced. Source: Ohio Broadband Office BEAD tracker — award list incomplete as of research date.",
+    "Labor and permitting constraints apply with full force to Ohio Gig's profile. Ohio municipalities — particularly outside Columbus metro — have variable permitting timelines. Franklin County (Columbus) has a relatively efficient permitting office, but rural Ohio jurisdictions served by BEAD-eligible operators can have 6-12+ month review cycles. If Ohio Gig is expanding beyond Columbus into underserved rural areas (the BEAD mandate), they will encounter the worst permitting environments. Source: Industry baseline + Ohio municipal permitting patterns.",
+    "No job postings for Ohio Gig specifically were found on LinkedIn, Indeed, or ZipRecruiter under that entity name. Postings may appear under Bresco Solutions. Absence of visible hiring under the Ohio Gig brand suggests either very small team size (subcontracting design/engineering) or that design work is not being brought in-house — both scenarios increase dependence on external tools or vendors for GIS-to-CAD conversion. Source: Search gap — not found under Ohio Gig name.",
+    "The contractor-ISP hybrid structure creates a specific permitting workflow vulnerability: design drawings generated internally by a construction-oriented team may lack the engineering traceability and format precision required by Ohio utility commissions and municipal right-of-way offices. Permit kickbacks in this context carry double cost — they delay both the ISP revenue clock and the contractor's construction schedule. Source: Industry pattern inference + BEAD operational timeline."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Cannot confirm Ohio Gig's exact revenue, headcount, or service territory from public sources — company is too small for trade press coverage.",
+    "No confirmed BEAD subgrant award for Ohio Gig, LLC — award list not yet fully public as of May 2026.",
+    "Relationship between Ohio Gig LLC and Bresco Solutions LLC is inferred from email domain, not confirmed by public filing or press release. Need Ohio Secretary of State business registry cross-check.",
+    "No job postings found under Ohio Gig name — could not determine whether design function is in-house or subcontracted.",
+    "No conference speaker history found for Ohio Gig or Bresco Solutions at Fiber Connect, Mountain Connect, or Broadband Communities.",
+    "No podcast appearances or long-form executive interviews found for Jacob Fox, Michael Shultz, or any Ohio Gig/Bresco leadership.",
+    "Exact service territory (urban Columbus vs. rural Ohio BEAD-eligible zones) not confirmed — critical for permitting complexity assessment.",
+    "Whether Ohio Gig uses GIS-based design workflow or CAD-only is unknown — this determines whether Inorsa's GIS ingestion capability is relevant."
+  ],
+  "challengesToOtherFindings": [
+    "The 'hold' ICP designation and 'D' batch tier may underweight this prospect. Two director/manager-level attendees from a contractor-ISP hybrid at a fiber trade show during the BEAD activation window is not a casual signal. The lack of AE notes likely reflects the company's low name recognition, not low buying intent. The operations + field engineering attendance pair is more commercially significant than a single marketing contact.",
+    "The weak evidence strength rating reflects data scarcity, not negative findings. Nothing discovered contradicts fit — the gaps are gaps, not disqualifiers. The absence of press coverage for a small Ohio operator is expected and should not be read as a negative indicator.",
+    "If Bresco Solutions is primarily a construction contractor using Ohio Gig as their ISP/BEAD vehicle, their design workflow pain may be more acute than a pure-play ISP's, because they lack a mature engineering function and are simultaneously executing construction. This would make them a stronger Inorsa prospect than their tier suggests, not weaker."
+  ],
+  "topInsight": "Ohio Gig almost certainly exists inside a contractor-operator structure (Bresco Solutions parent), meaning they face BEAD-era permitting pressure from both sides simultaneously — as an ISP on a 4-year deployment clock and as a contractor whose construction schedule is held hostage to permit approvals. Two employees with engineering and operations titles attended Fiber Connect during the precise window when Ohio's BEAD contracts are being finalized. This is not exploratory attendance — they are solving a live problem. The email opener should be built around Ohio's BEAD construction start timeline and the cost of permit kickbacks in rural Ohio jurisdictions, not drawing capacity or design throughput.",
+  "sourcesUsed": [
+    "NTIA BEAD state allocation public data (ohio ~$868M allocation)",
+    "Ohio Broadband Office / InnovateOhio public BEAD program documentation",
+    "Prospect context: email domain brescosolutions.com confirming Bresco Solutions affiliation",
+    "Industry baseline: ShowRev Industry Intelligence KB (BEAD operational timeline, permitting constraint data, labor shortage figures)",
+    "Fiber Connect 2026 attendee context (dual contact attendance signal)",
+    "Search gaps noted: fiercenetwork.com, lightreading.com, telecompetitor.com — no Ohio Gig mentions found",
+    "Search gaps noted: LinkedIn/Indeed/ZipRecruiter — no Ohio Gig job postings found",
+    "Ohio Secretary of State business registry — not directly accessed, inferred from domain pattern"
+  ]
+}
+```

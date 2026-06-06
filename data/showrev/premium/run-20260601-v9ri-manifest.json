@@ -1,0 +1,26 @@
+{
+  "pipeline": "premium_3persona",
+  "runId": "run-20260601-v9ri",
+  "runDate": "2026-06-01T16:02:05.427Z",
+  "config": {
+    "csvPath": "/Users/justynszymczyk/Documents/GitHub/ruflo/data/showrev/fiber-connect-2026-booth-scans.csv",
+    "tiers": [
+      "A",
+      "B"
+    ],
+    "model": "sonnet",
+    "batchSize": 5,
+    "dryRun": false,
+    "outputDir": "/Users/justynszymczyk/Documents/GitHub/ruflo/data/showrev/premium",
+    "runId": "run-20260601-v9ri"
+  },
+  "prospectCount": 1,
+  "resultsCount": 1,
+  "skippedFromCheckpoint": 0,
+  "tiers": [
+    "A",
+    "B"
+  ],
+  "emailsComposed": 3,
+  "status": "executed"
+}

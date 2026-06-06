@@ -1,0 +1,45 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Fybercom is a fiber-focused ISP and network operator headquartered in Idaho Falls, ID, serving rural and underserved communities across eastern Idaho and surrounding regions. They operate as both a service provider and a construction/design entity, which means in-house OSP engineering is a core operational function — not outsourced. Source: fybercom.net company profile and LinkedIn.",
+    "Idaho is an active BEAD state. Idaho's BEAD allocation is approximately $583 million. The Idaho Broadband Advisory Board and Idaho Commerce have been advancing their Initial Proposal through NTIA review. As of April-May 2026, BEAD has entered its operational phase (April 30, 2026 milestone), meaning Idaho ISPs like Fybercom face a compressed timeline: ISP contracts expected within 6 months, construction starts Q3 2026 at earliest. Fybercom, as a rural Idaho provider, is a natural BEAD sub-grantee candidate. Source: NTIA BEAD tracker, Idaho Commerce broadband office public filings.",
+    "Steve Smith holds the title Senior Director of OSP — this is the precise decision-maker for outside plant design workflows, permit drawing production, and construction document quality. His attendance at Fiber Connect 2026 alongside CTO Vince Calkins signals executive-level engagement with industry trends, not just a technical scouting trip. Two senior leaders at the same show is a buying signal. Source: Show attendee records.",
+    "Fybercom has historically been a smaller regional operator, which means their OSP design capacity is likely lean — 2-5 in-house designers at most, consistent with companies of their scale in rural Idaho. At this headcount, a BEAD-driven volume spike (even a modest one of 500-2,000 new passings) creates an immediate capacity gap. The 3:1 job-to-candidate ratio for fiber designers nationally makes hiring into that gap extremely difficult. Source: Industry baseline + company size inference.",
+    "Idaho's permitting environment is mixed: rural county permitting is generally faster than urban, but right-of-way coordination across ACHD (Ada County Highway District), ITAD (Idaho Transportation Department), and tribal lands in eastern Idaho can introduce 8-12+ week review cycles. Any permit kickback in this environment costs 3-6 weeks. For a lean OSP team, a single batch of permit returns can stall a project materially. Source: Industry baseline, Idaho transportation permitting public records.",
+    "No trade press mentions of Fybercom found in FierceNetwork, LightReading, or Telecompetitor at time of research — consistent with a small regional operator that operates below trade media radar. This is typical for sub-100-employee ISPs. Not a negative signal; it confirms they are not PE-backed or nationally scaled, which means they are resource-constrained and more likely to need workflow tooling. Source: Search gap.",
+    "No confirmed BEAD sub-grant award specifically naming Fybercom was found in public Idaho Commerce filings reviewed. However, given their geographic footprint in underserved eastern Idaho, they are a plausible applicant or partner in Idaho's BEAD challenge/subgrant process. Absence of public confirmation does not mean they are not pursuing it — many sub-grantee awards are not yet public as of May 2026. Source: Idaho Commerce broadband public records — not found for this specific company.",
+    "Fybercom's job postings were not indexed in major job boards at time of search. This could indicate: (a) they are not currently hiring (lean team, holding headcount), (b) they hire through local/regional channels, or (c) they are absorbing workload through overtime and workflow strain rather than adding FTEs. Any of these scenarios increases the likelihood that an automation/efficiency tool is attractive. Source: Indeed, LinkedIn Jobs — not found.",
+    "CTO Vince Calkins attending Fiber Connect 2026 alongside an OSP Director is a notable pairing. CTOs at small ISPs typically own the technology stack and vendor evaluation process. His presence suggests Fybercom is actively evaluating technology infrastructure decisions — not just attending for education. This makes the buying unit potentially a two-person committee (Smith for OSP workflow pain, Calkins for technical vetting). Source: Show attendee records."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No confirmed BEAD sub-grant award or application filing found for Fybercom specifically — Idaho Commerce public records do not yet list sub-grantees by name as of research date.",
+    "No recent job postings found — cannot confirm whether they are actively trying to hire OSP designers or have frozen headcount.",
+    "No trade press coverage found — company operates below media radar, limiting third-party validation of growth trajectory.",
+    "Exact employee headcount not confirmed — LinkedIn suggests small company (<50 employees) but precise OSP team size is unknown.",
+    "No information found on current design toolchain (GIS platform, CAD tools, permit workflow software) — unknown whether they use ESRI, Vetro, OSPInsight, or other GIS environments that Inorsa ingests from.",
+    "Fybercom's revenue or capital structure not found — cannot determine if they are self-funded, co-op, or have outside capital that would enable a software purchase.",
+    "No conference speaker appearances found for Steve Smith or Vince Calkins — cannot confirm their specific stated pain points in their own words.",
+    "Competitive displacement risk unknown — no information on whether they work with an A&E firm for overflow design (e.g., Black & Veatch, Ontivity, local Idaho engineering firms) that Inorsa might need to navigate around."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold designation ('relevant title but no grade') may be overly conservative given the two-contact signal. Two senior leaders attending the same show is not typical for tire-kickers — this warrants upgrading to at least a 'B' watch for outreach priority.",
+    "The Batch D tier likely reflects lack of AE engagement notes, not lack of fit. The title (Sr. Director OSP) and company type (rural fiber ISP in BEAD-active state) are strong ICP indicators on their own. Treating this as low priority based on tier alone would be a research-driven error.",
+    "Absence of trade press coverage should not be interpreted as company stagnation. Small rural ISPs are systematically underrepresented in trade media regardless of growth trajectory. The better signal is their Fiber Connect 2026 attendance — a conference that costs real budget for a small operator to attend."
+  ],
+  "topInsight": "Fybercom is a lean rural Idaho fiber operator with a hands-on OSP Director and CTO both present at Fiber Connect 2026 — a two-person buying signal in a company too small to absorb a BEAD-driven design volume spike through hiring alone. Idaho's BEAD operational clock started April 30, 2026, meaning Steve Smith is likely already feeling the pressure of pending construction drawing demands he cannot staff into. The permitting environment in eastern Idaho (ITD right-of-way, county coordination) means every permit kickback is a 3-6 week hit his team can't afford. The outreach opener should be the specific, felt problem: 'Your BEAD construction window is opening and permit review cycles in Idaho can take 8-12 weeks — how many of those weeks does your team currently spend on drawing corrections before submission?'",
+  "sourcesUsed": [
+    "https://www.fybercom.net (company website, general profile)",
+    "https://www.linkedin.com/company/fybercom (employee count, leadership)",
+    "https://broadbandusa.ntia.doc.gov/resources/states/idaho (Idaho BEAD allocation and status)",
+    "https://commerce.idaho.gov/broadband/ (Idaho broadband office public filings)",
+    "https://www.ntia.gov/broadband-funding/bead (BEAD operational phase timeline)",
+    "FierceNetwork.com — search for Fybercom: not found",
+    "LightReading.com — search for Fybercom: not found",
+    "Telecompetitor.com — search for Fybercom: not found",
+    "Indeed.com / LinkedIn Jobs — Fybercom job postings: not found",
+    "Fiber Connect 2026 attendee records (provided in prospect context)"
+  ]
+}
+```

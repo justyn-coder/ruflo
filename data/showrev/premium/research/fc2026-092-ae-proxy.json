@@ -1,0 +1,43 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Booker Engineering is a civil/infrastructure engineering firm based in Monroe, WA (Snohomish County). Based on their website and LinkedIn presence, they operate as a small-to-mid-size engineering services firm. Monroe, WA is in a semi-rural corridor of western Washington, which has active fiber buildout activity tied to Washington State's BEAD allocation ($683M confirmed in prior research).",
+    "Riley Riutta holds the title 'Project Manager' at Booker Engineering — this is a mid-level execution role, not a budget owner. Project Managers in engineering firms typically manage scope, schedule, and deliverable quality but escalate procurement decisions to principals or GMs. Riley is likely an influencer and internal champion candidate, not the final decision-maker.",
+    "Spencer Kariniemi attended the same show as Riley and holds the title 'General Manager' at Booker Engineering. This is the senior authority figure at the show. GMs at small engineering firms typically own P&L, vendor relationships, and budget approval. Spencer is the likely economic buyer and should be the primary outreach target for pricing/contract conversations.",
+    "Booker Engineering's presence at Fiber Connect 2026 with both a GM and a Project Manager suggests intentional scouting — not casual attendance. Two attendees from a small firm at a fiber-specific trade show is a meaningful buying signal indicating active evaluation of tools or partnerships.",
+    "Washington State received $683M in BEAD funding (confirmed in prior research). BEAD became operational April 30, 2026, with state ISP contracts expected to finalize within 6 months (by ~October 2026) and construction starting Q3 2026. Engineering firms in WA serving ISP clients are entering a high-velocity design workload period — directly relevant to Inorsa's capacity/throughput value prop.",
+    "Booker Engineering's website (bookereng.com) indicates civil engineering services with apparent focus on infrastructure. Monroe, WA is in a semi-rural region where fiber buildout for BEAD-eligible unserved/underserved areas is actively prioritized by the state broadband office (WSBB). This creates plausible downstream demand for fiber design/permitting work flowing to firms like Booker.",
+    "No direct quote from Riley Riutta found on LinkedIn, trade press, or conference panel appearances. No public speaking record located. LinkedIn profile exists but contains minimal public detail beyond title and location — tenure and career history not verifiable from open sources.",
+    "Booker Engineering does not appear in major fiber trade press (LightReading, Broadband Communities, ETI Software resources) — consistent with a sub-contractor/engineering services firm operating behind ISP clients rather than as a named operator. This limits lead intelligence but also means they are not yet a known vendor to Inorsa's existing network.",
+    "No BEAD award directly tied to Booker Engineering found — they are likely a downstream beneficiary (engineering subcontractor to ISPs or municipal broadband entities receiving BEAD funds) rather than a direct award recipient. Their urgency is derivative of their clients' BEAD construction timelines.",
+    "Labor shortage context applies: with 3:1 job-to-candidate ratios for fiber designers, a Project Manager at a small engineering firm is almost certainly feeling throughput pressure. Inorsa's ability to reduce manual GIS-to-CAD conversion and cut permit review cycles is directly relevant to Riley's day-to-day pain even if Riley doesn't own the budget."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Riley Riutta's LinkedIn profile not found with sufficient public detail — career history, tenure at Booker Engineering, and prior companies unknown",
+    "Booker Engineering's specific service lines not confirmed — whether they do fiber/OSP design specifically or are primarily civil/road/utility is unclear from available sources",
+    "No confirmation of which ISP clients or BEAD subcontract relationships Booker Engineering holds in Washington State",
+    "Spencer Kariniemi's LinkedIn profile not located — GM title assumed from show registration data, not independently confirmed",
+    "No information on Booker Engineering's current design toolchain (e.g., whether they use AutoCAD, GIS platforms, or any existing workflow automation)",
+    "Company size (headcount, revenue) not verified — critical for determining whether Inorsa's pricing tier is appropriate",
+    "No booth notes from AE at show — no direct conversation signals to work from",
+    "Booker Engineering's website content depth not fully assessed — services page may clarify OSP/fiber scope",
+    "No confirmation Riley Riutta or Spencer Kariniemi spoke to anyone from Inorsa's team at the show"
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold status ('Thin data') is appropriate but may be overly cautious — the two-person attendance at a fiber-specific show is a meaningful signal that should push this toward at least a qualified follow-up rather than a low-priority drip. Batch tier D may underweight the GM co-attendance signal.",
+    "Without confirming Booker Engineering does OSP/fiber design work (vs. purely civil/land development), Inorsa's value prop may not land. If Booker is primarily a roads/site civil firm that happened to attend, this is a weak lead. This is the single biggest unknown that determines whether this is worth pursuing at all.",
+    "Riley as 'Project Manager' should not be dismissed as a low-value contact — in small engineering firms, PMs often have strong internal credibility and can be the person who actually drives vendor evaluation before escalating to the GM. Riley + Spencer together are a stronger multi-thread than either alone."
+  ],
+  "topInsight": "Spencer Kariniemi (General Manager) is the economic buyer, not Riley. The fact that both a GM and a PM attended Fiber Connect from a small Monroe, WA engineering firm is the strongest signal in this record — it suggests deliberate vendor/tool evaluation, not casual attendance. Outreach should thread both contacts: Riley gets the operational/PM-level message around permit cycle time and design throughput; Spencer gets the business case around margin protection and capacity for BEAD-driven workload. The critical unknown is whether Booker Engineering does fiber/OSP design work at all — this must be confirmed before investing significant sales effort. Lead the follow-up with a question that surfaces their OSP scope naturally.",
+  "sourcesUsed": [
+    "https://www.bookereng.com (company website — limited public content reviewed)",
+    "LinkedIn public search — Riley Riutta, Booker Engineering (minimal public profile data available)",
+    "LinkedIn public search — Spencer Kariniemi, Booker Engineering (not located with confidence)",
+    "Washington State Broadband Office BEAD allocation records — $683M figure from prior Brain research",
+    "ShowRev Industry Intelligence KB — BEAD timeline, labor shortage, permitting baseline",
+    "Fiber Connect 2026 attendee registration data — dual attendance by Riley Riutta and Spencer Kariniemi confirmed from lead record"
+  ]
+}
+```

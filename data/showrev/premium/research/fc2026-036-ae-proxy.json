@@ -1,0 +1,42 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Kathryn (Kathy) Eisele holds the title 'National Director, Telecom/Broadband' at Terracon Consultants — a large national geotechnical and engineering firm (~5,000 employees, 175+ offices). This is a senior practice leadership role, not a project-level title. Source: LinkedIn profile / Terracon website.",
+    "Terracon is a multi-discipline engineering and consulting firm, NOT a fiber operator or ISP. Their telecom/broadband practice serves ISPs, utilities, and municipalities as an outside engineering consultant — handling site assessments, permitting support, environmental review, and construction-phase services for fiber and wireless deployments. Source: terracon.com/services.",
+    "As National Director of Telecom/Broadband, Eisele likely oversees Terracon's telecom practice line nationally — setting service offerings, directing project delivery standards, and managing key client relationships. She almost certainly influences tool and workflow decisions that affect the practice's throughput and margin. Whether she holds a direct budget line for software procurement vs. recommending to a VP/COO is unconfirmed, but her title implies P&L-level influence. Source: Terracon org structure inference + LinkedIn title.",
+    "Lauren Lanoux (Senior Project Manager, also attended the show) is likely a direct report or close collaborator within the same telecom practice — her presence alongside Eisele at a fiber tradeshow suggests operational alignment. This is a two-contact thread at the same firm. Source: Booth scan list provided.",
+    "Terracon's telecom practice is positioned squarely in the BEAD tailwind: their clients are ISPs and municipalities winning BEAD awards who need permitting support, make-ready assessments, and construction drawing packages to get shovels in the ground. The permitting bottleneck (each kickback = 3-6 weeks) is a direct pain point Terracon's clients impose on Terracon — and Terracon's own throughput and billing is constrained by permit cycle time. Source: Industry baseline + Terracon service line.",
+    "As an A&E consulting firm, Terracon almost certainly uses a GIS-to-CAD manual workflow for converting field data into permit/construction drawings. The 40-80% fiber material cost inflation and 3:1 labor shortage mean Terracon's telecom practice faces margin compression from both sides — labor cost up, designer availability down, client project timelines compressing. Inorsa's automation of GIS→CAD is a direct throughput multiplier for a firm like this. Source: Industry baseline + A&E firm operating model inference.",
+    "Terracon's telecom practice is positioned as a vendor-to-operators, not an operator itself — this means their ICP fit for Inorsa is as a consulting/A&E buyer who would license Inorsa to increase throughput on client engagements, OR as a channel/referral partner who recommends Inorsa to their ISP clients. This dual-angle (direct buyer vs. channel) is worth probing in outreach. Source: Terracon service model.",
+    "No public speaking appearances, trade press quotes, or podcast mentions for 'Kathryn Eisele' or 'Kathy Eisele' found in accessible sources related to fiber, broadband, or permitting. Conference panel presence at Fiber Connect 2026 is the only confirmed public engagement. Source: Search — not found.",
+    "Terracon filed no relevant press releases or BEAD award announcements under their own name (they are a services firm, not an award recipient). Their clients may be BEAD awardees, but Terracon's revenue follows from those clients winning and needing engineering services. The BEAD operational clock (April 30, 2026; 6-month ISP contract window; Q3 2026 construction start) creates direct pipeline urgency for Terracon's telecom practice. Source: Industry baseline + Terracon positioning.",
+    "Terracon is employee-owned (ESOP structure) — this matters for budget decisions. ESOP firms tend to be conservative on SaaS/software spend but very focused on billable utilization and margin per project. A tool that demonstrably increases throughput per designer (billable hours per project shrink, but more projects can be taken on) is a margin argument, not just a capacity argument. Source: Terracon About page — ESOP mentioned publicly."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No direct quote from Kathy Eisele about her pain points, priorities, or current toolstack — no podcast, panel recording, or trade press interview found.",
+    "Cannot confirm whether Eisele holds a direct software/tools procurement budget or whether she recommends to a CFO/COO. Terracon's internal org chart for telecom practice is not publicly available.",
+    "Cannot confirm which CAD/GIS tools Terracon's telecom practice currently uses (AutoCAD, MicroStation, QGIS, ArcGIS, etc.) — this affects integration objection framing.",
+    "Lauren Lanoux's reporting relationship to Eisele is not confirmed — assumed same practice based on co-attendance but not verified.",
+    "No confirmation of whether Terracon has evaluated or piloted any GIS-to-CAD automation tools (IQGeo, AirWorks, or competitors). 'We already have a tool' objection risk is unquantified.",
+    "Eisele's tenure at Terracon and prior career history not confirmed from search — unclear if she is a long-tenure Terracon operator or a recent hire building out the telecom practice from scratch (the latter would indicate more openness to new tools).",
+    "No data on Terracon's current telecom practice headcount or revenue — can't size the opportunity or confirm how many active fiber design projects are in flight."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP tag of 'hold' likely reflects uncertainty about whether a consulting/A&E firm (rather than a direct fiber operator) is a fit for Inorsa. This is worth challenging: A&E firms with dedicated telecom practices that generate permit and construction drawings are arguably a HIGHER-value buyer than small ISPs — they have more volume, repeated need, and brand the workflow across multiple client engagements. Terracon's scale (175+ offices, national) means a single deal could represent dozens of concurrent fiber projects.",
+    "The 'Batch Tier D / Ungraded' classification may undervalue this lead. Eisele's title (National Director) at a firm of Terracon's scale is a senior buyer signal, not a mid-funnel contact. The absence of AE notes doesn't mean low intent — it means no one has engaged her yet post-show.",
+    "The dual-buyer angle (Terracon as direct licensee vs. referral/channel partner into their ISP clients) is not captured in the standard ICP framing. If Terracon licenses Inorsa and deploys it across their telecom practice, the downstream client base could accelerate Inorsa's market penetration significantly."
+  ],
+  "topInsight": "Terracon's telecom practice is an A&E consulting firm whose revenue and margins are directly throttled by permit cycle times and GIS-to-CAD design throughput — the exact pain Inorsa solves. Eisele, as National Director, is responsible for the quality and scalability of that practice nationally. The BEAD clock (construction starts Q3 2026) means her clients are under deadline pressure right now, which passes directly to her team's workload. The single best outreach angle is: 'Your clients are about to start construction — permit kickbacks eat 3-6 weeks each, and designer labor is your scarcest resource. Inorsa cut one customer's review cycle from 3-4 weeks to 2 days. What does that arithmetic look like across your current project pipeline?' The ESOP/margin angle reinforces this: more throughput per designer = better utilization = better ESOP returns.",
+  "sourcesUsed": [
+    "https://www.terracon.com/services/",
+    "https://www.terracon.com/about/",
+    "LinkedIn profile inference for Kathryn Eisele (title: National Director Telecom/Broadband, Terracon Consultants) — direct profile not scraped but title confirmed via provided lead data and public LinkedIn presence",
+    "Booth scan contact list (Lauren Lanoux, Senior Project Manager, Terracon — co-attendee)",
+    "ShowRev Industry Intelligence KB — BEAD operational timeline, labor shortage data, permitting constraint benchmarks",
+    "Inorsa value proposition brief — permit kickback reduction, GIS-to-CAD automation, 3-4 week to 2-day proof point",
+    "General Terracon public profile (employee-owned/ESOP, ~5,000 employees, 175+ offices) — terracon.com About page"
+  ]
+}
+```

@@ -1,0 +1,60 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Jason Hart holds the title 'Partner Manager' at Esri (Redlands, CA) — this is a channel/ecosystem role, not an end-user operator role. His function is managing relationships with Esri's technology and solution partners, not deploying fiber or managing engineering workflows internally. Source: Lead record + Esri's known partner program structure (esri.com/en-us/partners).",
+
+    "Esri is the dominant GIS platform in the fiber/telecom infrastructure space. Virtually every fiber operator, A&E firm, and contractor that Inorsa targets runs ArcGIS as their system of record for network design data. This makes Esri a potential channel partner or technology integration ally — not a direct buyer of Inorsa's construction drawing automation. Source: Esri telecom industry page (esri.com/en-us/industries/telecommunications), industry baseline knowledge.",
+
+    "Esri has an active Partner Network with tiered levels (Platinum, Gold, Silver, Authorized). A 'Partner Manager' at Esri is typically responsible for recruiting, enabling, and co-selling with ISV and solution partners — meaning Hart's job is to help partners succeed on Esri's platform, not to purchase tools for internal use. Source: Esri Partner Network program structure (esri.com/en-us/partners/partner-program).",
+
+    "Inorsa's core workflow — ingesting GIS/LLD data and producing CAD construction drawings — is directly downstream of Esri ArcGIS. Every Inorsa customer likely uses ArcGIS as their input source. This creates a natural partnership conversation: Inorsa as an Esri-compatible solution that extends ArcGIS data into construction-ready outputs. Source: Inorsa value proposition + Esri ArcGIS for Telecom product suite.",
+
+    "Esri has its own telecom network management product (ArcGIS Utility Network, Esri Telecom), which includes some design and as-built documentation features. Hart may raise this as an objection — 'Esri already does this' — but Esri's output is GIS-centric, not CAD-construction-ready. The gap between GIS design and permit-ready CAD drawings is exactly where Inorsa operates. Source: Esri Utility Network for Telecom documentation.",
+
+    "Jason Hart's presence at a fiber tradeshow (Fiber Connect 2026) as a Partner Manager suggests Esri was exhibiting or sponsoring to recruit/enable telecom partners. This is consistent with Esri's active push into BEAD-adjacent infrastructure markets. His attendance likely involved partner meetings, not procurement. Source: Lead record (Attendee, Fiber Connect 2026).",
+
+    "No LinkedIn profile found for 'Jason Hart' at Esri Redlands with Partner Manager title that is definitively verifiable through public search. Common name introduces ambiguity. Phone area code 804 is Richmond, VA — inconsistent with Redlands, CA headquarters, suggesting Hart may be remote/field-based, which is common for partner-facing roles. Source: Lead record; area code lookup.",
+
+    "Esri's BEAD-adjacent positioning: Esri has been heavily marketing ArcGIS as the GIS backbone for BEAD planning, application support, and deployment tracking. Multiple state broadband offices use Esri's fabric and mapping tools. This means Esri's partner ecosystem — the firms Hart manages — are exactly the ISPs, A&E firms, and contractors that Inorsa sells to. Source: Esri BEAD resource pages, state broadband office deployments (publicly documented).",
+
+    "No direct quotes, panel appearances, or trade press interviews found for 'Jason Hart' at Esri. The name is common and no unambiguous public record surfaced. Source: Search of Light Reading, BBCMag, ETI Software, LinkedIn — not found.",
+
+    "ICP classification is 'hold (Thin data)' and batch tier is D (Ungraded) — the lead record itself signals low confidence. This is consistent with the research finding: Hart is not a direct buyer but could be a partnership/channel entry point or a referral node into Esri's telecom partner ecosystem."
+  ],
+
+  "evidenceStrength": "moderate",
+
+  "gaps": [
+    "Could not confirm Jason Hart's specific LinkedIn profile or career history with confidence — common name, no unambiguous match found for Esri Partner Manager in Redlands/remote.",
+    "No public quotes, panel appearances, or trade press mentions found for this contact.",
+    "Unknown which specific Esri partner accounts Hart manages — whether he covers ISPs, A&E firms, or both would sharpen the angle.",
+    "Unknown whether Esri has any existing formal partnership or technology certification relationship with Inorsa.",
+    "No confirmation of Hart's internal influence over Esri's own ISV/partner certification decisions or co-sell agreements.",
+    "Cannot verify whether Hart attended Fiber Connect as a booth staffer, attendee, or in a business development capacity.",
+    "Budget authority: Partner Managers at Esri typically do not control procurement budgets — they manage partner program relationships. No evidence Hart has direct spend authority over software tools."
+  ],
+
+  "challengesToOtherFindings": [
+    "The lead is classified ICP 'hold' but this may be underselling the strategic value. Hart is not a buyer — but Esri is the upstream GIS platform for nearly every Inorsa prospect. A partnership conversation with Esri's partner team could unlock warm referrals into dozens of fiber operators and A&E firms simultaneously. The ICP framework needs a 'channel/partner' category distinct from direct buyer.",
+    "Treating this as a standard post-show follow-up with a direct sales pitch (Inorsa's drawing automation to Esri) would almost certainly miss the mark. Esri does not deploy fiber. The correct frame is: 'Inorsa extends ArcGIS investment for your telecom partners — can we get into your partner ecosystem?' Not a design capacity pitch.",
+    "The Batch D / Ungraded classification may be technically correct for direct sales but wrong for partnership development. Recommending a hard pass or low-priority follow-up would be a strategic mistake if Esri's partner channel is a real go-to-market lever for Inorsa."
+  ],
+
+  "topInsight": "Jason Hart is not a fiber operator or A&E buyer — he is a Partner Manager who manages Esri's relationships with the exact types of companies Inorsa sells to (ISPs, fiber A&E firms, contractors). The right outreach is not a product pitch but a partnership inquiry: position Inorsa as an Esri-compatible solution that extends ArcGIS GIS data into permit-ready CAD construction drawings, and ask Hart whether Inorsa qualifies for Esri's partner ecosystem or co-sell program. Done correctly, this one contact could open warm introductions to dozens of Inorsa's ideal prospects who are already in Hart's managed partner portfolio. The angle is: 'Your telecom partners are sitting on ArcGIS data they can't turn into construction drawings fast enough — Inorsa closes that gap. Let's talk about whether we belong in your partner network.'",
+
+  "sourcesUsed": [
+    "https://www.esri.com/en-us/industries/telecommunications/overview",
+    "https://www.esri.com/en-us/partners/partner-program/overview",
+    "https://www.esri.com/en-us/arcgis/products/arcgis-utility-network/overview",
+    "https://www.esri.com/en-us/broadband/overview",
+    "Lead record: Jason Hart, Partner Manager, Esri, jhart@esri.com, (804) 916-9771",
+    "Area code 804 lookup — Richmond, VA geographic assignment",
+    "Inorsa value proposition (provided brief)",
+    "ShowRev Industry Intelligence KB baseline (provided)",
+    "Light Reading telecom partner ecosystem coverage — Jason Hart not found",
+    "BBCMag.com — Jason Hart / Esri — not found",
+    "LinkedIn public search — Jason Hart Esri — ambiguous, not confirmed"
+  ]
+}
+```

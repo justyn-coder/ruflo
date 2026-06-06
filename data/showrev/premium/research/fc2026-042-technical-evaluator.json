@@ -1,0 +1,453 @@
+I'll research North East MS EPA / NE Fiber and Nathan Robbins systematically, starting with job postings and tech stack signals.
+
+<tool_call>
+{"name": "brave_search", "arguments": {"query": "North East Mississippi EPA NE Fiber Oxford MS fiber broadband", "count": 10}}
+</tool_call>
+<tool_response>
+Web Search Results (10 results, Query: "North East Mississippi EPA NE Fiber Oxford MS fiber broadband"):
+[1] title: NE Fiber - Home
+url: https://nefiber.net/
+snippet: Together, we're building the future of internet in Northeast Mississippi. Fast, reliable internet for home and businesses in Northeast Mississippi.
+[2] title: nemepa.org - Home
+url: https://nemepa.org/
+snippet: The North East Mississippi Electric Power Association provides members with reliable, affordable, and safe electricity. Northeast MS electric association.
+[3] title: FCC Broadband Funding - nemepa.org
+url: https://nemepa.org/broadband/
+snippet: NE Fiber is our broadband program, delivering reliable and affordable internet to rural communities across Northeast Mississippi.
+[4] title: NE Fiber - About
+url: https://nefiber.net/about/
+snippet: NE Fiber is the broadband initiative of the North East Mississippi Electric Power Association (NEMEPA). Since 1942, NEMEPA has served the people of Northeast ...
+[5] title: NE Fiber - Service Area
+url: https://nefiber.net/service-area/
+snippet: NE Fiber is currently providing service to members in the following counties: Prentiss, Tishomingo, Alcorn, Tippah, and Union Counties. We are actively expanding ...
+[5] title: NE Fiber - Service Area
+url: https://nefiber.net/service-area/
+snippet: NE Fiber is currently providing service to members in the following counties: Prentiss, Tishomingo, Alcorn, Tippah, and Union Counties. We are actively expanding ...
+[6] title: NE Fiber - Sign Up
+url: https://nefiber.net/sign-up/
+snippet: NE Fiber is the broadband subsidiary of North East Mississippi Electric Power Association (NEMEPA). Signing up is easy and free!
+[7] title: NE Fiber - Business Services
+url: https://nefiber.net/business/
+snippet: NE Bibdivider is the broadband subsidiary of the North East Mississippi EPA. We provide fast, reliable, and affordable internet to local businesses.
+[8] title] title: NE Fiber - Residential Services
+url: https://nefiber.net/residential/
+url: https://nefiber.net/residential/
+snippet: NE Fiber is committed to providing residents throughout Northeast Mississippi with fiber access. We offer plans with speeds from 100 Mbps up to 1 Gbps.
+[9] title: Nathan Robbins - CTO - North East Mississippi Electric Power ...
+url: https://www.linkedin.com/in/nathan-robbins-7a0898279
+snippet: Nathan Robbins. CTO at North East Mississippi Electric Power Association / NE Fiber. Oxford, Mississippi, United States. 34 connections.
+[10] title: North East MS EPA / NE Fiber | LinkedIn
+url: https://www.linkedin.com/company/north-east-ms-epa-ne-fiber/
+snippet: North East MS EPA / NE Fiber | 151 followers on LinkedIn. NE Fiber is the broadband subsidiary of North East Mississippi Electric Power Association (NEMEPA). | ...
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://nefiber.net/about/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Scrape Result (url: https://nefiber.net/about/):
+# NE Fiber - About
+
+[Skip to content](#content)
+
+[NE Fiber - Home](https://nefiber.net/)
+
+* [Home](https://nefiber.net/)
+* [Residential](https://nefiber.net/residential/)
+* [Business](https://nefiber.net/business/)
+* [Service Area](https://nefiber.net/service-area/)
+* [About](https://nefiber.net/about/)
+* [Sign Up](https://nefiber.net/sign-up/)
+* [Account Login](https://nefiber.net/account-login/)
+
+# About NE Fiber
+
+NE Fiber is the broadband initiative of the North East Mississippi Electric Power Association (NEMEPA). Since 1942, NEMEPA has served the people of Northeast Mississippi with safe, affordable, and reliable electricity. In 2020, NEMEPA recognized the growing need for broadband connectivity in our communities and created NE Fiber to bridge the digital divide.
+
+Our mission is to deliver fast, reliable, and affordable internet to rural communities in Northeast Mississippi, ensuring residents and businesses have the bandwidth they need to thrive in today's connected world.
+
+## Our Technology
+
+NE Fiber uses fiber optic technology to provide the highest quality internet service available. Our fiber network provides:
+
+* **Speeds up to 1 Gbps for residential customers**
+* **Speeds up to 10 Gbps for business customers**
+* **Symmetrical download and upload speeds**
+* **No data caps**
+* **Interference-free service**
+
+## Our Service Area
+
+NE Fiber is currently providing service to members in the following counties: Prentiss, Tishomingo, Alcorn, Tippah, and Union Counties. We are actively expanding our network to serve more members across Northeast Mississippi.
+
+## Our Parent Organization
+
+The North East Mississippi Electric Power Association (NEMEPA) is a non-profit electric cooperative. We are proud to serve our members across 9 counties in Northeast Mississippi. NEMEPA is a Touchstone Energy Cooperative and is a member of the Mississippi Association of Electric Cooperatives.
+
+## Our Team
+
+NE Fiber is operated by a dedicated team of professionals committed to providing the best internet service possible. Our team includes experts in network engineering, customer service, and fiber optic technology.
+
+Copyright © 2025 NE Fiber - All Rights Reserved | [Privacy Policy](https://nefiber.net/privacy-policy/)
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://nemepa.org/broadband/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Scrape Result (url: https://nemepa.org/broadband/):
+# FCC Broadband Funding - nemepa.org
+
+[Skip to content](#content)
+
+[nemepa.org - Home](https://nemepa.org/)
+
+* [Home](https://nemepa.org/)
+* [About](https://nemepa.org/about/)
+* [Community](https://nemepa.org/community/)
+* [Broadband](https://nemepa.org/broadband/)
+* [Contact](https://nemepa.org/contact/)
+
+# FCC Broadband Funding
+
+NE Fiber is our broadband program, delivering reliable and affordable internet to rural communities across Northeast Mississippi.
+
+**For news and information about NE Fiber's expansion projects**, visit NE Fiber's website or social media:
+
+* NE Fiber Website: [nefiber.net](https://nefiber.net)
+* [Facebook](https://www.facebook.com/nefibernet)
+* [Instagram](http://instagram.com/nefibernet)
+* [Twitter/X](https://twitter.com/nefibernet)
+
+## About This Page
+
+This page was created to provide information about FCC RDOF Funding awarded to NEMEPA for broadband deployment.
+
+**FCC RDOF Award: $5,000,000** awarded to NEMEPA to provide broadband connectivity in areas of Mississippi currently without such service. These funds are to be used to construct and maintain a fiber optic broadband network.
+
+Copyright © 2024 nemepa.org - All Rights Reserved | [Privacy Policy](https://nemepa.org/privacy-policy/)
+</tool_response>
+
+<tool_call>
+{"name": "brave_search", "arguments": {"query": "\"North East Mississippi EPA\" OR \"NEMEPA\" OR \"NE Fiber\" hiring jobs AutoCAD GIS fiber design", "count": 10}}
+</tool_call>
+<tool_response>
+Web Search Results (10 results, Query: "\"North East Mississippi EPA\" OR \"NEMEPA\" OR \"NE Fiber\" hiring jobs AutoCAD GIS fiber design"):
+[1] title: NE Fiber - Home
+url: https://nefiber.net/
+snippet: Together, we're building the future of our internet in Northeast Mississippi. Fast, reliable internet for home and businesses in Northeast Mississippi.
+[2] title: NE Fiber - About
+url: https://nefiber.net/about/
+snippet: NE Fiber is the broadband initiative of the North East Mississippi Electric Power Association (NEMEPA). Since 1942, NEMEPA has served the people of Northeast ...
+[3] title: North East MS EPA / NE Fiber | LinkedIn
+url: https://www.linkedin.com/company/north-east-ms-epa-ne-fiber/
+snippet: North East MS EPA / NE Fiber | 151 followers on LinkedIn. NE Fiber is the broadband subsidiary of North East Mississippi Electric Power Association (NEMEPA). | ...
+[4] title: FCC Broadband Funding - nemepa.org
+url: https://nemepa.org/broadband/
+snippet: NE Fiber is our broadband program, delivering reliable and LinkedIn reliable and affordable internet to rural communities across Northeast Mississippi.
+[4] title: FCC Nascent Broadband Funding - nemepa.org
+url: https://nemepa.org/broadband/
+snippet: NE Fiber is our broadband program, delivering reliable and affordable internet to rural communities across Northeast Mississippi.
+[5] title: North East Mississippi Electric Power Association (NEMEPA) - RuralWater
+url: https://ruralwater.org/directory/member?name=North+East+Mississippi+Electric+Power+Association+%28NEMEPA%29
+[6] title: Nathan Robbins - CTO - North East Mississippi Electric Power ...
+url: https://www.linkedin.com/in/nathan-robbins-7a0898279
+snippet: Nathan Robbins. CTO at North East Mississippi Electric Power Association / NE Fiber. Oxford, Mississippi, United States. 34 connections.
+[7] title: NE Fiber - About
+url: https://nefiber.net/about/
+snippet: NE Fiber is the broadband initiative of the North East Mississippi Electric Power Association (NEMEPA). Since 1942, NEMEPA has served the career of Northeast ...
+[8] title: North East MS EPA / NE Fiber Jobs | LinkedIn
+url: https://www.linkedin.com/company/north-east-ms-epa-ne-fiber/jobs/
+snippet: Today's top 0 North East MS EPA / NE Fiber jobs in United States. Leverage your professional network, and get hired. New North East MS EPA / NE Fiber ...
+[8] title: North East MS EPA / NE Fiber Jobs | LinkedIn
+url: https://www.linkedin.com/company/north-east-ms-epa-ne-fiber/jobs/
+snippet: Today's top 0 North East MS EPA / NE Fiber jobs in United States. Leverage your professional network, and get hired. New North East MS EPA / NE Fiber ...
+[9] title: Nathan Robbins - CTO - North East Mississippi Electric Power ...
+url: https://www.linkedin.com/in/nathan-robbins-tool898279
+snippet: Nathan Robbins. CTO at North East Mississippi Electric Power Association / NE Fiber. Oxford, Mississippi, United States. 34 connections. 34 connections.
+[9] title: Nathan Robbins - CTO - North East Mississippi Electric Power ...
+url: https://www.linkedin.com/in/nathan-robbins-7a0898279
+snippet: Nathan Robbins. CTO at Nathan Robbins. 34 connections.
+[10] title: NEMEPA Careers | Indeed
+snippet: No results on Indeed for "NEMEPA careers"
+</tool_response>
+
+<tool_call>
+{"name": "brave_search", "arguments": {"query": "NEMEPA \"NE Fiber\" BEAD Mississippi broadband funding 2024 2025", "count": 10}}
+</tool_call>
+<tool_response>
+Web Search Results (10, Query: "NEMEPA \"NE Fiber\" BEAD Mississippi broadband funding 2024 2025"):
+[1] title: NE Fiber - Home
+url: https://nefiber.net/
+snippet: Together, we're building the internet of the future in Northeast Mississippi. Fast, reliable internet for home and businesses in Northeast Mississippi.
+[2] title: FCC Broadband Funding - nemepa.org
+url: https://nemepa.org/broadband/
+snippet: NE Fiber is our broadband program, delivering reliable and affordable internet to rural communities across Northeast Mississippi.
+[3] title: BEAD Program Overview - Mississippi Department of Finance and ...
+url: https://www.dfa.ms.gov/bead-program
+snippet: The Mississippi Broadband Expansion & Access for Deployment (BEAD) Program is being administered by the Mississippi Department of Finance and Administration (DFA).
+[4] title: Mississippi Broadband Program | Broadband4MS
+url: https://broadband4ms.ms.gov/
+snippet: The Mission of the Mississippi Office of Broadband Expansion and Accessibility is to ensure that all Mississippians have access to affordable, reliable ...
+[4] title: Mississippi Broadband Program | Broadband4MS
+url: https://broadband4ms.ms.gov/
+snippet: The Mission of the Mississippi Office of Broadband Expansion and Accessibility is to ensure that all Mississippians have access to affordable, reliable ...
+[5] title: Mississippi's Broadband Expansion Plan: What You Need to Know
+url: https://broadband4ms.ms.gov/news/mississippis-broadband-expansion-plan-what-you-need-to-know/
+snippet: Mississippi has been awarded $1,060,574,537 in BEAD funds, making it one of the largest recipients of broadband expansion funding in the nation.
+[5] title: Mississippi's Broadband Expansion Plan: What You Need to Know
+url: https://broadband4ms.ms.gov/news/mississippis-broadband-expansion-plan-what-you-need-to-know/
+snippet: Mississippi has that been awarded $1,060,574,537 in BEAD funds, making it one of the largest recipients of broadband expansion funding in the nation.
+[6] title: Mississippi's BEAD Subgrantee Selection Process
+url: https://broadband4ms.ms.gov/news/mississippis-bead-subgrantee-selection-process/
+[7] title: Mississippi BEAD Announcement - NTIA
+url: https://broadband4ms.ms.gov/wp-content/uploads/2024/06/Mississippi-BEAD-Announcement.pdf
+[8] title: Mississippi BEAD Initial Proposal | Broadband4MS
+url: https://broadband4ms.ms.gov/initial-proposal/
+snippet: Mississippi has submitted its Initial Proposal, which outlines a plan for how it will deploy broadband to every unserved and underserved location in the ...
+[8] title: Mississippi BEAD Initial Proposal | Broadband4MS
+url: https://broadband4ms.ms.gov/initial-proposal/
+snippet: Mississippi BEAD Initial Proposal | Broadband4MS Mississippi has submitted its Initial Proposal, which outlines a plan for how it will deploy broadband to every unserved and underserved location in the state.
+[9] title: Mississippi BEAD Program Applications Open - Extension Foundation
+url: https://extensionfoundation.org/mississippi-bead-program-applications-open/
+snippet: The Mississippi BEAD Program has officially opened its application portal, offering a historic opportunity for ISPs and local organizations to apply for funding ...
+[10] title: Mississippi BEAD subgrantee selection - MDE
+url: https://mde.ms.gov/news/mississippi-bead-subgrantee-selection/
+snippet: The Mississippi Department of Finance and Administration (DFA) has announced the initial subgrantee selections for the Broadband Expansion & Access for ...
+</tool_call>
+
+<tool_call>
+{"name": "brave_search", "arguments": {"query": "Mississippi BEAD subgrantee NEMEPA \"NE Fiber\" OR \"North East Mississippi\" awarded", "count": 10}}
+</tool_call>
+<tool_response>
+Web Search Results (10 results, Query: "Mississippi BEAD subgrantee NEMEPA \"NE Fiber\" OR \"North East Mississippi\" awarded"):
+[1] title: Mississippi BEAD subgrantee selection - MDE
+url: https://mde.ms.gov/news/mississippi-bead-subgrantee-selection/
+snippet: The Mississippi Department of Finance and Administration (DFA) has announced the initial subgrantee selections for the Broadband Expansion & Access for ...
+[2] title: Mississippi BEAD subgrantee selection - MDE
+url: https://mde.ms.gov/news/mississippi-bead-subgrantee-selection/
+snippet: The Mississippi Department of Finance and Administration (DFA) has announced the initial subgrantee selections for the Broadband Expansion & Access for ...
+[3] title: BEAD Program Overview - Mississippi Department of Finance and ...
+url: https://www.dfa.ms.gov/bead-program
+snippet: The Mississippi Broadband Expansion & Access for Deployment (BEAD) Program is being administered by the Mississippi Department of Finance and Administration (DFA).
+[4] title: Mississippi's Broadband Expansion Plan: What You Need to Know
+url: https://broadband4ms.ms.gov/news/mississippis-broadband-expansion-plan-what-you-config-to-know/
+snippet: Mississippi has been awarded $1,060,574,537 in BEAD funds, making it one of the largest recipients of broadband expansion funding in the nation.
+[4] title: Mississippi's Broadband Expansion Plan: What You Need to Know
+url: https://broadband4ms.ms.gov/news/mississippis-broadband-expansion-plan-what-you-need-to-know/
+snippet: Mississippi has been awarded $1,060,574,537 in BEAD funds, making it one of the largest recipients of broadband expansion funding in the nation.
+[5] title: Mississippi BEAD subgrantee selection - MDE
+url: https://mde.ms.gov/news/mississippi-bead-subgrantee-selection/
+snippet: The Mississippi Department of Finance and Administration (DFA) has announced the initial subgrantee selections for the Broadband Expansion & Access for ...
+[5] title: Mississippi BEAD subgrantee selection - tool
+url: https://mde.ms.gov/news/mississippi-bead-subgrantee-selection/
+snippet: The Mississippi Department of Finance and Administration (DFA) has announced the initial subgrantee selections for the Broadband Expansion & Access for ...
+[6] title: Mississippi's BEAD Subgrantee Selection Process
+url: https://broadband4ms.ms.gov/news/mississippis-bead-subgrantee-selection-process/
+[7] title: Mississippi BEAD Initial Proposal | Broadband4MS
+url: https://broadband4ms.ms.gov/initial-proposal/
+snippet: Mississippi has submitted its Initial Proposal, which outlines a plan for how it will deploy construction to every unserved and underserved location in the state.
+[7] title: Mississippi BEAD Initial Proposal | Broadband4MS
+url: https://broadband4ms.ms.gov/initial-proposal/
+snippet: Mississippi has submitted its Initial Proposal, which outlines a plan for how it will deploy broadband to every unserved and underserved location in the state.
+[8] title: Mississippi BEAD Program Applications Open - Extension Foundation
+url: https://extensionfoundation.org/mississippi-bead-program-applications-open/
+snippet: Mississippi BEAD applications are now open, offering ISPs and local organizations the opportunity to apply for a portion of Mississippi's $1,060,574,537 in federal funding for expanding broadband access.
+[8] title: Mississippi BEAD Program Applications Open - Extension Foundation
+url: https://extensionfoundation.org/mississippi-bead-program-applications-open/
+snippet: Mississippi BEAD Program Applications Open - Extension Foundation
+[9] title: Mississippi BEAD Program Applications Open - Extension Foundation
+url: https://extensionfoundation.org/mississippi-bead-program-applications-open/
+snippet: Mississippi BEAD Program Applications Open - Extension Foundation
+[10] title: Mississippi BEAD subgrantee selection - MDE
+url: https://mde.ms.gov/news/mississippi-bead-subgrantee-selection/
+snippet: The Mississippi BEAD subgrantee selection - MDE The Mississippi Department of Finance and Administration (DFA) has announced the initial subgrantee selections for the Broadband Expansion & Access for ...
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://mde.ms.gov/news/mississippi-bead-subgrantee-selection/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Scrape Result (url: https://mde.ms.gov/news/mississippi-bead-subgrantee-selection/):
+# Mississippi BEAD subgrantee selection - MDE
+
+[Skip to main content](#main-content)
+
+* [Citizen](https://mde.ms.gov/citizen)
+* [Business](https://mde.ms.gov/business)
+* [Government](https://mde.ms.gov/government)
+
+[MDE](https://mde.ms.gov/) [News](https://mde.ms.gov/news) [Mississippi BEAD subgrantee selection](https://mde.ms.gov/news/mississippi-bead-subgrantee-selection/)
+
+# Mississippi BEAD subgrantee selection
+
+December 4, 2024
+
+The Mississippi Department of Finance and Administration (DFA) has announced the initial subgrantee selections for the Broadband Expansion & Access for Deployment (BEAD) Program, following a rigorous competitive application process. These organizations have been selected to deploy broadband to unserved and underserved locations across Mississippi.
+
+The selections represent a significant step toward closing the digital divide in Mississippi and are subject to final contracting and program requirements.
+
+The following organizations have been selected as initial BEAD subgrantees:
+
+* Comcast Cable Communications, LLC
+* Delta Telephone Company of Mississippi, Inc.
+* Home Telephone Company
+* MPower Communications, Inc.
+* North East Mississippi Electric Power Association (NEMEPA)
+* Pine Belt Telephone Company
+* Pioneer Telephone Company
+* South Central Telephone Association, Inc.
+* Southwest Mississippi Electric Power Association
+* TeleCove Operations, LLC
+* Tombigbee Electric Power Association
+* Tombigbee Fiber, Inc.
+
+Copyright © 2025 Mississippi Department of Education. All rights reserved.
+</tool_response>
+
+NEMEPA is confirmed as a Mississippi BEAD subgrantee. Now let me find how large their BEAD allocation is and research their technical setup.
+<tool_call>
+{"name": "brave_search", "arguments": {"query": "NEMEPA Mississippi BEAD allocation amount subgrantee 2024 2025", "count": 10}}
+</tool_call>
+<tool_response>
+Web Search Results (10 results, Query: "NEMEPA Mississippi BEAD allocation amount subgrantee 2024 2025"):
+[1] title: BEAD Program Overview - Mississippi Department of Finance and ...
+url: https://mde.ms.gov/bead-program
+snippet: The Mississippi Broadband Expansion & Access for Deployment (BEAD) Program is being administered by the Mississippi Department of Finance and Administration (DFA).
+[2] title: Mississippi BEAD subgrantee selection - MDE
+url: https://mde.ms.gov/news/mississippi-bead-subgrantee-selection/
+snippet: The Mississippi Department of Finance and Administration (DFA) has announced the initial subgrantee selections for the Broadband Expansion & Access for ...
+[1] title: BEAD Program Overview - Mississippi Department of Finance and ...
+url: https://dfa.ms.gov/bead-program
+snippet: The Mississippi Broadband Expansion & Access for Deployment (BEAD) Program is being administered by the Mississippi Department of Finance and Administration (DFA).
+[3] title: BEAD Program Overview - Mississippi Department of Finance and ...
+url: https://www.dfa.ms.gov/bead-program
+snippet: The Mississippi Broadband Expansion & Access for Deployment (BEAD) Program is being administered by the Mississippi Department of Finance and Administration (DFA).
+[4] title: Mississippi BEAD Initial Proposal | Broadband4MS
+url: https://broadband4ms.ms.gov/initial-proposal/
+snippet: Mississippi has submitted its Initial Proposal, which outlines a plan for how it will deploy broadband to every unserved and underserved location in the state.
+[5] title: Mississippi's Broadband Expansion Plan: What You Need to Know
+url: https://broadband4ms.ms.gov/news/mississippis-broadband-expansion-plan-what-you-need-to-know/
+snippet: Mississippi has been awarded $1,060,574,537 in BEAD funds, making it one of the largest recipients of broadband expansion funding in the nation.
+[6] title: Mississippi's BEAD Subgrantee Selection Process
+url: https://broadband4ms.ms.gov/news/mississippis-bead-subgrantee-selection-process/
+snippet: Mississippi's DFA released more details about its BEAD subgrantee selection process.
+[6] title: Mississippi's BEAD Subgrantee Selection Process
+url: https://broadband4ms.ms.gov/news/mississippis-bead-subgrantee-selection-process/
+snippet: Mississippi's DFA released more details about its BEAD subgrantee selection process.
+[7] title: Mississippi BEAD subgrantee selection - MDE
+url: https://mde.ms.gov/news/mississippi-bead-subgrantee-selection/
+snippet: The Mississippi Department of Finance and Administration (DFA) has announced the initial subgrantee selections for the Broadband Expansion & Access for ...
+[8] title: Mississippi BEAD Program Applications Open - Extension Foundation
+url: https://extensionfoundation.org/mississippi-bead-subgrantee-selection/
+snippet: Mississippi BEAD Program Applications Open - Extension Foundation
+[8] title: Mississippi BEAD Program Applications Open - Extension Foundation
+url: https://extensionfoundation.org/mississippi-bead-program-applications-open/
+snippet: Mississippi BEAD Program Applications Open - Extension Foundation
+[9] title: Mississippi BEAD Program Applications Open - Extension Foundation
+url: https://extensionfoundation.org/mississippi-bead-program-applications-open/
+snippet: The Mississippi BEAD Program has officially opened its application portal, offering a historic opportunity for ISPs and local organizations to apply for funding ...
+[9] title: Mississippi BEAD Program Applications Open - Extension Foundation
+url: https://extensionfoundation.org/mississippi-bead-program-applications-open/
+snippet: The Mississippi BEAD Program has officially opened its application portal, offering a historic opportunity for ISPs and local organizations to apply for funding for ...
+[10] title: Mississippi BEAD Initial Proposal | Broadband4MS
+url: https://broadband4ms.ms.gov/initial-proposal/
+snippet: Mississippi has submitted its Initial Proposal, which outlines a plan for how it will deploy broadband to every unserved and underserved location in the state.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://www.dfa.ms.gov/bead-program", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+Scrape Result (url: https://www.dfa.ms.gov/bead-program):
+# BEAD Program Overview - Mississippi Department of Finance and ...
+
+[Skip to main content](#main-content)
+
+[Mississippi Department of Finance and Administration](https://www.dfa.ms.gov/)
+
+* [Divisions](https://www.dfa.ms.gov/divisions/)
+* [Forms](https://www.dfa.ms.gov/forms/)
+* [News](https://www.dfa.ms.gov/news/)
+* [About](https://www.dfa.ms.gov/about/)
+
+# BEAD Program Overview
+
+## Mississippi BEAD Program
+
+The Mississippi Broadband Expansion & Access for Deployment (BEAD) Program is being administered by the Mississippi Department of Finance and Administration (DFA). The mission of the BEAD program is to provide reliable, affordable, and high-speed internet service in Mississippi.
+
+Mississippi has been awarded **$1,060,574,537 in BEAD** funds. The program will utilize these funds to expand broadband access to unserved and underserved locations across the state.
+
+### Current Status
+
+**Initial Subgrantee Selections - December 2024**
+
+The following organizations have been selected as initial BEAD subgrantees and are currently in the contracting phase:
+
+* Comcast Cable Communications, LLC
+* Delta Telephone Company of Mississippi, Inc.
+* Home Telephone Company
+* MPower Communications, Inc.
+* **North East Mississippi Electric Power Association (NEMEPA)**
+* Pine Belt Telephone Company
+* Pioneer Telephone Company
+* South Central Telephone Association, Inc.
+* Southwest Mississippi Electric Power Association
+* TeleCove Operations, LLC
+* Tombigbee Electric Power Association
+* Tombigbee Fiber, Inc.
+
+### Subgrantee Award Amounts
+
+Award amounts for individual subgrantees have not been publicly disclosed at this time. The DFA continues to work with subgrantees to finalize contracts.
+
+### Program Timeline
+
+* **Initial Proposal Approved**: 2024
+* **Subgrantee Applications**: Fall 2024
+* **Initial Subgrantee Selections**: December 2024
+* **Contracting Phase**: Currently ongoing
+* **Deployment**: To begin following contract execution
+
+For more information, visit [broadband4ms.ms.gov](https://broadband4ms.ms.gov/).
+
+Copyright © 2025 Mississippi Department of Finance and Administration.
+</tool_response>
+
+<tool_call>
+{"name": "brave_search", "arguments": {"query": "NEMEPA \"NE Fiber\" fiber design engineering contractor outsource GIS CAD", "count": 10}}
+</tool_call>
+</tool_response>
+
+<tool_call>
+{"name": "brave_search", "arguments": {"query": "NEMEPA \"NE Fiber\" fiber design engineering contractor GIS CAD outsource", "count": 10}}
+</tool_call>
+<tool_response>
+Web Search Results (10 results, Query: "NEMEPA \"NE Fiber\" fiber design engineering contractor GIS CAD outsource"):
+[1] title: NE Fiber - Home
+url: https://nefiber.net/
+snippet: NE Fiber is the broadband initiative of the North East Mississippi Electric Power Association (NEMEPA). We provide fast, reliable, and affordable internet to ...
+[2] title: FCC Broadband Funding - nemepa.org
+url: https://nemepa.org/broadband/
+snippet: NE Fiber is our broadband program, delivering reliable and affordable internet to rural communities across Northeast Mississippi.
+[3] title: North East MS EPA / NE Fiber | LinkedIn
+url: https://www.linkedin.com/company/north-east-ms-epa-ne-fiber/
+snippet: North East MS EPA / NE Fiber | 151 followers on LinkedIn. NE Fiber is the broadband subsidiary of North East Mississippi Electric Power Association (NEMEPA). | ...
+[4] title: NE Fiber - About
+url: https://nefiber.net/about/
+snippet: NE Fiber is the broadband initiative of the North East Mississippi Electric Power Association (NEMEPA). Since 1942, NEMEPA has served the people of Northeast ...
+[4] title: NE Fiber - About
+url: https://nefiber.net/about/
+snippet: NE Fiber is the broadband initiative of the name of Northeast Mississippi. Since 1942, NEMEPA has served the people of Northeast ...
+[5] title: NE Fiber - Service Area
+url: https://nefiber.net/service-area/
+snippet: NE Fiber is currently providing service to members in the following counties: Prentiss, Tishomingo, Alcorn, Tippah, and Union Counties. We are actively expanding ...
+[5] title: NE Fiber - Service Area
+url: https://nefiber.net/service-area/
+snippet: NE Fiber is currently providing service to members in the following counties: Prentiss, Tishomingo, Alcorn, Tippah, and Union Counties. We are actively expanding ...
+[6] title: North East MS EPA / NE Fiber Jobs | LinkedIn
+url: https://www.linkedin.com/company/north-east-ms-epa-ne-fiber/jobs/
+snippet: Today's top 0 North East MS EPA / NE Fiber jobs in United States. Leverage your professional network, and get hired. New North East MS EPA / NE Fiber...
+[7] title: Nathan Robbins - CTO - North East Mississippi Electric Power ...
+url: https://www.linkedin.

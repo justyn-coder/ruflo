@@ -1,0 +1,665 @@
+I'll research TalentPartners systematically, starting with job postings, tech stack signals, and company capability profile.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners \"Boynton Beach\" fiber telecom engineering", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'TalentPartners "Boynton Beach" fiber telecom engineering':
+- **TalentPartners – TalentPartners**
+  URL: https://thetalentpartners.net/
+  Snippet: TalentPartners is where Talent Meets Opportunity. Connecting exceptional professionals with leading companies in the telecom sector.
+
+- **About us – TalentPartners**
+  URL: https://thetalentpartners.net/about-us/
+  Snippet: TalentPartners is a specialized recruitment firm focused exclusively on the telecom industry. We connect exceptional professionals with leading companies, ...
+
+- **TalentPartners on LinkedIn**
+  URL: https://www.linkedin.com/company/thetalentpartners
+  Snippet: TalentPartners is a specialized recruitment firm focused exclusively on the telecom industry. Connecting exceptional professionals with leading companies in the ...
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://thetalentpartners.net/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+# TalentPartners – TalentPartners
+
+[Skip to content](#content)
+
+[![TalentPartners](https://thetalentpartners.net/wp-content/uploads/2025/01/logo.png)](https://thetalentpartners.net/)
+
+- [Home](https://thetalentpartners.net/)
+- [About us](https://thetalentpartners.net/about-us/)
+- [Open Positions](https://thetalentpartners.net/open-positions/)
+- [Candidates](https://thetalentpartners.net/candidates/)
+- [Employers](https://thetalentpartners.net/employers/)
+- [Blog](https://thetalentpartners.net/blog/)
+
+## TalentPartners is where Talent Meets Opportunity.
+
+Connecting exceptional professionals with leading companies in the telecom sector.
+
+[Learn More](https://thetalentpartners.net/about-us/)
+
+## How we help
+
+### Telecom Recruiting Experts
+
+TalentPartners is a specialized recruitment firm focused exclusively on the telecom industry. Our team of experienced recruiters brings deep domain expertise to every search, ensuring we understand exactly what our clients need.
+
+### Recruiting Across Key Telecom Disciplines
+
+We place candidates across many key disciplines in the telecom field.
+
+### Dedicated to Excellence
+
+Our commitment to excellence drives everything we do—from the way we engage with clients, to how we partner with candidates.
+
+## What we do
+
+### [Employers](https://thetalentpartners.net/employers/)
+
+We help growing telecom companies find and retain the top talent they need to execute on buildouts, scale operations, and meet project demands. Whether you're scaling up for a major deployment or need to add key hires to your team, we're here to serve.
+
+**Telecom Recruitment Solutions**
+
+Our goal is to help you find the right people, fast. We work on a contingency basis, which means you only pay us when we successfully place a candidate with you. And our pricing is designed to be straightforward and fair.
+
+**We specialize in placing candidates for:**
+
+- OSP Engineering
+- ISP Engineering
+- Program Management
+- Project Management
+- Fiber Technicians
+- Network Operations
+- Construction Management
+- GIS Professionals
+- OSP Engineering
+- ISP Engineering
+- Program Management
+- Project Management
+- Fiber Technicians
+- Network Operations
+- Construction Management
+- GIS Professionals
+
+[Learn more about our employer services](https://thetalentpartners.net/employers/)
+
+### [Candidates](https://thetalentpartners.net/candidates/)
+
+Are you a telecom professional looking for your next opportunity? We work with you to understand your background and goals, then connect you with the right companies.
+
+**Candidate Services**
+
+We believe in building long-term relationships with the candidates we represent. Our recruiters take the time to understand your experience, goals, and the type of environment in which you thrive.
+
+**We help place candidates in these types of roles:**
+
+- Network Design Engineer
+- Fiber Design Engineer
+- OSP Designer
+- Fiber Technician
+- GIS Analyst
+- Project Manager
+- Construction Manager
+- Sr. OSP Engineer
+
+[Learn more about our candidate services](https://thetalentpartners.net/candidates/)
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://thetalentpartners.net/open-positions/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+# Open Positions – TalentPartners
+
+[Skip to content](#content)
+
+[![TalentPartners](https://thetalentpartners.net/wp-content/uploads/2025/01/logo.tech.png)](https://thetalentpartners.net/)
+
+- [Home](https://thetalentpartners.net/)
+- **[About us](https://thetalentpartners.net/about-us/)**
+- [Open Positions](https://thetalentpartners.net/open-positions/)
+- [Candidates](https://thetalentpartners.net/candidates/)
+- [Employers](https://thetalentpartners.net/employers/)
+- [Blog](https://thetalentpartners.tool-platform.net/blog/)
+
+# Open Positions
+
+## Senior OSP Engineer
+
+**Location:** Remote  
+**Experience:** 10-15+ years  
+**Compensation:** $100,000 – $135,000
+
+**About The Role:**
+
+We are seeking a Senior OSP Engineer to join a leading telecommunications company. This role involves designing and overseeing the installation of outside plant infrastructure, including aerial, direct buried, and conduit/underground fiber optic systems.
+
+**Key Responsibilities:**
+
+- Design telecommunications infrastructure including aerial and underground systems, utilizing AutoCAD, MicroStation, and/or GIS tools
+- Develop detailed engineering design packages, permit packages, and construction drawings
+- Manage permitting processes with municipalities and utilities
+- Coordinate with project managers, construction teams, and stakeholders
+- Perform site surveys, field walks, and plan reviews
+- Ensure compliance with standards and best practices
+
+**Requirements:**
+
+- 10-15+ years of OSP engineering experience
+- Proficiency in AutoCAD, MicroStation, and GIS platforms (ArcGIS, QGIS, or similar)
+- Experience developing permit packages and construction drawings
+- Familiarity with NESC (National Electrical Safety Code) and local utility requirements
+- Ability to interpret as-built documents and engineering drawings
+
+---
+
+## OSP Designer
+
+**Location:** Remote  
+**Experience:** 3-5+ years  
+**Compensation:** $55,000 – $85,000
+
+**About The Role:**
+
+We are seeking an OSP Designer to join a telecom engineering team. The ideal candidate will have hands-on experience in outside plant design and be proficient in the tools and workflows used in modern fiber deployments.
+
+**About The Role:**
+
+**Key Responsibilities:**
+
+- Create fiber optic network designs using specialized design software (e.g., AutoCAD, ArcGIS, QGIS, MicroStation, Katapult, Biarri, Render Networks)
+- Develop strand count maps, cable placement plans, and splice diagrams
+- Prepare and submit permit packages for local municipalities and utilities
+- Support the Make Ready Engineering (MRE) process
+- Work with GIS data to maintain and update network records
+
+**Key Responsibilities:**
+
+**Requirements:**
+
+- 3-5+ years of OSP design experience in the telecom industry
+- Proficiency in one or more design tools: AutoCAD, ArcGIS, QGIS, MicroStation, Katapult, Biarri, Render Networks
+- Experience with permit preparation and Make Ready Engineering (MRE)
+- Ability to interpret and work with GIS data, aerial and underground designs
+
+---
+
+## GIS Analyst
+
+**Location:** Remote  
+**Experience:** 2-4+ years  
+**Compensation:** $50,000 – $75,000
+
+**About The Role:**
+
+We are seeking a GIS Analyst to join a telecom engineering team focused on fiber network design and deployment. The ideal candidate will have a strong background in geospatial data management, analysis, and mapping within the telecom industry.
+
+**About The Roles:**
+
+**Key Responsibilities:**
+
+- Maintain and manage GIS databases and spatial data for fiber network infrastructure
+- Create and update network maps using ArcGIS, QGIS, or other GIS platforms
+- Support OSP engineers with geospatial data needs
+- Generate reports and visualizations for project planning and management
+- Collaborate with design and construction teams to ensure data accuracy
+
+**Requirements:**
+
+- 2-4+ years of GIS experience in telecom or utilities
+- Proficiency in ArcGIS, QGIS, or similar GIS platforms
+- Experience with fiber network data, spatial analysis, and mapping
+- Knowledge of OSP design principles and infrastructure data management
+
+---
+
+## Fiber Technician
+
+**Location:** Remote  
+**Experience:** 1-3+ years  
+**Compensation:** $45,000 – $75,000
+
+**About The Role:**
+
+We are seeking a Fiber Technician to join a telecom company focused on fiber network construction and maintenance. The ideal candidate will have hands-on experience with fiber optic cable installation, splicing, and testing.
+
+---
+
+## Project Manager
+
+**Location:** Remote  
+**Experience:** 5-7+ years  
+**Compensation:** $85,000 – $115,000
+
+**About The Roles:**
+
+We are seeking a Project Manager to join a telecom company focused on fiber network deployments. The ideal candidate will have strong project management skills and experience overseeing fiber construction projects.
+
+---
+
+## Network Design Engineer
+
+**Location:** Remote  
+**Experience:** 5-7+ years  
+**Compensation:** $75,000 – $95,000
+
+**About The Role:**
+
+We are **seeking a Network Design Engineer** to join a telecom company. The role involves designing fiber and broadband networks, working closely with OSP engineers, GIS analysts, and project managers.
+
+**Key Responsibilities:**
+
+- Design fiber optic and broadband networks using AutoCAD, GIS, and network design tools
+- Develop detailed network schematics, strand count maps, and cable routing plans
+- Collaborate with OSP engineers, GIS analysts, and construction teams
+- Analyze network performance, capacity, and optimization requirements
+- Review and approve engineering designs and construction drawings
+
+**Requirements:**
+
+- 5-7+ years in network design for fiber or broadband networks
+- Proficiency in AutoCAD, GIS tools (ArcGIS, QGIS), and network design software
+- Experience with fiber optic network design, OSP and ISP engineering
+- Knowledge of network design principles and fiber deployment standards
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://thetalentpartners.net/about-us/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+# About us – TalentPartners
+
+[Skip to content](#content)
+
+[![TalentPartners.tech](https://thetalentpartners.net/wp-content/uploads/2025/02/logo.tech.png)](https://thetalentpartners.net/)
+
+- [Home](https://thetalentpartners.net/)
+- **[About us](https://thetalentpartners.net/about-us/)**
+- [Open Positions](https://thetalentpartners.net/open-positions/)
+- [Candidates](https://thetalentpartners.net/candidates/)
+- [Employers](https://thetalentpartners.net/candidates/)
+- [Employers](https://thetalentpartners.net/employers/)
+- [Blog](https://thetalentpartners.net/blog/)
+
+## We're a specialized telecom recruitment firm — and we're just getting started.
+
+TalentPartners launched in 2025. We're a small, focused team of recruiters who came up through the telecom industry. Our founders worked inside telecom companies and recruiting firms before building TalentPartners—so we know the industry from the inside.
+
+## Our mission
+
+To be the most trusted recruiting partner in the telecom space.
+
+**We measure success by:**
+
+- Placements that stick
+- Clients that come back
+- Candidates that thrive
+
+## What makes us different
+
+**Industry Expertise:** Our team has worked inside telecom companies, so we understand the nuances of OSP engineering, fiber deployment, GIS, network design, and construction management.
+
+**Speed:** We know that in telecom, time matters. Projects can't wait for a slow hire. We move fast.
+
+**Transparency:** No surprises. We're upfront about timelines, fees, and expectations.
+
+## Our story
+
+TalentPartners was born out of a frustration with generic recruiting firms that don't really understand telecom. Our founders saw a gap in the market for a recruiting firm that could speak the language of OSP engineers, GIS analysts, and fiber technicians—and actually deliver.
+
+## Our Approach
+
+We work with a limited number of clients at a time to ensure we can deliver real results. We're not a high-volume, low-touch shop. We focus on quality over quantity.
+
+**Our process:**
+
+1. Discovery call to understand your needs
+2. Targeted search and outreach
+3. Candidate presentation and interview coordination
+4. Offer support and onboarding assistance
+
+## The Founding Team
+
+**Brett Sarubbi, Managing Partner**
+
+Brett has spent his career in telecom recruiting and human resources. Before co-founding TalentPartners, Brett worked for a national staffing firm where he placed hundreds of candidates across the telecom industry. He brings a deep understanding of the talent needs of fiber ISPs and engineering firms.
+
+**Jon Millet, Managing Partner**
+
+Jon has worked in telecom operations and project management before transitioning into recruiting. His hands-on experience in fiber deployment gives him a unique perspective on what makes a great hire in this industry.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://thetalentpartners.net/employers/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+# Employers – TalentPartners
+
+[Skip to content](#content)
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners \"thetalentpartners.net\" clients fiber ISP engineering firms", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'TalentPartners "thetalentpartners.net" clients fiber ISP engineering firms':
+- **TalentPartners – TalentPartners**
+  URL: https://thetalentpartners.net/
+  Snippet: TalentPartners is where Talent Meets Opportunity. Connecting exceptional professionals with leading companies in the telecom sector.
+
+- **TalentPartners on LinkedIn**
+  URL: https://www.linkedin.com/company/thetalentpartners
+  Snippet: TalentPartners is a specialized recruitment firm focused exclusively on the telecom industry. Connecting exceptional professionals with leading companies in the ...
+
+- **Jon Millet | LinkedIn**
+  URL: https://www.linkedin.com/in/jon-millet
+  Snippet: Jon Millet is a Managing Partner at TalentPartners. The staffing and recruiting industry.
+
+- **Brett Sarubbi | LinkedIn**
+  URL: https://www.linkedin.com/in/brett-sarubbi
+  Snippet: Brett Sarubbi is a Managing Partner at TalentPartners. The staffing and recruiting industry.
+
+</tool_call>
+<tool_response>
+Results for 'TalentPartners "thetalentpartners.net" clients fiber ISP engineering firms':
+- **TalentPartners – TalentPartners**
+  URL: https://thetalentpartners.net/
+  Snippet: TalentPartners is where Talent Meets Opportunity. Connecting exceptional professionals with leading companies in the telecom sector.
+
+- **TalentPartners on LinkedIn**
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Brett Sarubbi telecom recruiting fiber LinkedIn", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'Brett Sarubbi telecom recruiting fiber LinkedIn':
+- **Brett Sarubbi | LinkedIn**
+  URL: https://www.linkedin.com/in/brett-sarubbi
+  Snippet: Brett Sarubbi is a Managing Partner at TalentPartners. The staffing and recruiting industry.
+
+- **Brett Sarubbi - Managing Partner - TalentPartners | LinkedIn**
+  URL: https://www.linkedin.com/in/brett-sarubbi-7b77b3234/
+  Snippet: Managing Partner @ TalentPartners | Telecom Recruiting. Connecting OSP Engineers, GIS Analysts, Fiber Technicians & Project Managers with Leading Telecom ...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"TalentPartners\" telecom staffing Fiber Connect 2026 OR \"fiber connect\" OR BEAD recruiting", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for '"TalentPartners" telecom staffing Fiber Connect 2026 OR "fiber connect" OR BEAD recruiting':
+- **TalentPartners – TalentPartners**
+  URL: https://thetalentpartners.net/
+  Snippet: TalentPartners is where Talent Calls Home.
+
+- **TalentPartners on LinkedIn**
+  URL: https://www.linkedin.com/company/thetalentpartners
+  Snippet: TalentPartners is a specialized recruitment firm focused exclusively on the telecom sector. Connecting exceptional professionals with leading companies in the ...
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://thetalentpartners.net/blog/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+# Blog – TalentPartners
+
+[Skip to content](#content)
+
+[![TalentPartners.tech](https://thetalentpartners.net/wp-content/uploads/2025/02/logo.tech.png)](https://thetalentpartners.net/)
+
+- [Home](https://thetalentpartners.net/)
+- **[About us](https://thetalentpartners.net/about-us/)**
+- [Open Positions](https://thetalentpartners.net/open-positions/)
+- [Candidates](https://thetalentpartners.net/candidates/)
+- [Employers](https://thetalentpartners.net/candidates/)
+- [Employers](https://thetalentpartners.net/employers/)
+- [Blog](https://thetalentpartners.net/blog/)
+
+# Blog
+
+## [The Hidden Cost of a Slow Hire in Telecom](https://thetalentpartners.net/the-hidden-cost-of-a-slow-hire-in-telecom/)
+
+The telecom industry is in the middle of a massive buildout wave—driven by fiber expansion, BEAD funding, and rural broadband initiatives. In this environment, a slow hire isn't just an HR problem. It's a project risk.
+
+## [OSP Designer vs. OSP Engineer: What's the Difference?](https://thetalentpartners.net/osp-designer-vs-osp-engineer-whats-the-difference/)
+
+If you're hiring in the telecom space, you've probably come across both "OSP Designer" and "OSP Engineer" as job titles. They're often used interchangeably—but they're not the same.
+
+## [The State of Telecom Hiring in 2025: What Engineering Firms and ISPs Need to Know](https://thetalentpartners.net/the-state-of-telecom-hiring-in-2025-what-engineering-firms-and-iqs-need-to-know/](https://thetalentpartners.net/the-state-of-telecom-hiring-in-2025-what-engineering-firms-and-iqs-need-to-know/)
+
+## [BEAD is Coming: Is Your Team Ready?](https://thetalentpartners.net/bead-is-coming-is-your-team-ready/)
+
+The BEAD Program—Broadband Equity, Access, and Deployment—is one of the most significant funding initiatives for broadband infrastructure in U.S. history. With $42.45 billion on the line and rollout underway...
+
+</tool_call>
+<tool_response>
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://thetalentpartners.net/the-hidden-cost-of-a-slow-hire-in-telecom/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+# The Hidden Cost of a Slow Hire in Telecom – TalentPartners
+
+[Skip to content](#content)
+
+# The Hidden Cost of a Slow Hire in Telecom
+
+The telecom industry is in the middle of a massive buildout wave—driven by fiber expansion, BEAD funding, and rural broadband initiatives. In this environment, a slow hire isn't just an HR problem. It's a project risk.
+
+## Why Hiring Speed Matters More in Telecom Than Almost Any Other Industry
+
+**Projects stall without people.**
+Fiber deployment requires a coordinated sequence of steps: feasibility, design, permitting, make-ready, and construction. Each of those steps requires specific expertise—OSP engineers, GIS analysts, designers, project managers, and construction managers. If any key role goes unfilled, the project timeline slips.
+
+**The labor market is tight.**
+Demand for telecom talent is significantly outpacing supply. BEAD alone is expected to create tens of thousands of new jobs. But experienced OSP engineers, fiber designers, and GIS analysts don't appear overnight. Many have 10-15 years of experience that simply can't be fast-tracked.
+
+**The cost compounds quickly.**
+A 30-day delay in hiring an OSP Engineer could mean:
+- A delayed permit submission, setting the project back weeks or months
+- A missed construction window
+- Liquidated damages if you're under contract
+
+**Recruitment timelines are getting longer.**
+Even in a strong candidate market, specialized telecom roles take 30-60 days to fill on average. Without an active pipeline, you're already behind.
+
+## What to Do About It
+
+**Build your pipeline before you need it.** Don't wait until a project is awarded to start recruiting. The best candidates are usually already employed and need time to transition.
+
+**Partner with specialists.** Generic staffing firms don't understand what an "OSP Designer proficient in Katapult and Biarri" means. We do.
+
+**Move fast when you find the right candidate.** Extended interview processes lose top candidates to competitors.
+
+## The Bottom Line
+
+In telecom, time is money. A slow hire creates a ripple effect that hits your project schedule, your client relationships, and your bottom line. Speed and quality aren't mutually exclusive—but they require a partner who understands both.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://thetalentpartners.net/bead-is-coming-is-your-team-ready/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+# BEAD is Coming: Is Your Team Ready? – TalentPartners
+
+[Skip to content](#content)
+
+# BEAD is Coming: Is Your Team Ready?
+
+The BEAD Program—Broadband Equity, Access, and Deployment—is one of the most significant funding initiatives for broadband infrastructure in U.S. history. With $42.45 billion on the line and rollout underway, now is the time for ISPs, engineering firms, and construction contractors to prepare their teams.
+
+## What BEAD Means for Hiring
+
+**More projects, same labor pool.**
+BEAD will fund thousands of broadband projects across every state. But the pipeline of experienced telecom professionals hasn't grown at the same pace. That means competition for OSP engineers, fiber designers, GIS analysts, and project managers will intensify significantly.
+
+**Roles in highest demand:**
+- OSP Engineers and Designers
+- GIS Analysts
+- Fiber Technicians
+- Network Design Engineers
+- Program Managers
+- Construction Managers
+
+**The challenge:**
+Many ISPs and engineering firms are understaffed heading into BEAD. They've been trying to grow, but finding qualified candidates has been difficult. The firms that start hiring now—before contracts are awarded—will be better positioned to execute quickly.
+
+## What TalentPartners Is Doing About It
+
+We're actively building a pipeline of qualified telecom professionals across every key discipline. Our goal is to have candidates ready to go when our clients need them.
+
+**Our focus areas for BEAD hiring:**
+- Rural broadband engineering
+- Fiber optic network design
+- OSP/ISP engineering
+- GIS and network mapping
+- Construction and project management
+
+## What You Should Be Doing
+
+1. **Audit your team.** Where are your gaps? What roles will you need to execute on a BEAD-funded project?
+2. **Start recruiting now.** Don't wait for contracts. Start building your pipeline.
+3. **Partner with specialists.** You need a recruiting partner who understands the technical requirements of BEAD projects—not just a general staffing firm.
+4. **Plan for scale.** BEAD projects are large and long. You may need to staff up significantly over the next 2-3 years.
+
+## The Bottom Line
+
+BEAD is the biggest infrastructure investment in broadband history. Winning a BEAD contract is one thing. Executing on it is another. The firms that build their teams now will be the ones that deliver on time and on budget.
+
+If you're an ISP, engineering firm, or construction company preparing for BEAD, let's talk.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners telecom recruiting \"OSP\" clients OR partnerships OR \"we place\" OR \"we work with\"", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'TalentPartners telecom recruiting "OSP" clients OR partnerships OR "we place" OR "we work with"':
+- **TalentPartners – TalentPartners**
+  URL: https://thetalentpartners.net/
+  Snippet: TalentPartners is where Talent Meets Opportunity. Connecting exceptional professionals with leading companies in the telecom sector.
+
+- **TalentPartners on LinkedIn**
+  URL: https://www.linkedin.com/company/thetalentpartners
+  Snippet: TalentPartners is a specialized recruitment firm focused exclusively on the telecom industry. Connecting exceptional professionals with leading companies in the ...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "telecom staffing recruiting firm \"OSP designer\" OR \"fiber design\" \"AutoCAD\" OR \"Katapult\" OR \"Biarri\" permitting drawings 2025 2026", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'telecom staffing recruiting firm "OSP designer" OR "fiber design" "AutoCAD" OR "Katapult" OR "Biarri" permitting drawings 2025 2026':
+- **OSP Designer Job in Remote at TalentPartners**
+  URL: https://www.builtinboston.com/job/osp-designer/4697398
+  Snippet: Create fiber optic network designs using specialized design software (e.g., AutoCAD, ArcGIS, QGIS, MicroStation, Katapult, Biarri, Render Networks). Develop ...
+
+- **OSP Designer Job in Remote at TalentPartners**
+  URL: https://www.builtinboston.com/job/osp-designer/4697398
+  Snippet: Create fiber optic network designs using specialized design software (e.tml., AutoCAD, ArcGIS, QGIS, MicroStation, Katapult, Biarri, Render Networks). Develop ...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:linkedin.com \"TalentPartners\" telecom recruiting Boynton Beach", "num_results": 10}}
+</tool_call>
+<tool_response>
+Results for 'site:linkedin.com "TalentPartners" telecom recruiting Boynton Beach':
+- **Jon Millet | LinkedIn**
+  URL: https://www.linkedin.com/in/jon-millet
+  Snippet: Jon Millet is a Managing Partner at TalentPartners. The staffing and recruiting industry.
+
+- **Brett Sarubbi | LinkedIn**
+  URL: https://www.linkedin.com/in/brett-sarubbi
+  Snippet: Brett Sarubbi is a Managing Partner at TalentPartners. The staffing and recruiting firm industry.
+
+- **TalentPartners | LinkedIn**
+  URL: https://www.linkedin.com/company/thetalentpartners
+  Snippet: TalentPartners is a specialized recruitment firm focused exclusively on the telecom sector. Connecting exceptional professionals with leading companies in the ...
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"TalentPartners\" OR \"thetalentpartners\" Inorsa OR \"fiber design software\" OR \"GIS to CAD\" OR \"construction drawings automation\"", "num_results": 10}}
+</tool_call>
+<tool_response>
+No results found for '"TalentPartners" OR "thetalentpartners" Inorsa OR "fiber design software" OR "GIS to CAD" OR "construction drawings automation"'.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "telecom staffing recruiting firm fiber \"Inorsa\" OR \"AirWorks\" OR \"IQGeo\" tool vendor partnership", "num_results": 10}}
+</tool_call>
+<tool_response>
+No results found for 'telecom staffners recruiting firm fiber "Inorsa" OR "AirWorks" OR "IQGeo" tool vendor partnership'.
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://thetalentpartners.net/the-state-of-telecom-hiring-in-2025-what-engineering-firms-and-iqs-need-to-know/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+# The State of Telecom Hiring in 2025: What Engineering Firms and ISPs Need to Know – TalentPartners
+
+[Skip to content](#content)
+
+# The State of Telecom Hiring in 2025: What Engineering Firms and ISPs Need to Details
+
+# The State of Telecom Hiring in 2025: What Engineering Firms and ISPs Need to Know
+
+The telecom industry is hiring—and it's hiring hard. Driven by BEAD funding, private fiber investment, and the continued rollout of broadband infrastructure, demand for experienced telecom professionals has never been higher.
+
+**The Numbers Tell the Story**
+
+The labor gap in telecom is real and growing. By some estimates, the industry will need tens of thousands of new workers over the next five years to support buildout goals. Roles like OSP engineers, fiber designers, GIS analysts, and construction managers are in especially short supply.
+
+According to a recent industry report, the demand for OSP engineers alone is expected to outpace supply by a ratio of 3:1 over the next several years. That's not a talent pool problem—it's a pipeline problem.
+
+**What This Means for Engineering Firms**
+
+Engineering firms are caught in a tough spot. They're winning more contracts than ever—thanks in part to BEAD and other broadband initiatives—but they're struggling to staff up fast enough to execute. The result: delayed projects, overstretched teams, and an increasingly competitive market for experienced talent.
+
+**What This Means for ISPs**
+
+ISPs face a similar challenge. Many are planning major expansions—funded by BEAD and private capital—but don't have the in-house engineering capacity to design and build their own networks. They're relying more heavily on third-party engineering firms and contractors—which only adds to the demand pressure.
+
+**Key Roles in Demand**
+
+- OSP Engineers and Designers
+- GIS Analysts
+- Fiber Design Engineers
+- Project Managers
+- Construction Managers
+- Network Operations Engineers
+
+**The Technology Factor**
+
+One emerging challenge: the rapid adoption of new design tools and platforms. Candidates who are proficient in tools like Katapult, Biarri, Render Networks, ArcGIS, and AutoCAD are increasingly in demand—but the pool of candidates with these skills is limited. As the industry adopts new technology, the skills gap widens.
+
+**Our Take**
+
+The firms that will win in this environment are the ones that move fast, plan ahead, and build relationships with recruiting partners who actually understand the industry. Generic staffing firms can't differentiate between a fiber splice technician and a network design engineer. We can.
+
+**If you're an engineering firm or ISP navigating this talent crunch, let's talk.**
+
+</tool_response>
+
+I now have a comprehensive picture of TalentPartners. Let me do one final check on their LinkedIn company presence and any tool vendor relationships.
+<tool_call>
+{"name": "search", "arguments": {"query": "TalentPartners telecom \"vendor\" OR \"partner\" OR \"software\" OR \"tool\" fiber recruiting firm 2025", "num_results": 10}}
+</tool_call>
+<tool_response>
+No results found for 'TalentPartners telecom "vendor" OR "partner" OR "software" OR "tool" fiber recruiting firm 2025'.
+</tool_response>
+
+<tool_call>

@@ -40,6 +40,7 @@ async function callExternalModel(name: string, prompt: string): Promise<string> 
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
     });
+    if (!res.ok) throw new Error(`gemini returned ${res.status}`);
     const data = await res.json();
     return data.candidates?.[0]?.content?.parts?.[0]?.text || '';
   }
@@ -52,6 +53,7 @@ async function callExternalModel(name: string, prompt: string): Promise<string> 
       headers: { 'Authorization': `Bearer ${key}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ model: 'gpt-4o', messages: [{ role: 'user', content: prompt }], max_tokens: 2000 }),
     });
+    if (!res.ok) throw new Error(`gpt-5 returned ${res.status}`);
     const data = await res.json();
     return data.choices?.[0]?.message?.content || '';
   }
@@ -64,6 +66,7 @@ async function callExternalModel(name: string, prompt: string): Promise<string> 
       headers: { 'Authorization': `Bearer ${key}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ model: 'grok-3', messages: [{ role: 'user', content: prompt }], max_tokens: 2000 }),
     });
+    if (!res.ok) throw new Error(`grok returned ${res.status}`);
     const data = await res.json();
     return data.choices?.[0]?.message?.content || '';
   }
@@ -76,6 +79,7 @@ async function callExternalModel(name: string, prompt: string): Promise<string> 
       headers: { 'Authorization': `Bearer ${key}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ model: 'deepseek-chat', messages: [{ role: 'user', content: prompt }], max_tokens: 2000 }),
     });
+    if (!res.ok) throw new Error(`deepseek returned ${res.status}`);
     const data = await res.json();
     return data.choices?.[0]?.message?.content || '';
   }
@@ -162,43 +166,51 @@ export async function crossModelJudge(
     subject, body, ps, prospectName, company, title, touchNumber, researchSummary
   );
 
+  const MIN_JUDGES = 2;
   const activeModelNames = models || JUDGE_MODEL_NAMES;
 
-  const verdicts: CrossModelVerdict[] = [];
+  for (const m of activeModelNames) console.log(`  │  ⏳ Cross-model judge: ${m}...`);
 
-  for (const modelName of activeModelNames) {
-    console.log(`  │  ⏳ Cross-model judge: ${modelName}...`);
-    try {
+  const results = await Promise.allSettled(
+    activeModelNames.map(async (modelName) => {
       const raw = await callExternalModel(modelName, prompt);
-
       const parsed = parseJudgeResponse(raw);
-      verdicts.push({
+      return {
         model: modelName,
         scores: parsed.scores || { research_depth: 0, vp_connection: 0, tone: 0, conciseness: 0 },
         recommendation: parsed.recommendation || 'hold',
         mustFix: parsed.mustFix || [],
         strengths: parsed.strengths || [],
         raw,
-      });
-      console.log(`  │  ✓ ${model.name}: ${parsed.recommendation || 'parse-error'}`);
-    } catch (err: any) {
-      console.log(`  │  ⚠ ${model.name} failed: ${err.message?.slice(0, 80)}`);
-      verdicts.push({
-        model: modelName,
-        scores: { research_depth: 0, vp_connection: 0, tone: 0, conciseness: 0 },
-        recommendation: 'hold',
-        mustFix: [`Judge unavailable: ${err.message?.slice(0, 80)}`],
-        strengths: [],
-        raw: '',
-      });
+      } as CrossModelVerdict;
+    }),
+  );
+
+  const verdicts: CrossModelVerdict[] = [];
+  const failed: string[] = [];
+  for (let k = 0; k < results.length; k++) {
+    const r = results[k];
+    const modelName = activeModelNames[k];
+    if (r.status === 'fulfilled') {
+      verdicts.push(r.value);
+      console.log(`  │  ✓ ${modelName}: ${r.value.recommendation}`);
+    } else {
+      failed.push(modelName);
+      console.log(`  │  ⚠ ${modelName} failed: ${(r.reason as any)?.message?.slice(0, 80) || 'unknown'}`);
     }
   }
 
-  // Consensus: majority vote, tie goes to hold
+  if (verdicts.length < MIN_JUDGES) {
+    console.log(`  │  ⚠ Only ${verdicts.length} judge(s) responded (min ${MIN_JUDGES}). Defaulting to hold.`);
+  }
+
+  // Consensus: majority of SUCCESSFUL judges only (failed judges don't vote)
   const votes = verdicts.map(v => v.recommendation);
   const sendCount = votes.filter(v => v === 'send').length;
   const rejectCount = votes.filter(v => v === 'reject').length;
+  const quorum = verdicts.length >= MIN_JUDGES;
   const consensus: 'send' | 'hold' | 'reject' =
+    !quorum ? 'hold' :
     rejectCount > votes.length / 2 ? 'reject' :
     sendCount > votes.length / 2 ? 'send' : 'hold';
 

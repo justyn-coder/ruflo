@@ -1,10 +1,42 @@
-Output written to `fc2026-054-ae-proxy.json`.
-
-**Key AE Proxy findings for Vince Calkins / Fybercom:**
-
-- **Not a technical buyer.** Finance degree from BYU-Idaho. Pitch ROI and federal risk, not CAD specs.
-- **Zero design staff under the CTO.** His 6-person team is NOC/IT/infra — no OSP designers, no GIS, no CAD. The design capacity gap for a 12,000-location build is structural, not a workflow inefficiency.
-- **Buying committee is three people:** Calkins (tech/tool decision) + Steve Smith (workflow champion, Sr. Director of OSP) + Stowell/CEO (budget). Both Calkins and Smith attended Fiber Connect together — joint eval already started.
-- **Federal clock running.** NIST cleared Idaho January 2026. Construction starts this season. 4-year deployment deadline. No OSP design hires posted. They are staffing crews for a build they haven't designed yet.
-- **Top objection to pre-handle:** "We outsource design to an A&E firm." Unknown if that relationship exists yet — but if it does, Inorsa's entry point is as the validation/conflict-check layer that reduces that firm's permit kickbacks, not a replacement.
-- **PE board optics:** Novacap is watching deployment velocity. Calkins bringing a solution that de-risks the federal timeline is a career-positive move internally.
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Vince Calkins holds the title of CTO at Fybercom, placing him in a technical leadership role. At a company of Fybercom's likely size (regional Idaho-based fiber ISP), CTO typically implies both technical direction AND significant influence over tooling/vendor decisions, though budget sign-off may formally sit with a CEO or CFO. He is likely a strong recommender and possibly the decision-maker for engineering software. Source: AE booth notes + title inference.",
+    "Steve Smith (Senior Director of OSP) also attended the show — this is a critical multi-threading signal. OSP Directors are typically the daily users of design-to-construction workflows. If Inorsa's workflow touches GIS-to-CAD conversion and permit drawing generation, Smith is likely the operational buyer or champion, while Calkins is the technical approver. Both contacts should be sequenced. Source: Booth scan list in prospect context.",
+    "AE booth note flags 'a lot of short runs' and 'don't do a lot of CAD' — this is the primary fit risk. Fybercom's deployment model may lean toward aerial/simple plant where informal design processes (sketch-to-permit, or GIS-only) are the norm. If they're not generating formal CAD deliverables today, Inorsa's value prop around CAD-ready construction drawings may not land unless reframed around permit drawings and QC validation rather than CAD output volume. Source: AE booth notes 05/19/2026.",
+    "Fybercom is based in Idaho Falls, ID — Idaho is a BEAD-participating state. Idaho received approximately $584M in BEAD funding. While exact Fybercom BEAD application status was not found, any ISP in Idaho with active fiber deployment is likely positioning for BEAD subgrant or prime contracts. BEAD operationalized April 30, 2026; Idaho's ISP contract finalization window runs through ~October 2026. If Fybercom wins BEAD volume, their 'short runs' model could shift rapidly to higher-volume, permit-intensive builds. Source: Industry baseline + NTIA BEAD program public data.",
+    "Fybercom has prior Brain/research entity presence ('firm Fybercom has') but specific details on revenue, headcount, or current toolstack were not surfaced from the knowledge digest. No specific LinkedIn profile data, trade press quotes, or conference speaker history for Vince Calkins was found in available sources. Source: Brain Knowledge Digest (entity listed, no detail retrieved).",
+    "No direct quote from Vince Calkins in trade press, podcast, or conference panel was found. No LinkedIn URL or career history detail was surfaced. This limits personalization to title-and-company-based inference rather than voice-of-prospect evidence. Source: Search result gaps.",
+    "The labor shortage baseline (3:1 job-to-candidate ratio for fiber designers) is directly relevant to a CTO at a regional ISP. Even if Fybercom does short runs today, if they are growing or pursuing BEAD, they face the same designer capacity ceiling as larger operators. Inorsa's pitch around reducing designer hours per permit set (not just total drawing volume) could resonate even at lower volume. Source: Industry baseline.",
+    "Permitting workflow pain is the highest-signal angle per Fiber Connect 2026 feedback. Even 'short run' builds in Idaho require ROW permits, utility crossing permits, and municipal encroachment permits. Each kickback costs 3-6 weeks. A CTO evaluating tools will respond to cycle time and rework reduction framing more than drawing throughput framing. Source: Inorsa client value prop + ShowRev Industry Intelligence KB."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No LinkedIn profile found for Vince Calkins — career history, tenure at Fybercom, prior companies, and professional interests are unknown.",
+    "No trade press quotes, podcast appearances, or conference speaker credits found for Vince Calkins.",
+    "Fybercom company profile details not confirmed: employee count, annual revenue, current toolstack (GIS platform, any existing CAD/design tools), and number of active projects are all unknown.",
+    "Fybercom's BEAD application status in Idaho is not confirmed — unclear if they are pursuing BEAD at all or operating purely as a private/commercial ISP.",
+    "Steve Smith's LinkedIn or contact details beyond name/title are not available from current data — no career history or direct contact info for follow-up threading.",
+    "Whether Fybercom has any existing design automation or GIS-to-permit workflow tools is unknown — the 'don't do a lot of CAD' note suggests manual or informal processes but this is not confirmed.",
+    "Formal budget authority structure at Fybercom is unknown — whether Calkins controls capex/opex for tooling or routes to a CEO/CFO is not confirmed.",
+    "No information found on Fybercom's current permitting pain, average permit cycle times, or recent project footprint."
+  ],
+  "challengesToOtherFindings": [
+    "The AE note 'may not be a good fit' based on short runs and low CAD usage should not be treated as a disqualifier at this stage. The fit concern is valid for high-volume CAD throughput use cases, but Inorsa's permitting workflow and QC flagging value prop does not require high CAD volume — it requires any build that touches permit submissions. Short-run aerial builds still generate permits. The AE's instinct was reasonable given the drawing-generation framing, but Fiber Connect 2026 feedback explicitly says to lead with permitting pain, not drawing capacity. The angle should shift, not the prospect.",
+    "Batch Tier C (Ungraded) may underweight this prospect. With a CTO + Senior Director of OSP both attending, Fybercom sent two relevant decision-influencers to the show — a signal of genuine interest, not passive attendance. The ungraded status likely reflects missing firmographic data, not low intent. Recommend treating as Tier B pending a single qualifying call.",
+    "The Brain Knowledge Digest lists Fybercom as a known entity but surfaces no detail — this does not mean Fybercom is small or irrelevant. Regional Idaho ISPs have grown significantly on the back of E-ACAM and RDOF funding pre-BEAD. Absence of data in the digest is a research gap, not a negative signal about company size or activity."
+  ],
+  "topInsight": "Vince Calkins came to the show with his Senior Director of OSP — that pairing (CTO + OSP lead) is exactly the buyer unit Inorsa needs for a technical eval. The AE's fit concern about 'short runs / low CAD' is a framing problem, not a disqualification: the email should open on permit cycle time and rework cost (where even short-run rural builds bleed weeks), not on drawing volume or CAD throughput. Lead with the permitting workflow angle, invite both Calkins and Steve Smith to a discovery call, and validate BEAD exposure as a potential volume inflection point before writing off the account.",
+  "sourcesUsed": [
+    "AE booth notes (05/19/2026, provided in prospect context)",
+    "Booth scan list — Steve Smith contact (provided in prospect context)",
+    "ShowRev Industry Intelligence KB — BEAD timeline, labor shortage, permitting constraint baseline",
+    "Inorsa client value prop (provided in system prompt)",
+    "Fiber Connect 2026 feedback note (provided in system prompt)",
+    "NTIA BEAD program public data — Idaho allocation (~$584M) inferred from public NTIA records",
+    "Brain Knowledge Digest — Fybercom entity confirmed present, no detail retrieved",
+    "LinkedIn / trade press search for Vince Calkins — not found (gap noted)"
+  ]
+}
+```

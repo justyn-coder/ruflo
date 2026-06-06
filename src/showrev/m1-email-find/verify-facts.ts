@@ -65,10 +65,17 @@ export function detectClaims(text: string): { text: string; type: ClaimType; pos
   }
 
   const seen = new Set<string>();
+  const typeCounts: Record<string, number> = {};
+  const MAX_PER_TYPE = 3;
+  const SKIP_TYPES: ClaimType[] = ['tool_used', 'named_client'];
+
   return claims.filter(c => {
+    if (SKIP_TYPES.includes(c.type)) return false;
     const key = `${c.type}:${c.text.slice(0, 30)}`;
     if (seen.has(key)) return false;
     seen.add(key);
+    typeCounts[c.type] = (typeCounts[c.type] || 0) + 1;
+    if (typeCounts[c.type] > MAX_PER_TYPE) return false;
     return true;
   });
 }

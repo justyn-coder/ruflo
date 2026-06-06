@@ -1,0 +1,46 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Mountain, Ltd. is a telecommunications company based in Tampa/Orlando, FL. The company appears to provide wireless and fiber infrastructure services, consistent with the contact's title 'Director of Wireless.' No dedicated company website with detailed service descriptions was confirmed in research; presence is thin online. [Source: LinkedIn company page inference, Florida business registry search]",
+    "Chris Lee, Director of Wireless at Mountain, Ltd. — LinkedIn profile not confirmed with high confidence. The title 'Director of Wireless' places him in a technical operations/engineering leadership role, not a pure fiber design role. This is a flag: Inorsa is fiber-only (no tower/cellular), and 'Director of Wireless' skews toward cellular/wireless infrastructure rather than fiber design workflows. His ICP status is 'hold' for this reason — relevant title but ambiguous fit. [Source: Lead record, Inorsa ICP criteria]",
+    "No speaking engagements, trade press quotes, podcast appearances, or panel citations found for 'Chris Lee' + 'Mountain Ltd' across Fiber Connect, BBCMag, Light Reading, or ETI Software properties. The contact has a low public footprint, which limits direct quote sourcing for personalized outreach. [Source: Search of site:lightreading.com, site:bbcmag.com, site:etisoftware.com — not found]",
+    "Mountain, Ltd. is Orlando-FL-based, placing it in Florida's BEAD environment. Florida received $683M in BEAD allocation. Florida's BEAD program was operational as of April 30, 2026, with ISP contracts expected to finalize within 6 months and construction projected to begin Q3 2026. If Mountain, Ltd. is a BEAD subgrantee or construction partner, there is a real external deadline driving design throughput pressure. [Source: Industry baseline KB, BEAD funding data from Brain]",
+    "The phone number (813) area code is Tampa, FL — consistent with a Tampa/Orlando metro operator or contractor. This is a dual-market company (Tampa + Orlando), which may indicate regional fiber build activity or hybrid wireless+fiber service territory. [Source: Lead record phone area code]",
+    "No other contacts from Mountain, Ltd. were found in the booth-scan list for multi-threading. Chris Lee appears to be the sole representative from this company at the event. [Source: Batch contact list — single entry for Mountain, Ltd.]",
+    "Title analysis: 'Director of Wireless' in a telecom context most commonly owns wireless network planning, small cell, or WISP operations — not fiber OSP design. However, in smaller regional operators and rural CLECs, the same director often owns both wireless and fiber infrastructure. If Mountain, Ltd. is a rural or hybrid operator, Chris Lee may influence or own fiber design workflows despite the wireless title. This hypothesis requires confirmation. [Source: Persona inference from title + company size signal]",
+    "No confirmed BEAD award to Mountain, Ltd. specifically was found in the funding records. The $683M Florida BEAD allocation exists but no tranche was attributed to this company in available data. [Source: Brain funding digest — not matched to Mountain, Ltd.]",
+    "Budget authority inference: Director-level at a small-to-mid regional operator typically has departmental budget influence (tools, software subscriptions) but may require VP/CTO sign-off for platform purchases above ~$50K. If Mountain, Ltd. is a smaller firm (<100 employees), the Director may effectively be the decision-maker. Org size is unconfirmed. [Source: Persona bucket inference — Design/Document + Build persona hybrid]",
+    "Likely objections from this persona: (1) 'We handle wireless, not fiber design' — if his scope is truly cellular/WISP, Inorsa is a misfit; (2) 'We use a third-party A&E firm for fiber design' — outsourcing is common; (3) 'We don't have active fiber build volume yet' — pre-BEAD award status unknown; (4) 'Not my budget' — if fiber design sits under a different director or VP of Engineering. [Source: Persona analysis + Inorsa product fit criteria]"
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Cannot confirm Chris Lee's LinkedIn profile with certainty — no direct URL found, no career history, no tenure at Mountain, Ltd.",
+    "Mountain, Ltd. company size, revenue, employee count, and org structure are unconfirmed. No Crunchbase, Pitchbook, or press coverage found.",
+    "Cannot confirm whether Mountain, Ltd. has an active fiber build program or is primarily a wireless/WISP operator — this is the critical fit question.",
+    "No BEAD award or funding tranche confirmed for Mountain, Ltd. specifically.",
+    "No other executives at Mountain, Ltd. identified (no VP Engineering, no CFO, no CTO) — multi-threading not possible without additional research.",
+    "No trade press quotes, panel appearances, or public statements from Chris Lee found anywhere.",
+    "Cannot confirm whether 'Director of Wireless' at Mountain, Ltd. includes fiber design scope or is strictly RF/wireless.",
+    "Florida BEAD subgrantee list not cross-referenced to Mountain, Ltd. — gap in confirming whether they are a BEAD recipient or construction partner."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP 'hold' designation is the right call and should not be upgraded without confirming fiber build activity. The title 'Director of Wireless' is a genuine fit risk for Inorsa's fiber-only product. Do not assume fiber scope simply because the company is in telecom.",
+    "The Florida BEAD $683M allocation is real, but attributing urgency to Chris Lee specifically based on state-level funding without company-level confirmation is speculative. BEAD urgency only applies if Mountain, Ltd. has an active BEAD award or is a subcontractor to an awarded ISP.",
+    "Batch tier D (Ungraded) is appropriate given evidence weakness. Upgrading this prospect to active outreach without a qualification call risks AE time on a low-fit lead."
+  ],
+  "topInsight": "The critical unknown is whether Mountain, Ltd. has any active fiber build program — without that, Inorsa has no product fit regardless of BEAD tailwinds or Florida market timing. The email or call must open with a qualifying question framed as curiosity: 'We saw Mountain, Ltd. at Fiber Connect — are you running fiber builds alongside your wireless network, or is your team primarily on the wireless side?' This surfaces fit or disqualifies quickly. Do not lead with Inorsa capabilities until fiber scope is confirmed. If fiber scope is confirmed, the angle is Florida BEAD construction timeline pressure (Q3 2026 start, 4-year clock) and the permitting cycle-time proof point (3-4 weeks to 2 days).",
+  "sourcesUsed": [
+    "Lead record (Mountain, Ltd. / Chris Lee — internal batch file)",
+    "Inorsa ICP criteria and product scope (fiber-only, no tower/cellular)",
+    "ShowRev Industry Intelligence KB — BEAD operational April 30 2026, Florida $683M allocation",
+    "Brain Knowledge Digest — funding programs list, company entities",
+    "Persona bucket inference — Director of Wireless title analysis",
+    "Area code 813 — Tampa, FL geographic inference",
+    "site:lightreading.com — search for Chris Lee Mountain Ltd (not found)",
+    "site:bbcmag.com — search for Chris Lee Mountain Ltd (not found)",
+    "site:etisoftware.com — search for Chris Lee Mountain Ltd (not found)",
+    "LinkedIn — Chris Lee Mountain Ltd search (not confirmed)"
+  ]
+}
+```

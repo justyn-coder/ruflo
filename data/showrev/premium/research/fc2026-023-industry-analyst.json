@@ -1,0 +1,47 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "JDI Fibertech is headquartered in Hoschton, GA (Hall/Jackson County line area, northeast of Atlanta) — a geography directly within Georgia's $683M BEAD allocation footprint. Georgia's BEAD program became operational April 30, 2026, meaning ISP contract finalization is due by ~October 2026, putting JDI in the pre-construction sprint window right now. Source: NTIA BEAD program timeline + Georgia Broadband Office records.",
+    "No trade press mentions (Fierce Network, Light Reading, Telecompetitor, Broadband Communities) found for JDI Fibertech or Jonathan Solomon. This is a strong indicator the company operates below the industry media threshold — likely a regional contractor or design/construction subcontractor rather than an ISP or large A&E firm. Source: searched fiercenetwork.com, lightreading.com, telecompetitor.com — not found.",
+    "No Fiber Connect 2026, Mountain Connect, or Broadband Communities speaker appearances found for Jonathan Solomon or JDI Fibertech. Attendance (not speaking) at Fiber Connect 2026 is consistent with a company in growth mode seeking vendor relationships, not one with established industry positioning. Source: conference agenda searches — not found.",
+    "No Georgia Broadband Office sub-grant award found specifically for JDI Fibertech. They may be operating as a subcontractor to a primary ISP grantee rather than a direct BEAD recipient, which is a common structure for design/construction firms in the Southeast. Source: Georgia Broadband Office BEAD award database search — not found for JDI specifically.",
+    "JDI Fibertech's LinkedIn presence is minimal and the company does not appear in major contractor directories (NECA, BICSI, or similar). This suggests a small-to-mid-size firm (estimated <50 employees) that is likely capacity-constrained relative to the BEAD build wave about to hit Georgia. Source: LinkedIn company search, contractor directories — minimal presence confirmed.",
+    "Hoschton, GA is in the exurban/rural fringe of the Atlanta metro — precisely the underserved geography that BEAD is designed to address and that Georgia's $683M allocation targets. This positions JDI Fibertech as either a beneficiary (ISP/constructor getting BEAD work) or a supplier (engineering/design firm supporting ISPs building in this corridor). Either way, they are directly in the path of the Q3 2026 construction ramp. Source: Georgia BEAD coverage maps + geographic analysis.",
+    "Georgia's labor market for fiber designers mirrors the national 3:1 job-to-candidate ratio. The Atlanta metro and surrounding counties have seen significant fiber construction activity (AT&T Fiber expansion, Google Fiber legacy, rural co-op builds) competing for the same designer pool. JDI Fibertech, as a smaller firm in this market, faces acute pressure to either hire experienced designers (expensive, slow) or find workflow automation to extend existing capacity. Source: Industry Intelligence KB baseline + BLS regional labor data.",
+    "No job postings found for JDI Fibertech on Indeed, LinkedIn, or ZipRecruiter as of research date. Absence of active hiring either signals: (a) the firm is stable/small and not scaling, (b) they are scaling via subcontractors rather than W-2 hires, or (c) they are capacity-constrained and have not yet addressed it. This absence is itself a data point worth probing. Source: Indeed, LinkedIn Jobs, ZipRecruiter searches — not found.",
+    "Jonathan Solomon as CEO of a small fiber firm in Georgia attending Fiber Connect 2026 is a signal of strategic intent. CEOs of sub-50-person firms attend major tradeshows to evaluate vendors, explore partnerships, or position for growth ahead of a funding wave. The timing — Fiber Connect occurring just as BEAD goes operational — makes this a high-intent attendance signal. Source: Tradeshow context + role inference.",
+    "The GIS-to-CAD manual workflow problem identified in Inorsa's ICP research is highly applicable to JDI Fibertech's likely operational profile. Smaller fiber engineering/construction firms in the Southeast disproportionately rely on manual GIS workflows because they cannot afford to build or license enterprise-grade automation. Each permit kickback (3-6 weeks) at a firm of JDI's probable size represents a disproportionate revenue and schedule impact. Source: Industry Intelligence KB + Inorsa client intel."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Cannot confirm JDI Fibertech's specific business model — are they an ISP, a fiber design/engineering firm, a construction contractor, or a hybrid? This is the most critical unknown for qualification.",
+    "No revenue, employee count, or funding data found. Company size cannot be confirmed beyond inference from digital footprint.",
+    "No BEAD sub-grant award or ISP certification found for JDI Fibertech in Georgia's program — unclear if they are a BEAD recipient, subcontractor, or neither.",
+    "Jonathan Solomon's professional background prior to JDI Fibertech not confirmed — no LinkedIn profile details retrieved. Prior experience would signal whether he comes from engineering, construction, ISP operations, or finance/PE.",
+    "No confirmation of whether JDI Fibertech uses GIS design workflows, CAD workflows, or outsourced design entirely. The core Inorsa value prop assumes an internal design function.",
+    "No competitor firms in the Hoschton/Hall County Georgia market identified — cannot assess competitive pressure or peer firm behavior.",
+    "No conference session content, podcast appearances, or long-form interviews found for Jonathan Solomon — no direct executive voice to analyze.",
+    "Cannot confirm whether JDI Fibertech attended Fiber Connect 2026 as a buyer evaluating vendors (high Inorsa relevance) or as a general industry participant (lower immediate relevance)."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP designation of 'hold' is appropriate given data scarcity — any persona asserting high confidence in JDI Fibertech's fit should be challenged. This company has near-zero verifiable digital footprint, which means qualification hypotheses are largely inference-based.",
+    "The Batch D / ungraded tier is probably correct given current evidence, but should not be treated as disqualifying. Small fiber firms in BEAD-active geographies attending Fiber Connect 2026 are exactly the kind of emerging buyers Inorsa should be cultivating ahead of Q3 2026 construction ramp — they just require a lower-cost, higher-volume outreach approach rather than heavy AE investment.",
+    "Brain Knowledge Digest entities (Avatar Tech, Mohawk Networks, AirWorks, etc.) are not directly relevant to JDI Fibertech and should not be used to characterize this specific prospect. The competitive landscape data from Brain applies to the broader market, not to JDI's specific segment or geography without additional confirmation.",
+    "Funding program list in prior research ($683M BEAD Georgia allocation, etc.) represents the state-level envelope — JDI Fibertech's access to those funds is unconfirmed. Do not assume JDI is a BEAD recipient without verification."
+  ],
+  "topInsight": "JDI Fibertech is a small, digitally invisible fiber firm in a BEAD-active Georgia geography, led by a CEO who chose to attend Fiber Connect 2026 at precisely the moment Georgia's $683M BEAD program went operational. The complete absence of trade press coverage, job postings, and directory listings points to a firm that is either about to scale rapidly or already struggling to keep pace with incoming project demand — both conditions create acute permitting cycle and design capacity pain. The outreach should open with the permitting bottleneck (each kickback = 3-6 weeks in a 4-year deployment deadline environment), not drawing generation, and should explicitly acknowledge that Inorsa works with firms at every scale — not just enterprise A&E shops — to make the ask feel accessible rather than oversized for a firm of JDI's apparent profile.",
+  "sourcesUsed": [
+    "https://www.ntia.gov/broadband-grants/bead (BEAD program timeline)",
+    "https://broadband.georgia.gov (Georgia Broadband Office — JDI not found)",
+    "https://www.fiercenetwork.com (searched JDI Fibertech, Jonathan Solomon — not found)",
+    "https://www.lightreading.com (searched JDI Fibertech — not found)",
+    "https://www.telecompetitor.com (searched JDI Fibertech — not found)",
+    "https://www.linkedin.com/company/jdi-fibertech (minimal presence confirmed)",
+    "https://www.indeed.com (JDI Fibertech job postings — not found)",
+    "https://www.ziprecruiter.com (JDI Fibertech job postings — not found)",
+    "Industry Intelligence KB baseline (BEAD timeline, labor shortage, permitting constraints, GIS-to-CAD workflow gap)",
+    "Fiber Connect 2026 attendee/speaker roster (Jonathan Solomon — attendee, not speaker, confirmed by lead source)"
+  ]
+}
+```

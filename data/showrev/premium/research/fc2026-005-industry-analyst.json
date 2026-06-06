@@ -1,0 +1,40 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Render Networks is a construction management and field execution platform for fiber/broadband deployment — NOT a design or GIS-to-CAD firm. They focus on work order management, field crew coordination, and real-time progress tracking during active construction. Their platform connects project managers, contractors, and field crews. Source: rendernetworks.com product pages and LinkedIn company description.",
+    "Render Networks completed a merger with NetPMD Solutions (noted in Brain KB), which adds project management and document control capabilities. This creates near-term integration complexity but also signals they are trying to become a more comprehensive construction lifecycle platform — potentially moving upstream toward design handoff workflows. Source: Brain KB relationship node.",
+    "Anish Kelkar holds the title of Chief Revenue Officer, meaning he controls commercial strategy, partnerships, and revenue growth. He is not a technical buyer — he is a growth buyer. His attendance at a fiber tradeshow signals active pipeline development. Source: prospect context + LinkedIn inference.",
+    "Render Networks competes in the construction execution layer — adjacent to but downstream of Inorsa's design/permit drawing layer. Their platform ingests design outputs (GIS, LLD, as-builts) as inputs to field work orders. If those inputs are low-quality or arrive late from permitting delays, Render's platform performance degrades. This creates a shared pain point: permit kickbacks and rework in design directly delay Render's ability to mobilize field crews. Source: Render product architecture (rendernetworks.com) + Inorsa value proposition alignment.",
+    "BEAD operational as of April 30, 2026. State ISP contracts expected to finalize within 6 months (by ~Oct 2026). Construction starts Q3 2026 at earliest. This creates a wave of new project activations hitting Render's platform simultaneously — and those projects will need clean, permit-ready design packages upstream before Render's field coordination can begin. Source: Industry Intelligence KB baseline.",
+    "Render Networks is Australia-founded and US-expanding. Denver, CO is a US hub — Rocky Mountain/Western US market focus aligns with states like Colorado, Wyoming, Utah that have active BEAD programs. Colorado received $683M+ in BEAD allocation. Source: Brain KB funding data + Render corporate background.",
+    "Labor shortage at 3:1 job-to-candidate ratio for fiber designers means that projects flowing into Render's construction management platform will arrive with design errors or incomplete permit packages more frequently — because understaffed design teams are cutting corners. Every permit kickback (3-6 weeks per event) is a delay that shows up as a stalled work order in Render's dashboard. Source: Industry Intelligence KB.",
+    "Render Networks' integration with NetPMD Solutions suggests they are building toward end-to-end project lifecycle coverage. This may mean they are evaluating or will soon evaluate upstream integrations with design/permit tools — making Inorsa a potential integration partner or competitive threat depending on how the conversation is framed. Source: Brain KB merger note.",
+    "No evidence found of Render Networks being a direct fiber ISP, operator, or engineering services firm. They are a SaaS platform vendor serving those segments. This means Anish Kelkar as CRO is likely selling TO the same customers Inorsa sells to (ISPs, utilities, A&E firms) — positioning Render as a potential channel/integration partner rather than a direct prospect customer. This is a critical nuance that should shape outreach framing. Source: Render Networks product positioning (rendernetworks.com).",
+    "Render Networks has been mentioned in context with broadband construction management alongside competitors like UtiliSuite, BuilderGuru (now part of larger platforms), and manual PM tools. Their differentiation is real-time field visibility and as-built capture. No specific BEAD sub-grant awards found for Render Networks — they are a platform vendor, not a grant recipient. Source: general trade press search, no direct citation found."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No AE booth notes available — cannot confirm what pain Anish Kelkar expressed at the show or why he attended.",
+    "Could not confirm specific Render Networks revenue, employee count, or funding round details from public sources with high confidence.",
+    "No direct quote from Anish Kelkar or Render Networks leadership about permitting pain, design handoff quality, or BEAD readiness found in trade press search.",
+    "Render Networks' exact integration partners and API ecosystem not fully mapped — cannot confirm whether they already have a GIS-to-CAD or permitting tool partner that would compete with or complement Inorsa.",
+    "Could not verify whether Render Networks attended Fiber Connect 2026 as an exhibitor or only as an attendee — distinction matters for understanding their commercial posture.",
+    "No podcast appearances or long-form interviews with Render Networks executives found in the sources available to me."
+  ],
+  "challengesToOtherFindings": [
+    "The Brain KB lists Render Networks in the 'companies discovered' context but groups them with ISPs and operators (Mohawk, Ohio Gig, Fybercom, Hilliary). This framing is misleading — Render Networks is a SaaS construction management vendor, not an operator. Outreach that assumes they are a fiber builder will misfire. The ICP designation of 'hold' may reflect this ambiguity.",
+    "The 'Batch tier: D (Ungraded)' status likely reflects that no AE confirmed whether Render is a buyer or a partner prospect. I would argue this is a partnership/channel conversation first, not a direct sales conversation — Render's CRO would be interested in how Inorsa's output quality affects his platform's customer satisfaction, not in buying Inorsa for internal use.",
+    "Other personas may focus on BEAD funding as a direct growth driver for Render Networks. I would refine this: BEAD is an indirect tailwind for Render (more construction projects = more platform usage) but the upstream bottleneck — poor permit-ready design packages — is what creates the specific pain Inorsa can address. The BEAD angle is valid but should be framed as 'your customers' construction timelines are at risk from upstream design delays' not 'you are receiving BEAD money.'"
+  ],
+  "topInsight": "Render Networks is a construction execution SaaS platform, not a fiber operator or design firm — meaning Anish Kelkar as CRO is selling to the same ISP/operator customers Inorsa targets. The most valuable outreach frame is NOT 'buy Inorsa' but rather 'your platform's field execution performance is downstream of design quality — permit kickbacks stall your customers' work orders for 3-6 weeks each, and that shows up as churn risk for you.' This positions Inorsa as a strategic integration or co-sell partner that protects Render's NPS by fixing the upstream problem Render can see but cannot solve. The NetPMD merger signals Render is actively building out lifecycle coverage — Inorsa's permit-drawing and conflict-detection layer is a logical upstream addition to that vision.",
+  "sourcesUsed": [
+    "https://www.rendernetworks.com (product architecture and company positioning)",
+    "https://www.linkedin.com/company/render-networks (company description and employee count inference)",
+    "Brain Knowledge Digest — NetPMD merger relationship node",
+    "Brain Knowledge Digest — funding programs for BEAD state allocations (Colorado $683M+ context)",
+    "ShowRev Industry Intelligence KB — BEAD timeline, labor shortage, permitting baseline",
+    "Prospect context metadata (title, location, ICP status)"
+  ]
+}
+```

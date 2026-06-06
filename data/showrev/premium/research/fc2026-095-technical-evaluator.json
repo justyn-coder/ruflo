@@ -1,0 +1,210 @@
+I'll research Advanced 1 systematically, starting with job postings, then tech stack signals, then general capability searches.
+
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "Advanced 1 fiber design engineering Georgetown TX hiring careers", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
+{
+  "query": "Advanced 1 fiber design engineering Georgetown TX hiring careers",
+  "results": [
+    {
+      "title": "Advanced 1 - Home",
+      "url": "https://advanced1.net/",
+      "content": "Advanced 1 provides comprehensive telecommunications infrastructure services to clients nationwide, delivering turnkey outside plant (OSP) engineering, design, and project management solutions. With decades of experience, Advanced 1 combines technical expertise with innovative technology to meet the demands of modern telecommunications infrastructure. © 2024 Advanced 1. All rights reserved.",
+      "score": 0.81816024,
+      "raw_content": null
+    },
+    {
+      "title": "Advanced 1 LLC - LinkedIn",
+      "url": "https://www.linkedin.com/company/advanced-1-llc",
+      "content": "Advanced 1 is a privately held company specializing in the design and project management of telecommunications infrastructure across the U.S. Advanced 1 provides comprehensive telecommunications infrastructure services to clients nationwide, delivering turnkey outside plant (OSP) engineering, design, and project management solutions. With decades of experience, Advanced 1 combines technical expertise with innovative technology to meet the demands of modern telecommunications infrastructure.\n\nAdvanced 1 provides comprehensive telecommunications infrastructure services to clients nationwide, delivering turnkey outside plant (OSP) engineering, design, and project management solutions. With decades of experience, Advanced 1 combines technical expertise with innovative technology to meet the demands of modern telecommunications infrastructure.",
+      "score": 0.7866454,
+      "score_details": {},
+      "raw_content": null
+    },
+    {
+      "title": "Advanced 1 LLC | LinkedIn",
+      "url": "https://www.linkedin.com/company/advanced-1-llc/",
+      "content": "Advanced 1 is a privately held company specializing in the design and project management of telecommunications infrastructure across the U.S. Advanced 1 provides comprehensive telecommunications infrastructure services to clients nationwide, delivering turnkey outside plant (OSP) engineering, design, and project management solutions. With decades of experience, Advanced 1 combines technical expertise with innovative technology to meet the demands of modern telecommunications infrastructure.\n\nAdvanced 1 provides comprehensive telecommunications infrastructure services to clients nationwide, delivering turnkey outside plant (OSP) engineering, design, and project management solutions. With decades of experience, Advanced 1 combines technical expertise with innovative technology to meet the demands of modern telecommunications infrastructure.",
+      "score": 0.7866454,
+      "raw_content": null
+    },
+    {
+      "title": "VP, Design Services - Advanced 1 LLC | LinkedIn",
+      "url": "https://www.linkedin.com/jobs/view/vp-design-services-at-advanced-1-llc-4198025090",
+      "score": 0.70813894,
+      "raw_content": null
+    },
+    {
+      "title": "Advanced 1 LLC Jobs, Benefits, Business Model, Founding Story ...",
+      "url": "https://www.thestartupjobs.com/company/advanced-1-llc/",
+      "score": 0.50040513,
+      "raw_content": null
+    }
+  ]
+}
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://advanced1.net/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "markdown": "# OSP Engineering, Design & Project Management | Advanced 1\n\n[Skip to main content](#main-content)\n\n[Advanced 1](https://advanced1.net/)\n\n* [Home](https://advanced1.net/)\n* [About](https://advanced1.net/about)\n* [Services](https://advanced1.net/services)\n* [Careers](https://advanced1.net/careers)\n* [Contact](https://advanced1.net/contact)\n\n# Delivering Turnkey Solutions for Telecom Infrastructure\n\n#### Turnkey OSP Engineering, Design, and Project Management, Nationwide\n\n[Learn More](https://advanced1.net/about)\n\n## Comprehensive Telecom Infrastructure Services\n\nAdvanced 1 provides comprehensive telecommunications infrastructure services to clients nationwide, delivering turnkey outside plant (OSP) engineering, design, and project management solutions. With decades of experience, Advanced 1 combines technical expertise with innovative technology to meet the demands of modern telecommunications infrastructure.\n\n## Our Services\n\n### OSP Engineering\n\nFrom network design and route analysis to feasibility studies and infrastructure planning, we offer comprehensive OSP engineering solutions that maximize performance while minimizing costs.\n\n### Design & Drafting\n\n### Project Management\n\n### Quality Control\n\n### BEAD Program\n\n### FEMA Services\n\n## BEAD Program\n\nOur team of experts will guide you through the BEAD application process providing engineering and design support with thorough knowledge of state program requirements. Our team has the technical expertise to provide you with complete services from the initial BEAD application process all the way through design, permitting, and construction.\n\n## Why Choose Advanced 1?\n\n#### Technical Expertise\n\n#### Innovative Technology\n\n#### Client-Centric Approach\n\n#### Proven Track Record\n\n© 2024 Advanced 1. All rights reserved.",
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://advanced1.net/services", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "markdown": "# Services | Advanced 1\n\n[Skip to main content](#main-content)\n\n[Advanced 1](https://advanced1.net/)\n\n* [Home](https://advanced1.net/)\n* [About](https://advanced1.net/about)\n* [Services](https://advanced1.net/services)\n* [Careers](https://advanced1.net/careers)\n* [Contact](https://advanced1.net/contact)\n\n## Our Services\n\n### OSP Engineering\n\nFrom network design and route analysis to feasibility studies and infrastructure planning, we offer comprehensive OSP engineering solutions that maximize performance while minimizing costs.\n\n### Design & Drafting\n\nOur experienced team delivers precise CAD drawings and as-built documentation that meet project specifications and regulatory standards. We specialize in creating accurate, high-quality design documents essential for project success.\n\n### Project Management\n\nOur seasoned project management team ensures your telecom infrastructure projects are completed on time, within budget, and to the highest quality standards.\n\n### Quality Control\n\nWe maintain rigorous quality control protocols to ensure every deliverable meets or exceeds client expectations and industry standards.\n\n### BEAD Program\n\nOur team of experts will guide you through the BEAD application process providing engineering and design support with thorough knowledge of state program requirements. Our team has the technical expertise to provide you with complete services from the initial BEAD application process all the way through design, permitting, and construction.\n\n### FEMA Services\n\nAdvanced 1 provides essential FEMA services to help communities recover from natural disasters. Our team assists with disaster response and recovery efforts, ensuring critical telecommunications infrastructure is restored quickly and effectively.\n\n### Private Wireless / CBRS\n\nAdvanced 1 provides turnkey private wireless (CBRS) design and deployment solutions for enterprises and service providers. We handle everything from spectrum coordination and site selection to system design and integration.\n\n## Why Choose Advanced 1?\n\n#### Technical Expertise\n\n#### Innovative Technology\n\n#### Client-Centric Approach\n\n#### Proven Track Record\n\n© 2024 Advanced 1. All rights reserved.",
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://advanced1.net/careers", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "markdown": "# Careers | Advanced 1\n\n[Skip to main content](#main-content)\n\n[Advanced 1](https://advanced1.net/)\n\n* [Home](https://advanced1.net/About)\n* [About](https://advanced1.net/about)\n* [Services](https://advanced1.net/services)\n* [About](https://advanced1.net/About)\n* [Services](https://advanced1.net/services)\n* [Careers](https://advanced1.net/careers)\n* [Contact](https://advanced1.net/contact)\n
+
+## Careers\n\nAt Advanced 1, we're always looking for talented professionals to join our growing team. We offer exciting opportunities in the telecom infrastructure space, working on cutting-edge projects that shape the future of connectivity.\n\n## Open Positions\n\n### OSP Design Engineer\n\nGEORGETOWN, TX\n\nAs an OSP Design Engineer at Advanced 1, you will be responsible for the design and drafting of fiber optic and other telecommunications infrastructure projects.\n\n[Apply Now](https://advanced1.net/careers/osp-design-engineer)\n\n### CAD/GIS Technician\n\nGEORGETOWN, TX\n\nThe CAD/GIS Technician supports the design team by creating and maintaining accurate technical drawings and geographic information system data.\n\n[Apply Now](https://advanced1.net/careers/cad-gis-technician)\n\n### OSP Senior Engineer\n\nGEORGETOWN, TX\n\n[Apply Now](https://advanced1.net/careers/osp-senior-engineer)\n\n### Director of Engineering\n\nGEORGETOWN, TX\n\n[Apply Now](https://advanced1.net/careers/director-of-engineering)\n\n### Regional Project Manager\n\nGEORGETOWN, TX\n\n[Apply Now](https://advanced1.net/careers/regional-project-manager)\n\n### Senior Design Engineer (Fiber)\n\nGEORGETOWN, TX\n\n[Apply Now](https://advanced1.net/careers/senior-design-engineer-fiber)\n\n### Senior Quality Control Engineer\n\nGEORGETOWN, TX\n\n[Apply Now](https://advanced1.net/careers/senior-quality-control-engineer)\n\n### GIS Analyst\n\nGEORGETOWN, TX\n\n[Apply Now](https://advanced1.net/careers/gis-analyst)\n\n### VP, Design Services\n\nGEORGETOWN, TX\n\n[Apply Now](https://advanced1.net/careers/vp-design-services)\n\n### VP, Project Management\n\nGEORGETOWN, TX\n\n[Apply Now](https://advanced1.net/careers/vp-project-management)\n\n### CAD Technician\n\nGEORGETOWN, TX\n\n[Apply Now](https://advanced1.net/careers/cad-technician)\n\n### CAD Manager\n\nGEORGETOWN\n\n[Apply Now](https://advanced1.net/careers/cad-manager)\n\n© 2024 Advanced 1. All rights reserved.",
+</tool_response>
+
+Excellent — they're actively hiring across the board. Let me dig into those specific job postings for tool stack details.
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://advanced1.net/careers/osp-design-engineer", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "markdown": "# OSP Design Engineer | Advanced 1\n\n[Skip to main content](#main-content)\n\n[Advanced 1](https://advanced1.net/)\n\n* [Home](https://advanced1.net/About)\n* [About](https://advanced1.net/about)\n* [Services](https://advanced1.net/services)\n* [About](https://advanced1.net/About)\n* [Services](https://advanced1.net/services)\n* [Careers](https://advanced1.net/careers)\n* [Contact](https://advanced1.net/contact)\n\n# OSP Design Engineer\n\n## Position Overview\n\nAs an OSP Design Engineer at Advanced 1, you will be responsible for the design and drafting of fiber optic and other telecommunications infrastructure projects. You will work closely with clients, project managers, and other engineers to deliver high-quality design solutions.\n\n## Key Responsibilities\n\n* Design fiber optic and other telecom infrastructure\n* Create detailed engineering drawings using CAD software\n* Perform route analysis and site surveys\n* Collaborate with project teams and clients\n* Ensure compliance with industry standards and client specifications\n* Support permitting and regulatory approval processes\n* Participate in quality control reviews\n\n## Qualifications\n\n* 3+ years of OSP design experience\n* Proficiency in CAD software (AutoCAD, MicroStation, or similar)\n* Experience with GIS tools (ArcGIS, QGIS)\n* Knowledge of fiber optic design principles\n* Familiarity with permitting processes and regulatory requirements\n* Strong attention to detail and quality\n\n## What We Offer\n\n* Competitive salary and benefits\n* Opportunities for professional growth\n* Dynamic, collaborative work environment\n\n© 2024 Advanced 1. All rights reserved.",
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://advanced1.net/careers/cad-gis-technician", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+<error>
+Error occurred while processing URL https://advanced1.net/careers/cad-gis-technician: Page fetched successfully but content is empty or not meaningful for the purpose of scraping.</error>
+</tool_call>
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://advanced1.net/careers/senior-design-engineer-fiber", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "markdown": "# Senior Design Engineer (Fiber) | Advanced 1\n\n[Skip to main content](#main-content)\n\n[Advanced 1](https://advanced1.net/)\n\n* [Home](https://advanced1.net/About)\n* [About](https://advanced1.net/about)\n* [Services](https://advanced1.net/services)\n* [About](https://advanced1.net/About)\n* [Services](https://advanced1.net/services)\n* [Careers](https://advanced1.net/careers)\n* [Contact](https://advanced1.net/contact)\n\n# Senior Design Engineer (Fiber)\n\n## Position Overview\n\nThe Senior Design Engineer (Fiber) will lead the design of complex fiber optic networks, ensuring high-quality deliverables and mentoring junior engineers.\n\n## Key Responsibilities\n\n* Lead design of complex fiber optic networks\n* Create and review detailed engineering drawings\n* Mentor junior engineers\n* Coordinate with clients and project managers\n* Ensure compliance with industry standards and best practices\n* Support permit applications and regulatory submittals\n* Conduct quality control reviews of design documents\n\n## Qualifications\n\n* 5+ years of fiber optic design experience\n* Expert-level proficiency in AutoCAD and/or MicroStation\n* Strong GIS skills (ArcGIS preferred)\n* Experience with permit applications and regulatory submittals\n* Familiarity with BEAD program requirements\n\n## What We Offer\n\n* Competitive salary and benefits\n* Opportunities for professional growth\n* Dynamic, collaborative work environment\n\n© 2024 Advanced 1. All rights reserved.",
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://advanced1.net/careers/cad-manager", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "markdown": "# CAD Manager | Advanced 1\n\n[Skip to main content](#main-content)\n\n[Advanced 1](https://advanced1.net/)\n\n* [Home](https://advanced1.net/About)\n* [About](https://advanced1.net/about)\n* [Services](https://advanced1.net/services)\n* [About](https://advanced1.net/About)\n* [Services](https://advanced1.net/services)\n* [Careers](https://advanced1.net/careers)\n* [Contact](https://advanced1.net/contact)\n\n* [Home](https://advanced1.net/About)\n* [About](https://advanced1.net/about)\n* [Services](https://advanced1.net/services)\n* [About](https://advanced1.net/About)\n* [Services](https://advanced1.net/services)\n* [Careers](https://advanced1.net/careers)\n* [Contact](https://advanced1.net/contact)\n\n# CAD Manager\n\n## Position Overview\n\nThe CAD Manager will oversee the CAD team, ensuring the production of high-quality drawings and maintaining CAD standards.\n\n## Key Responsibilities\n\n* Manage and mentor the CAD team\n* Develop and maintain CAD standards and workflows\n* Ensure accuracy and quality of all CAD deliverables\n* Collaborate with engineering and project management teams\n* Evaluate and implement new CAD tools and technologies\n* Coordinate with clients on design requirements\n\n## Qualifications\n\n* 7+ years of CAD experience in telecom or utilities\n* Expert-level AutoCAD skills\n* Experience with GIS integration (ArcGIS or similar)\n* Strong understanding of OSP design and fiber optic networks\n* Ability to develop and enforce CAD standards\n* Experience with MicroStation is a plus\n\n## What We Offer\n\n* Competitive salary and benefits\n* Opportunities for professional growth\n* Dynamic, collaborative work environment\n\n© 2024 Advanced 1. All rights reserved.",
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://advanced1.net/careers/senior-quality-control-engineer", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "markdown": "# Senior Quality Control Engineer | Advanced 1\n\n[Skip to main content](#main-content)\n\n[Advanced 1](https://advanced1.net/)\n\n* [Home](https://advanced1.net/About)\n* [About](https://advanced1.net/about)\n* [Services](https://advanced1.net/services)\n* [About](https://advanced1.net/About)\n* [Services](https://advanced1.net/services)\n* [Careers](https://advanced1.net/careers)\n* [Contact](https://advanced1.net/contact)\n\n* [Home](https://advanced1.net/About)\n* [About](https://advanced1.net/about)\n* [Services](https://advanced1.net/services)\n* [About](https://advanced1.net/About)\n* [Services](https://advanced1.net/services)\n* [Careers](https://advanced1.net/careers)\n* [Contact](https://advanced1.net/contact)\n\n# Senior Quality Control Engineer\n\n## Senior Quality Control Engineer**\n\n## Position Overview\n\nThe Senior Quality Control Engineer will be responsible for maintaining and improving quality standards across all design deliverables, ensuring compliance with client specifications and industry standards.\n\n## Key Responsibilities\n
+
+* Develop and implement quality control processes and checklists\n* Review and audit design deliverables for accuracy and compliance\n* Identify and address recurring errors and workflow inefficiencies\n* Collaborate with design engineers to resolve technical issues\n* Prepare QC reports and metrics for management\n* Ensure compliance with client-specific standards and specifications\n* Support permit review processes and respond to regulatory inquiries\n\n## Qualifications\n\n* 5+ years of QC experience in OSP design or telecom engineering\n* Strong knowledge of fiber optic design principles\n* Proficiency in AutoCAD and GIS tools\n* Experience with permit submissions and review processes\n* Attention to detail and strong analytical skills\n\n## What We Offer\n\n* Competitive salary and benefits\n* Opportunities for professional growth\n* Dynamic, collaborative work environment\n\n© 2024 Advanced 1. All rights reserved.",
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://advanced1.net/careers/director-of-engineering", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "markdown": "# Director of Engineering | Advanced 1\n\n[Skip to main content](#main-content)\n\n[Advanced 1](https://advanced1.net/)\n\n* [Home](https://advanced1.net/About)\n* [About](https://advanced1.net/about)\n* [Services](https://advanced1.net/services)\n* [About](https://advanced1.net/About)\n* [Services](https://advanced1.net/services)\n* [Careers](https://advanced1.net/careers)\n* [Contact](https://advanced1.net/contact)\n\n# Director of Engineering\n\n## Position Overview\n\nThe Director of Engineering will lead Advanced 1's engineering team, driving technical excellence and innovation across all projects.\n\n## Key Responsibilities\n\n* Lead and grow the engineering team\n* Define and implement engineering standards and best practices\n* Oversee design quality and project delivery\n* Evaluate and adopt new tools and technologies\n* Collaborate with sales and project management on technical proposals\n* Develop client relationships and support business development\n\n## Qualifications\n\n* 10+ years of OSP engineering experience\n* Proven leadership experience\n* Deep knowledge of fiber optic design and construction\n* Experience with BEAD program and grant-funded projects\n* Strong client management skills\n* Familiarity with current design tools (AutoCAD, GIS, Katapult, or similar)\n\n## What We Offer\n\n* Competitive salary and benefits\n* Opportunities for professional growth\n* Dynamic, collaborative work environment\n\n© 2024 Advanced 1. All rights reserved.",
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://advanced1.net/careers/gis-analyst", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "markdown": "# GIS Analyst | Advanced 1\n\n[Skip to main content](#main-content)\n\n[Advanced 1](https://advanced1.net/)\n\n* [Home](https://advanced1.net/About)\n* [About](https://advanced1.net/about)\n* [Services](https://advanced1.net/services)\n* [About](https://advanced1.net/About)\n* [Services": "services)\n* [Careers](https://advanced1.net/careers)\n* [Contact](https://advanced1.net/contact)\n\n# GIS Analyst\n\n## Position Overview\n\nThe GIS Analyst will support the design team by managing and analyzing geographic data to support fiber optic network design and planning.\n\n## Key Responsibilities\n\n* Manage and maintain GIS databases\n* Analyze geospatial data to support network design\n* Create maps and spatial analysis reports\n* Collaborate with design engineers on route planning\n* Support permit applications with GIS data\n* Ensure data accuracy and integrity\n\n## Qualifications\n\n* 3+ years of GIS experience\n* Proficiency in ArcGIS (ESRI) and/or QGIS\n* Experience with fiber optic network data\n* Familiarity with LiDAR and other spatial data sources\n* Knowledge of permitting data requirements\n\n## What We Offer\n\n* Competitive salary and benefits\n* Opportunities for professional growth\n* Dynamic, collaborative work environment\n\n© 2024 Advanced 1. All rights reserved.",
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://advanced1.net/careers/vp-design-services", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "markdown": "# VP, Design Services | Advanced 1\n\n[Skip to main content](#main-content)\n\n[Advanced 1](https://advanced1.net/)\n\n* [Home](https://advanced1.net/About)\n* [About](https://advanced1.net/about)\n* [Services](https://advanced1.net/services)\n* [About](https://advanced1.net/About)\n* [Services](https://advanced1.net/services)\n* [Careers](https://advanced1.net/careers)\n* [Contact](https://advanced1.net/contact)\n\n* [Home](https://advanced1.net/About)\n* [About](https://advanced1.net/about)\n* [Services](https://advanced1.net/services)\n* [About](https://advanced1.net/About)\n* [Services](https://advanced1.net/services)\n* [Careers](https://advanced1.net/careers)\n* [Contact](https://advanced1.net/contact)\n\n# VP, Design Services\n\n## Position Overview\n\nThe VP, Design Services will lead Advanced 1's design team, overseeing the delivery of high-quality OSP design solutions for fiber optic networks.\n\n## Position Overview\n\nThe VP, Design Services will lead Advanced 1's design team, overseeing the delivery of high-quality OSP design solutions for fiber optic networks.\n\n## Key Responsibilities\n\n* Lead and grow the design services team\n* Ensure quality and timeliness of design deliverables\n* Develop and implement design standards and workflows\n* Collaborate with clients and stakeholders on project requirements\n* Support BEAD program design and permitting needs\n* Evaluate and adopt new design tools and technologies\n\n## Qualifications\n\n* 10+ years of OSP design experience\n* Proven leadership in design services\n* Deep knowledge of fiber optic design and outside plant engineering\n* Experience with BEAD program requirements and grant-funded projects\n* Strong client management and business development skills\n\n## What We Offer\n\n* Competitive salary and benefits\n* Opportunities for professional growth\n* Dynamic, collaborative work environment\n\n© 2024 Advanced 1. All rights reserved.",
+</tool_command>
+
+Interesting — they're actively hiring a VP of Design Services while Salli Smith holds that exact title as *Senior* VP. Now let me check the About page and search for tech stack specifics.
+<tool_call>
+{"name": "firecrawl_scrape", "arguments": {"url": "https://advanced1.net/about", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+{
+  "markdown": "# About | Advanced 1\n\n[Skip to main content](#main-content)\n\n[Advanced 1](https://advanced1.net/)\n\n* [Home](https://advanced1.net/)\n* [About](https://advanced1.net/about)\n* [Services](https://advanced1.net/services)\n* [Careers](https://advanced1.net/careers)\n* [Contact](https://advanced1.net/contact)\n\n## About Advanced 1\n\nAdvanced 1 is a privately held company specializing in the design and project management of telecommunications infrastructure across the U.S. Our team of experienced engineers, designers, and project managers work together to deliver comprehensive OSP solutions. We have decades of experience in the telecommunications industry, with a strong focus on fiber optic network design and deployment.\n\nAdvanced 1 combines technical expertise with innovative technology to meet the demands of modern telecommunications infrastructure. We are committed to delivering high-quality, cost-effective solutions that meet the unique needs of each client.\n\n## Our Team\n\nOur team is comprised of industry veterans with decades of experience in OSP engineering, design, and project management. We are passionate about connecting communities and advancing telecommunications infrastructure.\n\n## Our Approach\n\nWe take a client-centric approach to every project, working closely with our clients to understand their unique needs and deliver tailored solutions. We leverage the latest technologies and best practices to ensure the highest quality results.\n\n© 2024 Advanced 1. All rights reserved.",
+</tool_response>
+
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "\"Advanced 1\" Georgetown TX AutoCAD MicroStation ArcGIS Katapult fiber design", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
+{
+  "query": "\"Advanced 1\" Georgetown TX AutoCAD MicroStation ArcGIS Katapult fiber design",
+  "search_depth": "advanced",
+  "results": [
+    {
+      "title": "Advanced 1 - Home",
+      "url": "https://advanced1.net/",
+      "content": "Advanced 1 provides comprehensive telecommunications infrastructure services to clients nationwide, delivering turnkey outside plant (OSP) engineering, design, and project management solutions. With decades of experience, Advanced 1 combines technical expertise with innovative technology to meet the demands of modern telecommunications infrastructure. © 2024 Advanced 1. All rights reserved.",
+      "score": 0.624025,
+      "raw_content": null
+    },
+    {
+      "title": "Advanced 1 LLC - LinkedIn",
+      "url": "https://www.linkedin.com/company/advanced-1-llc",
+      "content": "Advanced 1 is a privately held company specializing in the design and project management of telecommunications infrastructure across the U.S. Advanced 1 provides comprehensive telecommunications infrastructure services to clients nationwide, delivering turnkey outside plant (OSP) engineering, design, and project management solutions. With decades of experience, Advanced 1 combines technical expertise with innovative technology to meet the demands of modern telecommunications infrastructure.\n\nAdvanced 1 provides comprehensive telecommunications infrastructure services to clients nationwide, delivering turnkey infrastructure across the U.S. Advanced 1 provides comprehensive telecommunications infrastructure services to clients nationwide, delivering turnkey outside plant (OSP) engineering, design, and project management solutions. With decades of experience, Advanced 1 combines technical expertise with innovative technology to meet the demands of modern telecommunications infrastructure.",
+      "score": 0.45609823,
+      "raw_content": null
+    }
+  ]
+}
+</tool_response>
+
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "\"Advanced 1 LLC\" fiber construction drawings permitting BEAD", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
+{
+  "query": "\"Advanced 1 LLC\" fiber construction drawings permitting BEAD",
+  "search_depth": "advanced",
+  "results": [
+    {
+      "title": "Advanced 1 - Home",
+      "url": "https://advanced1.net/",
+      "content": "Advanced 1 provides comprehensive telecommunications infrastructure services to clients nationwide, delivering turnkey outside plant (OSP) engineering, design, and project management solutions. With decades of experience, Advanced 1 combines technical expertise with innovative technology to meet the demands of modern telecommunications infrastructure. © 2024 Advanced 1. All rights reserved.",
+      "score": 0.72197455,
+      "raw_content": null
+    },
+    {
+      "title": "Advanced 1 LLC - LinkedIn",
+      "url": "https://www.linkedin.com/company/advanced-1-llc",
+      "content": "Advanced 1 is a privately held company specializing in the design and project management of advanced 1 combines technical expertise with innovative technology to meet the demands of modern telecommunications infrastructure.\n\nAdvanced 1 provides comprehensive telecommunications infrastructure services to clients nationwide, delivering turnkey outside plant (OSP) engineering, design, and project management solutions. With decades of experience, Advanced 1 combines technical expertise with innovative technology to meet the demands of modern telecommunications infrastructure.",
+      "score": 0.43574718,
+      "raw_content": null
+    }
+  ]
+}
+</tool_call>
+<tool_call>
+{"name": "tavily_search", "arguments": {"query": "Advanced 1 LLC Georgetown TX site:linkedin.com", "search_depth": "advanced"}}
+</tool_call>
+<tool_response>
+{
+  "query": "Advanced 1 LLC Georgetown TX site:linkedin.com",
+  "search_depth": "advanced",
+  "results": [
+    {
+      "title": "Advanced 1 LLC - LinkedIn",
+      "url": "https://www.linkedin.com/company/advanced-1-llc

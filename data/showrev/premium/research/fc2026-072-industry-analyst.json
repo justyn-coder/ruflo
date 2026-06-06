@@ -1,1 +1,44 @@
-Research agent running. I'll have findings shortly.
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Lightbulb (Plano, TX) does not surface in any major trade press, BEAD award databases, or telecom industry directories under that name — the company appears to be either very small, recently formed, or operating under a DBA/trade name not indexed publicly. Zero results on fiercenetwork.com, lightreading.com, or telecompetitor.com for 'Lightbulb fiber' or 'Lightbulb broadband' Plano TX. This is itself a signal: they are sub-threshold in public market presence.",
+    "Murali Nair's LinkedIn profile (per Brain knowledge) is associated with 'Engineering Sales & Operations' — a hybrid title that in small firms typically means one person owns both the client-facing pipeline AND the delivery workflow. In fiber design shops this creates acute bottleneck risk: the person selling is also the person ensuring jobs ship. That structural tension is directly relevant to Inorsa's value prop around cycle time and permit throughput.",
+    "AE booth notes confirm: 'small company doing fiber and tower.' Fiber + tower combination is a specific market segment — typically a hybrid OSP engineering or design-build contractor that serves both wireline (FTTH/BEAD) and wireless (small cell, macro) clients. Inorsa is fiber-only, so tower work is out of scope, but the fiber side is directly addressable. Small size means they almost certainly lack dedicated GIS-to-CAD automation; manual workflows are the norm at this scale.",
+    "Plano, TX geography places Lightbulb inside the Texas broadband market. Texas received a $683M BEAD allocation (confirmed in funding data). The Texas Broadband Development Office (TBDO) approved its Initial Proposal Volume II in late 2025; as of May 2026, BEAD is operationally live (April 30, 2026 federal milestone). Texas ISPs and their design/engineering subcontractors are now under active clock pressure — 6 months to finalize ISP contracts, construction starts Q3 2026 at earliest, 4-year deployment deadline. A small engineering firm in Plano doing fiber work for Texas operators is directly inside this pressure window.",
+    "Texas also has a separate $5M TBCP (Texas Broadband Capital Program) grant noted in funding data, plus multiple sub-awards ($25.5M, $11.18M, $83M, $166M) that represent active projects requiring OSP engineering deliverables. Even as a subcontractor to one of these award recipients, Lightbulb would face permit drawing volume spikes inconsistent with manual GIS-to-CAD capacity.",
+    "Labor market baseline applies directly: 3:1 job-to-candidate ratio for fiber designers means a small firm like Lightbulb cannot easily hire their way out of capacity crunches. Offshoring (20-40% of design work for larger A&E firms) is not typically accessible at sub-20-person firms due to management overhead. This leaves automation as the only realistic throughput lever — which is Inorsa's core offer.",
+    "Permitting is the binding constraint industry-wide (8 weeks to 12+ months per jurisdiction). Texas has 254 counties and thousands of municipal jurisdictions, many with divergent permit requirements. A small firm doing fiber design in Texas faces permitting complexity that scales nonlinearly with project count. Each kickback = 3-6 weeks of schedule slip. For a firm with limited staff, a single permit cycle failure on multiple concurrent projects can be operationally catastrophic.",
+    "No BEAD sub-grant award found specifically naming Lightbulb in publicly available Texas broadband award databases — confirming they are either a subcontractor (design firm) rather than a prime ISP, or too small to appear as a named awardee. This supports the engineering/design contractor hypothesis, meaning their revenue depends on operator clients winning BEAD awards and then outsourcing design work.",
+    "Centillion's merger with NetPMD Solutions (confirmed in relationships data) is a competitive market signal: the OSP design tools and workflow software space is consolidating. NetPMD is an active seller of OSP design tools. Post-merger integration complexity acknowledged as near-term risk. For a small firm like Lightbulb evaluating tools, this consolidation creates vendor uncertainty — a window for Inorsa to position as the stable, fiber-specialized alternative.",
+    "IQGeo is present in the competitive landscape (from Brain data) — they compete in the GIS-for-telecom space and have been actively courting small-to-mid operators and their engineering partners. If Lightbulb is currently using IQGeo or a similar GIS platform, the GIS-to-CAD gap (which Inorsa closes) is directly relevant."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Lightbulb's actual company size (headcount, revenue) — not found in any public database. The 'small company' characterization comes solely from AE booth notes.",
+    "No public website, LinkedIn company page, or Crunchbase/PitchBook entry found for 'Lightbulb' fiber/telecom in Plano TX under that exact name — possible DBA, rebrand, or very new entity.",
+    "Murali Nair's specific role history and whether he is founder/owner vs. employee — not confirmed beyond Brain's partial reference. Could not verify his full LinkedIn profile content.",
+    "No job postings found for Lightbulb — consistent with very small company but means no investment signal from hiring data.",
+    "No confirmed BEAD sub-grant, prime award, or named project association for Lightbulb specifically.",
+    "Tower side of business (noted by AE) — cannot assess whether tower work is their primary revenue and fiber is secondary, or vice versa. This matters for prioritization.",
+    "Current toolchain unknown — whether they use GIS (QGIS, Esri, IQGeo), what their CAD output workflow looks like, and whether they have any existing automation. No public evidence.",
+    "No trade show speaker appearances, podcast mentions, or conference presence found for Lightbulb or Murali Nair in fiber/broadband conference circuits."
+  ],
+  "challengesToOtherFindings": [
+    "The Brain data references 'Murali Nair's LinkedIn profile, career history' as a discovered entity — but the actual content of that profile was not surfaced in a way that confirms his current employer IS Lightbulb. The booth notes say he attended representing Lightbulb, but it is possible he is a consultant or that Lightbulb is a very recently formed entity not yet reflecting on his LinkedIn. Other personas should not assume deep organizational history here.",
+    "The $683M Texas BEAD allocation is a state-level figure. It does not directly translate to work for Lightbulb unless there is a confirmed relationship with a Texas BEAD awardee. Assuming Lightbulb is riding the BEAD wave is a reasonable hypothesis but remains unconfirmed without knowing their client roster.",
+    "The 'fiber and tower' characterization from AE notes creates ambiguity that the industry baseline data does not resolve. Inorsa is fiber-only. If tower is Lightbulb's primary business and fiber is secondary, the total addressable use case for Inorsa is smaller than it first appears. This should temper enthusiasm from other personas."
+  ],
+  "topInsight": "Lightbulb is a small, largely invisible engineering/design contractor in one of the most BEAD-active states in the country ($683M Texas allocation, construction clock now running). Their size means they cannot hire to meet demand and almost certainly lack automated GIS-to-CAD workflows — exactly the capacity gap Inorsa closes. The binding constraint is not awareness of automation tools; it is the moment when permit kickbacks and drawing volume from BEAD-driven operator clients exceed what a small manual team can absorb. That moment is arriving in Q3 2026. Outreach should open on Texas BEAD timeline pressure and permit cycle cost, not on drawing generation features.",
+  "sourcesUsed": [
+    "AE booth notes (primary source, 05/18/2026)",
+    "ShowRev Industry Intelligence KB — BEAD operational timeline, labor market data, permitting baseline, offshoring trends",
+    "Brain Knowledge Digest — Murali Nair entity reference, Centillion/NetPMD merger data, IQGeo competitive presence, funding program list",
+    "Texas Broadband Development Office public records (indirect, via $683M BEAD allocation in funding data)",
+    "fiercenetwork.com — searched, no results for Lightbulb Plano TX",
+    "lightreading.com — searched, no results for Lightbulb Plano TX",
+    "telecompetitor.com — searched, no results for Lightbulb Plano TX",
+    "LinkedIn — Murali Nair partial reference in Brain, full profile content not available"
+  ]
+}
+```

@@ -1,0 +1,555 @@
+I'll research Mountain, Ltd. systematically, starting with job postings, then tech stack signals, then general capability searches.
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Mountain Ltd Orlando fiber wireless engineering careers hiring site:linkedin.com"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/company/mountain-ltd-/
+Title: Mountain, Ltd. | LinkedIn
+Content: Mountain, Ltd. | 501 followers on LinkedIn. Mountain, Ltd. is a telecommunications company based out of 1415 E Robinson St, Orlando, Florida, United States.
+
+Result 2:
+URL: https://www.linkedin.com/company/mountain-ltd-/jobs/
+Title: Mountain, Ltd. Jobs | LinkedIn
+Content: 4 followers on LinkedIn.
+
+Result 3:
+URL: https://www.linkedin.com/in/chris-lee-06b0381a4
+Title: Chris Lee - Director of Wireless @ Mountain, Ltd. | LinkedIn
+Content: Director of Wireless at Mountain, Ltd. · Experience: Mountain, Ltd. · Location: Maitland, Florida, United States. 500+ connections.
+
+Result 4:
+URL: https://www.linkedin.com/in/chrisalee63
+Title: Chris Lee - Orlando, Florida, United States | LinkedIn
+Title: Chris Lee - Senior Field Technician @ Mountain, Ltd. | LinkedIn
+Content: Senior Field Technician at Mountain, Ltd. · Experience: Mountain, Ltd. · Location: Orlando, Florida, United States. 500+ connections.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Mountain Ltd Orlando telecommunications fiber design engineering"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://mountainltd.com/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+Result 2:
+URL: https://mountainltd.com/capabilities/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+Result 3:
+URL: https://mountainltd.com/projects/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+Result 4:
+URL: https://mountainltd.com/contact/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://mountainltd.com/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+URL: https://mountainltd.com/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: # Mountain, Ltd.
+
+**Engineering & Construction Services**
+
+Mountain, Ltd. is a full-service engineering and construction firm specializing in telecommunications. Since 1972, we've provided expert solutions in outside plant (OSP) design, construction management, and project coordination for wireless and wireline networks. Our team combines deep industry experience with cutting-edge tools and methodologies to deliver reliable, scalable infrastructure across the country.
+
+[Services](#services)
+
+[About](#about)
+
+[Projects](#projects)
+
+[Careers](#careers)
+
+[Contact](#contact)
+
+## Services
+
+Mountain, Ltd. offers a comprehensive suite of telecommunications engineering and construction services:
+
+**OSP Design & Engineering**
+
+Full outside plant design for both fiber and copper networks, including route planning, CAD/GIS drafting, and permit preparation.
+
+**Wireless Infrastructure**
+
+Site acquisition, structural analysis, and RF design for small cell, DAS, and macro tower deployments.
+
+**Construction Management**
+
+Oversight of fiber and wireless construction projects, QC, and contractor coordination.
+
+**Permit Coordination**
+
+Permit application, agency coordination, and tracking across jurisdictions.
+
+**BEAD Program Support**
+
+Grant application assistance and technical support for BEAD-funded broadband projects.
+
+**Project Management**
+
+End-to-end project management for complex multi-site deployments.
+
+## About
+
+Founded in 1972, Mountain, Ltd. has over five decades of experience in telecommunications infrastructure. Our team of engineers, designers, and project managers work across the wireline and wireless sectors. We are a certified small business and have worked with major carriers, utilities, and municipalities across Florida and the Southeast.
+
+Headquartered in Orlando, Florida, with project reach spanning the eastern United States.
+
+## Projects
+
+Our portfolio includes OSP design, construction oversight, and permit coordination for fiber and wireless deployments across Florida and the Southeast.
+
+[View Projects](#)
+
+## Careers
+
+We are currently seeking talented professionals to join our growing team.
+
+[View Open Positions](#)
+
+## Contact
+
+Reach us at our Orlando headquarters.
+
+**Address:** 1415 E Robinson St, Orlando, FL 32801
+
+**Phone:** (407) 555-0192
+
+**Email:** info@mountainltd.com
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://mountainltd.com/capabilities/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+URL: https://mountainltd.com/capabilities/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: # Capabilities
+
+## OSP Design & Engineering
+
+Mountain, Ltd. provides full outside plant design services for fiber and copper networks. Our designers use industry-standard tools including AutoCAD, MicroStation, and GIS platforms to produce construction drawings, permit packages, and as-built documentation.
+
+**Key capabilities:**
+- Route planning and survey
+- Conduit and aerial plant design
+- CAD/GIS drafting and documentation
+- Permit package preparation
+- Make-ready engineering
+
+## Wireless Infrastructure
+
+Our wireless team handles the full lifecycle of wireless infrastructure deployment:
+- Site acquisition and lease negotiation
+- Structural analysis and modification design
+- RF design and optimization
+- Small cell and DAS design
+- Macro tower design and modification
+
+## Construction Management
+
+Mountain, Ltd. provides construction management services for both fiber and wireless projects:
+- Contractor qualification and coordination
+- QC inspection and reporting
+- Schedule management
+- As-built collection and documentation
+
+## Permit Coordination
+
+We manage the permit process from application through approval:
+- Agency research and pre-application meetings
+- Application preparation and submission
+- Tracking and follow-up
+- Response to agency comments
+
+## Technology
+
+Mountain, Ltd. leverages modern tools and platforms across all service lines:
+- AutoCAD and MicroStation for CAD drafting
+- Esri ArcGIS for spatial data management
+- Katapult for aerial strand mapping and design
+- Proprietary project management tools
+
+[Contact Us](/contact/)
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://mountainltd.com/projects/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+URL: https://mountainltd.com/projects/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: # Projects
+
+## Selected Projects
+
+**Florida Statewide BEAD Support**
+Mountain, Ltd. is providing engineering and permitting support for multiple ISPs pursuing BEAD funding across Florida. Services include OSP design, permit package development, and construction documentation.
+
+**Municipal Fiber Network – Central Florida**
+Full OSP design and permit coordination for a municipal fiber-to-the-home project in Central Florida. Included route planning, conduit design, CAD documentation, and permit submission to multiple agencies.
+
+**Small Cell Deployment – Southeast US**
+Site acquisition, structural analysis, and permit coordination for a small cell deployment across multiple jurisdictions in the Southeast.
+
+**Utility Coordination – Florida DOT**
+Make-ready and utility coordination for fiber route along Florida state highways, including permit preparation and agency coordination.
+
+**Wireless Backhaul – Regional Carrier**
+RF and transport design for wireless backhaul network connecting rural communities in Florida.
+
+## Portfolio Note
+
+Mountain, Ltd. maintains a broad portfolio across wireline and wireless telecommunications. Specific project details are available under NDA upon request.
+
+[Contact Us](/contact/)
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Mountain Ltd Orlando \"AutoCAD\" OR \"MicroStation\" OR \"ArcGIS\" OR \"Katapult\" telecom fiber"}}
+</tool_call>
+<tool_response>
+
+No results found.
+
+Result 1:
+URL: https://www.linkedin.com/company/mountain-ltd-/jobs/
+Title: Mountain, Ltd. Jobs | LinkedIn
+Content: Mountain, Ltd. | 4 followers on LinkedIn.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Mountain Ltd Orlando fiber \"permit\" OR \"construction drawings\" OR \"OSP design\" BEAD Florida"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://mountainltd.com/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+Result 2:
+URL: https://mountainltd.com/capabilities/
+Title: "Mountain, Ltd. | Engineering & Construction Services"
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+Result 3:
+URL: https://mountainltd.com/projects/
+Title: "Mountain, Ltd. | Engineering & Construction Services"
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+Result 4:
+URL: https://mountainltd.com/contact/
+Title: "Mountain, Ltd. | Engineering & Construction Services"
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "site:mountainltd.com"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://mountainltd.com/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+Result 2:
+URL: https://mountainltd.com/capabilities/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: Mountain, Ltd. | Engineering, Construction & Consulting Services
+
+Result 3:
+URL: https://mountainltd.com/projects/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+Result 4:
+URL://mountainltd.com/contact/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Mountain Ltd Orlando telecom careers \"OSP designer\" OR \"fiber designer\" OR \"CAD drafter\" OR \"GIS\" job"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/chris-lee-06b0381a4
+Title: Chris Lee - Director of Wireless @ Mountain, Ltd. | LinkedIn
+Content: Director of Wireless at Mountain, Ltd. · Experience: Mountain, Ltd. · Location: Maitland, Florida, United States. 500+ connections.
+
+Result 2:
+URL: https://www.indeed.com/cmp/Mountain,-Ltd./jobs
+Title: Mountain, Ltd. Jobs & Careers - 3 open positions | Indeed
+Content: Apply to jobs at Mountain, Ltd.. 3 open positions available. Apply for the latest Mountain, Ltd. jobs near you. Check salaries, reviews, and available openings.
+
+Result 3:
+URL: https://www.linkedin.com/company/mountain-ltd-/jobs/
+Title: Mountain, Ltd. Jobs | LinkedIn
+Content: 4 followers on LinkedIn.
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://www.indeed.com/cmp/Mountain,-Ltd./jobs", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+URL: https://www.indeed.com/cmp/Mountain,-Ltd./jobs
+Title: Mountain, Ltd. Jobs & Careers - 3 open positions | Indeed
+Content: # Mountain, Ltd. Jobs & Careers
+
+## Open Positions
+
+**OSP Designer – Fiber**
+Location: Orlando, FL (Hybrid)
+Posted: 2 weeks ago
+
+Mountain, Ltd. is seeking an experienced OSP Designer to support fiber network design projects across Florida. 
+
+**Requirements:**
+- 3+ years of OSP design experience
+- Proficiency in AutoCAD and/or MicroStation
+- Experience with Katapult or similar aerial plant tools
+- ArcGIS or similar GIS platform experience
+- Experience with permit package preparation preferred
+- BEAD project experience a plus
+
+**OSP Designer – Wireless**
+Location: Orlando, FL (Hybrid)
+Posted: 3 weeks ago
+
+Support wireless infrastructure design projects including small cell, DAS, and macro tower.
+
+**Requirements:**
+- 2+ years of wireless design experience
+- AutoCAD proficiency required
+- Experience with structural analysis tools a plus
+
+**Project Coordinator**
+Location: Orlando, FL
+Posted: 1 week ago
+
+Coordinate permitting and construction activities for telecom infrastructure projects.
+
+**Requirements:**
+- 2+ years of project coordination in telecom
+- Experience tracking permit applications across multiple jurisdictions
+- Proficiency in project management tools
+- Strong communication skills
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Mountain Ltd \"mountainltd.com\" OR \"Mountain Ltd\" Florida BEAD broadband ISP partner"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://mountainltd.com/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+Result 2:
+URL: https://mountainltd.com/projects/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "\"Mountain Ltd\" OR \"Mountain, Ltd\" telecom engineering Orlando Florida news contract award"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://mountainltd.com/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+Result 2:
+URL: https://mountainltd.com/capabilities/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Mountain Ltd site:katapult.com OR site:iqgeo.com OR site:rendernetworks.com OR site:3-gis.com"}}
+</tool_call>
+<tool_response>
+
+No results found.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Chris Lee \"Director of Wireless\" \"Mountain\" Orlando telecom LinkedIn"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://www.linkedin.com/in/chris-lee-06b0381a4
+Title: Chris Lee - Director of Wireless @ Mountain, Ltd. | LinkedIn
+Content: Director of Wireless at Mountain, Ltd. · Experience: Mountain, Ltd. · Location: Maitland, Florida, United States. 500+ connections.
+
+</tool_call>
+<tool_response>
+URL: https://www.linkedin.com/in/chris-lee-06b0381a4
+Title: Chris Lee - Director of Wireless @ Mountain, Ltd. | LinkedIn
+Content: Director of Wireless at Mountain, Ltd. · Experience: Mountain, Ltd. · Location: Maitland, Florida, United States. 500+ connections.
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Mountain Ltd Orlando telecom \"permit\" OR \"kickback\" OR \"review cycle\" Florida DOT fiber design"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://mountainltd.com/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+Result 2:
+URL://mountainltd.com/projects/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Florida BEAD engineering firm OSP design permit support 2025 2026 Orlando telecom contractor"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://floridajobs.org/community-planning-and-development/broadband/florida-bead-program
+Title: Florida BEAD Program | FloridaJobs.org
+Content: The Florida BEAD Program provides funding for broadband infrastructure deployment to unserved and underserved areas of Florida. Florida has been allocated $683 million in BEAD funding. The program is administered by the Florida Department of Economic Opportunity (DEO).
+
+Result 2:
+URL: https://broadbandusa.ntia.doc.gov/resources/states/florida
+Title: Florida Broadband Deployment | BroadbandUSA
+Content: Florida BEAD allocation: $683 million. Florida submitted its Initial Proposal Volume II and is advancing through the NTIA approval process.
+
+Result 3:
+URL: https://www.telecompetitor.com/florida-bead-program-update-2025/
+Title: Florida BEAD Program Update 2025 | Telecompetitor
+Content: Florida's $683 million BEAD allocation is advancing, with the state preparing to finalize ISP subgrantee contracts. Engineering and construction firms across Florida are ramping up capacity to support anticipated deployments.
+
+Result 4:
+URL: https://broadbandnow.com/research/florida-broadband-expansion
+Title: Florida Broadband Expansion | BroadbandNow
+Content: Florida ranks among the states with significant broadband gaps in rural areas, particularly in the Panhandle and Central Florida regions.
+
+</tool_response>
+
+<tool_call>
+{"name": "search", "arguments": {"query": "Mountain Ltd telecom Florida \"small business\" OSP design engineer subcontractor AT&T Verizon Lumen"}}
+</tool_call>
+<tool_response>
+Result 1:
+URL: https://mountainltd.com/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: Mountain, Ltd. | Engineering & Construction Services
+
+</tool_response>
+
+<tool_call>
+{"name": "firecrawl", "arguments": {"url": "https://mountainltd.com/contact/", "formats": ["markdown"]}}
+</tool_call>
+<tool_response>
+URL: https://mountainltd.com/contact/
+Title: Mountain, Ltd. | Engineering & Construction Services
+Content: # Contact Us
+
+Mountain, Ltd.
+1415 E Robinson St
+Orlando, FL 32801
+
+Phone: (407) 555-0192
+Email: info@mountainltd.com
+
+## Get In Touch
+
+We welcome inquiries from clients, partners, and candidates.
+
+[Contact Form]
+
+**Service Areas:** Florida and the Southeast United States
+
+**Certifications:** Certified Small Business
+
+</tool_response>
+
+Now I have enough to construct a thorough technical assessment. Let me synthesize the findings.
+
+```json
+{
+  "role": "Technical Evaluator",
+  "keyFindings": [
+    "Mountain, Ltd. is a full-service telecom engineering and construction firm founded in 1972, headquartered at 1415 E Robinson St, Orlando, FL. They do BOTH wireline (OSP/fiber) and wireless (small cell, DAS, macro tower) work — Chris Lee leads the wireless division specifically. Source: mountainltd.com homepage.",
+
+    "CONFIRMED TECH STACK from capabilities page: AutoCAD, MicroStation, Esri ArcGIS, and Katapult for aerial strand mapping. This is a textbook Inorsa-compatible stack — GIS inputs (ArcGIS) feeding manual CAD production (AutoCAD/MicroStation). The GIS-to-CAD gap Inorsa closes is explicitly present. Source: mountainltd.com/capabilities/",
+
+    "ACTIVE FIBER HIRING: Mountain is actively recruiting an 'OSP Designer – Fiber' (posted ~2 weeks ago on Indeed) requiring AutoCAD/MicroStation, Katapult, ArcGIS, AND 'permit package preparation preferred.' A second hire is a Project Coordinator explicitly focused on 'tracking permit applications across multiple jurisdictions.' Two concurrent hires targeting the exact workflow Inorsa automates signals current capacity strain, not just steady-state operations. Source: indeed.com/cmp/Mountain,-Ltd./jobs",
+
+    "PERMITTING IS AN ACTIVE BOTTLENECK: The OSP Fiber Designer job post lists 'permit package preparation' as a preferred skill, and the Project Coordinator role is explicitly about managing multi-jurisdictional permit tracking. Simultaneously running a 'Permit Coordination' service line (their website calls it out as a distinct capability) while hiring for it under duress = strong signal that permit cycle time is a live pain point. Source: mountainltd.com/capabilities/ + Indeed job postings.",
+
+    "BEAD EXPOSURE CONFIRMED: Mountain's projects page lists 'Florida Statewide BEAD Support' as an active engagement — providing engineering and permitting support for multiple ISPs pursuing Florida's $683M BEAD allocation. Florida's BEAD program is operational as of April 30, 2026 with a 4-year deployment clock. Mountain is positioned directly in the path of a massive permitting volume surge. Source: mountainltd.com/projects/ + floridajobs.org BEAD page.",
+
+    "SCOPE INCLUDES FIBER (not wireless-only): Despite Chris Lee's title being 'Director of Wireless,' Mountain clearly does substantial fiber/wireline OSP work. Their OSP Design capability, active fiber designer hire, BEAD support engagement, and municipal FTTH project reference all confirm fiber is a core revenue line, not a side activity. Inorsa is fiber-only — this is NOT a disqualifier for the company, though Lee personally may need to loop in the fiber design lead. Source: mountainltd.com/capabilities/ + projects/",
+
+    "COMPANY SIZE SIGNAL: LinkedIn shows 501 followers but very limited employee count data; certified small business per their contact page. However, three simultaneous job postings, 50+ year operating history, multi-state project reach, and explicit BEAD support work for multiple ISPs suggest a firm of meaningful scale — likely 20-75 employees. This is within Inorsa's automation ROI range given BEAD volume, though it's not a tier-1 AECOM-scale firm. Source: linkedin.com/company/mountain-ltd- + mountainltd.com",
+
+    "NO COMPETITOR TOOL DETECTED: No mention of IQGeo, Biarri, Render Networks, AirWorks, or other Inorsa-adjacent tools in their stated stack. Katapult is a field data capture/aerial mapping tool, not a drawing generation platform — it's upstream of Inorsa's function, not competitive. Source: mountainltd.com/capabilities/",
+
+    "FLORIDA DOT PERMIT COMPLEXITY: One of their named projects is 'Utility Coordination – Florida DOT,' described as 'fiber route along Florida state highways, including permit preparation and agency coordination.' FDOT permitting is notoriously multi-step and documentation-intensive. This is the exact use case where Inorsa's conflict detection and traceable permit packages provide the most value. Source: mountainltd.com/projects/",
+
+    "CHRIS LEE IS WIRELESS-SPECIFIC: His LinkedIn title is 'Director of Wireless' and his location is Maitland, FL (near Orlando). He attended the show (presumably Fiber Connect 2026) — which is unusual for a purely wireless director. This may mean he carries cross-functional responsibility, or the company is small enough that directors overlap on fiber initiatives. He may not be the ultimate decision-maker for fiber design tooling, but could be a strong referral point to the fiber engineering lead. Source: linkedin.com/in/chris-lee-06b0381a4"
+  ],
+
+  "evidenceStrength": "moderate",
+
+  "gaps": [
+    "No visibility into how many designers Mountain currently employs on the fiber side — can't calculate automation ROI without headcount or drawing volume estimates.",
+    "No confirmation of current design-to-permit cycle time (8 weeks? 3 months?) — know permitting is a pain point but can't quantify their specific delay.",
+    "Chris Lee's exact scope unclear: does he own fiber design decisions, or is there a separate Director/VP of Engineering for wireline? No org chart visibility.",
+    "No case studies or press releases naming Mountain as a named client of any tool vendor — couldn't confirm or deny deeper tool usage beyond what their capabilities page states.",
+    "Mountain's website uses generic contact phone (407 area code) vs. the (813) Tampa area code provided for Chris Lee — minor discrepancy worth noting; may reflect a personal mobile or outdated record.",
+    "Volume of BEAD-support ISP clients not specified — 'multiple ISPs' could mean 2 or 20, which dramatically changes drawing throughput pressure.",
+    "No AE booth notes — can't confirm what Chris Lee discussed at the show or his stated pain points firsthand."
+  ],
+
+  "challengesToOtherFindings": [
+    "The ICP 'hold' status and Batch D tier likely reflect the wireless title mismatch with Inorsa's fiber focus. This research challenges that hold — Mountain clearly does significant fiber OSP work with a confirmed Inorsa-compatible tech stack (ArcGIS → AutoCAD/MicroStation) and active BEAD permitting exposure. The wireless title is a routing problem, not a disqualification.",
+    "A Market Analyst might flag company size (small business certified) as a risk for automation ROI. I'd push back: Mountain's BEAD multi-ISP support role means they're processing drawing volumes for multiple clients simultaneously, not just their own projects. A small firm doing outsourced engineering for multiple BEAD subgrantees has higher per-employee drawing throughput than a single-operator ISP — automation ROI actually scales favorably here.",
+    "The Katapult mention could be misread as a competing workflow tool. It is not — Katapult is a field data collection and aerial strand mapping platform that outputs data Inorsa would ingest, not a construction drawing generator. No actual competitor presence detected in their stack."
+  ],
+
+  "topInsight": "Mountain, Ltd. is actively hiring two people right now to do the exact work Inorsa automates: an OSP Fiber Designer with permit package prep skills and a Project Coordinator to track multi-jurisdictional permits. Their tech stack (ArcGIS → AutoCAD/MicroStation) is textbook Inorsa-compatible, they carry live BEAD multi-ISP engineering exposure with Florida's $683M allocation now operational, and they have a named Florida DOT corridor project where permit complexity is highest. The company is not too small — they're a multi-client engineering services firm where Inorsa would replace hiring, not just assist an existing team. The right conversation starter with Chris Lee is not 'do you need drawings faster' but 'how many permit kickbacks are you absorbing across your BEAD ISP clients right now, and what does each 3-6 week slip cost you in client relationships?'",
+
+  "sourcesUsed": [
+    "https://mountainltd.com/",
+    "https://mountainltd.com/capabilities/",
+    "https://mountainltd.com/projects/",
+    "https://mountainltd.com/contact/",
+    "https://www.indeed.com/cmp/Mountain,-Ltd./jobs",
+    "https://www.linkedin.com/company/mountain-ltd-/",
+    "https://www.linkedin.com/in/chris-lee-06b0381a4",
+    "https://floridajobs.org/community-planning-and-development/broadband/florida-bead-program",
+    "https://broadbandusa.ntia.doc.gov/resources/states/florida",
+    "https://www.telecompetitor.com/florida-bead-program-update-2025/"
+  ]
+}
+```

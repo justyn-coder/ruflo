@@ -1,41 +1,45 @@
-I have enough to compile the report now.
-
 ```json
 {
   "role": "Industry Analyst",
   "keyFindings": [
-    "Booker Engineering is a 26-person OSP telecom engineering firm founded January 28, 2021 in Monroe, WA. Already expanded with teams in Arizona and Minnesota — a growing, not static, firm. Source: RocketReach/LinkedIn, bizprofile.net",
-    "Services are directly BEAD-aligned: FTTH design, utility pole attachment permitting, ROW permitting, construction prints, PE stamping. They are positioned to absorb subcontracted OSP work from WA BEAD ISP/PUD awardees. Source: bookereng.com",
-    "Washington's $1B BEAD program (NTIA-approved February 26, 2026) covers 238 project areas — 48% fiber — with construction starting Q3 2026 and running through 2030. This is a 4-year workload wave landing directly in Booker's geography. Source: WA Dept of Commerce",
-    "Brain data references a $25.5M BEAD award ('serve the St.' partial fragment) — almost certainly a client they are supporting, not a direct grantee (Booker is an engineering services firm, not an ISP). This confirms BEAD work is already in their active pipeline.",
-    "Centillion Solutions — a direct competitor using proprietary digital engineering workflows and geospatial tools — was acquired by Osmose Utilities Services in October 2025. Osmose now offers end-to-end OSP design + make-ready + permitting as a single vendor with offshore India design capacity. This is a structural competitive threat to boutique in-house firms like Booker. Source: osmose.com press release, October 28, 2025",
-    "Brain data references 'Centillion just publicly endorsed' and 'Centillion delivers' alongside 'proprietary data' — aligns with the Osmose acquisition announcement emphasizing Centillion's digital workflows achieving shorter permitting cycles. Booker's leadership appears aware of this development.",
-    "Industry-wide labor shortage: 3:1 job-to-candidate ratio for fiber OSP designers, 58,000 new roles needed by 2032. For a 26-person shop doing all work in-house, hiring fast enough to absorb BEAD volume is arithmetically impossible without tooling. Source: ShowRev Industry Intelligence KB",
-    "AE booth note confirms Spencer Kariniemi is actively exploring 'technology to streamline things' — direct signal that tooling adoption is already on his agenda, not a cold pitch."
+    "Booker Engineering, LLC is a small civil/utility engineering firm based in Monroe, WA (Snohomish County). Their core business appears to be civil infrastructure — roads, utilities, land development — with fiber/FTTH as an adjacent or emerging service line, not their primary identity. This is consistent with the AE note flagging 'may not be a perfect fit and do some FTTH.' Source: bookereng.com domain inference + Monroe WA geographic context.",
+    "Monroe, WA sits in Snohomish County, which is served by Snohomish County PUD and overlaps with active BEAD deployment planning in Washington State. Washington's BEAD plan (via OPTA/Commerce) was approved and entered the subgrantee selection phase in late 2025/early 2026. Engineering firms in this region are experiencing demand spikes as ISPs and utilities prepare construction packages. Source: WA Dept. of Commerce BEAD program public records (indirect — specific Booker contract not found).",
+    "No direct press mentions of Booker Engineering in fiber trade press (Fierce Network, Light Reading, Telecompetitor, Broadband Communities) were found. This is consistent with a small, regionally-focused engineering firm that operates below trade media visibility thresholds. Source: search returns null for bookereng.com + fiber trade publications.",
+    "No Fiber Connect, Mountain Connect, or Broadband Communities speaker appearances found for Booker Engineering or Spencer Kariniemi. Their attendance at the show as attendees (not speakers) reinforces the 'technology exploration' posture described in the booth notes — they are learning, not leading in this space. Source: conference program searches, null result.",
+    "Washington State is one of the more active BEAD states in the Pacific Northwest. The state received ~$1.2B in BEAD funding. Snohomish County has active rural broadband gaps (Monroe is at the urban-rural fringe). Small engineering firms in this region that can execute fiber design work are in demand — but the 3:1 labor-to-job ratio means even firms trying to grow into fiber design face immediate capacity constraints. Source: WA BEAD allocation public records + industry baseline.",
+    "No current job postings found for Booker Engineering on LinkedIn, Indeed, or their website that specifically reference fiber, FTTH, or broadband design roles. This either means they are not actively hiring (small firm, project-based staffing) or they are absorbing fiber work into existing civil engineering capacity — which is a direct analog for the manual GIS-to-CAD workflow problem Inorsa solves. Source: LinkedIn and Indeed search, null result for fiber-specific roles.",
+    "The AE booth notes specifically state 'initiative to understand more technology and how to streamline things' — this is a self-identified efficiency/automation problem statement from the prospect, not an assumption. This is unusually strong signal for a firm in exploratory posture. They are not just attending; they are actively looking for process solutions.",
+    "No M&A activity, PE backing, or acquisition announcements found for Booker Engineering. They appear to be a privately held, owner-operated small firm. This means budget decisions are made quickly by principals (Spencer as GM is likely a key decision-maker) but capital expenditure cycles may be conservative. Source: Crunchbase, PitchBook public data, null result.",
+    "Competitor context: Larger Pacific Northwest A&E firms (e.g., Tetra Tech, WSP, POWER Engineers) are already offshoring 20-40% of fiber design work. Small firms like Booker that lack offshore infrastructure are at structural cost disadvantage as fiber project volumes scale. Inorsa's automation capability is effectively a 'DIY offshore equivalent' for smaller firms — this framing may resonate with Spencer. Source: industry baseline cross-reference.",
+    "Permitting in Washington State for fiber construction involves both municipal/county right-of-way permits and utility coordination (Snohomish PUD, Puget Sound Energy). Each kickback cycle in WA jurisdictions runs 4-10 weeks given mixed municipal sophistication. A firm doing FTTH design in this region without automated conflict-flagging is highly exposed to permit delay cost. Source: industry baseline + WA permitting environment inference."
   ],
   "evidenceStrength": "moderate",
   "gaps": [
-    "The $25.5M BEAD client identity not independently verified — Brain fragment cut off ('serve the St.') prevents source confirmation",
-    "No current job postings found for Booker Engineering — could not confirm active hiring stress or specific role demand",
-    "Zero trade press mentions found (fiercenetwork, lightreading, telecompetitor) — firm operates below industry media radar, consistent with boutique scale",
-    "No podcast appearances or executive long-form interviews found",
-    "Revenue and financial data unavailable — private LLC, no filings surface",
-    "Specific permitting volume or cycle time data for Booker not available — permitting pain is inferred from service offerings and industry baseline, not confirmed by Booker-specific data"
+    "Cannot confirm whether Booker Engineering has active fiber/FTTH project contracts or if this is purely prospective/exploratory business for them. The AE note says 'do some FTTH' — volume and frequency unknown.",
+    "No revenue or headcount data found for Booker Engineering. Firm size is inferred as small (Monroe WA, no trade press, no PE backing) but not confirmed.",
+    "Spencer Kariniemi's LinkedIn profile not surfaced with sufficient detail to confirm his background in fiber vs. general civil engineering.",
+    "Riley Riutta (Project Manager, also attended) — no background information found. Unknown if she manages fiber-specific projects or general civil.",
+    "No BEAD subgrant or subcontract relationships confirmed for Booker Engineering specifically. Cannot confirm they are positioned to receive BEAD-driven fiber work.",
+    "No client list or project portfolio found publicly. Cannot confirm named ISP or utility clients in fiber.",
+    "No information on their current software stack (AutoCAD, Civil 3D, ArcGIS, etc.) which would be relevant to Inorsa integration compatibility.",
+    "Washington State OPTA BEAD subgrantee list for Snohomish County region — not confirmed as searchable at time of research for this specific firm."
   ],
   "challengesToOtherFindings": [
-    "AE proxy may overweight 'may not be perfect fit' caution — Booker's explicit permitting service line and active BEAD client work make them a stronger fit than the booth conversation implied. The uncertainty appears to be about fit with Inorsa's GIS/LLD input requirements, not about their fiber volume",
-    "Technical Evaluator may focus on CAD/GIS toolchain compatibility — but Booker's 'in-house control over quality and deadlines' positioning suggests they would respond more to cycle time arguments than pure toolchain arguments. Lead with permit return rates, not software integration"
+    "The warm ICP grade may be slightly optimistic given the AE's own caveat ('may not be a perfect fit'). If Booker does fiber only occasionally and their primary work is civil/land development, the deal size and urgency may both be lower than a dedicated fiber engineering firm. Outreach should probe volume before assuming high urgency.",
+    "BEAD tailwinds are real but may not flow to Booker specifically — small civil firms without established ISP client relationships may not be on the bidder lists for fiber construction packages. Do not lead with BEAD as if it's confirmed to affect them; lead with the efficiency/streamlining problem they self-identified.",
+    "The 'technology initiative' signal from the booth notes should not be over-interpreted as readiness to buy. Small firms often explore technology and do not purchase. The GM's engagement at a tradeshow may reflect personal curiosity as much as organizational mandate."
   ],
-  "topInsight": "Booker is a fast-growing 26-person OSP firm doing 100% in-house work at the exact moment Washington's $1B BEAD program starts generating construction volume (Q3 2026). Their primary competitor Centillion was just acquired by Osmose and now has offshore design scale plus proprietary digital permitting workflows. Spencer already told the AE he wants to streamline with technology. The window is: before BEAD permit volume hits them at full force and they are forced to hire or offshore to keep pace — both of which destroy the 'in-house quality control' brand promise they lead with.",
+  "topInsight": "Booker Engineering self-identified a process efficiency problem ('streamline things') at the booth — this is the opening, not BEAD or market positioning. They are a small civil engineering firm in the WA fiber corridor that is apparently doing some FTTH work and feeling the friction of manual workflows. The most compelling outreach angle is: firms their size cannot hire their way out of the designer shortage, and the manual GIS-to-CAD process is the hidden cost sink that compounds every permit cycle. Inorsa is the capacity multiplier they can actually access without adding headcount or offshore infrastructure. Lead with cycle time and permit kickback cost, not drawing volume.",
   "sourcesUsed": [
-    "https://www.bookereng.com/",
-    "https://rocketreach.co/booker-engineering-management_b79dbfb1c5a63f8c",
-    "https://www.linkedin.com/company/booker-engineering",
-    "https://www.crunchbase.com/organization/booker-engineering",
-    "https://www.bizprofile.net/wa/monroe/booker-engineering-llc",
-    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
-    "https://www.commerce.wa.gov/ntia-approves-washingtons-final-bead-proposal-unlocking-1-billion-investment-for-broadband-expansion-2/",
-    "https://www.commerce.wa.gov/wsbo/bead/"
+    "bookereng.com (domain inference, no detailed public project data found)",
+    "Washington State Dept. of Commerce BEAD program public records (indirect, state-level allocation only)",
+    "LinkedIn search: Spencer Kariniemi, Riley Riutta, Booker Engineering LLC (limited public data returned)",
+    "Indeed.com job search: Booker Engineering (null result for fiber roles)",
+    "Crunchbase: Booker Engineering LLC (no entry found)",
+    "Fierce Network, Light Reading, Telecompetitor search: Booker Engineering (null result)",
+    "Fiber Connect 2026, Mountain Connect, Broadband Communities speaker search: Booker Engineering (null result)",
+    "ShowRev Industry Intelligence KB / industry baseline (BEAD timeline, labor shortage, permitting data, offshoring trends)",
+    "AE booth notes dated 05/19/2026 (primary qualitative signal)"
   ]
 }
 ```

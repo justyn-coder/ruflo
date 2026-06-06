@@ -1,8 +1,8 @@
 ---
 title: Inorsa Source of Truth -- ShowRev FC2026 Pilot
 status: ACTIVE
-last_updated: 2026-05-29 10:31 EST
-version: v1
+last_updated: 2026-06-04 00:30 EST
+version: v3
 purpose: Single canonical reference for all Inorsa product claims, positioning, and constraints used in ShowRev outreach. Every email, microsite, HubSpot property, and AE brief must be checked against this file before shipping.
 ---
 
@@ -16,7 +16,7 @@ purpose: Single canonical reference for all Inorsa product claims, positioning, 
 
 ---
 
-## 2. Chris's One-Pager (Marketing Manager, week of 2026-05-19)
+## 2. Chris Balandran's One-Pager (Head of Marketing, week of 2026-05-19)
 
 **Headline:** 10X Your Engineering
 **Subhead:** Your fiber builds are scaling. Your engineering workflows aren't.
@@ -124,28 +124,65 @@ Inorsa is purpose-built for telecom infrastructure. Every output is deterministi
 ## 7. Value Prop Scope (hard constraints)
 
 **What Inorsa does for fiber (safe to claim):**
-- Generates construction and permit drawings from GIS and LLD inputs
-- Validates design data before drawings are produced
-- Structures/ingests documents into asset-level intelligence
-- Catches input conflicts that cause permit returns
-- Produces consistent deliverables at any build volume
+- Generates construction drawings from GIS and LLD inputs at dramatically faster speed (~10 min vs hours/days)
+- Produces consistent AutoCAD output to each jurisdiction's standard from one input process
+- Scales drafting capacity 2-5x with existing headcount (cite as range, not guarantee — actual automation depends on prospect's GIS data quality)
+- Accelerates production so teams have more time for their own QC before jurisdictional submission
 - Deterministic, traceable outputs (not AI hallucination)
 
-**What Inorsa is NOT (never claim or imply):**
-- NOT a GIS replacement (it ingests FROM GIS, does not replace ArcGIS/IQGeo/3GIS)
+**What Inorsa does NOT do for fiber (NEVER claim — confirmed by Nick McManus 2026-06-03):**
+- Does NOT validate inputs or catch errors in the GIS data — errors in GIS = errors in output
+- Does NOT reduce permit return rates directly — speed gives time for better QC, but Inorsa does not do QC
+- Does NOT guarantee a specific automation percentage without reviewing the prospect's files first
+- NOT a GIS replacement (ingests FROM GIS, does not replace ArcGIS/IQGeo/3GIS)
 - NOT a visualization tool (the Nvidia confusion from the booth)
-- NOT a construction management platform (that is SiteTracker's job)
-- NOT structural analysis for towers (that is RISA/TNX via Harmoni product, tower-side only)
-- NOT a Validation-only product for fiber (Validation Suite exists but fiber pitch is Engineering + Data)
+- NOT a construction management platform (SiteTracker's job)
+- NOT structural analysis for towers (RISA/TNX via Harmoni, tower-side only)
+- Does NOT support conflict avoidance today (can ingest utility GIS layers but conflict avoidance is future)
 
-**Product scope for FC2026 outreach:**
+**The real value proposition (Nick McManus framing, 2026-06-03):**
+1. Revenue Acceleration — do the work faster, get paid sooner
+2. Revenue Generation — accept more work without adding headcount
+3. Opportunity — your team isn't stuck on this work, can do other things
+4. Mistake proofing — ONLY where a key input is missing (not general QA)
+
+**Known prospect objections (from Nick + sales threads):**
+1. "Our GIS data is conceptual, not construction-grade" — network management tools are conceptual; CAD parity still requires drafter intervention. Counter: Inorsa maximizes what CAN be automated and partners to improve over time.
+2. "The price doesn't match the value yet" — product is recent, still growing into pricing model. Focus on time/capacity ROI.
+3. "We can't capitalize it" — SaaS/OPEX only. Frame as: throughput gain covers the OPEX.
+
+**Industry reality (Nick confirmed):**
+- 40-50% of permit submissions rejected on first pass (NOT 8-12% as previously cited)
+- Kickback delays are MONTHS. Production delays are DAYS. This is the biggest problem in the industry.
+
+**Product scope for outreach:**
 - Engineering Suite + Data Suite = the fiber story
-- Validation is part of the workflow but not the lead message
 - Fiber-only. Harmoni is tower-side only. Do NOT cross-reference tower capabilities in fiber outreach.
 
 ---
 
-## 8. AE Roster and Territories
+## 8. HubSpot Configuration
+
+| Property | Value |
+|----------|-------|
+| Sales Hub | Professional |
+| Marketing Hub | Yes (tier TBD — confirm Starter/Pro/Enterprise) |
+| Portal ID | (in .env as HUBSPOT_PORTAL_ID) |
+| Private App | ShowRev Loader (scopes: contacts r/w, companies r/w, schemas r, lists) |
+| Sequences | Active — 3 AE sequences for FC2026 |
+
+**Reporting capabilities (Sales Hub Pro + Marketing Hub):**
+
+- Custom reports: up to 100, single- and cross-object
+- Dashboards: up to 25 (10 reports per dashboard)
+- Sequences reporting: enrollment status, step-level metrics
+- Email analytics: opens, clicks, replies (via Marketing Hub email events API)
+- Attribution reporting: NO (Enterprise only)
+- Revenue analytics: NO (Enterprise only)
+
+---
+
+## 9. AE Roster
 
 | AE | Territory | HubSpot Owner ID | Email |
 |----|-----------|-------------------|-------|
@@ -159,7 +196,7 @@ Inorsa is purpose-built for telecom infrastructure. Every output is deterministi
 
 ---
 
-## 9. Show Facts (canonical per wiki-459-mirror)
+## 10. Show Facts (canonical per wiki-459-mirror)
 
 - **Show:** Fiber Connect (always two words, always with a space)
 - **Dates:** May 18-19, 2026 (Mon-Tue). May 17 = setup day, NOT show floor.
@@ -169,7 +206,7 @@ Inorsa is purpose-built for telecom infrastructure. Every output is deterministi
 
 ---
 
-## 10. Salutation and Copy Rules
+## 11. Salutation and Copy Rules
 
 - Salutation: strictly `[FirstName],` (comma only). NO greeting word ("Hey", "Hi", "Hello", "Dear", "Greetings").
 - No em-dashes in prospect-facing copy. Use commas or periods.
@@ -181,7 +218,7 @@ Inorsa is purpose-built for telecom infrastructure. Every output is deterministi
 
 ---
 
-## 11. MEDDPICC Alignment
+## 12. MEDDPICC Alignment
 
 Inorsa uses MEDDPICC sales qualification in HubSpot. ShowRev dossiers should map to:
 
@@ -202,4 +239,6 @@ Inorsa uses MEDDPICC sales qualification in HubSpot. ShowRev dossiers should map
 
 | Version | Date (EST) | Author | Change |
 |---------|-----------|--------|--------|
+| v3 | 2026-06-04 00:30 | Claude | Nick McManus corrections: removed validation/error-catching claims, added 40-50% rejection rate, added "conceptual GIS" + pricing objections, reframed value prop as speed→time→QC (not direct quality assurance). |
+| v2 | 2026-06-02 17:49 | Claude | Added §8 HubSpot Configuration (Sales Hub Pro + Marketing Hub, reporting capabilities). Renumbered §9-12. |
 | v1 | 2026-05-29 10:31 | Claude | Initial SOT. Sources: pitch verbatim (decisions.log #026), Chris one-pager (2026-05-19), inorsa.com/product, inorsa.com/solutions/fiber, inorsa.com/packages, wiki-459-mirror show facts, Tim voice directives, operator constraints. |

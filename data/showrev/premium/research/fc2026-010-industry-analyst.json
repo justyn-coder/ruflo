@@ -1,0 +1,40 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Terracon is a large, employee-owned geotechnical, environmental, and materials testing firm headquartered in Olathe, KS, with 6,000+ employees across 175+ offices. They are NOT a fiber design or ISP firm — they are a consulting engineering/testing firm that has expanded into telecom/broadband infrastructure work as a service line. Source: terracon.com, general industry profile.",
+    "The presence of Kathryn Eisele as 'National Director, Telecom/Broadband' at Fiber Connect 2026 is the strongest signal of strategic intent. A national director title suggests Terracon has formalized broadband/fiber as a dedicated practice area — not just opportunistic project work. This is a relatively recent build-out, consistent with BEAD-era growth in civil/geotech firms expanding into telecom. Source: tradeshow attendance data, contact context.",
+    "Lauren Lanoux is a Senior Project Manager in Winter Park, FL (Orlando metro). Her attendance alongside a national telecom director at a fiber-specific conference strongly implies she is working on active fiber/broadband projects in the Southeast — likely BEAD-adjacent state broadband work given Florida's BEAD allocation of ~$868M (NTIA FY2024 BEAD state allocations). Source: NTIA BEAD program public data.",
+    "Terracon's core competency is field investigation, materials testing, and environmental consulting — NOT GIS-to-CAD fiber design. If they are delivering fiber construction drawings or permit packages, they are either (a) doing it manually with civil engineers unfamiliar with OSP norms, (b) subcontracting it, or (c) attempting to build a design capability. All three paths create friction with permitting. Source: terracon.com service descriptions, industry inference.",
+    "Terracon is employee-owned (ESOP), meaning procurement decisions are decentralized and cost-conscious. No PE pressure for rapid scale, but ESOP culture often means cautious vendor evaluation. Growth in telecom services would be driven by project wins, not M&A. Source: terracon.com corporate overview.",
+    "Florida's broadband office (FloridaCommerce) has been active in BEAD planning. As of early 2026, Florida entered BEAD Initial Proposal phase. ISP contracts expected Q3-Q4 2026. Terracon's Florida presence (Winter Park office) positions them as a potential consultant/subcontractor for BEAD-funded deployment projects needing civil/environmental/permitting support. Source: FloridaCommerce broadband program public filings, NTIA BEAD timeline.",
+    "No specific Terracon press releases, trade press articles on fiercenetwork.com, lightreading.com, or telecompetitor.com found referencing a major fiber contract win. This is consistent with a firm still building its telecom practice — early-stage pipeline, not yet publicly announcing project scale. Source: search gaps noted below.",
+    "The geotechnical-to-fiber bridge is a real trend: firms like Terracon compete with WSP, Kimley-Horn, and Stantec who have also expanded into broadband permitting and construction management. These larger A&E competitors have more developed GIS/design toolchains. Terracon's competitive pressure from these firms is real if they cannot deliver permit-ready drawings at the same speed. Source: industry landscape, A&E broadband expansion reporting."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "No confirmed Terracon fiber/broadband contract announcements found in trade press (fiercenetwork.com, lightreading.com, telecompetitor.com) — could not verify project pipeline scale.",
+    "Cannot confirm whether Terracon has in-house GIS/OSP design capability or is subcontracting fiber design work — this is a critical unknown for Inorsa fit.",
+    "Lauren Lanoux's specific project focus not publicly verifiable — her LinkedIn profile details not confirmed in available data.",
+    "No job postings data available to confirm whether Terracon is hiring GIS technicians, fiber designers, or CAD drafters in the telecom practice.",
+    "Cannot confirm which specific Florida or Southeast BEAD projects Terracon may be pursuing or under contract for.",
+    "Kathryn Eisele's tenure as National Director Telecom/Broadband not confirmed — unclear if this role is 12 months old or 3+ years old, which matters for practice maturity.",
+    "No podcast appearances or long-form executive interviews found for Terracon telecom leadership.",
+    "No state broadband office sub-grant or consulting award directly naming Terracon found in public filings searched."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold designation ('thin data') is appropriate — Terracon is not a fiber operator or ISP, so the standard ICP model (operator deploying fiber) does not apply cleanly. However, the A&E/consulting firm use case for Inorsa is legitimate: firms like Terracon that are producing permit and construction drawings for fiber clients face the same GIS-to-CAD friction and permitting kickback pain as in-house design teams. Do not dismiss this as out-of-ICP without evaluating the A&E services buyer persona.",
+    "Terracon's ESOP structure is sometimes interpreted as slow-moving or budget-constrained. This is not necessarily accurate — Terracon has grown to 6,000+ employees organically and has capital for technology investment when there is clear ROI. The framing should be ROI-on-projects, not feature-selling.",
+    "Lauren Lanoux's title (Senior PM) and location (Florida) could suggest she is an end-user buyer rather than an economic buyer. But her co-attendance with a National Director at Fiber Connect 2026 suggests she is either influencing national practice decisions or is a high-value practitioner worth engaging as a champion — not just a low-level contact."
+  ],
+  "topInsight": "Terracon is a large employee-owned A&E firm that has formally stood up a national telecom/broadband practice — evidenced by a dedicated National Director title attending Fiber Connect 2026. Their core business is geotechnical and environmental consulting, NOT fiber design, meaning their path to delivering permit-ready OSP construction drawings likely runs through manual civil engineering workflows unfamiliar with OSP-specific permitting norms. With Florida BEAD contracts expected Q3-Q4 2026 and a 4-year deployment clock starting, Terracon will face the same permitting cycle-time pressure as any firm producing fiber drawings — but with less institutional tooling than specialized OSP design shops. The outreach angle is not 'do you design fiber?' but 'when your telecom PM team is producing permit packages for BEAD projects, how long does a kickback cost you, and can your civil workflow absorb that at scale?'",
+  "sourcesUsed": [
+    "https://www.terracon.com (corporate overview, services, locations)",
+    "NTIA BEAD Program public allocations — ntia.gov/broadband (Florida ~$868M allocation, state timeline)",
+    "FloridaCommerce broadband program — floridajobs.org/broadband (BEAD Initial Proposal phase status)",
+    "Fiber Connect 2026 attendee/speaker context (provided in prompt)",
+    "General A&E industry landscape: WSP, Kimley-Horn, Stantec telecom practice expansion (industry inference, no single URL)",
+    "ShowRev Industry Intelligence KB — BEAD timeline, permitting constraint baseline, labor shortage data (provided baseline)"
+  ]
+}
+```

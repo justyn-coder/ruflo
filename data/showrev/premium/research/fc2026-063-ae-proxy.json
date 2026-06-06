@@ -1,0 +1,42 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "Matt Shearer holds the title Director of Operations at LHTC Broadband (Lamar, PA / Donegal, PA service area), a rural Pennsylvania CLEC/ISP. Operations directors at ISPs of this size typically own field deployment execution, contractor oversight, and permitting workflow management — not pure engineering design. He is likely a strong influencer and operational gatekeeper, but budget authority probably sits with a VP/GM or CEO. Source: LHTC company structure inference + LinkedIn title pattern for rural telcos.",
+    "LHTC Broadband is a Pennsylvania-based rural broadband provider serving Lamar, PA and surrounding communities. Pennsylvania received $683,057,831 in BEAD funding. With BEAD now operational as of April 30, 2026 and state ISP contracts being finalized within a 6-month window, LHTC is likely in active planning or early construction preparation for BEAD-funded fiber builds. This creates a credible urgency window of Q3–Q4 2026. Source: NTIA BEAD allocation data + industry baseline.",
+    "Three LHTC contacts attended the tradeshow: Matt Shearer (Director of Operations), Deanna Richter (Director of Marketing & Communications), and Matthew Mongell (Business Development Manager). The presence of an operations director AND a business development manager together at a fiber industry event strongly suggests LHTC is in active growth/build mode, not just maintaining existing plant. Multi-threading is viable and the BD Manager (Mongell) may be closer to the funding/expansion decision than Shearer. Source: Booth scan list.",
+    "No public LinkedIn profile, speaker bio, trade press quote, or podcast appearance was found for 'Matt Shearer LHTC Broadband' in available search results. His digital footprint is minimal, which is typical of operations directors at small rural telcos who are practitioners, not public-facing executives. Source: Search conducted — not found.",
+    "LHTC Broadband's scale (small rural PA provider) suggests they likely rely on small regional A&E firms or self-perform limited design work rather than large national engineering firms. This means they are more likely to feel the GIS-to-CAD manual workflow pain directly rather than having it abstracted behind a large contractor. The labor shortage (3:1 job-to-candidate ratio for fiber designers) would hit them disproportionately. Source: Industry baseline + company scale inference.",
+    "Pennsylvania BEAD timeline pressure is real: PA's $683M allocation requires ISP contracts finalized within ~6 months of April 30, 2026 (by ~October 2026), with construction starts expected Q3 2026 at earliest. For a rural operator like LHTC, permit kickbacks — each costing 3–6 weeks — represent an existential risk to hitting BEAD deployment milestones and unlocking funding tranches. Source: NTIA BEAD program rules + PA allocation data.",
+    "No evidence found of LHTC using Inorsa, IQGeo, or any named GIS-to-CAD automation tool. No vendor relationships publicly disclosed. The company is small enough that they may be fully manual in GIS-to-CAD workflow, making them a greenfield prospect rather than a displacement sale. Source: Search conducted — not found.",
+    "Matthew Mongell (Business Development Manager) at LHTC attending the same show likely indicates he is managing BEAD application and funding coordination. BD Managers at rural telcos in 2025–2026 are frequently the internal champions for tooling that accelerates build timelines because their performance is tied to project delivery and grant compliance. Mongell may be the warmer thread for an initial Inorsa conversation. Source: Role pattern inference + booth scan."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "No direct LinkedIn profile found for Matt Shearer — cannot confirm tenure, career history, or previous employers to personalize outreach",
+    "No public quote, panel appearance, podcast, or trade press interview found for Matt Shearer — no first-person statement of priorities available",
+    "Cannot confirm whether LHTC has applied for or been awarded any portion of Pennsylvania's $683M BEAD allocation — this is the single most important gap",
+    "Cannot confirm LHTC's current design/engineering workflow (in-house GIS, outsourced A&E, or hybrid) — critical for framing Inorsa's value prop correctly",
+    "Org chart unknown — cannot confirm whether a VP Engineering, VP Operations, or CEO sits above Shearer and who ultimately holds budget authority",
+    "Cannot confirm whether LHTC is currently in active BEAD build planning or still in pre-application/challenge phase",
+    "No evidence of existing vendor relationships for permitting or design automation tools",
+    "Company revenue, headcount, and total planned fiber miles not publicly available — makes it hard to size the deal or calibrate urgency"
+  ],
+  "challengesToOtherFindings": [
+    "The ICP grade of 'hold' is defensible given Shearer's ops title, but it may be underweighting this contact. An operations director at a rural ISP actively attending a fiber tradeshow during the BEAD operational window is exhibiting strong behavioral buying signals regardless of title grade — the tradeshow attendance itself is a signal worth more than the title alone.",
+    "The multi-contact presence (Shearer + Richter + Mongell) from a small rural PA operator is unusual and suggests deliberate attendance, not incidental. This is a stronger buying signal than a single attendee from a larger company. The D/hold tier may need to be revisited if BEAD award status can be confirmed.",
+    "Matthew Mongell (Business Development Manager) may actually be the better primary outreach target for Inorsa than Shearer, given that BD managers at rural telcos are often the internal drivers of BEAD-adjacent tooling decisions, while operations directors focus on execution after tools are selected. However, Shearer is the one who will feel permitting pain most directly, making him the right pain-point target even if Mongell is the champion."
+  ],
+  "topInsight": "LHTC sent three people to a fiber tradeshow — Operations, Marketing, and Business Development — during the exact window when Pennsylvania's $683M BEAD allocation is being converted into ISP contracts. For a small rural Pennsylvania operator, this is not casual attendance; it signals active build preparation. Matt Shearer as Director of Operations is the person who will personally absorb the consequences of permit kickbacks and slow GIS-to-CAD cycles during a time-bound BEAD deployment. The outreach angle is not 'drawing generation' — it is: 'Each permit return costs your BEAD project 3–6 weeks. With PA contracts finalizing by October and construction starting Q3, you have almost no buffer. How is your current workflow handling that?' Lead with the permitting cycle time proof point (3-4 weeks to 2 days) and tie it directly to BEAD milestone risk.",
+  "sourcesUsed": [
+    "NTIA BEAD allocation data (Pennsylvania $683,057,831) — industry baseline KB",
+    "ShowRev Industry Intelligence KB — fiber market baseline (permitting, labor, BEAD timeline)",
+    "Booth scan list — multi-contact confirmation (Shearer, Richter, Mongell)",
+    "LHTC Broadband public company information (lhtc.net domain, Donegal/Lamar PA service area) — general web inference",
+    "LinkedIn search for 'Matt Shearer LHTC Broadband' — not found / no public profile confirmed",
+    "Trade press search (bbcmag.com, lightreading.com, etisoftware.com) for Matt Shearer — not found",
+    "Speaker/panel search 'Matt Shearer Fiber Connect' — not found",
+    "Role pattern inference from comparable rural CLEC/ISP org structures"
+  ]
+}
+```

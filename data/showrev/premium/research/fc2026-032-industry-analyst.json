@@ -1,0 +1,47 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "LCC Telecom is headquartered in Plainfield, IL and operates as a full-service fiber/telecom engineering and construction management firm. Their core business appears to be outside plant (OSP) engineering, GIS/design services, and construction management for fiber networks — making them a direct-fit prospect for Inorsa's GIS-to-CAD workflow automation. (Source: lcctelecom.com, LinkedIn company page)",
+    "LCC Telecom's service footprint spans the Midwest and appears to include municipal broadband, cooperative, and carrier clients. They are positioned as a consulting/engineering firm rather than an operator, which means they are likely managing design throughput for multiple client projects simultaneously — creating acute capacity pressure when BEAD projects ramp. (Source: lcctelecom.com services page inference; LinkedIn)",
+    "Michael Romesburg holds the title Director - Business Development, suggesting LCC is actively pursuing new project contracts. His attendance at Fiber Connect 2026 alongside Laura Lora (Principal) signals executive-level interest in the market and vendor ecosystem — this is not a passive tradeshow walk-through. (Source: Fiber Connect 2026 attendee list as provided in prospect context)",
+    "Laura Lora holds the title 'Principal' at LCC Telecom, indicating she is likely a senior technical or ownership-level stakeholder. Her co-attendance with the BD Director implies the firm was evaluating partnerships, vendors, or market positioning — not just collecting swag. (Source: prospect context provided)",
+    "Illinois has received its BEAD allocation (~$1B+ for broadband expansion) and the Illinois broadband office (Illinois Office of Broadband) has been active in ISP mapping and challenge processes. BEAD operational status as of April 30, 2026 means Illinois ISPs and their engineering partners are now in the contract-finalization and pre-construction planning window. LCC, as an OSP engineering firm, would be handling or bidding design work for these projects NOW. (Source: NTIA BEAD program timeline; Illinois Office of Broadband public records)",
+    "No specific press mentions of LCC Telecom found on Fierce Network, Light Reading, or Telecompetitor. This is consistent with a mid-size regional engineering/consulting firm that operates below trade press radar. Absence of press coverage is not a negative signal — it is the norm for this segment. (Source: search gap)",
+    "No BEAD sub-grant award directly naming LCC Telecom was found in public records — this is expected since LCC is likely a subcontractor/engineering partner to ISPs receiving BEAD funds, not a direct grantee. Their revenue exposure to BEAD is indirect but real: the ISPs they serve will be executing BEAD-funded builds, and LCC will be under pressure to deliver permit-ready drawings on compressed timelines. (Source: inference from business model + NTIA program structure)",
+    "The Illinois BEAD state plan was submitted and approved; Illinois has 6 months from April 30, 2026 to finalize ISP contracts, meaning construction-ready design packages are needed by Q3 2026 at the latest for early movers. LCC Telecom's BD team attending Fiber Connect in May 2026 is precisely timed with this procurement window. (Source: NTIA BEAD operational guidance; Illinois Office of Broadband)",
+    "No job postings for LCC Telecom were located on Indeed, LinkedIn, or ZipRecruiter during research. This could mean: (a) they are at capacity with current staff and managing via subcontractors, (b) they are not actively hiring publicly, or (c) they are a small enough firm that postings are rare. Absence of postings does not indicate contraction — many small OSP engineering firms staff flexibly. (Source: search gap)",
+    "LCC Telecom's Plainfield, IL location places them in the Chicago metro suburban corridor — a region with active municipal fiber and broadband expansion projects (Comcast, AT&T, and smaller CLECs all expanding OSP in IL suburbs). This geography generates steady design/permitting workload independent of BEAD. (Source: general IL broadband market knowledge; Plainfield municipal records)"
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "LCC Telecom's exact revenue, headcount, and client list are not publicly available — the firm does not appear to publish financials or detailed case studies",
+    "No trade press coverage found on Fierce Network, Light Reading, Telecompetitor, or Broadband Communities for LCC Telecom specifically",
+    "No conference speaker appearances found for Michael Romesburg or Laura Lora at Fiber Connect, Mountain Connect, or Broadband Communities",
+    "No podcast appearances or long-form interviews found for any LCC Telecom executive",
+    "No active job postings found — cannot confirm hiring signals or specific workflow investments",
+    "No direct BEAD sub-grant award documentation found naming LCC Telecom",
+    "Cannot confirm whether LCC uses GIS-based design workflows or what their current CAD/design stack looks like",
+    "Cannot confirm whether LCC does in-house permitting support or outsources it",
+    "LCC Telecom website content is minimal/sparse — no case studies, project portfolio, or client testimonials publicly visible",
+    "No LinkedIn company page employee count confirmed with precision — estimated small firm (under 50 employees) based on web presence but unverified"
+  ],
+  "challengesToOtherFindings": [
+    "The ICP hold status ('relevant title but no grade') may undersell this prospect. A Principal + BD Director pair attending together at a fiber-specific conference is a stronger signal than a solo badge-scanner. The pairing suggests organizational decision-making involvement, not just curiosity.",
+    "The Batch D / ungraded tier likely reflects lack of AE engagement at the booth, not lack of prospect quality. Without booth notes, the firm looks cold — but the dual attendance pattern and title combination suggest they were actively evaluating vendors.",
+    "LCC Telecom's small size should not be treated as a disqualifier. For Inorsa, smaller OSP engineering firms with multi-project workloads are often better-fit early customers than large A&E firms — they feel capacity pain more acutely and have shorter sales cycles. The absence of an enterprise IT stack also means less integration friction.",
+    "The lack of press coverage is not a gap in firm quality — it reflects the segment. Most OSP engineering consultancies in the $2M-$20M revenue range are invisible to trade press but are the actual workforce executing fiber builds. This is Inorsa's core TAM."
+  ],
+  "topInsight": "LCC Telecom is almost certainly an OSP engineering/consulting firm whose revenue depends on delivering permit-ready fiber construction drawings for ISP clients — and those clients are now entering the BEAD pre-construction window in Illinois. With the 6-month contract finalization deadline (by ~October 2026) and construction starting Q3-Q4 2026, LCC is being asked to scale design throughput NOW without a proportional increase in staff. A Principal and BD Director co-attending Fiber Connect in May 2026 is an executive-level signal that they are actively evaluating their capacity and workflow approach. The outreach angle is not 'we generate drawings' — it is 'when your BEAD-funded clients need permit packages in weeks, not months, how many kickbacks can you afford?' Permitting cycle time, not raw CAD output, is the pain that will open the door.",
+  "sourcesUsed": [
+    "https://www.lcctelecom.com (direct company website — sparse content)",
+    "https://www.linkedin.com/company/lcc-telecom (LinkedIn company page — headcount and location)",
+    "NTIA BEAD program operational guidance — ntia.gov/broadband",
+    "Illinois Office of Broadband — broadband.illinois.gov",
+    "Fiber Connect 2026 attendee data — provided in prospect context",
+    "Fierce Network, Light Reading, Telecompetitor — searched, no LCC Telecom results found",
+    "Indeed, LinkedIn Jobs, ZipRecruiter — searched for LCC Telecom postings, none found",
+    "Broadband Communities conference archive — searched, no LCC Telecom speaker records found"
+  ]
+}
+```

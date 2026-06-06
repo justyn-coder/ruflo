@@ -1,0 +1,40 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "North East MS Electric Power Association (NEMEPA) is an electric cooperative serving northeastern Mississippi, headquartered in Oxford, MS. They operate NE Fiber as their broadband subsidiary — a pattern common among electric cooperatives leveraging existing right-of-way and infrastructure to deploy fiber. Source: nemepa.org domain, Oxford MS location, cooperative naming convention.",
+    "Mississippi received $683,057,831 in BEAD funding. As a cooperative-backed fiber ISP in a rural Mississippi market, NE Fiber is a near-certain BEAD subgrantee candidate. BEAD became operational April 30, 2026; Mississippi ISP contracts must be finalized within 6 months (by ~October 2026), making Q3-Q4 2026 a critical decision window for design tooling and permitting workflow. Source: BEAD funding records in research corpus.",
+    "Nathan Robbins holds the CTO title at NEMEPA/NE Fiber. At a cooperative of this scale, CTO typically means he owns the technical architecture, vendor selection, and engineering operations for the fiber buildout. He is almost certainly the primary technical decision-maker and likely has significant influence over budget for tooling. Final budget approval may rest with a CEO or board, but Robbins would be the internal champion whose recommendation would carry. Source: Title analysis, cooperative org structure norms.",
+    "No AE booth notes were recorded for Robbins. His ICP status is 'hold' with no grade — meaning no AE qualified him on the floor. This is a cold follow-up from badge scan only. Outreach must do the qualification work the booth conversation did not. Source: Prospect context metadata.",
+    "Electric cooperative fiber deployments (ECFS/EC fiber) typically run lean engineering teams — often 2-5 internal staff — who are stretched thin managing GIS data, permit applications, and construction coordination simultaneously. The 3:1 labor shortage ratio hits these organizations hard because they cannot compete on salary with larger A&E firms. Manual GIS-to-CAD workflow is likely the default. Source: Industry baseline + cooperative operational model inference.",
+    "Mississippi's permitting environment for rural fiber is mixed — state DOT and county road permits vary significantly by jurisdiction. For a cooperative spanning multiple northeastern MS counties (likely Lafayette, Union, Pontotoc, Calhoun area counties based on Oxford HQ), permitting complexity across multiple jurisdictions is a real operational pain point. Each kickback = 3-6 weeks of delay against a BEAD construction timeline. Source: Industry baseline + geographic inference.",
+    "No direct quotes from Robbins found in trade press, podcasts, or conference panels. No Fiber Connect 2026 speaking record found. No LinkedIn profile data confirmed. His public footprint appears minimal — typical of cooperative technical staff who attend conferences as learners, not speakers. Source: Search inference, absence of findings.",
+    "The cooperative model means NE Fiber's board is the ultimate budget authority, but a CTO recommendation on an engineering/permitting tool of Inorsa's likely price point would likely pass with minimal friction if Robbins is bought in. Cooperatives are member-funded and cost-sensitive, but BEAD funding creates a justifiable line item for design tooling that accelerates deployment and reduces costly rework. Source: Cooperative governance structure norms.",
+    "No other NE Fiber / NEMEPA contacts appear in the booth scan list based on available data, limiting multi-threading options without a referral from Robbins. Source: Company contacts list — single contact only."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "Nathan Robbins LinkedIn profile not confirmed — tenure, career history, previous companies, and whether he came from an engineering/GIS background or IT/network background are all unknown. This matters because an IT-background CTO will have different objections than a field-engineer-turned-CTO.",
+    "NE Fiber's current design workflow is unknown — whether they use in-house GIS staff, outsource to an A&E firm, or have a hybrid model is unconfirmed. This directly determines whether Inorsa replaces a vendor relationship or augments internal capacity.",
+    "No confirmation of NE Fiber's BEAD application status — whether they are a confirmed subgrantee, an applicant, or a prospective applicant. This affects urgency calibration significantly.",
+    "NE Fiber's current permitting volume and known pain points are unconfirmed — no public statements, press releases, or cooperative newsletter mentions found.",
+    "No confirmation of current CAD/GIS tooling stack (ESRI, AutoCAD, Bentley, etc.) which would determine integration complexity objections.",
+    "No direct quotes from Robbins on any public platform — eliminates the best-case personalization hook.",
+    "Cooperative annual report or board minutes that might reveal buildout scope, timeline commitments, or vendor relationships — not found."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP 'hold' designation should not be treated as a negative signal. It simply reflects that no AE engaged him at the booth. A CTO at a BEAD-funded rural cooperative fiber operator is squarely within Inorsa's fiber-only ICP and should be upgraded to active prospect pending a qualification call.",
+    "The Batch D tier likely reflects absence of AE notes rather than a genuine disqualification. The combination of CTO title + cooperative fiber subsidiary + Mississippi BEAD allocation makes this a structurally valid prospect regardless of tier assignment.",
+    "Cooperative cost-sensitivity is real but should not be overstated as an objection. BEAD funding explicitly covers infrastructure deployment costs, and design/permitting tooling that demonstrably reduces rework and permit kickbacks has a direct, calculable ROI in a grant-funded construction timeline. The objection is not 'we can't afford it' but 'prove the ROI in our context.'"
+  ],
+  "topInsight": "NE Fiber is a cooperative-backed rural fiber operator in Mississippi sitting inside a $683M BEAD allocation window with a 6-month ISP contract finalization deadline (by ~October 2026). Robbins as CTO is almost certainly the technical decision-maker for design and permitting tooling. The single most compelling angle is timeline compression: if BEAD construction starts Q3 2026 and each permit kickback costs 3-6 weeks, a cooperative running lean engineering staff cannot absorb rework cycles without jeopardizing their deployment commitment to the state. The email opener should lead with the BEAD construction clock and permitting friction — not drawing generation — and offer a single diagnostic question: 'How many jurisdictions are you pulling permits across, and what's your current cycle time per application?' This qualifies pain and positions Inorsa's conflict-flagging and permit-ready output as the solution before a formal demo is requested.",
+  "sourcesUsed": [
+    "nemepa.org (domain/location inference)",
+    "Industry baseline: BEAD operational timeline, labor shortage, permitting constraint data (ShowRev Industry Intelligence KB)",
+    "BEAD funding records in research corpus: $683,057,831 Mississippi allocation",
+    "Prospect context metadata: title, location, ICP status, batch tier",
+    "Cooperative governance and operational model: general industry knowledge, no specific URL confirmed",
+    "Fiber Connect 2026 feedback summary (Inorsa client brief)"
+  ]
+}
+```

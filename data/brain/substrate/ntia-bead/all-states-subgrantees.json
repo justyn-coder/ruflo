@@ -1,0 +1,196 @@
+{
+  "source": "ntia-bead-subgrantees",
+  "title": "BEAD Provisional Awards — All States Complete Sub-Grantee List",
+  "url": "https://www.telecompetitor.com/updated-comprehensive-list-bead-benefit-of-the-bargain-provisional-awards/",
+  "date": "2026",
+  "states": {
+    "Alabama": {
+      "allocation": "$1.4B",
+      "provisional_awards": "$530.7M",
+      "subgrantees": [
+        {"company": "Comcast Cable Communications Management LLC", "amount": "$157,204,258"},
+        {"company": "AT&T (BellSouth Telecommunications LLC)", "amount": "$93,246,382"},
+        {"company": "SP Broadband Inc.", "amount": "$57,614,608"},
+        {"company": "Premier Holdings LLC", "amount": "$57,405,202"},
+        {"company": "ZiTEL", "amount": "$53,818,453"},
+        {"company": "Yellowhammer Networks LLC", "amount": "$24,216,483"},
+        {"company": "Windstream Alabama LLC", "amount": "$17,873,782"},
+        {"company": "Charter Communications (Spectrum)", "amount": "$16,626,800"},
+        {"company": "Brightspeed", "amount": "$14,302,871"},
+        {"company": "Millry Telephone Co.", "amount": "$9,450,000"},
+        {"company": "Farmers Telecommunications Corp.", "amount": "$8,318,075"},
+        {"company": "Amazon Kuiper", "amount": "$8,160,000"},
+        {"company": "SpaceX (Starlink)", "amount": "$7,468,500"},
+        {"company": "Ardmore Telephone Co.", "amount": "$3,216,073"},
+        {"company": "Point Broadband Fiber Holding", "amount": "$1,821,711"}
+      ]
+    },
+    "California": {
+      "allocation": "$1.9B",
+      "provisional_awards": "$1.57B",
+      "subgrantees": [
+        {"company": "Comcast", "amount": "$399,711,231"},
+        {"company": "AT&T", "amount": "$331,334,561"},
+        {"company": "Frontier Communications", "amount": "$248,654,998"},
+        {"company": "Stimulus Technologies of California", "amount": "$118,997,374"},
+        {"company": "Astound Broadband", "amount": "$113,910,769"},
+        {"company": "Amazon Kuiper", "amount": "$100,979,428"},
+        {"company": "Wi-Fiber of Northern California", "amount": "$64,103,363"},
+        {"company": "SpaceX (Starlink)", "amount": "$63,089,695"},
+        {"company": "INTUS Smartcities", "amount": "$50,432,883"},
+        {"company": "Resound Networks", "amount": "$34,433,409"},
+        {"company": "VARCOMM Broadband", "amount": "$23,076,128"}
+      ]
+    },
+    "Georgia": {
+      "allocation": "$1.31B",
+      "provisional_awards": "$309.6M",
+      "subgrantees": [
+        {"company": "Windstream Communications", "amount": "$118,915,422"},
+        {"company": "AT&T", "amount": "$44,899,034"},
+        {"company": "Georgia Windstream", "amount": "$28,362,388"},
+        {"company": "Comcast", "amount": "$20,198,847"},
+        {"company": "Conexon Connect", "amount": "$19,899,198"},
+        {"company": "Burke County", "amount": "$14,230,000"},
+        {"company": "Mediacom", "amount": "$12,659,423"},
+        {"company": "Charter (Spectrum)", "amount": "$12,615,842"},
+        {"company": "SpaceX (Starlink)", "amount": "$11,645,993"},
+        {"company": "Zoom Telcom", "amount": "$11,611,883"},
+        {"company": "Blue Ridge Mountain EMC", "amount": "$3,807,280"},
+        {"company": "Brightspeed", "amount": "$2,265,592"},
+        {"company": "LiveOak Fiber", "amount": "$2,231,167"},
+        {"company": "Plant Telephone Company", "amount": "$1,767,135"},
+        {"company": "City of Elberton (ElbertonNet)", "amount": "$1,456,019"},
+        {"company": "Ellijay Telephone Company", "amount": "$1,278,364"},
+        {"company": "Dovetel Communications", "amount": "$1,183,360"},
+        {"company": "Pembroke Telephone Company", "amount": "$493,500"},
+        {"company": "Planters Communications", "amount": "$82,371"}
+      ]
+    },
+    "Louisiana": {
+      "allocation": "$1.36B",
+      "provisional_awards": "$499.1M",
+      "subgrantees": [
+        {"company": "Louisiana Local Fiber Consortium", "amount": "$378,042,581"},
+        {"company": "AT&T", "amount": "$21,507,805"},
+        {"company": "Nextlink", "amount": "$18,490,698"},
+        {"company": "Cajun Broadband", "amount": "$18,203,892"},
+        {"company": "Comcast", "amount": "$16,233,318"},
+        {"company": "Direct Communications", "amount": "$10,000,000"},
+        {"company": "Conexon Connect", "amount": "$9,349,697"},
+        {"company": "SpaceX (Starlink)", "amount": "$7,745,250"},
+        {"company": "Brightspeed", "amount": "$5,751,955"},
+        {"company": "SkyRider Communications", "amount": "$5,418,804"},
+        {"company": "Pelican Broadband", "amount": "$4,022,689"},
+        {"company": "Coushatta Tribe of LA", "amount": "$3,529,898"}
+      ]
+    },
+    "Michigan": {
+      "allocation": "$1.6B",
+      "provisional_awards": "$919.1M",
+      "subgrantees": [
+        {"company": "Strategic Management LLC", "amount": "$272,036,386"},
+        {"company": "123NET", "amount": "$85,536,205"},
+        {"company": "ITC Broadband Operating", "amount": "$71,248,405"},
+        {"company": "Midwest Energy & Communications", "amount": "$59,437,634"},
+        {"company": "Surf Internet", "amount": "$54,339,757"},
+        {"company": "Charter (Spectrum)", "amount": "$45,684,355"},
+        {"company": "Presque Isle Electric & Gas Co-op", "amount": "$38,016,460"},
+        {"company": "Upper Peninsula Telephone Company", "amount": "$35,505,000"},
+        {"company": "Comcast", "amount": "$29,286,256"},
+        {"company": "Great Lakes Energy", "amount": "$26,711,000"},
+        {"company": "Point Broadband Fiber Holding", "amount": "$22,584,250"},
+        {"company": "Brightspeed", "amount": "$19,704,803"},
+        {"company": "DMCI Broadband", "amount": "$19,215,468"},
+        {"company": "SpaceX (Starlink)", "amount": "$16,758,000"}
+      ]
+    },
+    "Mississippi": {
+      "allocation": "$1.2B",
+      "provisional_awards": "$567.2M",
+      "subgrantees": [
+        {"company": "AT&T", "amount": "$241,719,009"},
+        {"company": "Cablesouth Media III", "amount": "$75,129,148"},
+        {"company": "Conexon Connect", "amount": "$66,349,715"},
+        {"company": "Comcast", "amount": "$44,620,446"},
+        {"company": "Bruce Telephone Company", "amount": "$42,552,391"},
+        {"company": "TEC of Jackson", "amount": "$40,758,621"},
+        {"company": "Telepak Networks", "amount": "$22,338,413"},
+        {"company": "Franklin Telephone Company", "amount": "$19,070,871"},
+        {"company": "Amazon Kuiper", "amount": "$5,201,400"},
+        {"company": "TecInfo Communications", "amount": "$4,921,067"},
+        {"company": "SpaceX (Starlink)", "amount": "$3,762,327"},
+        {"company": "Mediacom", "amount": "$741,963"}
+      ]
+    },
+    "Missouri": {
+      "allocation": "$1.74B",
+      "provisional_awards": "$793.3M",
+      "subgrantees": [
+        {"company": "Brightspeed", "amount": "$117,333,761"},
+        {"company": "Conexon Connect", "amount": "$64,636,100"},
+        {"company": "STE Rural Broadband", "amount": "$51,617,972"},
+        {"company": "Hometown Internet", "amount": "$47,357,529"},
+        {"company": "Net Vision Communications", "amount": "$43,104,558"},
+        {"company": "Current Inc.", "amount": "$41,609,805"},
+        {"company": "Stimulus Technologies", "amount": "$41,077,818"},
+        {"company": "Charter (Spectrum)", "amount": "$39,645,265"},
+        {"company": "Socket Telecom", "amount": "$35,932,432"},
+        {"company": "Total Highspeed", "amount": "$32,547,833"},
+        {"company": "Wisper Internet", "amount": "$22,860,634"},
+        {"company": "United Fiber", "amount": "$21,659,065"}
+      ]
+    },
+    "North_Carolina": {
+      "allocation": "$1.53B",
+      "provisional_awards": "$408.5M",
+      "subgrantees": [
+        {"company": "AT&T", "amount": "$142,476,363"},
+        {"company": "Brightspeed", "amount": "$90,599,049"},
+        {"company": "Charter (Spectrum)", "amount": "$71,467,709"},
+        {"company": "Frontier Internet", "amount": "$44,179,778"},
+        {"company": "Amazon Kuiper", "amount": "$15,885,600"},
+        {"company": "Citizens Telephone Company", "amount": "$8,738,155"},
+        {"company": "Wilkes Telephone Membership Coop", "amount": "$7,929,438"},
+        {"company": "Cherokee Cablevision", "amount": "$6,902,283"}
+      ]
+    },
+    "Texas": {
+      "allocation": "$3.31B",
+      "provisional_awards": "$1.27B",
+      "subgrantees": [
+        {"company": "Nexstream (4ip Technology)", "amount": "$407,439,361"},
+        {"company": "Astound Networks Texas", "amount": "$166,100,901"},
+        {"company": "Lyte Fiber", "amount": "$119,069,421"},
+        {"company": "SpaceX (Starlink)", "amount": "$108,789,551"},
+        {"company": "Plains Internet", "amount": "$96,116,680"},
+        {"company": "Frontier Southwest", "amount": "$59,237,742"},
+        {"company": "Aristotle Unified Communications", "amount": "$56,914,449"},
+        {"company": "Rural Telecommunications of America", "amount": "$48,392,725"},
+        {"company": "Charter (Spectrum)", "amount": "$47,810,536"},
+        {"company": "AMG Technology (Nextlink)", "amount": "$39,308,137"},
+        {"company": "AT&T", "amount": "$32,237,747"},
+        {"company": "Brightspeed", "amount": "$24,396,727"},
+        {"company": "Resound Networks", "amount": "$23,127,233"},
+        {"company": "360 Broadband", "amount": "$16,071,631"}
+      ]
+    },
+    "Virginia": {
+      "allocation": "$1.48B",
+      "provisional_awards": "$613.3M",
+      "subgrantees": [
+        {"company": "Virginia Everywhere", "amount": "$171,382,468"},
+        {"company": "Comcast", "amount": "$146,403,435"},
+        {"company": "RiverStreet Communications", "amount": "$44,002,222"},
+        {"company": "ZiTEL", "amount": "$38,130,346"},
+        {"company": "Empower Broadband", "amount": "$35,185,485"},
+        {"company": "Verizon Virginia", "amount": "$30,431,448"},
+        {"company": "Point Broadband Fiber Holding", "amount": "$23,358,488"},
+        {"company": "Wi-Fiber", "amount": "$23,187,805"},
+        {"company": "Port 80 Internet Services", "amount": "$21,806,686"},
+        {"company": "GigaBeam Networks", "amount": "$18,174,941"},
+        {"company": "Brightspeed", "amount": "$16,661,198"}
+      ]
+    }
+  }
+}

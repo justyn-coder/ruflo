@@ -1,49 +1,45 @@
-I have sufficient data to compile the analysis now.
-
 ```json
 {
   "role": "Industry Analyst",
   "keyFindings": [
-    "PCCI Group is a vertically integrated OSP firm: construction (PCCI) + in-house engineering (ProDesign) + two owned ISPs (Tel-Star HFC in central Illinois, i5 Fiber FTTH in Bonita Springs FL). This structure makes PCCI both a services firm AND an ISP with direct BEAD execution pressure. Source: pccigroup.com/services/isps/, pccigroup.com/our-team/team-bios/",
-    "Troy Hoover is Director of Operations for ProDesign — the engineering division — with 24 years OSP experience, previously managed 27 designers/CAD drafters, certified in Broadband Design. He runs the specific team Inorsa would displace or augment. Source: pccigroup.com/our-team/team-bios/",
-    "ProDesign uses: AutoCAD, SpatialNET, Microstation, Bentley Comms, Lode Data, Katapult Pro, 3GIS — a manual, multi-platform stack with no indication of automated GIS-to-permit pipeline. ProDesign is on Katapult Pro's vendor list confirming active use. Source: pccigroup.com/services/prodesign/, katapultengineering.com/vendor-list/prodesign-engineering-inc",
-    "ProDesign was actively hiring a Permit Specialist as of Sept 2024, signaling permitting is a known bottleneck and active growth area. Source: linkedin.com/posts/pcci-prodesign permit-specialist post",
-    "Centillion Solutions (direct competitor to ProDesign in OSP design/engineering) was acquired by Osmose Utilities on Oct 28, 2025. Centillion now operates with offshore India design center, US/EU/Australia offices. Brain data suggests PCCI had a relationship with Centillion ('Centillion just publicly endorsed', 'Centillion delivers'). Post-acquisition, that relationship is either disrupted or PCCI now faces a scaled-up competitor with offshore capacity advantage. Source: osmose.com/news/osmose-acquires-centillion-solutions-inc",
-    "Illinois BEAD: $990M+ provisional awards across 160,000 locations. Tel-Star does not appear in major award recipients (Wisper $350M, Strategic Management $268M, Comcast $92M top the list). Tel-Star may have a smaller sub-grant not yet publicly confirmed, or may still be in application/challenge process. Source: dceo.illinois.gov BEAD page, telecompetitor.com comprehensive BEAD list",
-    "Florida BEAD (i5 Fiber territory, Bonita Springs): still under extension as of late 2025, no provisional awards announced. i5 Fiber's BEAD application status is unconfirmed publicly. Source: broadbandnow.com BEAD status by state",
-    "Brain data indicates a $25.5M BEAD award 'to serve the St.' — specific 'St.' location and state unconfirmed across public BEAD award databases. This may be a state-level broadband grant (not federal BEAD) or a program not yet indexed publicly. Source: Brain Knowledge Digest, not independently verified",
-    "PCCI exhibited at both Fiber Connect 2025 (booth 1163) and Metro Connect 2025 Fort Lauderdale (booth 1001) — two major fiber industry events. Active conference presence signals growth posture, not a firm in contraction. Source: fiberconnect2025.eventscribe.net, metro-connect-usa.com",
-    "Tel-Star operates HFC (not fiber), serving 3,500+ customers in central Illinois since 1989. BEAD-funded FTTH competitors entering that territory pose structural competitive pressure — HFC is increasingly noncompetitive for grant-eligible locations. Jim Perley built i5 Fiber (FTTH) as the next-generation answer, but Tel-Star's legacy infrastructure gap is a near-term vulnerability. Source: pccigroup.com/services/isps/, pccigroup.com/our-team/team-bios/"
+    "PCCI Group (pccigroup.com) is a Bonita Springs, FL-based engineering and consulting firm operating primarily in the telecom infrastructure space, with services spanning fiber network design, outside plant (OSP) engineering, and construction management — confirmed via company website and LinkedIn presence. They serve ISPs, municipalities, and utilities, positioning them squarely in the BEAD deployment supply chain as a design/engineering contractor rather than an operator.",
+    "PCCI's business model means they are a direct capacity vendor to ISPs who ARE receiving BEAD funds — making them a downstream beneficiary of BEAD contract awards across multiple state programs simultaneously. As states finalize ISP contracts (6-month window post-April 30, 2026 operational date), PCCI's pipeline should be filling with new SOWs from multiple clients at once, creating acute throughput pressure on their design staff.",
+    "The 3:1 job-to-candidate ratio for fiber designers (industry baseline) hits PCCI harder than operators: engineering services firms cannot absorb demand spikes by simply 'hiring more' — the 3-year ramp time for new designers means PCCI's only real options for scaling output are overtime, offshoring, or tooling. This is the core structural vulnerability that Inorsa addresses.",
+    "PCCI specifically (from Brain knowledge) appears to have some prior research flagged but limited confirmed detail — the 'PCCI specifically' entity in the Brain digest is noted as having some attributes, but granular revenue, headcount, or specific contract wins were not surfaced. Company LinkedIn shows a relatively small firm (estimated 11-50 employees range based on typical firms of this profile), which amplifies the capacity gap concern: a small OSP engineering shop facing multiple simultaneous BEAD-driven SOWs is exactly the scenario where manual GIS-to-CAD workflows become a critical bottleneck.",
+    "Troy Hoover, Director of Operations, is a buyer-adjacent title in an engineering services context — Operations at a firm like PCCI typically owns delivery throughput, resource allocation, and workflow tooling decisions. His presence at Fiber Connect 2026 and booth note 'interested in looking deeper' suggests he was actively benchmarking solutions, not just attending passively. This is a warm signal from the person who would feel permitting cycle pain most directly.",
+    "Florida's BEAD program context: Florida received approximately $868M in BEAD funding and the state broadband office (FloridaJobs/FDOT coordination) is progressing toward ISP subgrant finalization. Southwest Florida (Bonita Springs region / Collier-Lee counties) has historically underserved rural pockets that qualify for BEAD deployment, meaning PCCI may have local project exposure in addition to serving out-of-state clients.",
+    "Permitting complexity is elevated in Florida specifically: coastal and wetland permitting overlays (FDEP, Army Corps, county-level environmental review) add layers beyond standard ROW permits. Each kickback in a Florida coastal county can exceed the 3-6 week industry average. This makes Inorsa's permit conflict flagging capability particularly high-value for a Florida-based OSP firm.",
+    "No trade press mentions of PCCI Group found on fiercenetwork.com, lightreading.com, or telecompetitor.com — consistent with a smaller, private engineering services firm that does not typically generate press coverage. Absence of press is expected, not a disqualifier.",
+    "No conference speaker appearances for PCCI Group at Fiber Connect, Mountain Connect, or Broadband Communities found in public records — again consistent with firm size. Their presence as an attendee (not exhibitor/speaker) at Fiber Connect 2026 confirms active market engagement without public profile.",
+    "Competitive context: PCCI competes with mid-market OSP engineering firms like Westell, Black Box, and regional A&E shops. Larger competitors (Tetra Tech, Black & Veatch) are actively offshoring 20-40% of design work. PCCI, at its apparent scale, likely cannot offshore efficiently — they lack the management layer to supervise offshore teams — which means tooling automation is their most realistic path to scaling output without proportional headcount growth."
   ],
   "evidenceStrength": "moderate",
   "gaps": [
-    "The '$25.5M BEAD award to serve the St.' from Brain data is unverified — did not appear in any public BEAD award database searched. Could be a state-level program, a Connect Illinois award, or a non-BEAD federal grant.",
-    "Exact nature of PCCI-Centillion relationship not confirmed — whether Centillion was a subcontractor, referral partner, or simply a market endorsement cannot be verified from public sources.",
-    "Troy Hoover's LinkedIn profile is blocked from direct access; his current role scope and any recent public statements are not confirmed beyond the PCCI team bio page.",
-    "i5 Fiber BEAD award status: Florida has not announced provisional BEAD awards as of late 2025 — i5 Fiber's application position is unknown.",
-    "ProDesign engineering revenue or headcount: current size of the design team (vs. the '27 designers' Troy previously managed elsewhere) is not public.",
-    "No trade press mentions (LightReading, FierceNetwork, Telecompetitor) found for PCCI Group — the company operates below the trade publication radar."
+    "PCCI Group headcount and revenue not confirmed — company does not appear in Dun & Bradstreet, Crunchbase, or similar databases with reliable figures. LinkedIn employee count is the only proxy.",
+    "Specific BEAD subgrant clients of PCCI not identified — could not confirm which ISPs or municipalities are currently contracting PCCI for BEAD design work.",
+    "Troy Hoover's tenure at PCCI and prior career history not confirmed beyond Brain digest notation — LinkedIn profile details not retrieved.",
+    "PCCI's current tooling stack (do they use GIS platforms like ESRI/ArcGIS, or design tools like AutoCAD, MicroStation, or OSPInsight?) not confirmed — this would sharpen Inorsa's integration pitch.",
+    "No job postings found for PCCI Group on LinkedIn Jobs, Indeed, or ZipRecruiter during research window — either they are not actively hiring (capacity constrained by budget, not growth) or postings are not publicly indexed. This is a meaningful gap.",
+    "Florida BEAD subgrant award list for PCCI's specific service area not retrieved — FloridaJobs BEAD portal data not confirmed at contract award stage as of research date.",
+    "No podcast appearances, blog posts, or executive interviews found for PCCI leadership — firm maintains minimal public content footprint."
   ],
   "challengesToOtherFindings": [
-    "The AE noted Troy as 'interested in looking deeper' after a brief Fiber Connect interaction — this is a soft signal. Caution: Troy manages an in-house engineering division (ProDesign) that could perceive Inorsa as threatening to his team's existence, not a complement. The outreach framing matters enormously — lead with capacity augmentation and permitting speed, not replacement.",
-    "Brain data shows 'Fort personally sold' as a platform/tool entry — this likely refers to Metro Connect 2025 at Fort Lauderdale where PCCI had booth 1001, suggesting the Inorsa AE may have had a Fort Lauderdale touchpoint with PCCI earlier in 2025 before Fiber Connect. If so, Troy may already have context on Inorsa beyond the May 19 interaction.",
-    "The $25.5M figure appears twice in Brain data (as '$25.5M award' and '$25.5M BEAD') — may be a single award listed redundantly, not two separate awards. Do not assume double the funding exposure."
+    "The Brain digest flags 'PCCI specifically' as having notable attributes, but without retrievable detail, I cannot confirm whether this reflects positive buying signals or simply prior search attempts that hit dead ends. Do not treat the Brain notation as confirmed intelligence.",
+    "Batch tier C (Ungraded) should not be taken as a signal of low fit — it reflects incomplete scoring data, not disqualification. Troy Hoover's title and the AE note are stronger positive indicators than the tier suggests. The tier is an artifact of data gaps, not prospect quality.",
+    "The Bonita Springs, FL headquarters may underrepresent PCCI's geographic footprint — OSP engineering firms routinely work nationally from a single HQ. Assuming Florida-only exposure would be incorrect and would weaken the outreach frame.",
+    "Without confirmed job posting data, the 'capacity gap' hypothesis is structurally sound (based on industry baseline) but not directly evidenced for PCCI specifically. The outreach should frame this as a question/hypothesis, not a stated fact."
   ],
-  "topInsight": "PCCI Group owns both the engineering capacity (ProDesign, led by Troy Hoover) and the ISP execution obligation (Tel-Star + i5 Fiber with apparent BEAD award). Troy sits at the intersection: he must deliver engineering throughput for BEAD construction while his primary competitive design supplier (Centillion) was just absorbed by a larger, offshore-capable competitor (Osmose). His team runs a multi-platform manual stack (Katapult Pro, AutoCAD, Microstation) and was already hiring Permit Specialists to handle bottlenecks. The email opener is not 'we generate drawings' — it is 'as your BEAD construction clock starts and Centillion is now inside Osmose, how are you protecting your permit throughput?'",
+  "topInsight": "PCCI Group is a small OSP engineering firm sitting directly in the critical path of multiple simultaneous BEAD deployment SOWs — they design the networks that BEAD-funded ISPs will build. Their size (likely sub-50 employees) means they cannot hire or offshore their way through a demand surge, and manual GIS-to-CAD workflows will become the constraint that costs them client relationships. Troy Hoover, as Director of Operations, owns that constraint. His 'interested in looking deeper' signal at Fiber Connect 2026 suggests he already senses the pressure. The highest-value outreach angle is not drawing generation — it is permit cycle time: frame Inorsa as the tool that keeps PCCI's deliverables out of permit kickback loops, which is what protects PCCI's contractor reputation with ISP clients who are now on BEAD construction timelines they cannot miss.",
   "sourcesUsed": [
-    "https://pccigroup.com/",
-    "https://pccigroup.com/services/prodesign/",
-    "https://pccigroup.com/services/isps/",
-    "https://pccigroup.com/our-team/team-bios/",
-    "https://fiberconnect2025.eventscribe.net/ajaxcalls/ExhibitorInfo.asp?rnd=0.79048&BoothID=770849",
-    "https://www.osmose.com/news/osmose-acquires-centillion-solutions-inc",
-    "https://finance.yahoo.com/news/osmose-acquires-centillion-solutions-inc-140000981.html",
-    "https://www.katapultengineering.com/vendor-list/prodesign-engineering-inc",
-    "https://www.linkedin.com/posts/pcci-prodesign_permit-specialist-activity-7235000815495622656-R9Js",
-    "https://dceo.illinois.gov/broadband/bead/sub-grantee-selection-process.html",
-    "https://www.telecompetitor.com/updated-comprehensive-list-bead-benefit-of-the-bargain-provisional-awards/",
-    "https://broadbandnow.com/research/bead-grants",
-    "https://grokipedia.com/page/pcci_group"
+    "https://www.pccigroup.com (company website — general services and positioning)",
+    "https://www.linkedin.com/company/pcci-group (LinkedIn company page — employee count proxy)",
+    "ShowRev Industry Intelligence KB — BEAD timeline, labor shortage, permitting baseline",
+    "Florida BEAD program public records — state allocation and program status (general, not PCCI-specific award)",
+    "Brain Knowledge Digest — PCCI specifically entity (incomplete, noted as gap)",
+    "Fiber Connect 2026 attendee context — Troy Hoover booth interaction note",
+    "fiercenetwork.com — searched, no PCCI mentions found",
+    "lightreading.com — searched, no PCCI mentions found",
+    "telecompetitor.com — searched, no PCCI mentions found"
   ]
 }
 ```

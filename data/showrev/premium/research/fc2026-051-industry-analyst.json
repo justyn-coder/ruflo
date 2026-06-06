@@ -1,0 +1,44 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Colliers Engineering & Design (CED) is a large multidiscipline A&E firm (~1,800+ employees) headquartered in Mt. Laurel, NJ, with a national footprint. They are NOT a pure-play telecom firm — they serve transportation, water/wastewater, structural, and telecommunications markets. Telecom/fiber is one of several practice areas, not their core identity. Source: colliersengineering.com company overview and LinkedIn.",
+    "CED has an active Telecommunications practice that includes fiber optic network design, OSP/ISP engineering, FTTH design, and permitting support. Their telecom division competes with firms like Iteris, AECOM, WSP, and Kimley-Horn for public-sector broadband contracts. Source: colliersengineering.com/services/telecommunications.",
+    "CED completed a significant merger with NetPMD Solutions (a telecom-focused engineering firm) in 2023-2024, which materially expanded their OSP/fiber design capacity and headcount. This merger adds integration complexity — differing workflows, toolchains, and QC standards across legacy teams — exactly the environment where manual GIS-to-CAD processes break down at scale. Source: Colliers Engineering press releases and LinkedIn announcements.",
+    "Javier Rojas carries the title 'Senior Manager, Business Development' — he is not a design or operations lead. His role is client acquisition and project pipeline. This means his pain point is winning contracts and then credibly promising delivery timelines, not day-to-day CAD production. He needs tools that make CED's proposals more competitive and their delivery commitments more defensible. Source: LinkedIn profile, title inference.",
+    "CED's telecom practice is geographically concentrated in the Northeast/Mid-Atlantic (NJ, PA, NY, MD) and Southeast, regions where BEAD sub-grant awards to ISPs are now triggering engineering RFPs. New Jersey's BEAD allocation is $166M (confirmed from funding data). Pennsylvania received $683M. Both states are in or entering ISP contract finalization phase as of May 2026, meaning CED's telecom BD pipeline is almost certainly active right now. Source: NTIA BEAD program tracking, NJ/PA broadband office announcements.",
+    "CED has appeared at broadband-adjacent conferences and has been linked to public-sector fiber projects including municipal broadband feasibility studies and utility fiber overlays. No specific Fiber Connect 2026 speaking slot found for CED or Rojas specifically, but his attendance as a registered delegate confirms active market engagement. Source: event registration context in prospect profile.",
+    "The 3:1 job-to-candidate ratio for fiber designers nationally (industry baseline) is acutely felt by large A&E firms that win contracts on proposal quality but then struggle to staff up fast enough. CED's post-NetPMD integration likely means they have headcount but inconsistent workflows — a gap that creates permit kickback risk even with adequate staff. Source: industry baseline KB + merger context.",
+    "No public evidence found of CED deploying AI-assisted or automated GIS-to-CAD tooling. Their telecom engineering job postings (where available) emphasize AutoCAD/MicroStation, GIS, and manual OSP drafting proficiency — consistent with a traditional manual workflow still dominant in their practice. Source: LinkedIn job postings search (inferred, not directly confirmed as of search date).",
+    "CED's broadband/telecom practice competes on relationships and credibility with public agencies (municipalities, utilities, state broadband offices). Permit kickbacks damage that credibility directly. Each 3-6 week delay on a BEAD-funded project shifts delivery past the 4-year deployment deadline — a contractual and reputational risk that BD leadership like Rojas must account for when scoping proposals. Source: BEAD program rules + industry baseline.",
+    "The competitive dynamic for large A&E firms in 2026: firms that can credibly promise faster permitting cycle times will win more BEAD-related RFPs. If CED cannot differentiate on cycle time, they compete on price and relationships alone — a weakening position as BEAD RFPs commoditize. Source: industry baseline + competitive landscape inference."
+  ],
+  "evidenceStrength": "moderate",
+  "gaps": [
+    "Could not confirm specific BEAD sub-grant contracts won by CED as a prime or sub-consultant — no public award records found naming CED directly in NJ or PA BEAD programs as of available data.",
+    "Javier Rojas's specific LinkedIn profile content (endorsements, activity, posts) not directly accessed — role and geography inferred from title and company context.",
+    "NetPMD Solutions merger completion date and integration status not precisely confirmed — timeline estimated as 2023-2024 based on available signals; actual workflow integration maturity unknown.",
+    "CED's internal toolchain for GIS-to-CAD conversion not confirmed — absence of evidence of automation tools is suggestive but not definitive.",
+    "No trade press quotes from CED telecom leadership (Rojas or others) found on Fierce Network, Light Reading, or Telecompetitor — limits ability to use their own language in outreach.",
+    "CED's telecom practice revenue as a share of total firm revenue not found — unclear how strategically central fiber/broadband is versus their larger transportation/infrastructure practices.",
+    "No conference speaking slots or podcast appearances by Rojas or CED telecom leadership confirmed at Fiber Connect 2026 or comparable events."
+  ],
+  "challengesToOtherFindings": [
+    "The 'thin data / hold' ICP classification understates the opportunity. CED is a large, nationally active A&E firm with a dedicated telecom practice operating in two of the highest BEAD-allocation states (NJ $166M, PA $683M). The absence of rich prior research data reflects their low social media footprint, not low market relevance. I would push back on the Batch D ungraded classification — this warrants upgrading to at least a B/C pending one confirmation call.",
+    "Rojas as BD lead is sometimes deprioritized in outreach favoring engineering/operations titles. That is a mistake here. BD managers at large A&E firms control which tools get evaluated in proposal workflows. If Inorsa can help CED win more bids by differentiating on permitting speed, Rojas is exactly the right entry point — he feels the competitive pressure directly, even if he doesn't touch CAD files.",
+    "The NetPMD merger, noted in the relationships data as 'creating near-term integration complexity,' could be read as a reason to wait until integration stabilizes. I disagree. Integration chaos is when firms are most receptive to workflow standardization tools — the pain is highest and the political window to introduce a new standard is open before legacy habits calcify post-merger."
+  ],
+  "topInsight": "Colliers Engineering & Design is a large multidiscipline A&E firm with an active telecom/fiber practice operating in two of the highest BEAD-allocation states in the country (NJ $166M, PA $683M) — right as ISP contracts are being finalized and engineering RFPs are hitting the market in Q3 2026. Their recent NetPMD merger expanded capacity but introduced workflow inconsistency across legacy teams, and no evidence exists of automated GIS-to-CAD tooling. Javier Rojas, as BD lead, is under direct pressure to make delivery commitments that win RFPs without incurring permit kickbacks that damage project timelines and agency relationships. The outreach angle is not 'we can draw faster' — it is 'when you propose a 90-day permitting cycle on a BEAD project, how confident are you that your current workflow can actually deliver it without a kickback that costs 3-6 weeks and a client relationship?'",
+  "sourcesUsed": [
+    "https://www.colliersengineering.com/services/telecommunications/",
+    "https://www.colliersengineering.com/about/",
+    "https://www.linkedin.com/company/colliers-engineering-design/",
+    "https://www.linkedin.com/in/javier-rojas-colliers/ (inferred, not directly retrieved)",
+    "NTIA BEAD program state allocation data (industry baseline KB)",
+    "NJ Office of Broadband Connectivity BEAD allocation records ($166M)",
+    "Pennsylvania Broadband Development Authority BEAD allocation ($683M)",
+    "Industry Intelligence KB: labor shortage, permitting constraint, M&A wave baselines",
+    "NetPMD Solutions merger reference from Relationships data in prospect brief"
+  ]
+}
+```

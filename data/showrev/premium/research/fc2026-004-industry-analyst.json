@@ -1,0 +1,36 @@
+```json
+{
+  "role": "Industry Analyst",
+  "keyFindings": [
+    "Zyxel Communications is a Taiwan-headquartered networking hardware manufacturer (founded 1989) with North American operations in Anaheim, CA. They produce CPE, routers, switches, ONTs, and DSL/fiber access equipment — positioning them as a hardware vendor in the telecom/ISP supply chain, NOT an operator or engineering services firm. AE flag ('hardware vendor') is confirmed. Source: zyxel.com/us/en/",
+    "Zyxel has active fiber/FTTH product lines including XGS-PON and GPON ONTs, and has marketed to ISPs and carriers deploying fiber broadband. They are a supplier TO the ecosystem, not a deployer of it. This means they sell into BEAD-funded projects indirectly through ISP customers, not as a BEAD sub-grantee themselves. Source: zyxel.com product catalog, general trade knowledge",
+    "Zyxel is not a GIS/design/engineering firm. They do not produce construction drawings, manage permitting workflows, or employ fiber designers. The core Inorsa value proposition (GIS-to-CAD, permit drawing generation, cycle time reduction) does not map to Zyxel's business model or operational pain points. Source: zyxel.com/us/en/, AE notes",
+    "Andrew Cuellar's title is Sales Engineer — meaning he is a pre-sales/technical resource helping Zyxel's ISP customers evaluate and deploy hardware. He would have visibility into ISP pain points but zero authority or budget for design software procurement. He is not a decision-maker for any Inorsa-relevant tool. Source: contact record",
+    "Zyxel competes in the ONT/CPE hardware market against Calix, Nokia (Alcatel-Lucent), Huawei, ZTE, and CommScope. None of these are Inorsa competitors. The competitive dynamics here are irrelevant to Inorsa's positioning. Source: general trade knowledge, lightreading.com coverage of PON CPE market",
+    "No evidence found of Zyxel receiving BEAD sub-grant funding directly — consistent with their role as a hardware OEM, not a network operator. They may benefit from BEAD-driven hardware procurement volume, but this does not create a permitting workflow pain point. Source: search of NTIA BEAD grantee lists, not found",
+    "Zyxel has no apparent presence at Fiber Connect 2026 as a speaker or featured exhibitor in the engineering/design track. Their tradeshow presence, if any, would be in hardware/equipment exhibit halls. Source: fiberconnect.org agenda review, not confirmed as speaker",
+    "No job postings found indicating Zyxel is hiring fiber designers, GIS technicians, permitting specialists, or CAD technicians — further confirming they are outside Inorsa's ICP entirely. Source: LinkedIn jobs, indeed.com search, not found"
+  ],
+  "evidenceStrength": "strong",
+  "gaps": [
+    "Could not verify Andrew Cuellar's specific tenure at Zyxel or prior employer history — irrelevant given ICP rejection",
+    "No trade press quotes from Cuellar or Zyxel leadership on BEAD hardware procurement pipeline — would be useful context but does not change ICP assessment",
+    "Zyxel's exact North American revenue or headcount not publicly confirmed — not material to this analysis",
+    "No visibility into whether Cuellar attended the show in a personal capacity (job-seeking) vs. representing Zyxel — does not change outreach recommendation"
+  ],
+  "challengesToOtherFindings": [
+    "One might argue that Zyxel's ISP customers are Inorsa's ICP and that Cuellar could serve as a referral path or channel partner. I reject this: Sales Engineers at hardware OEMs have no structural incentive or authority to recommend design software to their customers, and this indirect path would require significant relationship investment with near-zero conversion probability. The effort-to-outcome ratio is negative.",
+    "BEAD hardware demand is real and Zyxel will likely benefit from increased ONT/CPE procurement through 2028. This does NOT create a permitting or design workflow pain point at Zyxel. Do not conflate BEAD market tailwinds with ICP relevance — these are different layers of the value chain.",
+    "Some analysts might flag Zyxel's fiber product expansion as a signal of strategic alignment with Inorsa's market. This is misleading: hardware OEMs and design automation software serve orthogonal functions. Fiber product growth at Zyxel means more hardware is moving, not that Zyxel needs drawing generation tools."
+  ],
+  "topInsight": "Zyxel is a hardware OEM with no permitting workflows, no design engineering staff, and no GIS-to-CAD operations. The AE rejection is correct and well-supported. There is no pathway to Inorsa relevance here — not through the contact, not through the company, not through an indirect channel play. This record should be suppressed from all active outreach sequences. Analyst time spent on this prospect is not recoverable; recommend immediate exclusion from Batch E sequencing and archiving the record for future reference only if Zyxel launches an operator/CLEC division (no current signals of this).",
+  "sourcesUsed": [
+    "https://www.zyxel.com/us/en/",
+    "https://www.zyxel.com/us/en/products/fiber-access",
+    "https://www.lightreading.com (general Zyxel/PON CPE market coverage, no specific article URL confirmed for this prospect)",
+    "https://broadbandusa.ntia.doc.gov/bead (BEAD grantee reference, Zyxel not found as direct recipient)",
+    "https://www.linkedin.com/jobs (Zyxel NA job postings review, no design/GIS roles found)",
+    "https://www.fiberconnect.org (speaker/exhibitor agenda, Zyxel not found in engineering track)"
+  ]
+}
+```

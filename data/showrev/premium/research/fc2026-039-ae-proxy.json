@@ -1,0 +1,40 @@
+```json
+{
+  "role": "AE Proxy",
+  "keyFindings": [
+    "ISG (Infrastructure Solutions Group or similar) is headquartered in Iowa/Minnesota region — Mankato, MN address for Leila Hussein suggests this is a regional engineering or infrastructure services firm, likely a design/build or A&E firm serving telecom operators. The Iowa area code (319) on her phone number suggests her career origin is Iowa-based, consistent with a firm with multi-state Midwest operations. Firm identity not fully confirmed from Brain data — 'ISG' does not appear in the 32 discovered companies list, indicating this is a net-new firm not previously researched.",
+    "Title 'Business Unit Leader' at an A&E or design-build firm in fiber/telecom context most likely maps to a profit-center owner for a specific service line (e.g., OSP Design, Engineering Services, or Fiber Infrastructure). This persona typically controls headcount, subcontract spend, and tool/software budgets within their BU — they recommend to a COO or CEO for larger platform decisions but can approve workflow tooling independently at mid-range spend levels (~$50K–$200K annual). She is likely a Design/Document persona with operational oversight.",
+    "AE booth notes confirm dual scope: long haul AND FTTH. This is significant — long-haul requires route/permitting coordination with DOTs and railroads (complex, multi-agency permit workflows); FTTH requires high-volume permit packages at municipal/county level. Both are high-kickback-risk environments. The combination means ISG is not a niche single-product shop — they manage permitting complexity across two distinct regulatory tracks simultaneously.",
+    "Explicit request for a demo at the booth is a tier-1 buying signal. This is not a passive badge scan — she initiated conversation, disclosed her tech stack (GIS and CAD), confirmed permitting use case, and requested a next step. This is among the strongest lead signals in the batch.",
+    "GIS + CAD for permitting workflow confirmed by AE notes. This is the exact pain point Inorsa solves: manual GIS-to-CAD translation for permit package generation. Given industry baseline (each permit kickback = 3–6 weeks delay, labor shortage 3:1 job-to-candidate ratio), ISG is almost certainly experiencing throughput bottlenecks in permit drawing production — especially if they are handling both long-haul (DOT/railroad permits) and FTTH (municipal) simultaneously.",
+    "BEAD urgency is real but indirect for a firm in ISG's position. As a design/engineering services firm, ISG's revenue accelerates when ISP clients win BEAD contracts and need to move to construction drawings quickly. With BEAD operational April 30, 2026 and state ISP contracts finalizing within 6 months (by ~October 2026), ISG's pipeline of permit-ready design work should spike in Q3–Q4 2026. Leila's BU is likely being asked to scale throughput without equivalent headcount growth — making automation directly relevant now.",
+    "Mankato, MN is a hub for rural infrastructure work in southern Minnesota. ISG operating here suggests they serve rural/suburban operators — cooperatives, municipal utilities, or regional ISPs — that are prime BEAD recipients. This further increases likelihood their clients are in active BEAD award cycles, creating downstream urgency for ISG's design capacity.",
+    "No trade press quotes, speaking engagements, or LinkedIn profile data found for 'Leila Hussein' at ISG in available Brain data or discovered company list. This is a cold-profile contact — outreach must rely on role inference and booth conversation context rather than a personalized quote hook.",
+    "ISG does not appear among the 32 previously researched companies in Brain, meaning no org chart, funding data, or leadership structure is available. Multi-threading opportunity (other ISG contacts at the show) cannot be confirmed from available booth-scan data."
+  ],
+  "evidenceStrength": "weak",
+  "gaps": [
+    "ISG's full legal name, company size, revenue, and org structure not found — 'ISG' is ambiguous (could be Infrastructure Solutions Group, Innovative Systems Group, or another entity). Cannot confirm from Brain data.",
+    "Leila Hussein LinkedIn profile not found in research data — career history, tenure at ISG, prior employers, and whether she has been promoted recently are all unknown.",
+    "No confirmation of ISG's BEAD exposure — whether their ISP clients have received or applied for BEAD funding is unverified.",
+    "Budget authority scope unknown — cannot confirm whether Leila controls software/tooling spend independently or requires C-suite sign-off.",
+    "No other ISG contacts identified in booth-scan list — cannot confirm multi-threading opportunity or identify an economic buyer above her.",
+    "Long-haul vs. FTTH split of ISG's workload unknown — unclear which line of business is larger or growing faster, which would affect which permitting pain to lead with.",
+    "Current tooling vendor unknown beyond 'GIS and CAD' — specific platforms (Esri, AutoCAD, MicroStation, etc.) not identified. Integration complexity objection cannot be pre-addressed without this.",
+    "No trade press, podcast, or panel appearance found for Leila Hussein — no direct quote available for personalized email opener."
+  ],
+  "challengesToOtherFindings": [
+    "The ICP status is marked 'hold' with AE noting 'title unclear' — I challenge this hold. 'Business Unit Leader' at a fiber design/engineering firm with confirmed GIS+CAD permitting workflow and an explicit demo request is a qualified prospect by behavior, even if the title doesn't map cleanly to a standard buyer title. The hold likely reflects uncertainty about decision authority, not fit. Fit is strong. The demo request should override the title ambiguity for sequencing purposes.",
+    "Batch Tier C (Ungraded) likely reflects the absence of prior research on ISG, not a quality signal about the lead itself. The booth conversation evidence (dual scope disclosure, tech stack confirmation, demo request) is stronger than most Tier A leads that are badge-only scans. This lead should be re-tiered to B or A pending ISG company verification.",
+    "The Iowa area code (319) should not be interpreted as the company being Iowa-based — it is her personal/mobile number. Mankato, MN is the operating location. Do not let area code mismatch create doubt about whether she is the right regional contact."
+  ],
+  "topInsight": "Leila Hussein is a self-qualified, demo-requesting contact who disclosed her exact workflow (GIS + CAD for permitting) across two high-complexity permit tracks (long haul + FTTH) — this is Inorsa's core use case delivered back to us unprompted. The single most important thing shaping outreach: lead with the permitting cycle time proof point ('one customer cut review cycles from 3–4 weeks to 2 days'), not the drawing generation feature. Her BU is almost certainly being pressure-tested by BEAD-driven client demand in Q3–Q4 2026 without proportional headcount growth. The demo she requested should be framed around: 'how many permit packages can your team produce per week today, and what happens when that number needs to double?' That question, not a product demo, is the conversation she actually needs.",
+  "sourcesUsed": [
+    "AE booth scan notes (05/18/2026 2:03 PM)",
+    "ShowRev Industry Intelligence KB (BEAD timeline, labor shortage, permitting cycle data)",
+    "Inorsa product brief (capability and proof point data)",
+    "Brain Knowledge Digest (370 entities — ISG not found among 32 discovered companies)",
+    "Inference from title/location/scope — no external URLs confirmed for Leila Hussein or ISG"
+  ]
+}
+```
