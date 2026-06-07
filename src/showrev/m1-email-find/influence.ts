@@ -476,7 +476,8 @@ ${micrositeSlug ? `P.S. Put together a brief on ${prospect.company}'s [relevant 
 Rules: 1-2 sentences. Pattern break from body tone.
 
 ## Hard constraints
-- WORD COUNT: ${touchNumber === 3 ? '45-55 words target. Hard ceiling 66 words (+10% flex).' : '65-78 words target. Hard ceiling 88 words (+10% flex).'} Body only, excluding subject/PS/signature. Over the ceiling triggers recomposition. Company-specific data points are worth the words, but ruthlessly cut filler to stay under the ceiling. Flex exists only to complete a thought naturally, not as extra budget.
+- INORSA MENTIONS: The word "Inorsa" may appear in EXACTLY ONE sentence in the body. That sentence must be the verbatim pitch variant above. Do NOT mention Inorsa anywhere else in the body — not in the opener, bridge, CTA, or any other sentence. The P.S. line may reference the Inorsa URL but the body gets ONE mention only.
+- WORD COUNT: ${touchNumber === 3 ? '45-55 words target. Hard ceiling 66 words (+10% flex).' : '60-75 words target. Hard ceiling 88 words (+10% flex).'} Body only, excluding subject/PS/signature. Over the ceiling triggers recomposition. Company-specific data points are worth the words, but ruthlessly cut filler to stay under the ceiling. Flex exists only to complete a thought naturally, not as extra budget. Aim for the LOW end of the target range — 60-70 words is ideal.
 - Subject line: under 8 words, specific to their situation. First letter capitalized. No all-lowercase.
 - Salutation: strictly "${prospect.firstName}," (comma only, NO greeting word)
 - The salutation IS the sentence start. Do NOT capitalize the first word after the comma unless it's a proper noun (state names like Mississippi/Washington/Georgia, country names, company names, person names, and acronyms like BEAD/NTIA are ALL proper nouns — keep them capitalized).

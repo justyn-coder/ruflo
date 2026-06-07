@@ -423,9 +423,9 @@ async function fetchSendData(): Promise<SendData> {
   const sbHeaders = { apikey: sbKey, Authorization: `Bearer ${sbKey}` };
 
   const [pRes, eRes, mRes] = await Promise.all([
-    fetch(`${sbUrl}/rest/v1/sr_prospects?send_status=eq.send&select=*`, { headers: sbHeaders }),
-    fetch(`${sbUrl}/rest/v1/sr_engine_output?select=*`, { headers: sbHeaders }),
-    fetch(`${sbUrl}/rest/v1/sr_microsites?select=*`, { headers: sbHeaders }),
+    fetch(`${sbUrl}/rest/v1/sr_prospects?send_status=eq.send&select=*&limit=0`, { headers: { ...sbHeaders, 'Range-Unit': 'items', Range: '0-9999' } }),
+    fetch(`${sbUrl}/rest/v1/sr_engine_output?send_status=eq.send&select=*&limit=0`, { headers: { ...sbHeaders, 'Range-Unit': 'items', Range: '0-9999' } }),
+    fetch(`${sbUrl}/rest/v1/sr_microsites?select=*&limit=0`, { headers: { ...sbHeaders, 'Range-Unit': 'items', Range: '0-9999' } }),
   ]);
 
   const prospects: any[] = await pRes.json();

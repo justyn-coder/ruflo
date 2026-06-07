@@ -1,6 +1,6 @@
-Brain Knowledge Digest (635 entities)
+Brain Knowledge Digest (662 entities)
 
-## Companies discovered (65)
+## Companies discovered (68)
 - **Avatar Tech**: firm Avatar Tech is
 - **Mohawk Networks**: operator: Mohawk Networks is
 - **Centillion**: firm Centillion is
@@ -67,7 +67,7 @@ Lighthouse Technologies is
 - **IMMCO's current headcount with prec**: firm IMMCO's current headcount with precis
 - **Spencer Kariniemi's LinkedIn profile or career h**: firm Spencer Kariniemi's LinkedIn profile or career his
 
-## Funding programs (78)
+## Funding programs (82)
 - $25.5M award
 - $25.5M BEAD
 - $83M BEAD
@@ -146,6 +146,10 @@ Lighthouse Technologies is
 - $868M BEAD
 - $399M in BEAD
 - $813M allocation
+- $869.5M in BEAD
+- $975M allocation
+- $1.4B in BEAD
+- $1.7B in BEAD
 
 ## Relationships (83)
 - NetPMD Solutions creates near-term integration complexity that could cut both ways: merger with NetPMD Solutions creates near-term integration complexity that could cut both ways
@@ -267,7 +271,7 @@ Result
 - Osmose (engineering_software)
 - Hexagon (engineering_software)
 
-## Tools / platforms in use (399)
+## Tools / platforms in use (419)
 - case
 - engineering
 - those
@@ -669,6 +673,26 @@ Runway is designed
 - or contracts
 - was confirmed in any public source
 - conversation needs
+- AutoCAD LT or full AutoCAD
+- AutoCAD specifically
+- EPB uses
+- of or exposure
+- any number of
+- AutoCAD is the statistically dominant
+- Inorsa is a direct
+- subdomain conventions
+- team
+- him as an entry point
+- any
+- OSP design team or outsources
+- legacy or proprietary
+- subcontractors
+- fiber network design
+- budget or must escalate
+- Vetro or GPON design
+- coordination
+- applications go
+- engineering and consulting services
 
 ## Regulatory / funding landscape (1 entries)
 - BEAD award to serve the St.

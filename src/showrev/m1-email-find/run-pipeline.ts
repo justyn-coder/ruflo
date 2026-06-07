@@ -37,6 +37,7 @@ interface PipelineConfig {
   verbose: boolean;
   model: string;
   composer: 'full' | 'lean' | 'auto';
+  leadType: string;
 }
 
 interface ProspectRow {
@@ -71,6 +72,7 @@ interface PipelineResult {
   icpResult: { verdict: string; icpType: string; reason: string; confidence: number; method: string } | null;
   emailFound: string | null;
   emailConfidence: string;
+  domainMismatch: string | null;
   researchSummary: string;
   semanticVerification: SemanticVerification | null;
   factVerification: FactVerification | null;
@@ -80,6 +82,8 @@ interface PipelineResult {
   judgeScores: Record<string, number>;
   judgePass: boolean;
   crossModelJudge: { consensus: string; divergence: string[] } | null;
+  confidenceScore: number | null;
+  confidenceColor: string | null;
   emailSubjects: { t1: string; t2: string; t3: string };
   emailBodies: { t1: string; t2: string; t3: string };
   emailPs: { t1: string; t2: string; t3: string };
@@ -231,9 +235,29 @@ function toSlug(company: string, firstName?: string, lastName?: string): string 
 async function phaseEmailFind(
   row: ProspectRow,
   verbose: boolean,
-): Promise<{ email: string | null; confidence: string }> {
-  if (row.email) {
-    return { email: row.email, confidence: 'provided' };
+): Promise<{ email: string | null; confidence: string; domainMismatch: string | null; csvDomainMismatch: boolean; mvQuality: string | null }> {
+  const isPlaceholder = !row.email || row.email.startsWith('pending@');
+
+  // Verify CSV-provided emails with MillionVerifier before trusting them.
+  // CSV domain is a data point, not truth — MV catches bad domains and typos
+  // before we burn research credits on a dead address.
+  if (!isPlaceholder && row.email) {
+    const mvKey = process.env.MILLIONVERIFIER_API_KEY;
+    if (mvKey) {
+      try {
+        const { verifyEmailMV } = await import('./email-finder/million-verifier.js');
+        const vr = await verifyEmailMV(row.email, { apiKey: mvKey });
+        if (vr.quality === 'good' || vr.quality === 'catch_all') {
+          return { email: row.email, confidence: 'provided-verified', domainMismatch: null, csvDomainMismatch: false, mvQuality: vr.quality };
+        }
+        if (verbose) console.log(`    MV rejected provided email ${row.email}: ${vr.quality}/${vr.result} — falling through to discovery`);
+      } catch (err: any) {
+        if (verbose) console.log(`    MV check failed: ${err.message?.slice(0, 60)} — accepting provided email`);
+        return { email: row.email, confidence: 'provided', domainMismatch: null, csvDomainMismatch: false, mvQuality: null };
+      }
+    } else {
+      return { email: row.email, confidence: 'provided', domainMismatch: null, csvDomainMismatch: false, mvQuality: null };
+    }
   }
 
   try {
@@ -349,10 +373,39 @@ async function phaseEmailFind(
         millionVerifierFn,
       },
     );
-    return { email: result.email, confidence: result.confidence };
+    // Domain mismatch detection: compare discovered domain against CSV/companyUrl
+    let domainMismatch: string | null = null;
+    let csvDomainMismatch = false;
+    if (result.email) {
+      const discoveredDomain = result.email.split('@')[1]?.toLowerCase();
+      if (discoveredDomain) {
+        const csvDomain = row.email?.includes('@')
+          ? row.email.split('@')[1]?.toLowerCase()
+          : null;
+        const companyDomain = row.companyUrl
+          ? (() => { try { return new URL(row.companyUrl.startsWith('http') ? row.companyUrl : `https://${row.companyUrl}`).hostname.replace(/^www\./, ''); } catch { return null; } })()
+          : null;
+
+        const mismatches: string[] = [];
+        if (csvDomain && csvDomain !== discoveredDomain && !csvDomain.startsWith('pending')) {
+          mismatches.push(`csv=${csvDomain}`);
+          csvDomainMismatch = true;
+        }
+        // companyUrl mismatch is informational only — many companies use different
+        // domains for website vs email (e.g. acme-corp.com vs acme.com)
+        if (companyDomain && companyDomain !== discoveredDomain)
+          mismatches.push(`companyUrl=${companyDomain} (info-only)`);
+
+        if (mismatches.length > 0) {
+          domainMismatch = `discovered=${discoveredDomain} vs ${mismatches.join(', ')}`;
+          if (verbose) console.log(`    DOMAIN MISMATCH: ${domainMismatch}`);
+        }
+      }
+    }
+    return { email: result.email, confidence: result.confidence, domainMismatch, csvDomainMismatch, mvQuality: null };
   } catch (err: any) {
     if (verbose) console.log(`    email-find error: ${err.message?.slice(0, 80)}`);
-    return { email: null, confidence: 'error' };
+    return { email: null, confidence: 'error', domainMismatch: null, csvDomainMismatch: false, mvQuality: null };
   }
 }
 
@@ -934,6 +987,10 @@ async function phaseSupabaseWrite(
   mechanicalCheck: { pass: boolean; failures: string[] },
   patterns: Array<{ pattern: string; challengerInsight: string }>,
   microsite: { headline: string; insightText: string },
+  domainMismatch: string | null,
+  emailConfidence: string,
+  confidenceScore: number | null,
+  confidenceColor: string | null,
   dryRun: boolean,
   verbose: boolean,
 ): Promise<boolean> {
@@ -986,6 +1043,10 @@ async function phaseSupabaseWrite(
     research_confidence: '',
     mechanical_check_passed: mechanicalCheck.pass,
     mechanical_check_failures: mechanicalCheck.failures.join('; '),
+    domain_mismatch: domainMismatch,
+    email_confidence: emailConfidence || null,
+    confidence_score: confidenceScore,
+    confidence_color: confidenceColor,
     created_at: new Date().toISOString(),
   };
 
@@ -997,8 +1058,22 @@ async function phaseSupabaseWrite(
     return true;
   }
 
+  // Check if overwriting existing data
   try {
-    const res = await fetch(`${sbUrl}/rest/v1/sr_engine_output`, {
+    const checkRes = await fetch(
+      `${sbUrl}/rest/v1/sr_engine_output?prospect_id=eq.${encodeURIComponent(prospectId)}&select=prospect_id,created_at`,
+      { headers: { apikey: sbKey, Authorization: `Bearer ${sbKey}` } },
+    );
+    if (checkRes.ok) {
+      const existing = await checkRes.json();
+      if (existing.length > 0) {
+        console.log(`    ⚠ OVERWRITING existing sr_engine_output for ${prospectId} (created ${existing[0].created_at})`);
+      }
+    }
+  } catch {}
+
+  try {
+    const res = await fetch(`${sbUrl}/rest/v1/sr_engine_output?on_conflict=prospect_id`, {
       method: 'POST',
       headers: {
         apikey: sbKey,
@@ -1061,6 +1136,7 @@ async function phaseProspectUpsert(
   icpStatus: string = 'pending',
   icpReason: string = '',
   icpType: string = '',
+  leadType: string = '',
 ): Promise<boolean> {
   const prospectId = `${row.firstName}-${row.lastName}-${row.company}`.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
@@ -1090,6 +1166,7 @@ async function phaseProspectUpsert(
     ae_review_status: 'pending',
     show_name: 'Fiber Connect 2026',
     company_website: row.companyUrl || '',
+    ...(leadType ? { lead_type: leadType } : {}),
   };
 
   try {
@@ -1267,12 +1344,15 @@ async function processOneProspect(
     icpResult: null,
     emailFound: row.email || null,
     emailConfidence: row.email ? 'provided' : 'not-attempted',
+    domainMismatch: null,
     researchSummary: '',
     semanticVerification: null,
     factVerification: null,
     structuredIntel: null,
     brainIngest: null,
     brainContext: null,
+    confidenceScore: null,
+    confidenceColor: null,
     judgeScores: {},
     judgePass: false,
     crossModelJudge: null,
@@ -1305,7 +1385,7 @@ async function processOneProspect(
       // Upsert prospect row with reject status so Mission Control shows the reason
       try {
         const ae = resolveAE(row.state);
-        await phaseProspectUpsert(row, ae, null, 'not-attempted', config.dryRun, config.verbose, 'reject', icp.reason, icp.icpType);
+        await phaseProspectUpsert(row, ae, null, 'not-attempted', config.dryRun, config.verbose, 'reject', icp.reason, icp.icpType, config.leadType);
         result.prospectUpserted = true;
       } catch {}
 
@@ -1316,25 +1396,44 @@ async function processOneProspect(
     result.icpResult = { verdict: 'pass', icpType: 'unknown', reason: 'Gate error — defaulting to pass', confidence: 0, method: 'error' };
   }
 
-  // Phase 2: Email Discovery
-  if (!row.email) {
+  // Phase 2: Email Discovery (also runs for pending@ placeholders and MV-rejected emails)
+  const needsDiscovery = !row.email || row.email.startsWith('pending@');
+  if (needsDiscovery) {
     console.log('  Phase 2: Email discovery...');
-    try {
-      const emailResult = await phaseEmailFind(row, config.verbose);
-      result.emailFound = emailResult.email;
-      result.emailConfidence = emailResult.confidence;
-      if (emailResult.email) {
-        row.email = emailResult.email;
-        console.log(`  -> Found: ${emailResult.email} (${emailResult.confidence})`);
-      } else {
-        console.log(`  -> No email found (${emailResult.confidence})`);
-      }
-    } catch (err: any) {
-      errors.push(`email-find: ${err.message?.slice(0, 80)}`);
-      console.log(`  -> Email find error: ${err.message?.slice(0, 60)}`);
-    }
   } else {
-    console.log(`  Phase 2: Email provided (${row.email})`);
+    console.log('  Phase 2: Email verification + discovery...');
+  }
+  try {
+    const emailResult = await phaseEmailFind(row, config.verbose);
+    result.emailFound = emailResult.email;
+    result.emailConfidence = emailResult.confidence;
+    result.domainMismatch = emailResult.domainMismatch;
+    if (emailResult.email) {
+      row.email = emailResult.email;
+      console.log(`  -> ${needsDiscovery ? 'Found' : 'Verified'}: ${emailResult.email} (${emailResult.confidence})`);
+      if (emailResult.domainMismatch) {
+        console.log(`  -> ⚠ DOMAIN MISMATCH: ${emailResult.domainMismatch}`);
+      }
+
+      const { evaluateConfidence } = await import('../deliverability/confidence-gate.js');
+      const mvForGate = emailResult.mvQuality
+        ? { quality: emailResult.mvQuality as any }
+        : undefined;
+      const confEval = evaluateConfidence(
+        emailResult.email,
+        emailResult.confidence as any,
+        mvForGate,
+        emailResult.csvDomainMismatch,
+      );
+      result.confidenceScore = confEval.score;
+      result.confidenceColor = confEval.color;
+      console.log(`  -> Confidence: ${confEval.color} (${confEval.score}) — ${confEval.canSend ? 'can send' : 'BLOCKED'}`);
+    } else {
+      console.log(`  -> No email found (${emailResult.confidence})`);
+    }
+  } catch (err: any) {
+    errors.push(`email-find: ${err.message?.slice(0, 80)}`);
+    console.log(`  -> Email find error: ${err.message?.slice(0, 60)}`);
   }
 
   // Phase 2b: Upsert sr_prospects (Mission Control needs prospect rows)
@@ -1346,6 +1445,7 @@ async function processOneProspect(
       result.icpResult?.verdict === 'pass' ? 'pass' : 'pending',
       result.icpResult?.reason || '',
       result.icpResult?.icpType || '',
+      config.leadType,
     );
     console.log(`  -> ${result.prospectUpserted ? 'Prospect upserted to sr_prospects' : 'Prospect upsert failed (non-blocking)'}`);
   } catch (err: any) {
@@ -1863,6 +1963,10 @@ async function processOneProspect(
       row, runId, emails, ae, micrositeSlug, researchSummary,
       { pass: judgeResult.pass, failures: judgeResult.failures },
       patterns, { headline: microsite.headline, insightText: microsite.insightText },
+      result.domainMismatch,
+      result.emailConfidence,
+      result.confidenceScore,
+      result.confidenceColor,
       config.dryRun, config.verbose,
     );
     if (!config.dryRun) {
@@ -2011,6 +2115,7 @@ async function main(): Promise<void> {
       verbose: { type: 'boolean', short: 'v', default: false },
       model: { type: 'string', default: 'sonnet' },
       composer: { type: 'string', default: 'full' },
+      'lead-type': { type: 'string', default: '' },
       help: { type: 'boolean', short: 'h', default: false },
     },
     strict: false,
@@ -2039,6 +2144,7 @@ Options:
   --verbose, -v          Verbose output
   --model <model>        LLM model: sonnet (default) or opus
   --composer <mode>      Composition: auto (default), lean, or full
+  --lead-type <type>     Lead type tag: Cold (P2 cold outreach), Attendee (P1 booth)
   --help, -h             Show this help
 
 CSV format:
@@ -2075,7 +2181,15 @@ Environment variables:
     verbose: values.verbose as boolean,
     model: (values.model as string) || 'sonnet',
     composer: ((values.composer as string) || 'full') as 'full' | 'lean' | 'auto',
+    leadType: (values['lead-type'] as string) || '',
   };
+
+  // Validate --lead-type
+  const VALID_LEAD_TYPES = ['', 'Cold', 'Attendee', 'Scanned'];
+  if (config.leadType && !VALID_LEAD_TYPES.includes(config.leadType)) {
+    console.error(`Error: --lead-type must be one of: ${VALID_LEAD_TYPES.filter(Boolean).join(', ')}`);
+    process.exit(1);
+  }
 
   // Validate input file
   const inputPath = resolve(process.cwd(), config.input);
@@ -2128,12 +2242,34 @@ Environment variables:
     }
   }
 
+  // Seed bounce monitor from prior runs
+  const { shouldHalt: checkHalt, seedFromSupabase, getBatchStats } = await import('../deliverability/bounce-monitor.js');
+  await seedFromSupabase();
+  const seedStats = getBatchStats();
+  if (seedStats.total > 0) {
+    console.log(`  Bounce monitor seeded: ${seedStats.total} prior sends, ${seedStats.bounced} bounces (${(seedStats.bounceRate * 100).toFixed(1)}%)`);
+    const preCheck = checkHalt();
+    if (preCheck.shouldHalt) {
+      console.error(`\n  🛑 HALT: ${preCheck.reason}`);
+      console.error('  Pipeline stopped. Investigate bounces before continuing.');
+      process.exit(1);
+    }
+  }
+
   // Process each prospect
   const t0 = Date.now();
   const results: PipelineResult[] = [];
 
   for (let i = 0; i < rows.length; i++) {
     const row = rows[i];
+
+    // Check bounce monitor before each prospect
+    const haltCheck = checkHalt();
+    if (haltCheck.shouldHalt) {
+      console.error(`\n  🛑 HALT after ${i} prospects: ${haltCheck.reason}`);
+      console.error('  Remaining prospects skipped. Investigate bounces.');
+      break;
+    }
 
     // Skip existing if flag set
     if (config.skipExisting) {

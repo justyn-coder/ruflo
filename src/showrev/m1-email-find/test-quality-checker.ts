@@ -34,7 +34,7 @@ const ANTI_VALIDATION_TERMS = [
   /\bdetects?\s+(?:errors?|mistakes?|issues?)\b/i,
   /\bstructural\s+analysis\b/i,
   /\bHarmoni\b/i,
-  /\btower\b/i,
+  /\bcell\s*tower/i,
   /\bcellular\b/i,
   /\bsmall\s+cell/i,
   /\bDAS\b/,
@@ -178,6 +178,61 @@ function checkEmail(email: EmailOutput, prospectFirstName: string, icpType: stri
       pass: !boothReferences.test(fullText),
       detail: boothReferences.test(fullText) ? 'COLD prospect but references booth/meeting' : 'Clean',
       severity: 'high',
+    });
+  }
+
+  // --- AI-WRITING DETECTION (research-validated, DL-199) ---
+  // Source: VERMILLION Framework (ResearchLeap 2025), PNAS 2025 (PMC11874169), B2B practitioner findings
+
+  // Check 1: Echoed sentence structures — adjacent sentences mirroring grammatical rhythm
+  const sentences = bodyOnly.split(/(?<=[.!?])\s+/).filter(s => s.length > 10);
+  let echoCount = 0;
+  for (let i = 1; i < sentences.length; i++) {
+    const prev = sentences[i - 1].replace(/[^a-zA-Z\s]/g, '').trim().split(/\s+/);
+    const curr = sentences[i].replace(/[^a-zA-Z\s]/g, '').trim().split(/\s+/);
+    if (prev.length >= 3 && curr.length >= 3 && Math.abs(prev.length - curr.length) <= 2) {
+      const prevStart = prev.slice(0, 3).map(w => w.length > 3 ? 'L' : 'S').join('');
+      const currStart = curr.slice(0, 3).map(w => w.length > 3 ? 'L' : 'S').join('');
+      if (prevStart === currStart) echoCount++;
+    }
+  }
+  checks.push({
+    name: `T${email.touchNumber} echoed sentence structures`,
+    category: 'framing',
+    pass: echoCount <= 1,
+    detail: echoCount > 1 ? `${echoCount} adjacent sentence pairs mirror grammatical rhythm (AI tell)` : `${echoCount} echo(es) — within tolerance`,
+    severity: 'medium',
+  });
+
+  // Check 2: Participial clause density — present-participial openers at 2-5x human rate
+  // Exclude common non-participial -ing words in fiber/construction context
+  const ingExclusions = /^(Building|Engineering|King|Ring|Sing|String|Spring|Sterling|Mining|Morning|Evening|Lightning|Ceiling|Billing|Willing|Darling)\s/i;
+  const participialOpeners = sentences.filter(s => /^[A-Z][a-z]*ing\s/.test(s.trim()) && !ingExclusions.test(s.trim()));
+  checks.push({
+    name: `T${email.touchNumber} participial clause density`,
+    category: 'framing',
+    pass: participialOpeners.length <= 1,
+    detail: participialOpeners.length > 1
+      ? `${participialOpeners.length} participial openers found: "${participialOpeners.map(s => s.slice(0, 30)).join('", "')}" (AI tell per PNAS 2025)`
+      : `${participialOpeners.length} — within human range`,
+    severity: 'medium',
+  });
+
+  // Check 3: Sentence-length variance — low variance = AI tell (B2B practitioner consensus)
+  const sentenceLengths = sentences.map(s => s.split(/\s+/).length);
+  if (sentenceLengths.length >= 3) {
+    const mean = sentenceLengths.reduce((a, b) => a + b, 0) / sentenceLengths.length;
+    const variance = sentenceLengths.reduce((sum, l) => sum + (l - mean) ** 2, 0) / sentenceLengths.length;
+    const stdDev = Math.sqrt(variance);
+    const cv = mean > 0 ? (stdDev / mean) * 100 : 0;
+    checks.push({
+      name: `T${email.touchNumber} sentence-length variance`,
+      category: 'framing',
+      pass: cv >= 25,
+      detail: cv < 25
+        ? `CV=${cv.toFixed(1)}% (lengths: ${sentenceLengths.join(',')}). Below 25% = robotic cadence (AI tell)`
+        : `CV=${cv.toFixed(1)}% — natural variation`,
+      severity: 'medium',
     });
   }
 

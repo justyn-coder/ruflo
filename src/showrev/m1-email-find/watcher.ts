@@ -290,6 +290,7 @@ async function learn(): Promise<void> {
       t1_opened: events.has('opened'),
       t1_replied: events.has('replied'),
       t1_reply_sentiment: existing?.t1_reply_sentiment || (events.has('replied') ? 'unclassified' : null),
+      t1_bounced: events.has('bounced'),
       microsite_viewed: msViewSet.has(p.id),
       microsite_booking_clicked: events.has('clicked'),
       meeting_booked: existing?.meeting_booked || events.has('meeting_booked'),
@@ -555,6 +556,81 @@ async function classify(): Promise<void> {
   console.log(`\nDone: ${classified} classified, ${skipped} skipped (already set or no data)`);
 }
 
+// --- Deliverability command: feed bounce data into deliverability monitor ---
+async function deliverability(): Promise<void> {
+  const { recordOutcome: recordDel, getBatchStats, shouldHalt } = await import('../deliverability/index.js');
+  const { evaluateConfidence } = await import('../deliverability/index.js');
+
+  const h = sbHeaders();
+  const base = sbUrl();
+
+  const [pRes, oRes, eRes] = await Promise.all([
+    fetch(`${base}/rest/v1/sr_prospects?send_status=eq.send&select=id,email,first_name,last_name,company`, { headers: h }),
+    fetch(`${base}/rest/v1/sr_outcomes?event_source=eq.hubspot&select=prospect_id,event_type,contact_email`, { headers: h }),
+    fetch(`${base}/rest/v1/sr_engine_output?select=prospect_id,email_confidence,domain_mismatch`, { headers: h }),
+  ]);
+
+  const prospects: any[] = await pRes.json();
+  const outcomes: any[] = await oRes.json();
+  const engine: any[] = await eRes.json();
+
+  const engineMap = new Map<string, any>();
+  for (const e of engine) engineMap.set(e.prospect_id, e);
+
+  const outcomeByProspect = new Map<string, Set<string>>();
+  for (const o of outcomes) {
+    if (!outcomeByProspect.has(o.prospect_id)) outcomeByProspect.set(o.prospect_id, new Set());
+    outcomeByProspect.get(o.prospect_id)!.add(o.event_type);
+  }
+
+  console.log('=== DELIVERABILITY REPORT ===\n');
+
+  const redProspects: string[] = [];
+  const yellowProspects: string[] = [];
+
+  for (const p of prospects) {
+    const events = outcomeByProspect.get(p.id) || new Set();
+    const bounced = events.has('bounced');
+    const eng = engineMap.get(p.id);
+    const confidence = eng?.email_confidence || 'unknown';
+    const mismatch = eng?.domain_mismatch || false;
+
+    recordDel(p.email, bounced, bounced ? 'hard' : 'unknown');
+
+    const gate = evaluateConfidence(p.email, confidence, undefined, mismatch);
+
+    if (gate.color === 'red') {
+      redProspects.push(`  🔴 ${p.first_name} ${p.last_name} (${p.company}) — score ${gate.score}, ${gate.reasons.join(', ')}${bounced ? ' [BOUNCED]' : ''}`);
+    } else if (gate.color === 'yellow') {
+      yellowProspects.push(`  🟡 ${p.first_name} ${p.last_name} (${p.company}) — score ${gate.score}, ${gate.reasons.join(', ')}`);
+    }
+  }
+
+  const stats = getBatchStats();
+  const halt = shouldHalt();
+
+  console.log(`Total sent: ${stats.total}`);
+  console.log(`Delivered:  ${stats.delivered}`);
+  console.log(`Bounced:    ${stats.bounced} (${(stats.bounceRate * 100).toFixed(1)}%)`);
+  console.log(`Hard:       ${stats.hardBounces} (${(stats.hardBounceRate * 100).toFixed(1)}%)`);
+  console.log(`Halt?       ${halt.shouldHalt ? '⛔ YES' : '✅ NO'} — ${halt.reason}\n`);
+
+  if (redProspects.length) {
+    console.log(`RED gate (${redProspects.length} — do NOT send):`);
+    redProspects.forEach(r => console.log(r));
+    console.log();
+  }
+
+  if (yellowProspects.length) {
+    console.log(`YELLOW gate (${yellowProspects.length} — verify before sending):`);
+    yellowProspects.forEach(r => console.log(r));
+    console.log();
+  }
+
+  const greenCount = prospects.length - redProspects.length - yellowProspects.length;
+  console.log(`GREEN gate: ${greenCount} prospects clear to send`);
+}
+
 // CLI
 if (process.argv[1]?.includes('watcher')) {
   const cmd = process.argv[2] || 'help';
@@ -576,15 +652,20 @@ if (process.argv[1]?.includes('watcher')) {
       classify().catch(err => { console.error('Classify failed:', err.message); process.exit(1); });
       break;
 
+    case 'deliverability':
+      deliverability().catch(err => { console.error('Deliverability check failed:', err.message); process.exit(1); });
+      break;
+
     default:
       console.log(`
 ShowRev Watcher — HubSpot engagement poller + Brain feed
 
 Usage:
-  npx tsx watcher.ts poll       Fetch engagement events from HubSpot → sr_outcomes
-  npx tsx watcher.ts status     Show engagement stats (opens, clicks, replies, microsites)
-  npx tsx watcher.ts learn      Feed outcomes into Brain (sr_brain_outcomes + sr_brain_outreach_patterns)
-  npx tsx watcher.ts classify   Read reply content from HubSpot, classify sentiment (ooo/positive/meeting/decline)
+  npx tsx watcher.ts poll            Fetch engagement events from HubSpot → sr_outcomes
+  npx tsx watcher.ts status          Show engagement stats (opens, clicks, replies, microsites)
+  npx tsx watcher.ts learn           Feed outcomes into Brain (sr_brain_outcomes + sr_brain_outreach_patterns)
+  npx tsx watcher.ts classify        Read reply content from HubSpot, classify sentiment
+  npx tsx watcher.ts deliverability  Run deliverability audit (bounce rates, confidence gates, halt check)
 
 Env: HUBSPOT_PRIVATE_APP_TOKEN, NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY
 `);

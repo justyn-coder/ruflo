@@ -1,8 +1,8 @@
 ---
 title: Inorsa Source of Truth -- ShowRev FC2026 Pilot
 status: ACTIVE
-last_updated: 2026-06-04 00:30 EST
-version: v3
+last_updated: 2026-06-06 12:04 EST
+version: v4
 purpose: Single canonical reference for all Inorsa product claims, positioning, and constraints used in ShowRev outreach. Every email, microsite, HubSpot property, and AE brief must be checked against this file before shipping.
 ---
 
@@ -235,10 +235,27 @@ Inorsa uses MEDDPICC sales qualification in HubSpot. ShowRev dossiers should map
 
 ---
 
+## 13. Deployment Domains (Vercel prj_8Pfr4uUoe0h26wvveeYANnOyvSjN)
+
+Single Next.js app, two domains, different audiences:
+
+| Domain | Audience | Routes | Purpose |
+|--------|----------|--------|---------|
+| **fiber.inorsa.com** | Prospects | `/brief/[slug]` | ABM microsites ONLY. Prospect-facing. What goes in email P.S. links. |
+| **showrev-microsites.vercel.app** | Operators (Justyn, Tim, AEs) | `/ops`, `/ops/queue`, `/ops/pipeline`, `/ops/brain`, `/ops/intelligence` | Internal Mission Control portal + staging. Never shared with prospects. |
+
+**Hard rules:**
+- Prospect emails link to `fiber.inorsa.com/brief/[slug]` — NEVER the showrev-microsites domain.
+- Operator portal URLs (`/ops/*`) should NEVER be exposed to prospects or Inorsa stakeholders.
+- Both domains serve from the same Vercel deployment. Code changes deploy to both simultaneously.
+
+---
+
 ## Version history
 
 | Version | Date (EST) | Author | Change |
 |---------|-----------|--------|--------|
+| v4 | 2026-06-06 12:04 | Claude | Added §13 Deployment Domains — fiber.inorsa.com (prospect-facing) vs showrev-microsites.vercel.app (internal ops portal). |
 | v3 | 2026-06-04 00:30 | Claude | Nick McManus corrections: removed validation/error-catching claims, added 40-50% rejection rate, added "conceptual GIS" + pricing objections, reframed value prop as speed→time→QC (not direct quality assurance). |
 | v2 | 2026-06-02 17:49 | Claude | Added §8 HubSpot Configuration (Sales Hub Pro + Marketing Hub, reporting capabilities). Renumbered §9-12. |
 | v1 | 2026-05-29 10:31 | Claude | Initial SOT. Sources: pitch verbatim (decisions.log #026), Chris one-pager (2026-05-19), inorsa.com/product, inorsa.com/solutions/fiber, inorsa.com/packages, wiki-459-mirror show facts, Tim voice directives, operator constraints. |
