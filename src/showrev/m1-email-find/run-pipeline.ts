@@ -18,7 +18,12 @@
 import { parseArgs } from 'node:util';
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
-import 'dotenv/config';
+import { config as dotenvConfig } from 'dotenv';
+
+// Load .env from pipeline directory (where API keys live), then CWD as fallback
+const pipelineDir = dirname(new URL(import.meta.url).pathname);
+dotenvConfig({ path: resolve(pipelineDir, '.env') });
+dotenvConfig(); // CWD fallback (won't override already-set vars)
 
 // ---------------------------------------------------------------------------
 // Types
@@ -49,6 +54,13 @@ interface ProspectRow {
   email?: string;
   companyUrl?: string;
   aeNotes?: string;
+}
+
+interface PhaseTiming {
+  phase: string;
+  durationMs: number;
+  status: 'pass' | 'fail' | 'skip' | 'warn';
+  detail?: string;
 }
 
 interface SemanticVerification {
@@ -84,6 +96,9 @@ interface PipelineResult {
   crossModelJudge: { consensus: string; divergence: string[] } | null;
   confidenceScore: number | null;
   confidenceColor: string | null;
+  mvQuality: string | null;
+  emailCorrected: boolean;
+  originalEmail: string | null;
   emailSubjects: { t1: string; t2: string; t3: string };
   emailBodies: { t1: string; t2: string; t3: string };
   emailPs: { t1: string; t2: string; t3: string };
@@ -91,38 +106,15 @@ interface PipelineResult {
   micrositeSlug: string;
   prospectUpserted: boolean;
   micrositeUpserted: boolean;
+  aeSender: string;
+  aeFlag: string | null;
   duration: number;
   errors: string[];
+  warnings: string[];
+  phaseTimings: PhaseTiming[];
 }
 
-// ---------------------------------------------------------------------------
-// AE territory mapping (mirrored from premium-pipeline.ts)
-// ---------------------------------------------------------------------------
-
-const AE_TERRITORY: Record<string, { name: string; email: string }> = {
-  east: { name: 'Mike Rutski', email: 'mike@inorsa.com' },
-  central: { name: 'Nathan Dunn', email: 'nathan@inorsa.com' },
-  west: { name: 'Lucas Spencer', email: 'lucas@inorsa.com' },
-};
-
-const STATE_TO_AE: Record<string, string> = {
-  CT: 'east', MA: 'east', RI: 'east', NH: 'east', VT: 'east', ME: 'east',
-  NY: 'east', NJ: 'east', PA: 'east', DE: 'east', MD: 'east', DC: 'east',
-  VA: 'east', WV: 'east', NC: 'east', SC: 'east', GA: 'east', FL: 'east',
-  AL: 'east', MS: 'east', TN: 'east', KY: 'east', OH: 'east', IN: 'east', MI: 'east',
-  TX: 'central', OK: 'central', KS: 'central', NE: 'central', SD: 'central', ND: 'central',
-  MN: 'central', IA: 'central', MO: 'central', AR: 'central', LA: 'central',
-  WI: 'central', IL: 'central',
-  WA: 'west', OR: 'west', CA: 'west', NV: 'west', AZ: 'west', NM: 'west',
-  CO: 'west', UT: 'west', WY: 'west', MT: 'west', ID: 'west', HI: 'west', AK: 'west',
-};
-
-function resolveAE(state?: string): { name: string; email: string } {
-  const stateKey = state?.toUpperCase().trim() || '';
-  const territory = STATE_TO_AE[stateKey];
-  if (territory) return AE_TERRITORY[territory];
-  return AE_TERRITORY.west; // default to Lucas
-}
+import { resolveAE, getAEDetails } from './ae-config.js';
 
 // ---------------------------------------------------------------------------
 // CSV parser (no external deps)
@@ -726,12 +718,13 @@ async function phaseJudge(
   model: string = 'sonnet',
   researchSummary: string = '',
   icpType?: string,
-): Promise<{ scores: Record<string, number>; pass: boolean; failures: string[] }> {
+): Promise<{ scores: Record<string, number>; pass: boolean; failures: string[]; warnings: string[] }> {
   // Phase 1: Mechanical checks (no LLM needed)
   const { runMechanicalChecks, judgeEmail: judgeDimensions } = await import('./judge.js');
   // 5-dimension LLM scorer: research_depth, vp_connection, tone, conciseness, jtbd_alignment
 
   const allFailures: string[] = [];
+  const allWarnings: string[] = [];
 
   for (const email of emails) {
     const mechanical = runMechanicalChecks(
@@ -752,6 +745,7 @@ async function phaseJudge(
     if (!mechanical.passed) {
       allFailures.push(...mechanical.failures.map(f => `T${email.touchNumber}: ${f}`));
     }
+    allWarnings.push(...mechanical.warnings.map(w => `T${email.touchNumber}: ${w}`));
   }
 
   // If mechanical checks fail, don't spend LLM budget on 5-dim scoring
@@ -759,11 +753,12 @@ async function phaseJudge(
     const t1 = emails.find(e => e.touchNumber === 1);
     return {
       scores: {
-        wordCount: (t1?.wordCount ?? 999) <= 88 ? 8 : 4,
+        wordCount: (t1?.wordCount ?? 999) <= 100 ? 8 : 4,
         mechanicalPass: 3,
       },
       pass: false,
       failures: allFailures,
+      warnings: allWarnings,
     };
   }
 
@@ -929,6 +924,7 @@ async function phaseJudge(
     scores: aggregatedScores,
     pass: finalPass,
     failures: allFailures,
+    warnings: allWarnings,
   };
 }
 
@@ -991,6 +987,8 @@ async function phaseSupabaseWrite(
   emailConfidence: string,
   confidenceScore: number | null,
   confidenceColor: string | null,
+  structuredIntel: { dossier: any; warnings: string[] } | null,
+  aeFlag: string | null,
   dryRun: boolean,
   verbose: boolean,
 ): Promise<boolean> {
@@ -1021,7 +1019,8 @@ async function phaseSupabaseWrite(
     icp_reason: '',
     assigned_ae: ae.name,
     ae_email: ae.email,
-    persona_bucket: '',
+    ae_flag: aeFlag,
+    persona_bucket: structuredIntel?.dossier?.contact?.showrev_persona_classification || '',
     research_summary: researchSummary.slice(0, 5000),
     challenger_insight: patterns[0]?.challengerInsight || '',
     influence_pattern_t1: t1?.pattern || '',
@@ -1040,7 +1039,7 @@ async function phaseSupabaseWrite(
     microsite_headline: microsite.headline,
     microsite_insight: microsite.insightText,
     research_model: 'premium_3persona',
-    research_confidence: '',
+    research_confidence: structuredIntel?.dossier?.meta?.showrev_research_confidence || '',
     mechanical_check_passed: mechanicalCheck.pass,
     mechanical_check_failures: mechanicalCheck.failures.join('; '),
     domain_mismatch: domainMismatch,
@@ -1049,6 +1048,39 @@ async function phaseSupabaseWrite(
     confidence_color: confidenceColor,
     created_at: new Date().toISOString(),
   };
+
+  // Map intel-structurer output to Supabase columns
+  if (structuredIntel?.dossier) {
+    const { contact = {}, company = {}, salesIntel = {} } = structuredIntel.dossier;
+    const strip = (v: any) => (v && !String(v).startsWith('[insufficient data]')) ? String(v) : null;
+    Object.assign(dossierRow, {
+      intel_signal_strength: strip(salesIntel.showrev_signal_strength),
+      intel_fit_rationale: strip(salesIntel.showrev_fit_rationale),
+      intel_next_action: strip(salesIntel.showrev_next_best_action),
+      intel_buying_timeline: strip(salesIntel.showrev_buying_timeline),
+      intel_risk_factors: strip(salesIntel.showrev_risk_factors),
+      intel_talking_points: strip(contact.showrev_talking_points),
+      intel_decision_authority: strip(contact.showrev_decision_authority),
+      company_summary: strip(company.showrev_company_summary),
+      company_size: strip(company.showrev_company_size),
+      fiber_activities: strip(company.showrev_fiber_activities),
+      bead_status: strip(company.showrev_bead_status),
+      growth_signals: strip(company.showrev_growth_signals),
+      key_projects: strip(company.showrev_key_projects),
+      external_deadlines: strip(company.showrev_external_deadlines),
+      known_tools: strip(company.showrev_competitive_landscape),
+      likely_competitors: null,
+      market_moment: strip(company.showrev_recent_news),
+      linkedin_summary: strip(contact.showrev_linkedin_summary),
+      other_stakeholders: strip(contact.showrev_other_stakeholders),
+      likely_objections: strip(contact.showrev_likely_objections),
+      meddpicc_identified_pain: strip(salesIntel.showrev_fit_rationale),
+      meddpicc_economic_buyer: strip(contact.showrev_decision_authority),
+      meddpicc_champion: strip(salesIntel.showrev_multi_thread_contacts),
+      meddpicc_decision_criteria: null,
+      meddpicc_competition: strip(company.showrev_competitive_landscape),
+    });
+  }
 
   if (dryRun) {
     console.log(`    [DRY RUN] Would write to sr_engine_output:`);
@@ -1073,7 +1105,7 @@ async function phaseSupabaseWrite(
   } catch {}
 
   try {
-    const res = await fetch(`${sbUrl}/rest/v1/sr_engine_output?on_conflict=prospect_id`, {
+    const res = await fetch(`${sbUrl}/rest/v1/sr_engine_output?on_conflict=prospect_id,run_id`, {
       method: 'POST',
       headers: {
         apikey: sbKey,
@@ -1086,13 +1118,13 @@ async function phaseSupabaseWrite(
 
     if (!res.ok) {
       const errText = await res.text();
-      if (verbose) console.log(`    Supabase write failed: ${res.status} ${errText.slice(0, 100)}`);
+      console.log(`    Supabase write failed: ${res.status} ${errText.slice(0, 200)}`);
       return false;
     }
 
     return true;
   } catch (err: any) {
-    if (verbose) console.log(`    Supabase write error: ${err.message?.slice(0, 80)}`);
+    console.log(`    Supabase write error: ${err.message?.slice(0, 120)}`);
     return false;
   }
 }
@@ -1137,6 +1169,7 @@ async function phaseProspectUpsert(
   icpReason: string = '',
   icpType: string = '',
   leadType: string = '',
+  emailVerification?: { mvQuality?: string; corrected?: boolean; originalEmail?: string; provider?: string; persona?: string },
 ): Promise<boolean> {
   const prospectId = `${row.firstName}-${row.lastName}-${row.company}`.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
@@ -1167,10 +1200,14 @@ async function phaseProspectUpsert(
     show_name: 'Fiber Connect 2026',
     company_website: row.companyUrl || '',
     ...(leadType ? { lead_type: leadType } : {}),
+    ...(emailVerification?.mvQuality ? { email_verification_status: emailVerification.mvQuality } : {}),
+    ...(emailVerification?.mvQuality ? { email_verified: emailVerification.mvQuality === 'good' } : {}),
+    ...(emailVerification?.corrected ? { email_corrected: true, original_email: emailVerification.originalEmail || '' } : {}),
+    ...(emailVerification?.persona ? { persona_bucket: emailVerification.persona, contact_persona: emailVerification.persona } : {}),
   };
 
   try {
-    const res = await fetch(`${sbUrl}/rest/v1/sr_prospects`, {
+    const res = await fetch(`${sbUrl}/rest/v1/sr_prospects?on_conflict=id`, {
       method: 'POST',
       headers: {
         apikey: sbKey,
@@ -1183,12 +1220,12 @@ async function phaseProspectUpsert(
 
     if (!res.ok) {
       const errText = await res.text();
-      if (verbose) console.log(`    sr_prospects upsert failed: ${res.status} ${errText.slice(0, 100)}`);
+      console.log(`    sr_prospects upsert failed: ${res.status} ${errText.slice(0, 200)}`);
       return false;
     }
     return true;
   } catch (err: any) {
-    if (verbose) console.log(`    sr_prospects upsert error: ${err.message?.slice(0, 80)}`);
+    console.log(`    sr_prospects upsert error: ${err.message?.slice(0, 120)}`);
     return false;
   }
 }
@@ -1217,13 +1254,7 @@ async function phaseMicrositeUpsert(
 
   const prospectId = `${row.firstName}-${row.lastName}-${row.company}`.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
-  const AE_DETAILS: Record<string, { title: string; phone: string; booking_url: string; photo_url: string }> = {
-    'Mike Rutski': { title: 'Sr. Account Executive', phone: '', booking_url: 'https://meetings-na2.hubspot.com/michael-rutski/introduction', photo_url: '/assets/ae/mike-rutski.jpg' },
-    'Nathan Dunn': { title: 'Sr. Account Executive', phone: '', booking_url: 'https://meetings-na2.hubspot.com/nathan970/introduction', photo_url: '/assets/ae/nathan-dunn.jpg' },
-    'Lucas Spencer': { title: 'Sr. Account Executive', phone: '', booking_url: 'https://meetings-na2.hubspot.com/lucas-spencer/introduction', photo_url: '/assets/ae/lucas-spencer.jpg' },
-  };
-
-  const aeDetail = AE_DETAILS[ae.name] || AE_DETAILS['Lucas Spencer'];
+  const aeDetail = getAEDetails(ae.name);
 
   const { resolveOrVerify } = await import('./logo-resolver.js');
   const existingLogo = null; // fresh upsert — no existing URL to verify
@@ -1249,7 +1280,7 @@ async function phaseMicrositeUpsert(
   };
 
   try {
-    const res = await fetch(`${sbUrl}/rest/v1/sr_microsites`, {
+    const res = await fetch(`${sbUrl}/rest/v1/sr_microsites?on_conflict=slug`, {
       method: 'POST',
       headers: {
         apikey: sbKey,
@@ -1262,12 +1293,12 @@ async function phaseMicrositeUpsert(
 
     if (!res.ok) {
       const errText = await res.text();
-      if (verbose) console.log(`    sr_microsites upsert failed: ${res.status} ${errText.slice(0, 100)}`);
+      console.log(`    sr_microsites upsert failed: ${res.status} ${errText.slice(0, 200)}`);
       return false;
     }
     return true;
   } catch (err: any) {
-    if (verbose) console.log(`    sr_microsites upsert error: ${err.message?.slice(0, 80)}`);
+    console.log(`    sr_microsites upsert error: ${err.message?.slice(0, 120)}`);
     return false;
   }
 }
@@ -1327,6 +1358,63 @@ async function phaseCrossModelJudge(
 }
 
 // ---------------------------------------------------------------------------
+// Failure flag writer — saves what we have + error explanation for operator review
+// ---------------------------------------------------------------------------
+
+async function writeFailureFlag(
+  row: ProspectRow,
+  runId: string,
+  firstResult: PipelineResult,
+  retryResult: PipelineResult | null,
+): Promise<void> {
+  const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
+  const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+  if (!sbKey) return;
+
+  const prospectId = `${row.firstName}-${row.lastName}-${row.company}`.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  const allErrors = [
+    ...firstResult.errors.map(e => `[attempt 1] ${e}`),
+    ...(retryResult?.errors || []).map(e => `[attempt 2] ${e}`),
+  ];
+  const errorSummary = allErrors.slice(0, 5).join('; ');
+
+  const strip = (v: any) => (v && !String(v).startsWith('[insufficient data]')) ? String(v) : null;
+  const intel = firstResult.structuredIntel?.dossier || retryResult?.structuredIntel?.dossier || {};
+  const { contact = {}, company = {}, salesIntel = {} } = intel;
+
+  try {
+    await fetch(`${sbUrl}/rest/v1/sr_engine_output`, {
+      method: 'POST',
+      headers: { apikey: sbKey, Authorization: `Bearer ${sbKey}`, 'Content-Type': 'application/json', Prefer: 'resolution=merge-duplicates' },
+      body: JSON.stringify({
+        prospect_id: prospectId, run_id: runId,
+        first_name: row.firstName, last_name: row.lastName,
+        email: firstResult.emailFound || retryResult?.emailFound || '',
+        company: row.company, title: row.title, state: row.state || '',
+        icp_status: firstResult.icpResult?.verdict || retryResult?.icpResult?.verdict || 'pass',
+        icp_reason: firstResult.icpResult?.reason || retryResult?.icpResult?.reason || '',
+        assigned_ae: firstResult.aeSender || resolveAE(row.state).name,
+        ae_email: resolveAE(row.state).email,
+        ae_flag: `FAILED after 2 attempts: ${errorSummary.slice(0, 200)}`,
+        research_summary: (firstResult.researchSummary || retryResult?.researchSummary || '').slice(0, 5000),
+        intel_signal_strength: strip(salesIntel.showrev_signal_strength),
+        company_summary: strip(company.showrev_company_summary),
+        persona_bucket: strip(contact.showrev_persona_classification),
+        email_subject_t1: firstResult.emailSubjects.t1 || retryResult?.emailSubjects.t1 || '',
+        email_body_t1: firstResult.emailBodies.t1 || retryResult?.emailBodies.t1 || '',
+        email_ps_t1: firstResult.emailPs.t1 || retryResult?.emailPs.t1 || '',
+        mechanical_check_passed: false,
+        mechanical_check_failures: `retry-exhausted: ${errorSummary.slice(0, 200)}`,
+        confidence_score: firstResult.confidenceScore ?? retryResult?.confidenceScore ?? null,
+      }),
+    });
+    console.log(`  -> Flagged in Supabase: ${prospectId} (2 attempts failed)`);
+  } catch (err: any) {
+    console.log(`  -> Flag write error: ${err.message?.slice(0, 60)}`);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Main pipeline
 // ---------------------------------------------------------------------------
 
@@ -1353,6 +1441,9 @@ async function processOneProspect(
     brainContext: null,
     confidenceScore: null,
     confidenceColor: null,
+    mvQuality: null,
+    emailCorrected: false,
+    originalEmail: null,
     judgeScores: {},
     judgePass: false,
     crossModelJudge: null,
@@ -1363,14 +1454,23 @@ async function processOneProspect(
     micrositeSlug: toSlug(row.company, row.firstName, row.lastName),
     prospectUpserted: false,
     micrositeUpserted: false,
+    aeSender: '',
+    aeFlag: null,
     duration: 0,
     errors: [],
+    warnings: [],
+    phaseTimings: [],
+  };
+
+  const recordPhase = (phase: string, startMs: number, status: PhaseTiming['status'], detail?: string) => {
+    result.phaseTimings.push({ phase, durationMs: Date.now() - startMs, status, detail });
   };
 
   console.log(`\n[${index + 1}/${total}] Processing ${row.company} -- ${row.firstName} ${row.lastName}...`);
 
   // Phase 1: ICP Gate — reject non-ICP before burning pipeline time
   console.log('  Phase 1: ICP qualification...');
+  const p1Start = Date.now();
   try {
     const { icpGate } = await import('./icp-gate.js');
     const icp = await icpGate(row.company, row.title, config.verbose);
@@ -1378,6 +1478,7 @@ async function processOneProspect(
     console.log(`  -> ICP: ${icp.verdict.toUpperCase()} — ${icp.icpType} (${icp.reason})`);
 
     if (icp.verdict === 'reject') {
+      recordPhase('1-icp-gate', p1Start, 'pass', `reject:${icp.icpType}`);
       result.duration = Date.now() - t0;
       result.errors = errors;
       console.log(`  -> SKIPPED: Non-ICP prospect.`);
@@ -1391,9 +1492,11 @@ async function processOneProspect(
 
       return result;
     }
+    recordPhase('1-icp-gate', p1Start, 'pass', `${result.icpResult?.verdict}:${result.icpResult?.icpType}`);
   } catch (err: any) {
     console.log(`  -> ICP gate error (non-blocking, defaulting to pass): ${err.message?.slice(0, 60)}`);
     result.icpResult = { verdict: 'pass', icpType: 'unknown', reason: 'Gate error — defaulting to pass', confidence: 0, method: 'error' };
+    recordPhase('1-icp-gate', p1Start, 'warn', 'error-defaulted-pass');
   }
 
   // Phase 2: Email Discovery (also runs for pending@ placeholders and MV-rejected emails)
@@ -1403,11 +1506,15 @@ async function processOneProspect(
   } else {
     console.log('  Phase 2: Email verification + discovery...');
   }
+  const p2Start = Date.now();
   try {
     const emailResult = await phaseEmailFind(row, config.verbose);
     result.emailFound = emailResult.email;
     result.emailConfidence = emailResult.confidence;
     result.domainMismatch = emailResult.domainMismatch;
+    result.mvQuality = emailResult.mvQuality;
+    result.emailCorrected = !!(emailResult.email && row.email && emailResult.email !== row.email);
+    result.originalEmail = result.emailCorrected ? row.email : null;
     if (emailResult.email) {
       row.email = emailResult.email;
       console.log(`  -> ${needsDiscovery ? 'Found' : 'Verified'}: ${emailResult.email} (${emailResult.confidence})`);
@@ -1431,14 +1538,18 @@ async function processOneProspect(
     } else {
       console.log(`  -> No email found (${emailResult.confidence})`);
     }
+    recordPhase('2-email-find', p2Start, result.emailFound ? 'pass' : 'fail', `${result.emailConfidence}${result.mvQuality ? `:mv=${result.mvQuality}` : ''}`);
   } catch (err: any) {
     errors.push(`email-find: ${err.message?.slice(0, 80)}`);
     console.log(`  -> Email find error: ${err.message?.slice(0, 60)}`);
+    recordPhase('2-email-find', p2Start, 'fail', 'error');
   }
 
   // Phase 2b: Upsert sr_prospects (Mission Control needs prospect rows)
-  const ae = resolveAE(row.state);
+  let ae = resolveAE(row.state);
+  result.aeSender = ae.name;
   console.log('  Phase 2b: Prospect upsert...');
+  const p2bStart = Date.now();
   try {
     result.prospectUpserted = await phaseProspectUpsert(
       row, ae, result.emailFound, result.emailConfidence, config.dryRun, config.verbose,
@@ -1446,17 +1557,67 @@ async function processOneProspect(
       result.icpResult?.reason || '',
       result.icpResult?.icpType || '',
       config.leadType,
+      {
+        mvQuality: result.mvQuality,
+        corrected: result.emailCorrected,
+        originalEmail: result.originalEmail,
+        persona: result.persona,
+      },
     );
     console.log(`  -> ${result.prospectUpserted ? 'Prospect upserted to sr_prospects' : 'Prospect upsert failed (non-blocking)'}`);
+    recordPhase('2b-prospect-upsert', p2bStart, result.prospectUpserted ? 'pass' : 'warn', result.prospectUpserted ? undefined : 'upsert-failed');
   } catch (err: any) {
     errors.push(`prospect-upsert: ${err.message?.slice(0, 80)}`);
     console.log(`  -> Prospect upsert error: ${err.message?.slice(0, 60)}`);
+    recordPhase('2b-prospect-upsert', p2bStart, 'fail', 'error');
+  }
+
+  // No-email early exit: skip composition pipeline, write flag status for operator review
+  if (!result.emailFound) {
+    console.log('  -> No email found — skipping composition. Flagging for operator review.');
+    result.warnings.push('No email found — flagged for operator review. Check System Brief for research details.');
+    result.duration = Date.now() - t0;
+    // Still run research + intel so the System Brief is useful, but skip compose/judge/microsite
+    // Write a minimal engine output row with 'flag' status
+    try {
+      const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
+      const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+      const prospectId = `${row.firstName}-${row.lastName}-${row.company}`.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      if (sbKey) {
+        await fetch(`${sbUrl}/rest/v1/sr_engine_output`, {
+          method: 'POST',
+          headers: { apikey: sbKey, Authorization: `Bearer ${sbKey}`, 'Content-Type': 'application/json', Prefer: 'resolution=merge-duplicates' },
+          body: JSON.stringify({
+            prospect_id: prospectId,
+            run_id: runId,
+            first_name: row.firstName,
+            last_name: row.lastName,
+            email: '',
+            company: row.company,
+            title: row.title,
+            state: row.state || '',
+            icp_status: result.icpResult?.verdict || 'pass',
+            icp_reason: result.icpResult?.reason || '',
+            assigned_ae: ae.name,
+            ae_email: ae.email,
+            ae_flag: 'No email found — requires manual lookup',
+            mechanical_check_passed: false,
+            mechanical_check_failures: 'no-email: skipped composition pipeline',
+          }),
+        });
+        console.log(`  -> Flagged in Supabase (status=flag, no email)`);
+      }
+    } catch (err: any) {
+      console.log(`  -> Flag write error (non-blocking): ${err.message?.slice(0, 60)}`);
+    }
+    return result;
   }
 
   // Phase 3a: Brain/AgentDB context query — provide cached knowledge to research
   //   Strategy: try AgentDB semantic search first (searchBrain), fall back to JSONL filtering
   const brainDir = resolve(process.cwd(), 'data/brain/fiber-telecom/inorsa/fiber/fiber-connect-2026');
   let brainContextEntries = 0;
+  const p3aStart = Date.now();
   if (!config.skipResearch) {
     console.log('  Phase 3a: Brain context query...');
     try {
@@ -1517,16 +1678,22 @@ async function processOneProspect(
         const { setBrainCacheContent } = await import('./llm-client.js');
         setBrainCacheContent(brainContextText);
       }
+      recordPhase('3a-brain-context', p3aStart, brainContextEntries > 0 ? 'pass' : 'warn', `${brainContextEntries} entries`);
     } catch (err: any) {
       console.log(`  -> Brain context error (non-blocking): ${err.message?.slice(0, 60)}`);
+      recordPhase('3a-brain-context', p3aStart, 'warn', 'error');
     }
+  } else {
+    recordPhase('3a-brain-context', p3aStart, 'skip');
   }
 
   // Phase 3: Research (3-persona STORM)
   let researchResults = { analyst: '', aeProxy: '', techEval: '' };
+  const p3Start = Date.now();
   if (config.skipResearch) {
     console.log('  Phase 3: Research SKIPPED (--skip-research)');
     result.researchSummary = '[Research skipped]';
+    recordPhase('3-research', p3Start, 'skip');
   } else {
     console.log('  Phase 3: 3-persona research...');
     try {
@@ -1537,15 +1704,18 @@ async function processOneProspect(
         researchResults.techEval.slice(0, 1000),
       ].join('\n---\n');
       console.log('  -> Research complete (3 personas)');
+      recordPhase('3-research', p3Start, 'pass', '3 personas');
     } catch (err: any) {
       errors.push(`research: ${err.message?.slice(0, 80)}`);
       console.log(`  -> Research error: ${err.message?.slice(0, 60)}`);
+      recordPhase('3-research', p3Start, 'fail', 'error');
     }
   }
 
   const researchSummary = Object.values(researchResults).filter(Boolean).join('\n\n');
 
   // Phase 3b: Brain Ingest — extract entities from research into entity graph
+  const p3bStart = Date.now();
   if (!config.skipResearch && researchSummary) {
     console.log('  Phase 3b: Brain ingest...');
     try {
@@ -1560,13 +1730,18 @@ async function processOneProspect(
       );
       result.brainIngest = { added: brainResult.added, updated: brainResult.updated, total: brainResult.total };
       console.log(`  -> Brain ingest: ${brainResult.added + brainResult.updated} entities extracted (${brainResult.added} new, ${brainResult.updated} updated)${brainResult.digestRefreshed ? ' [digest refreshed]' : ''}`);
+      recordPhase('3b-brain-ingest', p3bStart, 'pass', `${brainResult.added}+${brainResult.updated} entities`);
     } catch (err: any) {
       errors.push(`brain-ingest: ${err.message?.slice(0, 80)}`);
       console.log(`  -> Brain ingest error (non-blocking): ${err.message?.slice(0, 60)}`);
+      recordPhase('3b-brain-ingest', p3bStart, 'warn', 'error');
     }
+  } else {
+    recordPhase('3b-brain-ingest', p3bStart, 'skip');
   }
 
   // Phase 3c: Intel Structurer — structure research into HubSpot dossier fields
+  const p3cStart = Date.now();
   if (!config.skipResearch && researchSummary) {
     console.log('  Phase 3c: Intel structurer...');
     try {
@@ -1607,14 +1782,38 @@ async function processOneProspect(
         return sum + (typeof section === 'object' ? Object.keys(section).filter(k => section[k] && section[k] !== '[insufficient data]').length : 0);
       }, 0);
       console.log(`  -> Intel structured: ${fieldCount} fields populated${intelResult.warnings.length > 0 ? ` (${intelResult.warnings.length} warnings)` : ''}`);
+      recordPhase('3c-intel-structurer', p3cStart, 'pass', `${fieldCount} fields`);
     } catch (err: any) {
       errors.push(`intel-structurer: ${err.message?.slice(0, 80)}`);
       console.log(`  -> Intel structurer error (non-blocking): ${err.message?.slice(0, 60)}`);
+      recordPhase('3c-intel-structurer', p3cStart, 'fail', 'error');
+    }
+  } else {
+    recordPhase('3c-intel-structurer', p3cStart, 'skip');
+  }
+
+  // Phase 3d: HQ state detection — re-resolve AE if intel reveals different HQ state
+  if (result.structuredIntel?.dossier?.company?.showrev_hq_state) {
+    const hqState = result.structuredIntel.dossier.company.showrev_hq_state.trim().toUpperCase();
+    const contactState = (row.state || '').trim().toUpperCase();
+    if (hqState.length === 2 && hqState !== contactState) {
+      const hqAe = resolveAE(hqState);
+      if (hqAe.name !== ae.name) {
+        result.aeFlag = `HQ=${hqState} (contact=${contactState}), reassigned ${ae.name} → ${hqAe.name}`;
+        result.warnings.push(`AE reassigned: contact state ${contactState} → HQ state ${hqState} (${ae.name} → ${hqAe.name}). Flag for operator review.`);
+        console.log(`  -> ⚠ AE reassigned: HQ state ${hqState} differs from contact state ${contactState} (${ae.name} → ${hqAe.name}) — flagged for operator review`);
+        ae = hqAe;
+        result.aeSender = ae.name;
+      } else if (hqState !== contactState) {
+        result.aeFlag = `Multi-state: contact=${contactState}, HQ=${hqState} (same AE territory)`;
+        console.log(`  -> HQ state ${hqState} differs from contact state ${contactState} but same AE territory`);
+      }
     }
   }
 
   // Phase 4: Substrate search
   console.log('  Phase 4: Substrate search...');
+  const p4Start = Date.now();
   let substrateContext = '';
   try {
     substrateContext = await phaseSubstrateSearch(row, config.verbose);
@@ -1623,41 +1822,25 @@ async function processOneProspect(
     } else {
       console.log('  -> No substrate matches');
     }
+    recordPhase('4-substrate', p4Start, substrateContext ? 'pass' : 'warn', substrateContext ? undefined : 'no-matches');
   } catch (err: any) {
     errors.push(`substrate: ${err.message?.slice(0, 80)}`);
+    recordPhase('4-substrate', p4Start, 'fail', 'error');
   }
 
-  // Phase 4b: Semantic Verification — cross-check research claims against substrate
-  let semanticVerification: SemanticVerification | null = null;
-  if (!config.skipResearch && researchSummary) {
-    console.log('  Phase 4b: Semantic verification...');
-    try {
-      const { verifyAllClaims } = await import('./semantic-verifier.js');
-      const prospectId = `${row.firstName}-${row.lastName}-${row.company}`.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-      const verificationReport = await verifyAllClaims(researchSummary, row.company, prospectId);
-      semanticVerification = {
-        totalClaims: verificationReport.totalClaims,
-        verified: verificationReport.verified,
-        flagged: verificationReport.unverified,
-        overallConfidence: verificationReport.overallConfidence,
-        blockers: verificationReport.blockers,
-      };
-      console.log(`  -> Semantic verification: ${verificationReport.totalClaims} claims checked, ${verificationReport.verified} verified, ${verificationReport.unverified} flagged`);
-      if (verificationReport.blockers.length > 0) {
-        console.log(`  -> Blockers: ${verificationReport.blockers.join('; ').slice(0, 120)}`);
-      }
-    } catch (err: any) {
-      errors.push(`semantic-verify: ${err.message?.slice(0, 80)}`);
-      console.log(`  -> Semantic verification error: ${err.message?.slice(0, 60)}`);
-    }
-  }
-  result.semanticVerification = semanticVerification;
+  // Phase 4b: Semantic Verification — DISABLED
+  // Root cause: asks LLM to "search the web" but callLLM has no web access.
+  // Every claim returns [UNVERIFIED] because fabricated URLs never match classifySource() tiers.
+  // Cost: ~10 LLM calls per prospect for zero signal. The judge's research_depth dimension
+  // already evaluates claim support against actual research context in a single call.
+  result.semanticVerification = null;
 
   // Extract icpType for downstream routing
   const icpType = result.icpResult?.icpType || 'unknown';
 
   // Phase 5: Pattern selection (Thompson Sampling fallback to default)
   console.log('  Phase 5: Pattern selection...');
+  const p5Start = Date.now();
   let patterns: Array<{ pattern: string; challengerInsight: string; emotionalFrame: string; rationale: string; ctaType: string; psStrategy: string }> = [];
   if (config.skipResearch) {
     // Use safe defaults when no research to ground pattern selection
@@ -1667,10 +1850,12 @@ async function processOneProspect(
       { pattern: 'social_proof', challengerInsight: '', emotionalFrame: 'belonging', rationale: 'Default (no research)', ctaType: 'binary_close', psStrategy: 'Case study' },
     ];
     console.log('  -> Using defaults (research skipped)');
+    recordPhase('5-pattern-select', p5Start, 'skip');
   } else {
     try {
       patterns = await phasePatternSelection(row, researchSummary, config.model, config.verbose, config.touches, icpType);
       console.log(`  -> ${patterns.map((p, i) => `T${config.touches[i]}: ${p.pattern}`).join(', ')}`);
+      recordPhase('5-pattern-select', p5Start, 'pass', patterns.map(p => p.pattern).join(','));
     } catch (err: any) {
       errors.push(`pattern-selection: ${err.message?.slice(0, 80)}`);
       console.log(`  -> Pattern selection error, using defaults`);
@@ -1679,18 +1864,23 @@ async function processOneProspect(
         { pattern: 'curiosity_gap', challengerInsight: '', emotionalFrame: 'curiosity', rationale: 'Fallback', ctaType: 'soft_time', psStrategy: 'Office Hours' },
         { pattern: 'social_proof', challengerInsight: '', emotionalFrame: 'belonging', rationale: 'Fallback', ctaType: 'binary_close', psStrategy: 'Case study' },
       ];
+      recordPhase('5-pattern-select', p5Start, 'warn', 'fallback-defaults');
     }
   }
 
   // Phase 6: Email composition
   const micrositeSlug = toSlug(row.company, row.firstName, row.lastName);
   let emails: ComposedEmail[] = [];
-  let judgeResult = { scores: {} as Record<string, number>, pass: false, failures: [] as string[] };
+  let judgeResult = { scores: {} as Record<string, number>, pass: false, failures: [] as string[], warnings: [] as string[] };
   let microsite = { headline: '', insightText: '', caseStudy: '' };
+  const p6Start = Date.now();
 
   if (config.skipComposition) {
     // --skip-composition: phases 1-4 only, skip 6/7/8
     console.log('  Phase 6-8: SKIPPED (--skip-composition)');
+    recordPhase('6-composition', p6Start, 'skip');
+    recordPhase('7-judge', p6Start, 'skip');
+    recordPhase('8-microsite', p6Start, 'skip');
   } else if (config.skipResearch) {
     console.log('  Phase 6: Email composition SKIPPED (no research to compose from)');
     emails = config.touches.map(n => ({
@@ -1712,13 +1902,13 @@ async function processOneProspect(
       emails = allEmails.filter(e => config.touches.includes(e.touchNumber));
       console.log(`  -> ${emails.length} touches composed`);
 
-      // Word count: target 80w T1/T2, 60w T3. Ceiling +10% flex (88w / 66w) per SOT §11
+      // Word count: target 70-90w T1/T2, 55-70w T3. Ceiling 100w / 80w
       const { buildComposerPrompt: wcRecomposeBuilder } = await import('./influence.js');
       const { callLLM: wcRecomposeLLM } = await import('./llm-client.js');
       for (let idx = 0; idx < emails.length; idx++) {
         const email = emails[idx];
         const wc = email.body.split(/\s+/).filter(Boolean).length;
-        const wcCeiling = email.touchNumber === 3 ? 66 : 88;
+        const wcCeiling = email.touchNumber === 3 ? 80 : 100;
         if (wc > wcCeiling) {
           console.log(`  -> WARNING: T${email.touchNumber} has ${wc} words (ceiling ${wcCeiling}), recomposing...`);
           try {
@@ -1737,7 +1927,7 @@ async function processOneProspect(
               micrositeSlug,
               wcKeyFacts,
               icpType,
-            ) + `\n\n## CRITICAL: WORD COUNT FIX\nYour previous draft was ${wc} words. The HARD CEILING is ${wcCeiling} words. Target ${wcCeiling === 66 ? '45-55' : '65-78'} words. Cut filler ruthlessly but KEEP the company-specific opener fact. Every sentence must earn its place.`;
+            ) + `\n\n## CRITICAL: WORD COUNT FIX\nYour previous draft was ${wc} words. The HARD CEILING is ${wcCeiling} words. Your TARGET is ${wcCeiling === 80 ? '45-60' : '60-75'} words. You naturally overshoot by 10-20 words, so aim for the TARGET — not the ceiling. Structure: opener (1-2 sentences), bridge question (1 sentence), pitch line (1 sentence). Cut entire sentences rather than trimming individual words. KEEP the company-specific opener fact.`;
             const wcResult = await wcRecomposeLLM(wcPrompt, {
               model: config.model === 'opus' ? 'claude-opus-4-6' : 'claude-sonnet-4-6',
               label: `T${tNum}-wc-recompose`,
@@ -1770,6 +1960,7 @@ async function processOneProspect(
       errors.push(`composition: ${err.message?.slice(0, 80)}`);
       console.log(`  -> Composition error: ${err.message?.slice(0, 60)}`);
     }
+    recordPhase('6-composition', p6Start, emails.length > 0 ? 'pass' : 'fail', `${emails.length} touches, wc=${emails.map(e => e.body.split(/\s+/).length).join('/')}`);
 
     result.emailSubjects = {
       t1: emails.find(e => e.touchNumber === 1)?.subject || '',
@@ -1789,42 +1980,11 @@ async function processOneProspect(
     const { detectPersona } = await import('./influence.js');
     result.persona = detectPersona(row.title);
 
-    // Phase 6b: Fact Verification — check composed email claims via web search
-    let factVerification: FactVerification | null = null;
-    if (emails.length > 0) {
-      console.log('  Phase 6b: Fact verification...');
-      try {
-        const { verifyClaimsWithWebSearch: verifyFacts } = await import('./verify-facts.js');
-        const { callLLM: verifyCallLLM } = await import('./llm-client.js');
-
-        // Verify claims in T1 body (primary touch, most claim-dense)
-        const t1 = emails.find(e => e.touchNumber === 1);
-        if (t1 && t1.body && t1.body !== '[Composition error]') {
-          const factResult = await verifyFacts(t1.body, row.company, verifyCallLLM);
-          const unsafeForEmail = factResult.verified
-            .filter(c => !c.safeForEmail)
-            .map(c => `${c.claimType}: "${c.claim.slice(0, 50)}" — ${c.discrepancy || 'unverified'}`);
-
-          factVerification = {
-            totalClaims: factResult.verified.length,
-            verified: factResult.verified.filter(c => c.verified).length,
-            unverified: factResult.verified.filter(c => !c.verified).length,
-            summary: factResult.summary,
-            unsafeForEmail,
-          };
-          console.log(`  -> Fact verification: ${factResult.summary}`);
-          if (unsafeForEmail.length > 0) {
-            console.log(`  -> Unsafe for email: ${unsafeForEmail.length} claim(s) flagged`);
-          }
-        }
-      } catch (err: any) {
-        errors.push(`fact-verify: ${err.message?.slice(0, 80)}`);
-        console.log(`  -> Fact verification error: ${err.message?.slice(0, 60)}`);
-      }
-    }
-    result.factVerification = factVerification;
+    // Phase 6b: Fact Verification — DISABLED (redundant with semantic verify, added latency without gating)
+    result.factVerification = null;
 
     // Phase 7: Judge gate (with auto-recompose on mechanical failure, up to 2 retries)
+    const p7Start = Date.now();
     const MAX_JUDGE_RETRIES = 2;
     for (let judgeAttempt = 0; judgeAttempt <= MAX_JUDGE_RETRIES; judgeAttempt++) {
       console.log(`  Phase 7: Judge gate${judgeAttempt > 0 ? ` (retry ${judgeAttempt})` : ''}...`);
@@ -1927,13 +2087,23 @@ async function processOneProspect(
       }
     }
 
+    {
+      const scoreStr = Object.entries(judgeResult.scores).map(([k, v]) => `${k}=${v}`).join(',');
+      recordPhase('7-judge', p7Start, judgeResult.pass ? 'pass' : 'fail', scoreStr);
+    }
+
     // Phase 8: Microsite content
+    const p8Start = Date.now();
     console.log('  Phase 8: Microsite content...');
     try {
       microsite = await phaseMicrosite(
         row, runId, micrositeSlug, ae,
         patterns[0]?.challengerInsight || '', researchSummary, '',
       );
+      const genericFallback = microsite.headline.startsWith('What ') && microsite.headline.includes('should know');
+      if (genericFallback && patterns[0]?.challengerInsight) {
+        console.log(`  -> WARNING: microsite headline fell back to generic despite available challenger insight`);
+      }
       console.log(`  -> "${microsite.headline.slice(0, 50)}..."`);
     } catch (err: any) {
       errors.push(`microsite: ${err.message?.slice(0, 80)}`);
@@ -1953,11 +2123,13 @@ async function processOneProspect(
         console.log(`  -> Microsite upsert error: ${err.message?.slice(0, 60)}`);
       }
     }
+    recordPhase('8-microsite', p8Start, microsite.headline ? 'pass' : 'warn', microsite.headline ? undefined : 'no-headline');
   }
   result.micrositeSlug = micrositeSlug;
 
   // Phase 9: Supabase write
   console.log('  Phase 9: Supabase write...');
+  const p9Start = Date.now();
   try {
     const written = await phaseSupabaseWrite(
       row, runId, emails, ae, micrositeSlug, researchSummary,
@@ -1967,21 +2139,121 @@ async function processOneProspect(
       result.emailConfidence,
       result.confidenceScore,
       result.confidenceColor,
+      result.structuredIntel || null,
+      result.aeFlag,
       config.dryRun, config.verbose,
     );
     if (!config.dryRun) {
       console.log(`  -> ${written ? 'Written to Supabase' : 'Supabase write failed (non-blocking)'}`);
     }
+    recordPhase('9-supabase-write', p9Start, 'pass');
   } catch (err: any) {
     errors.push(`supabase: ${err.message?.slice(0, 80)}`);
     console.log(`  -> Supabase error: ${err.message?.slice(0, 60)}`);
+    recordPhase('9-supabase-write', p9Start, 'fail', 'error');
   }
 
   result.duration = Date.now() - t0;
   result.errors = errors;
-  console.log(`  Done (${(result.duration / 1000).toFixed(1)}s, ${errors.length} errors)`);
+  result.warnings = judgeResult.warnings || [];
+  console.log(`  Done (${(result.duration / 1000).toFixed(1)}s, ${errors.length} errors${result.warnings.length > 0 ? `, ${result.warnings.length} warnings` : ''})`);
 
   return result;
+}
+
+// ---------------------------------------------------------------------------
+// Telemetry report
+// ---------------------------------------------------------------------------
+
+function writeTelemetryReport(results: PipelineResult[], runId: string, totalDuration: number): string {
+  const allPhases = new Set<string>();
+  for (const r of results) {
+    for (const pt of r.phaseTimings) allPhases.add(pt.phase);
+  }
+  const phases = [...allPhases].sort();
+
+  const phaseAgg: Record<string, { count: number; passCount: number; failCount: number; totalMs: number; maxMs: number }> = {};
+  for (const phase of phases) {
+    phaseAgg[phase] = { count: 0, passCount: 0, failCount: 0, totalMs: 0, maxMs: 0 };
+  }
+  for (const r of results) {
+    for (const pt of r.phaseTimings) {
+      const a = phaseAgg[pt.phase];
+      a.count++;
+      if (pt.status === 'pass') a.passCount++;
+      if (pt.status === 'fail') a.failCount++;
+      a.totalMs += pt.durationMs;
+      if (pt.durationMs > a.maxMs) a.maxMs = pt.durationMs;
+    }
+  }
+
+  const icpPassed = results.filter(r => r.icpResult?.verdict !== 'reject');
+  const report = {
+    runId,
+    timestamp: new Date().toISOString(),
+    totalDuration: `${(totalDuration / 1000).toFixed(1)}s`,
+    prospectCount: results.length,
+    icpPassCount: icpPassed.length,
+    emailFoundCount: results.filter(r => r.emailFound).length,
+    judgePassCount: results.filter(r => r.judgePass).length,
+    emailFindRate: icpPassed.length > 0 ? `${Math.round(results.filter(r => r.emailFound).length / icpPassed.length * 100)}%` : 'n/a',
+    judgePassRate: icpPassed.length > 0 ? `${Math.round(results.filter(r => r.judgePass).length / icpPassed.length * 100)}%` : 'n/a',
+    phaseStats: Object.fromEntries(
+      phases.map(p => [p, {
+        passRate: phaseAgg[p].count > 0 ? `${Math.round(phaseAgg[p].passCount / phaseAgg[p].count * 100)}%` : 'n/a',
+        failRate: phaseAgg[p].count > 0 ? `${Math.round(phaseAgg[p].failCount / phaseAgg[p].count * 100)}%` : 'n/a',
+        avgMs: phaseAgg[p].count > 0 ? Math.round(phaseAgg[p].totalMs / phaseAgg[p].count) : 0,
+        maxMs: phaseAgg[p].maxMs,
+        count: phaseAgg[p].count,
+      }]),
+    ),
+    bottleneck: phases.reduce((worst, p) => {
+      const avg = phaseAgg[p].count > 0 ? phaseAgg[p].totalMs / phaseAgg[p].count : 0;
+      return avg > (phaseAgg[worst]?.totalMs / (phaseAgg[worst]?.count || 1) || 0) ? p : worst;
+    }, phases[0] || ''),
+    prospects: results.map(r => ({
+      name: `${r.prospect.firstName} ${r.prospect.lastName}`,
+      company: r.prospect.company,
+      email: r.emailFound || null,
+      emailConfidence: r.emailConfidence,
+      mvQuality: r.mvQuality,
+      judgePass: r.judgePass,
+      judgeScores: r.judgeScores,
+      duration: `${(r.duration / 1000).toFixed(1)}s`,
+      errors: r.errors,
+      warnings: r.warnings,
+      phases: r.phaseTimings.map(pt => ({
+        phase: pt.phase,
+        ms: pt.durationMs,
+        status: pt.status,
+        ...(pt.detail ? { detail: pt.detail } : {}),
+      })),
+    })),
+  };
+
+  const outDir = resolve(process.cwd(), 'data/showrev/premium/telemetry');
+  mkdirSync(outDir, { recursive: true });
+  const outPath = resolve(outDir, `${runId}-telemetry.json`);
+  writeFileSync(outPath, JSON.stringify(report, null, 2));
+
+  // Print phase summary table
+  console.log('\n  Phase Telemetry:');
+  console.log('  ' + '-'.repeat(72));
+  console.log('  ' + 'Phase'.padEnd(22) + 'Pass%'.padEnd(8) + 'Fail%'.padEnd(8) + 'AvgMs'.padEnd(10) + 'MaxMs'.padEnd(10) + 'Count');
+  console.log('  ' + '-'.repeat(72));
+  for (const phase of phases) {
+    const s = phaseAgg[phase];
+    if (s.count === 0) continue;
+    const passRate = `${Math.round(s.passCount / s.count * 100)}%`;
+    const failRate = `${Math.round(s.failCount / s.count * 100)}%`;
+    const avgMs = Math.round(s.totalMs / s.count).toString();
+    console.log(`  ${phase.padEnd(22)}${passRate.padEnd(8)}${failRate.padEnd(8)}${avgMs.padEnd(10)}${s.maxMs.toString().padEnd(10)}${s.count}`);
+  }
+  console.log('  ' + '-'.repeat(72));
+  console.log(`  Bottleneck: ${report.bottleneck} (avg ${phaseAgg[report.bottleneck]?.count > 0 ? Math.round(phaseAgg[report.bottleneck].totalMs / phaseAgg[report.bottleneck].count) : 0}ms)`);
+  console.log(`  Telemetry saved: ${outPath}`);
+
+  return outPath;
 }
 
 // ---------------------------------------------------------------------------
@@ -2040,6 +2312,8 @@ function printSummary(results: PipelineResult[], runId: string, totalDuration: n
   console.log(`  Avg per prospect:   ${(avgDuration / 1000).toFixed(1)}s`);
   console.log(`  Total duration:     ${(totalDuration / 1000).toFixed(1)}s`);
   console.log(`  Total errors:       ${totalErrors}`);
+  const warnCount = results.reduce((s, r) => s + r.warnings.length, 0);
+  if (warnCount > 0) console.log(`  AI-tell warnings:   ${warnCount}`);
 
   if (icpRejected > 0) {
     console.log('\n  ICP Rejections:');
@@ -2055,6 +2329,17 @@ function printSummary(results: PipelineResult[], runId: string, totalDuration: n
     for (const r of results) {
       if (r.errors.length > 0) {
         console.log(`    ${r.prospect.firstName} ${r.prospect.lastName}: ${r.errors.join('; ')}`);
+      }
+    }
+  }
+
+  const totalWarnings = results.reduce((s, r) => s + r.warnings.length, 0);
+  if (totalWarnings > 0) {
+    console.log(`\n  AI-Tell Warnings: ${totalWarnings}`);
+    for (const r of results) {
+      if (r.warnings.length > 0) {
+        console.log(`    ${r.prospect.firstName} ${r.prospect.lastName}:`);
+        for (const w of r.warnings) console.log(`      ${w}`);
       }
     }
   }
@@ -2077,7 +2362,7 @@ function printEmails(results: PipelineResult[]): void {
     console.log(`  COMPANY:  ${r.prospect.company}`);
     console.log(`  TITLE:    ${r.prospect.title}`);
     console.log(`  PERSONA:  ${r.persona || 'unknown'}`);
-    console.log(`  AE:       ${(r as any).aeSender || 'unassigned'}`);
+    console.log(`  AE:       ${r.aeSender || 'unassigned'}${r.aeFlag ? ` ⚠ ${r.aeFlag}` : ''}`);
     console.log(`  JUDGE:    ${r.judgePass ? 'PASS' : 'FAIL'} — ${Object.entries(r.judgeScores).map(([k, v]) => `${k}:${v}`).join(' ')}`);
     if (r.crossModelJudge) {
       console.log(`  X-MODEL:  ${r.crossModelJudge.consensus}`);
@@ -2111,7 +2396,7 @@ async function main(): Promise<void> {
       'skip-composition': { type: 'boolean', default: false },
       'cross-model-judge': { type: 'boolean', default: false },
       'optimize-prompts': { type: 'boolean', default: false },
-      touches: { type: 'string', default: '1,2,3' },
+      touches: { type: 'string', default: '1' },
       verbose: { type: 'boolean', short: 'v', default: false },
       model: { type: 'string', default: 'sonnet' },
       composer: { type: 'string', default: 'full' },
@@ -2131,8 +2416,8 @@ Usage:
 Options:
   --input, -i <file>     CSV file with prospects (required)
   --limit, -n <N>        Process only first N rows
-  --touches <list>       Comma-separated touch numbers to compose (default: 1,2,3)
-                         e.g. --touches 1  or  --touches 1,2
+  --touches <list>       Comma-separated touch numbers to compose (default: 1)
+                         e.g. --touches 1,2,3  or  --touches 1,2
   --dry-run              Print plan but don't write to Supabase
   --skip-existing        Skip prospects already in sr_engine_output
   --skip-research        Skip LLM research (for testing)
@@ -2259,6 +2544,7 @@ Environment variables:
   // Process each prospect
   const t0 = Date.now();
   const results: PipelineResult[] = [];
+  const retryQueue: Array<{ row: ProspectRow; index: number; firstResult: PipelineResult }> = [];
 
   for (let i = 0; i < rows.length; i++) {
     const row = rows[i];
@@ -2282,11 +2568,48 @@ Environment variables:
 
     const result = await processOneProspect(row, i, rows.length, config, runId);
     results.push(result);
+
+    // Track for retry if transient errors occurred
+    const hasTransientError = result.errors.some(e =>
+      /connection|fetch failed|timeout|ECONNRESET|ENOTFOUND|ETIMEDOUT|socket hang up|503|429/i.test(e)
+    );
+    if (hasTransientError && result.errors.length > 0) {
+      retryQueue.push({ row, index: i, firstResult: result });
+    }
   }
 
-  // Phase 10: Summary report
+  // Retry queue: auto-retry prospects that failed due to transient errors
+  if (retryQueue.length > 0) {
+    console.log(`\n${'='.repeat(70)}`);
+    console.log(`  AUTO-RETRY: ${retryQueue.length} prospect(s) had transient errors`);
+    console.log('='.repeat(70));
+
+    for (const { row, index, firstResult } of retryQueue) {
+      console.log(`\n  [RETRY] ${row.firstName} ${row.lastName} @ ${row.company} (errors: ${firstResult.errors.length})`);
+      try {
+        const retryResult = await processOneProspect(row, index, rows.length, config, runId);
+
+        // If retry succeeded better (fewer errors or has emails now), replace the first result
+        if (retryResult.errors.length < firstResult.errors.length || (retryResult.emailBodies.t1 && !firstResult.emailBodies.t1)) {
+          const origIdx = results.indexOf(firstResult);
+          if (origIdx >= 0) results[origIdx] = retryResult;
+          console.log(`  [RETRY] SUCCESS — replaced original result (${firstResult.errors.length} errors → ${retryResult.errors.length})`);
+        } else {
+          // Retry also failed — flag for operator review
+          console.log(`  [RETRY] FAILED AGAIN — flagging for operator review`);
+          await writeFailureFlag(row, runId, firstResult, retryResult);
+        }
+      } catch (err: any) {
+        console.log(`  [RETRY] FATAL: ${err.message?.slice(0, 80)} — flagging for operator review`);
+        await writeFailureFlag(row, runId, firstResult, null);
+      }
+    }
+  }
+
+  // Phase 10: Summary report + telemetry
   const totalDuration = Date.now() - t0;
   printSummary(results, runId, totalDuration);
+  writeTelemetryReport(results, runId, totalDuration);
   printEmails(results);
 }
 

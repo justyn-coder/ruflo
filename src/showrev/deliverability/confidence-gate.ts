@@ -13,13 +13,18 @@ export interface ConfidenceEvaluation {
   canSend: boolean;
 }
 
-const CONFIDENCE_SCORES: Record<ConfidenceLevel, number> = {
+const CONFIDENCE_SCORES: Record<string, number> = {
   'provided-verified': 95,
   'apollo-verified': 90,
+  'green': 90,
   'provided': 70,
+  'yellow': 70,
   'pattern-derived': 60,
+  'amber': 50,
   'clearbit': 50,
   'duckduckgo': 40,
+  'red': 20,
+  'not-found': 0,
   'unknown': 10,
 };
 

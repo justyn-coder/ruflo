@@ -2,6 +2,7 @@ import { readFileSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import type { Prospect } from './importer.js';
 import type { PatternSelection } from './influence.js';
+import { getAEDetails } from './ae-config.js';
 
 export type MicrositeFormat = 'field-brief' | 'interactive-demo' | 'gamified-challenge' | 'work-product-preview';
 
@@ -34,26 +35,6 @@ interface CaseStudy {
   approved_by: string | null;
 }
 
-const AE_DETAILS: Record<string, { title: string; phone: string; booking_url: string; photo_url: string }> = {
-  'Mike Rutski': {
-    title: 'Sr. Account Executive',
-    phone: '',
-    booking_url: 'https://meetings-na2.hubspot.com/michael-rutski/introduction',
-    photo_url: '/assets/ae/mike-rutski.jpg',
-  },
-  'Nathan Dunn': {
-    title: 'Sr. Account Executive',
-    phone: '',
-    booking_url: 'https://meetings-na2.hubspot.com/nathan970/introduction',
-    photo_url: '/assets/ae/nathan-dunn.jpg',
-  },
-  'Lucas Spencer': {
-    title: 'Sr. Account Executive',
-    phone: '',
-    booking_url: 'https://meetings-na2.hubspot.com/lucas-spencer/introduction',
-    photo_url: '/assets/ae/lucas-spencer.jpg',
-  },
-};
 
 const DEFAULT_CASE_STUDIES: CaseStudy[] = [
   { id: 'cs-001', segment: 'fiber_operator', persona: 'build_pace', text: 'A fiber operator cut construction drawing production from days to minutes, giving their team time to QC properly before jurisdictional submission.', status: 'generated', approved_by: null },
@@ -146,7 +127,7 @@ export function composeMicrositeContent(
   brainDir?: string,
   productionMode: boolean = false,
 ): MicrositeRow {
-  const aeDetails = AE_DETAILS[ae.name] || AE_DETAILS['Lucas Spencer'];
+  const aeDetails = getAEDetails(ae.name);
   const segment = detectSegment(prospect);
   const studies = brainDir ? loadCaseStudies(brainDir) : DEFAULT_CASE_STUDIES;
   const caseStudy = selectCaseStudy(studies, segment, personaBucket, productionMode);

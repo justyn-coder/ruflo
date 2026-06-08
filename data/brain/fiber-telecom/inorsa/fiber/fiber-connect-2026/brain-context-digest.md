@@ -1,6 +1,6 @@
-Brain Knowledge Digest (662 entities)
+Brain Knowledge Digest (896 entities)
 
-## Companies discovered (68)
+## Companies discovered (100)
 - **Avatar Tech**: firm Avatar Tech is
 - **Mohawk Networks**: operator: Mohawk Networks is
 - **Centillion**: firm Centillion is
@@ -67,7 +67,7 @@ Lighthouse Technologies is
 - **IMMCO's current headcount with prec**: firm IMMCO's current headcount with precis
 - **Spencer Kariniemi's LinkedIn profile or career h**: firm Spencer Kariniemi's LinkedIn profile or career his
 
-## Funding programs (82)
+## Funding programs (110)
 - $25.5M award
 - $25.5M BEAD
 - $83M BEAD
@@ -150,8 +150,36 @@ Lighthouse Technologies is
 - $975M allocation
 - $1.4B in BEAD
 - $1.7B in BEAD
+- $425M in BEAD
+- $800M BEAD
+- $425M BEAD
+- $277M in BEAD
+- $185M in BEAD
+- $198M in BEAD
+- $1.7B allocation
+- $1.73B allocation
+- $1.1B in BEAD
+- $1.018B BEAD
+- $996M BEAD
+- $1.28B in BEAD
+- $1.28B BEAD
+- $656M in BEAD
+- $452M allocation
+- $695M in BEAD
+- $1.2B in funding
+- $401.5M allocation
+- $394M in BEAD
+- $400M funding
+- $1.0B in BEAD
+- $1.05B in BEAD
+- $399M allocation
+- $1.4B BEAD
+- $649M in BEAD
+- $843M in BEAD
+- $583M BEAD
+- $3.3B BEAD
 
-## Relationships (83)
+## Relationships (88)
 - NetPMD Solutions creates near-term integration complexity that could cut both ways: merger with NetPMD Solutions creates near-term integration complexity that could cut both ways
 - NetPMD Solutions is live. The strategic rationale was explicit: merger with NetPMD Solutions is live. The strategic rationale was explicit 
 - Janan is about channel access to those: partnership with Janan is about channel access to those 
@@ -259,8 +287,13 @@ Result: partnership between NATE and accredited post-secondary colleges and univ
 Result: Partnership with local electric cooperative.
 
 Result 
+- a drawing automation vendor: partnership with a drawing automation vendor 
+- it: partnership with it 
+- major fiber operators: partnership with major fiber operators 
+- NVIDIA announced in: partnership with NVIDIA announced in 
+- Inorsa interesting to her roadmap, not her ops team: partnership with Inorsa interesting to her roadmap, not her ops team.
 
-## Known competitors in use (9)
+## Known competitors in use (10)
 - Iqgeo (systems_of_record)
 - 3gis (systems_of_record)
 - Katapult (systems_of_record)
@@ -270,8 +303,9 @@ Result
 - Comsof (engineering_software)
 - Osmose (engineering_software)
 - Hexagon (engineering_software)
+- Sitetracker (systems_of_record)
 
-## Tools / platforms in use (419)
+## Tools / platforms in use (587)
 - case
 - engineering
 - those
@@ -693,6 +727,174 @@ Runway is designed
 - coordination
 - applications go
 - engineering and consulting services
+- or outsources it entirely
+- No confirmed GIS
+- some personas
+- a competing automation
+- firms this size never had the volume
+- rural Oklahoma is not a talent magnet
+- it directly maps
+- usage explicitly
+- a formal network design
+- purchase
+- the first call objective is
+- GIS as a baseline workflow
+- lean internal teams
+- margin impact flows directly
+- you
+- conversation
+- engineering and operations team
+- platform being imposed
+- or geospatial subsidiary was found
+- they can credibly commit
+- offshore or contract drafting labor
+- without connecting
+- posting content as
+- an automated drawing generation
+- a drawing automation
+- design team and no confirmed automation
+- OSP design staff or outsources
+- this and pass the speed benefit
+- network engineers
+- Dobson uses internally
+- solution need
+- blog mentions found
+- their fiber team competes
+- rather than fully outsourcing
+- and current design
+- any contract design firms
+- fiber design
+- partial automation
+- procurement
+- an automation
+- they currently use
+- Technologies is a telecom
+- cannot simply hire their way
+- Technologies contacts identified
+- construction drawings or outsources
+- acquisitions found
+- MicroStation or other Bentley
+- faster
+- with this
+- MicroStation or Bentley
+- platform vendor selling
+- construction drawings internally
+- value
+- processes aerial survey data
+- this as a direct pain point in outreach
+- EVP
+- a competitor
+- it directly drives his ability
+- as an attractive alternative
+- a separate tech
+- investment
+- FWA and wireless backhaul are adjacent
+- drawing capacity
+- a different channel
+- or competing
+- competitor
+- selection
+- Esri ArcGIS or a similar GIS
+- he is close enough
+- or current automation vendor identified
+- of offshore design labor
+- selection and workflow decisions
+- Esri ArcGIS as a core
+- or a licensed drawing automation
+- design team large enough
+- or one of several
+- an internal GIS
+- or partially contracted
+- Bentley
+- rather than outsourcing
+- of GIS
+- a CAD
+- a Network Design
+- if they use AutoCAD
+- they have staff
+- profits flow back
+- offshore
+- buying pressure may be overstated
+- AutoCAD and ArcGIS as primary
+- equivalent
+- solutions rather than buy point
+- to a permitting velocity
+- Esri ArcGIS as their primary GIS
+- model means they are slower
+- PE capital without homes passed
+- outsourced design firms
+- skews
+- team or outsourced
+- Inorsa is a direct productivity
+- drawing production is internal
+- by a small design team or outsourced
+- simpler GIS
+- adoption or
+- enterprise GIS
+- Google Maps
+- personal Gmail
+- your capacity ceiling is
+- budget
+- gets customers
+- the evidence base is
+- references found in indexed content
+- that response
+- is prerequisite
+- its AI
+- computer vision and machine learning
+- as the solution
+- team or contracted
+- or geospatial
+- legacy Bentley
+- simplified or legacy
+- mentions linked
+- a competitor automation
+- does your team use
+- through
+- rather than a speed
+- design teams with GIS
+- the website requires javascript
+- searches returned no results attributed
+- AutoCAD as their primary drafting
+- blog and industry podcast indexes
+- that gives his team the time margin
+- acquired companies bring legacy
+- any automated drawing production
+- should note there is zero evidence
+- or find automation
+- TEC
+- adoption press releases found
+- ArcFM or ArcGIS
+- Dycom has the scale
+- McKinley
+- specific GIS
+- they are large enough
+- permitting submissions or outsources
+- is publicly attributable
+- of Inorsa within Dycom may be limited
+- of competitor
+- with our
+- adoption pressure
+- generic GIS
+- for the cooperative
+- a less prominent
+- or outsources them
+- platform originally built
+- gets you
+- stack references
+- various
+- internal
+- conversation does NOT need
+- company originally built
+- purchasing
+- any existing drawing automation
+- or telecom
+- adoption more likely
+- offshore design labor or subcontractors
+- it changes whether
+- OSP design or outsources
+- selection and vendor relationships
+- AND as a
 
 ## Regulatory / funding landscape (1 entries)
 - BEAD award to serve the St.

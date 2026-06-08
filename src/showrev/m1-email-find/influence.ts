@@ -90,19 +90,19 @@ function getPersonaFraming(title: string): PersonaFraming {
   const framings: Record<PersonaBucket, Omit<PersonaFraming, 'bucket'>> = {
     revenue_leader: {
       pitchVariant: 'C',
-      pitchVerbatim: 'Inorsa automates drawing generation from your GIS and LLD inputs so your team scales output without adding headcount.',
-      framingInstructions: 'This is an executive. Frame EVERYTHING around capital efficiency, time-to-revenue, and competitive market capture. They care about how fast fiber lights up and what that means for subscriber activation and BEAD ROI. Do NOT talk about drawings, GIS layers, or technical process. Talk about SPEED TO REVENUE and SCALE WITHOUT HEADCOUNT.',
+      pitchVerbatim: 'We convert your GIS and LLD data into construction and permit drawings in minutes, so projects get to construction faster without adding headcount.',
+      framingInstructions: 'This is an executive. Frame EVERYTHING around capital efficiency, time-to-revenue, and competitive market capture. They care about how fast fiber lights up and what that means for subscriber activation and BEAD ROI. Do not talk about drawings, GIS layers, or technical process. Talk about SPEED TO REVENUE and SCALE WITHOUT HEADCOUNT.',
       valueLens: 'revenue timing, BEAD investment yield, subscriber activation speed, competitive market capture, capital efficiency',
     },
     ops_builder: {
       pitchVariant: 'A',
-      pitchVerbatim: 'We turn design data into permit-ready construction drawings. Quality control is built in, so builds keep moving.',
+      pitchVerbatim: 'We convert your GIS and LLD data into construction and permit drawings in minutes, so your team takes on more work without adding headcount.',
       framingInstructions: 'This is an operations/construction leader. Frame around drawing throughput, design capacity, permitting speed, and crew utilization. They feel the pain of delayed drawings holding up construction crews. Talk about BUILDS MOVING and DOCUMENTATION NOT BEING THE BOTTLENECK.',
       valueLens: 'drawing throughput, design capacity, permitting speed, crew utilization, build schedule adherence',
     },
     technical_designer: {
       pitchVariant: 'B',
-      pitchVerbatim: 'Inorsa converts your GIS and LLD inputs into permit-ready construction drawings with full source traceability.',
+      pitchVerbatim: 'We convert your GIS and LLD data into construction and permit drawings in minutes. Deterministic output, full traceability back to source.',
       framingInstructions: 'This is an engineering/technical leader. Frame around GIS-to-CAD automation, data traceability, design tool integration, and workforce scaling. They care about accuracy, source traceability, and not losing data in translation. Talk about STRUCTURED DATA and TRACEABILITY.',
       valueLens: 'GIS-to-CAD automation, data traceability, design tool integration, workforce scaling without quality loss',
     },
@@ -215,7 +215,7 @@ const COMPETITOR_CATEGORIES: Record<string, { category: string; gap: string }> =
   'iqgeo': { category: 'GIS platform', gap: 'manages network data but doesn\'t generate construction drawings from it' },
   '3gis': { category: 'GIS platform', gap: 'strong on fiber network modeling, gap on automated drawing output' },
   'sitetracker': { category: 'project management', gap: 'tracks projects but doesn\'t automate the drawing production that feeds them' },
-  'katapult': { category: 'pole data collection', gap: 'captures field data but doesn\'t convert it to permit-ready construction drawings' },
+  'katapult': { category: 'pole data collection', gap: 'captures field data but doesn\'t convert it to construction and permit drawings' },
   'vetro': { category: 'network planning', gap: 'plans routes but doesn\'t generate the construction documents for those routes' },
   'biarri': { category: 'network planning', gap: 'optimizes network design but doesn\'t produce construction-ready deliverables' },
   'hexagon': { category: 'engineering software', gap: 'broad engineering suite, but fiber drawing automation isn\'t the core workflow' },
@@ -419,7 +419,7 @@ Or derive a diagnostic question from the dossier. Must reference a different ang
 
 ## What Inorsa does (LOCKED pitch variant ${persona.pitchVariant} — use verbatim, char-for-char)
 "${persona.pitchVerbatim}"
-NEVER paraphrase. NEVER mix with other variants. NEVER claim Inorsa "validates inputs" or "catches errors."
+Use this sentence verbatim, char-for-char. Inorsa's value is SPEED and CAPACITY — accelerating drawing production so teams do more work faster. The product does not do QC, validation, or error detection.
 
 ## Prospect persona: ${persona.bucket}
 ${persona.framingInstructions}
@@ -430,13 +430,13 @@ ${icpType === 'fiber_operator' ? `This prospect is a fiber operator. Frame the b
 - GIS-to-CAD conversion pain (manual redrawing from GIS exports into construction drawings)
 - Build schedule adherence (drawings as the bottleneck, not engineering talent)
 - BEAD/grant construction deadlines creating time pressure
-Do NOT reference "validation" or "cross-checking" as a primary pain — those are A&E firm pains.` : `This prospect is an A&E firm. Frame the bridge around:
-- Drawing throughput per engineer (how many permit-ready packages per week)
+Operators care about build schedule and crew utilization — frame around those.` : `This prospect is an A&E firm. Frame the bridge around:
+- Drawing throughput per engineer (how many construction packages per week)
 - CD revision cycles consuming margin on fixed-fee projects
 - Scaling project capacity without proportional headcount growth
 - Cross-referencing time between GIS source data and deliverable drawings
-Do NOT frame around "build schedule" or "crew utilization" as primary pains — those are operator pains.
-CRITICAL: Do NOT claim Inorsa "validates inputs" or "catches errors." The prospect's cross-checking pain is real, but the email must frame Inorsa's value as automated drawing generation, not as a validation tool.`}` : ''}
+A&E firms care about throughput and margin — frame around those.
+Inorsa's value for A&E is automated drawing generation at speed, freeing engineers for higher-value work. The product accelerates production; it does not perform QC or validation.`}` : ''}
 
 ## Influence pattern: ${pattern.name}
 ${pattern.description}
@@ -468,8 +468,13 @@ ${touchNumber === 3 ? 'Final touch. 3-4 sentences MAX. Binary close. Reference O
 - NO transition words (Furthermore, Additionally, Moreover)
 - NO more than 2 sentences per paragraph
 - NEVER reference "India", "offshore", "outsourced" or any workforce geography
-- NEVER use: "worth a look", "or not the right time", "just say the word", "on my end", "just let me know", "Different angle", "eat construction time", "bleeding", "binding constraint"
+- NEVER use: "worth a look", "worth a quick call", "worth a conversation", "or not the right time", "just say the word", "on my end", "just let me know", "Different angle", "eat construction time", "bleeding", "binding constraint", "kickback" (use "setback" or "rejection" instead), "permit-ready" (use "construction and permit drawings" instead)
 - VARY sentence length. USE contractions. START one sentence with "And" or "But".
+
+## Density rules (ENFORCE ALL — these prevent filler)
+- ONE independent clause per sentence. No trailing "which..." or "so that..." justification clauses. If the reader can infer it, cut it.
+- Ask exactly ONE question with ONE question mark. No compound questions joined by "and" or "or."
+- The pitch sentence is the verbatim variant above. Do not append benefit clauses, qualifiers, or "so that..." explanations after it.
 
 ## P.S. line (REQUIRED for T1 and T2)
 ${micrositeSlug ? `P.S. Put together a brief on ${prospect.company}'s [relevant topic]. https://fiber.inorsa.com/brief/${micrositeSlug}` : ''}
@@ -477,8 +482,8 @@ Rules: 1-2 sentences. Pattern break from body tone.
 
 ## Hard constraints
 - INORSA MENTIONS: The word "Inorsa" may appear in EXACTLY ONE sentence in the body. That sentence must be the verbatim pitch variant above. Do NOT mention Inorsa anywhere else in the body — not in the opener, bridge, CTA, or any other sentence. The P.S. line may reference the Inorsa URL but the body gets ONE mention only.
-- WORD COUNT: ${touchNumber === 3 ? '45-55 words target. Hard ceiling 66 words (+10% flex).' : '60-75 words target. Hard ceiling 88 words (+10% flex).'} Body only, excluding subject/PS/signature. Over the ceiling triggers recomposition. Company-specific data points are worth the words, but ruthlessly cut filler to stay under the ceiling. Flex exists only to complete a thought naturally, not as extra budget. Aim for the LOW end of the target range — 60-70 words is ideal.
-- Subject line: under 8 words, specific to their situation. First letter capitalized. No all-lowercase.
+- WORD COUNT: ${touchNumber === 3 ? '45-60 words target. Hard ceiling 80 words.' : '60-75 words target. Hard ceiling 100 words.'} Body only, excluding subject/PS/signature. Over the ceiling triggers recomposition. You WILL overshoot your target by 10-20 words — this is expected. Aim for the TARGET, not the ceiling. Company-specific data points are worth the words, but ruthlessly cut filler.
+- Subject line: 6 words or fewer, specific to their situation. First letter capitalized. No all-lowercase.
 - Salutation: strictly "${prospect.firstName}," (comma only, NO greeting word)
 - The salutation IS the sentence start. Do NOT capitalize the first word after the comma unless it's a proper noun (state names like Mississippi/Washington/Georgia, country names, company names, person names, and acronyms like BEAD/NTIA are ALL proper nouns — keep them capitalized).
 - Sign off as: ${aeName} | Inorsa | ${aeEmail} (ONCE only)

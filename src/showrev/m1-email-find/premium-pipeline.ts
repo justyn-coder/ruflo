@@ -42,7 +42,7 @@ const BASE_DIR = resolve(dirname(new URL(import.meta.url).pathname), '../../../d
 const INORSA_VP_SUMMARY = `## What Inorsa does
 Inorsa automates the generation of construction drawings from GIS/LLD inputs. They ingest GIS data and produce construction-grade AutoCAD drawings. The core value is SPEED — accelerating production so teams can do more work, get paid sooner, and have more time for their own QC. Fiber only (no tower/cellular).
 
-CRITICAL: Inorsa does NOT validate inputs or catch errors in the GIS data. Errors in the network management tool translate directly as errors in the output. The value is acceleration and capacity, NOT quality assurance. Never claim Inorsa "catches errors" or "validates inputs" or "reduces permit returns." The product accelerates production, giving the customer MORE TIME to do their own QC before submission.
+CRITICAL: Inorsa's value is SPEED and CAPACITY — accelerating drawing production so teams produce more and have more time for their own QC before submission. Errors in the network management tool translate directly as errors in the output. The product accelerates production from GIS/LLD data; it does not perform quality assurance, validation, or error detection on prospect data.
 
 ## How it works (from sales deck, confirmed by Nick McManus, Dir. Customer Transformation)
 INGEST: GIS data (GeoPackage/shapefile or direct IQGeo integration) + CAD standards + jurisdictional standards.

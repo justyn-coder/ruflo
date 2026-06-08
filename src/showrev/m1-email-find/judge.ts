@@ -47,8 +47,6 @@ export function runMechanicalChecks(
     failures.push(`Salutation "${firstLine.slice(0, 40)}" should start with "${prospectFirstName},"`);
   }
 
-  // First word after salutation should be lowercase (salutation IS the sentence start)
-  // Exception: proper nouns (BEAD, company names, person names) are okay capitalized
   const contentStart = lines.findIndex((l, i) => i > 0 && l.trim() !== '');
   if (contentStart > 0) {
     const firstContentLine = lines[contentStart].trim();
@@ -92,6 +90,34 @@ export function runMechanicalChecks(
   ];
   for (const [pattern, label] of aiTells) {
     if (pattern.test(body)) failures.push(`AI-tell: ${label}`);
+  }
+
+  // Structural AI-tell checks (PNAS 2025, VERMILLION Framework, DL-199)
+  const sentences = body.split(/[.!?]+/).map(s => s.trim()).filter(s => s.length > 10);
+  if (sentences.length >= 3) {
+    // Participial clause density: present-participle openers at 2-5x human rate
+    const participialOpeners = sentences.filter(s => /^[A-Z][a-z]+ing\b/.test(s));
+    if (participialOpeners.length > 1) {
+      warnings.push(`[AI-TELL] ${participialOpeners.length} participial openers (>1 flags as AI pattern, PNAS 2025)`);
+    }
+    // Sentence-length variance: low std-dev = AI tell (humans vary more)
+    const lengths = sentences.map(s => s.split(/\s+/).length);
+    const mean = lengths.reduce((a, b) => a + b, 0) / lengths.length;
+    const variance = lengths.reduce((a, l) => a + (l - mean) ** 2, 0) / lengths.length;
+    const stdDev = Math.sqrt(variance);
+    const cv = mean > 0 ? stdDev / mean : 0;
+    if (cv < 0.15 && sentences.length >= 4) {
+      warnings.push(`[AI-TELL] Low sentence-length variance (σ=${stdDev.toFixed(1)}, CV=${cv.toFixed(2)}, <0.15 flags as AI pattern)`);
+    }
+    // Echoed sentence structures: adjacent sentences with mirrored opening patterns (VERMILLION marker 2)
+    for (let i = 0; i < sentences.length - 1; i++) {
+      const wordsA = sentences[i].split(/\s+/).slice(0, 2).join(' ').toLowerCase();
+      const wordsB = sentences[i + 1].split(/\s+/).slice(0, 2).join(' ').toLowerCase();
+      if (wordsA === wordsB && wordsA.length > 3) {
+        warnings.push(`[AI-TELL] Adjacent sentences echo structure: "${wordsA}" (VERMILLION marker 2)`);
+        break;
+      }
+    }
   }
 
   // Tim kill-list (phrases Tim kills on sight — from TIM_EDIT_PATTERNS in judges.ts)

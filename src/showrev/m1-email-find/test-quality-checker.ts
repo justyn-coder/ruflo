@@ -21,7 +21,7 @@ interface QualityCheck {
   severity: 'critical' | 'high' | 'medium' | 'low';
 }
 
-const PITCH_VERBATIM = 'We turn design data into permit-ready construction drawings. Quality control is built in, so builds keep moving.';
+const PITCH_VERBATIM = 'We convert your GIS and LLD data into construction and permit drawings in minutes, so your team takes on more work without adding headcount.';
 
 const ANTI_VALIDATION_TERMS = [
   /\bvalidat(?:es?|ing|ion)\b/i,

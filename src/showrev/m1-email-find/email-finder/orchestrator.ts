@@ -804,10 +804,12 @@ async function findEmailForContact(
   // Rank survivors and pick the best
   if (allSurvivors.length > 0) {
     // Sort survivors by likelihood. Priority:
-    // 1. Exact input-name match (phil.arnholt > phillip.arnholt when input="Phil")
-    // 2. Dotted > non-dotted (firstname.lastname > firstname)
-    // 3. Penalize initials
-    // 4. Original candidate rank (pattern priority)
+    // 1. Penalize initials (2 chars or less)
+    // 2. Exact input-name match (phil.arnholt > phillip.arnholt when input="Phil")
+    // 3. When NO eliminations occurred (catch-all): prefer shorter local parts
+    //    among equally-qualified candidates. Calibration data shows small/mid
+    //    companies skew toward simpler formats (first@, flast@) over first.last@.
+    // 4. Original candidate rank (pattern priority from Step 2 detection)
     const inputFirst = contact.firstName.toLowerCase();
     const inputLast = contact.lastName.toLowerCase();
     allSurvivors.sort((a, b) => {
@@ -821,11 +823,16 @@ async function findEmailForContact(
       const aExactFirst = aLocal.startsWith(inputFirst + '.') || aLocal.startsWith(inputFirst + '@') || aLocal === inputFirst;
       const bExactFirst = bLocal.startsWith(inputFirst + '.') || bLocal.startsWith(inputFirst + '@') || bLocal === inputFirst;
       if (aExactFirst !== bExactFirst) return aExactFirst ? -1 : 1;
-      // Prefer dotted locals (firstname.lastname) over non-dotted (first, flast)
-      const aHasDot = aLocal.includes('.');
-      const bHasDot = bLocal.includes('.');
-      if (aHasDot !== bHasDot) return aHasDot ? -1 : 1;
-      // Among same-type, prefer original candidate rank (pattern priority order)
+      // When verification is ambiguous (no eliminations, or eliminations
+      // didn't narrow the field to ≤3) AND no pattern was detected: prefer
+      // shorter local parts. Calibration showed catch-all and over-permissive
+      // M365 tenants return 200 for many candidates; shorter forms (first@,
+      // flast@) are more likely correct than first.last@ when unproven.
+      const ambiguous = !anyEliminationsOccurred || allSurvivors.length > 3;
+      if (ambiguous && !patternResult) {
+        if (aLocal.length !== bLocal.length) return aLocal.length - bLocal.length;
+      }
+      // Fall through to original candidate rank (pattern detection priority)
       if (a.candidate.rank !== b.candidate.rank) return a.candidate.rank - b.candidate.rank;
       return 0;
     });

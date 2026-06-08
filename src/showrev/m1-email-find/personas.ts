@@ -158,7 +158,7 @@ USE THIS BASELINE to form hypotheses about the prospect BEFORE searching. Then s
 
 ## Client (Inorsa) value proposition
 Inorsa automates the generation of construction drawings from GIS/LLD inputs. The core value is SPEED — dramatically faster drawing production (~10 min vs hours/days) so teams can take on more work and have more time for their own QC before jurisdictional submission.
-CRITICAL: Inorsa does NOT validate inputs or catch errors. Errors in the GIS data = errors in the output. Never claim "catches errors" or "validates inputs" or "reduces permit returns." The value is acceleration and capacity.
+Inorsa's value is SPEED and CAPACITY — accelerating drawing production so teams produce more work and have more time for their own QC. The product accelerates production from GIS/LLD data. It does not perform quality assurance, validation, or error detection on prospect data.
 Key capabilities: ingest GIS data, generate AutoCAD drawings to jurisdictional standards, 2-5x drafting capacity with existing headcount, 70% reduction in construction drawing cycle time.
 Key outcome: Revenue Acceleration (faster), Revenue Generation (more volume without hiring), Opportunity (team freed for other work).
 FIBER CONNECT 2026 FEEDBACK: Fiber prospects care more about PERMITTING WORKFLOWS and CYCLE TIME than drawing generation alone. 40-50% of permits rejected on first pass (per Nick McManus). Inorsa's speed gives teams more time to QC properly before submission.

@@ -72,7 +72,8 @@ ${crossExamInsights.slice(0, 1500)}
     "showrev_key_projects": "Named projects with scale. e.g. 'TDS integration: 35,000 locations.'",
     "showrev_recent_news": "Last 12 months. One line per event.",
     "showrev_external_deadlines": "Dates. e.g. 'BEAD construction Q3 2026. ISP contracts close Oct 2026.'",
-    "showrev_automation_level": "manual | partial | moderate | high (manual: 0-20% automated, partial: 20-40%, moderate: 40-60%, high: >60%. Classify based on number of manual vs automated steps described.)"
+    "showrev_automation_level": "manual | partial | moderate | high (manual: 0-20% automated, partial: 20-40%, moderate: 40-60%, high: >60%. Classify based on number of manual vs automated steps described.)",
+    "showrev_hq_state": "2-letter US state code where the company is headquartered. e.g. 'TX'. If unknown, use '[insufficient data]'."
   },
   "salesIntel": {
     "showrev_influence_pattern": "${patternSelections[0]?.pattern || ''}",

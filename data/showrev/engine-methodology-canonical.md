@@ -277,10 +277,12 @@ HubSpot has a Workflow that auto-sets Contact Owner = Company Owner ~12 seconds 
 
 ## §7 Operator Constraints (hard rules)
 
-### Pitch Verbatim (locked)
-> "We convert GIS design data into CAD-ready construction drawings. Quality control is built in, so builds keep moving."
+### Pitch Variants (3 approved, rotate for differentiation)
+> Variant A: "We convert your GIS and LLD data into construction and permit drawings in minutes, so your team takes on more work without adding headcount."
+> Variant B: "We convert your GIS and LLD data into construction and permit drawings in minutes. Deterministic output, full traceability back to source."
+> Variant C: "We convert your GIS and LLD data into construction and permit drawings in minutes, so projects get to construction faster without adding headcount."
 
-Do NOT paraphrase in prospect-facing copy.
+Use one variant per email, char-for-char. Rotate across prospects for spam differentiation.
 
 ### Sender Rules
 - AE senders: Mike Rutski (East), Nathan Dunn (Central), Lucas Spencer (West/spread)

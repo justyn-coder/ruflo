@@ -1,9 +1,9 @@
 ---
 title: Claude Design Prompt -- ShowRev System Architecture Visualization
 status: ACTIVE
-last_updated: 2026-06-06 09:55 EST
-version: v3
-purpose: Exact prompt for Claude Design to render the full ShowRev system architecture. Reflects actual code in run-pipeline.ts as of Wave 2 completion. Every component, data flow, gate, and external service.
+last_updated: 2026-06-06 23:33 EST
+version: v4
+purpose: Exact prompt for Claude Design to render the full ShowRev system architecture. Reflects actual code in run-pipeline.ts as of Wave 2 + deliverability infrastructure (2026-06-06). Every component, data flow, gate, external service, and automation trigger.
 ---
 
 # Claude Design Prompt
@@ -16,13 +16,14 @@ Create a comprehensive system architecture diagram for ShowRev, a B2B tradeshow 
 
 Full-page landscape. Left-to-right primary flow. Use a clean, dark navy/white color scheme matching the Inorsa brand (#0B1120 background, white text, #C4B5FD purple accents for highlights, #2D6A4F green for gates that pass, #B91C1C red for gates that reject).
 
-Group components into 6 vertical swim lanes from left to right:
+Group components into 7 vertical swim lanes from left to right:
 1. **INTAKE** (left edge)
 2. **RESEARCH + BRAIN**
 3. **COMPOSITION**
 4. **QUALITY GATES**
-5. **STAGING** (Mission Control)
-6. **DELIVERY** (right edge)
+5. **DELIVERABILITY** (new — below or beside Quality Gates)
+6. **STAGING** (Mission Control)
+7. **DELIVERY + AUTOMATION** (right edge)
 
 ## Content — Every Component (Honest Build Status)
 
@@ -46,17 +47,19 @@ Group components into 6 vertical swim lanes from left to right:
 - PASS: continues with icpType threaded downstream
 - Error handling: defaults to pass (non-blocking)
 
-**Phase 2: Email Discovery** (run-pipeline.ts `phaseEmailFind`, lines 231-357)
-- Only runs if CSV has no email
+**Phase 2: Email Discovery** (run-pipeline.ts `phaseEmailFind`, lines 231-405)
+- Runs if CSV has no email OR if email is a `pending@` placeholder OR if MV pre-verification rejects the CSV email
+- **MV Pre-Verification Gate** (lines 239-256): CSV-provided emails are verified by MillionVerifier BEFORE being trusted. If MV returns `good` or `catch_all`, the email is accepted as `provided-verified`. If MV returns `bad`, `disposable`, or `unknown`, the email is rejected and falls through to full discovery. This prevents `pending@` placeholders and bad CSV emails from bypassing the discovery pipeline.
+
 - Multi-step orchestrator (`email-finder/orchestrator.ts`):
   1. **Apollo primary** (if APOLLO_API_KEY set): people match by name + company → returns email + status + confidence
   2. **DuckDuckGo fallback** (if Apollo misses): HTML search → domain extraction → email pattern inference
   3. **Domain hints** loaded from `data/showrev/premium/domain-hints.json` (manual overrides for known company domains)
   4. **Social media domain filtering** (x.com, linkedin.com, etc.) — prevents false domain matches
-  5. **MillionVerifier check** (if MILLIONVERIFIER_API_KEY set): verifies deliverability → quality (good/bad/risky) + result (ok/catch_all/unknown)
-- Confidence color: green (verified by Apollo + MV), yellow (partial verification), red (unverified)
-- Output: email address + confidence color
-- Note: "Required for P2 cold prospects (2,300 contacts without email)"
+  5. **MillionVerifier check** (if MILLIONVERIFIER_API_KEY set): verifies deliverability → quality (good/catch_all/bad/disposable/unknown)
+- **Domain Mismatch Detection** (lines 377-405): Compares discovered email domain against CSV email domain and companyUrl domain. CSV domain mismatch sets `csvDomainMismatch: true` which triggers a -15 confidence penalty. CompanyUrl mismatch is info-only (many companies use different domains for website vs email).
+- Output: `{ email, confidence, domainMismatch, csvDomainMismatch, mvQuality }`
+- Note: "Required for P2 cold prospects (2,300 contacts without email). Also re-verifies P1 CSV emails via MV gate."
 
 **Phase 2b: Prospect Upsert** (run-pipeline.ts `phaseProspectUpsert`, line 1342)
 - Upserts sr_prospects in Supabase immediately after email discovery
@@ -173,13 +176,41 @@ Group components into 6 vertical swim lanes from left to right:
 - Optional second-opinion from alternate model
 - Runs after primary judge passes
 
-**Email Verification** (MillionVerifier, called during Phase 2)
-- Verifies email deliverability during email discovery (not a separate phase)
-- External service: MillionVerifier API (MILLIONVERIFIER_API_KEY)
-- Returns: quality (good/bad/risky), result (ok/catch_all/unknown)
-- bad/risky → confidence drops to red, pipeline continues but email flagged
+### Swim Lane 5: DELIVERABILITY
 
-### Swim Lane 5: STAGING (Mission Control)
+**Confidence Gate** (deliverability/confidence-gate.ts, wired at line 1418)
+- Pure function `evaluateConfidence(email, discoveryMethod, mvResult?, domainMismatch?)` → `{ color, score, reasons, canSend }`
+- Base scores by discovery method: provided-verified=95, apollo-verified=90, provided=70, pattern-derived=60, clearbit=50, duckduckgo=40, unknown=10
+- MV adjustments: good=+20, catch_all=-10, bad=-60, disposable=-80, unknown=-5
+- CSV domain mismatch penalty: -15 (only for CSV email domain mismatch, not companyUrl)
+- Special cases: `pending@` or empty email → score=0, canSend=false
+- Color thresholds: green (≥70), yellow (≥40), red (<40)
+- `canSend = color !== 'red'` — red emails are blocked from delivery
+- Score and color stored in sr_engine_output (`confidence_score`, `confidence_color`)
+- Show as a scoring dashboard with green/yellow/red bands
+
+**Bounce Monitor** (deliverability/bounce-monitor.ts, wired at lines 2246-2272)
+- In-memory state tracking: `events[]` (bounce records) + `totalSent` counter
+- `seedFromSupabase()` — pre-run: reads `sr_brain_outcomes.t1_bounced` to seed counters from prior send history. Runs once before batch loop.
+- `shouldHalt()` — checked before EVERY prospect in the batch loop:
+  - Halts at ≥5% hard bounce rate
+  - Halts at ≥10% total bounce rate (hard + soft)
+  - Minimum 10-send sample before halt logic activates
+  - Returns `{ shouldHalt, reason, stats }`
+- Pre-run check: if seeded stats already exceed thresholds, `process.exit(1)` before processing any prospects
+- Per-prospect check: if threshold exceeded mid-batch, remaining prospects skipped with `break`
+- `recordOutcome(email, bounced, bounceType, source)` — tracks each send result
+- Show as a health gauge with red/green zones and halt threshold lines
+
+**Circuit Breaker** (deliverability/circuit-breaker.ts — built but not yet integrated, show as dashed outline)
+- Class `CircuitBreaker` with 3 states: CLOSED (normal) → OPEN (halted) → HALF_OPEN (testing)
+- CLOSED: sends allowed, tracks failures. 5 consecutive failures → OPEN
+- OPEN: sends blocked. After 30-min reset timeout → HALF_OPEN
+- HALF_OPEN: allows 3 test sends. If all succeed → CLOSED. Any failure → OPEN
+- Designed for future MTA integration (wrap individual send calls)
+- Not yet wired into pipeline send path
+
+### Swim Lane 6: STAGING (Mission Control)
 
 **Phase 8: Microsite Content** (microsite-composer.ts `composeMicrositeContent`, line 1831)
 - Generates personalized Field Brief content
@@ -216,9 +247,10 @@ Group components into 6 vertical swim lanes from left to right:
 - Cookie-based personalization (sr_slug set by /brief/ route)
 - Two variants: operator (permit speed) vs A&E firm (margin/throughput)
 
-### Swim Lane 6: DELIVERY
+### Swim Lane 7: DELIVERY + AUTOMATION
 
 **HubSpot Loader** (hubspot-loader.ts — built but manual trigger, show as solid with manual icon)
+
 - Protocol (Breeze-validated):
   1. Search company by domain (not name)
   2. If exists → capture ID. If not → create with showrev_* fields
@@ -230,31 +262,57 @@ Group components into 6 vertical swim lanes from left to right:
 - Portal: Inorsa account 20729069
 
 **HubSpot Sequences** (not yet built — show as dashed outline)
+
 - T1/T2/T3 email bodies loaded into HubSpot sequence steps
 - AE sends via HubSpot (tracks opens, clicks, replies)
 
+**Engagement Feed / Watcher** (watcher/engagement-feed.ts — built, automated via RemoteTrigger)
+
+- `fetchEngagement()` — reads from `v_prospect_engagement` Supabase view (scores based on page_views×1 + assess_views×3 + insights_views×2 + pipeline_views×2 + recent_activity bonus)
+- `computeBrainUpdates()` — filters to warm/hot prospects, generates `nextBestAction` + `inferredUrgency` per signal
+- `pushBrainUpdates()` — PATCHes `sr_brain_dossiers` with `engagement_note`, `next_best_action`, `inferred_urgency`. Uses `Prefer: return=representation` to detect 0-row PATCH and log skips.
+- Writes to `engagement_note` column (NOT `pinned_note_text` — avoids clobbering AE notes)
+- Show as a feedback loop: Microsite Events → Engagement View → Watcher → Brain Dossiers → (back to AE intelligence)
+
+**RemoteTrigger Automation** (claude.ai/code/scheduled — 2 daily triggers)
+
+- **Bounce Monitor Check** — daily 7:00 AM ET. Seeds from Supabase, checks bounce rates, alerts if thresholds exceeded.
+- **Engagement Feed** — daily 7:15 AM ET. Fetches engagement signals, pushes brain updates for warm/hot prospects.
+- Both run headless via Claude Code RemoteTrigger (no laptop required).
+- Show as clock/cron icons connected to Bounce Monitor and Engagement Feed respectively.
+
 **Outcome Tracking / Reporter** (not yet built — show as dashed outline)
+
 - HubSpot engagement events → Supabase sr_outcomes
 - Required meta-fields: influence_pattern, persona_bucket, research_confidence, source_count
 - Feeds Brain learning loop
 
 ## The Orchestrator
 
-**run-pipeline.ts** (~2000 lines) is the single CLI orchestrator that wires all phases. Show it as a horizontal backbone connecting all swim lanes, with phase numbers labeled on each connection.
+**run-pipeline.ts** (~2300 lines) is the single CLI orchestrator that wires all phases. Show it as a horizontal backbone connecting all swim lanes, with phase numbers labeled on each connection.
 
 ```
-CSV → [P1: ICP Gate] → [P2: Email Find] → [P2b: Prospect Upsert]
+CSV → [P1: ICP Gate] → [P2: MV Pre-Verify → Email Find → Domain Mismatch] → [Confidence Gate] → [P2b: Prospect Upsert]
     → [P3a: Brain Query] → [P3: STORM Research (3 parallel)] → [P3b: Brain Ingest] → [P3c: Intel Structurer]
     → [P4: Substrate Search] → [P4b: Semantic Verify]
     → [P5: Pattern Selection] → [P6: Composition] → [P6b: Fact Verify]
     → [P7: Judge Gate] → [P7b: Cross-Model Judge]
     → [P8: Microsite] → [P8b: Microsite Upsert] → [P9: Supabase Write]
+
+Pre-loop: [Bounce Monitor Seed] ← sr_brain_outcomes
+Per-prospect: [Bounce Monitor Check] → HALT if thresholds exceeded
+Post-pipeline: [Engagement Feed] → Brain Dossiers (daily via RemoteTrigger)
 ```
 
 CLI invocation:
 ```
-npx tsx src/showrev/m1-email-find/run-pipeline.ts --input prospects.csv [--limit N] [--dry-run] [--skip-research] [--skip-composition] [--model sonnet|opus] [--composer full|lean|auto] [--touches 1,2,3]
+npx tsx src/showrev/m1-email-find/run-pipeline.ts --input prospects.csv [--limit N] [--dry-run] [--skip-research] [--skip-composition] [--model sonnet|opus] [--composer full|lean|auto] [--touches 1,2,3] [--lead-type Cold|Attendee|Scanned] [--skip-existing]
 ```
+
+New flags added:
+
+- `--lead-type <type>` — Tags prospects with lead source. Validated: `Cold` (P2 cold outreach), `Attendee` (P1 booth visitors), `Scanned` (badge scans). Sets `lead_type` in sr_prospects.
+- `--skip-existing` — Skips prospects already in sr_engine_output (avoids re-processing)
 
 ## Database Schema (central data store connected to all swim lanes)
 
@@ -262,11 +320,13 @@ npx tsx src/showrev/m1-email-find/run-pipeline.ts --input prospects.csv [--limit
 
 | Table | Purpose | Key fields |
 |-------|---------|------------|
-| sr_prospects | All contacts + status | first_name, last_name, email, company, title, state, send_status, icp_status, icp_type, icp_reason, assigned_ae |
-| sr_brain_dossiers | Structured research output | company_summary, challenger_insight, persona_bucket, competitive_landscape, bead_status, growth_signals |
-| sr_engine_output | Full pipeline output per contact | email_subject_t1/t2/t3, email_body_t1/t2/t3, email_ps_t1/t2/t3, judge_scores, patterns, research_summary |
+| sr_prospects | All contacts + status | first_name, last_name, email, company, title, state, send_status, icp_status, icp_type, icp_reason, assigned_ae, lead_type, domain_mismatch, confidence_score |
+| sr_brain_dossiers | Structured research output + engagement | company_summary, challenger_insight, persona_bucket, competitive_landscape, bead_status, growth_signals, engagement_note, next_best_action, inferred_urgency |
+| sr_brain_outcomes | Send outcome tracking (bounce monitor seed) | prospect_id, t1_bounced |
+| sr_engine_output | Full pipeline output per contact | email_subject_t1/t2/t3, email_body_t1/t2/t3, email_ps_t1/t2/t3, judge_scores, patterns, research_summary, confidence_score, confidence_color, domain_mismatch |
 | sr_microsites | ABM page config | slug, company_name, ae_name, ae_booking_url, ae_photo_url, company_logo_url |
 | sr_microsite_events | Page view tracking | microsite_id, event_type, metadata |
+| v_prospect_engagement | Engagement scoring (VIEW) | prospect_id, page_views, assess_views, engagement_score, engagement_level, recently_active |
 
 ## External Services (cloud icons connected to relevant components)
 
@@ -274,14 +334,16 @@ npx tsx src/showrev/m1-email-find/run-pipeline.ts --input prospects.csv [--limit
 |---------|---------|---------|
 | callLLM() → Anthropic API | Research, Pattern, Composition, Judge, Intel Structurer | LLM execution (Sonnet or Opus) |
 | callLLM() → Haiku | ICP Gate (LLM tier) | Fast classification |
-| Apollo.io API | Email Discovery (Step 0, primary) | People match → verified email + confidence |
-| MillionVerifier API | Email Discovery (Step 0, post-Apollo) | Deliverability verification → quality/result |
+| Apollo.io API | Email Discovery (primary) | People match → verified email + confidence |
+| MillionVerifier API | MV Pre-Verification Gate + Email Discovery | Deliverability verification → quality (good/catch_all/bad/disposable/unknown) |
 | DuckDuckGo HTML Search | Email Discovery (fallback), Research agents | Web search without API key |
 | Supabase Edge Functions | Substrate Search | search-substrate semantic endpoint |
-| Supabase Direct | Prospect/Dossier/Engine/Microsite writes | Database read/write |
+| Supabase Direct | Prospect/Dossier/Engine/Microsite/Outcomes writes, Engagement view reads | Database read/write |
+| Supabase View | Engagement Feed (v_prospect_engagement) | Aggregated engagement scoring from microsite events |
 | Vercel | Microsites, Mission Control | Hosting + deployment |
 | HubSpot API | HubSpot Loader | CRM write (manual trigger) |
 | HubSpot Meetings | Booking flow | Calendar scheduling with pre-fill |
+| Claude Code RemoteTrigger | Bounce Monitor Check, Engagement Feed | Daily scheduled automation (7:00 AM, 7:15 AM ET) |
 
 ## ICP Routing (Wave 2 Addition)
 
@@ -300,13 +362,17 @@ icpType threads through: Phase 5 (pattern selection) → Phase 6 (composition) �
 
 - Solid boxes: built and working
 - Solid boxes with manual icon: built but requires manual trigger (HubSpot Loader)
-- Dashed boxes: designed but not yet built
+- Solid boxes with clock icon: built and automated via RemoteTrigger (Engagement Feed, Bounce Monitor Check)
+- Dashed boxes: designed but not yet built (HubSpot Sequences, Outcome Tracking, Circuit Breaker)
 - Green arrows: data flows that are working
 - Orange dashed arrows: planned data flows
 - Red gate icons: quality gates (reject path shown)
+- Red halt icon: bounce monitor threshold breach (stops entire batch)
+- Green/yellow/red gauge: confidence gate scoring bands
 - Purple highlights: external service calls
 - Database cylinder: Supabase (central, connected to all lanes)
-- Brain cycle icon: learning loop (Phase 3a reads → Phase 3b writes)
+- Brain cycle icon: learning loop (Phase 3a reads → Phase 3b writes → Engagement Feed enriches)
+- Clock icons: RemoteTrigger scheduled automation (daily cron)
 
 ## Audience
 
@@ -318,6 +384,7 @@ Justyn Szymczyk, ShowRev founder. Visual learner. This diagram is both a communi
 
 | Version | Date (EST) | Author | Change |
 |---------|-----------|--------|--------|
+| v4 | 2026-06-06 23:33 | Claude | Added Swim Lane 5 (DELIVERABILITY): Confidence Gate (scoring by discovery method + MV + domain mismatch), Bounce Monitor (Supabase seeding + per-prospect halt check at 5% hard / 10% total), Circuit Breaker (built, not integrated). Updated Phase 2: MV Pre-Verification Gate (CSV emails verified before trust), Domain Mismatch Detection (CSV vs discovered domain → -15 penalty). Added Engagement Feed / Watcher (v_prospect_engagement → brain dossier updates). Added RemoteTrigger daily automation (bounce monitor 7am, engagement feed 7:15am). Added --lead-type and --skip-existing CLI flags. Updated database schema (sr_brain_outcomes, v_prospect_engagement view, new columns on sr_prospects/sr_brain_dossiers/sr_engine_output). Updated orchestrator backbone to show pre-loop seed, per-prospect halt check, and post-pipeline engagement loop. |
 | v3 | 2026-06-06 09:55 | Claude | Corrected Email Discovery to reflect actual multi-step orchestrator: Apollo primary → DuckDuckGo fallback → MillionVerifier verification (was described as DuckDuckGo-only + Findymail). Fixed word count gate: 88w T1/T2, 66w T3 per SOT §11 (was incorrectly stated as >80). Updated external services table. Cross-referenced against pipeline-trace-lyte-fiber.md IPO trace to verify all phases match code. |
 | v2 | 2026-06-06 07:30 | Claude | Complete rewrite to reflect actual code after Wave 1+2. Added: 9-phase orchestrator backbone, ICP routing (3 types + tower exclusion), Brain learning loop (Phase 3a/3b), semantic verification (Phase 4b), fact verification (Phase 6b), auto-recompose on judge failure, Wave 2 ICP-aware composition/judge features, CSV aeNotes column mapping. Corrected: removed "7-bucket persona" (actually 3 persona buckets), fixed judge dimensions (5 not 4), added cross-model judge, honest build status on HubSpot Loader. |
 | v1 | 2026-05-31 12:00 | Claude | Initial architecture visualization prompt. |

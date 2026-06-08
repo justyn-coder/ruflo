@@ -1,18 +1,27 @@
 ---
 title: Inorsa Source of Truth -- ShowRev FC2026 Pilot
 status: ACTIVE
-last_updated: 2026-06-06 12:04 EST
-version: v4
+last_updated: 2026-06-07 18:07 EST
+version: v5
 purpose: Single canonical reference for all Inorsa product claims, positioning, and constraints used in ShowRev outreach. Every email, microsite, HubSpot property, and AE brief must be checked against this file before shipping.
 ---
 
 # Inorsa Source of Truth
 
-## 1. Pitch Verbatim (decisions.log #026, locked)
+## 1. Pitch Variants (3 approved, rotate for spam differentiation + A/B testing)
 
-> "We turn design data into permit-ready construction drawings. Quality control is built in, so builds keep moving."
+**Variant A (ops_builder default):**
+> "We convert your GIS and LLD data into construction and permit drawings in minutes, so your team takes on more work without adding headcount."
 
-**Rules:** Do NOT paraphrase in prospect-facing copy. Use this exact sentence or a structural variation that preserves the meaning. Do not expand scope beyond what this sentence claims.
+**Variant B (technical_designer):**
+> "We convert your GIS and LLD data into construction and permit drawings in minutes. Deterministic output, full traceability back to source."
+
+**Variant C (revenue_leader):**
+> "We convert your GIS and LLD data into construction and permit drawings in minutes, so projects get to construction faster without adding headcount."
+
+**Rules:** Use one variant per email, char-for-char. Rotate variants across touches and prospects to avoid spam-filter fingerprinting. All three are Nick-validated (2026-06-03 framing: speed, capacity, traceability). The mechanism ("GIS and LLD data → drawings in minutes") is the differentiator — keep it in every variant.
+
+**Supersedes:** decisions.log #026 original pitch ("permit-ready construction drawings / Quality control is built in") — retired 2026-06-07 per Nick corrections + operator directive.
 
 ---
 
@@ -255,6 +264,7 @@ Single Next.js app, two domains, different audiences:
 
 | Version | Date (EST) | Author | Change |
 |---------|-----------|--------|--------|
+| v5 | 2026-06-07 18:07 | Claude | §1 rewritten: single locked pitch → 3 rotatable variants (A/B/C). "permit-ready" and "Quality control is built in" retired per Nick corrections + operator directive. New mechanism: "GIS and LLD data → construction and permit drawings in minutes." |
 | v4 | 2026-06-06 12:04 | Claude | Added §13 Deployment Domains — fiber.inorsa.com (prospect-facing) vs showrev-microsites.vercel.app (internal ops portal). |
 | v3 | 2026-06-04 00:30 | Claude | Nick McManus corrections: removed validation/error-catching claims, added 40-50% rejection rate, added "conceptual GIS" + pricing objections, reframed value prop as speed→time→QC (not direct quality assurance). |
 | v2 | 2026-06-02 17:49 | Claude | Added §8 HubSpot Configuration (Sales Hub Pro + Marketing Hub, reporting capabilities). Renumbered §9-12. |

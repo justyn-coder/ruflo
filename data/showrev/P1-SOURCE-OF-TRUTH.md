@@ -69,7 +69,7 @@ P1 = prospects who visited Inorsa booth 1728 at Fiber Connect 2026 (May 18-19, G
 | D-P1-06 | Salutation hard-lock: `[FirstName],` only | 2026-05-01 | Tim directive — no greeting words | Permanent |
 | D-P1-07 | Under 80 words T1/T2, under 60 words T3 | 2026-05-01 | Tim directive | Enforced by mechanical checks in judge.ts |
 | D-P1-08 | One Inorsa sentence per email | 2026-05-01 | Pitch discipline | Mechanical check enforced |
-| D-P1-09 | Pitch verbatim locked (decisions.log #026) | 2026-05-19 | "We turn design data into permit-ready construction drawings..." | Use exact or structural variation only |
+| D-P1-09 | Pitch variants (3 approved, supersedes decisions.log #026) | 2026-06-07 | "We convert your GIS and LLD data into construction and permit drawings in minutes..." | Rotate A/B/C variants for spam differentiation |
 | D-P1-10 | Each touch stands alone — no "following up on my previous email" | 2026-05-01 | Tim directive | T2/T3 must not reference T1 |
 
 ---

@@ -283,7 +283,7 @@ Permitting is the single biggest bottleneck in US fiber deployment. Industry lea
 | Prospect Type | Impact |
 |---|---|
 | **Fiber ISPs** | Permitting delays directly threaten BEAD 4-year deadlines. First-time-right engineering drawings are existential -- every kickback is a potential deadline miss. |
-| **A&E Firms** | Quality of permit packages is their core value proposition. Firms that can produce permit-ready packages with low kickback rates have massive competitive advantage. |
+| **A&E Firms** | Quality of permit packages is their core value proposition. Firms that can produce construction and permit packages with low kickback rates have massive competitive advantage. |
 | **Construction Contractors** | Crews sit idle when permits are delayed. Construction schedule driven entirely by permit flow rate. |
 
 ### Inference Rules
