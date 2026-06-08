@@ -111,18 +111,28 @@ export function runMechanicalChecks(
 
   // Redundancy checks (DL-Q4 Fix B, 2026-06-08)
   // 1) Repeated specific numeric anchor (e.g. "~3,900 locations" then "Based on the ~3,900-location scope")
-  // 2) Repeated 3-word noun phrases used as structural anchors
+  // 2) Repeated bigrams used as structural anchors
   // Recomposition often grows the email back over the ceiling by restating a number it already named.
-  const numericPattern = /\b~?\d{1,3}(?:[,]\d{3})*(?:[-.]\d+)?(?:[a-z]?\s*(?:locations?|miles?|drawings?|cycles?|days?|weeks?|months?|years?|hours?|%|percent))\b/gi;
-  const numericTokens = (body.match(numericPattern) || []).map(t => t.replace(/[-]\d*\s*/, ' ').trim().toLowerCase());
-  const numericTokenStems = numericTokens.map(t => t.replace(/[-,]/g, ' ').replace(/\s+/g, ' ').replace(/[s.]+$/, ''));
-  const seenNumericStems = new Set<string>();
-  for (const stem of numericTokenStems) {
-    if (seenNumericStems.has(stem)) {
-      failures.push(`Redundant numeric anchor: "${stem}" appears twice (recomposition grew the email back)`);
+  // Detect numbers followed by EITHER space-then-noun OR hyphen-then-noun.
+  // Captures: "3,900 locations", "~3,900-location", "2-3 days", "5 miles", "40%".
+  const numericPattern = /\b~?\d{1,3}(?:[,.]?\d{3})*(?:[-.]\d+)?[\s-]*(locations?|miles?|drawings?|cycles?|days?|weeks?|months?|years?|hours?|packages?|%|percent)\b/gi;
+  // Group by NUMBER alone — same number used twice with the same kind of unit signals reuse,
+  // even if one mention says "3,900 locations" and the other says "3,900-location scope".
+  const numericMatches = [...body.matchAll(numericPattern)];
+  const numberFingerprints = numericMatches.map(m => {
+    const numPart = m[0].match(/~?\d[\d,.]*/)?.[0]?.replace(/[,.]/g, '') || '';
+    const unit = (m[1] || '').toLowerCase().replace(/s$/, '');
+    return `${numPart}:${unit}`;
+  });
+  const seenFingerprints = new Set<string>();
+  for (const fp of numberFingerprints) {
+    if (!fp || fp === ':') continue;
+    if (seenFingerprints.has(fp)) {
+      const [num, unit] = fp.split(':');
+      failures.push(`Redundant numeric anchor: ${num} ${unit} appears twice (recomposition restated the same number)`);
       break;
     }
-    seenNumericStems.add(stem);
+    seenFingerprints.add(fp);
   }
 
   // 3-word noun phrase repetition within the same body — captures patterns like
