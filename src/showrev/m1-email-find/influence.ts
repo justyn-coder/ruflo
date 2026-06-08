@@ -452,8 +452,8 @@ ${dossierSummary}
 
 ## Touch ${touchNumber} specifics
 ${touchNumber === 1 ? `First touch. Interest-based CTA. No links in body.${hasAeNotes ? ' Reference booth conversation.' : ''}` : ''}
-${touchNumber === 2 ? `Second touch. Different angle than T1${previousTouchSubject ? ` (T1 subject: "${previousTouchSubject}")` : ''}. Casual follow-up tone. Include Office Hours secondary CTA: "Or see it live, Inorsa runs weekly Office Hours where the team demos fiber drawing generation and takes questions. 30 minutes, no commitment." Link: https://events.teams.microsoft.com/event/d351d0fb-4db5-4b4e-b627-ace41b7a75c2@1ffe754f-042e-41a2-857b-2ff7c6da0c27` : ''}
-${touchNumber === 3 ? 'Final touch. 3-4 sentences MAX. Binary close. Reference Office Hours as fallback if no engagement on T1/T2.' : ''}
+${touchNumber === 2 ? `Second touch. Different angle than T1${previousTouchSubject ? ` (T1 subject: "${previousTouchSubject}")` : ''}. Casual follow-up tone. No Office Hours link in email — that lives on the microsite only.` : ''}
+${touchNumber === 3 ? 'Final touch. 3-4 sentences MAX. Binary close. No Office Hours link in email — that lives on the microsite only.' : ''}
 
 ## ANTI-HALLUCINATION (CRITICAL)
 - NEVER invent facts not present in the key facts or dossier above. No fabricated competitors, market dynamics, team sizes, or project details.

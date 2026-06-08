@@ -536,37 +536,43 @@ async function phasePatternSelection(
     const prompt = buildPatternSelectorPrompt(enrichedSummary, row.aeNotes || '', row.title, touchNum, previousPatterns, icpType);
     if (verbose) console.log(`    T${touchNum} pattern selection...`);
 
-    try {
-      const result = await callLLM(prompt, {
-        model: model === 'opus' ? 'claude-opus-4-6' : 'claude-sonnet-4-6',
-        label: `T${touchNum}-pattern`,
-      });
-
-      const jsonMatch = result.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/) || result.match(/(\{[\s\S]*\})/);
-      if (jsonMatch) {
-        const parsed = JSON.parse(jsonMatch[1]);
-        selections.push({
-          pattern: parsed.pattern || 'challenger_insight',
-          challengerInsight: parsed.challengerInsight || '',
-          emotionalFrame: parsed.emotionalFrame || 'curiosity',
-          rationale: parsed.rationale || '',
-          ctaType: parsed.ctaType || 'interest_based',
-          psStrategy: parsed.psStrategy || '',
+    let parsed: any = null;
+    for (let attempt = 0; attempt < 2 && !parsed; attempt++) {
+      try {
+        const result = await callLLM(prompt, {
+          model: model === 'opus' ? 'claude-opus-4-6' : 'claude-sonnet-4-6',
+          label: `T${touchNum}-pattern${attempt > 0 ? '-retry' : ''}`,
         });
-        if (verbose) console.log(`    T${touchNum} -> ${parsed.pattern}`);
-        continue;
-      }
-    } catch {}
+        const jsonMatch = result.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/) || result.match(/(\{[\s\S]*\})/);
+        if (jsonMatch) {
+          parsed = JSON.parse(jsonMatch[1]);
+        } else if (verbose && attempt === 0) {
+          console.log(`    T${touchNum} pattern: no JSON in response, retrying...`);
+        }
+      } catch {}
+    }
 
-    // Fallback
-    selections.push({
-      pattern: touchNum === 1 ? 'challenger_insight' : touchNum === 2 ? 'curiosity_gap' : 'challenger_insight',
-      challengerInsight: '[Fallback - review needed]',
-      emotionalFrame: 'curiosity',
-      rationale: 'Fallback due to parse error',
-      ctaType: touchNum === 1 ? 'interest_based' : touchNum === 2 ? 'soft_time' : 'binary_close',
-      psStrategy: 'Microsite link',
-    });
+    if (parsed) {
+      selections.push({
+        pattern: parsed.pattern || 'challenger_insight',
+        challengerInsight: parsed.challengerInsight || '',
+        emotionalFrame: parsed.emotionalFrame || 'curiosity',
+        rationale: parsed.rationale || '',
+        ctaType: parsed.ctaType || 'interest_based',
+        psStrategy: parsed.psStrategy || '',
+      });
+      if (verbose) console.log(`    T${touchNum} -> ${parsed.pattern}`);
+    } else {
+      selections.push({
+        pattern: touchNum === 1 ? 'challenger_insight' : touchNum === 2 ? 'curiosity_gap' : 'challenger_insight',
+        challengerInsight: '',
+        emotionalFrame: 'curiosity',
+        rationale: 'Fallback — pattern selection failed after retry',
+        ctaType: touchNum === 1 ? 'interest_based' : touchNum === 2 ? 'soft_time' : 'binary_close',
+        psStrategy: 'Microsite link',
+      });
+      if (verbose) console.log(`    T${touchNum} -> FALLBACK (challenger_insight)`);
+    }
   }
 
   return selections;
@@ -1276,7 +1282,7 @@ async function phaseMicrositeUpsert(
     ae_phone: aeDetail.phone,
     ae_booking_url: aeDetail.booking_url,
     ae_photo_url: aeDetail.photo_url,
-    status: 'live',
+    status: (microsite.headline.includes('[Fallback') || microsite.insightText.includes('[Fallback')) ? 'draft' : 'live',
   };
 
   try {

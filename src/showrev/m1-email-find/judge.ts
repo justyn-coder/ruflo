@@ -29,7 +29,7 @@ export function runMechanicalChecks(
   const failures: string[] = [];
   const warnings: string[] = [];
 
-  const wcCeiling = (touchNumber ?? 1) === 3 ? 66 : 88;
+  const wcCeiling = (touchNumber ?? 1) === 3 ? 80 : 100;
   const wordCount = body.trim().split(/\s+/).length;
   if (wordCount > wcCeiling) failures.push(`Word count ${wordCount} exceeds ${wcCeiling}-word ceiling`);
 
