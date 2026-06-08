@@ -300,10 +300,91 @@ Replaced with 6 variants designed against the Assessment Microsite Behavioral Au
 
 ---
 
+## 16. CSV Input Contract (no email column, no website column)
+
+**Ratified 2026-06-08 after the Andrew Aeschliman incident** (run-20260608-zobi).
+
+### What the CSV may contain
+
+| Column | Required | Notes |
+|---|---|---|
+| `firstName` | yes | Used for salutation + Apollo people-match |
+| `lastName` | yes | Used for Apollo people-match + email-find |
+| `company` | yes | Will be normalized (strip ", LLC" / ", Inc" / etc.) before Apollo lookup once BL-013 ships |
+| `title` | yes | Persona detection + Apollo title match |
+| `state` | recommended | AE territory routing |
+| `aeNotes` | optional | Only used for post-show follow-ups |
+
+### What the CSV must NOT contain
+
+- **No `email` column.** Client-sourced emails (often pulled from Apollo or LinkedIn scrapers) have been wrong in subtle ways. Example: Andrew Aeschliman shipped as `andrew.aeschliman@unitedfiber.com` (wrong domain + wrong format). Pipeline must always discover via its own Apollo + SMTP chain.
+- **No `companyUrl` column.** Same reasoning. Domain inference happens in the email-finder pipeline (apollo enrichment + MX lookup), not from CSV input.
+
+### Why
+
+The pipeline's email-discovery chain is now the ground truth, not the CSV. Every prospect goes through Apollo people-match → domain hint → pattern detection → SMTP verify. The confidence gate's green/yellow/red is the authoritative deliverability signal. No human-curated CSV bypass.
+
+### What this trades
+
+- **+1 Apollo credit per prospect** (~$0.01-0.02): the people-match call that previously could be skipped when CSV had a valid email
+- **+5-10s per prospect** wall-clock: email discovery phase always runs
+- **-100% of CSV-poisoning risk** for the Andrew-shaped failure mode
+
+Net acceptable. Operator-ratified 2026-06-08.
+
+### Migration
+
+- `data/showrev/wet-run-p2-hard5.csv` — updated 2026-06-08 (email column removed).
+- All future P2 cold-prospect input files must follow this contract.
+- Existing P1 prospects in `sr_prospects` are NOT re-validated by this change. P1 was sourced before the contract; operator can decide whether to re-run any P1 emails through the pipeline.
+
+---
+
+## 15. ICP Qualification Guardrails (inform-only label, not a gate)
+
+Only TWO criteria matter. Both are volume floors, evaluated post-research as a label that surfaces in the operator System Brief. Composition runs regardless of verdict — the operator decides on the portal whether to send.
+
+### Volume floors
+
+| ICP type | Volume floor |
+|---|---|
+| **Fiber operator** | ≥250 miles/year (~1.3M linear feet) of active fiber build |
+| **A&E firm** | ≥500 combined drawings/analyses per year |
+
+### Ignored at this stage
+
+ACV minimum, urgency, automation level, decision-maker seniority. Persona-bucket fit on the contact is sufficient. We rely on the human operator (Tim, Justyn, AEs) to apply softer criteria when reviewing the verdict on the portal.
+
+### Three verdict states (verbatim wording)
+
+| Verdict | When the structurer returns it | Cost of being wrong |
+|---|---|---|
+| **fit** — "Definitively a fit" | Research contains specific volume evidence at or above the floor (e.g. "3,900-location ReConnect award", "multi-state FTTH build with stated counts", "named in BEAD subgrantee selection") | Low — happy path |
+| **miss** — "Definitively a miss" | Research contains direct contrary evidence (e.g. single-city < 20 mile deployment, 2-engineer A&E shop, hobbyist sole proprietorship, retired entity) | Low — recipient ignores cold email |
+| **leaning_fit** — "Uncertain but leaning to yes" | No conclusive evidence either way but research signals (sector, BEAD region, growth signals, employee count) suggest likely fit | Low — informs human reviewer, doesn't block |
+
+### Operating principle
+
+Cost of sending to a non-ICP prospect is low (they ignore). Document what the research shows in the verdict reasoning. The verdict is a LABEL the operator reads — never a gate that blocks composition.
+
+### Where it lives
+
+- **Schema fields** (added to `sr_engine_output`): `icp_volume_verdict`, `icp_volume_evidence`, `icp_volume_reasoning`
+- **Where computed**: `intel-structurer.ts` — same LLM call that already extracts the 30 structured fields. No new call. Verdict block runs AFTER extraction so the structurer is reasoning over its own extracted fields, not raw research.
+- **Where surfaced**: Operator portal `/ops` System Brief tab → dedicated ICP Verdict section showing verdict + evidence + reasoning.
+
+### What's intentionally NOT here
+
+No automated FAIL gate. No skip-composition logic. No cross-prospect calibration. No retry override behavior. Verdict gets recomputed on every research pass. If two retries disagree, the latest write wins (acceptable — composition runs either way, operator sees both via change_log if needed).
+
+---
+
 ## Version history
 
 | Version | Date (EST) | Author | Change |
 |---------|-----------|--------|--------|
+| v8 | 2026-06-08 19:30 | Claude | Added §16 CSV Input Contract — no `email` or `companyUrl` columns. Pipeline must discover via its own Apollo + SMTP chain. Operator-directed after Andrew Aeschliman ran with a wrong CSV email (wrong domain `unitedfiber.com` vs correct parent-co `ueci.coop`, and wrong format `firstname.lastname` vs `firstinitial+lastname`). The verifier red-flagged correctly but the path was still scary; expunging CSV emails eliminates the entire failure mode. Trade: +1 Apollo credit + 5-10s wall-clock per prospect for guaranteed-discovery integrity. |
+| v7 | 2026-06-08 17:55 | Claude | Added §15 ICP Qualification Guardrails — inform-only label, not a gate. Two volume floors (fiber operators ≥250 mi/yr, A&E firms ≥500 drawings/yr). Three verdict states: fit / miss / leaning_fit. Verdict block lives at the end of intel-structurer (no new LLM call, separation from extraction). Composition runs regardless of verdict. Operator-directed 2026-06-08 after red-team review: cost of false-positive is low (recipient ignores) so no gating is needed. |
 | v6 | 2026-06-08 17:30 | Claude | Added §14 P.S. Variants (6 cold-prospect variants rotating by persona × touch). Retired single canonical cold P.S. ("We scored [Company]'s drawing workflow against 300+ fiber firms") which failed judge 3 of 4 prospects in run-20260608-drsr. New variants designed against Assessment Microsite Behavioral Audit principles. Composer + recomposer use `selectPSVariant()` for cold; post-show retains brief-link template. |
 | v5 | 2026-06-07 18:07 | Claude | §1 rewritten: single locked pitch → 3 rotatable variants (A/B/C). "permit-ready" and "Quality control is built in" retired per Nick corrections + operator directive. New mechanism: "GIS and LLD data → construction and permit drawings in minutes." |
 | v4 | 2026-06-06 12:04 | Claude | Added §13 Deployment Domains — fiber.inorsa.com (prospect-facing) vs showrev-microsites.vercel.app (internal ops portal). |

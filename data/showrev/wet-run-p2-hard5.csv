@@ -1,6 +1,6 @@
-firstName,lastName,company,title,email,state
-Dan,Gillan,Dobson Fiber,Chief Revenue Officer,dgillan@dobson.net,FL
-Blake,Griffin,Communication Network Engineering,President,blake@ccfargo.com,ND
-Adam,Willoughby,Farmers Telecommunications Cooperative,Senior Outside Plant Tech,awilloughby@staff.farmerstel.com,AL
-Joe,Kunz,GFiber,Head of OSP Strategy & Systems,joekunz@google.com,CA
-Andrew,Aeschliman,"United Fiber, LLC",Services Facility Manager,andrew.aeschliman@unitedfiber.com,MO
+firstName,lastName,company,title,state
+Dan,Gillan,Dobson Fiber,Chief Revenue Officer,FL
+Blake,Griffin,Communication Network Engineering,President,ND
+Adam,Willoughby,Farmers Telecommunications Cooperative,Senior Outside Plant Tech,AL
+Joe,Kunz,GFiber,Head of OSP Strategy & Systems,CA
+Andrew,Aeschliman,"United Fiber, LLC",Services Facility Manager,MO
