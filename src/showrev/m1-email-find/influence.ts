@@ -212,12 +212,17 @@ const PS_VARIANTS: Record<PSVariantKey, PSVariantDef> = {
  * Post-show follow-ups (hasAeNotes=true) still use the brief-link template
  * upstream in buildComposerPrompt — variant selection only kicks in for cold.
  *
- * | Persona            | T1 default        | T1 alt            | T2 default              |
- * | ops_builder        | quiet_diagnostic  | question_no_link  | named_peer              |
- * | technical_designer | industry_data_hook| question_no_link  | named_peer              |
- * | revenue_leader     | loss_frame_anchor | quiet_diagnostic  | walkthrough_high_commit |
+ * | Persona            | T1 default        | T1 alt              | T2 default              |
+ * | ops_builder        | quiet_diagnostic  | industry_data_hook  | named_peer              |
+ * | technical_designer | industry_data_hook| loss_frame_anchor   | named_peer              |
+ * | revenue_leader     | loss_frame_anchor | quiet_diagnostic    | walkthrough_high_commit |
  *
- * T3 (binary close) gets no P.S. variant — the body IS the close.
+ * `question_no_link` removed from T1 rotation (2026-06-08): it phrases its
+ * P.S. as a diagnostic question, which conflicts with the body's standard CTA
+ * question (judge flagged this as REJECT-level duplicate-CTA on Joe Kunz in
+ * run-20260608-tgas). Reserved for T3 only.
+ *
+ * T3 (binary close) gets `question_no_link` — the body IS the close, no body CTA.
  */
 function pickPSVariantKey(
   bucket: PersonaBucket,
@@ -228,11 +233,11 @@ function pickPSVariantKey(
 
   const matrix: Record<PersonaBucket, { t1: PSVariantKey[]; t2: PSVariantKey[] }> = {
     ops_builder: {
-      t1: ['quiet_diagnostic', 'question_no_link'],
+      t1: ['quiet_diagnostic', 'industry_data_hook'],
       t2: ['named_peer'],
     },
     technical_designer: {
-      t1: ['industry_data_hook', 'question_no_link'],
+      t1: ['industry_data_hook', 'loss_frame_anchor'],
       t2: ['named_peer'],
     },
     revenue_leader: {

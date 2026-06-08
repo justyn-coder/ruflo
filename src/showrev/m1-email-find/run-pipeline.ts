@@ -691,10 +691,12 @@ async function phaseComposition(
         const cleanSubject = (parsed.subject || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
         let cleanPs = (parsed.ps || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
 
-        if (touchNum <= 2 && micrositeSlug && !cleanPs.includes('fiber.inorsa.com')) {
-          cleanPs = cleanPs
-            ? `${cleanPs}\nhttps://fiber.inorsa.com/brief/${micrositeSlug}`
-            : `P.S. Put together an overview: https://fiber.inorsa.com/brief/${micrositeSlug}`;
+        // Only inject a default brief URL when the LLM returned an EMPTY P.S.
+        // Do NOT append a URL to a P.S. that already has content — some variants
+        // (e.g. question_no_link) are intentionally link-free reply hooks and an
+        // appended URL would corrupt them (observed in run-20260608-tgas, Joe Kunz).
+        if (touchNum <= 2 && micrositeSlug && !cleanPs) {
+          cleanPs = `P.S. Put together an overview: https://fiber.inorsa.com/brief/${micrositeSlug}`;
         }
 
         emails.push({
