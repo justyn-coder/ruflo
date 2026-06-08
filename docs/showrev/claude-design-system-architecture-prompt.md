@@ -1,9 +1,9 @@
 ---
 title: Claude Design Prompt -- ShowRev System Architecture Visualization
 status: ACTIVE
-last_updated: 2026-06-06 23:33 EST
-version: v4
-purpose: Exact prompt for Claude Design to render the full ShowRev system architecture. Reflects actual code in run-pipeline.ts as of Wave 2 + deliverability infrastructure (2026-06-06). Every component, data flow, gate, external service, and automation trigger.
+last_updated: 2026-06-08 11:17 EST
+version: v5
+purpose: Exact prompt for Claude Design to render the full ShowRev system architecture. Reflects actual code in run-pipeline.ts as of P2 pipeline resilience build (2026-06-08). Every component, data flow, gate, external service, automation trigger, plus side modules (VERMILLION, Extra Email Finder).
 ---
 
 # Claude Design Prompt
@@ -67,6 +67,13 @@ Group components into 7 vertical swim lanes from left to right:
 - Sets icp_status, icp_reason, icp_type, assigned_ae
 - AE resolved via state-based territory mapping (East/Central/West)
 
+**Phase 2c: No-Email Early Exit** (run-pipeline.ts, after Phase 2b)
+
+- If email discovery returns nothing (no Apollo, no domain resolution, no pattern candidates), pipeline exits early
+- Writes a minimal row to Supabase with `ae_flag = "No email found"` and `mechanical_check_passed = false`
+- Prospect appears in Portal with Flag status and explanation in System Report
+- Skips all downstream phases (research, composition, judge, microsite)
+
 ### Swim Lane 2: RESEARCH + BRAIN
 
 **Phase 3a: Brain Context Query** (brain-agentdb.ts + brain-ingest.ts, line 1361)
@@ -94,9 +101,19 @@ Group components into 7 vertical swim lanes from left to right:
 - Note: "This is the learning loop — Brain accumulates knowledge across runs"
 
 **Phase 3c: Intel Structurer** (intel-structurer.ts `structureIntelReport`, line 1471)
+
 - Structures raw research into HubSpot-ready dossier fields
-- Fields: showrev_company_summary, showrev_bead_status, showrev_key_projects, showrev_growth_signals, showrev_challenger_insight, showrev_competitive_landscape, showrev_automation_level, showrev_product_fit, etc.
+- Fields: showrev_company_summary, showrev_bead_status, showrev_key_projects, showrev_growth_signals, showrev_challenger_insight, showrev_competitive_landscape, showrev_automation_level, showrev_product_fit, showrev_hq_state, etc.
 - Output: structured dossier object with populated field count
+
+**Phase 3d: AE Territory Resolution + HQ State Detection** (run-pipeline.ts, after Phase 3c)
+
+- AE auto-assigned by contact state via `resolveAE(state)` → East (Mike Rutski), Central (Nathan Dunn), West (Lucas Spencer)
+- Intel structurer extracts `showrev_hq_state` (2-letter US state code where company is headquartered)
+- If HQ state differs from contact state AND maps to a different AE territory, pipeline reassigns AE to HQ territory
+- Reassignment flagged for operator review: `ae_flag = "HQ=TX (contact=CA), reassigned Lucas Spencer → Nathan Dunn"`
+- Operator sees the flag in Portal and can override
+- Default AE = Lucas Spencer for unresolvable territories
 
 **Brain Knowledge Base** (data/brain/fiber-telecom/inorsa/fiber/fiber-connect-2026/)
 - entity-graph.jsonl — growing entity graph (updated by Phase 3b)
@@ -287,13 +304,46 @@ Group components into 7 vertical swim lanes from left to right:
 - Required meta-fields: influence_pattern, persona_bucket, research_confidence, source_count
 - Feeds Brain learning loop
 
+### Universal Retry Queue (run-pipeline.ts, post-loop)
+
+- After all prospects finish the main loop, any that hit transient errors auto-retry
+- Transient error detection: regex match on `connection|fetch failed|timeout|ECONNRESET|ENOTFOUND|ETIMEDOUT|socket hang up|503|429`
+- Retry re-runs the full pipeline for that prospect (same phases, same run ID)
+- If retry produces a better result (fewer errors or has emails), replaces the original
+- If retry also fails, `writeFailureFlag()` saves best data from both attempts to Supabase
+- Flag row: `ae_flag = "FAILED after 2 attempts: <error summary>"`, `mechanical_check_passed = false`
+- Prospect appears in Portal with Flag/Issue status, error explanation visible in System Report
+- Show as a loop arrow after the main pipeline backbone with "auto-retry" label
+
+### Side Modules (built, NOT wired into main pipeline — show as separate boxes with dashed borders, positioned below the main architecture)
+
+**VERMILLION AI-Tell Audit** (judge.ts — 3 observation-only checks)
+
+- Three research-validated checks that detect AI-written patterns in composed emails:
+  1. **Participial clause density** — present-participial openers at 2-5x human rate (PNAS 2025); flags if >1 per body
+  2. **Sentence-length variance** — low variance = AI tell (B2B practitioner consensus); std-dev check
+  3. **Echoed sentence structures** — adjacent sentences mirroring grammatical rhythm (ResearchLeap 2025)
+- Currently observation-only: produces warnings, does NOT gate or reject
+- Designed for future promotion to soft gate once calibrated on P2 volume
+- Source research: VERMILLION Framework (ResearchLeap 2025), PNAS 2025 PMC11874169, B2B practitioners (Lead411 + B2B Rocket 2026)
+
+**Extra Email Finder** (external tool, not integrated)
+
+- Standalone email discovery tool for manual fallback when pipeline email finder fails
+- Used when Apollo + domain resolution + pattern detection all miss
+- Operator runs manually for flagged "No email found" prospects
+- Output can be manually fed back into CSV for re-run
+- Not wired into pipeline automation — operator-triggered only
+
 ## The Orchestrator
 
 **run-pipeline.ts** (~2300 lines) is the single CLI orchestrator that wires all phases. Show it as a horizontal backbone connecting all swim lanes, with phase numbers labeled on each connection.
 
 ```
 CSV → [P1: ICP Gate] → [P2: MV Pre-Verify → Email Find → Domain Mismatch] → [Confidence Gate] → [P2b: Prospect Upsert]
+    → [P2c: No-Email Exit? → Flag row if no email, skip remaining phases]
     → [P3a: Brain Query] → [P3: STORM Research (3 parallel)] → [P3b: Brain Ingest] → [P3c: Intel Structurer]
+    → [P3d: AE Territory + HQ State Detection → reassign AE if HQ ≠ contact territory]
     → [P4: Substrate Search] → [P4b: Semantic Verify]
     → [P5: Pattern Selection] → [P6: Composition] → [P6b: Fact Verify]
     → [P7: Judge Gate] → [P7b: Cross-Model Judge]
@@ -301,6 +351,7 @@ CSV → [P1: ICP Gate] → [P2: MV Pre-Verify → Email Find → Domain Mismatch
 
 Pre-loop: [Bounce Monitor Seed] ← sr_brain_outcomes
 Per-prospect: [Bounce Monitor Check] → HALT if thresholds exceeded
+Post-loop: [Retry Queue] → auto-retry transient failures → writeFailureFlag if 2nd fail
 Post-pipeline: [Engagement Feed] → Brain Dossiers (daily via RemoteTrigger)
 ```
 
@@ -323,7 +374,7 @@ New flags added:
 | sr_prospects | All contacts + status | first_name, last_name, email, company, title, state, send_status, icp_status, icp_type, icp_reason, assigned_ae, lead_type, domain_mismatch, confidence_score |
 | sr_brain_dossiers | Structured research output + engagement | company_summary, challenger_insight, persona_bucket, competitive_landscape, bead_status, growth_signals, engagement_note, next_best_action, inferred_urgency |
 | sr_brain_outcomes | Send outcome tracking (bounce monitor seed) | prospect_id, t1_bounced |
-| sr_engine_output | Full pipeline output per contact | email_subject_t1/t2/t3, email_body_t1/t2/t3, email_ps_t1/t2/t3, judge_scores, patterns, research_summary, confidence_score, confidence_color, domain_mismatch |
+| sr_engine_output | Full pipeline output per contact | email_subject_t1/t2/t3, email_body_t1/t2/t3, email_ps_t1/t2/t3, judge_scores, patterns, research_summary, confidence_score, confidence_color, domain_mismatch, ae_flag |
 | sr_microsites | ABM page config | slug, company_name, ae_name, ae_booking_url, ae_photo_url, company_logo_url |
 | sr_microsite_events | Page view tracking | microsite_id, event_type, metadata |
 | v_prospect_engagement | Engagement scoring (VIEW) | prospect_id, page_views, assess_views, engagement_score, engagement_level, recently_active |
@@ -373,6 +424,8 @@ icpType threads through: Phase 5 (pattern selection) → Phase 6 (composition) �
 - Database cylinder: Supabase (central, connected to all lanes)
 - Brain cycle icon: learning loop (Phase 3a reads → Phase 3b writes → Engagement Feed enriches)
 - Clock icons: RemoteTrigger scheduled automation (daily cron)
+- Retry loop icon: universal retry queue (transient errors auto-retry once, flag on 2nd failure)
+- Dashed boxes below main architecture: side modules (built, not wired) — VERMILLION audit, Extra Email Finder
 
 ## Audience
 
@@ -384,6 +437,7 @@ Justyn Szymczyk, ShowRev founder. Visual learner. This diagram is both a communi
 
 | Version | Date (EST) | Author | Change |
 |---------|-----------|--------|--------|
+| v5 | 2026-06-08 11:17 | Claude | Added: Phase 2c No-Email Early Exit (flag row, skip downstream), Phase 3d AE Territory + HQ State Detection (cross-territory reassignment with operator flag), Universal Retry Queue (transient error auto-retry, writeFailureFlag on 2nd failure, ae_flag in Portal), ae_flag column in sr_engine_output schema. Added Side Modules section: VERMILLION AI-Tell Audit (3 observation-only checks, not gated), Extra Email Finder (manual fallback, not wired). Updated orchestrator backbone diagram with P2c, P3d, retry queue. |
 | v4 | 2026-06-06 23:33 | Claude | Added Swim Lane 5 (DELIVERABILITY): Confidence Gate (scoring by discovery method + MV + domain mismatch), Bounce Monitor (Supabase seeding + per-prospect halt check at 5% hard / 10% total), Circuit Breaker (built, not integrated). Updated Phase 2: MV Pre-Verification Gate (CSV emails verified before trust), Domain Mismatch Detection (CSV vs discovered domain → -15 penalty). Added Engagement Feed / Watcher (v_prospect_engagement → brain dossier updates). Added RemoteTrigger daily automation (bounce monitor 7am, engagement feed 7:15am). Added --lead-type and --skip-existing CLI flags. Updated database schema (sr_brain_outcomes, v_prospect_engagement view, new columns on sr_prospects/sr_brain_dossiers/sr_engine_output). Updated orchestrator backbone to show pre-loop seed, per-prospect halt check, and post-pipeline engagement loop. |
 | v3 | 2026-06-06 09:55 | Claude | Corrected Email Discovery to reflect actual multi-step orchestrator: Apollo primary → DuckDuckGo fallback → MillionVerifier verification (was described as DuckDuckGo-only + Findymail). Fixed word count gate: 88w T1/T2, 66w T3 per SOT §11 (was incorrectly stated as >80). Updated external services table. Cross-referenced against pipeline-trace-lyte-fiber.md IPO trace to verify all phases match code. |
 | v2 | 2026-06-06 07:30 | Claude | Complete rewrite to reflect actual code after Wave 1+2. Added: 9-phase orchestrator backbone, ICP routing (3 types + tower exclusion), Brain learning loop (Phase 3a/3b), semantic verification (Phase 4b), fact verification (Phase 6b), auto-recompose on judge failure, Wave 2 ICP-aware composition/judge features, CSV aeNotes column mapping. Corrected: removed "7-bucket persona" (actually 3 persona buckets), fixed judge dimensions (5 not 4), added cross-model judge, honest build status on HubSpot Loader. |
