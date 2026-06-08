@@ -109,6 +109,46 @@ export function runMechanicalChecks(
     }
   }
 
+  // Redundancy checks (DL-Q4 Fix B, 2026-06-08)
+  // 1) Repeated specific numeric anchor (e.g. "~3,900 locations" then "Based on the ~3,900-location scope")
+  // 2) Repeated 3-word noun phrases used as structural anchors
+  // Recomposition often grows the email back over the ceiling by restating a number it already named.
+  const numericPattern = /\b~?\d{1,3}(?:[,]\d{3})*(?:[-.]\d+)?(?:[a-z]?\s*(?:locations?|miles?|drawings?|cycles?|days?|weeks?|months?|years?|hours?|%|percent))\b/gi;
+  const numericTokens = (body.match(numericPattern) || []).map(t => t.replace(/[-]\d*\s*/, ' ').trim().toLowerCase());
+  const numericTokenStems = numericTokens.map(t => t.replace(/[-,]/g, ' ').replace(/\s+/g, ' ').replace(/[s.]+$/, ''));
+  const seenNumericStems = new Set<string>();
+  for (const stem of numericTokenStems) {
+    if (seenNumericStems.has(stem)) {
+      failures.push(`Redundant numeric anchor: "${stem}" appears twice (recomposition grew the email back)`);
+      break;
+    }
+    seenNumericStems.add(stem);
+  }
+
+  // 3-word noun phrase repetition within the same body — captures patterns like
+  // "drawing cycle" appearing in three sentences, or "design throughput" anchoring two clauses
+  const sentencesForDup = body.split(/[.!?]+/).map(s => s.trim()).filter(s => s.length > 12);
+  if (sentencesForDup.length >= 3) {
+    const ngramCounts = new Map<string, number>();
+    for (const s of sentencesForDup) {
+      const words = s.toLowerCase().replace(/[^a-z\s]/g, ' ').split(/\s+/).filter(w => w.length > 3);
+      const seenInSentence = new Set<string>();
+      for (let i = 0; i + 1 < words.length; i++) {
+        const bigram = `${words[i]} ${words[i + 1]}`;
+        if (seenInSentence.has(bigram)) continue;
+        seenInSentence.add(bigram);
+        ngramCounts.set(bigram, (ngramCounts.get(bigram) || 0) + 1);
+      }
+    }
+    const STOPWORD_BIGRAMS = /^(?:that |this |with |from |into |their |there |would |could |should |which |where |when |what |only |just |very |they |when |then |also |here |much |many |some |most |such |make |made |been |were |have |will |your |our |you )/;
+    for (const [bigram, count] of ngramCounts.entries()) {
+      if (count >= 3 && !STOPWORD_BIGRAMS.test(bigram)) {
+        warnings.push(`Repeated phrase "${bigram}" appears in ${count} sentences (structural redundancy)`);
+        break;
+      }
+    }
+  }
+
   // Tim kill-list (phrases Tim kills on sight — from TIM_EDIT_PATTERNS in judges.ts)
   if (/\bworth a? (?:20|15|30)[- ]minutes?\b/i.test(body)) failures.push('Generic CTA: "Worth X minutes?" — use a diagnostic question instead');
   if (/\bworth a look\b/i.test(body)) failures.push('Tim-kill: "worth a look"');

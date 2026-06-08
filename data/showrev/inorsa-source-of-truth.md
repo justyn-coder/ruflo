@@ -260,10 +260,51 @@ Single Next.js app, two domains, different audiences:
 
 ---
 
+## 14. P.S. Variants (cold prospects only, 6 approved)
+
+Cold-prospect P.S. used to be a single template — "We scored [Company]'s drawing workflow against 300+ fiber firms…" Two problems killed it:
+
+1. The 5-dim judge consistently flagged it as misleading ("implies a completed analysis that doesn't exist; reframe to 'See how X benchmarks against…'") — caused 3 of 4 drafts in run-20260608-drsr.
+2. Identical P.S. across every cold prospect is a spam-filter and recipient-comparison fingerprint.
+
+Replaced with 6 variants designed against the Assessment Microsite Behavioral Audit (2026-06-08). Each variant invokes a different audit principle. Variants rotate by persona × touch number × deterministic company-hash.
+
+### The 6 variants
+
+| Key | Persona | Touch | Principle invoked |
+|---|---|---|---|
+| `quiet_diagnostic` | ops_builder | T1 | Curiosity gap, honest framing, personalization |
+| `industry_data_hook` | technical_designer | T1 | Third-party authority (FBA), no overclaim |
+| `loss_frame_anchor` | revenue_leader | T1 | Quantified loss frame + FBA source |
+| `question_no_link` | any | T1 alt / T3 | Specific question as reply hook (no link CTA) |
+| `named_peer` | any | T2 follow-up | Peer-operator authority + curiosity gap on outcome |
+| `walkthrough_high_commit` | revenue_leader | T2 | High-commit booking CTA, gated specifics (Zeigarnik) |
+
+**Verbatim text and rotation matrix:** `src/showrev/m1-email-find/influence.ts` → `PS_VARIANTS` + `pickPSVariantKey()`.
+
+### Rules
+
+- Each variant is char-for-char verbatim. Composers and recomposers must not paraphrase the claim or the source.
+- Replacing "Fiber Broadband Association" with "industry sources" or similar generic language is a credibility downgrade and will fail the judge.
+- The variants are for cold prospects only. Post-show follow-ups (when `hasAeNotes` is true) keep the brief-link template: `P.S. Put together a brief on [Company]'s drawing workflow. https://fiber.inorsa.com/brief/[slug]`
+- T3 (binary close) gets `question_no_link` — no link CTA. The body IS the close.
+- Variant selection is deterministic on `(persona, touchNumber, companyHash)`. Same prospect = same variant on re-runs.
+
+### Audit principles applied (citation for each)
+
+- **No overclaim** — "Claiming you've benchmarked 300+ is asserting you've assessed 20-30% of the industry. A VP will know most of their peers by name."
+- **Third-party authority** — "Quoting your own salesperson as a source of industry insight is the fastest way to trigger 'this is marketing.'"
+- **Honest framing of what the link delivers** — "If [prospect] clicks and gets a quiz rather than a completed report, the credibility damage outweighs the CTA benefit."
+- **Curiosity gap (Zeigarnik)** — "Show the WHAT but gate the HOW. Walkthrough is where the specifics live."
+- **Loss frame > vague opportunity** — "Technical people respond more to quantified loss than to vague opportunity."
+
+---
+
 ## Version history
 
 | Version | Date (EST) | Author | Change |
 |---------|-----------|--------|--------|
+| v6 | 2026-06-08 17:30 | Claude | Added §14 P.S. Variants (6 cold-prospect variants rotating by persona × touch). Retired single canonical cold P.S. ("We scored [Company]'s drawing workflow against 300+ fiber firms") which failed judge 3 of 4 prospects in run-20260608-drsr. New variants designed against Assessment Microsite Behavioral Audit principles. Composer + recomposer use `selectPSVariant()` for cold; post-show retains brief-link template. |
 | v5 | 2026-06-07 18:07 | Claude | §1 rewritten: single locked pitch → 3 rotatable variants (A/B/C). "permit-ready" and "Quality control is built in" retired per Nick corrections + operator directive. New mechanism: "GIS and LLD data → construction and permit drawings in minutes." |
 | v4 | 2026-06-06 12:04 | Claude | Added §13 Deployment Domains — fiber.inorsa.com (prospect-facing) vs showrev-microsites.vercel.app (internal ops portal). |
 | v3 | 2026-06-04 00:30 | Claude | Nick McManus corrections: removed validation/error-catching claims, added 40-50% rejection rate, added "conceptual GIS" + pricing objections, reframed value prop as speed→time→QC (not direct quality assurance). |

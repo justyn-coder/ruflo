@@ -1431,6 +1431,56 @@ async function writeFailureFlag(
 }
 
 // ---------------------------------------------------------------------------
+// Flag write helper — used by no-email + red-confidence early-exit paths
+// Writes an engine_output row so the prospect surfaces on the operator portal
+// with the failure reason and a System Brief signal.
+// ---------------------------------------------------------------------------
+
+async function writeFlagRow(
+  row: ProspectRow,
+  runId: string,
+  ae: { name: string; email: string },
+  result: PipelineResult,
+  flagKind: 'no_email' | 'red_confidence',
+  aeFlagMessage: string,
+  mechanicalFailureMessage: string,
+): Promise<void> {
+  const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
+  const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+  if (!sbKey) return;
+  const prospectId = `${row.firstName}-${row.lastName}-${row.company}`.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+
+  try {
+    await fetch(`${sbUrl}/rest/v1/sr_engine_output`, {
+      method: 'POST',
+      headers: { apikey: sbKey, Authorization: `Bearer ${sbKey}`, 'Content-Type': 'application/json', Prefer: 'resolution=merge-duplicates' },
+      body: JSON.stringify({
+        prospect_id: prospectId,
+        run_id: runId,
+        first_name: row.firstName,
+        last_name: row.lastName,
+        email: result.emailFound || '',
+        company: row.company,
+        title: row.title,
+        state: row.state || '',
+        icp_status: result.icpResult?.verdict || 'pass',
+        icp_reason: result.icpResult?.reason || '',
+        assigned_ae: ae.name,
+        ae_email: ae.email,
+        ae_flag: aeFlagMessage,
+        mechanical_check_passed: false,
+        mechanical_check_failures: mechanicalFailureMessage,
+        confidence_score: result.confidenceScore ?? null,
+        confidence_color: result.confidenceColor || null,
+      }),
+    });
+    console.log(`  -> Flagged in Supabase (kind=${flagKind})`);
+  } catch (err: any) {
+    console.log(`  -> Flag write error (non-blocking): ${err.message?.slice(0, 60)}`);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Main pipeline
 // ---------------------------------------------------------------------------
 
@@ -1603,46 +1653,20 @@ async function processOneProspect(
     console.log('  -> No email found — skipping composition. Flagging for operator review.');
     result.warnings.push('No email found — flagged for operator review. Check System Brief for research details.');
     result.duration = Date.now() - t0;
-    // Still run research + intel so the System Brief is useful, but skip compose/judge/microsite
-    // Write a minimal engine output row with 'flag' status
-    try {
-      const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
-      const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
-      const prospectId = `${row.firstName}-${row.lastName}-${row.company}`.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-      if (sbKey) {
-        await fetch(`${sbUrl}/rest/v1/sr_engine_output`, {
-          method: 'POST',
-          headers: { apikey: sbKey, Authorization: `Bearer ${sbKey}`, 'Content-Type': 'application/json', Prefer: 'resolution=merge-duplicates' },
-          body: JSON.stringify({
-            prospect_id: prospectId,
-            run_id: runId,
-            first_name: row.firstName,
-            last_name: row.lastName,
-            email: '',
-            company: row.company,
-            title: row.title,
-            state: row.state || '',
-            icp_status: result.icpResult?.verdict || 'pass',
-            icp_reason: result.icpResult?.reason || '',
-            assigned_ae: ae.name,
-            ae_email: ae.email,
-            ae_flag: 'No email found — requires manual lookup',
-            mechanical_check_passed: false,
-            mechanical_check_failures: 'no-email: skipped composition pipeline',
-          }),
-        });
-        console.log(`  -> Flagged in Supabase (status=flag, no email)`);
-      }
-    } catch (err: any) {
-      console.log(`  -> Flag write error (non-blocking): ${err.message?.slice(0, 60)}`);
-    }
+    await writeFlagRow(row, runId, ae, result, 'no_email',
+      'No email found — requires manual lookup',
+      'no-email: skipped composition pipeline');
     return result;
   }
 
   // Red confidence early exit: prospect upserted above, but skip research/composition
   if (result.confidenceColor === 'red') {
-    console.log('  -> RED confidence — skipping research/composition. Draft-only.');
+    console.log('  -> RED confidence — skipping research/composition. Flagging for operator review.');
+    result.warnings.push(`Email confidence RED (${result.confidenceScore}) — flagged for operator review. Check System Brief.`);
     result.duration = Date.now() - t0;
+    await writeFlagRow(row, runId, ae, result, 'red_confidence',
+      `Email verification failed (red ${result.confidenceScore}) — no deliverable address`,
+      `red-confidence: ${result.warnings.filter(w => /RED/.test(w)).join('; ') || 'verification failed'}`);
     return result;
   }
 
@@ -2017,8 +2041,17 @@ async function processOneProspect(
     result.factVerification = null;
 
     // Phase 7: Judge gate (with auto-recompose on mechanical failure, up to 2 retries)
+    // DL-Q4 Fix A (2026-06-08): Track candidates across all attempts. Recomposition is non-monotonic
+    // (LLM can grow a 97-word email back to 112w on the next pass) so we no longer ship "last" by default —
+    // we ship "best" measured by (mech_pass, judge_avg, fewest_must_fix).
     const p7Start = Date.now();
     const MAX_JUDGE_RETRIES = 2;
+    type RetryCandidate = {
+      attempt: number;
+      emails: typeof emails;
+      judgeResult: typeof judgeResult;
+    };
+    const candidates: RetryCandidate[] = [];
     for (let judgeAttempt = 0; judgeAttempt <= MAX_JUDGE_RETRIES; judgeAttempt++) {
       console.log(`  Phase 7: Judge gate${judgeAttempt > 0 ? ` (retry ${judgeAttempt})` : ''}...`);
       try {
@@ -2026,6 +2059,12 @@ async function processOneProspect(
         result.judgeScores = judgeResult.scores;
         result.judgePass = judgeResult.pass;
         console.log(`  -> ${judgeResult.pass ? 'PASS' : 'FAIL'}${judgeResult.failures.length > 0 ? ` (${judgeResult.failures.length} failures)` : ''}`);
+        // Snapshot this attempt for the "ship the best" selector below
+        candidates.push({
+          attempt: judgeAttempt,
+          emails: emails.map(e => ({ ...e })),
+          judgeResult: { ...judgeResult, scores: { ...judgeResult.scores }, failures: [...judgeResult.failures], mustFix: judgeResult.mustFix ? [...judgeResult.mustFix] : [], warnings: judgeResult.warnings ? [...judgeResult.warnings] : [] },
+        });
       } catch (err: any) {
         errors.push(`judge: ${err.message?.slice(0, 80)}`);
         console.log(`  -> Judge error: ${err.message?.slice(0, 60)}`);
@@ -2097,6 +2136,41 @@ async function processOneProspect(
         } catch (err: any) {
           console.log(`    T${tNum} recompose failed: ${err.message?.slice(0, 60)}`);
         }
+      }
+    }
+
+    // DL-Q4 Fix A: pick the BEST candidate across retries, not the last one.
+    // Score precedence: (1) any passing attempt > any failing attempt
+    //                   (2) within failing attempts, fewer must-fix items > more
+    //                   (3) tie-break on highest judge avg score
+    // This prevents a non-monotonic recompose (97w → 112w) from shipping the worse version.
+    if (candidates.length > 1) {
+      const computeAvg = (jr: typeof judgeResult): number => {
+        const scoreVals = Object.values(jr.scores).filter(v => typeof v === 'number') as number[];
+        return scoreVals.length > 0 ? scoreVals.reduce((a, b) => a + b, 0) / scoreVals.length : 0;
+      };
+      const scoreOf = (c: RetryCandidate) => ({
+        pass: c.judgeResult.pass ? 1 : 0,
+        mustFixPenalty: -(c.judgeResult.mustFix?.length || 0),
+        avg: computeAvg(c.judgeResult),
+        attempt: c.attempt,
+      });
+      const sorted = [...candidates].sort((a, b) => {
+        const sa = scoreOf(a), sb = scoreOf(b);
+        if (sa.pass !== sb.pass) return sb.pass - sa.pass;
+        if (sa.mustFixPenalty !== sb.mustFixPenalty) return sb.mustFixPenalty - sa.mustFixPenalty;
+        return sb.avg - sa.avg;
+      });
+      const best = sorted[0];
+      const last = candidates[candidates.length - 1];
+      if (best.attempt !== last.attempt) {
+        const bestAvg = computeAvg(best.judgeResult).toFixed(2);
+        const lastAvg = computeAvg(last.judgeResult).toFixed(2);
+        console.log(`  -> Best-of-retries: attempt ${best.attempt} (avg ${bestAvg}, ${best.judgeResult.mustFix?.length || 0} must-fix) beats attempt ${last.attempt} (avg ${lastAvg}, ${last.judgeResult.mustFix?.length || 0} must-fix) — shipping best`);
+        emails.splice(0, emails.length, ...best.emails);
+        judgeResult = best.judgeResult;
+        result.judgeScores = best.judgeResult.scores;
+        result.judgePass = best.judgeResult.pass;
       }
     }
 
@@ -2612,11 +2686,14 @@ Environment variables:
     const result = await processOneProspect(row, i, rows.length, config, runId);
     results.push(result);
 
-    // Track for retry if transient errors occurred
+    // Track for retry: transient errors, red email confidence, or no-email-found.
+    // SMTP timeouts (greylisting, slow MTA) often resolve on second attempt — retry once
+    // before the prospect surfaces in Portal Flagged for manual operator action.
     const hasTransientError = result.errors.some(e =>
       /connection|fetch failed|timeout|ECONNRESET|ENOTFOUND|ETIMEDOUT|socket hang up|503|429/i.test(e)
     );
-    if (hasTransientError && result.errors.length > 0) {
+    const failedEmailFind = !result.emailFound || result.confidenceColor === 'red';
+    if (failedEmailFind || (hasTransientError && result.errors.length > 0)) {
       retryQueue.push({ row, index: i, firstResult: result });
     }
   }

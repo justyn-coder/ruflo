@@ -111,6 +111,158 @@ function getPersonaFraming(title: string): PersonaFraming {
   return { bucket, ...framings[bucket] };
 }
 
+// ---------------------------------------------------------------------------
+// P.S. Variant System (Q3, 2026-06-08)
+//
+// Cold-prospect P.S. used to be a single template ("We scored [Company]'s
+// drawing workflow against 300+ fiber firms…"). That phrasing kept failing
+// the judge on every prospect (the judge flagged the implied-completed-analysis
+// as misleading) and any prospect-to-prospect comparison would expose the
+// fingerprint to a sophisticated reader.
+//
+// 6 variants designed against the Assessment Microsite Behavioral Audit
+// (2026-06-08), each invoking a different principle:
+//
+//   1 quiet_diagnostic      — curiosity gap, honest framing       (ops_builder T1)
+//   2 industry_data_hook    — third-party authority (FBA)         (technical_designer T1)
+//   3 loss_frame_anchor     — quantified loss, FBA source         (revenue_leader T1)
+//   4 question_no_link      — single open question, no CTA URL    (T1 alt for any persona)
+//   5 named_peer            — peer-operator framing               (T2 follow-up, any persona)
+//   6 walkthrough_high_commit — high-commit booking CTA           (T2 close for revenue_leader)
+//
+// SoT canonical reference: data/showrev/inorsa-source-of-truth.md §14.
+// ---------------------------------------------------------------------------
+
+export type PSVariantKey =
+  | 'quiet_diagnostic'
+  | 'industry_data_hook'
+  | 'loss_frame_anchor'
+  | 'question_no_link'
+  | 'named_peer'
+  | 'walkthrough_high_commit';
+
+interface PSVariantDef {
+  key: PSVariantKey;
+  principle: string;
+  needsAssessmentLink: boolean;
+  needsBookingLink: boolean;
+  noLink: boolean;
+  render: (ctx: { company: string; micrositeSlug: string; aeFirstName: string }) => string;
+}
+
+const PS_VARIANTS: Record<PSVariantKey, PSVariantDef> = {
+  quiet_diagnostic: {
+    key: 'quiet_diagnostic',
+    principle: 'curiosity gap, honest framing, personalization',
+    needsAssessmentLink: true,
+    needsBookingLink: false,
+    noLink: false,
+    render: ({ company, micrositeSlug }) =>
+      `P.S. We built a 4-question diagnostic to map where the drawing-cycle bottleneck actually sits — design throughput, jurisdictional rework, or template debt. 60 seconds, ${company}-specific result: https://fiber.inorsa.com/assess/${micrositeSlug}`,
+  },
+  industry_data_hook: {
+    key: 'industry_data_hook',
+    principle: 'third-party authority, no overclaim',
+    needsAssessmentLink: true,
+    needsBookingLink: false,
+    noLink: false,
+    render: ({ company, micrositeSlug }) =>
+      `P.S. Fiber Broadband Association data shows 40-50% of utility permit submissions get rejected on first pass. Cycle math is brutal. If that matches your experience, the 4-question diagnostic surfaces where it's most fixable for ${company}: https://fiber.inorsa.com/assess/${micrositeSlug}`,
+  },
+  loss_frame_anchor: {
+    key: 'loss_frame_anchor',
+    principle: 'loss frame, personalization, third-party authority',
+    needsAssessmentLink: true,
+    needsBookingLink: false,
+    noLink: false,
+    render: ({ company, micrositeSlug }) =>
+      `P.S. Permit-cycle delays are the most-cited reason BEAD project timelines slip and grant performance milestones get missed (Fiber Broadband Association, 2025). The drawing-stage diagnostic surfaces where ${company}'s cycle is exposed: https://fiber.inorsa.com/assess/${micrositeSlug}`,
+  },
+  question_no_link: {
+    key: 'question_no_link',
+    principle: 'specific question, reply hook not click hook',
+    needsAssessmentLink: false,
+    needsBookingLink: false,
+    noLink: true,
+    render: () =>
+      `P.S. The fastest tell for whether drawing throughput is your real bottleneck: how many hours does someone on your team spend cross-checking GIS-to-CAD before engineering review can start? If it's >2 per package, the math gets ugly fast.`,
+  },
+  named_peer: {
+    key: 'named_peer',
+    principle: 'peer authority, curiosity gap on outcome',
+    needsAssessmentLink: false,
+    needsBookingLink: true,
+    noLink: false,
+    render: ({ micrositeSlug }) =>
+      `P.S. One operator with a similar build profile saw the same pattern — drawing cycle ate weeks they didn't see coming. We mapped where it broke for them in 30 minutes. Worth comparing notes: https://fiber.inorsa.com/brief/${micrositeSlug}`,
+  },
+  walkthrough_high_commit: {
+    key: 'walkthrough_high_commit',
+    principle: 'high-commit CTA, gated specifics (Zeigarnik)',
+    needsAssessmentLink: false,
+    needsBookingLink: true,
+    noLink: false,
+    render: ({ company, micrositeSlug, aeFirstName }) =>
+      `P.S. We mapped what the drawing-stage compression looks like for fiber operators at ${company}'s scale. ${aeFirstName} can walk you through the specifics — and what the recovery path looks like — in 30 minutes: https://fiber.inorsa.com/brief/${micrositeSlug}`,
+  },
+};
+
+/**
+ * Rotation matrix for cold prospects (no AE notes).
+ * Post-show follow-ups (hasAeNotes=true) still use the brief-link template
+ * upstream in buildComposerPrompt — variant selection only kicks in for cold.
+ *
+ * | Persona            | T1 default        | T1 alt            | T2 default              |
+ * | ops_builder        | quiet_diagnostic  | question_no_link  | named_peer              |
+ * | technical_designer | industry_data_hook| question_no_link  | named_peer              |
+ * | revenue_leader     | loss_frame_anchor | quiet_diagnostic  | walkthrough_high_commit |
+ *
+ * T3 (binary close) gets no P.S. variant — the body IS the close.
+ */
+function pickPSVariantKey(
+  bucket: PersonaBucket,
+  touchNumber: 1 | 2 | 3,
+  companyHash: number,
+): PSVariantKey {
+  if (touchNumber === 3) return 'question_no_link';
+
+  const matrix: Record<PersonaBucket, { t1: PSVariantKey[]; t2: PSVariantKey[] }> = {
+    ops_builder: {
+      t1: ['quiet_diagnostic', 'question_no_link'],
+      t2: ['named_peer'],
+    },
+    technical_designer: {
+      t1: ['industry_data_hook', 'question_no_link'],
+      t2: ['named_peer'],
+    },
+    revenue_leader: {
+      t1: ['loss_frame_anchor', 'quiet_diagnostic'],
+      t2: ['walkthrough_high_commit'],
+    },
+  };
+  const lane = touchNumber === 1 ? matrix[bucket].t1 : matrix[bucket].t2;
+  // Stable selection: rotate within the persona's lane based on a hash of the company
+  // name so different prospects in the same persona+touch get different variants without
+  // randomness (deterministic = reproducible runs).
+  return lane[companyHash % lane.length];
+}
+
+function selectPSVariant(
+  bucket: PersonaBucket,
+  touchNumber: 1 | 2 | 3,
+  company: string,
+  micrositeSlug: string,
+  aeName: string,
+): string {
+  let h = 0;
+  for (let i = 0; i < company.length; i++) h = ((h << 5) - h + company.charCodeAt(i)) | 0;
+  const companyHash = Math.abs(h);
+  const variantKey = pickPSVariantKey(bucket, touchNumber, companyHash);
+  const variant = PS_VARIANTS[variantKey];
+  const aeFirstName = aeName.split(/\s+/)[0] || aeName;
+  return variant.render({ company, micrositeSlug, aeFirstName });
+}
+
 export const INFLUENCE_TOOLKIT: InfluenceToolkit = {
   patterns: {
     challenger_insight: {
@@ -480,9 +632,9 @@ ${touchNumber === 3 ? 'Final touch. 3-4 sentences MAX. Binary close. No Office H
 ## P.S. line (REQUIRED for T1 and T2)
 ${micrositeSlug ? (hasAeNotes
   ? `P.S. Put together a brief on ${prospect.company}'s drawing workflow. https://fiber.inorsa.com/brief/${micrositeSlug}`
-  : `P.S. We scored ${prospect.company}'s drawing workflow against 300+ fiber firms. 4 questions, 60 seconds, instant results: https://fiber.inorsa.com/assess/${micrositeSlug}`)
+  : selectPSVariant(persona.bucket, touchNumber, prospect.company, micrositeSlug, aeName))
 : ''}
-Rules: 1-2 sentences. Pattern break from body tone. The P.S. must create a curiosity gap — give them a reason to click that has nothing to do with Inorsa and everything to do with seeing where THEY stand.
+Rules: 1-2 sentences. Pattern break from body tone. The P.S. must create a curiosity gap — give them a reason to click that has nothing to do with Inorsa and everything to do with seeing where THEY stand. Use the variant above VERBATIM — do not paraphrase the claim or the source. Replacing "Fiber Broadband Association" with "industry sources" or similar generic language is a credibility downgrade and will fail the judge.
 
 ## Hard constraints
 - INORSA MENTIONS: The word "Inorsa" may appear in EXACTLY ONE sentence in the body. That sentence must be the verbatim pitch variant above. Do NOT mention Inorsa anywhere else in the body — not in the opener, bridge, CTA, or any other sentence. The P.S. line may reference the Inorsa URL but the body gets ONE mention only.
