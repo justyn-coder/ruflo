@@ -150,6 +150,11 @@ interface PSVariantDef {
   render: (ctx: { company: string; micrositeSlug: string; aeFirstName: string }) => string;
 }
 
+// Variants tightened 2026-06-08 per operator feedback:
+// - Drop full-company-name repetition (use "your" instead — they know who they are)
+// - Cut em-dashes (the post-process replaces them with commas and leaves stray
+//   spaces, producing "sits , design" artifacts in run-20260608-zobi)
+// - Shorter and more conversational; reads like a peer note, not a brochure
 const PS_VARIANTS: Record<PSVariantKey, PSVariantDef> = {
   quiet_diagnostic: {
     key: 'quiet_diagnostic',
@@ -157,8 +162,8 @@ const PS_VARIANTS: Record<PSVariantKey, PSVariantDef> = {
     needsAssessmentLink: true,
     needsBookingLink: false,
     noLink: false,
-    render: ({ company, micrositeSlug }) =>
-      `P.S. We built a 4-question diagnostic to map where the drawing-cycle bottleneck actually sits — design throughput, jurisdictional rework, or template debt. 60 seconds, ${company}-specific result: https://fiber.inorsa.com/assess/${micrositeSlug}`,
+    render: ({ micrositeSlug }) =>
+      `P.S. Built a 4-question diagnostic that pinpoints where your drawing cycle actually breaks. 60 seconds: https://fiber.inorsa.com/assess/${micrositeSlug}`,
   },
   industry_data_hook: {
     key: 'industry_data_hook',
@@ -166,8 +171,8 @@ const PS_VARIANTS: Record<PSVariantKey, PSVariantDef> = {
     needsAssessmentLink: true,
     needsBookingLink: false,
     noLink: false,
-    render: ({ company, micrositeSlug }) =>
-      `P.S. Fiber Broadband Association data shows 40-50% of utility permit submissions get rejected on first pass. Cycle math is brutal. If that matches your experience, the 4-question diagnostic surfaces where it's most fixable for ${company}: https://fiber.inorsa.com/assess/${micrositeSlug}`,
+    render: ({ micrositeSlug }) =>
+      `P.S. FBA data shows 40-50% of utility permits get rejected first pass. If that matches your reality, the 4-question diagnostic shows where it's most fixable: https://fiber.inorsa.com/assess/${micrositeSlug}`,
   },
   loss_frame_anchor: {
     key: 'loss_frame_anchor',
@@ -175,8 +180,8 @@ const PS_VARIANTS: Record<PSVariantKey, PSVariantDef> = {
     needsAssessmentLink: true,
     needsBookingLink: false,
     noLink: false,
-    render: ({ company, micrositeSlug }) =>
-      `P.S. Permit-cycle delays are the most-cited reason BEAD project timelines slip and grant performance milestones get missed (Fiber Broadband Association, 2025). The drawing-stage diagnostic surfaces where ${company}'s cycle is exposed: https://fiber.inorsa.com/assess/${micrositeSlug}`,
+    render: ({ micrositeSlug }) =>
+      `P.S. FBA flagged permit-cycle delay as the top reason BEAD timelines slip. The 4-question diagnostic shows where your cycle is exposed: https://fiber.inorsa.com/assess/${micrositeSlug}`,
   },
   question_no_link: {
     key: 'question_no_link',
@@ -185,7 +190,7 @@ const PS_VARIANTS: Record<PSVariantKey, PSVariantDef> = {
     needsBookingLink: false,
     noLink: true,
     render: () =>
-      `P.S. The fastest tell for whether drawing throughput is your real bottleneck: how many hours does someone on your team spend cross-checking GIS-to-CAD before engineering review can start? If it's >2 per package, the math gets ugly fast.`,
+      `P.S. Fastest tell: how many hours does your team spend cross-checking GIS-to-CAD per package before engineering review? Over 2, the math gets ugly fast.`,
   },
   named_peer: {
     key: 'named_peer',
@@ -194,7 +199,7 @@ const PS_VARIANTS: Record<PSVariantKey, PSVariantDef> = {
     needsBookingLink: true,
     noLink: false,
     render: ({ micrositeSlug }) =>
-      `P.S. One operator with a similar build profile saw the same pattern — drawing cycle ate weeks they didn't see coming. We mapped where it broke for them in 30 minutes. Worth comparing notes: https://fiber.inorsa.com/brief/${micrositeSlug}`,
+      `P.S. A similar operator hit the same pattern, drawing cycle ate weeks before they saw it coming. We mapped where it broke in 30 minutes. Worth comparing notes: https://fiber.inorsa.com/brief/${micrositeSlug}`,
   },
   walkthrough_high_commit: {
     key: 'walkthrough_high_commit',
@@ -202,8 +207,8 @@ const PS_VARIANTS: Record<PSVariantKey, PSVariantDef> = {
     needsAssessmentLink: false,
     needsBookingLink: true,
     noLink: false,
-    render: ({ company, micrositeSlug, aeFirstName }) =>
-      `P.S. We mapped what the drawing-stage compression looks like for fiber operators at ${company}'s scale. ${aeFirstName} can walk you through the specifics — and what the recovery path looks like — in 30 minutes: https://fiber.inorsa.com/brief/${micrositeSlug}`,
+    render: ({ micrositeSlug, aeFirstName }) =>
+      `P.S. We've mapped what the drawing-stage compression looks like at your scale. ${aeFirstName} can walk you through it, and the recovery path, in 30 minutes: https://fiber.inorsa.com/brief/${micrositeSlug}`,
   },
 };
 
