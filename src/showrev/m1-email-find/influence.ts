@@ -468,11 +468,12 @@ ${touchNumber === 3 ? 'Final touch. 3-4 sentences MAX. Binary close. Reference O
 - NO transition words (Furthermore, Additionally, Moreover)
 - NO more than 2 sentences per paragraph
 - NEVER reference "India", "offshore", "outsourced" or any workforce geography
-- NEVER use: "worth a look", "worth a quick call", "worth a conversation", "or not the right time", "just say the word", "on my end", "just let me know", "Different angle", "eat construction time", "bleeding", "binding constraint", "kickback" (use "setback" or "rejection" instead), "permit-ready" (use "construction and permit drawings" instead)
+- NEVER use: "worth a look", "worth a quick call", "worth a conversation", "or not the right time", "just say the word", "on my end", "just let me know", "Different angle", "eat construction time", "bleeding", "binding", "kickback" (use "setback" or "rejection" instead), "permit-ready" (use "construction and permit drawings" instead), "Reply 'remove'" or any opt-out/unsubscribe language (handled in signature, never in body), "loads the pipeline" (use "impacts the project pipeline" instead)
 - VARY sentence length. USE contractions. START one sentence with "And" or "But".
 
 ## Density rules (ENFORCE ALL — these prevent filler)
 - ONE independent clause per sentence. No trailing "which..." or "so that..." justification clauses. If the reader can infer it, cut it.
+- NEVER start two consecutive sentences with the same word (especially "Where", "When", "That"). Combine them or restructure the second.
 - Ask exactly ONE question with ONE question mark. No compound questions joined by "and" or "or."
 - The pitch sentence is the verbatim variant above. Do not append benefit clauses, qualifiers, or "so that..." explanations after it.
 
