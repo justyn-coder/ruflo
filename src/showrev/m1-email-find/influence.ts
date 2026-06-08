@@ -477,8 +477,11 @@ ${touchNumber === 3 ? 'Final touch. 3-4 sentences MAX. Binary close. Reference O
 - The pitch sentence is the verbatim variant above. Do not append benefit clauses, qualifiers, or "so that..." explanations after it.
 
 ## P.S. line (REQUIRED for T1 and T2)
-${micrositeSlug ? `P.S. Put together a brief on ${prospect.company}'s [relevant topic]. https://fiber.inorsa.com/brief/${micrositeSlug}` : ''}
-Rules: 1-2 sentences. Pattern break from body tone.
+${micrositeSlug ? (hasAeNotes
+  ? `P.S. Put together a brief on ${prospect.company}'s drawing workflow. https://fiber.inorsa.com/brief/${micrositeSlug}`
+  : `P.S. We scored ${prospect.company}'s drawing workflow against 300+ fiber firms. 4 questions, 60 seconds, instant results: https://fiber.inorsa.com/assess/${micrositeSlug}`)
+: ''}
+Rules: 1-2 sentences. Pattern break from body tone. The P.S. must create a curiosity gap — give them a reason to click that has nothing to do with Inorsa and everything to do with seeing where THEY stand.
 
 ## Hard constraints
 - INORSA MENTIONS: The word "Inorsa" may appear in EXACTLY ONE sentence in the body. That sentence must be the verbatim pitch variant above. Do NOT mention Inorsa anywhere else in the body — not in the opener, bridge, CTA, or any other sentence. The P.S. line may reference the Inorsa URL but the body gets ONE mention only.
