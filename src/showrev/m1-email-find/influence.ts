@@ -489,7 +489,8 @@ Rules: 1-2 sentences. Pattern break from body tone. The P.S. must create a curio
 - WORD COUNT: ${touchNumber === 3 ? '45-60 words target. Hard ceiling 80 words.' : '60-75 words target. Hard ceiling 100 words.'} Body only, excluding subject/PS/signature. Over the ceiling triggers recomposition. You WILL overshoot your target by 10-20 words — this is expected. Aim for the TARGET, not the ceiling. Company-specific data points are worth the words, but ruthlessly cut filler.
 - Subject line: 6 words or fewer, specific to their situation. First letter capitalized. No all-lowercase.
 - Salutation: strictly "${prospect.firstName}," (comma only, NO greeting word)
-- The salutation IS the sentence start. Do NOT capitalize the first word after the comma unless it's a proper noun (state names like Mississippi/Washington/Georgia, country names, company names, person names, and acronyms like BEAD/NTIA are ALL proper nouns — keep them capitalized).
+- After the salutation comma, the next word starts a new sentence. Capitalize normally.
+- Company name: use EXACTLY "${prospect.company}" in the email. Never substitute a parent entity, historical name, trade name, or DBA from research. If research mentions a parent company, you may reference the relationship but "${prospect.company}" must be the name used.
 - Sign off as: ${aeName} | Inorsa | ${aeEmail} (ONCE only)
 
 ## Output format (JSON only)

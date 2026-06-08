@@ -47,17 +47,6 @@ export function runMechanicalChecks(
     failures.push(`Salutation "${firstLine.slice(0, 40)}" should start with "${prospectFirstName},"`);
   }
 
-  const contentStart = lines.findIndex((l, i) => i > 0 && l.trim() !== '');
-  if (contentStart > 0) {
-    const firstContentLine = lines[contentStart].trim();
-    const firstChar = firstContentLine.charAt(0);
-    const firstWord = firstContentLine.split(/\s/)[0];
-    const isProperNoun = /^[A-Z]{2,}/.test(firstWord) || /^(The|A|An|In|On|At|Most|Every|When|Your|One|Three|Last|BEAD|NTIA|NY|BIA)$/.test(firstWord);
-    if (firstChar && firstChar === firstChar.toUpperCase() && !isProperNoun) {
-      warnings.push(`First word after salutation is capitalized ("${firstWord}") — salutation is the sentence start, use lowercase unless proper noun`);
-    }
-  }
-
   // P.S. microsite slug check (warn, not fail — composer may choose a better custom P.S.)
   if (ps && micrositeSlug && !ps.includes(micrositeSlug)) {
     warnings.push(`P.S. uses custom content instead of microsite slug "${micrositeSlug}"`);

@@ -108,6 +108,7 @@ interface PipelineResult {
   micrositeUpserted: boolean;
   aeSender: string;
   aeFlag: string | null;
+  outputStatus?: 'draft' | 'live';
   duration: number;
   errors: string[];
   warnings: string[];
@@ -724,7 +725,7 @@ async function phaseJudge(
   model: string = 'sonnet',
   researchSummary: string = '',
   icpType?: string,
-): Promise<{ scores: Record<string, number>; pass: boolean; failures: string[]; warnings: string[] }> {
+): Promise<{ scores: Record<string, number>; pass: boolean; failures: string[]; warnings: string[]; mustFix: string[] }> {
   // Phase 1: Mechanical checks (no LLM needed)
   const { runMechanicalChecks, judgeEmail: judgeDimensions } = await import('./judge.js');
   // 5-dimension LLM scorer: research_depth, vp_connection, tone, conciseness, jtbd_alignment
@@ -840,6 +841,7 @@ async function phaseJudge(
   };
   let worstRecommendation: 'send' | 'hold' | 'reject' = 'send';
   let anyJtbdReject = false;
+  const allMustFix: string[] = [];
 
   for (const email of emails) {
     // Build EmailTouch compatible with judgeEmail
@@ -874,8 +876,12 @@ async function phaseJudge(
       // Log dimension scores
       console.log(`    T${email.touchNumber} dimension scores: research=${research}, vp=${vp}, tone=${tone}, concise=${concise}, jtbd=${jtbd} (avg: ${avg} -> ${verdict.recommendation.toUpperCase()})`);
 
-      if (verdict.mustFix.length > 0 && verbose) {
-        console.log(`    T${email.touchNumber} must fix: ${verdict.mustFix.join('; ')}`);
+      if (verdict.mustFix.length > 0) {
+        for (const mf of verdict.mustFix) {
+          allMustFix.push(`T${email.touchNumber}: ${mf}`);
+          allFailures.push(`T${email.touchNumber} must-fix: ${mf}`);
+        }
+        if (verbose) console.log(`    T${email.touchNumber} must fix: ${verdict.mustFix.join('; ')}`);
       }
 
       // Store per-touch scores
@@ -917,8 +923,10 @@ async function phaseJudge(
   } else if (worstRecommendation === 'reject') {
     finalPass = false;
     console.log(`    5-dim verdict: REJECT (dimension <= 4)`);
+  } else if (allMustFix.length > 0) {
+    finalPass = false;
+    console.log(`    5-dim verdict: FAIL (${allMustFix.length} must-fix items — triggers recomposition)`);
   } else if (anyBelowThreshold || worstRecommendation === 'hold') {
-    // HOLD = flag for review, but don't block pipeline
     finalPass = true;
     console.log(`    5-dim verdict: HOLD (avg < 7.0 on some touches — flagged for operator review)`);
   } else {
@@ -931,6 +939,7 @@ async function phaseJudge(
     pass: finalPass,
     failures: allFailures,
     warnings: allWarnings,
+    mustFix: allMustFix,
   };
 }
 
@@ -1248,6 +1257,7 @@ async function phaseMicrositeUpsert(
   microsite: { headline: string; insightText: string; caseStudy: string },
   dryRun: boolean,
   verbose: boolean,
+  overrideStatus?: 'draft' | 'live',
 ): Promise<boolean> {
   if (dryRun) {
     if (verbose) console.log(`    [DRY RUN] Would upsert sr_microsites: ${micrositeSlug}`);
@@ -1282,7 +1292,7 @@ async function phaseMicrositeUpsert(
     ae_phone: aeDetail.phone,
     ae_booking_url: aeDetail.booking_url,
     ae_photo_url: aeDetail.photo_url,
-    status: (microsite.headline.includes('[Fallback') || microsite.insightText.includes('[Fallback')) ? 'draft' : 'live',
+    status: overrideStatus || ((microsite.headline.includes('[Fallback') || microsite.insightText.includes('[Fallback')) ? 'draft' : 'live'),
   };
 
   try {
@@ -1541,6 +1551,16 @@ async function processOneProspect(
       result.confidenceScore = confEval.score;
       result.confidenceColor = confEval.color;
       console.log(`  -> Confidence: ${confEval.color} (${confEval.score}) — ${confEval.canSend ? 'can send' : 'BLOCKED'}`);
+
+      if (confEval.color === 'red') {
+        console.log(`  -> RED confidence — will skip research/composition after prospect upsert`);
+        result.outputStatus = 'draft';
+        result.warnings.push(`Email confidence RED (${confEval.score}) — blocked: ${confEval.reasons.join(', ')}`);
+      }
+      if (confEval.color === 'yellow') {
+        result.outputStatus = 'draft';
+        result.warnings.push(`Email confidence YELLOW (${confEval.score}) — needs operator review: ${confEval.reasons.join(', ')}`);
+      }
     } else {
       console.log(`  -> No email found (${emailResult.confidence})`);
     }
@@ -1616,6 +1636,13 @@ async function processOneProspect(
     } catch (err: any) {
       console.log(`  -> Flag write error (non-blocking): ${err.message?.slice(0, 60)}`);
     }
+    return result;
+  }
+
+  // Red confidence early exit: prospect upserted above, but skip research/composition
+  if (result.confidenceColor === 'red') {
+    console.log('  -> RED confidence — skipping research/composition. Draft-only.');
+    result.duration = Date.now() - t0;
     return result;
   }
 
@@ -1877,7 +1904,7 @@ async function processOneProspect(
   // Phase 6: Email composition
   const micrositeSlug = toSlug(row.company, row.firstName, row.lastName);
   let emails: ComposedEmail[] = [];
-  let judgeResult = { scores: {} as Record<string, number>, pass: false, failures: [] as string[], warnings: [] as string[] };
+  let judgeResult = { scores: {} as Record<string, number>, pass: false, failures: [] as string[], warnings: [] as string[], mustFix: [] as string[] };
   let microsite = { headline: '', insightText: '', caseStudy: '' };
   const p6Start = Date.now();
 
@@ -2073,6 +2100,15 @@ async function processOneProspect(
       }
     }
 
+    if (!judgeResult.pass) {
+      result.outputStatus = 'draft';
+      if (judgeResult.mustFix?.length > 0) {
+        console.log(`  -> ${judgeResult.mustFix.length} must-fix items persisted after retries — output set to draft`);
+      } else {
+        console.log(`  -> Judge FAIL after retries — output set to draft`);
+      }
+    }
+
     // Phase 7b: Cross-Model Judge (multi-model consensus on T1)
     if (config.crossModelJudge && judgeResult.pass) {
       console.log('  Phase 7b: Cross-model judge...');
@@ -2122,6 +2158,7 @@ async function processOneProspect(
       try {
         result.micrositeUpserted = await phaseMicrositeUpsert(
           row, runId, micrositeSlug, ae, microsite, config.dryRun, config.verbose,
+          result.outputStatus as 'draft' | 'live' | undefined,
         );
         console.log(`  -> ${result.micrositeUpserted ? 'Microsite upserted to sr_microsites' : 'Microsite upsert failed (non-blocking)'}`);
       } catch (err: any) {
