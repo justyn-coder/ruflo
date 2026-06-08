@@ -33,6 +33,16 @@ export function runMechanicalChecks(
   const wordCount = body.trim().split(/\s+/).length;
   if (wordCount > wcCeiling) failures.push(`Word count ${wordCount} exceeds ${wcCeiling}-word ceiling`);
 
+  // HubSpot Sequence paragraph requirement (2026-06-08): T1 body MUST be EXACTLY 3 paragraphs.
+  // The P.S. is a separate field and becomes the 4th paragraph at send time.
+  // T2 enforces 3 paragraphs too for sequence symmetry; T3 is open (different structure).
+  if ((touchNumber ?? 1) === 1 || (touchNumber ?? 1) === 2) {
+    const bodyParagraphs = body.split(/\n\s*\n+/).map(p => p.trim()).filter(p => p.length > 0);
+    if (bodyParagraphs.length !== 3) {
+      failures.push(`HubSpot sequence requires T${touchNumber ?? 1} body to be exactly 3 paragraphs (you wrote ${bodyParagraphs.length}); paragraphs are separated by a single blank line`);
+    }
+  }
+
   // Em-dash check
   if (body.includes('—') || body.includes('–')) failures.push('Contains em-dash or en-dash');
 

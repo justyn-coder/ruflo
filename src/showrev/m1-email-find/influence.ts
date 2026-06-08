@@ -550,24 +550,42 @@ Use ONLY when key facts have NO company-specific data. Frame the state data as c
 ## Key facts about this company (USE THESE — prioritize company-specific facts over state-level data)
 ${keyFacts || '[No structured intel available — extract from dossier summary below]'}
 
-## Email structure (FOLLOW THIS ORDER)
-1. Salutation: "${prospect.firstName},"
-2. OPENER (1-2 sentences): Name ${prospect.company} in the first sentence. Use the best tier from above: Tier 1 if key facts have company-specific data, Tier 2 if only state-level data. For Tier 2, frame as "State's BEAD creates demand for firms like ${prospect.company}" — NOT "${prospect.company}'s BEAD work."
-3. BRIDGE (1 sentence): Name the specific friction the opener fact implies for this prospect's workflow. Use the failure-friction micro-template:
+## Email structure (FOLLOW THIS ORDER — EXACTLY 3 BODY PARAGRAPHS for T1; the P.S. lives in a separate field and becomes the 4th paragraph when HubSpot Sequence assembles the email)
+
+HARD RULE for T1 body: EXACTLY 3 paragraphs separated by a single blank line. Not 2, not 4. The mechanical check counts paragraphs and will FAIL the email if it's not exactly 3.
+
+**PARAGRAPH 1 — OPENER (1-2 sentences, 1 paragraph):**
+Salutation joined inline to the opener: "${prospect.firstName}, <opener sentence>". Name ${prospect.company} in the first sentence. Use the best tier from above: Tier 1 if key facts have company-specific data, Tier 2 if only state-level data. For Tier 2, frame as "State's BEAD creates demand for firms like ${prospect.company}" — NOT "${prospect.company}'s BEAD work."
+
+(blank line — paragraph break)
+
+**PARAGRAPH 2 — BRIDGE (1 sentence, 1 paragraph):**
+Name the specific friction the opener fact implies for this prospect's workflow. Use the failure-friction micro-template:
    - Name what's failing or slowing down (the friction)
    - Make it specific to this persona's daily work
    - Do NOT name Inorsa or any fix yet — let the CTA invite the conversation
 
 ${bridgeExamples}${competitiveBridge}
 
-4. CTA QUESTION (1 sentence): ${touchNumber === 1 ? `Choose ONE diagnostic question from this list (matched to this prospect's segment):
+(blank line — paragraph break)
+
+**PARAGRAPH 3 — CTA QUESTION + PITCH (2 sentences, 1 paragraph):**
+Two sentences in this paragraph, NO blank line between them. First the CTA question, then the verbatim pitch sentence.
+
+CTA question (1st sentence of P3): ${touchNumber === 1 ? `Choose ONE diagnostic question from this list (matched to this prospect's segment):
 ${ctaList}
 
 HYPOTHESIS FORMAT (use when key facts have 3+ company-specific lines): Instead of a list question, frame as: "Based on [specific fact from key facts], I suspect [hypothesis about their situation]. Is that directionally right?" The [specific fact] MUST be verbatim from key facts, not paraphrased or extended. The hypothesis must be about the company specifically, not a restatement of state-level trends. If the only facts available are state-level, use the diagnostic question format instead. The hypothesis must be something the prospect would find surprising or insightful, not a restatement of their job description.` : touchNumber === 2 ? `Different diagnostic question than T1. Select a DIFFERENT angle from the ICP CTA list:
 ${ctaList}
 Or derive a diagnostic question from the dossier. Must reference a different angle from T1.` : 'Short binary close about a specific decision they face.'}
-5. PITCH VARIANT (1 sentence, verbatim): "${persona.pitchVerbatim}"
-6. No signature in body (added separately)
+
+Pitch sentence (2nd sentence of P3, VERBATIM, char-for-char): "${persona.pitchVerbatim}"
+
+No paragraph break between the question and the pitch — they share the same paragraph.
+
+(No more paragraphs in the body. The P.S. is rendered separately into the "ps" output field and becomes the 4th paragraph when HubSpot assembles the email.)
+
+No signature in body (added separately).
 
 ## What Inorsa does (LOCKED pitch variant ${persona.pitchVariant} — use verbatim, char-for-char)
 "${persona.pitchVerbatim}"
@@ -638,6 +656,7 @@ Rules: 1-2 sentences. Pattern break from body tone. The P.S. must create a curio
 
 ## Hard constraints
 - INORSA MENTIONS: The word "Inorsa" may appear in EXACTLY ONE sentence in the body. That sentence must be the verbatim pitch variant above. Do NOT mention Inorsa anywhere else in the body — not in the opener, bridge, CTA, or any other sentence. The P.S. line may reference the Inorsa URL but the body gets ONE mention only.
+- ${touchNumber === 1 ? `PARAGRAPH COUNT (HUBSPOT SEQUENCE REQUIREMENT): The body MUST be EXACTLY 3 paragraphs separated by a single blank line (\\n\\n). No more, no less. Paragraph 1 = opener (1-2 sentences, salutation joined inline). Paragraph 2 = bridge (1 sentence). Paragraph 3 = CTA question + verbatim pitch (2 sentences, no blank line between them, in the same paragraph). The P.S. is a SEPARATE field that becomes the 4th paragraph when HubSpot assembles the email. The mechanical check will count body paragraphs and FAIL the email if it is not exactly 3.` : 'Paragraph count: keep the body structure flat and readable. Mechanical check enforces touch-specific rules.'}
 - WORD COUNT: ${touchNumber === 3 ? '45-60 words target. Hard ceiling 80 words.' : '60-75 words target. Hard ceiling 100 words.'} Body only, excluding subject/PS/signature. Over the ceiling triggers recomposition. You WILL overshoot your target by 10-20 words — this is expected. Aim for the TARGET, not the ceiling. Company-specific data points are worth the words, but ruthlessly cut filler.
 - Subject line: 6 words or fewer, specific to their situation. First letter capitalized. No all-lowercase.
 - Salutation: strictly "${prospect.firstName}," (comma only, NO greeting word)

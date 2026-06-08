@@ -685,6 +685,8 @@ async function phaseComposition(
           .replace(/\s+,/g, ',');
         cleanBody = cleanBody.replace(/^([A-Z][a-z]+,)\s*\n+\s*/m, '$1 ');
         cleanBody = cleanBody.replace(/\n\s*\w[\w\s]*\| Inorsa \| \w+@inorsa\.com\s*/g, '').trim();
+        // HubSpot Sequence paragraph normalization: collapse 3+ newlines to exactly 2
+        cleanBody = cleanBody.replace(/\n{3,}/g, '\n\n').replace(/[ \t]+\n/g, '\n');
 
         const cleanSubject = (parsed.subject || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
         let cleanPs = (parsed.ps || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
@@ -1094,6 +1096,11 @@ async function phaseSupabaseWrite(
       meddpicc_champion: strip(salesIntel.showrev_multi_thread_contacts),
       meddpicc_decision_criteria: null,
       meddpicc_competition: strip(company.showrev_competitive_landscape),
+      // ICP volume verdict — inform-only label (SoT §15). Composition runs regardless;
+      // operator reads this on the portal System Brief and decides whether to send.
+      icp_volume_verdict: strip(salesIntel.showrev_icp_volume_verdict),
+      icp_volume_evidence: strip(salesIntel.showrev_icp_volume_evidence),
+      icp_volume_reasoning: strip(salesIntel.showrev_icp_volume_reasoning),
     });
   }
 
@@ -1998,6 +2005,8 @@ async function processOneProspect(
                 .replace(/\s+,/g, ',');
               cleanBody = cleanBody.replace(/^([A-Z][a-z]+,)\s*\n+\s*/m, '$1 ');
               cleanBody = cleanBody.replace(/\n\s*\w[\w\s]*\| Inorsa \| \w+@inorsa\.com\s*/g, '').trim();
+              // HubSpot Sequence paragraph normalization: collapse 3+ newlines to exactly 2
+              cleanBody = cleanBody.replace(/\n{3,}/g, '\n\n').replace(/[ \t]+\n/g, '\n');
               emails[idx] = {
                 touchNumber: tNum,
                 subject: (parsed.subject || email.subject).replace(/[—–]/g, ','),
@@ -2121,6 +2130,10 @@ async function processOneProspect(
               .replace(/\s+,/g, ',');
             cleanBody = cleanBody.replace(/^([A-Z][a-z]+,)\s*\n+\s*/m, '$1 ');
             cleanBody = cleanBody.replace(/\n\s*\w[\w\s]*\| Inorsa \| \w+@inorsa\.com\s*/g, '').trim();
+            // HubSpot Sequence paragraph normalization: collapse 3+ newlines to exactly 2
+            // (one blank line between paragraphs). Prevents accidental 4th paragraph from
+            // extra blank lines the LLM sometimes emits.
+            cleanBody = cleanBody.replace(/\n{3,}/g, '\n\n').replace(/[ \t]+\n/g, '\n');
             emails[idx] = {
               touchNumber: tNum,
               subject: (parsed.subject || emails[idx].subject).replace(/[—–]/g, ','),
