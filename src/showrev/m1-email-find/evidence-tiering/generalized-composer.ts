@@ -39,6 +39,15 @@ import type {
 } from './types.js';
 import { getAEDetails } from '../ae-config.js';
 import { selectPSVariant } from '../influence.js';
+import {
+  bannedPhrasesPromptBlock,
+  ctaLibraryPromptBlock,
+  companyNameLockPromptBlock,
+  checkBannedPhrases,
+  checkCompanyNameLock,
+  countParagraphs,
+  countWords,
+} from './composer-constraints.js';
 
 /**
  * Persona buckets — mirrors `getPersonaFraming` in influence.ts.
@@ -182,7 +191,21 @@ export function buildGeneralizedPrompt(args: {
   // is a spam signal).
   const psLine = selectPSVariant(persona, 1, prospect.company, micrositeSlug, aeName);
 
-  return `You are a senior fiber industry Account Executive at Inorsa writing a cold outreach email. The recipient is someone you have NOT met. Your goal is to sound like a peer who knows the industry cold — informed, grounded, conversational. Not like a vendor pitching a product. Not like an AI.
+  return `You are a senior fiber industry Account Executive at Inorsa.
+
+## The intent of THIS email (load-bearing — read before composing)
+
+Imagine you and ${prospect.firstName} met briefly at Fiber Connect 2026, exchanged business cards but didn't get to talk shop. You spent the next week deep-researching their world: the pains they wake up thinking about, the gains they're chasing, the jobs-to-be-done that sit on their team's plate. Now you're following up — as a peer who genuinely *gets* it.
+
+This is NOT a sales pitch. The email reads like one professional talking to another:
+- It RECOGNIZES the prospect's reality (a pain, a gain, or a job-to-be-done specific to ${prospect.title} at a ${icpType.replace('_', ' ')})
+- It doesn't tell them they have a problem — they already know
+- It doesn't pitch Inorsa as the answer — it offers Inorsa as one path worth considering
+- The hook is: "I see your world, I've thought about it from your angle, here's a way you might compress the friction"
+
+The opener earns the read because you sound like you've done the homework. The close is a soft hook ("worth a look?"), not a hard ask. Inorsa is named once, as the proposed alleviation — not as the hero of the story.
+
+Cold reader test: if a peer fiber AE read this email, would they think "this person gets my world" or "this is a vendor pitch"? Your job is the former.
 
 ## Recipient
 - Name: ${prospect.firstName} ${prospect.lastName}
@@ -228,14 +251,20 @@ Name the friction that pattern implies for this persona's role. Use the failure-
 (blank line)
 
 PARAGRAPH 3 (CTA + pitch, 2 sentences, same paragraph):
-First sentence: a diagnostic question they'd actually want to answer (yes/no/maybe). Second sentence: the verbatim pitch — "${pitchVerbatim}"
+First sentence: the diagnostic question — pick from CTA QUESTION BANK below. Second sentence: the verbatim pitch — "${pitchVerbatim}"
 
 NO 4th body paragraph. The P.S. is the 4th paragraph when HubSpot assembles.
 
+${ctaLibraryPromptBlock(icpType)}
+
+${companyNameLockPromptBlock(prospect.company)}
+
+${bannedPhrasesPromptBlock()}
+
 ## Hard constraints
 - WORD COUNT: aim for 60-70 words. Hard ceiling 100 words — mechanical gate REJECTS above 100w. LLM tends to undercount, so the 60-70 target is intentional padding so you naturally land under 100. Body only.
+- BODY MUST BE EXACTLY 3 PARAGRAPHS separated by single blank lines. HubSpot Sequence breaks if paragraph count drifts.
 - NO em-dashes. Use commas or periods.
-- NO AI tells: "I hope this finds you well", "I wanted to reach out", "Happy to", "Feel free to", "leverage", "synergy", "utilize", "in today's", participial-clause openers ("Looking at...", "Building on..."), "delve", "Notably", "Furthermore", "Additionally", "Moreover", "seamlessly", "robust", "comprehensive", "transformative", "revolutionize".
 - NO forced personalization: do NOT name the company in the opener if the framing is industry-level. The company can appear in the question or pitch.
 - One question, one question mark. No compound asks joined by "and"/"or".
 - Vary sentence length. Use contractions. Start one sentence with "And" or "But" if it flows.
@@ -298,13 +327,16 @@ export async function composeGeneralized(args: {
     micrositeSlug,
   });
 
-  // Compose with up to 2 retries on word-count overrun (SoT §11 hard ceiling 100w).
-  // LLMs tend to undercount so target is 60-70w; retry kicks in if actual body >100w.
+  // Compose with up to 3 retries that fire on ANY constraint violation:
+  //   - Word count >100w (SoT §11 hard ceiling)
+  //   - Paragraph count != 3 (HubSpot Sequence requirement)
+  //   - Any banned phrase (AI tells + Tim kills + product guards + offshore)
+  //   - Company-name mismatch (Andrew/UECI bug class)
   let parsed: any = null;
-  let lastWordCount = 0;
-  for (let attempt = 0; attempt < 3; attempt++) {
+  let lastViolations: string[] = [];
+  for (let attempt = 0; attempt < 4; attempt++) {
     const retryHint = attempt === 0 ? '' :
-      `\n\n**RETRY** — your previous attempt was ${lastWordCount} words, OVER the 100-word ceiling. SHORTEN to 60 words. Cut adjectives. Cut adverbs. Cut redundant phrases. Keep the structure but tighten ruthlessly.`;
+      `\n\n**RETRY (attempt ${attempt + 1} of 4)** — your previous attempt had these violations:\n${lastViolations.map(v => `- ${v}`).join('\n')}\n\nFix ALL of them. Re-read the constraints. Body must be ≤100 words, EXACTLY 3 paragraphs, no banned phrases, exact company name "${prospect.company}".`;
     const raw = await callLLM(prompt + retryHint, {
       model,
       timeoutMs: 60000,
@@ -314,16 +346,28 @@ export async function composeGeneralized(args: {
       raw.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/) || raw.match(/(\{[\s\S]*\})/);
     if (!jsonMatch) throw new Error('Generalized composer: no JSON in LLM output');
     const candidate = JSON.parse(jsonMatch[1]);
-    const wordCount = (candidate.body || '').trim().split(/\s+/).filter(Boolean).length;
-    lastWordCount = wordCount;
-    if (verbose) console.log(`  Compose attempt ${attempt + 1}: ${wordCount}w`);
-    if (wordCount <= 100) {
+    const body: string = candidate.body || '';
+    const subject: string = candidate.subject || '';
+
+    const violations: string[] = [];
+    const wordCount = countWords(body);
+    if (wordCount > 100) violations.push(`Body is ${wordCount} words — over 100w ceiling`);
+    const paraCount = countParagraphs(body);
+    if (paraCount !== 3) violations.push(`Body has ${paraCount} paragraphs — must be exactly 3`);
+    const bannedHits = checkBannedPhrases(body, subject);
+    for (const b of bannedHits) violations.push(`Banned: ${b}`);
+    const companyMismatch = checkCompanyNameLock(body, prospect.company);
+    if (companyMismatch) violations.push(companyMismatch);
+
+    lastViolations = violations;
+    if (verbose) console.log(`  Compose attempt ${attempt + 1}: ${wordCount}w, ${paraCount}p, ${violations.length} violations`);
+
+    if (violations.length === 0) {
       parsed = candidate;
       break;
     }
-    if (attempt === 2) {
-      // Last attempt — accept but flag
-      console.warn(`  ⚠ Body still ${wordCount}w after 3 attempts — accepting; mechanical gate will reject`);
+    if (attempt === 3) {
+      console.warn(`  ⚠ ${violations.length} violations after 4 attempts — accepting; flagged for review`);
       parsed = candidate;
     }
   }

@@ -36,6 +36,15 @@ import { getAEDetails } from '../ae-config.js';
 import { getCompanyEvidence, getAssociationPriorities } from './substrate-query.js';
 import { selectPSVariant } from '../influence.js';
 import {
+  bannedPhrasesPromptBlock,
+  ctaLibraryPromptBlock,
+  companyNameLockPromptBlock,
+  checkBannedPhrases,
+  checkCompanyNameLock,
+  countParagraphs,
+  countWords,
+} from './composer-constraints.js';
+import {
   composeGeneralized,
   detectPersona,
   type PersonaBucket,
@@ -110,7 +119,21 @@ export function buildSpecificPrompt(args: {
   // PS rotation per persona/touch/company hash (deterministic; spam-defense at scale)
   const psLine = selectPSVariant(persona, 1, prospect.company, micrositeSlug, args.aeName);
 
-  return `You are a senior fiber industry Account Executive at Inorsa writing a cold outreach email. The recipient is someone you have NOT met. You sound like a peer who knows the industry cold — informed, grounded, conversational. NOT like a vendor pitching, NOT like AI.
+  return `You are a senior fiber industry Account Executive at Inorsa.
+
+## The intent of THIS email (load-bearing — read before composing)
+
+Imagine you and ${prospect.firstName} met briefly at Fiber Connect 2026, exchanged business cards but didn't get to talk shop. You spent the next week deep-researching their world: the pains they wake up thinking about, the gains they're chasing, the jobs-to-be-done that sit on their team's plate. Now you're following up — as a peer who genuinely *gets* it.
+
+This is NOT a sales pitch. The email reads like one professional talking to another:
+- It RECOGNIZES the prospect's reality from your deep research (you have actual evidence; use it)
+- It doesn't tell them they have a problem — they already know
+- It doesn't pitch Inorsa as the answer — it offers Inorsa as one path worth considering to alleviate the friction
+- The hook is: "I see your world, I've thought about your angle, here's a way you might compress the friction"
+
+Specific mode = you have substrate evidence on ${prospect.company}. Use it to SHOW you've done the research, not to flex what you know. Cite verifiable facts as approximations ("north of N locations") — never as exact numbers (stale-data risk).
+
+Cold reader test: would a peer fiber AE think "this person actually researched my world" or "this is a vendor pitch with my company name pasted in"? Your job is the former.
 
 ## Recipient
 - Name: ${prospect.firstName} ${prospect.lastName}
@@ -178,15 +201,21 @@ The friction the opener implies for this persona's role. Failure-friction templa
 (blank line)
 
 PARAGRAPH 3 (CTA + pitch, 2 sentences, same paragraph):
-First sentence: diagnostic question they'd actually want to answer (yes/no/maybe).
+First sentence: the diagnostic question — pick from CTA QUESTION BANK below.
 Second sentence: VERBATIM pitch — "${pitchVerbatim}"
 
 NO 4th body paragraph. The P.S. is the 4th paragraph when HubSpot assembles.
 
+${ctaLibraryPromptBlock(icpType)}
+
+${companyNameLockPromptBlock(prospect.company)}
+
+${bannedPhrasesPromptBlock()}
+
 ## Hard constraints
 - WORD COUNT: aim for 60-70 words. Hard ceiling 100 words — mechanical gate REJECTS above 100w. LLM tends to undercount, so the 60-70 target is intentional padding. Body only.
+- BODY MUST BE EXACTLY 3 PARAGRAPHS separated by single blank lines.
 - NO em-dashes.
-- NO AI tells (Hope this finds you, wanted to reach out, leverage, synergy, utilize, in today's, delve, Notably, Furthermore, seamlessly, robust, comprehensive, revolutionize).
 - ONE question with ONE question mark.
 - Inorsa mentioned EXACTLY ONCE (the verbatim pitch sentence).
 - Subject: 6 words max, specific to the angle you took, first letter capitalized.
@@ -272,12 +301,12 @@ export async function composeSpecific(args: {
     micrositeSlug,
   });
 
-  // Compose with up to 2 retries on word-count overrun (SoT §11 hard ceiling 100w).
+  // Compose with up to 3 retries on ANY constraint violation
   let parsed: any = null;
-  let lastWordCount = 0;
-  for (let attempt = 0; attempt < 3; attempt++) {
+  let lastViolations: string[] = [];
+  for (let attempt = 0; attempt < 4; attempt++) {
     const retryHint = attempt === 0 ? '' :
-      `\n\n**RETRY** — your previous attempt was ${lastWordCount} words, OVER the 100-word ceiling. SHORTEN to 60 words. Cut adjectives. Cut adverbs. Cut redundant phrases. Keep the structure but tighten ruthlessly.`;
+      `\n\n**RETRY (attempt ${attempt + 1} of 4)** — your previous attempt had these violations:\n${lastViolations.map(v => `- ${v}`).join('\n')}\n\nFix ALL of them. Re-read the constraints. Body must be ≤100 words, EXACTLY 3 paragraphs, no banned phrases, exact company name "${prospect.company}".`;
     const raw = await callLLM(prompt + retryHint, {
       model,
       timeoutMs: 60000,
@@ -287,15 +316,28 @@ export async function composeSpecific(args: {
       raw.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/) || raw.match(/(\{[\s\S]*\})/);
     if (!jsonMatch) throw new Error('Specific composer: no JSON in LLM output');
     const candidate = JSON.parse(jsonMatch[1]);
-    const wordCount = (candidate.body || '').trim().split(/\s+/).filter(Boolean).length;
-    lastWordCount = wordCount;
-    if (verbose) console.log(`  Compose attempt ${attempt + 1}: ${wordCount}w`);
-    if (wordCount <= 100) {
+    const body: string = candidate.body || '';
+    const subject: string = candidate.subject || '';
+
+    const violations: string[] = [];
+    const wordCount = countWords(body);
+    if (wordCount > 100) violations.push(`Body is ${wordCount} words — over 100w ceiling`);
+    const paraCount = countParagraphs(body);
+    if (paraCount !== 3) violations.push(`Body has ${paraCount} paragraphs — must be exactly 3`);
+    const bannedHits = checkBannedPhrases(body, subject);
+    for (const b of bannedHits) violations.push(`Banned: ${b}`);
+    const companyMismatch = checkCompanyNameLock(body, prospect.company);
+    if (companyMismatch) violations.push(companyMismatch);
+
+    lastViolations = violations;
+    if (verbose) console.log(`  Compose attempt ${attempt + 1}: ${wordCount}w, ${paraCount}p, ${violations.length} violations`);
+
+    if (violations.length === 0) {
       parsed = candidate;
       break;
     }
-    if (attempt === 2) {
-      console.warn(`  ⚠ Body still ${wordCount}w after 3 attempts — accepting; mechanical gate will reject`);
+    if (attempt === 3) {
+      console.warn(`  ⚠ ${violations.length} violations after 4 attempts — accepting; flagged for review`);
       parsed = candidate;
     }
   }

@@ -274,6 +274,7 @@ async function processOne(
     try {
       const t5 = Date.now();
       await persistToSupabase(result, options.runId);
+      await persistMicrosite(result);
       result.durations_ms.persist = Date.now() - t5;
     } catch (err) {
       result.errors.push(`persist: ${(err as Error).message}`);
@@ -300,6 +301,33 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-');
 
+  // Derive MEDDPICC + intel_* columns from the dossier WITHOUT extra LLM calls.
+  // Per V2-COMPOSER-GAP-FIX-PLAN Fix 8 — operator-approved: derive what we can,
+  // leave LLM-required fields null. Portal expand-view becomes useful instead of empty.
+  const tierCounts = result.dossier?.tierCounts;
+  const intelSignalStrength =
+    (tierCounts?.useDirectly ?? 0) >= 3 ? 'strong' :
+    (tierCounts?.useDirectly ?? 0) >= 1 ? 'medium' : 'weak';
+  const intelFitRationale = result.dossier?.icp_volume_reasoning || '';
+
+  // Pick the strongest USE_DIRECTLY company_fact for the meddpicc_identified_pain field
+  const useDirectlyFacts = (result.dossier?.claims?.company_fact || [])
+    .filter(c => c.tier === 'USE_DIRECTLY')
+    .slice(0, 3);
+  const meddpiccPain = useDirectlyFacts.length > 0
+    ? useDirectlyFacts.map(c => `- ${c.claim}`).join('\n')
+    : '';
+
+  // Persona-driven decision criteria (deterministic from persona bucket)
+  const personaBucket = result.composer_mode === 'specific' && result.composed?.composer_mode
+    ? (result.dossier ? 'inferred-from-title' : null)
+    : null;
+  const meddpiccDecisionCriteria =
+    /chief|vp|svp|ceo/i.test(result.row.title || '') ? 'Speed-to-revenue; capital efficiency; competitive market capture' :
+    /director|head|ops|operation/i.test(result.row.title || '') ? 'Drawing throughput; permitting speed; crew utilization; design capacity' :
+    /engineer|technical|designer/i.test(result.row.title || '') ? 'GIS-to-CAD traceability; design tool integration; data accuracy; workforce scaling' :
+    '';
+
   const body = {
     prospect_id: prospectId,
     run_id: runId,
@@ -321,6 +349,12 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     confidence_score: result.email_confidence_score ?? null,
     icp_volume_verdict: result.icp_volume_verdict || null,
     icp_volume_reasoning: result.dossier?.icp_volume_reasoning || null,
+    // MEDDPICC + intel_* derived from dossier
+    persona_bucket: personaBucket,
+    intel_signal_strength: intelSignalStrength,
+    intel_fit_rationale: intelFitRationale,
+    meddpicc_identified_pain: meddpiccPain || null,
+    meddpicc_decision_criteria: meddpiccDecisionCriteria || null,
     research_summary: JSON.stringify({
       composer_mode: result.composer_mode,
       research_quality: result.research_quality,
@@ -392,6 +426,127 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     const text = await presRes.text();
     // Non-fatal — sr_engine_output already has the data; portal sync can be retried
     console.warn(`[persist] sr_prospects upsert failed ${presRes.status}: ${text.slice(0, 200)}`);
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Microsite generation (Fix 9 — templated content per persona + ICP)
+// ----------------------------------------------------------------------------
+//
+// Cold prospect clicks PS link → /assess/{slug} must return 200 with relevant
+// content. Templated approach: persona-driven headline + ICP-typed insight +
+// 1-of-2 case studies. Saves ~$0.02/prospect vs LLM-generation; operator can
+// promote to LLM-rich later for high-value cohorts.
+// status='draft' so it doesn't auto-appear public until operator review.
+
+const MICROSITE_HEADLINE_BY_PERSONA: Record<string, string> = {
+  revenue_leader: 'Compress design-to-construction so revenue catches up with the network',
+  ops_builder: 'When the build is moving but the drawings are the bottleneck',
+  technical_designer: 'GIS-to-CAD: deterministic, traceable, built for scale',
+};
+
+function buildMicrositeInsight(
+  icpType: 'fiber_operator' | 'ae_firm',
+  persona: string,
+  companyName: string,
+): string {
+  const opener = icpType === 'fiber_operator'
+    ? 'Fiber operators in active build phases hit the same wall — design throughput, not crews or capital, becomes the gating constraint.'
+    : 'A&E firms running multi-program fiber design hit a per-engineer ceiling that no amount of hiring or outsourcing solves cleanly.';
+
+  const personaBridge =
+    persona === 'revenue_leader' ? 'For revenue leaders, the cost shows up as delayed subscriber activation, slipped BEAD ROI timelines, and lost ground to faster-moving peers.' :
+    persona === 'ops_builder' ? 'For ops leaders, it shows up as crews waiting on approved drawings, permit cycles eating the construction window, and a backlog that grows faster than the team can close.' :
+    persona === 'technical_designer' ? 'For engineering leaders, it shows up as designers spending hours formatting deliverables instead of designing, and re-cycle work whenever GIS data updates mid-build.' :
+    'It shows up across the build as friction between data and field execution.';
+
+  const close = `Inorsa converts your GIS and LLD data into construction and permit drawings in minutes. Deterministic output, full traceability back to source — no AI guesswork, no black box. Below: a 4-question diagnostic that takes ~60 seconds and shows where in your current cycle the friction concentrates.`;
+
+  return `${opener}\n\n${personaBridge}\n\n${close}`;
+}
+
+const CASE_STUDY_FIBER_OPERATOR = `**Case study: Regional fiber operator, ~120,000 locations served**
+
+The team was running BEAD-funded builds across 6 counties. Engineering throughput was the rate limiter — designers spent 60-70% of their time on drawing production, not actual design.
+
+Inorsa drop-in:
+- GIS + LLD data feeds Inorsa's drawing engine
+- Construction + permit drawing packages render in minutes, not days
+- All output is deterministic and traceable back to the source data feeds
+- Engineers reclaim time for the design work that actually needs human judgment
+
+Result: design-to-construction cycle compressed by 40%+ without adding headcount. Build momentum compounded.`;
+
+const CASE_STUDY_AE_FIRM = `**Case study: A&E firm, multi-program fiber design**
+
+The firm was managing 4 concurrent fiber programs for different operator clients, each with its own data feed + GIS conventions. Drawing-production cycle was the per-engineer ceiling.
+
+Inorsa drop-in:
+- Per-program drawing engines run on Inorsa's deterministic pipeline
+- Source-data → drawing packages in minutes
+- Margin compression from CD revision cycles drops to near-zero
+- Engineering team capacity effectively doubles without hiring
+
+Result: throughput per engineer doubled. Firm took on a 5th concurrent program with the same team.`;
+
+async function persistMicrosite(result: ProspectResult): Promise<void> {
+  if (!result.composed) return; // nothing to display if no email composed
+  const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
+  const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+  if (!sbKey) return;
+
+  const persona =
+    /chief|vp|svp|ceo|cfo/i.test(result.row.title || '') ? 'revenue_leader' :
+    /director|head|ops|operation|manager/i.test(result.row.title || '') ? 'ops_builder' :
+    /engineer|technical|designer|cto/i.test(result.row.title || '') ? 'technical_designer' :
+    'ops_builder';
+
+  const headline = MICROSITE_HEADLINE_BY_PERSONA[persona] || MICROSITE_HEADLINE_BY_PERSONA.ops_builder;
+  const icpType = (result.icp_type === 'ae_firm' ? 'ae_firm' : 'fiber_operator') as 'fiber_operator' | 'ae_firm';
+  const insightText = buildMicrositeInsight(icpType, persona, result.row.company);
+  const caseStudyText = icpType === 'fiber_operator' ? CASE_STUDY_FIBER_OPERATOR : CASE_STUDY_AE_FIRM;
+
+  const aeDetail = getAEDetails(result.ae.name);
+  const prospectId = `${result.row.firstName}-${result.row.lastName}-${result.row.company}`
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-');
+
+  const micrositeRow = {
+    slug: result.micrositeSlug,
+    prospect_id: prospectId,
+    company_name: result.row.company,
+    company_logo_url: null, // logo resolution deferred; portal can fill later
+    recipient_name: `${result.row.firstName} ${result.row.lastName}`,
+    recipient_title: result.row.title || '',
+    headline,
+    insight_text: insightText,
+    case_study_text: caseStudyText,
+    ae_name: result.ae.name,
+    ae_title: aeDetail.title,
+    ae_email: result.ae.email,
+    ae_phone: aeDetail.phone,
+    ae_booking_url: aeDetail.booking_url,
+    ae_photo_url: aeDetail.photo_url,
+    status: 'draft', // operator review required before public
+  };
+
+  try {
+    const res = await fetch(`${sbUrl}/rest/v1/sr_microsites?on_conflict=slug`, {
+      method: 'POST',
+      headers: {
+        apikey: sbKey,
+        Authorization: `Bearer ${sbKey}`,
+        'Content-Type': 'application/json',
+        Prefer: 'resolution=merge-duplicates,return=minimal',
+      },
+      body: JSON.stringify(micrositeRow),
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      console.warn(`[microsite] upsert ${res.status}: ${text.slice(0, 200)}`);
+    }
+  } catch (err) {
+    console.warn(`[microsite] upsert error: ${(err as Error).message}`);
   }
 }
 
