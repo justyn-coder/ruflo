@@ -769,24 +769,26 @@ export async function writeContacts(
   contacts: Array<Omit<CompanyContactRow, 'id' | 'discovered_at' | 'company_normalized'> & { id?: string }>,
 ): Promise<{ inserted: number; failed: number }> {
   if (contacts.length === 0) return { inserted: 0, failed: 0 };
-  const rows = contacts.map(c => ({
-    id:
-      c.id ||
-      evidenceRecordId(
-        { citation: c.source_citation },
-        `${c.name}@${c.company_name}`,
-      ),
-    name: c.name,
-    title: c.title ?? null,
-    company_name: c.company_name,
-    company_normalized: normalizeCompanyName(c.company_name),
-    email: c.email ?? null,
-    linkedin: c.linkedin ?? null,
-    source_kind: c.source_kind,
-    source_citation: c.source_citation,
-    discovered_at: new Date().toISOString(),
-    metadata: c.metadata ?? null,
-  }));
+  // Deterministic id from (lower(name), normalized(company)) so multiple
+  // sources for the same person collapse on upsert (matches sr_company_contacts
+  // unique index idx_contacts_unique). Without this, citation-hashed ids
+  // diverge per source and hit the index instead of merging.
+  const rows = contacts.map(c => {
+    const semanticKey = `${c.name.toLowerCase().trim()}@${normalizeCompanyName(c.company_name)}`;
+    return {
+      id: c.id || evidenceRecordId({ citation: 'contact' }, semanticKey),
+      name: c.name,
+      title: c.title ?? null,
+      company_name: c.company_name,
+      company_normalized: normalizeCompanyName(c.company_name),
+      email: c.email ?? null,
+      linkedin: c.linkedin ?? null,
+      source_kind: c.source_kind,
+      source_citation: c.source_citation,
+      discovered_at: new Date().toISOString(),
+      metadata: c.metadata ?? null,
+    };
+  });
 
   try {
     await supabaseFetch(`/rest/v1/sr_company_contacts?on_conflict=id`, {
