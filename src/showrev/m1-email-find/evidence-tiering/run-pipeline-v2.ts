@@ -36,7 +36,7 @@ import { resolveAE } from '../ae-config.js';
 import { findEmail } from '../email-finder/orchestrator.js';
 import { orchestrateEvidence } from './orchestrator.js';
 import { composeSpecific } from './specific-composer.js';
-import { ApolloCreditTracker } from './apollo-client.js';
+import { ApolloCreditTracker, findEmailForProspect } from './apollo-client.js';
 import type { ComposedEmail, TieredDossier, IcpVolumeVerdict } from './types.js';
 
 // ----------------------------------------------------------------------------
@@ -154,6 +154,8 @@ async function processOne(
 
   // Phase 2: Email find (existing primitive)
   // Per SoT §16: CSV has no email column. Always discover via Apollo + SMTP.
+  // Path A: existing findEmail (SMTP verification + pattern matching)
+  // Path B fallback: when Path A returns red/null, derive via Apollo peer-pattern
   try {
     const t2 = Date.now();
     const emailResult = await findEmail({
@@ -163,8 +165,41 @@ async function processOne(
     });
     result.email_found = emailResult.email || undefined;
     result.email_confidence = emailResult.confidence;
+
+    const pathANeedsB =
+      !emailResult.email ||
+      emailResult.confidence === 'red' ||
+      emailResult.confidence === 'amber' ||
+      emailResult.confidence === 'not-found';
+
+    if (pathANeedsB && !options.skipApollo) {
+      // Path B: Apollo direct people-match → peer-pattern derivation fallback
+      const apolloResult = await findEmailForProspect({
+        firstName: row.firstName,
+        lastName: row.lastName,
+        company: row.company,
+      });
+      creditTracker.add(apolloResult.creditsUsed);
+      if (
+        apolloResult.email &&
+        (apolloResult.confidence === 'high' ||
+          apolloResult.confidence === 'medium' ||
+          apolloResult.confidence === 'guessed')
+      ) {
+        // Only override if Path B found something tangible
+        if (
+          !result.email_found ||
+          (apolloResult.confidence !== 'guessed' && emailResult.confidence === 'red')
+        ) {
+          console.log(`  email path-b: ${apolloResult.email} (${apolloResult.confidence}, source=${apolloResult.source})`);
+          result.email_found = apolloResult.email;
+          result.email_confidence = apolloResult.confidence;
+        }
+      }
+    }
+
     result.durations_ms.email = Date.now() - t2;
-    console.log(`  email: ${emailResult.email || 'NOT-FOUND'} (${emailResult.confidence})`);
+    console.log(`  email: ${result.email_found || 'NOT-FOUND'} (${result.email_confidence || 'n/a'})`);
   } catch (err) {
     result.errors.push(`email-find: ${(err as Error).message}`);
   }
