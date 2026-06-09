@@ -47,6 +47,7 @@ import {
   checkSentenceLengthVariance,
   checkEchoedStructures,
   checkReadingAge,
+  checkCitationCoverage,
   countParagraphs,
   countWords,
   countWordsTotal,
@@ -161,7 +162,8 @@ You have actual evidence about this company. Use it carefully.
 **USE_DIRECTLY claims** — evidence we can defend. You may reference these, but:
 - NEVER quote a numeric value verbatim ("1,700 miles"). Frame as approximation: "north of 1,500 miles", "around 16,000 customers", "in the multi-state range." This protects against stale data.
 - DO cite the source implicitly by being specific (e.g., "your ReConnect Round 3 award" not "your USDA funding") — specificity is its own credential.
-- When you reference a USE_DIRECTLY claim in a sentence, record its [id] in that sentence's claim_ids array.
+- **MANDATORY citation rule (2026-06-09)**: For EVERY sentence that includes a numeric value, a company name, an industry-specific fact, or any claim that could be verified — you MUST include the claim_id(s) of the supporting USE_DIRECTLY evidence in that sentence's claim_ids array. Sentences without supporting evidence MUST be persona-frame only (no specifics — generic operator-typed framing).
+- Audit hard rule: if a sentence contains a number / a proper noun / a verifiable claim AND its claim_ids array is empty, the email will be rejected as a hallucination risk. No exceptions.
 
 **USE_TO_SHAPE claims** — defensible inference, but you cannot quote them as fact:
 - Use to shape your POV ("for operators at this scale…"). NEVER assert as a claim about the company.
@@ -217,7 +219,7 @@ Second sentence: VERBATIM pitch — "${pitchVerbatim}"
 
 NO 4th body paragraph. The P.S. is the 4th paragraph when HubSpot assembles.
 
-${ctaLibraryPromptBlock(icpType)}
+${ctaLibraryPromptBlock(icpType, prospect.firstName, prospect.lastName, prospect.company)}
 
 ${companyNameLockPromptBlock(prospect.company)}
 
@@ -370,6 +372,10 @@ export async function composeSpecific(args: {
     // Flesch-Kincaid reading-age check (grade ceiling 12)
     const readingAge = checkReadingAge(body);
     if (readingAge) violations.push(readingAge);
+    // Citation gate (2026-06-09 SPM hallucination defense): if substrate
+    // had >=2 USE_DIRECTLY claims AND body has zero claim_ids → reject.
+    const citationViolation = checkCitationCoverage(candidate.bodySentences, useDirectly.length);
+    if (citationViolation) violations.push(citationViolation);
 
     lastViolations = violations;
     attempts.push({ candidate, violations, attemptNumber: attempt + 1 });

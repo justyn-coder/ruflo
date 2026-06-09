@@ -51,6 +51,7 @@ import {
   checkSentenceLengthVariance,
   checkEchoedStructures,
   checkReadingAge,
+  checkCitationCoverage,
   countParagraphs,
   countWords,
   countWordsTotal,
@@ -259,7 +260,7 @@ First sentence: the diagnostic question — pick from CTA QUESTION BANK below. S
 
 NO 4th body paragraph. The P.S. is the 4th paragraph when HubSpot assembles.
 
-${ctaLibraryPromptBlock(icpType)}
+${ctaLibraryPromptBlock(icpType, prospect.firstName, prospect.lastName, prospect.company)}
 
 ${companyNameLockPromptBlock(prospect.company)}
 
@@ -391,6 +392,12 @@ export async function composeGeneralized(args: {
     // Flesch-Kincaid reading-age check (grade ceiling 12)
     const readingAge = checkReadingAge(body);
     if (readingAge) violations.push(readingAge);
+    // Citation gate (generalized mode uses industryContext = USE_TO_SHAPE
+    // by design — no USE_DIRECTLY claims to demand cites from). The check
+    // is a no-op when useDirectlyClaimCount < 2, so we pass 0 here as
+    // documentation but it never fires for generalized mode.
+    const citationViolation = checkCitationCoverage(candidate.bodySentences, 0);
+    if (citationViolation) violations.push(citationViolation);
 
     lastViolations = violations;
     attempts.push({ candidate, violations, attemptNumber: attempt + 1 });

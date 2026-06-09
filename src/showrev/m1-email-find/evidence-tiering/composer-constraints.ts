@@ -141,8 +141,51 @@ export const ICP_CTA_OPTIONS: Record<string, string[]> = {
   ],
 };
 
-export function ctaLibraryPromptBlock(icpType: 'fiber_operator' | 'ae_firm'): string {
+/**
+ * Deterministic CTA selector — hash prospect identity → pick 1-of-4 from bank.
+ *
+ * Replaces "LLM picks CTA freely" which anchor-biased to option #1 every time
+ * (caught by operator E2E test 2026-06-09 — every email had identical Para 3).
+ *
+ * Same pattern as P.S. variant rotation in influence.ts. Deterministic =
+ * same prospect always gets the same CTA across re-runs.
+ */
+export function selectCTAForProspect(
+  icpType: 'fiber_operator' | 'ae_firm',
+  firstName: string,
+  lastName: string,
+  company: string,
+): string {
   const lib = ICP_CTA_OPTIONS[icpType] || ICP_CTA_OPTIONS.fiber_operator;
+  if (lib.length === 0) return '';
+  const key = `${firstName}-${lastName}-${company}`.toLowerCase();
+  let hash = 0;
+  for (let i = 0; i < key.length; i++) {
+    hash = ((hash << 5) - hash) + key.charCodeAt(i);
+    hash |= 0;
+  }
+  const idx = Math.abs(hash) % lib.length;
+  return lib[idx];
+}
+
+export function ctaLibraryPromptBlock(
+  icpType: 'fiber_operator' | 'ae_firm',
+  prospectFirstName?: string,
+  prospectLastName?: string,
+  prospectCompany?: string,
+): string {
+  const lib = ICP_CTA_OPTIONS[icpType] || ICP_CTA_OPTIONS.fiber_operator;
+  // If prospect identity supplied, pin to deterministic selection. Else
+  // fall back to free pick (used by tests).
+  if (prospectFirstName && prospectLastName && prospectCompany) {
+    const chosen = selectCTAForProspect(icpType, prospectFirstName, prospectLastName, prospectCompany);
+    return `## CTA QUESTION — assigned to this prospect (use VERBATIM or with minor adaptation)
+
+The diagnostic question for this email is:
+"${chosen}"
+
+Slight adaptation allowed (replace generic "your team" with role-specific terms, swap "build schedule" for "construction window" if it flows better). NOT allowed: picking a different question, inventing a new one, or asking two questions.`;
+  }
   return `## CTA QUESTION BANK (pick ONE, slightly adapt to flow — do NOT invent)
 
 For ${icpType} prospects, the diagnostic question must be one of:
@@ -517,6 +560,32 @@ export function fleschKincaidGrade(body: string): number {
   const wordsPerSentence = wordCount / sentenceCount;
   const syllablesPerWord = syllableTotal / wordCount;
   return 0.39 * wordsPerSentence + 11.8 * syllablesPerWord - 15.59;
+}
+
+/**
+ * Citation gate — caught by DB integrity audit 2026-06-09: 225 of 343
+ * composed emails had body_sentences with ZERO claim_ids (substrate collected
+ * but never cited). Without citation linkage, we can't mechanically trace
+ * factual claims back to evidence = hallucination risk.
+ *
+ * Rule: if the dossier has >=2 USE_DIRECTLY claims available AND the composed
+ * body has zero claim_ids across all sentences → reject. Forces the LLM to
+ * actually cite the substrate it was given.
+ *
+ * Persona-frame sentences (no specifics) are allowed to have empty claim_ids
+ * — but if substrate was rich and we got zero cites, that's the LLM ignoring it.
+ */
+export function checkCitationCoverage(
+  bodySentences: Array<{ text: string; claim_ids?: string[] }> | undefined,
+  useDirectlyClaimCount: number,
+): string | null {
+  if (useDirectlyClaimCount < 2) return null; // not enough substrate to demand cites
+  if (!bodySentences || bodySentences.length === 0) return null;
+  const totalCites = bodySentences.reduce((acc, s) => acc + (s.claim_ids?.length || 0), 0);
+  if (totalCites === 0) {
+    return `Citation gate: dossier had ${useDirectlyClaimCount} USE_DIRECTLY claims but body has 0 claim_ids — every factual sentence must cite supporting evidence to prevent hallucination`;
+  }
+  return null;
 }
 
 /**
