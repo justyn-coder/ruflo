@@ -858,15 +858,43 @@ async function findEmailForContact(
       });
     }
 
-    // No eliminations or too many survivors — treat as catch-all
+    // No eliminations or too many survivors — treat as catch-all.
+    // Path A final-gate: run MillionVerifier on the best survivor to disambiguate
+    // catch-all servers (M365/Google return 200 OK for everything via SMTP).
+    let pathACatchAllConfidence: 'green' | 'yellow' | 'amber' | 'red' = 'yellow';
+    let pathACatchAllVerification: 'valid' | 'catch-all' | 'unverified' | 'invalid' | 'skipped' = 'catch-all';
+    if (options.millionVerifierFn) {
+      tacticsAttempted.push('mv-final-gate (path-a-catch-all)');
+      try {
+        const mvResult = await options.millionVerifierFn(winner.candidate.email);
+        const mvQuality = (mvResult.quality || '').toLowerCase();
+        console.log(`${prefix()} Step 6 MV final-gate: ${winner.candidate.email} = ${mvQuality}`);
+        if (mvQuality === 'good' || mvQuality === 'valid') {
+          pathACatchAllConfidence = 'green';
+          pathACatchAllVerification = 'valid';
+          tacticsSucceeded.push('mv-final-gate (upgrade-to-green)');
+        } else if (mvQuality === 'catch_all' || mvQuality === 'catch-all') {
+          pathACatchAllConfidence = 'amber';
+          pathACatchAllVerification = 'catch-all';
+          tacticsSucceeded.push('mv-final-gate (upgrade-to-amber)');
+        } else if (mvQuality === 'bad' || mvQuality === 'invalid' || mvQuality === 'disposable' || mvQuality === 'do_not_send') {
+          pathACatchAllConfidence = 'red';
+          pathACatchAllVerification = 'invalid';
+          tacticsSucceeded.push('mv-final-gate (definitive-negative)');
+        }
+        // 'unknown' or anything else: keep yellow (no signal either way)
+      } catch (err) {
+        console.log(`${prefix()} Step 6 MV final-gate error: ${err instanceof Error ? err.message : String(err)}`);
+      }
+    }
     tacticsSucceeded.push('smtp-verification (catch-all)');
-    console.log(`${prefix()} Step 6 fallback: best survivor ${winner.candidate.email}`);
+    console.log(`${prefix()} Step 6 fallback: best survivor ${winner.candidate.email} -> ${pathACatchAllConfidence}`);
     return buildResult(contact, {
       email: winner.candidate.email,
-      confidence: 'yellow',
+      confidence: pathACatchAllConfidence,
       domain: winner.domain,
       pattern: winner.candidate.pattern ?? patternResult?.pattern ?? null,
-      verificationStatus: 'catch-all',
+      verificationStatus: pathACatchAllVerification,
       mailProvider: winner.provider,
       tacticsAttempted,
       tacticsSucceeded,
@@ -939,8 +967,58 @@ async function findEmailForContact(
     }
   }
 
+  // Path A final-gate: before giving up with RED, run MillionVerifier on the
+  // best candidate. MV's catch-all detection catches cases where M365/Google
+  // SMTP returns ambiguous results that our self-hosted probe couldn't classify.
+  //
+  // Mapping:
+  //   - MV 'good'/'valid' -> upgrade to GREEN (deliverable)
+  //   - MV 'catch_all'    -> upgrade to AMBER (sendable, caveat)
+  //   - MV 'unknown'      -> keep RED (no signal either way)
+  //   - MV 'bad'/'disposable' -> keep RED (definitive negative)
+  const bestRedCandidate = candidates[0]?.email ?? null;
+  if (bestRedCandidate && options.millionVerifierFn) {
+    tacticsAttempted.push('mv-final-gate (path-a-red)');
+    try {
+      const mvResult = await options.millionVerifierFn(bestRedCandidate);
+      const mvQuality = (mvResult.quality || '').toLowerCase();
+      console.log(`${prefix()} Path A final-gate MV: ${bestRedCandidate} = ${mvQuality}`);
+      if (mvQuality === 'good' || mvQuality === 'valid') {
+        tacticsSucceeded.push('mv-final-gate (upgrade-to-green)');
+        return buildResult(contact, {
+          email: bestRedCandidate,
+          confidence: 'green',
+          domain,
+          pattern: patternResult?.pattern ?? null,
+          verificationStatus: 'valid',
+          mailProvider: providerStr,
+          tacticsAttempted,
+          tacticsSucceeded,
+          duration: ms() - t0,
+        });
+      }
+      if (mvQuality === 'catch_all' || mvQuality === 'catch-all') {
+        tacticsSucceeded.push('mv-final-gate (upgrade-to-amber)');
+        return buildResult(contact, {
+          email: bestRedCandidate,
+          confidence: 'amber',
+          domain,
+          pattern: patternResult?.pattern ?? null,
+          verificationStatus: 'catch-all',
+          mailProvider: providerStr,
+          tacticsAttempted,
+          tacticsSucceeded,
+          duration: ms() - t0,
+        });
+      }
+      // 'unknown', 'bad', 'invalid', 'disposable', 'do_not_send' -> keep red below
+    } catch (err) {
+      console.log(`${prefix()} Path A final-gate MV error: ${err instanceof Error ? err.message : String(err)}`);
+    }
+  }
+
   return buildResult(contact, {
-    email: candidates[0]?.email ?? null,
+    email: bestRedCandidate,
     confidence: 'red',
     domain,
     pattern: patternResult?.pattern ?? null,
