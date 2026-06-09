@@ -571,6 +571,9 @@ export async function writeEvidence(
   // PostgREST bulk insert requires all rows in the batch to have the same
   // key set. Normalize every row to include the same keys (filling missing
   // optional fields with null) so the wire-format matches.
+  // Also dedup by id within the batch — PG on_conflict can't update the
+  // same row twice in one statement.
+  const seen = new Set<string>();
   const rows = records.map(r => ({
     id:
       r.id ||
@@ -587,7 +590,11 @@ export async function writeEvidence(
     category: r.category,
     extracted_at: new Date().toISOString(),
     metadata: r.metadata ?? null,
-  }));
+  })).filter(row => {
+    if (seen.has(row.id)) return false;
+    seen.add(row.id);
+    return true;
+  });
 
   try {
     await supabaseFetch(`/rest/v1/sr_company_evidence?on_conflict=id`, {
