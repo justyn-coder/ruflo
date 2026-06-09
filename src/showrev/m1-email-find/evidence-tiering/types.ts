@@ -55,7 +55,8 @@ export type SourceKind =
   | 'web_research'        // Live 3-persona research with citation
   | 'web_research_dated'  // Live web research with explicit publication date <12mo
   | 'csv_input'           // Operator-provided input data
-  | 'manual';             // Operator override or hand-curated source
+  | 'manual'              // Operator override or hand-curated source
+  | 'fcc_bdc';            // FCC Broadband Data Collection (authoritative regulatory filing)
 
 /**
  * Claim category — simplified 8→3 per critique simplicity-cut.
@@ -306,6 +307,7 @@ export function tierBySourceKind(kind: SourceKind): ClaimTier {
     case 'web_research_dated':   return 'USE_DIRECTLY';
     case 'csv_input':            return 'USE_DIRECTLY'; // operator-provided
     case 'manual':               return 'USE_DIRECTLY'; // operator override
+    case 'fcc_bdc':              return 'USE_DIRECTLY'; // authoritative regulatory filing
 
     // USE_TO_SHAPE — defensible but not authoritative
     case 'apollo':               return 'USE_TO_SHAPE'; // Apollo alone = inferred

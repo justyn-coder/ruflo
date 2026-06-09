@@ -206,21 +206,28 @@ async function supabaseFetch<T>(
 ): Promise<T> {
   const { url, key } = supabaseConfig();
   if (!key) throw new Error('substrate-query: SUPABASE key missing from env');
-  const res = await fetch(`${url}${path}`, {
-    ...init,
-    headers: {
-      apikey: key,
-      Authorization: `Bearer ${key}`,
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-      ...(init.headers || {}),
-    },
-  });
+  const headers = {
+    apikey: key,
+    Authorization: `Bearer ${key}`,
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+    ...(init.headers || {}),
+  };
+  const res = await fetch(`${url}${path}`, { ...init, headers });
   if (!res.ok) {
     const text = await res.text().catch(() => '');
     throw new Error(`substrate-query: ${res.status} ${res.statusText}: ${text.slice(0, 200)}`);
   }
-  return res.json() as Promise<T>;
+  // With Prefer: return=minimal the body is empty; don't try to JSON-parse.
+  const preferHeader =
+    (headers as Record<string, string>).Prefer ||
+    (headers as Record<string, string>).prefer;
+  if (preferHeader && /return=minimal/i.test(preferHeader)) {
+    return undefined as unknown as T;
+  }
+  const text = await res.text();
+  if (!text) return undefined as unknown as T;
+  return JSON.parse(text) as T;
 }
 
 // ----------------------------------------------------------------------------
@@ -561,6 +568,9 @@ export async function writeEvidence(
   records: Array<Omit<CompanyEvidenceRow, 'id' | 'extracted_at' | 'company_normalized'> & { id?: string }>,
 ): Promise<{ inserted: number; failed: number }> {
   if (records.length === 0) return { inserted: 0, failed: 0 };
+  // PostgREST bulk insert requires all rows in the batch to have the same
+  // key set. Normalize every row to include the same keys (filling missing
+  // optional fields with null) so the wire-format matches.
   const rows = records.map(r => ({
     id:
       r.id ||
@@ -570,19 +580,19 @@ export async function writeEvidence(
     claim: r.claim,
     source_kind: r.source_kind,
     source_citation: r.source_citation,
-    source_date: r.source_date,
-    speaker_name: r.speaker_name,
-    speaker_company: r.speaker_company,
-    speaker_role: r.speaker_role,
+    source_date: r.source_date ?? null,
+    speaker_name: r.speaker_name ?? null,
+    speaker_company: r.speaker_company ?? null,
+    speaker_role: r.speaker_role ?? null,
     category: r.category,
     extracted_at: new Date().toISOString(),
-    metadata: r.metadata,
+    metadata: r.metadata ?? null,
   }));
 
   try {
     await supabaseFetch(`/rest/v1/sr_company_evidence?on_conflict=id`, {
       method: 'POST',
-      headers: { Prefer: 'resolution=merge-duplicates' },
+      headers: { Prefer: 'resolution=merge-duplicates,return=minimal' },
       body: JSON.stringify(rows),
     });
     return { inserted: rows.length, failed: 0 };
@@ -611,21 +621,21 @@ export async function writeContacts(
         `${c.name}@${c.company_name}`,
       ),
     name: c.name,
-    title: c.title,
+    title: c.title ?? null,
     company_name: c.company_name,
     company_normalized: normalizeCompanyName(c.company_name),
-    email: c.email,
-    linkedin: c.linkedin,
+    email: c.email ?? null,
+    linkedin: c.linkedin ?? null,
     source_kind: c.source_kind,
     source_citation: c.source_citation,
     discovered_at: new Date().toISOString(),
-    metadata: c.metadata,
+    metadata: c.metadata ?? null,
   }));
 
   try {
     await supabaseFetch(`/rest/v1/sr_company_contacts?on_conflict=id`, {
       method: 'POST',
-      headers: { Prefer: 'resolution=merge-duplicates' },
+      headers: { Prefer: 'resolution=merge-duplicates,return=minimal' },
       body: JSON.stringify(rows),
     });
     return { inserted: rows.length, failed: 0 };
