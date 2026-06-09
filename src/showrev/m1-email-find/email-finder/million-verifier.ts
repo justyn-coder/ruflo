@@ -130,6 +130,60 @@ export async function verifyBatchMV(
   return results;
 }
 
+// ----------------------------------------------------------------------------
+// Credit tracking / budget enforcement
+// ----------------------------------------------------------------------------
+
+/**
+ * MillionVerifier credit budget tracker (mirror of ApolloCreditTracker).
+ *
+ * Red-team finding #8 (2026-06-09): MV is invoked at up to 4 sites per
+ * prospect inside email-finder/orchestrator.ts (Step 0 Apollo-primary,
+ * Step 1b Apollo no-domain fallback, Step 6 catch-all final-gate, Step 6
+ * red final-gate, Step 7 Apollo red-fallback). Without a budget, a single
+ * 100-prospect run could burn ~400 MV credits, overshooting the standing
+ * balance the operator has on hand (163 at the time of the finding).
+ *
+ * Caller checks `shouldStop()` BEFORE each MV call and SKIPS the call when
+ * the cap is hit (no degrade — the email retains its raw SMTP confidence).
+ * Caller calls `increment()` AFTER each MV call to record spend.
+ *
+ * Construction with maxCredits<=0 disables the cap (no-op tracker).
+ */
+export class MvCreditTracker {
+  private spent = 0;
+  private readonly max: number;
+
+  constructor(maxCredits: number) {
+    this.max = maxCredits;
+  }
+
+  /** Add 1 credit. Returns true if the cap has been reached after the bump. */
+  increment(): boolean {
+    this.spent += 1;
+    return this.shouldStop();
+  }
+
+  /** True when spent >= max (and max is a positive cap). */
+  shouldStop(): boolean {
+    if (this.max <= 0) return false;
+    return this.spent >= this.max;
+  }
+
+  getSpent(): number {
+    return this.spent;
+  }
+
+  getMax(): number {
+    return this.max;
+  }
+
+  getRemaining(): number {
+    if (this.max <= 0) return Number.POSITIVE_INFINITY;
+    return Math.max(0, this.max - this.spent);
+  }
+}
+
 /**
  * Summarize batch verification results.
  */

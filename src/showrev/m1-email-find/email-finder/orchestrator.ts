@@ -18,6 +18,7 @@ import type { EmailPattern, CandidateEmail, PatternResult } from './pattern-dete
 import { queryCompanyPeers, inferPatternFromPeers, applyPatternToProspect } from './peer-pattern.js';
 import { verifyEmail, detectMailProvider } from './smtp-verifier.js';
 import type { SmtpVerifyResult, MailProvider } from './smtp-verifier.js';
+import type { MvCreditTracker } from './million-verifier.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -62,6 +63,16 @@ export interface OrchestratorOptions {
   apolloFn?: (firstName: string, lastName: string, domain: string) => Promise<string | null>;
   apolloPeopleMatchFn?: (firstName: string, lastName: string, companyName: string, domain?: string) => Promise<ApolloFallbackResult>;
   millionVerifierFn?: (email: string) => Promise<{ quality: string; result: string }>;
+  /**
+   * Optional budget tracker for MillionVerifier credits (red-team finding #8,
+   * 2026-06-09). MV is called at up to 4 sites per prospect inside the
+   * waterfall; without a budget a 100-prospect run can burn ~400 credits.
+   *
+   * When present, orchestrator skips MV calls (no degrade — email keeps its
+   * raw SMTP confidence) after `tracker.shouldStop()` returns true, and
+   * increments on every successful invocation.
+   */
+  mvCreditTracker?: MvCreditTracker;
   skipProviders?: string[];
   apolloPrimary?: boolean;
   domainHints?: Record<string, string>;
@@ -175,12 +186,18 @@ async function findEmailForContact(
 
         let mvQuality = 'skipped';
         if (options.millionVerifierFn) {
-          try {
-            const mvResult = await options.millionVerifierFn(apolloResult.email);
-            mvQuality = mvResult.quality;
-            console.log(`${prefix()} Step 0: MV: ${apolloResult.email} = ${mvQuality}`);
-          } catch (err) {
-            console.log(`${prefix()} Step 0: MV error: ${err instanceof Error ? err.message : String(err)}`);
+          if (options.mvCreditTracker?.shouldStop()) {
+            console.log(`${prefix()} Step 0: MV SKIPPED (budget ${options.mvCreditTracker.getMax()} reached)`);
+          } else {
+            try {
+              const mvResult = await options.millionVerifierFn(apolloResult.email);
+              options.mvCreditTracker?.increment();
+              mvQuality = mvResult.quality;
+              console.log(`${prefix()} Step 0: MV: ${apolloResult.email} = ${mvQuality}`);
+            } catch (err) {
+              options.mvCreditTracker?.increment();
+              console.log(`${prefix()} Step 0: MV error: ${err instanceof Error ? err.message : String(err)}`);
+            }
           }
         }
 
@@ -295,12 +312,18 @@ async function findEmailForContact(
             // Run MillionVerifier on Apollo result if available
             let mvQuality = 'skipped';
             if (options.millionVerifierFn) {
-              try {
-                const mvResult = await options.millionVerifierFn(apolloResult.email);
-                mvQuality = mvResult.quality;
-                console.log(`${prefix()} Step 1b: MillionVerifier: ${apolloResult.email} = ${mvQuality}`);
-              } catch (err) {
-                console.log(`${prefix()} Step 1b: MillionVerifier error: ${err instanceof Error ? err.message : String(err)}`);
+              if (options.mvCreditTracker?.shouldStop()) {
+                console.log(`${prefix()} Step 1b: MV SKIPPED (budget ${options.mvCreditTracker.getMax()} reached)`);
+              } else {
+                try {
+                  const mvResult = await options.millionVerifierFn(apolloResult.email);
+                  options.mvCreditTracker?.increment();
+                  mvQuality = mvResult.quality;
+                  console.log(`${prefix()} Step 1b: MillionVerifier: ${apolloResult.email} = ${mvQuality}`);
+                } catch (err) {
+                  options.mvCreditTracker?.increment();
+                  console.log(`${prefix()} Step 1b: MillionVerifier error: ${err instanceof Error ? err.message : String(err)}`);
+                }
               }
             }
 
@@ -942,27 +965,34 @@ async function findEmailForContact(
     let pathACatchAllConfidence: 'green' | 'yellow' | 'amber' | 'red' = 'yellow';
     let pathACatchAllVerification: 'valid' | 'catch-all' | 'unverified' | 'invalid' | 'skipped' = 'catch-all';
     if (options.millionVerifierFn) {
-      tacticsAttempted.push('mv-final-gate (path-a-catch-all)');
-      try {
-        const mvResult = await options.millionVerifierFn(winner.candidate.email);
-        const mvQuality = (mvResult.quality || '').toLowerCase();
-        console.log(`${prefix()} Step 6 MV final-gate: ${winner.candidate.email} = ${mvQuality}`);
-        if (mvQuality === 'good' || mvQuality === 'valid') {
-          pathACatchAllConfidence = 'green';
-          pathACatchAllVerification = 'valid';
-          tacticsSucceeded.push('mv-final-gate (upgrade-to-green)');
-        } else if (mvQuality === 'catch_all' || mvQuality === 'catch-all') {
-          pathACatchAllConfidence = 'amber';
-          pathACatchAllVerification = 'catch-all';
-          tacticsSucceeded.push('mv-final-gate (upgrade-to-amber)');
-        } else if (mvQuality === 'bad' || mvQuality === 'invalid' || mvQuality === 'disposable' || mvQuality === 'do_not_send') {
-          pathACatchAllConfidence = 'red';
-          pathACatchAllVerification = 'invalid';
-          tacticsSucceeded.push('mv-final-gate (definitive-negative)');
+      if (options.mvCreditTracker?.shouldStop()) {
+        tacticsAttempted.push('mv-final-gate (path-a-catch-all, budget-skipped)');
+        console.log(`${prefix()} Step 6 MV final-gate SKIPPED (budget ${options.mvCreditTracker.getMax()} reached)`);
+      } else {
+        tacticsAttempted.push('mv-final-gate (path-a-catch-all)');
+        try {
+          const mvResult = await options.millionVerifierFn(winner.candidate.email);
+          options.mvCreditTracker?.increment();
+          const mvQuality = (mvResult.quality || '').toLowerCase();
+          console.log(`${prefix()} Step 6 MV final-gate: ${winner.candidate.email} = ${mvQuality}`);
+          if (mvQuality === 'good' || mvQuality === 'valid') {
+            pathACatchAllConfidence = 'green';
+            pathACatchAllVerification = 'valid';
+            tacticsSucceeded.push('mv-final-gate (upgrade-to-green)');
+          } else if (mvQuality === 'catch_all' || mvQuality === 'catch-all') {
+            pathACatchAllConfidence = 'amber';
+            pathACatchAllVerification = 'catch-all';
+            tacticsSucceeded.push('mv-final-gate (upgrade-to-amber)');
+          } else if (mvQuality === 'bad' || mvQuality === 'invalid' || mvQuality === 'disposable' || mvQuality === 'do_not_send') {
+            pathACatchAllConfidence = 'red';
+            pathACatchAllVerification = 'invalid';
+            tacticsSucceeded.push('mv-final-gate (definitive-negative)');
+          }
+          // 'unknown' or anything else: keep yellow (no signal either way)
+        } catch (err) {
+          options.mvCreditTracker?.increment();
+          console.log(`${prefix()} Step 6 MV final-gate error: ${err instanceof Error ? err.message : String(err)}`);
         }
-        // 'unknown' or anything else: keep yellow (no signal either way)
-      } catch (err) {
-        console.log(`${prefix()} Step 6 MV final-gate error: ${err instanceof Error ? err.message : String(err)}`);
       }
     }
     tacticsSucceeded.push('smtp-verification (catch-all)');
@@ -1013,12 +1043,18 @@ async function findEmailForContact(
 
         let mvQuality = 'skipped';
         if (options.millionVerifierFn) {
-          try {
-            const mvResult = await options.millionVerifierFn(apolloResult.email);
-            mvQuality = mvResult.quality;
-            console.log(`${prefix()} Step 7: MillionVerifier: ${apolloResult.email} = ${mvQuality}`);
-          } catch (err) {
-            console.log(`${prefix()} Step 7: MillionVerifier error: ${err instanceof Error ? err.message : String(err)}`);
+          if (options.mvCreditTracker?.shouldStop()) {
+            console.log(`${prefix()} Step 7: MV SKIPPED (budget ${options.mvCreditTracker.getMax()} reached)`);
+          } else {
+            try {
+              const mvResult = await options.millionVerifierFn(apolloResult.email);
+              options.mvCreditTracker?.increment();
+              mvQuality = mvResult.quality;
+              console.log(`${prefix()} Step 7: MillionVerifier: ${apolloResult.email} = ${mvQuality}`);
+            } catch (err) {
+              options.mvCreditTracker?.increment();
+              console.log(`${prefix()} Step 7: MillionVerifier error: ${err instanceof Error ? err.message : String(err)}`);
+            }
           }
         }
 
@@ -1055,10 +1091,14 @@ async function findEmailForContact(
   //   - MV 'unknown'      -> keep RED (no signal either way)
   //   - MV 'bad'/'disposable' -> keep RED (definitive negative)
   const bestRedCandidate = candidates[0]?.email ?? null;
-  if (bestRedCandidate && options.millionVerifierFn) {
+  if (bestRedCandidate && options.millionVerifierFn && options.mvCreditTracker?.shouldStop()) {
+    tacticsAttempted.push('mv-final-gate (path-a-red, budget-skipped)');
+    console.log(`${prefix()} Path A final-gate MV SKIPPED (budget ${options.mvCreditTracker.getMax()} reached)`);
+  } else if (bestRedCandidate && options.millionVerifierFn) {
     tacticsAttempted.push('mv-final-gate (path-a-red)');
     try {
       const mvResult = await options.millionVerifierFn(bestRedCandidate);
+      options.mvCreditTracker?.increment();
       const mvQuality = (mvResult.quality || '').toLowerCase();
       console.log(`${prefix()} Path A final-gate MV: ${bestRedCandidate} = ${mvQuality}`);
       if (mvQuality === 'good' || mvQuality === 'valid') {
@@ -1091,6 +1131,7 @@ async function findEmailForContact(
       }
       // 'unknown', 'bad', 'invalid', 'disposable', 'do_not_send' -> keep red below
     } catch (err) {
+      options.mvCreditTracker?.increment();
       console.log(`${prefix()} Path A final-gate MV error: ${err instanceof Error ? err.message : String(err)}`);
     }
   }
