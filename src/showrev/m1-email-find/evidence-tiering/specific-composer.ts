@@ -46,6 +46,7 @@ import {
   checkParticipialDensity,
   checkSentenceLengthVariance,
   checkEchoedStructures,
+  checkReadingAge,
   countParagraphs,
   countWords,
   countWordsTotal,
@@ -352,6 +353,9 @@ export async function composeSpecific(args: {
     if (sentenceVariance) violations.push(`AI-tell: ${sentenceVariance}`);
     const echoedStructures = checkEchoedStructures(body);
     if (echoedStructures) violations.push(`AI-tell: ${echoedStructures}`);
+    // Flesch-Kincaid reading-age check (grade ceiling 12)
+    const readingAge = checkReadingAge(body);
+    if (readingAge) violations.push(readingAge);
 
     lastViolations = violations;
     attempts.push({ candidate, violations, attemptNumber: attempt + 1 });

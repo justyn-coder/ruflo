@@ -304,6 +304,7 @@ export function checkBigramRepeat(body: string): string | null {
 }
 
 // ----------------------------------------------------------------------------
+<<<<<<< HEAD
 // AI-detection signal checks (DL-199, research-validated)
 // ----------------------------------------------------------------------------
 //
@@ -435,6 +436,101 @@ export function checkEchoedStructures(body: string): string | null {
     if (prevOpen && prevOpen === curOpen) {
       return `Echoed structure: adjacent sentences both open with "${prevOpen}..." — VERMILLION marker 2, vary syntactic shape`;
     }
+  }
+  return null;
+}
+
+// ----------------------------------------------------------------------------
+// Flesch-Kincaid reading-age check (peer-level fiber copy reads ~8-10th grade)
+// ----------------------------------------------------------------------------
+//
+// Above grade 12 = "AI cosplaying as expert" tell. Real fiber AEs write at
+// 8-10 because that's how peers talk to peers — short sentences, plain words,
+// concrete nouns. Multi-clause sentences with latinate verbs ("utilize",
+// "leverage", "facilitate") shoot the grade above 12 fast.
+//
+// Formula (Flesch-Kincaid Grade Level):
+//   0.39 * (words/sentences) + 11.8 * (syllables/words) - 15.59
+//
+// Pure math, no API. Syllable count is approximated via vowel-group heuristic
+// — good enough for English prose; exact dictionary lookup not needed because
+// we only care about gross grade-level (8 vs 14, not 8.2 vs 8.7).
+
+const READING_AGE_CEILING = 12;
+
+/**
+ * Approximate syllable count for an English word via vowel-group heuristic.
+ *
+ * Rules:
+ *   - Strip non-letters
+ *   - Count groups of consecutive vowels (a/e/i/o/u/y) as 1 syllable each
+ *   - Subtract 1 for silent trailing 'e' (when preceded by a consonant and
+ *     the word has more than one vowel group)
+ *   - Trailing 'le' preceded by a consonant counts as its own syllable
+ *   - Minimum 1 syllable for any non-empty word
+ *
+ * Not perfect (won't always catch "fire" = 1 vs "fired" = 1, or "every" = 2
+ * vs 3), but median error ~5% — fine for grade-level estimation.
+ */
+export function countSyllables(word: string): number {
+  const w = word.toLowerCase().replace(/[^a-z]/g, '');
+  if (!w) return 0;
+  // Count vowel groups
+  const groups = w.match(/[aeiouy]+/g) || [];
+  let count = groups.length;
+  // Silent trailing 'e' adjustment
+  if (count > 1 && /[^aeiouy]e$/.test(w)) count -= 1;
+  // Trailing "le" preceded by consonant is its own syllable ("table" = 2)
+  if (/[^aeiouy]le$/.test(w) && w.length > 2) count = Math.max(count, 2);
+  return Math.max(1, count);
+}
+
+/**
+ * Compute Flesch-Kincaid Grade Level for a body of text.
+ *
+ * Returns 0 if the body has no usable words or sentences (defensive — we
+ * don't want a zero-divide to fail-open a violation check).
+ */
+export function fleschKincaidGrade(body: string): number {
+  // Strip URLs first — they bloat syllable count without contributing to readability
+  const stripped = body.replace(URL_PATTERN, '').trim();
+  if (!stripped) return 0;
+
+  // Sentence count: split on terminal punctuation
+  const sentences = stripped
+    .split(/[.!?]+/)
+    .map(s => s.trim())
+    .filter(s => s.length > 0);
+  const sentenceCount = sentences.length;
+  if (sentenceCount === 0) return 0;
+
+  // Word count + syllable count
+  const words = stripped
+    .split(/\s+/)
+    .map(w => w.replace(/[^a-zA-Z']/g, ''))
+    .filter(Boolean);
+  const wordCount = words.length;
+  if (wordCount === 0) return 0;
+
+  let syllableTotal = 0;
+  for (const w of words) syllableTotal += countSyllables(w);
+
+  const wordsPerSentence = wordCount / sentenceCount;
+  const syllablesPerWord = syllableTotal / wordCount;
+  return 0.39 * wordsPerSentence + 11.8 * syllablesPerWord - 15.59;
+}
+
+/**
+ * Tier 1 mechanical check — returns a violation string if reading grade
+ * exceeds the ceiling (12 = college level). Null = clean.
+ *
+ * Target band 8-10 (peer-level fiber industry copy). 11-12 acceptable.
+ * Above 12 = forced retry.
+ */
+export function checkReadingAge(body: string): string | null {
+  const grade = fleschKincaidGrade(body);
+  if (grade > READING_AGE_CEILING) {
+    return `Reading age grade ${grade.toFixed(1)} exceeds ${READING_AGE_CEILING} ceiling — shorten sentences, swap latinate verbs for plain English (utilize→use, facilitate→help, demonstrate→show)`;
   }
   return null;
 }
