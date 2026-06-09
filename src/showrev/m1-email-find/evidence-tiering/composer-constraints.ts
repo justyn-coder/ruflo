@@ -600,6 +600,89 @@ export function selectBestAttempt(attempts: ComposeAttempt[]): ComposeAttempt | 
   return best;
 }
 
+// ----------------------------------------------------------------------------
+// A/B subject line picker (operator-approved 2026-06-09)
+// ----------------------------------------------------------------------------
+//
+// Composers now emit TWO subject candidates per prospect. The judge picks the
+// higher-scoring one as the shipped subject; the loser is preserved as
+// `subject_alt` for portal display and future A/B testing.
+//
+// Score model — subject-only, deterministic, no LLM call:
+//   - Start at 5 (same scale as Tier 2)
+//   - Subtract 1 per banned-phrase hit (AI tells / Tim kill / product / offshore)
+//   - Subtract 2 if subject contains em-dash or en-dash (Tim universal flag)
+//   - Subtract 1 if subject exceeds 6 words (composer rule violation)
+//   - Subtract 1 if subject is empty / < 2 words
+// Floor at 0.
+//
+// Tiebreak: prefer the FIRST candidate (LLM tends to put its preferred subject
+// first when asked for two — empirical from prior best-of-N work).
+
+export interface SubjectScore {
+  score: number;
+  hits: string[];
+}
+
+export function scoreSubject(subject: string): SubjectScore {
+  const s = (subject || '').trim();
+  const hits: string[] = [];
+  let score = 5;
+
+  if (!s) {
+    return { score: 0, hits: ['empty subject'] };
+  }
+  const wordCount = s.split(/\s+/).filter(Boolean).length;
+  if (wordCount < 2) {
+    hits.push(`only ${wordCount} word(s)`);
+    score -= 1;
+  }
+  if (wordCount > 6) {
+    hits.push(`${wordCount} words (max 6)`);
+    score -= 1;
+  }
+  if (/[—–]/.test(s)) {
+    hits.push('em/en-dash');
+    score -= 2;
+  }
+  for (const b of ALL_BANNED) {
+    if (b.pattern.test(s)) {
+      hits.push(`banned: ${b.label}`);
+      score -= 1;
+    }
+  }
+  return { score: Math.max(0, score), hits };
+}
+
+/**
+ * Pick the higher-scoring subject from two candidates. Ties go to subjectA
+ * (the first candidate). Returns { winner, loser, winnerScore, loserScore }.
+ *
+ * If subjectB is empty/missing, returns subjectA as winner with no loser.
+ */
+export function pickSubjectWinner(
+  subjectA: string,
+  subjectB: string | undefined,
+): {
+  winner: string;
+  loser: string | undefined;
+  winnerScore: number;
+  loserScore: number | undefined;
+} {
+  const a = (subjectA || '').trim();
+  const b = (subjectB || '').trim();
+  if (!b) {
+    const sa = scoreSubject(a);
+    return { winner: a, loser: undefined, winnerScore: sa.score, loserScore: undefined };
+  }
+  const sa = scoreSubject(a);
+  const sb = scoreSubject(b);
+  if (sb.score > sa.score) {
+    return { winner: b, loser: a, winnerScore: sb.score, loserScore: sa.score };
+  }
+  return { winner: a, loser: b, winnerScore: sa.score, loserScore: sb.score };
+}
+
 /**
  * Render a company-name-lock instruction for the composer prompt.
  */

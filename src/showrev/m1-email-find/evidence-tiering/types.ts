@@ -227,7 +227,15 @@ export interface AttributedSentence {
  * click-sentence-see-source trace (BL-002 fix).
  */
 export interface ComposedEmail {
+  /** Winning subject line — Tier-2-judged higher than `subject_alt`. */
   subject: string;
+  /**
+   * Loser subject from the same composition call. Preserved for portal display
+   * and future A/B testing. Composer emits TWO subjects per attempt; the higher
+   * Tier-2-scoring one becomes `subject`, the other becomes `subject_alt`.
+   * Optional for backward compatibility with composers that emit a single subject.
+   */
+  subject_alt?: string;
   /** Full body string — kept for backwards compatibility with portal email view. */
   body: string;
   /** Sentence-by-sentence breakdown of the body with claim attribution. */

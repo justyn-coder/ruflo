@@ -52,6 +52,7 @@ import {
   countWordsTotal,
   scoreAttempt,
   selectBestAttempt,
+  pickSubjectWinner,
   type ComposeAttempt,
 } from './composer-constraints.js';
 import {
@@ -228,7 +229,7 @@ ${bannedPhrasesPromptBlock()}
 - NO em-dashes.
 - ONE question with ONE question mark.
 - Inorsa mentioned EXACTLY ONCE (the verbatim pitch sentence).
-- Subject: 6 words max, specific to the angle you took, first letter capitalized.
+- Subject lines: 6 words max EACH, specific to the angle you took, first letter capitalized. Emit TWO distinct subject candidates (\`subject\` + \`subject_alt\`) — different angles on the same email, not synonyms. Both obey the banned-phrase + em-dash + 6-word rules. Judge picks the higher-scoring one; loser becomes the A/B alternate.
 
 ## P.S. line (verbatim — variant assigned to this prospect by persona+touch+company rotation)
 ${psLine}
@@ -236,6 +237,7 @@ ${psLine}
 ## Output format (JSON only)
 {
   "subject": "",
+  "subject_alt": "",
   "body": "",
   "ps": "${psLine.replace(/"/g, '\\"')}",
   "bodySentences": [
@@ -244,6 +246,8 @@ ${psLine}
     ...
   ]
 }
+
+\`subject\` and \`subject_alt\` are TWO DIFFERENT angles on the same email — not paraphrases. Example pair: "ReConnect Round 3 throughput" + "Permit cycle at scale". Both must independently obey ALL subject constraints (≤6 words, no em-dashes, no banned phrases, exact company name "${prospect.company}" if used, first letter capitalized). The judge picks the winner; loser is preserved for portal A/B display.
 
 bodySentences MUST split the body on sentence boundaries. claim_ids contains evidence ids ONLY from the USE_DIRECTLY block above (never from USE_TO_SHAPE). If a sentence doesn't reference any USE_DIRECTLY claim, claim_ids is empty.
 `;
@@ -332,14 +336,24 @@ export async function composeSpecific(args: {
     const candidate = JSON.parse(jsonMatch[1]);
     const body: string = candidate.body || '';
     const subject: string = candidate.subject || '';
+    const subjectAlt: string = candidate.subject_alt || '';
 
     const violations: string[] = [];
     const totalWords = countWordsTotal(body, psLine);
     if (totalWords > 100) violations.push(`Total (body + P.S., URL excluded) is ${totalWords} words — over 100w ceiling`);
     const paraCount = countParagraphs(body);
     if (paraCount !== 3) violations.push(`Body has ${paraCount} paragraphs — must be exactly 3`);
+    // Mechanical checks run against BOTH subjects so a dirty alt forces a
+    // retry, not a silent "judge picks the cleaner one" pass.
     const bannedHits = checkBannedPhrases(body, subject);
     for (const b of bannedHits) violations.push(`Banned: ${b}`);
+    if (subjectAlt) {
+      const bannedAlt = checkBannedPhrases('', subjectAlt);
+      for (const b of bannedAlt) violations.push(`Banned (subject_alt): ${b}`);
+      if (/[—–]/.test(subjectAlt)) violations.push('Em/en-dash in subject_alt');
+      const altCompanyMismatch = checkCompanyNameLock(subjectAlt, prospect.company);
+      if (altCompanyMismatch) violations.push(`subject_alt: ${altCompanyMismatch}`);
+    }
     const companyMismatch = checkCompanyNameLock(body, prospect.company);
     if (companyMismatch) violations.push(companyMismatch);
     const numericRepeat = checkNumericAnchorRepeat(body);
@@ -374,9 +388,10 @@ export async function composeSpecific(args: {
       .trim();
     cb = cb.replace(/^([A-Z][a-z]+,)\s*\n+\s*/m, '$1 ');
     cb = cb.replace(/\n{3,}/g, '\n\n').replace(/[ \t]+\n/g, '\n');
-    const cs = (cand.subject || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
+    const cs = (cand.subject || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',').trim();
+    const csAlt = (cand.subject_alt || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',').trim();
     const cp = (cand.ps || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
-    return { cleanBody: cb, cleanSubject: cs, cleanPs: cp };
+    return { cleanBody: cb, cleanSubject: cs, cleanSubjectAlt: csAlt, cleanPs: cp };
   };
 
   // Post-compose company-name verification (item 5, operator-approved
@@ -392,7 +407,7 @@ export async function composeSpecific(args: {
   });
 
   let parsed = winner.candidate;
-  let { cleanBody, cleanSubject, cleanPs } = postProcess(parsed);
+  let { cleanBody, cleanSubject, cleanSubjectAlt, cleanPs } = postProcess(parsed);
   let postProcessViolation = checkCompanyNameLock(cleanBody, prospect.company)
     || checkCompanyNameLock(cleanPs, prospect.company);
 
@@ -408,12 +423,23 @@ export async function composeSpecific(args: {
         parsed = cand.candidate;
         cleanBody = pp.cleanBody;
         cleanSubject = pp.cleanSubject;
+        cleanSubjectAlt = pp.cleanSubjectAlt;
         cleanPs = pp.cleanPs;
         postProcessViolation = null;
         break;
       }
     }
   }
+
+  // A/B subject pick — judge the two cleaned candidates and ship the higher
+  // scorer. Loser is preserved on the ComposedEmail for portal display / future
+  // A/B testing.
+  const ab = pickSubjectWinner(cleanSubject, cleanSubjectAlt);
+  if (verbose && ab.loser !== undefined) {
+    console.log(`  Subject A/B: "${ab.winner}" (${ab.winnerScore}/5) > "${ab.loser}" (${ab.loserScore}/5)`);
+  }
+  const finalSubject = ab.winner;
+  const finalSubjectAlt = ab.loser;
 
   const winnerScore = scoreAttempt(winner.violations);
   if (postProcessViolation) {
@@ -444,7 +470,8 @@ export async function composeSpecific(args: {
   if (verbose) console.log(`  Composed: ${sentencesWithCitations}/${bodySentences.length} sentences with citations`);
 
   return {
-    subject: cleanSubject,
+    subject: finalSubject,
+    subject_alt: finalSubjectAlt,
     body: cleanBody,
     bodySentences,
     ps: cleanPs,
