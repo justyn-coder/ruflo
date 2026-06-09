@@ -21,7 +21,7 @@
  *   - Zero company-specific factual claims (no "Company X has Y miles")
  *   - Salutation: [FirstName],
  *   - 3 body paragraphs (HubSpot Sequence)
- *   - Body 60-80 words target, 100w ceiling
+ *   - Body 60-70 words target, 100w ceiling (operator-confirmed 2026-06-09)
  *   - P.S. uses industry_data_hook variant (FBA citation, neutral)
  *   - Pitch sentence verbatim per persona (Variant A/B/C from SoT §1)
  *   - No em-dashes, no AI tells, no forced company-name shoehorning
@@ -47,6 +47,9 @@ import {
   checkCompanyNameLock,
   countParagraphs,
   countWords,
+  scoreAttempt,
+  selectBestAttempt,
+  type ComposeAttempt,
 } from './composer-constraints.js';
 
 /**
@@ -327,12 +330,11 @@ export async function composeGeneralized(args: {
     micrositeSlug,
   });
 
-  // Compose with up to 3 retries that fire on ANY constraint violation:
-  //   - Word count >100w (SoT §11 hard ceiling)
-  //   - Paragraph count != 3 (HubSpot Sequence requirement)
-  //   - Any banned phrase (AI tells + Tim kills + product guards + offshore)
-  //   - Company-name mismatch (Andrew/UECI bug class)
-  let parsed: any = null;
+  // Compose with up to 3 retries + best-of-N selection (per operator
+  // 2026-06-09 #5). LLM retries are non-monotonic — tracking attempts and
+  // picking the highest-scoring one beats shipping the last attempt.
+  // Early-exit on first clean attempt; otherwise pick best of all attempts.
+  const attempts: ComposeAttempt[] = [];
   let lastViolations: string[] = [];
   for (let attempt = 0; attempt < 4; attempt++) {
     const retryHint = attempt === 0 ? '' :
@@ -360,16 +362,19 @@ export async function composeGeneralized(args: {
     if (companyMismatch) violations.push(companyMismatch);
 
     lastViolations = violations;
-    if (verbose) console.log(`  Compose attempt ${attempt + 1}: ${wordCount}w, ${paraCount}p, ${violations.length} violations`);
+    attempts.push({ candidate, violations, attemptNumber: attempt + 1 });
+    if (verbose) console.log(`  Compose attempt ${attempt + 1}: ${wordCount}w, ${paraCount}p, ${violations.length} violations, score=${scoreAttempt(violations)}`);
 
-    if (violations.length === 0) {
-      parsed = candidate;
-      break;
-    }
-    if (attempt === 3) {
-      console.warn(`  ⚠ ${violations.length} violations after 4 attempts — accepting; flagged for review`);
-      parsed = candidate;
-    }
+    if (violations.length === 0) break; // clean → ship
+  }
+  const winner = selectBestAttempt(attempts);
+  if (!winner) throw new Error('Generalized composer: no attempts');
+  const parsed = winner.candidate;
+  const winnerScore = scoreAttempt(winner.violations);
+  if (winner.violations.length > 0) {
+    console.warn(`  ⚠ Best-of-N winner = attempt ${winner.attemptNumber} (score ${winnerScore}, ${winner.violations.length} violations) — flagged for review`);
+  } else if (winner.attemptNumber > 1 && verbose) {
+    console.log(`  Best-of-N: shipped attempt ${winner.attemptNumber} (clean)`);
   }
 
   // Post-process: em-dash cleanup, salutation inline join, paragraph normalize

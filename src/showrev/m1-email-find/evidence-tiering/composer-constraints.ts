@@ -216,6 +216,71 @@ export function checkCompanyNameLock(body: string, expectedCompany: string): str
   return null;
 }
 
+// ----------------------------------------------------------------------------
+// Best-of-N retry selector
+// ----------------------------------------------------------------------------
+//
+// LLM retries are non-monotonic — a retry can produce a WORSE result than
+// the previous attempt (e.g., 97w pass → 105w fail → 99w with banned phrase).
+// The naive "ship the latest" approach loses the best attempt. Best-of-N
+// tracks every attempt + picks the one that best satisfies constraints.
+//
+// Operator approved 2026-06-09 (#5 of rule archeology synthesis). The
+// canonical case was Adam Willoughby in the old build — only caught by
+// manual comparison of attempts.
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export interface ComposeAttempt {
+  // any so downstream composer post-processing (em-dash strip, JSON parse) can
+  // access body/subject/ps/bodySentences/claim_ids without re-casting
+  candidate: any;
+  violations: string[];
+  attemptNumber: number;
+}
+
+/**
+ * Score a compose attempt. Higher = better. Used to pick winner across N
+ * attempts when none are clean (violations.length === 0).
+ *
+ * Heuristic weights tuned to:
+ *   - Critical: company-name mismatch (Andrew/UECI bug class). -40
+ *   - High: word count / paragraph count (structural). -30 each
+ *   - Medium: banned phrases (style). -20 each
+ *   - Low: anything else. -10
+ *
+ * A clean attempt scores 100. An attempt with one banned phrase scores 80.
+ * An attempt with wrong company name + over word count scores 30.
+ */
+export function scoreAttempt(violations: string[]): number {
+  let score = 100;
+  for (const v of violations) {
+    if (/company is/.test(v) || /references "/.test(v)) score -= 40;
+    else if (/Body is \d+ words/.test(v) || /Body has \d+ paragraphs/.test(v)) score -= 30;
+    else if (/^Banned:/.test(v)) score -= 20;
+    else score -= 10;
+  }
+  return Math.max(0, score);
+}
+
+/**
+ * Pick the best attempt from a list. Returns the highest-scoring attempt,
+ * with the earliest attempt as tiebreaker (LLM sometimes produces clean
+ * output on attempt 1 and degrades on retries).
+ */
+export function selectBestAttempt(attempts: ComposeAttempt[]): ComposeAttempt | null {
+  if (attempts.length === 0) return null;
+  let best: ComposeAttempt = attempts[0];
+  let bestScore = scoreAttempt(best.violations);
+  for (let i = 1; i < attempts.length; i++) {
+    const score = scoreAttempt(attempts[i].violations);
+    if (score > bestScore) {
+      best = attempts[i];
+      bestScore = score;
+    }
+  }
+  return best;
+}
+
 /**
  * Render a company-name-lock instruction for the composer prompt.
  */

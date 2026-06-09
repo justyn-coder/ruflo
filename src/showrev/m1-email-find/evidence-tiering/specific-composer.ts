@@ -43,6 +43,9 @@ import {
   checkCompanyNameLock,
   countParagraphs,
   countWords,
+  scoreAttempt,
+  selectBestAttempt,
+  type ComposeAttempt,
 } from './composer-constraints.js';
 import {
   composeGeneralized,
@@ -301,8 +304,9 @@ export async function composeSpecific(args: {
     micrositeSlug,
   });
 
-  // Compose with up to 3 retries on ANY constraint violation
-  let parsed: any = null;
+  // Best-of-N retry (operator-approved #5 of rule archeology 2026-06-09).
+  // Early-exit on first clean attempt; otherwise pick highest-scoring.
+  const attempts: ComposeAttempt[] = [];
   let lastViolations: string[] = [];
   for (let attempt = 0; attempt < 4; attempt++) {
     const retryHint = attempt === 0 ? '' :
@@ -330,16 +334,19 @@ export async function composeSpecific(args: {
     if (companyMismatch) violations.push(companyMismatch);
 
     lastViolations = violations;
-    if (verbose) console.log(`  Compose attempt ${attempt + 1}: ${wordCount}w, ${paraCount}p, ${violations.length} violations`);
+    attempts.push({ candidate, violations, attemptNumber: attempt + 1 });
+    if (verbose) console.log(`  Compose attempt ${attempt + 1}: ${wordCount}w, ${paraCount}p, ${violations.length} violations, score=${scoreAttempt(violations)}`);
 
-    if (violations.length === 0) {
-      parsed = candidate;
-      break;
-    }
-    if (attempt === 3) {
-      console.warn(`  ⚠ ${violations.length} violations after 4 attempts — accepting; flagged for review`);
-      parsed = candidate;
-    }
+    if (violations.length === 0) break;
+  }
+  const winner = selectBestAttempt(attempts);
+  if (!winner) throw new Error('Specific composer: no attempts');
+  const parsed = winner.candidate;
+  const winnerScore = scoreAttempt(winner.violations);
+  if (winner.violations.length > 0) {
+    console.warn(`  ⚠ Best-of-N winner = attempt ${winner.attemptNumber} (score ${winnerScore}, ${winner.violations.length} violations) — flagged for review`);
+  } else if (winner.attemptNumber > 1 && verbose) {
+    console.log(`  Best-of-N: shipped attempt ${winner.attemptNumber} (clean)`);
   }
 
   // Post-process: em-dash cleanup, paragraph normalize
