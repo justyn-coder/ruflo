@@ -38,6 +38,7 @@ import type {
   EvidenceRecord,
 } from './types.js';
 import { getAEDetails } from '../ae-config.js';
+import { selectPSVariant } from '../influence.js';
 
 /**
  * Persona buckets — mirrors `getPersonaFraming` in influence.ts.
@@ -176,7 +177,10 @@ export function buildGeneralizedPrompt(args: {
     .map((e, i) => `[CTX-${i + 1}] (${e.source.citation}):\n${e.claim.slice(0, 400)}`)
     .join('\n\n');
 
-  const psIndustryDataHook = `P.S. FBA data shows 40-50% of utility permits get rejected first pass. If that matches your reality, the 4-question diagnostic shows where it's most fixable: https://fiber.inorsa.com/assess/${micrositeSlug}`;
+  // PS rotation per persona/touch/company hash (deterministic; spam-defense
+  // at scale per operator 2026-06-09 — sending the same PS to 100 prospects
+  // is a spam signal).
+  const psLine = selectPSVariant(persona, 1, prospect.company, micrositeSlug, aeName);
 
   return `You are a senior fiber industry Account Executive at Inorsa writing a cold outreach email. The recipient is someone you have NOT met. Your goal is to sound like a peer who knows the industry cold — informed, grounded, conversational. Not like a vendor pitching a product. Not like an AI.
 
@@ -229,7 +233,7 @@ First sentence: a diagnostic question they'd actually want to answer (yes/no/may
 NO 4th body paragraph. The P.S. is the 4th paragraph when HubSpot assembles.
 
 ## Hard constraints
-- WORD COUNT: 60-80 words target. Hard ceiling 100 words. Body only.
+- WORD COUNT: aim for 60-70 words. Hard ceiling 100 words — mechanical gate REJECTS above 100w. LLM tends to undercount, so the 60-70 target is intentional padding so you naturally land under 100. Body only.
 - NO em-dashes. Use commas or periods.
 - NO AI tells: "I hope this finds you well", "I wanted to reach out", "Happy to", "Feel free to", "leverage", "synergy", "utilize", "in today's", participial-clause openers ("Looking at...", "Building on..."), "delve", "Notably", "Furthermore", "Additionally", "Moreover", "seamlessly", "robust", "comprehensive", "transformative", "revolutionize".
 - NO forced personalization: do NOT name the company in the opener if the framing is industry-level. The company can appear in the question or pitch.
@@ -238,14 +242,14 @@ NO 4th body paragraph. The P.S. is the 4th paragraph when HubSpot assembles.
 - Inorsa is mentioned EXACTLY ONCE — in the verbatim pitch sentence.
 - Subject: 6 words or fewer, specific to the industry pattern (not the company), capitalized first letter.
 
-## P.S. line (REQUIRED — verbatim, this is the industry_data_hook variant)
-${psIndustryDataHook}
+## P.S. line (REQUIRED — verbatim, this is the variant assigned to this prospect by persona+touch+company rotation)
+${psLine}
 
 ## Output format (JSON only)
 {
   "subject": "",
   "body": "",
-  "ps": "${psIndustryDataHook.replace(/"/g, '\\"')}",
+  "ps": "${psLine.replace(/"/g, '\\"')}",
   "bodySentences": [
     {"text": "<sentence 1 of body>", "claim_ids": []},
     {"text": "<sentence 2 of body>", "claim_ids": []},
@@ -294,19 +298,35 @@ export async function composeGeneralized(args: {
     micrositeSlug,
   });
 
-  const raw = await callLLM(prompt, {
-    model,
-    timeoutMs: 60000,
-    label: 'generalized-composer',
-  });
-
-  const jsonMatch =
-    raw.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/) || raw.match(/(\{[\s\S]*\})/);
-  if (!jsonMatch) {
-    throw new Error('Generalized composer: no JSON in LLM output');
+  // Compose with up to 2 retries on word-count overrun (SoT §11 hard ceiling 100w).
+  // LLMs tend to undercount so target is 60-70w; retry kicks in if actual body >100w.
+  let parsed: any = null;
+  let lastWordCount = 0;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const retryHint = attempt === 0 ? '' :
+      `\n\n**RETRY** — your previous attempt was ${lastWordCount} words, OVER the 100-word ceiling. SHORTEN to 60 words. Cut adjectives. Cut adverbs. Cut redundant phrases. Keep the structure but tighten ruthlessly.`;
+    const raw = await callLLM(prompt + retryHint, {
+      model,
+      timeoutMs: 60000,
+      label: attempt === 0 ? 'generalized-composer' : `generalized-composer-retry-${attempt}`,
+    });
+    const jsonMatch =
+      raw.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/) || raw.match(/(\{[\s\S]*\})/);
+    if (!jsonMatch) throw new Error('Generalized composer: no JSON in LLM output');
+    const candidate = JSON.parse(jsonMatch[1]);
+    const wordCount = (candidate.body || '').trim().split(/\s+/).filter(Boolean).length;
+    lastWordCount = wordCount;
+    if (verbose) console.log(`  Compose attempt ${attempt + 1}: ${wordCount}w`);
+    if (wordCount <= 100) {
+      parsed = candidate;
+      break;
+    }
+    if (attempt === 2) {
+      // Last attempt — accept but flag
+      console.warn(`  ⚠ Body still ${wordCount}w after 3 attempts — accepting; mechanical gate will reject`);
+      parsed = candidate;
+    }
   }
-
-  const parsed = JSON.parse(jsonMatch[1]);
 
   // Post-process: em-dash cleanup, salutation inline join, paragraph normalize
   let cleanBody = (parsed.body || '')

@@ -34,6 +34,7 @@ import type {
 import { SPECIFIC_MODE_THRESHOLD, computeTierCounts } from './types.js';
 import { getAEDetails } from '../ae-config.js';
 import { getCompanyEvidence, getAssociationPriorities } from './substrate-query.js';
+import { selectPSVariant } from '../influence.js';
 import {
   composeGeneralized,
   detectPersona,
@@ -106,7 +107,8 @@ export function buildSpecificPrompt(args: {
     ? associationPriorities.slice(0, 3).map(renderClaimForPrompt).join('\n')
     : '(none retrieved)';
 
-  const psIndustryDataHook = `P.S. FBA data shows 40-50% of utility permits get rejected first pass. If that matches your reality, the 4-question diagnostic shows where it's most fixable: https://fiber.inorsa.com/assess/${micrositeSlug}`;
+  // PS rotation per persona/touch/company hash (deterministic; spam-defense at scale)
+  const psLine = selectPSVariant(persona, 1, prospect.company, micrositeSlug, args.aeName);
 
   return `You are a senior fiber industry Account Executive at Inorsa writing a cold outreach email. The recipient is someone you have NOT met. You sound like a peer who knows the industry cold — informed, grounded, conversational. NOT like a vendor pitching, NOT like AI.
 
@@ -182,21 +184,21 @@ Second sentence: VERBATIM pitch — "${pitchVerbatim}"
 NO 4th body paragraph. The P.S. is the 4th paragraph when HubSpot assembles.
 
 ## Hard constraints
-- WORD COUNT: 60-80 words target. Hard ceiling 100 words. Body only.
+- WORD COUNT: aim for 60-70 words. Hard ceiling 100 words — mechanical gate REJECTS above 100w. LLM tends to undercount, so the 60-70 target is intentional padding. Body only.
 - NO em-dashes.
 - NO AI tells (Hope this finds you, wanted to reach out, leverage, synergy, utilize, in today's, delve, Notably, Furthermore, seamlessly, robust, comprehensive, revolutionize).
 - ONE question with ONE question mark.
 - Inorsa mentioned EXACTLY ONCE (the verbatim pitch sentence).
 - Subject: 6 words max, specific to the angle you took, first letter capitalized.
 
-## P.S. line (verbatim — industry_data_hook variant)
-${psIndustryDataHook}
+## P.S. line (verbatim — variant assigned to this prospect by persona+touch+company rotation)
+${psLine}
 
 ## Output format (JSON only)
 {
   "subject": "",
   "body": "",
-  "ps": "${psIndustryDataHook.replace(/"/g, '\\"')}",
+  "ps": "${psLine.replace(/"/g, '\\"')}",
   "bodySentences": [
     {"text": "<sentence 1>", "claim_ids": ["ev_xxx", ...]},
     {"text": "<sentence 2>", "claim_ids": [...]},
@@ -270,18 +272,33 @@ export async function composeSpecific(args: {
     micrositeSlug,
   });
 
-  const raw = await callLLM(prompt, {
-    model,
-    timeoutMs: 60000,
-    label: 'specific-composer',
-  });
-
-  const jsonMatch =
-    raw.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/) || raw.match(/(\{[\s\S]*\})/);
-  if (!jsonMatch) {
-    throw new Error('Specific composer: no JSON in LLM output');
+  // Compose with up to 2 retries on word-count overrun (SoT §11 hard ceiling 100w).
+  let parsed: any = null;
+  let lastWordCount = 0;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const retryHint = attempt === 0 ? '' :
+      `\n\n**RETRY** — your previous attempt was ${lastWordCount} words, OVER the 100-word ceiling. SHORTEN to 60 words. Cut adjectives. Cut adverbs. Cut redundant phrases. Keep the structure but tighten ruthlessly.`;
+    const raw = await callLLM(prompt + retryHint, {
+      model,
+      timeoutMs: 60000,
+      label: attempt === 0 ? 'specific-composer' : `specific-composer-retry-${attempt}`,
+    });
+    const jsonMatch =
+      raw.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/) || raw.match(/(\{[\s\S]*\})/);
+    if (!jsonMatch) throw new Error('Specific composer: no JSON in LLM output');
+    const candidate = JSON.parse(jsonMatch[1]);
+    const wordCount = (candidate.body || '').trim().split(/\s+/).filter(Boolean).length;
+    lastWordCount = wordCount;
+    if (verbose) console.log(`  Compose attempt ${attempt + 1}: ${wordCount}w`);
+    if (wordCount <= 100) {
+      parsed = candidate;
+      break;
+    }
+    if (attempt === 2) {
+      console.warn(`  ⚠ Body still ${wordCount}w after 3 attempts — accepting; mechanical gate will reject`);
+      parsed = candidate;
+    }
   }
-  const parsed = JSON.parse(jsonMatch[1]);
 
   // Post-process: em-dash cleanup, paragraph normalize
   let cleanBody = (parsed.body || '')

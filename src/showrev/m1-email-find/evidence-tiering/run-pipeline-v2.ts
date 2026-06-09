@@ -32,7 +32,7 @@ loadEnv({ path: resolve(__dirname, '../.env') });
 
 import { parseArgs } from 'util';
 import { icpGate } from '../icp-gate.js';
-import { resolveAE } from '../ae-config.js';
+import { resolveAE, getAEDetails } from '../ae-config.js';
 import { findEmail } from '../email-finder/orchestrator.js';
 import { orchestrateEvidence } from './orchestrator.js';
 import { composeSpecific } from './specific-composer.js';

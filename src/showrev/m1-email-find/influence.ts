@@ -257,7 +257,7 @@ function pickPSVariantKey(
   return lane[companyHash % lane.length];
 }
 
-function selectPSVariant(
+export function selectPSVariant(
   bucket: PersonaBucket,
   touchNumber: 1 | 2 | 3,
   company: string,
