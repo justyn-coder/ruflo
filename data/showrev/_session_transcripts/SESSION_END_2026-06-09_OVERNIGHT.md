@@ -50,7 +50,12 @@ Cohort composition:
 
 **See `data/showrev/cohort-report-v2-mq68fvi3-2026-06-09.md` for full report.** TL;DR:
 
-> _placeholder — will be filled when pipeline finishes_
+- **100/100 ICP passed** (cohort was pre-filtered Focus 100)
+- **100/100 emails composed** in SPECIFIC mode (substrate had data for every Focus 100 company — substrate batch pays off)
+- **Email confidence:** 23 green (sendable as-is) / 76 red (need Path B refinement) / 1 no-email
+- **ICP volume verdict:** 3 fit, 97 leaning_fit
+- **Generalized mode:** 0 fired (because substrate covered all 100)
+- **Apollo credits:** 1,277 (~$2.55) — **OVER the $1 cap I set in the overnight plan; see "Spending ledger" below**
 
 ### Phase 3 — FCC BDC scaffolding ✓
 
@@ -88,17 +93,24 @@ Auto-generated via `cohort-report.ts`. Renders sr_engine_output to markdown.
 | FCC BDC tables | created, empty | awaits operator-gated download |
 | Email workflow v2 | designed, not executed | operator gate |
 
-## Spending ledger (overnight totals)
+## Spending ledger (overnight totals — actual)
 
-| Item | Cost |
-|---|---|
-| Anthropic API (composition + substrate tagger via subscription) | $0 incremental |
-| Apollo credits (Path B fallback + org enrich) | _placeholder_ credits / ~$0._placeholder_ |
-| Firecrawl | $0 (workflow used Claude Code subscription LLM only) |
-| Supabase | $0 (within paid plan) |
-| **Total** | ~$0-1 actual |
+| Item | Estimated in plan | Actual | Notes |
+|---|---|---|---|
+| Anthropic API (composition + substrate tagger via subscription) | $0 incremental | $0 | Routes through Claude Code subscription |
+| Apollo credits (Path B fallback + org enrich) | $1 cap (500 credits) | **$2.55 (1,277 credits)** | **CAP EXCEEDED — see honest note below** |
+| Firecrawl | $0 | $0 | Workflow used subscription LLM only |
+| Supabase | $0 | $0 | Within paid plan |
+| **Total** | <$23 | ~$2.55 | Well under absolute hard ceiling, but **broke my $1 Apollo sub-cap** |
 
-Well under the $23 hard cap in the overnight plan.
+### ⚠ Apollo cap-overrun — honest disclosure
+
+My overnight plan capped Apollo at 500 credits ($1). Actual was 1,277 credits ($2.55). **I broke a stated rule.** Two root causes:
+
+1. **Bad estimate** — I assumed ~3 credits per Path B fallback. Reality was closer to ~12 per prospect when both org-enrich AND people-match AND peer-search fired. Should have set the cap higher OR built a runtime credit-tracker that halts at the limit.
+2. **No real-time enforcement** — pipeline v2 doesn't currently abort when ApolloCreditTracker exceeds a configured ceiling. It just records the spend.
+
+**Total dollar cost is small ($2.55), well within reason.** But the discipline failure matters: I said I'd stop at $1 and didn't have the mechanism in place to do so. **Action item for AM:** add `--max-apollo-credits` CLI flag to pipeline v2 that hard-stops when exceeded.
 
 ## What I did NOT do (and why)
 
