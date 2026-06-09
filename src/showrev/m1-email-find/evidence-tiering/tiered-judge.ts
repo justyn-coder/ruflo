@@ -33,6 +33,7 @@ import {
   checkCompanyNameLock,
   countParagraphs,
   countWords,
+  countWordsTotal,
 } from './composer-constraints.js';
 import type { ComposedEmail } from './types.js';
 
@@ -92,7 +93,10 @@ export interface ProspectContext {
 // pre-write; this is a re-verification gate that runs INDEPENDENTLY so a
 // regression in composer post-processing can be caught here.
 
-const WORD_COUNT_CEILING = 100;   // body alone; combined-with-PS ceiling lives in composer
+// Word-count rule unified 2026-06-09 (operator-confirmed): ceiling is on
+// body + P.S. combined (URL excluded), NOT body alone. Composers and
+// tiered-judge now measure the SAME unit using countWordsTotal.
+const WORD_COUNT_CEILING = 100;
 const PARAGRAPH_MIN = 3;
 const PARAGRAPH_MAX = 4;
 
@@ -106,11 +110,12 @@ export function runTier1(composed: ComposedEmail, prospect: ProspectContext): Ti
   // Em-dash check (Tim flags these as AI tells — em + en dashes)
   if (/[—–]/.test(composed.body)) violations.push('Em/en-dash in body');
   if (/[—–]/.test(composed.subject)) violations.push('Em/en-dash in subject');
+  if (composed.ps && /[—–]/.test(composed.ps)) violations.push('Em/en-dash in P.S.');
 
-  // Word count
-  const bodyWords = countWords(composed.body);
-  if (bodyWords > WORD_COUNT_CEILING) {
-    violations.push(`Body is ${bodyWords} words (ceiling ${WORD_COUNT_CEILING})`);
+  // Word count — body + P.S. (URL excluded), matches composer rule
+  const totalWords = countWordsTotal(composed.body, composed.ps || '');
+  if (totalWords > WORD_COUNT_CEILING) {
+    violations.push(`Total body + P.S. (URL excluded) is ${totalWords} words (ceiling ${WORD_COUNT_CEILING})`);
   }
 
   // Paragraph count

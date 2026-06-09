@@ -44,16 +44,23 @@ const PERSONA_TITLE_PATTERNS: Array<{ bucket: PersonaBucket; patterns: RegExp[] 
     bucket: 'revenue_leader',
     patterns: [
       /\b(ceo|president|managing\s+partner|cfo|controller|chief\s+financial|chief\s+executive|chief\s+revenue|cro|vp\s+finance|evp\s+operations|evp|svp|chief\s+operating|coo)\b/i,
-      /\b(general\s+manager|owner|founder|principal)\b/i,
+      // 'principal' must NOT be followed by a technical role word (Principal
+      // Engineer / Principal Consultant / Principal Architect / etc.) —
+      // those are individual contributors, not revenue leaders. Negative
+      // lookahead added 2026-06-09 to fix red-team Principal X regression.
+      /\b(general\s+manager|owner|founder|managing\s+principal)\b|\bprincipal\b(?!\s+\w*\s*(engineer|consultant|designer|architect|analyst|developer|scientist|technologist|specialist|software|gis|cad|systems|data|it|technical|network))/i,
     ],
   },
   {
     bucket: 'ops_builder',
     patterns: [
-      /\b(vp|vice\s+president|director|manager|head|lead|superintendent)\b.*\b(construction|deployment|outside\s+plant|osp|network\s+deployment|field\s+operations|project\s+management|operations|build|program)\b/i,
-      /\b(construction|deployment|outside\s+plant|osp|network\s+deployment|field\s+operations|project\s+management|operations|build|program)\b.*\b(vp|vice\s+president|director|manager|head|lead|superintendent)\b/i,
+      // Added 'principal' to leadership token list (Principal Consultant /
+      // Principal Project Manager / etc.) — 2026-06-09 Principal X fix.
+      /\b(vp|vice\s+president|director|manager|head|lead|superintendent|principal)\b.*\b(construction|deployment|outside\s+plant|osp|network\s+deployment|field\s+operations|project\s+management|operations|build|program|consultant)\b/i,
+      /\b(construction|deployment|outside\s+plant|osp|network\s+deployment|field\s+operations|project\s+management|operations|build|program|consultant)\b.*\b(vp|vice\s+president|director|manager|head|lead|superintendent|principal)\b/i,
       /\bproject\s+manager\b/i,
       /\boperations\s+manager\b/i,
+      /\bprincipal\s+consultant\b/i,
     ],
   },
   {
@@ -63,9 +70,9 @@ const PERSONA_TITLE_PATTERNS: Array<{ bucket: PersonaBucket; patterns: RegExp[] 
       // domain words (caught GFiber "Head of AI & Innovation" case that the
       // original list missed). Operator-approved port of clever two-token
       // regex pair pattern + domain extension.
-      /\b(vp|vice\s+president|director|manager|head|lead)\b.*\b(engineering|network|it|gis|design|permitting|technical|ai|innovation|data|platform|analytics|architecture|software|systems?|product)\b/i,
-      /\b(engineering|network|it|gis|design|permitting|technical|ai|innovation|data|platform|analytics|architecture|software|systems?|product)\b.*\b(vp|vice\s+president|director|manager|head|lead)\b/i,
-      /\b(gis\s+(manager|analyst|specialist)|network\s+engineer|design\s+engineer|osp\s+engineer|data\s+(engineer|scientist|architect))\b/i,
+      /\b(vp|vice\s+president|director|manager|head|lead|principal)\b.*\b(engineering|network|it|gis|design|permitting|technical|ai|innovation|data|platform|analytics|architecture|software|systems?|product)\b/i,
+      /\b(engineering|network|it|gis|design|permitting|technical|ai|innovation|data|platform|analytics|architecture|software|systems?|product)\b.*\b(vp|vice\s+president|director|manager|head|lead|principal)\b/i,
+      /\b(gis\s+(manager|analyst|specialist)|network\s+engineer|design\s+engineer|osp\s+engineer|data\s+(engineer|scientist|architect)|principal\s+(engineer|architect|designer|analyst|developer|scientist))\b/i,
       /\b(cto|cio|chief\s+technology|chief\s+technical|chief\s+data|chief\s+information)\b/i,
     ],
   },

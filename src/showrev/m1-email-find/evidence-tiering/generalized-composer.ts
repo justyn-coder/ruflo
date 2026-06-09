@@ -38,7 +38,7 @@ import type {
   EvidenceRecord,
 } from './types.js';
 import { getAEDetails } from '../ae-config.js';
-import { selectPSVariant } from '../influence.js';
+import { selectPSVariant, detectPersona } from '../influence.js';
 import {
   bannedPhrasesPromptBlock,
   ctaLibraryPromptBlock,
@@ -82,22 +82,15 @@ const PERSONA_FRAMING: Record<PersonaBucket, string> = {
 };
 
 /**
- * Detect persona bucket from a title — same heuristic as influence.ts.
+ * Persona detection — re-exported from influence.ts as the SINGLE source of
+ * truth (operator-confirmed 2026-06-09 after red-team flagged split-brain).
+ * Old simpler one-token regex deleted to avoid drift.
+ *
+ * The canonical detector uses two-token regex pairs (leadership word +
+ * domain word) which correctly disambiguates "Director of Engineering"
+ * (→ technical_designer) vs "Director of Construction" (→ ops_builder).
  */
-export function detectPersona(title: string): PersonaBucket {
-  const t = title.toLowerCase();
-  // Revenue / executive titles
-  if (/\b(ceo|chief executive|cro|chief revenue|coo|chief operating|cfo|president|vp[\s-]+sales|vp[\s-]+revenue|vp[\s-]+growth|vp[\s-]+strategy|head\s+of\s+strategy)\b/.test(t)) {
-    return 'revenue_leader';
-  }
-  // Technical / engineering titles — note: \bengineer\b does NOT match "engineering"
-  // (no word boundary after "engineer" + "ing" suffix), so we use a wildcard.
-  if (/\b(engineer\w*|architect|design|cad|gis|technical|technology|systems|developer|head\s+of\s+(?:engineering|technology|systems))\b/.test(t)) {
-    return 'technical_designer';
-  }
-  // Default: ops builder
-  return 'ops_builder';
-}
+export { detectPersona } from '../influence.js';
 
 /**
  * Search the canonical Supabase substrate store for industry-context chunks

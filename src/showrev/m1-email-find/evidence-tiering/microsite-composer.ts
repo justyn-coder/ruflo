@@ -187,9 +187,15 @@ The Field Brief template renders one paragraph in the Finding section:
 
   if (!parsed) throw new Error('Microsite composer: no candidate produced');
 
+  // Em-dash + en-dash strip — Tim flags these as AI tells; SoT §11 bans them
+  // in prospect-facing copy and microsite IS prospect-facing. Composers strip
+  // post-LLM; microsite must match (red-team CRITICAL #3 2026-06-09).
+  const cleanHeadline = (parsed.headline || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',').trim();
+  const cleanBloom = (parsed.bloom_text || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',').trim();
+
   return {
-    headline: parsed.headline,
-    bloom_text: parsed.bloom_text,
+    headline: cleanHeadline,
+    bloom_text: cleanBloom,
     attempts: attemptNum,
     violations_final: lastViolations,
   };

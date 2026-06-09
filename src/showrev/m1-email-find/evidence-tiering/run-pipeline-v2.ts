@@ -36,6 +36,7 @@ import { resolveAE, getAEDetails } from '../ae-config.js';
 import { detectPersona } from '../influence.js';
 import { findEmail } from '../email-finder/orchestrator.js';
 import { verifyEmailMV } from '../email-finder/million-verifier.js';
+import { resolveCompanyLogo } from '../logo-resolver.js';
 import { composeMicrosite } from './microsite-composer.js';
 import { orchestrateEvidence } from './orchestrator.js';
 import { composeSpecific } from './specific-composer.js';
@@ -620,12 +621,25 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     /engineer|technical|designer/i.test(result.row.title || '') ? 'GIS-to-CAD traceability; design tool integration; data accuracy; workforce scaling' :
     '';
 
-  // Item 9 (2026-06-09): Plain-English system_brief for flagged prospects.
+  // Unified send_status resolution (2026-06-09 red-team CRITICAL #4 fix).
+  // Three flag sources, ALL converge here to a SINGLE finalSendStatus value
+  // that both sr_engine_output AND sr_prospects write — no more table-level
+  // disagreement.
+  //
+  // Priority order (most-authoritative wins):
+  //   1. Tiered judge action (items 7+8) — set via result.send_status
+  //   2. Email-find flag pattern (item 6) — result.flag_status when red/no-email
+  //   3. System-brief flag (item 9) — shouldFlag(result) for any ICP-pass + pipeline-incomplete
+  //
   // Operator rule: every ICP makes it into the Portal; pipeline-incomplete
-  // ones get send_status='flag' + a plain-English explanation here.
+  // gets send_status='flag' + plain-English system_brief explanation.
   const flagged = shouldFlag(result);
   const systemBrief = flagged ? generateFlagSystemBrief(result) : null;
-  const sendStatusForOutput = flagged ? 'flag' : 'pending';
+  const finalSendStatus: 'pending' | 'flag' =
+    result.send_status === 'flag' ? 'flag' :  // tiered judge wins
+    result.flag_status ? 'flag' :              // email-find pattern
+    flagged ? 'flag' :                          // system-brief shouldFlag
+    'pending';
 
   const body: Record<string, unknown> = {
     prospect_id: prospectId,
@@ -663,7 +677,7 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     meddpicc_decision_criteria: meddpiccDecisionCriteria || null,
     // Item 9: plain-english explanation for portal operator review.
     system_brief: systemBrief,
-    send_status: sendStatusForOutput,
+    send_status: finalSendStatus,  // unified — same value as sr_prospects below
     research_summary: JSON.stringify({
       composer_mode: result.composer_mode,
       research_quality: result.research_quality,
@@ -727,11 +741,9 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     lead_type: 'Cold',
     tier: 'A',
     campaign: 'P2',
-    // Three flag sources, all converge to 'flag' status:
-    //   - tiered judge (items 7+8) sets result.send_status for borderline/dissenting
-    //   - email-find flag pattern (item 6) sets result.flag_status for red/no-email
-    //   - system_brief computation (item 9) sets sendStatusForOutput for any ICP-pass + pipeline-incomplete
-    send_status: result.send_status || (result.flag_status ? 'flag' : sendStatusForOutput),
+    // Unified resolution — same value as sr_engine_output above.
+    // See finalSendStatus block ~line 631 for priority order.
+    send_status: finalSendStatus,
     system_brief: systemBrief,
     assigned_ae: result.ae.name,
     icp_status: result.icp_verdict,
@@ -859,11 +871,27 @@ async function persistMicrosite(result: ProspectResult): Promise<void> {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-');
 
+  // Resolve company logo via 5-source PNG waterfall (logo.dev primary —
+  // returns transparent PNG by default; ops want transparent for microsite).
+  // Probes in parallel, returns first valid. Fails gracefully to null —
+  // microsite renders text fallback when logo absent.
+  let companyLogoUrl: string | null = null;
+  if (result.email_found) {
+    const domain = result.email_found.split('@')[1];
+    if (domain) {
+      try {
+        companyLogoUrl = await resolveCompanyLogo(domain);
+      } catch (err) {
+        console.warn(`  ⚠ logo resolution failed: ${(err as Error).message}`);
+      }
+    }
+  }
+
   const micrositeRow = {
     slug: result.micrositeSlug,
     prospect_id: prospectId,
     company_name: result.row.company,
-    company_logo_url: null, // logo resolution deferred; portal can fill later
+    company_logo_url: companyLogoUrl,
     recipient_name: `${result.row.firstName} ${result.row.lastName}`,
     recipient_title: result.row.title || '',
     headline,

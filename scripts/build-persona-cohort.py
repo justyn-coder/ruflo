@@ -48,23 +48,28 @@ from pathlib import Path
 
 REVENUE_LEADER_PATTERNS = [
     re.compile(r"\b(ceo|president|managing\s+partner|cfo|controller|chief\s+financial|chief\s+executive|chief\s+revenue|cro|vp\s+finance|evp\s+operations|evp|svp|chief\s+operating|coo)\b", re.IGNORECASE),
-    re.compile(r"\b(general\s+manager|owner|founder|principal)\b", re.IGNORECASE),
+    # 'principal' must NOT be followed by a technical role word (Principal
+    # Engineer / Principal Consultant / etc.) — those are ICs, not revenue
+    # leaders. Negative lookahead matches influence.ts logic.
+    re.compile(r"\b(general\s+manager|owner|founder|managing\s+principal)\b|\bprincipal\b(?!\s+\w*\s*(engineer|consultant|designer|architect|analyst|developer|scientist|technologist|specialist|software|gis|cad|systems|data|it|technical|network))", re.IGNORECASE),
 ]
 
 OPS_BUILDER_PATTERNS = [
-    re.compile(r"\b(vp|vice\s+president|director|manager|head|lead|superintendent)\b.*\b(construction|deployment|outside\s+plant|osp|network\s+deployment|field\s+operations|project\s+management|operations|build|program)\b", re.IGNORECASE),
-    re.compile(r"\b(construction|deployment|outside\s+plant|osp|network\s+deployment|field\s+operations|project\s+management|operations|build|program)\b.*\b(vp|vice\s+president|director|manager|head|lead|superintendent)\b", re.IGNORECASE),
+    # 'principal' added to leadership token list 2026-06-09 (Principal X fix)
+    re.compile(r"\b(vp|vice\s+president|director|manager|head|lead|superintendent|principal)\b.*\b(construction|deployment|outside\s+plant|osp|network\s+deployment|field\s+operations|project\s+management|operations|build|program|consultant)\b", re.IGNORECASE),
+    re.compile(r"\b(construction|deployment|outside\s+plant|osp|network\s+deployment|field\s+operations|project\s+management|operations|build|program|consultant)\b.*\b(vp|vice\s+president|director|manager|head|lead|superintendent|principal)\b", re.IGNORECASE),
     re.compile(r"\bproject\s+manager\b", re.IGNORECASE),
     re.compile(r"\boperations\s+manager\b", re.IGNORECASE),
+    re.compile(r"\bprincipal\s+consultant\b", re.IGNORECASE),
 ]
 
 # Extended 2026-06-09 with AI/innovation/data/platform/analytics/architecture/
 # software/systems/product domain words. Caught "Head of AI & Innovation" case
 # the original list missed.
 TECHNICAL_DESIGNER_PATTERNS = [
-    re.compile(r"\b(vp|vice\s+president|director|manager|head|lead)\b.*\b(engineering|network|it|gis|design|permitting|technical|ai|innovation|data|platform|analytics|architecture|software|systems?|product)\b", re.IGNORECASE),
-    re.compile(r"\b(engineering|network|it|gis|design|permitting|technical|ai|innovation|data|platform|analytics|architecture|software|systems?|product)\b.*\b(vp|vice\s+president|director|manager|head|lead)\b", re.IGNORECASE),
-    re.compile(r"\b(gis\s+(manager|analyst|specialist)|network\s+engineer|design\s+engineer|osp\s+engineer|data\s+(engineer|scientist|architect))\b", re.IGNORECASE),
+    re.compile(r"\b(vp|vice\s+president|director|manager|head|lead|principal)\b.*\b(engineering|network|it|gis|design|permitting|technical|ai|innovation|data|platform|analytics|architecture|software|systems?|product)\b", re.IGNORECASE),
+    re.compile(r"\b(engineering|network|it|gis|design|permitting|technical|ai|innovation|data|platform|analytics|architecture|software|systems?|product)\b.*\b(vp|vice\s+president|director|manager|head|lead|principal)\b", re.IGNORECASE),
+    re.compile(r"\b(gis\s+(manager|analyst|specialist)|network\s+engineer|design\s+engineer|osp\s+engineer|data\s+(engineer|scientist|architect)|principal\s+(engineer|architect|designer|analyst|developer|scientist))\b", re.IGNORECASE),
     re.compile(r"\b(cto|cio|chief\s+technology|chief\s+technical|chief\s+data|chief\s+information)\b", re.IGNORECASE),
 ]
 
