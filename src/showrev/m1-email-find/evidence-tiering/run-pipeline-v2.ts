@@ -48,7 +48,7 @@ import {
   type TieredJudgeResult,
   type JudgeAction,
 } from './tiered-judge.js';
-import type { ComposedEmail, TieredDossier, IcpVolumeVerdict } from './types.js';
+import type { ComposedEmail, EvidenceRecord, TieredDossier, IcpVolumeVerdict } from './types.js';
 
 // ----------------------------------------------------------------------------
 // CSV parse (no email column per SoT §16)
@@ -375,16 +375,28 @@ async function processOne(
     }
   }
 
-  // Phase 4.5: Tiered judge (items 7+8 — synthesis 2026-06-09)
+  // Phase 4.5: Tiered judge (items 7+8 — synthesis 2026-06-09 + halluc 2026-06-09 PM)
   // T1 mechanical regex (instant, $0) -> T2 Tim-style edit-patterns (instant, $0)
-  // -> T3 Gemini cross-family judge (~10s, ~$0.005) for borderline cases only.
+  // -> T3 Gemini quality judge (~10s, ~$0.005) for borderline cases only
+  // -> T3 Gemini hallucination check (~10s, ~$0.005) ALWAYS-ON for every prospect.
   // Result.judge_action drives send_status:
-  //   'ship'   -> send_status='pending' (caller writes), composed email proceeds
-  //   'flag'   -> send_status='flag', surfaced for human review in portal
-  //   'retry'  -> best-of-N composer upstream already handles. If we land here,
-  //              composer exhausted retries — treat as flag (safer than ship).
+  //   'ship'               -> send_status='pending', composed email proceeds
+  //   'flag'               -> send_status='flag' (quality borderline), human review
+  //   'flag-hallucination' -> send_status='flag' (unsupported claims found), human review
+  //   'retry'              -> best-of-N composer upstream already handles. If we land
+  //                            here, composer exhausted retries — treat as flag.
   if (result.composed) {
     try {
+      // Flatten substrate claims across all categories + generalized framing.
+      // Hallucination check grounds the email against ONLY what the composer saw.
+      const substrateClaims: EvidenceRecord[] = [];
+      if (result.dossier) {
+        for (const cat of Object.keys(result.dossier.claims) as Array<keyof typeof result.dossier.claims>) {
+          substrateClaims.push(...result.dossier.claims[cat]);
+        }
+        substrateClaims.push(...result.dossier.generalizedFraming);
+      }
+
       const judgeResult = await runTieredJudgeOnProspect(
         result.composed,
         {
@@ -394,15 +406,19 @@ async function processOne(
           title: row.title || '',
           state: row.state,
         },
+        {
+          substrateClaims,
+        },
       );
       result.judge_result = judgeResult;
       result.judge_action = judgeResult.action;
       result.send_status =
         judgeResult.action === 'ship' ? 'pending'
-        : 'flag'; // 'retry' here = composer already exhausted; treat as flag for safety
+        : 'flag'; // 'flag' | 'flag-hallucination' | 'retry' all collapse to flag here
       console.log(
         `  judge: T1=${judgeResult.tier1.pass ? 'pass' : 'fail'} T2=${judgeResult.tier2.score}/5` +
         (judgeResult.tier3 ? ` T3=${judgeResult.tier3.verdict}` : '') +
+        (judgeResult.tier3Hallucination ? ` H=${judgeResult.tier3Hallucination.verdict}` : '') +
         ` -> ${judgeResult.action} (${judgeResult.rationale})`,
       );
       // Item 8 monitoring — track rolling rates and write JUDGE-ALERT.md if tripped
@@ -460,6 +476,7 @@ function classifyFlagReason(
 ):
   | 'compose_failed'
   | 'compose_violations'
+  | 'hallucination'
   | 'email_red'
   | 'email_guessed_only'
   | 'icp_leaning_fit'
@@ -469,6 +486,11 @@ function classifyFlagReason(
   // portal has nothing to show the human.
   if (result.errors.some(e => e.startsWith('compose:'))) return 'compose_failed';
   if (!result.composed) return 'compose_failed';
+
+  // Hallucination check (always-on Tier 3, added 2026-06-09 PM). This is
+  // a content-safety signal — if the email cites facts the substrate
+  // doesn't support, route to human even if every other gate passes.
+  if (result.judge_action === 'flag-hallucination') return 'hallucination';
 
   // Email confidence next — a 'red' confidence means we never produced
   // a usable address.
@@ -513,6 +535,21 @@ export function generateFlagSystemBrief(result: ProspectResult): string {
         `The composer could not produce a clean email for ${firstName} at ${company} after 4 attempts. ` +
         `Specific issue: ${detail}. ` +
         `Recommendation: hand-write this one or wait until we tune the compose constraints — likely a banned-phrase or paragraph-count violation the model can't self-correct on this prospect's evidence set.`
+      );
+    }
+    case 'hallucination': {
+      // Always-on Tier 3 cross-family judge found factual claims in the email
+      // body that the substrate evidence doesn't support. Name them in the
+      // brief so the operator knows exactly what to verify (or strip).
+      const halluc = result.judge_result?.tier3Hallucination;
+      const claims = halluc?.unsupportedClaims ?? [];
+      const claimsList = claims.length === 0
+        ? 'no specific claims listed (verdict was a fail with empty list — treat as cautionary)'
+        : claims.slice(0, 3).map(c => `"${c}"`).join('; ');
+      const reasoning = halluc?.reasoning ? ` Reviewer reasoning: ${halluc.reasoning}.` : '';
+      return (
+        `The email for ${firstName} at ${company} cites one or more factual claims that our substrate evidence does not clearly support: ${claimsList}.${reasoning} ` +
+        `Recommendation: either rewrite the email to remove those specifics and stick to industry framing the operator can defend, or verify the claims against a primary source (their website, press, BDC filing) before sending. Sending unverified specifics on cold outbound damages trust faster than a generic email does.`
       );
     }
     case 'email_red': {
