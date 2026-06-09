@@ -88,6 +88,14 @@ interface ProspectResult {
   email_found?: string;
   email_confidence?: string;
   email_confidence_score?: number;
+  // Item 9 (2026-06-09): expose email-finder + Apollo signals so the
+  // system_brief generator can explain Path A / Path B outcomes in
+  // plain English without re-running anything.
+  email_tactics_attempted?: string[];
+  email_verification_status?: string;
+  email_path_b_attempted?: boolean;
+  email_path_b_source?: string;
+  email_path_b_confidence?: string;
   dossier?: TieredDossier;
   composed?: ComposedEmail;
   composer_mode?: 'specific' | 'generalized';
@@ -165,6 +173,9 @@ async function processOne(
     });
     result.email_found = emailResult.email || undefined;
     result.email_confidence = emailResult.confidence;
+    // Item 9 (2026-06-09): capture Path A signals for system_brief.
+    result.email_tactics_attempted = emailResult.tacticsAttempted;
+    result.email_verification_status = emailResult.verificationStatus;
 
     const pathANeedsB =
       !emailResult.email ||
@@ -178,12 +189,16 @@ async function processOne(
     }
     if (pathANeedsB && !options.skipApollo && !apolloCapHit) {
       // Path B: Apollo direct people-match → peer-pattern derivation fallback
+      result.email_path_b_attempted = true;
       const apolloResult = await findEmailForProspect({
         firstName: row.firstName,
         lastName: row.lastName,
         company: row.company,
       });
       creditTracker.add(apolloResult.creditsUsed);
+      // Item 9: record Path B telemetry for system_brief, regardless of accept/reject.
+      result.email_path_b_source = apolloResult.source;
+      result.email_path_b_confidence = apolloResult.confidence;
       if (
         apolloResult.email &&
         (apolloResult.confidence === 'high' ||
@@ -292,6 +307,159 @@ async function processOne(
 }
 
 // ----------------------------------------------------------------------------
+// Item 9 (2026-06-09) — Plain-English System Brief for flagged prospects
+// ----------------------------------------------------------------------------
+//
+// Operator rule (verbatim 2026-06-09):
+//   "Regardless of how we set this up, the rule of thumb is that everything
+//    that's an ICP needs to make it into the Portal for the human to see.
+//    But if it hasn't passed our full pipeline then it gets a Status of Flag
+//    in there and in the System Brief you explain, plain english no jargon,
+//    why it failed and any recommendations you have"
+//
+// This replaces the prior machine-y debug content with operator-readable
+// 2-3 sentence explanations, each ending with a recommendation for what
+// technique would unblock the prospect in a future run.
+//
+// Coordination note for items 5/6/7/8: this function writes to a field
+// named `system_brief` on sr_engine_output (and the same field on
+// sr_prospects). Sibling items can read this field name and wire UI later.
+
+/**
+ * Decide whether a prospect should be flagged for human review.
+ *
+ * A prospect is flagged when it's an ICP but did NOT pass the full
+ * pipeline. Reasons cascade in priority order — the most blocking issue
+ * wins so the brief explains the actual root cause, not a downstream
+ * symptom.
+ */
+function classifyFlagReason(
+  result: ProspectResult,
+):
+  | 'compose_failed'
+  | 'compose_violations'
+  | 'email_red'
+  | 'email_guessed_only'
+  | 'icp_leaning_fit'
+  | 'research_low'
+  | 'none' {
+  // Composer errors trump everything — without an email body, the
+  // portal has nothing to show the human.
+  if (result.errors.some(e => e.startsWith('compose:'))) return 'compose_failed';
+  if (!result.composed) return 'compose_failed';
+
+  // Email confidence next — a 'red' confidence means we never produced
+  // a usable address.
+  const conf = (result.email_confidence || '').toLowerCase();
+  if (!result.email_found || conf === 'red' || conf === 'not-found') return 'email_red';
+
+  // 'guessed' = Apollo peer-pattern derived. Usable but unverified —
+  // operator should know before send.
+  if (conf === 'guessed' || conf === 'amber') return 'email_guessed_only';
+
+  // ICP volume verdict — 'leaning_fit' means we couldn't prove the
+  // hard volume signal (BDC locations, BEAD applications, etc).
+  if (result.icp_volume_verdict === 'leaning_fit') return 'icp_leaning_fit';
+
+  // Low research quality — composer ran in generalized mode without
+  // company-specific claims.
+  if (result.research_quality === 'low' || result.composer_mode === 'generalized') {
+    return 'research_low';
+  }
+
+  return 'none';
+}
+
+/**
+ * generateFlagSystemBrief — Plain-English 2-3 sentence explanation of
+ * why a prospect was flagged, ending with a recommendation.
+ *
+ * No jargon. No internal IDs. No tier labels. Written for an operator
+ * who's reviewing the portal and decides whether to send, hold, or
+ * route to another path.
+ */
+export function generateFlagSystemBrief(result: ProspectResult): string {
+  const reason = classifyFlagReason(result);
+  const firstName = result.row.firstName;
+  const company = result.row.company;
+
+  switch (reason) {
+    case 'compose_failed': {
+      const composeErr = result.errors.find(e => e.startsWith('compose:'));
+      const detail = composeErr ? composeErr.replace(/^compose:\s*/, '') : 'no email body produced';
+      return (
+        `The composer could not produce a clean email for ${firstName} at ${company} after 4 attempts. ` +
+        `Specific issue: ${detail}. ` +
+        `Recommendation: hand-write this one or wait until we tune the compose constraints — likely a banned-phrase or paragraph-count violation the model can't self-correct on this prospect's evidence set.`
+      );
+    }
+    case 'email_red': {
+      const tactics = result.email_tactics_attempted || [];
+      const tacticCount = tactics.length;
+      const pathBSource = result.email_path_b_source || '';
+      const pathBNote = result.email_path_b_attempted
+        ? (pathBSource === 'apollo:no-match'
+            ? `Apollo's contact database also had no record of this person at this company`
+            : pathBSource === 'apollo:error'
+              ? `Apollo's lookup errored out before returning a result`
+              : `the Apollo fallback came back empty`)
+        : `we did not run the Apollo fallback (credit cap or skip flag)`;
+      return (
+        `Email could not be verified for ${firstName} at ${company} — we tried ${tacticCount} domain and pattern variation${tacticCount === 1 ? '' : 's'} via SMTP probe, and ${pathBNote}. ` +
+        `Recommendation: this prospect may be using a personal email or be a recent hire not yet in directories. Revisit when we add LinkedIn pattern derivation as a Path B+ technique, or pull the email manually from a sales-tool sign-in if available.`
+      );
+    }
+    case 'email_guessed_only': {
+      const pathBSource = result.email_path_b_source || '';
+      const verifiedHint = pathBSource === 'apollo:peer-pattern'
+        ? `we derived it from how their colleagues' emails are formatted, but no peer at this company was verified to confirm the exact pattern is current`
+        : `we have a likely format but no verified peer at the company to confirm it`;
+      return (
+        `Email for ${firstName} at ${company} is a best-guess pattern — ${verifiedHint}. ` +
+        `Recommendation: this can be sent at lower priority with the understanding bounces will happen. Long-term fix: enrich the peer pattern check to verify against 2+ active inboxes at this company before promoting to "verified."`
+      );
+    }
+    case 'icp_leaning_fit': {
+      const reasoning = result.dossier?.icp_volume_reasoning || 'no specific volume signal surfaced';
+      return (
+        `${company} qualifies as in-segment for our fiber/A&E ICP, but we do not have hard volume signals (BDC location counts, BEAD application status, build-program scale) to confirm priority. ` +
+        `What we found: ${reasoning}. ` +
+        `Recommendation: verify deal-size potential by spot-checking their public BDC filings or recent press before sending. If volume is confirmed, promote to fit and queue normally; if not, keep at lower priority.`
+      );
+    }
+    case 'research_low': {
+      const tierCounts = result.dossier?.tierCounts;
+      const directCount = tierCounts?.useDirectly ?? 0;
+      const shapeCount = tierCounts?.useToShape ?? 0;
+      return (
+        `The composer wrote a generalized email for ${firstName} at ${company} because we only found ${directCount} hard fact${directCount === 1 ? '' : 's'} and ${shapeCount} contextual signal${shapeCount === 1 ? '' : 's'} about this company — not enough to write a fully specific message. ` +
+        `Recommendation: this is fine to send if the operator wants volume, but a 5-10 minute LinkedIn or company-news scan would surface enough to upgrade it to a specific email. Long-term fix: expand the substrate sources we pull from for sub-100-location operators.`
+      );
+    }
+    case 'none':
+    default: {
+      // Should never reach here when called from a flag branch — but
+      // provide a graceful fallback in case sibling items wire this
+      // differently than expected.
+      return (
+        `${firstName} at ${company} cleared the mechanical pipeline but was flagged for human review. ` +
+        `Recommendation: spot-check the composed email and approve or edit before sending.`
+      );
+    }
+  }
+}
+
+/**
+ * Should this prospect be flagged (send_status='flag') for human review?
+ * True when the prospect is an ICP pass but did NOT clear the full
+ * pipeline cleanly.
+ */
+function shouldFlag(result: ProspectResult): boolean {
+  if (result.icp_verdict !== 'pass') return false;
+  return classifyFlagReason(result) !== 'none';
+}
+
+// ----------------------------------------------------------------------------
 // Supabase persistence (direct write to sr_engine_output)
 // ----------------------------------------------------------------------------
 
@@ -334,6 +502,13 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     /engineer|technical|designer/i.test(result.row.title || '') ? 'GIS-to-CAD traceability; design tool integration; data accuracy; workforce scaling' :
     '';
 
+  // Item 9 (2026-06-09): Plain-English system_brief for flagged prospects.
+  // Operator rule: every ICP makes it into the Portal; pipeline-incomplete
+  // ones get send_status='flag' + a plain-English explanation here.
+  const flagged = shouldFlag(result);
+  const systemBrief = flagged ? generateFlagSystemBrief(result) : null;
+  const sendStatusForOutput = flagged ? 'flag' : 'pending';
+
   const body = {
     prospect_id: prospectId,
     run_id: runId,
@@ -368,6 +543,9 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     intel_fit_rationale: intelFitRationale,
     meddpicc_identified_pain: meddpiccPain || null,
     meddpicc_decision_criteria: meddpiccDecisionCriteria || null,
+    // Item 9: plain-english explanation for portal operator review.
+    system_brief: systemBrief,
+    send_status: sendStatusForOutput,
     research_summary: JSON.stringify({
       composer_mode: result.composer_mode,
       research_quality: result.research_quality,
@@ -418,7 +596,11 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     lead_type: 'Cold',
     tier: 'A',
     campaign: 'P2',
-    send_status: 'pending',
+    // Item 9 (2026-06-09): send_status='flag' (not 'pending') when the
+    // ICP cleared but the pipeline did not — operator reviews the
+    // system_brief in the Portal before deciding to send.
+    send_status: sendStatusForOutput,
+    system_brief: systemBrief,
     assigned_ae: result.ae.name,
     icp_status: result.icp_verdict,
     icp_reason: result.icp_reason || '',
