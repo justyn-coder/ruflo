@@ -563,4 +563,14 @@ export class ApolloCreditTracker {
     // We assume $0.002/credit as a conservative bound.
     return (this.credits * 0.002).toFixed(4);
   }
+  /**
+   * Check if a configured ceiling has been hit. Caller skips further
+   * Apollo calls when this returns true (closes the discipline gap from
+   * the 2026-06-09 overnight Apollo cap-overrun: pipeline recorded
+   * spend but didn't enforce).
+   */
+  shouldStop(maxCredits: number | undefined): boolean {
+    if (maxCredits === undefined || maxCredits <= 0) return false;
+    return this.credits >= maxCredits;
+  }
 }

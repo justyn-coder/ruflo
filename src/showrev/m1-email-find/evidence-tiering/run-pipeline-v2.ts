@@ -114,7 +114,7 @@ interface ProspectResult {
 
 async function processOne(
   row: CsvRow,
-  options: { skipApollo: boolean; runId: string; verbose: boolean },
+  options: { skipApollo: boolean; runId: string; verbose: boolean; maxApolloCredits?: number },
   creditTracker: ApolloCreditTracker,
 ): Promise<ProspectResult> {
   const t0 = Date.now();
@@ -172,7 +172,11 @@ async function processOne(
       emailResult.confidence === 'amber' ||
       emailResult.confidence === 'not-found';
 
-    if (pathANeedsB && !options.skipApollo) {
+    const apolloCapHit = creditTracker.shouldStop(options.maxApolloCredits);
+    if (apolloCapHit && pathANeedsB) {
+      console.log(`  email path-b: SKIPPED (Apollo credit cap ${options.maxApolloCredits} reached, current=${creditTracker.total()})`);
+    }
+    if (pathANeedsB && !options.skipApollo && !apolloCapHit) {
       // Path B: Apollo direct people-match → peer-pattern derivation fallback
       const apolloResult = await findEmailForProspect({
         firstName: row.firstName,
@@ -219,7 +223,7 @@ async function processOne(
         {
           icpType: result.icp_type,
           verbose: options.verbose,
-          skipApollo: options.skipApollo,
+          skipApollo: options.skipApollo || creditTracker.shouldStop(options.maxApolloCredits),
           apolloCreditTracker: creditTracker,
         },
       );
@@ -396,6 +400,7 @@ async function main() {
     options: {
       input: { type: 'string', short: 'i' },
       'skip-apollo': { type: 'boolean', default: false },
+      'max-apollo-credits': { type: 'string' },
       verbose: { type: 'boolean', default: false, short: 'v' },
       limit: { type: 'string' },
     },
@@ -404,7 +409,7 @@ async function main() {
 
   const inputPath = values.input as string;
   if (!inputPath) {
-    console.error('Usage: --input <csv-path> [--skip-apollo] [--verbose] [--limit N]');
+    console.error('Usage: --input <csv-path> [--skip-apollo] [--max-apollo-credits N] [--verbose] [--limit N]');
     process.exit(1);
   }
 
@@ -419,7 +424,10 @@ async function main() {
   console.log(`  Pipeline v2 — substrate-first cold prospecting`);
   console.log(`  Run ID: ${runId}`);
   console.log(`  Input:  ${inputPath} (${rows.length} prospects)`);
-  console.log(`  Apollo: ${values['skip-apollo'] ? 'SKIPPED' : 'enabled (fallback)'}`);
+  const maxApolloCredits = values['max-apollo-credits']
+    ? parseInt(values['max-apollo-credits'] as string, 10)
+    : undefined;
+  console.log(`  Apollo: ${values['skip-apollo'] ? 'SKIPPED' : 'enabled (fallback)'}` + (maxApolloCredits ? ` | cap=${maxApolloCredits} credits` : ''));
   console.log('='.repeat(70));
 
   const creditTracker = new ApolloCreditTracker();
@@ -432,6 +440,7 @@ async function main() {
         row,
         {
           skipApollo: !!values['skip-apollo'],
+          maxApolloCredits,
           runId,
           verbose: !!values.verbose,
         },
