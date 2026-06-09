@@ -35,6 +35,7 @@ import {
 import {
   getCompanyEvidence,
   getAssociationPriorities,
+  getFccCoverage,
   writeEvidence,
 } from './substrate-query.js';
 import {
@@ -95,6 +96,10 @@ interface Phase1Output {
   apolloResult: OrgEnrichResult | null;
   /** Apollo-derived EvidenceRecord[]. */
   apolloEvidence: EvidenceRecord[];
+  /** FCC BDC coverage evidence (USE_DIRECTLY — regulatory filing). */
+  fccEvidence: EvidenceRecord[];
+  /** FCC BDC matched? telemetry */
+  fccMatched: boolean;
 }
 
 async function phase1Pull(
@@ -105,8 +110,8 @@ async function phase1Pull(
   const { verbose } = options;
   if (verbose) console.log(`  [phase 1] Pull facts for ${prospect.company}`);
 
-  // All three sources run in parallel (substrate-query + Apollo + association)
-  const [substrateEvidence, industryEvidence, apolloResult] = await Promise.all([
+  // Four sources run in parallel (substrate-query + Apollo + association + FCC BDC)
+  const [substrateEvidence, industryEvidence, apolloResult, fccResult] = await Promise.all([
     // Primary: tagged substrate + semantic fallback
     getCompanyEvidence(prospect.company, {
       semanticContext: { state: prospect.state, icpType: options.icpType },
@@ -117,10 +122,13 @@ async function phase1Pull(
     options.skipApollo
       ? Promise.resolve(null)
       : enrichOrganization(prospect.company),
+    // FCC BDC authoritative coverage (no-op until ingestion runs)
+    getFccCoverage(prospect.company),
   ]);
 
   const apolloEvidence =
     apolloResult?.matched ? enrichmentToEvidence(apolloResult) : [];
+  const fccEvidence = fccResult.matched ? fccResult.evidence : [];
 
   if (apolloResult) {
     creditTracker.add(apolloResult.creditsUsed);
@@ -130,7 +138,8 @@ async function phase1Pull(
     console.log(
       `  [phase 1] substrate=${substrateEvidence.length}, ` +
         `apollo=${apolloEvidence.length} (${apolloResult?.matched ? 'matched' : 'no-match'}), ` +
-        `industry=${industryEvidence.length}`,
+        `industry=${industryEvidence.length}, ` +
+        `fcc_bdc=${fccEvidence.length} (${fccResult.matched ? 'matched' : 'no-data'})`,
     );
   }
 
@@ -139,6 +148,8 @@ async function phase1Pull(
     industryEvidence,
     apolloResult,
     apolloEvidence,
+    fccEvidence,
+    fccMatched: fccResult.matched,
   };
 }
 
@@ -399,6 +410,7 @@ export async function orchestrateEvidence(
   const allEvidence = [
     ...phase1.substrateEvidence,
     ...phase1.apolloEvidence,
+    ...phase1.fccEvidence,
     ...phase2.additionalEvidence,
   ];
   const dossier = phase3TierAndEmit({

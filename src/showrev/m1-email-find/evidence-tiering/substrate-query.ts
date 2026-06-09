@@ -555,6 +555,155 @@ export async function getSpeakerQuotes(
 }
 
 // ----------------------------------------------------------------------------
+// FCC BDC coverage lookup (scaffolding — table empty until ingestion runs)
+// ----------------------------------------------------------------------------
+
+/**
+ * Authoritative coverage data from FCC Broadband Data Collection.
+ *
+ * Per docs/specs/fcc-bdc-ingestion-spec.md. Tables (`fcc_bdc_coverage` and
+ * `fcc_bdc_provider_summary`) are created but EMPTY as of 2026-06-09 — the
+ * bulk ~30 GB BDC download requires operator authorization. This function
+ * returns null when tables are empty, so callers (orchestrator) gracefully
+ * skip BDC enrichment until data lands.
+ *
+ * Once ingested:
+ *   - Lookup latest snapshot for the company
+ *   - Compute fiber location count + estimated miles (locations × ~0.2-0.5/mile)
+ *   - Compute state footprint
+ *   - Compute 24-month growth delta (if 2+ snapshots present)
+ *
+ * All returned EvidenceRecord rows are tier=USE_DIRECTLY (regulatory filing
+ * authoritative; no cross-source needed).
+ */
+export async function getFccCoverage(companyName: string): Promise<{
+  matched: boolean;
+  providerId?: string;
+  latestSnapshot?: string;
+  fiberLocations?: number;
+  estimatedMiles?: number;
+  stateFootprint?: string[];
+  growthLast24mo?: { locationDelta: number; percentage: number };
+  evidence: EvidenceRecord[];
+}> {
+  const normalized = normalizeCompanyName(companyName);
+
+  try {
+    // Pull latest snapshot for this provider (fiber-only, technology_code=50)
+    const summaryRows = await supabaseFetch<
+      Array<{
+        provider_normalized: string;
+        snapshot_date: string;
+        technology_code: number;
+        locations_served: number;
+        state_count: number;
+        census_block_count: number;
+      }>
+    >(
+      `/rest/v1/fcc_bdc_provider_summary?provider_normalized=eq.${encodeURIComponent(
+        normalized,
+      )}&technology_code=eq.50&order=snapshot_date.desc&limit=10`,
+    );
+
+    if (!summaryRows || summaryRows.length === 0) {
+      return { matched: false, evidence: [] };
+    }
+
+    const latest = summaryRows[0];
+    const fiberLocations = latest.locations_served;
+    // Suburban density ~5 locations/mile; rural ~2; urban ~10. Use 4 as a
+    // weighted average for cold-prospect estimation.
+    const estimatedMiles = Math.round(fiberLocations / 4);
+
+    // 24-month growth: compare to 4-snapshot-back (twice-yearly = 24 months)
+    let growthLast24mo: { locationDelta: number; percentage: number } | undefined;
+    if (summaryRows.length >= 5) {
+      const baseline = summaryRows[4];
+      const delta = fiberLocations - baseline.locations_served;
+      const pct = baseline.locations_served > 0
+        ? (delta / baseline.locations_served) * 100
+        : 0;
+      growthLast24mo = { locationDelta: delta, percentage: pct };
+    }
+
+    // Get state footprint from coverage table
+    const stateRows = await supabaseFetch<Array<{ state: string }>>(
+      `/rest/v1/fcc_bdc_coverage?select=state&provider_normalized=eq.${encodeURIComponent(
+        normalized,
+      )}&technology_code=eq.50&limit=1000`,
+    );
+    const stateFootprint = [...new Set((stateRows || []).map(r => r.state))];
+
+    // Build EvidenceRecord rows — all USE_DIRECTLY
+    const evidence: EvidenceRecord[] = [];
+    const baseCite = `fcc_bdc:${latest.snapshot_date}`;
+
+    evidence.push({
+      id: evidenceRecordId({ citation: baseCite }, `fiber_locations:${fiberLocations}`),
+      claim: `${companyName} serves ${fiberLocations.toLocaleString()} fiber locations per FCC BDC snapshot ${latest.snapshot_date} (≈${estimatedMiles.toLocaleString()} miles deployed)`,
+      source: {
+        kind: 'fcc_bdc',
+        citation: `FCC BDC ${latest.snapshot_date}`,
+        fetched_at: new Date().toISOString(),
+        sourceDate: `${latest.snapshot_date}T00:00:00Z`,
+      },
+      tier: tierBySourceKind('fcc_bdc'),
+      tierReason: 'FCC BDC regulatory filing — authoritative location count.',
+      category: 'company_fact',
+    });
+
+    if (stateFootprint.length > 0) {
+      evidence.push({
+        id: evidenceRecordId({ citation: baseCite }, `states:${stateFootprint.join(',')}`),
+        claim: `${companyName} fiber footprint spans ${stateFootprint.length} state(s): ${stateFootprint.join(', ')}`,
+        source: {
+          kind: 'fcc_bdc',
+          citation: `FCC BDC ${latest.snapshot_date}`,
+          fetched_at: new Date().toISOString(),
+          sourceDate: `${latest.snapshot_date}T00:00:00Z`,
+        },
+        tier: tierBySourceKind('fcc_bdc'),
+        tierReason: 'FCC BDC state coverage derived from per-location records.',
+        category: 'company_fact',
+      });
+    }
+
+    if (growthLast24mo && growthLast24mo.percentage > 5) {
+      evidence.push({
+        id: evidenceRecordId(
+          { citation: baseCite },
+          `growth_24mo:${growthLast24mo.locationDelta}`,
+        ),
+        claim: `${companyName} grew fiber footprint by ${growthLast24mo.locationDelta.toLocaleString()} locations (${growthLast24mo.percentage.toFixed(1)}%) over last 24 months per FCC BDC snapshots`,
+        source: {
+          kind: 'fcc_bdc',
+          citation: `FCC BDC 24-month delta`,
+          fetched_at: new Date().toISOString(),
+          sourceDate: `${latest.snapshot_date}T00:00:00Z`,
+        },
+        tier: tierBySourceKind('fcc_bdc'),
+        tierReason: 'FCC BDC time-series growth signal from regulatory filings.',
+        category: 'company_fact',
+      });
+    }
+
+    return {
+      matched: true,
+      providerId: latest.provider_normalized,
+      latestSnapshot: latest.snapshot_date,
+      fiberLocations,
+      estimatedMiles,
+      stateFootprint,
+      growthLast24mo,
+      evidence,
+    };
+  } catch (err) {
+    console.warn(`[substrate-query] getFccCoverage failed: ${(err as Error).message}`);
+    return { matched: false, evidence: [] };
+  }
+}
+
+// ----------------------------------------------------------------------------
 // Writer API — used by the workflow agents + by future ingestion code
 // ----------------------------------------------------------------------------
 
