@@ -233,7 +233,9 @@ async function supabaseFetch<T>(
  * Aggregates across all three storage surfaces:
  *   1. `sr_brain_substrate` chunks where metadata.companies_mentioned contains the name
  *   2. `sr_company_evidence` rows directly tagged to the company
- *   3. (does NOT pull contacts — use `getCompanyContacts` for that)
+ *   3. Semantic fallback: if exact-name lookups are thin, pgvector search
+ *      over chunk content using a company-shaped query. Catches mentions
+ *      using parent-co name, abbreviations, alternate spellings.
  *
  * Returns EvidenceRecord[] with tiers already computed by source-kind rules.
  *
@@ -244,7 +246,14 @@ async function supabaseFetch<T>(
  */
 export async function getCompanyEvidence(
   companyName: string,
-  options: { limitPerSource?: number; minSourceDate?: string } = {},
+  options: {
+    limitPerSource?: number;
+    minSourceDate?: string;
+    /** Enable semantic fallback when exact-name returns < N results. Default 3. */
+    semanticFallbackThreshold?: number;
+    /** Additional context for semantic query (state, ICP type). */
+    semanticContext?: { state?: string; icpType?: 'fiber_operator' | 'ae_firm' };
+  } = {},
 ): Promise<EvidenceRecord[]> {
   const normalized = normalizeCompanyName(companyName);
   const limit = options.limitPerSource ?? 50;
@@ -327,7 +336,65 @@ export async function getCompanyEvidence(
     console.warn(`[substrate-query] getCompanyEvidence row lookup failed: ${(err as Error).message}`);
   }
 
+  // 3. Semantic fallback — if exact-name lookups are thin, pgvector-search
+  //    over chunk content. Catches cases where a chunk discusses the company
+  //    via parent-co name, abbreviation, or alternate spelling.
+  const threshold = options.semanticFallbackThreshold ?? 3;
+  if (results.length < threshold) {
+    try {
+      const ctxState = options.semanticContext?.state;
+      const ctxIcp = options.semanticContext?.icpType;
+      const ctxStr =
+        (ctxState ? ` ${ctxState}` : '') +
+        (ctxIcp === 'fiber_operator' ? ' fiber operator ISP' : ctxIcp === 'ae_firm' ? ' engineering firm A&E' : '');
+      const semantic = await semanticSubstrateSearch(`${companyName}${ctxStr}`, 8);
+      for (const r of semantic) {
+        // Don't double-count chunks we already pulled by exact name
+        const dupId = evidenceRecordId({ citation: `semantic:${r.id}` }, r.content.slice(0, 50));
+        if (results.some(e => e.id === dupId)) continue;
+        results.push({
+          id: dupId,
+          claim: r.content.slice(0, 500),
+          source: {
+            kind: 'substrate',
+            citation: `semantic-match (${r.source}: ${r.title || r.id})`,
+            fetched_at: new Date().toISOString(),
+          },
+          tier: tierBySourceKind('substrate'),
+          tierReason: `Semantic match (similarity ${(r.similarity ?? 0).toFixed(2)}). USE_TO_SHAPE — not company-quoted.`,
+          category: 'industry_context',
+        });
+      }
+    } catch (err) {
+      console.warn(`[substrate-query] semantic fallback failed: ${(err as Error).message}`);
+    }
+  }
+
   return results;
+}
+
+/**
+ * Internal helper — pgvector search over substrate chunks.
+ * Reused by getIndustryContext + getCompanyEvidence semantic fallback.
+ */
+async function semanticSubstrateSearch(
+  query: string,
+  topN: number,
+): Promise<SubstrateChunkRow[]> {
+  const { url, key } = supabaseConfig();
+  if (!key) return [];
+  try {
+    const res = await fetch(`${url}/functions/v1/search-substrate`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query, limit: topN }),
+    });
+    if (!res.ok) return [];
+    const data: { results?: SubstrateChunkRow[] } = await res.json();
+    return data.results || [];
+  } catch {
+    return [];
+  }
 }
 
 /**
@@ -615,6 +682,111 @@ export async function getEvidenceBaseHealth(): Promise<{
       return new Set(rows.map(r => r.company_normalized)).size;
     })(),
   };
+}
+
+// ----------------------------------------------------------------------------
+// Email-content dedup (semantic spam-filter defense)
+// ----------------------------------------------------------------------------
+
+/**
+ * Embed a composed email body and check cosine similarity against the
+ * last N sent emails. If similarity > threshold, the new email is too
+ * close to something we already sent → spam-filter pattern detection risk.
+ *
+ * Caller re-prompts the composer with a "vary the structure" hint.
+ *
+ * Without this defense, 2,300 prospects sharing structural patterns
+ * tanks domain reputation. With it, every email has provable variance.
+ *
+ * Uses the existing Supabase substrate embedding service (transformers
+ * all-MiniLM-L6-v2 384-dim) so no new infrastructure.
+ */
+export interface DedupResult {
+  /** Highest cosine similarity found among recent sends. */
+  maxSimilarity: number;
+  /** True if maxSimilarity > threshold (default 0.85). */
+  tooSimilar: boolean;
+  /** The matched email's recipient + send timestamp, if any. */
+  matchedAgainst?: { recipientEmail: string; sentAt: string; sliceOfBody: string };
+  /** Threshold applied. */
+  threshold: number;
+}
+
+export async function checkEmailDedup(
+  composedBody: string,
+  options: { recentDays?: number; threshold?: number } = {},
+): Promise<DedupResult> {
+  const threshold = options.threshold ?? 0.85;
+  const recentDays = options.recentDays ?? 30;
+  try {
+    const since = new Date(Date.now() - recentDays * 86_400_000).toISOString();
+    const rows = await supabaseFetch<
+      Array<{
+        recipient_email: string;
+        sent_at: string;
+        email_body: string;
+        body_embedding?: number[];
+      }>
+    >(
+      `/rest/v1/sr_sent_emails?select=recipient_email,sent_at,email_body,body_embedding` +
+        `&sent_at=gte.${encodeURIComponent(since)}&limit=500`,
+    );
+    if (rows.length === 0) {
+      return { maxSimilarity: 0, tooSimilar: false, threshold };
+    }
+
+    // Embed the candidate body via the same edge function used for substrate
+    const { url, key } = supabaseConfig();
+    if (!key) return { maxSimilarity: 0, tooSimilar: false, threshold };
+    const embedRes = await fetch(`${url}/functions/v1/embed-text`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: composedBody }),
+    });
+    if (!embedRes.ok) return { maxSimilarity: 0, tooSimilar: false, threshold };
+    const embedData: { embedding?: number[] } = await embedRes.json();
+    const candidate = embedData.embedding;
+    if (!candidate) return { maxSimilarity: 0, tooSimilar: false, threshold };
+
+    // Cosine sim against each recent send
+    let bestSim = 0;
+    let bestRow: { recipientEmail: string; sentAt: string; sliceOfBody: string } | undefined;
+    for (const r of rows) {
+      if (!r.body_embedding || r.body_embedding.length !== candidate.length) continue;
+      const sim = cosineSimilarity(candidate, r.body_embedding);
+      if (sim > bestSim) {
+        bestSim = sim;
+        bestRow = {
+          recipientEmail: r.recipient_email,
+          sentAt: r.sent_at,
+          sliceOfBody: r.email_body.slice(0, 200),
+        };
+      }
+    }
+
+    return {
+      maxSimilarity: bestSim,
+      tooSimilar: bestSim > threshold,
+      matchedAgainst: bestRow,
+      threshold,
+    };
+  } catch (err) {
+    console.warn(`[substrate-query] checkEmailDedup failed: ${(err as Error).message}`);
+    return { maxSimilarity: 0, tooSimilar: false, threshold };
+  }
+}
+
+function cosineSimilarity(a: number[], b: number[]): number {
+  let dot = 0;
+  let normA = 0;
+  let normB = 0;
+  for (let i = 0; i < a.length; i++) {
+    dot += a[i] * b[i];
+    normA += a[i] * a[i];
+    normB += b[i] * b[i];
+  }
+  const denom = Math.sqrt(normA) * Math.sqrt(normB);
+  return denom === 0 ? 0 : dot / denom;
 }
 
 // ----------------------------------------------------------------------------

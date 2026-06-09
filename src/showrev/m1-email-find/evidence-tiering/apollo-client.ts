@@ -26,9 +26,7 @@
  */
 
 import type { EvidenceRecord, SourceKind } from './types.js';
-import { tierBySourceKind, evidenceRecordId, normalizeCompanyName } from './types.js';
-// Note: normalizeCompanyName is exported from substrate-query.ts; for
-// independence we re-implement minimal stripping here to avoid circular dep
+import { tierBySourceKind, evidenceRecordId } from './types.js';
 import { apolloPeopleMatch } from '../email-finder/apollo-fallback.js';
 
 // ----------------------------------------------------------------------------
