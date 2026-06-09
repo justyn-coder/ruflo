@@ -28,7 +28,7 @@
  *   Throws NoVerifiedStatError on zero matches (after sync miss-log append).
  */
 
-import { readFileSync, appendFileSync } from 'node:fs';
+import { readFileSync, appendFileSync, statSync, renameSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import { z } from 'zod';
@@ -45,6 +45,20 @@ export type Persona = (typeof PERSONAS)[number];
 /** Source tier vocab — weighted in rankScore. */
 export const SOURCE_TIERS = ['primary', 'trade', 'vendor'] as const;
 export type SourceTier = (typeof SOURCE_TIERS)[number];
+
+/** Claim kind vocab — discriminates numeric-anchored from phrase-anchored
+ *  stats so composers can prefer numeric claims when both are available.
+ *  Audit DL-2026-06-09 surfaced 13 phrase entries posing as stats. */
+export const CLAIM_KINDS = ['number', 'phrase'] as const;
+export type ClaimKind = (typeof CLAIM_KINDS)[number];
+
+/** Domains that block programmatic fetch (UA spoofing required). Logged at
+ *  load with a single WARN so operators see refresh-fragility up front. */
+const FETCH_FRAGILE_DOMAINS: ReadonlySet<string> = new Set([
+  'glassdoor.com',
+  'lightreading.com',
+  'ecmag.com',
+]);
 
 /** Topic tags — controlled enum (spec §4). Adding a value requires
  *  updating Bucket->Topic map in `bucket-topic-map.ts`. */
@@ -79,6 +93,9 @@ export interface VerifiedStat {
   id: string;
   claimText: string;
   numericValue: string;
+  /** Discriminator: 'number' = numeric anchor; 'phrase' = lexical anchor.
+   *  Composers should prefer 'number' when both are available. */
+  kind: ClaimKind;
   topicTags: TopicTag[];
   applicabilityTags: ApplicabilityTag[];
   source: { title: string; url: string; publishedDate: string };
@@ -116,6 +133,7 @@ const TopicTagSchema = z.enum(TOPIC_TAGS);
 const ApplicabilityTagSchema = z.enum(APPLICABILITY_TAGS);
 const PersonaSchema = z.enum(PERSONAS);
 const SourceTierSchema = z.enum(SOURCE_TIERS);
+const ClaimKindSchema = z.enum(CLAIM_KINDS);
 
 const SourceSchema = z.object({
   title: z.string().min(1),
@@ -128,6 +146,8 @@ const StatEntrySchema = z.object({
   id: z.string().min(1),
   claimText: z.string().min(1),
   numericValue: z.string().min(1),
+  /** Required at load — every stat must declare itself number or phrase. */
+  kind: ClaimKindSchema,
   topicTags: z.array(TopicTagSchema).min(1),
   applicabilityTags: z.array(ApplicabilityTagSchema).min(1),
   source: SourceSchema,
@@ -229,6 +249,11 @@ function loadLibrary(): LoadedLibrary {
   const statsParsed = StatLibraryFileSchema.parse(statsRaw);
   const tiersParsed = SourceTiersFileSchema.parse(tiersRaw);
 
+  // Track fetch-fragile-domain hits so we WARN ONCE per load with the count
+  // and the affected stat ids — operators learn at boot which stats can't
+  // be re-verified programmatically (Glassdoor / Light Reading / EC Mag).
+  const fragileHits: Array<{ id: string; host: string }> = [];
+
   // Per-stat validation: numeric-token equality, publishedDate sanity,
   // declared sourceTier matches domain allowlist (no silent fallback).
   for (const s of statsParsed.stats) {
@@ -249,6 +274,20 @@ function loadLibrary(): LoadedLibrary {
           `${host} is tiered as ${declared} in source-tiers.json. Reconcile.`,
       );
     }
+    if (FETCH_FRAGILE_DOMAINS.has(host)) {
+      fragileHits.push({ id: s.id, host });
+    }
+  }
+
+  if (fragileHits.length > 0) {
+    // Single WARN line — stderr, not throw. The library still loads; we
+    // just surface the refresh-fragility risk so the quarterly citation
+    // pass knows which stats need manual re-verification.
+    const detail = fragileHits.map((h) => `${h.id}@${h.host}`).join(', ');
+    process.stderr.write(
+      `[stat-library] WARN: ${fragileHits.length} stat(s) on fetch-fragile ` +
+        `(403-prone) domains — manual re-verify required: ${detail}\n`,
+    );
   }
 
   // Detect duplicate IDs (would break byte-stable sort tiebreak).
@@ -292,13 +331,37 @@ function computeRecencyMonths(publishedISO: string, now: number): number {
   return Math.floor((now - published) / msPerMonth);
 }
 
+/** Miss-log rotation: rename to .1 when current size exceeds threshold.
+ *  Pre-check on append. Threshold is conservative (1 MiB) — at ~150 bytes
+ *  per line that's ~7k misses before rotation, which matches the audit
+ *  recommendation. We rotate by rename (atomic), so a concurrent appender
+ *  on a stale fd still writes to the rotated file (one-cycle straggler
+ *  acceptable — beats unbounded growth). */
+const MISS_LOG_ROTATE_BYTES = 1_048_576;
+function rotateMissLogIfLarge(missLogPath: string): void {
+  try {
+    const st = statSync(missLogPath);
+    if (st.size <= MISS_LOG_ROTATE_BYTES) return;
+    const rotatedPath = `${missLogPath}.1`;
+    renameSync(missLogPath, rotatedPath);
+  } catch (e) {
+    // ENOENT (file doesn't exist) = no rotation needed; suppress.
+    const code = (e as NodeJS.ErrnoException).code;
+    if (code === 'ENOENT') return;
+    const msg = e instanceof Error ? e.message : String(e);
+    process.stderr.write(`[stat-library] miss-log rotation failed: ${msg}\n`);
+  }
+}
+
 /** Sync append to miss-log.jsonl. Sync, not async — async errors get
- *  swallowed and we lose the audit trail (red-team cut). */
+ *  swallowed and we lose the audit trail (red-team cut). Rotates the
+ *  file when it exceeds MISS_LOG_ROTATE_BYTES (audit punch-list item). */
 function appendMissLogSync(
   missLogPath: string,
   payload: { ts: string; topic: TopicTag; persona: Persona; prospectTags: ApplicabilityTag[]; reason: string },
 ): void {
   try {
+    rotateMissLogIfLarge(missLogPath);
     appendFileSync(missLogPath, JSON.stringify(payload) + '\n', 'utf8');
   } catch (e) {
     // Last-resort: stderr. We do NOT throw — a miss-log write failure
@@ -417,6 +480,7 @@ export function getVerifiedStat(
       id: raw.id,
       claimText: raw.claimText,
       numericValue: raw.numericValue,
+      kind: raw.kind,
       topicTags: [...raw.topicTags],
       applicabilityTags: [...raw.applicabilityTags],
       source: { ...raw.source },

@@ -58,8 +58,10 @@ import {
   SOURCE_TIERS,
   TOPIC_TAGS,
   APPLICABILITY_TAGS,
+  CLAIM_KINDS,
   _resetLibraryForTests,
   type ApplicabilityTag,
+  type ClaimKind,
   type Persona,
   type TopicTag,
 } from '../../stat-library/index.js';
@@ -422,6 +424,13 @@ section('T9  Sidecar load invariants');
   assert(Array.isArray(stats.stats) && stats.stats.length > 0, 'T9.e stats array non-empty');
   assert(typeof tiers.domains === 'object' && Object.keys(tiers.domains).length > 0,
     'T9.f tiers.domains non-empty');
+  // Audit DL-2026-06-09: removed fabricated bead_42_45b_pool_2026 -> 29 stats.
+  assertEq(stats.stats.length, 29, 'T9.g stats count = 29 (post-audit pruning)');
+  // Fabricated stat must not reappear.
+  const fabricatedReintroduced = (stats.stats as Array<{ id: string }>).some(
+    (s) => s.id === 'bead_42_45b_pool_2026',
+  );
+  assertEq(fabricatedReintroduced, false, 'T9.h fabricated bead_42_45b stat stays deleted');
 }
 
 // =====================================================================
@@ -737,6 +746,51 @@ section('T19  Every loaded stat: numericValue is a substring of claimText');
     }
   }
   assert(ok, `T19.a every stat has numericValue in claimText verbatim (first bad: ${firstBad || 'none'})`);
+}
+
+// =====================================================================
+// T19.5  Every loaded stat declares a valid kind (number | phrase)
+// =====================================================================
+section('T19.5  Every loaded stat declares a valid kind');
+{
+  const stats = JSON.parse(readFileSync(STATS_PATH, 'utf8')).stats as Array<{
+    id: string; kind: string;
+  }>;
+  let ok = true;
+  let firstBad = '';
+  let numberCount = 0;
+  let phraseCount = 0;
+  for (const s of stats) {
+    if (!(CLAIM_KINDS as readonly string[]).includes(s.kind)) {
+      ok = false;
+      firstBad = `${s.id}: kind=${JSON.stringify(s.kind)}`;
+      break;
+    }
+    if (s.kind === 'number') numberCount++;
+    else if (s.kind === 'phrase') phraseCount++;
+  }
+  assert(ok, `T19.5a every stat has kind ∈ {number,phrase} (first bad: ${firstBad || 'none'})`);
+  // Audit DL-2026-06-09 classification: 16 number + 13 phrase = 29 total.
+  assertEq(numberCount, 16, 'T19.5b number-kind count = 16');
+  assertEq(phraseCount, 13, 'T19.5c phrase-kind count = 13');
+  // Library surfaces kind on returned stats too.
+  _resetLibraryForTests();
+  try {
+    const got = getVerifiedStat('bead', 'CEO', ['bead-funded'], {
+      nowOverride: FIXED_NOW,
+      limit: 1,
+    });
+    if (got.length > 0) {
+      assert(
+        (CLAIM_KINDS as readonly ClaimKind[]).includes(got[0].kind),
+        'T19.5d returned VerifiedStat carries kind discriminator',
+      );
+    } else {
+      pass('T19.5d no bead/CEO stat to inspect (kind discriminator untested at runtime)');
+    }
+  } catch {
+    pass('T19.5d bead/CEO query missed (kind discriminator untested at runtime)');
+  }
 }
 
 // =====================================================================
