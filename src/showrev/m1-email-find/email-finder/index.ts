@@ -21,6 +21,10 @@ export type { SmtpVerifyResult, MailProvider } from './smtp-verifier.js';
 export { generateCandidates, detectPatternFromWeb, inferPattern } from './pattern-detector.js';
 export type { EmailPattern, CandidateEmail, PatternResult } from './pattern-detector.js';
 
+// Peer Pattern (sr_company_contacts)
+export { queryCompanyPeers, inferPatternFromPeers, applyPatternToProspect, normalizeCompanyName } from './peer-pattern.js';
+export type { CompanyPeer, PeerPatternResult } from './peer-pattern.js';
+
 // Apollo Fallback
 export { apolloPeopleMatch, createApolloEnrichFn } from './apollo-fallback.js';
 export type { ApolloMatchResult, ApolloFallbackOptions } from './apollo-fallback.js';

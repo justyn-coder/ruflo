@@ -15,6 +15,7 @@ import { resolveDomain, resolveDomainsFromMx } from './domain-resolver.js';
 import type { DomainResult } from './domain-resolver.js';
 import { generateCandidates, detectPatternFromWeb, inferPattern } from './pattern-detector.js';
 import type { EmailPattern, CandidateEmail, PatternResult } from './pattern-detector.js';
+import { queryCompanyPeers, inferPatternFromPeers, applyPatternToProspect } from './peer-pattern.js';
 import { verifyEmail, detectMailProvider } from './smtp-verifier.js';
 import type { SmtpVerifyResult, MailProvider } from './smtp-verifier.js';
 
@@ -399,6 +400,83 @@ async function findEmailForContact(
     const merged = Array.from(new Set([...existing, ...alternativeDomains]));
     domainResult.alternativeDomains = merged;
   }
+
+  // -----------------------------------------------------------------------
+  // Step 1d: PEER-PATTERN DERIVATION (sr_company_contacts)
+  //
+  // Before running web-scrape pattern detection or SMTP guess-and-check,
+  // see whether we already have one or more verified peer emails at this
+  // company stored in `sr_company_contacts` from prior research. If so,
+  // infer the company pattern from peers and (a) return GREEN directly
+  // when 2+ peers agree (high confidence) or (b) seed Step 2 with the
+  // peer-derived pattern so candidate generation + SMTP verification can
+  // confirm against a single high-likelihood candidate (medium confidence).
+  // -----------------------------------------------------------------------
+  let peerHighConfidenceEmail: string | null = null;
+  let peerSource: string | null = null;
+  if (!patternResult && Date.now() < pipelineDeadline) {
+    tacticsAttempted.push('peer-pattern');
+    try {
+      const peers = await queryCompanyPeers(contact.company);
+      if (peers.length > 0) {
+        const peerResult = inferPatternFromPeers(peers);
+        console.log(`${prefix()} Step 1d: ${peers.length} peer(s), pattern=${peerResult.pattern}, confidence=${peerResult.confidence}, matched=${peerResult.matchedPeers}/${peerResult.totalPeers}`);
+
+        if (peerResult.pattern) {
+          // Seed Step 2 with the peer-derived pattern. Confidence is mapped
+          // from the peer rubric: 'high' = 0.95, 'medium' = 0.7, 'low' = 0.4.
+          const confidenceValue = peerResult.confidence === 'high' ? 0.95
+            : peerResult.confidence === 'medium' ? 0.7
+            : 0.4;
+          patternResult = {
+            pattern: peerResult.pattern,
+            confidence: confidenceValue,
+            source: `peer-pattern: ${peerResult.matchedPeers}/${peerResult.totalPeers} peers (${peerResult.sampleEmails.slice(0, 2).join(', ')})`,
+          };
+          peerSource = patternResult.source;
+          if (companyCache) companyCache.pattern = patternResult;
+          tacticsSucceeded.push('peer-pattern');
+
+          // High confidence (2+ peers agree) AND we can build the predicted
+          // email from the pattern: short-circuit to GREEN without Path A SMTP.
+          if (peerResult.confidence === 'high') {
+            const predicted = applyPatternToProspect(
+              peerResult.pattern,
+              contact.firstName,
+              contact.lastName,
+              domain,
+            );
+            if (predicted) {
+              peerHighConfidenceEmail = predicted;
+              console.log(`${prefix()} Step 1d: high-confidence peer-derived email ${predicted} -> GREEN (skipping SMTP)`);
+              return buildResult(contact, {
+                email: predicted,
+                confidence: 'green',
+                domain,
+                pattern: peerResult.pattern,
+                verificationStatus: 'unverified',
+                mailProvider: 'peer-derived',
+                tacticsAttempted,
+                tacticsSucceeded,
+                duration: ms() - t0,
+              });
+            }
+          }
+          // Medium confidence (1 peer): fall through to Step 2/3/6. The seeded
+          // patternResult will drive candidate generation; SMTP confirms.
+          // Final confidence will end up GREEN if SMTP returns valid, YELLOW
+          // if catch-all, AMBER if no signal — same as existing behavior.
+        }
+      }
+    } catch (err) {
+      console.log(`${prefix()} Step 1d error: ${err instanceof Error ? err.message : String(err)}`);
+    }
+  }
+  // Reference peerHighConfidenceEmail / peerSource so TS noUnusedLocals
+  // doesn't trip — they document the high-confidence short-circuit path
+  // above and are useful for downstream debug logging if needed.
+  void peerHighConfidenceEmail;
+  void peerSource;
 
   // -----------------------------------------------------------------------
   // Step 2: PATTERN DETECTION
