@@ -63,6 +63,68 @@ This is the load-bearing responsibility for the build. The composition layer is 
 
 The composer never decides what's true. It dresses up whatever Claude hands it. Claude's job at the tiering layer is to hand it only claims worth defending.
 
+## v2 amendment (2026-06-09 00:30 EDT) — Substrate-first / Apollo-as-fallback
+
+Operator-driven pivot after end of 2-hour autonomy window. Apollo was load-bearing in the v2 spec because it was the only structured-fact source I had wired in. Operator pointed out — correctly — that we have a huge owned data asset (6,512-chunk substrate + Firecrawl scraping infrastructure) that's strictly cheaper and more authoritative than Apollo's crowdsourced data.
+
+### What changed
+
+**Primary structured-fact sources (new priority order, cheapest + most authoritative first):**
+
+1. **Substrate** (already paid for) — tagged by company mention enables company-specific queries
+2. **Company website scrape** (Firecrawl, ~$0.01-0.03/prospect) — 1st-party authoritative
+3. **LinkedIn / trade press / FCC BDC** — authoritative external sources
+4. **Trade association deep dive** (board/committee bios, annual plans, blogs, meeting docs)
+5. **Multi-year conference speaker bios** (people stay at companies 3-5 yrs; old bios still ~80% accurate)
+6. **Apollo** — DEMOTED to fallback for email-find (where it's still good) + tie-breaker when 1-5 are silent
+
+**Cost shift:** ~$60-90 ONE-TIME multi-source evidence-base build vs ongoing Apollo subscription. The build is in flight as Workflow `wei06huvu` (6 parallel agents).
+
+**Substrate ranks higher than Apollo because:**
+- Substrate quotes from CEOs about their own companies = direct evidence
+- Apollo `short_description` is crowdsourced/scraped and often stale
+- Substrate is already paid for; we just need to tag it
+
+### Step 0 prerequisites — REVISED
+
+Replaces v2 spec §7 prerequisites:
+
+1. **Substrate company-tagging pass** (was: Apollo audit). Run Haiku extraction across 6,512 chunks tagging by company mention + speaker affiliation + topic. Cost ~$30-60. After this, substrate is queryable by company name. Workflow agent A is doing this.
+2. **Multi-source enrichment build** (NEW). Agents B/C/D/E/F populate `sr_company_evidence` + `sr_company_contacts` with 1st-party data from websites, FCC BDC, trade press, multi-year conference bios, trade associations.
+3. **Apollo demoted to fallback API** — wire it as a backstop in the email-finder + as a tie-breaker when substrate + websites are silent. Keep the existing apollo-fallback.ts integration; do NOT pay for a higher subscription tier.
+4. **Calibration-first N** — still applies. Run orchestrator on 28 cold prospects, pick SPECIFIC_MODE_THRESHOLD from real distribution.
+
+### New evidence-base data model
+
+Three storage surfaces (designed by `evidence-tiering/substrate-query.ts`):
+
+| Table | Purpose | Populated by |
+|---|---|---|
+| `sr_brain_substrate` (existing, extended) | 6,512 chunks + new metadata column (companies_mentioned, speaker_name, speaker_company, speaker_role, topics) | Agent A |
+| `sr_company_evidence` (NEW) | Per-(company, claim) rows. Tagged by tier + source_kind | Agents B-F |
+| `sr_company_contacts` (NEW) | Per-(person, company) rows. Optional email/linkedin | Agents E + F primarily |
+
+The query API (`substrate-query.ts`) abstracts these three tables behind one interface that both generalized AND specific composers call.
+
+### Implications for previous decisions
+
+- **Brain Level 2 + Level 3 cut → STAYS cut.** Substrate tagging accomplishes most of what BL-003 wanted.
+- **Substrate entity-tagging "post-pilot" → MOVED to Step 0.** The operator-corrected scope (900 companies, not 100) made this work too valuable to defer.
+- **Apollo demotion in tier rules → still applies but lower stakes**, because Apollo is no longer load-bearing.
+- **"Top 0.01% of AEs" quality bar** — substrate-first + 1st-party source ranking is the architectural piece that makes this achievable.
+
+### Cost comparison (revised)
+
+| Approach | Source | Cost |
+|---|---|---|
+| Original v2 | Apollo subscription as primary | ~$199/mo recurring |
+| Revised | Substrate tag pass + Firecrawl scrapes | ~$60-90 ONE TIME |
+| Ongoing | Substrate-query API (free) + occasional Firecrawl re-scrape (~$10/mo) | ~$10/mo recurring |
+
+Annual: $2,388 vs $180 → saves ~$2,200/yr while delivering more authoritative data.
+
+---
+
 ## Post-critique amendments — v2 design (locked 2026-06-08)
 
 Adversarial critique workflow `wf_45c688ad-620` ran 4 angles in parallel (operator-alignment, technical-feasibility, consequence-of-being-wrong, simplicity-cut) and synthesized to `ship_with_amendments`. All amendments accepted on operator's standing authority ("make a decision and start building").
