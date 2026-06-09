@@ -59,10 +59,14 @@ const PERSONA_TITLE_PATTERNS: Array<{ bucket: PersonaBucket; patterns: RegExp[] 
   {
     bucket: 'technical_designer',
     patterns: [
-      /\b(vp|vice\s+president|director|manager|head|lead)\b.*\b(engineering|network|it|gis|design|permitting|technical)\b/i,
-      /\b(engineering|network|it|gis|design|permitting|technical)\b.*\b(vp|vice\s+president|director|manager|head|lead)\b/i,
-      /\b(gis\s+(manager|analyst|specialist)|network\s+engineer|design\s+engineer|osp\s+engineer)\b/i,
-      /\b(cto|chief\s+technology|chief\s+technical)\b/i,
+      // Extended 2026-06-09 to include AI/innovation/data/platform/analytics
+      // domain words (caught GFiber "Head of AI & Innovation" case that the
+      // original list missed). Operator-approved port of clever two-token
+      // regex pair pattern + domain extension.
+      /\b(vp|vice\s+president|director|manager|head|lead)\b.*\b(engineering|network|it|gis|design|permitting|technical|ai|innovation|data|platform|analytics|architecture|software|systems?|product)\b/i,
+      /\b(engineering|network|it|gis|design|permitting|technical|ai|innovation|data|platform|analytics|architecture|software|systems?|product)\b.*\b(vp|vice\s+president|director|manager|head|lead)\b/i,
+      /\b(gis\s+(manager|analyst|specialist)|network\s+engineer|design\s+engineer|osp\s+engineer|data\s+(engineer|scientist|architect))\b/i,
+      /\b(cto|cio|chief\s+technology|chief\s+technical|chief\s+data|chief\s+information)\b/i,
     ],
   },
 ];

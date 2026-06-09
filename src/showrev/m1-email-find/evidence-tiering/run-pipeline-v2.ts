@@ -33,6 +33,7 @@ loadEnv({ path: resolve(__dirname, '../.env') });
 import { parseArgs } from 'util';
 import { icpGate } from '../icp-gate.js';
 import { resolveAE, getAEDetails } from '../ae-config.js';
+import { detectPersona } from '../influence.js';
 import { findEmail } from '../email-finder/orchestrator.js';
 import { orchestrateEvidence } from './orchestrator.js';
 import { composeSpecific } from './specific-composer.js';
@@ -595,16 +596,13 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     ? useDirectlyFacts.map(c => `- ${c.claim}`).join('\n')
     : '';
 
-  // Persona bucket — detected from title (same logic as composer). Store the
-  // ACTUAL persona value (revenue_leader / ops_builder / technical_designer /
-  // other) so the portal can show it. Previously stored the literal string
-  // 'inferred-from-title' which described the source, not the value.
-  const title = result.row.title || '';
-  const personaBucket: string =
-    /\b(ceo|cfo|coo|cto|cmo|cio|cco|cso|cpo|cdo|cro|cbo|svp|vp|chief|founder|owner|president|partner|managing\s+director|managing\s+partner)\b/i.test(title) ? 'revenue_leader' :
-    /\b(director|head\s+of|operation|construction|field|manager|supervisor|outside\s+plant|osp|construction\s+lead)\b/i.test(title) ? 'ops_builder' :
-    /\b(engineer|technical|designer|gis|cad|architect|developer|design\s+lead|design\s+manager)\b/i.test(title) ? 'technical_designer' :
-    'other';
+  // Persona bucket — uses canonical detectPersona() from influence.ts which
+  // uses two-token regex pairs (leadership word + domain word). Correctly
+  // disambiguates "Director of Engineering" → technical_designer vs
+  // "Director of Construction" → ops_builder, etc. Extended 2026-06-09 to
+  // include AI/innovation/data/platform domain words for cases like
+  // "Head of AI & Innovation".
+  const personaBucket: string = detectPersona(result.row.title || '');
   const meddpiccDecisionCriteria =
     /chief|vp|svp|ceo/i.test(result.row.title || '') ? 'Speed-to-revenue; capital efficiency; competitive market capture' :
     /director|head|ops|operation/i.test(result.row.title || '') ? 'Drawing throughput; permitting speed; crew utilization; design capacity' :

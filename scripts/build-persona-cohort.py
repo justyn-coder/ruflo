@@ -36,22 +36,37 @@ import re
 import sys
 from pathlib import Path
 
-# Persona detection patterns — mirror what generalized-composer.ts uses
-REVENUE_LEADER = re.compile(
-    r"\b(ceo|cfo|coo|cto|cmo|cio|cco|cso|cpo|cdo|cro|cbo|svp|vp|"
-    r"chief|founder|owner|president|partner|managing\s+director|managing\s+partner)\b",
-    re.IGNORECASE,
-)
-OPS_BUILDER = re.compile(
-    r"\b(director|head\s+of|operation|construction|field|"
-    r"manager|supervisor|outside\s+plant|osp|construction\s+lead)\b",
-    re.IGNORECASE,
-)
-TECHNICAL_DESIGNER = re.compile(
-    r"\b(engineer|technical|designer|gis|cad|architect|developer|"
-    r"design\s+lead|design\s+manager)\b",
-    re.IGNORECASE,
-)
+# Persona detection patterns — mirrors influence.ts PERSONA_TITLE_PATTERNS
+# (operator-approved 2026-06-09 port of clever two-token regex pair pattern).
+#
+# Strategy: require BOTH a leadership word AND a domain word in the same title
+# for ops_builder + technical_designer. Disambiguates "Director of Engineering"
+# (→ technical_designer) vs "Director of Construction" (→ ops_builder).
+#
+# Revenue leader = standalone exec titles (CEO, CFO, etc.) — no two-token needed.
+# Fallback = ops_builder (matches old-build behavior).
+
+REVENUE_LEADER_PATTERNS = [
+    re.compile(r"\b(ceo|president|managing\s+partner|cfo|controller|chief\s+financial|chief\s+executive|chief\s+revenue|cro|vp\s+finance|evp\s+operations|evp|svp|chief\s+operating|coo)\b", re.IGNORECASE),
+    re.compile(r"\b(general\s+manager|owner|founder|principal)\b", re.IGNORECASE),
+]
+
+OPS_BUILDER_PATTERNS = [
+    re.compile(r"\b(vp|vice\s+president|director|manager|head|lead|superintendent)\b.*\b(construction|deployment|outside\s+plant|osp|network\s+deployment|field\s+operations|project\s+management|operations|build|program)\b", re.IGNORECASE),
+    re.compile(r"\b(construction|deployment|outside\s+plant|osp|network\s+deployment|field\s+operations|project\s+management|operations|build|program)\b.*\b(vp|vice\s+president|director|manager|head|lead|superintendent)\b", re.IGNORECASE),
+    re.compile(r"\bproject\s+manager\b", re.IGNORECASE),
+    re.compile(r"\boperations\s+manager\b", re.IGNORECASE),
+]
+
+# Extended 2026-06-09 with AI/innovation/data/platform/analytics/architecture/
+# software/systems/product domain words. Caught "Head of AI & Innovation" case
+# the original list missed.
+TECHNICAL_DESIGNER_PATTERNS = [
+    re.compile(r"\b(vp|vice\s+president|director|manager|head|lead)\b.*\b(engineering|network|it|gis|design|permitting|technical|ai|innovation|data|platform|analytics|architecture|software|systems?|product)\b", re.IGNORECASE),
+    re.compile(r"\b(engineering|network|it|gis|design|permitting|technical|ai|innovation|data|platform|analytics|architecture|software|systems?|product)\b.*\b(vp|vice\s+president|director|manager|head|lead)\b", re.IGNORECASE),
+    re.compile(r"\b(gis\s+(manager|analyst|specialist)|network\s+engineer|design\s+engineer|osp\s+engineer|data\s+(engineer|scientist|architect))\b", re.IGNORECASE),
+    re.compile(r"\b(cto|cio|chief\s+technology|chief\s+technical|chief\s+data|chief\s+information)\b", re.IGNORECASE),
+]
 
 PERSONA_PRIORITY = {
     "revenue_leader": 1,
@@ -63,15 +78,20 @@ PERSONA_PRIORITY = {
 
 def detect_persona(title: str) -> str:
     if not title:
-        return "other"
+        return "ops_builder"  # match influence.ts fallback
     t = title.strip()
-    if REVENUE_LEADER.search(t):
-        return "revenue_leader"
-    if OPS_BUILDER.search(t):
-        return "ops_builder"
-    if TECHNICAL_DESIGNER.search(t):
-        return "technical_designer"
-    return "other"
+    # Order matches influence.ts PERSONA_TITLE_PATTERNS iteration:
+    # revenue_leader first (most specific), then ops_builder + technical_designer.
+    for pat in REVENUE_LEADER_PATTERNS:
+        if pat.search(t):
+            return "revenue_leader"
+    for pat in OPS_BUILDER_PATTERNS:
+        if pat.search(t):
+            return "ops_builder"
+    for pat in TECHNICAL_DESIGNER_PATTERNS:
+        if pat.search(t):
+            return "technical_designer"
+    return "ops_builder"  # fallback matches influence.ts
 
 
 def main() -> int:

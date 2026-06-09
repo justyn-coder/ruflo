@@ -1,297 +1,87 @@
 firstName,lastName,company,title,state
-Sandra,Lail,Sapona Plastics LLC,VP Sales,NC
-Sam,Elfeky,Satellite Star Light Inc,President,CA
-Mary,Savery,Savery Solutions,Founder & CEO,AZ
-Jim,Lucas,SBS,"VP, Solutions",CO
-Andy,Mott,SBS,CMO,CO
-Diego,Anderson,Schurz Broadband Group,President,MD
-Jim,Kronebusch,Schurz Broadband Group,CTO,MN
-Austin,Cook,"Schurz Communications, Inc.",CFO,IN
-Ryan,Pauk,SCS Telecom Supply LLC,Executive Vice President,MO
-Ryan,Punt,SD,CEO,SD
-Elijah,Quinn-Ridgwell,"SECOM, Inc",CTO,CO
-Seimitsu,Cook,Seimitsu / Turnkey Fiber Network,CEO,GA
-Donna,Unger,Seimitsu / Turnkey Fiber Network,CRO,GA
-Heath,Sellenriek,"Sellenriek Construction, Inc",President & COO,MO
-Alex,Vizir,Seralex LLC,President,NC
-Michael,Solitro,Sertex,Founder & CEO,
-Jay,Janger,ServicePower,SVP - Global Sales,VA
-Michael,Guffy,Shawnee Communications,President,IL
-Matt,Estep,Shenandoah Telecommunications Company,"Vice President, Outside Plant Engineering & Construction",VA
-Mark,Watkins,Shenandoah Telecommunications Company,VP Marketing - Shentel,VA
-Dara,Leslie,Shentel,SVP Sales and Marketing,GA
-Jeff,Manning,Shentel (GloFiber),Vice President Network Strategy,VA
-Rick,Mason,Shentel/ Glo Fiber,Senior Vice President Engineering and Operations,VA
-Shirley,Bloomfield,ShirleyConnected,President,VA
-Ionut,Mazilu,Signal Cable INC,Vice President,WA
-Leslie,Hamada,Signature Communications,CMO,RI
-Barbara,Sessions,Silver Star,President,WY
-Jason,Jenkins,SilverLight Fiber Networks,VP Open Access,WY
-Brian,Disney,"Skyde Solutions, Inc.",CEO,TX
-Jake,Greenwald,"Skyde Solutions, Inc.",COO,TX
-Kevin,Lynch,SLICFiber,CEO,NY
-Seth,Klondar,Smartlock Incorporated,Vice President,FL
-Joe,Krzizike,Smartoptics,Vice President,CO
-Nicole,Plunkett,Smithville Communications,"Vice President, Commercial Sales",IN
-Ron,Krakowski,SMJ International,Vice President,MI
-Lindsay,Kelley,Sonar Software,VP of Sales & Marketing,IL
-Georgette,Lopez-Aguado,Sonar Software,VP of Client Experience,IL
-Rick,Seemann,Sonar Software,VP of Product Management,IL
-Dylan,Larmore,Sound Broadband,President,MD
-Scott,Seale,Southern Telecommunication Services Inc,CEO,MS
-Scott,Casey,Spatial Business Systems,"VP, Telecom",CO
-Peter,Dart,SpatialNetworX,Chief Architect,MA
-Cornelius,Puia,"Springfield Telecom Company, LLC",PRESIDENT/CEO,MO
-Joe,Collina,SQUAN,Executive VP of Strategy,NJ
-Marc,Dyman,SQUAN,Chief Development Officer,NJ
-John,Mantiply,SQUAN,"Executive Vice President, Tech Solutions & Strategy",NJ
-Dave,Rundella,SQUAN,"SVP, Strategic Development",NJ
-Scott,Shafer,SQUAN,Chief Technical Officer,NJ
-Michael,Stanley,Stanley Utility Contractor Inc,President-Owner,FL
-Christian,Whitehead,StarTAK Fiber LLC,Chief Operating Officer,FL
-Jonathan,Bahmani,Stealth,Founder,FL
-Shayne,Barr,StellarRAD Systems,President,MO
-Matthew,Partridge,StellarRAD Systems,Vice President of Technology,MO
-Matt,Dannehl,Stevens Fiber Group LLC,Vice President,KS
-Austin,Stevens,Stevens Fiber Group LLC,President,KS
-Steve,Soraparu,Stifel,Managing Director,IL
-Marc Philiip,Brenninkmeijer,STL - Sterlite Technologies Inc.,"Vice President, National Accounts / ONB Americas",SC
-Ryan,Chappell,STL - Sterlite Technologies Inc.,VP Optical Interconnect - Opitcal Network,SC
-Jeric,McCoy,STL - Sterlite Technologies Inc.,"Vice President, Channel Sales / ONB Americas",SC
-Stephen,Szymanski,STL - Sterlite Technologies Inc.,"Vice President & General Manager, ONB Americas",SC
-Dan,Gonzalez,Straight Line Global,Vice President,FL
-James,Seidel,Straight Line Global,"Vice President, Claims",FL
-Ihor,Kutsalaba,Streamline Utilities LLC,President,IL
-Balazs,Birton,Stronghold Contracting Group,COO,AL
-Logan,Hale,Stronghold Contracting Group,President,AL
-Brandon,Mullinax,Stronghold Contracting Group,VP Business Development,AL
-Torryon,Coleman,Summit Broadband,VP Network,FL
-Jason,Cortes,"SunCoast Commuinication Services, Inc.",President,FL
-Bradley,Provost,Suncoast Communication,VP-Owner,FL
-"James ""Jay""",Martin,Sunrise Telecom,Vice President Business Development,MO
-Brad,Blystone,Superior Essex Communications,Communications Sales VP,GA
-Chris,Freitag,Superior Essex Communications,Chief Executive Officer of Superior Solutions,GA
-Hezi,Lasinger,SUPERSONIC ISRAEL LTD.,CEO,TX
-Heather,Miles,Surf Internet,VP and Corporate Counsel,IN
-Mary,Moran,Surf Internet,Vice President of OSP,IN
-Craig,Conaway,Sutherland Global,VP - AI Powered Business Evolution,TX
-Jude,Fleet,Sutherland Global,"VP, Client Partner CMT",TX
-Troy,Bourque,Swyft Fiber,CCO,LA
-Mark,Glynn,Swyft Fiber,VP Accounting,LA
-Robert,Segrave,Swyft Fiber,VP,LA
-Jason,Williams,Swyft Fiber,VP Of Construction,LA
-Chris,Crowe,t3 Broadband,CEO,KS
-Alicia,Hackett,Tablo TV,Vice President Platform Sales and Partnerships,OH
-Trent,VanMaanen,TAK Broadband LLC,COO,SD
-Andre,DeMattia,Talkie Fiber,Co-CEO,MD
-Andrew,DeMattia,Talkie Fiber,Co-CEO,MD
-Katherine,Latham,Talman Consultants,"CEO, Managing Partner",IL
-James D,Norton,Talman Consultants,Partner,IL
-Robert,Taylor,Taylor's Construction,President,TX
-Troy,McEldowney,TD&I Cable,Director of Partner Relations,WI
-Meghan,Corcoran,TDS Telecom,VP Marketing,IL
-Craig,Mathes,Team Fishel,"VP Safety, HR, Business Development",OH
-Brian,Smith,Team Fishel,VP Engineering,OH
-Terence,Singh,Technetix,"VP Sales, North America",CO
-Herbert,John,Techwave,"Vice President, Head of Digital Services",TX
-Robert,Wolf,Techwave,Client Delivery Vice President,PA
-Steve,Hillman,"TekCom Resources, Inc",Vice President - National Accounts,PA
-Ian,Raddant,"TekCom Resources, Inc",President,NY
-Rod,Elms,Telcom Construction,VP Operations,FL
-Dave,Rantasha,Telcom Construction,Senior Vice President,FL
-Rick,Jameson,Teldor Cables USA,VP Sales,ME
-Jeff,Houston,Telecon,"Executive Vice-President, Head of U.S.",UT
-Kevin,Kappler,Telecon,"Vice-President, Business Development",NC
-Douglas,Rice,Telecon,"Vice President, US Strategy and Market Development",AZ
-Katherine,Hunt,Teleqo Technical Solutions,CEO,VA
-Ronald,Deese,TelForce Group LLP,CEO,TN
-Robert,Lopez,"Telgec, LLC",Managing Director,TX
-Blake,Stone,Telvero,Co-Founder & President,TN
-Brad,Little,TEP,"VP, Business Development",NC
-Thomas,Vito,TEP Group,Chief Revenue Officer,NC
-Tim,Luden,Thayer Power and Communication LLC,President,OH
-Stevie,Garcia,The Aspen Utility Company,Vice President,TX
-Ernest,Spicer,The Aspen Utility Company,"VP, Governmental Affairs",TX
-Jeff,Reiman,The Broadband Group,President,NV
-Patrick,Thibeault,The Broadband Group,Chief Technology Officer,CO
-Linda,Richardson,The CMO Architect,Founder,FL
-Brandan,Stringer,The ECAM Group,Partner,FL
-Megan,Schulman,The Select Group,"Managing Director, Communications",NC
-Jonathan,Thomas,"Thomas Fiber Solutions, LLC",Owner,GA
-John,Perkins,Threat Angler,CEO,FL
-Riya,Karumanchi,Tiburon Labs,Co-Founder,CA
-Shree,Reddy,Tiburon Labs,Co-founder,CA
-Ira,Thawornbut,Tiburon Labs,Co-Founder,CA
-Ralph,DePascale,Tii Technologies Inc.,"Regional Vice President, Sales & Marketing",NY
-Tim,Angel,TiVo,VP Customer Success,CA
-Maria,Mendoza,TiVo,"VP, North America Sales",CA
-Karl,Misling,TiVo,VP Sales LATAM,CA
-Bill,Routt,TiVo,"SVP, Global Head of Sales and Customer Success",CA
-Thomas,Koehler,TKI Infrastructure Solutions Inc,CEO & President,NY
-Jan,Schindler,TKI Infrastructure Solutions Inc,Executive Vice President,NY
-Scott,Hendrix,Tombigbee Fiber,CEO,MS
-Josh,Snow,"Trace Fiber Networks, LLC.",CEO,OK
-Rohit,Jha,Transcelestial,CEO & Co-Founder,PA
-Karla,Myers-Beman,Traverse City Light and Power,CFO,MI
-Stephen,Carter,TRAXyL Inc.,COO,VA
-Greg,Stempkoski,TRAXyL Inc.,Chief Strategy Officer,VA
-Daniel,Turner,TRAXyL Inc.,CEO,VA
-Angel,Barrios,TREKTEL LLC,GM/Managing Director,FL
-John,Vetter,Tribal Ready,VP of Tech Strategy and Services,NV
-Doug,Butler,Trileaf Corporation,"Executive Vice President, National Environmental Accounts",MO
-Whit,Majors,Tritech Fiber,Partner,FL
-Lord,Ravensden,Trust Engineering Group TEG,Managing Partner,FL
-Sujee,Jeganathan,TrustClarity inc.,CEO & Founder,IL
-Michael,Petty,TruVista Communications,Chief Operating Officer,SC
-Jeffrey,Auman,Truvista Fiber,Chief Growth Officer,SC
-Tessa,Dutra,Trylon TSF Inc.,"Vice President, Fiber Infrastructure Solutions",TX
-Dave,Navarre,TSR ComSupply,President,CO
-Chad,Dillon,Twin Lakes,Chief Operations Officer,TN
-John,Sullivan,"Twin Valley Telephone, Inc.",Vice President,MO
-Sean,Park,UCL Swift,President,TX
-Cindy,Kazee,UNDC,President,CA
-Robert,Carpenter,Underground Infrastructure,Editor-in-Chief,TX
-Gary,Underwood,Underwood Strategies,President,OH
-Casey,Worth,United Fiber,Chief Administrative Officer,MO
-Brenda,Halter,"United Fiber, LLC",Vice President of Field Services,MO
-Tj,Plumley,"United Fiber, LLC",Chief Field Services Officer,MO
-Mark,Allen,United Tel Supply,COO,TX
-Zack,Burnes,United Tel Supply,Owner/ President,TX
-Dmitrii,Kichuk,United Traffic Control Solutions LLC,CEO,NJ
-Amanda,Stewart,UniTek Global Services,VP of Sales and Marketing,MS
-Rebecca,Denman,"UniTek Global Services, Inc.",President of Business Development,MS
-Bruce,McPhee,Universal Network Development Corporation,VP Business Development,CA
-Anna,Jaworowska,UniWave OSP,President,SC
-John,Greene,USDA,COO,DC
-Ed,Cooper,Utilicom Supply,Owner,GA
-Danny,Mulcay,Utilicom Supply,President/Owner,GA
-Loren,Brace,"UtiliSource, LLC",Vice President of PMO & Special Projects,MO
-Steve,Sellenriek,"UtiliSource, LLC",CEO,MO
-Preston,Keck,"Utilisouth, Inc.",Partner - Shareholder,SC
-Ryan,Keck,"Utilisouth, Inc.",CEO,GA
-Jon,Pruitt,"Utilisouth, Inc.",Co-Owner,GA
-Ivan,Galkin,Utilities One Group,Senior Vice President of Fulfillment Services,NJ
-David,Buck,Utilus LLC,COO,FL
-D J,Patnaude,Utilus LLC,President,FL
-Jeff,Erwin,UTOPIA Fiber,Chief Operating Officer,UT
-Laura,King,UTOPIA Fiber,Chief Project Officer,UT
-Roger,Timmerman,UTOPIA Fiber,CEO,UT
-Christian,Santangelo,"Valhalla Industries, Inc",Chief Commercial Officer,CO
-Kevin,Kloehn,Vantage Point Solutions,VP of Customer Relations,SD
-Nathan,Weber,Vantage Point Solutions,Sr. Vice President of Engineering,SD
-Jeff,Coke,VarData,President,NY
-Raj,Singh,VCTI,CEO,NJ
-John,Funk,Vecima,"VP, PMO & Business Office",GA
-Tom,Counts,Velox,CEO,AL
-Danny,Johnson,Velox,VP of Business Development,AL
-Charles,Hines,Velox Utility Construction,Vice President of Operations,AL
-Michael,Falsetti,Verità Telecommunications Corporation,President & CEO,MI
-Michael,Schlagel@vertigis.com,VertiGIS,VP of Sales Americas Telecoms,VA
-J.D.,Doyle,VETRO,CTO,ME
-Michaela,Goodwin,VETRO,CFO,ME
-Brett,Lindsey,VETRO,President,ME
-Will,Mitchell,VETRO,CEO,ME
-Rick,Mook,VETRO,VP of Product Portfolio and Delivery,ME
-Keith,Hyde,viaPhoton,VP Sales,OH
-Paul,McNab,VIAVI Solutions,CMO,CA
-Sarah,Smith,Visionary Broadband,VP of Enterprise Performance,CO
-Jesse,Filadelfia,Vitruvi Software,Vice President of Global Sales,CO
-Brad,Wiertel,VNET Fiber,COO,PA
-Daniel,Livelli,Volks Resources,President,TX
-Matt,Morris,Volks Resources,VP of Engineering,TX
-Hugh,Markey,Vulcan Utility Signs,Vice President of Sales,AL
-Wesley,Stanfield,W Brown Enterprises,VP of Telecom,OK
-Zach,Hubeck,WAV,Executive VP of Marketing,IL
-Stephanie,Beck,Wesco,"VP, Marketing",CT
-Frank,McCullough,Wesco,"VP, US Broadband and Service Providers",PA
-Jason,Nelson,WIA,"VP, Business Development & Partnerships",VA
-Kyle,Barnes,Winncom Technologies,VP Engineering,OH
-Mike,Cook,Winncom Technologies,VP Business Development,OH
-Aaron,Savy,Winncom Technologies,VP Sales & Business Dev,OH
-Robert,Winston,Winston International LTD,President,NC
-Deb,Bennett,Wireless Infrastructure Association,"VP, Apprenticeship",VA
-Jeff,Hall,Wireless Supply,VP / General Manager,NC
-Marshall,Manhoff,Wiring The Future Networks,Exec VP Engineering,VA
-May,Manhoff,Wiring The Future Networks,CEO,VA
-Aaron,Weimer,Wiring the Future Networks,CTO,GA
-Lynn,Weimer,Wiring The Future Networks,CFO,VA
-Luke,Phillips,Wisper Internet,CTO,IL
-Nathan,Stooke,Wisper Internet,Founder & CEO,IL
-Jeffrey,Gasper,www.southerntiernetwork.org,CEO,NY
-Abby,Rogers,YMCA of the USA,"Executive Vice President, Growth and External Engagement Team",IL
-Jeff,Fincannon,"Zealous Edge, LLC",Regional VP of Operations / Founder,SC
-Craig,Freeman,"Zhone Technologies, Inc.",VP Sales,TX
-Jason,Lauzon,"Zhone Technologies, Inc.",VP Sales Engineering,TX
-Jeff,Liening,"Zhone Technologies, Inc.",CRO,AL
-Bill,Sandiford,"Zhone Technologies, Inc.",CSO,AL
-Rodrigo,Carvalho,Zion Undergrouns,Owner,TN
-Chandni,Thakrar-Woolam,Zirrus One,CEO,TX
-Edmund,Chu,Zyxel Communications Inc.,Executive Vice President,CA
-Chris,Lanier,Zyxel Communications Inc.,"Vice President – U.S. & Canada, Zyxel Communications",CA
-Jenniffer,Mackey,Zyxel Communications Inc.,"Vice President, Strategic Accounts",CA
-Amanda,Griffith,123Net,Director of Fiber Engineering,MI
-Robert,Michaelis,123NET,Technical Design Manager,MI
-Yvonne,Lambeth,1Finity,Channel Manager,TX
-Lori,Butler,"1Finity Americas, Inc.",Senior Account Based Marketing Manager,TX
-Kelly,Fournier,3-GIS,"Director, Strategic Accounts",AL
-Orry,Moody,3-GIS,"Executive Director, Sales",AL
 Rod,Walker,3HV Innovations,Sales Manager,TN
 Josh,Loaiza,3Strands Global Foundation,Director Of Strategic Partership,CA
 Jose,Rivera,832 Communications,"Manager, Network Operations",FL
 Scott,Souser,832 Communications,Senior Ops Manager,FL
+Beth,Keserauskis,Access Marketing Company LLC,GM,KS
 Scott,Hudson,AccessPlus,Manager,MA
 Shawna,Popek,Account Manager,Account Manager,NC
+Rubianto,Satrio,Acentury Americas,VP of Sales & Business Development,CA
+Andrew,Bordine,Actalent,Grid Automation Head,FL
 Jay,McHenry,Actalent Services,Delivery Manager,SC
-John,McBrayne,"Actiontec Electronics, Inc.",Head of Product,CA
+Jerry,Rojas,Actalent Services,Telecom Engineer,IL
+Thomas,Sullivan,Actifai,VP of Partnerships,DC
 Tyler,Adams,Adams Cable Equipment,Account Manager,KS
 Teddy,Dye,Adams Cable Equipment,National Account Manager,KS
 Alan,Eppers,Adams Cable Equipment,National Account Manager,KS
 Gary,Flora,Adams Cable Equipment,National Account Manager,KS
+Gracen,Hipfl,Adams Cable Equipment,Marketing Assistant,KS
 Leah,Kieso,Adams Cable Equipment,Account Manager,KS
 Brad,Rogers,Adams Cable Equipment,National Account Manager,KS
 McKenzie,Rowe,Adams Cable Equipment,National Account Manager,KS
 Josie,Salzman,Adams Cable Equipment,Account Manager,KS
 Jeffery,Schnell,Adams Cable Equipment,Account Manager,KS
+Eric,Biehle,ADB,Senior VP Business Development,MO
+Krissy,Cross,ADB,Chief of Staff,MO
+Paul,Foster,ADB,Chief Commercialization Officer,MO
 Carolyn,Hardwick,ADB,Senior Director Business Development,MO
-Craig,Schellenbach,ADB,Director IT,MO
-Paxton,Davis,Adtran,"Business Development Manager, Engineering Partners",AL
-Pablo,Guevara,Adtran,SaaS Product Manager,AL
+Curt,Machado,ADB,Senior VP Business Development,MO
+Josh,Bailey,Adtran,RVP Northeast Sales,AL
+Zach,Boeckman,Adtran,"Regional VP, Sales – Western US",AL
+Paul,Breakman,Adtran,VP. Americas Partners + BD,DC
+Ashley,Brown,Adtran,"Senior Director, Field and Partner Marketing",CO
+Darrell,Brown,Adtran,VP - US RSP / BSP Sales,AL
+Brent,Cancienne,Adtran,"VP, US Regional Service Providers",AL
+John,Dilley,Adtran,US National Accounts,AL
+Javier,Lopez,Adtran,"Sr. Dir, Product Management",AL
+Grace,Marcopulos,Adtran,Marketing Specialist,AL
+David,Mould,Adtran,Sales,AL
+Mark,Ogden,Adtran,"Regional VP,  Sales",AL
 Doug,Payauys,Adtran,Business Development Director,AL
+Niall,Robinson,Adtran,VP Global Business Development,AL
+John,Sequeira,Adtran,Regional Sales VP - Canada,AL
 Gerald,Spencer,Adtran,"Sr. Manager, Tribal Relations and Business Development",AL
 Heather,Walther,Adtran,National Account Director,AL
 Johan,Westerberg,Adtran,Sales Director,AL
+Joshua,Yi,Adtran,Senior Solutions Engineer,AL
 Vinicio,Mendez,Adtran / Liberty Networks,Regional OSP Manager,AL
 Jim,Zou,Adtran Networks North America,Director Global Business Development,GA
 Mark,Cicinelli,Advantage Marketing,Regional Sales Manager,IL
 Vince,Cicinelli,Advantage Marketing,Regional Sales Manager,ND
-Roger,Ouellette,AECON,General Manager Utilities,TX
 Joe,Skinner,Aecon Construction Group Inc.,Sr. Manager Business Development,MI
 Jay,Barigela,AEGIS Digital LLC,Director Client Relationships,TX
 Kristin,Decker,AFL,Marketing Event Manager,SC
-Dennis,Parks,AFL,"Director, Product Sales",SC
+Kinnidy,Orr,AFL,Event Marketing Specialist,SC
 Ryan,O'Sullivan,"AFL Telecommunications, LLC",Director of Broadband Ecosystem Development,SC
 Noah,Taylor,"AFL Telecommunications, LLC",Head of Market Intelligence,SC
-Pat,Widger,Agri Valley Communications Inc,Network Manager,MI
 Raul,Archundia,AirWay Technologies,Account Manager,KY
 Sharity,Bayerlein,AirWay Technologies,Account Manager,KY
+Erin,Buck,AirWay Technologies,Account Executive,KY
+Grace,Goedde,AirWay Technologies,Senior Technical Buyer,KY
+Kelly,Lakkis,AirWay Technologies,VP of Sales,KY
 Brian,Schock,AirWay Technologies,Director of Sales,KY
+Katie,Swope,AirWay Technologies,Account Executive,KY
+Lou,Tomasetti,AirWay Technologies,VP of Business Development,KY
 Jordan,Trimble,AirWay Technologies,Account Manager,KY
 Alexander,Hardie,Akamai Technologies,Director,GA
 Glazer,Gant,Alabama Power,Project Supervisor,AL
 Mac,McGann,Alabama Power Company,Grid Investment Construction Supervisor,AL
 Jay,Nidiffer,All West Fiber,Director of Operations,WY
 Darin,Jackson,Allo Communications,Senior Manager of Supply Chain & Logistics,NE
+Tera,Schmer,Allo Communications,Supply Chain Analyst,NE
 Scott,Speer,Allo Communications,Supply Chain & Purchasing Supervisor,NE
 Dan,Molique,altafiber,OSP Network Planner II,KY
 Robert,Shema,altafiber,Sr. Director of Govt Affairs and Corp Development,OH
 Chip,Proctor,Altamaha EMC,Project Manager,GA
 Frank,Cummins,"Altec Industries, Inc.",Account Manager - Telecom Sales,AL
+Kieran,Blakemore,Altman Solon,Sr Client Solutions Engineer,VA
+Rene,Fernandez,Amdocs,"VP, CBE – Fiber Services",FL
+Doron,Fialkov,Amdocs,"VP, Customer Business Executive",TX
 Travis,Thaxton,Amdocs,Sales Director,OK
 Al,Hinson,American Polymer Company,Director of Sales,FL
-Omar,Rodriguez,American Polymer Company,"Director, Fiber Sales Engineering",FL
+Kevin,Matsui,American Polymer Company,"VP, Commercial Operations",FL
 Ha,Beavers,American Products,Marketing Manager,MO
 Devin,Brown,American Products,Executive Sales Director,MO
-Matt,Calton,American Products,General Manager,MO
 Mike,Henderson,American Products,Executive Sales Director,MO
 Graham,Hingley,American Products,Executive Sales Director,MO
 Mike,Riedel,American Products,Executive Sales Director,MO
@@ -299,3 +89,213 @@ Mike,Springer,American Products,Executive Sales Director,MO
 James,Veirs,American Products,Executive Sales Director,MO
 Trey,McFarren,Amerine Construction,Director of Operations Support,KS
 Jeremy,Smith,Amerine Construction,Operations Manager,KS
+Robert,Chipman,Amphenol Custom Cable,Sr. Account Manager,FL
+Brent,McMurray,Amphenol Fiber Optic Products,VP Sales and Marketing,IL
+David,Rifkin,Amphenol Fiber Optic Products,"Sales Director, FTTx",IL
+John,Childs,AMT,Account Executive,FL
+David,Coffey,AMT,Sales Manager,FL
+Chris,Dallemand,AMT,Sales Manager,FL
+Craig,Hugueley,AMT,"Director of Sales, Strategic Accounts",FL
+Deibys,Matute,AMT,Event Coordinator,FL
+Diego,Merizalde,AMT,International & CALA Sales Director,FL
+Rob,Narzisi,AMT,Sales Manager-Enterprise/Private Networks,FL
+Matt,O'Connor,AMT,Sales Manager,FL
+Rob,Privett,AMT,Western USA Sales Manager,FL
+Esteban,Sanmarco,AMT,Director of Procurement and Logistics,FL
+Phil,Young,AMT,VP of Sales,FL
+Adam,DaBelle,AMT/KAON,Director Business Development,FL
+Ben,Diamond,AMT/KAON,Sales Director,FL
+Todd,Kellison,AMT/Opticonn,"VP, Sales & Marketing",FL
+Henok,Tafese,AMT/Opticonn,Managing Director,FL
+Lucia,Morales,Andina Link,,
+James,Day,Andrew,Sr Dir Sales,LA
+David,Child,Anthem Broadband,Director of Marketing Development,ID
+Al,Johnson,AOI,Senior Director Business Development,TX
+Tim,Wills,Appalachia Construction Services,VP of Fiber Operations & Deployment,PA
+Mitchell,Taylor,Arcadis,"IMS Solution Lead: Networking & Comms, North America",CA
+John,DiLiberti,ARIA by ProLabs,"Client Executive, Service Provider Sales",CA
+Nathan,Enze,ARIA by ProLabs,Sr. Client Executive,CA
+James,Hammer,ARIA by ProLabs,Consulting Systems Engineer,CA
+Andrew,Johnson,ARIA by ProLabs,VP of Business Development,CA
+Andrew,Milburn,ARIA by ProLabs,Sr. Product Development,CA
+Sean,Preish,ARIA by ProLabs,Regional Sales Manager,CA
+Rich,Wagner,ARIA by ProLabs,Client Director,CA
+Maria,Rey,Ariplanet,Business Development,FL
+Jana,Cheatham,"Arista Networks, Inc.",Client Director,GA
+Adam,Aalexander,Armstrong,Director of OSP Construction,PA
+Nathaniel,Taylor,"Armstrong Utilities, Inc",Outside Plant Technology Engineer,PA
+Efi,Massali,Artemis ITS Inc.,Account Director,CO
+Harald,Graber,Arycs Technologies,CCO,CA
+Brian,Mayfield,Astound Broadband,Dir Network Engineering,TX
+Jason,Murray,AT&T,Associate Director Technology,FL
+Lennie,Pici,ATI,Director National Accounts,CA
+Matt,Rouleau,ATI,Engineer,CA
+Tony,Bracci,Atkore,Sales Manager,TX
+Austin,Cordova,Atkore,Sales Director,TX
+Jeff,Ericson,Atkore,Regional Sales Manager,TX
+Patty,Sharkey,Atkore,Sales Manager,MO
+Dan,Vassar,Atkore,Sr. Marketing Operations Mgr.,IL
+Chas,Rubino,Atlas Digital Group,Head of Sales,MO
+Brian,Hanson,Atlas Path,Business Development Consultant,IL
+Aaron,Woody,"ATS-Sales, LLC",Director of Sales & Business Development,FL
+Kevin,O'Neill,Aurora Networks,Account Director,OH
+David,Acomb,AWP Safety,"Director, Strategic Alliances",OH
+Nick,Szlemp,AWP Safety,Regional Sales Manager,OH
+Carlos,Berto,Axiom Connectivity,Director,TX
+Mary,Harris,Axiom Connectivity,Director of Sales,OH
+Matt,Munn,Axiom Connectivity,,
+Aaron,Pierett,Axiom Connectivity,Sales,TX
+Denys,Pihur,Axon Fiber,Director of Installations,IL
+Ron,Llamas,Azimuth Engineering,Director,NJ
+Colin,Svatos,"Azores Networks, LLC",Account Executive,TX
+Todd,Van Horn,B&D Communications,Director,VA
+Cheri,Brock,Backbone Fiber,Director of Business Development,CO
+Nic,Clark,BairesDev,"Director, Client Solutions",CA
+Jason,Lu,Baker Tilly,Senior Manager,KS
+Donald,Ray,BAM Broadband,Chief Development Officer,CO
+Aaron,Adkins,Bartlett Electric Cooperative,Chief Broadband Officer,TX
+Kerri,Rauch,BDI Datalynk,Tools Specialist & Support Coordinator,TX
+Scott,Paul,Beacon Broadband,Director of Customer Experience and Growth,OR
+Daniel,Berkowitz,Bekaert,Strategic Market Manager Energy,GA
+Chris,Podgorny,Bekaert,Regional Sales Manager,GA
+Josh,Solomon,Bekaert,Market Analyst,GA
+Jorgen,Tommerberg,Bekaert,Regional Sales Manager,GA
+Rodney,Edge,Belden,Manager,NY
+Matthew,Hagemann,Belden,Director,NY
+Josh,Ivancic,Belden,Director,NY
+Colin,Loiselle,Belden,Director,NY
+Zach,Richardson,Belden,Applications Engineer,NY
+Tom,Wetzelberger,Belden,Sales Manager,NY
+Esther,Wise,Belden,Event Specialist,NY
+Carl,Brumfield,Benchmark Subsurface Utility Services,Director of Business Development,VA
+Revati,Prasad,Benton Institute for Broadband & Society,Executive Director,IL
+Jr,Bertram,Bertram Communications LLC,Operations Manager,WI
+Sarah,Lawrenz,Bertram Communications LLC,Manager of Strategic Partnerships,WI
+William,Platt,BHC,Lead OSP Engineering Tech,KS
+Luke,Stenzel,BHC - Engineering,Business Development,KS
+Lauren,Marcucci,BHC Engineering,Project Manager II,KS
+Brian,Dailey,BICSI,BDM,FL
+Courtney,Nalls,BICSI,Business Development,FL
+Rylan,Chambers,Big Bend (BBT),OSP & Construction Supervisor,TX
+Brad,Gruno,Blitz Broadband,Chief Operations Officer,GA
+Stephanie,Morris,Blue Diamond,Director of National Sales,KY
+Pilton,Blankenship,Blue Jay Communications,PM,OH
+Jose,Martinez,Blue Jay Communications,PM,OH
+Michael,Morrone,Blue Jay Communications,VP,OH
+Kevin,Kelly,Blue Ridge Communications,Headend Technician,PA
+Gabriel,Gilliland,Blue Ridge Mountain EMC,Broadband Technical Specialist,GA
+Alex,King,Blue Ridge Mountain EMC,Director of Broadband,GA
+Tim,Buffkin,Blue Streak LLC,"Director, Sales / Business Development",FL
+Jesse,Cangiano,Blue Streak LLC,"Business Analyst, Sales Operations",FL
+Adam,Skala,Blue Streak LLC,"VP Sales, Business Development",FL
+Linda,Richardson,Blue Stream Fiber,VP Marketing,FL
+Raqib,Huq,BlueAlly Technology Solutions,"VP, Telecom & Broadband",GA
+Ryan,Reid,BlueAlly Technology Solutions,Client Executive,GA
+James,Ross,BLVD,Director,SC
+Josh,Orlowitz,Bonfire,Director of Strategy and Planning,CO
+Aimee,Linn,Bonfire Fiber,Business Development Coordinator,CO
+Drew,Pappas,Bonfire Fiber,Director of Business Development,CO
+Chris,Davis,Border States,Category Manager,ND
+Dan,Lech,Border States,Technical Sr. Sales Engineer,ND
+Scott,Schmidt,Border States,Sr. Technical Sales Engineer,ND
+Nick,Mann,Bowlin Group,Project Manager,KY
+Heath,Millay,Bowlin Group,Business Unit Manager,OH
+Jeff,Drapeau,Breezeline,Director Market Expansion,NH
+Tali,Kulbeda,Brightspeed,Head of Local Marketing & Partnerships,TN
+Ashley,Watters,Brilliant Technology,Sr. Director Client Solutions,CO
+Jake,Neenan,Broadband Breakfast,Reporter,MA
+Pete,Pizzutillo,Broadband Bunch Podcast,Host,NJ
+Laura,O'Reilly,Broadband Communities,Content Manager,TX
+David,Reno,Broadband Engineering & Construction,Senior Project Manager,VA
+Ken,Pyle,Broadband Forum,Director of Marketing,CA
+Doug,Adams,Broadband Marketers,CMO,CO
+Tommy,Clift,Broadband Nation,Editor,DC
+David,Drain,Broadband Nation,Director,TX
+Garrett,Bates,Broadband Power Solutions,Director,FL
+Peter,Voderberg,BroadbandOhio,Chief,OH
+Todd,Lambert,Buckingham MFG,Telecommunication Accounts Manager,NY
+Kevin,McDevitt,Buckingham MFG,Sales Representative/Consultant,NY
+George,Willoughby,Buckingham MFG,Sales Representative/Consultant,NY
+Trystian,Barber,Buzz Broadband,IT Specialist,AL
+Lee,Hamrac,Buzz Broadband,Broadband Tech,AL
+Ellen,Milner,C Spire,Fiber Marketing Manager,MS
+Jerry,Skipper,C Spire,Director OSP,AL
+Christy,Tucker,C&L Broadband Connect,IT Systems Operations,AR
+Jeffery,Eddins,C4 Technical Services,Account Director,MN
+Tim,Chan,Cablcon,Sr. PLM,WI
+Madelene,Du Preez,Cable Feeder Systems Inc,Senior Administrative Manager,NC
+Wayne,Andrews,Cable Services Co.,Sr. Construction Manager,PA
+Jeremy,Kennedy,Cable Services Co.,Sr. Construction Manager,PA
+Avery,Schwarz,CableSouth Construction,Regional Sales Manager,TN
+Shailaja,Babladi,Cadsys Technologies LLC,VP - Finance,VA
+Nagarajan,Sripadarajan,Cadsys Technologies LLC,Executive Director,VA
+Krishna Dev,Vala,Cadsys Technologies LLC,Business Analyst,VA
+Luke,Bright,Cahaba Energy Solutions,Business Development Manager,AL
+Michael,Corsi,Cal Am Manufacturing,Regional Account Manager,CA
+Jimmy,Scanlon,Cal Am Manufacturing,Inside Sales,CO
+Kristin,Ventura,Cal Am Manufacturing,Marketing Manager,CA
+Keith,Nelson,Cal-Ore Telephone,OSP Engineering Manager,CA
+Martha,Galley,Calix,Chief Sustainability Officer,CA
+Kristy,Harrison,Calix,Executive VP of Operations,CA
+Shapur,Izadiyar,Calix,Lead Funding Analyst,CA
+Teresa,McGaughey,Calix,VP Field and Partner Marketing,FL
+Josh,Nelson,Calix,Sr. Events and Demo Technology Manager,CA
+Karen,Ricci,Calix,Senior Growth Segment Marketing Manager,CA
+Nicole,Devereaux,Cambium Networks,Field and Channel Marketing Manager,IL
+Kelly,Hatcher,Cambium Networks,Regional Sales Manager,IL
+Joshaven,Potter,Cambium Networks,System Architect,IL
+Kate,Suchanek,Cambium Networks,Account Manager,IL
+Chase,Linscomb,Capcon Networks LLC,VP of Business Development,TX
+Alex,Newberry,Capcon Networks LLC,Solutions Architect,TX
+Andrew,Alvey,Cape Electric Supply,Utility Outside Sales,KY
+Cody,Brumett,Cape Electric Supply,Broadband and Utility Inside Sales,KY
+Carter,Greene,Cape Electric Supply,Utility Outside Sales,KY
+Craig,Meredith,Cape Electric Supply,Broadband Sales,KY
+Megan,Corriveau,Cartesian,Manager,MA
+Samuel,Kornstein,Cartesian,Managing Director,MA
+Tim,Locker,"CBM, Inc.",VP - Broadband,IA
+Peren,Ford,"CCI Systems, Inc.",Regional Account Manager,MI
+Nick,Hurzeler,"CCI Systems, Inc.",Sr. Director Business Development,MI
+Dave,Mapes,"CCI Systems, Inc.",Regional Account Manager,MI
+Dan,Nicholson,"CCI Systems, Inc.",Regional Account Manager,MI
+Rob,LaBonte,CDG,Regional Account Manager,IL
+Andrew,Sabatuk,CDG,VP-Sales,IL
+Deepak,Sabu,CDG,Sales,IL
+Ryan,DeVries,CEC Facilities Group,Sr. Project Manager,MT
+Eric,Bass,Cedar Falls Utilities,Communications Planner,IA
+Chris,Hartman,Cedar Falls Utilities,Communications Supervisor,IA
+Jared,Millard,Celerity,Business Development,PA
+Jeff,Cox,CentraCom,"VP, Engineering & Fiber Operations",UT
+Chris,Montgomery,Central Access,VP Central Access,AL
+Prakhar,Jain,Cerillion Technologies limited,Senior Consultant,NJ
+Robert,Ortiz,CHALLENGER,"VP, Sales & Development",CA
+Jason,Sklanka,CHALLENGER,"VP, Sales & Support",CA
+Daniel,Chavarria,CHANNELL,Regional Manager,TX
+Miles,Dean,CHANNELL,Regional Manager,TX
+Jim,Eckert,CHANNELL,Regional Manager,TX
+Kiley,Gregory,CHANNELL,VP Sales,TX
+Sean,Hoover,CHANNELL,Marketing,TX
+Tom,Janke,CHANNELL,Marketing,NV
+Drake,Nilges,CHANNELL,Regional Manager,TX
+Brett,Roberts,CHANNELL,Manager,TX
+Michael,Scheuerman,CHANNELL,Regional Manager,TX
+Brandon,Schmaltz,CHANNELL,Regional director,TX
+Sean,Torpey,CHANNELL,Regional Manager,TX
+Aaron,Walker,CHANNELL,Regional Manager,TX
+Damon,DeSantis,"Charles Industries LLC, An Amphenol Company",National Sales Director - Utilities,IL
+Philip,Goebel,"Charles Industries LLC, An Amphenol Company",Territory Account Manager,IL
+Brandon,Harper,"Charles Industries LLC, An Amphenol Company",Tier B/Strategics/Integrator/OEM's Sales Director,IL
+Dan,Kennedy,"Charles Industries LLC, An Amphenol Company",VP Sales,IL
+Tyler,Osteen,"Charles Industries LLC, An Amphenol Company",Territory Account Manager,IL
+Joe,Pawela,"Charles Industries LLC, An Amphenol Company",Sr. Marketing Communications Specialist,IL
+Lisa,Ramirez,"Charles Industries LLC, An Amphenol Company",Sales Operations Director,IL
+Shavaun,Reed,"Charles Industries LLC, An Amphenol Company",Director of Field & Channel Sales,IL
+Debi,Saha,"Charles Industries LLC, An Amphenol Company",Marketing Manager,IL
+Steve,Skiest,"Charles Industries LLC, An Amphenol Company",Market Development Manager - Fiber Products,IL
+Lance,Browder,Choctaw Nation of Oklahoma,Senior Tribal Broadband Officer,OK
+Kyle,Holcomb,Choptank Fiber,Sr Electrical Engineer,MD
+Tyler,Thompson,Choptank Fiber,Sr. Fiber Administrator,MD
+David,Fein,Chumash Enterprises,Sr. Project Manager,CA
+Pete,Bley,Ciena,"Director, Inside Sales",NC
+Tracy,Sprout,CIRBN LLC,Assistant Executive Director,IL
+Jennifer,Alexander,Circet USA,Marketing Director,MN
