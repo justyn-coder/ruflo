@@ -349,6 +349,50 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     const text = await res.text();
     throw new Error(`sr_engine_output upsert ${res.status}: ${text.slice(0, 200)}`);
   }
+
+  // Also upsert to sr_prospects so the portal P2-Cold tab picks this up.
+  // Without this, prospects compose silently into sr_engine_output but never
+  // appear in the operator review surface — discovered 2026-06-09 PM.
+  if (result.icp_verdict !== 'pass') return;
+  const icpType: string =
+    /a&e|firm|consulting|engineering/i.test(result.icp_reason || '') &&
+    !/operator|isp|carrier|fiber to|broadband/i.test(result.icp_reason || '')
+      ? 'ae_firm'
+      : 'fiber_operator';
+
+  const prospectBody = {
+    id: prospectId,
+    first_name: result.row.firstName,
+    last_name: result.row.lastName,
+    email: result.email_found || '',
+    title: result.row.title || '',
+    state: result.row.state || '',
+    company: result.row.company,
+    lead_type: 'Cold',
+    tier: 'A',
+    campaign: 'P2',
+    send_status: 'pending',
+    assigned_ae: result.ae.name,
+    icp_status: result.icp_verdict,
+    icp_reason: result.icp_reason || '',
+    icp_type: icpType,
+    updated_at: new Date().toISOString(),
+  };
+  const presRes = await fetch(`${sbUrl}/rest/v1/sr_prospects?on_conflict=id`, {
+    method: 'POST',
+    headers: {
+      apikey: sbKey,
+      Authorization: `Bearer ${sbKey}`,
+      'Content-Type': 'application/json',
+      Prefer: 'resolution=merge-duplicates,return=minimal',
+    },
+    body: JSON.stringify(prospectBody),
+  });
+  if (!presRes.ok) {
+    const text = await presRes.text();
+    // Non-fatal — sr_engine_output already has the data; portal sync can be retried
+    console.warn(`[persist] sr_prospects upsert failed ${presRes.status}: ${text.slice(0, 200)}`);
+  }
 }
 
 // ----------------------------------------------------------------------------
