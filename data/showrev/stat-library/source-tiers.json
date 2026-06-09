@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "_notes": [
+    "Domain -> source tier allowlist for stat library (Phase B v1.1).",
+    "Any URL whose hostname is NOT in this map is REJECTED at load. No silent vendor fallback (red-team cut from v1).",
+    "Tier weights: primary=1.0, trade=0.7, vendor=0.4.",
+    "primary = government, regulator, congressional research, peer-reviewed.",
+    "trade = industry associations, established trade press, vendor-neutral analyst.",
+    "vendor = commercial vendors, blogs, marketing-adjacent sources (lowest weight; only included if claim corroborated)."
+  ],
+  "domains": {
+    "ntia.gov": "primary",
+    "congress.gov": "primary",
+    "fcc.gov": "primary",
+    "broadbandusa.ntia.gov": "primary",
+    "comptroller.texas.gov": "primary",
+    "fiberbroadband.org": "trade",
+    "broadbandbreakfast.com": "trade",
+    "lightreading.com": "trade",
+    "route-fifty.com": "trade",
+    "broadbandexpanded.com": "trade",
+    "ecmag.com": "trade",
+    "gisuser.com": "trade",
+    "broadstaffglobal.com": "trade",
+    "chrsolutions.com": "trade",
+    "lightbrigade.com": "trade",
+    "glassdoor.com": "trade",
+    "commmesh.com": "vendor",
+    "yfconnectivity.com": "vendor",
+    "symphony.rakuten.com": "vendor",
+    "asecaddesign.com": "vendor",
+    "outsource2india.com": "vendor"
+  }
+}
