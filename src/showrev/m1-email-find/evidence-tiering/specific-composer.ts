@@ -43,6 +43,7 @@ import {
   checkCompanyNameLock,
   checkNumericAnchorRepeat,
   checkBigramRepeat,
+  checkReadingAge,
   countParagraphs,
   countWords,
   countWordsTotal,
@@ -342,6 +343,8 @@ export async function composeSpecific(args: {
     if (numericRepeat) violations.push(`Recompose regression: ${numericRepeat}`);
     const bigramRepeat = checkBigramRepeat(body);
     if (bigramRepeat) violations.push(`Recompose regression: ${bigramRepeat}`);
+    const readingAge = checkReadingAge(body);
+    if (readingAge) violations.push(readingAge);
 
     lastViolations = violations;
     attempts.push({ candidate, violations, attemptNumber: attempt + 1 });
