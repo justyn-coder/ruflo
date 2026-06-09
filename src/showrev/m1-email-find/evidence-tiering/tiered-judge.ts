@@ -7,15 +7,22 @@
  *            Reuses checks from composer-constraints.ts (NO reinvention).
  *   Tier 2 — Tim-style edit-pattern judge. ~3s/email, $0 (small inline pattern check).
  *            Scores 0-5. Threshold: ≥3/5 = pass clean.
- *   Tier 3 — Cross-family Gemini judge. ~10s/email, ~$0.005. Used for borderline
- *            cases (Tier 2 ≤2/5) OR explicit medium+ deliverables.
+ *   Tier 3 — Cross-family Gemini judge. ~10s/email, ~$0.005. TWO sub-checks:
+ *            (a) QUALITY check (runTier3) — borderline only (Tier 2 ≤2/5) OR
+ *                explicit medium+ deliverables. Scores 0-10, pass/fail.
+ *            (b) HALLUCINATION check (runTier3HallucinationCheck) — ALWAYS on,
+ *                every prospect. Reads substrate claims + composed body and
+ *                returns the list of factual claims that look unsupported or
+ *                exaggerated. Added 2026-06-09 as SPM-level insurance.
+ *                ~$0.005/prospect * 300 = ~$1.50/cohort.
  *
- * Decision rule (per synthesis):
- *   T1 pass + T2 ≥3       → ship clean
- *   T1 pass + T2 = 2      → require T3 confirmation
- *   T1 pass + T2 0-1      → require T3 confirmation
- *   T1 pass + split       → flag for human review (send_status='flag')
- *   T1 fail               → retry (best-of-N selector upstream)
+ * Decision rule (per synthesis + 2026-06-09 hallucination extension):
+ *   T1 pass + T2 ≥3 + halluc pass    → ship clean
+ *   T1 pass + T2 = 2 + halluc pass   → require T3-quality confirmation
+ *   T1 pass + T2 0-1 + halluc pass   → require T3-quality confirmation
+ *   any branch + halluc fail         → send_status='flag' (flag-hallucination)
+ *   T1 pass + split                  → flag for human review (send_status='flag')
+ *   T1 fail                          → retry (best-of-N selector upstream)
  *
  * Monitoring (item 8): every 10 prospects, rolling rates are recomputed. If a
  * threshold trips, JUDGE-ALERT.md is rewritten at repo root.
@@ -35,13 +42,27 @@ import {
   countWords,
   countWordsTotal,
 } from './composer-constraints.js';
-import type { ComposedEmail } from './types.js';
+import type { ComposedEmail, EvidenceRecord } from './types.js';
 
 // ----------------------------------------------------------------------------
 // Public types
 // ----------------------------------------------------------------------------
 
-export type JudgeAction = 'ship' | 'retry' | 'flag';
+/**
+ * Judge actions:
+ *   ship                 — clean, send normally
+ *   retry                — composer should try again (T1 fail upstream)
+ *   flag                 — borderline quality, route to human review
+ *   flag-hallucination   — always-on Tier 3 hallucination check found
+ *                          unsupported or exaggerated factual claims in the
+ *                          email body. Routes to send_status='flag' with a
+ *                          system_brief that lists the offending claims.
+ *
+ * 'flag-hallucination' is distinct from generic 'flag' so the portal can
+ * label it differently and so the brief generator can write a different
+ * 2-3 sentence explanation focused on hallucination risk.
+ */
+export type JudgeAction = 'ship' | 'retry' | 'flag' | 'flag-hallucination';
 
 export interface Tier1Result {
   pass: boolean;
@@ -67,10 +88,39 @@ export interface Tier3Result {
   errored?: boolean;
 }
 
+/**
+ * Always-on Tier 3 hallucination check (added 2026-06-09).
+ *
+ * Distinct from Tier3Result (quality judge). This one asks Gemini one
+ * question only: "Is every factual claim in this email body supported by
+ * the substrate evidence the composer cited?" Answer is a verdict plus
+ * the list of unsupported / exaggerated claims so the brief can name them.
+ *
+ * Runs on EVERY prospect (not just borderline) as SPM-level hallucination
+ * insurance. ~$0.005/prospect * 300 = ~$1.50/cohort.
+ */
+export interface Tier3HallucinationResult {
+  /**
+   * 'pass'           — every factual claim is supported by cited evidence
+   * 'fail'           — at least one factual claim is unsupported or exaggerated
+   * 'split'          — Gemini was inconclusive (treat as pass for safety —
+   *                    we already have the borderline-quality T3 as backstop)
+   */
+  verdict: 'pass' | 'fail' | 'split';
+  /** Plain-English list of unsupported / exaggerated claims, if any. */
+  unsupportedClaims: string[];
+  /** Short reasoning lifted from Gemini. */
+  reasoning?: string;
+  /** True if the call errored out. Errors do NOT flag the prospect. */
+  errored?: boolean;
+}
+
 export interface TieredJudgeResult {
   tier1: Tier1Result;
   tier2: Tier2Result;
   tier3?: Tier3Result;
+  /** Always-on hallucination check (one per prospect, every prospect). */
+  tier3Hallucination?: Tier3HallucinationResult;
   /** What to do with the composed email. */
   action: JudgeAction;
   /** Brief why-string for logs. */
@@ -314,6 +364,182 @@ function parseTier3Response(text: string): Tier3Result {
 }
 
 // ----------------------------------------------------------------------------
+// Tier 3 — Always-on hallucination check (2026-06-09 SPM-level insurance)
+// ----------------------------------------------------------------------------
+//
+// Runs on EVERY prospect, not just borderline. Reads the substrate evidence
+// claims that fed the composer + the final composed body, and asks Gemini
+// one question: "Is every factual claim in the email body supported by the
+// cited evidence?" Returns the list of unsupported / exaggerated claims so
+// the brief generator can name them in plain English.
+//
+// Cost: ~$0.005/prospect * 300/cohort = ~$1.50/cohort. Cheap insurance.
+//
+// Errors do NOT flag the prospect — we fall back to the existing pipeline
+// (borderline T3 quality check still runs). Same fail-open posture as the
+// existing quality T3.
+
+function buildHallucinationPrompt(
+  composed: ComposedEmail,
+  prospect: ProspectContext,
+  claims: EvidenceRecord[],
+): string {
+  // Build a numbered list of substrate claims the composer had access to.
+  // We don't pass the whole dossier — just the claim text + tier + category —
+  // because the question is "is the email faithful to what we knew", not
+  // "is what we knew correct."
+  const claimsBlock = claims.length === 0
+    ? '(no substrate claims — generalized mode; only generic industry framing is supported)'
+    : claims
+        .map((c, i) => `[${i + 1}] (${c.tier}/${c.category}) ${c.claim}`)
+        .join('\n');
+
+  return `You are a hallucination auditor for a B2B cold outbound email. Your ONE job is to detect factual claims in the email body that are NOT supported by the substrate evidence the composer had access to.
+
+PROSPECT
+- Name: ${prospect.firstName} ${prospect.lastName}
+- Company: ${prospect.company}
+- Title: ${prospect.title || 'unknown'}
+- State: ${prospect.state || 'unknown'}
+
+SUBSTRATE EVIDENCE THE COMPOSER HAD (the only facts the email may rely on)
+${claimsBlock}
+
+EMAIL TO AUDIT
+Subject: ${composed.subject}
+Body:
+${composed.body}
+${composed.ps ? `P.S.: ${composed.ps}` : ''}
+
+WHAT COUNTS AS A FACTUAL CLAIM
+- Specific numbers (miles of fiber, # of locations, $ amounts, # of crews, dates, percentages)
+- Named projects, programs, partnerships, contracts
+- Attributed statements (something the prospect or their company said publicly)
+- Specific operational facts about THIS company (volume, geography, recent activity)
+
+WHAT IS NOT A FACTUAL CLAIM (do NOT flag these)
+- Generic industry framing ("operators at this scale often...", "BEAD deadlines are tight...")
+- Questions and opinions
+- General descriptions of our product or services
+- Greetings, sign-offs, calls to action
+
+RULE
+A factual claim is SUPPORTED if it matches (or is a conservative rephrase of) at least one substrate evidence item above. Approximations are fine ("north of 1,500 miles" for a "1,847 miles" claim is supported).
+A factual claim is UNSUPPORTED if it specifies something not in the substrate, or EXAGGERATES a substrate claim (e.g., substrate says "considering BEAD" and email says "winning BEAD awards").
+
+OUTPUT (JSON ONLY, no markdown):
+{
+  "verdict": "pass" | "fail",
+  "unsupported_claims": ["<verbatim quote 1>", "<verbatim quote 2>"],
+  "reasoning": "<one sentence — what you found or why it's clean>"
+}
+
+verdict = "pass" if unsupported_claims is empty.
+verdict = "fail" if unsupported_claims has at least one entry.`;
+}
+
+function parseHallucinationResponse(text: string): Tier3HallucinationResult {
+  const cleaned = text.replace(/```json\s*/gi, '').replace(/```\s*/g, '').trim();
+  const match = cleaned.match(/\{[\s\S]*\}/);
+  if (!match) {
+    return {
+      verdict: 'split',
+      unsupportedClaims: [],
+      errored: true,
+      reasoning: 'Could not parse JSON from Gemini hallucination check',
+    };
+  }
+  try {
+    const parsed = JSON.parse(match[0]);
+    const rawVerdict = (parsed.verdict || '').toLowerCase();
+    const reasoning: string = typeof parsed.reasoning === 'string' ? parsed.reasoning : '';
+    const rawClaims = Array.isArray(parsed.unsupported_claims) ? parsed.unsupported_claims : [];
+    const unsupportedClaims: string[] = rawClaims
+      .filter((c: unknown): c is string => typeof c === 'string' && c.trim().length > 0)
+      .map((c: string) => c.trim());
+
+    let verdict: 'pass' | 'fail' | 'split' = 'split';
+    if (rawVerdict === 'pass') verdict = 'pass';
+    else if (rawVerdict === 'fail') verdict = 'fail';
+    else verdict = unsupportedClaims.length > 0 ? 'fail' : 'pass';
+
+    // Defensive: if model says 'pass' but populated the list, trust the list.
+    if (unsupportedClaims.length > 0 && verdict === 'pass') verdict = 'fail';
+
+    return { verdict, unsupportedClaims, reasoning };
+  } catch {
+    return {
+      verdict: 'split',
+      unsupportedClaims: [],
+      errored: true,
+      reasoning: 'JSON parse error in hallucination response',
+    };
+  }
+}
+
+/**
+ * Always-on Tier 3 hallucination check. Runs Gemini with the hallucination
+ * prompt on every prospect. Returns a structured result the caller can
+ * inspect (verdict + list of unsupported claims).
+ *
+ * Fail-open: any error (no key, HTTP, timeout, parse) returns a 'split'
+ * verdict with errored=true. The pipeline does NOT flag on a split — only
+ * a clear 'fail' with one or more unsupported claims flags the prospect.
+ */
+export async function runTier3HallucinationCheck(
+  composed: ComposedEmail,
+  prospect: ProspectContext,
+  claims: EvidenceRecord[],
+  options: { timeoutMs?: number } = {},
+): Promise<Tier3HallucinationResult> {
+  const timeoutMs = options.timeoutMs ?? 30000;
+  const key = process.env.GEMINI_API_KEY;
+  if (!key) {
+    return {
+      verdict: 'split',
+      unsupportedClaims: [],
+      errored: true,
+      reasoning: 'GEMINI_API_KEY not set',
+    };
+  }
+  const prompt = buildHallucinationPrompt(composed, prospect, claims);
+
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const res = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=${key}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
+        signal: controller.signal,
+      },
+    );
+    if (!res.ok) {
+      return {
+        verdict: 'split',
+        unsupportedClaims: [],
+        errored: true,
+        reasoning: `Gemini hallucination HTTP ${res.status}`,
+      };
+    }
+    const data = await res.json();
+    const text: string = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    return parseHallucinationResponse(text);
+  } catch (err) {
+    return {
+      verdict: 'split',
+      unsupportedClaims: [],
+      errored: true,
+      reasoning: `Gemini hallucination call failed: ${(err as Error).message}`,
+    };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+// ----------------------------------------------------------------------------
 // Decision rule
 // ----------------------------------------------------------------------------
 
@@ -325,6 +551,20 @@ export interface RunTieredJudgeOptions {
   forceTier3?: boolean;
   /** Override Gemini timeout. */
   tier3TimeoutMs?: number;
+  /**
+   * Substrate claims the composer had access to. Required for the
+   * always-on Tier 3 hallucination check (2026-06-09).
+   *
+   * Pass the flattened list of EvidenceRecord across all categories +
+   * generalizedFraming. If omitted or empty, the hallucination check is
+   * skipped (no substrate to ground against = no signal).
+   */
+  substrateClaims?: EvidenceRecord[];
+  /**
+   * Set to true to skip the always-on hallucination check (e.g., for unit
+   * tests that don't want to hit Gemini). Defaults to false.
+   */
+  skipHallucinationCheck?: boolean;
 }
 
 export async function runTieredJudgeOnProspect(
@@ -346,20 +586,73 @@ export async function runTieredJudgeOnProspect(
 
   const tier2 = runTier2(composed);
 
-  // T1 pass + T2 >= threshold and no force flag -> ship
+  // Always-on hallucination check (2026-06-09). Runs in parallel-friendly
+  // shape with the quality T3 below — but we await it before deciding
+  // action because a hallucination fail OVERRIDES a ship decision.
+  // Skip when caller didn't pass substrate (nothing to ground against) or
+  // explicitly opted out (tests).
+  let tier3Hallucination: Tier3HallucinationResult | undefined;
+  const haveSubstrate = (options.substrateClaims?.length ?? 0) > 0;
+  if (!options.skipHallucinationCheck && haveSubstrate) {
+    tier3Hallucination = await runTier3HallucinationCheck(
+      composed,
+      prospect,
+      options.substrateClaims!,
+      { timeoutMs: options.tier3TimeoutMs },
+    );
+  }
+
+  // Hallucination override — any branch below collapses to flag-hallucination
+  // when the always-on check returns a clear 'fail' with at least one
+  // unsupported claim. Errors / 'split' do NOT flag (fail-open).
+  const hallucinationFail =
+    tier3Hallucination?.verdict === 'fail' &&
+    tier3Hallucination.unsupportedClaims.length > 0;
+
+  // T1 pass + T2 >= threshold and no force flag -> would-ship (but check halluc)
   if (tier2.score >= TIER2_SHIP_THRESHOLD && !options.forceTier3) {
+    if (hallucinationFail) {
+      const claimsList = tier3Hallucination!.unsupportedClaims.slice(0, 3).join('; ');
+      return {
+        tier1,
+        tier2,
+        tier3Hallucination,
+        action: 'flag-hallucination',
+        rationale:
+          `T1 pass + T2 ${tier2.score}/5 + halluc FAIL ` +
+          `(${tier3Hallucination!.unsupportedClaims.length} unsupported: ${claimsList})`,
+      };
+    }
     return {
       tier1,
       tier2,
+      tier3Hallucination,
       action: 'ship',
-      rationale: `T1 pass + T2 ${tier2.score}/5`,
+      rationale:
+        `T1 pass + T2 ${tier2.score}/5` +
+        (tier3Hallucination ? ` + halluc ${tier3Hallucination.verdict}` : ''),
     };
   }
 
-  // Otherwise run T3
+  // Otherwise run T3 quality (borderline / forced)
   const tier3 = await runTier3(composed, prospect, { timeoutMs: options.tier3TimeoutMs });
 
-  // Decision rule with T3
+  // Hallucination always wins — flag-hallucination beats ship/flag
+  if (hallucinationFail) {
+    const claimsList = tier3Hallucination!.unsupportedClaims.slice(0, 3).join('; ');
+    return {
+      tier1,
+      tier2,
+      tier3,
+      tier3Hallucination,
+      action: 'flag-hallucination',
+      rationale:
+        `T1 pass + T2 ${tier2.score}/5 + T3 ${tier3.verdict} + halluc FAIL ` +
+        `(${tier3Hallucination!.unsupportedClaims.length} unsupported: ${claimsList})`,
+    };
+  }
+
+  // Decision rule with T3 (unchanged quality-judge logic)
   let action: JudgeAction;
   let rationale: string;
   if (tier3.verdict === 'pass') {
@@ -376,7 +669,11 @@ export async function runTieredJudgeOnProspect(
     rationale = `T1 pass + T2 ${tier2.score}/5 + T3 inconclusive: ${tier3.reasoning || 'errored'}`;
   }
 
-  return { tier1, tier2, tier3, action, rationale };
+  if (tier3Hallucination) {
+    rationale += ` + halluc ${tier3Hallucination.verdict}`;
+  }
+
+  return { tier1, tier2, tier3, tier3Hallucination, action, rationale };
 }
 
 // ----------------------------------------------------------------------------
