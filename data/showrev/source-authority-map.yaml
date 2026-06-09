@@ -1,0 +1,88 @@
+# Source Authority Map — Phase A of Substrate Query Orchestrator
+#
+# Spec: docs/specs/substrate-query-orchestrator-phase-a-scope.md v4 §2.
+#
+# Each `publisher` is the token authority-map.ts extracts from a citation's
+# host portion. Unknown publishers throw UnknownPublisherError unless
+# --allow-unknown is passed (Hardening 1).
+#
+# Tiers:
+#   A = primary/regulatory/operator-quoted (NTIA, FCC, company press releases)
+#   B = trade press / podcast operator interviews
+#   C = analyst commentary / conference speaker pages (not the operator themselves)
+#   D = reserved for unknown-with-flag fallback (do NOT seed this tier here)
+#
+# This file is the lint target for the weekly RemoteTrigger (§10).
+# DO NOT add tier=D rows here; that tier is reserved for runtime fallback.
+#
+# 30 hand-labeled rows seeded for SC #4 (publisher map ≥27/30 correct on
+# tests/fixtures/publisher-labels.json AND <15% unknown-rate on 756-row corpus).
+#
+# Last reviewed: 2026-06-09
+
+publishers:
+  # ---- Tier A: regulatory + operator-primary ----
+  - publisher: ntia-bead-subgrantees
+    tier: A
+  - publisher: ntia.doc.gov
+    tier: A
+  - publisher: fcc.gov
+    tier: A
+  - publisher: bbcmag.com
+    tier: A
+  - publisher: broadband communities
+    tier: A
+  - publisher: cartesian-cost-report
+    tier: A
+  - publisher: cartesian.com
+    tier: A
+  - publisher: fc2026 speaker page
+    tier: A
+  - publisher: bbc2026 speaker page
+    tier: A
+  - publisher: fc2026 + bbc2026 speaker pages
+    tier: A
+  - publisher: 123.net
+    tier: A
+
+  # ---- Tier B: podcast + trade press ----
+  - publisher: community-broadband-bits
+    tier: B
+  - publisher: communitynetworks.org
+    tier: B
+  - publisher: fiber-for-breakfast
+    tier: B
+  - publisher: fiberbroadband.org
+    tier: B
+  - publisher: lightreading.com
+    tier: B
+  - publisher: telecompetitor.com
+    tier: B
+  - publisher: fierce-network
+    tier: B
+  - publisher: fiercewireless.com
+    tier: B
+  - publisher: fiercetelecom.com
+    tier: B
+
+  # ---- Tier C: analyst commentary / inferred ----
+  - publisher: dawson-pots-and-pans
+    tier: C
+  - publisher: potsandpansbyccg.com
+    tier: C
+  - publisher: techdirt.com
+    tier: C
+  - publisher: arstechnica.com
+    tier: C
+  - publisher: protocol.com
+    tier: C
+  - publisher: theverge.com
+    tier: C
+  - publisher: cnet.com
+    tier: C
+  - publisher: zdnet.com
+    tier: C
+  - publisher: forbes.com
+    tier: C
+  - publisher: linkedin.com
+    tier: C

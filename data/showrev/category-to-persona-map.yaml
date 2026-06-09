@@ -1,0 +1,82 @@
+# Category & Speaker-Role → Persona Map
+#
+# Spec: docs/specs/substrate-query-orchestrator-phase-a-scope.md v4 §2, §4 step 6.
+#
+# Deterministic, no LLM. Each rule fires when either:
+#   - `category` matches sr_company_evidence.category exactly, OR
+#   - `speaker_role_substring` matches case-insensitively as a substring of
+#     sr_company_evidence.speaker_role
+#
+# A claim's `persona_tags` is the UNION of all matching rules' `personas`.
+# Empty union (no rule matched) → empty persona_tags. The SC #6 drop filter
+# removes any row where persona_tags=[] AND kb_status='unaddressed'.
+#
+# Persona definitions (operator's three-persona model):
+#   revenue_leader     — CEO, CRO, VP-Sales, GM. Cares about top-line + capital.
+#   ops_builder        — COO, VP-Ops, Director-of-Ops, Build Manager. Cares about
+#                        crew utilization, permit cycle, BEAD construction timeline.
+#   technical_designer — Director/VP Engineering, CTO, Network Architect, GIS Lead.
+#                        Cares about design throughput, GIS→CAD, drawings/QC.
+
+rules:
+  # ---- category-based rules ----
+  - category: company_fact
+    personas: [revenue_leader, ops_builder]
+
+  - category: industry_context
+    personas: [revenue_leader, ops_builder, technical_designer]
+
+  - category: persona_signal
+    personas: [revenue_leader, ops_builder, technical_designer]
+
+  # ---- speaker-role substring rules (case-insensitive) ----
+  - speaker_role_substring: ceo
+    personas: [revenue_leader]
+  - speaker_role_substring: chief executive
+    personas: [revenue_leader]
+  - speaker_role_substring: cro
+    personas: [revenue_leader]
+  - speaker_role_substring: chief revenue
+    personas: [revenue_leader]
+  - speaker_role_substring: president
+    personas: [revenue_leader]
+  - speaker_role_substring: vp sales
+    personas: [revenue_leader]
+  - speaker_role_substring: vp of sales
+    personas: [revenue_leader]
+  - speaker_role_substring: general manager
+    personas: [revenue_leader]
+
+  - speaker_role_substring: coo
+    personas: [ops_builder]
+  - speaker_role_substring: chief operating
+    personas: [ops_builder]
+  - speaker_role_substring: vp ops
+    personas: [ops_builder]
+  - speaker_role_substring: vp of ops
+    personas: [ops_builder]
+  - speaker_role_substring: vp operations
+    personas: [ops_builder]
+  - speaker_role_substring: director of operations
+    personas: [ops_builder]
+  - speaker_role_substring: build manager
+    personas: [ops_builder]
+  - speaker_role_substring: construction manager
+    personas: [ops_builder]
+
+  - speaker_role_substring: cto
+    personas: [technical_designer]
+  - speaker_role_substring: chief technology
+    personas: [technical_designer]
+  - speaker_role_substring: vp engineering
+    personas: [technical_designer]
+  - speaker_role_substring: director of engineering
+    personas: [technical_designer]
+  - speaker_role_substring: network architect
+    personas: [technical_designer]
+  - speaker_role_substring: gis lead
+    personas: [technical_designer]
+  - speaker_role_substring: outside plant
+    personas: [technical_designer]
+  - speaker_role_substring: design engineer
+    personas: [technical_designer]
