@@ -1,8 +1,8 @@
 ---
 title: P2 Pilot — Operator-Vetted Alignment Document
 status: ACTIVE
-last_updated: 2026-06-08 22:55 EDT
-version: v2
+last_updated: 2026-06-09 02:30 EDT
+version: v2.2
 purpose: Single source of truth for the P2 pilot build. Codifies operator-stated scope, the architectural reframing from 2026-06-08, the post-critique amendments (synthesized from 4-angle adversarial workflow wf_45c688ad-620), and the C-portion scope cut. Drift from this without an explicit version bump = scope creep.
 ---
 
@@ -69,14 +69,17 @@ Operator-driven pivot after end of 2-hour autonomy window. Apollo was load-beari
 
 ### What changed
 
-**Primary structured-fact sources (new priority order, cheapest + most authoritative first):**
+**Primary structured-fact sources (revised priority order, 2026-06-09):**
 
-1. **Substrate** (already paid for) — tagged by company mention enables company-specific queries
-2. **Company website scrape** (Firecrawl, ~$0.01-0.03/prospect) — 1st-party authoritative
-3. **LinkedIn / trade press / FCC BDC** — authoritative external sources
-4. **Trade association deep dive** (board/committee bios, annual plans, blogs, meeting docs)
-5. **Multi-year conference speaker bios** (people stay at companies 3-5 yrs; old bios still ~80% accurate)
-6. **Apollo** — DEMOTED to fallback for email-find (where it's still good) + tie-breaker when 1-5 are silent
+1. **FCC BDC** (Broadband Data Collection) — **PROMOTED to #1 for fiber operators**. Authoritative regulatory filing. ~115M location records per snapshot, twice-yearly since 2022. Free, public. Gives us per-ISP location count (proxy for fiber miles via location density), geographic coverage, technology mix, and growth trajectory across snapshots. Replaces Apollo's `short_description` mining entirely.
+2. **Substrate** (already paid for) — tagged by company mention enables company-specific queries. Best for industry context + speaker-attributed company quotes.
+3. **Company website scrape** (Firecrawl, ~$0.01-0.03/prospect) — 1st-party authoritative for product info, leadership, press, named projects.
+4. **LinkedIn / trade press** — authoritative external sources with speaker affiliation.
+5. **Trade association deep dive** — board/committee bios, annual plans, blogs, meeting docs.
+6. **Multi-year conference speaker bios** (people stay at companies 3-5 yrs; old bios still ~80% accurate).
+7. **Apollo** — DEMOTED to fallback for email-find (where it's still good) + tie-breaker when 1-6 are silent. NO ongoing subscription dependency.
+
+**Note on FCC BDC promotion (2026-06-09)**: Initially deferred to post-pilot. Operator pushback: dismissal was lazy not analytical. FCC BDC at ~3B accumulated records IS the RuVector use case, free, the most authoritative single dataset for US fiber operators, and replaces Apollo's biggest claim-to-fame. Added as Step 0.5 work (3 days: BDC download + RuVector setup + ingestion pipeline + substrate-query integration).
 
 **Cost shift:** ~$60-90 ONE-TIME multi-source evidence-base build vs ongoing Apollo subscription. The build is in flight as Workflow `wei06huvu` (6 parallel agents).
 
@@ -296,5 +299,7 @@ This doc is the contract. Spec details what to build to honor the contract. Buil
 
 | Version | Date (EST) | Author | Change |
 |---|---|---|---|
+| v2.2 | 2026-06-09 02:30 | Claude | FCC BDC promoted to #1 source for fiber operators. RuVector moved in-scope for the BDC's ~3B records. Apollo demoted further. Acknowledged that initial dismissal of FCC BDC was lazy not analytical (operator pushback caught it). New Step 0.5 (3 days work). |
+| v2.1 | 2026-06-09 00:30 | Claude | Substrate-first pivot codified — Apollo demoted to fallback. 6-agent workflow `wei06huvu` launched. Cost model shifted: $199/mo recurring → ~$60-90 one-time + ~$10/mo Firecrawl. |
 | v2 | 2026-06-08 22:55 | Claude | C-portion scope cut codified. Post-critique amendments (2 tiers + 1 mode, 3-phase orchestrator, Apollo→USE_TO_SHAPE, sentence-level sources_used, generalized mode built Day 1, cuts: Brain L2/L3, substrate backfill, Phase E LLM). Pop-quiz gaps added to open decisions. SoT Lock List section added. Top-0.01%-AE quality bar codified. |
 | v1 | 2026-06-08 21:30 | Claude | Initial alignment doc captured from operator-driven reframing 2026-06-08. |
