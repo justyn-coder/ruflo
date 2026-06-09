@@ -26,10 +26,20 @@ export {
   authorityWeight,
   demoteAuthority,
   reloadAuthorityMap,
-  _setAuthorityMapForTests,
+  __TEST_ONLY__ as __TEST_ONLY_AUTHORITY__,
 } from './authority-map.js';
-export { classifyPersona, reloadPersonaMap, _setPersonaRulesForTests } from './persona-map.js';
-export { classifyClaim, kbWeight, gcKbCache, reloadKb, _setKbForTests } from './kb-classifier.js';
+export {
+  classifyPersona,
+  reloadPersonaMap,
+  __TEST_ONLY__ as __TEST_ONLY_PERSONA__,
+} from './persona-map.js';
+export {
+  classifyClaim,
+  kbWeight,
+  gcKbCache,
+  reloadKb,
+  __TEST_ONLY__ as __TEST_ONLY_KB__,
+} from './kb-classifier.js';
 export { matchInorsaAngles, INORSA_ANGLES } from './inorsa-angles.js';
 export { fetchSubstrate } from './substrate-bridge.js';
 

@@ -46,15 +46,26 @@ let cachedMap: Map<string, AuthorityTier> | null = null;
  *
  * The path goes:
  *   src/showrev/m1-email-find/evidence-tiering/rich-dossier/authority-map.ts
- *   ../../../../../../data/showrev/source-authority-map.yaml
+ *   ../../../../../data/showrev/source-authority-map.yaml
  *
- * That's 6 levels up (rich-dossier → evidence-tiering → m1-email-find →
- * showrev → src → repo-root → data/showrev/...).
+ * `new URL('.', import.meta.url).pathname` returns the directory CONTAINING
+ * this file (rich-dossier/). To climb back to repo root we walk 5 segments:
+ *   rich-dossier → evidence-tiering → m1-email-find → showrev → src → repo-root
+ * Earlier code used 6 `..` which landed one level ABOVE the repo (the bug the
+ * 2026-06-09 fresh-eyes audit caught; see audit report path-off-by-one item).
+ *
+ * MODULE-SINGLETON SCOPE: cachedMap is a module-level `let`. Every Node
+ * process that imports this module shares one cache. If a backfill script
+ * and the production pipeline ever share a process, the test seam
+ * `_setAuthorityMapForTests` (exported only via __TEST_ONLY__) can poison
+ * the production cache — keep that seam out of production import paths.
  */
 function defaultMapPath(): string {
   const here = new URL('.', import.meta.url).pathname;
-  return join(here, '../../../../../../data/showrev/source-authority-map.yaml');
+  return join(here, '../../../../../data/showrev/source-authority-map.yaml');
 }
+
+const ALLOWED_TIERS: readonly AuthorityTier[] = ['A', 'B', 'C', 'D'];
 
 function loadMap(path: string): Map<string, AuthorityTier> {
   const raw = readFileSync(path, 'utf-8');
@@ -63,7 +74,23 @@ function loadMap(path: string): Map<string, AuthorityTier> {
     throw new Error(`authority-map: ${path} did not parse as { publishers: [...] }`);
   }
   const m = new Map<string, AuthorityTier>();
-  for (const entry of parsed.publishers) {
+  for (let i = 0; i < parsed.publishers.length; i++) {
+    const entry = parsed.publishers[i];
+    // YAML schema guard (audit issue D, 2026-06-09): refuse rows missing
+    // publisher or with tier outside {A,B,C,D}. Fail-loud over silent ignore —
+    // a malformed YAML must not become a runtime "unknown publisher" mystery.
+    if (!entry || typeof entry.publisher !== 'string' || entry.publisher.trim() === '') {
+      throw new Error(
+        `authority-map: ${path} row #${i} missing or empty "publisher"`,
+      );
+    }
+    if (!ALLOWED_TIERS.includes(entry.tier)) {
+      throw new Error(
+        `authority-map: ${path} row #${i} (publisher="${entry.publisher}") ` +
+        `has invalid tier=${JSON.stringify(entry.tier)}; ` +
+        `expected one of A|B|C|D`,
+      );
+    }
     // Normalize publisher key — lowercased, whitespace-collapsed — so the
     // matcher is tolerant of cosmetic citation variation across the corpus.
     m.set(normalizePublisher(entry.publisher), entry.tier);
@@ -83,15 +110,38 @@ function normalizePublisher(s: string): string {
 }
 
 /**
+ * Strip a trailing `#hashfragment` and a trailing `(parenthetical title)` from
+ * an extracted publisher token.
+ *
+ * The 2026-06-09 audit caught NTIA citations of the shape
+ *   "ntia-bead-subgrantees#0cdebf46 (BEAD Sub-Grantees: Missouri)"
+ * where the splitter regex `/\s*::\s*|\s*\|\s*|\s+—\s+/` returned the WHOLE
+ * citation as segment 0, and the publisher map lookup missed because the
+ * trailing fragment+title were still attached. Strip them here so the
+ * canonical key is the bare publisher name.
+ */
+function stripFragmentAndTitle(s: string): string {
+  let out = s.trim();
+  // Strip a trailing parenthetical (the "(BEAD Sub-Grantees: Missouri)" half).
+  out = out.replace(/\s*\([^()]*\)\s*$/, '').trim();
+  // Strip a trailing #fragment (the "#0cdebf46" half).
+  const hashIdx = out.indexOf('#');
+  if (hashIdx >= 0) out = out.slice(0, hashIdx).trim();
+  return out;
+}
+
+/**
  * Extract a candidate publisher token from a raw source_citation.
  *
- * The 2026-06-09 DB sample shows three citation shapes:
+ * The 2026-06-09 DB sample shows four citation shapes:
  *   1. "publisher :: title"                — most common
  *   2. "publisher | title | url"           — multi-segment with bar separator
  *   3. "https://host.com/path"             — bare URL
  *   4. "publisher" (bare)                  — short form, no segment markers
+ *   5. "publisher#fragment (title)"        — NTIA shape: hash + parenthetical
  *
- * For (1)/(2)/(4) we take the leading non-URL segment.
+ * For (1)/(2)/(4)/(5) we take the leading non-URL segment, then strip
+ * the trailing `#fragment` and `(title)` (audit issue 2).
  * For (3) we strip protocol + path and take the hostname.
  *
  * Returns the normalized key (lowercased, whitespace-collapsed). The caller
@@ -114,7 +164,7 @@ export function publisherFromCitation(citation: string): string {
   // Find the first segment using either of the two known delimiters.
   // Order matters — `::` is more common (70% of corpus), then ` | `.
   const segs = trimmed.split(/\s*::\s*|\s*\|\s*|\s+—\s+/);
-  const head = (segs[0] || '').trim();
+  const head = stripFragmentAndTitle((segs[0] || '').trim());
 
   // The "head" might itself be a URL hidden inside a multi-segment citation
   // (e.g. "Broadband Communities — https://bbcmag.com/..."). Re-test.
@@ -131,15 +181,20 @@ export function publisherFromCitation(citation: string): string {
 }
 
 /**
- * Test seam — bypass disk read so unit tests can inject a fixture map.
- * Production code never calls this.
+ * Test-only API surface. Production code MUST NOT import from this object —
+ * grouping the seams here makes the intent visible at the call site so a
+ * casual copy-paste into production code is harder than a one-line import.
  */
-export function _setAuthorityMapForTests(map: Map<string, AuthorityTier>): void {
-  cachedMap = map;
-}
+export const __TEST_ONLY__ = {
+  /** Bypass disk read so unit tests can inject a fixture map. */
+  setAuthorityMap(map: Map<string, AuthorityTier>): void {
+    cachedMap = map;
+  },
+};
 
 /**
- * Test seam — clear cache so the next call re-reads from disk.
+ * Reload cache so the next call re-reads from disk. Used by tests AND by
+ * the weekly RemoteTrigger lint job; keep on the public surface.
  */
 export function reloadAuthorityMap(): void {
   cachedMap = null;

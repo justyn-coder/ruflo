@@ -39,9 +39,9 @@ import {
   reloadAuthorityMap,
   reloadPersonaMap,
   reloadKb,
-  _setAuthorityMapForTests,
-  _setPersonaRulesForTests,
-  _setKbForTests,
+  __TEST_ONLY_AUTHORITY__,
+  __TEST_ONLY_PERSONA__,
+  __TEST_ONLY_KB__,
   UnknownPublisherError,
   type ScoredClaim,
   type RichDossier,
@@ -126,9 +126,9 @@ function seedMaps(): void {
     ['forbes.com', 'C'],
     ['linkedin.com', 'C'],
   ]);
-  _setAuthorityMapForTests(auth);
+  __TEST_ONLY_AUTHORITY__.setAuthorityMap(auth);
 
-  _setPersonaRulesForTests([
+  __TEST_ONLY_PERSONA__.setPersonaRules([
     { category: 'company_fact', personas: ['revenue_leader', 'ops_builder'] },
     { category: 'industry_context', personas: ['revenue_leader', 'ops_builder', 'technical_designer'] },
     { category: 'persona_signal', personas: ['revenue_leader', 'ops_builder', 'technical_designer'] },
@@ -144,7 +144,7 @@ function seedMaps(): void {
 
   // Minimal KB body so getKbBodyAndHash() doesn't try to read from disk during
   // tests that exercise classifyClaim's cache layer.
-  _setKbForTests('# Industry Intelligence KB (test stub)\nBEAD operational April 30 2026.');
+  __TEST_ONLY_KB__.setKb('# Industry Intelligence KB (test stub)\nBEAD operational April 30 2026.');
 }
 
 interface RawRow {

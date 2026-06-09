@@ -37,17 +37,23 @@ const CONFIDENCE_THRESHOLD = 0.7;             // PM fix 3 force-unaddressed cuto
 
 /** Resolved cache directory (lazy created). */
 function cacheDir(): string {
+  // 5 levels up to repo root (audit fix; was 6). See authority-map.ts header.
   const here = new URL('.', import.meta.url).pathname;
   // Co-located with the module so dev + prod share the same cache surface.
   // .gitignore'd by convention (cache files are .json hashes, no PII).
-  return join(here, '../../../../../../.cache/kb-classifier');
+  return join(here, '../../../../../.cache/kb-classifier');
 }
 
 function defaultKbPath(): string {
+  // 5 levels up to repo root (audit fix; was 6).
   const here = new URL('.', import.meta.url).pathname;
-  return join(here, '../../../../../../data/showrev/industry-intelligence-kb.md');
+  return join(here, '../../../../../data/showrev/industry-intelligence-kb.md');
 }
 
+/**
+ * Module-singleton KB cache. Same caveat as authority-map.ts — the
+ * test-only seam lives under __TEST_ONLY__ for that reason.
+ */
 let cachedKbBody: string | null = null;
 let cachedKbHash: string | null = null;
 
@@ -63,12 +69,14 @@ function getKbBodyAndHash(): { body: string; hash: string } {
 }
 
 /**
- * Test seam — inject a KB body for unit tests instead of reading from disk.
+ * Test-only API surface. Production code MUST NOT import from this object.
  */
-export function _setKbForTests(body: string): void {
-  cachedKbBody = body;
-  cachedKbHash = createHash('sha256').update(body).digest('hex').slice(0, 16);
-}
+export const __TEST_ONLY__ = {
+  setKb(body: string): void {
+    cachedKbBody = body;
+    cachedKbHash = createHash('sha256').update(body).digest('hex').slice(0, 16);
+  },
+};
 
 export function reloadKb(): void {
   cachedKbBody = null;

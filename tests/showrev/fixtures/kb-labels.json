@@ -1,0 +1,22 @@
+[
+  { "claim": "BEAD program officially became operational on April 30, 2026.", "expected_status": "confirmed" },
+  { "claim": "Fiber prices jumped 40%+ in recent weeks in spring 2026.", "expected_status": "confirmed" },
+  { "claim": "RDOF saw 37% of awarded locations default, totaling $3.3B of $9.2B.", "expected_status": "confirmed" },
+  { "claim": "52 states/territories have NIST approval making BEAD grant funds available.", "expected_status": "confirmed" },
+  { "claim": "Chinese G.652D bare fiber prices surged 80%+ between Nov 2025 and Jan 2026.", "expected_status": "confirmed" },
+  { "claim": "Texas expects BEAD construction to begin summer 2026.", "expected_status": "confirmed" },
+  { "claim": "NEPA reviews are expected to take at least 6 months for BEAD subgrantees.", "expected_status": "confirmed" },
+  { "claim": "Amazon Kuiper holds about 20% of BEAD grants by location count.", "expected_status": "confirmed" },
+  { "claim": "BEAD has a $42.45B program budget.", "expected_status": "confirmed" },
+  { "claim": "States facing delays include those with unresolved pole attachment disputes.", "expected_status": "confirmed" },
+  { "claim": "BEAD program was officially shut down in March 2026 with no funds released.", "expected_status": "contradicted" },
+  { "claim": "Fiber prices dropped 50% in the last quarter of 2025.", "expected_status": "contradicted" },
+  { "claim": "Zero states have received NTIA approval of Final Proposals.", "expected_status": "contradicted" },
+  { "claim": "RDOF achieved a 100% completion rate with no defaults.", "expected_status": "contradicted" },
+  { "claim": "All BEAD construction will be completed by end of 2026.", "expected_status": "contradicted" },
+  { "claim": "Amazon Kuiper has provided residential connectivity nationwide in 2025.", "expected_status": "contradicted" },
+  { "claim": "NTIA mandates that no BEAD funds be used for non-deployment purposes.", "expected_status": "contradicted" },
+  { "claim": "Chinese G.652D bare fiber prices fell 80%+ between Nov 2025 and Jan 2026.", "expected_status": "contradicted" },
+  { "claim": "BEAD requires construction to be completed within 2 years of funding receipt.", "expected_status": "contradicted" },
+  { "claim": "The Commerce Department reduced BEAD's total budget by $22B in 2026.", "expected_status": "contradicted" }
+]

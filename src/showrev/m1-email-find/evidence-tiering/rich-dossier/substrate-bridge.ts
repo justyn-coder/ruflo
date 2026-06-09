@@ -39,10 +39,15 @@ function supabaseConfig(): { url: string; key: string } {
  *
  * Returns `{ rows, timedOut }` so the orchestrator can set `empty_reason='timeout'`
  * IF substrate timed out AND no DB rows survived (§4 step 11 fallback).
+ *
+ * `externalSignal` (audit issue E): when the orchestrator's parallel DB query
+ * fails, it aborts this in-flight fetch via a shared controller instead of
+ * leaving it dangling for the full 1.5s.
  */
 export async function fetchSubstrate(
   query: string,
   limit = 6,
+  externalSignal?: AbortSignal,
 ): Promise<{ rows: SubstrateRow[]; timedOut: boolean }> {
   const { url, key } = supabaseConfig();
   if (!key) {
@@ -52,6 +57,17 @@ export async function fetchSubstrate(
   // AbortController gives a real 1.5s cap, not a "try to be nice" timeout.
   const controller = new AbortController();
   const t = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  // Wire the external signal in too — if the orchestrator aborts (DB error),
+  // we abort here as well.
+  let externalAbortListener: (() => void) | null = null;
+  if (externalSignal) {
+    if (externalSignal.aborted) {
+      controller.abort();
+    } else {
+      externalAbortListener = () => controller.abort();
+      externalSignal.addEventListener('abort', externalAbortListener);
+    }
+  }
 
   try {
     const res = await fetch(`${url}/functions/v1/search-substrate`, {
@@ -61,6 +77,9 @@ export async function fetchSubstrate(
       signal: controller.signal,
     });
     clearTimeout(t);
+    if (externalSignal && externalAbortListener) {
+      externalSignal.removeEventListener('abort', externalAbortListener);
+    }
     if (!res.ok) {
       console.warn(`[substrate-bridge] non-OK ${res.status} ${res.statusText} — degrading to empty`);
       return { rows: [], timedOut: false };
@@ -69,10 +88,20 @@ export async function fetchSubstrate(
     return { rows: data.results || [], timedOut: false };
   } catch (err) {
     clearTimeout(t);
+    if (externalSignal && externalAbortListener) {
+      externalSignal.removeEventListener('abort', externalAbortListener);
+    }
     const isAbort = (err as Error)?.name === 'AbortError';
     if (isAbort) {
-      console.warn(`[substrate-bridge] timed out after ${TIMEOUT_MS}ms — degrading to empty`);
-      return { rows: [], timedOut: true };
+      // Distinguish "we aborted internally" (true timeout) from "external
+      // abort fired" (DB error race). The latter should not be reported as
+      // a timeout.
+      const externallyAborted = externalSignal?.aborted === true;
+      if (!externallyAborted) {
+        console.warn(`[substrate-bridge] timed out after ${TIMEOUT_MS}ms — degrading to empty`);
+        return { rows: [], timedOut: true };
+      }
+      return { rows: [], timedOut: false };
     }
     console.warn(`[substrate-bridge] error: ${(err as Error).message} — degrading to empty`);
     return { rows: [], timedOut: false };

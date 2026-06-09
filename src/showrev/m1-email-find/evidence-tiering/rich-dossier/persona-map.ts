@@ -33,11 +33,20 @@ interface PersonaMapFile {
   rules: PersonaRule[];
 }
 
+/**
+ * Module-singleton cached rules. Same module-scope caveat as authority-map.ts:
+ * all importers in one Node process share this cache. The test-only seam
+ * lives under __TEST_ONLY__ to keep production accidental-poisoning hard.
+ */
 let cachedRules: PersonaRule[] | null = null;
 
+const ALLOWED_PERSONAS: readonly PersonaTag[] = ['revenue_leader', 'ops_builder', 'technical_designer'];
+
 function defaultMapPath(): string {
+  // 5 levels up to repo root (audit fix; was 6). See authority-map.ts header
+  // for the segment-count explanation.
   const here = new URL('.', import.meta.url).pathname;
-  return join(here, '../../../../../../data/showrev/category-to-persona-map.yaml');
+  return join(here, '../../../../../data/showrev/category-to-persona-map.yaml');
 }
 
 function loadRules(path: string): PersonaRule[] {
@@ -46,15 +55,43 @@ function loadRules(path: string): PersonaRule[] {
   if (!parsed || !Array.isArray(parsed.rules)) {
     throw new Error(`persona-map: ${path} did not parse as { rules: [...] }`);
   }
+  // Audit issue D: validate each rule. Reject rows with neither match key,
+  // empty personas, or invalid persona tags.
+  for (let i = 0; i < parsed.rules.length; i++) {
+    const rule = parsed.rules[i];
+    if (!rule || typeof rule !== 'object') {
+      throw new Error(`persona-map: ${path} row #${i} not an object`);
+    }
+    if (!rule.category && !rule.speaker_role_substring) {
+      throw new Error(
+        `persona-map: ${path} row #${i} must have either "category" or "speaker_role_substring"`,
+      );
+    }
+    if (!Array.isArray(rule.personas) || rule.personas.length === 0) {
+      throw new Error(
+        `persona-map: ${path} row #${i} "personas" must be a non-empty array`,
+      );
+    }
+    for (const p of rule.personas) {
+      if (!ALLOWED_PERSONAS.includes(p)) {
+        throw new Error(
+          `persona-map: ${path} row #${i} unknown persona ${JSON.stringify(p)}; ` +
+          `expected one of revenue_leader|ops_builder|technical_designer`,
+        );
+      }
+    }
+  }
   return parsed.rules;
 }
 
 /**
- * Test seam — bypass disk read.
+ * Test-only API surface. Production code MUST NOT import from this object.
  */
-export function _setPersonaRulesForTests(rules: PersonaRule[]): void {
-  cachedRules = rules;
-}
+export const __TEST_ONLY__ = {
+  setPersonaRules(rules: PersonaRule[]): void {
+    cachedRules = rules;
+  },
+};
 
 export function reloadPersonaMap(): void {
   cachedRules = null;

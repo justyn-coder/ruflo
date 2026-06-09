@@ -36,7 +36,10 @@ import {
 } from '../../../src/showrev/m1-email-find/evidence-tiering/rich-dossier/index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const FIXTURES = join(__dirname, '../../fixtures');
+// Audit fix (issue A, 2026-06-09): fixtures now live at tests/showrev/fixtures/
+// (was tests/fixtures/). Co-located with the showrev test tree so the directory
+// structure tells you which suite owns the data.
+const FIXTURES = join(__dirname, '../fixtures');
 
 interface RawRow {
   id: string;

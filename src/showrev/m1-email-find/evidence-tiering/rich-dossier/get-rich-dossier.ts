@@ -24,7 +24,7 @@ import type {
   EmptyReason,
   AuthorityTier,
 } from './types.js';
-import { SubstrateQueryError } from './types.js';
+import { SubstrateQueryError, UnknownPublisherError } from './types.js';
 import {
   lookupAuthority,
   authorityWeight,
@@ -68,7 +68,10 @@ function supabaseConfig(): { url: string; key: string } {
   return { url, key };
 }
 
-async function selectRows(companyNormalized: string): Promise<RawEvidenceRow[]> {
+async function selectRows(
+  companyNormalized: string,
+  signal?: AbortSignal,
+): Promise<RawEvidenceRow[]> {
   const { url, key } = supabaseConfig();
   if (!key) {
     throw new SubstrateQueryError('SUPABASE key missing from env');
@@ -89,6 +92,7 @@ async function selectRows(companyNormalized: string): Promise<RawEvidenceRow[]> 
       'Content-Type': 'application/json',
       Accept: 'application/json',
     },
+    signal,
   });
   if (!res.ok) {
     const text = await res.text().catch(() => '');
@@ -106,11 +110,18 @@ async function selectRows(companyNormalized: string): Promise<RawEvidenceRow[]> 
  *   floor 0.5
  *
  * Treats invalid/parse-failed dates as effectively maximally-old to be safe.
+ *
+ * AUDIT FIX (2026-06-09): `nowMs` is now an optional injectable parameter.
+ * Module docstring claims "no random, no time" but the previous call to
+ * `Date.now()` violated that — two scoring passes across a day boundary
+ * diverged. Default-resolves to `Date.now()` at CALL time (NOT module load)
+ * so production preserves its real-time-clock behavior; tests pass a fixed
+ * epoch to keep results reproducible.
  */
-function computeRecencyBoost(dateStr: string): number {
+function computeRecencyBoost(dateStr: string, nowMs: number = Date.now()): number {
   const t = Date.parse(dateStr);
   if (Number.isNaN(t)) return 0.5;
-  const ageDays = (Date.now() - t) / (24 * 60 * 60 * 1000);
+  const ageDays = (nowMs - t) / (24 * 60 * 60 * 1000);
   if (ageDays <= 30) return 1.0;
   if (ageDays >= 365) return 0.5;
   // Linear from 1.0 at 30d to 0.5 at 365d
@@ -125,10 +136,13 @@ function computeRecencyBoost(dateStr: string): number {
  * Returns null if the row must be skipped — caller increments
  * skipped_counts.no_citation in that case.
  * Throws UnknownPublisherError unless opts.allowUnknown=true.
+ *
+ * `nowMs` is threaded through so the caller pins a single clock-read per
+ * dossier (audit fix 3: computeRecencyBoost determinism).
  */
 async function scoreRow(
   row: RawEvidenceRow,
-  opts: { allowUnknown: boolean; skipLlm: boolean },
+  opts: { allowUnknown: boolean; skipLlm: boolean; nowMs: number },
 ): Promise<ScoredClaim | null> {
   // §4 step 2: skip empty citations.
   if (!row.source_citation || row.source_citation.trim() === '') {
@@ -150,7 +164,7 @@ async function scoreRow(
     date_confidence = 'unknown';
     date_penalty_applied = true;
   } else {
-    recency_boost = computeRecencyBoost(row.source_date);
+    recency_boost = computeRecencyBoost(row.source_date, opts.nowMs);
     date_confidence = 'verified';
   }
 
@@ -244,12 +258,18 @@ export async function getRichDossier(
     allowUnknown?: boolean;
     skipLlm?: boolean;
     substrateQuery?: string;
+    /** Inject a clock for tests. Defaults to Date.now() at call time. */
+    nowMs?: number;
     /** Test hook — inject pre-fetched rows to bypass DB. */
     _injectRows?: RawEvidenceRow[];
   } = {},
 ): Promise<RichDossier> {
   const allowUnknown = opts.allowUnknown ?? false;
   const skipLlm = opts.skipLlm ?? false;
+  // Pin a single clock-read per dossier (audit fix 3). Scoring two rows on
+  // either side of a day boundary used to diverge under Date.now() called
+  // inside the loop. Now both rows score against this one timestamp.
+  const nowMs = opts.nowMs ?? Date.now();
 
   // Best-effort cache cleanup once per call — cheap, off the hot path.
   if (!skipLlm) gcKbCache();
@@ -258,6 +278,12 @@ export async function getRichDossier(
   const substrateQuery = opts.substrateQuery
     ?? `${prospect.company_normalized} fiber operator industry context`;
 
+  // Audit fix E: thread an AbortController so a fast-failing DB select can
+  // signal cancellation to the still-in-flight substrate fetch instead of
+  // leaving it dangling for the full 1.5s. selectRows + fetchSubstrate both
+  // accept signal now.
+  const sharedAbort = new AbortController();
+
   let rows: RawEvidenceRow[];
   let substrateResult: Awaited<ReturnType<typeof fetchSubstrate>>;
   try {
@@ -265,10 +291,14 @@ export async function getRichDossier(
       rows = opts._injectRows;
       substrateResult = { rows: [], timedOut: false };
     } else {
-      const [r, s] = await Promise.all([
-        selectRows(prospect.company_normalized),
-        fetchSubstrate(substrateQuery, 6),
-      ]);
+      const dbPromise = selectRows(prospect.company_normalized, sharedAbort.signal)
+        .catch((err) => {
+          // Cancel the in-flight substrate fetch on DB failure (audit issue E).
+          sharedAbort.abort();
+          throw err;
+        });
+      const substratePromise = fetchSubstrate(substrateQuery, 6, sharedAbort.signal);
+      const [r, s] = await Promise.all([dbPromise, substratePromise]);
       rows = r;
       substrateResult = s;
     }
@@ -305,15 +335,37 @@ export async function getRichDossier(
 
   // Score every row (sequential — Haiku cache hits are sub-ms so the loop
   // is fast warm; cold p95 stays <3s per §10).
+  //
+  // AUDIT FIX (issue C, 2026-06-09): UnknownPublisherError used to bubble
+  // straight out of the loop on the first offending row, killing the entire
+  // cohort. We now COLLECT them per-row. If allowUnknown=false and any rows
+  // had unknown publishers, we re-throw the FIRST collected error at the end
+  // — preserving the "fail loud" contract from the spec § Hardening 1
+  // without halting mid-cohort.
   let skippedNoCitation = 0;
   const scored: ScoredClaim[] = [];
+  const unknownPublisherErrors: UnknownPublisherError[] = [];
   for (const row of rows) {
-    const claim = await scoreRow(row, { allowUnknown, skipLlm });
-    if (claim === null) {
-      skippedNoCitation++;
-      continue;
+    try {
+      const claim = await scoreRow(row, { allowUnknown, skipLlm, nowMs });
+      if (claim === null) {
+        skippedNoCitation++;
+        continue;
+      }
+      scored.push(claim);
+    } catch (err) {
+      if (err instanceof UnknownPublisherError) {
+        unknownPublisherErrors.push(err);
+        continue;
+      }
+      throw err;
     }
-    scored.push(claim);
+  }
+
+  // If we ran in strict mode and ANY row had an unknown publisher, fail loud
+  // with the first one (preserves Hardening 1 + Test 3b contract).
+  if (unknownPublisherErrors.length > 0 && !allowUnknown) {
+    throw unknownPublisherErrors[0];
   }
 
   // §4 step 10: SC #6 drop filter.
