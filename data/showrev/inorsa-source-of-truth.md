@@ -61,12 +61,12 @@ Inorsa is purpose-built for telecom infrastructure. Every output is deterministi
 
 | Suite | What it does | Fiber relevance |
 |-------|-------------|-----------------|
-| **Data Suite** | Transforms structured, semi-structured, and unstructured document data into maintained, asset-level intelligence | HIGH -- ingests GIS, LLD, leases, RFDs, permits, drawings |
+| **Data Suite** | Transforms structured, semi-structured, and unstructured document data into maintained, asset-level intelligence | HIGH -- ingests GIS, LLD, leases, permits, drawings |
 | **Validation Suite** | Applies rules and reconciliation logic across documents to detect conflicts, missing inputs, inconsistencies | HIGH -- catches errors before permit submission |
 | **Engineering Suite** | Generates engineering-grade outputs from validated data with review controls | HIGH -- produces construction and permit drawings |
 
 **Workflow (3 phases):**
-1. **Ingest & Structure** -- Extracts critical fields from leases, RFDs, permits, and drawings into structured asset-level intelligence
+1. **Ingest & Structure** -- Extracts critical fields from leases, permits, and drawings into structured asset-level intelligence
 2. **Validate & Reconcile** -- Cross-checks sources to detect conflicts, missing inputs, and inconsistencies
 3. **Generate Outputs** -- Creates engineering and operational deliverables with source data traceability
 
@@ -100,7 +100,7 @@ Inorsa is purpose-built for telecom infrastructure. Every output is deterministi
 
 **Three components:**
 1. **Asset Data Foundation** -- Annual subscription based on portfolio size. Covers document ingestion and asset-level data structuring.
-2. **Deliverable Capacity** -- Right-sized output blocks. ~500 validation reports or ~250 structural analyses per block. Blocks combinable across types. Higher commitments = better per-block pricing.
+2. **Deliverable Capacity** -- Right-sized output blocks. Sized by validation reports + fiber drawing outputs. Blocks combinable across types. Higher commitments = better per-block pricing.
 3. **Ecosystem Connectors** -- Integrations (see section 6).
 
 **Included in all packages:**
@@ -122,8 +122,6 @@ Inorsa is purpose-built for telecom infrastructure. Every output is deterministi
 | **SiteTracker** | Project management for telecom | HIGH -- construction tracking |
 | **Egnyte** | Document management | MEDIUM -- document storage |
 | **SharePoint** | Document management | MEDIUM -- enterprise document storage |
-| **RISA** | Structural analysis | LOW -- tower-side, not fiber |
-| **TNX** | Structural analysis | LOW -- tower-side, not fiber |
 | **Salesforce** | CRM | LOW for outreach, HIGH for HubSpot loader context |
 
 **Outreach rule:** Only reference integrations that match the prospect's known stack. Do NOT list all integrations. If we know they use AutoCAD (most do), mention AutoCAD. If we know they use 3GIS or Katapult Pro (which are NOT listed as integrations), do NOT claim Inorsa integrates with those.
@@ -146,7 +144,6 @@ Inorsa is purpose-built for telecom infrastructure. Every output is deterministi
 - NOT a GIS replacement (ingests FROM GIS, does not replace ArcGIS/IQGeo/3GIS)
 - NOT a visualization tool (the Nvidia confusion from the booth)
 - NOT a construction management platform (SiteTracker's job)
-- NOT structural analysis for towers (RISA/TNX via Harmoni, tower-side only)
 - Does NOT support conflict avoidance today (can ingest utility GIS layers but conflict avoidance is future)
 
 **The real value proposition (Nick McManus framing, 2026-06-03):**
