@@ -349,27 +349,66 @@ export async function composeSpecific(args: {
 
     if (violations.length === 0) break;
   }
-  const winner = selectBestAttempt(attempts);
+  // Post-process helper — em-dash strip, salutation inline join, paragraph
+  // normalize. Pulled into a function so we can re-run after picking a
+  // different best-of-N attempt during post-compose company-name verification.
+  const postProcess = (cand: any) => {
+    let cb = (cand.body || '')
+      .replace(/(\d)[–—](\d)/g, '$1-$2')
+      .replace(/[—–]/g, ',')
+      .replace(/\s+,/g, ',')
+      .trim();
+    cb = cb.replace(/^([A-Z][a-z]+,)\s*\n+\s*/m, '$1 ');
+    cb = cb.replace(/\n{3,}/g, '\n\n').replace(/[ \t]+\n/g, '\n');
+    const cs = (cand.subject || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
+    const cp = (cand.ps || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
+    return { cleanBody: cb, cleanSubject: cs, cleanPs: cp };
+  };
+
+  // Post-compose company-name verification (item 5, operator-approved
+  // 2026-06-09). Mirrors generalized-composer — see that file for full
+  // commentary. Re-checks final post-processed cleanBody AND cleanPs; if
+  // winner violates, walks next-best attempts before flagging.
+  let winner = selectBestAttempt(attempts);
   if (!winner) throw new Error('Specific composer: no attempts');
-  const parsed = winner.candidate;
+
+  const orderedAttempts = [...attempts].sort((a, b) => {
+    const diff = scoreAttempt(b.violations) - scoreAttempt(a.violations);
+    return diff !== 0 ? diff : a.attemptNumber - b.attemptNumber;
+  });
+
+  let parsed = winner.candidate;
+  let { cleanBody, cleanSubject, cleanPs } = postProcess(parsed);
+  let postProcessViolation = checkCompanyNameLock(cleanBody, prospect.company)
+    || checkCompanyNameLock(cleanPs, prospect.company);
+
+  if (postProcessViolation) {
+    for (const cand of orderedAttempts) {
+      if (cand === winner) continue;
+      const pp = postProcess(cand.candidate);
+      const v = checkCompanyNameLock(pp.cleanBody, prospect.company)
+        || checkCompanyNameLock(pp.cleanPs, prospect.company);
+      if (!v) {
+        if (verbose) console.log(`  Post-compose company-name verify: winner attempt ${winner.attemptNumber} failed, swapped to attempt ${cand.attemptNumber}`);
+        winner = cand;
+        parsed = cand.candidate;
+        cleanBody = pp.cleanBody;
+        cleanSubject = pp.cleanSubject;
+        cleanPs = pp.cleanPs;
+        postProcessViolation = null;
+        break;
+      }
+    }
+  }
+
   const winnerScore = scoreAttempt(winner.violations);
-  if (winner.violations.length > 0) {
+  if (postProcessViolation) {
+    console.warn(`  ⚠ Post-compose company-name verify FAILED for ${prospect.company} after walking all ${attempts.length} attempts: ${postProcessViolation} — flagged for review`);
+  } else if (winner.violations.length > 0) {
     console.warn(`  ⚠ Best-of-N winner = attempt ${winner.attemptNumber} (score ${winnerScore}, ${winner.violations.length} violations) — flagged for review`);
   } else if (winner.attemptNumber > 1 && verbose) {
     console.log(`  Best-of-N: shipped attempt ${winner.attemptNumber} (clean)`);
   }
-
-  // Post-process: em-dash cleanup, paragraph normalize
-  let cleanBody = (parsed.body || '')
-    .replace(/(\d)[–—](\d)/g, '$1-$2')
-    .replace(/[—–]/g, ',')
-    .replace(/\s+,/g, ',')
-    .trim();
-  cleanBody = cleanBody.replace(/^([A-Z][a-z]+,)\s*\n+\s*/m, '$1 ');
-  cleanBody = cleanBody.replace(/\n{3,}/g, '\n\n').replace(/[ \t]+\n/g, '\n');
-
-  const cleanSubject = (parsed.subject || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
-  const cleanPs = (parsed.ps || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
 
   const knownIds = new Set(useDirectly.map(e => e.id));
   // bodySentences post-process — validate claim_ids against the actual
