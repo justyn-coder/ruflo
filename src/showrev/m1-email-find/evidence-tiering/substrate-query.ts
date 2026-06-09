@@ -584,26 +584,38 @@ export async function getFccCoverage(companyName: string): Promise<{
   estimatedMiles?: number;
   stateFootprint?: string[];
   growthLast24mo?: { locationDelta: number; percentage: number };
+  matchedViaAlias?: string;
   evidence: EvidenceRecord[];
 }> {
   const normalized = normalizeCompanyName(companyName);
+  // Build candidate list via BDC alias layer — handles brand→registered mismatches
+  // (e.g., "GFiber" cohort name → "google fiber" BDC name)
+  const { getBdcCandidates } = await import('./bdc-aliases.js');
+  const candidates = getBdcCandidates(normalized);
 
   try {
-    // Pull latest snapshot for this provider (fiber-only, technology_code=50)
-    const summaryRows = await supabaseFetch<
-      Array<{
-        provider_normalized: string;
-        snapshot_date: string;
-        technology_code: number;
-        locations_served: number;
-        state_count: number;
-        census_block_count: number;
-      }>
-    >(
-      `/rest/v1/fcc_bdc_provider_summary?provider_normalized=eq.${encodeURIComponent(
-        normalized,
-      )}&technology_code=eq.50&order=snapshot_date.desc&limit=10`,
-    );
+    // Try each candidate, taking the first match
+    let summaryRows: Array<{
+      provider_normalized: string;
+      snapshot_date: string;
+      technology_code: number;
+      locations_served: number;
+      state_count: number;
+      census_block_count: number;
+    }> = [];
+    let matchedCandidate = normalized;
+    for (const candidate of candidates) {
+      const rows = await supabaseFetch<typeof summaryRows>(
+        `/rest/v1/fcc_bdc_provider_summary?provider_normalized=eq.${encodeURIComponent(
+          candidate,
+        )}&technology_code=eq.50&order=snapshot_date.desc&limit=10`,
+      );
+      if (rows && rows.length > 0) {
+        summaryRows = rows;
+        matchedCandidate = candidate;
+        break;
+      }
+    }
 
     if (!summaryRows || summaryRows.length === 0) {
       return { matched: false, evidence: [] };
@@ -695,6 +707,7 @@ export async function getFccCoverage(companyName: string): Promise<{
       estimatedMiles,
       stateFootprint,
       growthLast24mo,
+      matchedViaAlias: matchedCandidate !== normalized ? matchedCandidate : undefined,
       evidence,
     };
   } catch (err) {

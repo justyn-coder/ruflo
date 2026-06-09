@@ -190,10 +190,16 @@ async function processOne(
           apolloResult.confidence === 'medium' ||
           apolloResult.confidence === 'guessed')
       ) {
-        // Only override if Path B found something tangible
+        // Path 1 fix (2026-06-09 operator-approved): override Path A red
+        // for ANY tangible Path B result, including 'guessed' (peer-pattern
+        // derived). Without this, the cohort splits binary 25g/0y/75r
+        // because Apollo Basic returns 'guessed' for many small-operator
+        // domains and we were dropping those to red.
         if (
           !result.email_found ||
-          (apolloResult.confidence !== 'guessed' && emailResult.confidence === 'red')
+          emailResult.confidence === 'red' ||
+          emailResult.confidence === 'not-found' ||
+          emailResult.confidence === 'amber'
         ) {
           console.log(`  email path-b: ${apolloResult.email} (${apolloResult.confidence}, source=${apolloResult.source})`);
           result.email_found = apolloResult.email;
@@ -345,7 +351,14 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     email_subject_t1: result.composed?.subject || '',
     email_body_t1: result.composed?.body || '',
     email_ps_t1: result.composed?.ps || '',
-    confidence_color: result.email_confidence === 'high' ? 'green' : result.email_confidence === 'medium' ? 'yellow' : 'red',
+    // Path 1 (2026-06-09): map 'guessed' to amber (a step below yellow), not red.
+    // 'guessed' = Apollo peer-pattern derived (verified pattern, applied to prospect).
+    // Not as strong as Apollo people-match (high → green) or SMTP verified (yellow),
+    // but more usable than red (= no email at all).
+    confidence_color: result.email_confidence === 'high' ? 'green'
+      : result.email_confidence === 'medium' ? 'yellow'
+      : result.email_confidence === 'guessed' ? 'amber'
+      : 'red',
     confidence_score: result.email_confidence_score ?? null,
     icp_volume_verdict: result.icp_volume_verdict || null,
     icp_volume_reasoning: result.dossier?.icp_volume_reasoning || null,
