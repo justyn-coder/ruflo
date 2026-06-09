@@ -6,7 +6,9 @@
     "publishedDate is ISO date; recencyMonths > 24 hard-excluded at query time.",
     "Topic + applicability tags use controlled vocab in src/showrev/m1-email-find/stat-library/index.ts.",
     "Source-of-truth: data/showrev/industry-intelligence-kb.md (corroborated). Vendor sources only seeded if also corroborated by primary/trade.",
-    "Citation audit 2026-06-09: removed 5 fabricated, fixed 5 in-place, flagged 10 for operator action. See docs/showrev/stat-library-citation-audit-2026-06-09.md."
+    "Citation audit 2026-06-09: removed 5 fabricated, fixed 5 in-place, flagged 10 for operator action. See docs/showrev/stat-library-citation-audit-2026-06-09.md.",
+    "Citation audit round 2 (2026-06-09): removed 3 more fabricated (operator-verified against pasted sources), fixed 1 in-place, added 5 new verified stats from Light Reading sources operator pasted.",
+    "ntia_dashboard_progress_2026 replaced with verified June 8, 2026 dashboard snapshot pasted by operator."
   ],
   "stats": [
     {
@@ -114,10 +116,10 @@
       ]
     },
     {
-      "id": "fiber_supply_2027_tight_2026",
-      "claimText": "Fiber supply tightness is projected to persist through 2027 as data center and BEAD demand converge on the same manufacturers.",
-      "numericValue": "2027",
-      "kind": "phrase",
+      "id": "fiber_supply_2026_tight_2026",
+      "claimText": "One leading fiber-glass manufacturer has already sold all inventory through 2026 as data-center AI demand collides with BEAD timelines.",
+      "numericValue": "2026",
+      "kind": "number",
       "topicTags": [
         "ops-cost",
         "bead"
@@ -136,33 +138,7 @@
       "personaFit": [
         "CEO",
         "COO"
-      ],
-      "_audit_note": "Light Reading paywall. Operator opens in browser, confirms number, adds [verified <date>] marker."
-    },
-    {
-      "id": "bead_workforce_22b_pool_2026",
-      "claimText": "BEAD non-deployment funds \u2014 a $22B pool \u2014 are partly intended for workforce training, but the cycle to certified designers still lags first-wave construction.",
-      "numericValue": "$22B",
-      "kind": "number",
-      "topicTags": [
-        "capacity",
-        "bead"
-      ],
-      "applicabilityTags": [
-        "bead-funded",
-        "rural-middle-mile"
-      ],
-      "source": {
-        "title": "BEAD Issues for 119th Congress - CRS",
-        "url": "https://www.congress.gov/crs-product/R48666",
-        "publishedDate": "2026-03-05"
-      },
-      "sourceTier": "primary",
-      "personaFit": [
-        "CEO",
-        "COO"
-      ],
-      "_audit_note": "CRS report Cloudflare-blocked. Operator confirms in browser."
+      ]
     },
     {
       "id": "unserved_1m_post_bead_2026",
@@ -188,32 +164,6 @@
         "COO",
         "VP_Ops"
       ]
-    },
-    {
-      "id": "kuiper_20pct_grants_2026",
-      "claimText": "Amazon Kuiper holds 20% of BEAD grants by location count but has not yet delivered residential connectivity anywhere \u2014 replacement-ISP risk is non-trivial.",
-      "numericValue": "20%",
-      "kind": "number",
-      "topicTags": [
-        "bead",
-        "peer-pattern"
-      ],
-      "applicabilityTags": [
-        "bead-funded",
-        "rural-middle-mile",
-        "private-clec"
-      ],
-      "source": {
-        "title": "Fiber Still Dominates Most BEAD Locations",
-        "url": "https://www.lightreading.com/broadband/fiber-still-dominates-most-bead-locations",
-        "publishedDate": "2026-05-01"
-      },
-      "sourceTier": "trade",
-      "personaFit": [
-        "CEO",
-        "COO"
-      ],
-      "_audit_note": "Light Reading paywall. Operator verifies in browser."
     },
     {
       "id": "construction_pay_20yr_low_tower_2026",
@@ -265,31 +215,6 @@
         "COO",
         "VP_Ops"
       ]
-    },
-    {
-      "id": "rural_coop_walk_away_2026",
-      "claimText": "NRECA warned that many rural electric co-ops may walk away from BEAD awards rather than accept pole-attachment regulations \u2014 a structural risk to first-wave timelines.",
-      "numericValue": "walk away",
-      "kind": "phrase",
-      "topicTags": [
-        "operator-survey",
-        "bead"
-      ],
-      "applicabilityTags": [
-        "bead-funded",
-        "rural-middle-mile"
-      ],
-      "source": {
-        "title": "BEAD Issues for 119th Congress - CRS",
-        "url": "https://www.congress.gov/crs-product/R48666",
-        "publishedDate": "2026-03-05"
-      },
-      "sourceTier": "primary",
-      "personaFit": [
-        "CEO",
-        "COO"
-      ],
-      "_audit_note": "CRS report Cloudflare-blocked. Operator confirms in browser."
     },
     {
       "id": "ntia_know_your_rights_2026",
@@ -544,10 +469,10 @@
       "_audit_note": "Cite specific broadbandmap.fcc.gov page, not homepage."
     },
     {
-      "id": "ntia_dashboard_progress_2026",
-      "claimText": "NTIA's BEAD progress dashboard makes state-by-state engineering capacity visible \u2014 peer operators are already benchmarking each other publicly.",
-      "numericValue": "state-by-state",
-      "kind": "phrase",
+      "id": "bead_dashboard_states_progress_2026",
+      "claimText": "Per NTIA's dashboard (June 8, 2026): all 56 states submitted Final Proposals, 54 received NTIA approval, 52 have NIST approval with funds available, 52 signed award agreements \u2014 first-mover BEAD operators are crossing the construction line now.",
+      "numericValue": "52",
+      "kind": "number",
       "topicTags": [
         "peer-pattern"
       ],
@@ -557,16 +482,15 @@
         "private-clec"
       ],
       "source": {
-        "title": "NTIA BEAD Progress Dashboard",
-        "url": "https://www.ntia.gov/funding-programs/internet-all/broadband-equity-access-and-deployment-bead-program/progress-dashboard",
-        "publishedDate": "2026-05-20"
+        "title": "BEAD RPN Progress Dashboard (2026-06-08 snapshot)",
+        "url": "https://www.ntia.gov/sites/default/files/bead-rpn-progress-dashboard-20260608.jpg",
+        "publishedDate": "2026-06-08"
       },
       "sourceTier": "primary",
       "personaFit": [
         "CEO",
         "COO"
-      ],
-      "_audit_note": "NTIA dashboard 403-blocked. Operator confirms in browser."
+      ]
     },
     {
       "id": "broadband_breakfast_state_finalize_2026",
@@ -613,6 +537,127 @@
       "personaFit": [
         "COO",
         "VP_Ops"
+      ]
+    },
+    {
+      "id": "bead_satellite_share_2026",
+      "claimText": "Satellite share of BEAD locations jumped from 9% to 16% in one week as more states finalized \u2014 Colorado was the first to select LEO satellite for a majority (50%) of its locations.",
+      "numericValue": "16%",
+      "kind": "number",
+      "topicTags": [
+        "bead"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "rural-middle-mile",
+        "private-clec",
+        "ftth"
+      ],
+      "source": {
+        "title": "Fiber still dominates most BEAD locations",
+        "url": "https://www.lightreading.com/broadband/fiber-still-dominates-most-bead-locations",
+        "publishedDate": "2025-08-26"
+      },
+      "sourceTier": "trade",
+      "personaFit": [
+        "CEO",
+        "COO",
+        "VP_Ops"
+      ]
+    },
+    {
+      "id": "fiber_penetration_56pct_2025",
+      "claimText": "Fiber now reaches 88.1 million US households \u2014 56.5% of all homes \u2014 with 10.3 million homes passed in 2024 alone, per FBA/RVA research.",
+      "numericValue": "56.5%",
+      "kind": "number",
+      "topicTags": [
+        "operator-survey"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "ftth",
+        "private-clec"
+      ],
+      "source": {
+        "title": "The Divide: FBA's Marissa Mitrovich on the growth of fiber and future of BEAD",
+        "url": "https://www.lightreading.com/the-divide/the-divide-fba-s-marissa-mitrovich-on-the-growth-of-fiber-and-future-of-bead",
+        "publishedDate": "2025-06-02"
+      },
+      "sourceTier": "trade",
+      "personaFit": [
+        "CEO",
+        "COO",
+        "VP_Ops"
+      ]
+    },
+    {
+      "id": "fiber_provider_count_1900_2025",
+      "claimText": "There are about 1,900 fiber providers in the US \u2014 1,000 tied to electric co-ops or municipalities, 900 commercial \u2014 driving competition at the edge.",
+      "numericValue": "1,900",
+      "kind": "number",
+      "topicTags": [
+        "operator-survey"
+      ],
+      "applicabilityTags": [
+        "ftth",
+        "rural-middle-mile",
+        "private-clec"
+      ],
+      "source": {
+        "title": "The Divide: FBA's Marissa Mitrovich on the growth of fiber and future of BEAD",
+        "url": "https://www.lightreading.com/the-divide/the-divide-fba-s-marissa-mitrovich-on-the-growth-of-fiber-and-future-of-bead",
+        "publishedDate": "2025-06-02"
+      },
+      "sourceTier": "trade",
+      "personaFit": [
+        "CEO",
+        "VP_Ops"
+      ]
+    },
+    {
+      "id": "baba_650m_onshoring_2025",
+      "claimText": "FBA members invested $650 million to onshore fiber manufacturing under Build America Buy America, creating 5,600 jobs across 28 states \u2014 investments that depend on BEAD actually proceeding.",
+      "numericValue": "$650 million",
+      "kind": "number",
+      "topicTags": [
+        "bead",
+        "capacity"
+      ],
+      "applicabilityTags": [
+        "bead-funded"
+      ],
+      "source": {
+        "title": "The Divide: FBA's Marissa Mitrovich on the growth of fiber and future of BEAD",
+        "url": "https://www.lightreading.com/the-divide/the-divide-fba-s-marissa-mitrovich-on-the-growth-of-fiber-and-future-of-bead",
+        "publishedDate": "2025-06-02"
+      },
+      "sourceTier": "trade",
+      "personaFit": [
+        "CEO",
+        "COO",
+        "VP_Ops"
+      ]
+    },
+    {
+      "id": "bead_pause_lost_seasons_2025",
+      "claimText": "FBA's VP of policy: 'many of our members and providers are gonna lose build seasons' \u2014 direct hit to deployment timelines from the ongoing BEAD pause.",
+      "numericValue": "lose build seasons",
+      "kind": "phrase",
+      "topicTags": [
+        "bead"
+      ],
+      "applicabilityTags": [
+        "bead-funded"
+      ],
+      "source": {
+        "title": "The Divide: FBA's Marissa Mitrovich on the growth of fiber and future of BEAD",
+        "url": "https://www.lightreading.com/the-divide/the-divide-fba-s-marissa-mitrovich-on-the-growth-of-fiber-and-future-of-bead",
+        "publishedDate": "2025-06-02"
+      },
+      "sourceTier": "trade",
+      "personaFit": [
+        "CEO",
+        "COO"
       ]
     }
   ]
