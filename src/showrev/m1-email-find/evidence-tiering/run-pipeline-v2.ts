@@ -324,10 +324,16 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     ? useDirectlyFacts.map(c => `- ${c.claim}`).join('\n')
     : '';
 
-  // Persona-driven decision criteria (deterministic from persona bucket)
-  const personaBucket = result.composer_mode === 'specific' && result.composed?.composer_mode
-    ? (result.dossier ? 'inferred-from-title' : null)
-    : null;
+  // Persona bucket — detected from title (same logic as composer). Store the
+  // ACTUAL persona value (revenue_leader / ops_builder / technical_designer /
+  // other) so the portal can show it. Previously stored the literal string
+  // 'inferred-from-title' which described the source, not the value.
+  const title = result.row.title || '';
+  const personaBucket: string =
+    /\b(ceo|cfo|coo|cto|cmo|cio|cco|cso|cpo|cdo|cro|cbo|svp|vp|chief|founder|owner|president|partner|managing\s+director|managing\s+partner)\b/i.test(title) ? 'revenue_leader' :
+    /\b(director|head\s+of|operation|construction|field|manager|supervisor|outside\s+plant|osp|construction\s+lead)\b/i.test(title) ? 'ops_builder' :
+    /\b(engineer|technical|designer|gis|cad|architect|developer|design\s+lead|design\s+manager)\b/i.test(title) ? 'technical_designer' :
+    'other';
   const meddpiccDecisionCriteria =
     /chief|vp|svp|ceo/i.test(result.row.title || '') ? 'Speed-to-revenue; capital efficiency; competitive market capture' :
     /director|head|ops|operation/i.test(result.row.title || '') ? 'Drawing throughput; permitting speed; crew utilization; design capacity' :
