@@ -1,104 +1,89 @@
 /**
- * Substrate-tiering type definitions
+ * Substrate-tiering type definitions — v2 (post-critique 2026-06-08)
  *
- * Implements the 4-tier claim model from
- * `docs/specs/substrate-tiering-architecture-spec.md` §2-3.
+ * Implements the 2-tier claim model from
+ * `docs/specs/substrate-tiering-architecture-spec.md` v2.
  *
  * These types are the contract between:
  *   - The evidence orchestrator (produces TieredDossier)
- *   - The composer (consumes TieredDossier)
- *   - The portal (renders attribution per claim_id)
+ *   - The composer (consumes TieredDossier and emits sentence-level attribution)
+ *   - The portal (renders attribution per claim_id, click-sentence-see-source)
  *
  * Per P2-PILOT-ALIGNMENT.md, Claude decides what's true; the composer
  * dresses it up. This file's job is to make that decision auditable
- * and traceable.
+ * and traceable AT SENTENCE LEVEL.
+ *
+ * V2 changes from V1 (post-critique):
+ *   - 4 tiers collapsed to 2 (USE_DIRECTLY + USE_TO_SHAPE)
+ *   - Discarded claims don't get records (no WEAKLY_INFERRED clutter)
+ *   - GENERALIZED is a composer-mode switch, not a tier
+ *   - prospectScope dropped; category simplified 8→3
+ *   - Sentence-level sources_used schema (was email-level)
+ *   - source_index Record dropped — sentence-level attribution doesn't need it
  */
 
 /**
- * 4-tier model — operator's contract:
- *   - VERIFIED: Direct evidence, Claude willing to stake reputation on it
- *   - STRONGLY_INFERRED: Reasoning chain from observable signals; defensible but not directly quotable
- *   - WEAKLY_INFERRED: Thin support; never appears in email body
- *   - GENERALIZED: Synthetic industry/region/peer framing when verified evidence is thin
+ * 2-tier model — operator's contract verbatim:
+ *   - USE_DIRECTLY:  Operator's "Verified" — willing to stake reputation on it.
+ *                    Composer may reference, but NUMERIC claims still framed as
+ *                    approximations ("north of 1,500 miles") unless cross-source
+ *                    confirmed within 12 months. Closes the stale-Apollo failure mode.
+ *   - USE_TO_SHAPE:  Operator's "Likely" merged with "Strongly inferred" — defensible
+ *                    enough to inform the pitch POV. Composer must NOT quote as fact.
+ *                    Frame implicitly ("for operators at this scale…").
  *
- * See spec §2 for composer usage rules per tier.
+ * Operator's "Not confident" tier → discard (no record kept).
+ * Operator's "Nothing usable" → composer_mode='generalized' (mode switch, not tier).
+ *
+ * See spec v2 §2 for composer usage rules per tier.
  */
-export type ClaimTier =
-  | 'VERIFIED'
-  | 'STRONGLY_INFERRED'
-  | 'WEAKLY_INFERRED'
-  | 'GENERALIZED';
+export type ClaimTier = 'USE_DIRECTLY' | 'USE_TO_SHAPE';
 
 /**
  * Source kind — where the claim was retrieved from.
- * Used by the tier computation rules in spec §3.2.
+ * Used by the deterministic tier rules in spec v2 §3.2.
+ *
+ * Per critique consequence-analysis: source-kind table maps mechanically to
+ * a tier ceiling. No LLM 'synthesizer' decides tier — pure rules only.
  */
 export type SourceKind =
-  | 'apollo'        // Apollo people-match or org-enrich
-  | 'brain'         // AgentDB entity store (per-prospect history)
-  | 'substrate'     // Tagged industry chunks (podcasts, articles, reports)
-  | 'web_research'  // Live 3-persona research
-  | 'csv_input'     // Operator-provided input data
-  | 'manual';       // Operator override or hand-curated source
+  | 'apollo'              // Apollo people-match or org-enrich
+  | 'apollo_cross'        // Apollo + concordance with a 2nd source <12mo (promotes to USE_DIRECTLY)
+  | 'brain'               // AgentDB entity store (per-prospect history)
+  | 'substrate'           // Industry chunks (podcasts, articles, reports)
+  | 'substrate_quoted'    // Substrate quote where speaker.company === prospect.company AND speaker.role qualifies
+  | 'web_research'        // Live 3-persona research with citation
+  | 'web_research_dated'  // Live web research with explicit publication date <12mo
+  | 'csv_input'           // Operator-provided input data
+  | 'manual';             // Operator override or hand-curated source
 
 /**
- * Source confidence — independent of tier. Tier is computed from
- * source kind + sourceConfidence + agreement count per §3.2.
+ * Claim category — simplified 8→3 per critique simplicity-cut.
  *
- *   authoritative: official/primary (Apollo's API, company's own site)
- *   reliable:      reputable secondary (FBA report, NTIA filing, named press)
- *   uncited:       claim appears in research output but source not traceable
- *   inferred:      not extracted from a document — derived by reasoning
+ *   company_fact:     anything specific to this prospect's company
+ *                     (volume, growth, projects, articulated pain/gain/JTBD)
+ *   persona_signal:   decision-authority, role-level signals
+ *   industry_context: regional/sector framing for the email (BEAD timeline,
+ *                     FBA stats, peer comparisons). Used heavily in generalized mode.
  */
-export type SourceConfidence =
-  | 'authoritative'
-  | 'reliable'
-  | 'uncited'
-  | 'inferred';
+export type ClaimCategory = 'company_fact' | 'persona_signal' | 'industry_context';
 
 /**
- * Claim category — what bucket of the dossier this fact serves.
- * Composer reads claims by category when assembling the email
- * (e.g., opener pulls from `company_volume` or `project`, bridge from `pain`).
- */
-export type ClaimCategory =
-  | 'company_volume'    // miles of fiber, customer count, revenue scale
-  | 'company_growth'    // BEAD awards, expansion announcements, hiring spikes
-  | 'project'           // named projects with scope (e.g. ReConnect Round 3 award)
-  | 'pain'              // articulated frustrations from research
-  | 'gain'              // desired outcomes
-  | 'jtbd'              // jobs-to-be-done at the persona level
-  | 'persona'           // decision-authority, role signals
-  | 'industry_context'  // regional/sector framing (BEAD timeline, FBA stats)
-  | 'other';
-
-/**
- * Scope of who a claim applies to.
- * `company` = specific to this prospect's company
- * `persona` = applies to this title/role generally
- * `industry` = applies to fiber operators or A&E firms broadly
- * `region` = applies to prospects in this state/county/region
- */
-export type ClaimScope = 'company' | 'persona' | 'industry' | 'region';
-
-/**
- * Composer mode — switched by the tier orchestrator based on the
- * tierCounts in the dossier. See spec §6.
+ * Composer mode — switched by the orchestrator based on USE_DIRECTLY +
+ * USE_TO_SHAPE count vs SPECIFIC_MODE_THRESHOLD. See spec v2 §6.
  *
- *   specific:    ≥3 VERIFIED+STRONGLY_INFERRED → use company-specific composer prompt
- *   generalized: <3 → use generalized fallback prompt (no company-specific claims)
+ *   specific:    ≥ threshold usable claims → company-specific composer prompt
+ *   generalized: < threshold → generalized composer prompt (no company-specific
+ *                claims; industry/region/peer framing only)
  */
 export type ComposerMode = 'specific' | 'generalized';
 
 /**
  * One atomic claim with its provenance and tier classification.
  *
- * Atomicity: each EvidenceRecord wraps ONE claim ≤30 words. A research
- * paragraph with 5 facts produces 5 EvidenceRecords. This keeps tier
- * decisions per-fact, not per-paragraph.
+ * Atomicity: each EvidenceRecord wraps ONE claim ≤30 words.
  *
- * Composer attribution (BL-002 fix): each sentence in the composed email
- * cites the claim_id(s) it drew from. The portal renders this trace.
+ * Tier is computed by deterministic source-kind rules, not LLM judgment.
  */
 export interface EvidenceRecord {
   /** Hash of (source.citation + claim) — stable across runs for dedup. */
@@ -114,10 +99,11 @@ export interface EvidenceRecord {
     citation: string;
     /** ISO timestamp when this claim was retrieved. */
     fetched_at: string;
-    sourceConfidence: SourceConfidence;
+    /** If the source has its own publication date (relevant for staleness). */
+    sourceDate?: string;
   };
 
-  /** Tier classification. Computed by orchestrator per spec §3.2. */
+  /** Tier classification. Computed by deterministic rules per spec v2 §3.2. */
   tier: ClaimTier;
 
   /** Single-sentence explanation of why this tier was assigned. */
@@ -125,36 +111,31 @@ export interface EvidenceRecord {
 
   /** Bucket this claim serves in the dossier. */
   category: ClaimCategory;
-
-  /** Who the claim applies to. */
-  prospectScope: ClaimScope;
 }
 
 /**
  * Per-tier counts. Used by the orchestrator to decide composer_mode and
- * by the portal to show "we have N verified facts about this prospect."
+ * by the portal to show "we have N usable facts about this prospect."
+ *
+ * Note: discarded (operator's "Not confident") claims don't get records;
+ * generalized claims live in TieredDossier.generalizedFraming, not in tier counts.
  */
 export interface TierCounts {
-  verified: number;
-  stronglyInferred: number;
-  /** Counted for transparency; composer never sees these. */
-  weaklyInferred: number;
-  /** Synthetic claims from substrate/Brain for generalized mode. */
-  generalized: number;
+  useDirectly: number;
+  useToShape: number;
 }
 
 /**
  * Research quality — computed scalar used in the ICP rank composite.
- * Definition per spec §5:
- *   high:   ≥3 VERIFIED claims
- *   medium: 1-2 VERIFIED, OR ≥4 STRONGLY_INFERRED
+ * Spec v2 §5:
+ *   high:   ≥3 USE_DIRECTLY claims
+ *   medium: 1-2 USE_DIRECTLY, OR ≥4 USE_TO_SHAPE
  *   low:    everything else (triggers generalized mode)
  */
 export type ResearchQuality = 'high' | 'medium' | 'low';
 
 /**
  * ICP volume verdict — preserved from the current intel-structurer.
- * See SoT §15 and the intel-structurer ICP block.
  */
 export type IcpVolumeVerdict = 'fit' | 'leaning_fit' | 'miss';
 
@@ -173,32 +154,25 @@ export interface ProspectIdentity {
  * The TieredDossier replaces today's `structuredIntel` object.
  *
  * Composer reads this. Portal renders attribution from this.
- * `claims` is grouped by category for composer ergonomics. Only
- * VERIFIED + STRONGLY_INFERRED appear in the per-category arrays;
- * WEAKLY_INFERRED are tracked in `weaklyInferred` for transparency only.
  *
- * GENERALIZED claims are populated only when composer_mode='generalized'
- * and live in `generalizedFraming` (separate from the company-specific
- * claims to make the handoff explicit).
+ * `claims` is grouped by category for composer ergonomics. Only USE_DIRECTLY +
+ * USE_TO_SHAPE appear. Discarded (operator's "Not confident") claims don't
+ * get records.
+ *
+ * `generalizedFraming` is populated when composer_mode='generalized' and holds
+ * industry/region/peer framing material drawn from Brain + Substrate + SoT.
  */
 export interface TieredDossier {
   prospect: ProspectIdentity;
 
-  /** Per-tier counts including weakly inferred and generalized. */
+  /** Per-tier counts. */
   tierCounts: TierCounts;
 
-  /** Claims grouped by category. Only VERIFIED + STRONGLY_INFERRED. */
+  /** Claims grouped by category. Only USE_DIRECTLY + USE_TO_SHAPE. */
   claims: Record<ClaimCategory, EvidenceRecord[]>;
 
   /**
-   * Claims that didn't meet the tier bar. Tracked here for portal
-   * transparency — operator can see what was found but rejected.
-   * Composer never reads this field.
-   */
-  weaklyInferred: EvidenceRecord[];
-
-  /**
-   * Generalized framing claims populated only when composer_mode='generalized'.
+   * Generalized framing populated only when composer_mode='generalized'.
    * Drawn from Brain peer-data + Substrate industry context + SoT.
    * Composer reads these in fallback mode (no company-specific claims).
    */
@@ -212,47 +186,69 @@ export interface TieredDossier {
   research_quality: ResearchQuality;
 
   /**
-   * Composer mode handoff. Computed by orchestrator from tierCounts.
-   * Trigger: if (verified + stronglyInferred) < SPECIFIC_MODE_THRESHOLD
-   * → generalized mode. Threshold currently 3 (calibrate during build).
+   * Composer mode handoff. Computed by orchestrator from tierCounts:
+   *   (useDirectly + useToShape) >= SPECIFIC_MODE_THRESHOLD → 'specific'
+   *   otherwise                                              → 'generalized'
    */
   composer_mode: ComposerMode;
-
-  /**
-   * Fast lookup: claim_id → EvidenceRecord. Used by composer for
-   * sources_used attribution and by portal for the click-to-source trace.
-   */
-  source_index: Record<string, EvidenceRecord>;
 }
 
 /**
  * Composer mode trigger threshold. Drop to generalized when fewer than
- * this many VERIFIED + STRONGLY_INFERRED claims exist in the dossier.
+ * this many USE_DIRECTLY + USE_TO_SHAPE claims exist in the dossier.
  *
- * Calibrate during Step 5 cohort. Range 2-5 likely. Per spec §12.
+ * Per critique consequence-analysis #6: calibration-first sequencing. Run the
+ * orchestrator on the 28 true-cold P2 prospects BEFORE picking N. Hard floor:
+ * if >70% would hit generalized mode at chosen N, do not ship specific mode.
  */
 export const SPECIFIC_MODE_THRESHOLD = 3;
 
 /**
- * Helper — count the tiers from a dossier's claim list.
- * Used by orchestrator and portal.
+ * ONE composed email sentence with its claim attribution.
+ *
+ * Per critique operator-alignment #5: BL-002 promise requires sentence-level
+ * attribution. Email-level sources_used cannot answer "which sentence cited X."
+ *
+ * The portal renders this as click-sentence-see-source.
  */
-export function computeTierCounts(
-  allRecords: EvidenceRecord[],
-): TierCounts {
-  const counts: TierCounts = {
-    verified: 0,
-    stronglyInferred: 0,
-    weaklyInferred: 0,
-    generalized: 0,
+export interface AttributedSentence {
+  /** The sentence as it appears in the composed email body. */
+  text: string;
+  /** EvidenceRecord.id values this sentence drew from. May be empty for
+   *  industry/general framing sentences that don't cite a specific claim. */
+  claim_ids: string[];
+}
+
+/**
+ * Composer output — what gets persisted to Supabase per prospect.
+ *
+ * Per spec v2 §6.3. Sentence-level attribution enables the portal's
+ * click-sentence-see-source trace (BL-002 fix).
+ */
+export interface ComposedEmail {
+  subject: string;
+  /** Full body string — kept for backwards compatibility with portal email view. */
+  body: string;
+  /** Sentence-by-sentence breakdown of the body with claim attribution. */
+  bodySentences: AttributedSentence[];
+  ps: string;
+  composer_mode: ComposerMode;
+  /** Counts for quick portal rendering. */
+  tier_breakdown: {
+    use_directly_count: number;
+    use_to_shape_count: number;
+    generalized_count: number;
   };
-  for (const r of allRecords) {
-    switch (r.tier) {
-      case 'VERIFIED': counts.verified++; break;
-      case 'STRONGLY_INFERRED': counts.stronglyInferred++; break;
-      case 'WEAKLY_INFERRED': counts.weaklyInferred++; break;
-      case 'GENERALIZED': counts.generalized++; break;
-    }
+}
+
+/**
+ * Helper — count the tiers from a list of EvidenceRecords.
+ */
+export function computeTierCounts(records: EvidenceRecord[]): TierCounts {
+  const counts: TierCounts = { useDirectly: 0, useToShape: 0 };
+  for (const r of records) {
+    if (r.tier === 'USE_DIRECTLY') counts.useDirectly++;
+    else if (r.tier === 'USE_TO_SHAPE') counts.useToShape++;
   }
   return counts;
 }
@@ -262,7 +258,7 @@ export function computeTierCounts(
  * `specific` requires at least SPECIFIC_MODE_THRESHOLD usable claims.
  */
 export function computeComposerMode(counts: TierCounts): ComposerMode {
-  const usable = counts.verified + counts.stronglyInferred;
+  const usable = counts.useDirectly + counts.useToShape;
   return usable >= SPECIFIC_MODE_THRESHOLD ? 'specific' : 'generalized';
 }
 
@@ -270,8 +266,8 @@ export function computeComposerMode(counts: TierCounts): ComposerMode {
  * Helper — compute research_quality scalar from tier counts.
  */
 export function computeResearchQuality(counts: TierCounts): ResearchQuality {
-  if (counts.verified >= 3) return 'high';
-  if (counts.verified >= 1 || counts.stronglyInferred >= 4) return 'medium';
+  if (counts.useDirectly >= 3) return 'high';
+  if (counts.useDirectly >= 1 || counts.useToShape >= 4) return 'medium';
   return 'low';
 }
 
@@ -280,8 +276,6 @@ export function computeResearchQuality(counts: TierCounts): ResearchQuality {
  * Identical claims from identical sources collapse to one record.
  */
 export function evidenceRecordId(source: { citation: string }, claim: string): string {
-  // Lightweight non-cryptographic hash (fnv-1a inspired) — stable across runs.
-  // Good enough for dedup; not for security.
   const s = `${source.citation}|${claim}`;
   let h = 0x811c9dc5;
   for (let i = 0; i < s.length; i++) {
@@ -289,4 +283,34 @@ export function evidenceRecordId(source: { citation: string }, claim: string): s
     h = (h * 0x01000193) >>> 0;
   }
   return `ev_${h.toString(16).padStart(8, '0')}`;
+}
+
+/**
+ * Deterministic tier rules — source-kind table per critique consequence #2.
+ *
+ * Maps SourceKind mechanically to tier ceiling. No LLM judgment.
+ *
+ * Apollo-only data (without cross-source) is USE_TO_SHAPE because Apollo
+ * data is crowdsourced/scraped, not authoritative. Apollo + 2nd source
+ * dated <12mo → apollo_cross kind → USE_DIRECTLY.
+ *
+ * Substrate quotes require speaker.company === prospect.company AND
+ * speaker.role in (CEO/COO/VP-Ops/similar). When that's satisfied, source
+ * kind is substrate_quoted → USE_DIRECTLY. Otherwise plain substrate → USE_TO_SHAPE.
+ */
+export function tierBySourceKind(kind: SourceKind): ClaimTier {
+  switch (kind) {
+    // USE_DIRECTLY — cross-confirmed or authoritative + datable
+    case 'apollo_cross':         return 'USE_DIRECTLY';
+    case 'substrate_quoted':     return 'USE_DIRECTLY';
+    case 'web_research_dated':   return 'USE_DIRECTLY';
+    case 'csv_input':            return 'USE_DIRECTLY'; // operator-provided
+    case 'manual':               return 'USE_DIRECTLY'; // operator override
+
+    // USE_TO_SHAPE — defensible but not authoritative
+    case 'apollo':               return 'USE_TO_SHAPE'; // Apollo alone = inferred
+    case 'brain':                return 'USE_TO_SHAPE'; // prior dossier carries forward
+    case 'substrate':            return 'USE_TO_SHAPE'; // industry context, not company-quoted
+    case 'web_research':         return 'USE_TO_SHAPE'; // research without date confidence
+  }
 }

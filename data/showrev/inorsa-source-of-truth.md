@@ -379,10 +379,87 @@ No automated FAIL gate. No skip-composition logic. No cross-prospect calibration
 
 ---
 
+## 17. AE Calendar Links + Territory Mapping (canonical, mirrored to `ae-config.ts`)
+
+### Calendar URLs
+
+| AE | HubSpot Meetings URL |
+|---|---|
+| Mike Rutski | https://meetings-na2.hubspot.com/michael-rutski/introduction |
+| Nathan Dunn | https://meetings-na2.hubspot.com/nathan970/introduction |
+| Lucas Spencer | https://meetings-na2.hubspot.com/lucas-spencer/introduction |
+| Tom Marciano | INERT — never a sender, no booking link |
+
+### State → AE Territory (verbatim from `ae-config.ts`)
+
+| Region | AE | States |
+|---|---|---|
+| East | Mike Rutski | CT, MA, RI, NH, VT, ME, NY, NJ, PA, DE, MD, DC, VA, WV, NC, SC, GA, FL, AL, MS, TN, KY, OH, IN, MI |
+| Central | Nathan Dunn | TX, OK, KS, NE, SD, ND, MN, IA, MO, AR, LA, WI, IL |
+| West | Lucas Spencer | WA, OR, CA, NV, AZ, NM, CO, UT, WY, MT, ID, HI, AK |
+| Default | Lucas Spencer | any unassigned state |
+
+### Multi-state contact rule
+
+When a prospect's contact state differs from their company HQ state, pipeline's `resolveAE(state)` runs against contact_state first, then surfaces a flag (`ae_flag` column) in `sr_engine_output` noting the HQ-state vs contact-state mismatch. Operator reviews on portal; default behavior is **contact-state AE wins** (the AE closest to the human). Example: Dan Gillan at Dobson Fiber — HQ=OK (Central → Nathan), contact=FL (East → Mike). Pipeline routed to East/Mike based on contact state; flag surfaced.
+
+### Canonical source
+
+`src/showrev/m1-email-find/ae-config.ts` is the **code-side canonical**. This §17 mirrors it for human-readable reference. If they ever drift, `ae-config.ts` wins (closer to the runtime). Updating one means updating both.
+
+---
+
+## 18. Source-of-Truth Lock Index (NEW v9)
+
+Single index of every canonical doc this project uses. Drift prevention.
+
+### Document ranks
+
+| Rank | Doc | Canonical for | Update authority |
+|---|---|---|---|
+| 1 | `data/showrev/P2-PILOT-ALIGNMENT.md` | P2 pilot scope, decisions, ship-ready criteria, build amendments | Operator only |
+| 2 | `data/showrev/inorsa-source-of-truth.md` (this file) | Inorsa positioning, pitch variants, AE roster + calendars, P.S. variants, CSV input contract, ICP volume floors, deployment domains | Operator only |
+| 3 | `docs/specs/substrate-tiering-architecture-spec.md` | Substrate-tiering technical implementation | Claude with operator notify |
+| 4 | `data/showrev/engine-methodology-canonical.md` | Composer prompt structure, mechanical checks, judge dimensions, HubSpot config | Claude with operator notify |
+| 5 | `data/showrev/industry-intelligence-kb.md` | BEAD/ReConnect by state, fiber program timelines, market dynamics | Claude with operator notify |
+| 6 | `data/showrev/pipeline-backlog.md` | Backlog items, status, completed fixes | Claude (operational) |
+| 7 | Auto-memory files (`~/.claude/projects/.../memory/*.md`) | Operator-stated facts not yet promoted to canonical | Auto-memory hook |
+
+### Code-side canonicals (single source for runtime)
+
+| File | Canonical for |
+|---|---|
+| `src/showrev/m1-email-find/ae-config.ts` | AE territory + calendar URLs + photos |
+| `src/showrev/m1-email-find/influence.ts` | Pitch variants (A/B/C), P.S. variants (6), persona framing, composer prompt structure |
+| `src/showrev/m1-email-find/icp-gate.ts` | ICP regex indicators (initial gate) |
+| `src/showrev/m1-email-find/intel-structurer.ts` | Structurer schema + ICP volume verdict logic |
+| `src/showrev/m1-email-find/judge.ts` | Mechanical checks + 5-dim judge prompt |
+
+### Input data canonicals
+
+| File | Contents | Update authority |
+|---|---|---|
+| `data/showrev/p2-cold/focus-100.csv` | 100 priority Inorsa-target companies (75 Fiber operators + 25 High-volume A&E firms) | Operator only |
+| `data/showrev/p2-cold/fc2026-attendees-usa.csv` | 2,737 Fiber Connect 2026 attendees (fName, lName, Company Name, Role, State, Country) | Operator only |
+| `data/showrev/wet-run-p2-hard5.csv` | 5-prospect smoke test cohort | Claude with operator notify |
+
+### Drift rule
+
+If Claude sees an internal fact in code or comments that contradicts one of these docs, the doc wins. Code gets updated to match. If two docs disagree, the higher-rank one wins. If unclear, **ESCALATE to operator before building further** — do not silently resolve.
+
+### Update rule
+
+- Rank 1-2 docs: amendments require explicit operator approval + version bump in frontmatter
+- Rank 3-6 docs: Claude may amend, must notify operator in next response with the change summary
+- Code-side canonicals: amendments require both the code update AND the mirroring doc update in the same commit
+
+---
+
 ## Version history
 
 | Version | Date (EST) | Author | Change |
 |---------|-----------|--------|--------|
+| v9 | 2026-06-08 23:05 | Claude | Added §17 AE Calendar Links + Territory Mapping (mirrors `ae-config.ts`). Added §18 Source-of-Truth Lock Index — single ranked index of every canonical doc + code file. Drift rule (higher rank wins, escalate if unclear). Update rule (rank 1-2 operator-only, rank 3-6 Claude with notify). Locks foundational SoT before P2 build accelerates. |
 | v8 | 2026-06-08 19:30 | Claude | Added §16 CSV Input Contract — no `email` or `companyUrl` columns. Pipeline must discover via its own Apollo + SMTP chain. Operator-directed after Andrew Aeschliman ran with a wrong CSV email (wrong domain `unitedfiber.com` vs correct parent-co `ueci.coop`, and wrong format `firstname.lastname` vs `firstinitial+lastname`). The verifier red-flagged correctly but the path was still scary; expunging CSV emails eliminates the entire failure mode. Trade: +1 Apollo credit + 5-10s wall-clock per prospect for guaranteed-discovery integrity. |
 | v7 | 2026-06-08 17:55 | Claude | Added §15 ICP Qualification Guardrails — inform-only label, not a gate. Two volume floors (fiber operators ≥250 mi/yr, A&E firms ≥500 drawings/yr). Three verdict states: fit / miss / leaning_fit. Verdict block lives at the end of intel-structurer (no new LLM call, separation from extraction). Composition runs regardless of verdict. Operator-directed 2026-06-08 after red-team review: cost of false-positive is low (recipient ignores) so no gating is needed. |
 | v6 | 2026-06-08 17:30 | Claude | Added §14 P.S. Variants (6 cold-prospect variants rotating by persona × touch). Retired single canonical cold P.S. ("We scored [Company]'s drawing workflow against 300+ fiber firms") which failed judge 3 of 4 prospects in run-20260608-drsr. New variants designed against Assessment Microsite Behavioral Audit principles. Composer + recomposer use `selectPSVariant()` for cold; post-show retains brief-link template. |
