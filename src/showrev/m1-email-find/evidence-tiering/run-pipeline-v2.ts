@@ -35,7 +35,7 @@ import { icpGate } from '../icp-gate.js';
 import { resolveAE, getAEDetails } from '../ae-config.js';
 import { detectPersona } from '../influence.js';
 import { findEmail } from '../email-finder/orchestrator.js';
-import { verifyEmailMV } from '../email-finder/million-verifier.js';
+import { verifyEmailMV, MvCreditTracker } from '../email-finder/million-verifier.js';
 import { resolveCompanyLogo } from '../logo-resolver.js';
 import { composeMicrosite } from './microsite-composer.js';
 import { orchestrateEvidence } from './orchestrator.js';
@@ -145,6 +145,7 @@ async function processOne(
   row: CsvRow,
   options: { skipApollo: boolean; runId: string; verbose: boolean; maxApolloCredits?: number; prospectIdx: number },
   creditTracker: ApolloCreditTracker,
+  mvCreditTracker: MvCreditTracker,
 ): Promise<ProspectResult> {
   const t0 = Date.now();
   const ae = resolveAE(row.state);
@@ -200,6 +201,11 @@ async function processOne(
         const mv = await verifyEmailMV(email);
         return { quality: mv.quality, result: mv.result };
       },
+      // Red-team #8 (2026-06-09): MV is invoked at up to 4 sites per prospect
+      // inside orchestrator. The tracker enforces a hard cap on credits spent;
+      // orchestrator checks shouldStop() before each call and skips when hit
+      // (no degrade — email keeps raw SMTP confidence).
+      mvCreditTracker,
     });
     result.email_found = emailResult.email || undefined;
     result.email_confidence = emailResult.confidence;
@@ -1017,6 +1023,10 @@ async function main() {
       input: { type: 'string', short: 'i' },
       'skip-apollo': { type: 'boolean', default: false },
       'max-apollo-credits': { type: 'string' },
+      // Red-team #8 (2026-06-09): cap MillionVerifier credits per run.
+      // Default 200 covers the 163 credits on hand at the time of the finding
+      // with a small buffer. Set to 0 to disable the cap.
+      'max-mv-credits': { type: 'string' },
       verbose: { type: 'boolean', default: false, short: 'v' },
       limit: { type: 'string' },
       // Item 6 (2026-06-09): when set, include prospects that already have
@@ -1031,7 +1041,7 @@ async function main() {
 
   const inputPath = values.input as string;
   if (!inputPath) {
-    console.error('Usage: --input <csv-path> [--skip-apollo] [--max-apollo-credits N] [--verbose] [--limit N] [--include-flagged]');
+    console.error('Usage: --input <csv-path> [--skip-apollo] [--max-apollo-credits N] [--max-mv-credits N] [--verbose] [--limit N] [--include-flagged]');
     process.exit(1);
   }
 
@@ -1073,10 +1083,17 @@ async function main() {
     ? parseInt(values['max-apollo-credits'] as string, 10)
     : undefined;
   console.log(`  Apollo: ${values['skip-apollo'] ? 'SKIPPED' : 'enabled (fallback)'}` + (maxApolloCredits ? ` | cap=${maxApolloCredits} credits` : ''));
+  // Red-team #8 (2026-06-09): default 200 covers 163-credit standing balance + buffer.
+  // Pass --max-mv-credits 0 to disable the cap entirely.
+  const maxMvCredits = values['max-mv-credits'] !== undefined
+    ? parseInt(values['max-mv-credits'] as string, 10)
+    : 200;
+  console.log(`  MV budget: ${maxMvCredits > 0 ? `${maxMvCredits} credits` : 'UNCAPPED'}`);
   console.log(`  Flag-skip: ${includeFlagged ? 'OFF (--include-flagged set)' : 'ON (default; pass --include-flagged to re-run flagged)'}`);
   console.log('='.repeat(70));
 
   const creditTracker = new ApolloCreditTracker();
+  const mvCreditTracker = new MvCreditTracker(maxMvCredits);
   resetJudgeMonitor(); // item 8: fresh rolling rates per pipeline run
   const t0 = Date.now();
   const results: ProspectResult[] = [];
@@ -1094,6 +1111,7 @@ async function main() {
           prospectIdx: i,
         },
         creditTracker,
+        mvCreditTracker,
       );
       results.push(result);
     } catch (err) {
