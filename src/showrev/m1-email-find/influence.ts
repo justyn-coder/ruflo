@@ -158,7 +158,19 @@ interface PSVariantDef {
   needsAssessmentLink: boolean;
   needsBookingLink: boolean;
   noLink: boolean;
-  render: (ctx: { company: string; micrositeSlug: string; aeFirstName: string }) => string;
+  /**
+   * If set, this variant requires a verified industry stat from the stat
+   * library (Phase B integration). The composer fetches a stat for this
+   * TopicTag at compose time; if no stat is available (sidecar empty for
+   * topic+persona+applicabilityTags intersection), the composer falls back
+   * to a non-stat variant.
+   *
+   * Wired 2026-06-09 per operator citation audit: hardcoded "FBA 40-50%
+   * permit rejection" + "FBA flagged permit-cycle as top BEAD-slip reason"
+   * were both fabricated relative to source. Replaced with library lookup.
+   */
+  requiresStatTopic?: 'permit-cycle' | 'bead' | 'operator-survey' | 'drawing-cycle' | 'gis-cad' | 'middle-mile';
+  render: (ctx: { company: string; micrositeSlug: string; aeFirstName: string; verifiedStat?: string }) => string;
 }
 
 // Variants tightened 2026-06-08 per operator feedback:
@@ -178,21 +190,35 @@ const PS_VARIANTS: Record<PSVariantKey, PSVariantDef> = {
   },
   industry_data_hook: {
     key: 'industry_data_hook',
-    principle: 'third-party authority, no overclaim',
+    principle: 'third-party authority, verified-stat citation',
     needsAssessmentLink: true,
     needsBookingLink: false,
     noLink: false,
-    render: ({ micrositeSlug }) =>
-      `P.S. FBA data shows 40-50% of utility permits get rejected first pass. If that matches your reality, the 4-question diagnostic shows where it's most fixable: https://fiber.inorsa.com/assess/${micrositeSlug}`,
+    // Requires a verified permit-cycle stat from the library. The old
+    // hardcoded "FBA 40-50% permit rejection" was fabricated (citation audit
+    // 2026-06-09); composer now pastes verifiedStat verbatim or falls back.
+    requiresStatTopic: 'permit-cycle',
+    render: ({ micrositeSlug, verifiedStat }) =>
+      verifiedStat
+        ? `P.S. ${verifiedStat} If that matches your reality, the 4-question diagnostic shows where it's most fixable: https://fiber.inorsa.com/assess/${micrositeSlug}`
+        : // Fallback: pure curiosity-gap, no industry-stat claim
+          `P.S. Built a 4-question diagnostic that pinpoints where your drawing cycle actually breaks. 60 seconds: https://fiber.inorsa.com/assess/${micrositeSlug}`,
   },
   loss_frame_anchor: {
     key: 'loss_frame_anchor',
-    principle: 'loss frame, personalization, third-party authority',
+    principle: 'loss frame, verified-stat citation',
     needsAssessmentLink: true,
     needsBookingLink: false,
     noLink: false,
-    render: ({ micrositeSlug }) =>
-      `P.S. FBA flagged permit-cycle delay as the top reason BEAD timelines slip. The 4-question diagnostic shows where your cycle is exposed: https://fiber.inorsa.com/assess/${micrositeSlug}`,
+    // Requires a verified BEAD-related stat. Old hardcoded "FBA flagged
+    // permit-cycle as THE top reason BEAD slips" was overstated relative
+    // to source (Phase 1B verification 2026-06-09).
+    requiresStatTopic: 'bead',
+    render: ({ micrositeSlug, verifiedStat }) =>
+      verifiedStat
+        ? `P.S. ${verifiedStat} The 4-question diagnostic shows where your cycle is exposed: https://fiber.inorsa.com/assess/${micrositeSlug}`
+        : // Fallback: ops-cost-framed loss without claiming the slip statistic
+          `P.S. Built a 4-question diagnostic that pinpoints where your drawing cycle actually breaks. 60 seconds: https://fiber.inorsa.com/assess/${micrositeSlug}`,
   },
   question_no_link: {
     key: 'question_no_link',
@@ -268,20 +294,130 @@ function pickPSVariantKey(
   return lane[companyHash % lane.length];
 }
 
+/**
+ * Map PersonaBucket (rotation matrix domain) → Persona (stat library domain).
+ *
+ * Phase B integration 2026-06-09. The stat library indexes stats by
+ * Persona ('CEO'|'COO'|'VP_Eng'|'VP_Ops'|'PM') but the influence rotation
+ * uses PersonaBucket. This mapping is the adapter at the boundary.
+ */
+const PERSONA_BUCKET_TO_STAT_PERSONA: Record<PersonaBucket, 'CEO' | 'COO' | 'VP_Eng' | 'VP_Ops' | 'PM'> = {
+  revenue_leader: 'CEO',
+  ops_builder: 'VP_Ops',
+  technical_designer: 'VP_Eng',
+};
+
+export interface PsVariantSelectionResult {
+  /** Rendered P.S. line (the actual text inserted into the email). */
+  ps: string;
+  /** Which variant was used. May differ from the rotation pick if stat lookup missed and fell back. */
+  variantKey: PSVariantKey;
+  /** If a verified stat was injected, this is the stat id (for audit trail). Otherwise null. */
+  psClaimId: string | null;
+}
+
+/**
+ * Phase B integration: when the rotation picks a stat-required variant
+ * (industry_data_hook or loss_frame_anchor), look up a verified stat from
+ * the library. If found, paste verbatim. If miss, fall back to a non-stat
+ * variant (quiet_diagnostic) so we never ship a fabricated number.
+ *
+ * applicabilityTags defaults to ['bead-funded'] since all ShowRev cold
+ * prospects are BEAD-impacted fiber operators. Caller can override.
+ */
+function trySelectVariantWithStat(
+  variantKey: PSVariantKey,
+  bucket: PersonaBucket,
+  applicabilityTags: ReadonlyArray<string>,
+): { stat: { id: string; claimText: string } | null } {
+  const variant = PS_VARIANTS[variantKey];
+  if (!variant.requiresStatTopic) return { stat: null };
+
+  // Lazy-import to keep cold-start cheap on the persona/title regex code path
+  // (which doesn't need the stat sidecar).
+  let getVerifiedStat: typeof import('./stat-library/index.js').getVerifiedStat;
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    ({ getVerifiedStat } = require('./stat-library/index.js') as typeof import('./stat-library/index.js'));
+  } catch {
+    return { stat: null };
+  }
+
+  const persona = PERSONA_BUCKET_TO_STAT_PERSONA[bucket];
+  try {
+    const stats = getVerifiedStat(
+      variant.requiresStatTopic,
+      persona,
+      applicabilityTags as Array<import('./stat-library/index.js').ApplicabilityTag>,
+      { limit: 1 },
+    );
+    if (stats.length === 0) return { stat: null };
+    return { stat: { id: stats[0].id, claimText: stats[0].claimText } };
+  } catch {
+    // NoVerifiedStatError or topic-not-found: caller falls back.
+    return { stat: null };
+  }
+}
+
+/**
+ * Legacy entry point — kept for backward compatibility. Returns just the
+ * rendered P.S. text. New callers should prefer `selectPSVariantWithAudit`
+ * which also returns the variantKey + psClaimId for DB audit trail.
+ *
+ * 2026-06-09: When the rotation picks a stat-required variant, this falls
+ * back to quiet_diagnostic if no stat is available (no more fabricated
+ * "FBA 40-50% permit rejection" type claims).
+ */
 export function selectPSVariant(
   bucket: PersonaBucket,
   touchNumber: 1 | 2 | 3,
   company: string,
   micrositeSlug: string,
   aeName: string,
+  applicabilityTags: ReadonlyArray<string> = ['bead-funded'],
 ): string {
+  return selectPSVariantWithAudit(bucket, touchNumber, company, micrositeSlug, aeName, applicabilityTags).ps;
+}
+
+/**
+ * New audit-trail entry point. Returns variantKey + psClaimId so the
+ * composer can persist the citation to sr_engine_output for reproducibility.
+ */
+export function selectPSVariantWithAudit(
+  bucket: PersonaBucket,
+  touchNumber: 1 | 2 | 3,
+  company: string,
+  micrositeSlug: string,
+  aeName: string,
+  applicabilityTags: ReadonlyArray<string> = ['bead-funded'],
+): PsVariantSelectionResult {
   let h = 0;
   for (let i = 0; i < company.length; i++) h = ((h << 5) - h + company.charCodeAt(i)) | 0;
   const companyHash = Math.abs(h);
   const variantKey = pickPSVariantKey(bucket, touchNumber, companyHash);
   const variant = PS_VARIANTS[variantKey];
   const aeFirstName = aeName.split(/\s+/)[0] || aeName;
-  return variant.render({ company, micrositeSlug, aeFirstName });
+
+  // Phase B integration: if variant requires a stat, try the library.
+  if (variant.requiresStatTopic) {
+    const { stat } = trySelectVariantWithStat(variantKey, bucket, applicabilityTags);
+    if (stat) {
+      return {
+        ps: variant.render({ company, micrositeSlug, aeFirstName, verifiedStat: stat.claimText }),
+        variantKey,
+        psClaimId: stat.id,
+      };
+    }
+    // Miss: variant's render() has a built-in fallback that omits the stat
+    // claim (so we don't ship a fabricated number). Fall through to render
+    // with verifiedStat=undefined.
+  }
+
+  return {
+    ps: variant.render({ company, micrositeSlug, aeFirstName }),
+    variantKey,
+    psClaimId: null,
+  };
 }
 
 export const INFLUENCE_TOOLKIT: InfluenceToolkit = {

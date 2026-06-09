@@ -362,16 +362,22 @@ async function processOne(
     }
   }
 
-  // Phase 3.5: Substrate refutation (audit fresh-eyes 2026-06-09 wiring)
+  // Phase 3.5: Substrate refutation (Phase C activation 2026-06-09 evening)
   // ---------------------------------------------------------------------
   // After substrate is pulled but BEFORE compose, ask: "does the substrate
   // refute this frame's premise?" — and on halt, route the prospect to
   // send_status='flag' with a system_brief that names the refuter claims.
   //
-  // Phase B is NOT yet emitting per-prospect frame selections, so this is
-  // gated on result.refutation_frame being explicitly set by an upstream
-  // caller. Once Phase B lands, the orchestrator will assign
-  // result.refutation_frame and this block lights up automatically.
+  // Frame selection: default-frame per ICP type. Operator can later refine
+  // based on persona_bucket or BEAD-state context. This activation closes
+  // the ALLO/Finley fabrication class — see verified-claim-library-B-* docs.
+  //   fiber_operator → bead_timeline_v1 (BEAD obligations on the clock)
+  //   ae_firm        → gis_pain_v1      (GIS-to-CAD friction)
+  if (result.icp_type && !result.refutation_frame) {
+    result.refutation_frame = result.icp_type === 'fiber_operator'
+      ? 'bead_timeline_v1'
+      : 'gis_pain_v1';
+  }
   if (result.icp_type && result.dossier && result.refutation_frame) {
     try {
       const prospectId = `${row.firstName}-${row.lastName}-${row.company}`
