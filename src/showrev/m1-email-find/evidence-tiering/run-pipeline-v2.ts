@@ -42,6 +42,12 @@ import { orchestrateEvidence } from './orchestrator.js';
 import { composeSpecific } from './specific-composer.js';
 import { ApolloCreditTracker, findEmailForProspect } from './apollo-client.js';
 import {
+  checkSubstrateRefutation,
+  type RefutationResult,
+  type Refuter,
+  type FrameId,
+} from './refutation.js';
+import {
   runTieredJudgeOnProspect,
   judgeMonitor,
   resetJudgeMonitor,
@@ -126,6 +132,12 @@ interface ProspectResult {
   flag_status?: boolean;
   flag_reason_short?: string;  // → sr_engine_output.ae_flag (terse, one-line)
   flag_reason_brief?: string;  // → sr_engine_output.company_summary (System Brief, 1-3 sentences plain English)
+  // Phase C (audit fresh-eyes 2026-06-09 integration handoff): the
+  // refutation result captured pre-compose. status='halt' means the
+  // substrate refuted the chosen frame and no safe alternative existed —
+  // the prospect routes to system_brief with refuter claims named.
+  refutation_result?: RefutationResult;
+  refutation_frame?: FrameId;
   durations_ms: {
     icp?: number;
     email?: number;
@@ -350,6 +362,43 @@ async function processOne(
     }
   }
 
+  // Phase 3.5: Substrate refutation (audit fresh-eyes 2026-06-09 wiring)
+  // ---------------------------------------------------------------------
+  // After substrate is pulled but BEFORE compose, ask: "does the substrate
+  // refute this frame's premise?" — and on halt, route the prospect to
+  // send_status='flag' with a system_brief that names the refuter claims.
+  //
+  // Phase B is NOT yet emitting per-prospect frame selections, so this is
+  // gated on result.refutation_frame being explicitly set by an upstream
+  // caller. Once Phase B lands, the orchestrator will assign
+  // result.refutation_frame and this block lights up automatically.
+  if (result.icp_type && result.dossier && result.refutation_frame) {
+    try {
+      const prospectId = `${row.firstName}-${row.lastName}-${row.company}`
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-');
+      const refResult = await checkSubstrateRefutation(
+        {
+          id: prospectId,
+          company_normalized: row.company.toLowerCase().trim(),
+        },
+        result.refutation_frame,
+        { runId: options.runId },
+      );
+      result.refutation_result = refResult;
+      console.log(
+        `  refutation: ${refResult.status}` +
+          (refResult.status === 'swap'
+            ? ` (${result.refutation_frame} → ${refResult.alternative}, method=${refResult.method})`
+            : refResult.status === 'halt'
+              ? ` (reason=${refResult.reason}, refuters=${refResult.refuters.length})`
+              : ''),
+      );
+    } catch (err) {
+      result.errors.push(`refutation: ${(err as Error).message}`);
+    }
+  }
+
   // Phase 4: Composition (NEW — specific with auto-fallback to generalized)
   if (result.icp_type && result.dossier) {
     try {
@@ -477,11 +526,19 @@ function classifyFlagReason(
   | 'compose_failed'
   | 'compose_violations'
   | 'hallucination'
+  | 'substrate_refuted'
   | 'email_red'
   | 'email_guessed_only'
   | 'icp_leaning_fit'
   | 'research_low'
   | 'none' {
+  // Phase C halt — substrate refuted the chosen frame and no safe alt
+  // existed. This is the audit's "halt → system_brief" wiring (fresh-eyes
+  // 2026-06-09 §"Integration handoff"). Highest priority below compose
+  // because the refutation gate runs PRE-compose; if it halted, there is
+  // no email to evaluate further.
+  if (result.refutation_result?.status === 'halt') return 'substrate_refuted';
+
   // Composer errors trump everything — without an email body, the
   // portal has nothing to show the human.
   if (result.errors.some(e => e.startsWith('compose:'))) return 'compose_failed';
@@ -528,6 +585,34 @@ export function generateFlagSystemBrief(result: ProspectResult): string {
   const company = result.row.company;
 
   switch (reason) {
+    case 'substrate_refuted': {
+      // Phase C halt — name the refuter claims so the operator can see WHY
+      // the substrate killed the frame, and what the original frame was.
+      const ref = result.refutation_result;
+      const refuters: Refuter[] =
+        ref && ref.status === 'halt' ? ref.refuters : [];
+      const reason = ref && ref.status === 'halt' ? ref.reason : 'unknown';
+      const method = ref && ref.status === 'halt' ? ref.method : 'unknown';
+      const claimList = refuters.length === 0
+        ? 'no specific refuter claims captured'
+        : refuters
+            .slice(0, 3)
+            .map(r => `"${r.claim}" (${r.source_citation || 'no citation'})`)
+            .join('; ');
+      const reasonHuman =
+        reason === 'refuted_no_safe_alt'
+          ? 'the substrate evidence directly contradicted the angle we picked, and no materially-different alternative passed its own check'
+          : reason === 'insufficient_evidence'
+            ? 'this frame requires substrate evidence we never found for this company'
+            : reason === 'judge_unavailable'
+              ? 'the semantic refutation judge timed out or failed and we fail-closed rather than risk a fabricated email'
+              : 'an internal refutation gate decision';
+      return (
+        `The substrate-refutation gate halted ${firstName} at ${company} before composing — ${reasonHuman} (method=${method}, frame=${result.refutation_frame ?? 'unknown'}). ` +
+        `Refuter claims: ${claimList}. ` +
+        `Recommendation: either select a different frame for this prospect (Phase B can re-route to a non-refuted angle), or hand-write a message that explicitly acknowledges the refuting context. Do not auto-send — that's the ALLO/Finley fabrication class.`
+      );
+    }
     case 'compose_failed': {
       const composeErr = result.errors.find(e => e.startsWith('compose:'));
       const detail = composeErr ? composeErr.replace(/^compose:\s*/, '') : 'no email body produced';

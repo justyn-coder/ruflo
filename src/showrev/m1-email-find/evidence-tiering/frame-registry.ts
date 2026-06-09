@@ -92,6 +92,35 @@ export const DEFAULT_PERMANENT_CLAIM_CATEGORIES: ReadonlyArray<string> = Object.
   'public_statement',
 ]);
 
+/**
+ * Canonical premiseAxis enum (audit fresh-eyes 2026-06-09 §"Frame registry
+ * handoff risk" #2). Two frames sharing the same intent under different
+ * axis labels (e.g. "gis-pain" vs "operational-pain-gis") silently break
+ * the theatre-swap defense. This list is the source of truth; Phase B
+ * must pin every frame to one of these values.
+ *
+ * Phase B may extend this list, but every addition must be reviewed against
+ * the theatre-swap test: would frame X under axis A and frame Y under axis B
+ * actually be saying the same thing? If yes, they share an axis.
+ */
+export const CANONICAL_PREMISE_AXES: ReadonlyArray<string> = Object.freeze([
+  'operational-pain-gis',   // GIS-to-CAD friction, drafting bottleneck, design throughput
+  'bead-timeline',          // BEAD obligations on the clock, deadline pressure
+  'growth-narrative',       // Growth win, BEAD/RDOF momentum, expansion announcement
+  'partner-pride',          // Vendor partnership praise, integrator referral
+  'capital-pressure',       // Capital raise, runway, financing event
+  'workforce-scaling',      // Hiring, in-house capability build, acquisition for talent
+  'compliance-risk',        // Permit, reporting, regulatory deadline pressure
+  'judge-axis',             // Generic axis for judge-only frames (Phase B placeholder)
+]);
+
+/**
+ * Phase C internal: allow tests + Phase B placeholders to use axes outside
+ * the canonical list without crashing at load. Set to true in production
+ * builds once Phase B has migrated all frames to canonical axes.
+ */
+const ENFORCE_CANONICAL_AXES = false;
+
 // ----------------------------------------------------------------------------
 // Errors — public so callers can `instanceof` them
 // ----------------------------------------------------------------------------
@@ -135,6 +164,19 @@ export function validateFrameRegistryEntry(
   // Spec §2: premiseAxis required, non-empty. Defeats "theatre swap" failure mode.
   if (!entry.premiseAxis || typeof entry.premiseAxis !== 'string' || !entry.premiseAxis.trim()) {
     throw new FrameSchemaInvalid(entry.frameId, 'premiseAxis must be a non-empty string');
+  }
+  // Audit fresh-eyes 2026-06-09 §"Frame registry handoff risk" #2: when
+  // canonical-axis enforcement is on (Phase B migration complete), reject
+  // any frame whose axis label isn't in CANONICAL_PREMISE_AXES. Until then
+  // (ENFORCE_CANONICAL_AXES=false) just permit any non-empty string so
+  // placeholder Phase B frames keep working.
+  if (ENFORCE_CANONICAL_AXES && !CANONICAL_PREMISE_AXES.includes(entry.premiseAxis)) {
+    throw new FrameSchemaInvalid(
+      entry.frameId,
+      `premiseAxis "${entry.premiseAxis}" not in canonical set ` +
+        `(${CANONICAL_PREMISE_AXES.join(', ')}); ` +
+        `Phase B must pin axes to canonical values to defeat theatre swaps`,
+    );
   }
   if (!Array.isArray(entry.refuterKeywords)) {
     throw new FrameSchemaInvalid(entry.frameId, 'refuterKeywords must be an array');
@@ -299,6 +341,22 @@ const _registryMap: Map<FrameId, FrameRegistryEntry> = (() => {
     validateFrameRegistryEntry(entry);
     m.set(entry.frameId, Object.freeze({ ...entry }) as FrameRegistryEntry);
   }
+  // Audit fresh-eyes 2026-06-09 §"Frame registry handoff risk" #1:
+  // cross-frame referential check. Every id in `safeAlternatives` must
+  // resolve to a registered frame. Without this, a Phase B typo surfaces
+  // only at runtime inside pickSafeAlternative — silently degrading to
+  // halt-no-alt instead of failing loud at load.
+  for (const entry of m.values()) {
+    for (const altId of entry.safeAlternatives) {
+      if (!m.has(altId)) {
+        throw new FrameSchemaInvalid(
+          entry.frameId,
+          `safeAlternatives contains unknown frameId "${altId}"; ` +
+            `Phase B mis-config — every alternative must be registered`,
+        );
+      }
+    }
+  }
   return m;
 })();
 
@@ -322,6 +380,18 @@ export function getFrame(frameId: FrameId): FrameRegistryEntry {
  */
 export function registerFrameForTest(entry: FrameRegistryEntry): void {
   validateFrameRegistryEntry(entry);
+  // Per-entry safeAlternatives check (same as the registry-load sweep).
+  // Allowed to self-reference an alt that hasn't been registered yet ONLY
+  // if it's the entry being registered right now — supports two-frame
+  // mutual-alt patterns in tests where both frames are registered in sequence.
+  for (const altId of entry.safeAlternatives) {
+    if (!_registryMap.has(altId) && altId !== entry.frameId) {
+      throw new FrameSchemaInvalid(
+        entry.frameId,
+        `safeAlternatives contains unknown frameId "${altId}" at registerFrameForTest`,
+      );
+    }
+  }
   _registryMap.set(entry.frameId, Object.freeze({ ...entry }) as FrameRegistryEntry);
 }
 

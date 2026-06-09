@@ -251,11 +251,10 @@ function makeRealDbFns(): DbFns {
       try {
         // Spec §6: ON CONFLICT(prospect_id, stage, metadata->>runId) DO NOTHING.
         // PostgREST `on_conflict=...` works on unique-index columns; the
-        // expression-index migration named in spec §6 must exist for
-        // idempotency to engage. Use Prefer: resolution=ignore-duplicates so
-        // the server-side ON CONFLICT short-circuits — fail-soft if the
-        // index isn't there yet, the second call will simply create a
-        // duplicate row (loud rather than silent).
+        // expression-index migration (applied 2026-06-09: idx_sr_decision_trace_idempotent)
+        // engages the server-side ON CONFLICT short-circuit. Without this index
+        // a re-run with same runId would create duplicate rows (loud rather
+        // than silent — but operationally bad).
         const res = await fetch(`${url}/rest/v1/sr_decision_trace`, {
           method: 'POST',
           headers: {
@@ -273,8 +272,38 @@ function makeRealDbFns(): DbFns {
             model: payload.model,
           }),
         });
-        if (!res.ok && res.status !== 409) {
+        if (!res.ok) {
           const text = await res.text().catch(() => '');
+          // 409 can be EITHER a real ON CONFLICT ignore (idempotent re-run)
+          // OR a foreign-key violation (PostgREST maps fk_violation → 409 too).
+          // FAIL-LOUD on FK: that's the ALLO/Finley fabrication class
+          // (trace looks written but prospect_id doesn't exist). Postgres
+          // foreign_key_violation has SQLSTATE code=23503.
+          // Audit 2026-06-09 fresh-eyes review §"Known 409 bug".
+          if (res.status === 409) {
+            // Inspect body. PostgREST error JSON shape: { code, details, hint, message }.
+            let isRealConflict = true;
+            try {
+              const parsed = JSON.parse(text) as { code?: string; message?: string };
+              if (parsed && typeof parsed === 'object' && typeof parsed.code === 'string') {
+                if (parsed.code === '23503') isRealConflict = false; // FK violation
+                // 23505 (unique_violation) is the legitimate idempotency case.
+              }
+            } catch {
+              // Empty body or non-JSON → assume real conflict (ON CONFLICT path
+              // with Prefer: resolution=ignore-duplicates returns 201/empty,
+              // not 409. If we see 409 with empty body something else happened).
+              // Be conservative: treat as conflict only if body is empty.
+              if (text.trim() !== '') isRealConflict = false;
+            }
+            if (!isRealConflict) {
+              throw new Error(
+                `FK or other constraint violation: HTTP 409 — ${text.slice(0, 200)}`,
+              );
+            }
+            // Real ON CONFLICT — idempotent re-run, silent success.
+            return;
+          }
           throw new Error(`HTTP ${res.status}: ${text.slice(0, 200)}`);
         }
       } catch (cause) {
@@ -385,6 +414,13 @@ Return ONLY a JSON object of shape:
 /**
  * Wrap the judge with timeout + 1 retry. Returns a JudgeFn that the algorithm
  * calls. Spec §3.7 + §9: 1500ms × 1 retry = ~3s worst case before halt.
+ *
+ * Retry policy (audit fresh-eyes 2026-06-09 NEW issue #1): retry ONLY on
+ * non-abort errors (parse errors, network blips, JSON-shape errors).
+ * Do NOT retry on AbortError/timeout — the second call would hit the same
+ * wall clock budget with the same result and double the Haiku bill for no
+ * audit benefit. Halt fast on timeout; let the caller's halt-no-judge
+ * branch take over.
  */
 function defaultJudgeFn(frame: FrameRegistryEntry): JudgeFn {
   return async (evidenceTop10, _prompt, parentSignal) => {
@@ -404,7 +440,14 @@ function defaultJudgeFn(frame: FrameRegistryEntry): JudgeFn {
         clearTimeout(timeout);
         parentSignal.removeEventListener('abort', onParentAbort);
         lastErr = err;
-        // No backoff sleep — we have a tight latency budget; spec §9.
+        // Audit fresh-eyes 2026-06-09: do not retry on abort/timeout.
+        // The wall clock budget is the same, the SDK behavior is the same,
+        // and we'd just bill twice for the same outcome.
+        const isAbort =
+          (err instanceof Error &&
+            (err.name === 'AbortError' || /abort|timeout/i.test(err.message))) ||
+          controller.signal.aborted;
+        if (isAbort) break;
       }
     }
     throw lastErr ?? new Error('judge: unknown failure');
@@ -427,6 +470,12 @@ const MAX_ALT_RECURSION_DEPTH = 2; // spec §3.6
  * We intentionally only re-run KEYWORD refutation in the recursive check —
  * recursing into Haiku would blow the latency budget and the spec doesn't
  * require it.
+ *
+ * Audit fresh-eyes 2026-06-09 NEW issue #2: `seen` is now a per-path
+ * accumulator (copied at each recursion frame), not a global cross-branch
+ * Set. Cycle prevention is preserved along the current path, but a
+ * depth-1 reject can be reconsidered as a depth-2 alt via a different
+ * parent (avoids starving legitimate swaps in a dense frame graph).
  */
 function pickSafeAlternative(
   refutedFrame: FrameRegistryEntry,
@@ -437,13 +486,14 @@ function pickSafeAlternative(
   if (depth > MAX_ALT_RECURSION_DEPTH) return null;
   for (const altId of refutedFrame.safeAlternatives) {
     if (seen.has(altId)) continue;
-    seen.add(altId);
     let alt: FrameRegistryEntry;
     try {
       alt = getFrame(altId);
     } catch {
       // Missing alternative — Phase B mis-config. Skip rather than throw,
       // so a partial registry doesn't take down the whole pipeline.
+      // (Load-time validation in frame-registry.ts now catches this at
+      //  registry build, so we should never hit it in production.)
       continue;
     }
     // (a) Reject same-axis (theatre swap defense).
@@ -452,7 +502,11 @@ function pickSafeAlternative(
     const refs = applyKeywordPass(alt, evidence);
     if (refs.length === 0) return altId;
     // (b-recurse) The alt is itself refuted — try ITS alternatives.
-    const nested = pickSafeAlternative(alt, evidence, depth + 1, seen);
+    // Per-path Set: copy `seen`, add the current alt as "on this path",
+    // and recurse. Sibling branches at depth `depth` get their own copies.
+    const childSeen = new Set(seen);
+    childSeen.add(altId);
+    const nested = pickSafeAlternative(alt, evidence, depth + 1, childSeen);
     if (nested) return nested;
   }
   return null;
