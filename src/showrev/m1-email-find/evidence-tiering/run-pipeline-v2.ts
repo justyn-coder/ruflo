@@ -35,6 +35,8 @@ import { icpGate } from '../icp-gate.js';
 import { resolveAE, getAEDetails } from '../ae-config.js';
 import { detectPersona } from '../influence.js';
 import { findEmail } from '../email-finder/orchestrator.js';
+import { verifyEmailMV } from '../email-finder/million-verifier.js';
+import { composeMicrosite } from './microsite-composer.js';
 import { orchestrateEvidence } from './orchestrator.js';
 import { composeSpecific } from './specific-composer.js';
 import { ApolloCreditTracker, findEmailForProspect } from './apollo-client.js';
@@ -188,6 +190,15 @@ async function processOne(
       firstName: row.firstName,
       lastName: row.lastName,
       company: row.company,
+    }, {
+      // MillionVerifier as Path A final-gate (operator-confirmed wiring 2026-06-09).
+      // Resolves M365/Google catch-all "200 OK for everything" ambiguity that
+      // currently kills ~18 of 43 red prospects per cohort. valid → green,
+      // catch_all → amber, unknown/invalid → keep red.
+      millionVerifierFn: async (email: string) => {
+        const mv = await verifyEmailMV(email);
+        return { quality: mv.quality, result: mv.result };
+      },
     });
     result.email_found = emailResult.email || undefined;
     result.email_confidence = emailResult.confidence;
@@ -811,15 +822,36 @@ async function persistMicrosite(result: ProspectResult): Promise<void> {
   const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
   if (!sbKey) return;
 
-  const persona =
-    /chief|vp|svp|ceo|cfo/i.test(result.row.title || '') ? 'revenue_leader' :
-    /director|head|ops|operation|manager/i.test(result.row.title || '') ? 'ops_builder' :
-    /engineer|technical|designer|cto/i.test(result.row.title || '') ? 'technical_designer' :
-    'ops_builder';
-
-  const headline = MICROSITE_HEADLINE_BY_PERSONA[persona] || MICROSITE_HEADLINE_BY_PERSONA.ops_builder;
+  const persona = detectPersona(result.row.title || '');
   const icpType = (result.icp_type === 'ae_firm' ? 'ae_firm' : 'fiber_operator') as 'fiber_operator' | 'ae_firm';
-  const insightText = buildMicrositeInsight(icpType, persona, result.row.company);
+
+  // Option A microsite content — LLM-generated headline + bloom (operator-approved 2026-06-09).
+  // Template renders: <p>{headline} <span class="bloom">{insight_text}</span></p>
+  // where the bloom span fades in on scroll for dynamic effect.
+  // Falls back to templated content if LLM call fails (graceful degradation).
+  let headline: string;
+  let insightText: string;
+  if (result.dossier) {
+    try {
+      const microsite = await composeMicrosite({
+        prospect: { firstName: result.row.firstName, lastName: result.row.lastName, company: result.row.company, title: result.row.title || '', state: result.row.state || '' },
+        persona,
+        icpType,
+        dossier: result.dossier,
+        emailBody: result.composed.body || '',
+        emailSubject: result.composed.subject || '',
+      });
+      headline = microsite.headline;
+      insightText = microsite.bloom_text;
+    } catch (err) {
+      console.warn(`  ⚠ microsite-composer fallback to templated: ${(err as Error).message}`);
+      headline = MICROSITE_HEADLINE_BY_PERSONA[persona] || MICROSITE_HEADLINE_BY_PERSONA.ops_builder;
+      insightText = buildMicrositeInsight(icpType, persona, result.row.company);
+    }
+  } else {
+    headline = MICROSITE_HEADLINE_BY_PERSONA[persona] || MICROSITE_HEADLINE_BY_PERSONA.ops_builder;
+    insightText = buildMicrositeInsight(icpType, persona, result.row.company);
+  }
   const caseStudyText = icpType === 'fiber_operator' ? CASE_STUDY_FIBER_OPERATOR : CASE_STUDY_AE_FIRM;
 
   const aeDetail = getAEDetails(result.ae.name);
