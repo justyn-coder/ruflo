@@ -304,7 +304,6 @@ export function checkBigramRepeat(body: string): string | null {
 }
 
 // ----------------------------------------------------------------------------
-<<<<<<< HEAD
 // AI-detection signal checks (DL-199, research-validated)
 // ----------------------------------------------------------------------------
 //
