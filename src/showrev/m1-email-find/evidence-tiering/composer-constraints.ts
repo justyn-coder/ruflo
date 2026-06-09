@@ -167,6 +167,23 @@ export function countWords(body: string): number {
 }
 
 /**
+ * Count words across body + P.S. while excluding URLs.
+ *
+ * Operator-confirmed 2026-06-09: the 100w ceiling applies to body + P.S.
+ * combined, NOT body alone. URLs are stripped because they visually count
+ * as one heavy "word" but carry no narrative weight — the URL is what the
+ * reader CLICKS, not what they READ.
+ *
+ * Body target ~50-60w, P.S. ~20-25w (excluding URL), total ~75-85w —
+ * landing comfortably under the 100w ceiling.
+ */
+const URL_PATTERN = /https?:\/\/\S+/g;
+export function countWordsTotal(body: string, ps: string): number {
+  const combined = `${body} ${ps}`.replace(URL_PATTERN, '').trim();
+  return combined.split(/\s+/).filter(Boolean).length;
+}
+
+/**
  * Check that the composed body references the prospect's company by the
  * EXACT input name — not a parent-co / alias / abbreviation pulled from
  * substrate metadata.
@@ -213,6 +230,76 @@ export function checkCompanyNameLock(body: string, expectedCompany: string): str
     return `Body references "${suspect[1]}" but prospect company is "${expectedCompany}". Use the exact name from CSV, do NOT substitute parent-co / aliases.`;
   }
 
+  return null;
+}
+
+// ----------------------------------------------------------------------------
+// Recompose-regression guards (item 4 — numeric-anchor + bigram fingerprinter)
+// ----------------------------------------------------------------------------
+//
+// Recomposition can REINTRODUCE patterns that the previous attempt didn't have:
+//   - Same numeric value cited twice ("~3,900 locations" + "3,900-location scope")
+//   - Same multi-word phrase used 3+ times across sentences as a structural crutch
+//
+// Both are recompose-regression signals — the LLM clung to one anchor too hard
+// while trying to fix something else. Caught these in the old build's judge.ts.
+// Ported here as constraint-check helpers so the composer can detect + retry.
+
+/**
+ * Check for repeated numeric anchors. Returns the offending number if found,
+ * or null if clean.
+ *
+ * Fingerprint: number + singular unit. So "1,700 miles" and "~1,700-mile scope"
+ * both fingerprint as "1700:mile" and trigger the check.
+ */
+export function checkNumericAnchorRepeat(body: string): string | null {
+  const numericPattern = /\b~?\d{1,3}(?:[,.]?\d{3})*(?:[-.]\d+)?[\s-]*(locations?|miles?|drawings?|cycles?|days?|weeks?|months?|years?|hours?|packages?|customers?|subscribers?|counties?|states?|%|percent)\b/gi;
+  const matches = [...body.matchAll(numericPattern)];
+  const seen = new Set<string>();
+  for (const m of matches) {
+    const numPart = m[0].match(/~?\d[\d,.]*/)?.[0]?.replace(/[,.]/g, '') || '';
+    const unit = (m[1] || '').toLowerCase().replace(/s$/, '');
+    const fp = `${numPart}:${unit}`;
+    if (!fp || fp === ':') continue;
+    if (seen.has(fp)) {
+      return `${numPart} ${unit} appears twice in body`;
+    }
+    seen.add(fp);
+  }
+  return null;
+}
+
+/**
+ * Check for 3-word noun-phrase repetition (structural redundancy crutch).
+ * Returns the offending phrase if found in 3+ sentences, or null if clean.
+ *
+ * Filters out stopword bigrams ("that the", "with their", etc.) so common
+ * connective phrases don't trigger.
+ */
+const STOPWORD_BIGRAMS = /^(?:that |this |with |from |into |their |there |would |could |should |which |where |when |what |only |just |very |they |then |also |here |much |many |some |most |such |make |made |been |were |have |will |your |our |you )/;
+
+export function checkBigramRepeat(body: string): string | null {
+  const sentences = body
+    .split(/[.!?]+/)
+    .map(s => s.trim())
+    .filter(s => s.length > 12);
+  if (sentences.length < 3) return null;
+  const counts = new Map<string, number>();
+  for (const s of sentences) {
+    const words = s.toLowerCase().replace(/[^a-z\s]/g, ' ').split(/\s+/).filter(w => w.length > 3);
+    const seenInSentence = new Set<string>();
+    for (let i = 0; i + 1 < words.length; i++) {
+      const bigram = `${words[i]} ${words[i + 1]}`;
+      if (seenInSentence.has(bigram)) continue;
+      seenInSentence.add(bigram);
+      counts.set(bigram, (counts.get(bigram) || 0) + 1);
+    }
+  }
+  for (const [bigram, count] of counts.entries()) {
+    if (count >= 3 && !STOPWORD_BIGRAMS.test(bigram)) {
+      return `phrase "${bigram}" repeats in ${count} sentences`;
+    }
+  }
   return null;
 }
 

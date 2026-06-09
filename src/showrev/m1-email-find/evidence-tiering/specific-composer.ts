@@ -41,8 +41,11 @@ import {
   companyNameLockPromptBlock,
   checkBannedPhrases,
   checkCompanyNameLock,
+  checkNumericAnchorRepeat,
+  checkBigramRepeat,
   countParagraphs,
   countWords,
+  countWordsTotal,
   scoreAttempt,
   selectBestAttempt,
   type ComposeAttempt,
@@ -216,7 +219,7 @@ ${companyNameLockPromptBlock(prospect.company)}
 ${bannedPhrasesPromptBlock()}
 
 ## Hard constraints
-- WORD COUNT: aim for 60-70 words. Hard ceiling 100 words — mechanical gate REJECTS above 100w. LLM tends to undercount, so the 60-70 target is intentional padding. Body only.
+- WORD COUNT: aim for 60-70 words. **Hard ceiling 100 words on body + P.S. combined (URL excluded). Mechanical gate REJECTS above 100.** LLM tends to undercount, so the 60-70 target is intentional padding so you naturally land under 100.
 - BODY MUST BE EXACTLY 3 PARAGRAPHS separated by single blank lines.
 - NO em-dashes.
 - ONE question with ONE question mark.
@@ -293,6 +296,9 @@ export async function composeSpecific(args: {
   const associationPriorities = await getAssociationPriorities({ topN: 5 });
 
   // 4. Compose
+  // Pre-select the P.S. variant so the retry loop can count total words
+  // (body + P.S. excluding URL) against the 100w ceiling.
+  const psLine = selectPSVariant(persona, 1, prospect.company, micrositeSlug, aeName);
   const prompt = buildSpecificPrompt({
     prospect,
     icpType,
@@ -324,18 +330,22 @@ export async function composeSpecific(args: {
     const subject: string = candidate.subject || '';
 
     const violations: string[] = [];
-    const wordCount = countWords(body);
-    if (wordCount > 100) violations.push(`Body is ${wordCount} words — over 100w ceiling`);
+    const totalWords = countWordsTotal(body, psLine);
+    if (totalWords > 100) violations.push(`Total (body + P.S., URL excluded) is ${totalWords} words — over 100w ceiling`);
     const paraCount = countParagraphs(body);
     if (paraCount !== 3) violations.push(`Body has ${paraCount} paragraphs — must be exactly 3`);
     const bannedHits = checkBannedPhrases(body, subject);
     for (const b of bannedHits) violations.push(`Banned: ${b}`);
     const companyMismatch = checkCompanyNameLock(body, prospect.company);
     if (companyMismatch) violations.push(companyMismatch);
+    const numericRepeat = checkNumericAnchorRepeat(body);
+    if (numericRepeat) violations.push(`Recompose regression: ${numericRepeat}`);
+    const bigramRepeat = checkBigramRepeat(body);
+    if (bigramRepeat) violations.push(`Recompose regression: ${bigramRepeat}`);
 
     lastViolations = violations;
     attempts.push({ candidate, violations, attemptNumber: attempt + 1 });
-    if (verbose) console.log(`  Compose attempt ${attempt + 1}: ${wordCount}w, ${paraCount}p, ${violations.length} violations, score=${scoreAttempt(violations)}`);
+    if (verbose) console.log(`  Compose attempt ${attempt + 1}: ${totalWords}w total, ${paraCount}p, ${violations.length} violations, score=${scoreAttempt(violations)}`);
 
     if (violations.length === 0) break;
   }
