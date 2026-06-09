@@ -37,6 +37,13 @@ import { findEmail } from '../email-finder/orchestrator.js';
 import { orchestrateEvidence } from './orchestrator.js';
 import { composeSpecific } from './specific-composer.js';
 import { ApolloCreditTracker, findEmailForProspect } from './apollo-client.js';
+import {
+  runTieredJudgeOnProspect,
+  judgeMonitor,
+  resetJudgeMonitor,
+  type TieredJudgeResult,
+  type JudgeAction,
+} from './tiered-judge.js';
 import type { ComposedEmail, TieredDossier, IcpVolumeVerdict } from './types.js';
 
 // ----------------------------------------------------------------------------
@@ -91,6 +98,9 @@ interface ProspectResult {
   dossier?: TieredDossier;
   composed?: ComposedEmail;
   composer_mode?: 'specific' | 'generalized';
+  judge_result?: TieredJudgeResult;
+  judge_action?: JudgeAction;
+  send_status?: 'pending' | 'flag';
   icp_volume_verdict?: IcpVolumeVerdict;
   research_quality?: string;
   pull_substrate_records?: number;
@@ -114,7 +124,7 @@ interface ProspectResult {
 
 async function processOne(
   row: CsvRow,
-  options: { skipApollo: boolean; runId: string; verbose: boolean; maxApolloCredits?: number },
+  options: { skipApollo: boolean; runId: string; verbose: boolean; maxApolloCredits?: number; prospectIdx: number },
   creditTracker: ApolloCreditTracker,
 ): Promise<ProspectResult> {
   const t0 = Date.now();
@@ -275,6 +285,43 @@ async function processOne(
     }
   }
 
+  // Phase 4.5: Tiered judge (items 7+8 — synthesis 2026-06-09)
+  // T1 mechanical regex (instant, $0) -> T2 Tim-style edit-patterns (instant, $0)
+  // -> T3 Gemini cross-family judge (~10s, ~$0.005) for borderline cases only.
+  // Result.judge_action drives send_status:
+  //   'ship'   -> send_status='pending' (caller writes), composed email proceeds
+  //   'flag'   -> send_status='flag', surfaced for human review in portal
+  //   'retry'  -> best-of-N composer upstream already handles. If we land here,
+  //              composer exhausted retries — treat as flag (safer than ship).
+  if (result.composed) {
+    try {
+      const judgeResult = await runTieredJudgeOnProspect(
+        result.composed,
+        {
+          firstName: row.firstName,
+          lastName: row.lastName,
+          company: row.company,
+          title: row.title || '',
+          state: row.state,
+        },
+      );
+      result.judge_result = judgeResult;
+      result.judge_action = judgeResult.action;
+      result.send_status =
+        judgeResult.action === 'ship' ? 'pending'
+        : 'flag'; // 'retry' here = composer already exhausted; treat as flag for safety
+      console.log(
+        `  judge: T1=${judgeResult.tier1.pass ? 'pass' : 'fail'} T2=${judgeResult.tier2.score}/5` +
+        (judgeResult.tier3 ? ` T3=${judgeResult.tier3.verdict}` : '') +
+        ` -> ${judgeResult.action} (${judgeResult.rationale})`,
+      );
+      // Item 8 monitoring — track rolling rates and write JUDGE-ALERT.md if tripped
+      judgeMonitor(options.prospectIdx, judgeResult);
+    } catch (err) {
+      result.errors.push(`judge: ${(err as Error).message}`);
+    }
+  }
+
   // Phase 5: Persist to Supabase
   if (result.icp_type) {
     try {
@@ -424,7 +471,9 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     lead_type: 'Cold',
     tier: 'A',
     campaign: 'P2',
-    send_status: 'pending',
+    // Tiered judge (items 7+8) sets 'flag' for borderline / dissenting cases.
+    // Default to 'pending' if judge didn't run (no composed email).
+    send_status: result.send_status || 'pending',
     assigned_ae: result.ae.name,
     icp_status: result.icp_verdict,
     icp_reason: result.icp_reason || '',
@@ -649,10 +698,12 @@ async function main() {
   console.log('='.repeat(70));
 
   const creditTracker = new ApolloCreditTracker();
+  resetJudgeMonitor(); // item 8: fresh rolling rates per pipeline run
   const t0 = Date.now();
   const results: ProspectResult[] = [];
 
-  for (const row of rows) {
+  for (let i = 0; i < rows.length; i++) {
+    const row = rows[i];
     try {
       const result = await processOne(
         row,
@@ -661,6 +712,7 @@ async function main() {
           maxApolloCredits,
           runId,
           verbose: !!values.verbose,
+          prospectIdx: i,
         },
         creditTracker,
       );
