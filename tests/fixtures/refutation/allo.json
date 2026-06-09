@@ -1,0 +1,54 @@
+{
+  "_comment": "ALLO Communications fixture for Phase C refutation tests (2026-06-09). Substrate shows a fresh BEAD-award narrative — the GIS-pain frame's refuterKeywords ('bead award', 'expanded into') fire and force a swap to bead_timeline_v1. Mirrors sr_company_evidence row shape verified 2026-06-09 via information_schema. Evidence IDs are placeholder strings — Phase C does not constrain id format.",
+  "prospect": {
+    "id": "prospect_allo_001",
+    "company_normalized": "allo communications"
+  },
+  "evidence": [
+    {
+      "id": "ev_allo_001",
+      "claim": "ALLO Communications announced a $90M BEAD award for rural Nebraska in 2026-04.",
+      "source_citation": "https://nebraska.gov/bead/awards-2026-Q2",
+      "source_date": "2026-04-15T00:00:00Z",
+      "extracted_at": "2026-04-20T12:00:00Z",
+      "category": "company_fact",
+      "metadata": null
+    },
+    {
+      "id": "ev_allo_002",
+      "claim": "Expanded into three new counties in central Nebraska, citing BEAD as the catalyst.",
+      "source_citation": "https://allo.com/news/expansion-2026",
+      "source_date": "2026-05-02T00:00:00Z",
+      "extracted_at": "2026-05-02T11:00:00Z",
+      "category": "company_fact",
+      "metadata": null
+    },
+    {
+      "id": "ev_allo_003",
+      "claim": "CEO interviewed on Fiber Forward podcast about scaling fast.",
+      "source_citation": "https://fiberforward.fm/ep-204",
+      "source_date": "2026-03-10T00:00:00Z",
+      "extracted_at": "2026-03-12T09:00:00Z",
+      "category": "persona_signal",
+      "metadata": null
+    },
+    {
+      "id": "ev_allo_004",
+      "claim": "Hired a new VP of Construction to manage rural buildouts.",
+      "source_citation": "https://linkedin.com/in/allo-vp-construction",
+      "source_date": null,
+      "extracted_at": "2026-05-15T08:00:00Z",
+      "category": "persona_signal",
+      "metadata": null
+    },
+    {
+      "id": "ev_allo_005",
+      "claim": "Quarterly investor letter highlights subscriber growth of 18%.",
+      "source_citation": "https://allo.com/investors/q1-2026",
+      "source_date": "2026-04-25T00:00:00Z",
+      "extracted_at": "2026-04-26T10:00:00Z",
+      "category": "company_fact",
+      "metadata": null
+    }
+  ]
+}

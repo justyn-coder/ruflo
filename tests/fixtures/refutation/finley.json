@@ -1,0 +1,54 @@
+{
+  "_comment": "Finley Engineering fixture for Phase C refutation tests (2026-06-09). Substrate is growth-only and contains NO keywords that refute the bead_growth_v1 frame. The check should clear and emit a trace row. Used by tests 1 (clear_writes_trace) and 6 (permanent_claim_survives_recency, with an additional injected award row).",
+  "prospect": {
+    "id": "prospect_finley_001",
+    "company_normalized": "finley engineering"
+  },
+  "evidence": [
+    {
+      "id": "ev_finley_001",
+      "claim": "Finley Engineering reported a record bookings year on the back of BEAD pre-bid engineering work.",
+      "source_citation": "https://finley.com/news/2026-pre-bid",
+      "source_date": "2026-04-01T00:00:00Z",
+      "extracted_at": "2026-04-02T09:00:00Z",
+      "category": "company_fact",
+      "metadata": null
+    },
+    {
+      "id": "ev_finley_002",
+      "claim": "Expanded their engineering team by 22 staff in the past year.",
+      "source_citation": "https://finley.com/about/team-growth",
+      "source_date": "2026-03-20T00:00:00Z",
+      "extracted_at": "2026-03-21T10:00:00Z",
+      "category": "company_fact",
+      "metadata": null
+    },
+    {
+      "id": "ev_finley_003",
+      "claim": "Opened a new regional office focused on rural fiber engineering.",
+      "source_citation": "https://finley.com/news/regional-office",
+      "source_date": "2026-02-12T00:00:00Z",
+      "extracted_at": "2026-02-13T09:00:00Z",
+      "category": "company_fact",
+      "metadata": null
+    },
+    {
+      "id": "ev_finley_004",
+      "claim": "Director of Engineering interviewed on national broadband podcast.",
+      "source_citation": "https://broadband-pod.com/ep-77",
+      "source_date": "2026-05-05T00:00:00Z",
+      "extracted_at": "2026-05-05T18:00:00Z",
+      "category": "persona_signal",
+      "metadata": null
+    },
+    {
+      "id": "ev_finley_005",
+      "claim": "Selected as engineering partner for two BEAD-funded state programs.",
+      "source_citation": "https://finley.com/news/state-bead-partners",
+      "source_date": "2026-04-30T00:00:00Z",
+      "extracted_at": "2026-05-01T11:00:00Z",
+      "category": "company_fact",
+      "metadata": null
+    }
+  ]
+}
