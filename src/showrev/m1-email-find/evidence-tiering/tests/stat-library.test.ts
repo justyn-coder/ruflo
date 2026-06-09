@@ -424,8 +424,9 @@ section('T9  Sidecar load invariants');
   assert(Array.isArray(stats.stats) && stats.stats.length > 0, 'T9.e stats array non-empty');
   assert(typeof tiers.domains === 'object' && Object.keys(tiers.domains).length > 0,
     'T9.f tiers.domains non-empty');
-  // Audit DL-2026-06-09: removed fabricated bead_42_45b_pool_2026 -> 29 stats.
-  assertEq(stats.stats.length, 29, 'T9.g stats count = 29 (post-audit pruning)');
+  // Audit DL-2026-06-09 v2: full citation audit removed 5 more fabricated -> 24 stats.
+  // Of the 24: 8 verified clean, 5 fixed in-place, 11 flagged with _audit_note for operator action.
+  assertEq(stats.stats.length, 24, 'T9.g stats count = 24 (post-citation-audit pruning)');
   // Fabricated stat must not reappear.
   const fabricatedReintroduced = (stats.stats as Array<{ id: string }>).some(
     (s) => s.id === 'bead_42_45b_pool_2026',
@@ -770,9 +771,9 @@ section('T19.5  Every loaded stat declares a valid kind');
     else if (s.kind === 'phrase') phraseCount++;
   }
   assert(ok, `T19.5a every stat has kind ∈ {number,phrase} (first bad: ${firstBad || 'none'})`);
-  // Audit DL-2026-06-09 classification: 16 number + 13 phrase = 29 total.
-  assertEq(numberCount, 16, 'T19.5b number-kind count = 16');
-  assertEq(phraseCount, 13, 'T19.5c phrase-kind count = 13');
+  // Audit DL-2026-06-09 v2 (post-citation-audit): 13 number + 11 phrase = 24 total.
+  assertEq(numberCount, 13, 'T19.5b number-kind count = 13');
+  assertEq(phraseCount, 11, 'T19.5c phrase-kind count = 11');
   // Library surfaces kind on returned stats too.
   _resetLibraryForTests();
   try {

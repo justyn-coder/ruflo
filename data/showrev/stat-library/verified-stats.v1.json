@@ -5,7 +5,8 @@
     "Each claimText MUST contain numericValue verbatim (load-time regex equality).",
     "publishedDate is ISO date; recencyMonths > 24 hard-excluded at query time.",
     "Topic + applicability tags use controlled vocab in src/showrev/m1-email-find/stat-library/index.ts.",
-    "Source-of-truth: data/showrev/industry-intelligence-kb.md (corroborated). Vendor sources only seeded if also corroborated by primary/trade."
+    "Source-of-truth: data/showrev/industry-intelligence-kb.md (corroborated). Vendor sources only seeded if also corroborated by primary/trade.",
+    "Citation audit 2026-06-09: removed 5 fabricated, fixed 5 in-place, flagged 10 for operator action. See docs/showrev/stat-library-citation-audit-2026-06-09.md."
   ],
   "stats": [
     {
@@ -13,435 +14,606 @@
       "claimText": "RDOF's legacy is the cautionary benchmark for BEAD: 37% of awarded locations defaulted ($3.3B of $9.2B). Operators under similar deadline pressure are at structural risk if engineering capacity slips.",
       "numericValue": "37%",
       "kind": "number",
-      "topicTags": ["bead", "operator-survey"],
-      "applicabilityTags": ["bead-funded", "rural-middle-mile", "private-clec"],
+      "topicTags": [
+        "bead",
+        "operator-survey"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "rural-middle-mile",
+        "private-clec"
+      ],
       "source": {
         "title": "What Happened to BEAD? 2026 Update",
         "url": "https://www.ecmag.com/magazine/articles/article-detail/what-happened-to-bead--2026-fiber-optic-update",
         "publishedDate": "2026-04-15"
       },
       "sourceTier": "trade",
-      "personaFit": ["CEO", "COO", "VP_Ops"]
+      "personaFit": [
+        "CEO",
+        "COO",
+        "VP_Ops"
+      ],
+      "_audit_note": "Source ecmag.com is 403-blocked. Re-cite to Benton Institute or Broadband Breakfast."
     },
     {
       "id": "bead_operational_apr30_2026",
       "claimText": "BEAD became officially operational on April 30, 2026. Awardees now face a hard 4-year service deadline once contracts are signed.",
       "numericValue": "April 30, 2026",
       "kind": "number",
-      "topicTags": ["bead"],
-      "applicabilityTags": ["bead-funded", "rural-middle-mile"],
+      "topicTags": [
+        "bead"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "rural-middle-mile"
+      ],
       "source": {
         "title": "BEAD Program Becomes Operational",
         "url": "https://www.route-fifty.com/digital-government/2026/04/rural-focused-42b-broadband-equity-access-and-deployment-program-becomes-operational/413227/",
         "publishedDate": "2026-04-30"
       },
       "sourceTier": "trade",
-      "personaFit": ["CEO", "COO", "VP_Ops"]
-    },
-    {
-      "id": "osp_designer_3yr_ramp_2026",
-      "claimText": "Formal OSP design courses run 3-4 days, but full competency requires 3+ years of hands-on field experience. The ramp is the bottleneck, not the headcount budget.",
-      "numericValue": "3+ years",
-      "kind": "number",
-      "topicTags": ["capacity", "operator-survey"],
-      "applicabilityTags": ["bead-funded", "rural-middle-mile", "private-clec", "ftth"],
-      "source": {
-        "title": "FTTx OSP Design Program - FBA",
-        "url": "https://fiberbroadband.org/education-and-certification/fttx-outside-plant-design-program/",
-        "publishedDate": "2026-01-15"
-      },
-      "sourceTier": "trade",
-      "personaFit": ["COO", "VP_Eng", "VP_Ops"]
+      "personaFit": [
+        "CEO",
+        "COO",
+        "VP_Ops"
+      ]
     },
     {
       "id": "osp_cad_salary_75k_2026",
-      "claimText": "Senior OSP CAD drafters now earn $75,669 at the high end — and even at that rate, the pipeline can't refill fast enough to absorb BEAD demand.",
+      "claimText": "Senior OSP CAD drafters now earn $75,669 at the high end \u2014 and even at that rate, the pipeline can't refill fast enough to absorb BEAD demand.",
       "numericValue": "$75,669",
       "kind": "number",
-      "topicTags": ["capacity", "ops-cost"],
-      "applicabilityTags": ["bead-funded", "private-clec", "ftth"],
+      "topicTags": [
+        "capacity",
+        "ops-cost"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "private-clec",
+        "ftth"
+      ],
       "source": {
         "title": "OSP CAD Drafter Salary - Glassdoor",
         "url": "https://www.glassdoor.com/Salaries/osp-cad-drafter-salary-SRCH_KO0,15.htm",
         "publishedDate": "2026-03-01"
       },
       "sourceTier": "vendor",
-      "personaFit": ["COO", "VP_Eng", "VP_Ops"]
-    },
-    {
-      "id": "offshore_cad_60pct_2026",
-      "claimText": "CAD drafting offshored to India and Philippines runs at up to 60% cost savings — but the QC tax on as-built returns is what eats the margin back.",
-      "numericValue": "60%",
-      "kind": "number",
-      "topicTags": ["ops-cost", "capacity"],
-      "applicabilityTags": ["private-clec", "ftth"],
-      "source": {
-        "title": "Strategic CAD Drafting Offshore Outsourcing",
-        "url": "https://www.asecaddesign.com/strategic-cad-drafting-leveraging-offshore-outsourcing-opportunities/",
-        "publishedDate": "2026-02-10"
-      },
-      "sourceTier": "vendor",
-      "personaFit": ["COO", "VP_Eng", "VP_Ops"]
+      "personaFit": [
+        "COO",
+        "VP_Eng",
+        "VP_Ops"
+      ],
+      "_audit_note": "Glassdoor blocks fetch. Re-cite to BLS Occupational Outlook."
     },
     {
       "id": "fiber_cost_40pct_2026",
       "claimText": "Fiber optic cable prices are up 40%+ since early 2026, squeezing BEAD project economics on the materials line before construction even starts.",
       "numericValue": "40%+",
       "kind": "number",
-      "topicTags": ["ops-cost", "bead"],
-      "applicabilityTags": ["bead-funded", "rural-middle-mile", "private-clec"],
+      "topicTags": [
+        "ops-cost",
+        "bead"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "rural-middle-mile",
+        "private-clec"
+      ],
       "source": {
         "title": "Why Fiber Optic Prices Exploded 2026",
         "url": "https://commmesh.com/why-fiber-optic-prices-exploded-from-early-2026/",
         "publishedDate": "2026-03-20"
       },
       "sourceTier": "vendor",
-      "personaFit": ["CEO", "COO", "VP_Ops"]
+      "personaFit": [
+        "CEO",
+        "COO",
+        "VP_Ops"
+      ]
     },
     {
       "id": "fiber_supply_2027_tight_2026",
       "claimText": "Fiber supply tightness is projected to persist through 2027 as data center and BEAD demand converge on the same manufacturers.",
       "numericValue": "2027",
       "kind": "phrase",
-      "topicTags": ["ops-cost", "bead"],
-      "applicabilityTags": ["bead-funded", "private-clec", "ftth"],
+      "topicTags": [
+        "ops-cost",
+        "bead"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "private-clec",
+        "ftth"
+      ],
       "source": {
         "title": "Perfect Storm in Fiber Supply",
         "url": "https://www.lightreading.com/fttx/-perfect-storm-in-fiber-supply-threatens-us-broadband-targets",
         "publishedDate": "2026-04-10"
       },
       "sourceTier": "trade",
-      "personaFit": ["CEO", "COO"]
+      "personaFit": [
+        "CEO",
+        "COO"
+      ],
+      "_audit_note": "Light Reading paywall. Operator opens in browser, confirms number, adds [verified <date>] marker."
     },
     {
       "id": "bead_workforce_22b_pool_2026",
-      "claimText": "BEAD non-deployment funds — a $22B pool — are partly intended for workforce training, but the cycle to certified designers still lags first-wave construction.",
+      "claimText": "BEAD non-deployment funds \u2014 a $22B pool \u2014 are partly intended for workforce training, but the cycle to certified designers still lags first-wave construction.",
       "numericValue": "$22B",
       "kind": "number",
-      "topicTags": ["capacity", "bead"],
-      "applicabilityTags": ["bead-funded", "rural-middle-mile"],
+      "topicTags": [
+        "capacity",
+        "bead"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "rural-middle-mile"
+      ],
       "source": {
         "title": "BEAD Issues for 119th Congress - CRS",
         "url": "https://www.congress.gov/crs-product/R48666",
         "publishedDate": "2026-03-05"
       },
       "sourceTier": "primary",
-      "personaFit": ["CEO", "COO"]
+      "personaFit": [
+        "CEO",
+        "COO"
+      ],
+      "_audit_note": "CRS report Cloudflare-blocked. Operator confirms in browser."
     },
     {
       "id": "unserved_1m_post_bead_2026",
-      "claimText": "Even after BEAD obligation, an estimated 1 million locations may remain unserved — most of them in jurisdictions where permitting cycles dominate the timeline.",
-      "numericValue": "1 million",
+      "claimText": "Even at full BEAD execution, ~1M locations remain unserved. The tail is the structural problem, not the headline gigabit number.",
+      "numericValue": "1M",
       "kind": "number",
-      "topicTags": ["permit", "bead"],
-      "applicabilityTags": ["bead-funded", "rural-middle-mile"],
+      "topicTags": [
+        "permit",
+        "bead"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "rural-middle-mile"
+      ],
       "source": {
         "title": "One Million Locations Might Remain Unserved Post-BEAD",
         "url": "https://broadbandexpanded.com/posts/unservedafterbead",
         "publishedDate": "2026-04-25"
       },
       "sourceTier": "trade",
-      "personaFit": ["CEO", "COO", "VP_Ops"]
+      "personaFit": [
+        "CEO",
+        "COO",
+        "VP_Ops"
+      ]
     },
     {
       "id": "kuiper_20pct_grants_2026",
-      "claimText": "Amazon Kuiper holds 20% of BEAD grants by location count but has not yet delivered residential connectivity anywhere — replacement-ISP risk is non-trivial.",
+      "claimText": "Amazon Kuiper holds 20% of BEAD grants by location count but has not yet delivered residential connectivity anywhere \u2014 replacement-ISP risk is non-trivial.",
       "numericValue": "20%",
       "kind": "number",
-      "topicTags": ["bead", "peer-pattern"],
-      "applicabilityTags": ["bead-funded", "rural-middle-mile", "private-clec"],
+      "topicTags": [
+        "bead",
+        "peer-pattern"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "rural-middle-mile",
+        "private-clec"
+      ],
       "source": {
         "title": "Fiber Still Dominates Most BEAD Locations",
         "url": "https://www.lightreading.com/broadband/fiber-still-dominates-most-bead-locations",
         "publishedDate": "2026-05-01"
       },
       "sourceTier": "trade",
-      "personaFit": ["CEO", "COO"]
-    },
-    {
-      "id": "fba_fiber_fourth_pillar_2026",
-      "claimText": "FBA's 2026 policy frame positions fiber as the Fourth Pillar of AI infrastructure — operators with delayed designs lose the strategic-partner narrative entirely.",
-      "numericValue": "Fourth Pillar",
-      "kind": "phrase",
-      "topicTags": ["peer-pattern", "operator-survey"],
-      "applicabilityTags": ["private-clec", "ftth", "tower-co"],
-      "source": {
-        "title": "Building Fiber Networks Through Software - FBA",
-        "url": "https://fiberbroadband.org/2025/10/23/building-fiber-networks-through-software/",
-        "publishedDate": "2025-10-23"
-      },
-      "sourceTier": "trade",
-      "personaFit": ["CEO", "VP_Eng"]
+      "personaFit": [
+        "CEO",
+        "COO"
+      ],
+      "_audit_note": "Light Reading paywall. Operator verifies in browser."
     },
     {
       "id": "construction_pay_20yr_low_tower_2026",
-      "claimText": "Fiber construction pay is rising while tower hiring is at a 20-year low — labor is migrating into fiber from wireless, which means competitors hire from the same pool you do.",
+      "claimText": "Fiber construction pay is rising while tower hiring is at a 20-year low \u2014 labor is migrating into fiber from wireless, which means competitors hire from the same pool you do.",
       "numericValue": "20-year low",
       "kind": "number",
-      "topicTags": ["capacity", "operator-survey"],
-      "applicabilityTags": ["private-clec", "ftth", "tower-co"],
+      "topicTags": [
+        "capacity",
+        "operator-survey"
+      ],
+      "applicabilityTags": [
+        "private-clec",
+        "ftth",
+        "tower-co"
+      ],
       "source": {
         "title": "Cost of Slow Fiber Build - Broadstaff",
         "url": "https://broadstaffglobal.com/cost-of-slow-fiber-build-workforce-delays-project-timeline",
         "publishedDate": "2026-02-20"
       },
       "sourceTier": "trade",
-      "personaFit": ["COO", "VP_Ops"]
+      "personaFit": [
+        "COO",
+        "VP_Ops"
+      ],
+      "_audit_note": "Source does not support '20-year low' claim. Re-cite to a labor-stats source OR remove."
     },
     {
       "id": "permit_first_wave_states_2026",
-      "claimText": "First-wave BEAD construction starts in 15-25 states this cycle — the permit-cycle bottleneck is the gating factor, not the engineering bench.",
+      "claimText": "First-wave BEAD construction starts in 15-25 states this cycle \u2014 the permit-cycle bottleneck is the gating factor, not the engineering bench.",
       "numericValue": "15-25 states",
       "kind": "number",
-      "topicTags": ["permit", "bead"],
-      "applicabilityTags": ["bead-funded", "rural-middle-mile"],
+      "topicTags": [
+        "permit",
+        "bead"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "rural-middle-mile"
+      ],
       "source": {
         "title": "States Working on Finalizing BEAD Contracts",
         "url": "https://broadbandbreakfast.com/states-working-on-finalizing-bead-contracts-beginning-nepa-reviews/",
         "publishedDate": "2026-04-18"
       },
       "sourceTier": "trade",
-      "personaFit": ["CEO", "COO", "VP_Ops"]
+      "personaFit": [
+        "CEO",
+        "COO",
+        "VP_Ops"
+      ]
     },
     {
       "id": "rural_coop_walk_away_2026",
-      "claimText": "NRECA warned that many rural electric co-ops may walk away from BEAD awards rather than accept pole-attachment regulations — a structural risk to first-wave timelines.",
+      "claimText": "NRECA warned that many rural electric co-ops may walk away from BEAD awards rather than accept pole-attachment regulations \u2014 a structural risk to first-wave timelines.",
       "numericValue": "walk away",
       "kind": "phrase",
-      "topicTags": ["operator-survey", "bead"],
-      "applicabilityTags": ["bead-funded", "rural-middle-mile"],
+      "topicTags": [
+        "operator-survey",
+        "bead"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "rural-middle-mile"
+      ],
       "source": {
         "title": "BEAD Issues for 119th Congress - CRS",
         "url": "https://www.congress.gov/crs-product/R48666",
         "publishedDate": "2026-03-05"
       },
       "sourceTier": "primary",
-      "personaFit": ["CEO", "COO"]
+      "personaFit": [
+        "CEO",
+        "COO"
+      ],
+      "_audit_note": "CRS report Cloudflare-blocked. Operator confirms in browser."
     },
     {
       "id": "ntia_know_your_rights_2026",
-      "claimText": "NTIA's 2026 'Know Your Rights' guidance to BEAD winners confirms states must absorb timeline risk if preliminary awardees pull out — the engineering capacity gap moves with them.",
+      "claimText": "NTIA's Know Your Rights guidance requires net-neutrality and permitting-language disclosures in BEAD subgrant contracts.",
       "numericValue": "Know Your Rights",
       "kind": "phrase",
-      "topicTags": ["operator-survey", "bead"],
-      "applicabilityTags": ["bead-funded", "rural-middle-mile"],
+      "topicTags": [
+        "operator-survey",
+        "bead"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "rural-middle-mile"
+      ],
       "source": {
         "title": "NTIA to BEAD Winners: Know Your Rights",
         "url": "https://broadbandbreakfast.com/ntia-to-bead-winners-know-your-rights/",
         "publishedDate": "2026-04-22"
       },
       "sourceTier": "trade",
-      "personaFit": ["CEO", "COO"]
+      "personaFit": [
+        "CEO",
+        "COO"
+      ]
     },
     {
       "id": "fiber_dominates_bead_locations_2026",
-      "claimText": "Fiber still dominates the majority of BEAD location awards — meaning the design-cycle competitor is other fiber operators, not fixed wireless or satellite.",
+      "claimText": "Fiber still dominates the majority of BEAD location awards \u2014 meaning the design-cycle competitor is other fiber operators, not fixed wireless or satellite.",
       "numericValue": "majority",
       "kind": "phrase",
-      "topicTags": ["peer-pattern", "bead"],
-      "applicabilityTags": ["bead-funded", "rural-middle-mile", "private-clec", "ftth"],
+      "topicTags": [
+        "peer-pattern",
+        "bead"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "rural-middle-mile",
+        "private-clec",
+        "ftth"
+      ],
       "source": {
         "title": "Fiber Still Dominates Most BEAD Locations",
         "url": "https://www.lightreading.com/broadband/fiber-still-dominates-most-bead-locations",
         "publishedDate": "2026-05-01"
       },
       "sourceTier": "trade",
-      "personaFit": ["CEO", "VP_Eng"]
+      "personaFit": [
+        "CEO",
+        "VP_Eng"
+      ]
     },
     {
       "id": "fttx_courses_3_4_days_2026",
-      "claimText": "FBA's FTTx OSP design certification runs 3-4 days of coursework — but candidates without prior fiber experience are filtered out before they enroll.",
-      "numericValue": "3-4 days",
+      "claimText": "FTTx OSP design courses run 3 days end-to-end. Operators staffing up under BEAD timelines hit this prereq fast.",
+      "numericValue": "3 days",
       "kind": "number",
-      "topicTags": ["capacity"],
-      "applicabilityTags": ["bead-funded", "private-clec", "ftth"],
+      "topicTags": [
+        "capacity"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "private-clec",
+        "ftth"
+      ],
       "source": {
         "title": "FTTx OSP Design Training - Light Brigade",
         "url": "https://www.lightbrigade.com/fttx-outside-plant-design",
         "publishedDate": "2026-01-20"
       },
       "sourceTier": "trade",
-      "personaFit": ["COO", "VP_Eng", "VP_Ops"]
+      "personaFit": [
+        "COO",
+        "VP_Eng",
+        "VP_Ops"
+      ]
     },
     {
       "id": "chr_8_practices_2026",
-      "claimText": "CHR Solutions' 2026 labor-shortage playbook lists 8 practices to beat the broadband design-capacity gap — most reduce to either outsource or extend timelines.",
+      "claimText": "CHR Solutions' 2026 labor-shortage playbook lists 8 practices to beat the broadband design-capacity gap \u2014 most reduce to either outsource or extend timelines.",
       "numericValue": "8 practices",
       "kind": "number",
-      "topicTags": ["capacity", "ops-cost"],
-      "applicabilityTags": ["private-clec", "ftth"],
+      "topicTags": [
+        "capacity",
+        "ops-cost"
+      ],
+      "applicabilityTags": [
+        "private-clec",
+        "ftth"
+      ],
       "source": {
         "title": "8 Best Practices to Beat Broadband Labor Shortage - CHR Solutions",
         "url": "https://chrsolutions.com/blog/broadband-labor-shortage/",
         "publishedDate": "2026-02-28"
       },
       "sourceTier": "trade",
-      "personaFit": ["COO", "VP_Ops"]
+      "personaFit": [
+        "COO",
+        "VP_Ops"
+      ]
     },
     {
       "id": "gis_ai_mapping_2026",
-      "claimText": "Industry coverage in May 2026 highlights AI-assisted GIS-to-CAD mapping as the highest-leverage automation target — drawing-stage hours are where the cycle compresses or doesn't.",
-      "numericValue": "May 2026",
+      "claimText": "AI-assisted basemap creation is now 7x faster than manual GIS workflows. The drawing-stage bottleneck shifts to engineering review.",
+      "numericValue": "7x faster",
       "kind": "phrase",
-      "topicTags": ["gis-cad", "operator-survey"],
-      "applicabilityTags": ["private-clec", "ftth", "bead-funded"],
+      "topicTags": [
+        "gis-cad",
+        "operator-survey"
+      ],
+      "applicabilityTags": [
+        "private-clec",
+        "ftth",
+        "bead-funded"
+      ],
       "source": {
         "title": "Intelligent Mapping with AI - GIS User",
         "url": "https://gisuser.com/2026/05/intelligent-mapping-revolutionizing-fiber-network-deployment-with-ai-and-advanced-software/",
         "publishedDate": "2026-05-15"
       },
       "sourceTier": "trade",
-      "personaFit": ["VP_Eng", "VP_Ops", "PM"]
+      "personaFit": [
+        "VP_Eng",
+        "VP_Ops",
+        "PM"
+      ]
     },
     {
       "id": "rakuten_ai_fiber_10_apps_2026",
-      "claimText": "Rakuten Symphony's 2026 breakdown identifies 10 breakthrough AI applications in fiber deployment — none of them ship value if the underlying GIS-to-CAD handoff is still manual.",
+      "claimText": "Rakuten Symphony's 2026 breakdown identifies 10 breakthrough AI applications in fiber deployment \u2014 none of them ship value if the underlying GIS-to-CAD handoff is still manual.",
       "numericValue": "10 breakthrough",
       "kind": "number",
-      "topicTags": ["gis-cad", "diagnostic"],
-      "applicabilityTags": ["private-clec", "ftth", "tower-co"],
+      "topicTags": [
+        "gis-cad",
+        "diagnostic"
+      ],
+      "applicabilityTags": [
+        "private-clec",
+        "ftth",
+        "tower-co"
+      ],
       "source": {
         "title": "AI in Fiber Deployment - Rakuten Symphony",
         "url": "https://symphony.rakuten.com/blog/ai-in-fiber-deployment-10-breakthrough-applications-transforming-the-industry",
         "publishedDate": "2026-04-08"
       },
       "sourceTier": "vendor",
-      "personaFit": ["VP_Eng", "VP_Ops"]
-    },
-    {
-      "id": "telecom_outsource_india_2026",
-      "claimText": "India remains the dominant offshore hub for telecom network drawing services and as-built documentation — the quality-control overhead is the line item operators consistently underestimate.",
-      "numericValue": "dominant",
-      "kind": "phrase",
-      "topicTags": ["ops-cost", "gis-cad"],
-      "applicabilityTags": ["private-clec", "ftth"],
-      "source": {
-        "title": "Telecom Network Drawings Services - Outsource2india",
-        "url": "https://www.outsource2india.com/eso/construction/telecom-network-drawings-services.asp",
-        "publishedDate": "2026-01-30"
-      },
-      "sourceTier": "vendor",
-      "personaFit": ["COO", "VP_Eng", "VP_Ops"]
+      "personaFit": [
+        "VP_Eng",
+        "VP_Ops"
+      ]
     },
     {
       "id": "texas_bead_window_2026",
-      "claimText": "Texas's BEAD program is one of the largest state pools and its construction window opens this year — every drawing-cycle week costs against a hard service deadline.",
+      "claimText": "Texas's BEAD program is one of the largest state pools and its construction window opens this year \u2014 every drawing-cycle week costs against a hard service deadline.",
       "numericValue": "this year",
       "kind": "phrase",
-      "topicTags": ["permit", "bead"],
-      "applicabilityTags": ["bead-funded", "rural-middle-mile"],
+      "topicTags": [
+        "permit",
+        "bead"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "rural-middle-mile"
+      ],
       "source": {
         "title": "Texas BEAD Program",
         "url": "https://comptroller.texas.gov/programs/broadband/funding/bead/",
         "publishedDate": "2026-04-01"
       },
       "sourceTier": "primary",
-      "personaFit": ["CEO", "COO", "VP_Ops"]
+      "personaFit": [
+        "CEO",
+        "COO",
+        "VP_Ops"
+      ]
     },
     {
       "id": "fiber_supply_can_meet_bead_2026",
-      "claimText": "Fiber suppliers publicly state they can meet BEAD and AI demand simultaneously — but the constraint operators actually hit is engineering throughput, not glass.",
-      "numericValue": "publicly state",
+      "claimText": "Suppliers say they can meet BEAD demand. The chokepoint is downstream \u2014 not in the cable, but in everything that has to be in place before the cable goes in.",
+      "numericValue": "can meet BEAD",
       "kind": "phrase",
-      "topicTags": ["diagnostic", "operator-survey"],
-      "applicabilityTags": ["private-clec", "ftth", "bead-funded"],
+      "topicTags": [
+        "diagnostic",
+        "operator-survey"
+      ],
+      "applicabilityTags": [
+        "private-clec",
+        "ftth",
+        "bead-funded"
+      ],
       "source": {
         "title": "Fiber Suppliers Say They Can Meet BEAD and AI Demand",
         "url": "https://broadbandbreakfast.com/fiber-suppliers-say-they-can-meet-bead-and-ai-demand/",
         "publishedDate": "2026-03-15"
       },
       "sourceTier": "trade",
-      "personaFit": ["CEO", "VP_Eng"]
+      "personaFit": [
+        "CEO",
+        "VP_Eng"
+      ]
     },
     {
       "id": "ec_mag_2026_update",
       "claimText": "EC Magazine's mid-2026 update flags engineering-design throughput as the most under-resourced line item across the 15-25-state first wave.",
       "numericValue": "15-25-state",
       "kind": "number",
-      "topicTags": ["capacity", "bead"],
-      "applicabilityTags": ["bead-funded", "rural-middle-mile", "private-clec"],
+      "topicTags": [
+        "capacity",
+        "bead"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "rural-middle-mile",
+        "private-clec"
+      ],
       "source": {
         "title": "What Happened to BEAD? 2026 Fiber Optic Update",
         "url": "https://www.ecmag.com/magazine/articles/article-detail/what-happened-to-bead--2026-fiber-optic-update",
         "publishedDate": "2026-04-15"
       },
       "sourceTier": "trade",
-      "personaFit": ["COO", "VP_Eng", "VP_Ops"]
+      "personaFit": [
+        "COO",
+        "VP_Eng",
+        "VP_Ops"
+      ],
+      "_audit_note": "Source date wrong (Jan not Apr). Re-cite correct article OR remove."
     },
     {
       "id": "fcc_locations_database_2026",
-      "claimText": "FCC's National Broadband Map underpins every state's BEAD eligibility — design teams that don't reconcile location IDs to their GIS data lose weeks at submission.",
+      "claimText": "FCC's National Broadband Map underpins every state's BEAD eligibility \u2014 design teams that don't reconcile location IDs to their GIS data lose weeks at submission.",
       "numericValue": "every state",
       "kind": "phrase",
-      "topicTags": ["gis-cad", "permit"],
-      "applicabilityTags": ["bead-funded", "rural-middle-mile"],
+      "topicTags": [
+        "gis-cad",
+        "permit"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "rural-middle-mile"
+      ],
       "source": {
         "title": "FCC.gov",
         "url": "https://fcc.gov",
         "publishedDate": "2026-05-01"
       },
       "sourceTier": "primary",
-      "personaFit": ["VP_Eng", "VP_Ops"]
+      "personaFit": [
+        "VP_Eng",
+        "VP_Ops"
+      ],
+      "_audit_note": "Cite specific broadbandmap.fcc.gov page, not homepage."
     },
     {
       "id": "ntia_dashboard_progress_2026",
-      "claimText": "NTIA's BEAD progress dashboard makes state-by-state engineering capacity visible — peer operators are already benchmarking each other publicly.",
+      "claimText": "NTIA's BEAD progress dashboard makes state-by-state engineering capacity visible \u2014 peer operators are already benchmarking each other publicly.",
       "numericValue": "state-by-state",
       "kind": "phrase",
-      "topicTags": ["peer-pattern"],
-      "applicabilityTags": ["bead-funded", "rural-middle-mile", "private-clec"],
+      "topicTags": [
+        "peer-pattern"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "rural-middle-mile",
+        "private-clec"
+      ],
       "source": {
         "title": "NTIA BEAD Progress Dashboard",
         "url": "https://www.ntia.gov/funding-programs/internet-all/broadband-equity-access-and-deployment-bead-program/progress-dashboard",
         "publishedDate": "2026-05-20"
       },
       "sourceTier": "primary",
-      "personaFit": ["CEO", "COO"]
+      "personaFit": [
+        "CEO",
+        "COO"
+      ],
+      "_audit_note": "NTIA dashboard 403-blocked. Operator confirms in browser."
     },
     {
       "id": "broadband_breakfast_state_finalize_2026",
-      "claimText": "States finalizing BEAD contracts in 2026 are beginning NEPA reviews in parallel — the permit-cycle clock is already running before engineering deliverables exist.",
+      "claimText": "States finalizing BEAD contracts in 2026 are beginning NEPA reviews in parallel \u2014 the permit-cycle clock is already running before engineering deliverables exist.",
       "numericValue": "NEPA",
       "kind": "phrase",
-      "topicTags": ["permit"],
-      "applicabilityTags": ["bead-funded", "rural-middle-mile"],
+      "topicTags": [
+        "permit"
+      ],
+      "applicabilityTags": [
+        "bead-funded",
+        "rural-middle-mile"
+      ],
       "source": {
         "title": "States Working on Finalizing BEAD Contracts",
         "url": "https://broadbandbreakfast.com/states-working-on-finalizing-bead-contracts-beginning-nepa-reviews/",
         "publishedDate": "2026-04-18"
       },
       "sourceTier": "trade",
-      "personaFit": ["COO", "VP_Ops"]
+      "personaFit": [
+        "COO",
+        "VP_Ops"
+      ]
     },
     {
       "id": "yfconn_fiber_price_2026",
-      "claimText": "Vendor pricing trackers report fiber optic cable prices have surged through 2026 — the materials line is no longer the cost lever, design throughput is.",
+      "claimText": "Vendor pricing trackers report fiber optic cable prices have surged through 2026 \u2014 the materials line is no longer the cost lever, design throughput is.",
       "numericValue": "2026",
       "kind": "phrase",
-      "topicTags": ["ops-cost"],
-      "applicabilityTags": ["private-clec", "ftth", "bead-funded"],
+      "topicTags": [
+        "ops-cost"
+      ],
+      "applicabilityTags": [
+        "private-clec",
+        "ftth",
+        "bead-funded"
+      ],
       "source": {
         "title": "Fiber Optic Cable Price Surge 2026",
         "url": "https://yfconnectivity.com/latest-fiber-optic-cable-price/",
         "publishedDate": "2026-03-25"
       },
       "sourceTier": "vendor",
-      "personaFit": ["COO", "VP_Ops"]
-    },
-    {
-      "id": "diagnostic_60_seconds_pattern_2026",
-      "claimText": "Operators self-reporting their drawing-cycle pain points in 2026 surveys consistently identify GIS-to-CAD handoff as the single most-cited bottleneck — diagnostic tooling exists to localize it in under 60 seconds.",
-      "numericValue": "60 seconds",
-      "kind": "number",
-      "topicTags": ["diagnostic"],
-      "applicabilityTags": ["private-clec", "ftth", "bead-funded"],
-      "source": {
-        "title": "Intelligent Mapping with AI - GIS User",
-        "url": "https://gisuser.com/2026/05/intelligent-mapping-revolutionizing-fiber-network-deployment-with-ai-and-advanced-software/",
-        "publishedDate": "2026-05-15"
-      },
-      "sourceTier": "trade",
-      "personaFit": ["VP_Eng", "VP_Ops", "PM"]
+      "personaFit": [
+        "COO",
+        "VP_Ops"
+      ]
     }
   ]
 }
