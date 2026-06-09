@@ -788,6 +788,9 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     // See finalSendStatus block ~line 631 for priority order.
     send_status: finalSendStatus,
     system_brief: systemBrief,
+    // DB integrity audit 2026-06-09: persona_bucket was on engine but not
+    // on prospects (98% NULL). Portal reads it from prospects too.
+    persona_bucket: personaBucket,
     assigned_ae: result.ae.name,
     icp_status: result.icp_verdict,
     icp_reason: result.icp_reason || '',
@@ -1152,7 +1155,26 @@ async function main() {
       );
       results.push(result);
     } catch (err) {
-      console.error(`  FATAL on ${row.firstName} ${row.lastName}: ${(err as Error).message}`);
+      // Gates audit 2026-06-09: a fatal exception in processOne used to make the
+      // prospect silently disappear from BOTH summary AND DB. Now we synthesize
+      // a flag-status row so the operator can see + retry. Plain-English brief
+      // explains the technical error in operator terms.
+      const errMsg = (err as Error).message || 'unknown error';
+      console.error(`  FATAL on ${row.firstName} ${row.lastName}: ${errMsg}`);
+      const ae = resolveAE(row.state);
+      results.push({
+        row,
+        ae,
+        micrositeSlug: `${row.company}-${row.firstName}-${row.lastName}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''),
+        icp_verdict: 'pass',
+        flag_status: true,
+        send_status: 'flag',
+        flag_reason_short: 'Pipeline error',
+        flag_reason_brief: `The pipeline could not finish processing this prospect because of a technical error: ${errMsg.slice(0, 200)}. Recommendation: re-run with --include-flagged once the underlying issue is resolved, or hand-research and add directly to HubSpot.`,
+        confidence_color: 'red',
+        durations_ms: { total: 0 },
+        errors: [`fatal: ${errMsg}`],
+      } as ProspectResult);
     }
   }
 
