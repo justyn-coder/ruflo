@@ -97,6 +97,13 @@ interface ProspectResult {
   pull_apollo_matched?: boolean;
   pull_industry_records?: number;
   apollo_credits_used?: number;
+  // Item 6 (2026-06-09): flag-status pattern. When an ICP-passed prospect
+  // exhausts Path A + Path B with no usable email, mark as 'flag' so it still
+  // surfaces in the portal for human review with a plain-English System Brief
+  // explaining why and what technique might unblock it later.
+  flag_status?: boolean;
+  flag_reason_short?: string;  // → sr_engine_output.ae_flag (terse, one-line)
+  flag_reason_brief?: string;  // → sr_engine_output.company_summary (System Brief, 1-3 sentences plain English)
   durations_ms: {
     icp?: number;
     email?: number;
@@ -212,6 +219,55 @@ async function processOne(
     console.log(`  email: ${result.email_found || 'NOT-FOUND'} (${result.email_confidence || 'n/a'})`);
   } catch (err) {
     result.errors.push(`email-find: ${(err as Error).message}`);
+  }
+
+  // Phase 2.5: Flag-status detection (Item 6 — 2026-06-09)
+  // Operator rule: "If the prospect is an ICP then we do all we can to find
+  // their email, but in the interest of time you stop after you've tried all
+  // our modules and you post it to the Portal as status 'Flag' and in the
+  // System Brief you explain why it's flagged."
+  //
+  // Trigger: ICP=pass AND (no email found OR confidence='red'/'not-found' OR
+  //          Path B was suppressed/failed AND Path A was red).
+  // The flag still flows into the Portal for human review (auto-promote runs
+  // for flagged prospects too, see Phase 5 persist logic).
+  if (result.icp_verdict === 'pass') {
+    const noEmail = !result.email_found;
+    const redConfidence =
+      result.email_confidence === 'red' ||
+      result.email_confidence === 'not-found';
+    if (noEmail || redConfidence) {
+      result.flag_status = true;
+      // Terse one-liner for sr_engine_output.ae_flag
+      const apolloPart = options.skipApollo
+        ? 'Path B (Apollo) skipped'
+        : creditTracker.shouldStop(options.maxApolloCredits)
+          ? `Path B (Apollo) suppressed (credit cap ${options.maxApolloCredits} reached)`
+          : 'Path B (Apollo) returned no usable match';
+      result.flag_reason_short =
+        `Email find exhausted: Path A (SMTP) ${redConfidence ? 'red' : 'no-result'}; ${apolloPart}.`
+          .slice(0, 200);
+
+      // Plain-English 1-3 sentence System Brief for sr_engine_output.company_summary.
+      // Per operator: "explain why it's flagged" + recommendations. No jargon.
+      const brief: string[] = [];
+      brief.push(
+        `This prospect passed our ICP check (${result.icp_type === 'ae_firm' ? 'A&E firm' : 'fiber operator'}) but we could not reliably find their email through our standard tools.`,
+      );
+      if (options.skipApollo) {
+        brief.push(`Our Apollo fallback was not run for this batch, so no peer-pattern derivation was attempted.`);
+      } else if (creditTracker.shouldStop(options.maxApolloCredits)) {
+        brief.push(`Our Apollo fallback was stopped early because the batch hit its credit cap of ${options.maxApolloCredits}.`);
+      } else if (redConfidence) {
+        brief.push(`SMTP pattern verification returned red confidence (the patterns we tested did not respond), and Apollo did not return a usable contact match either.`);
+      } else {
+        brief.push(`Neither SMTP pattern verification nor Apollo contact match returned an email we trust.`);
+      }
+      brief.push(`Recommendation: surface to the AE for manual lookup, or revisit when a new email-find technique (e.g., LinkedIn-Sales-Navigator-bridge, web-scrape enrichment, Apollo upgrade) comes online — re-run this prospect with --include-flagged.`);
+      result.flag_reason_brief = brief.join(' ').slice(0, 2000);
+
+      console.log(`  flag: ${result.flag_reason_short}`);
+    }
   }
 
   // Phase 3: Evidence orchestration (NEW substrate-first)
@@ -334,7 +390,7 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     /engineer|technical|designer/i.test(result.row.title || '') ? 'GIS-to-CAD traceability; design tool integration; data accuracy; workforce scaling' :
     '';
 
-  const body = {
+  const body: Record<string, unknown> = {
     prospect_id: prospectId,
     run_id: runId,
     first_name: result.row.firstName,
@@ -379,8 +435,17 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
       },
       body_sentences: result.composed?.bodySentences,
       apollo_credits_used: result.apollo_credits_used,
+      flag_status: result.flag_status || false,
     }),
   };
+
+  // Item 6 (2026-06-09): flag-status pattern — populate ae_flag (terse) and
+  // company_summary (System Brief, plain English) so the portal expand-view
+  // shows the WHY and the AE knows what to do.
+  if (result.flag_status) {
+    body.ae_flag = result.flag_reason_short || 'Email find exhausted.';
+    body.company_summary = result.flag_reason_brief || result.flag_reason_short || '';
+  }
 
   const res = await fetch(`${sbUrl}/rest/v1/sr_engine_output`, {
     method: 'POST',
@@ -407,6 +472,10 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
       ? 'ae_firm'
       : 'fiber_operator';
 
+  // Item 6 (2026-06-09): flagged prospects still auto-promote to sr_prospects
+  // so they appear in the portal for human review — but with send_status='flag'
+  // (not 'pending') so the AE knows the pipeline could not complete and the
+  // System Brief on sr_engine_output.company_summary explains why.
   const prospectBody = {
     id: prospectId,
     first_name: result.row.firstName,
@@ -418,7 +487,7 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     lead_type: 'Cold',
     tier: 'A',
     campaign: 'P2',
-    send_status: 'pending',
+    send_status: result.flag_status ? 'flag' : 'pending',
     assigned_ae: result.ae.name,
     icp_status: result.icp_verdict,
     icp_reason: result.icp_reason || '',
@@ -577,11 +646,13 @@ function printSummary(results: ProspectResult[], runId: string, totalMs: number)
   const specificMode = results.filter(r => r.composer_mode === 'specific');
   const generalizedMode = results.filter(r => r.composer_mode === 'generalized');
   const emailFound = results.filter(r => r.email_found).length;
+  const flagged = results.filter(r => r.flag_status).length;
   const totalApolloCredits = results.reduce((s, r) => s + (r.apollo_credits_used || 0), 0);
 
   console.log(`  Total prospects:     ${results.length}`);
   console.log(`  ICP passed:          ${passed.length}/${results.length}`);
   console.log(`  Emails found:        ${emailFound}/${results.length}`);
+  console.log(`  Flagged (no email):  ${flagged}/${results.length}`);
   console.log(`  Emails composed:     ${composed.length}/${results.length}`);
   console.log(`    Specific mode:     ${specificMode.length}`);
   console.log(`    Generalized mode:  ${generalizedMode.length}`);
@@ -603,6 +674,45 @@ function printSummary(results: ProspectResult[], runId: string, totalMs: number)
 }
 
 // ----------------------------------------------------------------------------
+// Flagged-prospect skip helper (Item 6 — 2026-06-09)
+// ----------------------------------------------------------------------------
+//
+// Reads sr_prospects.id where send_status='flag'. Returned as a Set so the
+// input CSV can be filtered in O(1) per row. Failure mode is permissive:
+// if the read fails, return an empty set (don't block the whole run).
+
+async function fetchFlaggedProspectIds(): Promise<Set<string>> {
+  const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
+  const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+  if (!sbKey) return new Set();
+  try {
+    const ids = new Set<string>();
+    // PostgREST defaults to 1000-row limit; page through if needed.
+    let offset = 0;
+    const pageSize = 1000;
+    // eslint-disable-next-line no-constant-condition
+    while (true) {
+      const res = await fetch(
+        `${sbUrl}/rest/v1/sr_prospects?send_status=eq.flag&select=id&limit=${pageSize}&offset=${offset}`,
+        { headers: { apikey: sbKey, Authorization: `Bearer ${sbKey}` } },
+      );
+      if (!res.ok) {
+        console.warn(`[flag-skip] sr_prospects read ${res.status} — proceeding without flag-skip`);
+        return ids;
+      }
+      const page = (await res.json()) as Array<{ id: string }>;
+      for (const r of page) ids.add(r.id);
+      if (page.length < pageSize) break;
+      offset += pageSize;
+    }
+    return ids;
+  } catch (err) {
+    console.warn(`[flag-skip] read error: ${(err as Error).message} — proceeding without flag-skip`);
+    return new Set();
+  }
+}
+
+// ----------------------------------------------------------------------------
 // Main
 // ----------------------------------------------------------------------------
 
@@ -615,13 +725,19 @@ async function main() {
       'max-apollo-credits': { type: 'string' },
       verbose: { type: 'boolean', default: false, short: 'v' },
       limit: { type: 'string' },
+      // Item 6 (2026-06-09): when set, include prospects that already have
+      // send_status='flag' in sr_prospects. Default behavior is to skip them
+      // so flagged prospects don't get re-burned through the pipeline on every
+      // run. Operator turns this on for the future "we developed a new
+      // email-find technique, re-run the parking lot" bulk pass.
+      'include-flagged': { type: 'boolean', default: false },
     },
     strict: false,
   });
 
   const inputPath = values.input as string;
   if (!inputPath) {
-    console.error('Usage: --input <csv-path> [--skip-apollo] [--max-apollo-credits N] [--verbose] [--limit N]');
+    console.error('Usage: --input <csv-path> [--skip-apollo] [--max-apollo-credits N] [--verbose] [--limit N] [--include-flagged]');
     process.exit(1);
   }
 
@@ -629,6 +745,29 @@ async function main() {
   let rows = parseCsv(csvText);
   if (values.limit) {
     rows = rows.slice(0, parseInt(values.limit as string, 10));
+  }
+
+  // Item 6 (2026-06-09): default-skip prospects already in sr_prospects with
+  // send_status='flag'. CLI override --include-flagged bypasses the skip for
+  // bulk re-runs after a new email-find technique comes online.
+  const includeFlagged = !!values['include-flagged'];
+  if (!includeFlagged) {
+    const flaggedIds = await fetchFlaggedProspectIds();
+    if (flaggedIds.size > 0) {
+      const before = rows.length;
+      rows = rows.filter(r => {
+        const id = `${r.firstName}-${r.lastName}-${r.company}`
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, '-');
+        return !flaggedIds.has(id);
+      });
+      const skipped = before - rows.length;
+      if (skipped > 0) {
+        console.log(`  flag-skip: ${skipped} prospect(s) skipped (already flagged in sr_prospects; pass --include-flagged to re-run)`);
+      }
+    }
+  } else {
+    console.log(`  --include-flagged: previously-flagged prospects will be re-processed`);
   }
 
   const runId = `v2-${Date.now().toString(36)}`;
@@ -640,6 +779,7 @@ async function main() {
     ? parseInt(values['max-apollo-credits'] as string, 10)
     : undefined;
   console.log(`  Apollo: ${values['skip-apollo'] ? 'SKIPPED' : 'enabled (fallback)'}` + (maxApolloCredits ? ` | cap=${maxApolloCredits} credits` : ''));
+  console.log(`  Flag-skip: ${includeFlagged ? 'OFF (--include-flagged set)' : 'ON (default; pass --include-flagged to re-run flagged)'}`);
   console.log('='.repeat(70));
 
   const creditTracker = new ApolloCreditTracker();
