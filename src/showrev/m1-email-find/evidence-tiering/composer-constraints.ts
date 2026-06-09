@@ -304,6 +304,142 @@ export function checkBigramRepeat(body: string): string | null {
 }
 
 // ----------------------------------------------------------------------------
+// AI-detection signal checks (DL-199, research-validated)
+// ----------------------------------------------------------------------------
+//
+// Three additional Tier-1 mechanical violations added per DL-199 open loop
+// (2026-06-09). Each check targets a research-validated AI-writing fingerprint
+// that classifiers like GPTZero / Originality.ai weight heavily.
+//
+// Goal: trip these as Tier 1 mechanical violations in the same compose retry
+// loop as banned phrases + numeric anchors so they cost retries (cheap) rather
+// than ship and burn judge cycles later.
+
+/**
+ * Check 1 — Participial-clause density.
+ *
+ * Research basis (DL-199): Present-participial sentence openers ("Building
+ * fiber networks...", "Growing through M&A...", "Operating at scale...")
+ * occur at 2-5x human baseline rate in LLM-generated business prose per
+ * PNAS 2025 ("Stylometric Fingerprints of LLM Output"). Human writers use
+ * them sparingly; LLMs lean on them as a rhythm crutch.
+ *
+ * Rule: flag if MORE than 1 sentence in the body opens with a present
+ * participle (-ing word starting a sentence, not embedded mid-clause).
+ *
+ * Returns violation string if >1 such opener, else null.
+ */
+export function checkParticipialDensity(body: string): string | null {
+  const sentences = body
+    .split(/[.!?]+/)
+    .map(s => s.trim())
+    .filter(s => s.length > 0);
+
+  // Skip nouns that happen to end in -ing (false positives like "Nothing
+  // changes...", "Morning standups...", "King's Crossing...").
+  const STOPWORD_ING = new Set([
+    'nothing', 'something', 'anything', 'everything', 'morning', 'evening',
+    'king', 'thing', 'spring', 'string', 'ring', 'wing', 'sing',
+  ]);
+
+  let participialOpeners = 0;
+  const examples: string[] = [];
+  for (const s of sentences) {
+    const cleaned = s.replace(/^[\s"'“‘\(\[\-—–]+/, '');
+    const firstWord = cleaned.split(/\s+/)[0]?.toLowerCase().replace(/[^a-z]/g, '') || '';
+    if (firstWord.length >= 5 && firstWord.endsWith('ing') && !STOPWORD_ING.has(firstWord)) {
+      participialOpeners++;
+      examples.push(firstWord);
+    }
+  }
+
+  if (participialOpeners > 1) {
+    return `Participial-opener density: ${participialOpeners} sentences open with -ing (${examples.join(', ')}) — PNAS 2025 AI-tell, max 1 per body`;
+  }
+  return null;
+}
+
+/**
+ * Check 2 — Sentence-length variance (low variance = AI tell).
+ *
+ * Research basis (DL-199): Human writing shows ~38% coefficient-of-variation
+ * in sentence length; LLM output averages ~12% (Stanford 2023, "Detecting
+ * Machine-Generated Text"). LLMs produce sentences clustered around a target
+ * length; humans mix short punches with longer clauses.
+ *
+ * Rule: flag if standard deviation of sentence word counts is < 5 words
+ * across the body. (5w std-dev is a conservative threshold — too-uniform
+ * pacing is the signature, regardless of absolute mean length.)
+ *
+ * Only applies when there are at least 3 sentences (variance is unstable
+ * below that).
+ *
+ * Returns violation string if std-dev < 5w, else null.
+ */
+export function checkSentenceLengthVariance(body: string): string | null {
+  const sentences = body
+    .split(/[.!?]+/)
+    .map(s => s.trim())
+    .filter(s => s.length > 0);
+
+  if (sentences.length < 3) return null;
+
+  const lengths = sentences.map(s => s.split(/\s+/).filter(Boolean).length);
+  const mean = lengths.reduce((a, b) => a + b, 0) / lengths.length;
+  const variance = lengths.reduce((sum, n) => sum + (n - mean) ** 2, 0) / lengths.length;
+  const stdDev = Math.sqrt(variance);
+
+  if (stdDev < 5) {
+    return `Sentence-length variance: std-dev ${stdDev.toFixed(1)}w across ${sentences.length} sentences (mean ${mean.toFixed(1)}w) — too uniform, Stanford 2023 AI signature, need ≥5w std-dev`;
+  }
+  return null;
+}
+
+/**
+ * Check 3 — Echoed sentence structures.
+ *
+ * Research basis (DL-199): The VERMILLION Framework marker 2 catches adjacent
+ * sentences with mirrored grammatical openings — the same first 2-word pattern
+ * repeated back-to-back (e.g., "At that scale, ..." followed by "At that
+ * pace, ..."). Humans vary syntactic shape between adjacent sentences; LLMs
+ * mirror, often unconsciously, when listing parallel ideas.
+ *
+ * Rule: flag if ANY pair of adjacent sentences in the body shares the same
+ * first 2 words (case-insensitive, punctuation-stripped). Both must be ≥4
+ * words long to count (otherwise short interjections like "Yes, and..." +
+ * "Yes, but..." trigger false positives).
+ *
+ * Returns violation string with the offending pattern, else null.
+ */
+export function checkEchoedStructures(body: string): string | null {
+  const sentences = body
+    .split(/[.!?]+/)
+    .map(s => s.trim())
+    .filter(s => s.length > 0);
+
+  if (sentences.length < 2) return null;
+
+  const firstTwoWords = (s: string): string => {
+    const cleaned = s.replace(/^[\s"'“‘\(\[\-—–]+/, '').toLowerCase();
+    const tokens = cleaned.split(/\s+/).map(t => t.replace(/[^a-z]/g, '')).filter(Boolean);
+    if (tokens.length < 2) return '';
+    return `${tokens[0]} ${tokens[1]}`;
+  };
+
+  for (let i = 1; i < sentences.length; i++) {
+    const prevLen = sentences[i - 1].split(/\s+/).filter(Boolean).length;
+    const curLen = sentences[i].split(/\s+/).filter(Boolean).length;
+    if (prevLen < 4 || curLen < 4) continue;
+    const prevOpen = firstTwoWords(sentences[i - 1]);
+    const curOpen = firstTwoWords(sentences[i]);
+    if (prevOpen && prevOpen === curOpen) {
+      return `Echoed structure: adjacent sentences both open with "${prevOpen}..." — VERMILLION marker 2, vary syntactic shape`;
+    }
+  }
+  return null;
+}
+
+// ----------------------------------------------------------------------------
 // Best-of-N retry selector
 // ----------------------------------------------------------------------------
 //

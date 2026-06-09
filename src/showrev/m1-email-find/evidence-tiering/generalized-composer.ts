@@ -47,6 +47,9 @@ import {
   checkCompanyNameLock,
   checkNumericAnchorRepeat,
   checkBigramRepeat,
+  checkParticipialDensity,
+  checkSentenceLengthVariance,
+  checkEchoedStructures,
   countParagraphs,
   countWords,
   countWordsTotal,
@@ -363,6 +366,13 @@ export async function composeGeneralized(args: {
     if (numericRepeat) violations.push(`Recompose regression: ${numericRepeat}`);
     const bigramRepeat = checkBigramRepeat(body);
     if (bigramRepeat) violations.push(`Recompose regression: ${bigramRepeat}`);
+    // DL-199 AI-detection signals (PNAS 2025, Stanford 2023, VERMILLION marker 2)
+    const participialDensity = checkParticipialDensity(body);
+    if (participialDensity) violations.push(`AI-tell: ${participialDensity}`);
+    const sentenceVariance = checkSentenceLengthVariance(body);
+    if (sentenceVariance) violations.push(`AI-tell: ${sentenceVariance}`);
+    const echoedStructures = checkEchoedStructures(body);
+    if (echoedStructures) violations.push(`AI-tell: ${echoedStructures}`);
 
     lastViolations = violations;
     attempts.push({ candidate, violations, attemptNumber: attempt + 1 });
