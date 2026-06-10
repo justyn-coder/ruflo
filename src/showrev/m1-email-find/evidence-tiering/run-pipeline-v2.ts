@@ -41,6 +41,7 @@ import { composeMicrosite } from './microsite-composer.js';
 import { orchestrateEvidence } from './orchestrator.js';
 import { composeSpecific } from './specific-composer.js';
 import { computeSendConfidence } from './send-confidence.js';
+import { resolveCompany, deriveIcpOverride } from './company-resolver.js';
 import { ApolloCreditTracker, findEmailForProspect } from './apollo-client.js';
 import {
   checkSubstrateRefutation,
@@ -140,6 +141,7 @@ interface ProspectResult {
   refutation_result?: RefutationResult;
   refutation_frame?: FrameId;
   durations_ms: {
+    resolve?: number;  // Fix #2 2026-06-10: company-resolver phase 0.5
     icp?: number;
     email?: number;
     orchestrate?: number;
@@ -177,6 +179,34 @@ async function processOne(
   };
 
   console.log(`\n[${row.firstName} ${row.lastName}] @ ${row.company} (${row.state || '?'})`);
+
+  // Phase 0.5: Company resolver (Fix #2 2026-06-10).
+  // Identifies what the company actually does BEFORE the title-only ICP gate
+  // runs. Catches the class of misses that title-driven fiber-override let
+  // through (TEP = Tower Engineering Professionals classified as fiber_operator
+  // because Mora's title contained "Fiber Engineering").
+  //
+  // If business_type is tower_ae with high/medium confidence, hard-reject
+  // before we waste research budget. Otherwise pass through to existing ICP
+  // gate which makes the final pass/reject call.
+  let companyContext: import('./company-resolver.js').CompanyContext | null = null;
+  try {
+    const t05 = Date.now();
+    companyContext = await resolveCompany(row.company, row.state);
+    result.durations_ms.resolve = Date.now() - t05;
+    console.log(`  resolve: ${companyContext.business_type} (${companyContext.business_type_confidence})${companyContext.alt_name_hint ? ` — ${companyContext.alt_name_hint}` : ''}`);
+    const override = deriveIcpOverride(companyContext);
+    if (override) {
+      result.icp_verdict = 'reject';
+      result.icp_reason = override.icp_reason;
+      console.log(`  icp: reject (company-resolver override — ${companyContext.business_type})`);
+      result.durations_ms.total = Date.now() - t0;
+      return result;
+    }
+  } catch (err) {
+    result.errors.push(`resolve: ${(err as Error).message}`);
+    // Soft-fail — fall through to existing ICP gate
+  }
 
   // Phase 1: ICP gate (existing primitive)
   try {
@@ -800,6 +830,53 @@ function shouldFlag(result: ProspectResult): boolean {
 // Supabase persistence (direct write to sr_engine_output)
 // ----------------------------------------------------------------------------
 
+/**
+ * Fix #3 (2026-06-10 operator directive): resolve claim_ids referenced in
+ * email body sentences to their full citation objects in sr_company_evidence,
+ * so the audit trail lives alongside the email body in sr_engine_output
+ * instead of forcing a join through research_summary.body_sentences.
+ *
+ * Output shape: { [claim_id]: { claim, source_kind, source_citation, speaker_name, speaker_role } }
+ * Pure additive — does not change body_sentences or composer output.
+ */
+async function resolveCitationProvenance(
+  bodySentences: Array<{ text: string; claim_ids?: string[] }> | undefined,
+  sbUrl: string,
+  sbKey: string,
+): Promise<Record<string, Record<string, unknown>>> {
+  if (!bodySentences || !Array.isArray(bodySentences)) return {};
+  const ids = Array.from(new Set(
+    bodySentences.flatMap(s => s.claim_ids || []).filter(Boolean),
+  ));
+  if (ids.length === 0) return {};
+  try {
+    const inList = ids.map(id => encodeURIComponent(id)).join(',');
+    const r = await fetch(
+      `${sbUrl}/rest/v1/sr_company_evidence?id=in.(${inList})&select=id,claim,source_kind,source_citation,speaker_name,speaker_role,category`,
+      { headers: { apikey: sbKey, Authorization: `Bearer ${sbKey}` } },
+    );
+    if (!r.ok) return {};
+    const rows = (await r.json()) as Array<{
+      id: string; claim: string; source_kind: string; source_citation: string;
+      speaker_name: string | null; speaker_role: string | null; category: string;
+    }>;
+    const out: Record<string, Record<string, unknown>> = {};
+    for (const row of rows) {
+      out[row.id] = {
+        claim: row.claim,
+        source_kind: row.source_kind,
+        source_citation: row.source_citation,
+        speaker_name: row.speaker_name,
+        speaker_role: row.speaker_role,
+        category: row.category,
+      };
+    }
+    return out;
+  } catch {
+    return {};
+  }
+}
+
 async function persistToSupabase(result: ProspectResult, runId: string): Promise<void> {
   const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
   const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
@@ -843,23 +920,50 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     '';
 
   // Unified send_status resolution (2026-06-09 red-team CRITICAL #4 fix).
-  // Three flag sources, ALL converge here to a SINGLE finalSendStatus value
-  // that both sr_engine_output AND sr_prospects write — no more table-level
-  // disagreement.
+  // Three flag sources + one production gate, ALL converge here to a SINGLE
+  // finalSendStatus value that both sr_engine_output AND sr_prospects write —
+  // no more table-level disagreement.
   //
   // Priority order (most-authoritative wins):
   //   1. Tiered judge action (items 7+8) — set via result.send_status
   //   2. Email-find flag pattern (item 6) — result.flag_status when red/no-email
   //   3. System-brief flag (item 9) — shouldFlag(result) for any ICP-pass + pipeline-incomplete
+  //   4. Production email gate (Fix #1 2026-06-10) — amber/red email + NOT operator-locked → 'hold'
   //
-  // Operator rule: every ICP makes it into the Portal; pipeline-incomplete
-  // gets send_status='flag' + plain-English system_brief explanation.
+  // Operator rule (2026-06-10): pattern-guess emails must NOT ship. Only green-
+  // verified (Apollo high or MV-confirmed) or operator-locked (email_corrected=true)
+  // emails reach 'pending'. Everything else goes to 'hold' (back-pocket queue).
+  // 'flag' still wins over 'hold' because flag means active issue, hold means
+  // email-axis queue waiting for back-pocket recovery.
   const flagged = shouldFlag(result);
   const systemBrief = flagged ? generateFlagSystemBrief(result) : null;
-  const finalSendStatus: 'pending' | 'flag' =
+
+  // Fix #1 (2026-06-10): is the operator already pre-verified this email?
+  // Check sr_prospects.email_corrected BEFORE finalSendStatus — bypasses the
+  // production gate when the operator has manually verified the email.
+  let preCheckOperatorLocked = false;
+  try {
+    const r = await fetch(
+      `${sbUrl}/rest/v1/sr_prospects?id=eq.${encodeURIComponent(prospectId)}&select=email_corrected`,
+      { headers: { apikey: sbKey, Authorization: `Bearer ${sbKey}` } },
+    );
+    if (r.ok) {
+      const rows = (await r.json()) as Array<{ email_corrected: boolean | null }>;
+      preCheckOperatorLocked = rows.length > 0 && rows[0].email_corrected === true;
+    }
+  } catch { /* best-effort; if check fails, gate engages */ }
+
+  // Email confidence is green only when the pipeline finds 'high' (Apollo people-match
+  // or MV-verified). 'medium' (Apollo medium), 'guessed' (peer-pattern), and 'red'
+  // (no email) all fail the production gate.
+  const emailIsGreen = result.email_confidence === 'high';
+  const productionGateFails = !emailIsGreen && !preCheckOperatorLocked;
+
+  const finalSendStatus: 'pending' | 'flag' | 'hold' =
     result.send_status === 'flag' ? 'flag' :  // tiered judge wins
     result.flag_status ? 'flag' :              // email-find pattern
     flagged ? 'flag' :                          // system-brief shouldFlag
+    productionGateFails ? 'hold' :              // Fix #1 production email gate
     'pending';
 
   const body: Record<string, unknown> = {
@@ -909,6 +1013,11 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
         industry_records: result.pull_industry_records,
       },
       body_sentences: result.composed?.bodySentences,
+      // Fix #3 (2026-06-10): denormalize citation provenance from sr_company_evidence.
+      // Each claim_id referenced in body_sentences resolves to a full citation object
+      // (claim text, source kind, source URL, speaker name/role). Audit trail lives
+      // inline so verifying email grounding doesn't require a sr_company_evidence join.
+      citations: await resolveCitationProvenance(result.composed?.bodySentences, sbUrl, sbKey),
       apollo_credits_used: result.apollo_credits_used,
       flag_status: result.flag_status || false,
     }),
@@ -1012,6 +1121,12 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     // Unified resolution — same value as sr_engine_output above.
     // See finalSendStatus block ~line 631 for priority order.
     send_status: finalSendStatus,
+    // Fix #1 (2026-06-10): when production gate sends to 'hold', explain why.
+    // Visible in portal so the operator knows it's the back-pocket queue, not
+    // a quality flag.
+    ...(finalSendStatus === 'hold' && {
+      skip_reason: `Email confidence is ${result.email_confidence || 'unknown'} (production gate requires green or operator-verified). Queued for back-pocket email recovery (FCC 499 / NTCA / PUC / press releases). Override by setting email_corrected=true after manual verification.`,
+    }),
     system_brief: systemBrief,
     // DB integrity audit 2026-06-09: persona_bucket was on engine but not
     // on prospects (98% NULL). Portal reads it from prospects too.
