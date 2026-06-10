@@ -190,8 +190,17 @@ The Field Brief template renders one paragraph in the Finding section:
   // Em-dash + en-dash strip — Tim flags these as AI tells; SoT §11 bans them
   // in prospect-facing copy and microsite IS prospect-facing. Composers strip
   // post-LLM; microsite must match (red-team CRITICAL #3 2026-06-09).
-  const cleanHeadline = (parsed.headline || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',').trim();
-  const cleanBloom = (parsed.bloom_text || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',').trim();
+  //
+  // 2026-06-10 fix: preserve number ranges (35–40% becomes 35-40%, NOT 35,40%).
+  // Same pattern as specific-composer.ts and generalized-composer.ts. Caught
+  // by operator on Fidium brief microsite.
+  const dashClean = (s: string) => s
+    .replace(/(\d)[–—](\d)/g, '$1-$2')   // preserve digit-dash-digit number ranges as ASCII hyphen
+    .replace(/[—–]/g, ',')               // then convert remaining em/en-dashes to commas
+    .replace(/\s+,/g, ',')
+    .trim();
+  const cleanHeadline = dashClean(parsed.headline || '');
+  const cleanBloom = dashClean(parsed.bloom_text || '');
 
   return {
     headline: cleanHeadline,
