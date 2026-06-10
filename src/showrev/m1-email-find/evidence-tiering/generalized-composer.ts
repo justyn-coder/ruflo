@@ -338,15 +338,17 @@ export async function composeGeneralized(args: {
     micrositeSlug,
   });
 
-  // Compose with up to 3 retries + best-of-N selection (per operator
-  // 2026-06-09 #5). LLM retries are non-monotonic — tracking attempts and
-  // picking the highest-scoring one beats shipping the last attempt.
+  // Compose with up to 5 retries + best-of-N selection (per operator
+  // 2026-06-09 #5, bumped 4 → 6 on 2026-06-10 Fix 5 of composition 6-fix plan
+  // alongside the new geographic-guard Tier-1 violation class).
+  // LLM retries are non-monotonic — tracking attempts and picking the
+  // highest-scoring one beats shipping the last attempt.
   // Early-exit on first clean attempt; otherwise pick best of all attempts.
   const attempts: ComposeAttempt[] = [];
   let lastViolations: string[] = [];
-  for (let attempt = 0; attempt < 4; attempt++) {
+  for (let attempt = 0; attempt < 6; attempt++) {
     const retryHint = attempt === 0 ? '' :
-      `\n\n**RETRY (attempt ${attempt + 1} of 4)** — your previous attempt had these violations:\n${lastViolations.map(v => `- ${v}`).join('\n')}\n\nFix ALL of them. Re-read the constraints. Body must be ≤100 words, EXACTLY 3 paragraphs, no banned phrases, exact company name "${prospect.company}".`;
+      `\n\n**RETRY (attempt ${attempt + 1} of 6)** — your previous attempt had these violations. **Fix every single one:**\n${lastViolations.map(v => `- ${v}`).join('\n')}\n\nRe-read ALL constraints. Body must be ≤100 words, EXACTLY 3 paragraphs, no banned phrases, exact company name "${prospect.company}", NO ungrounded state/region/industry-wide claims (use company-specific facts or persona-frame).`;
     const raw = await callLLM(prompt + retryHint, {
       model,
       timeoutMs: 60000,

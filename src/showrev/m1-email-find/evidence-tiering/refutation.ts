@@ -337,7 +337,12 @@ const JUDGE_MODEL = 'claude-haiku-4-5-20251001';
 // slow call halts the prospect. 3000ms gives ~3x headroom against typical
 // latency without doubling worst-case wall-clock. Verified on Frontier
 // substrate (v2-mq7iex0p halted at 1500ms cap).
-const JUDGE_TIMEOUT_MS = 3000;
+// Phase C judge timeout: bumped 3000 → 5000ms on 2026-06-10 after smoke v2 found
+// Amanda Griffith (123Net) regression — judge timed out on a previously-clean
+// prospect, fail-closed flagged her. Anthropic API latency is variable under
+// load. The "no retry on timeout" decision (audit 2026-06-09) is preserved —
+// the fix here is just headroom, not a retry change.
+const JUDGE_TIMEOUT_MS = 5000;
 
 /**
  * Real Haiku-backed judge. JSON mode, temperature=0, 1500ms timeout, 1 retry.

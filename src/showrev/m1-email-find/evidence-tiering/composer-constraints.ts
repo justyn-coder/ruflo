@@ -80,6 +80,29 @@ const OFFSHORE_GUARDS: Array<{ pattern: RegExp; label: string }> = [
 ];
 
 // ----------------------------------------------------------------------------
+// Ungrounded geographic / industry-wide claims (Fix 2 — composer-prompt-rule 2026-06-10)
+// ----------------------------------------------------------------------------
+// Composer reaches for these forms when company-specific substrate is thin.
+// The Tier-3 hallucination judge catches them, but soft instructions in the
+// prompt don't reliably block them (operator directive: "expunge > instruction").
+// These are the SPECIFIC failure-mode patterns observed in v2-mq7nti2t flagged
+// prospects (Anthem "Idaho's terrain", Azimuth "NJ firms hitting same wall",
+// BAM Broadband "Colorado operators pushing BEAD").
+// Composer is still free to write COMPANY-SPECIFIC claims with geography
+// (e.g., "Anthem Broadband's Idaho deployment" — that's grounded). What's banned
+// is GENERIC industry-wide patterns asserted as fact.
+const GEOGRAPHIC_GUARDS: Array<{ pattern: RegExp; label: string }> = [
+  // "Idaho's terrain", "California's market", "Texas's landscape"
+  { pattern: /\b[A-Z][a-z]+'s\s+(?:terrain|landscape|markets?|operators?|firms?|providers?|broadband|infrastructure|regulators?|builds?|deployments?|networks?|programs?|projects?)\b/, label: 'UNGROUNDED GEOGRAPHIC: "{State}\'s {noun}" — only valid if USE_DIRECTLY substrate has this geographic detail. Use COMPANY-specific framing instead.' },
+  // "fiber engineering firms in NJ", "operators in Colorado", "broadband providers in CA"
+  { pattern: /\b(?:fiber\s+)?(?:engineering\s+|broadband\s+|telecom\s+)?(?:firms?|operators?|providers?|carriers?|telecoms?|builds?|deployments?|networks?|programs?|projects?)\s+in\s+(?:[A-Z][a-z]+(?:\s+[A-Z][a-z]+)?|[A-Z]{2})\b/i, label: 'UNGROUNDED GEOGRAPHIC: "{firms/operators/providers/builds/deployments} in {state/region}" — only valid if USE_DIRECTLY substrate has this geographic detail.' },
+  // "Colorado operators", "Texas firms", "Idaho providers", "California broadband", "Colorado builds", "Idaho deployments"
+  { pattern: /\b(?:Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New\s+Hampshire|New\s+Jersey|New\s+Mexico|New\s+York|North\s+Carolina|North\s+Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode\s+Island|South\s+Carolina|South\s+Dakota|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West\s+Virginia|Wisconsin|Wyoming)\s+(?:operators?|firms?|providers?|carriers?|broadband(?:\s+providers?)?|fiber(?:\s+operators?)?|telecoms?|engineering\s+firms?|builds?|deployments?|networks?|programs?|projects?|BEAD(?:\s+awards?)?)\b/i, label: 'UNGROUNDED GEOGRAPHIC: "{State} {operators/firms/providers/builds/deployments/networks}" — only valid if USE_DIRECTLY substrate has this geographic detail.' },
+  // "rural builds at this scale", "urban deployments", "regional FTTH programs" — adjective + plural noun with no state name (still likely ungrounded)
+  { pattern: /\b(?:rural|urban|regional|nationwide|countrywide|multi[\s-]?state|cross[\s-]?state)\s+(?:builds?|deployments?|operators?|firms?|providers?|networks?|FTTH|fiber\s+(?:operators?|firms?|deployments?)|programs?|projects?|BEAD\s+(?:awards?|builds?))\s+(?:at\s+(?:this\s+|that\s+)?scale|in\s+(?:[A-Z][a-z]+|[A-Z]{2})|hit(?:ting)?|fac(?:ing|e)|push(?:ing|ed)|build(?:ing)?\s+toward)/i, label: 'UNGROUNDED CATEGORICAL: "{adjective} {builds/operators/etc.} at scale/facing/pushing" — broad-category claim without substrate. Use company-specific framing instead.' },
+];
+
+// ----------------------------------------------------------------------------
 // Combined blacklist
 // ----------------------------------------------------------------------------
 
@@ -88,6 +111,7 @@ export const ALL_BANNED: Array<{ pattern: RegExp; label: string; category: strin
   ...TIM_KILL_LIST.map(p => ({ ...p, category: 'tim_kill' })),
   ...PRODUCT_GUARDS.map(p => ({ ...p, category: 'product_guard' })),
   ...OFFSHORE_GUARDS.map(p => ({ ...p, category: 'offshore' })),
+  ...GEOGRAPHIC_GUARDS.map(p => ({ ...p, category: 'geographic_guard' })),
 ];
 
 /**
@@ -117,6 +141,11 @@ ${PRODUCT_GUARDS.map(p => `- ${p.label}`).join('\n')}
 
 **Offshore/India/outsource framing (devalues positioning):**
 ${OFFSHORE_GUARDS.map(p => `- ${p.label}`).join('\n')}
+
+**Ungrounded geographic / industry-wide claims (Tier-1 violation — composer is rejected if any of these appear unless USE_DIRECTLY substrate has matching geographic detail):**
+${GEOGRAPHIC_GUARDS.map(p => `- ${p.label}`).join('\n')}
+
+**RULE (ungrounded geographic):** You may write COMPANY-specific claims with geography ("Anthem Broadband's Idaho deployment" — grounded by USE_DIRECTLY about Anthem). You may NOT write industry-wide / state-wide / regional patterns as fact unless your substrate explicitly supports that geographic granularity. If substrate is thin on the company's region, use persona-frame ("for operators at this scale") instead of fake-specific geography.
 
 **Workaround for "additionally":** start a new sentence. Workaround for "leverage": "use". Workaround for "streamline": "compress" or "shorten". Workaround for "transformative": "structural". Workaround for "robust": "tight" or "solid".`;
 }

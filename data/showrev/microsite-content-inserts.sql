@@ -17,7 +17,7 @@ INSERT INTO sr_microsites (
   'One of our customers cut permit review cycles from 3-4 weeks to 2 days by validating design inputs before submission.',
   'National fiber engineering firm',
   'Nathan Dunn',
-  '["Reduce permit return rates across all 50 state jurisdictions from a single validation layer","Catch input conflicts before drawings leave your team — not after a county flags them","Scale multi-state project volume without proportional growth in QC headcount"]',
+  '["Reduce permit return rates across all 50 state jurisdictions from one accelerated production workflow","Speed up production so your team has the time to QC before drawings leave — not after a county flags them","Scale multi-state project volume without proportional growth in QC headcount"]',
   'draft'
 )
 ON CONFLICT (slug) DO UPDATE SET
@@ -37,7 +37,7 @@ INSERT INTO sr_microsites (
   'hilliary',
   'Hilliary Communications',
   'Running long haul and FTTH under one roof means two engineering workflows with different documentation standards.',
-  'Hilliary just absorbed 35,000 TDS locations on top of an existing long haul and FTTH operation. That is two design workflows, two sets of documentation standards, and a growing list of municipalities that each review drawings their own way. The drawing review process stops scaling with headcount before the expansion does. Inorsa validates design inputs before drawings are produced so permits go through clean the first time.',
+  'Hilliary just absorbed 35,000 TDS locations on top of an existing long haul and FTTH operation. That is two design workflows, two sets of documentation standards, and a growing list of municipalities that each review drawings their own way. The drawing review process stops scaling with headcount before the expansion does. Inorsa accelerates drawing production from your GIS/LLD inputs so your team has time to QC properly before submission so permits go through clean the first time.',
   'One of our customers cut permit review cycles from 3-4 weeks to 2 days by validating design inputs before submission.',
   'Multi-state fiber operator',
   'Nathan Dunn',
@@ -57,7 +57,7 @@ INSERT INTO sr_microsites (
   'One of our customers cut permit review cycles from 3-4 weeks to 2 days by validating design inputs before submission.',
   'National fiber engineering firm',
   'Nathan Dunn',
-  '["Protect margins on high-volume design work by eliminating rework from permit kickbacks","Maintain consistent quality across multi-client project portfolios without adding QC headcount","Complement your existing IQGeo workflow with a document validation layer before permit submission"]',
+  '["Protect margins on high-volume design work by eliminating rework from permit kickbacks","Maintain consistent quality across multi-client project portfolios without adding QC headcount","Complement your existing IQGeo workflow with a accelerated production so your team can QC before permit submission"]',
   'draft'
 );
 
@@ -85,7 +85,7 @@ INSERT INTO sr_microsites (
   'avatar-tech',
   'Avatar Tech',
   'Avatarius commits municipalities to construction timelines. Avatar Tech has to deliver them. The variable is permit review cycles.',
-  'When Avatarius helps a municipality secure BEAD funding, it comes with a construction timeline commitment. Avatar Tech builds what Avatarius wins. Every rejected drawing set is 3-6 weeks of delay, and municipal jurisdictions across NJ, NY, and MD all flag different things on the same engineering package. The gap between winning the award and breaking ground is where timelines compress or blow. Inorsa validates design data before drawings are produced — fewer returns, fewer timeline surprises.',
+  'When Avatarius helps a municipality secure BEAD funding, it comes with a construction timeline commitment. Avatar Tech builds what Avatarius wins. Every rejected drawing set is 3-6 weeks of delay, and municipal jurisdictions across NJ, NY, and MD all flag different things on the same engineering package. The gap between winning the award and breaking ground is where timelines compress or blow. Inorsa accelerates drawing production from your GIS/LLD inputs so your team has time to QC properly before submission — fewer returns, fewer timeline surprises.',
   'One of our customers cut permit review cycles from 3-4 weeks to 2 days by validating design inputs before submission.',
   'Multi-state fiber operator',
   'Mike Rutski',
@@ -133,11 +133,11 @@ INSERT INTO sr_microsites (
   'pcci-prodesign',
   'PCCI Group / ProDesign',
   'At 27 CAD drafters pushing large-scale city redesigns, a single permit kickback does not just cost rework hours — it backs up the queue behind it.',
-  'ProDesign runs a high-throughput CAD operation spanning AutoCAD through 3GIS, producing construction documents for multi-city FTTH projects and military base infrastructure. When one permit package comes back from a jurisdiction, it does not just require rework on that package — it backs up every package behind it in the queue. At your team''s volume, the cost of a single kickback is measured in days of delayed output, not hours. Inorsa validates design data before drawings are produced so fewer packages come back.',
+  'ProDesign runs a high-throughput CAD operation spanning AutoCAD through 3GIS, producing construction documents for multi-city FTTH projects and military base infrastructure. When one permit package comes back from a jurisdiction, it does not just require rework on that package — it backs up every package behind it in the queue. At your team''s volume, the cost of a single kickback is measured in days of delayed output, not hours. Inorsa accelerates drawing production from your GIS/LLD inputs so your team has time to QC properly before submission so fewer packages come back.',
   'One of our customers cut permit review cycles from 3-4 weeks to 2 days by validating design inputs before submission.',
   'National fiber engineering firm',
   'Mike Rutski',
-  '["Protect throughput across a high-volume CAD operation by catching errors before they enter the permit queue","Reduce rework that backs up production for every designer behind the rejected package","Validate across your full tool stack (AutoCAD, 3GIS, Katapult Pro) with one QC layer"]',
+  '["Protect throughput across a high-volume CAD operation by catching errors before they enter the permit queue","Reduce rework that backs up production for every designer behind the rejected package","Accelerate production across your full tool stack (AutoCAD, 3GIS, Katapult Pro) with consistent output to each standard"]',
   'draft'
 );
 
@@ -149,7 +149,7 @@ INSERT INTO sr_microsites (
   'lighthouse-tech',
   'Lighthouse Technologies',
   '350 crews across 23 states. One rejected drawing set in Georgia backs up crew allocation across three neighboring states.',
-  'At Lighthouse''s scale, the construction schedule is only as fast as the permit pipeline feeding it. A single permit return does not just delay one project — it cascades across crew allocation in neighboring states. With 26 years of operations and thousands of miles deployed, the math is clear: the cost of idle crews waiting on resubmissions is measured in crew-days multiplied across 23 states. Inorsa validates design data before drawings are produced — fewer returns, fewer days with crews waiting on paperwork.',
+  'At Lighthouse''s scale, the construction schedule is only as fast as the permit pipeline feeding it. A single permit return does not just delay one project — it cascades across crew allocation in neighboring states. With 26 years of operations and thousands of miles deployed, the math is clear: the cost of idle crews waiting on resubmissions is measured in crew-days multiplied across 23 states. Inorsa accelerates drawing production from your GIS/LLD inputs so your team has time to QC properly before submission — fewer returns, fewer days with crews waiting on paperwork.',
   'One of our customers cut permit review cycles from 3-4 weeks to 2 days by validating design inputs before submission.',
   'Multi-state fiber operator',
   'Mike Rutski',
@@ -201,7 +201,7 @@ INSERT INTO sr_microsites (
   'One of our customers cut permit review cycles from 3-4 weeks to 2 days by validating design inputs before submission.',
   'National fiber engineering firm',
   'Mike Rutski',
-  '["Drop permit rejection rates regardless of whether the design originated in the US, India, or Australia","Eliminate rework cycles that cross time zones and add days to every correction","Complement your iBISS field automation with upstream design validation before permit submission"]',
+  '["Drop permit rejection rates regardless of whether the design originated in the US, India, or Australia","Eliminate rework cycles that cross time zones and add days to every correction","Complement your iBISS field automation with upstream production speed that gives your team time to QC before permit submission"]',
   'draft'
 );
 
@@ -217,6 +217,6 @@ INSERT INTO sr_microsites (
   'One of our customers cut permit review cycles from 3-4 weeks to 2 days by validating design inputs before submission.',
   'Multi-state fiber operator',
   'Mike Rutski',
-  '["Standardize engineering QC across all six ISPs without waiting for workflow convergence","Pilot with one ISP and roll the playbook across the remaining five","Reduce permit return rates across nine states from a single validation platform"]',
+  '["Standardize engineering QC across all six ISPs without waiting for workflow convergence","Pilot with one ISP and roll the playbook across the remaining five","Reduce permit return rates across nine states from a single accelerated production platform"]',
   'draft'
 );

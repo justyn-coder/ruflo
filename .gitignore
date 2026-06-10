@@ -162,3 +162,10 @@ hive-mind-prompt-*.txt
 .env.*
 !.env.example
 !.env.*.example
+
+# Large raw datasets — NEVER commit (added 2026-06-10 after 600MB push rejection)
+data/fcc-bdc/raw/
+data/fcc-bdc/*.csv
+data/fcc-bdc/*.zip
+src/showrev/m1-email-find/data/showrev/premium/judge-reports/
+src/showrev/m1-email-find/data/showrev/premium/telemetry/

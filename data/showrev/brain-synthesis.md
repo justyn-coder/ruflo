@@ -227,14 +227,14 @@ Inorsa actually does. The email corrects that confusion. Graded WARM.
 METRICS: TDS acquisition = 35,000 additional locations. Long haul + FTTH dual operations.
 ECONOMIC BUYER: CTO/SVP = likely the decision-maker or co-decision-maker with CEO.
 DECISION PROCESS: Family-owned Oklahoma telco. Decision likely involves CEO/owner.
-DECISION CRITERIA: Must differentiate from the Nvidia visualization tool he referenced. Inorsa validates design inputs, not visualizes networks.
+DECISION CRITERIA: Must differentiate from the Nvidia visualization tool he referenced. Inorsa accelerates drawing production from GIS/LLD inputs (freeing the team to do their own QC), not network visualization. (Per Nick 2026-06-04: Inorsa does NOT validate inputs.)
 PAPER PROCESS: Unknown. Private company = simpler procurement than public entity.
 IDENTIFIED PAIN: Running two engineering workflows (long haul + FTTH) with different documentation standards. The TDS acquisition added 35,000 locations on top of that.
 CHAMPION: Adam (CTO) is the internal champion if he sees the value proposition clearly.
 COMPETITION: Mentioned an Nvidia tool. Investigate what this is -- possibly Nvidia Omniverse for infrastructure visualization, which is NOT competitive with Inorsa.
 
 TALKING POINTS:
-- Clear up the Nvidia confusion: Inorsa validates design data, not visualizes it
+- Clear up the Nvidia confusion: Inorsa accelerates drawing production from GIS/LLD inputs (it does NOT visualize networks, and per Nick 2026-06-04 it does NOT validate inputs either)
 - Ask about the TDS integration timeline and engineering challenges
 - Probe whether they are bringing TDS designs in-house or using external engineering
 - Ask about their BEAD participation plans

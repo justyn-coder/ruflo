@@ -56,7 +56,7 @@ purpose: Single source of product intelligence for ShowRev agents. Feeds researc
 - Uses specific BEAD/RDOF dollar amounts and county names
 
 **Mike Rutski — first-touch language:**
-- "Inorsa validates design data before drawings are produced so fewer packages come back from the jurisdiction"
+- "Inorsa accelerates drawing production from your GIS/LLD inputs so your team has time to QC properly before submission" (corrected from "validates design data" framing per Nick McManus 2026-06-04)
 - References specific tool stacks (AutoCAD, 3GIS) and team sizes
 
 ## 4. The Real Objection (from customer sales thread)

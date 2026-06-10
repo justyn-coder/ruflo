@@ -117,7 +117,7 @@ sources: sr_brain_substrate (6,262 chunks), product-intelligence-brief.md, booth
 
 **Inorsa capability:** Generate step — "AutoCAD package to YOUR standard, plus PDF for permitting" (sales deck p6). Drawing Agent "maps to your CAD blocks, generates pages with cross-references and jurisdictional callouts."
 
-**Best proof point:** "Automate GIS-to-CAD conversion, validate cross-document inputs before production begins, and standardize deliverables across multiple client specs at once" (Nathan Dunn, Cyient email — best problem/solution statement).
+**Best proof point:** "Automate GIS-to-CAD conversion, accelerate production speed across multi-jurisdiction inputs, and standardize deliverables across multiple client specs at once" (adapted from Nathan Dunn's Cyient email — original used "validate cross-document inputs" framing, corrected per Nick McManus 2026-06-04: Inorsa Fiber Drawings does NOT validate inputs).
 
 **Best CTA:** "Do your LLDs and permit inputs vary across teams or markets, even for similar builds?" (Inorsa deck slide 8, question 4)
 

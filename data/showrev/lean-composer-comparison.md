@@ -37,7 +37,7 @@ version: v1
 
 > Jordan, running fiber construction across Texas, Louisiana, Oklahoma, Arkansas, and Kansas means five different permitting standards hitting your financials at different times. A drawing rejected in Oklahoma delays crew schedules in Texas. The compounding effect shows up in your project cost reports before it shows up anywhere else.
 >
-> Inorsa validates design data before drawings are produced. Fewer permit returns, fewer timeline surprises across every region.
+> Inorsa accelerates drawing production from your GIS/LLD inputs so your team has time for thorough QC before each jurisdiction's submission. (Per Nick 2026-06-04: this replaces the earlier "validates design data" framing — Inorsa does not validate inputs.)
 >
 > Worth a 20-minute conversation?
 
@@ -72,7 +72,7 @@ https://fiber.inorsa.com/brief/rayco-inc
 
 > Matt, acquiring Pennsylvania Telephone Company means LHTC's operations team is absorbing a new service territory with different infrastructure, different vendor records, and different municipal requirements. Your existing engineering process worked for Laurel Highlands. The new footprint introduces jurisdictions your team has not submitted to before.
 >
-> Inorsa validates design data before drawings are submitted. Same QC standard across both the legacy and acquired territories.
+> Inorsa accelerates drawing production across both the legacy and acquired territories so your team can apply the same QC standard everywhere before submission. (Per Nick 2026-06-04: Inorsa does not validate inputs — it gives your team time to.)
 >
 > Worth a 20-minute conversation?
 
@@ -104,7 +104,7 @@ https://fiber.inorsa.com/brief/matt-shearer-lhtc
 
 > Aditya, deploying 200 to 500 sites monthly means your engineering team is submitting permit packages to cities, railroad authorities, and TxDOT simultaneously. Each entity reviews by its own standards. A drawing that clears the city gets flagged by TxDOT for a different reason. At that volume, a small rejection rate is a large absolute number.
 >
-> Inorsa validates design data before drawings go to any of those entities. The rejection rate drops across the board.
+> Inorsa accelerates production across all entities so your team has time to QC every submission to each jurisdiction's standard. The rejection rate drops as a function of better preparation. (Per Nick 2026-06-04: Inorsa does not validate inputs — it gives your team time to.)
 >
 > Worth a 20-minute conversation?
 
