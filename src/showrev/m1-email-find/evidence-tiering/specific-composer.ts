@@ -334,8 +334,46 @@ export async function composeSpecific(args: {
     });
     const jsonMatch =
       raw.match(/```(?:json)?\s*\n?([\s\S]*?)\n?```/) || raw.match(/(\{[\s\S]*\})/);
-    if (!jsonMatch) throw new Error('Specific composer: no JSON in LLM output');
-    const candidate = JSON.parse(jsonMatch[1]);
+    if (!jsonMatch) {
+      // No JSON found — treat as a violation, retry rather than throw. The
+      // composer's own retry loop already exists; we feed this violation
+      // into lastViolations so attempt N+1 sees an explicit fix-it hint.
+      const violations = ['Composer output had no JSON object — wrap your response in a single ```json {...} ``` block'];
+      lastViolations = violations;
+      attempts.push({ candidate: null as any, violations, attemptNumber: attempt + 1 });
+      if (verbose) console.log(`  Compose attempt ${attempt + 1}: no-JSON violation`);
+      continue;
+    }
+    // Tolerant JSON parse: try strict first; on failure, normalize smart
+    // quotes + strip trailing commas (common LLM artifacts) and retry once.
+    // Previously a single LLM JSON glitch (e.g. position 963 on Blue Stream
+    // Fiber, position 637 on ALLO in v2-mq7iex0p / v2-mq7lm7h8) threw out
+    // of the for-loop entirely — composer returned no result and the
+    // prospect landed as compose_failed with an unfixable JSON parse error.
+    let candidate: any;
+    let parseFailureReason: string | null = null;
+    try {
+      candidate = JSON.parse(jsonMatch[1]);
+    } catch (e1) {
+      const fixed = jsonMatch[1]
+        .replace(/[“”]/g, '"')
+        .replace(/[‘’]/g, "'")
+        .replace(/,(\s*[}\]])/g, '$1');
+      try {
+        candidate = JSON.parse(fixed);
+      } catch (e2) {
+        parseFailureReason = (e1 as Error).message;
+      }
+    }
+    if (parseFailureReason || !candidate) {
+      const violations = [
+        `Composer output JSON was malformed (parse error: ${parseFailureReason ?? 'unknown'}) — return STRICTLY valid JSON: no trailing commas, no smart-quote characters, escape any double-quotes inside string values with \\".`,
+      ];
+      lastViolations = violations;
+      attempts.push({ candidate: null as any, violations, attemptNumber: attempt + 1 });
+      if (verbose) console.log(`  Compose attempt ${attempt + 1}: JSON-parse violation`);
+      continue;
+    }
     const body: string = candidate.body || '';
     const subject: string = candidate.subject || '';
     const subjectAlt: string = candidate.subject_alt || '';

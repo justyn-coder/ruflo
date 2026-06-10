@@ -554,6 +554,17 @@ function classifyFlagReason(
   // doesn't support, route to human even if every other gate passes.
   if (result.judge_action === 'flag-hallucination') return 'hallucination';
 
+  // Compose-time quality violations — tier-1 (banned phrases, em-dash,
+  // word count, paragraph count, company-name) or tier-2 (peer-feel score
+  // below ship threshold). Without this case, judge_action='retry' and
+  // judge_action='flag' produce send_status='flag' with an empty
+  // system_brief — the operator sees a mystery flag with no reason. Added
+  // 2026-06-10 after the ICP fix unmasked this edge case (Amanda Griffith
+  // at 123Net in run v2-mq7mxgmx: T1 fail, 1 violation, empty brief).
+  if (result.judge_action === 'retry' || result.judge_action === 'flag') {
+    return 'compose_violations';
+  }
+
   // Email confidence next — a 'red' confidence means we never produced
   // a usable address.
   const conf = (result.email_confidence || '').toLowerCase();
@@ -676,6 +687,26 @@ export function generateFlagSystemBrief(result: ProspectResult): string {
     // per SoT §15; it no longer reaches the brief generator. The verdict
     // and reasoning are displayed via the ICP Volume Verdict card in the
     // detail panel, sourced directly from sr_engine_output.icp_volume_*.
+    case 'compose_violations': {
+      const jr = result.judge_result;
+      const t1 = jr?.tier1;
+      const t2 = jr?.tier2;
+      const t1ViolationCount = t1?.violations?.length ?? 0;
+      const t1ViolationsList = (t1?.violations || []).slice(0, 3).map((v: string) => `"${v}"`).join(', ');
+      const t2Score = t2?.score ?? 'n/a';
+      const judgeAction = result.judge_action || 'unknown';
+
+      if (judgeAction === 'retry' && t1ViolationCount > 0) {
+        return (
+          `The email for ${firstName} at ${company} failed our tier-1 quality check after 4 composer attempts: ${t1ViolationCount} violation${t1ViolationCount === 1 ? '' : 's'} ${t1ViolationsList ? `(${t1ViolationsList})` : ''}. ` +
+          `Recommendation: review the body, manually edit to remove the flagged content (banned phrases, em-dashes, word count, or company-name mismatches), or hand-write a replacement. Long-term fix: tune the composer prompt to avoid the recurring violation pattern.`
+        );
+      }
+      return (
+        `The email for ${firstName} at ${company} did not clear our tier-2 quality bar (peer-feel score ${t2Score}/5; ship threshold higher). ` +
+        `Recommendation: review the body for tone (does it sound like a peer fiber AE writing or a vendor pitch?), and either approve, edit, or hand-write a sharper version. Long-term fix: surface what tier-2 specifically scored low on so we can iterate the composer prompt.`
+      );
+    }
     case 'research_low': {
       const tierCounts = result.dossier?.tierCounts;
       const directCount = tierCounts?.useDirectly ?? 0;
