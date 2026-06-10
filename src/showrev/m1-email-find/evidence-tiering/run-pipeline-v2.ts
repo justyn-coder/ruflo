@@ -195,7 +195,11 @@ async function processOne(
     companyContext = await resolveCompany(row.company, row.state);
     result.durations_ms.resolve = Date.now() - t05;
     console.log(`  resolve: ${companyContext.business_type} (${companyContext.business_type_confidence})${companyContext.alt_name_hint ? ` — ${companyContext.alt_name_hint}` : ''}`);
-    const override = deriveIcpOverride(companyContext);
+    // Operator-directed 2026-06-10: pass prospectTitle so a fiber-specific
+    // title (e.g. "Sr. Director - Fiber Engineering") protects them from a
+    // company-level tower_ae reject. Primary source (title) beats LLM company
+    // classification. See feedback_primary_source_beats_llm_classification.
+    const override = deriveIcpOverride(companyContext, row.title);
     if (override) {
       result.icp_verdict = 'reject';
       result.icp_reason = override.icp_reason;

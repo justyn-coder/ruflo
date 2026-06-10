@@ -148,22 +148,49 @@ function validateConfidence(v: unknown): CompanyContext['business_type_confidenc
 }
 
 /**
- * Apply company-resolver output to gate the ICP verdict. The pipeline
- * runs this AFTER resolveCompany() and BEFORE the existing ICP gate. If the
- * business_type is tower_ae with high/medium confidence, hard-reject before
- * we waste research budget.
+ * Apply company-resolver output to gate the ICP verdict. The pipeline runs
+ * this AFTER resolveCompany() and BEFORE the existing ICP gate.
  *
- * Returns null if no override needed; returns an ICP-reject decision if the
- * company is out of scope.
+ * SOURCE-OF-TRUTH HIERARCHY (operator-directed 2026-06-10):
+ *
+ *   1. PRIMARY SOURCE — attendee list / prospect's title with fiber keywords.
+ *      If the person attended Fiber Connect (i.e. they're in our CSV at all)
+ *      OR their title contains fiber-specific role words, they work in fiber.
+ *      Full stop. This BEATS company-level LLM classification.
+ *
+ *   2. LLM CLASSIFICATION — useful context for substrate query + composer
+ *      framing, but never overrides primary source. A tower_ae firm can have a
+ *      fiber sub-vertical; reject only when the title shows no fiber relevance.
+ *
+ * Result: deriveIcpOverride now requires BOTH (a) high-confidence tower_ae
+ * classification AND (b) the person's title shows zero fiber relevance.
+ * Without (b), we pass through to the existing ICP gate which makes the call.
+ *
+ * Lesson logged in memory: feedback_primary_source_beats_llm_classification.md
  */
-export function deriveIcpOverride(ctx: CompanyContext): {
+const FIBER_TITLE_WORDS = /\b(fiber|ftth|fttx|ftp|gpon|xgs|broadband|isp|osp|outside\s*plant|fttp|olt|access\s*network|cable|broadband\s*construction|head[\s-]?end)\b/i;
+
+export function deriveIcpOverride(
+  ctx: CompanyContext,
+  prospectTitle?: string | null,
+): {
   icp_verdict: 'reject';
   icp_reason: string;
 } | null {
-  if (ctx.business_type === 'tower_ae' && ctx.business_type_confidence !== 'low') {
+  // Hard rule: if the prospect's title indicates a fiber-specific role,
+  // they're in scope regardless of what the company's primary business is.
+  // TEP (Tower Engineering Professionals) had Alex Mora as "Sr. Director -
+  // Fiber Engineering" — he runs their fiber sub-vertical and is a valid
+  // ICP target. Caught 2026-06-10 by operator: source-of-truth violation.
+  if (prospectTitle && FIBER_TITLE_WORDS.test(prospectTitle)) {
+    return null;
+  }
+  // Only reject when the company is high-confidence tower_ae AND the
+  // person shows no fiber relevance in their title.
+  if (ctx.business_type === 'tower_ae' && ctx.business_type_confidence === 'high') {
     return {
       icp_verdict: 'reject',
-      icp_reason: `Company-resolver: ${ctx.raw_name}${ctx.alt_name_hint ? ` (${ctx.alt_name_hint})` : ''} is tower-side A&E. Out of fiber-only scope. ${ctx.reason}`,
+      icp_reason: `Company-resolver: ${ctx.raw_name}${ctx.alt_name_hint ? ` (${ctx.alt_name_hint})` : ''} is tower-side A&E and prospect title shows no fiber-specific role. Out of fiber-only scope. ${ctx.reason}`,
     };
   }
   return null;
