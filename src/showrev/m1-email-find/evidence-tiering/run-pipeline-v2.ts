@@ -40,6 +40,7 @@ import { resolveCompanyLogo } from '../logo-resolver.js';
 import { composeMicrosite } from './microsite-composer.js';
 import { orchestrateEvidence } from './orchestrator.js';
 import { composeSpecific } from './specific-composer.js';
+import { computeSendConfidence } from './send-confidence.js';
 import { ApolloCreditTracker, findEmailForProspect } from './apollo-client.js';
 import {
   checkSubstrateRefutation,
@@ -856,6 +857,24 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
       flag_status: result.flag_status || false,
     }),
   };
+
+  // Send-confidence axes (v1.0-uncalibrated, 2026-06-10 — spec at
+  // docs/showrev/send-confidence-system-spec-2026-06-10.md). Surfaces
+  // 3-axis breakdown + composite so operators can dispute strict/lenient calls.
+  // Reuses existing tierCounts from line 762 above.
+  body.send_confidence = computeSendConfidence({
+    icp_status: result.icp_verdict,
+    icp_volume_verdict: result.icp_volume_verdict,
+    persona_bucket: personaBucket,
+    intel_signal_strength: intelSignalStrength,
+    email: result.email_found,
+    confidence_color: body.confidence_color as string,
+    system_brief: systemBrief,
+    use_directly_count: tierCounts?.useDirectly ?? null,
+    use_to_shape_count: tierCounts?.useToShape ?? null,
+    composer_mode: result.composer_mode,
+    intel_talking_points: meddpiccDecisionCriteria || meddpiccPain || null,
+  }) as unknown as Record<string, unknown>;
 
   // Item 6 (2026-06-09): flag-status pattern — populate ae_flag (terse) and
   // company_summary (System Brief, plain English) so the portal expand-view
