@@ -185,8 +185,11 @@ const PS_VARIANTS: Record<PSVariantKey, PSVariantDef> = {
     needsAssessmentLink: true,
     needsBookingLink: false,
     noLink: false,
+    // 2026-06-10: distinct from industry_data_hook / loss_frame_anchor
+    // fallbacks. Operator flagged identical fallback text across variants;
+    // this is the curiosity-gap "where does it break" framing.
     render: ({ micrositeSlug }) =>
-      `P.S. Built a 4-question diagnostic that pinpoints where your drawing cycle actually breaks. 60 seconds: https://fiber.inorsa.com/assess/${micrositeSlug}`,
+      `P.S. Quick gut-check: where does your drawing cycle most often break? 4 questions, 60 seconds: https://fiber.inorsa.com/assess/${micrositeSlug}`,
   },
   industry_data_hook: {
     key: 'industry_data_hook',
@@ -201,8 +204,9 @@ const PS_VARIANTS: Record<PSVariantKey, PSVariantDef> = {
     render: ({ micrositeSlug, verifiedStat }) =>
       verifiedStat
         ? `P.S. ${verifiedStat} If that matches your reality, the 4-question diagnostic shows where it's most fixable: https://fiber.inorsa.com/assess/${micrositeSlug}`
-        : // Fallback: pure curiosity-gap, no industry-stat claim
-          `P.S. Built a 4-question diagnostic that pinpoints where your drawing cycle actually breaks. 60 seconds: https://fiber.inorsa.com/assess/${micrositeSlug}`,
+        : // Fallback distinct from quiet_diagnostic / loss_frame_anchor —
+          // industry-peer framing without claiming a number we don't have.
+          `P.S. Curious how your permit-cycle pace compares to other operators in your region. 60-second snapshot: https://fiber.inorsa.com/assess/${micrositeSlug}`,
   },
   loss_frame_anchor: {
     key: 'loss_frame_anchor',
@@ -217,8 +221,9 @@ const PS_VARIANTS: Record<PSVariantKey, PSVariantDef> = {
     render: ({ micrositeSlug, verifiedStat }) =>
       verifiedStat
         ? `P.S. ${verifiedStat} The 4-question diagnostic shows where your cycle is exposed: https://fiber.inorsa.com/assess/${micrositeSlug}`
-        : // Fallback: ops-cost-framed loss without claiming the slip statistic
-          `P.S. Built a 4-question diagnostic that pinpoints where your drawing cycle actually breaks. 60 seconds: https://fiber.inorsa.com/assess/${micrositeSlug}`,
+        : // Fallback distinct from quiet_diagnostic / industry_data_hook —
+          // loss-framed without claiming the BEAD-slip stat we don't have.
+          `P.S. We mapped where drawing-cycle slippage tends to cost operators the most. 60 seconds to see your own cycle's exposure: https://fiber.inorsa.com/assess/${micrositeSlug}`,
   },
   question_no_link: {
     key: 'question_no_link',
