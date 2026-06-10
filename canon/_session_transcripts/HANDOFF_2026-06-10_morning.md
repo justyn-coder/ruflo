@@ -50,13 +50,31 @@ Expected outcome vs the pre-fix run `v2-mq7lm7h8` (30 prospects, 97% flag rate):
 - Judge-driven flags now have explicit briefs (Phase 1b fix)
 - Composer JSON-parse failures get retried not thrown (Phase 1c fix)
 
-## What's flagged so far (live data)
+## Final P2 re-run results (v2-mq7nti2t — 85 prospects, 122 min wall-clock, 1822 Apollo credits used)
 
-I'm watching the pipeline. Pattern so far:
-- 50% pending / 50% flag among the first 4 to land
-- Pre-fix run: 3% pending / 97% flag
-- That's a clean ~15× improvement on the pending rate, dominated by the ICP fix
-- Remaining flags are legitimate: Tier 3 hallucination catches (Anthem Broadband "scaling fiber across Idaho's terrain" — that's working as designed, you don't want to send that), Best-of-N quality violations
+| Outcome | Count | % of cohort |
+|---|---|---|
+| 🟢 **PENDING** (clean SEND path) | **22** | **26%** |
+| 🔴 Flag — Anthropic API rate limit hit | 28 | 33% |
+| 🔴 Flag — Tier 3 hallucination caught | 10 | 12% |
+| 🔴 Flag — Email not findable | 10 | 12% |
+| 🔴 Flag — Phase C halt (substrate refuted) | 9 | 11% |
+| 🔴 Flag — Tier 1/2 compose_violations | 6 | 7% |
+
+**Versus pre-fix run (v2-mq7lm7h8, 30 prospects): 3% pending → 26% pending = 8.7× improvement.**
+
+### The 28 API rate-limit failures are recoverable
+
+The error literally says: *"You have reached your specified API usage limits. You will regain access..."*. This isn't a code bug — your Anthropic tier hit its cap somewhere around prospect 57 of 85 (the alphabetical tail). Re-running those 28 with `--include-flagged` once the rate limit refreshes (typically hourly) will recover most of them.
+
+**Concrete prediction after rate-limit re-run:** if those 28 hit the same ~30% pending rate as the first 57, the cohort lands at ~30 pending out of 85 = **35% pending rate**. That's a real number you can plan against.
+
+### The other 35 flags are LEGITIMATE — system working as designed
+
+- **10 hallucination** — Tier 3 caught unsupported claims like Anthem Broadband "scaling fiber across Idaho's terrain." Don't disable this. Manual AE review.
+- **10 email not findable** — Apollo + 20+ SMTP probes turned up nothing. Either personal email or recent hire.
+- **9 Phase C halt** — substrate directly contradicted the chosen frame (the Frontier/Verizon-acquisition pattern). Engine refused to compose a misleading email. Manual angle change needed.
+- **6 compose_violations** — Best-of-N hit Tier 1 banned phrase / em-dash / word count violations. Edit and re-approve.
 
 ## What I left alone (intentional)
 
