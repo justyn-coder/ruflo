@@ -1125,12 +1125,14 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     // Unified resolution — same value as sr_engine_output above.
     // See finalSendStatus block ~line 631 for priority order.
     send_status: finalSendStatus,
-    // Fix #1 (2026-06-10): when production gate sends to 'hold', explain why.
-    // Visible in portal so the operator knows it's the back-pocket queue, not
-    // a quality flag.
-    ...(finalSendStatus === 'hold' && {
-      skip_reason: `Email confidence is ${result.email_confidence || 'unknown'} (production gate requires green or operator-verified). Queued for back-pocket email recovery (FCC 499 / NTCA / PUC / press releases). Override by setting email_corrected=true after manual verification.`,
-    }),
+    // Fix #1 (2026-06-10): skip_reason is ALWAYS in the body. When status='hold'
+    // we set the back-pocket queue explanation; otherwise NULL clears any stale
+    // value from a previous run. This is the ghost-risk fix per DB-FIELD-AUDIT
+    // 2026-06-10 — without this, an old 'hold' skip_reason would persist after
+    // a new run that produces 'pending'.
+    skip_reason: finalSendStatus === 'hold'
+      ? `Email confidence is ${result.email_confidence || 'unknown'} (production gate requires green or operator-verified). Queued for back-pocket email recovery (FCC 499 / NTCA / PUC / press releases). Override by setting email_corrected=true after manual verification.`
+      : null,
     system_brief: systemBrief,
     // DB integrity audit 2026-06-09: persona_bucket was on engine but not
     // on prospects (98% NULL). Portal reads it from prospects too.
