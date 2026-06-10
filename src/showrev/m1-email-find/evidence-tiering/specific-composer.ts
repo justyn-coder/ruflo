@@ -143,7 +143,7 @@ This is NOT a sales pitch. The email reads like one professional talking to anot
 - It doesn't pitch Inorsa as the answer — it offers Inorsa as one path worth considering to alleviate the friction
 - The hook is: "I see your world, I've thought about your angle, here's a way you might compress the friction"
 
-Specific mode = you have substrate evidence on ${prospect.company}. Use it to SHOW you've done the research, not to flex what you know. Cite verifiable facts as approximations ("north of N locations") — never as exact numbers (stale-data risk).
+Specific mode = you have substrate evidence on ${prospect.company}. Use it to SHOW you've done the research, not to flex what you know. Cite verifiable facts as **neutral** approximations ("approximately N locations", "around N customers") — never as exact numbers (stale-data risk). DO NOT use directionally-biased qualifiers like "over N", "north of N", "more than N" — those imply the actual value exceeds N, and the Tier 3 hallucination judge will flag them as exaggeration whenever substrate states an exact figure.
 
 Cold reader test: would a peer fiber AE think "this person actually researched my world" or "this is a vendor pitch with my company name pasted in"? Your job is the former.
 
@@ -160,7 +160,7 @@ Cold reader test: would a peer fiber AE think "this person actually researched m
 You have actual evidence about this company. Use it carefully.
 
 **USE_DIRECTLY claims** — evidence we can defend. You may reference these, but:
-- NEVER quote a numeric value verbatim ("1,700 miles"). Frame as approximation: "north of 1,500 miles", "around 16,000 customers", "in the multi-state range." This protects against stale data.
+- NEVER quote a numeric value verbatim ("1,700 miles"). Frame as **neutral** approximation: "approximately 1,500 miles", "around 16,000 customers", "in the multi-state range." This protects against stale data. **DO NOT use "over N", "north of N", "more than N", "in excess of N", or any directionally-upward qualifier** — those imply substrate > value and the Tier 3 hallucination judge will flag them as fabricated whenever substrate states an exact figure. Use neutral hedges only ("approximately", "around", "roughly", "in the [magnitude] range").
 - DO cite the source implicitly by being specific (e.g., "your ReConnect Round 3 award" not "your USDA funding") — specificity is its own credential.
 - **MANDATORY citation rule (2026-06-09)**: For EVERY sentence that includes a numeric value, a company name, an industry-specific fact, or any claim that could be verified — you MUST include the claim_id(s) of the supporting USE_DIRECTLY evidence in that sentence's claim_ids array. Sentences without supporting evidence MUST be persona-frame only (no specifics — generic operator-typed framing).
 - Audit hard rule: if a sentence contains a number / a proper noun / a verifiable claim AND its claim_ids array is empty, the email will be rejected as a hallucination risk. No exceptions.
