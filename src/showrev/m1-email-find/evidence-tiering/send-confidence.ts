@@ -162,6 +162,10 @@ export function computeEmailScore(input: {
       score = 80;
       detail = 'Email address verified deliverable by MillionVerifier.';
       break;
+    case 'yellow':
+      score = 50;
+      detail = 'Email pattern verified (SMTP-confirmed) but not MV-checked.';
+      break;
     case 'amber':
       score = 50;
       detail = 'Email is a pattern guess — verifier returned uncertain.';
