@@ -70,26 +70,30 @@ export function computeIcpScore(input: {
 
   if (input.icp_status === 'pass') {
     score += 40;
-    reasons.push('icp_status=pass');
+    reasons.push('Passes the ICP filter');
+  } else {
+    reasons.push('Does not pass the ICP filter');
   }
   if (input.icp_volume_verdict === 'fit') {
     score += 30;
-    reasons.push('verdict=fit');
+    reasons.push('volume signal confirms fit');
   } else if (input.icp_volume_verdict === 'leaning_fit') {
     score += 15;
-    reasons.push('verdict=leaning_fit');
+    reasons.push('volume signal uncertain but leaning yes');
+  } else if (input.icp_volume_verdict === 'miss') {
+    reasons.push('volume signal says miss');
   }
   if (input.persona_bucket && CORE_ICP_PERSONAS.has(input.persona_bucket)) {
     score += 20;
-    reasons.push(`persona=${input.persona_bucket} (core ICP)`);
+    reasons.push(`${humanPersona(input.persona_bucket)} — core buyer persona`);
   } else if (input.persona_bucket) {
-    reasons.push(`persona=${input.persona_bucket} (adjacent — not core ICP)`);
+    reasons.push(`${humanPersona(input.persona_bucket)} — adjacent persona, not core buyer`);
   }
   if (input.intel_signal_strength === 'strong') {
     score += 10;
-    reasons.push('signal=strong');
+    reasons.push('strong qualitative fit signal');
   } else if (input.intel_signal_strength === 'weak') {
-    reasons.push('signal=weak (no boost)');
+    reasons.push('weak qualitative fit signal');
   }
 
   const clamped = Math.max(0, Math.min(100, score));
@@ -98,8 +102,28 @@ export function computeIcpScore(input: {
   return {
     score: clamped,
     label,
-    why: `${clamped}/100 (${label}). ${reasons.join(', ')}.`,
+    why: `${capitalize(reasons[0])}${reasons.slice(1).length ? '. ' + reasons.slice(1).map(capitalize).join('. ') : ''}.`,
   };
+}
+
+function humanPersona(p: string): string {
+  const m: Record<string, string> = {
+    technical_designer: 'Technical designer',
+    ops_builder: 'Operations / builder',
+    revenue_leader: 'Revenue leader',
+    exec_leader: 'Executive',
+    executive: 'Executive',
+    technical_decision_maker: 'Technical decision maker',
+    operations_manager: 'Operations manager',
+    project_manager: 'Project manager',
+    engineer: 'Engineer',
+    business_development: 'Business development',
+  };
+  return m[p] || p;
+}
+
+function capitalize(s: string): string {
+  return s.length > 0 ? s[0].toUpperCase() + s.slice(1) : s;
 }
 
 /**
@@ -127,7 +151,7 @@ export function computeEmailScore(input: {
     return {
       score: 0,
       label: 'cannot_send',
-      why: '0/100 (cannot_send). No verified email address.',
+      why: 'No verified email address. Cannot send.',
     };
   }
 
@@ -136,26 +160,26 @@ export function computeEmailScore(input: {
   switch (input.confidence_color) {
     case 'green':
       score = 80;
-      detail = 'confidence_color=green (verified or high-confidence pattern)';
+      detail = 'Email address verified deliverable by MillionVerifier.';
       break;
     case 'amber':
       score = 50;
-      detail = 'confidence_color=amber (pattern-inferred, some risk)';
+      detail = 'Email is a pattern guess — verifier returned uncertain.';
       break;
     case 'red':
       score = 25;
-      detail = 'confidence_color=red (low-confidence pattern, unverified)';
+      detail = 'Email address could not be verified — pattern is low confidence.';
       break;
     default:
       score = 25;
-      detail = `confidence_color=${input.confidence_color || 'unknown'} (treating as low)`;
+      detail = 'Email address confidence unknown — treating as low.';
   }
 
   const label = labelFromScore(score);
   return {
     score,
     label,
-    why: `${score}/100 (${label}). ${detail}.`,
+    why: detail,
   };
 }
 
@@ -202,18 +226,18 @@ export function computeSubstrateScore(input: {
     const ud = input.use_directly_count!;
     if (ud >= 10) {
       score += 60;
-      reasons.push(`USE_DIRECTLY=${ud} (rich)`);
+      reasons.push(`${ud} directly-citable claims about this company (rich research)`);
     } else if (ud >= 5) {
       score += 40;
-      reasons.push(`USE_DIRECTLY=${ud} (medium)`);
+      reasons.push(`${ud} directly-citable claims about this company (decent research)`);
     } else if (ud >= 3) {
       score += 25;
-      reasons.push(`USE_DIRECTLY=${ud} (thin)`);
+      reasons.push(`${ud} directly-citable claims about this company (thin research)`);
     } else if (ud >= 1) {
       score += 12;
-      reasons.push(`USE_DIRECTLY=${ud} (very thin)`);
+      reasons.push(`only ${ud} directly-citable claim${ud === 1 ? '' : 's'} about this company (very thin research)`);
     } else {
-      reasons.push('USE_DIRECTLY=0 (no substrate)');
+      reasons.push('no directly-citable claims about this company');
     }
   } else {
     // Fallback — older row without tierCounts. Use research_summary length proxy.
@@ -221,35 +245,35 @@ export function computeSubstrateScore(input: {
     const len = summary.length;
     if (len >= 1500) {
       score += 50;
-      reasons.push(`summary ${len}c (rich, fallback)`);
+      reasons.push('rich research summary on file');
     } else if (len >= 800) {
       score += 35;
-      reasons.push(`summary ${len}c (medium, fallback)`);
+      reasons.push('medium-depth research summary on file');
     } else if (len >= 300) {
       score += 18;
-      reasons.push(`summary ${len}c (thin, fallback)`);
+      reasons.push('thin research summary on file');
     } else {
       score += 5;
-      reasons.push(`summary ${len}c (very thin, fallback)`);
+      reasons.push('almost no research summary on file');
     }
   }
 
   if (input.composer_mode === 'specific') {
     score += 25;
-    reasons.push('composer_mode=specific (company-grounded)');
+    reasons.push('email is written company-specific, not generic');
   } else if (input.composer_mode === 'generalized') {
     score += 5;
-    reasons.push('composer_mode=generalized (persona-frame)');
+    reasons.push('email falls back to a generic persona frame');
   }
 
   if (typeof input.use_to_shape_count === 'number' && input.use_to_shape_count >= 5) {
     score += 10;
-    reasons.push(`USE_TO_SHAPE=${input.use_to_shape_count}`);
+    reasons.push(`${input.use_to_shape_count} supporting claims add context`);
   }
 
   if (input.intel_talking_points && input.intel_talking_points.trim().length > 30) {
     score += 5;
-    reasons.push('talking_points populated');
+    reasons.push('AE-ready talking points available');
   }
 
   const clamped = Math.max(0, Math.min(100, score));
@@ -258,7 +282,7 @@ export function computeSubstrateScore(input: {
   return {
     score: clamped,
     label,
-    why: `${clamped}/100 (${label}). ${reasons.join(', ')}.`,
+    why: `${capitalize(reasons[0])}${reasons.slice(1).length ? '. ' + reasons.slice(1).map(capitalize).join('. ') : ''}.`,
   };
 }
 

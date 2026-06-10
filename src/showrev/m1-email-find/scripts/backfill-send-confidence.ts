@@ -60,6 +60,24 @@ async function main() {
   const samples: Array<{ name: string; company: string; composite: number; label: string; icp: number; email: number; substrate: number }> = [];
 
   for (const row of rows) {
+    // research_summary is JSON ({composer_mode, tier_counts:{useDirectly,useToShape}, ...}).
+    // Parse it so the substrate axis uses the real tier counts instead of
+    // falling back to summary-length proxy.
+    let useDirectly: number | null = null;
+    let useToShape: number | null = null;
+    let composerMode: string | null = null;
+    try {
+      const rs = row.research_summary;
+      if (rs && typeof rs === 'string') {
+        const parsed = JSON.parse(rs as string);
+        if (parsed?.tier_counts) {
+          useDirectly = parsed.tier_counts.useDirectly ?? parsed.tier_counts.use_directly ?? null;
+          useToShape = parsed.tier_counts.useToShape ?? parsed.tier_counts.use_to_shape ?? null;
+        }
+        if (parsed?.composer_mode) composerMode = parsed.composer_mode;
+      }
+    } catch { /* leave as null — falls back to summary-length path */ }
+
     const conf = computeSendConfidence({
       icp_status: row.icp_status as string,
       icp_volume_verdict: row.icp_volume_verdict as string,
@@ -68,6 +86,9 @@ async function main() {
       email: row.email as string,
       confidence_color: row.confidence_color as string,
       system_brief: row.system_brief as string,
+      use_directly_count: useDirectly,
+      use_to_shape_count: useToShape,
+      composer_mode: composerMode,
       research_summary: row.research_summary as string,
       company_summary: row.company_summary as string,
       challenger_insight: row.challenger_insight as string,
