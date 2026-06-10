@@ -199,8 +199,63 @@ async function processOne(
   // Per SoT §16: CSV has no email column. Always discover via Apollo + SMTP.
   // Path A: existing findEmail (SMTP verification + pattern matching)
   // Path B fallback: when Path A returns red/null, derive via Apollo peer-pattern
+  //
+  // FIX 2026-06-10 (operator directive: "don't overwrite good emails"):
+  // BEFORE the email-finder runs, check if sr_prospects.email is already set
+  // (operator manually recovered an email via research). If yes, use that
+  // verbatim and skip the finder. Otherwise the finder's worst-case output
+  // (e.g., "couldn't find") would overwrite manually-recovered peer-verified
+  // anchors like Stephanie Lobdell's slobdell@cemc.org or Allison Ellis's
+  // Allison.Ellis@ftr.com. Bug caught in wet-run v2-mq8byucj.
   try {
     const t2 = Date.now();
+
+    // Precheck: existing email in sr_prospects
+    const sbUrlEarly = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const sbKeyEarly = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    let preservedEmail: string | null = null;
+    let preservedColor: string | null = null;
+    if (sbUrlEarly && sbKeyEarly) {
+      try {
+        const prospectIdSlug = `${row.firstName.toLowerCase().trim()}-${row.lastName.toLowerCase().trim()}-${(row.company || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
+        const r = await fetch(
+          `${sbUrlEarly}/rest/v1/sr_prospects?id=eq.${encodeURIComponent(prospectIdSlug)}&select=email,email_corrected`,
+          { headers: { apikey: sbKeyEarly, Authorization: `Bearer ${sbKeyEarly}` } },
+        );
+        if (r.ok) {
+          const rows = (await r.json()) as Array<{ email: string | null; email_corrected: boolean | null }>;
+          if (rows.length > 0 && rows[0].email && rows[0].email !== 'pending@calibration' && rows[0].email.includes('@')) {
+            preservedEmail = rows[0].email;
+            // Also check engine_output for prior confidence_color so we don't downgrade
+            const r2 = await fetch(
+              `${sbUrlEarly}/rest/v1/sr_engine_output?prospect_id=eq.${encodeURIComponent(prospectIdSlug)}&select=confidence_color&order=created_at.desc&limit=1`,
+              { headers: { apikey: sbKeyEarly, Authorization: `Bearer ${sbKeyEarly}` } },
+            );
+            if (r2.ok) {
+              const er = (await r2.json()) as Array<{ confidence_color: string | null }>;
+              if (er.length > 0) preservedColor = er[0].confidence_color;
+            }
+          }
+        }
+      } catch {
+        // best-effort; fall through to normal email-find
+      }
+    }
+
+    if (preservedEmail) {
+      result.email_found = preservedEmail;
+      // Map the prior confidence_color back to email_confidence.
+      // confidence_color values seen in DB: 'green', 'yellow', 'amber', 'red'.
+      // 'yellow' and 'amber' both map to 'medium' (they're both intermediate
+      // confidence — yellow=SMTP-verified, amber=pattern-inferred-with-domain-confirmed).
+      result.email_confidence =
+        preservedColor === 'green' ? 'high' :
+        preservedColor === 'yellow' || preservedColor === 'amber' ? 'medium' :
+        'guessed';
+      result.durations_ms.phase_email_find = Date.now() - t2;
+      console.log(`  email: ${result.email_found} (PRESERVED from sr_prospects, prior color=${preservedColor || 'unknown'} → confidence=${result.email_confidence})`);
+      // Skip findEmail/Apollo paths entirely
+    } else {
     const emailResult = await findEmail({
       firstName: row.firstName,
       lastName: row.lastName,
@@ -274,6 +329,7 @@ async function processOne(
 
     result.durations_ms.email = Date.now() - t2;
     console.log(`  email: ${result.email_found || 'NOT-FOUND'} (${result.email_confidence || 'n/a'})`);
+    } // close `else` (no preservedEmail path)
   } catch (err) {
     result.errors.push(`email-find: ${(err as Error).message}`);
   }
@@ -913,11 +969,40 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
   // so they appear in the portal for human review — but with send_status='flag'
   // (not 'pending') so the AE knows the pipeline could not complete and the
   // System Brief on sr_engine_output.company_summary explains why.
-  const prospectBody = {
+  //
+  // FIX 2026-06-10 (operator directive: "don't overwrite good emails"):
+  // BEFORE writing prospectBody, check if sr_prospects.email is operator-locked
+  // (email_corrected=true). If yes, OMIT email from the upsert so we don't
+  // clobber the operator's manual research. Sibling fix to the email-find
+  // precheck at line ~213.
+  // Fetch existing sr_prospects.email + email_corrected. If email_corrected=true,
+  // we use the EXISTING email (not result.email_found) so the upsert never
+  // clobbers operator-set values. Defensive — the precheck at line ~213 should
+  // have already set result.email_found = existing email, but in edge cases
+  // (precheck fails, race condition, etc.) this is the belt-and-suspenders.
+  let operatorLockedEmail: string | null = null;
+  try {
+    const r = await fetch(
+      `${sbUrl}/rest/v1/sr_prospects?id=eq.${encodeURIComponent(prospectId)}&select=email,email_corrected`,
+      { headers: { apikey: sbKey, Authorization: `Bearer ${sbKey}` } },
+    );
+    if (r.ok) {
+      const rows = (await r.json()) as Array<{ email: string | null; email_corrected: boolean | null }>;
+      if (rows.length > 0 && rows[0].email_corrected === true && rows[0].email && rows[0].email.includes('@')) {
+        operatorLockedEmail = rows[0].email;
+        console.log(`[persist] sr_prospects.email_corrected=true → using operator-locked email ${operatorLockedEmail} (not result.email_found=${result.email_found})`);
+      }
+    }
+  } catch {
+    // best-effort; if check fails, fall through to result.email_found
+  }
+
+  const prospectBody: Record<string, unknown> = {
     id: prospectId,
     first_name: result.row.firstName,
     last_name: result.row.lastName,
-    email: result.email_found || '',
+    // operator-locked wins; otherwise use what the pipeline found
+    email: operatorLockedEmail || result.email_found || '',
     title: result.row.title || '',
     state: result.row.state || '',
     company: result.row.company,
