@@ -535,7 +535,6 @@ function classifyFlagReason(
   | 'substrate_refuted'
   | 'email_red'
   | 'email_guessed_only'
-  | 'icp_leaning_fit'
   | 'research_low'
   | 'none' {
   // Phase C halt — substrate refuted the chosen frame and no safe alt
@@ -564,9 +563,13 @@ function classifyFlagReason(
   // operator should know before send.
   if (conf === 'guessed' || conf === 'amber') return 'email_guessed_only';
 
-  // ICP volume verdict — 'leaning_fit' means we couldn't prove the
-  // hard volume signal (BDC locations, BEAD applications, etc).
-  if (result.icp_volume_verdict === 'leaning_fit') return 'icp_leaning_fit';
+  // ICP volume verdict is INFORM-ONLY per SoT §15 and the original
+  // feature commit 734f731b7 ("inform-only label, not a gate"). Verdict
+  // + reasoning are persisted to sr_engine_output.icp_volume_verdict and
+  // .icp_volume_reasoning for display in the detail panel — they do NOT
+  // cause a flag. Previously a leaning_fit verdict gated 64% of cold
+  // cohort prospects into 'flag' status (smoke run v2-mq7lm7h8, 9 of 14
+  // landed prospects flagged ONLY for leaning_fit). Removed 2026-06-10.
 
   // Low research quality — composer ran in generalized mode without
   // company-specific claims.
@@ -669,14 +672,10 @@ export function generateFlagSystemBrief(result: ProspectResult): string {
         `Recommendation: this can be sent at lower priority with the understanding bounces will happen. Long-term fix: enrich the peer pattern check to verify against 2+ active inboxes at this company before promoting to "verified."`
       );
     }
-    case 'icp_leaning_fit': {
-      const reasoning = result.dossier?.icp_volume_reasoning || 'no specific volume signal surfaced';
-      return (
-        `${company} qualifies as in-segment for our fiber/A&E ICP, but we do not have hard volume signals (BDC location counts, BEAD application status, build-program scale) to confirm priority. ` +
-        `What we found: ${reasoning}. ` +
-        `Recommendation: verify deal-size potential by spot-checking their public BDC filings or recent press before sending. If volume is confirmed, promote to fit and queue normally; if not, keep at lower priority.`
-      );
-    }
+    // 'icp_leaning_fit' case removed 2026-06-10 — verdict is inform-only
+    // per SoT §15; it no longer reaches the brief generator. The verdict
+    // and reasoning are displayed via the ICP Volume Verdict card in the
+    // detail panel, sourced directly from sr_engine_output.icp_volume_*.
     case 'research_low': {
       const tierCounts = result.dossier?.tierCounts;
       const directCount = tierCounts?.useDirectly ?? 0;
