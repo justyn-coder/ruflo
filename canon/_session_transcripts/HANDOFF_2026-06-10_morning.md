@@ -69,6 +69,14 @@ The error literally says: *"You have reached your specified API usage limits. Yo
 
 **Concrete prediction after rate-limit re-run:** if those 28 hit the same ~30% pending rate as the first 57, the cohort lands at ~30 pending out of 85 = **35% pending rate**. That's a real number you can plan against.
 
+**Tested ~02:50 EDT** with 2 of the failed prospects (Tiffany Hess, Emily Owen) — rate limit still active, composer attempts still failing the same way. So your Anthropic quota is likely on a longer cycle (daily, not hourly). Check your Anthropic dashboard for the reset time; the re-run command is:
+```bash
+npx tsx src/showrev/m1-email-find/evidence-tiering/run-pipeline-v2.ts \
+  --input data/showrev/test/p2-full-rerun.csv \
+  --limit 85 --include-flagged --verbose
+```
+The `--include-flagged` flag is REQUIRED to re-run already-flagged prospects (otherwise the pipeline skips them by design).
+
 ### The other 35 flags are LEGITIMATE — system working as designed
 
 - **10 hallucination** — Tier 3 caught unsupported claims like Anthem Broadband "scaling fiber across Idaho's terrain." Don't disable this. Manual AE review.
