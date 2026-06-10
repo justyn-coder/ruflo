@@ -329,7 +329,15 @@ export type JudgeFn = (
 ) => Promise<JudgeResponse>;
 
 const JUDGE_MODEL = 'claude-haiku-4-5-20251001';
-const JUDGE_TIMEOUT_MS = 1500;
+// Bumped 1500 → 3000 on 2026-06-09 evening. Standalone Haiku latency for the
+// refutation prompt is ~700-1000ms, but during a real pipeline run there are
+// many parallel API calls (email-finder DNS verification, MillionVerifier,
+// Apollo) competing for network. The retry-on-abort is intentionally
+// disabled (audit decision: same wall clock, doubles the bill), so a single
+// slow call halts the prospect. 3000ms gives ~3x headroom against typical
+// latency without doubling worst-case wall-clock. Verified on Frontier
+// substrate (v2-mq7iex0p halted at 1500ms cap).
+const JUDGE_TIMEOUT_MS = 3000;
 
 /**
  * Real Haiku-backed judge. JSON mode, temperature=0, 1500ms timeout, 1 retry.
@@ -392,7 +400,14 @@ Return ONLY a JSON object of shape:
     .join('\n')
     .trim();
   // JSON-mode: parse strictly; throw on any deviation. fail-closed (§3.7).
-  const parsed = JSON.parse(text) as unknown;
+  // Haiku 4.5 wraps JSON in ```json ... ``` fences despite the prompt asking
+  // for pure JSON — strip them before parsing. Verified 2026-06-09 evening
+  // (smoke test v2-mq7hi71c halted all judge calls on this exact bug).
+  const cleaned = text
+    .replace(/^```(?:json)?\s*/i, '')
+    .replace(/```\s*$/, '')
+    .trim();
+  const parsed = JSON.parse(cleaned) as unknown;
   if (
     !parsed ||
     typeof parsed !== 'object' ||

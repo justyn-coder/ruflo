@@ -250,32 +250,52 @@ await section('test3: judge_swap (keyword miss + judge hits)', async () => {
 });
 
 // ---- 4. halt_no_alt --------------------------------------------------------
-await section('test4: halt_no_alt (bead_timeline_v1 with empty alternatives)', async () => {
-  const fx: FixtureFile = {
-    prospect: { id: 'p_halt_4', company_normalized: 'no-alt corp' },
-    evidence: [
-      {
-        id: 'ev_halt_001',
-        claim: 'Acquired engineering firm and opened in-house drafting team last quarter.',
-        source_citation: 'https://example.com/x',
-        source_date: '2026-04-01T00:00:00Z',
-        extracted_at: '2026-04-02T00:00:00Z',
-        category: 'company_fact',
-        metadata: null,
-      },
-    ],
-  };
-  const { db, traces } = makeDbStub(fx.evidence);
-  const result = await checkSubstrateRefutation(fx.prospect, 'bead_timeline_v1', {
-    runId: 'run_halt_no_alt_4',
-    now: new Date('2026-06-09T00:00:00Z'),
-    dbFns: db,
+// Uses a test-only frame so the halt-no-alt path stays covered regardless of
+// what production safeAlternatives chains look like. Previously this test
+// used bead_timeline_v1's empty safeAlternatives — that field was wired up
+// 2026-06-10 (L1: bead_timeline_v1 → bead_growth_v1), so the test was
+// repointed to an isolated fixture frame.
+await section('test4: halt_no_alt (isolated test-only frame, no safe alts)', async () => {
+  registerFrameForTest({
+    frameId: 'halt_no_alt_test_v1',
+    premise: 'Test-only frame for halt-no-alt path coverage',
+    premiseAxis: 'halt-test',
+    refuterKeywords: ['acquired engineering firm', 'in-house drafting'],
+    refuterSemanticPrompt: 'Does the substrate refute the test premise?',
+    freshnessHorizonDays: 365,
+    permanentClaimCategories: ['company_fact'],
+    safeAlternatives: [],
+    requiresEvidence: false,
   });
-  eq(result.status, 'halt', 'halt path taken');
-  if (result.status === 'halt') {
-    eq(result.reason, 'refuted_no_safe_alt', 'reason=refuted_no_safe_alt');
+  try {
+    const fx: FixtureFile = {
+      prospect: { id: 'p_halt_4', company_normalized: 'no-alt corp' },
+      evidence: [
+        {
+          id: 'ev_halt_001',
+          claim: 'Acquired engineering firm and opened in-house drafting team last quarter.',
+          source_citation: 'https://example.com/x',
+          source_date: '2026-04-01T00:00:00Z',
+          extracted_at: '2026-04-02T00:00:00Z',
+          category: 'company_fact',
+          metadata: null,
+        },
+      ],
+    };
+    const { db, traces } = makeDbStub(fx.evidence);
+    const result = await checkSubstrateRefutation(fx.prospect, 'halt_no_alt_test_v1', {
+      runId: 'run_halt_no_alt_4',
+      now: new Date('2026-06-09T00:00:00Z'),
+      dbFns: db,
+    });
+    eq(result.status, 'halt', 'halt path taken');
+    if (result.status === 'halt') {
+      eq(result.reason, 'refuted_no_safe_alt', 'reason=refuted_no_safe_alt');
+    }
+    eq(traces.length, 1, 'trace written even on halt');
+  } finally {
+    unregisterFrameForTest('halt_no_alt_test_v1');
   }
-  eq(traces.length, 1, 'trace written even on halt');
 });
 
 // ---- 5. halt_insufficient --------------------------------------------------

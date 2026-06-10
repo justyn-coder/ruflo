@@ -273,7 +273,19 @@ const SEED_FRAMES: FrameRegistryEntry[] = [
       'capacity gap in-house (acquisition, large hire, opened internal team)?',
     freshnessHorizonDays: 365,
     permanentClaimCategories: [...DEFAULT_PERMANENT_CLAIM_CATEGORIES],
-    safeAlternatives: [], // intentionally empty for the halt-no-alt test
+    // Spec §3.6 supports depth-2 recursion through safeAlternatives. Original
+    // entry was empty solely for halt-no-alt unit-test coverage — that test
+    // is now also covered by strict_required_v1 (axis 'strict-required',
+    // safeAlternatives: []), so we wire the production chain here.
+    //
+    // Production chain (verified on Frontier Communications 2026-06-10):
+    //   bead_timeline_v1 → bead_growth_v1 (growth-narrative axis,
+    //     different premise, captures Verizon-acquisition / 30M-passings
+    //     style substrate that refutes timeline-pressure framing)
+    //   bead_growth_v1 → gis_pain_v1 (depth-1 recursion, operational-pain
+    //     axis, fallback for prospects whose growth narrative is itself
+    //     refuted by layoff/retraction substrate)
+    safeAlternatives: ['bead_growth_v1'],
     requiresEvidence: false,
   },
   // -----------------------------------------------------------------------
