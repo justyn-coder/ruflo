@@ -181,19 +181,62 @@ async function enrichOne(target: CompanyTarget): Promise<{ company: string; verd
     }
 
     if (LIVE) {
+      // Map the prompt's granular source_kind to the DB CHECK constraint values.
+      // The DB only accepts: substrate, substrate_quoted, web_research, web_research_dated.
+      // The original granular source_kind is preserved in metadata.original_source_kind
+      // so the composer / portal can still display it. Fix 2026-06-11 (enum mismatch
+      // blocked the original 2026-06-10 run from writing any rows).
+      const mapSourceKind = (granular: string): string => {
+        switch ((granular || '').toLowerCase()) {
+          case 'press_release':
+          case 'news_article':
+          case 'award_announcement':
+          case 'industry_pub':
+          case 'newsroom_post':
+            return 'web_research_dated';
+          case 'company_blog':
+            return 'web_research';
+          default:
+            return 'web_research';
+        }
+      };
+
+      // Map the prompt's granular category to the DB CHECK constraint values.
+      // DB accepts: company_fact, industry_context, persona_signal.
+      const mapCategory = (granular: string, speakerName: string | null): string => {
+        switch ((granular || '').toLowerCase()) {
+          case 'leadership_quote':
+            return 'persona_signal';
+          case 'company_fact':
+          case 'company_news':
+          case 'product_launch':
+          case 'partnership':
+          case 'award':
+          case 'expansion':
+            return 'company_fact';
+          default:
+            return speakerName ? 'persona_signal' : 'company_fact';
+        }
+      };
+
       // Write to sr_company_evidence — append-only, never overwrite existing
       const inserts = valid.map(c => ({
         id: `ev_${Math.random().toString(16).slice(2, 10)}`,
         company_name: target.company_name,
         company_normalized: target.company_normalized,
         claim: c.claim,
-        source_kind: c.source_kind || 'news_article',
+        source_kind: mapSourceKind(c.source_kind || 'news_article'),
         source_citation: c.source_citation,
         speaker_name: c.speaker_name || null,
         speaker_role: c.speaker_role || null,
-        category: c.category || 'company_news',
+        category: mapCategory(c.category || 'company_news', c.speaker_name || null),
         extracted_at: new Date().toISOString(),
-        metadata: { enrichment_run: '2026-06-10-news-substrate', script: 'enrich-substrate-news' },
+        metadata: {
+          enrichment_run: '2026-06-11-news-substrate',
+          script: 'enrich-substrate-news',
+          original_source_kind: c.source_kind || null,
+          original_category: c.category || null,
+        },
       }));
       const w = await fetch(`${SUPABASE_URL}/rest/v1/sr_company_evidence`, {
         method: 'POST',
@@ -210,7 +253,14 @@ async function enrichOne(target: CompanyTarget): Promise<{ company: string; verd
       }
       return { company: target.company_name, verdict: 'wrote', count: valid.length, reason: `${valid.length} claims persisted` };
     }
-    return { company: target.company_name, verdict: 'would-write', count: valid.length, reason: `${valid.length} claims (dry-run sample: "${valid[0]?.claim.slice(0, 80)}")` };
+    // Dry-run: print full claims so operator can audit quality before going live.
+    console.log(`\n--- ${target.company_name} (${valid.length} claims) ---`);
+    for (const c of valid) {
+      console.log(`  [${c.category}] ${c.claim}`);
+      console.log(`     source: ${c.source_citation}`);
+      if (c.speaker_name) console.log(`     speaker: ${c.speaker_name} (${c.speaker_role || '?'})`);
+    }
+    return { company: target.company_name, verdict: 'would-write', count: valid.length, reason: `${valid.length} claims` };
   } catch (err) {
     return { company: target.company_name, verdict: 'err', count: 0, reason: (err as Error).message.slice(0, 150) };
   }
