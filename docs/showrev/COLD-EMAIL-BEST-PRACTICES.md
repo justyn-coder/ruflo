@@ -241,8 +241,58 @@ These trigger immediate "automated cold email" classification. Many already enfo
 | Perfect grammar + zero contractions | Humans write "I'd" not "I would" |
 | Numbered/bulleted lists in <80-word emails | Overkill, screams template |
 | "Looking forward to hearing your thoughts" | Top 5 AI-fatigue trigger |
+| **LOW BURSTINESS (uniform sentence length)** | **Stanford Liang 2023 + Pangram Labs — see below** |
 
 **Gap in our composer:** "Looking forward to hearing your thoughts" + contractions vs "I would" patterns NOT yet banned. **Recommend adding to composer banned-phrase list in next composer pass.**
+
+### 🔬 Stanford research: burstiness is the structural AI tell (operator-flagged 2026-06-11)
+
+**Key insight from [Stanford Liang et al. 2023 (Patterns, Cell journal)](https://pmc.ncbi.nlm.nih.gov/articles/PMC10382961/):** AI detectors fail (61.3% false-positive rate on non-native English essays) because they over-key on perplexity + burstiness. **The inverse implication for us: if our composer optimizes for high burstiness + varied perplexity, output reads MORE human AND ducks AI detectors.**
+
+**The two operational metrics:**
+
+| Metric | Definition | Target |
+|---|---|---|
+| Perplexity | How unpredictable next word is given prior context. Higher = more human. | Mid-to-high, varied across sentences |
+| **Burstiness** | `stdev(sentence_lengths) / mean(sentence_lengths)` | **0.65-0.85** (human range per [ProofreaderPro 2026](https://proofreaderpro.ai/blog/what-is-burstiness-ai-writing)) |
+
+**Why LMs score low burstiness:** they regress to mean sentence length because they generate token-by-token within fixed context. **Humans cluster short punchy sentences with long winding ones.** ([Pangram Labs](https://www.pangram.com/blog/why-perplexity-and-burstiness-fail-to-detect-ai))
+
+**To AVOID in composer output:**
+- Uniform sentence length (LM "metronome" pattern)
+- Predictable vocabulary in every sentence
+- Three-sentence paragraphs of equal length
+
+**To EMULATE in composer output:**
+- Mix one short punchy sentence with one long winding one per paragraph
+- Vary opening words across sentences (don't start three sentences with the same subject)
+- Use contractions ("I'd" not "I would")
+- Occasional sentence fragment as emphasis — humans do, LMs avoid
+
+### 🔴 Composer enhancement worth adding (Tier-1 mechanical check)
+
+Add `burstiness_check.ts` as new Tier-1 mechanical gate alongside word-count + banned-phrase:
+
+```ts
+// Same shape as existing checks. ~30 LOC.
+function burstiness(text: string): number {
+  const sentences = text.split(/[.!?]+/).map(s => s.trim()).filter(Boolean);
+  const lengths = sentences.map(s => s.split(/\s+/).length);
+  const mean = lengths.reduce((a,b) => a+b, 0) / lengths.length;
+  const variance = lengths.reduce((sum, len) => sum + (len - mean) ** 2, 0) / lengths.length;
+  const stdev = Math.sqrt(variance);
+  return stdev / mean;
+}
+
+// Composer rejects bodies scoring below 0.55 (AI-typical range)
+// Target 0.65+. If burstiness < 0.55 → mark as regenerate candidate
+```
+
+**Recommendation:** add this to composer in the same pass that fixes the "Looking forward to hearing your thoughts" / contractions gaps. Net effort: ~30 LOC + smoke test. Material impact on "does this read like Mike wrote it" vs "does this read like Claude wrote it."
+
+### Adjacent note on DraftMarks (Georgia Tech / Stanford CHI 2026)
+
+[DraftMarks paper](https://arxiv.org/html/2509.23505v1) is NOT a humanness scorer — it's process-trace visualization for student writing. Not directly applicable to our composer evaluation, but the underlying premise (AI-detection-as-final-output is broken; the real signal is the EDITING PROCESS) validates our Tim-edits-the-draft pattern. The human review gate isn't just quality control — it's a structural defense against AI-pattern detection.
 
 ### Gate to graduate a hypothesis from Section 2 to a canonical rule
 
@@ -385,4 +435,5 @@ All 3 research forks completed. Sections 1.1, 1.2, and Section 2 seeded. Compone
 | Version | Date (EST) | Change |
 |---|---|---|
 | v0.1 | 2026-06-11 19:30 | Initial skeleton. Operator philosophy front-and-center. Section 1 partially populated from existing canon (composer rules, Chris's throttling notes, Q1-Q16 Breeze answers). Section 2 empty (goal state). Section 3 (test-and-learn metadata) specced. 3 research forks dispatched for sections 1.1/1.2 + Section 2 seed hypotheses. |
-| v0.2 | 2026-06-11 19:55 | All 3 research forks completed. Sections 1.1 (send timing) + 1.2 (anti-spam content rules) fully populated with 2026-verified sources + URLs. Section 2 seeded with 4 testable hypotheses (H1-H4) + 2026 sacred-cow contradiction + AI-detection signal canonical list. Section 3 `sr_email_experiments` table schema specified. Added "Impact on POST-PORTAL-SPEC-V6" section flagging 5 concrete changes (sr_email_experiments DDL, SPF/DKIM/DMARC pre-flight, tracking pixel off, per-recipient timezone sequences, per-send metadata logging in Component 2). |
+| v0.2 | 2026-06-11 19:55 | All 3 research forks completed. Sections 1.1 (send timing) + 1.2 (anti-spam content rules) fully populated with 2026-verified sources + URLs. Section 2 seeded with 4 testable hypotheses (H1-H4) + 2026 sacred-cow contradiction + AI-detection signal canonical list. Section 3 `sr_email_experiments` table schema specified. Added "Impact on POST-PORTAL-SPEC-V6" section flagging 5 concrete changes. |
+| v0.3 | 2026-06-11 20:10 | Throttling clarification (operator 2026-06-11): 20-30 PER AE, not aggregate. Spec v6 send-cap defaults revised. Plus 4th research fork (Stanford AI-humanness): burstiness metric is the structural AI tell. Stanford Liang 2023 + Pangram + ProofreaderPro 2026: target 0.65-0.85 burstiness (stdev sentence lengths / mean). Composer enhancement specced as Tier-1 mechanical check (~30 LOC). DraftMarks not directly applicable but validates Tim's human-edit gate as structural defense. |
