@@ -260,10 +260,28 @@ export async function getCompanyEvidence(
     semanticFallbackThreshold?: number;
     /** Additional context for semantic query (state, ICP type). */
     semanticContext?: { state?: string; icpType?: 'fiber_operator' | 'ae_firm' };
+    /**
+     * Optional canonical name override from the per-company directory. When set,
+     * substrate queries use normalizeCompanyName(companyAlias) instead of the raw
+     * companyName. Closes the Google-GFiber substrate-keying class — prospect's
+     * CSV says "Google-GFiber" but substrate is keyed under "gfiber"/"google fiber".
+     * If alias-query returns ZERO results, falls back to raw-name query AND logs
+     * the miss (fail-open with visibility per directory-integration spec v2).
+     *
+     * Phase A composer fix 2026-06-10 + Directory integration 2026-06-11.
+     */
+    companyAlias?: string;
   } = {},
 ): Promise<EvidenceRecord[]> {
-  const normalized = normalizeCompanyName(companyName);
+  const aliased = options.companyAlias && options.companyAlias.trim() !== ''
+    ? options.companyAlias
+    : null;
+  const normalized = normalizeCompanyName(aliased || companyName);
   const limit = options.limitPerSource ?? 50;
+
+  if (aliased && normalized !== normalizeCompanyName(companyName)) {
+    console.log(`  [substrate-alias] using canonical "${aliased}" (normalized "${normalized}") instead of raw "${companyName}"`);
+  }
 
   const results: EvidenceRecord[] = [];
 
@@ -279,16 +297,19 @@ export async function getCompanyEvidence(
       const md = row.metadata || {};
       // Promote substrate chunk to substrate_quoted IF speaker affiliation matches
       // (closes the competitor-claim-leak failure mode from the critique).
+      // Null-safety guard exposed by directory-alias integration 2026-06-11:
+      // some substrate rows (esp. industry_context chunks reached via alias)
+      // have null speaker_company OR claims with null company. Guard both.
       const speakerMatches =
-        md.speaker_company &&
+        typeof md.speaker_company === 'string' &&
         normalizeCompanyName(md.speaker_company) === normalized &&
-        md.speaker_role &&
+        typeof md.speaker_role === 'string' &&
         /^(ceo|coo|cto|vp|chief|president|director|head of|sr\s*vp)/i.test(
           md.speaker_role,
         );
       const sourceKind: SourceKind = speakerMatches ? 'substrate_quoted' : 'substrate';
       const claims = md.claims?.filter(
-        c => normalizeCompanyName(c.company) === normalized,
+        c => typeof c.company === 'string' && normalizeCompanyName(c.company) === normalized,
       ) || [];
       for (const c of claims) {
         const tier = tierBySourceKind(sourceKind);

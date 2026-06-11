@@ -60,6 +60,14 @@ export interface OrchestratorOptions {
   persistApolloEvidence?: boolean;
   /** Override the cred tracker. */
   apolloCreditTracker?: ApolloCreditTracker;
+  /**
+   * Optional canonical name override from per-company directory. Passed through
+   * to substrate-query.getCompanyEvidence so the substrate query keys on the
+   * canonical name (e.g. "GFiber") rather than the raw prospect company (e.g.
+   * "Google-GFiber"). Closes the substrate-keying mismatch class identified
+   * in the substrate audit. Directory integration 2026-06-11.
+   */
+  companyAlias?: string;
 }
 
 export interface OrchestratorResult {
@@ -112,9 +120,11 @@ async function phase1Pull(
 
   // Four sources run in parallel (substrate-query + Apollo + association + FCC BDC)
   const [substrateEvidence, industryEvidence, apolloResult, fccResult] = await Promise.all([
-    // Primary: tagged substrate + semantic fallback
+    // Primary: tagged substrate + semantic fallback. companyAlias plumbs the
+    // directory canonical_name through so substrate queries hit the correct key.
     getCompanyEvidence(prospect.company, {
       semanticContext: { state: prospect.state, icpType: options.icpType },
+      companyAlias: options.companyAlias,
     }),
     // Industry context (used heavily in generalized mode + as bridge framing)
     getAssociationPriorities({ matchesCompany: prospect.company, topN: 5 }),

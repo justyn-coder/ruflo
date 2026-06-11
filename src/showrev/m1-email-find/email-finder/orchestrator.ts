@@ -77,6 +77,15 @@ export interface OrchestratorOptions {
   apolloPrimary?: boolean;
   domainHints?: Record<string, string>;
   pipelineTimeoutMs?: number;
+  /**
+   * Optional canonical domain from per-company directory. When set, Step 6
+   * verification SKIPS the alternative-domain fallback entirely — verification
+   * runs only against the primary domain. Closes the wrong-company-domain
+   * class (Trawinski / Omni Fiber → omni.com bug). If primary verification
+   * fails, the email returns red — operator review catches it. Directory
+   * integration 2026-06-11.
+   */
+  pinDomain?: string;
 }
 
 interface BatchSummary {
@@ -718,9 +727,16 @@ async function findEmailForContact(
     { attemptDomain: domain, attemptCandidates: candidates, attemptProvider: providerStr, isAlternative: false },
   ];
 
-  // Enqueue alternative domains from domain resolution
-  const altDomains = domainResult.alternativeDomains ?? [];
-  if (altDomains.length > 0) {
+  // Enqueue alternative domains from domain resolution.
+  // When pinDomain is set (per-company directory), SKIP the alt-domain fallback
+  // entirely — only verify against the primary domain. Closes wrong-company
+  // email send class. Directory integration 2026-06-11.
+  const altDomains = opts.pinDomain
+    ? []
+    : (domainResult.alternativeDomains ?? []);
+  if (opts.pinDomain) {
+    console.log(`${prefix()} Step 6: pinDomain="${opts.pinDomain}" set — skipping alt-domain fallback (directory-pinned)`);
+  } else if (altDomains.length > 0) {
     console.log(`${prefix()} Step 6: ${altDomains.length} alternative domain(s) available: ${altDomains.join(', ')}`);
   }
   for (const altDomain of altDomains) {

@@ -42,6 +42,7 @@ import { orchestrateEvidence } from './orchestrator.js';
 import { composeSpecific } from './specific-composer.js';
 import { computeSendConfidence } from './send-confidence.js';
 import { resolveCompany, deriveIcpOverride } from './company-resolver.js';
+import { loadDirectory, lookupDirectory, type DirectoryEntry, type DirectoryMap } from './company-directory.js';
 import { ApolloCreditTracker, findEmailForProspect } from './apollo-client.js';
 import {
   checkSubstrateRefutation,
@@ -158,7 +159,7 @@ interface ProspectResult {
 
 async function processOne(
   row: CsvRow,
-  options: { skipApollo: boolean; runId: string; verbose: boolean; maxApolloCredits?: number; prospectIdx: number },
+  options: { skipApollo: boolean; runId: string; verbose: boolean; maxApolloCredits?: number; prospectIdx: number; directory?: DirectoryMap },
   creditTracker: ApolloCreditTracker,
   mvCreditTracker: MvCreditTracker,
 ): Promise<ProspectResult> {
@@ -179,6 +180,17 @@ async function processOne(
   };
 
   console.log(`\n[${row.firstName} ${row.lastName}] @ ${row.company} (${row.state || '?'})`);
+
+  // Phase 0.4: Per-company directory lookup (Directory integration 2026-06-11).
+  // Look up the prospect's raw company in the operator-reviewed directory CSV.
+  // A hit gives us canonical_domain (for email-find pinning) + canonical_name
+  // (for substrate-query aliasing) + business_type. Miss = legacy behavior.
+  const directoryHint: DirectoryEntry | null = options.directory
+    ? lookupDirectory(options.directory, row.company)
+    : null;
+  if (directoryHint) {
+    console.log(`  directory: hit — canonical="${directoryHint.canonical_name}", domain=${directoryHint.canonical_domain} (${directoryHint.confidence})`);
+  }
 
   // Phase 0.5: Company resolver (Fix #2 2026-06-10).
   // Identifies what the company actually does BEFORE the title-only ICP gate
@@ -308,6 +320,10 @@ async function processOne(
       // orchestrator checks shouldStop() before each call and skips when hit
       // (no degrade — email keeps raw SMTP confidence).
       mvCreditTracker,
+      // Directory integration 2026-06-11: when directory has a canonical_domain
+      // for this prospect's company, Step 6 verification SKIPS alt-domain fallback.
+      // Closes the wrong-company-send class (Trawinski/Omni Fiber → omni.com).
+      pinDomain: directoryHint?.canonical_domain,
     });
     result.email_found = emailResult.email || undefined;
     result.email_confidence = emailResult.confidence;
@@ -434,6 +450,10 @@ async function processOne(
           verbose: options.verbose,
           skipApollo: options.skipApollo || creditTracker.shouldStop(options.maxApolloCredits),
           apolloCreditTracker: creditTracker,
+          // Directory integration 2026-06-11: when directory has a canonical_name
+          // for this prospect's company, substrate query keys on it instead of
+          // raw row.company. Closes substrate-keying mismatch (Google-GFiber).
+          companyAlias: directoryHint?.canonical_name,
         },
       );
       result.dossier = orch.dossier;
@@ -1484,6 +1504,10 @@ async function main() {
   const t0 = Date.now();
   const results: ProspectResult[] = [];
 
+  // Directory integration 2026-06-11: load once at startup, pass through to every prospect.
+  // Misses (companies not in directory) gracefully fall through to legacy behavior in processOne.
+  const directory = loadDirectory();
+
   for (let i = 0; i < rows.length; i++) {
     const row = rows[i];
     try {
@@ -1495,6 +1519,7 @@ async function main() {
           runId,
           verbose: !!values.verbose,
           prospectIdx: i,
+          directory,
         },
         creditTracker,
         mvCreditTracker,
