@@ -236,6 +236,9 @@ export interface EngineRow {
   email_subject_t3: string;
   email_body_t3: string;
   email_ps_t3: string;
+  // Spec v6.1 A3: distinguish P1 booth-visitor (Warm) vs P2 cold prospects
+  // for engagement slug branching. Required for cold-list filtering in HS.
+  lead_type: string;
 }
 
 function decomposeEmail(body: string, ps: string): { para1: string; para2: string; para3: string; para4: string } {
@@ -338,9 +341,16 @@ export async function loadProspectToHubSpot(
     lastname: row.last_name,
     jobtitle: row.title,
     showrev_research_summary: (row.research_summary || '').slice(0, 2000),
-    showrev_engagement_slug: 'inorsa-fiberconnect-2026',
+    // Spec v6.1 A3: branch engagement slug + outreach cohort by lead_type.
+    // P1 booth visitors (Warm) → existing list filter.
+    // P2 cold prospects → -cold suffix on slug; cohort label updated.
+    showrev_engagement_slug:
+      row.lead_type === 'Cold'
+        ? 'inorsa-fiberconnect-2026-cold'
+        : 'inorsa-fiberconnect-2026',
     showrev_assigned_ae: row.assigned_ae || 'Unassigned',
-    showrev_outreach_cohort: 'fc2026-booth',
+    showrev_outreach_cohort:
+      row.lead_type === 'Cold' ? 'fc2026-cold' : 'fc2026-booth',
     showrev_first_outreach_date: new Date().toISOString().split('T')[0],
     showrev_pilot_owner: 'true',
     showrev_signal_strength: signalMapped,
@@ -700,6 +710,9 @@ function buildEngineRow(p: any, e: any): EngineRow {
     email_ps_t1: e.email_ps_t1 || '',
     email_subject_t2: '', email_body_t2: '', email_ps_t2: '',
     email_subject_t3: '', email_body_t3: '', email_ps_t3: '',
+    // Spec v6.1 A3: pulled from sr_prospects.lead_type. Drives slug branch
+    // in contactProps. "Cold" → inorsa-fiberconnect-2026-cold list filter.
+    lead_type: p.lead_type || '',
   };
 }
 
