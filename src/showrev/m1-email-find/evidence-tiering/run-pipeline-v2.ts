@@ -656,8 +656,108 @@ async function processOne(
         (judgeResult.tier3Hallucination ? ` H=${judgeResult.tier3Hallucination.verdict}` : '') +
         ` -> ${judgeResult.action} (${judgeResult.rationale})`,
       );
+
+      // Phase 4.7: JUDGE-FEEDBACK-LOOP (2026-06-11, operator-approved).
+      // When Tier 3 flags hallucination AND we have parseable unsupported
+      // claims AND outer-loop budget remaining, re-fire the composer with
+      // those claim_ids excluded. Max 2 outer iterations (configurable via
+      // env JUDGE_FEEDBACK_LOOP_MAX). Tier 1/2 flags do NOT trigger the
+      // outer loop — those are mechanical and don't benefit from substrate
+      // re-pick.
+      const maxOuterLoops = Math.max(0, parseInt(process.env.JUDGE_FEEDBACK_LOOP_MAX || '2', 10));
+      const excludedClaimIds = new Set<string>();
+      const accumulatedUnsupported: string[] = [];
+      let outerAttempts = 0;
+      while (
+        outerAttempts < maxOuterLoops &&
+        result.judge_action === 'flag-hallucination' &&
+        result.judge_result?.tier3Hallucination?.unsupportedClaims?.length &&
+        result.composed
+      ) {
+        outerAttempts++;
+        const unsupported = result.judge_result.tier3Hallucination.unsupportedClaims;
+        accumulatedUnsupported.push(...unsupported);
+
+        // Map unsupported claim TEXT to claim_ids via the bodySentences
+        // (composer attaches claim_ids per sentence). For each unsupported
+        // text, find sentences whose text overlaps and pull their claim_ids.
+        // Imperfect matching is fine — we union claims and the composer
+        // tolerates over-exclusion (falls through to generalized if useDirectly
+        // empties).
+        const sentences = result.composed.bodySentences || [];
+        const norm = (s: string) => s.toLowerCase().replace(/\s+/g, ' ').trim();
+        for (const claimText of unsupported) {
+          const nClaim = norm(claimText);
+          for (const sent of sentences) {
+            const nSent = norm(sent.text || '');
+            // Substring either way OR significant overlap of 6+ word phrases
+            if (nSent.includes(nClaim.slice(0, 60)) || nClaim.includes(nSent.slice(0, 60))) {
+              for (const id of sent.claim_ids || []) excludedClaimIds.add(id);
+            }
+          }
+        }
+
+        console.log(`  judge-feedback-loop attempt ${outerAttempts}: excluding ${excludedClaimIds.size} claim_id(s) — recomposing`);
+
+        // Re-fire composer with exclusions + retry-hint
+        try {
+          const recomposed = await composeSpecific({
+            prospect: {
+              firstName: row.firstName,
+              lastName: row.lastName,
+              company: row.company,
+              title: row.title || '',
+              state: row.state,
+            },
+            icpType: result.icp_type!,
+            aeName: ae.name,
+            micrositeSlug: slug,
+            verbose: false,
+            excludeClaimIds: Array.from(excludedClaimIds),
+            priorTier3Unsupported: accumulatedUnsupported,
+          });
+          result.composed = recomposed;
+
+          // Re-run judge on recomposed
+          const substrateClaims2: EvidenceRecord[] = [];
+          if (result.dossier) {
+            for (const cat of Object.keys(result.dossier.claims) as Array<keyof typeof result.dossier.claims>) {
+              substrateClaims2.push(...result.dossier.claims[cat]);
+            }
+            substrateClaims2.push(...result.dossier.generalizedFraming);
+          }
+          const reJudge = await runTieredJudgeOnProspect(
+            recomposed,
+            {
+              firstName: row.firstName,
+              lastName: row.lastName,
+              company: row.company,
+              title: row.title || '',
+              state: row.state,
+            },
+            { substrateClaims: substrateClaims2 },
+          );
+          result.judge_result = reJudge;
+          result.judge_action = reJudge.action;
+          result.send_status =
+            reJudge.action === 'ship' ? 'pending' : 'flag';
+          console.log(
+            `  judge (loop ${outerAttempts}): T1=${reJudge.tier1.pass ? 'pass' : 'fail'} T2=${reJudge.tier2.score}/5` +
+            (reJudge.tier3 ? ` T3=${reJudge.tier3.verdict}` : '') +
+            (reJudge.tier3Hallucination ? ` H=${reJudge.tier3Hallucination.verdict}` : '') +
+            ` -> ${reJudge.action}`,
+          );
+        } catch (err) {
+          console.log(`  judge-feedback-loop attempt ${outerAttempts} failed: ${(err as Error).message}`);
+          break;
+        }
+      }
+      // Stash for persist-phase so the new columns get written.
+      (result as ProspectResult & { judge_feedback_loop_attempts?: number; judge_excluded_claim_ids?: string[] }).judge_feedback_loop_attempts = outerAttempts;
+      (result as ProspectResult & { judge_feedback_loop_attempts?: number; judge_excluded_claim_ids?: string[] }).judge_excluded_claim_ids = Array.from(excludedClaimIds);
+
       // Item 8 monitoring — track rolling rates and write JUDGE-ALERT.md if tripped
-      judgeMonitor(options.prospectIdx, judgeResult);
+      judgeMonitor(options.prospectIdx, result.judge_result!);
     } catch (err) {
       result.errors.push(`judge: ${(err as Error).message}`);
     }
@@ -1087,6 +1187,12 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     prospect_id: prospectId,
     run_id: runId,
     ...priorCompositionReview,
+    // Judge-feedback-loop telemetry (2026-06-11): how many outer-loop retries
+    // ran on this prospect + which claim_ids were excluded across them.
+    judge_feedback_loop_attempts:
+      (result as ProspectResult & { judge_feedback_loop_attempts?: number }).judge_feedback_loop_attempts ?? 0,
+    judge_excluded_claim_ids:
+      (result as ProspectResult & { judge_excluded_claim_ids?: string[] }).judge_excluded_claim_ids ?? [],
     first_name: result.row.firstName,
     last_name: result.row.lastName,
     email: result.email_found || '',

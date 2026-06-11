@@ -316,23 +316,38 @@ export async function composeGeneralized(args: {
   micrositeSlug: string;
   model?: string;
   verbose?: boolean;
+  /** 2026-06-11 Judge-feedback-loop — see specific-composer for shape. */
+  excludeClaimIds?: string[];
+  /** 2026-06-11 Judge-feedback-loop — see specific-composer for shape. */
+  priorTier3Unsupported?: string[];
 }): Promise<ComposedEmail> {
   const { prospect, icpType, aeName, micrositeSlug, model = 'claude-sonnet-4-6', verbose = false } = args;
   const persona = args.persona || detectPersona(prospect.title);
   const aeDetails = getAEDetails(aeName);
   const aeFirstName = aeName.split(/\s+/)[0] || aeName;
+  const excludeClaimIds = new Set(args.excludeClaimIds || []);
+  const priorTier3Unsupported = args.priorTier3Unsupported || [];
 
   if (verbose) console.log(`  Generalized composer: ${prospect.firstName} ${prospect.lastName} (persona=${persona}, icp=${icpType})`);
 
   // Phase 1: pull industry context from canonical substrate
-  const industryContext = await pullIndustryContext(prospect.state, icpType, persona, 5);
+  let industryContext = await pullIndustryContext(prospect.state, icpType, persona, 5);
   if (verbose) console.log(`  Substrate: ${industryContext.length} chunks pulled`);
+
+  // Judge-feedback-loop: drop chunks the Tier 3 judge previously flagged.
+  // Generalized context items have IDs from pullIndustryContext (sub-xxx).
+  if (excludeClaimIds.size > 0) {
+    const before = industryContext.length;
+    industryContext = industryContext.filter((c) => !excludeClaimIds.has((c as { id?: string }).id ?? ''));
+    const dropped = before - industryContext.length;
+    if (verbose || dropped > 0) console.log(`  Excluded ${dropped} industry chunk(s) flagged by prior Tier 3 verdict`);
+  }
 
   // Phase 2: compose
   // Pre-select the P.S. variant so the retry loop can count total words
   // (body + P.S. excluding URL) against the 100w ceiling.
   const psLine = selectPSVariant(persona, 1, prospect.company, micrositeSlug, aeName);
-  const prompt = buildGeneralizedPrompt({
+  let prompt = buildGeneralizedPrompt({
     prospect,
     icpType,
     persona,
@@ -341,6 +356,12 @@ export async function composeGeneralized(args: {
     aeFirstName,
     micrositeSlug,
   });
+
+  // Judge-feedback-loop: forbidden-claim block (mirror of specific-composer).
+  if (priorTier3Unsupported.length > 0) {
+    const forbidBlock = `\n\n**PRIOR ATTEMPT REJECTED BY HALLUCINATION JUDGE.**\nThe previous email made claims our substrate evidence did not support. Do NOT make any of the following claims (or close variants):\n${priorTier3Unsupported.map((c, i) => `  ${i + 1}. ${c}`).join('\n')}\n\nYou MUST pick a different industry pattern to ground this email. Lean on persona-frame if needed.\n`;
+    prompt = forbidBlock + prompt;
+  }
 
   // Compose with up to 5 retries + best-of-N selection (per operator
   // 2026-06-09 #5, bumped 4 → 6 on 2026-06-10 Fix 5 of composition 6-fix plan

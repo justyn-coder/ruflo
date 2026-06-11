@@ -277,9 +277,24 @@ export async function composeSpecific(args: {
   micrositeSlug: string;
   model?: string;
   verbose?: boolean;
+  /**
+   * 2026-06-11 Judge-feedback-loop: claim_ids the Tier 3 hallucination
+   * judge previously flagged as unsupported. Filtered out of useDirectly
+   * so the composer is forced to lean on its 2nd / 3rd-best evidence.
+   */
+  excludeClaimIds?: string[];
+  /**
+   * 2026-06-11 Judge-feedback-loop: free-text claims the Tier 3 judge
+   * said weren't supported. Passed as a retry hint to the model so it
+   * avoids the same hallucination CLASS even if the underlying claim_id
+   * mapping was incomplete.
+   */
+  priorTier3Unsupported?: string[];
 }): Promise<ComposedEmail> {
   const { prospect, icpType, aeName, micrositeSlug, model = 'claude-sonnet-4-6', verbose = false } = args;
   const persona = args.persona || detectPersona(prospect.title);
+  const excludeClaimIds = new Set(args.excludeClaimIds || []);
+  const priorTier3Unsupported = args.priorTier3Unsupported || [];
 
   if (verbose) console.log(`  Specific composer: ${prospect.firstName} ${prospect.lastName} (persona=${persona}, icp=${icpType})`);
 
@@ -287,8 +302,16 @@ export async function composeSpecific(args: {
   const allEvidence = await getCompanyEvidence(prospect.company, {
     semanticContext: { state: prospect.state, icpType },
   });
-  const useDirectly = allEvidence.filter(e => e.tier === 'USE_DIRECTLY');
+  let useDirectly = allEvidence.filter(e => e.tier === 'USE_DIRECTLY');
   const useToShape = allEvidence.filter(e => e.tier === 'USE_TO_SHAPE');
+
+  // Judge-feedback-loop: drop claims the Tier 3 judge previously flagged
+  if (excludeClaimIds.size > 0) {
+    const before = useDirectly.length;
+    useDirectly = useDirectly.filter(e => !excludeClaimIds.has(e.id));
+    const dropped = before - useDirectly.length;
+    if (verbose || dropped > 0) console.log(`  Excluded ${dropped} USE_DIRECTLY claim(s) flagged by prior Tier 3 verdict`);
+  }
   const counts = computeTierCounts(allEvidence);
   if (verbose) console.log(`  Evidence: ${counts.useDirectly} USE_DIRECTLY + ${counts.useToShape} USE_TO_SHAPE`);
 
@@ -314,7 +337,7 @@ export async function composeSpecific(args: {
   // Pre-select the P.S. variant so the retry loop can count total words
   // (body + P.S. excluding URL) against the 100w ceiling.
   const psLine = selectPSVariant(persona, 1, prospect.company, micrositeSlug, aeName);
-  const prompt = buildSpecificPrompt({
+  let prompt = buildSpecificPrompt({
     prospect,
     icpType,
     persona,
@@ -324,6 +347,14 @@ export async function composeSpecific(args: {
     aeName,
     micrositeSlug,
   });
+
+  // Judge-feedback-loop: prepend a forbidden-claim block when retrying after
+  // a Tier 3 hallucination flag. The composer's internal best-of-N retry
+  // gets a STRONG signal from the start, not just on its own retries.
+  if (priorTier3Unsupported.length > 0) {
+    const forbidBlock = `\n\n**PRIOR ATTEMPT REJECTED BY HALLUCINATION JUDGE.**\nThe previous email made claims our substrate evidence did not support. Do NOT make any of the following claims (or close variants):\n${priorTier3Unsupported.map((c, i) => `  ${i + 1}. ${c}`).join('\n')}\n\nYou MUST pick a different substrate fact to ground this email. The flagged claims and their supporting evidence have been removed from your USE_DIRECTLY set. Rebuild the opener around a different fact.\n`;
+    prompt = forbidBlock + prompt;
+  }
 
   // Best-of-N retry (operator-approved #5 of rule archeology 2026-06-09).
   // Bumped 4 → 6 on 2026-06-10 (Fix 5 of composition 6-fix plan): the new
