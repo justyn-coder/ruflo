@@ -336,17 +336,42 @@ For our personalized cold-outbound motion:
 
 ---
 
-## Q10 — Per-user sequence enrollment daily cap — PARTIALLY ANSWERED
+## Q10 (refined) — Per-user vs per-portal sequence enrollment cap — ANSWERED 2026-06-11
 
-### Prompt verbatim
-> On Sales Hub Professional, what is the maximum number of contacts a single user can enroll in sequences per day? Is there a per-user daily cap, a per-portal daily cap, or both? I'm planning to enroll 30 contacts per day per AE across 3 AEs (90 total per day) — is this safely within limits?
+### Prompt verbatim (refined)
+> On Sales Hub Professional, the 1,000 sequence enrollments per portal inbox per day cap — is this a per-USER cap or a per-PORTAL cap? If 3 AEs each enroll 30 contacts per day in their own sequences (90 total), does that count against ONE shared 1,000/day limit or three separate 1,000/day limits — one per user/inbox?
 
-### Partial answer (derived from Q1 answer, 2026-06-11)
-- HubSpot documents **1,000 enrollments per portal inbox per day** (Q1 answer)
-- Whether this is per-USER or per-PORTAL is unclear — likely per-portal
-- 90/day total across all AEs is well within the 1,000/day cap
-- BUT: per-sender daily send limit on Sales Hub Pro exists separately — that's the "silent skip" hazard
-- Still need explicit Breeze confirmation of per-USER (vs per-portal) cap
+### Answer (Breeze, 2026-06-11)
+
+**Per sender inbox, NOT shared portal-wide.** Each user has their own daily cap.
+
+- The phrase "1,000 enrollments per portal inbox per day" = per inbox, not shared
+- HubSpot Knowledge Base confirms each user with Sales/Service seat has individual rolling-24h daily enrollment limit
+- HubSpot consistently describes sequence sending limits as **user-based**
+
+### THE BINDING LIMIT on Sales Pro
+
+**Per-user sequence sending cap: 500 emails per day.** Lower than the 1,000 enrollment number.
+
+- This is the practical ceiling, not the 1,000/day enrollment figure
+- Bulk enrollment also throttles sending to 3 emails/minute
+
+### Our use case math
+
+- AE 1: 30 enrollments/day → 30 first-step emails immediately, then follow-ups across days
+- AE 2: 30/day
+- AE 3: 30/day
+- Total = 90/day across portal — but counted as 3 separate per-user buckets
+- Each AE = 30 enrollments/day = ~30 emails on day 1 + ~30 on follow-up days = well under 500/day per-user cap
+- Even at 100/AE/day we'd have headroom
+
+### Impact on spec
+
+- **Component 6 (send-cap enforcer)** uses 500/day/AE as the documented upper bound (not 1,000)
+- Default of 30/AE/day in spec v5 is conservative — plenty of room to scale
+- Should NOT shared-pool across AEs (each AE has independent quota)
+- Throttle pattern (3/min for bulk) reinforces our 8-10 enrollments/day with random spacing pattern
+
 
 ---
 
@@ -436,3 +461,4 @@ These came from prior Breeze research the operator had done — captured for con
 | v3 | 2026-06-11 16:55 | Q5 answered (bounce events: detectable but no auto-batch-pause — we build watcher with rolling 20-40 send denominator + 5% threshold) + Q6 answered (custom properties NOT auto-visible in AE sidebar — operator action: configure Record Customization) + Q7 answered (`"company"` property does NOT auto-associate — must use explicit `associations` array in single-request pattern OR enable portal-level domain-based setting). |
 | v4 | 2026-06-11 17:05 | Q8 answered (first-step emails fire ASAP upon enrollment — NOT held to sequence day/time schedule; subsequent steps DO follow schedule; we must pace enrollments ourselves). Plus Q11, Q14 marked DROPPED (covered by Q5 + Q1). Q10 and Q12 marked REFINED (focused on unanswered specifics). Q15 + Q16 added (429 retry pattern + sender disconnect handling). |
 | v5 | 2026-06-11 17:15 | Q9 answered (HubSpot does NOT document 409 body — cannot confirm existing contact ID is in conflict response. Plan on follow-up GET-by-email after 409 OR use legacy upsert-by-email endpoint to avoid the duplicate-create problem entirely). |
+| v6 | 2026-06-11 17:25 | Q10 (refined) answered: 1K/day enrollment cap is PER SENDER INBOX, not shared portal-wide. Each AE has independent quota. BINDING limit on Sales Pro is 500 sequence emails/day per user. Our 30/AE/day usage = comfortable headroom. Send-cap enforcer (Component 6) should NOT shared-pool across AEs. |
