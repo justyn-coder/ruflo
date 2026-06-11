@@ -582,10 +582,72 @@ Don't react to 429s. Throttle proactively:
 
 ---
 
-## Q16 (new) — Sender disconnect handling mid-batch — PENDING
+## Q16 — Sender disconnect mid-batch — ANSWERED 2026-06-11
 
 ### Prompt verbatim
 > On Sales Hub Professional, if I'm enrolling contacts in a sequence via API and one of my AE senders' connected inbox gets disconnected mid-batch (token revoked, password change, OAuth lapse), what happens? Does the enrollment API return an error indicating the sender is disconnected, does enrollment succeed but the email silently fails to send, or does the contact get enrolled but stuck waiting? What's the correct way to detect and handle this failure mode programmatically?
+
+### Answer (Breeze, 2026-06-11)
+
+**Most likely failure mode: contacts get enrolled, but the SEND step fails later with "Inbox disconnected" error.** API does NOT proactively catch this.
+
+### Two scenarios
+
+**Case 1: Inbox already disconnected when API called**
+- Enrollment SHOULD fail (sender must be connected per docs)
+- Exact API error code/message NOT documented — don't hardcode the error string, test it
+
+**Case 2: Inbox disconnects MID-BATCH (more important for us)**
+- Contacts already enrolled stay enrolled
+- Later steps fail when HubSpot tries to send: **"Inbox disconnected: the inbox disconnected and HubSpot was unable to access your email account to send this sequence step"**
+- NOT "silent success"
+- NOT caught by enrollment API
+
+### Critical distinction (Breeze)
+
+**Enrollment success ≠ Send success.** Treat them as separate states.
+
+- Enrollment API 200 → only confirms enrollment was created
+- Send actually firing requires inbox to be connected AT SEND TIME
+
+### No dedicated inbox health check API
+
+- HubSpot docs don't expose a "is this sender's inbox connected right now" endpoint
+- Must infer from events/error states
+
+### Detection strategy (Breeze recommendation)
+
+**Preflight (before enrolling):**
+- Sender has a seat
+- Sender has access to the sequence
+- Sender email is the intended connected inbox
+
+**Post-enrollment monitoring:**
+Track these documented sequence events:
+- Contacts enrolled
+- Sequence steps executed
+- Sequence emails bounced
+- **Sequences errored** ← KEY signal for inbox disconnect
+- Contacts unenrolled
+
+**Operational circuit-breaker:**
+- If multiple contacts for ONE sender start showing send failures / inbox-disconnected errors:
+  - Stop new enrollments to that sender immediately
+  - Reroute future enrollments to another AE or queue
+  - Alert operator
+
+**Recovery for affected contacts:**
+- Reconnect the inbox in HubSpot UI
+- Re-enroll the affected contacts at the failed step (HubSpot explicitly recommends re-enroll for send failures)
+
+### Impact on spec v6
+
+- **Component 3 (sequence enroller):** add preflight sender-health check before each enrollment batch
+- **Component 5 (watcher):** extend to poll `Sequences errored` events (not just engagement)
+- **Component 6 (send-cap enforcer):** add per-sender circuit-breaker — if N failures in M minutes → halt that AE's enrollments
+- **New monitoring concern:** sequence error events (distinct from email bounces)
+- **Operator playbook:** documented recovery path = reconnect inbox + re-enroll
+
 
 ### Prompt verbatim
 > Confirming for Sales Hub Professional: my private app has 190 requests per 10-second burst limit and 625,000 requests per day account-wide. Is this accurate as of June 2026? Are there any per-endpoint sub-limits I should know about (e.g., search endpoints, sequence endpoints, property endpoints with their own caps)?
@@ -639,3 +701,4 @@ These came from prior Breeze research the operator had done — captured for con
 | v7 | 2026-06-11 17:40 | Q12 (refined) answered + MCP empirically verified: long-text + rich-text both available on Sales Pro (Breeze). Our existing showrev_* string properties confirmed via MCP `get_properties` — use plain `type: "string"` API enum. Portal context expanded with MCP-verified seat types, account type, time zone. Operator confirmed: WatchTower is our private app name + MCP access is available for empirical verification of remaining questions. |
 | v8 | 2026-06-11 17:55 | Q13 answered (Workflows API on Pro): "Enroll in sequence" workflow action is ENTERPRISE-ONLY. Workflow-based fallback NOT supported on Pro. Best architecture for Sales Pro = Sequences API direct enrollment (already our primary pathway). Confirmed: we are not architecturally constrained on Pro vs Enterprise for this pipeline. |
 | v9 | 2026-06-11 18:05 | Q15 answered (429 retry pattern): use X-HubSpot-RateLimit-* headers to distinguish burst (10s rolling) vs daily 429s. Burst → wait Interval-Milliseconds + jitter, retry. Daily → STOP, defer to next day (midnight US/Eastern). Strong Breeze recommendation: proactive throttling beats reactive 429 handling. New HS API client wrapper module recommended for spec v6. |
+| v10 | 2026-06-11 18:15 | Q16 answered (sender disconnect mid-batch): API does NOT proactively catch disconnect. Most likely failure: contacts enrolled successfully, then send step fails later with "Inbox disconnected" error. Enrollment success ≠ Send success. No dedicated inbox health API. Detection via "Sequences errored" events + per-sender circuit-breaker. Recovery: reconnect inbox + re-enroll affected contacts. Spec v6 needs: preflight sender check (Component 3), error event polling (Component 5), per-sender circuit-breaker (Component 6). |
