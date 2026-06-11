@@ -297,10 +297,42 @@ For our personalized cold-outbound motion:
 
 ---
 
-## Q9 — HS 409 response shape — PENDING
+## Q9 — HS 409 response shape — ANSWERED 2026-06-11
 
 ### Prompt verbatim
 > On Sales Hub Professional, when I POST a new contact to /crm/v3/objects/contacts with an email that already exists in HubSpot, what's the exact response body structure for the 409 conflict? Specifically: is the existing contact ID returned in the 409 body (so I can use it directly), or do I need to follow up with a separate GET-by-email search?
+
+### Answer (Breeze, 2026-06-11)
+
+**HubSpot does NOT document the exact 409 body. Cannot confirm existing contact ID is returned.**
+
+- `email` is the primary unique identifier for contacts → duplicate-email conflicts are expected on create
+- HubSpot's docs don't surface an example 409 body that includes an existing `id`
+- Safest assumption: existing contact ID is NOT in the 409 body
+- Plan on a follow-up `GET`/search by email if we use `POST /crm/v3/objects/contacts`
+
+### Alternative documented pattern: upsert-by-email
+
+- HubSpot has a **create-or-update / upsert-by-email endpoint in the legacy contact APIs**
+- This avoids the duplicate-create problem entirely (single call, no 409 branch)
+- Trade-off: legacy API surface vs. v3 modern API
+
+### Recommended implementation (Breeze)
+
+**For reliable dedupe-safe writes:**
+
+1. **Best:** use upsert-by-email path (legacy API, single call)
+2. **Or:** stick with v3 POST + handle 409 with GET-by-email follow-up
+
+### Impact on spec
+
+- v5 Component 2 already proposes the 409 → GET recovery branch — CORRECT, but inefficient (2 calls on every duplicate)
+- **Better v6:** evaluate the legacy upsert-by-email endpoint
+  - If it works on Sales Pro: cuts duplicate-handling complexity entirely
+  - If it doesn't: stick with the 409 recovery branch
+- This is a Breeze follow-up worth asking: "Does the legacy create-or-update-by-email endpoint work on Sales Pro with a private app?"
+- Either way, our EXISTING_HS_CONTACT pre-load check (Component 1) should catch most existing contacts BEFORE the loader even tries — making 409 recovery a rare edge case (operator-locked emails that got loaded by another process between pre-load and load)
+
 
 ---
 
@@ -403,3 +435,4 @@ These came from prior Breeze research the operator had done — captured for con
 | v2 | 2026-06-11 16:45 | Q3 answered (sequence edit detection via updatedAt comparison) + Q4 answered (engagement event lag — eventually consistent, recommended polling 60-120s normal / 30-60s for 10-15 min after send / then 5 min). |
 | v3 | 2026-06-11 16:55 | Q5 answered (bounce events: detectable but no auto-batch-pause — we build watcher with rolling 20-40 send denominator + 5% threshold) + Q6 answered (custom properties NOT auto-visible in AE sidebar — operator action: configure Record Customization) + Q7 answered (`"company"` property does NOT auto-associate — must use explicit `associations` array in single-request pattern OR enable portal-level domain-based setting). |
 | v4 | 2026-06-11 17:05 | Q8 answered (first-step emails fire ASAP upon enrollment — NOT held to sequence day/time schedule; subsequent steps DO follow schedule; we must pace enrollments ourselves). Plus Q11, Q14 marked DROPPED (covered by Q5 + Q1). Q10 and Q12 marked REFINED (focused on unanswered specifics). Q15 + Q16 added (429 retry pattern + sender disconnect handling). |
+| v5 | 2026-06-11 17:15 | Q9 answered (HubSpot does NOT document 409 body — cannot confirm existing contact ID is in conflict response. Plan on follow-up GET-by-email after 409 OR use legacy upsert-by-email endpoint to avoid the duplicate-create problem entirely). |
