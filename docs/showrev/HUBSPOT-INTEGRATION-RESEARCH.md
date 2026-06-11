@@ -9,10 +9,15 @@ purpose: Canonical reference for HubSpot Sequences API behavior, rate limits, an
 
 # HubSpot Integration Research — Breeze Q&A Log
 
-**Client context:**
+**Client context (verified via MCP `get_organization_details` 2026-06-11):**
 - HubSpot plan: **Sales Hub Professional + Marketing Hub** (NOT Enterprise)
-- Verified 2026-06-11 by operator
-- Private app used for showrev pipeline integration
+- Account type returned by API: `STANDARD`
+- Available seat types in portal: `core`, `sales-pro`, `partner`, `service-professional`, `view-only`
+- Portal time zone: `US/Eastern`
+- Portal currency: `USD`
+- UI domain: `app-na2.hubspot.com`
+- Private app: **WatchTower** (token in `HUBSPOT_PRIVATE_APP_TOKEN` env var)
+- MCP access: claude.ai HubSpot integration (read + write with confirmation)
 
 **How to use this doc:**
 - Questions are numbered Q1-Q14 (drafted for spec v4 post-portal pipeline)
@@ -381,10 +386,60 @@ Q4 established engagement properties are eventually consistent. Q5 established b
 
 ---
 
-## Q12 (refined) — Custom property types on Sales Pro — PENDING
+## Q12 (refined) — Custom property types on Sales Pro — ANSWERED 2026-06-11
 
 ### Prompt verbatim (refined)
 > On Sales Hub Professional, when creating custom contact properties via /crm/v3/properties/contacts API, are the following types available: textarea (multi-line text), richtext (formatted text)? Or are some property types restricted to Enterprise? I need rich/long-text fields for showrev_research_summary and showrev_talking_points.
+
+### Answer (Breeze, 2026-06-11)
+
+**YES — both multi-line text and rich text are available on Sales Pro. NOT Enterprise-only.**
+
+### What's restricted to higher tiers (per Breeze)
+
+- **Calculation** field type — Pro/Enterprise gated
+- **Property sync** field type — Pro/Enterprise gated
+- Multi-line and Rich text → available on ALL tiers
+
+### Field type specs
+
+| Type | Max chars | Formatting | Forms? | Notes |
+|---|---|---|---|---|
+| Multi-line text | 65,536 | Plain text only | Yes | Cleaner for API writes + downstream automation |
+| Rich text | 64 KB total (incl. images) | Bold/links/lists/images | No | Better for scanability when manually reviewed |
+
+### Recommendations (Breeze)
+
+- `showrev_research_summary` → Rich text (bullets, bolding, links for AE scanning)
+- `showrev_talking_points` → Rich text OR multi-line (depends if we write plain strings)
+- `showrev_signal_strength` → structured (dropdown / number), not text-heavy
+
+### Caveat (from Breeze, addressed via MCP empirical test)
+
+- HubSpot docs don't surface exact API payload enum strings for these field types
+- Breeze couldn't confirm whether the payload field is `textarea`, `richtext`, or some `fieldType`/`type` combination
+- **EMPIRICAL VERIFICATION VIA MCP:** see below
+
+### MCP empirical inventory of current showrev_* properties — 2026-06-11
+
+Verified via `mcp__claude_ai_HubSpot__get_properties`:
+
+| Property | Type returned by API | Use |
+|---|---|---|
+| `showrev_research_summary` | `string` | 3-5 sentence intelligence brief |
+| `showrev_ae_talking_points` | `string` | 3 talking points for AE pre-call |
+| `showrev_pilot_anchor_paragraph` | `string` | bespoke 1-3 sentence anchor |
+| `showrev_signal_strength` | `enumeration` (GREEN/YELLOW/ORANGE/RED) | priority signal |
+| `showrev_persona_classification` | `enumeration` (core_icp/exec_tier/wrong_persona) | ICP fit |
+
+**Key finding:** our existing long-text properties use plain `type: "string"` — NOT `richtext` or `textarea` as separate types. HubSpot's API surfaces a single `type` field at this level; the multi-line vs single-line vs richtext distinction may live in a separate `fieldType` attribute that this MCP endpoint doesn't expose.
+
+**What this confirms for spec v6:**
+- We can keep creating `string`-typed properties for free-form research text (proven pattern, already works on this Sales Pro portal)
+- For richtext specifically, we'd need to test the property-create API with `fieldType: "richtext"` to verify the exact payload — but for our use case (programmatically-written research text consumed by AE in HS UI), plain `string` has been adequate
+- No need to upgrade existing properties to richtext unless operator wants formatting (bold, links, bullets)
+
+
 
 ---
 
@@ -462,3 +517,4 @@ These came from prior Breeze research the operator had done — captured for con
 | v4 | 2026-06-11 17:05 | Q8 answered (first-step emails fire ASAP upon enrollment — NOT held to sequence day/time schedule; subsequent steps DO follow schedule; we must pace enrollments ourselves). Plus Q11, Q14 marked DROPPED (covered by Q5 + Q1). Q10 and Q12 marked REFINED (focused on unanswered specifics). Q15 + Q16 added (429 retry pattern + sender disconnect handling). |
 | v5 | 2026-06-11 17:15 | Q9 answered (HubSpot does NOT document 409 body — cannot confirm existing contact ID is in conflict response. Plan on follow-up GET-by-email after 409 OR use legacy upsert-by-email endpoint to avoid the duplicate-create problem entirely). |
 | v6 | 2026-06-11 17:25 | Q10 (refined) answered: 1K/day enrollment cap is PER SENDER INBOX, not shared portal-wide. Each AE has independent quota. BINDING limit on Sales Pro is 500 sequence emails/day per user. Our 30/AE/day usage = comfortable headroom. Send-cap enforcer (Component 6) should NOT shared-pool across AEs. |
+| v7 | 2026-06-11 17:40 | Q12 (refined) answered + MCP empirically verified: long-text + rich-text both available on Sales Pro (Breeze). Our existing showrev_* string properties confirmed via MCP `get_properties` — use plain `type: "string"` API enum. Portal context expanded with MCP-verified seat types, account type, time zone. Operator confirmed: WatchTower is our private app name + MCP access is available for empirical verification of remaining questions. |
