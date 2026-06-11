@@ -483,6 +483,46 @@ export async function getAeSendStats(aeName: string): Promise<AeStats> {
 
 ---
 
+## Compliance — Unsubscribe (operator-managed)
+
+**Unsubscribe link is enabled at the Sequences level**, not in our composer code. Operator controls this per sequence in HS UI: Sequences → {sequence} → Settings → Unsubscribe.
+
+HS injects the unsubscribe link **below the signature** automatically when the toggle is on.
+
+**Implications for our composer:**
+- Email body content should END with the signature (`Mike Rutski | Inorsa | mike@inorsa.com`)
+- Our `email_ps_t1` (P.S. line) is rendered via the `showrev_pre_show_t1_ps` token in the sequence template — placement within the template (above vs below signature) is operator-configured
+- We do NOT add any unsubscribe text in our composer — HS handles it
+- We do NOT need code-side suppression list — HS honors the unsubscribe per-contact globally
+
+**Validation checklist (operator action item):**
+- ☐ All 3 P2 sequences (Mike T1, Nathan T1, Lucas T1) have Unsubscribe enabled
+- ☐ Signature placement = last line of body content
+- ☐ P.S. line placement decided (above or below signature — operator preference)
+- ☐ Test enrollment fires a real email with visible unsubscribe link
+
+---
+
+## Out of scope this round
+
+The following came up during spec discussion but belong in separate workstreams to keep this spec focused:
+
+### Microsite tracking (deferred to separate spec)
+
+Operator confirmed: build OUR OWN tracking, do NOT embed HubSpot's `hs-script-loader` JS on microsites. Reasons:
+- `fiber.inorsa.com` isn't in Inorsa's HS tracked-domains list → HS attribution wouldn't work reliably
+- We want richer event data than HS's generic page-view (assess completion, section scrolling, CTA clicks, time on page)
+- We own the data, lives in our `sr_microsite_events` table
+- Privacy: no cookies needed if we design that way
+
+Architecture (deferred):
+- Phase 1: Next.js API route `/api/track` → `sr_microsite_events` (~2 hr)
+- Phase 2 (only if AEs need it): bridge worker posts notable events to HS Custom Events API for contact timeline visibility (~1-2 hr)
+
+Will be specced separately when prioritized.
+
+---
+
 ## Operator setup tasks (one-time, in HS UI)
 
 ### 1. P2 Active Lists (3 segments)
