@@ -71,10 +71,40 @@ interface CsvRow {
   state?: string;
 }
 
+/**
+ * Parse one CSV line respecting double-quoted fields with embedded commas.
+ * Fixes the column-shift bug discovered 2026-06-11: rows like
+ *   Ed,Carson,"Palmetto Rural Telephone Cooperative, Inc.",Director ...,SC,,
+ * were splitting on the comma INSIDE the quoted company name, shifting every
+ * downstream field by one. Affected ~25% of the cohort (50 of 204 rows).
+ */
+function parseCsvLine(line: string): string[] {
+  const out: string[] = [];
+  let current = '';
+  let inQuote = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (inQuote) {
+      if (ch === '"') {
+        if (line[i + 1] === '"') { current += '"'; i++; }
+        else inQuote = false;
+      } else {
+        current += ch;
+      }
+    } else {
+      if (ch === ',') { out.push(current.trim()); current = ''; }
+      else if (ch === '"') inQuote = true;
+      else current += ch;
+    }
+  }
+  out.push(current.trim());
+  return out;
+}
+
 function parseCsv(text: string): CsvRow[] {
   const lines = text.split(/\r?\n/).filter(Boolean);
   if (lines.length < 2) return [];
-  const header = lines[0].split(',').map(h => h.trim().toLowerCase());
+  const header = parseCsvLine(lines[0]).map(h => h.trim().toLowerCase());
   const idx = (name: string) => header.findIndex(h => h === name);
   const iFirst = idx('firstname') !== -1 ? idx('firstname') : idx('fname');
   const iLast = idx('lastname') !== -1 ? idx('lastname') : idx('lname');
@@ -83,7 +113,7 @@ function parseCsv(text: string): CsvRow[] {
   const iState = idx('state');
 
   return lines.slice(1).map(line => {
-    const fields = line.split(',').map(f => f.trim().replace(/^"|"$/g, ''));
+    const fields = parseCsvLine(line);
     return {
       firstName: fields[iFirst] || '',
       lastName: fields[iLast] || '',
