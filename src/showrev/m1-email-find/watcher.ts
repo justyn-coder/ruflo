@@ -30,7 +30,31 @@ function sbUrl(): string {
 }
 
 // --- Cutoff: only count events AFTER sequences were sent ---
-const SEQUENCE_SEND_DATE = '2026-06-02T00:00:00Z';
+// Spec v6 Component 5: dynamic cutoff based on earliest hubspot_loaded_at
+// across the active cohort, minus 1-day buffer. Falls back to this constant
+// if no loads have been recorded yet (e.g., pre-launch state).
+const SEQUENCE_SEND_DATE_FALLBACK = '2026-06-02T00:00:00Z';
+const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+
+/**
+ * Dynamic cutoff: returns earliest hubspot_loaded_at across cohort minus
+ * 1-day buffer, or the fallback constant if no loads yet.
+ */
+async function getDynamicCutoff(): Promise<string> {
+  const base = sbUrl();
+  const headers = sbHeaders();
+  // Earliest load across BOTH P1 warm + P2 cold
+  const res = await fetch(
+    `${base}/rest/v1/sr_prospects?hubspot_loaded_at=not.is.null&select=hubspot_loaded_at&order=hubspot_loaded_at.asc&limit=1`,
+    { headers },
+  );
+  if (!res.ok) return SEQUENCE_SEND_DATE_FALLBACK;
+  const rows: Array<{ hubspot_loaded_at: string }> = await res.json();
+  if (rows.length === 0) return SEQUENCE_SEND_DATE_FALLBACK;
+  const earliest = new Date(rows[0].hubspot_loaded_at);
+  // Subtract 1 day buffer for safety (events near load time still count)
+  return new Date(earliest.getTime() - ONE_DAY_MS).toISOString();
+}
 
 // --- HubSpot engagement properties (request both naming conventions) ---
 const ENGAGEMENT_PROPS = [
@@ -71,7 +95,7 @@ async function fetchHsContacts(): Promise<any[]> {
 // --- Get prospect mapping: email → { id, assigned_ae } ---
 async function getProspectMap(): Promise<Map<string, any>> {
   const res = await fetch(
-    `${sbUrl()}/rest/v1/sr_prospects?send_status=eq.send&select=id,email,assigned_ae,first_name,last_name`,
+    `${sbUrl()}/rest/v1/sr_prospects?send_status=eq.send&select=id,email,assigned_ae,first_name,last_name,sequence_enrolled_at`,
     { headers: sbHeaders() },
   );
   const prospects: any[] = await res.json();
@@ -83,7 +107,7 @@ async function getProspectMap(): Promise<Map<string, any>> {
 }
 
 // --- Extract engagement events from HubSpot contact properties ---
-function extractEvents(contact: any, prospectMap: Map<string, any>): any[] {
+function extractEvents(contact: any, prospectMap: Map<string, any>, cutoffIso: string): any[] {
   const props = contact.properties;
   const email = props.email?.toLowerCase();
   if (!email) return [];
@@ -95,7 +119,7 @@ function extractEvents(contact: any, prospectMap: Map<string, any>): any[] {
   const meta = { ae, hs_contact_id: contact.id };
 
   const events: any[] = [];
-  const cutoff = new Date(SEQUENCE_SEND_DATE).getTime();
+  const cutoff = new Date(cutoffIso).getTime();
   const isAfterCutoff = (ts: string | null) => ts && new Date(ts).getTime() >= cutoff;
 
   const openedAt = props.hs_sales_email_last_opened || props.hs_email_last_open_date;
@@ -147,9 +171,71 @@ async function upsertOutcomes(events: any[]): Promise<number> {
   return rows.length;
 }
 
+// --- Backfill sequence_enrolled_at from observed HS sales activity ---
+// Spec v6 Component 5 + Component 6 dependency: when watcher sees a
+// contact with hs_last_sales_activity_date set (a sequence step fired),
+// and sr_prospects.sequence_enrolled_at is null, set it to that
+// timestamp. This is what Component 6 reads to compute per-AE caps.
+async function backfillSequenceEnrolledAt(
+  contacts: any[],
+  prospectMap: Map<string, any>,
+): Promise<number> {
+  const headers = sbHeaders();
+  const base = sbUrl();
+  let updated = 0;
+  for (const c of contacts) {
+    const email = c.properties?.email?.toLowerCase();
+    if (!email) continue;
+    const prospect = prospectMap.get(email);
+    if (!prospect || prospect.sequence_enrolled_at) continue;
+    // HS sometimes returns hs_last_sales_activity_date as ms-since-epoch
+    // values that ISO-format to year 1970 (e.g., "1970-01-21T14:46:54.098Z").
+    // notes_last_contacted is more reliable. Try both, take the earliest
+    // value that passes a sanity check.
+    const candidates = [
+      c.properties?.notes_last_contacted,
+      c.properties?.hs_last_sales_activity_date,
+    ].filter(Boolean);
+    if (candidates.length === 0) continue;
+    const validIsos: string[] = [];
+    for (const raw of candidates) {
+      let candidate: string;
+      if (/^\d+$/.test(String(raw))) {
+        candidate = new Date(parseInt(String(raw), 10)).toISOString();
+      } else {
+        candidate = String(raw);
+      }
+      const ms = new Date(candidate).getTime();
+      if (
+        !isNaN(ms) &&
+        ms >= new Date('2024-01-01').getTime() &&
+        ms <= Date.now() + ONE_DAY_MS
+      ) {
+        validIsos.push(candidate);
+      }
+    }
+    if (validIsos.length === 0) continue;
+    // Earliest valid timestamp = first enrollment approximation
+    const iso = validIsos.sort()[0];
+    const res = await fetch(
+      `${base}/rest/v1/sr_prospects?id=eq.${encodeURIComponent(prospect.id)}`,
+      {
+        method: 'PATCH',
+        headers: { ...headers, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+        body: JSON.stringify({ sequence_enrolled_at: iso }),
+      },
+    );
+    if (res.ok) updated++;
+  }
+  return updated;
+}
+
 // --- Poll command ---
 async function poll(): Promise<void> {
   console.log('Polling HubSpot for engagement events...\n');
+
+  const cutoff = await getDynamicCutoff();
+  console.log(`Cutoff: ${cutoff}`);
 
   const prospectMap = await getProspectMap();
   console.log(`${prospectMap.size} SEND contacts in Supabase`);
@@ -157,9 +243,15 @@ async function poll(): Promise<void> {
   const contacts = await fetchHsContacts();
   console.log(`${contacts.length} ShowRev contacts in HubSpot\n`);
 
+  // Component 5/6: backfill sequence_enrolled_at for cap monitoring
+  const backfilled = await backfillSequenceEnrolledAt(contacts, prospectMap);
+  if (backfilled > 0) {
+    console.log(`Backfilled sequence_enrolled_at on ${backfilled} prospects\n`);
+  }
+
   const allEvents: any[] = [];
   for (const c of contacts) {
-    allEvents.push(...extractEvents(c, prospectMap));
+    allEvents.push(...extractEvents(c, prospectMap, cutoff));
   }
 
   if (!allEvents.length) {
@@ -181,7 +273,7 @@ async function poll(): Promise<void> {
 }
 
 // --- Status command ---
-async function status(): Promise<void> {
+async function statusReport(): Promise<void> {
   const h = sbHeaders();
   const base = sbUrl();
 
@@ -451,7 +543,8 @@ function classifySentiment(subject: string, body: string, hasMeeting: boolean): 
 async function classify(): Promise<void> {
   const h = sbHeaders();
   const base = sbUrl();
-  const cutoff = new Date(SEQUENCE_SEND_DATE).getTime();
+  const cutoffIso = await getDynamicCutoff();
+  const cutoff = new Date(cutoffIso).getTime();
 
   // 1. Get all replied contacts from sr_outcomes
   const oRes = await fetch(
@@ -558,7 +651,11 @@ async function classify(): Promise<void> {
 
 // --- Deliverability command: feed bounce data into deliverability monitor ---
 async function deliverability(): Promise<void> {
-  const { recordOutcome: recordDel, getBatchStats, shouldHalt } = await import('../deliverability/index.js');
+  // Component 4 refactor: bounce-monitor is now persistent (DB-backed)
+  // and uses batch_id. The deliverability report reads aggregated stats
+  // from sr_bounce_events for the cohort's batch_id (default 'p2-cold').
+  const { recordSend, recordBounce, getBatchStats, shouldHalt } = await import('../deliverability/index.js');
+  const REPORT_BATCH_ID = process.env.SHOWREV_BATCH_ID || 'p2-cold';
   const { evaluateConfidence } = await import('../deliverability/index.js');
 
   const h = sbHeaders();
@@ -595,7 +692,18 @@ async function deliverability(): Promise<void> {
     const confidence = eng?.email_confidence || 'unknown';
     const mismatch = eng?.domain_mismatch || false;
 
-    recordDel(p.email, bounced, bounced ? 'hard' : 'unknown');
+    // Record send + bounce to persistent bounce monitor (Component 4)
+    // Idempotent on retries via UNIQUE constraint on sr_bounce_events.
+    await recordSend(REPORT_BATCH_ID, p.email, p.id, 1);
+    if (bounced) {
+      await recordBounce(REPORT_BATCH_ID, {
+        email: p.email,
+        prospectId: p.id,
+        bounceType: 'hard',
+        source: 'hubspot',
+        sequenceStep: 1,
+      });
+    }
 
     const gate = evaluateConfidence(p.email, confidence, undefined, mismatch);
 
@@ -606,8 +714,8 @@ async function deliverability(): Promise<void> {
     }
   }
 
-  const stats = getBatchStats();
-  const halt = shouldHalt();
+  const stats = await getBatchStats(REPORT_BATCH_ID);
+  const halt = await shouldHalt(REPORT_BATCH_ID);
 
   console.log(`Total sent: ${stats.total}`);
   console.log(`Delivered:  ${stats.delivered}`);
@@ -641,7 +749,7 @@ if (process.argv[1]?.includes('watcher')) {
       break;
 
     case 'status':
-      status().catch(err => { console.error('Status failed:', err.message); process.exit(1); });
+      statusReport().catch(err => { console.error('Status failed:', err.message); process.exit(1); });
       break;
 
     case 'learn':
