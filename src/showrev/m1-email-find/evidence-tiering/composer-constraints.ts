@@ -103,7 +103,62 @@ const GEOGRAPHIC_GUARDS: Array<{ pattern: RegExp; label: string }> = [
 ];
 
 // ----------------------------------------------------------------------------
-// Combined blacklist
+// Cold-cohort guards (Phase A — composer fix 2026-06-10)
+// ----------------------------------------------------------------------------
+// Patterns the composer reaches for when prompted with post-show / follow-up
+// framing. For cold prospects (P2 attendee list, NOT booth visitors), every
+// one of these is a fabrication: no meeting happened, no conversation
+// happened, the prospect was never at our booth. The hallucination judge does
+// NOT catch these (it looks for unsupported factual claims, not relationship
+// claims), so the safety net lives here.
+//
+// SCOPE: only fires when leadType === 'cold' (passed by caller). Warm prospects
+// (booth visitors) can legitimately use this language and pass leadType='warm'
+// to skip these guards.
+//
+// Triggering examples observed in v2-mq8p* run (7 prospects):
+//   - Aimee Linn (Bonfire Fiber): "good meeting you at Fiber Connect"
+//   - Chip Proctor (Altamaha EMC): "good meeting you at Fiber Connect. After that..."
+//   - Bryan Moriarty (Blue Streak): "good to meet you at Fiber Connect, after we parted ways"
+//   - Anthony Brandt (PC Telcom): "good to meet you briefly at Fiber Connect"
+//   - Denys Pihur (Axon Fiber): "good briefly meeting at Fiber Connect"
+//   - Jason Miller (Glass Lab): "good connecting at Fiber Connect"
+//   - Linda Richardson (Blue Stream): "great meeting you at Fiber Connect"
+const COLD_COHORT_GUARDS: Array<{ pattern: RegExp; label: string }> = [
+  // "good meeting you" / "good to meet you" / "good connecting" / "good catching up" / "good to see you"
+  { pattern: /\bgood\s+(?:meeting|to\s+meet|to\s+see|connecting|catching\s+up|briefly\s+meeting)\s+(?:you|with\s+you|again|briefly)/i, label: 'COLD-COHORT: warm meeting opener ("good meeting/to meet/connecting you") — no prior meeting occurred' },
+  // "great meeting you" / "great to meet you" / etc.
+  { pattern: /\bgreat\s+(?:meeting|to\s+meet|to\s+see|connecting|catching\s+up)\s+(?:you|with\s+you|again)/i, label: 'COLD-COHORT: warm meeting opener ("great meeting/to meet/connecting you") — no prior meeting occurred' },
+  // "nice meeting you" / "nice to meet you" / "nice chatting"
+  { pattern: /\bnice\s+(?:meeting|to\s+meet|chatting|to\s+see)\s+(?:you|with\s+you)/i, label: 'COLD-COHORT: warm meeting opener ("nice meeting/to meet you") — no prior meeting occurred' },
+  // "at Fiber Connect" (show-referent — only valid for booth visitors)
+  { pattern: /\bat\s+Fiber\s+Connect\b/i, label: 'COLD-COHORT: show-referent ("at Fiber Connect") — cold prospects did not attend the booth' },
+  // "at the booth" / "at our booth"
+  { pattern: /\bat\s+(?:the\s+|our\s+)?booth\b/i, label: 'COLD-COHORT: booth-referent ("at the/our booth") — cold prospects did not visit the booth' },
+  // "at the show"
+  { pattern: /\bat\s+the\s+show\b/i, label: 'COLD-COHORT: show-referent ("at the show") — cold prospects did not attend' },
+  // "after we (parted ways|crossed paths|spoke|talked|met|chatted)"
+  { pattern: /\bafter\s+we\s+(?:parted\s+ways|crossed\s+paths|spoke|talked|met|chatted|connected)\b/i, label: 'COLD-COHORT: prior-conversation referent ("after we parted/crossed paths/spoke") — no prior conversation occurred' },
+  // "since we (spoke|met|talked)"
+  { pattern: /\bsince\s+(?:we\s+)?(?:spoke|met|talked|chatted)\b/i, label: 'COLD-COHORT: prior-conversation referent ("since we spoke/met") — no prior conversation occurred' },
+  // "thanks for stopping by" / "thanks for visiting" / "thanks for the chat"
+  { pattern: /\bthanks?\s+for\s+(?:stopping\s+by|visiting|the\s+chat|catching|coming\s+by)\b/i, label: 'COLD-COHORT: thanks-for-visit ("thanks for stopping by/visiting") — no visit occurred' },
+  // "stopped by (the/our) booth"
+  { pattern: /\bstopped?\s+by\s+(?:the\s+|our\s+)?booth\b/i, label: 'COLD-COHORT: booth-visit referent ("stopped by the booth") — no visit occurred' },
+  // "following up on/after our conversation/meeting/chat/Fiber Connect/show"
+  { pattern: /\bfollowing\s+up\s+(?:on|after)\s+(?:our|the|Fiber\s+Connect|the\s+show)\s*(?:conversation|meeting|chat|call|exchange|discussion|note)?/i, label: 'COLD-COHORT: post-conversation framing ("following up on our conversation/meeting") — no prior conversation occurred' },
+  // "exchanged (business cards|cards|contact info)"
+  { pattern: /\bexchanged\s+(?:business\s+)?(?:cards?|contact\s+info|info|details)\b/i, label: 'COLD-COHORT: card-exchange referent ("exchanged cards") — no exchange occurred' },
+  // "post-show"
+  { pattern: /\bpost[-\s]?show\b/i, label: 'COLD-COHORT: post-show referent — cold prospects did not attend' },
+  // "show floor"
+  { pattern: /\bshow\s+floor\b/i, label: 'COLD-COHORT: show-floor referent — cold prospects were not on the show floor' },
+  // "at Gaylord Palms" / "Music City Center" / specific venue
+  { pattern: /\bat\s+(?:the\s+)?(?:Gaylord\s+Palms|Music\s+City\s+Center)\b/i, label: 'COLD-COHORT: venue-specific referent — cold prospects did not attend the venue' },
+];
+
+// ----------------------------------------------------------------------------
+// Combined blacklist (universal — applies to ALL prospects)
 // ----------------------------------------------------------------------------
 
 export const ALL_BANNED: Array<{ pattern: RegExp; label: string; category: string }> = [
@@ -117,10 +172,19 @@ export const ALL_BANNED: Array<{ pattern: RegExp; label: string; category: strin
 /**
  * Check body + subject for banned phrases. Returns labels of any matches.
  * Empty array = clean.
+ *
+ * @param leadType - 'cold' (default, safe) applies cold-cohort guards too.
+ *                   'warm' skips cold-cohort guards (booth visitors can use warm
+ *                   meeting language legitimately).
  */
-export function checkBannedPhrases(body: string, subject: string): string[] {
+export function checkBannedPhrases(body: string, subject: string, leadType: 'cold' | 'warm' = 'cold'): string[] {
   const corpus = `${subject} ${body}`;
-  return ALL_BANNED.filter(b => b.pattern.test(corpus)).map(b => b.label);
+  const universal = ALL_BANNED.filter(b => b.pattern.test(corpus)).map(b => b.label);
+  if (leadType === 'cold') {
+    const coldHits = COLD_COHORT_GUARDS.filter(b => b.pattern.test(corpus)).map(b => b.label);
+    return [...universal, ...coldHits];
+  }
+  return universal;
 }
 
 /**

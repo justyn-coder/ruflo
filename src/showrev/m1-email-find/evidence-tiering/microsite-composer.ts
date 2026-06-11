@@ -91,7 +91,7 @@ export async function composeMicrosite(args: ComposeArgs): Promise<MicrositeComp
 
 ## The intent (load-bearing — read carefully)
 
-Imagine you met ${prospect.firstName} briefly at Fiber Connect 2026, exchanged cards but didn't get to talk shop. You spent a week deep-researching their world. The email opened the conversation; this landing page continues it — as a peer who genuinely *gets* their operation. NOT a sales pitch. Inorsa is mentioned ZERO times in your content; the product positioning is elsewhere on the page.
+You're writing this landing page for ${prospect.firstName}'s first read of the brief. You spent the past week deep-researching their world. The email framed the conversation; this page extends it — as a peer who genuinely *gets* their operation. NOT a sales pitch. Inorsa is mentioned ZERO times in your content; the product positioning is elsewhere on the page.
 
 ## The email you're extending
 

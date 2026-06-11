@@ -135,7 +135,7 @@ export function buildSpecificPrompt(args: {
 
 ## The intent of THIS email (load-bearing — read before composing)
 
-Imagine you and ${prospect.firstName} met briefly at Fiber Connect 2026, exchanged business cards but didn't get to talk shop. You spent the next week deep-researching their world: the pains they wake up thinking about, the gains they're chasing, the jobs-to-be-done that sit on their team's plate. Now you're following up — as a peer who genuinely *gets* it.
+You're writing the first email to ${prospect.firstName}. You spent the past week deep-researching their world: the pains they wake up thinking about, the gains they're chasing, the jobs-to-be-done that sit on their team's plate. The email reads as a peer who genuinely *gets* it.
 
 This is NOT a sales pitch. The email reads like one professional talking to another:
 - It RECOGNIZES the prospect's reality from your deep research (you have actual evidence; use it)

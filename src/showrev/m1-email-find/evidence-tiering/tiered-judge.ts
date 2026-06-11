@@ -133,6 +133,18 @@ export interface ProspectContext {
   company: string;
   title?: string;
   state?: string;
+  /**
+   * Cohort signal. 'cold' = attendee-list prospect with NO prior contact (default,
+   * safe behavior). 'warm' = booth visitor with a real conversation/handshake.
+   *
+   * Defaults to 'cold' if not passed — this is the safe default because the v2
+   * pipeline is exclusively cold cohort. Caller MUST pass 'warm' explicitly when
+   * the prospect actually met the sender (P1 booth visitor pipeline only).
+   *
+   * Phase A composer fix 2026-06-10 — wired through composer-constraints
+   * checkBannedPhrases() to enable COLD_COHORT_GUARDS regex check.
+   */
+  leadType?: 'cold' | 'warm';
 }
 
 // ----------------------------------------------------------------------------
@@ -153,8 +165,11 @@ const PARAGRAPH_MAX = 4;
 export function runTier1(composed: ComposedEmail, prospect: ProspectContext): Tier1Result {
   const violations: string[] = [];
 
-  // Banned phrases (AI tells, Tim kill-list, product guards, offshore guards)
-  const banned = checkBannedPhrases(composed.body, composed.subject);
+  // Banned phrases (AI tells, Tim kill-list, product guards, offshore guards, cold-cohort guards)
+  // Phase A composer fix 2026-06-10: cold-cohort guards (warm-meeting fabrication
+  // patterns) fire when prospect.leadType === 'cold' (default). Booth-visitor
+  // pipelines pass 'warm' explicitly.
+  const banned = checkBannedPhrases(composed.body, composed.subject, prospect.leadType || 'cold');
   for (const label of banned) violations.push(`Banned: ${label}`);
 
   // Em-dash check (Tim flags these as AI tells — em + en dashes)
