@@ -302,7 +302,57 @@ For our personalized cold-outbound motion:
 
 ---
 
-## Q9 — HS 409 response shape — ANSWERED 2026-06-11
+## Q9-followup — Legacy upsert-by-email endpoint — ANSWERED 2026-06-11
+
+### Prompt verbatim
+> On Sales Hub Professional, does the legacy "create-or-update contact by email" endpoint still work in 2026? Specifically: can a private app POST to /contacts/v1/contact/createOrUpdate/email/{email} to upsert a contact in a single API call, avoiding the duplicate-create / 409-recovery pattern entirely? If so, is this still the recommended path for dedupe-safe writes, or has it been deprecated in favor of a v3 equivalent?
+
+### Answer (Breeze, 2026-06-11)
+
+**YES — `POST /contacts/v1/contact/createOrUpdate/email/{contact_email}` is still documented + working in 2026.**
+
+- Private apps can still call it
+- Explicitly described as creating new OR updating existing — single call
+- Avoids the 409 / duplicate-create recovery pattern entirely
+- NO v3 equivalent single-call upsert endpoint exists
+
+### Caveats
+
+- HubSpot doesn't explicitly RECOMMEND it over v3 for new builds
+- It IS a legacy API surface
+- No documented deprecation announcement, but legacy ≠ guaranteed-forever
+
+### Decision for our spec v6
+
+Two valid paths:
+
+**Path A — Legacy single-call upsert**
+- ✅ Single API call per contact
+- ✅ No 409 handling logic
+- ✅ Simpler code, fewer edge cases
+- ⚠ Legacy endpoint surface
+- ⚠ Future deprecation risk
+
+**Path B — v3 create + 409 recovery + lookup fallback**
+- ✅ Modern v3 surface, no deprecation risk
+- ⚠ 2-3 API calls per duplicate (create → 409 → GET-by-email → update)
+- ⚠ More complex error handling
+
+### Our pilot context — Path A wins
+
+- **Volume is tiny:** 150 prospects total in this cohort
+- **EXISTING_HS_CONTACT pre-load check (Component 1)** already filters out existing contacts before the loader runs
+- So 409 should be EXTREMELY rare — only if a contact gets created between pre-load and load (race window)
+- For that rare case, Path A's upsert handles it gracefully in 1 call
+- Path B's overhead (2-3 calls per duplicate) isn't justified at our scale
+
+### Spec v6 recommendation
+
+**Use Path A (legacy upsert-by-email) for Component 2.** Simpler, fewer edge cases, no deprecation announcement, doc-supported. Migrate to v3 equivalent if/when one ships.
+
+---
+
+## Q9 — HS 409 response shape — ANSWERED 2026-06-11 (kept for reference even though Path A bypasses it)
 
 ### Prompt verbatim
 > On Sales Hub Professional, when I POST a new contact to /crm/v3/objects/contacts with an email that already exists in HubSpot, what's the exact response body structure for the 409 conflict? Specifically: is the existing contact ID returned in the 409 body (so I can use it directly), or do I need to follow up with a separate GET-by-email search?
@@ -702,3 +752,4 @@ These came from prior Breeze research the operator had done — captured for con
 | v8 | 2026-06-11 17:55 | Q13 answered (Workflows API on Pro): "Enroll in sequence" workflow action is ENTERPRISE-ONLY. Workflow-based fallback NOT supported on Pro. Best architecture for Sales Pro = Sequences API direct enrollment (already our primary pathway). Confirmed: we are not architecturally constrained on Pro vs Enterprise for this pipeline. |
 | v9 | 2026-06-11 18:05 | Q15 answered (429 retry pattern): use X-HubSpot-RateLimit-* headers to distinguish burst (10s rolling) vs daily 429s. Burst → wait Interval-Milliseconds + jitter, retry. Daily → STOP, defer to next day (midnight US/Eastern). Strong Breeze recommendation: proactive throttling beats reactive 429 handling. New HS API client wrapper module recommended for spec v6. |
 | v10 | 2026-06-11 18:15 | Q16 answered (sender disconnect mid-batch): API does NOT proactively catch disconnect. Most likely failure: contacts enrolled successfully, then send step fails later with "Inbox disconnected" error. Enrollment success ≠ Send success. No dedicated inbox health API. Detection via "Sequences errored" events + per-sender circuit-breaker. Recovery: reconnect inbox + re-enroll affected contacts. Spec v6 needs: preflight sender check (Component 3), error event polling (Component 5), per-sender circuit-breaker (Component 6). |
+| v11 | 2026-06-11 18:25 | Q9-followup answered (legacy upsert-by-email): POST /contacts/v1/contact/createOrUpdate/email/{email} STILL works in 2026 + documented. No v3 single-call equivalent. Path A (legacy upsert) wins for our pilot scale: simpler, no 409 logic, EXISTING_HS_CONTACT pre-load already handles bulk of dedupe. All 14 questions resolved. Spec v6 lockable. |
