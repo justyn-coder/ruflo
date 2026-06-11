@@ -139,30 +139,67 @@ Gmail (Feb 2024) terminates senders exceeding **0.3% spam-complaint rate** measu
 - ✅ Signature: `Mike Rutski | Inorsa | mike@inorsa.com` (one-line pipe-separated, per AE config in `ae-config.ts`)
 - ✅ Pitch verbatim: "We turn design data into permit-ready construction drawings. Quality control is built in, so builds keep moving."
 
-### 1.4 Throttling & Volume — operator-clarified 2026-06-11
+### 1.4 Throttling & Volume — operator-corrected 2026-06-11 (v2)
 
-**Per AE per day: 20-30 emails.** Cohort-level (3 AEs combined): 60-90 emails/day max.
+**Cohort target: 800 qualified ICP prospects.**
+**Per-AE enrollment cap: Day 1 = 20, Day 2 onwards = 30/day.**
+**Sequence design: 3 touches (T1 + T2 + T3) per prospect.**
 
-Operator clarification 2026-06-11: *"i think the current thinking from the client is that we could do 20 - 30 PER AE."*
+Operator correction 2026-06-11: *"goal is to try and get to 800 qualified ICP prospects. three touches. day 1: 20/AE. day 2 onwards: 30/AE/Day."*
 
-Chris's original notes (from `docs/showrev/hubspot-loader-spec.md`) said "no more than 20-30 emails per day initially" — operator clarifies this was PER AE, not aggregate.
+This supersedes the earlier "ramp for 2 weeks" framing. The structure is simpler:
 
-**Spec v6 send-cap defaults (revised):**
+| Day | Per-AE enrollment cap | Cohort-level |
+|---|---|---|
+| Day 1 | 20 new enrollments | 60 (3 AEs × 20) |
+| Day 2 onwards | 30 new enrollments | 90 (3 AEs × 30) |
 
-- Per-AE daily cap: **30 enrollments/day BLOCKING** (well below Q10's 500/day binding limit)
-- Per-AE daily cap during ramp (first 2 weeks of cold): **20/day** to seed reputation
-- Cohort-level daily cap: implicit 90/day (3 AEs × 30)
+**Time to enroll 800 prospects at steady state:**
+
+- Day 1: 60 enrollments
+- Day 2-10: 90/day × 9 days = 810 enrollments
+- Total enrolled by end of day 10: ~870 (covers 800 target with buffer)
+- **Roughly 9-10 working days to enroll full cohort**
+
+**Steady-state send volume per AE (Day 8+, when T2/T3 follow-ups start firing):**
+
+- 30 new T1 enrollments/day (immediate first-step send per Q8)
+- + ~30 T2 sends (from T1 enrollments ~7 days prior, depending on sequence step spacing)
+- + ~30 T3 sends (from T1 enrollments ~14 days prior)
+- = **~90 sequence emails/day per AE** at fully ramped state
+- Well under Q10's binding 500/day per-user cap
+- Cohort-level: ~270 emails/day across 3 AEs
+
+**Spec v6 send-cap defaults (revised again):**
+
+```
+SHOWREV_AE_DAY1_CAP = 20            # day 1 only
+SHOWREV_AE_DAILY_CAP = 30            # day 2 onwards, blocking
+SHOWREV_AE_DAILY_CAP_CEILING = 50    # absolute max, won't allow above even with great rep
+```
+
+**Component 6 logic:**
+
+```ts
+function getAeDailyCap(aeName: string, daysSinceStart: number): number {
+  if (daysSinceStart === 0) return 20;
+  return 30;
+}
+```
+
+`daysSinceStart` = days since first enrollment for this AE on this cohort. Tracked via earliest `sequence_enrolled_at` per AE.
+
+**Sequence design implication (NEW):**
+
+The current P1 sequence (`FC2026 — Lucas T1`) is **single-step** (1 email, no follow-up — per operator's screenshot). For P2 cold, sequences need **3 steps** (T1, T2, T3) with appropriate spacing.
+
+**Operator action item:** create P2 sequences with 3 steps OR add T2 + T3 steps to existing FC2026 sequences. Typical spacing: T1 → 5 days → T2 → 7 days → T3. Total sequence duration: ~12 days per prospect.
+
+**Bounce halt + pacing rules unchanged:**
+
 - Bounce halt: 5% hard bounce, rolling 20-40 send window (Component 4)
 - Pacing within day: 8-10 enrollments per AE with random spacing (Breeze Q8 recommendation)
-- Stagger by AE territory: optional. Chris's "Mike day 1, Nathan day 2, Lucas day 3" pattern reduces total daily volume during ramp but slows time-to-coverage. Operator decides per batch.
-
-**Translation for Component 6:**
-
-```
-SHOWREV_AE_DAILY_CAP_RAMP = 20    # first 2 weeks
-SHOWREV_AE_DAILY_CAP = 30          # post-ramp default
-SHOWREV_AE_DAILY_CAP_CEILING = 50  # max we'd let an AE push to even with great reputation
-```
+- Stagger by AE territory: optional; can run all 3 AEs concurrently from Day 1
 
 ### 1.5 HubSpot Sequence Hygiene (sourced from `HUBSPOT-INTEGRATION-RESEARCH.md`)
 
@@ -437,3 +474,4 @@ All 3 research forks completed. Sections 1.1, 1.2, and Section 2 seeded. Compone
 | v0.1 | 2026-06-11 19:30 | Initial skeleton. Operator philosophy front-and-center. Section 1 partially populated from existing canon (composer rules, Chris's throttling notes, Q1-Q16 Breeze answers). Section 2 empty (goal state). Section 3 (test-and-learn metadata) specced. 3 research forks dispatched for sections 1.1/1.2 + Section 2 seed hypotheses. |
 | v0.2 | 2026-06-11 19:55 | All 3 research forks completed. Sections 1.1 (send timing) + 1.2 (anti-spam content rules) fully populated with 2026-verified sources + URLs. Section 2 seeded with 4 testable hypotheses (H1-H4) + 2026 sacred-cow contradiction + AI-detection signal canonical list. Section 3 `sr_email_experiments` table schema specified. Added "Impact on POST-PORTAL-SPEC-V6" section flagging 5 concrete changes. |
 | v0.3 | 2026-06-11 20:10 | Throttling clarification (operator 2026-06-11): 20-30 PER AE, not aggregate. Spec v6 send-cap defaults revised. Plus 4th research fork (Stanford AI-humanness): burstiness metric is the structural AI tell. Stanford Liang 2023 + Pangram + ProofreaderPro 2026: target 0.65-0.85 burstiness (stdev sentence lengths / mean). Composer enhancement specced as Tier-1 mechanical check (~30 LOC). DraftMarks not directly applicable but validates Tim's human-edit gate as structural defense. |
+| v0.4 | 2026-06-11 20:25 | Operator correction on throttle (supersedes v0.3 ramp framing): cohort target 800 prospects, 3-touch sequences (T1/T2/T3), Day 1=20/AE, Day 2+=30/AE/day. Cohort takes ~10 working days to enroll. Steady-state per-AE volume ~90 emails/day across all touches (well under HS 500/day cap). Spec v6 send-cap simplified: Day1=20, Day2+=30, ceiling=50. Sequence design implication added: existing P1 sequence is single-step; P2 sequences need T1+T2+T3 with ~5d/7d spacing. Operator action item flagged. |
