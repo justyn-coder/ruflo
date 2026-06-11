@@ -1059,9 +1059,34 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     productionGateFails ? 'hold' :              // Fix #1 production email gate
     'pending';
 
+  // Carry forward composition_review from prior row so pipeline reruns don't
+  // erase Tim's craft-review verdict (sibling bug to the operator-lock guard at
+  // Phase 0.0). If the prior row had a non-pending verdict, preserve it; new
+  // composition reflects the same craft until Tim explicitly re-reviews.
+  let priorCompositionReview: {
+    composition_review?: string | null;
+    composition_reviewed_at?: string | null;
+    composition_reviewed_by?: string | null;
+  } = {};
+  try {
+    const r = await fetch(
+      `${sbUrl}/rest/v1/sr_engine_output?prospect_id=eq.${encodeURIComponent(prospectId)}&select=composition_review,composition_reviewed_at,composition_reviewed_by&order=created_at.desc&limit=1`,
+      { headers: { apikey: sbKey, Authorization: `Bearer ${sbKey}` } },
+    );
+    if (r.ok) {
+      const rows = (await r.json()) as Array<typeof priorCompositionReview>;
+      if (rows[0]?.composition_review && rows[0].composition_review !== 'pending') {
+        priorCompositionReview = rows[0];
+      }
+    }
+  } catch {
+    // soft-fail — if lookup errors, new row gets null composition_review
+  }
+
   const body: Record<string, unknown> = {
     prospect_id: prospectId,
     run_id: runId,
+    ...priorCompositionReview,
     first_name: result.row.firstName,
     last_name: result.row.lastName,
     email: result.email_found || '',
