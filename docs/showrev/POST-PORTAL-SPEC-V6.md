@@ -607,6 +607,143 @@ For each AE:
 
 **Total: ~8 hr** (with smoke tests + integration time = ~10 hr realistic).
 
+---
+
+## v6.1 Amendments (2026-06-11, post-research integration)
+
+Four changes absorbed from COLD-EMAIL-BEST-PRACTICES.md + operator clarifications. All within scope of existing components — no new components added.
+
+### A1. Schema DDL: add `sr_email_experiments` table
+
+For per-send metadata + outcomes (test-and-learn infrastructure).
+
+```sql
+CREATE TABLE IF NOT EXISTS sr_email_experiments (
+  id BIGSERIAL PRIMARY KEY,
+  prospect_id TEXT REFERENCES sr_prospects (id),
+  ae_name TEXT NOT NULL,
+  sequence_id TEXT,
+  step_n INT NOT NULL DEFAULT 1,
+  sent_at TIMESTAMPTZ NOT NULL,
+  day_of_week_utc INT,
+  hour_of_day_utc INT,
+  recipient_timezone TEXT,
+  hour_of_day_recipient_local INT,
+  subject_text TEXT,
+  subject_pattern TEXT,
+  body_word_count INT,
+  paragraph_count INT,
+  sentence_count INT,
+  has_question_count INT,
+  has_cta BOOLEAN,
+  cta_type TEXT,
+  personalization_signal TEXT,
+  verified_substrate_claim_count INT,
+  ps_present BOOLEAN,
+  ps_variant TEXT,
+  ps_includes_link BOOLEAN,
+  signature_format TEXT,
+  link_count INT,
+  has_microsite_link BOOLEAN,
+  has_external_link BOOLEAN,
+  microsite_variant TEXT,
+  composer_model TEXT,
+  send_confidence_score NUMERIC,
+  send_confidence_label TEXT,
+  outcome_at_24h TEXT,
+  outcome_at_3d TEXT,
+  outcome_at_7d TEXT,
+  reply_sentiment TEXT,
+  meeting_booked BOOLEAN DEFAULT FALSE,
+  meeting_booked_at TIMESTAMPTZ
+);
+CREATE INDEX IF NOT EXISTS idx_email_experiments_prospect ON sr_email_experiments (prospect_id);
+CREATE INDEX IF NOT EXISTS idx_email_experiments_ae ON sr_email_experiments (ae_name);
+CREATE INDEX IF NOT EXISTS idx_email_experiments_sent_at ON sr_email_experiments (sent_at);
+CREATE INDEX IF NOT EXISTS idx_email_experiments_outcomes ON sr_email_experiments (outcome_at_7d);
+```
+
+### A2. Component 1 — add SPF/DKIM/DMARC pre-flight check
+
+Sender-domain DNS posture must be valid before any cold send. **Verified compliant today** (2026-06-11): inorsa.com has SPF (including HubSpot portal 20729069), 2048-bit DKIM CNAMEs (hs1/hs2), and DMARC at p=quarantine. The check guards against silent regression.
+
+```typescript
+// Add as CHECK 12 in runVerify() (after EXISTING_HS_CONTACT)
+async function verifySpfDkimDmarc(): Promise<{ pass: boolean; details: string[] }> {
+  const details: string[] = [];
+  const spf = await dnsResolveTxt('inorsa.com');
+  const hasSpfHs = spf.some(r => r.includes('20729069.spf03.hubspotemail.net'));
+  if (!hasSpfHs) details.push('SPF missing HubSpot portal 20729069 include');
+
+  const dkim1 = await dnsResolveCname('hs1-20729069._domainkey.inorsa.com').catch(() => null);
+  const dkim2 = await dnsResolveCname('hs2-20729069._domainkey.inorsa.com').catch(() => null);
+  if (!dkim1 || !dkim2) details.push(`DKIM CNAMEs missing: hs1=${!!dkim1}, hs2=${!!dkim2}`);
+
+  const dmarc = await dnsResolveTxt('_dmarc.inorsa.com');
+  const hasDmarc = dmarc.some(r => r.includes('v=DMARC1'));
+  if (!hasDmarc) details.push('DMARC record missing or invalid');
+
+  return { pass: details.length === 0, details };
+}
+```
+
+Failure = BLOCKING (cannot proceed to load).
+
+### A3. Component 2 — branch engagement slug on `lead_type`
+
+P1 booth-visitor warm sends and P2 cold prospects need separate active lists in HubSpot to avoid cross-pollination. Single line in loader.
+
+```typescript
+// In contactProps construction:
+const engagementSlug = row.lead_type === 'Cold'
+  ? 'inorsa-fiberconnect-2026-cold'
+  : 'inorsa-fiberconnect-2026';
+contactProps.showrev_engagement_slug = engagementSlug;
+```
+
+Operator creates 3 P2 lists in HS UI with filter `showrev_engagement_slug = inorsa-fiberconnect-2026-cold` + their AE filter.
+
+### A4. Component 6 — tiered daily caps (Day 1 = 20, Day 2+ = 30, ceiling = 50)
+
+Per operator's 2026-06-11 throttle correction. Cap is per-AE-per-day, applied at enrollment time.
+
+```typescript
+// In send-cap-monitor.ts
+const SHOWREV_AE_DAY1_CAP = 20;
+const SHOWREV_AE_DAILY_CAP = 30;
+const SHOWREV_AE_DAILY_CAP_CEILING = 50;
+
+function getAeDailyCap(daysSinceStart: number): number {
+  if (daysSinceStart === 0) return SHOWREV_AE_DAY1_CAP;
+  return SHOWREV_AE_DAILY_CAP;
+}
+
+// daysSinceStart = days between today and earliest sequence_enrolled_at for this AE
+// Component 6 dashboard widget shows: per-AE today's enrollments / cap, color-coded
+// >80% of cap = yellow warning
+// >95% of cap = red (block via Component 6 if AE tries to enroll above)
+```
+
+### A5. T2/T3 = post-launch data-driven (NOT pre-launch scope)
+
+Per operator: *"we don't know what T2 nor T3 will look like."*
+
+Ship T1 single-step at launch. After ≥10 replies received from T1 cohort → analyze reply sentiment + objections + persona patterns → design T2 content informed by data, not generic 5-day-follow-up template. Same gate for T3.
+
+**Net for spec v6 components:** no T2/T3 work pre-launch. Loader writes T1 only (existing behavior, correct). HS sequences stay single-step at P2 launch (matches current P1 architecture).
+
+### Total amendment delta
+
+- Schema: +1 table, +4 indexes (Apply via Supabase MCP)
+- Component 1: +1 new check (SPF/DKIM/DMARC verify)
+- Component 2: +1 line (slug branch)
+- Component 6: +3 constants + 1 function (tiered caps)
+- **Effort delta: ~45 min** (mostly Component 1 DNS verification logic)
+
+### Status
+
+✅ v6.1 amendments captured. Ready for code. Spec v6 + this amendment block = canonical source for implementation.
+
 **Smoke test gates between each component.** Don't ship all at once.
 
 ---
