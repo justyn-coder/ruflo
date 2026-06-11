@@ -443,10 +443,51 @@ Verified via `mcp__claude_ai_HubSpot__get_properties`:
 
 ---
 
-## Q13 — Workflow API access on Sales Pro — PENDING
+## Q13 — Workflow API access on Sales Pro — ANSWERED 2026-06-11
 
 ### Prompt verbatim
 > On Sales Hub Professional + Marketing Hub, what level of access do I have to the Workflows API via a private app? Can I programmatically: (a) create workflows, (b) read workflow state/enrollments, (c) trigger workflows via contact property changes? I'm considering using a workflow as a fallback for sequence enrollment — if a contact has showrev_ready_for_sequence=true, a workflow could enroll them in the right sequence. Is this pattern supported on Pro tier, or is the "Enroll in sequence" workflow action Enterprise-only?
+
+### Answer (Breeze, 2026-06-11)
+
+**(a) Create workflows via API:** NOT confidently verified. Docs say "Workflows API is used to create and manage workflows" but specific create endpoints not pulled by Breeze's search.
+
+**(b) Read workflow state:** YES, partially.
+- List workflows + metadata: supported
+- Get specific workflow (conditions, steps, enabled state): supported
+- Performance stats (enrolled / unenrolled / completed counts): supported
+- "List all currently enrolled contacts in workflow X": NOT verified
+
+**(c) Trigger via property changes:** YES — configure contact-based workflow with enrollment criteria, update contact property, workflow picks it up. Metadata flag: `enrollOnCriteriaUpdate`.
+
+### 🔴 CRITICAL constraint for our fallback pattern
+
+**"Enroll in a sequence" workflow action is ENTERPRISE-ONLY.**
+
+Our fallback idea — `showrev_ready_for_sequence=true` → workflow auto-enrolls in sequence — **DOES NOT WORK on Pro** if using the standard Workflows tool with the Enroll-in-sequence action.
+
+### What IS supported on Sales Pro
+
+1. **Sequences API direct enrollment** (our PRIMARY pathway) — fully supported, sequence enrollment permission available on sales-pro
+2. **Sequence Automation tab** (inside Sequences UI, not Workflows tool) — auto enroll/unenroll based on:
+   - Form submission triggers
+   - Page view triggers
+   - NOT contact property changes (per documented triggers)
+
+### Best-fit architecture for Sales Pro (Breeze recommendation)
+
+- Use our app to set `showrev_ready_for_sequence=true` (tracking flag)
+- App decides AE + which sequence (already in our spec)
+- App calls Sequences API directly for enrollment (primary path)
+- Cleaner than trying to force a property-driven workflow fallback that Pro can't expose
+
+### Impact on spec v6
+
+- **Confirmed:** API-direct enrollment is the correct architecture, not workflow-based
+- **Drop:** "workflow-based fallback if API enrollment fails" — Pro can't do this with the generic Enroll-in-sequence action
+- **Replace fallback with:** retry logic on API enrollment (5-10 enrollments/sec with 429 backoff + sender-disconnect detection)
+- **Pro-tier reality check:** we are not architecturally constrained on Pro vs Enterprise for this pipeline. The Sequences API path is fully supported.
+
 
 ---
 
@@ -518,3 +559,4 @@ These came from prior Breeze research the operator had done — captured for con
 | v5 | 2026-06-11 17:15 | Q9 answered (HubSpot does NOT document 409 body — cannot confirm existing contact ID is in conflict response. Plan on follow-up GET-by-email after 409 OR use legacy upsert-by-email endpoint to avoid the duplicate-create problem entirely). |
 | v6 | 2026-06-11 17:25 | Q10 (refined) answered: 1K/day enrollment cap is PER SENDER INBOX, not shared portal-wide. Each AE has independent quota. BINDING limit on Sales Pro is 500 sequence emails/day per user. Our 30/AE/day usage = comfortable headroom. Send-cap enforcer (Component 6) should NOT shared-pool across AEs. |
 | v7 | 2026-06-11 17:40 | Q12 (refined) answered + MCP empirically verified: long-text + rich-text both available on Sales Pro (Breeze). Our existing showrev_* string properties confirmed via MCP `get_properties` — use plain `type: "string"` API enum. Portal context expanded with MCP-verified seat types, account type, time zone. Operator confirmed: WatchTower is our private app name + MCP access is available for empirical verification of remaining questions. |
+| v8 | 2026-06-11 17:55 | Q13 answered (Workflows API on Pro): "Enroll in sequence" workflow action is ENTERPRISE-ONLY. Workflow-based fallback NOT supported on Pro. Best architecture for Sales Pro = Sequences API direct enrollment (already our primary pathway). Confirmed: we are not architecturally constrained on Pro vs Enterprise for this pipeline. |
