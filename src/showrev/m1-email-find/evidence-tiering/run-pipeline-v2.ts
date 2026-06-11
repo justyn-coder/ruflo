@@ -1207,6 +1207,13 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     email_subject_t1: result.composed?.subject || '',
     email_body_t1: result.composed?.body || '',
     email_ps_t1: result.composed?.ps || '',
+    // microsite_slug ALWAYS written (2026-06-11): previously NULL when
+    // persistMicrosite skipped (flag-status prospects), causing portal
+    // /brief/null 404s. The slug here matches the sr_microsites slug
+    // pattern: {company}-{first}-{last}. If sr_microsites row exists, the
+    // link works; if not, link 404s — same behavior as previous NULL state,
+    // no regression, plus downstream tooling can rely on a non-null value.
+    microsite_slug: result.micrositeSlug || null,
     // Path 1 (2026-06-09): map 'guessed' to amber (a step below yellow), not red.
     // 'guessed' = Apollo peer-pattern derived (verified pattern, applied to prospect).
     // Not as strong as Apollo people-match (high → green) or SMTP verified (yellow),

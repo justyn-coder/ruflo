@@ -482,7 +482,16 @@ export async function composeSpecific(args: {
     cb = cb.replace(/\n{3,}/g, '\n\n').replace(/[ \t]+\n/g, '\n');
     const cs = (cand.subject || '').replace(/[—–]/g, ',').replace(STRIP_CITATION_IDS, '').replace(/\s+,/g, ',').trim();
     const csAlt = (cand.subject_alt || '').replace(/[—–]/g, ',').replace(STRIP_CITATION_IDS, '').replace(/\s+,/g, ',').trim();
-    const cp = (cand.ps || '').replace(/[—–]/g, ',').replace(STRIP_CITATION_IDS, '').replace(/\s+,/g, ',');
+    // P.S. PREFIX STRIP (2026-06-11): renderer always prepends "P.S." — if
+    // content also starts with "P.S.", recipient sees "P.S. P.S." (visible
+    // bug, caught by QA workflow). Strip a leading "P.S." (any case, optional
+    // colon/space) from the content here.
+    const cp = (cand.ps || '')
+      .replace(/[—–]/g, ',')
+      .replace(STRIP_CITATION_IDS, '')
+      .replace(/\s+,/g, ',')
+      .replace(/^\s*P\.?\s*S\.?\s*:?\s*/i, '')
+      .trim();
     return { cleanBody: cb, cleanSubject: cs, cleanSubjectAlt: csAlt, cleanPs: cp };
   };
 

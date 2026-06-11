@@ -452,7 +452,13 @@ export async function composeGeneralized(args: {
     cb = cb.replace(/\n{3,}/g, '\n\n').replace(/[ \t]+\n/g, '\n');
     const cs = (cand.subject || '').replace(/[—–]/g, ',').replace(STRIP_CITATION_IDS, '').replace(/\s+,/g, ',').trim();
     const csAlt = (cand.subject_alt || '').replace(/[—–]/g, ',').replace(STRIP_CITATION_IDS, '').replace(/\s+,/g, ',').trim();
-    const cp = (cand.ps || '').replace(/[—–]/g, ',').replace(STRIP_CITATION_IDS, '').replace(/\s+,/g, ',');
+    // P.S. PREFIX STRIP (2026-06-11): mirror of specific-composer fix.
+    const cp = (cand.ps || '')
+      .replace(/[—–]/g, ',')
+      .replace(STRIP_CITATION_IDS, '')
+      .replace(/\s+,/g, ',')
+      .replace(/^\s*P\.?\s*S\.?\s*:?\s*/i, '')
+      .trim();
     return { cleanBody: cb, cleanSubject: cs, cleanSubjectAlt: csAlt, cleanPs: cp };
   };
 
