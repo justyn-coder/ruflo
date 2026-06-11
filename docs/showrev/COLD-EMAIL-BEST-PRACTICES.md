@@ -189,11 +189,26 @@ function getAeDailyCap(aeName: string, daysSinceStart: number): number {
 
 `daysSinceStart` = days since first enrollment for this AE on this cohort. Tracked via earliest `sequence_enrolled_at` per AE.
 
-**Sequence design implication (NEW):**
+**Sequence design (clarified by operator 2026-06-11):**
 
-The current P1 sequence (`FC2026 — Lucas T1`) is **single-step** (1 email, no follow-up — per operator's screenshot). For P2 cold, sequences need **3 steps** (T1, T2, T3) with appropriate spacing.
+The current P1 sequence (`FC2026 — Lucas T1`) is single-step because *"P1 is supposed to be 3 touches as well, I just didn't get there."* For both P1 + P2, the plan is:
 
-**Operator action item:** create P2 sequences with 3 steps OR add T2 + T3 steps to existing FC2026 sequences. Typical spacing: T1 → 5 days → T2 → 7 days → T3. Total sequence duration: ~12 days per prospect.
+- **Ship T1 single-step** at launch (current state)
+- **Observe T1 response/performance** (reply rate, sentiment, objections, persona patterns)
+- **Design T2 content based on what we learn**, not generic 5-day-follow-up template
+- **Same for T3** after T2 data
+
+Operator framing: *"we should respond dynamically to the response/performance from T1. we don't know what T2 nor T3 will look like."*
+
+**Translation:**
+
+- No T2/T3 composer work pre-launch
+- HS sequences stay single-step at P2 launch (same as current P1)
+- Gate to design T2: ≥10 replies received from T1 cohort → reply-analysis informs T2 content
+- Gate to design T3: same pattern after T2 data
+- Total sequence duration: defined by data, not pre-set generic spacing
+
+This aligns with this doc's load-bearing test-and-learn philosophy. Section 2 hypotheses (single-touch vs multi-touch) become moot in the short term — we're single-touch by default, then earn the right to add more.
 
 **Bounce halt + pacing rules unchanged:**
 
@@ -475,3 +490,4 @@ All 3 research forks completed. Sections 1.1, 1.2, and Section 2 seeded. Compone
 | v0.2 | 2026-06-11 19:55 | All 3 research forks completed. Sections 1.1 (send timing) + 1.2 (anti-spam content rules) fully populated with 2026-verified sources + URLs. Section 2 seeded with 4 testable hypotheses (H1-H4) + 2026 sacred-cow contradiction + AI-detection signal canonical list. Section 3 `sr_email_experiments` table schema specified. Added "Impact on POST-PORTAL-SPEC-V6" section flagging 5 concrete changes. |
 | v0.3 | 2026-06-11 20:10 | Throttling clarification (operator 2026-06-11): 20-30 PER AE, not aggregate. Spec v6 send-cap defaults revised. Plus 4th research fork (Stanford AI-humanness): burstiness metric is the structural AI tell. Stanford Liang 2023 + Pangram + ProofreaderPro 2026: target 0.65-0.85 burstiness (stdev sentence lengths / mean). Composer enhancement specced as Tier-1 mechanical check (~30 LOC). DraftMarks not directly applicable but validates Tim's human-edit gate as structural defense. |
 | v0.4 | 2026-06-11 20:25 | Operator correction on throttle (supersedes v0.3 ramp framing): cohort target 800 prospects, 3-touch sequences (T1/T2/T3), Day 1=20/AE, Day 2+=30/AE/day. Cohort takes ~10 working days to enroll. Steady-state per-AE volume ~90 emails/day across all touches (well under HS 500/day cap). Spec v6 send-cap simplified: Day1=20, Day2+=30, ceiling=50. Sequence design implication added: existing P1 sequence is single-step; P2 sequences need T1+T2+T3 with ~5d/7d spacing. Operator action item flagged. |
+| v0.5 | 2026-06-11 21:00 | Operator clarification: P1 was SUPPOSED to be 3 touches, never got there. For P2: ship T1 single-step, observe T1 response/performance, then design T2 + T3 dynamically based on data ("we don't know what T2 nor T3 will look like"). Aligns with this doc's test-and-learn philosophy. Net impact: NO T2/T3 work pre-launch — composer/loader/sequences stay single-step. Section 1.4 sequence-design section rewritten. Gate criteria for T2 design (≥10 replies from T1) + T3 (same pattern after T2) specified. Total cohort duration becomes data-driven, not generic 5d/7d spacing. |
