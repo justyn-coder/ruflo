@@ -139,15 +139,30 @@ Gmail (Feb 2024) terminates senders exceeding **0.3% spam-complaint rate** measu
 - ✅ Signature: `Mike Rutski | Inorsa | mike@inorsa.com` (one-line pipe-separated, per AE config in `ae-config.ts`)
 - ✅ Pitch verbatim: "We turn design data into permit-ready construction drawings. Quality control is built in, so builds keep moving."
 
-### 1.4 Throttling & Volume (Chris's notes — sourced from `docs/showrev/hubspot-loader-spec.md`)
+### 1.4 Throttling & Volume — operator-clarified 2026-06-11
 
-> "Domain warming is a concern. Inorsa doesn't normally do cold prospecting. Chris said HubSpot throttling was 'more severe than expected'. Recommended: send no more than 20-30 emails per day initially. Batch by AE territory: Mike's contacts one day, Nathan's the next, Lucas's the third. Monitor bounce rate after each batch. If bounce > 5%, HALT."
+**Per AE per day: 20-30 emails.** Cohort-level (3 AEs combined): 60-90 emails/day max.
 
-**Translated into our spec v6:**
-- Send-cap default: 30/AE/day BLOCKING (per Q10 binding 500/day cap, but Chris's 30 is conservative for cold)
-- Pacing: 8-10/AE/day with random spacing recommended (Breeze Q8)
-- Bounce halt: 5% hard bounce rolling 20-40 send window (Component 4 in spec v6)
-- Stagger by AE territory: Mike day 1, Nathan day 2, Lucas day 3 (Chris's recommendation)
+Operator clarification 2026-06-11: *"i think the current thinking from the client is that we could do 20 - 30 PER AE."*
+
+Chris's original notes (from `docs/showrev/hubspot-loader-spec.md`) said "no more than 20-30 emails per day initially" — operator clarifies this was PER AE, not aggregate.
+
+**Spec v6 send-cap defaults (revised):**
+
+- Per-AE daily cap: **30 enrollments/day BLOCKING** (well below Q10's 500/day binding limit)
+- Per-AE daily cap during ramp (first 2 weeks of cold): **20/day** to seed reputation
+- Cohort-level daily cap: implicit 90/day (3 AEs × 30)
+- Bounce halt: 5% hard bounce, rolling 20-40 send window (Component 4)
+- Pacing within day: 8-10 enrollments per AE with random spacing (Breeze Q8 recommendation)
+- Stagger by AE territory: optional. Chris's "Mike day 1, Nathan day 2, Lucas day 3" pattern reduces total daily volume during ramp but slows time-to-coverage. Operator decides per batch.
+
+**Translation for Component 6:**
+
+```
+SHOWREV_AE_DAILY_CAP_RAMP = 20    # first 2 weeks
+SHOWREV_AE_DAILY_CAP = 30          # post-ramp default
+SHOWREV_AE_DAILY_CAP_CEILING = 50  # max we'd let an AE push to even with great reputation
+```
 
 ### 1.5 HubSpot Sequence Hygiene (sourced from `HUBSPOT-INTEGRATION-RESEARCH.md`)
 
