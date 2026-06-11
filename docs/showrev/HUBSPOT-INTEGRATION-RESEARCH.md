@@ -76,20 +76,73 @@ On timeout / unknown result:
 
 ---
 
-## Q3 — Sequence pause/edit detection — PENDING
+## Q3 — Sequence pause/edit detection — ANSWERED 2026-06-11
 
 ### Prompt verbatim
 > On Sales Hub Professional, is there a way via the API to programmatically detect if a HubSpot sequence has been edited or paused since my last successful enrollment? Specifically, is there a lastModifiedDate or isActive field I can check on the sequence object before enrolling new contacts? I want to halt enrollment automatically if the sequence is being edited.
 
-### Status
-Not yet asked Breeze.
+### Answer (Breeze, 2026-06-11)
+- **YES (partial):** sequence object exposes `updatedAt` timestamp — can detect that the sequence was modified since last successful run
+- **NO documented `isActive` / `paused` / `editing-in-progress` field** — only `updatedAt`
+- Documented sequence fields: `id, name, createdAt, updatedAt, userId, steps, settings`, plus step-level + settings-level `updatedAt` values
+- Will catch SAVED edits, but cannot tell if someone has the sequence open and unsaved (no editing-lock field)
+
+### Recommended pattern
+```
+store lastKnownSequenceUpdatedAt after each approved enrollment run
+
+before enrolling next batch:
+  GET sequence object
+  IF sequence.updatedAt != lastKnownSequenceUpdatedAt:
+    HALT, require operator re-approval
+  (optionally inspect returned steps[].updatedAt and settings.updatedAt for finer-grained audit)
+```
+
+### Endpoint correction (consistent with Q1)
+- Current docs: `POST /automation/sequences/2026-03/enrollments`
+- Older docs reference `/automation/v4/sequences/enrollments/`
+- The `/automation/v3/sequences/{id}/enrollments` form I had originally written is OUTDATED
+
+### Impact on spec
+- Component 3 Step 4 (sequence-edit check) now has a documented implementation pattern
+- Replace "lastModifiedDate within last 5 min" approach with stored-vs-current `updatedAt` comparison
 
 ---
 
-## Q4 — Engagement event real-time vs batched — PENDING
+## Q4 — Engagement event real-time vs batched — ANSWERED 2026-06-11
 
 ### Prompt verbatim
 > On Sales Hub Professional, when a contact is enrolled in a sequence and the first email sends, how quickly do engagement events appear on the contact record's properties? Specifically: notes_last_contacted, hs_email_last_open_date, hs_email_last_click_date, hs_email_last_reply_date. Are these real-time, or batched at some interval? I'm building a watcher that polls these properties and want to set the right poll interval.
+
+### Answer (Breeze, 2026-06-11)
+- **HubSpot does NOT document** batching interval or SLA for these properties
+- Properties are **event-driven but NOT guaranteed real-time** — treat as eventually consistent
+- Documented behavior:
+  - `hs_email_last_open_date` / `hs_email_last_click_date` / `hs_email_last_reply_date` — standard contact properties for email interactions
+  - Sequence emails use HubSpot's one-to-one email tracking/logging model
+  - If tracking is ineligible (privacy/legal-basis rules), related properties will NOT update
+  - `notes_last_contacted` exists but refresh cadence is undocumented
+
+### Recommended polling pattern (Breeze)
+- **Normal interval:** 60-120 seconds
+- **After fresh sequence send:** poll every 30-60 seconds for 10-15 min
+- **Then back off to 5 min**
+- Avoid sub-30-second polling (undocumented SLA — could over-poll on assumptions)
+
+### Property-by-property guidance
+- `notes_last_contacted` — coarse activity signal, NOT precise send-confirmation timestamp
+- `hs_email_last_open_date` / `hs_email_last_click_date` / `hs_email_last_reply_date` — better for watcher logic, but eventually consistent
+- For send confirmation specifically, prefer the email activity / enrollment record over `notes_last_contacted`
+
+### Best design choice (priority order)
+1. Sequence/email activity event (if available)
+2. Contact engagement properties as fallback
+3. Polling at 1-2 minute cadence (not sub-30-second)
+
+### Impact on spec
+- Component 5 (watcher) needs adaptive polling logic: tighter polling for 10-15 min after sends, normal cadence otherwise
+- Watcher's current SEQUENCE_SEND_DATE constant needs to be replaced with dynamic per-prospect logic (already in v5 spec — confirmed correct approach)
+- Cannot promise sub-minute engagement detection
 
 ---
 
@@ -209,3 +262,4 @@ These came from prior Breeze research the operator had done — captured for con
 | Version | Date (EST) | Change |
 |---|---|---|
 | v1 | 2026-06-11 16:35 | Initial canonical research doc. Q1, Q2 answered. Q3-Q9, Q11-Q13 pending. Q10, Q14 partial/answered via Q1. Captures operator's prior research on sequence behavior + Pro-tier pathways. |
+| v2 | 2026-06-11 16:45 | Q3 answered (sequence edit detection via updatedAt comparison) + Q4 answered (engagement event lag — eventually consistent, recommended polling 60-120s normal / 30-60s for 10-15 min after send / then 5 min). |
