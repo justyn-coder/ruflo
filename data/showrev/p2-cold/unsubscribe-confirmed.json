@@ -1,0 +1,9 @@
+{
+  "_status": "PENDING_OPERATOR_CONFIRMATION",
+  "_instructions": "Operator: after enabling Unsubscribe at the bottom of every P2 cold sequence (FC2026 - {AE} Cold), set each sequence's value to true and add confirmed_at + confirmed_by. While ANY value is missing or false, the pre-load verify will BLOCK.",
+  "FC2026 - Mike Rutski Cold": false,
+  "FC2026 - Nathan Dunn Cold": false,
+  "FC2026 - Lucas Spencer Cold": false,
+  "confirmed_at": null,
+  "confirmed_by": null
+}
