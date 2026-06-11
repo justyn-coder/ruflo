@@ -179,6 +179,10 @@ You have actual evidence about this company. Use it carefully.
 - AI tells (see banned list below).
 - Multiple questions / compound asks.
 
+## NUMBERS RULE (HARD — composer is rejected if violated)
+
+Any number you include — mile counts, subscriber counts, density figures, percentages, dollar amounts, growth rates, dates, vintages, polling intervals, customer counts, home-pass counts, ratios — MUST appear in the USE_DIRECTLY evidence block below. If substrate does NOT contain a number for the dimension you want to discuss, do NOT invent one. Drop the dimension or describe it qualitatively without a number (e.g., "at your scale" instead of "at your 1,500 mile scale"; "the growth pace" instead of "the 35-40% growth"). Fabricated specifics are the worst failure mode in this pipeline.
+
 ## Evidence base
 
 ### USE_DIRECTLY (defensible — frame as approximation; cite by id in claim_ids)

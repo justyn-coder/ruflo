@@ -241,7 +241,7 @@ ${personaFraming}
 ## Industry context — pulled from canonical substrate (Community Broadband Bits, Dawson Pots-and-Pans, Fiber for Breakfast, Cartesian cost report, NTIA BEAD)
 Use these chunks to inform the opener. Pull a real industry pattern. Do NOT cite the source by name in the email — these are background for YOUR understanding, not for the prospect.
 
-${industryFraming || '[No substrate context returned — use generic industry framing from your own knowledge of fiber/A&E/BEAD dynamics]'}
+${industryFraming || '[No substrate context returned. Open with PERSONA-LEVEL framing only — describe what teams in this prospect\'s role typically wrestle with, qualitatively. Do NOT introduce specific numbers, density figures, percentages, growth rates, mile counts, or industry-wide statistics from your training data. Do NOT make company-specific claims (e.g., NOT "at {company}\'s pace", NOT "for operators running networks at {company}\'s scale"). Stay at the qualitative job-level (e.g., "teams in your seat usually wrestle with X", not "{company}\'s X is Y").]'}
 
 ## Email structure (HARD — HubSpot Sequence requires exactly 3 body paragraphs)
 
@@ -259,6 +259,10 @@ PARAGRAPH 3 (CTA + pitch, 2 sentences, same paragraph):
 First sentence: the diagnostic question — pick from CTA QUESTION BANK below. Second sentence: the verbatim pitch — "${pitchVerbatim}"
 
 NO 4th body paragraph. The P.S. is the 4th paragraph when HubSpot assembles.
+
+## NUMBERS RULE (HARD — composer is rejected if violated)
+
+Any number you include — mile counts, subscriber counts, density figures, percentages, dollar amounts, growth rates, dates, vintages, polling intervals, customer counts, home-pass counts, ratios — MUST appear in the industry-context substrate above OR in a verified-stat citation. If substrate does NOT contain a number for the dimension you want to discuss, do NOT invent one. Drop the dimension or describe it qualitatively without a number (e.g., "at your scale" instead of "at your 1,500 mile scale"; "the growth pace" instead of "the 35-40% growth"). Do NOT make company-specific assertions when industry substrate is thin (e.g., NOT "at {company}'s pace", NOT "for operators running networks at {company}'s scale"). Fabricated specifics are the worst failure mode in this pipeline.
 
 ${ctaLibraryPromptBlock(icpType, prospect.firstName, prospect.lastName, prospect.company)}
 
