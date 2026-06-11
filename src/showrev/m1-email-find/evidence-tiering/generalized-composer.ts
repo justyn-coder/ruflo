@@ -452,6 +452,12 @@ export async function composeGeneralized(args: {
     return diff !== 0 ? diff : a.attemptNumber - b.attemptNumber;
   });
 
+  // Same null-candidate guard as specific-composer (2026-06-11 Gilliland class).
+  if (!winner.candidate) {
+    throw new Error(
+      `Generalized composer: all 6 attempts failed JSON parse — likely an evidence/prompt the model can't structure cleanly. Hand-write this prospect or investigate the failure mode.`,
+    );
+  }
   let parsed = winner.candidate;
   let { cleanBody, cleanSubject, cleanSubjectAlt, cleanPs } = postProcess(parsed);
   let postProcessViolation = checkCompanyNameLock(cleanBody, prospect.company)

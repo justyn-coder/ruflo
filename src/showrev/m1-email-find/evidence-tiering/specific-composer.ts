@@ -467,6 +467,16 @@ export async function composeSpecific(args: {
     return diff !== 0 ? diff : a.attemptNumber - b.attemptNumber;
   });
 
+  // Belt-and-suspenders: if even after the selectBestAttempt fix we somehow
+  // still got a null candidate (all 6 attempts failed JSON parse on this
+  // prospect's evidence), surface a clean error instead of crashing.
+  // Pipeline will catch + flag the prospect with a useful system_brief.
+  if (!winner.candidate) {
+    throw new Error(
+      `Specific composer: all 6 attempts failed JSON parse — likely an evidence-set the model can't structure cleanly (e.g., very long claims, embedded code blocks, unbalanced quotes). Hand-write this prospect or tune evidence pre-trim.`,
+    );
+  }
+
   let parsed = winner.candidate;
   let { cleanBody, cleanSubject, cleanSubjectAlt, cleanPs } = postProcess(parsed);
   let postProcessViolation = checkCompanyNameLock(cleanBody, prospect.company)
