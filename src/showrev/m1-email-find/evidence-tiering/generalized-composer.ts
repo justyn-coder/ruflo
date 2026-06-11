@@ -414,17 +414,24 @@ export async function composeGeneralized(args: {
   // Post-process helper — em-dash strip, salutation inline join, paragraph
   // normalize. Pulled into a function so we can re-run after picking a
   // different best-of-N attempt during post-compose company-name verification.
+  //
+  // Strip-citation-id regex (2026-06-11): mirror of specific-composer fix.
+  // LLM occasionally leaks claim_id tokens like "[ev_xxx, sub-xxx]" into
+  // body/subject/ps. claim_ids belong in bodySentences array only.
+  const STRIP_CITATION_IDS = /\s*\[(?:ev_|sub-)[^\]]*\]/g;
   const postProcess = (cand: any) => {
     let cb = (cand.body || '')
       .replace(/(\d)[–—](\d)/g, '$1-$2')
       .replace(/[—–]/g, ',')
+      .replace(STRIP_CITATION_IDS, '')
       .replace(/\s+,/g, ',')
+      .replace(/\s+\./g, '.')
       .trim();
     cb = cb.replace(/^([A-Z][a-z]+,)\s*\n+\s*/m, '$1 ');
     cb = cb.replace(/\n{3,}/g, '\n\n').replace(/[ \t]+\n/g, '\n');
-    const cs = (cand.subject || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',').trim();
-    const csAlt = (cand.subject_alt || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',').trim();
-    const cp = (cand.ps || '').replace(/[—–]/g, ',').replace(/\s+,/g, ',');
+    const cs = (cand.subject || '').replace(/[—–]/g, ',').replace(STRIP_CITATION_IDS, '').replace(/\s+,/g, ',').trim();
+    const csAlt = (cand.subject_alt || '').replace(/[—–]/g, ',').replace(STRIP_CITATION_IDS, '').replace(/\s+,/g, ',').trim();
+    const cp = (cand.ps || '').replace(/[—–]/g, ',').replace(STRIP_CITATION_IDS, '').replace(/\s+,/g, ',');
     return { cleanBody: cb, cleanSubject: cs, cleanSubjectAlt: csAlt, cleanPs: cp };
   };
 
