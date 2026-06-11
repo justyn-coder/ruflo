@@ -258,10 +258,42 @@ Check HS portal setting: **Settings > Objects > Companies > Auto-create and asso
 
 ---
 
-## Q8 — Sequence enrollment vs immediate send — PENDING
+## Q8 — Sequence enrollment vs immediate send — ANSWERED 2026-06-11
 
 ### Prompt verbatim
 > On Sales Hub Professional, if I enroll 100 contacts in a sequence via API on a Monday morning, does HubSpot honor the sequence's day-of-week and time-of-day send schedule, or does it fire all the first-step emails immediately? I want to enroll in batches but trust HubSpot to throttle the actual sends per the sequence settings.
+
+### Answer (Breeze, 2026-06-11)
+
+**Do NOT count on HubSpot to throttle. First-step emails fire ASAP after enrollment.**
+
+- **First step:** sends immediately / ASAP upon enrollment — NOT held to sequence's day-of-week / time-of-day rules
+- **Subsequent steps (2, 3, ...):** DO follow configured delays + contact's time zone
+- HubSpot docs explicitly say "the first email in the sequence will send as soon as possible by default"
+
+### Partial throttle (UI-only, NOT API)
+
+- HubSpot UI bulk-enroll has a documented limit of **3 emails per minute**
+- This is NOT a guaranteed throttle contract for the API
+- We cannot assume the API enforces this
+
+### Recommended pattern (Breeze)
+
+For our personalized cold-outbound motion:
+
+1. Enroll contacts in smaller batches (8-10/day per AE)
+2. Pace enrollments throughout the day (not all at 9 AM)
+3. Assume each contact's first email goes out right after enrollment
+4. Use randomized spacing between enrollments for human-like pacing
+
+### Impact on spec
+
+- **Component 6 (send-cap enforcer) must do the pacing — NOT trust sequence settings to throttle**
+- Implementation pattern: `pace_enrollments_with_random_jitter(8_to_10_per_day_per_ae, business_hours_only)`
+- Each enrollment = each first-send (immediate). Controlling enrollment time = controlling send time.
+- Component 3 needs an `enrollment_window` parameter to limit when enrollments fire
+- BUT: subsequent sequence steps DO honor schedule — so step 2, 3 etc will land in the configured time windows
+
 
 ---
 
@@ -286,28 +318,43 @@ Check HS portal setting: **Settings > Objects > Companies > Auto-create and asso
 
 ---
 
-## Q11 — Bounce property update lag — PENDING
+## Q11 — Bounce property update lag — DROPPED (covered by Q4 + Q5)
 
-### Prompt verbatim
-> On Sales Hub Professional, when a hard bounce occurs in a sequence, how quickly does HubSpot update hs_email_hard_bounce_reason on the contact record? Is it real-time (within seconds), or batched (every X minutes)? I need to know to set my bounce monitor polling interval — too short wastes API calls, too long lets the sequence keep firing while I'm blind to bounces.
-
----
-
-## Q12 — Custom property types on Pro — PENDING
-
-### Prompt verbatim
-> On Sales Hub Professional, can I create custom contact properties of type "textarea" (multi-line text) and "richtext" via the /crm/v3/properties/contacts API? Or are some property types restricted to Enterprise? I need to know which types are available because some of my showrev_* properties (research summaries, talking points) need rich formatting.
+Q4 established engagement properties are eventually consistent. Q5 established bounce events follow same model. No additional info needed.
 
 ---
 
-## Q13 — Workflow API access on Pro — PENDING
+## Q12 (refined) — Custom property types on Sales Pro — PENDING
 
-### Prompt verbatim
-> On Sales Hub Professional + Marketing Hub, what level of access do I have to the Workflows API via private apps? Can I programmatically create workflows, read workflow state, trigger workflows via property changes? I'm considering using a workflow as a fallback for sequence enrollment — if a contact has showrev_ready_for_sequence=true, a workflow could enroll them in the right sequence. Is this pattern supported on Pro?
+### Prompt verbatim (refined)
+> On Sales Hub Professional, when creating custom contact properties via /crm/v3/properties/contacts API, are the following types available: textarea (multi-line text), richtext (formatted text)? Or are some property types restricted to Enterprise? I need rich/long-text fields for showrev_research_summary and showrev_talking_points.
 
 ---
 
-## Q14 — Daily API limit confirmation — ANSWERED via Q1
+## Q13 — Workflow API access on Sales Pro — PENDING
+
+### Prompt verbatim
+> On Sales Hub Professional + Marketing Hub, what level of access do I have to the Workflows API via a private app? Can I programmatically: (a) create workflows, (b) read workflow state/enrollments, (c) trigger workflows via contact property changes? I'm considering using a workflow as a fallback for sequence enrollment — if a contact has showrev_ready_for_sequence=true, a workflow could enroll them in the right sequence. Is this pattern supported on Pro tier, or is the "Enroll in sequence" workflow action Enterprise-only?
+
+---
+
+## Q14 — Daily API limit confirmation — DROPPED (covered by Q1)
+
+Q1 confirmed: 190 req/10s burst + 625K/day per account. Sequences-specific: 1,000 enrollments/day per portal inbox. No additional info needed.
+
+---
+
+## Q15 (new) — 429 retry pattern — PENDING
+
+### Prompt verbatim
+> On Sales Hub Professional, when my private app hits a 429 Too Many Requests on the Sequences enrollment endpoint, what's the recommended retry pattern? The docs mention response headers expose the active window and remaining quota — what specific headers should I read (X-HubSpot-RateLimit-Remaining? X-HubSpot-RateLimit-Reset?), and is exponential backoff or wait-until-window-reset the safer pattern? Should retry behavior differ based on whether I hit the 10-second burst limit vs the daily limit?
+
+---
+
+## Q16 (new) — Sender disconnect handling mid-batch — PENDING
+
+### Prompt verbatim
+> On Sales Hub Professional, if I'm enrolling contacts in a sequence via API and one of my AE senders' connected inbox gets disconnected mid-batch (token revoked, password change, OAuth lapse), what happens? Does the enrollment API return an error indicating the sender is disconnected, does enrollment succeed but the email silently fails to send, or does the contact get enrolled but stuck waiting? What's the correct way to detect and handle this failure mode programmatically?
 
 ### Prompt verbatim
 > Confirming for Sales Hub Professional: my private app has 190 requests per 10-second burst limit and 625,000 requests per day account-wide. Is this accurate as of June 2026? Are there any per-endpoint sub-limits I should know about (e.g., search endpoints, sequence endpoints, property endpoints with their own caps)?
@@ -355,3 +402,4 @@ These came from prior Breeze research the operator had done — captured for con
 | v1 | 2026-06-11 16:35 | Initial canonical research doc. Q1, Q2 answered. Q3-Q9, Q11-Q13 pending. Q10, Q14 partial/answered via Q1. Captures operator's prior research on sequence behavior + Pro-tier pathways. |
 | v2 | 2026-06-11 16:45 | Q3 answered (sequence edit detection via updatedAt comparison) + Q4 answered (engagement event lag — eventually consistent, recommended polling 60-120s normal / 30-60s for 10-15 min after send / then 5 min). |
 | v3 | 2026-06-11 16:55 | Q5 answered (bounce events: detectable but no auto-batch-pause — we build watcher with rolling 20-40 send denominator + 5% threshold) + Q6 answered (custom properties NOT auto-visible in AE sidebar — operator action: configure Record Customization) + Q7 answered (`"company"` property does NOT auto-associate — must use explicit `associations` array in single-request pattern OR enable portal-level domain-based setting). |
+| v4 | 2026-06-11 17:05 | Q8 answered (first-step emails fire ASAP upon enrollment — NOT held to sequence day/time schedule; subsequent steps DO follow schedule; we must pace enrollments ourselves). Plus Q11, Q14 marked DROPPED (covered by Q5 + Q1). Q10 and Q12 marked REFINED (focused on unanswered specifics). Q15 + Q16 added (429 retry pattern + sender disconnect handling). |
