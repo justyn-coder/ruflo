@@ -482,16 +482,13 @@ export async function composeSpecific(args: {
     cb = cb.replace(/\n{3,}/g, '\n\n').replace(/[ \t]+\n/g, '\n');
     const cs = (cand.subject || '').replace(/[—–]/g, ',').replace(STRIP_CITATION_IDS, '').replace(/\s+,/g, ',').trim();
     const csAlt = (cand.subject_alt || '').replace(/[—–]/g, ',').replace(STRIP_CITATION_IDS, '').replace(/\s+,/g, ',').trim();
-    // P.S. PREFIX STRIP (2026-06-11): renderer always prepends "P.S." — if
-    // content also starts with "P.S.", recipient sees "P.S. P.S." (visible
-    // bug, caught by QA workflow). Strip a leading "P.S." (any case, optional
-    // colon/space) from the content here.
-    const cp = (cand.ps || '')
-      .replace(/[—–]/g, ',')
-      .replace(STRIP_CITATION_IDS, '')
-      .replace(/\s+,/g, ',')
-      .replace(/^\s*P\.?\s*S\.?\s*:?\s*/i, '')
-      .trim();
+    // 2026-06-11 REVERT: removed the P.S. prefix strip that was added in
+    // the previous version. The portal renders email_ps as-is (no prefix
+    // prepend), so the content NEEDS to start with "P.S." Stripping it
+    // broke 300+ rows. The "P.S.: P.S." pattern flagged by QA must come
+    // from a different path (HS template? variant text?) — not the renderer.
+    // Need to investigate the actual source before re-attempting any fix.
+    const cp = (cand.ps || '').replace(/[—–]/g, ',').replace(STRIP_CITATION_IDS, '').replace(/\s+,/g, ',');
     return { cleanBody: cb, cleanSubject: cs, cleanSubjectAlt: csAlt, cleanPs: cp };
   };
 

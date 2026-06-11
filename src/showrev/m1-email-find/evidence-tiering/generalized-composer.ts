@@ -452,13 +452,10 @@ export async function composeGeneralized(args: {
     cb = cb.replace(/\n{3,}/g, '\n\n').replace(/[ \t]+\n/g, '\n');
     const cs = (cand.subject || '').replace(/[—–]/g, ',').replace(STRIP_CITATION_IDS, '').replace(/\s+,/g, ',').trim();
     const csAlt = (cand.subject_alt || '').replace(/[—–]/g, ',').replace(STRIP_CITATION_IDS, '').replace(/\s+,/g, ',').trim();
-    // P.S. PREFIX STRIP (2026-06-11): mirror of specific-composer fix.
-    const cp = (cand.ps || '')
-      .replace(/[—–]/g, ',')
-      .replace(STRIP_CITATION_IDS, '')
-      .replace(/\s+,/g, ',')
-      .replace(/^\s*P\.?\s*S\.?\s*:?\s*/i, '')
-      .trim();
+    // 2026-06-11 REVERT (mirror of specific-composer revert): removed the
+    // P.S. prefix strip. The portal renders email_ps as-is. See
+    // specific-composer.ts for the full explanation.
+    const cp = (cand.ps || '').replace(/[—–]/g, ',').replace(STRIP_CITATION_IDS, '').replace(/\s+,/g, ',');
     return { cleanBody: cb, cleanSubject: cs, cleanSubjectAlt: csAlt, cleanPs: cp };
   };
 
