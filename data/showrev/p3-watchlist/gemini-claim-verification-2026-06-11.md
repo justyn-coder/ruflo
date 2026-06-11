@@ -1,10 +1,82 @@
 ---
 title: Gemini Deep Research — Claim Verification for 17 FLAG/HOLD Prospects
 date: 2026-06-11
-source: Gemini Deep Research (operator-supplied)
+source: Gemini Deep Research (operator-supplied; 2 independent runs)
 prompt: See `docs/showrev/COLD-EMAIL-BEST-PRACTICES.md` v0.5 + chat history 2026-06-11
-status: VERIFIED — anti-hallucination guards held (5 TRUE / 2 FALSE / 10 UNKNOWN)
+status: VERIFIED with second-run reconciliation — only 2 claims agree TRUE across both runs (conservative)
 purpose: Substrate updates + recompose targets for FLAG/HOLD prospects whose issue is unsupported factual claims (not email)
+---
+
+## ⚠ READ THIS FIRST — second-run reconciliation 2026-06-11
+
+Operator ran the same verification prompt through Gemini Deep Research a **second time** to test consistency. **The two runs disagreed on 7 of 17 rows.** This is a critical methodology lesson:
+
+> Even Gemini Deep Research with strict anti-hallucination rules has substantial run-to-run variance. **A single TRUE verdict is not sufficient evidence.** The honest verdict is the LOWER-confidence one when two runs disagree.
+
+### Reconciliation summary
+
+| Row | Run 1 verdict | Run 2 verdict | RECONCILED |
+|---|---|---|---|
+| 1 GFiber JD Power | TRUE | TRUE (South Region 3-peat) | ✅ **HIGH CONFIDENCE TRUE** |
+| 2 Edge Broadband huts | UNKNOWN | UNKNOWN | UNKNOWN |
+| 3 Shentel multi-state | TRUE | UNKNOWN | ⚠ DOWNGRADE TO UNKNOWN |
+| 4 Gateway Fiber 3-city | UNKNOWN | UNKNOWN | UNKNOWN |
+| 5 GFiber merger Q4 + 20 states | UNKNOWN | TRUE (NEW URL found) | ⚠ MEDIUM CONFIDENCE — verify URL works |
+| 6 Danella ENR + Wireless + offices | TRUE | UNKNOWN (couldn't tie all 3 to same year) | ⚠ DOWNGRADE: parts true, "same year" not verified |
+| 7 GFiber 17 states | FALSE → 15 states | UNKNOWN | ⚠ DOWNGRADE: don't assert 15; remove specific number |
+| 8 Long Lines 500 mi + Junck | TRUE | PARTIAL TRUE (500 mi ✅, Junck role UNKNOWN) | ✅ **MEDIUM CONFIDENCE: 500 mi only** |
+| 9 LHTC Patriot Cable upgrade | UNKNOWN | UNKNOWN | UNKNOWN |
+| 10 Citizens Fiber closed | UNKNOWN | FALSE (only announced) | ⚠ CONFIRMED FALSE: composer must use "announced" not "closed" |
+| 11 Ringgold scale | UNKNOWN | UNKNOWN | UNKNOWN |
+| 12 Ponderosa 1,650 sq mi | FALSE → 4,000 | UNKNOWN | ⚠ DOWNGRADE: remove sq mi number entirely |
+| 13 Farmers expansion | TRUE | UNKNOWN | ⚠ DOWNGRADE TO UNKNOWN |
+| 14 DSG scale | UNKNOWN | UNKNOWN | UNKNOWN |
+| 15 DCN exchanges | UNKNOWN (85% specific surfaced) | UNKNOWN | UNKNOWN with 85% specific available |
+| 16 Cedar Hill fixed fees | UNKNOWN | UNKNOWN | UNKNOWN |
+| 17 Axon Fiber pace | UNKNOWN | UNKNOWN | UNKNOWN |
+
+### Reconciled actionable findings
+
+**HIGH CONFIDENCE TRUE (both Gemini runs agree, with primary source URL + quote):**
+
+1. **Row 1 — GFiber JD Power** — both runs confirmed. Updated URL (run 2): https://fiber.google.com/blog/2025/10/three-peat-gfiber-is-1-in-jd.html — note: ranking is **South Region specifically** (3-peat), not nationally.
+
+**MEDIUM CONFIDENCE TRUE (single run found primary source, worth checking before reuse):**
+
+2. **Row 5 — GFiber + Astound merger** — Run 2 found https://fiber.google.com/blog/2026/03/gfiber-and-stonepeaks-astound-to.html. Deal announced March 11, 2026; expected close Q4 2026; combined scale ~20+ states. **Test the URL works before substrate-adding.**
+
+3. **Row 8 (partial) — Long Lines 500 mi** — both runs confirmed via https://fiberbroadband.org/2024/12/10/long-lines-broadband-invests-25-million-to-expand-flight-fiber/. **DO NOT include "Junck stepped into President role"** — second run could not verify, first run may have hallucinated.
+
+**CONFIRMED FALSE:**
+
+4. **Row 10 — Citizens Fiber acquisition status** — Omni Fiber's June 1, 2026 release says **"announced"** not **"closed"**. Composer must use accurate verb.
+
+**EVERYTHING ELSE = UNKNOWN.** Recompose with industry framing, no specifics.
+
+### Net for substrate updates (REVISED — conservative)
+
+- Add 1 HIGH-confidence claim (Row 1 GFiber JD Power South Region 3-peat)
+- Add 1 MEDIUM-confidence claim after URL test (Row 5 GFiber merger Q4 + 20 states)
+- Add 1 MEDIUM-confidence claim (Row 8 Long Lines 500 mi — DROP Junck role claim)
+- 1 FALSE → swap "closed" with "announced" (Row 10)
+- 13 UNKNOWN → recompose with industry framing
+
+**Expected lift after revised batch fix: +3 to +4 prospects (not +7 to +12 as initial run suggested).**
+
+The conservative reconciliation produces a SMALLER lift, but is the right tradeoff for the zero-bounce + don't-ship-hallucinations doctrine. Compare to initial run's 7+ lift estimate — that was over-optimistic from single-run results.
+
+### Methodology lesson captured for future runs
+
+When using Gemini Deep Research (or any LLM verification) for claims that will end up in cold outreach:
+
+1. **Run the verification twice** with the same prompt
+2. **Conservative wins** — agree-TRUE only (or independently confirm via direct fetch)
+3. **Single-run TRUE = MEDIUM confidence** — worth investigating but don't ship without verification
+4. **Single-run FALSE-with-correction is suspect** — second run may not confirm the correction
+5. **Honest UNKNOWNs are still the most common outcome** for cold outbound — most operational specifics aren't in primary public sources
+
+This pattern goes into `COLD-EMAIL-BEST-PRACTICES.md` as Section 2.3 (Verification Methodology).
+
 ---
 
 # Gemini Deep Research — Claim Verification 2026-06-11
