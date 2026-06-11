@@ -246,7 +246,7 @@ ${industryFraming || '[No substrate context returned. Open with PERSONA-LEVEL fr
 ## Email structure (HARD — HubSpot Sequence requires exactly 3 body paragraphs)
 
 PARAGRAPH 1 (opener, 1-2 sentences, salutation inline):
-Frame an industry-wide pattern that this persona's day-to-day would recognize. NOT company-specific. Example: "Operators running multi-state fiber programs in BEAD-active regions usually hit a permit-throughput wall around month 6 of construction." DO start with "${prospect.firstName},".
+Frame an industry-wide pattern that this persona's day-to-day would recognize. NOT company-specific. Example: "Operators running multi-state fiber programs in BEAD-active regions usually hit a permit-throughput wall around month 6 of construction." DO start with "${prospect.firstName},". DO NOT open with a dangling demonstrative ("that growth rate", "this gap", "the pace") — the reader does not see your substrate, so they cannot tell what "that" refers to. Either name the specific thing in the same sentence or use a description the reader can identify without seeing substrate.
 
 (blank line)
 

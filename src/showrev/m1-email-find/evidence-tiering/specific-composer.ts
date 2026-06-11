@@ -178,6 +178,7 @@ You have actual evidence about this company. Use it carefully.
 - Generic "we help companies like yours."
 - AI tells (see banned list below).
 - Multiple questions / compound asks.
+- Dangling demonstratives ("that growth rate", "this gap", "the pace") in the opening sentence WITHOUT establishing the antecedent in the same sentence. The reader does not see your substrate — if your opener says "that growth rate is compounding fast," the reader cannot tell what growth rate. Either name the specific thing ("three years of 35-40% growth doesn't slow itself down"), or replace the demonstrative with a description the reader can identify without seeing substrate ("the pace you've kept for three years").
 
 ## NUMBERS RULE (HARD — composer is rejected if violated)
 
