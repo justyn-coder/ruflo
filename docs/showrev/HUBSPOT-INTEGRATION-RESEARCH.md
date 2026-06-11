@@ -146,10 +146,53 @@ before enrolling next batch:
 
 ---
 
-## Q5 — Bounce event propagation — PENDING
+## Q5 — Bounce event propagation — ANSWERED 2026-06-11
 
 ### Prompt verbatim
 > On Sales Hub Professional, when a sequence email hard-bounces, does HubSpot automatically update the contact's hs_email_hard_bounce_reason and pause the sequence for that contact? How quickly does this happen? Or do I need to monitor and respond myself? What's the recommended way to halt an entire sequence batch if hard-bounce rate exceeds 5%?
+
+### Answer (Breeze, 2026-06-11)
+
+**YES — HubSpot updates the bounce information when it can identify the bounce.**
+
+- `hs_email_hard_bounce_reason` is populated when HubSpot can classify the bounce
+- For one-to-one and sequence emails, bounce details appear on email engagement on contact timeline
+- Some sequence bounces may not have enough data for HubSpot to fully classify root cause
+
+**NO — sequence is NOT automatically paused for that contact (not documented).**
+
+- Hard-bounced contacts ARE excluded from future emails (sender reputation protection)
+- "Unknown user" and "Mailbox full" → HubSpot AUTO-drops contact from future emails
+- Other reasons (Content / Spam / Policy) → not auto-dropped, need our review
+
+**NO documented timing SLA** — treat bounce propagation as eventually consistent, not instant.
+
+### HubSpot's auto-unenrollment triggers
+- ✅ Replies → auto-unenroll
+- ✅ Meeting bookings → auto-unenroll
+- ❌ Bounces → NO auto-batch-halt — we build this ourselves
+
+### Manual pause options (UI)
+- Single sequence: Sequences > Actions > Pause
+- All sequences: Sequences > Actions > Pause all
+- Individual contact: Contact record > sequence enrollment > unenroll
+
+### Recommended watcher pattern (Breeze)
+For our staggered 8-10 companies/day cold-outbound motion:
+
+1. Use **rolling denominator** (last 20-40 sends) instead of huge batches
+2. **Stop NEW enrollments first** when threshold crossed
+3. **Pause sequence** if rate stays above 5%
+4. Treat "Unknown user" / "Mailbox full" as especially strong stop signals
+5. For Content / Spam / Policy bounces → review auth/content before resuming
+
+### Impact on spec
+- Component 4 (bounce monitor) threshold logic confirmed: 5% hard bounce halt
+- Use rolling window (20-40 sends) — more responsive than batch-level
+- Component 6 (send-cap) gains a "halt new enrollments while existing batch active" mode
+- Watcher Component 5 should classify `hs_email_hard_bounce_reason` and treat Unknown user / Mailbox full as immediate-halt signals
+- Cannot rely on HubSpot to auto-pause the batch — our watcher is the gate
+
 
 ---
 
@@ -160,10 +203,58 @@ before enrolling next batch:
 
 ---
 
-## Q7 — Contact-to-company auto-association — PENDING
+## Q7 — Contact-to-company auto-association — ANSWERED 2026-06-11
 
 ### Prompt verbatim
 > On Sales Hub Professional, when I POST a new contact via /crm/v3/objects/contacts with a "company" property value that matches an existing company name in the portal, does HubSpot automatically associate the contact to that company? Or do I need to explicitly POST an association via /crm/v4/objects/contacts/{cid}/associations/companies/{cid}? Trying to avoid creating orphan contacts.
+
+### Answer (Breeze, 2026-06-11)
+
+**NO — `"company": "Acme"` does NOT create an association.** Contact properties and record associations are documented as separate concepts.
+
+### What auto-association IS
+
+HubSpot's documented auto-association is:
+- **Domain-based** (contact's email domain ↔ company's "Company domain name" property)
+- Or for freemail contacts: Website URL ↔ company domain
+- **Gated by portal setting** "Create and associate companies with contacts" — must be enabled
+- May pick wrong company if multiple share the same domain value (manual fix needed)
+
+### What auto-association is NOT
+- It is NOT company-name-based
+- Setting `"company": "Acme"` in the contact properties just stores the string — no association created
+
+### Documented patterns (do one of these explicitly)
+
+**Best:** create contact with `associations` array in the SAME POST request:
+```json
+POST /crm/v3/objects/contacts
+{
+  "properties": { "email": "...", "firstname": "...", ... },
+  "associations": [{
+    "to": { "id": "<company_id>" },
+    "types": [{ "associationCategory": "HUBSPOT_DEFINED", "associationTypeId": 1 }]
+  }]
+}
+```
+
+**Alternative:** create contact, then PUT to Associations API:
+```
+PUT /crm/v4/objects/contacts/{cid}/associations/companies/{cid}
+```
+
+### Impact on spec
+- Our current loader at hubspot-loader.ts:397-401 DOES call the v4 associations endpoint after create — CORRECT but inefficient (2 API calls per contact)
+- **Optimization for spec v6:** use the single-request pattern with `associations` array in the create POST → cuts loader API calls by ~30%
+- For our cohort: 150 contacts × 1 fewer call = 150 fewer API calls = stays within Pro's 625K/day comfortably
+- Auto-association by domain setting is portal-controlled — operator action: confirm if it's on/off
+
+### Operator action item
+Check HS portal setting: **Settings > Objects > Companies > Auto-create and associate companies with contacts** — is it ON?
+- If ON: we MIGHT get some auto-associations even if we don't pass them. Risky for wrong-company matches.
+- If OFF: we MUST pass associations explicitly (which we already do — good)
+- Recommend: keep OFF + use explicit associations from our loader = no ambiguity
+
 
 ---
 
@@ -263,3 +354,4 @@ These came from prior Breeze research the operator had done — captured for con
 |---|---|---|
 | v1 | 2026-06-11 16:35 | Initial canonical research doc. Q1, Q2 answered. Q3-Q9, Q11-Q13 pending. Q10, Q14 partial/answered via Q1. Captures operator's prior research on sequence behavior + Pro-tier pathways. |
 | v2 | 2026-06-11 16:45 | Q3 answered (sequence edit detection via updatedAt comparison) + Q4 answered (engagement event lag — eventually consistent, recommended polling 60-120s normal / 30-60s for 10-15 min after send / then 5 min). |
+| v3 | 2026-06-11 16:55 | Q5 answered (bounce events: detectable but no auto-batch-pause — we build watcher with rolling 20-40 send denominator + 5% threshold) + Q6 answered (custom properties NOT auto-visible in AE sidebar — operator action: configure Record Customization) + Q7 answered (`"company"` property does NOT auto-associate — must use explicit `associations` array in single-request pattern OR enable portal-level domain-based setting). |
