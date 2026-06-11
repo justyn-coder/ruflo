@@ -211,6 +211,45 @@ async function processOne(
 
   console.log(`\n[${row.firstName} ${row.lastName}] @ ${row.company} (${row.state || '?'})`);
 
+  // Phase 0.0: OPERATOR-LOCK GUARD (2026-06-11).
+  // Skip prospects whose latest engine_output row has send_status='send' or
+  // 'dnc'. Operator-approved decisions MUST NOT be overwritten by reruns.
+  //
+  // Incident 2026-06-11: a sibling-rerun on enriched companies reverted Tim's
+  // 3 SEND approvals (Buccieri, Dandridge, Mora) back to flag/yellow because
+  // the rerun ran them through the judges fresh, ignoring the prior operator
+  // decision. 137 mid-flight empty rows had to be deleted manually.
+  //
+  // To bypass (e.g., operator EXPLICITLY wants to recompose an approved
+  // prospect), set FORCE_OPERATOR_OVERRIDE=true in the environment.
+  if (process.env.FORCE_OPERATOR_OVERRIDE !== 'true') {
+    try {
+      const prospectIdSlug = `${row.firstName.toLowerCase().trim()}-${row.lastName.toLowerCase().trim()}-${(row.company || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
+      const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+      const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
+      if (sbUrl && sbKey) {
+        const r = await fetch(
+          `${sbUrl}/rest/v1/sr_engine_output?prospect_id=eq.${encodeURIComponent(prospectIdSlug)}&select=send_status&order=created_at.desc&limit=1`,
+          { headers: { apikey: sbKey, Authorization: `Bearer ${sbKey}` } },
+        );
+        if (r.ok) {
+          const rows = (await r.json()) as Array<{ send_status: string }>;
+          const prior = rows[0]?.send_status;
+          if (prior === 'send' || prior === 'dnc') {
+            console.log(`  🔒 OPERATOR-LOCKED (send_status=${prior}) — rerun SKIPPED. Set FORCE_OPERATOR_OVERRIDE=true to bypass.`);
+            result.icp_verdict = 'pending';
+            (result as ProspectResult & { skipped_operator_locked?: boolean }).skipped_operator_locked = true;
+            result.durations_ms.total = Date.now() - t0;
+            return result;
+          }
+        }
+      }
+    } catch (err) {
+      // Soft-fail — if the guard query errors, proceed with normal pipeline
+      console.log(`  operator-lock guard query failed: ${(err as Error).message} — proceeding without guard`);
+    }
+  }
+
   // Phase 0.4: Per-company directory lookup (Directory integration 2026-06-11).
   // Look up the prospect's raw company in the operator-reviewed directory CSV.
   // A hit gives us canonical_domain (for email-find pinning) + canonical_name
