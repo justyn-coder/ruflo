@@ -497,10 +497,88 @@ Q1 confirmed: 190 req/10s burst + 625K/day per account. Sequences-specific: 1,00
 
 ---
 
-## Q15 (new) — 429 retry pattern — PENDING
+## Q15 — 429 retry pattern — ANSWERED 2026-06-11
 
 ### Prompt verbatim
 > On Sales Hub Professional, when my private app hits a 429 Too Many Requests on the Sequences enrollment endpoint, what's the recommended retry pattern? The docs mention response headers expose the active window and remaining quota — what specific headers should I read (X-HubSpot-RateLimit-Remaining? X-HubSpot-RateLimit-Reset?), and is exponential backoff or wait-until-window-reset the safer pattern? Should retry behavior differ based on whether I hit the 10-second burst limit vs the daily limit?
+
+### Answer (Breeze, 2026-06-11)
+
+**Burst vs Daily 429s must be handled DIFFERENTLY. Use headers to distinguish.**
+
+### Headers to read on every response (record these)
+
+| Header | What it means |
+|---|---|
+| `X-HubSpot-RateLimit-Interval-Milliseconds` | Active window size (typically 10000 ms = 10 sec) |
+| `X-HubSpot-RateLimit-Max` | Max requests allowed in that window |
+| `X-HubSpot-RateLimit-Remaining` | Remaining requests in current window |
+| `X-HubSpot-RateLimit-Daily` | Daily quota (private apps only — OAuth omits this) |
+| `X-HubSpot-RateLimit-Daily-Remaining` | Remaining daily quota |
+
+### Headers to AVOID
+
+- ❌ `X-HubSpot-RateLimit-Reset` — NOT documented for HubSpot core API
+- ❌ `X-HubSpot-RateLimit-Secondly` / `-Secondly-Remaining` — present but DEPRECATED, no longer enforced
+
+### 429 response body
+
+- Includes `policyName` field — tells us WHICH limit was hit
+- Message text indicates daily vs secondly/rolling
+
+### Decision tree
+
+```
+On every successful response:
+  record X-HubSpot-RateLimit-Remaining, Max, Interval-Milliseconds
+  + daily headers if present
+
+On 429:
+  inspect response body policyName / message
+
+  If burst limit (10-second rolling):
+    wait Interval-Milliseconds + 250-1000ms jitter
+    retry
+    if still 429: widen with exponential backoff
+
+  If daily limit:
+    DO NOT RETRY
+    mark sender/app as exhausted for the day
+    queue work for after midnight portal-time-zone (we're US/Eastern)
+    resume after reset
+
+  If Retry-After header present:
+    honor it (NOT universally guaranteed for core API)
+```
+
+### Three distinct caps for Sequences enrollment endpoint
+
+1. **General app burst** — 190 req/10s (X-HubSpot-RateLimit-* headers)
+2. **General app daily** — 625K/day (X-HubSpot-RateLimit-Daily-* headers)
+3. **Sequences-specific daily** — 1,000 enrollments/inbox/day (NOT in standard headers — track ourselves per AE)
+
+### Proactive throttling (Breeze recommendation — strongest endorsement)
+
+Don't react to 429s. Throttle proactively:
+- Slow down when `X-HubSpot-RateLimit-Remaining` is getting low
+- Keep enrollment worker well below burst ceiling
+- Pace sequence enrollments steadily through the day
+- Our 8-10/AE/day with random spacing = far below any cap
+
+### Impact on spec v6
+
+- **New module recommended:** HS API client wrapper that:
+  - Records rate-limit headers after every call
+  - Sleeps proactively if remaining < threshold (e.g., < 30)
+  - On 429: parses policyName + decides retry vs defer
+  - Maintains separate per-AE Sequences enrollment counter (since HS doesn't expose this in headers)
+- Component 6 (send-cap enforcer) extends with **3-counter logic**:
+  - per-AE today's enrollments (vs 500/day soft cap, well below)
+  - per-app today's API calls (vs 625K, irrelevant for our volume)
+  - per-AE today's Sequences enrollments (vs 1,000 hard cap, irrelevant for our volume)
+- Component 3 (sequence enroller) calls the HS API wrapper, not raw fetch
+- Daily exhaustion → cron-style resume after midnight US/Eastern (portal time zone)
+
 
 ---
 
@@ -560,3 +638,4 @@ These came from prior Breeze research the operator had done — captured for con
 | v6 | 2026-06-11 17:25 | Q10 (refined) answered: 1K/day enrollment cap is PER SENDER INBOX, not shared portal-wide. Each AE has independent quota. BINDING limit on Sales Pro is 500 sequence emails/day per user. Our 30/AE/day usage = comfortable headroom. Send-cap enforcer (Component 6) should NOT shared-pool across AEs. |
 | v7 | 2026-06-11 17:40 | Q12 (refined) answered + MCP empirically verified: long-text + rich-text both available on Sales Pro (Breeze). Our existing showrev_* string properties confirmed via MCP `get_properties` — use plain `type: "string"` API enum. Portal context expanded with MCP-verified seat types, account type, time zone. Operator confirmed: WatchTower is our private app name + MCP access is available for empirical verification of remaining questions. |
 | v8 | 2026-06-11 17:55 | Q13 answered (Workflows API on Pro): "Enroll in sequence" workflow action is ENTERPRISE-ONLY. Workflow-based fallback NOT supported on Pro. Best architecture for Sales Pro = Sequences API direct enrollment (already our primary pathway). Confirmed: we are not architecturally constrained on Pro vs Enterprise for this pipeline. |
+| v9 | 2026-06-11 18:05 | Q15 answered (429 retry pattern): use X-HubSpot-RateLimit-* headers to distinguish burst (10s rolling) vs daily 429s. Burst → wait Interval-Milliseconds + jitter, retry. Daily → STOP, defer to next day (midnight US/Eastern). Strong Breeze recommendation: proactive throttling beats reactive 429 handling. New HS API client wrapper module recommended for spec v6. |
