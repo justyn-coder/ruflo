@@ -341,8 +341,87 @@ Getting some sleep. Sees ya.
 
 ---
 
+## Red team findings (operator-requested stress-test of this handoff)
+
+Conducted 5 checks after initial draft. **One real issue found and fixed.**
+
+### ✅ Red team 1: All 18 HS contacts verified
+- All 18 have `showrev_engagement_slug = inorsa-fiberconnect-2026-cold` ✓
+- All 18 have correct AE assignment ✓
+- All 18 have populated `showrev_pre_show_t1_*` properties ✓
+- Removed contacts (Emily Owen, David Child) confirmed at `inorsa-fiberconnect-2026-cold-mv-risky-excluded` (NOT in cold list) ✓
+
+### ✅ Red team 2: 5 strip-recomposed bodies spot-checked
+- Michele Sadwick — P1 cleaned (JV attribution removed), P2/P3/P4 intact
+- Gabriel Gilliland — P1 cleaned (specifics removed), reads naturally
+- Zack Burnes — P1 industry-framed
+- Ben Lewis-Ramirez — P1 keeps Vistal, drops LeadIQ role claim
+- Jesus Loya — P1 keeps geo reference, drops LeadIQ headcount
+
+### 🚨 Red team 2 (bonus): Subject ↔ body mismatch caught + fixed
+**Zack Burnes' subject was "Fiber Connect to COO search"** but I stripped both those references from the body. Recipient would have opened the email expecting Fiber Connect/COO content and seen generic industry framing. Trust loss.
+
+**FIXED:** New subject = "BEAD build cycle, drawings keeping pace?" (matches industry-framed body). Updated in both HS contact properties AND sr_engine_output.
+
+**Lesson for fresh session:** when strip-recomposing, ALWAYS check subject↔body coherence. The strip-recompose script in `scripts/strip-recompose-5.py` only updates body — should be extended to subject when applicable.
+
+### ⚠️ Red team 3 (partial): HS Sequences API enumeration blocked
+- API endpoint `automation/sequences/2026-03/sequences` returned 400 (validation error)
+- API endpoint `crm/v3/lists/search` returned 403 (missing scope)
+- This is a READ issue. Sequences + lists EXIST per operator's earlier UI confirmation.
+- Doesn't affect tomorrow's smoke (operator enrolls via HS UI, not API).
+- Action item for fresh session: investigate the right Sequences API endpoint + scope for future automation. Operator-confirmed `automation.sequences.enrollments.write` scope IS present.
+
+### ✅ Red team 4: All 3 dummies have Chad's content properly
+- Justyn Test-Mike → justyn@showrev.co — Chad's subject + body intact
+- Justyn Test-Nathan → justyn@tasteforyourself.com (uses pre-existing canary contact, name shows as "Justyn ShowRev Canary Spike")
+- Justyn Test-Lucas → justyn@trellisag.ca — Chad's content intact
+- All 3 will arrive in operator's Gmail tomorrow morning as separate emails from Mike/Nathan/Lucas — operator can compare per-AE sender identity
+
+**Awkward but intentional:** dummies say "Chad, building approximately 340,000 locations..." even though they arrive at operator's inbox. This is the test — verify rendering, sender identity, links, mobile, unsubscribe — not that the content makes contextual sense.
+
+### ✅ Red team 5: Math checks out
+- 10 SHIP AS-IS (Laurie, Dara, Brendan, Aamer, Casey, Doug, Issac, Anthony, Jeff, George)
+- 5 STRIP-RECOMPOSED (Michele, Gabriel, Zack, Ben, Jesus)
+- 3 DUMMIES (Justyn × 3 routing to one Gmail inbox)
+- **Total: 18 ✓** matches all earlier statements
+
+### Potential blow-up risks I'm flagging for fresh session / operator
+
+1. **AE might pick "User's time zone" instead of "Contact's time zone"** in enrollment dialog → recipients get email at wrong hour (8-10am Eastern instead of 8-10am their local). MITIGATION: highlighted in BOLD in the AE morning email drafts above.
+
+2. **AE might forget to enroll entirely** → no sends, smoke fails. MITIGATION: operator should ping AEs at 9am ET if HS sequence stats still show 0 enrollments.
+
+3. **Sequence fires before AE enrollment confirms sender inbox** → email could go from wrong inbox. MITIGATION: AE morning email explicitly states "select your @inorsa.com inbox in the dropdown."
+
+4. **Dummy email arrives at justyn@tasteforyourself.com but operator misses it in noise** → can't validate Nathan's sender identity. MITIGATION: operator should set a Gmail filter or just check inbox at 9-10am ET.
+
+5. **Strip-recomposed prospects' microsite links still reference original substrate** (e.g., Michele's microsite at /assess/greenlight-networks-michele-sadwick may still surface the 1.3M passings claim if microsite pulls from same substrate). MITIGATION: this is Saturday cleanup work — check microsite content + substrate-strict rendering. For tomorrow's smoke, click-through rate measures interest, not necessarily fact accuracy.
+
+### What red team did NOT catch (humble admission)
+
+- I did not verify the sequences/lists exist via API (blocked by scope). Trusting operator's UI confirmation from earlier tonight.
+- I did not verify the dummies' microsite URLs are LIVE and render correctly (could be Chad's microsite live → fine, could 404 → bad).
+- I did not test the strip-recomposed microsite URLs (Michele's slug etc.).
+- I did not verify Component 4 bounce monitor has the correct `batch_id` for tomorrow's sends.
+- I did not write a "morning verify" script for operator to run at 7am.
+
+These are real gaps. Fresh session should address before AEs enroll.
+
+---
+
+## What I'd add to my "things I'd do differently" list (post red team)
+
+10. Always include subject↔body coherence check in strip-recompose scripts
+11. Always verify microsite content matches stripped substrate before sending
+12. Always write a one-command "morning sanity check" script alongside any handoff
+13. Always verify API enumeration works for things the handoff references
+
+---
+
 ## Version history
 
 | Version | Date (EST) | Author | Change |
 |---|---|---|---|
 | v1 | 2026-06-12 02:30 EST | Claude (Opus 4.7) | Initial handoff. End of ~9-hour session. |
+| v2 | 2026-06-12 02:55 EST | Claude (Opus 4.7) | Operator-requested red team. 5 checks performed. 1 real issue found and fixed (Zack subject mismatch). 5 potential blow-up risks flagged. 4 gaps red team did NOT catch documented. |
