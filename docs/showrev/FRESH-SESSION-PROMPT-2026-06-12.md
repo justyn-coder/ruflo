@@ -18,6 +18,80 @@ in a panic. Tomorrow morning's smoke is already locked and safe to fire. Your
 job is fresh strategic thinking + judge panel orchestration + Saturday's
 substrate rebuild planning — NOT to redo the tactical work.
 
+## ⚠️ TWO CRITICAL WARNINGS (read BEFORE anything else)
+
+### Warning 1: Old canonical docs are STALE — do NOT use them
+
+The previous architecture had a canonical knowledge base that has since been
+archived. Some old canonical files may still be findable in the repo or in
+linked archives (e.g., showrev/canon/_archive/canon-hygiene-2026-05-12/).
+
+**Do NOT treat these archived canonicals as ground truth.** They contain
+deprecated decisions, stale facts, and old composer rules that have been
+superseded. The current canonical sources are:
+
+- This handoff (HANDOFF-2026-06-12-FRESH-SESSION.md)
+- The strategic synthesis (COLD-PROSPECTING-FIRST-PRINCIPLES-2026-06-12.md)
+- Supabase operating_procedure table (Layer 0, per
+  ~/Documents/CLAUDE.md)
+- engine/clients/inorsa/canonical/wiki-459-mirror.md (Inorsa-specific
+  canon, still active)
+- Latest commits on main branch
+
+If you grep the repo and find content older than 2026-05-12 in a path with
+"_archive" in it, IGNORE IT. The compliance hooks already block some, but
+not all.
+
+Operator-flagged: "we were supposed to clean out those old canonicals."
+That cleanup hasn't fully happened yet. **Be skeptical of any "canonical"
+doc you find with a date earlier than today.** Verify against the current
+sources above first.
+
+### Warning 2: P1 send data needs to be migrated from the OLD Supabase
+
+Operator-flagged: "we have to reinstall the P1 send data, we created that
+second instance of supabase and he'll need to go in there and surgically
+pull out all of the P1 prospect data and information about our 45 P1
+sends etc."
+
+What this means:
+- There are TWO Supabase instances
+- Current/active project: `slttpknnuthbttjuzrnz` (per CLAUDE.md)
+- A SECOND/older instance has the P1 send data (45 booth-visitor sends
+  from May 2026)
+- Fresh session needs to SURGICALLY extract P1 prospect records + send
+  outcomes from the second instance
+- Migrate them into the current instance for unified analytics
+
+Why this matters NOW:
+- Tomorrow's smoke is P2 cold. Need P1 baseline for comparison.
+- Reply rate / meeting rate from P1 (booth visitors) informs the Brain
+  function's expectations.
+- Without P1 baseline migrated, we can't measure if P2 is performing
+  better/worse than P1.
+
+What to do:
+1. ASK OPERATOR for the second Supabase project ID + admin access
+   (they may be asleep — note this as a blocker for the judge panel
+   work but DON'T attempt the migration without explicit confirmation)
+2. Once you have access, identify the relevant tables (likely the same
+   schema names — sr_prospects, sr_outcomes, sr_engine_output)
+3. Pull rows for the 45 P1 prospects (filter by
+   `showrev_engagement_slug = inorsa-fiberconnect-2026` — the warm slug,
+   not the new cold slug)
+4. UPSERT into current Supabase, preserving original timestamps
+5. Verify the watcher correctly classifies historical replies/sends
+
+Until this is done, P1 baseline metrics are unavailable to us. Operator-flagged
+as a "must do" but didn't put a time deadline. Saturday morning is reasonable.
+
+### Why these warnings exist
+
+Previous Claude (me) didn't catch either issue independently. Operator flagged
+them after the handoff was written. Both are real "watch out for these" notes
+that would otherwise trip you up. The handoff and synthesis docs are the
+source of truth — old canonicals are not.
+
 ## Read these first, IN THIS ORDER (45 min total)
 
 1. docs/showrev/HANDOFF-2026-06-12-FRESH-SESSION.md (~15 min)
