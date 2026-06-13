@@ -212,6 +212,153 @@ function classifySourceTier(url: string): 1 | 2 | 3 | 4 {
   return 3;
 }
 
+// ============================================================================
+// F3 (fix-sprint-2026-06-13-v2) — URL-domain trust tier classifier.
+// ============================================================================
+//
+// Exported version of source-tier classification, extended with a PROHIBITED
+// bucket for scraper / aggregator domains that are known to surface fabricated
+// or unverifiable claims. Audit 2026-06-13 found 21 confirmed PROHIBITED rows
+// in sr_company_evidence (15 zoominfo.com + 6 leadiq.com) that were entering
+// the composer as USE_DIRECTLY substrate via source_kind tagging — the source
+// tier was based on HOW the row was harvested, not WHERE it came from.
+//
+// Used by:
+//   - substrate-query.ts writeEvidence() — refuses INSERT on PROHIBITED
+//   - substrate-query.ts getCompanyEvidence() — filters PROHIBITED at read
+//   - scripts/backfill-domain-tier.ts — classifies historical rows
+//
+// Output enum: 'T1' | 'T2' | 'T3' | 'T4' | 'PROHIBITED'
+//   T1 = government primary (any .gov host + NTIA/FCC/SEC/Congress/GAO surfaces)
+//   T2 = recognized trade press / news wires / industry trade-association data
+//   T3 = single secondary source (default for non-recognized hosts incl. company
+//        own-sites, LinkedIn primary content, finance aggregators, local news)
+//   T4 = LLM inference / no source URL provided
+//   PROHIBITED = scraper/aggregator data brokers known to fabricate or
+//        surface poor-quality data we cannot verify
+//
+// Per plan v2: a T3/T4 row is still INGESTED (so the dossier has it for shape)
+// but the read-side caller maps T3/T4 → USE_TO_SHAPE before composition. A
+// PROHIBITED row is REFUSED at ingest and FILTERED at read.
+
+// Order matters in the runtime check below: PROHIBITED first (would otherwise
+// fall into T3 via the "linkedin|zoominfo|glassdoor|indeed" leftover branch).
+//
+// Lists are HOST suffixes. A row's host is normalized (lowercased, "www."
+// stripped) before being matched.
+
+const PROHIBITED_HOSTS: readonly string[] = [
+  // Scraper/aggregator data brokers — operator-flagged hallucination class.
+  'zoominfo.com',
+  'leadiq.com',
+  'rocketreach.co',
+  'rocketreach.com',
+  'hunter.io',
+  'lusha.com',
+  'snov.io',
+  'signalhire.com',
+  'contactout.com',
+  'kendo.io',
+  // NOTE: apollo.io is intentionally NOT prohibited — it is a partner email-
+  // verification + enrichment tool used by the pipeline, not a scraper source
+  // we ingest claims from. If apollo.io appears as a claim source URL (vs
+  // an enrichment lookup), revisit.
+] as const;
+
+const T1_HOST_SUFFIXES: readonly string[] = [
+  '.gov',           // catches every federal/state/local .gov host
+  'ntia.gov',       // belt-and-suspenders for explicit canonical surfaces
+  'fcc.gov',
+  'sec.gov',
+  'congress.gov',
+  'gao.gov',
+  'broadbandusa.ntia.gov',
+  'broadbandmap.fcc.gov',
+] as const;
+
+const T2_HOST_SUFFIXES: readonly string[] = [
+  // PR distribution / news wires
+  'prnewswire.com',
+  'businesswire.com',
+  'globenewswire.com',
+  'accessnewswire.com',
+  'newswire.telecomramblings.com',
+  // Major business press
+  'reuters.com',
+  'bloomberg.com',
+  'wsj.com',
+  'ft.com',
+  'forbes.com',
+  // Telecom/fiber trade press
+  'lightreading.com',
+  'fiercenetwork.com',
+  'fierce-network.com',
+  'telecompetitor.com',
+  'bbcmag.com',
+  'broadbandbreakfast.com',
+  'telecomramblings.com',
+  'datacenterdynamics.com',
+  'cablefax.com',
+  'insidetowers.com',
+  'wirelessestimator.com',
+  // Major tech press (occasional fiber coverage)
+  'geekwire.com',
+  'techcrunch.com',
+  'theverge.com',
+  'arstechnica.com',
+  // Industry trade associations (data + research surfaces)
+  'fiberbroadband.org',
+  'communitynetworks.org',
+  'ntca.org',
+  'ustelecom.org',
+] as const;
+
+/**
+ * Extract host from a URL string. Returns lowercase host with leading "www."
+ * stripped, or empty string if not parseable as a URL.
+ */
+export function extractHost(rawUrl: string): string {
+  if (!rawUrl || typeof rawUrl !== 'string') return '';
+  // Tolerate missing protocol (e.g., "fiber.example.com/page") — prepend https://
+  // so the URL constructor can parse, but strip back to host only.
+  const trimmed = rawUrl.trim();
+  if (!trimmed) return '';
+  const candidate = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+  try {
+    const u = new URL(candidate);
+    return u.hostname.toLowerCase().replace(/^www\./, '');
+  } catch {
+    return '';
+  }
+}
+
+/**
+ * Domain-tier classifier for substrate-row URLs.
+ *
+ * Plan v2 F3 contract:
+ *   classifyDomainTier(url: string): 'T1' | 'T2' | 'T3' | 'T4' | 'PROHIBITED'
+ *
+ * Empty / unparseable URL → 'T4' (LLM inference; treat as no-source).
+ * Matched PROHIBITED host → 'PROHIBITED' (caller refuses INSERT, filters READ).
+ * Matched T1 / T2 host → that tier.
+ * Anything else → 'T3' (single secondary).
+ */
+export function classifyDomainTier(url: string): 'T1' | 'T2' | 'T3' | 'T4' | 'PROHIBITED' {
+  const host = extractHost(url);
+  if (!host) return 'T4';
+  if (PROHIBITED_HOSTS.some(h => host === h || host.endsWith(`.${h}`))) return 'PROHIBITED';
+  if (T1_HOST_SUFFIXES.some(h => host === h.replace(/^\./, '') || host.endsWith(h))) return 'T1';
+  if (T2_HOST_SUFFIXES.some(h => host === h || host.endsWith(`.${h}`))) return 'T2';
+  return 'T3';
+}
+
+// Re-export PROHIBITED_HOSTS for the backfill script + tests, NOT for general
+// consumption. If you need to know "is this URL prohibited" at runtime, call
+// classifyDomainTier(url) === 'PROHIBITED'.
+export const DOMAIN_TIER_PROHIBITED_HOSTS = PROHIBITED_HOSTS;
+export const DOMAIN_TIER_T1_HOST_SUFFIXES = T1_HOST_SUFFIXES;
+export const DOMAIN_TIER_T2_HOST_SUFFIXES = T2_HOST_SUFFIXES;
+
 export async function verifyClaimsWithWebSearch(
   emailBody: string,
   company: string,

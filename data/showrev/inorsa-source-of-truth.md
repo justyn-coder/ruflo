@@ -1,8 +1,8 @@
 ---
 title: Inorsa Source of Truth -- ShowRev FC2026 Pilot
 status: ACTIVE
-last_updated: 2026-06-07 18:07 EST
-version: v5
+last_updated: 2026-06-13 15:57 EDT
+version: v10
 purpose: Single canonical reference for all Inorsa product claims, positioning, and constraints used in ShowRev outreach. Every email, microsite, HubSpot property, and AE brief must be checked against this file before shipping.
 ---
 
@@ -62,12 +62,12 @@ Inorsa is purpose-built for telecom infrastructure. Every output is deterministi
 | Suite | What it does | Fiber relevance |
 |-------|-------------|-----------------|
 | **Data Suite** | Transforms structured, semi-structured, and unstructured document data into maintained, asset-level intelligence | HIGH -- ingests GIS, LLD, leases, permits, drawings |
-| **Validation Suite** | Applies rules and reconciliation logic across documents to detect conflicts, missing inputs, inconsistencies | HIGH -- catches errors before permit submission |
+| **Validation Suite** | Flags MISSING inputs (only). Does NOT validate input correctness, catch upstream-tool errors, or QC the generated drawings (per `canon/sources/inorsa-product-truth-nick-2026-06-04.md` lines 24-28) | HIGH -- surfaces missing-input gaps before drawings are generated, so drafters fix the gap before drafting time is spent. Inorsa does NOT catch errors in the customer's network management tool or validate input correctness; that QC remains the customer's responsibility |
 | **Engineering Suite** | Generates engineering-grade outputs from validated data with review controls | HIGH -- produces construction and permit drawings |
 
 **Workflow (3 phases):**
 1. **Ingest & Structure** -- Extracts critical fields from leases, permits, and drawings into structured asset-level intelligence
-2. **Validate & Reconcile** -- Cross-checks sources to detect conflicts, missing inputs, and inconsistencies
+2. **Surface Missing Inputs** -- Flags MISSING required inputs so drafters can fix gaps before generation. Does NOT cross-check input correctness or catch upstream errors in the customer's network management tool (per Nick canon 2026-06-04: "Validating inputs doesn't really apply on our fiber drawing generation product EXCEPT when a key input is missing")
 3. **Generate Outputs** -- Creates engineering and operational deliverables with source data traceability
 
 **AI Assistant:** Nora -- conversational interface across all suites. Augments human judgment through natural language interaction.
@@ -456,6 +456,7 @@ If Claude sees an internal fact in code or comments that contradicts one of thes
 
 | Version | Date (EST) | Author | Change |
 |---------|-----------|--------|--------|
+| v10 | 2026-06-13 15:57 EDT | Claude | F2 (BL-016 / fix-sprint-2026-06-13-v2) — corrected §3 Validation Suite fiber-relevance + §3 Workflow phase 2 to align with Nick canon. Removed claim "catches errors before permit submission" (line 65) + replaced "Validate & Reconcile -- Cross-checks sources to detect conflicts, missing inputs, and inconsistencies" (line 70) with the narrower truth: Inorsa flags MISSING inputs only, does NOT validate input correctness, does NOT catch upstream tool errors, does NOT QC drawings. Per `canon/sources/inorsa-product-truth-nick-2026-06-04.md` (kill-list lines 57-61 + Nick 2026-06-04 JTBD validation). Pairs with code-side F1 (5 regex entries added to `composer-constraints.ts` PRODUCT_GUARDS). Closes BL-016. |
 | v9 | 2026-06-08 23:05 | Claude | Added §17 AE Calendar Links + Territory Mapping (mirrors `ae-config.ts`). Added §18 Source-of-Truth Lock Index — single ranked index of every canonical doc + code file. Drift rule (higher rank wins, escalate if unclear). Update rule (rank 1-2 operator-only, rank 3-6 Claude with notify). Locks foundational SoT before P2 build accelerates. |
 | v8 | 2026-06-08 19:30 | Claude | Added §16 CSV Input Contract — no `email` or `companyUrl` columns. Pipeline must discover via its own Apollo + SMTP chain. Operator-directed after Andrew Aeschliman ran with a wrong CSV email (wrong domain `unitedfiber.com` vs correct parent-co `ueci.coop`, and wrong format `firstname.lastname` vs `firstinitial+lastname`). The verifier red-flagged correctly but the path was still scary; expunging CSV emails eliminates the entire failure mode. Trade: +1 Apollo credit + 5-10s wall-clock per prospect for guaranteed-discovery integrity. |
 | v7 | 2026-06-08 17:55 | Claude | Added §15 ICP Qualification Guardrails — inform-only label, not a gate. Two volume floors (fiber operators ≥250 mi/yr, A&E firms ≥500 drawings/yr). Three verdict states: fit / miss / leaning_fit. Verdict block lives at the end of intel-structurer (no new LLM call, separation from extraction). Composition runs regardless of verdict. Operator-directed 2026-06-08 after red-team review: cost of false-positive is low (recipient ignores) so no gating is needed. |

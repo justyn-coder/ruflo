@@ -68,6 +68,13 @@ const PRODUCT_GUARDS: Array<{ pattern: RegExp; label: string }> = [
   { pattern: /\bTNX\b/, label: 'OUT-OF-SCOPE: TNX (tower structural)' },
   { pattern: /\bMicroStation\b/i, label: 'OUT-OF-SCOPE: MicroStation (hard disqualifier)' },
   { pattern: /\b(?:drawings?\s+QC|drawings?\s+quality[\s-]+control)\b/i, label: 'OUT-OF-SCOPE: Drawing QC (not a real product)' },
+  // BL-016 / F1 — Nick canon kill-list (canon/sources/inorsa-product-truth-nick-2026-06-04.md lines 57-61).
+  // Inorsa does NOT validate inputs (only flags missing inputs). These exact phrasings are WRONG.
+  { pattern: /\bInorsa\s+validates\s+inputs\b/i, label: 'kill-list: Inorsa validates inputs (Nick canon)' },
+  { pattern: /\bInorsa\s+validates\s+design\s+data\b/i, label: 'kill-list: Inorsa validates design data (Nick canon)' },
+  { pattern: /\bInorsa\s+validates\s+design\s+inputs\b/i, label: 'kill-list: Inorsa validates design inputs (Nick canon)' },
+  { pattern: /\bInorsa\s+catches\s+input\s+errors\b/i, label: 'kill-list: Inorsa catches input errors (Nick canon)' },
+  { pattern: /\bInorsa\s+validates\s+inputs\s+before\s+generating\b/i, label: 'kill-list: Inorsa validates inputs before generating (Nick canon)' },
 ];
 
 // ----------------------------------------------------------------------------

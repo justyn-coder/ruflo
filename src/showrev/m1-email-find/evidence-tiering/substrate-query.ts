@@ -30,6 +30,7 @@ import type {
   SourceKind,
 } from './types.js';
 import { tierBySourceKind, evidenceRecordId } from './types.js';
+import { classifyDomainTier } from '../verify-facts.js';
 
 // ----------------------------------------------------------------------------
 // Storage shapes (the wire format that comes back from Supabase)
@@ -107,6 +108,11 @@ export interface CompanyEvidenceRow {
   category: ClaimCategory;
   extracted_at: string;
   metadata?: Record<string, unknown>;
+  // F3 (fix-sprint-2026-06-13-v2) — URL-domain trust tier.
+  // 'T1' | 'T2' | 'T3' | 'T4' | 'PROHIBITED' | 'PROHIBITED_ROLLBACK_QUARANTINED' | null.
+  // null means pre-backfill (treat as unclassified, NOT as filtered).
+  domain_tier?: string | null;
+  domain_tier_set_at?: string | null;
 }
 
 /**
@@ -344,8 +350,37 @@ export async function getCompanyEvidence(
           ? `&source_date=gte.${encodeURIComponent(options.minSourceDate)}`
           : ''),
     );
-    for (const row of evidenceRows) {
-      const tier = tierBySourceKind(row.source_kind);
+    // F3 (fix-sprint-2026-06-13-v2) — drop rows whose URL classified as PROHIBITED
+    // (or were tagged PROHIBITED_ROLLBACK_QUARANTINED post-rollback). NULL
+    // domain_tier rows pass (pre-backfill; treat as unclassified, not filtered).
+    let prohibitedDropped = 0;
+    const safeRows = evidenceRows.filter(row => {
+      const dt = row.domain_tier;
+      if (dt === 'PROHIBITED' || dt === 'PROHIBITED_ROLLBACK_QUARANTINED') {
+        prohibitedDropped++;
+        return false;
+      }
+      return true;
+    });
+    if (prohibitedDropped > 0) {
+      console.log(`  [substrate-query] dropped ${prohibitedDropped} PROHIBITED evidence row(s) for "${companyName}"`);
+    }
+    for (const row of safeRows) {
+      // Base tier from source_kind (existing rule).
+      let tier = tierBySourceKind(row.source_kind);
+      let tierReason = `Evidence row from ${row.source_kind} build. Tier computed by source-kind rules.`;
+      // F3 (fix-sprint-2026-06-13-v2) — force T3 / T4 domain_tier → USE_TO_SHAPE
+      // regardless of source_kind. Defensive: a row tagged web_research_dated
+      // (USE_DIRECTLY by source-kind) but pointing at a single-secondary URL
+      // (T3 domain) should not stake the email's claim — it's dossier-only.
+      if (row.domain_tier === 'T3' || row.domain_tier === 'T4') {
+        if (tier !== 'USE_TO_SHAPE') {
+          tierReason = `Evidence row from ${row.source_kind} build (source-kind tier ${tier}), but URL-domain tier ${row.domain_tier} forces USE_TO_SHAPE per F3 (fix-sprint-2026-06-13-v2).`;
+        } else {
+          tierReason = `Evidence row from ${row.source_kind} build. URL-domain tier ${row.domain_tier} → USE_TO_SHAPE.`;
+        }
+        tier = 'USE_TO_SHAPE';
+      }
       results.push({
         id: row.id,
         claim: row.claim,
@@ -356,7 +391,7 @@ export async function getCompanyEvidence(
           sourceDate: row.source_date,
         },
         tier,
-        tierReason: `Evidence row from ${row.source_kind} build. Tier computed by source-kind rules.`,
+        tierReason,
         category: row.category,
       });
     }
@@ -749,35 +784,60 @@ export async function getFccCoverage(companyName: string): Promise<{
  */
 export async function writeEvidence(
   records: Array<Omit<CompanyEvidenceRow, 'id' | 'extracted_at' | 'company_normalized'> & { id?: string }>,
-): Promise<{ inserted: number; failed: number }> {
-  if (records.length === 0) return { inserted: 0, failed: 0 };
+): Promise<{ inserted: number; failed: number; refusedProhibited: number }> {
+  if (records.length === 0) return { inserted: 0, failed: 0, refusedProhibited: 0 };
   // PostgREST bulk insert requires all rows in the batch to have the same
   // key set. Normalize every row to include the same keys (filling missing
   // optional fields with null) so the wire-format matches.
   // Also dedup by id within the batch — PG on_conflict can't update the
   // same row twice in one statement.
+
+  // F3 (fix-sprint-2026-06-13-v2) — classify each row's source URL. Refuse
+  // INSERT on PROHIBITED hosts (scraper/aggregator data brokers). Set
+  // domain_tier + domain_tier_set_at on every other row for audit trail.
+  const now = new Date().toISOString();
+  let refusedProhibited = 0;
+
   const seen = new Set<string>();
-  const rows = records.map(r => ({
-    id:
-      r.id ||
-      evidenceRecordId({ citation: r.source_citation }, r.claim),
-    company_name: r.company_name,
-    company_normalized: normalizeCompanyName(r.company_name),
-    claim: r.claim,
-    source_kind: r.source_kind,
-    source_citation: r.source_citation,
-    source_date: r.source_date ?? null,
-    speaker_name: r.speaker_name ?? null,
-    speaker_company: r.speaker_company ?? null,
-    speaker_role: r.speaker_role ?? null,
-    category: r.category,
-    extracted_at: new Date().toISOString(),
-    metadata: r.metadata ?? null,
-  })).filter(row => {
+  const rows = records.map(r => {
+    const domainTier = classifyDomainTier(r.source_citation || '');
+    return {
+      id:
+        r.id ||
+        evidenceRecordId({ citation: r.source_citation }, r.claim),
+      company_name: r.company_name,
+      company_normalized: normalizeCompanyName(r.company_name),
+      claim: r.claim,
+      source_kind: r.source_kind,
+      source_citation: r.source_citation,
+      source_date: r.source_date ?? null,
+      speaker_name: r.speaker_name ?? null,
+      speaker_company: r.speaker_company ?? null,
+      speaker_role: r.speaker_role ?? null,
+      category: r.category,
+      extracted_at: now,
+      metadata: r.metadata ?? null,
+      domain_tier: domainTier,
+      domain_tier_set_at: now,
+    };
+  }).filter(row => {
+    if (row.domain_tier === 'PROHIBITED') {
+      refusedProhibited++;
+      console.warn(
+        `[substrate-query] writeEvidence refusing PROHIBITED-domain row: ` +
+        `company="${row.company_name}", citation="${row.source_citation}", ` +
+        `claim="${(row.claim || '').slice(0, 80)}"`
+      );
+      return false;
+    }
     if (seen.has(row.id)) return false;
     seen.add(row.id);
     return true;
   });
+
+  if (rows.length === 0) {
+    return { inserted: 0, failed: 0, refusedProhibited };
+  }
 
   try {
     await supabaseFetch(`/rest/v1/sr_company_evidence?on_conflict=id`, {
@@ -785,10 +845,10 @@ export async function writeEvidence(
       headers: { Prefer: 'resolution=merge-duplicates,return=minimal' },
       body: JSON.stringify(rows),
     });
-    return { inserted: rows.length, failed: 0 };
+    return { inserted: rows.length, failed: 0, refusedProhibited };
   } catch (err) {
     console.warn(`[substrate-query] writeEvidence failed: ${(err as Error).message}`);
-    return { inserted: 0, failed: rows.length };
+    return { inserted: 0, failed: rows.length, refusedProhibited };
   }
 }
 
