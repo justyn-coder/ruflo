@@ -1261,18 +1261,28 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     productionGateFails ? 'hold' :              // Fix #1 production email gate
     'pending';
 
-  // Carry forward composition_review from prior row so pipeline reruns don't
-  // erase Tim's craft-review verdict (sibling bug to the operator-lock guard at
-  // Phase 0.0). If the prior row had a non-pending verdict, preserve it; new
-  // composition reflects the same craft until Tim explicitly re-reviews.
+  // Carry forward composition_review verdict from the most-recent prior row so
+  // pipeline reruns don't erase Tim's craft-review verdict (sibling bug to the
+  // operator-lock guard at Phase 0.0). If the prior row had a non-pending
+  // verdict, preserve it; new composition reflects the same craft until Tim
+  // explicitly re-reviews.
+  //
+  // F6 (fix-sprint-2026-06-13-v2): composition_reviewed_{by,at} renamed to
+  // craft_reviewed_{by,at} for semantic separation from facts_reviewed_{by,at}.
+  // composition_review (the verdict string itself) was NOT renamed in F6 —
+  // only the actor + timestamp columns. Plan v2 §F6 trigger
+  // reset_craft_review_on_red() nulls the craft pair when confidence_color
+  // transitions to red; this carry-forward block reads the pair AFTER any
+  // trigger fires on the prior row, so we never propagate stale craft review
+  // across a substrate confidence drop.
   let priorCompositionReview: {
     composition_review?: string | null;
-    composition_reviewed_at?: string | null;
-    composition_reviewed_by?: string | null;
+    craft_reviewed_at?: string | null;
+    craft_reviewed_by?: string | null;
   } = {};
   try {
     const r = await fetch(
-      `${sbUrl}/rest/v1/sr_engine_output?prospect_id=eq.${encodeURIComponent(prospectId)}&select=composition_review,composition_reviewed_at,composition_reviewed_by&order=created_at.desc&limit=1`,
+      `${sbUrl}/rest/v1/sr_engine_output?prospect_id=eq.${encodeURIComponent(prospectId)}&select=composition_review,craft_reviewed_at,craft_reviewed_by&order=created_at.desc&limit=1`,
       { headers: { apikey: sbKey, Authorization: `Bearer ${sbKey}` } },
     );
     if (r.ok) {
