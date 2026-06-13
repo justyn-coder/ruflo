@@ -1487,6 +1487,67 @@ async function persistToSupabase(result: ProspectResult, runId: string): Promise
     // Non-fatal — sr_engine_output already has the data; portal sync can be retried
     console.warn(`[persist] sr_prospects upsert failed ${presRes.status}: ${text.slice(0, 200)}`);
   }
+
+  // F9 (fix-sprint-2026-06-13-v2): write composed email to sr_emails for
+  // per-touch audit trail. Fired AFTER sr_prospects upsert because sr_emails
+  // has FK to sr_prospects.id. UNIQUE (prospect_id, touch_number) means we
+  // UPSERT — re-running the pipeline updates the existing row instead of
+  // failing. status='draft' is the column default; F10/portal flips it as
+  // the email progresses to 'live' / 'enrolled' / 'sent'.
+  //
+  // Plan v2 §F9: spec assumed OTEL span `compose:email:*` with shipped=true.
+  // Fallback approach (per plan v2 explicit cover): write at compose time
+  // with status=draft, downstream surfaces flip status when ship occurs.
+  if (result.composed) {
+    try {
+      const wordCount = (result.composed.body || '').split(/\s+/).filter(Boolean).length;
+      const psLine = result.composed.ps || null;
+      const tier2Score = result.judge_result?.tier2?.score ?? null;
+      const judgeVerdict = result.judge_action ?? result.judge_result?.action ?? null;
+      const judgeDetails = result.judge_result ? {
+        action: result.judge_result.action,
+        rationale: result.judge_result.rationale,
+        tier1: result.judge_result.tier1,
+        tier2: result.judge_result.tier2,
+        tier3: result.judge_result.tier3 ?? null,
+        tier3_hallucination: result.judge_result.tier3Hallucination ?? null,
+      } : null;
+      const emailBody = {
+        prospect_id: prospectId,
+        touch_number: 1, // T1 cohort — smoke fire is touch 1
+        subject: result.composed.subject,
+        body: result.composed.body,
+        ps_line: psLine,
+        word_count: wordCount,
+        // 'draft' = column default; we hold here until F10/portal flips to live.
+        status: 'draft',
+        ae_name: result.ae.name,
+        judge_score: tier2Score,
+        judge_verdict: judgeVerdict,
+        judge_details: judgeDetails,
+        // human_edited stays false on initial compose; portal/ops flips on operator edit.
+      };
+      const emailRes = await fetch(
+        `${sbUrl}/rest/v1/sr_emails?on_conflict=prospect_id,touch_number`,
+        {
+          method: 'POST',
+          headers: {
+            apikey: sbKey,
+            Authorization: `Bearer ${sbKey}`,
+            'Content-Type': 'application/json',
+            Prefer: 'resolution=merge-duplicates,return=minimal',
+          },
+          body: JSON.stringify(emailBody),
+        },
+      );
+      if (!emailRes.ok) {
+        const text = await emailRes.text();
+        console.warn(`[persist] sr_emails upsert failed ${emailRes.status}: ${text.slice(0, 200)}`);
+      }
+    } catch (err) {
+      console.warn(`[persist] sr_emails upsert error: ${(err as Error).message}`);
+    }
+  }
 }
 
 // ----------------------------------------------------------------------------
