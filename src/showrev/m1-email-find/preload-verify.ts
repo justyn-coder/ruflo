@@ -313,10 +313,120 @@ async function checkUnsubscribeEnabled(
   }
 }
 
+// === F10 OPERATOR_GO_AND_LIVE_MICROSITE check (fix-sprint-2026-06-13-v2) ===
+// Per plan v2 §F10 Pre-send gate: "HS sequence enrollment script refuses to
+// enroll any prospect where sr_prospects.operator_go != true OR NOT EXISTS
+// (SELECT 1 FROM sr_microsites WHERE prospect_id = p.id AND status = 'live')."
+// Implemented here as a BLOCKING check so preload-verify.ts (the canonical
+// pre-fire gate per POST-PORTAL v6 + smoke fire flow) refuses to greenlight
+// any send until both conditions hold for every prospect in the roster.
+//
+// Fail-closed: empty prospectIds → check passes (degenerate; foundation
+// checks still gate the send). Missing Supabase env → BLOCKING fail
+// (can't verify, can't trust).
+async function checkOperatorGoAndLiveMicrosite(prospectIds: string[] | undefined): Promise<CheckResult> {
+  if (!prospectIds || prospectIds.length === 0) {
+    return {
+      name: 'OPERATOR_GO_AND_LIVE_MICROSITE',
+      level: 'BLOCKING',
+      pass: true,
+      details: ['No prospectIds passed — skipping per-prospect gate (foundation checks still apply)'],
+    };
+  }
+
+  const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
+  const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+  if (!sbKey) {
+    return {
+      name: 'OPERATOR_GO_AND_LIVE_MICROSITE',
+      level: 'BLOCKING',
+      pass: false,
+      details: ['No SUPABASE_SERVICE_ROLE_KEY — cannot verify operator_go + live microsite gates'],
+    };
+  }
+
+  const idsCsv = prospectIds.map(id => encodeURIComponent(id)).join(',');
+  const missingApproval: string[] = [];
+  const missingMicrosite: string[] = [];
+
+  try {
+    const prosRes = await fetch(
+      `${sbUrl}/rest/v1/sr_prospects?id=in.(${idsCsv})&select=id,operator_go`,
+      { headers: { apikey: sbKey, Authorization: `Bearer ${sbKey}` } },
+    );
+    if (!prosRes.ok) {
+      return {
+        name: 'OPERATOR_GO_AND_LIVE_MICROSITE',
+        level: 'BLOCKING',
+        pass: false,
+        details: [`sr_prospects query failed: HTTP ${prosRes.status}`],
+      };
+    }
+    const prospects = (await prosRes.json()) as Array<{ id: string; operator_go: boolean | null }>;
+    const seen = new Set(prospects.map(p => p.id));
+    for (const wanted of prospectIds) {
+      if (!seen.has(wanted)) missingApproval.push(`${wanted} (not in sr_prospects)`);
+    }
+    for (const p of prospects) {
+      if (p.operator_go !== true) missingApproval.push(p.id);
+    }
+
+    const micRes = await fetch(
+      `${sbUrl}/rest/v1/sr_microsites?prospect_id=in.(${idsCsv})&status=eq.live&select=prospect_id`,
+      { headers: { apikey: sbKey, Authorization: `Bearer ${sbKey}` } },
+    );
+    if (!micRes.ok) {
+      return {
+        name: 'OPERATOR_GO_AND_LIVE_MICROSITE',
+        level: 'BLOCKING',
+        pass: false,
+        details: [`sr_microsites query failed: HTTP ${micRes.status}`],
+      };
+    }
+    const live = new Set(((await micRes.json()) as Array<{ prospect_id: string }>).map(r => r.prospect_id));
+    for (const wanted of prospectIds) {
+      if (!live.has(wanted)) missingMicrosite.push(wanted);
+    }
+
+    const pass = missingApproval.length === 0 && missingMicrosite.length === 0;
+    const details: string[] = [];
+    if (missingApproval.length > 0) {
+      details.push(`${missingApproval.length} prospect(s) missing operator_go=true:`);
+      missingApproval.slice(0, 10).forEach(id => details.push(`  - ${id}`));
+      if (missingApproval.length > 10) details.push(`  ... +${missingApproval.length - 10} more`);
+    }
+    if (missingMicrosite.length > 0) {
+      details.push(`${missingMicrosite.length} prospect(s) missing live microsite:`);
+      missingMicrosite.slice(0, 10).forEach(id => details.push(`  - ${id}`));
+      if (missingMicrosite.length > 10) details.push(`  ... +${missingMicrosite.length - 10} more`);
+    }
+    if (pass) {
+      details.push(`All ${prospectIds.length} prospects pass: operator_go=true + live microsite present`);
+    }
+    return {
+      name: 'OPERATOR_GO_AND_LIVE_MICROSITE',
+      level: 'BLOCKING',
+      pass,
+      details,
+      meta: { totalChecked: prospectIds.length, missingApproval: missingApproval.length, missingMicrosite: missingMicrosite.length },
+    };
+  } catch (err) {
+    return {
+      name: 'OPERATOR_GO_AND_LIVE_MICROSITE',
+      level: 'BLOCKING',
+      pass: false,
+      details: [`Gate check error: ${(err as Error).message?.slice(0, 200) ?? 'unknown'}`],
+    };
+  }
+}
+
 // === Orchestrator ===
 export interface VerifyInput {
   prospectEmails: string[];
   sequenceNames: string[];
+  // F10: prospect IDs for the operator_go + live microsite per-prospect gate.
+  // Optional for backward compatibility; when present, BLOCKING check fires.
+  prospectIds?: string[];
 }
 
 export async function runVerify(input: VerifyInput): Promise<VerifyReport> {
@@ -337,7 +447,9 @@ export async function runVerify(input: VerifyInput): Promise<VerifyReport> {
   if (foundationOk) {
     const existing = await checkExistingContacts(input.prospectEmails);
     const unsub = await checkUnsubscribeEnabled(input.sequenceNames);
-    checks.push(existing, unsub);
+    // F10 (fix-sprint-2026-06-13-v2): operator approval + live microsite gate
+    const opGo = await checkOperatorGoAndLiveMicrosite(input.prospectIds);
+    checks.push(existing, unsub, opGo);
   } else {
     checks.push({
       name: 'EXISTING_HS_CONTACT',
@@ -347,6 +459,12 @@ export async function runVerify(input: VerifyInput): Promise<VerifyReport> {
     });
     checks.push({
       name: 'UNSUBSCRIBE_ENABLED',
+      level: 'BLOCKING',
+      pass: false,
+      details: ['Skipped — foundation checks failed'],
+    });
+    checks.push({
+      name: 'OPERATOR_GO_AND_LIVE_MICROSITE',
       level: 'BLOCKING',
       pass: false,
       details: ['Skipped — foundation checks failed'],
