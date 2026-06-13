@@ -391,10 +391,30 @@ export async function loadProspectToHubSpot(
     return { status: 'dry-run' };
   }
 
+  // F7 (fix-sprint-2026-06-13-v2): single-call create-with-association per
+  // HS GOSPEL Q7. When a new contact is created AND we already know the
+  // companyId, embed the contact→company association in the same POST body.
+  // Cuts loader API calls ~30% on the new-contact path (verified in spec v6
+  // Q7 §Impact). Existing-contact PATCH path is unchanged; association PUT
+  // still fires for the PATCH path (no v3 single-call equivalent exists for
+  // upsert + association together).
+  let contactCreatedWithAssoc = false;
   if (!contactId) {
-    const created = await hsApi('/crm/v3/objects/contacts', 'POST', { properties: contactProps });
+    const createBody: Record<string, unknown> = { properties: contactProps };
+    if (companyId) {
+      createBody.associations = [{
+        to: { id: companyId },
+        types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 1 }],
+      }];
+    }
+    const created = await hsApi('/crm/v3/objects/contacts', 'POST', createBody);
     contactId = created.id;
-    console.log(`    Contact created: ${contactId}`);
+    if (companyId) {
+      contactCreatedWithAssoc = true;
+      console.log(`    Contact created: ${contactId} + assoc → company ${companyId} (single POST)`);
+    } else {
+      console.log(`    Contact created: ${contactId}`);
+    }
   } else {
     // Existing contact: only set showrev_* fields (per Tim's rules)
     const updateProps = Object.fromEntries(
@@ -444,8 +464,12 @@ export async function loadProspectToHubSpot(
     }
   }
 
-  // Step 3: Associate contact → company
-  if (companyId && contactId) {
+  // Step 3: Associate contact → company.
+  // F7: skip when the create POST already embedded the association (one-call
+  // path). Still needed when (a) contact was PATCH-updated rather than
+  // created — no embed opportunity, or (b) companyId was discovered AFTER
+  // contact creation (defensive — currently unreachable but cheap to keep).
+  if (companyId && contactId && !contactCreatedWithAssoc) {
     try {
       await hsApi(`/crm/v4/objects/contacts/${contactId}/associations/companies/${companyId}`, 'PUT', [
         { associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 1 }
