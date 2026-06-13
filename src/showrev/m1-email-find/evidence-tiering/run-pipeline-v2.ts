@@ -1070,6 +1070,108 @@ async function resolveCitationProvenance(
   }
 }
 
+// ----------------------------------------------------------------------------
+// F8 (fix-sprint-2026-06-13-v2) — sr_pipeline_runs telemetry
+// ----------------------------------------------------------------------------
+// Plan v2 §F8 offered an OTEL receiver path OR a fallback "guaranteed to work"
+// direct-insert path. Fallback chosen: no long-running receiver, no global
+// ~/.claude/settings.json side-effect, deterministic capture even when run
+// outside a Claude Code session. Sample row's summary.session_id cross-check
+// (when CLAUDE_CODE_SESSION_ID is set) is preserved for the OTEL upgrade later.
+//
+// Table schema:  id uuid PK, run_type text NOT NULL, show_name default,
+// tiers_processed text[], prospects_count int, model text, config jsonb,
+// status text default 'running', started_at timestamptz default now(),
+// completed_at timestamptz, summary jsonb.
+
+interface PipelineRunInsert {
+  runId: string;            // string-form local runId (config.run_id)
+  runType: string;          // 'v2-cold' etc
+  prospectsCount: number;
+  model: string;            // 'opus-4.7'
+  config: Record<string, unknown>;
+}
+
+async function startPipelineRun(opts: PipelineRunInsert): Promise<string | null> {
+  const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
+  const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+  if (!sbKey) {
+    console.error('  F8 telemetry: no Supabase key, skipping sr_pipeline_runs insert');
+    return null;
+  }
+  try {
+    const res = await fetch(`${sbUrl}/rest/v1/sr_pipeline_runs?select=id`, {
+      method: 'POST',
+      headers: {
+        apikey: sbKey,
+        Authorization: `Bearer ${sbKey}`,
+        'Content-Type': 'application/json',
+        Prefer: 'return=representation',
+      },
+      body: JSON.stringify({
+        run_type: opts.runType,
+        prospects_count: opts.prospectsCount,
+        model: opts.model,
+        config: {
+          ...opts.config,
+          run_id: opts.runId,
+          session_id: process.env.CLAUDE_CODE_SESSION_ID ?? null,
+        },
+        status: 'running',
+      }),
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      console.error(`  F8 telemetry: insert failed HTTP ${res.status}: ${text.slice(0, 200)}`);
+      return null;
+    }
+    const rows = (await res.json()) as Array<{ id: string }>;
+    const id = rows[0]?.id ?? null;
+    if (id) console.log(`  F8 telemetry: sr_pipeline_runs row ${id} opened (status=running)`);
+    return id;
+  } catch (err) {
+    console.error(`  F8 telemetry: insert error: ${(err as Error).message}`);
+    return null;
+  }
+}
+
+async function finishPipelineRun(
+  pipelineRunId: string | null,
+  opts: { status: 'completed' | 'completed_with_errors' | 'failed'; summary: Record<string, unknown> },
+): Promise<void> {
+  if (!pipelineRunId) return;
+  const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
+  const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+  if (!sbKey) return;
+  try {
+    const res = await fetch(`${sbUrl}/rest/v1/sr_pipeline_runs?id=eq.${pipelineRunId}`, {
+      method: 'PATCH',
+      headers: {
+        apikey: sbKey,
+        Authorization: `Bearer ${sbKey}`,
+        'Content-Type': 'application/json',
+        Prefer: 'return=minimal',
+      },
+      body: JSON.stringify({
+        status: opts.status,
+        completed_at: new Date().toISOString(),
+        summary: {
+          ...opts.summary,
+          session_id: process.env.CLAUDE_CODE_SESSION_ID ?? null,
+        },
+      }),
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      console.error(`  F8 telemetry: complete failed HTTP ${res.status}: ${text.slice(0, 200)}`);
+      return;
+    }
+    console.log(`  F8 telemetry: sr_pipeline_runs row ${pipelineRunId} closed (status=${opts.status})`);
+  } catch (err) {
+    console.error(`  F8 telemetry: complete error: ${(err as Error).message}`);
+  }
+}
+
 async function persistToSupabase(result: ProspectResult, runId: string): Promise<void> {
   const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
   const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
@@ -1705,6 +1807,24 @@ async function main() {
   console.log(`  Flag-skip: ${includeFlagged ? 'OFF (--include-flagged set)' : 'ON (default; pass --include-flagged to re-run flagged)'}`);
   console.log('='.repeat(70));
 
+  // F8 (fix-sprint-2026-06-13-v2): open sr_pipeline_runs row before any work.
+  // pipelineRunId is the Supabase UUID; runId is the string display id.
+  const pipelineRunId = await startPipelineRun({
+    runId,
+    runType: 'v2-cold',
+    prospectsCount: rows.length,
+    model: 'opus-4.7',
+    config: {
+      input_path: inputPath,
+      skip_apollo: !!values['skip-apollo'],
+      max_apollo_credits: maxApolloCredits ?? null,
+      max_mv_credits: maxMvCredits,
+      include_flagged: includeFlagged,
+      verbose: !!values.verbose,
+      limit: values.limit ?? null,
+    },
+  });
+
   const creditTracker = new ApolloCreditTracker();
   const mvCreditTracker = new MvCreditTracker(maxMvCredits);
   resetJudgeMonitor(); // item 8: fresh rolling rates per pipeline run
@@ -1756,10 +1876,60 @@ async function main() {
     }
   }
 
-  printSummary(results, runId, Date.now() - t0);
+  const durationMs = Date.now() - t0;
+  printSummary(results, runId, durationMs);
+
+  // F8 (fix-sprint-2026-06-13-v2): close sr_pipeline_runs row at end of main().
+  // Counts mirror printSummary's mental model so summary jsonb is self-explanatory.
+  // send_status values: 'pending' (cleared judge, ready to ship) | 'flag' (stuck).
+  // composed has the email object; errors[] tracks per-prospect failure messages.
+  const pendingCount = results.filter(r => r.send_status === 'pending').length;
+  const flagCount = results.filter(r => r.flag_status === true || r.send_status === 'flag').length;
+  const composedCount = results.filter(r => r.composed != null).length;
+  const errorCount = results.filter(r => r.errors && r.errors.length > 0).length;
+  await finishPipelineRun(pipelineRunId, {
+    status: errorCount > 0 ? 'completed_with_errors' : 'completed',
+    summary: {
+      run_id: runId,
+      duration_ms: durationMs,
+      prospects_processed: results.length,
+      pending_count: pendingCount,
+      flag_count: flagCount,
+      composed_count: composedCount,
+      error_count: errorCount,
+      apollo_credits_used: creditTracker.total(),
+      mv_credits_used: mvCreditTracker.getSpent(),
+    },
+  });
 }
 
-main().catch(err => {
+main().catch(async err => {
   console.error('Fatal:', err);
+  // F8: best-effort mark the most-recent running row as failed. We can't recover
+  // the in-memory pipelineRunId from main()'s closure here, but the row was
+  // inserted with status='running' at start; this PATCH catches the case where
+  // an unexpected exception bubbled out of main() before finishPipelineRun ran.
+  try {
+    const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
+    const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+    if (sbKey) {
+      await fetch(`${sbUrl}/rest/v1/sr_pipeline_runs?status=eq.running&run_type=eq.v2-cold&order=started_at.desc&limit=1`, {
+        method: 'PATCH',
+        headers: {
+          apikey: sbKey,
+          Authorization: `Bearer ${sbKey}`,
+          'Content-Type': 'application/json',
+          Prefer: 'return=minimal',
+        },
+        body: JSON.stringify({
+          status: 'failed',
+          completed_at: new Date().toISOString(),
+          summary: { fatal_error: (err as Error).message?.slice(0, 500) ?? String(err) },
+        }),
+      });
+    }
+  } catch {
+    // swallow — we're exiting anyway
+  }
   process.exit(1);
 });
