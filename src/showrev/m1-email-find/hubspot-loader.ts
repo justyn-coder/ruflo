@@ -404,6 +404,46 @@ export async function loadProspectToHubSpot(
     console.log(`    Contact updated: ${contactId} (showrev_* fields only)`);
   }
 
+  // F5b (fix-sprint-2026-06-13-v2): forward-wire hubspot_contact_id into
+  // sr_prospects in the same call chain. After every successful create/upsert,
+  // immediately persist the HS contactId so the DB knows what's in HS
+  // without needing a separate backfill pass. Best-effort UPSERT — failures
+  // log a warning but don't block the load. Companion to F5a (the one-time
+  // backfill for the 18 pre-loaded smoke contacts).
+  if (contactId && row.prospect_id) {
+    try {
+      const sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://slttpknnuthbttjuzrnz.supabase.co';
+      const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+      if (sbKey) {
+        const patchRes = await fetch(
+          `${sbUrl}/rest/v1/sr_prospects?id=eq.${encodeURIComponent(row.prospect_id)}`,
+          {
+            method: 'PATCH',
+            headers: {
+              apikey: sbKey,
+              Authorization: `Bearer ${sbKey}`,
+              'Content-Type': 'application/json',
+              Prefer: 'return=minimal',
+            },
+            body: JSON.stringify({
+              hubspot_contact_id: contactId,
+              hubspot_loaded_at: new Date().toISOString(),
+              updated_at: new Date().toISOString(),
+            }),
+          },
+        );
+        if (!patchRes.ok) {
+          const text = await patchRes.text();
+          console.warn(`    F5b: sr_prospects.hubspot_contact_id update failed ${patchRes.status}: ${text.slice(0, 160)}`);
+        } else {
+          console.log(`    F5b: sr_prospects.${row.prospect_id} → hubspot_contact_id=${contactId}`);
+        }
+      }
+    } catch (err) {
+      console.warn(`    F5b: sr_prospects update error: ${(err as Error).message?.slice(0, 160)}`);
+    }
+  }
+
   // Step 3: Associate contact → company
   if (companyId && contactId) {
     try {
