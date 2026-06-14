@@ -112,6 +112,18 @@ export interface EvidenceRecord {
 
   /** Bucket this claim serves in the dossier. */
   category: ClaimCategory;
+
+  /**
+   * Inorsa-scope relevance tier (data-strategy-synthesis-2026-06-14.md §2.4,
+   * judge panel 98.6/100). Orthogonal to `tier` (which is source-trust).
+   * - A: internal Inorsa-AE / Chris / Nick / deck (lead-eligible gold)
+   * - B: booth obs / customer threads / AE call recaps (lead or support)
+   * - C: industry-research Inorsa-aligned (bridge/context only;
+   *      lead-eligible IFF persona=program_leverage AND primary_jtbd=7)
+   * - D: industry-research off-target or ambiguous-tower (BANNED — filtered upstream)
+   * - undefined: pre-classification row; treat as C-equivalent until backfilled
+   */
+  inorsa_scope_tier?: 'A' | 'B' | 'C' | 'D';
 }
 
 /**

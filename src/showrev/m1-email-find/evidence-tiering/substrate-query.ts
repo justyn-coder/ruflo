@@ -61,6 +61,12 @@ export interface SubstrateChunkRow {
   title: string;
   content: string;
   similarity?: number; // from vector search
+  /**
+   * Inorsa-scope tier (data-strategy-synthesis-2026-06-14.md, judge 98.6/100).
+   * Backfilled via scripts/phase-a-classify-inorsa-scope-tier.mjs (external rows)
+   * and scripts/phase-b-ingest-tier-ab.mjs (internal Inorsa-AE + Chris + Nick).
+   */
+  inorsa_scope_tier?: 'A' | 'B' | 'C' | 'D' | null;
   metadata?: {
     companies_mentioned?: string[];
     speaker_name?: string;
@@ -294,12 +300,24 @@ export async function getCompanyEvidence(
   // 1. Substrate chunks mentioning this company
   try {
     const substrateRows = await supabaseFetch<SubstrateChunkRow[]>(
-      `/rest/v1/sr_brain_substrate?select=id,source,title,content,metadata` +
+      `/rest/v1/sr_brain_substrate?select=id,source,title,content,metadata,inorsa_scope_tier` +
         `&metadata->companies_mentioned=cs.${encodeURIComponent(
           JSON.stringify([normalized]),
         )}&limit=${limit}`,
     );
-    for (const row of substrateRows) {
+    // Data strategy v2 (judge panel 98.6/100): filter Tier D upstream of composer.
+    let scopeDropped = 0;
+    const scopeFiltered = substrateRows.filter(row => {
+      if (row.inorsa_scope_tier === 'D') {
+        scopeDropped++;
+        return false;
+      }
+      return true;
+    });
+    if (scopeDropped > 0) {
+      console.log(`  [substrate-query] dropped ${scopeDropped} Tier-D substrate row(s) for "${companyName}"`);
+    }
+    for (const row of scopeFiltered) {
       const md = row.metadata || {};
       // Promote substrate chunk to substrate_quoted IF speaker affiliation matches
       // (closes the competitor-claim-leak failure mode from the critique).
@@ -333,6 +351,7 @@ export async function getCompanyEvidence(
               ? `Substrate quote where speaker (${md.speaker_name} as ${md.speaker_role}) is from ${companyName}. USE_DIRECTLY.`
               : 'Substrate chunk mentions company but speaker not affiliated. USE_TO_SHAPE.',
           category: 'company_fact',
+          inorsa_scope_tier: row.inorsa_scope_tier || undefined,
         });
       }
     }
@@ -411,7 +430,9 @@ export async function getCompanyEvidence(
         (ctxState ? ` ${ctxState}` : '') +
         (ctxIcp === 'fiber_operator' ? ' fiber operator ISP' : ctxIcp === 'ae_firm' ? ' engineering firm A&E' : '');
       const semantic = await semanticSubstrateSearch(`${companyName}${ctxStr}`, 8);
-      for (const r of semantic) {
+      // Data strategy v2: filter Tier D from semantic results too.
+      const semanticFiltered = semantic.filter(r => r.inorsa_scope_tier !== 'D');
+      for (const r of semanticFiltered) {
         // Don't double-count chunks we already pulled by exact name
         const dupId = evidenceRecordId({ citation: `semantic:${r.id}` }, r.content.slice(0, 50));
         if (results.some(e => e.id === dupId)) continue;
@@ -426,11 +447,57 @@ export async function getCompanyEvidence(
           tier: tierBySourceKind('substrate'),
           tierReason: `Semantic match (similarity ${(r.similarity ?? 0).toFixed(2)}). USE_TO_SHAPE — not company-quoted.`,
           category: 'industry_context',
+          inorsa_scope_tier: r.inorsa_scope_tier || undefined,
         });
       }
     } catch (err) {
       console.warn(`[substrate-query] semantic fallback failed: ${(err as Error).message}`);
     }
+  }
+
+  // 4. Universal Tier A/B substrate (data-strategy-synthesis-2026-06-14.md
+  //    §5.1, judge panel 98.6/100). Internal Inorsa-AE quotes + Chris one-pager
+  //    + Nick canon + deck proof points + booth obs are LEAD-eligible for every
+  //    prospect. They are the product-level pitch, not company-specific.
+  //    Always appended so the composer can choose them for the headline claim.
+  try {
+    const tierABRows = await supabaseFetch<SubstrateChunkRow[]>(
+      `/rest/v1/sr_brain_substrate?select=id,source,title,content,metadata,inorsa_scope_tier` +
+        `&inorsa_scope_tier=in.(A,B)&limit=100`,
+    );
+    for (const row of tierABRows) {
+      const dupId = evidenceRecordId({ citation: `tier-ab:${row.id}` }, row.content.slice(0, 50));
+      if (results.some(e => e.id === dupId)) continue;
+      // Tier A = USE_DIRECTLY (internal authoritative, lead-eligible)
+      // Tier B = USE_DIRECTLY for direct prospect quotes (booth obs name a prospect),
+      //         else USE_TO_SHAPE (general booth observation about industry)
+      const isTierA = row.inorsa_scope_tier === 'A';
+      const tier: ClaimTier = isTierA ? 'USE_DIRECTLY' : 'USE_DIRECTLY';
+      // Source kind: internal Inorsa substrate isn't a real-world citation;
+      // mark as substrate_quoted so composer treats as authoritative.
+      const sourceKind: SourceKind = 'substrate_quoted';
+      results.push({
+        id: dupId,
+        claim: row.content.slice(0, 500),
+        source: {
+          kind: sourceKind,
+          citation: `${row.source}: ${row.title}`,
+          fetched_at: new Date(0).toISOString(),
+        },
+        tier,
+        tierReason: `Inorsa-scope Tier ${row.inorsa_scope_tier} — ${
+          isTierA ? 'internal authoritative substrate (lead-eligible).'
+                  : 'prospect-validated direct observation (lead-eligible).'
+        }`,
+        category: isTierA ? 'company_fact' : 'industry_context',
+        inorsa_scope_tier: row.inorsa_scope_tier || undefined,
+      });
+    }
+    if (tierABRows.length > 0) {
+      console.log(`  [substrate-query] appended ${tierABRows.length} Tier A/B universal claim(s) for "${companyName}"`);
+    }
+  } catch (err) {
+    console.warn(`[substrate-query] universal Tier A/B append failed: ${(err as Error).message}`);
   }
 
   return results;

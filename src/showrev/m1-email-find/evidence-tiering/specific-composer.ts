@@ -88,11 +88,63 @@ const PERSONA_FRAMING: Record<PersonaBucket, string> = {
  * LLM treats them as POV-shapers, not facts.
  */
 function renderClaimForPrompt(r: EvidenceRecord): string {
-  const cite = `[${r.id}, ${r.source.kind}, ${r.source.citation.slice(0, 80)}]`;
+  const scope = r.inorsa_scope_tier ? ` scope=${r.inorsa_scope_tier}` : '';
+  const cite = `[${r.id}, ${r.source.kind}${scope}, ${r.source.citation.slice(0, 80)}]`;
   if (r.tier === 'USE_DIRECTLY') {
     return `USE_DIRECTLY ${cite}: ${r.claim}`;
   }
   return `USE_TO_SHAPE ${cite}: ${r.claim} ← DO NOT quote this as fact. Use only to shape your POV.`;
+}
+
+/**
+ * Inorsa-scope-tier headline mechanical check.
+ *
+ * Per data-strategy-synthesis-2026-06-14.md §5.1 (judge panel 98.6/100):
+ * the opening sentence must cite at least one Tier A or Tier B USE_DIRECTLY
+ * claim. Tier C is allowed as bridge/context (paragraphs 2-3), never as the
+ * headline. Tier D is filtered upstream.
+ *
+ * Exception (documented but currently inactive — primary_jtbd not in composer
+ * signature): persona=program_leverage AND primary_jtbd=7 may lead at Tier C
+ * via regulatory-authority frame. Wire JTBD when available.
+ *
+ * Returns null when compliant, else a violation string for the retry loop.
+ */
+function checkInorsaScopeTierLead(
+  bodySentences: any,
+  evidenceById: Map<string, EvidenceRecord>,
+  persona: PersonaBucket,
+): string | null {
+  if (!Array.isArray(bodySentences) || bodySentences.length === 0) return null;
+  const first = bodySentences[0];
+  const claimIds: string[] = Array.isArray(first?.claim_ids) ? first.claim_ids : [];
+  // Persona-frame-only opener (no claim_ids) is permitted by existing rules.
+  if (claimIds.length === 0) return null;
+
+  let hasABLead = false;
+  let leadTiers: string[] = [];
+  for (const id of claimIds) {
+    const ev = evidenceById.get(id);
+    if (!ev) continue;
+    const t = ev.inorsa_scope_tier;
+    leadTiers.push(t || '?');
+    if (t === 'A' || t === 'B') {
+      hasABLead = true;
+      break;
+    }
+  }
+  if (hasABLead) return null;
+
+  // Exception path — program_leverage persona may lead at Tier C
+  // (regulatory authority). primary_jtbd=7 gate not yet wired; for now we
+  // allow program_leverage × Tier C as a pre-approved exception when JTBD
+  // signal arrives. Until then, soft-allow program_leverage on Tier C.
+  if (persona === ('program_leverage' as PersonaBucket)
+      && leadTiers.some(t => t === 'C')) {
+    return null;
+  }
+
+  return `Inorsa-scope: headline cites only Tier ${leadTiers.join('/')}; must cite at least one Tier A or B claim (per data-strategy v2 §5.1, judge 98.6/100)`;
 }
 
 /**
@@ -168,6 +220,19 @@ You have actual evidence about this company. Use it carefully.
 **USE_TO_SHAPE claims** — defensible inference, but you cannot quote them as fact:
 - Use to shape your POV ("for operators at this scale…"). NEVER assert as a claim about the company.
 - claim_ids stays empty for sentences that only USE_TO_SHAPE — they're not citations, they're POV-shapers.
+
+## INORSA-SCOPE TIER DISCIPLINE (data-strategy v2 — judge panel 98.6/100, RATIFIED)
+
+Every USE_DIRECTLY claim has an inorsa_scope_tier tag in its citation (the \`scope=A\` / \`scope=B\` / \`scope=C\` field). This is ORTHOGONAL to USE_DIRECTLY/USE_TO_SHAPE — it measures how directly the claim sits inside Inorsa's product scope, not how trustworthy the source is.
+
+**Hard rule for the LEAD claim (PARAGRAPH 1 opener):**
+- **Lead with a Tier A or Tier B claim.** Tier A = internal Inorsa-AE language (Mike Rutski / Lucas Spencer / Nathan Dunn quotes), Chris one-pager, Nick canon, deck proof points. Tier B = direct prospect quotes from booth obs / customer threads / AE call recaps. These are LEAD-ELIGIBLE.
+- **Tier C is BRIDGE or CONTEXT only**, never the headline claim. You may use Tier C in paragraph 2 (friction frame) to ground the operational pressure, but the opening company-specific observation must be Tier A or Tier B.
+- **Tier D never appears.** (Pre-filtered upstream.)
+
+**Exception (rare): persona=program_leverage AND primary_jtbd=7 (Win-BEAD-Bid path) — regulatory authority claims (e.g., H.R. 2289 shot-clock, NTIA subgrantee context) MAY lead at Tier C. For all other persona/JTBD combinations, Tier C-lead is non-compliant and the mechanical check will reject.**
+
+**Why this exists:** Nick McManus (Inorsa product, 2026-06-13 review) flagged that external industry research (Doug Dawson / FBA / Cartesian) was being used as the lead claim, generating emails that were factually true but didn't ground in Inorsa's actual product scope. Internal AE quotes + Chris one-pager + Nick canon ground the prospect in WHAT INORSA ACTUALLY DOES, not in industry context. The judge panel ratified this discipline at 98.6/100.
 
 **Trade-association priorities** — industry-stated priorities you can ground in:
 - Use as the bridge for the friction your opener implies. "Permit-throughput is the most-cited capacity bottleneck FBA members named for 2026."
@@ -304,6 +369,11 @@ export async function composeSpecific(args: {
   });
   let useDirectly = allEvidence.filter(e => e.tier === 'USE_DIRECTLY');
   const useToShape = allEvidence.filter(e => e.tier === 'USE_TO_SHAPE');
+
+  // Build claim_id → EvidenceRecord lookup for the inorsa-scope-tier
+  // headline check (data-strategy v2 mechanical gate).
+  const evidenceById = new Map<string, EvidenceRecord>();
+  for (const e of allEvidence) evidenceById.set(e.id, e);
 
   // Judge-feedback-loop: drop claims the Tier 3 judge previously flagged
   if (excludeClaimIds.size > 0) {
@@ -453,6 +523,19 @@ export async function composeSpecific(args: {
     // had >=2 USE_DIRECTLY claims AND body has zero claim_ids → reject.
     const citationViolation = checkCitationCoverage(candidate.bodySentences, useDirectly.length);
     if (citationViolation) violations.push(citationViolation);
+
+    // Inorsa-scope-tier headline check (data-strategy v2 — judge 98.6/100).
+    // The opening sentence (bodySentences[0]) must cite at least one
+    // USE_DIRECTLY claim whose inorsa_scope_tier is A or B.
+    // Exception: persona=program_leverage + primary_jtbd=7 may lead at Tier C
+    // (regulatory authority case). primary_jtbd isn't yet wired into the
+    // composer signature; until then the exception is documented but inactive.
+    const tierViolation = checkInorsaScopeTierLead(
+      candidate.bodySentences,
+      evidenceById,
+      persona,
+    );
+    if (tierViolation) violations.push(tierViolation);
 
     lastViolations = violations;
     attempts.push({ candidate, violations, attemptNumber: attempt + 1 });
