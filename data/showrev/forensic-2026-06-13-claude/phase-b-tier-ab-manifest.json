@@ -1,0 +1,360 @@
+{
+  "_doc": "Phase B internal substrate ingest manifest (data-strategy-synthesis-2026-06-14.md §5.1 step 2). Each entry becomes one sr_brain_substrate row at the named tier. Sources: jtbd-matrix.md Pain sections (Tier A AE emails), inorsa-source-of-truth.md §2 (Chris one-pager) + §7 (proof points + boundaries), canon/sources/inorsa-product-truth-nick-2026-06-04.md (Nick canon), brain-synthesis.md + jtbd-matrix booth obs (Tier B). Idempotent by URL.",
+  "_version": "v1 2026-06-14",
+  "_known_gaps": "Customer email threads + AE call recaps (Tier B per synthesis v2 §2.4) are scattered across the repo and HS, not yet centralized. This manifest covers only the booth-obs subset of Tier B. Customer-thread + AE-recap ingestion is queued as incremental Tier B passes.",
+
+  "entries": [
+    {
+      "source": "internal-inorsa-ae",
+      "tier": "A",
+      "title": "Mike Rutski email to Indus CAD: kickback redesign on dime",
+      "url": "ruflo://data/showrev/jtbd-matrix.md#JTBD-1-Pain",
+      "content": "Every permit return on an FTTX package means your team redesigns on your dime, not the client's.",
+      "metadata": {"speaker": "Mike Rutski", "context": "email to Indus CAD (Kesari Iyengar)", "jtbd": 1, "persona_fit": "permit_cycle"}
+    },
+    {
+      "source": "internal-inorsa-ae",
+      "tier": "A",
+      "title": "Mike Rutski email to PCCI: single return backs up queue",
+      "url": "ruflo://data/showrev/jtbd-matrix.md#JTBD-1-Pain-PCCI",
+      "content": "A single permit return does not just cost rework hours. It backs up the queue behind it.",
+      "metadata": {"speaker": "Mike Rutski", "context": "email to PCCI", "jtbd": 1, "persona_fit": "permit_cycle"}
+    },
+    {
+      "source": "internal-inorsa-ae",
+      "tier": "A",
+      "title": "Mike Rutski email to Indus CAD (Kesari): client questions QC",
+      "url": "ruflo://data/showrev/jtbd-matrix.md#JTBD-6-Pain",
+      "content": "When an input conflict in the source data makes it through drafting and into a permit submission, the rejection comes back to your firm. Your team redesigns. Your client questions the QC process.",
+      "metadata": {"speaker": "Mike Rutski", "context": "email to Indus CAD (Kesari)", "jtbd": 6, "persona_fit": "drawings_quality"}
+    },
+    {
+      "source": "internal-inorsa-ae",
+      "tier": "A",
+      "title": "Lucas Spencer email to Ohio Gig: bottleneck is CAD-ready drawings",
+      "url": "ruflo://data/showrev/jtbd-matrix.md#JTBD-5-Pain-Ohio-Gig",
+      "content": "The bottleneck is not crews or equipment. It is whether CAD-ready drawings stay ahead of the construction schedule.",
+      "metadata": {"speaker": "Lucas Spencer", "context": "email to Ohio Gig", "jtbd": 5, "persona_fit": "build_pace"}
+    },
+    {
+      "source": "internal-inorsa-ae",
+      "tier": "A",
+      "title": "Lucas Spencer email to Ohio Gig: region drawings = region crews idle",
+      "url": "ruflo://data/showrev/jtbd-matrix.md#JTBD-5-Pain-Ohio-Gig-2",
+      "content": "When a drawing set comes back in one region, field crews in that region sit idle. Multiply that across four simultaneous builds.",
+      "metadata": {"speaker": "Lucas Spencer", "context": "email to Ohio Gig", "jtbd": 5, "persona_fit": "build_pace"}
+    },
+    {
+      "source": "internal-inorsa-ae",
+      "tier": "A",
+      "title": "Nathan Dunn email to Cyient: GIS-to-CAD remains manual per-client-standard",
+      "url": "ruflo://data/showrev/jtbd-matrix.md#JTBD-4-Pain-Cyient",
+      "content": "GIS designs move fast, but converting them to construction-grade AutoCAD remains manual, slow, and different for each client's drawing standard.",
+      "metadata": {"speaker": "Nathan Dunn", "context": "email to Cyient", "jtbd": 4, "persona_fit": "permit_cycle"}
+    },
+    {
+      "source": "internal-inorsa-ae",
+      "tier": "A",
+      "title": "Nathan Dunn B+T call recap: BEAD-rate engineering cost per LF",
+      "url": "ruflo://data/showrev/jtbd-matrix.md#JTBD-3-Pain-B+T",
+      "content": "Profitability at BEAD-funded rates (20 to 30 cents per linear foot) is the core objective.",
+      "metadata": {"speaker": "Nathan Dunn", "context": "call recap to B+T", "jtbd": 3, "persona_fit": "capital_efficiency"}
+    },
+    {
+      "source": "customer-thread",
+      "tier": "A",
+      "title": "Customer VP of Engineering: CFO objection on capitalization",
+      "url": "ruflo://data/showrev/jtbd-matrix.md#JTBD-3-Pain-VP",
+      "content": "Our CEO/CFO have come to the unfortunate conclusion that the cost is too high and will have a direct impact on EBITDA since we can't capitalize any of it.",
+      "metadata": {"speaker": "VP of Engineering", "context": "real objection from sales thread", "jtbd": 3, "persona_fit": "capital_efficiency"}
+    },
+    {
+      "source": "deck-proof-points",
+      "tier": "A",
+      "title": "Deck claim: 70% reduction in construction drawing cycle time",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-7-proof-points",
+      "content": "Inorsa delivers a 70% reduction in construction drawing cycle time.",
+      "metadata": {"approved_by": "Nick", "use_as": "proof_point", "applies_to_jtbd": [1, 2, 5, 6]}
+    },
+    {
+      "source": "deck-proof-points",
+      "tier": "A",
+      "title": "Deck claim: source data to preliminary drawing in ~10 minutes",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-7-proof-points-10min",
+      "content": "Inorsa takes roughly 10 minutes from source data to a preliminary drawing.",
+      "metadata": {"approved_by": "Nick", "use_as": "proof_point", "applies_to_jtbd": [1, 2, 5]}
+    },
+    {
+      "source": "deck-proof-points",
+      "tier": "A",
+      "title": "Deck claim: week of manual drafting compresses to minutes",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-7-proof-points-week",
+      "content": "On longer-route fiber projects, a week of manual drafting can compress to minutes of automation plus your team's finishing work.",
+      "metadata": {"approved_by": "Nick", "use_as": "proof_point", "applies_to_jtbd": [3, 5]}
+    },
+    {
+      "source": "customer-thread",
+      "tier": "A",
+      "title": "Customer proof: 56 hours to under 3 minutes",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-7-customer-thread",
+      "content": "A drafting cycle that previously took 56 hours of manual drafting now completes in under 3 minutes of Inorsa automation plus drafter finishing.",
+      "metadata": {"source": "customer thread", "use_as": "proof_point"}
+    },
+    {
+      "source": "deck-proof-points",
+      "tier": "A",
+      "title": "Deck claim: 2-5x drafting capacity with same headcount",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-7-proof-points-2-5x",
+      "content": "Inorsa scales drafting capacity 2 to 5 times with the existing team. Cite as a range, never as a guaranteed percentage without reviewing the prospect's files first.",
+      "metadata": {"approved_by": "Nick", "use_as": "proof_point", "applies_to_jtbd": [2, 7]}
+    },
+    {
+      "source": "nick-canon",
+      "tier": "A",
+      "title": "Nick: 30-40% permit rejection on first pass (LOCKED)",
+      "url": "ruflo://canon/sources/inorsa-product-truth-nick-2026-06-04.md#industry-datapoints",
+      "content": "Permit rejection rate on first submission is approximately 30 to 40 percent. This is Inorsa's internally claimed number, locked 2026-06-10. Higher than the often-cited 8 to 12 percent industry average. In outreach: attribute to industry sources or Inorsa product team estimate, not as observed customer data.",
+      "metadata": {"approved_by": "Nick + operator", "use_as": "industry_datapoint", "applies_to_jtbd": [1, 6]}
+    },
+    {
+      "source": "nick-canon",
+      "tier": "A",
+      "title": "Nick: kickback delays are MONTHS, production delays are DAYS",
+      "url": "ruflo://canon/sources/inorsa-product-truth-nick-2026-06-04.md#industry-datapoints-kickback",
+      "content": "Cycle time production delays are days. Kickback delays are months. The kickback cascade is the biggest problem in the industry.",
+      "metadata": {"approved_by": "Nick", "use_as": "industry_anchor", "applies_to_jtbd": [1, 6]}
+    },
+    {
+      "source": "chris-onepager",
+      "tier": "A",
+      "title": "Chris one-pager headline + subhead",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-2-chris-headline",
+      "content": "10X Your Engineering. Your fiber builds are scaling. Your engineering workflows aren't.",
+      "metadata": {"author": "Chris Balandran", "use_as": "headline"}
+    },
+    {
+      "source": "chris-onepager",
+      "tier": "A",
+      "title": "Chris one-pager: the problem (scale + manual production + outsourcing trap)",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-2-chris-problem",
+      "content": "Fiber deployment teams are under pressure to build faster with leaner teams and tighter margins. Engineers spend hours manually producing drawings from LLD and GIS inputs. Change requests stack up. Manual coordination that worked at 50 miles breaks at 250. Outsourcing adds handoffs, increases risk, and leaves teams with less control over quality and timing. Hiring adds headcount without fixing the underlying problem.",
+      "metadata": {"author": "Chris Balandran", "use_as": "problem_framing", "applies_to_jtbd": [2, 4]}
+    },
+    {
+      "source": "chris-onepager",
+      "tier": "A",
+      "title": "Chris one-pager: the solution (Ingest + Generate)",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-2-chris-solution",
+      "content": "Inorsa automates the generation of construction and permit drawings directly from your GIS and LLD inputs, so your team produces consistent, accurate deliverables at any build volume without the manual production overhead. Ingest: Inorsa structures GIS and LLD inputs into asset-level data. No manual extraction. Generate: Inorsa produces construction and permit drawings ready for engineer review and submission, directly from your structured data, with full traceability back to source documents.",
+      "metadata": {"author": "Chris Balandran", "use_as": "product_framing"}
+    },
+    {
+      "source": "chris-onepager",
+      "tier": "A",
+      "title": "Chris trust line (verbatim)",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-2-chris-trust",
+      "content": "Every output is deterministic and traceable back to source data. No AI guesswork. No black box.",
+      "metadata": {"author": "Chris Balandran", "use_as": "trust_line", "verbatim_required": true}
+    },
+    {
+      "source": "chris-onepager",
+      "tier": "A",
+      "title": "Chris outcomes: speed + consistency + throughput",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-2-chris-outcomes",
+      "content": "Faster drawing turnaround across markets and teams. Consistent documentation regardless of build volume. Higher throughput without proportional increases in staff.",
+      "metadata": {"author": "Chris Balandran", "use_as": "outcomes"}
+    },
+    {
+      "source": "deck-proof-points",
+      "tier": "A",
+      "title": "Variant A pitch (ops_builder default)",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-1-variant-a",
+      "content": "We convert your GIS and LLD data into construction and permit drawings in minutes, so your team takes on more work without adding headcount.",
+      "metadata": {"use_as": "pitch_variant", "variant": "A", "verbatim_required": true}
+    },
+    {
+      "source": "deck-proof-points",
+      "tier": "A",
+      "title": "Variant B pitch (technical_designer)",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-1-variant-b",
+      "content": "We convert your GIS and LLD data into construction and permit drawings in minutes. Deterministic output, full traceability back to source.",
+      "metadata": {"use_as": "pitch_variant", "variant": "B", "verbatim_required": true}
+    },
+    {
+      "source": "deck-proof-points",
+      "tier": "A",
+      "title": "Variant C pitch (revenue_leader)",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-1-variant-c",
+      "content": "We convert your GIS and LLD data into construction and permit drawings in minutes, so projects get to construction faster without adding headcount.",
+      "metadata": {"use_as": "pitch_variant", "variant": "C", "verbatim_required": true}
+    },
+    {
+      "source": "nick-canon",
+      "tier": "A",
+      "title": "Nick: Inorsa accelerates production + customer team gains QC time",
+      "url": "ruflo://canon/sources/inorsa-product-truth-nick-2026-06-04.md#what-inorsa-does",
+      "content": "Inorsa accelerates production, taking the manual drafting workload off the customer's team. That acceleration gives the customer's team time to perform their own more rigorous QC before submitting to jurisdictions.",
+      "metadata": {"speaker": "Nick McManus", "use_as": "value_prop_framing", "applies_to_jtbd": [1, 6]}
+    },
+    {
+      "source": "nick-canon",
+      "tier": "A",
+      "title": "Nick: Inorsa does NOT validate inputs (except flags missing)",
+      "url": "ruflo://canon/sources/inorsa-product-truth-nick-2026-06-04.md#what-inorsa-does-not-do",
+      "content": "Inorsa does NOT validate inputs, with ONE exception: it flags missing inputs. Inorsa does NOT catch errors in the customer's network management tool. Any errors or inaccuracies in their network management tool will translate directly as errors in the Inorsa output. Inorsa does NOT do QC on the drawings it generates.",
+      "metadata": {"speaker": "Nick McManus", "use_as": "boundary", "boundary_rule": "do_not_claim_validation"}
+    },
+    {
+      "source": "nick-canon",
+      "tier": "A",
+      "title": "Nick: speed creates time creates QC (NOT we catch errors)",
+      "url": "ruflo://canon/sources/inorsa-product-truth-nick-2026-06-04.md#JTBD-1-framing",
+      "content": "Inorsa doesn't catch input errors. But the accelerated production gives the customer more time to do rigorous QC before submission. Frame as: more time for their own QC, not we catch errors.",
+      "metadata": {"speaker": "Nick McManus", "use_as": "framing_rule", "applies_to_jtbd": [1, 6]}
+    },
+    {
+      "source": "nick-canon",
+      "tier": "A",
+      "title": "Nick: A&E firms get more billable throughput",
+      "url": "ruflo://canon/sources/inorsa-product-truth-nick-2026-06-04.md#JTBD-A&E",
+      "content": "A&E firms replace their drafters' manual work with Inorsa automation. Value equals more billable throughput. Automation potential is proportional to how well they're leveraging their network management tool. Don't claim a fixed percentage without a file review.",
+      "metadata": {"speaker": "Nick McManus", "use_as": "value_prop_a_e", "applies_to_jtbd": [2, 7]}
+    },
+    {
+      "source": "nick-canon",
+      "tier": "A",
+      "title": "Nick: Operators get drawings that never bottleneck field crews",
+      "url": "ruflo://canon/sources/inorsa-product-truth-nick-2026-06-04.md#JTBD-Operator",
+      "content": "Operators get drawings that never bottleneck field crews. Accelerated production contributes to accelerated construction schedules (other variables constant). Accelerated production accelerates revenue with cost reduction.",
+      "metadata": {"speaker": "Nick McManus", "use_as": "value_prop_operator", "applies_to_jtbd": [3, 5]}
+    },
+    {
+      "source": "nick-canon",
+      "tier": "A",
+      "title": "Nick: BEAD-bid capacity confidence + smoothing sporadic work",
+      "url": "ruflo://canon/sources/inorsa-product-truth-nick-2026-06-04.md#JTBD-7-framing",
+      "content": "Drafters still finish drawings, so drawings could still be a bottleneck, but the increased capacity over manual provides confidence in the bid and smooths the instability of sporadic work.",
+      "metadata": {"speaker": "Nick McManus", "use_as": "value_prop_bid", "applies_to_jtbd": [7]}
+    },
+    {
+      "source": "deck-proof-points",
+      "tier": "A",
+      "title": "Nick value-prop frame: Revenue Acceleration",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-7-nick-frame-1",
+      "content": "Revenue Acceleration: do the work faster, get paid sooner.",
+      "metadata": {"speaker": "Nick McManus", "use_as": "value_frame", "frame_n": 1}
+    },
+    {
+      "source": "deck-proof-points",
+      "tier": "A",
+      "title": "Nick value-prop frame: Revenue Generation",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-7-nick-frame-2",
+      "content": "Revenue Generation: accept more work without adding headcount.",
+      "metadata": {"speaker": "Nick McManus", "use_as": "value_frame", "frame_n": 2}
+    },
+    {
+      "source": "deck-proof-points",
+      "tier": "A",
+      "title": "Nick value-prop frame: Opportunity",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-7-nick-frame-3",
+      "content": "Opportunity: your team isn't stuck on this work and can do other things.",
+      "metadata": {"speaker": "Nick McManus", "use_as": "value_frame", "frame_n": 3}
+    },
+    {
+      "source": "deck-proof-points",
+      "tier": "A",
+      "title": "Nick value-prop frame: Mistake proofing (narrow)",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-7-nick-frame-4",
+      "content": "Mistake proofing: ONLY where a key input is missing. Not general QA. Inorsa surfaces missing-input gaps so drafters can fix the gap before drafting time is spent.",
+      "metadata": {"speaker": "Nick McManus", "use_as": "value_frame", "frame_n": 4, "boundary_rule": "missing_inputs_only"}
+    },
+    {
+      "source": "deck-proof-points",
+      "tier": "A",
+      "title": "Boundary: does NOT impact construction costs/efficiency",
+      "url": "ruflo://canon/sources/inorsa-product-truth-nick-2026-06-04.md#boundary",
+      "content": "Inorsa does NOT impact construction costs or efficiency. We get construction activities approved sooner, but we don't impact the actual construction activities. Per Nick on the brief/chris review.",
+      "metadata": {"speaker": "Nick McManus", "use_as": "boundary", "boundary_rule": "no_construction_impact_claim"}
+    },
+    {
+      "source": "booth-obs",
+      "tier": "B",
+      "title": "Spencer Kariniemi at Booker Engineering: INBOUND for automated basemap drafting",
+      "url": "ruflo://data/showrev/brain-synthesis.md#CARD-4-Spencer",
+      "content": "Spencer Kariniemi at Booker Engineering reached out INBOUND at the booth asking about automated basemap drafting. His team independently identified the need for capacity solutions. He is General Manager at Booker, a fiber construction firm.",
+      "metadata": {"prospect_company": "Booker Engineering", "prospect_name": "Spencer Kariniemi", "signal": "INBOUND", "jtbd_match": [2, 7], "persona_fit": "build_pace"}
+    },
+    {
+      "source": "booth-obs",
+      "tier": "B",
+      "title": "Jackie at Dallas firm: 250 active fiber projects, wants single standardization platform",
+      "url": "ruflo://data/showrev/jtbd-matrix.md#JTBD-4-Booth-Jackie",
+      "content": "Jackie at a Dallas firm with 250 active fiber projects: Multiple design vendors submit different drawing standards. Wants a single platform to standardize across all of them.",
+      "metadata": {"prospect_company": "Dallas A&E firm (unnamed)", "prospect_name": "Jackie", "jtbd_match": [4], "persona_fit": "build_pace"}
+    },
+    {
+      "source": "booth-obs",
+      "tier": "B",
+      "title": "Indus CAD: 200+ employees + offshore team still manual GIS-to-CAD",
+      "url": "ruflo://data/showrev/jtbd-matrix.md#JTBD-2-Booth-Indus",
+      "content": "Indus CAD Works has 200+ employees and an offshore team and is still doing manual GIS-to-CAD conversion. Headcount alone does not solve per-drafter throughput.",
+      "metadata": {"prospect_company": "Indus CAD Works", "prospect_name": null, "jtbd_match": [2, 4], "persona_fit": "build_pace"}
+    },
+    {
+      "source": "booth-obs",
+      "tier": "B",
+      "title": "Universal booth sentiment: permitting will never change",
+      "url": "ruflo://data/showrev/jtbd-matrix.md#JTBD-1-Booth-universal",
+      "content": "Universal sentiment from prospects at the booth: Permitting will never change. The industry has accepted permit-cycle pain as a fixed condition, not a controllable variable.",
+      "metadata": {"prospect_company": "multiple", "jtbd_match": [1], "persona_fit": "permit_cycle"}
+    },
+    {
+      "source": "booth-obs",
+      "tier": "B",
+      "title": "Multi-state operators: each state = different DOT and drawing standards",
+      "url": "ruflo://data/showrev/brain-synthesis.md#multi-state",
+      "content": "Multi-state operators (B+T GRP across 50 states, Rayco across 5 states) report that each state has its own DOT and drawing standards. Standardization-across-markets pain is real for any operator with footprint in 3+ states.",
+      "metadata": {"prospect_company": "B+T GRP, Rayco", "jtbd_match": [4], "persona_fit": "build_pace"}
+    },
+    {
+      "source": "booth-obs",
+      "tier": "B",
+      "title": "South Florida bore-route approval tightening",
+      "url": "ruflo://data/showrev/brain-synthesis.md#South-Florida",
+      "content": "South Florida (Broward, Palm Beach) jurisdictions are tightening bore-route approvals. Indus CAD Works, One Drill, Lunder Underground, PCCI/ProDesign all affected.",
+      "metadata": {"jurisdiction": "FL Broward/Palm Beach", "prospect_company": "Indus CAD, One Drill, Lunder, PCCI", "jtbd_match": [1], "persona_fit": "permit_cycle"}
+    },
+    {
+      "source": "deck-proof-points",
+      "tier": "A",
+      "title": "Output to each jurisdiction's standard from one input process",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-7-output-standard",
+      "content": "Inorsa produces consistent AutoCAD output to each jurisdiction's standard from one input process. The drafter does not reformat the same design for every county.",
+      "metadata": {"use_as": "value_prop", "applies_to_jtbd": [4]}
+    },
+    {
+      "source": "chris-onepager",
+      "tier": "A",
+      "title": "Chris: Inorsa is purpose-built for telecom infrastructure",
+      "url": "ruflo://data/showrev/inorsa-source-of-truth.md#section-2-chris-why",
+      "content": "Inorsa is purpose-built for telecom infrastructure. Every output is deterministic and traceable back to source data, no AI guesswork, no black box. We reshape how teams work by automating the ingestion and generation of infrastructure data, so fiber activations happen in days, not months.",
+      "metadata": {"author": "Chris Balandran", "use_as": "why_inorsa"}
+    },
+    {
+      "source": "nick-canon",
+      "tier": "A",
+      "title": "Nick: pricing objection is real, value will grow into pricing",
+      "url": "ruflo://canon/sources/inorsa-product-truth-nick-2026-06-04.md#objection-price",
+      "content": "Most common finance/budget objection from fiber prospects: price not commensurate with delivered value. Nick notes the product is recent and still receiving consistent, actionable feedback; value will grow into the pricing as the product matures.",
+      "metadata": {"speaker": "Nick McManus", "use_as": "objection_known", "objection_type": "price"}
+    },
+    {
+      "source": "nick-canon",
+      "tier": "A",
+      "title": "Nick: conceptual-GIS objection (Network management tools)",
+      "url": "ruflo://canon/sources/inorsa-product-truth-nick-2026-06-04.md#objection-conceptual",
+      "content": "Biggest objection NOT on the JTBD list: Network management tools are conceptual; creating CAD parity still requires drafter intervention. Counter: Inorsa maximizes what CAN be automated and partners to improve over time.",
+      "metadata": {"speaker": "Nick McManus", "use_as": "objection_known", "objection_type": "conceptual_gis"}
+    }
+  ]
+}
