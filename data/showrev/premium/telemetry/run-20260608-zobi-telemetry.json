@@ -1,0 +1,527 @@
+{
+  "runId": "run-20260608-zobi",
+  "timestamp": "2026-06-08T23:09:53.857Z",
+  "totalDuration": "1066.0s",
+  "prospectCount": 5,
+  "icpPassCount": 5,
+  "emailFoundCount": 5,
+  "judgePassCount": 0,
+  "emailFindRate": "100%",
+  "judgePassRate": "0%",
+  "phaseStats": {
+    "1-icp-gate": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 564,
+      "maxMs": 1520,
+      "count": 5
+    },
+    "2-email-find": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 8065,
+      "maxMs": 35150,
+      "count": 5
+    },
+    "2b-prospect-upsert": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 76,
+      "maxMs": 123,
+      "count": 5
+    },
+    "3-research": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 64505,
+      "maxMs": 75534,
+      "count": 4
+    },
+    "3a-brain-context": {
+      "passRate": "75%",
+      "failRate": "0%",
+      "avgMs": 136,
+      "maxMs": 502,
+      "count": 4
+    },
+    "3b-brain-ingest": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 46,
+      "maxMs": 56,
+      "count": 4
+    },
+    "3c-intel-structurer": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 39403,
+      "maxMs": 43027,
+      "count": 4
+    },
+    "4-substrate": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 1280,
+      "maxMs": 1658,
+      "count": 4
+    },
+    "5-pattern-select": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 17717,
+      "maxMs": 19521,
+      "count": 4
+    },
+    "6-composition": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 6717,
+      "maxMs": 7307,
+      "count": 4
+    },
+    "7-judge": {
+      "passRate": "0%",
+      "failRate": "100%",
+      "avgMs": 116604,
+      "maxMs": 169174,
+      "count": 4
+    },
+    "8-microsite": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 708,
+      "maxMs": 821,
+      "count": 4
+    },
+    "9-supabase-write": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 305,
+      "maxMs": 353,
+      "count": 4
+    }
+  },
+  "bottleneck": "7-judge",
+  "prospects": [
+    {
+      "name": "Dan Gillan",
+      "company": "Dobson Fiber",
+      "email": "dgillan@dobson.net",
+      "emailConfidence": "provided-verified",
+      "mvQuality": "good",
+      "judgePass": false,
+      "judgeScores": {
+        "mechanicalPass": 9,
+        "t1_research_depth": 7,
+        "t1_vp_connection": 8,
+        "t1_tone": 7,
+        "t1_conciseness": 6,
+        "t1_jtbd_alignment": 9,
+        "t1_avg": 7.4
+      },
+      "duration": "229.9s",
+      "errors": [],
+      "warnings": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 55,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 610,
+          "status": "pass",
+          "detail": "provided-verified:mv=good"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 72,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 502,
+          "status": "pass",
+          "detail": "2 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 57616,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 51,
+          "status": "pass",
+          "detail": "3+12 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 41696,
+          "status": "pass",
+          "detail": "33 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1236,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 16235,
+          "status": "pass",
+          "detail": "loss_aversion"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 6422,
+          "status": "pass",
+          "detail": "1 touches, wc=79"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 104348,
+          "status": "fail",
+          "detail": "mechanicalPass=9,t1_research_depth=7,t1_vp_connection=8,t1_tone=7,t1_conciseness=6,t1_jtbd_alignment=9,t1_avg=7.4"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 821,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 277,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Blake Griffin",
+      "company": "Communication Network Engineering",
+      "email": "blake@ccfargo.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {
+        "mechanicalPass": 9,
+        "t1_research_depth": 6,
+        "t1_vp_connection": 7,
+        "t1_tone": 7,
+        "t1_conciseness": 5,
+        "t1_jtbd_alignment": 8,
+        "t1_avg": 6.6
+      },
+      "duration": "226.1s",
+      "errors": [],
+      "warnings": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 3,
+          "status": "pass",
+          "detail": "pass:ae_firm"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 1909,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 44,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 12,
+          "status": "pass",
+          "detail": "3 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 63181,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 56,
+          "status": "pass",
+          "detail": "3+10 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 36502,
+          "status": "pass",
+          "detail": "32 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1135,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 19521,
+          "status": "pass",
+          "detail": "loss_aversion"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 7307,
+          "status": "pass",
+          "detail": "1 touches, wc=90"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 95364,
+          "status": "fail",
+          "detail": "mechanicalPass=9,t1_research_depth=6,t1_vp_connection=7,t1_tone=7,t1_conciseness=5,t1_jtbd_alignment=8,t1_avg=6.6"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 714,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 353,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Adam Willoughby",
+      "company": "Farmers Telecommunications Cooperative",
+      "email": "awilloughby@staff.farmerstel.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {
+        "mechanicalPass": 9,
+        "t1_research_depth": 7,
+        "t1_vp_connection": 8,
+        "t1_tone": 7,
+        "t1_conciseness": 6,
+        "t1_jtbd_alignment": 8,
+        "t1_avg": 7.2
+      },
+      "duration": "225.8s",
+      "errors": [],
+      "warnings": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1520,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 1619,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 100,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 17,
+          "status": "warn",
+          "detail": "0 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 61688,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 39,
+          "status": "pass",
+          "detail": "5+7 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 36387,
+          "status": "pass",
+          "detail": "33 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1658,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 17604,
+          "status": "pass",
+          "detail": "loss_aversion"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 6680,
+          "status": "pass",
+          "detail": "1 touches, wc=83"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 97529,
+          "status": "fail",
+          "detail": "mechanicalPass=9,t1_research_depth=7,t1_vp_connection=8,t1_tone=7,t1_conciseness=6,t1_jtbd_alignment=8,t1_avg=7.2"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 647,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 267,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Joe Kunz",
+      "company": "GFiber",
+      "email": "joekunz@google.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {
+        "mechanicalPass": 9,
+        "t1_research_depth": 8,
+        "t1_vp_connection": 8,
+        "t1_tone": 7,
+        "t1_conciseness": 5,
+        "t1_jtbd_alignment": 9,
+        "t1_avg": 7.4
+      },
+      "duration": "316.1s",
+      "errors": [],
+      "warnings": [
+        "T1: [AI-TELL] Low sentence-length variance (σ=2.5, CV=0.11, <0.15 flags as AI pattern)"
+      ],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1243,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 1038,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 39,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 11,
+          "status": "pass",
+          "detail": "1 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 75534,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 39,
+          "status": "pass",
+          "detail": "5+7 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 43027,
+          "status": "pass",
+          "detail": "33 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1090,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 17508,
+          "status": "pass",
+          "detail": "challenger_insight"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 6460,
+          "status": "pass",
+          "detail": "1 touches, wc=89"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 169174,
+          "status": "fail",
+          "detail": "mechanicalPass=9,t1_research_depth=8,t1_vp_connection=8,t1_tone=7,t1_conciseness=5,t1_jtbd_alignment=9,t1_avg=7.4"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 651,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 324,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Andrew Aeschliman",
+      "company": "United Fiber, LLC",
+      "email": "andrew.aeschliman@unitedfiber.com",
+      "emailConfidence": "red",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "35.3s",
+      "errors": [],
+      "warnings": [
+        "Email confidence RED (20) — blocked: base: red (20)",
+        "Email confidence RED (20) — flagged for operator review. Check System Brief."
+      ],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 35150,
+          "status": "pass",
+          "detail": "red"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 123,
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "schema_version": "1.0",
+  "captured_at": "2026-06-14T17:08:00Z",
+  "captured_by_session": "w4-hs-mistakes-remediation-2026-06-14",
+  "purpose": "Pre-action snapshot for W4 HS Mistakes Remediation. Rollback = re-apply these properties via single manage_crm_objects update per contact.",
+  "portal_id": 20729069,
+  "portal_ui_domain": "app-na2.hubspot.com",
+  "portal_account_type": "STANDARD",
+  "portal_timezone": "US/Eastern",
+  "rollback_pattern": "For each contact, call mcp__claude_ai_HubSpot__manage_crm_objects with updateRequest containing objectId, objectType='contacts', and the 'rollback_properties' map below. The 'rollback_properties' map captures the showrev_* / hubspot_owner_id / contact-routing fields that W4 may touch. Other HS-managed audit fields (lastmodifieddate, hs_updated_by_user_id) are excluded since they auto-update on any write.",
+  "contacts": [
+    {
+      "category": "wrong_mike_loaded",
+      "name": "Chad Mueller",
+      "company": "Omni Fiber",
+      "hs_object_id": 500780207855,
+      "email": "chad.mueller@omnifiber.com",
+      "created_at": "2026-06-12T11:12:19.402Z",
+      "updated_at": "2026-06-12T19:29:36.922Z",
+      "rollback_properties": {
+        "hubspot_owner_id": "89105202",
+        "showrev_engagement_slug": "inorsa-fiberconnect-2026-cold",
+        "showrev_outreach_cohort": "fc2026-cold",
+        "showrev_assigned_ae": "Mike Rutski",
+        "showrev_pilot_owner": "true",
+        "showrev_persona_classification": "core_icp",
+        "showrev_signal_strength": "GREEN",
+        "showrev_first_outreach_date": "2026-06-12",
+        "showrev_microsite_url": "https://fiber.inorsa.com/brief/omni-fiber-chad-mueller",
+        "lifecyclestage": "1162148264"
+      },
+      "current_url": "https://app.hubspot.com/contacts/20729069/record/0-1/500780207855"
+    },
+    {
+      "category": "wrong_mike_loaded",
+      "name": "Alex Mora",
+      "company": "TEP",
+      "hs_object_id": 500780207854,
+      "email": "alex@tep.com",
+      "created_at": "2026-06-12T11:12:19.031Z",
+      "updated_at": "2026-06-12T18:28:08.166Z",
+      "rollback_properties": {
+        "hubspot_owner_id": "89105202",
+        "showrev_engagement_slug": "inorsa-fiberconnect-2026-cold",
+        "showrev_outreach_cohort": "fc2026-cold",
+        "showrev_assigned_ae": "Mike Rutski",
+        "showrev_pilot_owner": "true",
+        "showrev_persona_classification": "core_icp",
+        "showrev_signal_strength": "GREEN",
+        "showrev_first_outreach_date": "2026-06-12",
+        "showrev_microsite_url": "https://fiber.inorsa.com/brief/tep-alex-mora",
+        "lifecyclestage": "1162148264"
+      },
+      "current_url": "https://app.hubspot.com/contacts/20729069/record/0-1/500780207854"
+    },
+    {
+      "category": "wrong_mike_loaded",
+      "name": "Alex King",
+      "company": "Blue Ridge Mountain EMC",
+      "hs_object_id": 500799121119,
+      "email": "alex.king@brmemc.com",
+      "created_at": "2026-06-12T11:12:18.825Z",
+      "updated_at": "2026-06-12T18:56:14.896Z",
+      "rollback_properties": {
+        "hubspot_owner_id": "89105202",
+        "showrev_engagement_slug": "inorsa-fiberconnect-2026-cold",
+        "showrev_outreach_cohort": "fc2026-cold",
+        "showrev_assigned_ae": "Mike Rutski",
+        "showrev_pilot_owner": "true",
+        "showrev_persona_classification": "core_icp",
+        "showrev_signal_strength": "GREEN",
+        "showrev_first_outreach_date": "2026-06-12",
+        "showrev_microsite_url": "https://fiber.inorsa.com/brief/blue-ridge-mountain-emc-alex-king",
+        "lifecyclestage": "1162148264"
+      },
+      "current_url": "https://app.hubspot.com/contacts/20729069/record/0-1/500799121119"
+    },
+    {
+      "category": "wrong_mike_loaded",
+      "name": "Aaron Snyder",
+      "company": "Citizens Fiber",
+      "hs_object_id": 500780459756,
+      "email": "aaron@thecitizens.com",
+      "created_at": "2026-06-12T11:12:18.560Z",
+      "updated_at": "2026-06-12T19:15:50.820Z",
+      "rollback_properties": {
+        "hubspot_owner_id": "89105202",
+        "showrev_engagement_slug": "inorsa-fiberconnect-2026-cold",
+        "showrev_outreach_cohort": "fc2026-cold",
+        "showrev_assigned_ae": "Mike Rutski",
+        "showrev_pilot_owner": "true",
+        "showrev_persona_classification": "core_icp",
+        "showrev_signal_strength": "RED",
+        "showrev_first_outreach_date": "2026-06-12",
+        "showrev_microsite_url": "https://fiber.inorsa.com/brief/citizens-fiber-aaron-snyder",
+        "lifecyclestage": "1162148264"
+      },
+      "current_url": "https://app.hubspot.com/contacts/20729069/record/0-1/500780459756"
+    },
+    {
+      "category": "retag_invented_to_canonical",
+      "name": "Brendan Karchner",
+      "company": "Buckeye Broadband",
+      "hs_object_id": 208136198549,
+      "email": "bkarchner@buckeyebroadband.com",
+      "created_at": "2026-03-09T20:01:52.072Z",
+      "updated_at": "2026-06-12T11:20:44.019Z",
+      "rollback_properties": {
+        "hubspot_owner_id": "78301143",
+        "showrev_engagement_slug": "excluded-prohibited-substrate",
+        "showrev_outreach_cohort": "excluded-prohibited-substrate",
+        "showrev_assigned_ae": "Mike Rutski",
+        "showrev_pilot_owner": "true",
+        "showrev_persona_classification": "core_icp",
+        "showrev_signal_strength": "ORANGE",
+        "showrev_first_outreach_date": "2026-06-12",
+        "showrev_microsite_url": "https://fiber.inorsa.com/brief/buckeye-broadband-brendan-karchner",
+        "lifecyclestage": "1162148264"
+      },
+      "notes": "Pre-existing contact (created 2026-03-09). Owner = Chris Balandran (78301143, legacy DETECTED). Per GOSPEL hard rule: do NOT overwrite owner. Re-tag ONLY slug + cohort.",
+      "current_url": "https://app.hubspot.com/contacts/20729069/record/0-1/208136198549"
+    },
+    {
+      "category": "retag_invented_to_canonical",
+      "name": "Laurie Turck",
+      "company": "Network Connex",
+      "hs_object_id": 500586218217,
+      "email": "lturck@networkconnex.com",
+      "created_at": "2026-06-12T01:05:40.313Z",
+      "updated_at": "2026-06-12T11:20:44.156Z",
+      "rollback_properties": {
+        "hubspot_owner_id": "89105202",
+        "showrev_engagement_slug": "excluded-prohibited-substrate",
+        "showrev_outreach_cohort": "excluded-prohibited-substrate",
+        "showrev_assigned_ae": "Mike Rutski",
+        "showrev_pilot_owner": "true",
+        "showrev_persona_classification": "core_icp",
+        "showrev_signal_strength": "ORANGE",
+        "showrev_first_outreach_date": "2026-06-12",
+        "showrev_microsite_url": "https://fiber.inorsa.com/brief/network-connex-laurie-turck",
+        "lifecyclestage": "1162148264"
+      },
+      "current_url": "https://app.hubspot.com/contacts/20729069/record/0-1/500586218217"
+    }
+  ],
+  "guardrail_readonly_verify": {
+    "name": "Joe Kunz",
+    "company": "GFiber",
+    "hs_object_id": 486747731655,
+    "email": "joekunz@google.com",
+    "expected_owner_id": "1586667974",
+    "expected_owner_name": "Tom Marciano",
+    "observed_owner_id": "1586667974",
+    "observed_engagement_slug": "inorsa-fiberconnect-2026",
+    "verdict": "PASS — owner unchanged, Tom Marciano DETECTED ownership preserved. Joe Kunz contact NOT touched by W4. Read-only verify complete.",
+    "verified_at": "2026-06-14T17:07:00Z"
+  },
+  "discovered_deferred": [
+    {
+      "name": "Dara Leslie",
+      "company": "Shentel",
+      "hs_object_id": 500587367154,
+      "email": "dara.leslie@emp.shentel.com",
+      "hubspot_owner_id": "78301143",
+      "showrev_assigned_ae": "Mike Rutski",
+      "showrev_engagement_slug": "inorsa-fiberconnect-2026-cold",
+      "note": "Already on Mike's cold list via showrev_assigned_ae dynamic-list filter, BUT owner = Chris Balandran (78301143, legacy DETECTED). Per GOSPEL: preserve. W4 takes no action."
+    },
+    {
+      "name": "Justyn Test-Mike dummy",
+      "expected_email": "justyn@showrev.co",
+      "search_result": "not_found_in_hs",
+      "note": "Canonical roster expects this dummy on Mike's cold list. NOT loaded in HS. Outside W4 scope — logged for next session."
+    },
+    {
+      "name": "Dev fixture justyn+w4test@tasteforyourself.com",
+      "search_result": "not_found_in_hs",
+      "note": "Spec S2 required this as the dev exercise fixture. NOT in HS. Operator decision needed before dev exercise can run as specified."
+    }
+  ],
+  "expected_canonical_state_after_w4": {
+    "mike_cold_owned_count": 3,
+    "mike_cold_dynamic_list_count_by_assigned_ae_filter": 5,
+    "explanation": "After W4: Mike-owned (89105202) + cold = 3 (Michele, Gabriel, Laurie). Chris-owned + cold but Mike-assigned via showrev_assigned_ae = 2 (Dara, Brendan). Dynamic-list filter on showrev_assigned_ae='Mike Rutski' AND showrev_engagement_slug='inorsa-fiberconnect-2026-cold' returns 5 real prospects. Dummy not yet loaded.",
+    "real_prospects_present": ["Michele Sadwick", "Gabriel Gilliland", "Laurie Turck", "Dara Leslie", "Brendan Karchner"],
+    "missing_from_canonical": ["Justyn Test-Mike dummy (justyn@showrev.co)"]
+  }
+}

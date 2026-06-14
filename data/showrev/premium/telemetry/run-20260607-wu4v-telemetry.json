@@ -1,0 +1,189 @@
+{
+  "runId": "run-20260607-wu4v",
+  "timestamp": "2026-06-07T18:14:20.464Z",
+  "totalDuration": "33.8s",
+  "prospectCount": 1,
+  "icpPassCount": 1,
+  "emailFoundCount": 1,
+  "judgePassCount": 0,
+  "emailFindRate": "100%",
+  "judgePassRate": "0%",
+  "phaseStats": {
+    "1-icp-gate": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 53,
+      "maxMs": 53,
+      "count": 1
+    },
+    "2-email-find": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 33714,
+      "maxMs": 33714,
+      "count": 1
+    },
+    "2b-prospect-upsert": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 1
+    },
+    "3-research": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 1
+    },
+    "3a-brain-context": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 1
+    },
+    "3b-brain-ingest": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 1
+    },
+    "3c-intel-structurer": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 1
+    },
+    "4-substrate": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 1
+    },
+    "5-pattern-select": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 1
+    },
+    "6-composition": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 1
+    },
+    "7-judge": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 1
+    },
+    "8-microsite": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 1
+    },
+    "9-supabase-write": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 1,
+      "maxMs": 1,
+      "count": 1
+    }
+  },
+  "bottleneck": "2-email-find",
+  "prospects": [
+    {
+      "name": "Michael Shultz",
+      "company": "Ohio Gig, LLC",
+      "email": "michael.shultz@shwdirect.com",
+      "emailConfidence": "red",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "33.8s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 53,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 33714,
+          "status": "pass",
+          "detail": "red"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 1,
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}

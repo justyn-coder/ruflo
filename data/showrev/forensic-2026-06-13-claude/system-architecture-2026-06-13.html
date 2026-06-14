@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShowRev System Architecture · 2026-06-13</title>
+<style>
+  :root {
+    --bg: #fbfaf5;
+    --panel: #ffffff;
+    --ink: #0e0e0e;
+    --quiet: #4a4a4a;
+    --rule: #c4c0b2;
+    --green: #1b6c33;
+    --green-fill: #e3f1e8;
+    --blue: #14467a;
+    --blue-fill: #dde9f7;
+    --red: #98001c;
+    --red-fill: #f9d6dc;
+    --gold: #8a5a00;
+    --gold-fill: #fbe9c4;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 20px; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.7;
+    padding: 48px 24px 80px;
+  }
+  main { max-width: 880px; margin: 0 auto; }
+
+  h1 {
+    font-size: 2.4rem;
+    margin: 0 0 8px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+    color: var(--quiet);
+    margin: 0 0 4px;
+  }
+  .date {
+    font-size: 0.95rem;
+    color: var(--quiet);
+    margin: 0 0 36px;
+  }
+
+  .lede {
+    font-size: 1.15rem;
+    background: var(--panel);
+    border-left: 8px solid var(--ink);
+    padding: 22px 28px;
+    margin: 0 0 50px;
+    border-radius: 4px;
+    line-height: 1.65;
+  }
+
+  .diagram-wrap {
+    background: var(--panel);
+    border: 2px solid var(--rule);
+    border-radius: 10px;
+    padding: 32px 12px;
+    margin: 0 0 50px;
+    overflow-x: auto;
+  }
+  .diagram-wrap svg { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+
+  h2 {
+    font-size: 1.55rem;
+    margin: 56px 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--ink);
+    line-height: 1.3;
+  }
+
+  .stage {
+    background: var(--panel);
+    border: 1.5px solid var(--rule);
+    border-radius: 8px;
+    padding: 22px 28px;
+    margin: 16px 0;
+  }
+  .stage-num {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--bg);
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-right: 14px;
+    vertical-align: middle;
+  }
+  .stage-title {
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    vertical-align: middle;
+    line-height: 1.3;
+  }
+  .stage-body {
+    margin: 16px 0 0;
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+  .stage-body p { margin: 0 0 10px; }
+  .stage-body strong { font-weight: 700; }
+
+  .touches {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.98rem;
+    color: var(--quiet);
+  }
+  .touches strong { color: var(--ink); font-weight: 700; }
+  .touches a {
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .callout {
+    border-radius: 6px;
+    padding: 14px 20px;
+    margin: 14px 0;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .callout-gate {
+    background: var(--gold-fill);
+    border-left: 6px solid var(--gold);
+  }
+  .callout-gap {
+    background: var(--red-fill);
+    border-left: 6px solid var(--red);
+  }
+  .callout strong { font-weight: 700; }
+
+  code {
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    font-size: 0.93em;
+    background: #f1ede1;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  footer {
+    margin-top: 70px;
+    padding-top: 22px;
+    border-top: 2px solid var(--rule);
+    font-size: 0.95rem;
+    color: var(--quiet);
+  }
+  footer a { color: var(--blue); font-weight: 600; }
+
+  ol, ul { padding-left: 28px; }
+  li { margin: 6px 0; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>ShowRev System Architecture</h1>
+<p class="subtitle">How a prospect goes from a name on a CSV to an email landing in their inbox.</p>
+<p class="date">2026-06-13 · Inorsa Fiber Connect 2026 cold-prospecting pipeline</p>
+
+<div class="lede">
+  Eight stages, top to bottom. Each one either learns something true about the prospect, makes a decision, or hands off to the next stage. Anything broken right now is shown in red below the diagram. The companion <a href="database-architecture-2026-06-13.html">Database Architecture map</a> lays out every table this system reads and writes.
+</div>
+
+<div class="diagram-wrap" role="img" aria-label="Eight-stage vertical flow diagram from substrate ingest through to post-send watching">
+  <svg viewBox="0 0 720 1320" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Helvetica Neue, Arial, sans-serif">
+    <defs>
+      <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+        <path d="M0,0 L10,5 L0,10 z" fill="#0e0e0e"/>
+      </marker>
+    </defs>
+
+    <!-- Stage 1 -->
+    <g>
+      <rect x="80" y="20" width="560" height="100" rx="12" fill="#e3f1e8" stroke="#1b6c33" stroke-width="3"/>
+      <text x="360" y="56" text-anchor="middle" font-size="22" font-weight="700" fill="#0e0e0e">1 · Substrate ingest</text>
+      <text x="360" y="86" text-anchor="middle" font-size="16" fill="#3a3a3a">Pull verified facts about each prospect company</text>
+      <text x="360" y="106" text-anchor="middle" font-size="14" fill="#5a5a5a">Sources: Nick's canon, web research, Apollo, FCC BDC</text>
+    </g>
+    <line x1="360" y1="120" x2="360" y2="155" stroke="#0e0e0e" stroke-width="2.5" marker-end="url(#arr)"/>
+
+    <!-- Stage 2 -->
+    <g>
+      <rect x="80" y="160" width="560" height="100" rx="12" fill="#ffffff" stroke="#0e0e0e" stroke-width="3"/>
+      <text x="360" y="196" text-anchor="middle" font-size="22" font-weight="700" fill="#0e0e0e">2 · Prospect intake</text>
+      <text x="360" y="226" text-anchor="middle" font-size="16" fill="#3a3a3a">Read CSV, decide ICP fit, find verified email</text>
+      <text x="360" y="246" text-anchor="middle" font-size="14" fill="#5a5a5a">CSV parse → ICP gate → Email finder waterfall</text>
+    </g>
+    <line x1="360" y1="260" x2="360" y2="295" stroke="#0e0e0e" stroke-width="2.5" marker-end="url(#arr)"/>
+
+    <!-- Stage 3 -->
+    <g>
+      <rect x="80" y="300" width="560" height="100" rx="12" fill="#ffffff" stroke="#0e0e0e" stroke-width="3"/>
+      <text x="360" y="336" text-anchor="middle" font-size="22" font-weight="700" fill="#0e0e0e">3 · Compose</text>
+      <text x="360" y="366" text-anchor="middle" font-size="16" fill="#3a3a3a">Write the email body using Nick's voice and verified evidence</text>
+      <text x="360" y="386" text-anchor="middle" font-size="14" fill="#5a5a5a">Mechanical gates block known-bad outputs at compose time</text>
+    </g>
+    <line x1="360" y1="400" x2="360" y2="435" stroke="#0e0e0e" stroke-width="2.5" marker-end="url(#arr)"/>
+
+    <!-- Stage 4 -->
+    <g>
+      <rect x="80" y="440" width="560" height="100" rx="12" fill="#ffffff" stroke="#0e0e0e" stroke-width="3"/>
+      <text x="360" y="476" text-anchor="middle" font-size="22" font-weight="700" fill="#0e0e0e">4 · Judge</text>
+      <text x="360" y="506" text-anchor="middle" font-size="16" fill="#3a3a3a">Three-tier scoring decides ship, retry, or flag</text>
+      <text x="360" y="526" text-anchor="middle" font-size="14" fill="#5a5a5a">Mechanical → Tim-style craft → Gemini quality + hallucination</text>
+    </g>
+    <line x1="360" y1="540" x2="360" y2="575" stroke="#0e0e0e" stroke-width="2.5" marker-end="url(#arr)"/>
+
+    <!-- Stage 5 -->
+    <g>
+      <rect x="80" y="580" width="560" height="100" rx="12" fill="#dde9f7" stroke="#14467a" stroke-width="3"/>
+      <text x="360" y="616" text-anchor="middle" font-size="22" font-weight="700" fill="#0e0e0e">5 · Persist + measure</text>
+      <text x="360" y="646" text-anchor="middle" font-size="16" fill="#3a3a3a">Save the email + dossier + microsite, emit telemetry</text>
+      <text x="360" y="666" text-anchor="middle" font-size="14" fill="#5a5a5a">Audit-trail tables empty today — sprint priority to fix</text>
+    </g>
+    <line x1="360" y1="680" x2="360" y2="715" stroke="#0e0e0e" stroke-width="2.5" marker-end="url(#arr)"/>
+
+    <!-- Stage 6 -->
+    <g>
+      <rect x="80" y="720" width="560" height="100" rx="12" fill="#fbe9c4" stroke="#8a5a00" stroke-width="3"/>
+      <text x="360" y="756" text-anchor="middle" font-size="22" font-weight="700" fill="#0e0e0e">6 · Operator gate</text>
+      <text x="360" y="786" text-anchor="middle" font-size="16" fill="#3a3a3a">Automated pre-load checks + operator clicks "Approve + Go Live"</text>
+      <text x="360" y="806" text-anchor="middle" font-size="14" fill="#5a5a5a">Per-prospect approval is the default; bulk option exists</text>
+    </g>
+    <line x1="360" y1="820" x2="360" y2="855" stroke="#0e0e0e" stroke-width="2.5" marker-end="url(#arr)"/>
+
+    <!-- Stage 7 -->
+    <g>
+      <rect x="80" y="860" width="560" height="100" rx="12" fill="#ffffff" stroke="#0e0e0e" stroke-width="3"/>
+      <text x="360" y="896" text-anchor="middle" font-size="22" font-weight="700" fill="#0e0e0e">7 · HubSpot load + send</text>
+      <text x="360" y="926" text-anchor="middle" font-size="16" fill="#3a3a3a">Upsert contact, then AE enrolls in their sequence</text>
+      <text x="360" y="946" text-anchor="middle" font-size="14" fill="#5a5a5a">Manual default; proxy-API path under parallel test this week</text>
+    </g>
+    <line x1="360" y1="960" x2="360" y2="995" stroke="#0e0e0e" stroke-width="2.5" marker-end="url(#arr)"/>
+
+    <!-- Stage 8 -->
+    <g>
+      <rect x="80" y="1000" width="560" height="100" rx="12" fill="#ffffff" stroke="#0e0e0e" stroke-width="3"/>
+      <text x="360" y="1036" text-anchor="middle" font-size="22" font-weight="700" fill="#0e0e0e">8 · Watch + learn</text>
+      <text x="360" y="1066" text-anchor="middle" font-size="16" fill="#3a3a3a">Track opens, clicks, replies, bounces — feed back into judge</text>
+      <text x="360" y="1086" text-anchor="middle" font-size="14" fill="#5a5a5a">Bounce monitor halts at 5%; Stop-hook calibrates judge in-session</text>
+    </g>
+
+    <!-- Recipient at end -->
+    <line x1="360" y1="1100" x2="360" y2="1140" stroke="#0e0e0e" stroke-width="2.5" marker-end="url(#arr)"/>
+    <g>
+      <rect x="180" y="1145" width="360" height="60" rx="30" fill="#0e0e0e" stroke="#0e0e0e" stroke-width="3"/>
+      <text x="360" y="1184" text-anchor="middle" font-size="20" font-weight="700" fill="#fbfaf5">Email lands in recipient inbox</text>
+    </g>
+  </svg>
+</div>
+
+<h2>The eight stages, in plain English</h2>
+
+<div class="stage">
+  <span class="stage-num">1</span><span class="stage-title">Substrate ingest</span>
+  <div class="stage-body">
+    <p>This stage pulls verified facts about each prospect company into a database we can trust when it's time to write the email. There are two ways in: <strong>manual capture</strong> (Nick or operator shares a fact, Claude writes it as a row) and <strong>web research</strong> (we pull from Apollo, FCC, trade publications, public filings). A domain-trust classifier sits at the write boundary and refuses prohibited sources like ZoomInfo.</p>
+    <div class="touches"><strong>Reads from:</strong> Apollo, FCC BDC, web sources, Nick DMs. <strong>Writes to:</strong> <a href="database-architecture-2026-06-13.html#tbl-sr_company_evidence">sr_company_evidence</a> and <a href="database-architecture-2026-06-13.html#tbl-sr_brain_substrate">sr_brain_substrate</a>.</div>
+  </div>
+</div>
+
+<div class="callout callout-gap">
+  <strong>Broken right now:</strong> The domain-trust classifier exists in the code but isn't wired up. 21 prohibited-domain rows are sitting in the high-trust tier today. Plan F3 wires it and backfills 1,522 existing rows.
+</div>
+
+<div class="stage">
+  <span class="stage-num">2</span><span class="stage-title">Prospect intake</span>
+  <div class="stage-body">
+    <p>Read the cohort CSV (210 rows for P2), decide whether each prospect fits Inorsa's ideal customer profile (fiber operator, A&E firm, or adjacent services), and find a verified email address. The email finder tries five methods in order — domain resolver, pattern detector, SMTP probe, MillionVerifier, Apollo — and stops at the first verified hit. Result is a confidence color: green, yellow, or red.</p>
+    <div class="touches"><strong>Writes to:</strong> <a href="database-architecture-2026-06-13.html#tbl-sr_prospects">sr_prospects</a>.</div>
+  </div>
+</div>
+
+<div class="callout callout-gate">
+  <strong>Gate:</strong> If the email score is zero, the prospect is hard-blocked from ever being sent. If the color is red, they are held for review.
+</div>
+
+<div class="stage">
+  <span class="stage-num">3</span><span class="stage-title">Compose</span>
+  <div class="stage-body">
+    <p>The evidence orchestrator pulls every row we have on this company and tiers them by trust. If we have three or more strong claims, the specific composer writes a cited, company-specific body. Otherwise the generalized composer writes industry-framed copy with no specifics. Both composers use Nick's voice and Inorsa's canonical framing through prompt templates.</p>
+    <p>After the body is drafted, mechanical constraints check it: banned phrases, AI tells, Tim's kill-list, hallucinations, readability. If anything fails, the composer retries up to four times with the violations as hints.</p>
+    <div class="touches"><strong>Reads from:</strong> <a href="database-architecture-2026-06-13.html#tbl-sr_company_evidence">sr_company_evidence</a>, <a href="database-architecture-2026-06-13.html#tbl-sr_brain_substrate">sr_brain_substrate</a>.</div>
+  </div>
+</div>
+
+<div class="callout callout-gate">
+  <strong>Gate (sprint-week add):</strong> Plan F1 adds Nick's five Inorsa-validates phrases to the kill-list. Hard-blocked at compose time. Test replays the five historical hallucination emails — expect five-of-five blocks.
+</div>
+
+<div class="callout callout-gap">
+  <strong>Broken right now:</strong> Nick's kill-list canon isn't in the regex array. Soft enforcement through prompt templates holds for the moment but is one bad edit away from drift.
+</div>
+
+<div class="stage">
+  <span class="stage-num">4</span><span class="stage-title">Judge</span>
+  <div class="stage-body">
+    <p>Three judges run in order on every composed body. <strong>Tier 1</strong> is mechanical regex, instant. <strong>Tier 2</strong> scores craft and voice in Tim's style. <strong>Tier 3</strong> is Gemini-powered quality scoring with an always-on hallucination check. The verdict is one of: ship, retry, flag for quality review, or flag for hallucination.</p>
+    <p>Then send-confidence combines three axes — ICP fit, email verification quality, substrate richness — into a composite score. If email score is zero, this hard-overrides to "cannot send."</p>
+    <div class="touches"><strong>Writes to:</strong> <a href="database-architecture-2026-06-13.html#tbl-sr_engine_output">sr_engine_output</a> (judge verdict and confidence fields).</div>
+  </div>
+</div>
+
+<div class="stage">
+  <span class="stage-num">5</span><span class="stage-title">Persist and measure</span>
+  <div class="stage-body">
+    <p>One row per prospect per touch gets saved: the email body, the dossier, the microsite content. Everything starts as <code>draft</code> — nothing is recipient-visible yet.</p>
+    <p>This stage is also where observability lives. Today the audit-trail tables are essentially empty — we have been shipping output for weeks with almost no telemetry. The fix-sprint routes Claude Code's native session-correlated telemetry into the audit tables.</p>
+    <div class="touches"><strong>Writes to:</strong> <a href="database-architecture-2026-06-13.html#tbl-sr_engine_output">sr_engine_output</a>, <a href="database-architecture-2026-06-13.html#tbl-sr_dossiers">sr_dossiers</a>, <a href="database-architecture-2026-06-13.html#tbl-sr_microsites">sr_microsites</a>, <a href="database-architecture-2026-06-13.html#tbl-sr_pipeline_runs">sr_pipeline_runs</a>, <a href="database-architecture-2026-06-13.html#tbl-sr_emails">sr_emails</a>.</div>
+  </div>
+</div>
+
+<div class="callout callout-gap">
+  <strong>Broken right now:</strong> The audit-trail tables are empty in production. <code>sr_pipeline_runs</code> has zero rows ever. <code>sr_emails</code> has zero rows ever. The fix-sprint addresses this with five connected items.
+</div>
+
+<div class="stage">
+  <span class="stage-num">6</span><span class="stage-title">Operator gate</span>
+  <div class="stage-body">
+    <p>Two things happen before any send. First, eleven automated checks run: existing-contact lookup, email authentication, do-not-contact lists, dedup against prior cohorts, bounce history. Any one failure halts the prospect.</p>
+    <p>Second, the operator reviews each prospect in the /ops Mission Control portal and clicks <strong>Approve + Go Live</strong>. That single click flips the microsite to live, marks the prospect as ready-to-send, and writes an audit record. Per-prospect approval is the default; a bulk "Approve all passing" option exists when the operator wants it.</p>
+    <div class="touches"><strong>Writes to:</strong> <a href="database-architecture-2026-06-13.html#tbl-sr_dnc_log">sr_dnc_log</a> (on failure), <a href="database-architecture-2026-06-13.html#tbl-sr_microsites">sr_microsites</a>, <a href="database-architecture-2026-06-13.html#tbl-sr_prospects">sr_prospects</a>, <a href="database-architecture-2026-06-13.html#tbl-sr_review_actions">sr_review_actions</a>.</div>
+  </div>
+</div>
+
+<div class="callout callout-gate">
+  <strong>Gate:</strong> No HubSpot load fires for any prospect where the operator hasn't approved or where no microsite is live. This is the hard human-in-the-loop checkpoint.
+</div>
+
+<div class="stage">
+  <span class="stage-num">7</span><span class="stage-title">HubSpot load and send</span>
+  <div class="stage-body">
+    <p>The loader upserts the contact into HubSpot in a single call (plan F7 fix — was two calls before). Every API hit gets logged with rate-limit headers so we can spot throttling early.</p>
+    <p>Then there are two paths to enrollment. The <strong>default</strong> is manual — the AE bulk-enrolls contacts from a HubSpot list using the UI. POST-PORTAL v6 ratified this over the API path because it eliminates silent-skip and sender-disconnect failure modes. The <strong>parallel test</strong> this week is the AE-proxy API path, where we'd enroll programmatically on the AE's behalf. If it passes by Sunday afternoon and the operator green-lights it, the smoke fires via API.</p>
+    <div class="touches"><strong>Writes to:</strong> <a href="database-architecture-2026-06-13.html#tbl-sr_prospects">sr_prospects</a> (HubSpot ID), <a href="database-architecture-2026-06-13.html#tbl-sr_hs_api_calls">sr_hs_api_calls</a>.</div>
+  </div>
+</div>
+
+<div class="stage">
+  <span class="stage-num">8</span><span class="stage-title">Watch and learn</span>
+  <div class="stage-body">
+    <p>After the send, the watcher polls HubSpot for engagement signals: opens, clicks, replies, bounces. Tight cadence for the first fifteen minutes (every 30-60 seconds), then back off to every five minutes.</p>
+    <p>A bounce monitor watches the rolling last 20-40 sends. If the hard-bounce rate crosses 5%, it halts new enrollments. If it stays above, it pauses the sequence.</p>
+    <p>Inside Claude Code sessions, a Stop-hook reads judge verdicts and feeds calibration notes back to the next turn — a small in-session learning loop. It only fires when the signal is strong (5+ verdicts, large success-rate shift); otherwise it returns nothing.</p>
+    <div class="touches"><strong>Writes to:</strong> <a href="database-architecture-2026-06-13.html#tbl-sr_outcomes">sr_outcomes</a>, <a href="database-architecture-2026-06-13.html#tbl-sr_bounce_events">sr_bounce_events</a>.</div>
+  </div>
+</div>
+
+<h2>What's broken right now</h2>
+
+<div class="callout callout-gap">
+  <strong>1 · P1 microsites are draft-only in production.</strong> The 45 P1 booth-visitor contacts who received emails last week click their microsite link and hit nothing. Plan W1 restores from backup and flips to live (~1 hour).
+</div>
+
+<div class="callout callout-gap">
+  <strong>2 · Tim's review is being misread by downstream code.</strong> Tim reviews craft and voice only — he does not see substrate, he does not verify claims. But the column his approval lives in (<code>composition_reviewed_by</code>) gets read by downstream gates as "approved for send." Plan F6 renames the column and adds a separate facts-reviewed field plus an SQL trigger that auto-resets craft approval if confidence flips to red.
+</div>
+
+<div class="callout callout-gap">
+  <strong>3 · Inorsa-validates kill-list is not in the regex array.</strong> Nick's five forbidden phrasings are protected by prompt templates only — one bad edit and they could ship. Plan F1 adds the five regex entries (20 minutes).
+</div>
+
+<div class="callout callout-gap">
+  <strong>4 · URL-domain trust classifier is unwired.</strong> The code exists but isn't called. 21 prohibited-domain rows are in the high-trust tier today. Plan F3 wires it, backfills 1,522 existing rows, and quarantines (does not delete) the prohibited ones for the audit trail.
+</div>
+
+<div class="callout callout-gap">
+  <strong>5 · The brain (distilled signals) is mostly empty.</strong> Five of ten brain tables have zero rows — market signals, bellwethers, patterns. The periodic LLM-distillation pass that fills these is in the REBUILD bucket, not this sprint.
+</div>
+
+<footer>
+  <p>System architecture · 2026-06-13 · Authored by Claude (Opus 4.7) after the cross-family judge panel session.</p>
+  <p>Companion: <a href="database-architecture-2026-06-13.html">Database Architecture Map (2026-06-13)</a>.<br>
+  Source documents: <code>audit-report.md</code>, <code>fix-plan-sprint-2026-06-13-v2.md</code>, <code>POST-PORTAL-SPEC-V6.md</code>.</p>
+</footer>
+
+</main>
+</body>
+</html>

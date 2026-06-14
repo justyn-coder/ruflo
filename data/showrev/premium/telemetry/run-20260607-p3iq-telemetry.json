@@ -1,0 +1,377 @@
+{
+  "runId": "run-20260607-p3iq",
+  "timestamp": "2026-06-07T19:31:21.220Z",
+  "totalDuration": "266.6s",
+  "prospectCount": 3,
+  "icpPassCount": 3,
+  "emailFoundCount": 3,
+  "judgePassCount": 0,
+  "emailFindRate": "100%",
+  "judgePassRate": "0%",
+  "phaseStats": {
+    "1-icp-gate": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 22,
+      "maxMs": 58,
+      "count": 3
+    },
+    "2-email-find": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 1240,
+      "maxMs": 1768,
+      "count": 3
+    },
+    "2b-prospect-upsert": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 45,
+      "maxMs": 51,
+      "count": 3
+    },
+    "3-research": {
+      "passRate": "0%",
+      "failRate": "100%",
+      "avgMs": 6415,
+      "maxMs": 6428,
+      "count": 3
+    },
+    "3a-brain-context": {
+      "passRate": "33%",
+      "failRate": "0%",
+      "avgMs": 277,
+      "maxMs": 807,
+      "count": 3
+    },
+    "3b-brain-ingest": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 3
+    },
+    "3c-intel-structurer": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 3
+    },
+    "4-substrate": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 1167,
+      "maxMs": 1309,
+      "count": 3
+    },
+    "5-pattern-select": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 19518,
+      "maxMs": 19541,
+      "count": 3
+    },
+    "6-composition": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 20006,
+      "maxMs": 20336,
+      "count": 3
+    },
+    "7-judge": {
+      "passRate": "0%",
+      "failRate": "100%",
+      "avgMs": 39332,
+      "maxMs": 39998,
+      "count": 3
+    },
+    "8-microsite": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 560,
+      "maxMs": 631,
+      "count": 3
+    },
+    "9-supabase-write": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 278,
+      "maxMs": 293,
+      "count": 3
+    }
+  },
+  "bottleneck": "7-judge",
+  "prospects": [
+    {
+      "name": "Jason Dandridge",
+      "company": "Palmetto Rural Telephone Cooperative",
+      "email": "jason.dandridge@cdg.us",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {
+        "wordCount": 8,
+        "mechanicalPass": 3
+      },
+      "duration": "89.1s",
+      "errors": [
+        "research: Technical Evaluator failed after 3 attempts: 400 {\"type\":\"error\",\"error\":{\"type\""
+      ],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 58,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 874,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 51,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 807,
+          "status": "warn",
+          "detail": "0 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 6399,
+          "status": "fail",
+          "detail": "error"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1101,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 19537,
+          "status": "pass",
+          "detail": "challenger_insight,curiosity_gap,challenger_insight"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 20336,
+          "status": "pass",
+          "detail": "3 touches, wc=2/2/2"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 39152,
+          "status": "fail",
+          "detail": "wordCount=8,mechanicalPass=3"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 512,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 266,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Ryan Fulcher",
+      "company": "Colliers Engineering & Design",
+      "email": "ryan.fulcher@collierseng.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {
+        "wordCount": 8,
+        "mechanicalPass": 3
+      },
+      "duration": "89.4s",
+      "errors": [
+        "research: Technical Evaluator failed after 3 attempts: 400 {\"type\":\"error\",\"error\":{\"type\""
+      ],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 4,
+          "status": "pass",
+          "detail": "pass:ae_firm"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 1768,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 39,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 9,
+          "status": "pass",
+          "detail": "3 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 6417,
+          "status": "fail",
+          "detail": "error"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1309,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 19541,
+          "status": "pass",
+          "detail": "challenger_insight,curiosity_gap,challenger_insight"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 19393,
+          "status": "pass",
+          "detail": "3 touches, wc=2/2/2"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 39998,
+          "status": "fail",
+          "detail": "wordCount=8,mechanicalPass=3"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 631,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 293,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Doug Guthrie",
+      "company": "IQ Fiber",
+      "email": "doug.guthrie@iqfiber.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {
+        "wordCount": 8,
+        "mechanicalPass": 3
+      },
+      "duration": "88.1s",
+      "errors": [
+        "research: AE Proxy failed after 3 attempts: 400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_r"
+      ],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 3,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 1077,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 44,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 16,
+          "status": "warn",
+          "detail": "0 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 6428,
+          "status": "fail",
+          "detail": "error"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1092,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 19477,
+          "status": "pass",
+          "detail": "challenger_insight,curiosity_gap,challenger_insight"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 20290,
+          "status": "pass",
+          "detail": "3 touches, wc=2/2/2"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 38845,
+          "status": "fail",
+          "detail": "wordCount=8,mechanicalPass=3"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 537,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 276,
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}

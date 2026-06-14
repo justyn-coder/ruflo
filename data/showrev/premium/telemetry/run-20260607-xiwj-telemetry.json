@@ -1,0 +1,297 @@
+{
+  "runId": "run-20260607-xiwj",
+  "timestamp": "2026-06-07T15:27:40.598Z",
+  "totalDuration": "308.2s",
+  "prospectCount": 2,
+  "icpPassCount": 2,
+  "emailFoundCount": 2,
+  "judgePassCount": 2,
+  "emailFindRate": "100%",
+  "judgePassRate": "100%",
+  "phaseStats": {
+    "1-icp-gate": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 844,
+      "maxMs": 1623,
+      "count": 2
+    },
+    "2-email-find": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 904,
+      "maxMs": 1035,
+      "count": 2
+    },
+    "2b-prospect-upsert": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 2
+    },
+    "3-research": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 58828,
+      "maxMs": 59680,
+      "count": 2
+    },
+    "3a-brain-context": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 308,
+      "maxMs": 606,
+      "count": 2
+    },
+    "3b-brain-ingest": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 34,
+      "maxMs": 39,
+      "count": 2
+    },
+    "3c-intel-structurer": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 24767,
+      "maxMs": 25388,
+      "count": 2
+    },
+    "4-substrate": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 1708,
+      "maxMs": 2146,
+      "count": 2
+    },
+    "5-pattern-select": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 20989,
+      "maxMs": 23261,
+      "count": 2
+    },
+    "6-composition": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 9769,
+      "maxMs": 11934,
+      "count": 2
+    },
+    "7-judge": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 35942,
+      "maxMs": 40440,
+      "count": 2
+    },
+    "8-microsite": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 8,
+      "maxMs": 10,
+      "count": 2
+    },
+    "9-supabase-write": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 1,
+      "maxMs": 1,
+      "count": 2
+    }
+  },
+  "bottleneck": "3-research",
+  "prospects": [
+    {
+      "name": "Patrik Lowenborg",
+      "company": "NetPMD Design and Integration",
+      "email": "patrik.lowenborg@netpmd.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": true,
+      "judgeScores": {
+        "mechanicalPass": 9,
+        "t1_research_depth": 7,
+        "t1_vp_connection": 6,
+        "t1_tone": 7,
+        "t1_conciseness": 6,
+        "t1_jtbd_alignment": 8,
+        "t1_avg": 6.8
+      },
+      "duration": "152.8s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 65,
+          "status": "pass",
+          "detail": "pass:ae_firm"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 1035,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 606,
+          "status": "pass",
+          "detail": "4 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 57975,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 29,
+          "status": "pass",
+          "detail": "3+6 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 24145,
+          "status": "pass",
+          "detail": "28 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 2146,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 18716,
+          "status": "pass",
+          "detail": "loss_aversion"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 7604,
+          "status": "pass",
+          "detail": "1 touches, wc=99"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 40440,
+          "status": "pass",
+          "detail": "mechanicalPass=9,t1_research_depth=7,t1_vp_connection=6,t1_tone=7,t1_conciseness=6,t1_jtbd_alignment=8,t1_avg=6.8"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 10,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 1,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Len DeWees",
+      "company": "B+T GRP",
+      "email": "len.dewees@btgrp.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": true,
+      "judgeScores": {
+        "mechanicalPass": 9,
+        "t1_research_depth": 7,
+        "t1_vp_connection": 8,
+        "t1_tone": 7,
+        "t1_conciseness": 6,
+        "t1_jtbd_alignment": 9,
+        "t1_avg": 7.4
+      },
+      "duration": "155.4s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1623,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 773,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 10,
+          "status": "pass",
+          "detail": "1 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 59680,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 39,
+          "status": "pass",
+          "detail": "4+8 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 25388,
+          "status": "pass",
+          "detail": "29 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1270,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 23261,
+          "status": "pass",
+          "detail": "loss_aversion"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 11934,
+          "status": "pass",
+          "detail": "1 touches, wc=97"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 31444,
+          "status": "pass",
+          "detail": "mechanicalPass=9,t1_research_depth=7,t1_vp_connection=8,t1_tone=7,t1_conciseness=6,t1_jtbd_alignment=9,t1_avg=7.4"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 5,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}

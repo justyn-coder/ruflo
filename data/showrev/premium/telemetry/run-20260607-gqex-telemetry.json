@@ -1,0 +1,1747 @@
+{
+  "runId": "run-20260607-gqex",
+  "timestamp": "2026-06-07T18:19:53.004Z",
+  "totalDuration": "175.1s",
+  "prospectCount": 20,
+  "icpPassCount": 20,
+  "emailFoundCount": 20,
+  "judgePassCount": 0,
+  "emailFindRate": "100%",
+  "judgePassRate": "0%",
+  "phaseStats": {
+    "1-icp-gate": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 3,
+      "maxMs": 48,
+      "count": 20
+    },
+    "2-email-find": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 8750,
+      "maxMs": 43818,
+      "count": 20
+    },
+    "2b-prospect-upsert": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 1,
+      "count": 20
+    },
+    "3-research": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 20
+    },
+    "3a-brain-context": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 20
+    },
+    "3b-brain-ingest": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 20
+    },
+    "3c-intel-structurer": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 20
+    },
+    "4-substrate": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 20
+    },
+    "5-pattern-select": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 20
+    },
+    "6-composition": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 20
+    },
+    "7-judge": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 0,
+      "count": 20
+    },
+    "8-microsite": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 1,
+      "count": 20
+    },
+    "9-supabase-write": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 0,
+      "maxMs": 1,
+      "count": 20
+    }
+  },
+  "bottleneck": "2-email-find",
+  "prospects": [
+    {
+      "name": "Patrik Lowenborg",
+      "company": "NetPMD Design and Integration",
+      "email": "patrik.lowenborg@netpmd.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "1.0s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 48,
+          "status": "pass",
+          "detail": "pass:ae_firm"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 927,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 1,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Len DeWees",
+      "company": "B+T GRP",
+      "email": "len.dewees@btgrp.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "0.4s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 2,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 349,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Michael Shultz",
+      "company": "Ohio Gig, LLC",
+      "email": "michael.shultz@shwdirect.com",
+      "emailConfidence": "red",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "32.9s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 0,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 32895,
+          "status": "pass",
+          "detail": "red"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Adam Cavazos",
+      "company": "Hilliary",
+      "email": "adam.cavazos@hilliary.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "0.8s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 2,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 837,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Garth Naar",
+      "company": "Avatar Tech",
+      "email": "garth@avatartechllc.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "11.3s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 11320,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Spencer Kariniemi",
+      "company": "Booker Engineering, LLC",
+      "email": "spencer@bookereng.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "0.7s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1,
+          "status": "pass",
+          "detail": "pass:ae_firm"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 687,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Troy Hoover",
+      "company": "PCCI Group / ProDesign",
+      "email": "troy.hoover@pccigroup.com",
+      "emailConfidence": "yellow",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "10.7s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 10660,
+          "status": "pass",
+          "detail": "yellow"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Vyshnaw Sadanandan",
+      "company": "IMMCO Inc.",
+      "email": "vyshnaw@immcoinc.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "0.8s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 772,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Jacob Fox",
+      "company": "Ohio Gig / Bresco",
+      "email": "jacob.fox@brescosolutions.com",
+      "emailConfidence": "red",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "43.8s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 0,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 43818,
+          "status": "pass",
+          "detail": "red"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 1,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Kimberly McKinley",
+      "company": "TAK Broadband",
+      "email": "kmckinley@takbroadband.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "0.9s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 0,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 870,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Roberto Martinez",
+      "company": "Lighthouse Technologies",
+      "email": "roberto.martinez@lh.tech",
+      "emailConfidence": "yellow",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "11.9s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 11915,
+          "status": "pass",
+          "detail": "yellow"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Cliff Churchill",
+      "company": "Fiber Optic Solutions",
+      "email": "cliff@fos-llc.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "13.1s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 13128,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 1,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Leila Hussein",
+      "company": "ISG",
+      "email": "leila.hussein@isginc.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "0.8s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 0,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 787,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 1,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Forrest Collier",
+      "company": "TEC",
+      "email": "fcollier@tec.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "0.4s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 351,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Janan Guillaume",
+      "company": "AirWorks",
+      "email": "janan@airworks.io",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "0.4s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 359,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Kesari Iyengar",
+      "company": "Indus CAD Works",
+      "email": "kesari.iyengar@induscadworks.com",
+      "emailConfidence": "yellow",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "10.9s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 0,
+          "status": "pass",
+          "detail": "pass:ae_firm"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 10908,
+          "status": "pass",
+          "detail": "yellow"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Raj Ahuja",
+      "company": "Indus CAD Works",
+      "email": "raj@induscadworks.com",
+      "emailConfidence": "yellow",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "8.6s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 0,
+          "status": "pass",
+          "detail": "pass:ae_firm"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 8581,
+          "status": "pass",
+          "detail": "yellow"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Aditya Kumar",
+      "company": "Integer Telecom Services",
+      "email": "aditya@integertel.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "3.9s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1,
+          "status": "pass",
+          "detail": "pass:ae_firm"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 3858,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Jordan Raymond",
+      "company": "Rayco Inc.",
+      "email": "jordan.raymond@rayco-digs.com",
+      "emailConfidence": "red",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "19.0s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 18975,
+          "status": "pass",
+          "detail": "red"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 0,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Chris Lee",
+      "company": "Mountain Ltd.",
+      "email": "clee@mountainltd.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {},
+      "duration": "3.0s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 3008,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 1,
+          "status": "warn",
+          "detail": "upsert-failed"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3-research",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 0,
+          "status": "warn",
+          "detail": "no-matches"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 0,
+          "status": "skip"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 0,
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}

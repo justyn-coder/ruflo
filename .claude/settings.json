@@ -65,6 +65,15 @@
             "timeout": 10000
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/session_health_proxy.sh\"",
+            "timeout": 2000
+          }
+        ]
       }
     ],
     "UserPromptSubmit": [
@@ -90,6 +99,11 @@
             "type": "command",
             "command": "node \"$CLAUDE_PROJECT_DIR/.claude/helpers/auto-memory-hook.mjs\" import",
             "timeout": 8000
+          },
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/session_start_handoff.sh\"",
+            "timeout": 5000
           }
         ]
       }

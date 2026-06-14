@@ -1,12 +1,39 @@
 ---
 title: ShowRev Pipeline Backlog — Post-V1 Improvements
 status: ACTIVE
-last_updated: 2026-06-08 00:44 EDT
-version: v2
-purpose: Items identified during pipeline audit that are deferred until V1 achieves minimum OKRs. Not blocking current pipeline operation.
+last_updated: 2026-06-13 EDT
+version: v4
+purpose: Items identified during pipeline audits. Top section = CRITICAL items to address in the next fix-plan session. Bottom section = deferred until V1 achieves minimum OKRs.
 ---
 
 # Pipeline Backlog
+
+## Priority: CRITICAL — address in next fix-plan session
+
+### BL-016: Inorsa-validates-inputs hallucination class — gate is missing in code
+
+**Phase:** 6 (Composition) + 0 (Source-of-truth docs)
+
+**Status:** Decision = made and documented in canon. Implementation = half-shipped. Mechanical gate = missing.
+
+**Finding (verified 2026-06-13):**
+
+- Canon (`canon/sources/inorsa-product-truth-nick-2026-06-04.md`, status CANON) carries an explicit kill-list at lines 57-61 — "Inorsa validates inputs", "Inorsa validates design data", "Inorsa validates design inputs", "Inorsa catches input errors", "Inorsa validates inputs before generating".
+- `composer-constraints.ts` `ALL_BANNED` array (the 5 hard-gate regex categories: AI_TELLS, TIM_KILL_LIST, PRODUCT_GUARDS, OFFSHORE_GUARDS, GEOGRAPHIC_GUARDS) does NOT contain any of the kill-list phrases. Grep confirmed.
+- Enforcement today relies on (a) the composer LLM reading the canon doc at compose time and obeying, and (b) Tier-3 Gemini hallucination check — both SOFT. The hard gate that catches Drawing-QC, MicroStation, India, "Idaho's terrain", etc. does not catch this class.
+- `data/showrev/inorsa-source-of-truth.md` carries an internal contradiction: lines 65 + 70 describe a "Validation Suite" feature that "catches errors before permit submission" — directly contradicting lines 141 + 153 + the canon. If the composer reads this doc at compose time, it gets mixed signals from the same file.
+- This has been Nick-validated multiple times (2026-06-04 JTBD review + 2026-06-13 Slack clarification captured as `nick_jtbd_14_critical_datapoint_clarification` in `sr_company_evidence`). No new strategic decision needed.
+
+**Fix (two small consistency edits, ~30 min total):**
+
+1. Add 5 regex entries to `PRODUCT_GUARDS` in `src/showrev/m1-email-find/evidence-tiering/composer-constraints.ts` matching the kill-list phrases. ~20 min.
+2. Edit `data/showrev/inorsa-source-of-truth.md` lines 65 + 70 — replace the "Validation Suite — catches errors" framing with canon-aligned wording ("Inorsa accelerates production so the team has time for thorough QC"). ~10 min.
+
+**Impact:** Closes the highest-leverage hallucination class in past sends. No reopening of substrate / composer / send-mechanics strategy required — pure consistency work between docs that already agree at the headline level.
+
+**Cross-refs:** `canon/sources/inorsa-product-truth-nick-2026-06-04.md` (kill-list source), `sr_company_evidence` rows `nick_jtbd_01_no_validation` and `nick_jtbd_14_critical_datapoint_clarification` (Nick provenance).
+
+---
 
 ## Priority: After V1 OKRs Met
 
@@ -129,6 +156,7 @@ purpose: Items identified during pipeline audit that are deferred until V1 achie
 
 | Version | Date (EST) | Author | Change |
 |---------|-----------|--------|--------|
+| v4 | 2026-06-13 EDT | Claude | Added CRITICAL section + BL-016 (Inorsa-validates-inputs hallucination gate missing in code; canon decision exists, mechanical gate does not; +SoT internal contradiction at lines 65/70). Flagged for next fix-plan session per operator directive. |
 | v3 | 2026-06-08 00:52 | Claude | BL-FIX-002 (word count target), BL-FIX-003 (kickback ban + reputational risk checks). |
 | v2 | 2026-06-08 00:44 | Claude | BL-008 partial fix (CTA regex expansion + structural AI-tell warnings). |
 | v1 | 2026-06-07 23:11 | Claude | Initial backlog from pipeline audit session. 12 items logged + 1 fix completed. |

@@ -1,0 +1,482 @@
+{
+  "round": 1,
+  "ts": "2026-06-14T15:35:36.602Z",
+  "synthesisPath": "data/showrev/forensic-2026-06-13-claude/data-strategy-synthesis-2026-06-14.md",
+  "rubricPath": "data/showrev/forensic-2026-06-13-claude/data-strategy-rubric-2026-06-14.md",
+  "judgeResults": [
+    {
+      "label": "gemini",
+      "model_id": "gemini-2.5-pro",
+      "raw": "{\n  \"judge_id\": \"gemini-1.5-pro-001\",\n  \"round\": 1,\n  \"scores\": {\n    \"D1_boundary_fidelity\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"The strategy is built upon this boundary. It's confirmed in the red-team (§1.1), explicitly used to define the 'DO NOT USE' Tier D (§2.4), and reinforced in the product audit (§3.2). All recommendations are strictly within the design-side scope.\"\n    },\n    \"D2_tier_coherence\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"The 4-tier scheme in §2.4 is exceptionally clear, with distinct criteria, examples, and use cases for each tier. The 'FIBER-ONLY SAFETY DEFAULT' provides a deterministic rule for edge cases, making the system highly coherent and classifiable by a new reader.\"\n    },\n    \"D3_jtbd_preservation\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"The synthesis explicitly states that the initial impulse to rebuild JTBDs was wrong (§1.3) and that the existing 7 JTBDs are sound and Nick-validated (§2.3). The recommendation is to NOT change them (§5.2), preserving the canonical framework perfectly.\"\n    },\n    \"D4_persona_pattern_fidelity\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"The strategy explicitly names the empirical signal (e.g., 'challenger_insight got 75% reply rate for permit_cycle persona' in §1.3 and §2.2) and uses this data directly to inform the recommended email strategy in §5.3. It honors documented signal over theory.\"\n    },\n    \"D5_talk_track_alignment\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"The email strategy in §5.3 is a textbook implementation of the 4-step doctrine, explicitly breaking down 'Name the failure → Describe friction → Explain Inorsa fix → Connect to outcome'. It also correctly references banned CTAs and openers.\"\n    },\n    \"D6_bridging_clarity\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"Section §4 provides 5 distinct, explicit bridges, each with a novel framing (e.g., 'Speed creates time creates quality'). The LEAD → BRIDGE → INORSA LEVER structure for each makes the path from market pain to product value exceptionally clear.\"\n    },\n    \"D7_over_correction_risk\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"The strategy masterfully avoids over-correction. It explicitly red-teams the author's initial impulse for a kill-list extension (§1.3, §5.1) and instead preserves Tier C for context/bridge use, correctly identifying the problem as upstream substrate tiering.\"\n    },\n    \"D8_empirical_grounding\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"Nearly every claim is grounded in a canonical source, from Nick's canon (§1.1) to specific AE emails (Mike Rutski, §2.4 Tier A), booth observations (Spencer Kariniemi, §2.4 Tier B), and engagement data (§2.2). The strategy is a model of empirical grounding.\"\n    },\n    \"D9_implementability\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"The plan is discrete, with a credible ~4-5 hour effort estimate (§6.3). Crucially, it includes a small-slice E2E test plan (§5.1) before the Sunday smoke fire, demonstrating a practical and risk-aware implementation path.\"\n    },\n    \"D10_reversibility\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"All proposed changes outlined in §6.2 are additive (new column, new prompt constraint) and non-destructive. The tiering is a tag that can be re-run or ignored, and composer changes can be reverted by flag. The strategy is fully reversible without blocking P2.\"\n    }\n  },\n  \"weighted_total\": 100,\n  \"weakest_dim\": \"D9_implementability\",\n  \"weakest_dim_score\": 10,\n  \"top_concerns\": [\n    \"The 2hr backfill estimate for 6,512 substrate rows (§5.1) is aggressive; classification errors here could silently undermine the entire tiering system.\",\n    \"The 'FIBER-ONLY SAFETY DEFAULT' (§2.4) is a blunt instrument that might discard valid, nuanced fiber claims that appear alongside tower context in source documents.\",\n    \"The strategy's reliance on small-N empirical data (e.g., N=17 for the 75% reply rate, §9.2) is a stated assumption but remains a risk to generalizability.\"\n  ],\n  \"adversarial_dissent\": \"The strategy defers the 'narrative utility' judge dimension (§5.2), optimizing for relevance-to-scope (Tier A/B) over resonance. This creates a risk of generating emails that are technically on-target but lack narrative punch because a grammatically awkward Tier A quote is algorithmically preferred over a well-phrased, compelling Tier C bridge for the lead claim. The system may become precise but less persuasive.\",\n  \"ship_recommendation\": \"SHIP\",\n  \"ship_rationale\": \"The strategy achieves a perfect score of 100, far exceeding the 80-point bar. The weakest dimension score is 10, well above the minimum gate of 6. The plan is exceptionally coherent, well-grounded, and implementable. The identified risks are second-order and manageable.\"\n}",
+      "parsed": {
+        "judge_id": "gemini-1.5-pro-001",
+        "round": 1,
+        "scores": {
+          "D1_boundary_fidelity": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "The strategy is built upon this boundary. It's confirmed in the red-team (§1.1), explicitly used to define the 'DO NOT USE' Tier D (§2.4), and reinforced in the product audit (§3.2). All recommendations are strictly within the design-side scope."
+          },
+          "D2_tier_coherence": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "The 4-tier scheme in §2.4 is exceptionally clear, with distinct criteria, examples, and use cases for each tier. The 'FIBER-ONLY SAFETY DEFAULT' provides a deterministic rule for edge cases, making the system highly coherent and classifiable by a new reader."
+          },
+          "D3_jtbd_preservation": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "The synthesis explicitly states that the initial impulse to rebuild JTBDs was wrong (§1.3) and that the existing 7 JTBDs are sound and Nick-validated (§2.3). The recommendation is to NOT change them (§5.2), preserving the canonical framework perfectly."
+          },
+          "D4_persona_pattern_fidelity": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "The strategy explicitly names the empirical signal (e.g., 'challenger_insight got 75% reply rate for permit_cycle persona' in §1.3 and §2.2) and uses this data directly to inform the recommended email strategy in §5.3. It honors documented signal over theory."
+          },
+          "D5_talk_track_alignment": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "The email strategy in §5.3 is a textbook implementation of the 4-step doctrine, explicitly breaking down 'Name the failure → Describe friction → Explain Inorsa fix → Connect to outcome'. It also correctly references banned CTAs and openers."
+          },
+          "D6_bridging_clarity": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Section §4 provides 5 distinct, explicit bridges, each with a novel framing (e.g., 'Speed creates time creates quality'). The LEAD → BRIDGE → INORSA LEVER structure for each makes the path from market pain to product value exceptionally clear."
+          },
+          "D7_over_correction_risk": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "The strategy masterfully avoids over-correction. It explicitly red-teams the author's initial impulse for a kill-list extension (§1.3, §5.1) and instead preserves Tier C for context/bridge use, correctly identifying the problem as upstream substrate tiering."
+          },
+          "D8_empirical_grounding": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Nearly every claim is grounded in a canonical source, from Nick's canon (§1.1) to specific AE emails (Mike Rutski, §2.4 Tier A), booth observations (Spencer Kariniemi, §2.4 Tier B), and engagement data (§2.2). The strategy is a model of empirical grounding."
+          },
+          "D9_implementability": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "The plan is discrete, with a credible ~4-5 hour effort estimate (§6.3). Crucially, it includes a small-slice E2E test plan (§5.1) before the Sunday smoke fire, demonstrating a practical and risk-aware implementation path."
+          },
+          "D10_reversibility": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "All proposed changes outlined in §6.2 are additive (new column, new prompt constraint) and non-destructive. The tiering is a tag that can be re-run or ignored, and composer changes can be reverted by flag. The strategy is fully reversible without blocking P2."
+          }
+        },
+        "weighted_total": 100,
+        "weakest_dim": "D9_implementability",
+        "weakest_dim_score": 10,
+        "top_concerns": [
+          "The 2hr backfill estimate for 6,512 substrate rows (§5.1) is aggressive; classification errors here could silently undermine the entire tiering system.",
+          "The 'FIBER-ONLY SAFETY DEFAULT' (§2.4) is a blunt instrument that might discard valid, nuanced fiber claims that appear alongside tower context in source documents.",
+          "The strategy's reliance on small-N empirical data (e.g., N=17 for the 75% reply rate, §9.2) is a stated assumption but remains a risk to generalizability."
+        ],
+        "adversarial_dissent": "The strategy defers the 'narrative utility' judge dimension (§5.2), optimizing for relevance-to-scope (Tier A/B) over resonance. This creates a risk of generating emails that are technically on-target but lack narrative punch because a grammatically awkward Tier A quote is algorithmically preferred over a well-phrased, compelling Tier C bridge for the lead claim. The system may become precise but less persuasive.",
+        "ship_recommendation": "SHIP",
+        "ship_rationale": "The strategy achieves a perfect score of 100, far exceeding the 80-point bar. The weakest dimension score is 10, well above the minimum gate of 6. The plan is exceptionally coherent, well-grounded, and implementable. The identified risks are second-order and manageable."
+      },
+      "error": null,
+      "elapsed_ms": 29475
+    },
+    {
+      "label": "gpt5",
+      "model_id": "gpt-5-2025-08-07",
+      "raw": "{\n  \"judge_id\": \"gpt-5-judge\",\n  \"round\": 1,\n  \"scores\": {\n    \"D1_boundary_fidelity\": {\"score\": 10, \"weight\": 10, \"rationale\": \"Explicit design-only scope; construction impacts excluded. §1.1(1) affirms boundary; §3.2 'does NOT do' lists construction; §2.4 Tier D bans construction/ambiguous tower. Bridges (§4) frame speed→QC, not field productivity.\"},\n    \"D2_tier_coherence\": {\"score\": 10, \"weight\": 10, \"rationale\": \"Clear A/B/C/D criteria with examples and non-examples + 'Use in email' roles (§2.4). Fiber-only safety default makes Tier D catch ambiguous claims. Nick’s 20-quote mapping reinforces determinism.\"},\n    \"D3_jtbd_preservation\": {\"score\": 10, \"weight\": 10, \"rationale\": \"JTBDs preserved and re-affirmed. Calls prior rebuild idea wrong (§1.2.2). Full 7 listed as Nick-validated (§2.3). 'Don't rebuild JTBD' explicit (§5.2.1). Focus is substrate tagging.\"},\n    \"D4_persona_pattern_fidelity\": {\"score\": 10, \"weight\": 10, \"rationale\": \"Empirical persona-patterns honored: 75% reply for permit_cycle with challenger_insight (§2.2). Retained in email strategy (§5.3 Persona-pattern preference). No a priori overrides.\"},\n    \"D5_talk_track_alignment\": {\"score\": 10, \"weight\": 10, \"rationale\": \"Email plan follows doctrine step-by-step (§5.3: Name failure → Friction → Inorsa fix → Outcome → Diagnostic CTA). References banned opener ('worth 20 minutes') via Tim kill-list (§5.3.5).\"},\n    \"D6_bridging_clarity\": {\"score\": 10, \"weight\": 10, \"rationale\": \"Five explicit bridges with pain→bridge→Inorsa lever: §4.1 speed→time→quality, §4.2 scale w/o hiring, §4.3 BEAD econ, §4.4 kickback cascade, §4.5 standardize. Novel framing called out.\"},\n    \"D7_over_correction_risk\": {\"score\": 10, \"weight\": 10, \"rationale\": \"Tier C preserved for context; only Tier D banned (§2.4). Initial kill-list extension rejected (§1.3). Implementation uses soft preference + C-lead warning, not bans (§5.1.2).\"},\n    \"D8_empirical_grounding\": {\"score\": 10, \"weight\": 10, \"rationale\": \"Grounded in Nick canon, SoT, AE emails, booth obs, and engagement data (§Exec, §1, §2.2, §2.4, §3.1–3.2, §4). Tier A/B examples verbatim (Mike Rutski, Nathan). Maps Nick’s 20-quote review.\"},\n    \"D9_implementability\": {\"score\": 9, \"weight\": 10, \"rationale\": \"Discrete plan w/ estimates: new column+backfill (2h), composer changes (1h), E2E test (1h), docs (30m) (§6). Small-slice test before smoke (§5.1.5). Slight risk: 6,512-row backfill speed/QA.\"},\n    \"D10_reversibility\": {\"score\": 10, \"weight\": 10, \"rationale\": \"All changes additive and flaggable: new column, soft composer preference, mechanical check (§6). Tiers re-taggable; composer behavior revertable. No destructive edits.\"}\n  },\n  \"weighted_total\": 99,\n  \"weakest_dim\": \"D9_implementability\",\n  \"weakest_dim_score\": 9,\n  \"top_concerns\": [\n    \"1–2h backfill for 6,512 rows (§5.1.3) risks noisy auto-tiering; without QA, misclassification could skew leads.\",\n    \"Engagement weights (e.g., 75% for permit_cycle) are small-N/cohort-specific (§2.5, §9.2); risk of overfitting pattern choice.\",\n    \"'Crew-idle' ROI math in §4.1 can drift into construction-impact framing; AEs could over-claim beyond §3.2 boundaries.\"\n  ],\n  \"adversarial_dissent\": \"The Tiering backfill speed feels optimistic; mis-tiered C-as-A leads will silently degrade emails. Add a sampling QA gate before composer consumption. Also, §4.1’s crew-idle framing nudges toward construction outcomes—tighten copy to avoid AE overreach. Fiber-only safety default may over-exclude valid fiber claims; define a rescue path for borderline items.\",\n  \"ship_recommendation\": \"SHIP\",\n  \"ship_rationale\": \"Weighted_total 99 ≥ 80 and weakest_dim D9 = 9 ≥ 6. Strategy is precise, additive, and aligned; ship with a quick QA spot-check on tier backfill and tightened guidance on §4.1 boundary language.\"\n}",
+      "parsed": {
+        "judge_id": "gpt-5-judge",
+        "round": 1,
+        "scores": {
+          "D1_boundary_fidelity": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Explicit design-only scope; construction impacts excluded. §1.1(1) affirms boundary; §3.2 'does NOT do' lists construction; §2.4 Tier D bans construction/ambiguous tower. Bridges (§4) frame speed→QC, not field productivity."
+          },
+          "D2_tier_coherence": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Clear A/B/C/D criteria with examples and non-examples + 'Use in email' roles (§2.4). Fiber-only safety default makes Tier D catch ambiguous claims. Nick’s 20-quote mapping reinforces determinism."
+          },
+          "D3_jtbd_preservation": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "JTBDs preserved and re-affirmed. Calls prior rebuild idea wrong (§1.2.2). Full 7 listed as Nick-validated (§2.3). 'Don't rebuild JTBD' explicit (§5.2.1). Focus is substrate tagging."
+          },
+          "D4_persona_pattern_fidelity": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Empirical persona-patterns honored: 75% reply for permit_cycle with challenger_insight (§2.2). Retained in email strategy (§5.3 Persona-pattern preference). No a priori overrides."
+          },
+          "D5_talk_track_alignment": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Email plan follows doctrine step-by-step (§5.3: Name failure → Friction → Inorsa fix → Outcome → Diagnostic CTA). References banned opener ('worth 20 minutes') via Tim kill-list (§5.3.5)."
+          },
+          "D6_bridging_clarity": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Five explicit bridges with pain→bridge→Inorsa lever: §4.1 speed→time→quality, §4.2 scale w/o hiring, §4.3 BEAD econ, §4.4 kickback cascade, §4.5 standardize. Novel framing called out."
+          },
+          "D7_over_correction_risk": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Tier C preserved for context; only Tier D banned (§2.4). Initial kill-list extension rejected (§1.3). Implementation uses soft preference + C-lead warning, not bans (§5.1.2)."
+          },
+          "D8_empirical_grounding": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Grounded in Nick canon, SoT, AE emails, booth obs, and engagement data (§Exec, §1, §2.2, §2.4, §3.1–3.2, §4). Tier A/B examples verbatim (Mike Rutski, Nathan). Maps Nick’s 20-quote review."
+          },
+          "D9_implementability": {
+            "score": 9,
+            "weight": 10,
+            "rationale": "Discrete plan w/ estimates: new column+backfill (2h), composer changes (1h), E2E test (1h), docs (30m) (§6). Small-slice test before smoke (§5.1.5). Slight risk: 6,512-row backfill speed/QA."
+          },
+          "D10_reversibility": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "All changes additive and flaggable: new column, soft composer preference, mechanical check (§6). Tiers re-taggable; composer behavior revertable. No destructive edits."
+          }
+        },
+        "weighted_total": 99,
+        "weakest_dim": "D9_implementability",
+        "weakest_dim_score": 9,
+        "top_concerns": [
+          "1–2h backfill for 6,512 rows (§5.1.3) risks noisy auto-tiering; without QA, misclassification could skew leads.",
+          "Engagement weights (e.g., 75% for permit_cycle) are small-N/cohort-specific (§2.5, §9.2); risk of overfitting pattern choice.",
+          "'Crew-idle' ROI math in §4.1 can drift into construction-impact framing; AEs could over-claim beyond §3.2 boundaries."
+        ],
+        "adversarial_dissent": "The Tiering backfill speed feels optimistic; mis-tiered C-as-A leads will silently degrade emails. Add a sampling QA gate before composer consumption. Also, §4.1’s crew-idle framing nudges toward construction outcomes—tighten copy to avoid AE overreach. Fiber-only safety default may over-exclude valid fiber claims; define a rescue path for borderline items.",
+        "ship_recommendation": "SHIP",
+        "ship_rationale": "Weighted_total 99 ≥ 80 and weakest_dim D9 = 9 ≥ 6. Strategy is precise, additive, and aligned; ship with a quick QA spot-check on tier backfill and tightened guidance on §4.1 boundary language."
+      },
+      "error": null,
+      "elapsed_ms": 38554
+    },
+    {
+      "label": "grok",
+      "model_id": "grok-4.3",
+      "raw": "{\n  \"judge_id\": \"claude-opus-external-4.7\",\n  \"round\": 1,\n  \"scores\": {\n    \"D1_boundary_fidelity\": {\"score\": 10, \"weight\": 10, \"rationale\": \"Explicit fiber-only safety default + Tier D exclusion of all construction claims in §2.4; §3.2 hard boundaries verbatim from Nick canon; no leaks.\"},\n    \"D2_tier_coherence\": {\"score\": 9, \"weight\": 10, \"rationale\": \"Clear inclusion criteria + examples/non-examples in §2.4 table; fiber-only default explicit. Minor edge-case fuzz on some BEAD regulatory claims could require judgment.\"},\n    \"D3_jtbd_preservation\": {\"score\": 10, \"weight\": 10, \"rationale\": \"§1 and §5.2 explicitly state JTBDs are sound; only substrate-to-JTBD pairing changes. No renumbering or restructuring proposed.\"},\n    \"D4_persona_pattern_fidelity\": {\"score\": 10, \"weight\": 10, \"rationale\": \"§2.2 and §5.3 directly cite 75% challenger_insight reply rate for permit_cycle persona and loss_aversion restriction to capital_efficiency.\"},\n    \"D5_talk_track_alignment\": {\"score\": 10, \"weight\": 10, \"rationale\": \"§5.3 explicitly maps email structure to Name failure → Friction → Inorsa fix → Outcome; bans 'worth 20 minutes' CTA.\"},\n    \"D6_bridging_clarity\": {\"score\": 9, \"weight\": 10, \"rationale\": \"§4.1-4.5 spell out 5 distinct pain→bridge→Inorsa-lever connections with novel framing ('Speed creates time creates quality'). One bridge slightly generic.\"},\n    \"D7_over_correction_risk\": {\"score\": 10, \"weight\": 10, \"rationale\": \"§1 and §5.1 explicitly red-team initial over-correction; Tier C preserved as context/bridge, only Tier D banned; composer-constraints.ts extension rejected.\"},\n    \"D8_empirical_grounding\": {\"score\": 9, \"weight\": 10, \"rationale\": \"Heavy citation of Mike Rutski email, Spencer Kariniemi booth obs, Nick canon, 75% engagement metric throughout §1-4. Minor abstract reasoning in §4.3 bridge.\"},\n    \"D9_implementability\": {\"score\": 10, \"weight\": 10, \"rationale\": \"§6 gives discrete 4-5hr breakdown (2hr backfill + 1hr composer + 1hr E2E + 30min docs) with named test plan on 1-3 prospects.\"},\n    \"D10_reversibility\": {\"score\": 10, \"weight\": 10, \"rationale\": \"§6 states all changes additive (new column, soft constraint, mechanical check); Tier classifications re-taggable; composer flag revertible.\"}\n  },\n  \"weighted_total\": 97,\n  \"weakest_dim\": \"D2_tier_coherence\",\n  \"weakest_dim_score\": 9,\n  \"top_concerns\": [\"Tier A/B preference may undervalue highly specific Tier C regulatory context for BEAD sub-grantee ICPs\", \"N=17 for 75% engagement signal is small; statistical confidence moderate per §9\", \"Fiber-only safety default could over-exclude legitimate dual-use claims if not carefully implemented\"],\n  \"adversarial_dissent\": \"The synthesis assumes internal Tier A sources are inherently superior for lead claims, yet some Tier C regulatory language (e.g., H.R. 2289 shot-clock specifics) could occasionally outperform generic internal quotes when targeting program_leverage persona on JTBD 7. This risk is under-explored in §4.2.\",\n  \"ship_recommendation\": \"SHIP\",\n  \"ship_rationale\": \"weighted_total=97 exceeds 80 bar; weakest_dim=9 exceeds 6 gate. All dimensions ≥9; changes are additive and scoped to 4-5hr window.\"\n}",
+      "parsed": {
+        "judge_id": "claude-opus-external-4.7",
+        "round": 1,
+        "scores": {
+          "D1_boundary_fidelity": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Explicit fiber-only safety default + Tier D exclusion of all construction claims in §2.4; §3.2 hard boundaries verbatim from Nick canon; no leaks."
+          },
+          "D2_tier_coherence": {
+            "score": 9,
+            "weight": 10,
+            "rationale": "Clear inclusion criteria + examples/non-examples in §2.4 table; fiber-only default explicit. Minor edge-case fuzz on some BEAD regulatory claims could require judgment."
+          },
+          "D3_jtbd_preservation": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "§1 and §5.2 explicitly state JTBDs are sound; only substrate-to-JTBD pairing changes. No renumbering or restructuring proposed."
+          },
+          "D4_persona_pattern_fidelity": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "§2.2 and §5.3 directly cite 75% challenger_insight reply rate for permit_cycle persona and loss_aversion restriction to capital_efficiency."
+          },
+          "D5_talk_track_alignment": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "§5.3 explicitly maps email structure to Name failure → Friction → Inorsa fix → Outcome; bans 'worth 20 minutes' CTA."
+          },
+          "D6_bridging_clarity": {
+            "score": 9,
+            "weight": 10,
+            "rationale": "§4.1-4.5 spell out 5 distinct pain→bridge→Inorsa-lever connections with novel framing ('Speed creates time creates quality'). One bridge slightly generic."
+          },
+          "D7_over_correction_risk": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "§1 and §5.1 explicitly red-team initial over-correction; Tier C preserved as context/bridge, only Tier D banned; composer-constraints.ts extension rejected."
+          },
+          "D8_empirical_grounding": {
+            "score": 9,
+            "weight": 10,
+            "rationale": "Heavy citation of Mike Rutski email, Spencer Kariniemi booth obs, Nick canon, 75% engagement metric throughout §1-4. Minor abstract reasoning in §4.3 bridge."
+          },
+          "D9_implementability": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "§6 gives discrete 4-5hr breakdown (2hr backfill + 1hr composer + 1hr E2E + 30min docs) with named test plan on 1-3 prospects."
+          },
+          "D10_reversibility": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "§6 states all changes additive (new column, soft constraint, mechanical check); Tier classifications re-taggable; composer flag revertible."
+          }
+        },
+        "weighted_total": 97,
+        "weakest_dim": "D2_tier_coherence",
+        "weakest_dim_score": 9,
+        "top_concerns": [
+          "Tier A/B preference may undervalue highly specific Tier C regulatory context for BEAD sub-grantee ICPs",
+          "N=17 for 75% engagement signal is small; statistical confidence moderate per §9",
+          "Fiber-only safety default could over-exclude legitimate dual-use claims if not carefully implemented"
+        ],
+        "adversarial_dissent": "The synthesis assumes internal Tier A sources are inherently superior for lead claims, yet some Tier C regulatory language (e.g., H.R. 2289 shot-clock specifics) could occasionally outperform generic internal quotes when targeting program_leverage persona on JTBD 7. This risk is under-explored in §4.2.",
+        "ship_recommendation": "SHIP",
+        "ship_rationale": "weighted_total=97 exceeds 80 bar; weakest_dim=9 exceeds 6 gate. All dimensions ≥9; changes are additive and scoped to 4-5hr window."
+      },
+      "error": null,
+      "elapsed_ms": 7943
+    },
+    {
+      "label": "deepseek",
+      "model_id": "deepseek-v4-flash",
+      "raw": "{\n  \"judge_id\": \"Gemini 2.5 Pro\",\n  \"round\": 1,\n  \"scores\": {\n    \"D1_boundary_fidelity\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"Explicitly respects Nick's boundary (§1, §3.2). All recommendations stay within design-side scope. Tier D excludes construction-impact claims. No boundary slips.\"\n    },\n    \"D2_tier_coherence\": {\n      \"score\": 9,\n      \"weight\": 10,\n      \"rationale\": \"4-tier scheme clearly defined with criteria, examples, and fiber-only safety default (§2.4). Tiers are distinguishable; minor fuzziness on 'Inorsa-aligned' for Tier C/D edge cases.\"\n    },\n    \"D3_jtbd_preservation\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"JTBDs explicitly preserved as Nick-validated (§1, §5.2). No restructuring proposed. Only substrate tagging changes recommended.\"\n    },\n    \"D4_persona_pattern_fidelity\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"Honors empirical engagement signal (challenger_insight 75% reply for permit_cycle) in §2.2 and §5.3. Recommends pattern selection by persona×JTBD with documented weights.\"\n    },\n    \"D5_talk_track_alignment\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"Email strategy in §5.3 explicitly follows 4-step doctrine: Name failure → Friction → Inorsa fix → Outcome. Banned openings and diagnostic CTA referenced.\"\n    },\n    \"D6_bridging_clarity\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"Five distinct bridges (§4.1-4.5) each with pain→bridge→Inorsa lever spelled out. Novel framing (e.g., 'Speed creates time creates quality').\"\n    },\n    \"D7_over_correction_risk\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"Explicitly red-teams initial over-correction (§1). Preserves Tier C as bridge/context, bans only Tier D. Rejects kill-list extension (§5.1). No over-correction.\"\n    },\n    \"D8_empirical_grounding\": {\n      \"score\": 9,\n      \"weight\": 10,\n      \"rationale\": \"Most claims grounded in canonical sources (Mike Rutski email, Spencer Karimi booth, Nick canon) and engagement metrics. Bridge math in §4.1 partially reasoned from first principles, but based on Nick-confirmed data.\"\n    },\n    \"D9_implementability\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"Clear effort estimate ~4-5 hr (§6). Discrete changes: new column, backfill, composer prompt+check, E2E test. Test plan on 1-3 prospects specified.\"\n    },\n    \"D10_reversibility\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"All changes additive: new column (nullable), soft constraint (revert by flag), mechanical check (removable). No destructive changes. §6 explicitly states taggable and revertable.\"\n    }\n  },\n  \"weighted_total\": 98,\n  \"weakest_dim\": \"D2_tier_coherence\",\n  \"weakest_dim_score\": 9,\n  \"top_concerns\": [\n    \"Empirical engagement data (75% reply) from N=17 contacts; statistical confidence moderate.\",\n    \"Tier C/D boundary may require subjective judgment on 'Inorsa-aligned'; safety default could exclude valid fiber context.\",\n    \"Narrative utility judge dimension deferred; if Tier A/B leads still fail to move replies, need additional iteration.\"\n  ],\n  \"adversarial_dissent\": \"The strategy assumes Tier A/B substrate is inherently more persuasive as lead claims, but this is untested at scale; the 75% reply signal is from N=17. The fiber-only safety default for ambiguous claims may be too conservative, excluding legitimate fiber industry context (e.g., BEAD workforce stats that explicitly mention fiber drafters). Consider adding explicit inclusion criteria for Tier C to prevent under-utilization of valid bridge language.\",\n  \"ship_recommendation\": \"SHIP\",\n  \"ship_rationale\": \"weighted_total 98 ≥ 80 ship target; weakest_dim D2 (tier_coherence) score 9 ≥ 6 gate. All dimensions at or above 9. Strategy is implementable, grounded, and avoids over-correction. Passes both bars.\"\n}",
+      "parsed": {
+        "judge_id": "Gemini 2.5 Pro",
+        "round": 1,
+        "scores": {
+          "D1_boundary_fidelity": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Explicitly respects Nick's boundary (§1, §3.2). All recommendations stay within design-side scope. Tier D excludes construction-impact claims. No boundary slips."
+          },
+          "D2_tier_coherence": {
+            "score": 9,
+            "weight": 10,
+            "rationale": "4-tier scheme clearly defined with criteria, examples, and fiber-only safety default (§2.4). Tiers are distinguishable; minor fuzziness on 'Inorsa-aligned' for Tier C/D edge cases."
+          },
+          "D3_jtbd_preservation": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "JTBDs explicitly preserved as Nick-validated (§1, §5.2). No restructuring proposed. Only substrate tagging changes recommended."
+          },
+          "D4_persona_pattern_fidelity": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Honors empirical engagement signal (challenger_insight 75% reply for permit_cycle) in §2.2 and §5.3. Recommends pattern selection by persona×JTBD with documented weights."
+          },
+          "D5_talk_track_alignment": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Email strategy in §5.3 explicitly follows 4-step doctrine: Name failure → Friction → Inorsa fix → Outcome. Banned openings and diagnostic CTA referenced."
+          },
+          "D6_bridging_clarity": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Five distinct bridges (§4.1-4.5) each with pain→bridge→Inorsa lever spelled out. Novel framing (e.g., 'Speed creates time creates quality')."
+          },
+          "D7_over_correction_risk": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Explicitly red-teams initial over-correction (§1). Preserves Tier C as bridge/context, bans only Tier D. Rejects kill-list extension (§5.1). No over-correction."
+          },
+          "D8_empirical_grounding": {
+            "score": 9,
+            "weight": 10,
+            "rationale": "Most claims grounded in canonical sources (Mike Rutski email, Spencer Karimi booth, Nick canon) and engagement metrics. Bridge math in §4.1 partially reasoned from first principles, but based on Nick-confirmed data."
+          },
+          "D9_implementability": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Clear effort estimate ~4-5 hr (§6). Discrete changes: new column, backfill, composer prompt+check, E2E test. Test plan on 1-3 prospects specified."
+          },
+          "D10_reversibility": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "All changes additive: new column (nullable), soft constraint (revert by flag), mechanical check (removable). No destructive changes. §6 explicitly states taggable and revertable."
+          }
+        },
+        "weighted_total": 98,
+        "weakest_dim": "D2_tier_coherence",
+        "weakest_dim_score": 9,
+        "top_concerns": [
+          "Empirical engagement data (75% reply) from N=17 contacts; statistical confidence moderate.",
+          "Tier C/D boundary may require subjective judgment on 'Inorsa-aligned'; safety default could exclude valid fiber context.",
+          "Narrative utility judge dimension deferred; if Tier A/B leads still fail to move replies, need additional iteration."
+        ],
+        "adversarial_dissent": "The strategy assumes Tier A/B substrate is inherently more persuasive as lead claims, but this is untested at scale; the 75% reply signal is from N=17. The fiber-only safety default for ambiguous claims may be too conservative, excluding legitimate fiber industry context (e.g., BEAD workforce stats that explicitly mention fiber drafters). Consider adding explicit inclusion criteria for Tier C to prevent under-utilization of valid bridge language.",
+        "ship_recommendation": "SHIP",
+        "ship_rationale": "weighted_total 98 ≥ 80 ship target; weakest_dim D2 (tier_coherence) score 9 ≥ 6 gate. All dimensions at or above 9. Strategy is implementable, grounded, and avoids over-correction. Passes both bars."
+      },
+      "error": null,
+      "elapsed_ms": 29256
+    }
+  ],
+  "agg": {
+    "perDim": {
+      "D1_boundary_fidelity": {
+        "mean": 10,
+        "stddev": 0,
+        "min": 10,
+        "max": 10,
+        "n": 4,
+        "weight": 10,
+        "scores": [
+          10,
+          10,
+          10,
+          10
+        ]
+      },
+      "D2_tier_coherence": {
+        "mean": 9.5,
+        "stddev": 0.5,
+        "min": 9,
+        "max": 10,
+        "n": 4,
+        "weight": 10,
+        "scores": [
+          10,
+          10,
+          9,
+          9
+        ]
+      },
+      "D3_jtbd_preservation": {
+        "mean": 10,
+        "stddev": 0,
+        "min": 10,
+        "max": 10,
+        "n": 4,
+        "weight": 10,
+        "scores": [
+          10,
+          10,
+          10,
+          10
+        ]
+      },
+      "D4_persona_pattern_fidelity": {
+        "mean": 10,
+        "stddev": 0,
+        "min": 10,
+        "max": 10,
+        "n": 4,
+        "weight": 10,
+        "scores": [
+          10,
+          10,
+          10,
+          10
+        ]
+      },
+      "D5_talk_track_alignment": {
+        "mean": 10,
+        "stddev": 0,
+        "min": 10,
+        "max": 10,
+        "n": 4,
+        "weight": 10,
+        "scores": [
+          10,
+          10,
+          10,
+          10
+        ]
+      },
+      "D6_bridging_clarity": {
+        "mean": 9.8,
+        "stddev": 0.43,
+        "min": 9,
+        "max": 10,
+        "n": 4,
+        "weight": 10,
+        "scores": [
+          10,
+          10,
+          9,
+          10
+        ]
+      },
+      "D7_over_correction_risk": {
+        "mean": 10,
+        "stddev": 0,
+        "min": 10,
+        "max": 10,
+        "n": 4,
+        "weight": 10,
+        "scores": [
+          10,
+          10,
+          10,
+          10
+        ]
+      },
+      "D8_empirical_grounding": {
+        "mean": 9.5,
+        "stddev": 0.5,
+        "min": 9,
+        "max": 10,
+        "n": 4,
+        "weight": 10,
+        "scores": [
+          10,
+          10,
+          9,
+          9
+        ]
+      },
+      "D9_implementability": {
+        "mean": 9.8,
+        "stddev": 0.43,
+        "min": 9,
+        "max": 10,
+        "n": 4,
+        "weight": 10,
+        "scores": [
+          10,
+          9,
+          10,
+          10
+        ]
+      },
+      "D10_reversibility": {
+        "mean": 10,
+        "stddev": 0,
+        "min": 10,
+        "max": 10,
+        "n": 4,
+        "weight": 10,
+        "scores": [
+          10,
+          10,
+          10,
+          10
+        ]
+      }
+    },
+    "weightedTotal": 98.6,
+    "weakestDim": "D2_tier_coherence",
+    "weakestDimScore": 9.5,
+    "dimsWithDisagreement": [],
+    "individualTotals": [
+      {
+        "label": "gemini",
+        "model_id": "gemini-2.5-pro",
+        "weighted_total": 100,
+        "ship_recommendation": "SHIP",
+        "error": null
+      },
+      {
+        "label": "gpt5",
+        "model_id": "gpt-5-2025-08-07",
+        "weighted_total": 99,
+        "ship_recommendation": "SHIP",
+        "error": null
+      },
+      {
+        "label": "grok",
+        "model_id": "grok-4.3",
+        "weighted_total": 97,
+        "ship_recommendation": "SHIP",
+        "error": null
+      },
+      {
+        "label": "deepseek",
+        "model_id": "deepseek-v4-flash",
+        "weighted_total": 98,
+        "ship_recommendation": "SHIP",
+        "error": null
+      }
+    ]
+  }
+}

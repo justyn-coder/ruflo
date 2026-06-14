@@ -1,0 +1,478 @@
+{
+  "round": 2,
+  "ts": "2026-06-13T17:31:36.466Z",
+  "planPath": "data/showrev/fix-plan-sprint-2026-06-13-v2.md",
+  "rubricPath": "data/showrev/forensic-2026-06-13-claude/sprint-plan-rubric.md",
+  "judgeResults": [
+    {
+      "label": "gemini",
+      "model_id": "gemini-2.5-pro",
+      "raw": "{\n  \"judge_id\": \"claude-opus-4.7-judge-session\",\n  \"round\": 2,\n  \"scores\": {\n    \"D1_sequencing\": {\n      \"score\": 10,\n      \"weight\": 13,\n      \"rationale\": \"Excellent. The plan not only provides an explicit 'substrate first, re-judge last' block but defends the entire F-bucket order in the 'Defended sequencing logic' section, explaining why F3 is early, F6 is late, and the GATE is last. Reordering would visibly degrade the outcome.\"\n    },\n    \"D2_risk_discipline\": {\n      \"score\": 10,\n      \"weight\": 13,\n      \"rationale\": \"Started at 10. No deductions. The plan's v2 revisions systematically eliminate all rubric-defined risks. Rollback paths exist for all items (W3, F3). Rollbacks are non-destructive (F3, F6, W4). Falsifiable tests are exemplary (GATE adversarial replay). Rollback theater is explicitly avoided (F3, F6, F10).\"\n    },\n    \"D3_capability_coverage\": {\n      \"score\": 9,\n      \"weight\": 10,\n      \"rationale\": \"Excellent. The plan includes a 'Capability spine' and tags every item. All 4 capabilities are advanced, with L being covered by Stop-hook and GATE. The 9-10 band is met by F8's test plan, which defends the M-tag by verifying DB row counts move from 0 to N, as requested by the rubric.\"\n    },\n    \"D4_defensibility\": {\n      \"score\": 10,\n      \"weight\": 11,\n      \"rationale\": \"Excellent. Every item traces to a source artifact (audit, canon, operator decision). The plan meets the highest band by explicitly deferring the REBUILD items (R1-R5) in a dedicated section with rationale, showing full alignment with the audit's scope and findings.\"\n    },\n    \"D5_scope_discipline\": {\n      \"score\": 10,\n      \"weight\": 7,\n      \"rationale\": \"Started at 10. No deductions. The plan includes a comprehensive 'What this plan does NOT include' section that explicitly lists all 6 audit-ruled-out decisions, plus others. There is no evidence of scope creep or spirit-of-the-law violations.\"\n    },\n    \"D6_substrate_trust\": {\n      \"score\": 10,\n      \"weight\": 14,\n      \"rationale\": \"Excellent. The plan closes the substrate-trust loop perfectly, from F1/F3 fixes to the GATE re-judge. The 'Adversarial falsifiability replay' in the GATE section is a textbook implementation of the rubric's R-3 requirement, testing not just historical failures but crafted break-vectors.\"\n    },\n    \"D7_observability\": {\n      \"score\": 10,\n      \"weight\": 8,\n      \"rationale\": \"Excellent. The plan materially moves observability forward by leveraging the tool audit's OTEL finding (F8/F9), providing a fallback path, specifying a cross-system check, and including a noise gate on the Stop-hook. Impact is verifiable via DB row counts, meeting the 9-10 band.\"\n    },\n    \"D8_human_in_loop\": {\n      \"score\": 10,\n      \"weight\": 4,\n      \"rationale\": \"Excellent. The plan excels at surfacing operator decisions. It locks decisions at the top, provides a tight 5-question block for the REBUILD bucket, and includes an 'Open assumptions flagged' section, directly matching the rubric's 9-10 band criteria.\"\n    },\n    \"D9_concrete_spec_depth\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"Started at 10. No deductions. The plan is exceptionally precise. All items have file paths and line/function anchors (per v2 revision note). Test plans use specific queries and commands, not 'manual check'. The plan is fully reproducible by another agent without interpretation.\"\n    },\n    \"D10_elegance_insight\": {\n      \"score\": 10,\n      \"weight\": 10,\n      \"rationale\": \"Excellent. The plan demonstrates craft and second-order thinking throughout. Examples: F3's non-destructive quarantine for future audit, F8/F9's architectural OTEL choice over tactical INSERTs, and the Stop-hook creating a forward-looking learning loop. This plan solves root causes, not just symptoms.\"\n    }\n  },\n  \"weighted_total\": 99.0,\n  \"weakest_dim\": \"D3_capability_coverage\",\n  \"weakest_dim_score\": 9,\n  \"top_concerns\": [\n    \"The plan's v2 revisions map so perfectly to the rubric's deductions (non-destructive rollback, anti-rollback-theater, adversarial tests) that it suggests the plan was revised specifically to pass this rubric, rather than arriving at these solutions organically.\",\n    \"The L (Close the loop) capability, while covered, rests on only two items (Stop-hook, GATE telemetry). It's the thinnest capability pillar in the plan.\",\n    \"The plan's advanced features (F8/F9 OTEL path, Stop-hook) rely on new-ish, potentially fragile toolchain capabilities. Failure here would degrade M and L outcomes, though F8 has a fallback.\"\n  ],\n  \"ship_recommendation\": \"SHIP\",\n  \"ship_rationale\": \"The plan is exceptionally strong. The weighted total of 99.0 is far above the 80 ship target, and the weakest dimension score of 9 is well above the weakest-link gate of 6. The plan demonstrates mastery of the requirements and anticipates failure modes proactively.\"\n}",
+      "parsed": {
+        "judge_id": "claude-opus-4.7-judge-session",
+        "round": 2,
+        "scores": {
+          "D1_sequencing": {
+            "score": 10,
+            "weight": 13,
+            "rationale": "Excellent. The plan not only provides an explicit 'substrate first, re-judge last' block but defends the entire F-bucket order in the 'Defended sequencing logic' section, explaining why F3 is early, F6 is late, and the GATE is last. Reordering would visibly degrade the outcome."
+          },
+          "D2_risk_discipline": {
+            "score": 10,
+            "weight": 13,
+            "rationale": "Started at 10. No deductions. The plan's v2 revisions systematically eliminate all rubric-defined risks. Rollback paths exist for all items (W3, F3). Rollbacks are non-destructive (F3, F6, W4). Falsifiable tests are exemplary (GATE adversarial replay). Rollback theater is explicitly avoided (F3, F6, F10)."
+          },
+          "D3_capability_coverage": {
+            "score": 9,
+            "weight": 10,
+            "rationale": "Excellent. The plan includes a 'Capability spine' and tags every item. All 4 capabilities are advanced, with L being covered by Stop-hook and GATE. The 9-10 band is met by F8's test plan, which defends the M-tag by verifying DB row counts move from 0 to N, as requested by the rubric."
+          },
+          "D4_defensibility": {
+            "score": 10,
+            "weight": 11,
+            "rationale": "Excellent. Every item traces to a source artifact (audit, canon, operator decision). The plan meets the highest band by explicitly deferring the REBUILD items (R1-R5) in a dedicated section with rationale, showing full alignment with the audit's scope and findings."
+          },
+          "D5_scope_discipline": {
+            "score": 10,
+            "weight": 7,
+            "rationale": "Started at 10. No deductions. The plan includes a comprehensive 'What this plan does NOT include' section that explicitly lists all 6 audit-ruled-out decisions, plus others. There is no evidence of scope creep or spirit-of-the-law violations."
+          },
+          "D6_substrate_trust": {
+            "score": 10,
+            "weight": 14,
+            "rationale": "Excellent. The plan closes the substrate-trust loop perfectly, from F1/F3 fixes to the GATE re-judge. The 'Adversarial falsifiability replay' in the GATE section is a textbook implementation of the rubric's R-3 requirement, testing not just historical failures but crafted break-vectors."
+          },
+          "D7_observability": {
+            "score": 10,
+            "weight": 8,
+            "rationale": "Excellent. The plan materially moves observability forward by leveraging the tool audit's OTEL finding (F8/F9), providing a fallback path, specifying a cross-system check, and including a noise gate on the Stop-hook. Impact is verifiable via DB row counts, meeting the 9-10 band."
+          },
+          "D8_human_in_loop": {
+            "score": 10,
+            "weight": 4,
+            "rationale": "Excellent. The plan excels at surfacing operator decisions. It locks decisions at the top, provides a tight 5-question block for the REBUILD bucket, and includes an 'Open assumptions flagged' section, directly matching the rubric's 9-10 band criteria."
+          },
+          "D9_concrete_spec_depth": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Started at 10. No deductions. The plan is exceptionally precise. All items have file paths and line/function anchors (per v2 revision note). Test plans use specific queries and commands, not 'manual check'. The plan is fully reproducible by another agent without interpretation."
+          },
+          "D10_elegance_insight": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Excellent. The plan demonstrates craft and second-order thinking throughout. Examples: F3's non-destructive quarantine for future audit, F8/F9's architectural OTEL choice over tactical INSERTs, and the Stop-hook creating a forward-looking learning loop. This plan solves root causes, not just symptoms."
+          }
+        },
+        "weighted_total": 99,
+        "weakest_dim": "D3_capability_coverage",
+        "weakest_dim_score": 9,
+        "top_concerns": [
+          "The plan's v2 revisions map so perfectly to the rubric's deductions (non-destructive rollback, anti-rollback-theater, adversarial tests) that it suggests the plan was revised specifically to pass this rubric, rather than arriving at these solutions organically.",
+          "The L (Close the loop) capability, while covered, rests on only two items (Stop-hook, GATE telemetry). It's the thinnest capability pillar in the plan.",
+          "The plan's advanced features (F8/F9 OTEL path, Stop-hook) rely on new-ish, potentially fragile toolchain capabilities. Failure here would degrade M and L outcomes, though F8 has a fallback."
+        ],
+        "ship_recommendation": "SHIP",
+        "ship_rationale": "The plan is exceptionally strong. The weighted total of 99.0 is far above the 80 ship target, and the weakest dimension score of 9 is well above the weakest-link gate of 6. The plan demonstrates mastery of the requirements and anticipates failure modes proactively."
+      },
+      "error": null,
+      "elapsed_ms": 34694
+    },
+    {
+      "label": "gpt5",
+      "model_id": "gpt-5-2025-08-07",
+      "raw": "{\n  \"judge_id\": \"gpt-4.1-judge\",\n  \"round\": 2,\n  \"scores\": {\n    \"D1_sequencing\": {\n      \"score\": 9,\n      \"weight\": 13,\n      \"rationale\": \"W2 order-of-ops block + F-bucket sequencing summary defend 'substrate first, re-judge last'. GATE after W2. Deps named (F9→F8, Stop-hook→F9, F6 after F1/F3). Minor items mark deps 'None' though preferable order noted (F3).\"\n    },\n    \"D2_risk_discipline\": {\n      \"score\": 7,\n      \"weight\": 13,\n      \"rationale\": \"Start 10; -2 happy-path-only tests on several items (F8, F9, F7, F2) lacking falsify steps; -1 rollback untested for some (F1, F2, F7, F8, F9, Stop-hook, W1, W3). Rollbacks mostly atomic/non-destructive; deps generally named.\"\n    },\n    \"D3_capability_coverage\": {\n      \"score\": 8,\n      \"weight\": 10,\n      \"rationale\": \"Capability spine present; each item tagged. K via F1-F4/F6/F10; M via F8/F9/F5; S via F7/F10/W3; L via Stop-hook + GATE watch. Tags feel honest; L advances but thinner than K/M.\"\n    },\n    \"D4_defensibility\": {\n      \"score\": 9,\n      \"weight\": 11,\n      \"rationale\": \"F1 cites canon l57-61; F8/F9 cite tool-audit items 13/16; Stop-hook cites tool-audit 7; W3 references HUBSPOT Q1/Q10/Q16; REBUILD defers R1-R5 w/ operator-decision deps. No novel scope without provenance.\"\n    },\n    \"D5_scope_discipline\": {\n      \"score\": 9,\n      \"weight\": 7,\n      \"rationale\": \"Start 10; explicit 'What this plan does NOT include' block. -1 Slack auto-ingest (audit-settled) not listed. No spirit-of-law creep; API enrollment kept as test-only (W3).\"\n    },\n    \"D6_substrate_trust\": {\n      \"score\": 10,\n      \"weight\": 14,\n      \"rationale\": \"F1 regex from canon; F2 SoT align; F3 classifier wire-in + quarantine + backfill; F4 staleness backfill; GATE re-judge w/ 5 hist + 5 adversarial prompts, mech verifiable. End-to-end K loop closed.\"\n    },\n    \"D7_observability\": {\n      \"score\": 8,\n      \"weight\": 8,\n      \"rationale\": \"F8/F9 prefer OTEL w/ fallback; receiver path + CLAUDE_CODE_SESSION_ID correlation; DB checks defined. Stop-hook has noise gate + downside. Would benefit from explicit fallback-falsification test.\"\n    },\n    \"D8_human_in_loop\": {\n      \"score\": 10,\n      \"weight\": 4,\n      \"rationale\": \"Operator decisions locked (frontmatter). Per-prospect microsite approval default (F10). W4 guardrail (Joe Kunz). 'Open assumptions' (4 items). GATE names operator touchpoints. Clear and auditable.\"\n    },\n    \"D9_concrete_spec_depth\": {\n      \"score\": 8,\n      \"weight\": 10,\n      \"rationale\": \"Start 10; -1 some tests lack explicit commands/expected outputs (F6 portal UI, F7 sr_hs_api_calls check, W3 inbox check); -1 reproducibility gaps for manual UI/inbox steps. Files/anchors + SQL present on major F-items.\"\n    },\n    \"D10_elegance_insight\": {\n      \"score\": 9,\n      \"weight\": 10,\n      \"rationale\": \"OTEL over hand-rolled INSERTs (F8/F9); PROHIBITED quarantine not delete (F3); craft/facts split solves root cause (F6); adversarial GATE; RE-ORCH cadence anticipates next issues. Reads ~2 sprints ahead.\"\n    }\n  },\n  \"weighted_total\": 86.4,\n  \"weakest_dim\": \"D2_risk_discipline\",\n  \"weakest_dim_score\": 7,\n  \"top_concerns\": [\n    \"Falsifiability and rollback tests are not uniform (F8/F9/F7/W1/W3 rely on happy-path checks; few rollback verifications).\",\n    \"Observability fallback lacks an explicit test to trigger/verify non-OTEL path; potential fragility if OTEL flakes.\",\n    \"Scope guard: 'Slack auto-ingest' omitted from 'does not include' despite being audit-settled.\"\n  ],\n  \"ship_recommendation\": \"SHIP\",\n  \"ship_rationale\": \"Weighted 86.4 ≥ 80 target. Weakest dim D2=7 ≥ 6 gate. Strong K substrate loop (F1-F4 + GATE), solid sequencing and audit ties. Ship with follow-ups on falsifiability breadth and OTEL-fallback test.\"\n}",
+      "parsed": {
+        "judge_id": "gpt-4.1-judge",
+        "round": 2,
+        "scores": {
+          "D1_sequencing": {
+            "score": 9,
+            "weight": 13,
+            "rationale": "W2 order-of-ops block + F-bucket sequencing summary defend 'substrate first, re-judge last'. GATE after W2. Deps named (F9→F8, Stop-hook→F9, F6 after F1/F3). Minor items mark deps 'None' though preferable order noted (F3)."
+          },
+          "D2_risk_discipline": {
+            "score": 7,
+            "weight": 13,
+            "rationale": "Start 10; -2 happy-path-only tests on several items (F8, F9, F7, F2) lacking falsify steps; -1 rollback untested for some (F1, F2, F7, F8, F9, Stop-hook, W1, W3). Rollbacks mostly atomic/non-destructive; deps generally named."
+          },
+          "D3_capability_coverage": {
+            "score": 8,
+            "weight": 10,
+            "rationale": "Capability spine present; each item tagged. K via F1-F4/F6/F10; M via F8/F9/F5; S via F7/F10/W3; L via Stop-hook + GATE watch. Tags feel honest; L advances but thinner than K/M."
+          },
+          "D4_defensibility": {
+            "score": 9,
+            "weight": 11,
+            "rationale": "F1 cites canon l57-61; F8/F9 cite tool-audit items 13/16; Stop-hook cites tool-audit 7; W3 references HUBSPOT Q1/Q10/Q16; REBUILD defers R1-R5 w/ operator-decision deps. No novel scope without provenance."
+          },
+          "D5_scope_discipline": {
+            "score": 9,
+            "weight": 7,
+            "rationale": "Start 10; explicit 'What this plan does NOT include' block. -1 Slack auto-ingest (audit-settled) not listed. No spirit-of-law creep; API enrollment kept as test-only (W3)."
+          },
+          "D6_substrate_trust": {
+            "score": 10,
+            "weight": 14,
+            "rationale": "F1 regex from canon; F2 SoT align; F3 classifier wire-in + quarantine + backfill; F4 staleness backfill; GATE re-judge w/ 5 hist + 5 adversarial prompts, mech verifiable. End-to-end K loop closed."
+          },
+          "D7_observability": {
+            "score": 8,
+            "weight": 8,
+            "rationale": "F8/F9 prefer OTEL w/ fallback; receiver path + CLAUDE_CODE_SESSION_ID correlation; DB checks defined. Stop-hook has noise gate + downside. Would benefit from explicit fallback-falsification test."
+          },
+          "D8_human_in_loop": {
+            "score": 10,
+            "weight": 4,
+            "rationale": "Operator decisions locked (frontmatter). Per-prospect microsite approval default (F10). W4 guardrail (Joe Kunz). 'Open assumptions' (4 items). GATE names operator touchpoints. Clear and auditable."
+          },
+          "D9_concrete_spec_depth": {
+            "score": 8,
+            "weight": 10,
+            "rationale": "Start 10; -1 some tests lack explicit commands/expected outputs (F6 portal UI, F7 sr_hs_api_calls check, W3 inbox check); -1 reproducibility gaps for manual UI/inbox steps. Files/anchors + SQL present on major F-items."
+          },
+          "D10_elegance_insight": {
+            "score": 9,
+            "weight": 10,
+            "rationale": "OTEL over hand-rolled INSERTs (F8/F9); PROHIBITED quarantine not delete (F3); craft/facts split solves root cause (F6); adversarial GATE; RE-ORCH cadence anticipates next issues. Reads ~2 sprints ahead."
+          }
+        },
+        "weighted_total": 86.4,
+        "weakest_dim": "D2_risk_discipline",
+        "weakest_dim_score": 7,
+        "top_concerns": [
+          "Falsifiability and rollback tests are not uniform (F8/F9/F7/W1/W3 rely on happy-path checks; few rollback verifications).",
+          "Observability fallback lacks an explicit test to trigger/verify non-OTEL path; potential fragility if OTEL flakes.",
+          "Scope guard: 'Slack auto-ingest' omitted from 'does not include' despite being audit-settled."
+        ],
+        "ship_recommendation": "SHIP",
+        "ship_rationale": "Weighted 86.4 ≥ 80 target. Weakest dim D2=7 ≥ 6 gate. Strong K substrate loop (F1-F4 + GATE), solid sequencing and audit ties. Ship with follow-ups on falsifiability breadth and OTEL-fallback test."
+      },
+      "error": null,
+      "elapsed_ms": 77957
+    },
+    {
+      "label": "grok",
+      "model_id": "grok-4.3",
+      "raw": "{\n  \"judge_id\": \"opus-4.7-external-judge\",\n  \"round\": 2,\n  \"scores\": {\n    \"D1_sequencing\": {\"score\": 9, \"weight\": 13, \"rationale\": \"Explicit substrate-first order (F1→F2→F3 then observability) with Tim re-judge LAST in GATE. Sequencing summary defends item-by-item; F3/F6 positioned after substrate. Matches 9-10 band.\"},\n    \"D2_risk_discipline\": {\"score\": 10, \"weight\": 13, \"rationale\": \"Started at 10. No deductions: every item (F3/F6/F10/W3/W4) has atomic non-destructive rollback + 'rollback verified in dev' step + named deps + adversarial falsifiability tests (GATE 5+5 prompts).\"},\n    \"D3_capability_coverage\": {\"score\": 9, \"weight\": 10, \"rationale\": \"Capability spine header present. All 4 (M/K/L/S) advance with ≥2 items each; test plans defend tags (e.g., F8 'we will know M improved because sr_pipeline_runs row count goes from 0 to N').\"},\n    \"D4_defensibility\": {\"score\": 9, \"weight\": 11, \"rationale\": \"Every F-item maps to specific audit/tool-audit findings (F8 cites items 13+16). Items beyond audit carry operator-decision provenance. No novel scope without rationale.\"},\n    \"D5_scope_discipline\": {\"score\": 10, \"weight\": 7, \"rationale\": \"Started at 10. Explicit 'What this plan does NOT include' section lists all 6 settled decisions with no spirit-of-the-law creep or renames.\"},\n    \"D6_substrate_trust\": {\"score\": 10, \"weight\": 14, \"rationale\": \"F1 cites canon 57-61 verbatim. F3 specifies wire paths, quarantine pattern, backfill. GATE closes loop with 5 historical + 5 adversarial falsifiability replays. End-to-end substrate trust.\"},\n    \"D7_observability\": {\"score\": 9, \"weight\": 8, \"rationale\": \"F8/F9 prefer OTEL with bounded fallback + CLAUDE_CODE_SESSION_ID correlation. Stop-hook noise gate present. Verifiable via DB row counts 0→N.\"},\n    \"D8_human_in_loop\": {\"score\": 9, \"weight\": 4, \"rationale\": \"Operator decisions locked at top. Per-prospect microsite default + batch option named. Open assumptions flagged section + tight REBUILD question block.\"},\n    \"D9_concrete_spec_depth\": {\"score\": 10, \"weight\": 10, \"rationale\": \"Started at 10. Every item has file paths, line/function anchors, reproducible test commands, expected outputs, pre/post queries, and rollback verification steps.\"},\n    \"D10_elegance_insight\": {\"score\": 9, \"weight\": 10, \"rationale\": \"F3 quarantine (not delete) for audit trail, F6 root-cause semantic split, OTEL architectural choice, observability surfaces next problem class. Reads 2-3 sprints ahead.\"}\n  },\n  \"weighted_total\": 94,\n  \"weakest_dim\": \"D1_sequencing\",\n  \"weakest_dim_score\": 9,\n  \"top_concerns\": [\"D1 could add explicit 'why not earlier/later' paragraph for F3/F6/Tim-rejudge\", \"D3/D4/D7/D10 at 9 leave minor room vs 10-band perfection\", \"No material concerns; plan already incorporates all R1 fixes\"],\n  \"ship_recommendation\": \"SHIP\",\n  \"ship_rationale\": \"94 ≥80 bar AND weakest dim 9 ≥6 gate. All deduction dims at 10; substrate (D6) and precision (D9) at apex weight are maximized. Plan is both correct and brilliant.\"\n}",
+      "parsed": {
+        "judge_id": "opus-4.7-external-judge",
+        "round": 2,
+        "scores": {
+          "D1_sequencing": {
+            "score": 9,
+            "weight": 13,
+            "rationale": "Explicit substrate-first order (F1→F2→F3 then observability) with Tim re-judge LAST in GATE. Sequencing summary defends item-by-item; F3/F6 positioned after substrate. Matches 9-10 band."
+          },
+          "D2_risk_discipline": {
+            "score": 10,
+            "weight": 13,
+            "rationale": "Started at 10. No deductions: every item (F3/F6/F10/W3/W4) has atomic non-destructive rollback + 'rollback verified in dev' step + named deps + adversarial falsifiability tests (GATE 5+5 prompts)."
+          },
+          "D3_capability_coverage": {
+            "score": 9,
+            "weight": 10,
+            "rationale": "Capability spine header present. All 4 (M/K/L/S) advance with ≥2 items each; test plans defend tags (e.g., F8 'we will know M improved because sr_pipeline_runs row count goes from 0 to N')."
+          },
+          "D4_defensibility": {
+            "score": 9,
+            "weight": 11,
+            "rationale": "Every F-item maps to specific audit/tool-audit findings (F8 cites items 13+16). Items beyond audit carry operator-decision provenance. No novel scope without rationale."
+          },
+          "D5_scope_discipline": {
+            "score": 10,
+            "weight": 7,
+            "rationale": "Started at 10. Explicit 'What this plan does NOT include' section lists all 6 settled decisions with no spirit-of-the-law creep or renames."
+          },
+          "D6_substrate_trust": {
+            "score": 10,
+            "weight": 14,
+            "rationale": "F1 cites canon 57-61 verbatim. F3 specifies wire paths, quarantine pattern, backfill. GATE closes loop with 5 historical + 5 adversarial falsifiability replays. End-to-end substrate trust."
+          },
+          "D7_observability": {
+            "score": 9,
+            "weight": 8,
+            "rationale": "F8/F9 prefer OTEL with bounded fallback + CLAUDE_CODE_SESSION_ID correlation. Stop-hook noise gate present. Verifiable via DB row counts 0→N."
+          },
+          "D8_human_in_loop": {
+            "score": 9,
+            "weight": 4,
+            "rationale": "Operator decisions locked at top. Per-prospect microsite default + batch option named. Open assumptions flagged section + tight REBUILD question block."
+          },
+          "D9_concrete_spec_depth": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "Started at 10. Every item has file paths, line/function anchors, reproducible test commands, expected outputs, pre/post queries, and rollback verification steps."
+          },
+          "D10_elegance_insight": {
+            "score": 9,
+            "weight": 10,
+            "rationale": "F3 quarantine (not delete) for audit trail, F6 root-cause semantic split, OTEL architectural choice, observability surfaces next problem class. Reads 2-3 sprints ahead."
+          }
+        },
+        "weighted_total": 94,
+        "weakest_dim": "D1_sequencing",
+        "weakest_dim_score": 9,
+        "top_concerns": [
+          "D1 could add explicit 'why not earlier/later' paragraph for F3/F6/Tim-rejudge",
+          "D3/D4/D7/D10 at 9 leave minor room vs 10-band perfection",
+          "No material concerns; plan already incorporates all R1 fixes"
+        ],
+        "ship_recommendation": "SHIP",
+        "ship_rationale": "94 ≥80 bar AND weakest dim 9 ≥6 gate. All deduction dims at 10; substrate (D6) and precision (D9) at apex weight are maximized. Plan is both correct and brilliant."
+      },
+      "error": null,
+      "elapsed_ms": 14221
+    },
+    {
+      "label": "deepseek",
+      "model_id": "deepseek-v4-flash",
+      "raw": "{\n  \"judge_id\": \"gemini-2.5-pro\",\n  \"round\": 2,\n  \"scores\": {\n    \"D1_sequencing\": {\"score\": 10, \"weight\": 13, \"rationale\": \"Explicit 'substrate first, re-judge last' order; F3, F6, GATE defended with 'why not earlier/why not later'; reordering would degrade outcomes.\"},\n    \"D2_risk_discipline\": {\"score\": 10, \"weight\": 13, \"rationale\": \"Started at 10. All items have rollbacks (non-destructive for F3,F6). Falsifiability via adversarial GATE replay. Dependencies explicit. Rollback theater addressed for high-risk items.\"},\n    \"D3_capability_coverage\": {\"score\": 6, \"weight\": 10, \"rationale\": \"Capability spine present, M/K/S have multiple items, but L (close-the-loop) only advanced by Stop-hook; insufficient for 7-8 band.\"},\n    \"D4_defensibility\": {\"score\": 10, \"weight\": 11, \"rationale\": \"Every F-item cites specific audit/tool-audit findings; deferred items (R1-R5) have explicit operator-decision dependencies; no scope without provenance.\"},\n    \"D5_scope_discipline\": {\"score\": 10, \"weight\": 7, \"rationale\": \"Start 10. No reopened decisions; explicit 'What this plan does NOT include' covers all settled items; no semantic scope creep.\"},\n    \"D6_substrate_trust\": {\"score\": 10, \"weight\": 14, \"rationale\": \"End-to-end loop: F1→F2→F3→F4→GATE. GATE includes 5 historical + 5 adversarial replay prompts; pass criteria mechanically verifiable.\"},\n    \"D7_observability\": {\"score\": 10, \"weight\": 8, \"rationale\": \"OTEL path preferred with explicit fallback; falsifiable tests (SELECT queries expect rows); Stop-hook downside acknowledged; impact verifiable post-sprint.\"},\n    \"D8_human_in_loop\": {\"score\": 10, \"weight\": 4, \"rationale\": \"Operator decisions locked at top; per-prospect microsite default with batch; REBUILD 5-question block; GATE approval per email.\"},\n    \"D9_concrete_spec_depth\": {\"score\": 7, \"weight\": 10, \"rationale\": \"Start 10. -3 for missing line numbers/anchors on F9, Stop-hook, W4, GATE. All other spec elements present (file paths, commands, expected outputs, reproducibility).\"},\n    \"D10_elegance_insight\": {\"score\": 10, \"weight\": 10, \"rationale\": \"PROHIBITED quarantine for audit trail; OTEL substitution shows architectural insight; F6 semantic split prevents downstream errors; adversarial prompts show second-order thinking.\"}\n  },\n  \"weighted_total\": 93,\n  \"weakest_dim\": \"D3_capability_coverage\",\n  \"weakest_dim_score\": 6,\n  \"top_concerns\": [\n    \"L (close-the-loop) capability only advanced by Stop-hook; may need more items to ensure robust learning loop.\",\n    \"D9 deducted for missing line anchors on some items (F9, Stop-hook, W4, GATE); minor spec gap.\",\n    \"D3 barely meets weakest-link threshold; consider adding another L item in next sprint.\"\n  ],\n  \"ship_recommendation\": \"SHIP\",\n  \"ship_rationale\": \"Weighted total 93 exceeds ship target 80; weakest dimension D3 scores 6, meeting the ≥6 gate. Plan is thorough with strong substrate-trust, observability, and elegance.\"\n}",
+      "parsed": {
+        "judge_id": "gemini-2.5-pro",
+        "round": 2,
+        "scores": {
+          "D1_sequencing": {
+            "score": 10,
+            "weight": 13,
+            "rationale": "Explicit 'substrate first, re-judge last' order; F3, F6, GATE defended with 'why not earlier/why not later'; reordering would degrade outcomes."
+          },
+          "D2_risk_discipline": {
+            "score": 10,
+            "weight": 13,
+            "rationale": "Started at 10. All items have rollbacks (non-destructive for F3,F6). Falsifiability via adversarial GATE replay. Dependencies explicit. Rollback theater addressed for high-risk items."
+          },
+          "D3_capability_coverage": {
+            "score": 6,
+            "weight": 10,
+            "rationale": "Capability spine present, M/K/S have multiple items, but L (close-the-loop) only advanced by Stop-hook; insufficient for 7-8 band."
+          },
+          "D4_defensibility": {
+            "score": 10,
+            "weight": 11,
+            "rationale": "Every F-item cites specific audit/tool-audit findings; deferred items (R1-R5) have explicit operator-decision dependencies; no scope without provenance."
+          },
+          "D5_scope_discipline": {
+            "score": 10,
+            "weight": 7,
+            "rationale": "Start 10. No reopened decisions; explicit 'What this plan does NOT include' covers all settled items; no semantic scope creep."
+          },
+          "D6_substrate_trust": {
+            "score": 10,
+            "weight": 14,
+            "rationale": "End-to-end loop: F1→F2→F3→F4→GATE. GATE includes 5 historical + 5 adversarial replay prompts; pass criteria mechanically verifiable."
+          },
+          "D7_observability": {
+            "score": 10,
+            "weight": 8,
+            "rationale": "OTEL path preferred with explicit fallback; falsifiable tests (SELECT queries expect rows); Stop-hook downside acknowledged; impact verifiable post-sprint."
+          },
+          "D8_human_in_loop": {
+            "score": 10,
+            "weight": 4,
+            "rationale": "Operator decisions locked at top; per-prospect microsite default with batch; REBUILD 5-question block; GATE approval per email."
+          },
+          "D9_concrete_spec_depth": {
+            "score": 7,
+            "weight": 10,
+            "rationale": "Start 10. -3 for missing line numbers/anchors on F9, Stop-hook, W4, GATE. All other spec elements present (file paths, commands, expected outputs, reproducibility)."
+          },
+          "D10_elegance_insight": {
+            "score": 10,
+            "weight": 10,
+            "rationale": "PROHIBITED quarantine for audit trail; OTEL substitution shows architectural insight; F6 semantic split prevents downstream errors; adversarial prompts show second-order thinking."
+          }
+        },
+        "weighted_total": 93,
+        "weakest_dim": "D3_capability_coverage",
+        "weakest_dim_score": 6,
+        "top_concerns": [
+          "L (close-the-loop) capability only advanced by Stop-hook; may need more items to ensure robust learning loop.",
+          "D9 deducted for missing line anchors on some items (F9, Stop-hook, W4, GATE); minor spec gap.",
+          "D3 barely meets weakest-link threshold; consider adding another L item in next sprint."
+        ],
+        "ship_recommendation": "SHIP",
+        "ship_rationale": "Weighted total 93 exceeds ship target 80; weakest dimension D3 scores 6, meeting the ≥6 gate. Plan is thorough with strong substrate-trust, observability, and elegance."
+      },
+      "error": null,
+      "elapsed_ms": 67658
+    }
+  ],
+  "agg": {
+    "perDim": {
+      "D1_sequencing": {
+        "mean": 9.5,
+        "stddev": 0.5,
+        "min": 9,
+        "max": 10,
+        "n": 4,
+        "weight": 13,
+        "scores": [
+          10,
+          9,
+          9,
+          10
+        ]
+      },
+      "D2_risk_discipline": {
+        "mean": 9.3,
+        "stddev": 1.3,
+        "min": 7,
+        "max": 10,
+        "n": 4,
+        "weight": 13,
+        "scores": [
+          10,
+          7,
+          10,
+          10
+        ]
+      },
+      "D3_capability_coverage": {
+        "mean": 8,
+        "stddev": 1.22,
+        "min": 6,
+        "max": 9,
+        "n": 4,
+        "weight": 10,
+        "scores": [
+          9,
+          8,
+          9,
+          6
+        ]
+      },
+      "D4_defensibility": {
+        "mean": 9.5,
+        "stddev": 0.5,
+        "min": 9,
+        "max": 10,
+        "n": 4,
+        "weight": 11,
+        "scores": [
+          10,
+          9,
+          9,
+          10
+        ]
+      },
+      "D5_scope_discipline": {
+        "mean": 9.8,
+        "stddev": 0.43,
+        "min": 9,
+        "max": 10,
+        "n": 4,
+        "weight": 7,
+        "scores": [
+          10,
+          9,
+          10,
+          10
+        ]
+      },
+      "D6_substrate_trust": {
+        "mean": 10,
+        "stddev": 0,
+        "min": 10,
+        "max": 10,
+        "n": 4,
+        "weight": 14,
+        "scores": [
+          10,
+          10,
+          10,
+          10
+        ]
+      },
+      "D7_observability": {
+        "mean": 9.3,
+        "stddev": 0.83,
+        "min": 8,
+        "max": 10,
+        "n": 4,
+        "weight": 8,
+        "scores": [
+          10,
+          8,
+          9,
+          10
+        ]
+      },
+      "D8_human_in_loop": {
+        "mean": 9.8,
+        "stddev": 0.43,
+        "min": 9,
+        "max": 10,
+        "n": 4,
+        "weight": 4,
+        "scores": [
+          10,
+          10,
+          9,
+          10
+        ]
+      },
+      "D9_concrete_spec_depth": {
+        "mean": 8.8,
+        "stddev": 1.3,
+        "min": 7,
+        "max": 10,
+        "n": 4,
+        "weight": 10,
+        "scores": [
+          10,
+          8,
+          10,
+          7
+        ]
+      },
+      "D10_elegance_insight": {
+        "mean": 9.5,
+        "stddev": 0.5,
+        "min": 9,
+        "max": 10,
+        "n": 4,
+        "weight": 10,
+        "scores": [
+          10,
+          9,
+          9,
+          10
+        ]
+      }
+    },
+    "weightedTotal": 93.4,
+    "weakestDim": "D3_capability_coverage",
+    "weakestDimScore": 8,
+    "dimsWithDisagreement": [],
+    "individualTotals": [
+      {
+        "label": "gemini",
+        "model_id": "gemini-2.5-pro",
+        "weighted_total": 99,
+        "ship_recommendation": "SHIP",
+        "error": null
+      },
+      {
+        "label": "gpt5",
+        "model_id": "gpt-5-2025-08-07",
+        "weighted_total": 86.4,
+        "ship_recommendation": "SHIP",
+        "error": null
+      },
+      {
+        "label": "grok",
+        "model_id": "grok-4.3",
+        "weighted_total": 94,
+        "ship_recommendation": "SHIP",
+        "error": null
+      },
+      {
+        "label": "deepseek",
+        "model_id": "deepseek-v4-flash",
+        "weighted_total": 93,
+        "ship_recommendation": "SHIP",
+        "error": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P2 System — Forensic Schematic (2026-06-13)</title>
+<style>
+  :root {
+    --bg: #fdfdf9;
+    --panel: #ffffff;
+    --ink: #1a1a1a;
+    --muted: #4a4a4a;
+    --rule: #d8d4c7;
+    --green: #1e7a3a;
+    --green-soft: #e6f3ea;
+    --yellow: #b86a00;
+    --yellow-soft: #fff4e0;
+    --red: #b00020;
+    --red-soft: #fde7eb;
+    --gray: #5a5a5a;
+    --gray-soft: #ececec;
+    --blue: #1a4d80;
+    --blue-soft: #e6eef7;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 17px; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.55;
+    padding: 32px 16px 64px;
+  }
+  main { max-width: 1180px; margin: 0 auto; }
+  header.page {
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 16px;
+    margin-bottom: 28px;
+  }
+  header.page h1 { font-size: 1.85rem; margin: 0 0 6px; letter-spacing: -0.01em; }
+  header.page p.sub { color: var(--muted); margin: 0; font-size: 0.95rem; }
+  h2 {
+    font-size: 1.35rem;
+    margin: 36px 0 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+    letter-spacing: -0.005em;
+  }
+  h3 { font-size: 1.05rem; margin: 22px 0 10px; color: var(--ink); }
+  p, li, dd { font-size: 0.97rem; }
+  ul { padding-left: 22px; }
+  code { font-family: "SF Mono", "Menlo", "Courier New", monospace; font-size: 0.88em; background: #f0ede1; padding: 1px 5px; border-radius: 3px; }
+  a { color: var(--blue); }
+
+  /* Status legend */
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 4px;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 10px; border-radius: 12px; font-size: 0.82rem; font-weight: 600;
+    border: 1px solid;
+  }
+  .badge .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .b-green { color: var(--green); background: var(--green-soft); border-color: var(--green); }
+  .b-green .dot { background: var(--green); }
+  .b-yellow { color: var(--yellow); background: var(--yellow-soft); border-color: var(--yellow); }
+  .b-yellow .dot { background: var(--yellow); }
+  .b-red { color: var(--red); background: var(--red-soft); border-color: var(--red); }
+  .b-red .dot { background: var(--red); }
+  .b-gray { color: var(--gray); background: var(--gray-soft); border-color: var(--gray); }
+  .b-gray .dot { background: var(--gray); }
+
+  /* Pipeline flow */
+  .flow {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 10px 0 6px;
+  }
+  .step {
+    background: var(--panel);
+    border: 1.5px solid var(--rule);
+    border-left-width: 8px;
+    border-radius: 6px;
+    padding: 12px 14px;
+    position: relative;
+  }
+  .step.green { border-left-color: var(--green); }
+  .step.yellow { border-left-color: var(--yellow); }
+  .step.red { border-left-color: var(--red); }
+  .step.gray { border-left-color: var(--gray); }
+  .step header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .step .num { font-weight: 700; font-size: 0.85rem; color: var(--muted); }
+  .step h4 { font-size: 1rem; margin: 0; }
+  .step .files { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+  .step .what { margin: 8px 0 4px; font-size: 0.94rem; }
+  .step .data { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; font-size: 0.85rem; }
+  .step .data .in, .step .data .out { background: #f7f4e8; padding: 6px 8px; border-radius: 4px; }
+  .step .data strong { color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .step .issue {
+    margin-top: 10px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-size: 0.88rem;
+  }
+  .step .issue.red { background: var(--red-soft); border-left: 3px solid var(--red); }
+  .step .issue.yellow { background: var(--yellow-soft); border-left: 3px solid var(--yellow); }
+  .arrow {
+    text-align: center; font-size: 0.95rem; color: var(--muted); margin: -2px 0 -2px;
+  }
+
+  /* Grid for modules */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+    margin: 8px 0;
+  }
+  .card {
+    background: var(--panel);
+    border: 1.5px solid var(--rule);
+    border-left-width: 6px;
+    border-radius: 6px;
+    padding: 12px 14px;
+  }
+  .card.green { border-left-color: var(--green); }
+  .card.yellow { border-left-color: var(--yellow); }
+  .card.red { border-left-color: var(--red); }
+  .card.gray { border-left-color: var(--gray); }
+  .card h4 { margin: 0 0 4px; font-size: 0.98rem; }
+  .card p { margin: 4px 0; font-size: 0.88rem; }
+  .card .meta { font-size: 0.78rem; color: var(--muted); margin-bottom: 6px; }
+
+  /* DB table */
+  table.db {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    font-size: 0.9rem;
+    margin: 10px 0;
+  }
+  table.db th, table.db td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  table.db th {
+    background: #f3efe2;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--ink);
+  }
+  table.db tr:last-child td { border-bottom: none; }
+  table.db .status-cell { white-space: nowrap; }
+  table.db td.role { color: var(--muted); font-size: 0.85rem; }
+
+  /* Score grid */
+  .scoregrid {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 12px 0;
+  }
+  .scoregrid table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  .scoregrid td { padding: 5px 6px; border-bottom: 1px solid var(--rule); }
+  .scoregrid td:nth-child(2) { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
+  .scoregrid td:nth-child(3) { color: var(--muted); font-size: 0.88rem; }
+  .scoregrid tr.total td { font-weight: 700; border-top: 2px solid var(--ink); border-bottom: none; padding-top: 10px; }
+
+  /* Risk callout */
+  .risk-callout {
+    background: var(--red-soft);
+    border: 2px solid var(--red);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 14px 0;
+  }
+  .risk-callout h3 { margin-top: 0; color: var(--red); }
+  .risk-callout p { margin: 6px 0; }
+
+  /* Skip link for accessibility */
+  .skip {
+    position: absolute; left: -10000px; top: auto;
+    width: 1px; height: 1px; overflow: hidden;
+  }
+  .skip:focus {
+    position: static; width: auto; height: auto;
+    background: var(--ink); color: white; padding: 6px 12px;
+  }
+  /* Focus styles */
+  a:focus, button:focus { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+  @media print {
+    body { padding: 8px; }
+    .step, .card { break-inside: avoid; }
+    h2 { break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to main content</a>
+<main id="main">
+
+<header class="page">
+  <h1>P2 System — Forensic Schematic</h1>
+  <p class="sub">Generated 2026-06-13 by Claude (Opus 4.7), session pm-build-fix. Live state at HEAD <code>507059907</code>.</p>
+</header>
+
+<section aria-labelledby="legend-h">
+  <h2 id="legend-h">Reading this document</h2>
+  <p>Every box is one piece of the system. The colored left edge tells you its state. Read the label too — color is never the only signal.</p>
+  <div class="legend" role="list">
+    <span class="badge b-green" role="listitem"><span class="dot" aria-hidden="true"></span> WORKING — leave alone</span>
+    <span class="badge b-yellow" role="listitem"><span class="dot" aria-hidden="true"></span> PARTIAL — wired but has a known gap</span>
+    <span class="badge b-red" role="listitem"><span class="dot" aria-hidden="true"></span> BROKEN — direct risk to the objective</span>
+    <span class="badge b-gray" role="listitem"><span class="dot" aria-hidden="true"></span> GHOST — built but unwired, or deprecated</span>
+  </div>
+</section>
+
+<section aria-labelledby="objectives-h">
+  <h2 id="objectives-h">What we are trying to protect</h2>
+  <p>Two operator objectives sit above this whole system:</p>
+  <ol>
+    <li><strong>Verified data.</strong> Every fact in an email body must come from a source we can defend if a recipient asks "how do you know that?"</li>
+    <li><strong>Verified email addresses.</strong> Every send goes to a real person at a real address we have evidence is theirs.</li>
+  </ol>
+  <p>Every red and yellow item below puts one of those two objectives at risk.</p>
+</section>
+
+<!-- ===================================================== -->
+<!-- SECTION A: ACTIVE PIPELINE FLOW (V2 substrate-tier)  -->
+<!-- ===================================================== -->
+<section aria-labelledby="pipeline-h">
+  <h2 id="pipeline-h">A. The active pipeline (CSV in → email out)</h2>
+  <p>Today the system runs TWO pipelines in parallel on the same prospects, by design — operator compares output. The v2 path (substrate-tier-first) is shown below. The v1 path (<code>run-pipeline.ts</code>) is similar but lacks tier discipline.</p>
+
+  <div class="flow" role="list">
+
+    <div class="step green" role="listitem">
+      <header><span class="num">STEP 1</span><span class="badge b-green"><span class="dot" aria-hidden="true"></span> WORKING</span></header>
+      <h4>Read the prospect list</h4>
+      <div class="files"><code>run-pipeline-v2.ts</code> · CSV parser handles quoted commas</div>
+      <div class="what">Takes a CSV with first name, last name, company, title, state. Pulls one row at a time.</div>
+      <div class="data">
+        <div class="in"><strong>In</strong><br>CSV file (e.g. <code>tier-a-pipeline-input.csv</code>)</div>
+        <div class="out"><strong>Out</strong><br>ProspectRow records</div>
+      </div>
+    </div>
+
+    <div class="arrow" aria-hidden="true">▼</div>
+
+    <div class="step yellow" role="listitem">
+      <header><span class="num">STEP 2</span><span class="badge b-yellow"><span class="dot" aria-hidden="true"></span> PARTIAL</span></header>
+      <h4>ICP gate — "is this person worth pursuing?"</h4>
+      <div class="files"><code>icp-gate.ts</code> · regex first, Haiku LLM fallback</div>
+      <div class="what">Looks at the company name and title. Decides fiber operator, A&amp;E firm, or non-ICP.</div>
+      <div class="data">
+        <div class="in"><strong>In</strong><br>company name, title</div>
+        <div class="out"><strong>Out</strong><br><code>pass</code> / <code>reject</code> + reason</div>
+      </div>
+      <div class="issue yellow"><strong>Gap D (operator-objective risk).</strong> Haiku is told "if uncertain, classify as fiber_operator with low confidence." 36 of 36 sampled rows passed. "ICP pass" really means "Haiku thinks maybe." Real non-fits get through.</div>
+    </div>
+
+    <div class="arrow" aria-hidden="true">▼</div>
+
+    <div class="step yellow" role="listitem">
+      <header><span class="num">STEP 3</span><span class="badge b-yellow"><span class="dot" aria-hidden="true"></span> PARTIAL</span></header>
+      <h4>Email finder waterfall — "what is their email?"</h4>
+      <div class="files"><code>email-finder/orchestrator.ts</code> + 12 sibling files</div>
+      <div class="what">Domain lookup → pattern detection → candidate generation → SMTP probe → MillionVerifier final pass. Colors the email green/yellow/amber/red/not-found.</div>
+      <div class="data">
+        <div class="in"><strong>In</strong><br>first name, last name, company, optional domain hint</div>
+        <div class="out"><strong>Out</strong><br>email address + confidence color + verification report</div>
+      </div>
+      <div class="issue red"><strong>Gap A (DIRECT objective risk).</strong> Email-verification fields are mostly null in the database. <code>email_confidence</code>, <code>confidence_score</code>, <code>verification_report</code>, <code>mv_quality</code>, <code>email_verified</code>, <code>email_verification_status</code> — null/false on most rows queried. The "MV verified all 18" claim cannot be backed by DB state.</div>
+      <div class="issue yellow"><strong>Gap B.</strong> Same prospect, multiple pipeline runs, conflicting confidence colors (green, yellow, amber, red across four rows for the same person). Re-runs disagree and there's no audit trail.</div>
+    </div>
+
+    <div class="arrow" aria-hidden="true">▼</div>
+
+    <div class="step red" role="listitem">
+      <header><span class="num">STEP 4</span><span class="badge b-red"><span class="dot" aria-hidden="true"></span> BROKEN — this is the headline gap</span></header>
+      <h4>Evidence orchestrator — "what do we know about this company?"</h4>
+      <div class="files"><code>evidence-tiering/orchestrator.ts</code> + <code>substrate-query.ts</code> + <code>apollo-client.ts</code></div>
+      <div class="what">Pulls company evidence from substrate, Apollo, industry associations, FCC BDC — in parallel. Then deterministically computes a tier per claim (USE_DIRECTLY or USE_TO_SHAPE) based on which kind of source it came from.</div>
+      <div class="data">
+        <div class="in"><strong>In</strong><br>company name + ICP type</div>
+        <div class="out"><strong>Out</strong><br>TieredDossier with claims grouped by category and tier</div>
+      </div>
+      <div class="issue red"><strong>Root cause of the substrate-quality crisis.</strong> Tier is computed from <code>source_kind</code> (how it was harvested), not from the URL domain. A ZoomInfo URL pulled via a dated web search gets <code>source_kind = web_research_dated</code>, which the tier table maps to <strong>USE_DIRECTLY</strong> — the highest trust. 12 ZoomInfo/LeadIQ/RocketReach rows confirmed in production across 3 prospects.</div>
+      <div class="issue red"><strong>The fix already exists as code but is stranded.</strong> <code>verify-facts.ts</code> has the URL-domain classifier (knows ZoomInfo is prohibited). It is imported by the deprecated v1 pipeline only. The v2 path never calls it. Wiring it in is ~5–6 hours of work.</div>
+    </div>
+
+    <div class="arrow" aria-hidden="true">▼</div>
+
+    <div class="step green" role="listitem">
+      <header><span class="num">STEP 5</span><span class="badge b-green"><span class="dot" aria-hidden="true"></span> WORKING</span></header>
+      <h4>Composer — write the email</h4>
+      <div class="files"><code>specific-composer.ts</code> or <code>generalized-composer.ts</code> + <code>composer-constraints.ts</code> (861 lines)</div>
+      <div class="what">If the dossier has 3+ usable claims, runs "specific mode" — references USE_DIRECTLY claims as approximations ("north of 1,500 miles") rather than exact numbers. Otherwise runs "generalized mode" — industry framing only, no company-specific claims. Best-of-N retry with mechanical regex checks (banned phrases, AI-tell patterns, company-name lock, paragraph and word count, reading age, citation coverage).</div>
+      <div class="data">
+        <div class="in"><strong>In</strong><br>TieredDossier + persona + AE identity</div>
+        <div class="out"><strong>Out</strong><br>ComposedEmail with sentence-level <code>claim_ids</code> attribution</div>
+      </div>
+      <div class="issue yellow"><strong>Carry-forward risk from Step 4.</strong> The composer is doing the right thing — but if the dossier it receives carries USE_DIRECTLY claims sourced from ZoomInfo, the composer treats them as authoritative. Garbage in, garbage out. Fixing Step 4 fixes this.</div>
+    </div>
+
+    <div class="arrow" aria-hidden="true">▼</div>
+
+    <div class="step green" role="listitem">
+      <header><span class="num">STEP 6</span><span class="badge b-green"><span class="dot" aria-hidden="true"></span> WORKING</span></header>
+      <h4>Tiered judge — three layers of QA</h4>
+      <div class="files"><code>tiered-judge.ts</code> (851 lines)</div>
+      <div class="what">T1 mechanical regex (instant, free). T2 Tim-style edit-pattern check (~3s, free). T3 Gemini quality + always-on hallucination check (~10s, $0.005/email). Hallucination check fires on every prospect. If it fails, the email is flagged for human review with the specific unsupported claims named.</div>
+      <div class="data">
+        <div class="in"><strong>In</strong><br>composed email + cited evidence records</div>
+        <div class="out"><strong>Out</strong><br>verdict: <code>ship</code> / <code>retry</code> / <code>flag</code> / <code>flag-hallucination</code></div>
+      </div>
+      <div class="issue yellow"><strong>Observation, not a code bug.</strong> <code>judge_feedback_loop_attempts = 0</code> on every row queried. The feedback loop is built (up to 2 recompose iterations with offending claim_ids excluded) but isn't firing on current rows. May indicate the pipeline isn't re-running through judge for older rows.</div>
+    </div>
+
+    <div class="arrow" aria-hidden="true">▼</div>
+
+    <div class="step yellow" role="listitem">
+      <header><span class="num">STEP 7</span><span class="badge b-yellow"><span class="dot" aria-hidden="true"></span> PARTIAL</span></header>
+      <h4>Send-confidence — score the prospect 3 ways</h4>
+      <div class="files"><code>evidence-tiering/send-confidence.ts</code></div>
+      <div class="what">Three axes 0-100: ICP fit, email deliverability, substrate richness. Plus a composite score. Author labels this <code>v1.0-uncalibrated</code>. Drives the portal display.</div>
+      <div class="data">
+        <div class="in"><strong>In</strong><br>prospect row + dossier + email confidence</div>
+        <div class="out"><strong>Out</strong><br>jsonb <code>send_confidence</code> with 3 axes + composite</div>
+      </div>
+      <div class="issue yellow"><strong>Two parallel confidence systems.</strong> There is also an integer <code>confidence_score</code> column on <code>sr_engine_output</code>. It is unset on every row. Dead column.</div>
+    </div>
+
+    <div class="arrow" aria-hidden="true">▼</div>
+
+    <div class="step green" role="listitem">
+      <header><span class="num">STEP 8</span><span class="badge b-green"><span class="dot" aria-hidden="true"></span> WORKING</span></header>
+      <h4>Microsite composer — build the personalized landing page</h4>
+      <div class="files"><code>evidence-tiering/microsite-composer.ts</code> (the active one)</div>
+      <div class="what">LLM produces the "finding / bloom" content. Renders into the brief / assess / compare / pipeline / report routes in the Next.js microsite app.</div>
+      <div class="data">
+        <div class="in"><strong>In</strong><br>dossier + persona + email body</div>
+        <div class="out"><strong>Out</strong><br>jsonb microsite content rows</div>
+      </div>
+      <div class="issue yellow"><strong>Naming collision.</strong> There is ALSO a <code>microsite-composer.ts</code> in <code>m1-email-find/</code> (used only by the deprecated v1 pipeline). Two files with the same name in sibling directories. A new developer reading the codebase will be confused about which one is active.</div>
+    </div>
+
+    <div class="arrow" aria-hidden="true">▼</div>
+
+    <div class="step green" role="listitem">
+      <header><span class="num">STEP 9</span><span class="badge b-green"><span class="dot" aria-hidden="true"></span> WORKING</span></header>
+      <h4>Write to Supabase</h4>
+      <div class="files"><code>supabase-adapter.ts</code></div>
+      <div class="what">Writes the prospect, dossier, engine output, microsite content rows. RLS hardening migration has been applied — anon key can only read live microsites and insert page-view events.</div>
+      <div class="data">
+        <div class="in"><strong>In</strong><br>composed email + dossier + microsite content</div>
+        <div class="out"><strong>Out</strong><br><code>sr_prospects</code>, <code>sr_engine_output</code>, <code>sr_microsites</code> rows</div>
+      </div>
+    </div>
+
+    <div class="arrow" aria-hidden="true">▼</div>
+
+    <div class="step yellow" role="listitem">
+      <header><span class="num">STEP 10</span><span class="badge b-yellow"><span class="dot" aria-hidden="true"></span> PARTIAL</span></header>
+      <h4>Pre-load verify — the safety gate before HubSpot</h4>
+      <div class="files"><code>preload-verify.ts</code> + <code>preload-audit.ts</code></div>
+      <div class="what">Verifies SPF/DKIM/DMARC, HubSpot auth, existing-contact check, unsubscribe state. Then per-prospect dedup + bounce history audit. Triggered manually before each smoke load.</div>
+      <div class="data">
+        <div class="in"><strong>In</strong><br>roster from <code>sr_prospects</code></div>
+        <div class="out"><strong>Out</strong><br>verify report — pass or halt</div>
+      </div>
+      <div class="issue yellow"><strong>Gap C.</strong> Tim's craft approval doesn't reset when email confidence later flips to red. One prospect (Kristina Groff / Greenlight) shipped Tim-approved on a <code>confidence_color = red</code> row.</div>
+    </div>
+
+    <div class="arrow" aria-hidden="true">▼</div>
+
+    <div class="step green" role="listitem">
+      <header><span class="num">STEP 11</span><span class="badge b-green"><span class="dot" aria-hidden="true"></span> WORKING</span></header>
+      <h4>HubSpot loader — push to CRM</h4>
+      <div class="files"><code>hubspot-loader.ts</code> + <code>hs-api-client.ts</code></div>
+      <div class="what">Writes the contact properties (T1/T2/T3 subject + body + PS, microsite slug, AE owner, list assignment). Idempotent on prospect_id.</div>
+      <div class="data">
+        <div class="in"><strong>In</strong><br>EngineRow</div>
+        <div class="out"><strong>Out</strong><br>HubSpot contact ID + list membership</div>
+      </div>
+    </div>
+
+    <div class="arrow" aria-hidden="true">▼</div>
+
+    <div class="step green" role="listitem">
+      <header><span class="num">STEP 12</span><span class="badge b-green"><span class="dot" aria-hidden="true"></span> WORKING (manual)</span></header>
+      <h4>AE enrolls into HubSpot sequence</h4>
+      <div class="files">HubSpot UI — not code</div>
+      <div class="what">Account Executive picks "Send from = their @inorsa.com inbox" + "Time zone = Contact's time zone" + enrolls into the AM or PM sequence. Sequence fires at recipient local 8-10am.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- SECTION B: SIDE MODULES                              -->
+<!-- ===================================================== -->
+<section aria-labelledby="modules-h">
+  <h2 id="modules-h">B. Side modules (sit alongside the main flow)</h2>
+
+  <h3>Always-on companions to the pipeline</h3>
+  <div class="grid" role="list">
+
+    <article class="card green" role="listitem">
+      <h4>Company directory</h4>
+      <div class="meta"><code>evidence-tiering/company-directory.ts</code></div>
+      <p>Per-company canonical-name + domain lookup. Closes the substrate-keying mismatch class (Google-GFiber → GFiber) and the wrong-domain class (Omni Fiber → omni.com).</p>
+    </article>
+
+    <article class="card green" role="listitem">
+      <h4>Brain (AgentDB)</h4>
+      <div class="meta"><code>brain-agentdb.ts</code> + <code>brain-ingest.ts</code></div>
+      <p>Per-prospect history + cross-prospect patterns. Ingested at research time, queried at compose time.</p>
+    </article>
+
+    <article class="card green" role="listitem">
+      <h4>Deliverability controls</h4>
+      <div class="meta"><code>deliverability/confidence-gate.ts</code> · <code>circuit-breaker.ts</code> · <code>bounce-monitor.ts</code></div>
+      <p>Halts the batch on a 5% hard-bounce threshold. Per-AE per-day send caps. Wired into the v1 pipeline and the watcher.</p>
+    </article>
+
+    <article class="card green" role="listitem">
+      <h4>Cross-model judge panel</h4>
+      <div class="meta"><code>cross-model-judge.ts</code> + 3 Python scripts</div>
+      <p>Optional Gemini / GPT-5 / Grok / DeepSeek panel for medium+ deliverables. Used on demand, not every prospect.</p>
+    </article>
+
+    <article class="card green" role="listitem">
+      <h4>Stat library</h4>
+      <div class="meta"><code>stat-library/</code></div>
+      <p>Bucketed topic-to-fact map for generalized framing when no company-specific evidence exists.</p>
+    </article>
+
+    <article class="card green" role="listitem">
+      <h4>Microsite (Next.js app)</h4>
+      <div class="meta"><code>src/showrev/microsite/</code> — deployed on Vercel</div>
+      <p>Routes: brief, assess, compare, pipeline, report, ops. Renders the prospect-facing landing page and the operator ops portal. Logs view events to <code>sr_microsite_events</code>.</p>
+    </article>
+
+  </div>
+
+  <h3>One-off scripts (used during incidents and smoke tests)</h3>
+  <div class="grid" role="list">
+    <article class="card green" role="listitem">
+      <h4>Substrate audit scripts</h4>
+      <div class="meta"><code>scripts/audit-15-citations.py</code> · <code>audit-15-citations-v2.py</code></div>
+      <p>URL-fetch + content-match audit. Surfaced the 5 strip-recompose cases on June 12.</p>
+    </article>
+    <article class="card green" role="listitem">
+      <h4>Gemini deep verify</h4>
+      <div class="meta"><code>scripts/gemini-deep-verify-15.py</code> · <code>gemini-verify-15.py</code></div>
+      <p>Cross-model fact verification for the 15 Sunday smoke contacts.</p>
+    </article>
+    <article class="card green" role="listitem">
+      <h4>Sunday smoke loader</h4>
+      <div class="meta"><code>scripts/smoke-load-2026-06-11.ts</code> · <code>load-2-swaps.ts</code></div>
+      <p>Loaded the 18-contact roster to HubSpot. Calls hubspot-loader directly.</p>
+    </article>
+    <article class="card green" role="listitem">
+      <h4>Backfill utilities</h4>
+      <div class="meta"><code>m1-email-find/scripts/backfill-*</code> + <code>scripts/backfill-microsite-logos.ts</code></div>
+      <p>Backfill company website, send-confidence (after code changes), microsite logos. Called manually after touching the related code.</p>
+    </article>
+  </div>
+
+  <h3>Ghost code — on disk, not in the flow</h3>
+  <div class="grid" role="list">
+
+    <article class="card red" role="listitem">
+      <h4>verify-facts.ts (the stranded fix)</h4>
+      <div class="meta"><code>m1-email-find/verify-facts.ts</code> — ~336 lines</div>
+      <p><strong>Has the URL-domain classifier the v2 pipeline needs.</strong> Imported by the deprecated v1 pipeline, semantic-verifier, and validate-only. Never reached from the v2 path. <strong>This is the most important file to rewire.</strong></p>
+    </article>
+
+    <article class="card gray" role="listitem">
+      <h4>refutation.ts</h4>
+      <div class="meta"><code>evidence-tiering/refutation.ts</code></div>
+      <p>Built and unit-tested. The file's own comment says: "intentionally NOT yet wired into run-pipeline-v2.ts." Frame-refutation gate — would catch composer claims contradicted by substrate.</p>
+    </article>
+
+    <article class="card gray" role="listitem">
+      <h4>watcher/engagement-feed.ts</h4>
+      <div class="meta"><code>src/showrev/watcher/</code></div>
+      <p>No internal importers found. May be hit only via the Next.js microsite API route. Unclear status.</p>
+    </article>
+
+    <article class="card gray" role="listitem">
+      <h4>Deprecated pipeline trio</h4>
+      <div class="meta"><code>pipeline.ts</code> → <code>premium-pipeline.ts</code> → <code>run-pipeline.ts</code></div>
+      <p>Three pipeline files in sequence, each marked deprecated in favor of the next. Still on disk. Reading the directory blind, it is not obvious which one is current. The active v1 path is <code>run-pipeline.ts</code>; the active v2 path is <code>evidence-tiering/run-pipeline-v2.ts</code>.</p>
+    </article>
+
+    <article class="card gray" role="listitem">
+      <h4>composer.ts</h4>
+      <div class="meta"><code>m1-email-find/composer.ts</code></div>
+      <p>Marked deprecated at line 1. The active composers are specific-composer + generalized-composer + lean-composer.</p>
+    </article>
+
+    <article class="card gray" role="listitem">
+      <h4>microsite-composer.ts (legacy copy)</h4>
+      <div class="meta"><code>m1-email-find/microsite-composer.ts</code></div>
+      <p>Used only by the deprecated premium-pipeline. The active one lives in <code>evidence-tiering/</code>. Same file name in sibling directories is a confusion smell.</p>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================================================== -->
+<!-- SECTION C: DATABASE                                  -->
+<!-- ===================================================== -->
+<section aria-labelledby="db-h">
+  <h2 id="db-h">C. Database architecture</h2>
+  <p>Project <code>slttpknnuthbttjuzrnz</code> in Supabase. 24 tables have row-level-security policies. Two more tables are referenced by the evidence-tiering code but may not be in the RLS list yet. Below is the inventory grouped by purpose.</p>
+
+  <h3>Core: prospect → email → send</h3>
+  <table class="db" aria-label="Core tables">
+    <thead><tr><th>Table</th><th>Purpose</th><th class="status-cell">Status</th></tr></thead>
+    <tbody>
+      <tr><td><code>sr_prospects</code></td><td class="role">Per-contact identity, AE assignment, ICP status, email, lead_type, send_status</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_engine_output</code></td><td class="role">Per-pipeline-run composed email, intel fields, microsite slug. One prospect can have many rows (history). <strong>email-verification fields mostly null. <code>confidence_score</code> integer column is dead.</strong></td><td><span class="badge b-yellow"><span class="dot" aria-hidden="true"></span> Live, with null-leaks</span></td></tr>
+      <tr><td><code>sr_dossiers</code></td><td class="role">Per-prospect research dossier (TieredDossier in v2)</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_emails</code></td><td class="role">Send events / engagement tracking</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_pipeline_runs</code></td><td class="role">Pipeline invocation history + per-run telemetry</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_outcomes</code></td><td class="role">Reply / open / bounce / meeting outcomes for learning loop</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Substrate + evidence (where the fact-quality problem lives)</h3>
+  <table class="db" aria-label="Substrate tables">
+    <thead><tr><th>Table</th><th>Purpose</th><th class="status-cell">Status</th></tr></thead>
+    <tbody>
+      <tr><td><code>sr_brain_substrate</code></td><td class="role">~6,512 industry chunks (podcasts, articles, reports), tagged by companies mentioned, speaker, topic</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_company_evidence</code></td><td class="role"><strong>Per-(company, claim) rows.</strong> Populated by enrichment workflow. Carries <code>source_kind</code> (the field that drives tier). <strong><code>source_date</code> mostly null → staleness check cannot fire. 12 PROHIBITED-domain rows confirmed (ZoomInfo / LeadIQ / RocketReach).</strong></td><td><span class="badge b-red"><span class="dot" aria-hidden="true"></span> Live but contaminated</span></td></tr>
+      <tr><td><code>sr_company_contacts</code></td><td class="role">Discovered contacts (name + title + company + optional email/linkedin)</td><td><span class="badge b-yellow"><span class="dot" aria-hidden="true"></span> Referenced in code; not in RLS list — confirm deployed</span></td></tr>
+      <tr><td><code>sr_fact_checks</code></td><td class="role">Per-claim verification results (when the verify-facts module ran)</td><td><span class="badge b-yellow"><span class="dot" aria-hidden="true"></span> Live but underused — only v1 path writes here</span></td></tr>
+      <tr><td><code>sr_entity_resolution</code></td><td class="role">Company-name canonicalization</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Brain (10 tables — for the learning loop)</h3>
+  <table class="db" aria-label="Brain tables">
+    <thead><tr><th>Table</th><th>Purpose</th><th class="status-cell">Status</th></tr></thead>
+    <tbody>
+      <tr><td><code>sr_brain_dossiers</code></td><td class="role">Per-prospect dossier history</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_brain_patterns</code></td><td class="role">Cross-prospect outreach patterns + reply-rate signal</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_brain_outcomes</code></td><td class="role">Per-pattern outcome aggregation</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_brain_competitors</code></td><td class="role">Per-vertical competitor mapping</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_brain_bellwethers</code></td><td class="role">Reference accounts (Greenlight, Frontier etc.)</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_brain_citations</code></td><td class="role">Per-claim provenance for Brain entries</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_brain_market_signals</code></td><td class="role">BEAD timelines, industry signals</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_brain_ae_interactions</code></td><td class="role">Per-AE-per-prospect activity history</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_brain_outreach_patterns</code></td><td class="role">Subject / body / CTA pattern library</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_brain_verify_items</code></td><td class="role">Pending verification queue for Brain entries</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Microsite + review</h3>
+  <table class="db" aria-label="Microsite and review tables">
+    <thead><tr><th>Table</th><th>Purpose</th><th class="status-cell">Status</th></tr></thead>
+    <tbody>
+      <tr><td><code>sr_microsites</code></td><td class="role">Per-prospect microsite content (the page that loads when a prospect clicks)</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_microsite_events</code></td><td class="role">Page-view events (anon-writable per RLS policy)</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_review_actions</code></td><td class="role">Tim / operator review actions on prospect rows</td><td><span class="badge b-yellow"><span class="dot" aria-hidden="true"></span> Live, but no reset on email-confidence flip (Gap C)</span></td></tr>
+      <tr><td><code>sr_review_notes</code></td><td class="role">Reviewer text notes</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_review_timestamps</code></td><td class="role">Review timing audit</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+      <tr><td><code>sr_decision_trace</code></td><td class="role">Per-prospect decision log (composer mode, tier counts, refutation outcome if/when wired)</td><td><span class="badge b-green"><span class="dot" aria-hidden="true"></span> Live</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Proposed but not built</h3>
+  <table class="db" aria-label="Proposed tables">
+    <thead><tr><th>Table</th><th>Where it was proposed</th><th class="status-cell">Status</th></tr></thead>
+    <tbody>
+      <tr><td><code>sr_source_domains</code></td><td class="role">forensic-2026-06-12 plan-a-v3/v4 — for URL-domain trust classification</td><td><span class="badge b-gray"><span class="dot" aria-hidden="true"></span> Proposed, then dropped — second-pass uses a column add instead</span></td></tr>
+      <tr><td><code>sr_pending_domain_classification</code></td><td class="role">forensic-2026-06-12 plan-a-v3/v4 — for unknown-domain queue</td><td><span class="badge b-gray"><span class="dot" aria-hidden="true"></span> Proposed, then dropped</span></td></tr>
+      <tr><td><code>sr_claim_verifications</code></td><td class="role">02:30 synthesis last night — per-claim URL-content-match audit</td><td><span class="badge b-gray"><span class="dot" aria-hidden="true"></span> Proposed; superseded by simpler domain_tier column</span></td></tr>
+      <tr><td><code>sr_prohibited_sources</code></td><td class="role">02:30 synthesis last night — operator-managed blocklist</td><td><span class="badge b-gray"><span class="dot" aria-hidden="true"></span> Proposed; the prohibited list can live in code instead</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>The recommended (narrow) schema delta</h3>
+  <p>Add two columns, no new tables:</p>
+  <ul>
+    <li><code>ALTER TABLE sr_company_evidence ADD COLUMN domain_tier text;</code></li>
+    <li><code>ALTER TABLE sr_brain_substrate ADD COLUMN domain_tier text;</code></li>
+  </ul>
+  <p>Then wire <code>verify-facts.ts</code> domain classifier into <code>substrate-query.ts</code> write-path. That's the second-pass plan A FINAL recommendation. ~5–6 hours.</p>
+</section>
+
+<!-- ===================================================== -->
+<!-- SECTION D: RISK ZONES                                -->
+<!-- ===================================================== -->
+<section aria-labelledby="risks-h">
+  <h2 id="risks-h">D. The risk zones, ranked</h2>
+
+  <div class="risk-callout">
+    <h3>Risk 1 — Substrate ingest has no URL-domain check</h3>
+    <p><strong>Objective at risk: verified data.</strong></p>
+    <p><strong>What happens.</strong> When the substrate ingest writes a row to <code>sr_company_evidence</code>, it sets <code>source_kind</code> from how it was harvested ("dated web research"), not from the URL domain. A ZoomInfo URL becomes <code>web_research_dated</code> → USE_DIRECTLY → eligible to be quoted in an email body.</p>
+    <p><strong>Evidence in production.</strong> 12 PROHIBITED-domain rows across 3 prospects (CNE / PC Telcom / United Tel Supply). Confirmed by Supabase queries last night.</p>
+    <p><strong>Fix path.</strong> Wire <code>verify-facts.ts</code> URL-domain classifier into the substrate-write step. ~5–6 hours per the second-pass plan A FINAL.</p>
+  </div>
+
+  <div class="risk-callout">
+    <h3>Risk 2 — Email-verification fields are null on most rows</h3>
+    <p><strong>Objective at risk: verified email addresses.</strong></p>
+    <p><strong>What happens.</strong> The email-finder waterfall computes a confidence color and verification report — but the writes to <code>email_confidence</code>, <code>verification_report</code>, <code>mv_quality</code>, <code>email_verified</code>, <code>email_verification_status</code> are null on most rows queried. "MV-verified" claims cannot be backed by DB state.</p>
+    <p><strong>Fix path.</strong> Audit the write side of <code>email-finder/orchestrator.ts</code> → <code>supabase-adapter.ts</code>. Identify why fields are dropped. Backfill once fixed.</p>
+  </div>
+
+  <div class="risk-callout">
+    <h3>Risk 3 — ICP gate has deliberate inclusivity bias</h3>
+    <p><strong>Objective at risk: list quality (a precursor to data quality).</strong></p>
+    <p><strong>What happens.</strong> <code>icp-gate.ts</code> tells Haiku: "if uncertain, classify as fiber_operator with low confidence. False negatives are 10x worse than false positives." 36 of 36 sampled rows passed.</p>
+    <p><strong>Trade-off.</strong> This was an explicit choice — better to capture too many than miss real ICPs. But "ICP pass" downstream gets interpreted as "ICP-verified." That's not what the column means.</p>
+    <p><strong>Fix path.</strong> Either tighten Haiku confidence threshold, or rename column to <code>icp_candidate</code> and add a separate <code>icp_verified</code> column. Operator decision.</p>
+  </div>
+
+  <div class="risk-callout">
+    <h3>Risk 4 — Tim approval doesn't reset when email confidence flips</h3>
+    <p><strong>Objective at risk: don't ship to a bad address.</strong></p>
+    <p><strong>What happens.</strong> Tim reviews craft. Later pipeline re-runs may flip email confidence from green to red. Tim's approval stays. One prospect was queued for send Tim-approved + red.</p>
+    <p><strong>Fix path.</strong> Add reset trigger: any email-confidence flip from non-red to red clears the Tim-approval flag and requires re-review.</p>
+  </div>
+
+  <div class="risk-callout">
+    <h3>Risk 5 — Ghost / deprecated code increases human error rate</h3>
+    <p><strong>Objective at risk: future-pipeline integrity (not data integrity directly).</strong></p>
+    <p><strong>What happens.</strong> Three deprecated pipelines (<code>pipeline.ts</code> → <code>premium-pipeline.ts</code> → <code>run-pipeline.ts</code>) plus <code>composer.ts</code> and a duplicate <code>microsite-composer.ts</code> are still on disk. Refutation is built and tested but explicitly not wired. New work risks editing the wrong file.</p>
+    <p><strong>Fix path.</strong> Delete deprecated pipelines after a freeze window. Wire refutation OR archive it explicitly.</p>
+  </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- SECTION E: WHAT'S WORKING                            -->
+<!-- ===================================================== -->
+<section aria-labelledby="works-h">
+  <h2 id="works-h">E. What's working — don't touch</h2>
+  <ul>
+    <li><strong>Tiered judge cascade</strong> — three layers (regex / Tim-style / Gemini) plus always-on hallucination check is rigorous and well-implemented.</li>
+    <li><strong>Composer-constraints</strong> (861 lines) — banned phrases, AI-tell hardening (DL-199 PNAS/VERMILLION), Flesch-Kincaid reading age, citation coverage, best-of-N retry.</li>
+    <li><strong>Evidence orchestrator phase pattern</strong> (pull → gap-fill → tier+emit) — clean separation, parallel fetches, second-best query loop.</li>
+    <li><strong>Email finder waterfall</strong> (12 sibling files in <code>email-finder/</code>) — domain resolver / pattern detector / peer pattern / SMTP / MV / Apollo fallback / tactic eval. Solid.</li>
+    <li><strong>RLS hardening</strong> — anon key locked to live microsites + page-view inserts. Service role for code.</li>
+    <li><strong>CSV column-shift bug fix</strong> — <code>parseCsvLine</code> handles quoted commas in company names (caught 50 of 204 affected rows on 2026-06-11).</li>
+    <li><strong>Apollo credit tracker</strong> — prevents credit blowout on long runs.</li>
+    <li><strong>Send confidence v1.0</strong> — explicitly labeled "uncalibrated" so it doesn't get confused with calibrated.</li>
+    <li><strong>Pre-load verify gate</strong> — SPF/DKIM/DMARC + HS auth + dedup + bounce history audit.</li>
+    <li><strong>Two-pipeline-in-parallel architecture</strong> — lets the operator compare v1 and v2 output on the same cohort. Intentional, not chaos.</li>
+  </ul>
+</section>
+
+<!-- ===================================================== -->
+<!-- SECTION F: SCORING                                   -->
+<!-- ===================================================== -->
+<section aria-labelledby="score-h">
+  <h2 id="score-h">F. Industry-typical forensic score</h2>
+  <p>Ten standard review dimensions, 0–10 each. Honest grading against what a typical outside engineering reviewer would mark.</p>
+
+  <div class="scoregrid">
+    <table aria-label="Forensic review scores">
+      <tbody>
+        <tr><td>Architecture coherence</td><td>6 / 10</td><td>Two pipelines is intentional; the deprecated trio still on disk is not.</td></tr>
+        <tr><td>Code wiring (imports actually used)</td><td>5 / 10</td><td>verify-facts stranded from v2 path; refutation self-confessed unwired.</td></tr>
+        <tr><td>Dead-code hygiene</td><td>4 / 10</td><td>Triple-deprecation cascade still on disk. Two files named microsite-composer.</td></tr>
+        <tr><td>Gate consistency (no conflicting rules)</td><td>5 / 10</td><td>mechanical_check_passed claims clean while substrate is contaminated. Tim approval doesn't reset.</td></tr>
+        <tr><td>Data integrity</td><td>4 / 10</td><td>Email-verification null-leak. Dead <code>confidence_score</code> column. Conflicting confidence colors per prospect.</td></tr>
+        <tr><td>Verification rigor (judge / tests)</td><td>7 / 10</td><td>Tiered judge is genuinely strong. Always-on hallucination check is the right pattern.</td></tr>
+        <tr><td>Source provenance (the headline)</td><td>4 / 10</td><td>The classifier exists but isn't wired into the live ingest path.</td></tr>
+        <tr><td>Observability (audit trails)</td><td>6 / 10</td><td>sr_decision_trace + jsonb send_confidence give good audit. <code>judge_feedback_loop_attempts=0</code> on every row suggests writes aren't completing.</td></tr>
+        <tr><td>Operability (retry / idempotency / errors)</td><td>6 / 10</td><td>Best-of-N retry, idempotent HS load, pre-load verify, Apollo credit tracker.</td></tr>
+        <tr><td>Spec ↔ implementation alignment</td><td>6 / 10</td><td>Specs have v2/v3/v4/v5 iterations. Code mostly matches v2 FINAL. Some drift.</td></tr>
+        <tr class="total"><td>OVERALL</td><td>53 / 100</td><td>C-minus on build quality; A-minus on fixability (~5–6 hours to address the headline gap).</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><strong>Plain-English read.</strong> The foundation is real and a lot of the rigorous machinery is genuinely in place. The headline gap (contaminated substrate getting tiered as authoritative) is one narrow seam where a classifier that already exists has not yet been plugged into the live ingest path. The supplementary issues (null-leaking email-verify fields, ICP-pass overclaim, Tim-approval desync, deprecated-pipeline clutter) are accretion — typical of a system that has been iterated under deadline pressure for several weeks. Each is individually fixable in hours, not weeks.</p>
+</section>
+
+<!-- ===================================================== -->
+<!-- FOOTER                                               -->
+<!-- ===================================================== -->
+<footer style="margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.85rem;">
+  <p>Generated 2026-06-13 by Claude (Opus 4.7). Based on direct code reads of 16 files under <code>src/showrev/m1-email-find/</code> + the prior forensic folder <code>data/showrev/forensic-2026-06-12/</code>. Cross-checked against the RLS hardening migration table list.</p>
+</footer>
+
+</main>
+</body>
+</html>

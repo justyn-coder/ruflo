@@ -6,6 +6,7 @@
 
 ## Behavioral Rules (Always Enforced)
 
+- **SESSION LIFECYCLE:** See `SESSION-RULES.md` — read latest `docs/showrev/HANDOFF-*.md` at session start; write fresh handoff at session end; respect tool-call health-check thresholds (60/120/180)
 - Do what has been asked; nothing more, nothing less
 - NEVER create files unless they're absolutely necessary for achieving your goal
 - ALWAYS prefer editing an existing file to creating a new one

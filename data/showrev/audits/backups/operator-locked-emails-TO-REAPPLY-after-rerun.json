@@ -1,0 +1,101 @@
+[
+  {
+    "id": "heath-sellenriek-gateway-fiber",
+    "company": "Gateway Fiber",
+    "first_name": "Heath",
+    "last_name": "Sellenriek",
+    "email": "heath.sellenriek@gf.com",
+    "email_corrected": true,
+    "company_website": "https://gatewayfiber.com",
+    "title": "President & COO",
+    "ae_review_notes": "Per operator 2026-06-10: outreach framing is Gateway Fiber Board Director (not Sellenriek Construction Inc.). Email heath.sellenriek@gf.com is operator-locked. Title 'President & COO' is from Sellenriek Construction \u2014 may want to update for Gateway Fiber framing."
+  },
+  {
+    "id": "joe-kunz-gfiber",
+    "company": "GFiber",
+    "first_name": "Joe",
+    "last_name": "Kunz",
+    "email": "joekunz@google.com",
+    "email_corrected": true,
+    "company_website": "https://fiber.google.com",
+    "title": "Head of OSP Strategy & Systems",
+    "ae_review_notes": null
+  },
+  {
+    "id": "darin-jackson-allo-communications",
+    "company": "ALLO Communications",
+    "first_name": "Darin",
+    "last_name": "Jackson",
+    "email": "darin.jackson@allofiber.com",
+    "email_corrected": true,
+    "company_website": "https://allofiber.com",
+    "title": "Senior Manager of Supply Chain & Logistics",
+    "ae_review_notes": null
+  },
+  {
+    "id": "stephanie-lobdell-cumberland-connect",
+    "company": "Cumberland Connect",
+    "first_name": "Stephanie",
+    "last_name": "Lobdell",
+    "email": "slobdell@cemc.org",
+    "email_corrected": true,
+    "company_website": null,
+    "title": "Marketing and Communications Director",
+    "ae_review_notes": null
+  },
+  {
+    "id": "doug-guthrie-iq-fiber",
+    "company": "IQ Fiber",
+    "first_name": "Doug",
+    "last_name": "Guthrie",
+    "email": "doug@iqfiber.com",
+    "email_corrected": true,
+    "company_website": "https://iqfiber.com",
+    "title": "COO",
+    "ae_review_notes": null
+  },
+  {
+    "id": "ryan-kudera-finley-engineering",
+    "company": "Finley Engineering",
+    "first_name": "Ryan",
+    "last_name": "Kudera",
+    "email": "r.kudera@finleyusa.com",
+    "email_corrected": true,
+    "company_website": "https://finleyusa.com",
+    "title": "Client Manager",
+    "ae_review_notes": null
+  },
+  {
+    "id": "david-wojcik-finley-engineering",
+    "company": "Finley Engineering",
+    "first_name": "David",
+    "last_name": "Wojcik",
+    "email": "d.wojcik@finleyusa.com",
+    "email_corrected": true,
+    "company_website": "https://finleyusa.com",
+    "title": "Chief Client Officer",
+    "ae_review_notes": null
+  },
+  {
+    "id": "wesley-kudera-finley-engineering",
+    "company": "Finley Engineering",
+    "first_name": "Wesley",
+    "last_name": "Kudera",
+    "email": "w.kudera@finleyusa.com",
+    "email_corrected": true,
+    "company_website": "https://finleyusa.com",
+    "title": "Client Manager",
+    "ae_review_notes": null
+  },
+  {
+    "id": "katie-espeseth-epb-fiber-optics",
+    "company": "EPB Fiber Optics",
+    "first_name": "Katie",
+    "last_name": "Espeseth",
+    "email": "katie.espeseth@efoinc.com",
+    "email_corrected": true,
+    "company_website": "https://epb.com",
+    "title": "Vice President of Fiber Optics",
+    "ae_review_notes": null
+  }
+]

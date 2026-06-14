@@ -1,0 +1,428 @@
+{
+  "runId": "run-20260607-wjo4",
+  "timestamp": "2026-06-07T22:28:45.469Z",
+  "totalDuration": "942.9s",
+  "prospectCount": 3,
+  "icpPassCount": 3,
+  "emailFoundCount": 3,
+  "judgePassCount": 2,
+  "emailFindRate": "100%",
+  "judgePassRate": "67%",
+  "phaseStats": {
+    "1-icp-gate": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 500,
+      "maxMs": 1437,
+      "count": 3
+    },
+    "2-email-find": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 18556,
+      "maxMs": 35797,
+      "count": 3
+    },
+    "2b-prospect-upsert": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 133,
+      "maxMs": 179,
+      "count": 3
+    },
+    "3-research": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 60698,
+      "maxMs": 63335,
+      "count": 3
+    },
+    "3a-brain-context": {
+      "passRate": "0%",
+      "failRate": "0%",
+      "avgMs": 193,
+      "maxMs": 545,
+      "count": 3
+    },
+    "3b-brain-ingest": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 38,
+      "maxMs": 45,
+      "count": 3
+    },
+    "3c-intel-structurer": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 29237,
+      "maxMs": 30629,
+      "count": 3
+    },
+    "4-substrate": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 1415,
+      "maxMs": 1889,
+      "count": 3
+    },
+    "5-pattern-select": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 55213,
+      "maxMs": 57238,
+      "count": 3
+    },
+    "6-composition": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 58505,
+      "maxMs": 97209,
+      "count": 3
+    },
+    "7-judge": {
+      "passRate": "67%",
+      "failRate": "33%",
+      "avgMs": 88718,
+      "maxMs": 90751,
+      "count": 3
+    },
+    "8-microsite": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 732,
+      "maxMs": 896,
+      "count": 3
+    },
+    "9-supabase-write": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 354,
+      "maxMs": 415,
+      "count": 3
+    }
+  },
+  "bottleneck": "7-judge",
+  "prospects": [
+    {
+      "name": "Katie Espeseth",
+      "company": "EPB Fiber Optics",
+      "email": "espesethkg@epb.net",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": true,
+      "judgeScores": {
+        "mechanicalPass": 9,
+        "t1_research_depth": 8,
+        "t1_vp_connection": 6,
+        "t1_tone": 6,
+        "t1_conciseness": 7,
+        "t1_jtbd_alignment": 5,
+        "t1_avg": 6.4,
+        "t2_research_depth": 8,
+        "t2_vp_connection": 7,
+        "t2_tone": 6,
+        "t2_conciseness": 5,
+        "t2_jtbd_alignment": 8,
+        "t2_avg": 6.8,
+        "t3_research_depth": 8,
+        "t3_vp_connection": 7,
+        "t3_tone": 7,
+        "t3_conciseness": 6,
+        "t3_jtbd_alignment": 8,
+        "t3_avg": 7.2
+      },
+      "duration": "292.5s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 63,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 3186,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 73,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 545,
+          "status": "warn",
+          "detail": "0 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 60016,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 45,
+          "status": "pass",
+          "detail": "4+7 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 30629,
+          "status": "pass",
+          "detail": "29 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1889,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 57238,
+          "status": "pass",
+          "detail": "challenger_insight,loss_aversion,curiosity_gap"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 49774,
+          "status": "pass",
+          "detail": "3 touches, wc=90/85/72"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 87857,
+          "status": "pass",
+          "detail": "mechanicalPass=9,t1_research_depth=8,t1_vp_connection=6,t1_tone=6,t1_conciseness=7,t1_jtbd_alignment=5,t1_avg=6.4,t2_research_depth=8,t2_vp_connection=7,t2_tone=6,t2_conciseness=5,t2_jtbd_alignment=8,t2_avg=6.8,t3_research_depth=8,t3_vp_connection=7,t3_tone=7,t3_conciseness=6,t3_jtbd_alignment=8,t3_avg=7.2"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 896,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 323,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Brian Perkins",
+      "company": "Burns & McDonnell",
+      "email": "brian.perkins@burnsmcd.com",
+      "emailConfidence": "yellow",
+      "mvQuality": null,
+      "judgePass": true,
+      "judgeScores": {
+        "mechanicalPass": 9,
+        "t1_research_depth": 6,
+        "t1_vp_connection": 8,
+        "t1_tone": 7,
+        "t1_conciseness": 6,
+        "t1_jtbd_alignment": 8,
+        "t1_avg": 7,
+        "t2_research_depth": 6,
+        "t2_vp_connection": 8,
+        "t2_tone": 7,
+        "t2_conciseness": 5,
+        "t2_jtbd_alignment": 9,
+        "t2_avg": 7,
+        "t3_research_depth": 6,
+        "t3_vp_connection": 8,
+        "t3_tone": 7,
+        "t3_conciseness": 7,
+        "t3_jtbd_alignment": 8,
+        "t3_avg": 7.2
+      },
+      "duration": "350.0s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1437,
+          "status": "pass",
+          "detail": "pass:ae_firm"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 16684,
+          "status": "pass",
+          "detail": "yellow"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 179,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 16,
+          "status": "warn",
+          "detail": "0 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 58742,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 36,
+          "status": "pass",
+          "detail": "7+4 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 30083,
+          "status": "pass",
+          "detail": "29 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1125,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 52693,
+          "status": "pass",
+          "detail": "challenger_insight,loss_aversion,reciprocity"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 97209,
+          "status": "pass",
+          "detail": "3 touches, wc=95/96/70"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 90751,
+          "status": "pass",
+          "detail": "mechanicalPass=9,t1_research_depth=6,t1_vp_connection=8,t1_tone=7,t1_conciseness=6,t1_jtbd_alignment=8,t1_avg=7,t2_research_depth=6,t2_vp_connection=8,t2_tone=7,t2_conciseness=5,t2_jtbd_alignment=9,t2_avg=7,t3_research_depth=6,t3_vp_connection=8,t3_tone=7,t3_conciseness=7,t3_jtbd_alignment=8,t3_avg=7.2"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 630,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 415,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Heath Sellenriek",
+      "company": "Gateway Fiber",
+      "email": "heath.sellenriek@gatewayfiber.com",
+      "emailConfidence": "red",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {
+        "mechanicalPass": 9,
+        "t1_research_depth": 4,
+        "t1_vp_connection": 8,
+        "t1_tone": 8,
+        "t1_conciseness": 6,
+        "t1_jtbd_alignment": 8,
+        "t1_avg": 6.8,
+        "t2_research_depth": 3,
+        "t2_vp_connection": 7,
+        "t2_tone": 7,
+        "t2_conciseness": 7,
+        "t2_jtbd_alignment": 8,
+        "t2_avg": 6.4,
+        "t3_research_depth": 4,
+        "t3_vp_connection": 8,
+        "t3_tone": 7,
+        "t3_conciseness": 6,
+        "t3_jtbd_alignment": 8,
+        "t3_avg": 6.6
+      },
+      "duration": "300.3s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 35797,
+          "status": "pass",
+          "detail": "red"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 147,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 17,
+          "status": "warn",
+          "detail": "0 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 63335,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 33,
+          "status": "pass",
+          "detail": "2+9 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 26998,
+          "status": "pass",
+          "detail": "29 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1231,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 55708,
+          "status": "pass",
+          "detail": "challenger_insight,loss_aversion,curiosity_gap"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 28531,
+          "status": "pass",
+          "detail": "3 touches, wc=96/81/74"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 87546,
+          "status": "fail",
+          "detail": "mechanicalPass=9,t1_research_depth=4,t1_vp_connection=8,t1_tone=8,t1_conciseness=6,t1_jtbd_alignment=8,t1_avg=6.8,t2_research_depth=3,t2_vp_connection=7,t2_tone=7,t2_conciseness=7,t2_jtbd_alignment=8,t2_avg=6.4,t3_research_depth=4,t3_vp_connection=8,t3_tone=7,t3_conciseness=6,t3_jtbd_alignment=8,t3_avg=6.6"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 670,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 323,
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}

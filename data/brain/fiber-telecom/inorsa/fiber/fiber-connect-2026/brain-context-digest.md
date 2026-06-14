@@ -1,6 +1,6 @@
-Brain Knowledge Digest (896 entities)
+Brain Knowledge Digest (976 entities)
 
-## Companies discovered (100)
+## Companies discovered (113)
 - **Avatar Tech**: firm Avatar Tech is
 - **Mohawk Networks**: operator: Mohawk Networks is
 - **Centillion**: firm Centillion is
@@ -67,7 +67,7 @@ Lighthouse Technologies is
 - **IMMCO's current headcount with prec**: firm IMMCO's current headcount with precis
 - **Spencer Kariniemi's LinkedIn profile or career h**: firm Spencer Kariniemi's LinkedIn profile or career his
 
-## Funding programs (110)
+## Funding programs (125)
 - $25.5M award
 - $25.5M BEAD
 - $83M BEAD
@@ -178,8 +178,23 @@ Lighthouse Technologies is
 - $843M in BEAD
 - $583M BEAD
 - $3.3B BEAD
+- $1.56B in BEAD
+- $1.49B BEAD
+- $1.17B BEAD
+- $714M in BEAD
+- $1.48B BEAD
+- $1.48B allocation
+- $357M in BEAD
+- $109M in BEAD
+- $869M in BEAD
+- $186M BEAD
+- $177M in BEAD
+- $759M in BEAD
+- $270M in BEAD
+- $270M BEAD
+- $270M allocation
 
-## Relationships (88)
+## Relationships (89)
 - NetPMD Solutions creates near-term integration complexity that could cut both ways: merger with NetPMD Solutions creates near-term integration complexity that could cut both ways
 - NetPMD Solutions is live. The strategic rationale was explicit: merger with NetPMD Solutions is live. The strategic rationale was explicit 
 - Janan is about channel access to those: partnership with Janan is about channel access to those 
@@ -292,6 +307,7 @@ Result
 - major fiber operators: partnership with major fiber operators 
 - NVIDIA announced in: partnership with NVIDIA announced in 
 - Inorsa interesting to her roadmap, not her ops team: partnership with Inorsa interesting to her roadmap, not her ops team.
+- Tennessee Valley Authority and Oak Ridge National Laboratory: partnership with Tennessee Valley Authority and Oak Ridge National Laboratory 
 
 ## Known competitors in use (10)
 - Iqgeo (systems_of_record)
@@ -305,7 +321,7 @@ Result
 - Hexagon (engineering_software)
 - Sitetracker (systems_of_record)
 
-## Tools / platforms in use (587)
+## Tools / platforms in use (638)
 - case
 - engineering
 - those
@@ -895,6 +911,59 @@ Runway is designed
 - OSP design or outsources
 - selection and vendor relationships
 - AND as a
+- of automation
+- drafting or subcontracts drafting
+- the recovered time
+- team in AutoCAD or handed off
+- our map
+- job postings as a proxy
+- due
+- may undersell it
+- Esri ArcGIS or Katapult
+- any project management or workflow
+- for network records management
+- the latest available technology
+- are they currently using
+- any offshore design labor or automation
+- or incumbent automation
+- unknown
+
+Now let me search
+- network design
+- mentions beyond AutoCAD and GIS found
+- there is no large internal bench
+- modern network management
+- him as a warm referral path
+- or partially outsourced
+- that protects his revenue
+- allowed them
+- is the dominant GIS
+- of permitting workflows
+- but as a wholesale sales acceleration
+- or design
+- version EPB uses
+- Collins as a referral path
+- fit is real
+- outside engineering contractors
+- as engineering contractors
+- any existing OSP design automation
+- his outsourced engineers have
+- that conversation
+- or workflow
+- of this contact is NOT
+- him as a champion
+- an automation solution
+- a combination of internal GIS
+- purchase needs
+- a mix of internal
+- that would create a competing internal
+- geospatial or design automation
+- any named competitor
+- him as a warm entry point
+- any commercial OSP design or permitting
+- design teams comparable
+- a mix of GIS
+- subscriber growth is directly tied
 
 ## Regulatory / funding landscape (1 entries)
 - BEAD award to serve the St.

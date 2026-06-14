@@ -1,0 +1,575 @@
+{
+  "runId": "run-20260608-l53t",
+  "timestamp": "2026-06-08T17:45:34.730Z",
+  "totalDuration": "1548.0s",
+  "prospectCount": 5,
+  "icpPassCount": 5,
+  "emailFoundCount": 5,
+  "judgePassCount": 0,
+  "emailFindRate": "100%",
+  "judgePassRate": "0%",
+  "phaseStats": {
+    "1-icp-gate": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 615,
+      "maxMs": 1815,
+      "count": 5
+    },
+    "2-email-find": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 1283,
+      "maxMs": 4105,
+      "count": 5
+    },
+    "2b-prospect-upsert": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 79,
+      "maxMs": 127,
+      "count": 5
+    },
+    "3-research": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 87303,
+      "maxMs": 145457,
+      "count": 5
+    },
+    "3a-brain-context": {
+      "passRate": "80%",
+      "failRate": "0%",
+      "avgMs": 131,
+      "maxMs": 589,
+      "count": 5
+    },
+    "3b-brain-ingest": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 39,
+      "maxMs": 52,
+      "count": 5
+    },
+    "3c-intel-structurer": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 28143,
+      "maxMs": 31097,
+      "count": 5
+    },
+    "4-substrate": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 1327,
+      "maxMs": 1869,
+      "count": 5
+    },
+    "5-pattern-select": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 54604,
+      "maxMs": 62134,
+      "count": 5
+    },
+    "6-composition": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 38208,
+      "maxMs": 51123,
+      "count": 5
+    },
+    "7-judge": {
+      "passRate": "0%",
+      "failRate": "100%",
+      "avgMs": 96672,
+      "maxMs": 214683,
+      "count": 5
+    },
+    "8-microsite": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 899,
+      "maxMs": 1052,
+      "count": 5
+    },
+    "9-supabase-write": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 303,
+      "maxMs": 320,
+      "count": 5
+    }
+  },
+  "bottleneck": "7-judge",
+  "prospects": [
+    {
+      "name": "Spencer Kariniemi",
+      "company": "Booker Engineering",
+      "email": "spencer@bookereng.com",
+      "emailConfidence": "provided-verified",
+      "mvQuality": "good",
+      "judgePass": false,
+      "judgeScores": {
+        "wordCount": 8,
+        "mechanicalPass": 3
+      },
+      "duration": "474.8s",
+      "errors": [],
+      "warnings": [
+        "T3: First word after salutation is capitalized (\"Capacity,\") — salutation is the sentence start, use lowercase unless proper noun"
+      ],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 81,
+          "status": "pass",
+          "detail": "pass:ae_firm"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 987,
+          "status": "pass",
+          "detail": "provided-verified:mv=good"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 62,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 589,
+          "status": "pass",
+          "detail": "6 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 121714,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 40,
+          "status": "pass",
+          "detail": "2+10 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 20369,
+          "status": "pass",
+          "detail": "29 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1869,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 62134,
+          "status": "pass",
+          "detail": "loss_aversion,curiosity_gap,challenger_insight"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 51123,
+          "status": "pass",
+          "detail": "3 touches, wc=95/94/73"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 214683,
+          "status": "fail",
+          "detail": "wordCount=8,mechanicalPass=3"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 817,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 290,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Dan Gillan",
+      "company": "Dobson Fiber",
+      "email": "dgillan@dobson.net",
+      "emailConfidence": "provided-verified",
+      "mvQuality": "good",
+      "judgePass": false,
+      "judgeScores": {
+        "wordCount": 8,
+        "mechanicalPass": 3
+      },
+      "duration": "334.7s",
+      "errors": [],
+      "warnings": [
+        "T1: First word after salutation is capitalized (\"Running\") — salutation is the sentence start, use lowercase unless proper noun"
+      ],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 4,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 573,
+          "status": "pass",
+          "detail": "provided-verified:mv=good"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 49,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 20,
+          "status": "pass",
+          "detail": "1 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 145457,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 52,
+          "status": "pass",
+          "detail": "3+20 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 29039,
+          "status": "pass",
+          "detail": "30 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1212,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 47722,
+          "status": "pass",
+          "detail": "loss_aversion,challenger_insight,curiosity_gap"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 36559,
+          "status": "pass",
+          "detail": "3 touches, wc=82/101/75"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 72741,
+          "status": "fail",
+          "detail": "wordCount=8,mechanicalPass=3"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 968,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 320,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Vyshnaw Sadanandan",
+      "company": "IMMCO Inc.",
+      "email": "vyshnaw@immcoinc.com",
+      "emailConfidence": "provided-verified",
+      "mvQuality": "good",
+      "judgePass": false,
+      "judgeScores": {
+        "wordCount": 8,
+        "mechanicalPass": 3
+      },
+      "duration": "201.5s",
+      "errors": [],
+      "warnings": [
+        "T1: First word after salutation is capitalized (\"What\") — salutation is the sentence start, use lowercase unless proper noun",
+        "T2: First word after salutation is capitalized (\"How\") — salutation is the sentence start, use lowercase unless proper noun"
+      ],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1174,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 362,
+          "status": "pass",
+          "detail": "provided-verified:mv=good"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 53,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 16,
+          "status": "pass",
+          "detail": "1 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 56670,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 36,
+          "status": "pass",
+          "detail": "0+3 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 31097,
+          "status": "pass",
+          "detail": "29 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1327,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 51511,
+          "status": "pass",
+          "detail": "challenger_insight,loss_aversion,curiosity_gap"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 25119,
+          "status": "pass",
+          "detail": "3 touches, wc=91/99/80"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 32737,
+          "status": "fail",
+          "detail": "wordCount=8,mechanicalPass=3"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 1052,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 306,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Adam Collins",
+      "company": "EPB",
+      "email": "collinsac@epb.net",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": false,
+      "judgeScores": {
+        "wordCount": 8,
+        "mechanicalPass": 3
+      },
+      "duration": "204.1s",
+      "errors": [],
+      "warnings": [
+        "T1: First word after salutation is capitalized (\"Based\") — salutation is the sentence start, use lowercase unless proper noun",
+        "T3: First word after salutation is capitalized (\"But\") — salutation is the sentence start, use lowercase unless proper noun"
+      ],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1815,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 4105,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 127,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 14,
+          "status": "pass",
+          "detail": "2 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 55046,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 38,
+          "status": "pass",
+          "detail": "1+9 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 30958,
+          "status": "pass",
+          "detail": "30 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1055,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 55813,
+          "status": "pass",
+          "detail": "curiosity_gap,reciprocity,challenger_insight"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 29720,
+          "status": "pass",
+          "detail": "3 touches, wc=82/81/76"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 24315,
+          "status": "fail",
+          "detail": "wordCount=8,mechanicalPass=3"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 824,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 288,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Doug Guthrie",
+      "company": "IQ Fiber",
+      "email": "doug.guthrie@iqfiber.com",
+      "emailConfidence": "provided-verified",
+      "mvQuality": "good",
+      "judgePass": false,
+      "judgeScores": {
+        "wordCount": 8,
+        "mechanicalPass": 3
+      },
+      "duration": "333.0s",
+      "errors": [],
+      "warnings": [
+        "T1: First word after salutation is capitalized (\"Reposting\") — salutation is the sentence start, use lowercase unless proper noun",
+        "T3: First word after salutation is capitalized (\"Is\") — salutation is the sentence start, use lowercase unless proper noun"
+      ],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 2,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 386,
+          "status": "pass",
+          "detail": "provided-verified:mv=good"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 103,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 18,
+          "status": "warn",
+          "detail": "0 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 57629,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 27,
+          "status": "pass",
+          "detail": "0+5 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 29251,
+          "status": "pass",
+          "detail": "30 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1170,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 55842,
+          "status": "pass",
+          "detail": "challenger_insight,loss_aversion,curiosity_gap"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 48517,
+          "status": "pass",
+          "detail": "3 touches, wc=94/74/75"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 138884,
+          "status": "fail",
+          "detail": "wordCount=8,mechanicalPass=3"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 834,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 311,
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}

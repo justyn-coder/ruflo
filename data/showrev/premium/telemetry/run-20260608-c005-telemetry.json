@@ -1,0 +1,198 @@
+{
+  "runId": "run-20260608-c005",
+  "timestamp": "2026-06-08T20:14:48.412Z",
+  "totalDuration": "211.3s",
+  "prospectCount": 1,
+  "icpPassCount": 1,
+  "emailFoundCount": 1,
+  "judgePassCount": 0,
+  "emailFindRate": "100%",
+  "judgePassRate": "0%",
+  "phaseStats": {
+    "1-icp-gate": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 62,
+      "maxMs": 62,
+      "count": 1
+    },
+    "2-email-find": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 1236,
+      "maxMs": 1236,
+      "count": 1
+    },
+    "2b-prospect-upsert": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 1,
+      "maxMs": 1,
+      "count": 1
+    },
+    "3-research": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 64563,
+      "maxMs": 64563,
+      "count": 1
+    },
+    "3a-brain-context": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 555,
+      "maxMs": 555,
+      "count": 1
+    },
+    "3b-brain-ingest": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 39,
+      "maxMs": 39,
+      "count": 1
+    },
+    "3c-intel-structurer": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 34778,
+      "maxMs": 34778,
+      "count": 1
+    },
+    "4-substrate": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 1967,
+      "maxMs": 1967,
+      "count": 1
+    },
+    "5-pattern-select": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 22083,
+      "maxMs": 22083,
+      "count": 1
+    },
+    "6-composition": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 15720,
+      "maxMs": 15720,
+      "count": 1
+    },
+    "7-judge": {
+      "passRate": "0%",
+      "failRate": "100%",
+      "avgMs": 70277,
+      "maxMs": 70277,
+      "count": 1
+    },
+    "8-microsite": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 9,
+      "maxMs": 9,
+      "count": 1
+    },
+    "9-supabase-write": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 11,
+      "maxMs": 11,
+      "count": 1
+    }
+  },
+  "bottleneck": "7-judge",
+  "prospects": [
+    {
+      "name": "Dan Gillan",
+      "company": "Dobson Fiber",
+      "email": "dgillan@dobson.net",
+      "emailConfidence": "provided-verified",
+      "mvQuality": "good",
+      "judgePass": false,
+      "judgeScores": {
+        "wordCount": 4,
+        "mechanicalPass": 3
+      },
+      "duration": "211.3s",
+      "errors": [],
+      "warnings": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 62,
+          "status": "pass",
+          "detail": "pass:fiber_operator"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 1236,
+          "status": "pass",
+          "detail": "provided-verified:mv=good"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 1,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 555,
+          "status": "pass",
+          "detail": "2 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 64563,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 39,
+          "status": "pass",
+          "detail": "0+6 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 34778,
+          "status": "pass",
+          "detail": "30 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1967,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 22083,
+          "status": "pass",
+          "detail": "loss_aversion"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 15720,
+          "status": "pass",
+          "detail": "1 touches, wc=93"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 70277,
+          "status": "fail",
+          "detail": "wordCount=4,mechanicalPass=3"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 9,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 11,
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}

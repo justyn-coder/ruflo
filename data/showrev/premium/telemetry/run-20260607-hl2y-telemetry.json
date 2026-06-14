@@ -1,0 +1,416 @@
+{
+  "runId": "run-20260607-hl2y",
+  "timestamp": "2026-06-07T19:16:11.816Z",
+  "totalDuration": "974.5s",
+  "prospectCount": 3,
+  "icpPassCount": 3,
+  "emailFoundCount": 3,
+  "judgePassCount": 3,
+  "emailFindRate": "100%",
+  "judgePassRate": "100%",
+  "phaseStats": {
+    "1-icp-gate": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 21,
+      "maxMs": 58,
+      "count": 3
+    },
+    "2-email-find": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 8272,
+      "maxMs": 22901,
+      "count": 3
+    },
+    "2b-prospect-upsert": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 74,
+      "maxMs": 123,
+      "count": 3
+    },
+    "3-research": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 109766,
+      "maxMs": 143044,
+      "count": 3
+    },
+    "3a-brain-context": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 174,
+      "maxMs": 487,
+      "count": 3
+    },
+    "3b-brain-ingest": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 35,
+      "maxMs": 44,
+      "count": 3
+    },
+    "3c-intel-structurer": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 27458,
+      "maxMs": 29932,
+      "count": 3
+    },
+    "4-substrate": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 1196,
+      "maxMs": 1544,
+      "count": 3
+    },
+    "5-pattern-select": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 54260,
+      "maxMs": 58717,
+      "count": 3
+    },
+    "6-composition": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 36472,
+      "maxMs": 47103,
+      "count": 3
+    },
+    "7-judge": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 86180,
+      "maxMs": 111199,
+      "count": 3
+    },
+    "8-microsite": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 669,
+      "maxMs": 730,
+      "count": 3
+    },
+    "9-supabase-write": {
+      "passRate": "100%",
+      "failRate": "0%",
+      "avgMs": 267,
+      "maxMs": 343,
+      "count": 3
+    }
+  },
+  "bottleneck": "3-research",
+  "prospects": [
+    {
+      "name": "Ryan Kudera",
+      "company": "Finley Engineering",
+      "email": "r.kudera@finleyusa.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": true,
+      "judgeScores": {
+        "mechanicalPass": 9,
+        "t1_research_depth": 7,
+        "t1_vp_connection": 7,
+        "t1_tone": 8,
+        "t1_conciseness": 6,
+        "t1_jtbd_alignment": 9,
+        "t1_avg": 7.4,
+        "t2_research_depth": 8,
+        "t2_vp_connection": 8,
+        "t2_tone": 8,
+        "t2_conciseness": 6,
+        "t2_jtbd_alignment": 9,
+        "t2_avg": 7.8,
+        "t3_research_depth": 7,
+        "t3_vp_connection": 7,
+        "t3_tone": 8,
+        "t3_conciseness": 7,
+        "t3_jtbd_alignment": 8,
+        "t3_avg": 7.4
+      },
+      "duration": "360.6s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 58,
+          "status": "pass",
+          "detail": "pass:ae_firm"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 976,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 49,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 487,
+          "status": "pass",
+          "detail": "5 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 143044,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 32,
+          "status": "pass",
+          "detail": "0+10 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 27031,
+          "status": "pass",
+          "detail": "29 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1544,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 52918,
+          "status": "pass",
+          "detail": "loss_aversion,reciprocity,curiosity_gap"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 32730,
+          "status": "pass",
+          "detail": "3 touches, wc=80/83/84"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 100873,
+          "status": "pass",
+          "detail": "mechanicalPass=9,t1_research_depth=7,t1_vp_connection=7,t1_tone=8,t1_conciseness=6,t1_jtbd_alignment=9,t1_avg=7.4,t2_research_depth=8,t2_vp_connection=8,t2_tone=8,t2_conciseness=6,t2_jtbd_alignment=9,t2_avg=7.8,t3_research_depth=7,t3_vp_connection=7,t3_tone=8,t3_conciseness=7,t3_jtbd_alignment=8,t3_avg=7.4"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 664,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 179,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "Wesley Kudera",
+      "company": "Finley Engineering",
+      "email": "wesley@finleyusa.com",
+      "emailConfidence": "yellow",
+      "mvQuality": null,
+      "judgePass": true,
+      "judgeScores": {
+        "mechanicalPass": 9,
+        "t1_research_depth": 6,
+        "t1_vp_connection": 7,
+        "t1_tone": 8,
+        "t1_conciseness": 7,
+        "t1_jtbd_alignment": 8,
+        "t1_avg": 7.2,
+        "t2_research_depth": 6,
+        "t2_vp_connection": 7,
+        "t2_tone": 7,
+        "t2_conciseness": 6,
+        "t2_jtbd_alignment": 8,
+        "t2_avg": 6.8,
+        "t3_research_depth": 6,
+        "t3_vp_connection": 8,
+        "t3_tone": 8,
+        "t3_conciseness": 7,
+        "t3_jtbd_alignment": 8,
+        "t3_avg": 7.4
+      },
+      "duration": "301.8s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 3,
+          "status": "pass",
+          "detail": "pass:ae_firm"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 22901,
+          "status": "pass",
+          "detail": "yellow"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 123,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 15,
+          "status": "pass",
+          "detail": "5 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 59417,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 29,
+          "status": "pass",
+          "detail": "1+5 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 25411,
+          "status": "pass",
+          "detail": "29 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 960,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 51144,
+          "status": "pass",
+          "detail": "loss_aversion,challenger_insight,curiosity_gap"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 29584,
+          "status": "pass",
+          "detail": "3 touches, wc=84/95/81"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 111199,
+          "status": "pass",
+          "detail": "mechanicalPass=9,t1_research_depth=6,t1_vp_connection=7,t1_tone=8,t1_conciseness=7,t1_jtbd_alignment=8,t1_avg=7.2,t2_research_depth=6,t2_vp_connection=7,t2_tone=7,t2_conciseness=6,t2_jtbd_alignment=8,t2_avg=6.8,t3_research_depth=6,t3_vp_connection=8,t3_tone=8,t3_conciseness=7,t3_jtbd_alignment=8,t3_avg=7.4"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 730,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 280,
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "name": "David Wojcik",
+      "company": "Finley Engineering",
+      "email": "d.wojcik@finleyusa.com",
+      "emailConfidence": "green",
+      "mvQuality": null,
+      "judgePass": true,
+      "judgeScores": {
+        "mechanicalPass": 9,
+        "t1_research_depth": 6,
+        "t1_vp_connection": 8,
+        "t1_tone": 8,
+        "t1_conciseness": 6,
+        "t1_jtbd_alignment": 9,
+        "t1_avg": 7.4
+      },
+      "duration": "312.1s",
+      "errors": [],
+      "phases": [
+        {
+          "phase": "1-icp-gate",
+          "ms": 1,
+          "status": "pass",
+          "detail": "pass:ae_firm"
+        },
+        {
+          "phase": "2-email-find",
+          "ms": 939,
+          "status": "pass",
+          "detail": "green"
+        },
+        {
+          "phase": "2b-prospect-upsert",
+          "ms": 49,
+          "status": "pass"
+        },
+        {
+          "phase": "3a-brain-context",
+          "ms": 20,
+          "status": "pass",
+          "detail": "5 entries"
+        },
+        {
+          "phase": "3-research",
+          "ms": 126836,
+          "status": "pass",
+          "detail": "3 personas"
+        },
+        {
+          "phase": "3b-brain-ingest",
+          "ms": 44,
+          "status": "pass",
+          "detail": "2+10 entities"
+        },
+        {
+          "phase": "3c-intel-structurer",
+          "ms": 29932,
+          "status": "pass",
+          "detail": "29 fields"
+        },
+        {
+          "phase": "4-substrate",
+          "ms": 1084,
+          "status": "pass"
+        },
+        {
+          "phase": "5-pattern-select",
+          "ms": 58717,
+          "status": "pass",
+          "detail": "reciprocity,loss_aversion,curiosity_gap"
+        },
+        {
+          "phase": "6-composition",
+          "ms": 47103,
+          "status": "pass",
+          "detail": "3 touches, wc=79/73/77"
+        },
+        {
+          "phase": "7-judge",
+          "ms": 46468,
+          "status": "pass",
+          "detail": "mechanicalPass=9,t1_research_depth=6,t1_vp_connection=8,t1_tone=8,t1_conciseness=6,t1_jtbd_alignment=9,t1_avg=7.4"
+        },
+        {
+          "phase": "8-microsite",
+          "ms": 612,
+          "status": "pass"
+        },
+        {
+          "phase": "9-supabase-write",
+          "ms": 343,
+          "status": "pass"
+        }
+      ]
+    }
+  ]
+}
